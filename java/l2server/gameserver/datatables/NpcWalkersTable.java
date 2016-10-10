@@ -35,99 +35,99 @@ import l2server.util.xml.XmlNode;
  * Main Table to Load Npc Walkers Routes and Chat SQL Table.<br>
  *
  * @author Rayan RPG for L2Emu Project, JIV
- *
  * @since 927
- *
  */
 public class NpcWalkersTable
 {
-	private TIntObjectHashMap<List<L2NpcWalkerNode>> _routes = new TIntObjectHashMap<List<L2NpcWalkerNode>>();
-	
-	public static NpcWalkersTable getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private NpcWalkersTable()
-	{
-		if (Config.ALLOW_NPC_WALKERS)
-		{
-			Log.info("Initializing Walkers Routes Table.");
-			load();
-		}
-	}
-	
-	public void load()
-	{
-		_routes.clear();
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
-		if (file.exists())
-		{
-			XmlDocument doc = new XmlDocument(file);
-			XmlNode n = doc.getFirstChild();
-			for (XmlNode d : n.getChildren())
-			{
-				if (d.getName().equals("walker"))
-				{
-					List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
-					int npcId = d.getInt("npcId");
-					for (XmlNode r : d.getChildren())
-					{
-						if (r.getName().equals("route"))
-						{
-							int x = r.getInt("X");
-							int y = r.getInt("Y");
-							int z = r.getInt("Z");
-							int delay = r.getInt("delay");
-							String chat = r.getString("string");
-							boolean running = r.getBool("run");
-							route.add(new L2NpcWalkerNode(x, y, z, delay, chat, running));
-						}
-					}
-					//_routes.put(npcId, route);
-					
-					try
-					{
-						L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
-						L2Spawn walkerSpawn = new L2Spawn(tmpl);
-						
-						walkerSpawn.setX(route.get(0).getMoveX());
-						walkerSpawn.setY(route.get(0).getMoveY());
-						walkerSpawn.setZ(route.get(0).getMoveZ());
-						
-						SpawnTable.getInstance().addNewSpawn(walkerSpawn, false);
-						
-						walkerSpawn.startRespawn();
-						walkerSpawn.doSpawn();
-						
-						L2Npc walker = walkerSpawn.getNpc();
-						L2NpcWalkerAI walkerAI = new L2NpcWalkerAI(walker.new AIAccessor());
-						
-						walker.setAI(walkerAI);
-						walkerAI.initializeRoute(route);
-					}
-					catch (Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
-			}
-		}
-		
-		for (Object list : _routes.getValues())
-			((ArrayList<?>) list).trimToSize();
-		
-		Log.info("WalkerRoutesTable: Loaded " + _routes.size() + " Npc Walker Routes.");
-	}
-	
-	public List<L2NpcWalkerNode> getRouteForNpc(int id)
-	{
-		return _routes.get(id);
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final NpcWalkersTable _instance = new NpcWalkersTable();
-	}
+    private TIntObjectHashMap<List<L2NpcWalkerNode>> _routes = new TIntObjectHashMap<List<L2NpcWalkerNode>>();
+
+    public static NpcWalkersTable getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private NpcWalkersTable()
+    {
+        if (Config.ALLOW_NPC_WALKERS)
+        {
+            Log.info("Initializing Walkers Routes Table.");
+            load();
+        }
+    }
+
+    public void load()
+    {
+        _routes.clear();
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
+        if (file.exists())
+        {
+            XmlDocument doc = new XmlDocument(file);
+            XmlNode n = doc.getFirstChild();
+            for (XmlNode d : n.getChildren())
+            {
+                if (d.getName().equals("walker"))
+                {
+                    List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
+                    int npcId = d.getInt("npcId");
+                    for (XmlNode r : d.getChildren())
+                    {
+                        if (r.getName().equals("route"))
+                        {
+                            int x = r.getInt("X");
+                            int y = r.getInt("Y");
+                            int z = r.getInt("Z");
+                            int delay = r.getInt("delay");
+                            String chat = r.getString("string");
+                            boolean running = r.getBool("run");
+                            route.add(new L2NpcWalkerNode(x, y, z, delay, chat, running));
+                        }
+                    }
+                    //_routes.put(npcId, route);
+
+                    try
+                    {
+                        L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
+                        L2Spawn walkerSpawn = new L2Spawn(tmpl);
+
+                        walkerSpawn.setX(route.get(0).getMoveX());
+                        walkerSpawn.setY(route.get(0).getMoveY());
+                        walkerSpawn.setZ(route.get(0).getMoveZ());
+
+                        SpawnTable.getInstance().addNewSpawn(walkerSpawn, false);
+
+                        walkerSpawn.startRespawn();
+                        walkerSpawn.doSpawn();
+
+                        L2Npc walker = walkerSpawn.getNpc();
+                        L2NpcWalkerAI walkerAI = new L2NpcWalkerAI(walker.new AIAccessor());
+
+                        walker.setAI(walkerAI);
+                        walkerAI.initializeRoute(route);
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        for (Object list : _routes.getValues())
+        {
+            ((ArrayList<?>) list).trimToSize();
+        }
+
+        Log.info("WalkerRoutesTable: Loaded " + _routes.size() + " Npc Walker Routes.");
+    }
+
+    public List<L2NpcWalkerNode> getRouteForNpc(int id)
+    {
+        return _routes.get(id);
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final NpcWalkersTable _instance = new NpcWalkersTable();
+    }
 }

@@ -1,1127 +1,1128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<item id="32200" type="Armor" name="Blessed Twilight Leather Helmet - Assassin Type">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<item id="32201" type="Armor" name="Blessed Twilight Leather Armor - Assassin Type">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="268" />
-			<set stat="pAtk" val="26" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="32202" type="Armor" name="Blessed Twilight Leather Leggings - Assassin Type">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="168" />
-			<set stat="rCrit" val="2.6" />
-			<set stat="mCritRate" val="2.6" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="32203" type="Armor" name="Blessed Twilight Leather Gloves - Assassin Type">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="32204" type="Armor" name="Blessed Twilight Leather Boots - Assassin Type">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="32205" type="Armor" name="Blessed Twilight Circlet - Magic Type">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<item id="32206" type="Armor" name="Blessed Twilight Tunic - Magic Type">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="184" />
-			<set stat="pAtk" val="26" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="32207" type="Armor" name="Blessed Twilight Stockings - Magic Type">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="115" />
-			<set stat="rCrit" val="2.6" />
-			<set stat="mCritRate" val="2.6" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="32208" type="Armor" name="Blessed Twilight Gloves - Magic Type">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="32209" type="Armor" name="Blessed Twilight Shoes - Magic Type">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="32210" type="Armor" name="Blessed Twilight Helmet - Defense Type">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<item id="32211" type="Armor" name="Blessed Twilight Breastplate - Defense Type">
-		<set name="icon" val="icon.armor_t401_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="335" />
-			<set stat="pAtk" val="26" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="32212" type="Armor" name="Blessed Twilight Gaiters - Defense Type">
-		<set name="icon" val="icon.armor_t401_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="209" />
-			<set stat="rCrit" val="2.6" />
-			<set stat="mCritRate" val="2.6" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="32213" type="Armor" name="Blessed Twilight Gauntlets - Defense Type">
-		<set name="icon" val="icon.armor_t401_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="32214" type="Armor" name="Blessed Twilight Boots - Defense Type">
-		<set name="icon" val="icon.armor_t401_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. -->
-	<item id="32215" type="Armor" name="Blessed Twilight Shield - Defense Type">
-		<set name="icon" val="icon.kratere_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="458" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="32216" type="Armor" name="Blessed Twilight Leather Helmet - Enchant Type">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<item id="32217" type="Armor" name="Blessed Twilight Leather Armor - Enchant Type">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="268" />
-			<set stat="pAtk" val="26" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="32218" type="Armor" name="Blessed Twilight Leather Leggings - Enchant Type">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="168" />
-			<set stat="rCrit" val="2.6" />
-			<set stat="mCritRate" val="2.6" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="32219" type="Armor" name="Blessed Twilight Leather Gloves - Enchant Type">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="32220" type="Armor" name="Blessed Twilight Leather Boots - Enchant Type">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="32221" type="Armor" name="Blessed Twilight Circlet - Recovery Type">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<item id="32222" type="Armor" name="Blessed Twilight Tunic - Recovery Type">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="184" />
-			<set stat="pAtk" val="26" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="32223" type="Armor" name="Blessed Twilight Stockings - Recovery Type">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="115" />
-			<set stat="rCrit" val="2.6" />
-			<set stat="mCritRate" val="2.6" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="32224" type="Armor" name="Blessed Twilight Gloves - Recovery Type">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="32225" type="Armor" name="Blessed Twilight Shoes - Recovery Type">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Magical scroll that relocates you to Talking Island. -->
-	<item id="32226" type="EtcItem" name="Scroll of Escape: Talking Island Village">
-		<set name="icon" val="icon.etc_scroll_of_return_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Proof for awakening. -->
-	<item id="32227" type="EtcItem" name="Stone of Awakening">
-		<set name="icon" val="icon.destiny_stone" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Pouch containing A-D-grade hardener. -->
-	<item id="32228" type="EtcItem" name="Hardener Pouch - D">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-C-grade hardener. -->
-	<item id="32229" type="EtcItem" name="Hardener Pouch - C(49)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-C-grade hardener. -->
-	<item id="32230" type="EtcItem" name="Hardener Pouch - C(52)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-C-grade hardener. -->
-	<item id="32231" type="EtcItem" name="Hardener Pouch - C(55)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing B-grade hardener. -->
-	<item id="32232" type="EtcItem" name="Hardener Pouch - B(58)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing B-grade hardener. -->
-	<item id="32233" type="EtcItem" name="Hardener Pouch - B(61)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-grade Hardener. -->
-	<item id="32234" type="EtcItem" name="Hardener Pouch - A(64)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-grade Hardener. -->
-	<item id="32235" type="EtcItem" name="Hardener Pouch - A(67)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing A-grade Hardener. -->
-	<item id="32236" type="EtcItem" name="Hardener Pouch - A(70)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing S-grade hardener. -->
-	<item id="32237" type="EtcItem" name="Hardener Pouch - S(75)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing S-grade hardener. -->
-	<item id="32238" type="EtcItem" name="Hardener Pouch - S(80)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing S-grade hardener. -->
-	<item id="32239" type="EtcItem" name="Hardener Pouch - S(82)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Pouch containing S-grade hardener. -->
-	<item id="32240" type="EtcItem" name="Hardener Pouch - S(84)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Box containing support goods for adventurers. -->
-	<item id="32241" type="EtcItem" name="Adventurer Support Goods">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="600" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="false" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="1061,10,20,5;22026,10,20,5;1540,10,20,5;10136,1,5,5;10137,1,5,5;10132,1,5,5;10134,1,5,5;10138,1,5,5;10131,1,5,5;10135,1,5,5;736,10,20,5;7122,10,20,5;7117,10,20,5;7123,10,20,5;7124,10,20,5;7126,10,20,5;7132,10,20,5;7133,10,20,5;7134,10,20,5;7135,10,20,5;" />
-	</item>
-	<!-- Pouch containing A-C-grade hardener. -->
-	<item id="32242" type="EtcItem" name="Hardener Pouch - C(46)">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- P. Atk. + 2% when equipped. -->
-	<item id="32243" type="Armor" name="Talisman (R-grade) - P. Atk. (Passive)">
-		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="item_skill" val="8608-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Atk. Spd. + 2% when equipped. -->
-	<item id="32244" type="Armor" name="Talisman (R-grade) - Atk. Spd. (Passive)">
-		<set name="icon" val="icon.r85_talisman_pa_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Atk. + 2% when equipped. -->
-	<item id="32245" type="Armor" name="Talisman (R-grade) - M. Atk. (Passive)">
-		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="item_skill" val="8616-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Casting Spd. + 2% when equipped. -->
-	<item id="32246" type="Armor" name="Talisman (R-grade) - Casting Spd. (Passive)">
-		<set name="icon" val="icon.r85_talisman_ma_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Cancels all debuffs when used. -->
-	<item id="32247" type="Armor" name="Talisman (R-grade) - Remove Debuff (Active)">
-		<set name="icon" val="icon.r85_talisman_ma_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Cancels all debuffs when used. -->
-	<item id="32248" type="Armor" name="Talisman (R-grade) - Remove Debuff (Active)">
-		<set name="icon" val="icon.r85_talisman_ma_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Quiver containing arrows made of wood. Used with a No-grade bow. -->
-	<item id="32249" type="EtcItem" name="Infinite Wooden Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="2212" />
-	</item>
-	<!-- Quiver containing arrows made of sharply ground bone. Used with a D-grade bow. -->
-	<item id="32250" type="EtcItem" name="Infinite Bone Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="10248" />
-	</item>
-	<!-- Quiver containing arrows made of steel. Used with a C-grade bow. -->
-	<item id="32251" type="EtcItem" name="Infinite Steel Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="16086" />
-	</item>
-	<!-- Quiver containing steel arrows plated in silver. Used with a B-grade bow. -->
-	<item id="32252" type="EtcItem" name="Infinite Silver Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="48482" />
-	</item>
-	<!-- Quiver containing steel arrows plated in mithril. Used with an A-grade bow. -->
-	<item id="32253" type="EtcItem" name="Infinite Mithril Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="510720" />
-	</item>
-	<!-- This quiver contains arrows made of unknown material. Used with an S-grade bow. -->
-	<item id="32254" type="EtcItem" name="Infinite Quiver of Light">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="2402400" />
-	</item>
-	<!-- Quiver containing arrows made of orichalcum. Used with an R-grade bow. -->
-	<item id="32255" type="EtcItem" name="Infinite Orichalcum Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="6340320" />
-	</item>
-	<!-- Container with bolts made of wood. Used with a No-grade Crossbow. -->
-	<item id="32256" type="EtcItem" name="Infinite Wooden Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="2212" />
-	</item>
-	<!-- Container with bolts made of sharply ground bone. Used with a D-grade Crossbow. -->
-	<item id="32257" type="EtcItem" name="Infinite Bone Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="10248" />
-	</item>
-	<!-- Container with bolts made of steel. Used with a C-grade Crossbow. -->
-	<item id="32258" type="EtcItem" name="Infinite Steel Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="16086" />
-	</item>
-	<!-- Container with steel bolts plated in silver. Used with a B-grade Crossbow. -->
-	<item id="32259" type="EtcItem" name="Infinite Silver Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="48482" />
-	</item>
-	<!-- Container with steel bolts plated in mithril. Used with an A-grade Crossbow. -->
-	<item id="32260" type="EtcItem" name="Infinite Mithril Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="510720" />
-	</item>
-	<!-- This container Has bolts made of unknown material. Used with an S-grade Crossbow. -->
-	<item id="32261" type="EtcItem" name="Infinite Light Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="2402400" />
-	</item>
-	<!-- Container with bolts made of orichalcum. Used with an R-grade Crossbow. -->
-	<item id="32262" type="EtcItem" name="Infinite Orichalcum Bolt Container">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="price" val="6340320" />
-	</item>
-	<!-- Awakened Hero's Olympiad Treasure Chest. -->
-	<item id="32263" type="EtcItem" name="Awakened Hero's Olympiad Treasure Chest">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Sigel Knights after Awakening. -->
-	<item id="32264" type="EtcItem" name="Abelius' Power - Sigel Knight">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Tyrr Warriors after Awakening. -->
-	<item id="32265" type="EtcItem" name="Sapyros' Power - Tyrr Warrior">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Othell Rogues after Awakening. -->
-	<item id="32266" type="EtcItem" name="Ashagen's Power - Othell Rogue">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Yul Archers after Awakening. -->
-	<item id="32267" type="EtcItem" name="Cranigg's Power - Yul Archer">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Feoh Wizards after Awakening. -->
-	<item id="32268" type="EtcItem" name="Soltkreig's Power - Feoh Wizard">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Wynn Summoners after Awakening. -->
-	<item id="32269" type="EtcItem" name="Naviarope's Power - Wynn Summoner">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Iss Enchanters after Awakening. -->
-	<item id="32270" type="EtcItem" name="Leister's Power - Iss Enchanter">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Chest that contains items helpful to Aeore Healers after Awakening. -->
-	<item id="32271" type="EtcItem" name="Lakcis' Power - Aeore Healer">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Reward box given to volunteers for the Antharas expedition. When the chest is opened, you can receive the Oren Lord Valtez' reward. -->
-	<item id="32272" type="EtcItem" name="Expedition Volunteer's Reward Box">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32273" type="EtcItem" name="Recipe: Human Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1131" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32274" type="EtcItem" name="Recipe: Human Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1132" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Male Wizard Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32275" type="EtcItem" name="Recipe: Human Male Wizard Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1133" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Female Wizard Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32276" type="EtcItem" name="Recipe: Human Female Wizard Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1134" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Elf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32277" type="EtcItem" name="Recipe: Elf Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1135" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Elf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32278" type="EtcItem" name="Recipe: Elf Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1136" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Dark Elf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32279" type="EtcItem" name="Recipe: Dark Elf Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1137" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Dark Elf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32280" type="EtcItem" name="Recipe: Dark Elf Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1138" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Dwarf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32281" type="EtcItem" name="Recipe: Dwarf Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1139" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Dwarf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32282" type="EtcItem" name="Recipe: Dwarf Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1140" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32283" type="EtcItem" name="Recipe: Orc Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1141" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32284" type="EtcItem" name="Recipe: Orc Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1142" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Male Shaman Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32285" type="EtcItem" name="Recipe: Orc Male Shaman Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1143" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Female Shaman Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32286" type="EtcItem" name="Recipe: Orc Female Shaman Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1144" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Kamael Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32287" type="EtcItem" name="Recipe: Kamael Male Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1145" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Kamael Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
-	<item id="32288" type="EtcItem" name="Recipe: Kamael Female Wig">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1146" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Olympiad Guardian Warrior's Ring. 30-day. MP + 28. -->
-	<item id="32289" type="Armor" name="Olympiad Guardian Warrior's Ring">
-		<set name="icon" val="icon.accessory_ring_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="87" />
-			<add stat="maxMp" val="28" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Olympiad Guardian Warrior's Necklace. 30-day. MP + 57. -->
-	<item id="32290" type="Armor" name="Olympiad Guardian Warrior's Necklace">
-		<set name="icon" val="icon.accessory_necklace_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="174" />
-			<add stat="maxMp" val="57" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Olympiad Guardian Warrior's Earring. 30-day. MP + 42. -->
-	<item id="32291" type="Armor" name="Olympiad Guardian Warrior's Earring">
-		<set name="icon" val="icon.accessory_earring_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="131" />
-			<add stat="maxMp" val="42" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32292" type="EtcItem" name="Recipe: Immortal Belt (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1147" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32293" type="EtcItem" name="Recipe: Immortal Bracelet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1148" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Shirt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32294" type="EtcItem" name="Recipe: Immortal Shirt (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1149" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32295" type="EtcItem" name="Recipe: Twilight Belt (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1150" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32296" type="EtcItem" name="Recipe: Twilight Bracelet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1151" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Shirt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32297" type="EtcItem" name="Recipe: Twilight Shirt (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1152" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Seraph Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32298" type="EtcItem" name="Recipe: Seraph Belt (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1153" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Used by all classes after completion of the fourth class transfer. Recipe for Seraph Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
-	<item id="32299" type="EtcItem" name="Recipe: Seraph Bracelet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1154" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
+    <item id="32200" type="Armor" name="Blessed Twilight Leather Helmet - Assassin Type">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <item id="32201" type="Armor" name="Blessed Twilight Leather Armor - Assassin Type">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="268" />
+            <set stat="pAtk" val="26" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="32202" type="Armor" name="Blessed Twilight Leather Leggings - Assassin Type">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="168" />
+            <set stat="rCrit" val="2.6" />
+            <set stat="mCritRate" val="2.6" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="32203" type="Armor" name="Blessed Twilight Leather Gloves - Assassin Type">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="32204" type="Armor" name="Blessed Twilight Leather Boots - Assassin Type">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="32205" type="Armor" name="Blessed Twilight Circlet - Magic Type">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <item id="32206" type="Armor" name="Blessed Twilight Tunic - Magic Type">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="184" />
+            <set stat="pAtk" val="26" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="32207" type="Armor" name="Blessed Twilight Stockings - Magic Type">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="115" />
+            <set stat="rCrit" val="2.6" />
+            <set stat="mCritRate" val="2.6" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="32208" type="Armor" name="Blessed Twilight Gloves - Magic Type">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="32209" type="Armor" name="Blessed Twilight Shoes - Magic Type">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="32210" type="Armor" name="Blessed Twilight Helmet - Defense Type">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <item id="32211" type="Armor" name="Blessed Twilight Breastplate - Defense Type">
+        <set name="icon" val="icon.armor_t401_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="335" />
+            <set stat="pAtk" val="26" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="32212" type="Armor" name="Blessed Twilight Gaiters - Defense Type">
+        <set name="icon" val="icon.armor_t401_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="209" />
+            <set stat="rCrit" val="2.6" />
+            <set stat="mCritRate" val="2.6" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="32213" type="Armor" name="Blessed Twilight Gauntlets - Defense Type">
+        <set name="icon" val="icon.armor_t401_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="32214" type="Armor" name="Blessed Twilight Boots - Defense Type">
+        <set name="icon" val="icon.armor_t401_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. -->
+    <item id="32215" type="Armor" name="Blessed Twilight Shield - Defense Type">
+        <set name="icon" val="icon.kratere_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="458" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="32216" type="Armor" name="Blessed Twilight Leather Helmet - Enchant Type">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <item id="32217" type="Armor" name="Blessed Twilight Leather Armor - Enchant Type">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="268" />
+            <set stat="pAtk" val="26" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="32218" type="Armor" name="Blessed Twilight Leather Leggings - Enchant Type">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="168" />
+            <set stat="rCrit" val="2.6" />
+            <set stat="mCritRate" val="2.6" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="32219" type="Armor" name="Blessed Twilight Leather Gloves - Enchant Type">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="32220" type="Armor" name="Blessed Twilight Leather Boots - Enchant Type">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="32221" type="Armor" name="Blessed Twilight Circlet - Recovery Type">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <item id="32222" type="Armor" name="Blessed Twilight Tunic - Recovery Type">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="184" />
+            <set stat="pAtk" val="26" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="32223" type="Armor" name="Blessed Twilight Stockings - Recovery Type">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="115" />
+            <set stat="rCrit" val="2.6" />
+            <set stat="mCritRate" val="2.6" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="32224" type="Armor" name="Blessed Twilight Gloves - Recovery Type">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="32225" type="Armor" name="Blessed Twilight Shoes - Recovery Type">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Magical scroll that relocates you to Talking Island. -->
+    <item id="32226" type="EtcItem" name="Scroll of Escape: Talking Island Village">
+        <set name="icon" val="icon.etc_scroll_of_return_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Proof for awakening. -->
+    <item id="32227" type="EtcItem" name="Stone of Awakening">
+        <set name="icon" val="icon.destiny_stone" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Pouch containing A-D-grade hardener. -->
+    <item id="32228" type="EtcItem" name="Hardener Pouch - D">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-C-grade hardener. -->
+    <item id="32229" type="EtcItem" name="Hardener Pouch - C(49)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-C-grade hardener. -->
+    <item id="32230" type="EtcItem" name="Hardener Pouch - C(52)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-C-grade hardener. -->
+    <item id="32231" type="EtcItem" name="Hardener Pouch - C(55)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing B-grade hardener. -->
+    <item id="32232" type="EtcItem" name="Hardener Pouch - B(58)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing B-grade hardener. -->
+    <item id="32233" type="EtcItem" name="Hardener Pouch - B(61)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-grade Hardener. -->
+    <item id="32234" type="EtcItem" name="Hardener Pouch - A(64)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-grade Hardener. -->
+    <item id="32235" type="EtcItem" name="Hardener Pouch - A(67)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing A-grade Hardener. -->
+    <item id="32236" type="EtcItem" name="Hardener Pouch - A(70)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing S-grade hardener. -->
+    <item id="32237" type="EtcItem" name="Hardener Pouch - S(75)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing S-grade hardener. -->
+    <item id="32238" type="EtcItem" name="Hardener Pouch - S(80)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing S-grade hardener. -->
+    <item id="32239" type="EtcItem" name="Hardener Pouch - S(82)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Pouch containing S-grade hardener. -->
+    <item id="32240" type="EtcItem" name="Hardener Pouch - S(84)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Box containing support goods for adventurers. -->
+    <item id="32241" type="EtcItem" name="Adventurer Support Goods">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="600" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="false" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items"
+             val="1061,10,20,5;22026,10,20,5;1540,10,20,5;10136,1,5,5;10137,1,5,5;10132,1,5,5;10134,1,5,5;10138,1,5,5;10131,1,5,5;10135,1,5,5;736,10,20,5;7122,10,20,5;7117,10,20,5;7123,10,20,5;7124,10,20,5;7126,10,20,5;7132,10,20,5;7133,10,20,5;7134,10,20,5;7135,10,20,5;" />
+    </item>
+    <!-- Pouch containing A-C-grade hardener. -->
+    <item id="32242" type="EtcItem" name="Hardener Pouch - C(46)">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- P. Atk. + 2% when equipped. -->
+    <item id="32243" type="Armor" name="Talisman (R-grade) - P. Atk. (Passive)">
+        <set name="icon" val="icon.r85_talisman_pa_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="item_skill" val="8608-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Atk. Spd. + 2% when equipped. -->
+    <item id="32244" type="Armor" name="Talisman (R-grade) - Atk. Spd. (Passive)">
+        <set name="icon" val="icon.r85_talisman_pa_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Atk. + 2% when equipped. -->
+    <item id="32245" type="Armor" name="Talisman (R-grade) - M. Atk. (Passive)">
+        <set name="icon" val="icon.r85_talisman_ma_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="item_skill" val="8616-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Casting Spd. + 2% when equipped. -->
+    <item id="32246" type="Armor" name="Talisman (R-grade) - Casting Spd. (Passive)">
+        <set name="icon" val="icon.r85_talisman_ma_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Cancels all debuffs when used. -->
+    <item id="32247" type="Armor" name="Talisman (R-grade) - Remove Debuff (Active)">
+        <set name="icon" val="icon.r85_talisman_ma_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Cancels all debuffs when used. -->
+    <item id="32248" type="Armor" name="Talisman (R-grade) - Remove Debuff (Active)">
+        <set name="icon" val="icon.r85_talisman_ma_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Quiver containing arrows made of wood. Used with a No-grade bow. -->
+    <item id="32249" type="EtcItem" name="Infinite Wooden Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="2212" />
+    </item>
+    <!-- Quiver containing arrows made of sharply ground bone. Used with a D-grade bow. -->
+    <item id="32250" type="EtcItem" name="Infinite Bone Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="10248" />
+    </item>
+    <!-- Quiver containing arrows made of steel. Used with a C-grade bow. -->
+    <item id="32251" type="EtcItem" name="Infinite Steel Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="16086" />
+    </item>
+    <!-- Quiver containing steel arrows plated in silver. Used with a B-grade bow. -->
+    <item id="32252" type="EtcItem" name="Infinite Silver Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="48482" />
+    </item>
+    <!-- Quiver containing steel arrows plated in mithril. Used with an A-grade bow. -->
+    <item id="32253" type="EtcItem" name="Infinite Mithril Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="510720" />
+    </item>
+    <!-- This quiver contains arrows made of unknown material. Used with an S-grade bow. -->
+    <item id="32254" type="EtcItem" name="Infinite Quiver of Light">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="2402400" />
+    </item>
+    <!-- Quiver containing arrows made of orichalcum. Used with an R-grade bow. -->
+    <item id="32255" type="EtcItem" name="Infinite Orichalcum Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="6340320" />
+    </item>
+    <!-- Container with bolts made of wood. Used with a No-grade Crossbow. -->
+    <item id="32256" type="EtcItem" name="Infinite Wooden Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="2212" />
+    </item>
+    <!-- Container with bolts made of sharply ground bone. Used with a D-grade Crossbow. -->
+    <item id="32257" type="EtcItem" name="Infinite Bone Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="10248" />
+    </item>
+    <!-- Container with bolts made of steel. Used with a C-grade Crossbow. -->
+    <item id="32258" type="EtcItem" name="Infinite Steel Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="16086" />
+    </item>
+    <!-- Container with steel bolts plated in silver. Used with a B-grade Crossbow. -->
+    <item id="32259" type="EtcItem" name="Infinite Silver Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="48482" />
+    </item>
+    <!-- Container with steel bolts plated in mithril. Used with an A-grade Crossbow. -->
+    <item id="32260" type="EtcItem" name="Infinite Mithril Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="510720" />
+    </item>
+    <!-- This container Has bolts made of unknown material. Used with an S-grade Crossbow. -->
+    <item id="32261" type="EtcItem" name="Infinite Light Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="2402400" />
+    </item>
+    <!-- Container with bolts made of orichalcum. Used with an R-grade Crossbow. -->
+    <item id="32262" type="EtcItem" name="Infinite Orichalcum Bolt Container">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="price" val="6340320" />
+    </item>
+    <!-- Awakened Hero's Olympiad Treasure Chest. -->
+    <item id="32263" type="EtcItem" name="Awakened Hero's Olympiad Treasure Chest">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Sigel Knights after Awakening. -->
+    <item id="32264" type="EtcItem" name="Abelius' Power - Sigel Knight">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Tyrr Warriors after Awakening. -->
+    <item id="32265" type="EtcItem" name="Sapyros' Power - Tyrr Warrior">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Othell Rogues after Awakening. -->
+    <item id="32266" type="EtcItem" name="Ashagen's Power - Othell Rogue">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Yul Archers after Awakening. -->
+    <item id="32267" type="EtcItem" name="Cranigg's Power - Yul Archer">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Feoh Wizards after Awakening. -->
+    <item id="32268" type="EtcItem" name="Soltkreig's Power - Feoh Wizard">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Wynn Summoners after Awakening. -->
+    <item id="32269" type="EtcItem" name="Naviarope's Power - Wynn Summoner">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Iss Enchanters after Awakening. -->
+    <item id="32270" type="EtcItem" name="Leister's Power - Iss Enchanter">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Chest that contains items helpful to Aeore Healers after Awakening. -->
+    <item id="32271" type="EtcItem" name="Lakcis' Power - Aeore Healer">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Reward box given to volunteers for the Antharas expedition. When the chest is opened, you can receive the Oren Lord Valtez' reward. -->
+    <item id="32272" type="EtcItem" name="Expedition Volunteer's Reward Box">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32273" type="EtcItem" name="Recipe: Human Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1131" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32274" type="EtcItem" name="Recipe: Human Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1132" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Male Wizard Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32275" type="EtcItem" name="Recipe: Human Male Wizard Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1133" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Human Female Wizard Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32276" type="EtcItem" name="Recipe: Human Female Wizard Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1134" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Elf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32277" type="EtcItem" name="Recipe: Elf Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1135" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Elf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32278" type="EtcItem" name="Recipe: Elf Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1136" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Dark Elf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32279" type="EtcItem" name="Recipe: Dark Elf Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1137" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Dark Elf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32280" type="EtcItem" name="Recipe: Dark Elf Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1138" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Dwarf Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32281" type="EtcItem" name="Recipe: Dwarf Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1139" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Dwarf Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32282" type="EtcItem" name="Recipe: Dwarf Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1140" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32283" type="EtcItem" name="Recipe: Orc Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1141" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32284" type="EtcItem" name="Recipe: Orc Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1142" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Male Shaman Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32285" type="EtcItem" name="Recipe: Orc Male Shaman Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1143" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Orc Female Shaman Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32286" type="EtcItem" name="Recipe: Orc Female Shaman Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1144" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Kamael Male Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32287" type="EtcItem" name="Recipe: Kamael Male Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1145" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Kamael Female Wig. Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
+    <item id="32288" type="EtcItem" name="Recipe: Kamael Female Wig">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1146" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Olympiad Guardian Warrior's Ring. 30-day. MP + 28. -->
+    <item id="32289" type="Armor" name="Olympiad Guardian Warrior's Ring">
+        <set name="icon" val="icon.accessory_ring_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="87" />
+            <add stat="maxMp" val="28" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Olympiad Guardian Warrior's Necklace. 30-day. MP + 57. -->
+    <item id="32290" type="Armor" name="Olympiad Guardian Warrior's Necklace">
+        <set name="icon" val="icon.accessory_necklace_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="174" />
+            <add stat="maxMp" val="57" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Olympiad Guardian Warrior's Earring. 30-day. MP + 42. -->
+    <item id="32291" type="Armor" name="Olympiad Guardian Warrior's Earring">
+        <set name="icon" val="icon.accessory_earring_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="131" />
+            <add stat="maxMp" val="42" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32292" type="EtcItem" name="Recipe: Immortal Belt (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1147" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32293" type="EtcItem" name="Recipe: Immortal Bracelet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1148" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Shirt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32294" type="EtcItem" name="Recipe: Immortal Shirt (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1149" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32295" type="EtcItem" name="Recipe: Twilight Belt (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1150" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32296" type="EtcItem" name="Recipe: Twilight Bracelet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1151" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Twilight Shirt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32297" type="EtcItem" name="Recipe: Twilight Shirt (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1152" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Seraph Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32298" type="EtcItem" name="Recipe: Seraph Belt (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1153" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Used by all classes after completion of the fourth class transfer. Recipe for Seraph Bracelet. Requires Create Common Item Lv. 10. Success rate is 60%. -->
+    <item id="32299" type="EtcItem" name="Recipe: Seraph Bracelet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1154" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
 </list>

@@ -17,23 +17,24 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * Format: ch d
- * @author  KenM
+ *
+ * @author KenM
  */
 public class ExDuelStart extends L2GameServerPacket
 {
-	private int _unk1;
-	
-	public ExDuelStart(int unk1)
-	{
-		_unk1 = unk1;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_unk1);
-	}
+    private int _unk1;
+
+    public ExDuelStart(int unk1)
+    {
+        _unk1 = unk1;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_unk1);
+    }
 }

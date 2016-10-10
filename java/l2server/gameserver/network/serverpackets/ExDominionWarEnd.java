@@ -17,18 +17,17 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author JIV
- *
- * Possibly trigger packet only, need to be verified.
- *
+ *         <p>
+ *         Possibly trigger packet only, need to be verified.
  */
 public class ExDominionWarEnd extends L2GameServerPacket
 {
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

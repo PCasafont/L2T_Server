@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- For 15 seconds, awakens party members' destructive instincts to increase P. Atk., P. Critical Rate, M. Atk., and M. Critical Rate by 50%, and Atk. Spd. and Casting Spd. by 20%. -->
-	<skill id="1600" levels="1" name="Soul Instinct">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="148" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="300000" />
-	</skill>
-	<!-- Attempt to fish at the dock. Put on a fishing rod and bait. -->
-	<skill id="1601" levels="1" name="Fishing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="1" />
-	</skill>
-	<!-- Loosen the fishing line when the fish is struggling. -->
-	<skill id="1602" levels="13" name="Reeling">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="2" />
-		<set name="reuseDelay" val="2000" />
-	</skill>
-	<!-- Tighten the fishing line when the fish is tired. -->
-	<skill id="1603" levels="13" name="Pumping">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="2" />
-		<set name="reuseDelay" val="2000" />
-	</skill>
-	<!-- Higher expertise gets you better fish. -->
-	<skill id="1604" levels="13" name="Fishing Expertise">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
+    <!-- For 15 seconds, awakens party members' destructive instincts to increase P. Atk., P. Critical Rate, M. Atk., and M. Critical Rate by 50%, and Atk. Spd. and Casting Spd. by 20%. -->
+    <skill id="1600" levels="1" name="Soul Instinct">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="148" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="300000" />
+    </skill>
+    <!-- Attempt to fish at the dock. Put on a fishing rod and bait. -->
+    <skill id="1601" levels="1" name="Fishing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="1" />
+    </skill>
+    <!-- Loosen the fishing line when the fish is struggling. -->
+    <skill id="1602" levels="13" name="Reeling">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="2" />
+        <set name="reuseDelay" val="2000" />
+    </skill>
+    <!-- Tighten the fishing line when the fish is tired. -->
+    <skill id="1603" levels="13" name="Pumping">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="2" />
+        <set name="reuseDelay" val="2000" />
+    </skill>
+    <!-- Higher expertise gets you better fish. -->
+    <skill id="1604" levels="13" name="Fishing Expertise">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
 </list>

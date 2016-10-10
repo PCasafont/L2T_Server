@@ -33,86 +33,94 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * Trade chat handler.
  *
- * @author  durgus
+ * @author durgus
  */
 public class ChatTrade implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		8
-	};
-	
-	/**
-	 * Handle chat type 'trade'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		/*if (!text.startsWith("WTS ") && !text.startsWith("WTB ") && !text.startsWith("WTT "))
+    private static final int[] COMMAND_IDS = {8};
+
+    /**
+     * Handle chat type 'trade'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        /*if (!text.startsWith("WTS ") && !text.startsWith("WTB ") && !text.startsWith("WTT "))
 		{
 			activeChar.sendMessage("Trade chat is reserved to trade! Your sentence must begin with WTS, WTB or WTT.");
 			return;
 		}*/
-		
-		if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("trade chat")))
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
-			return;
-		}
-		
-		for (int i = 0; i < text.length(); i++)
-		{
-			if ((text.charAt(i) & (char)0xff00) != 0)
-				text = text.substring(0, i) + text.substring(i + 1);
-		}
-		
-		CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-		
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		
-		if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("gm") && activeChar.isGM()))
-		{
-			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
-			for (L2PcInstance player : pls)
-			{
-				if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY())
-						&& !BlockList.isBlocked(player, activeChar)
-						&& player.getInstanceId() == activeChar.getInstanceId()
-						&& activeChar.getEvent() == null)
-					player.sendPacket(cs);
-			}
-		}
-		else if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
-		{
-			for (L2PcInstance player : pls)
-			{
-				if (!BlockList.isBlocked(player, activeChar))
-					player.sendPacket(cs);
-			}
-		}
-		
-		if (Server.gui != null)
-		{
-			if (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
-				text = "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text;
-			
-			ConsoleTab.appendMessage(ConsoleFilter.TradeChat, activeChar.getName() + ": " + text);
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+
+        if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar
+                .getFloodProtectors().getTradeChat().tryPerformAction("trade chat")))
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
+            return;
+        }
+
+        for (int i = 0; i < text.length(); i++)
+        {
+            if ((text.charAt(i) & (char) 0xff00) != 0)
+            {
+                text = text.substring(0, i) + text.substring(i + 1);
+            }
+        }
+
+        CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+
+        Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+
+        if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_TRADE_CHAT
+                .equalsIgnoreCase("gm") && activeChar.isGM()))
+        {
+            int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
+            for (L2PcInstance player : pls)
+            {
+                if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) && !BlockList
+                        .isBlocked(player, activeChar) && player.getInstanceId() == activeChar
+                        .getInstanceId() && activeChar.getEvent() == null)
+                {
+                    player.sendPacket(cs);
+                }
+            }
+        }
+        else if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
+        {
+            for (L2PcInstance player : pls)
+            {
+                if (!BlockList.isBlocked(player, activeChar))
+                {
+                    player.sendPacket(cs);
+                }
+            }
+        }
+
+        if (Server.gui != null)
+        {
+            if (text.contains("Type=") && text.contains("Title="))
+            {
+                int index1 = text.indexOf("Type=");
+                int index2 = text.indexOf("Title=") + 6;
+                text = text.substring(0, index1) + text.substring(index2);
+            }
+
+            if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+            {
+                text = "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text;
+            }
+
+            ConsoleTab.appendMessage(ConsoleFilter.TradeChat, activeChar.getName() + ": " + text);
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

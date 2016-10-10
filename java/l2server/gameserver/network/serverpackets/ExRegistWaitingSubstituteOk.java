@@ -19,30 +19,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author Erlandys
- *
  */
 public class ExRegistWaitingSubstituteOk extends L2GameServerPacket
 {
-	
-	int _classId;
-	L2PcInstance _player;
-	
-	public ExRegistWaitingSubstituteOk(int classId, L2PcInstance player)
-	{
-		_classId = classId;
-		_player = player.getParty().getLeader();
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeC(0x00); // TODO: Unknown
-		writeC(0x00); // TODO: Unknown
-		writeD(0x00); // TODO: Region Id
-		writeC(0x00); // TODO: Unknown
-		writeC(0x00); // TODO: Unknown
-		writeD(0x00); // TODO: Unknown
-		writeD(_player.getInstanceId() > 0 ? 0x01 : 0x00);
-		writeD(_classId);
-	}
+
+    int _classId;
+    L2PcInstance _player;
+
+    public ExRegistWaitingSubstituteOk(int classId, L2PcInstance player)
+    {
+        _classId = classId;
+        _player = player.getParty().getLeader();
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeC(0x00); // TODO: Unknown
+        writeC(0x00); // TODO: Unknown
+        writeD(0x00); // TODO: Region Id
+        writeC(0x00); // TODO: Unknown
+        writeC(0x00); // TODO: Unknown
+        writeD(0x00); // TODO: Unknown
+        writeD(_player.getInstanceId() > 0 ? 0x01 : 0x00);
+        writeD(_classId);
+    }
 }

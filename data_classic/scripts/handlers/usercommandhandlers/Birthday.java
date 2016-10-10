@@ -23,37 +23,34 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author JIV
- * Support for /mybirthday command
- * 
+ *         Support for /mybirthday command
  */
 public class Birthday implements IUserCommandHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		126
-	};
-	
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-			return false;
-		
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(activeChar.getCreateTime());
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_BIRTHDAY_IS_S3_S4_S2);
-		sm.addPcName(activeChar);
-		sm.addString(Integer.toString(cal.get(Calendar.YEAR)));
-		sm.addString(Integer.toString(cal.get(Calendar.MONTH)+1));
-		sm.addString(Integer.toString(cal.get(Calendar.DATE)));
-		
-		
-		activeChar.sendPacket(sm);
-		return true;
-	}
-	
-	public int[] getUserCommandList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {126};
+
+    public boolean useUserCommand(int id, L2PcInstance activeChar)
+    {
+        if (id != COMMAND_IDS[0])
+        {
+            return false;
+        }
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(activeChar.getCreateTime());
+
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_BIRTHDAY_IS_S3_S4_S2);
+        sm.addPcName(activeChar);
+        sm.addString(Integer.toString(cal.get(Calendar.YEAR)));
+        sm.addString(Integer.toString(cal.get(Calendar.MONTH) + 1));
+        sm.addString(Integer.toString(cal.get(Calendar.DATE)));
+
+        activeChar.sendPacket(sm);
+        return true;
+    }
+
+    public int[] getUserCommandList()
+    {
+        return COMMAND_IDS;
+    }
 }

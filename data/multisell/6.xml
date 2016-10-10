@@ -1,315 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="1" id="73" /> <!-- Shamshir -->
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2576" /> <!-- Shamshir*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="73" /> <!-- Shamshir -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2579" /> <!-- Shamshir*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="73" /> <!-- Shamshir -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2580" /> <!-- Shamshir*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="74" /> <!-- Katana -->
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2585" /> <!-- Katana*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="74" /> <!-- Katana -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2588" /> <!-- Katana*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="74" /> <!-- Katana -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2589" /> <!-- Katana*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="131" /> <!-- Spirit Sword -->
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2593" /> <!-- Spirit Sword*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="131" /> <!-- Spirit Sword -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2596" /> <!-- Spirit Sword*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="131" /> <!-- Spirit Sword -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2597" /> <!-- Spirit Sword*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="133" /> <!-- Raid Sword -->
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2600" /> <!-- Raid Sword*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="133" /> <!-- Raid Sword -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2603" /> <!-- Raid Sword*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="133" /> <!-- Raid Sword -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="953100" id="57" /> <!-- Adena -->
-		<production count="1" id="2604" /> <!-- Raid Sword*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2606" /> <!-- Caliburs*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2609" /> <!-- Caliburs*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2610" /> <!-- Caliburs*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2621" /> <!-- Sword of Nightmare*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2622" /> <!-- Sword of Nightmare*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="121500" id="57" /> <!-- Adena -->
-		<production count="1" id="2624" /> <!-- Tsurugi*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="73" /> <!-- Shamshir -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="788400" id="57" /> <!-- Adena -->
-		<production count="1" id="2581" /> <!-- Shamshir*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="74" /> <!-- Katana -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="788400" id="57" /> <!-- Adena -->
-		<production count="1" id="2590" /> <!-- Katana*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="131" /> <!-- Spirit Sword -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="788400" id="57" /> <!-- Adena -->
-		<production count="1" id="2598" /> <!-- Spirit Sword*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="133" /> <!-- Raid Sword -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="788400" id="57" /> <!-- Adena -->
-		<production count="1" id="2605" /> <!-- Raid Sword*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="75" /> <!-- Caliburs -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="1323000" id="57" /> <!-- Adena -->
-		<production count="1" id="2611" /> <!-- Caliburs*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="1323000" id="57" /> <!-- Adena -->
-		<production count="1" id="2623" /> <!-- Sword of Nightmare*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="77" /> <!-- Tsurugi -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="1323000" id="57" /> <!-- Adena -->
-		<production count="1" id="2625" /> <!-- Tsurugi*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
-		<ingredient count="1350000" id="57" /> <!-- Adena -->
-		<production count="1" id="2626" /> <!-- Samurai Long Sword*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11878" /> <!-- Common Item - Shamshir*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11876" /> <!-- Common Item - Shamshir*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11877" /> <!-- Common Item - Shamshir*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11888" /> <!-- Common Item - Katana*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11886" /> <!-- Common Item - Katana*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11887" /> <!-- Common Item - Katana*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11883" /> <!-- Common Item - Spirit Sword*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11881" /> <!-- Common Item - Spirit Sword*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11882" /> <!-- Common Item - Spirit Sword*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11873" /> <!-- Common Item - Raid Sword*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11871" /> <!-- Common Item - Raid Sword*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="105900" id="57" /> <!-- Adena -->
-		<production count="1" id="11872" /> <!-- Common Item - Raid Sword*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11914" /> <!-- Common Item - Caliburs*Caliburs -->
-	</item>
-	<item>
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11912" /> <!-- Common Item - Caliburs*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11913" /> <!-- Common Item - Caliburs*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11905" /> <!-- Common Item - Sword of Nightmare*Sword of Nightmare -->
-	</item>
-	<item>
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11906" /> <!-- Common Item - Sword of Nightmare*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="13500" id="57" /> <!-- Adena -->
-		<production count="1" id="11909" /> <!-- Common Item - Tsurugi*Tsurugi -->
-	</item>
-	<item>
-		<ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="87600" id="57" /> <!-- Adena -->
-		<production count="1" id="11921" /> <!-- Common Item - Shamshir*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="87600" id="57" /> <!-- Adena -->
-		<production count="1" id="11923" /> <!-- Common Item - Katana*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="87600" id="57" /> <!-- Adena -->
-		<production count="1" id="11922" /> <!-- Common Item - Spirit Sword*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="87600" id="57" /> <!-- Adena -->
-		<production count="1" id="11920" /> <!-- Common Item - Raid Sword*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="147000" id="57" /> <!-- Adena -->
-		<production count="1" id="11928" /> <!-- Common Item - Caliburs*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="147000" id="57" /> <!-- Adena -->
-		<production count="1" id="11926" /> <!-- Common Item - Sword of Nightmare*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="147000" id="57" /> <!-- Adena -->
-		<production count="1" id="11927" /> <!-- Common Item - Tsurugi*Samurai Long Sword -->
-	</item>
-	<item>
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
-		<ingredient count="150000" id="57" /> <!-- Adena -->
-		<production count="1" id="11937" /> <!-- Common Item - Samurai Long Sword*Samurai Long Sword -->
-	</item>
+    <item>
+        <ingredient count="1" id="73" /> <!-- Shamshir -->
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2576" /> <!-- Shamshir*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="73" /> <!-- Shamshir -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2579" /> <!-- Shamshir*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="73" /> <!-- Shamshir -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2580" /> <!-- Shamshir*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="74" /> <!-- Katana -->
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2585" /> <!-- Katana*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="74" /> <!-- Katana -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2588" /> <!-- Katana*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="74" /> <!-- Katana -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2589" /> <!-- Katana*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="131" /> <!-- Spirit Sword -->
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2593" /> <!-- Spirit Sword*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="131" /> <!-- Spirit Sword -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2596" /> <!-- Spirit Sword*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="131" /> <!-- Spirit Sword -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2597" /> <!-- Spirit Sword*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="133" /> <!-- Raid Sword -->
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2600" /> <!-- Raid Sword*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="133" /> <!-- Raid Sword -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2603" /> <!-- Raid Sword*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="133" /> <!-- Raid Sword -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="953100" id="57" /> <!-- Adena -->
+        <production count="1" id="2604" /> <!-- Raid Sword*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2606" /> <!-- Caliburs*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2609" /> <!-- Caliburs*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2610" /> <!-- Caliburs*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2621" /> <!-- Sword of Nightmare*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2622" /> <!-- Sword of Nightmare*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="121500" id="57" /> <!-- Adena -->
+        <production count="1" id="2624" /> <!-- Tsurugi*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="73" /> <!-- Shamshir -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="788400" id="57" /> <!-- Adena -->
+        <production count="1" id="2581" /> <!-- Shamshir*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="74" /> <!-- Katana -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="788400" id="57" /> <!-- Adena -->
+        <production count="1" id="2590" /> <!-- Katana*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="131" /> <!-- Spirit Sword -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="788400" id="57" /> <!-- Adena -->
+        <production count="1" id="2598" /> <!-- Spirit Sword*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="133" /> <!-- Raid Sword -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="788400" id="57" /> <!-- Adena -->
+        <production count="1" id="2605" /> <!-- Raid Sword*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="75" /> <!-- Caliburs -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="1323000" id="57" /> <!-- Adena -->
+        <production count="1" id="2611" /> <!-- Caliburs*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="134" /> <!-- Sword of Nightmare -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="1323000" id="57" /> <!-- Adena -->
+        <production count="1" id="2623" /> <!-- Sword of Nightmare*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="77" /> <!-- Tsurugi -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="1323000" id="57" /> <!-- Adena -->
+        <production count="1" id="2625" /> <!-- Tsurugi*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="1" id="135" /> <!-- Samurai Long Sword -->
+        <ingredient count="1350000" id="57" /> <!-- Adena -->
+        <production count="1" id="2626" /> <!-- Samurai Long Sword*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11878" /> <!-- Common Item - Shamshir*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11876" /> <!-- Common Item - Shamshir*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11877" /> <!-- Common Item - Shamshir*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11888" /> <!-- Common Item - Katana*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11886" /> <!-- Common Item - Katana*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11887" /> <!-- Common Item - Katana*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11883" /> <!-- Common Item - Spirit Sword*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11881" /> <!-- Common Item - Spirit Sword*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11882" /> <!-- Common Item - Spirit Sword*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11873" /> <!-- Common Item - Raid Sword*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11871" /> <!-- Common Item - Raid Sword*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="105900" id="57" /> <!-- Adena -->
+        <production count="1" id="11872" /> <!-- Common Item - Raid Sword*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11914" /> <!-- Common Item - Caliburs*Caliburs -->
+    </item>
+    <item>
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11912" /> <!-- Common Item - Caliburs*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11913" /> <!-- Common Item - Caliburs*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11905" /> <!-- Common Item - Sword of Nightmare*Sword of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11906" /> <!-- Common Item - Sword of Nightmare*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="13500" id="57" /> <!-- Adena -->
+        <production count="1" id="11909" /> <!-- Common Item - Tsurugi*Tsurugi -->
+    </item>
+    <item>
+        <ingredient count="1" id="11783" /> <!-- Common Item - Shamshir -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="87600" id="57" /> <!-- Adena -->
+        <production count="1" id="11921" /> <!-- Common Item - Shamshir*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11794" /> <!-- Common Item - Katana -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="87600" id="57" /> <!-- Adena -->
+        <production count="1" id="11923" /> <!-- Common Item - Katana*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11789" /> <!-- Common Item - Spirit Sword -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="87600" id="57" /> <!-- Adena -->
+        <production count="1" id="11922" /> <!-- Common Item - Spirit Sword*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11778" /> <!-- Common Item - Raid Sword -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="87600" id="57" /> <!-- Adena -->
+        <production count="1" id="11920" /> <!-- Common Item - Raid Sword*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11821" /> <!-- Common Item - Caliburs -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="147000" id="57" /> <!-- Adena -->
+        <production count="1" id="11928" /> <!-- Common Item - Caliburs*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11815" /> <!-- Common Item - Sword of Nightmare -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="147000" id="57" /> <!-- Adena -->
+        <production count="1" id="11926" /> <!-- Common Item - Sword of Nightmare*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11820" /> <!-- Common Item - Tsurugi -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="147000" id="57" /> <!-- Adena -->
+        <production count="1" id="11927" /> <!-- Common Item - Tsurugi*Samurai Long Sword -->
+    </item>
+    <item>
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="1" id="11853" /> <!-- Common Item - Samurai Long Sword -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="11937" /> <!-- Common Item - Samurai Long Sword*Samurai Long Sword -->
+    </item>
 </list>

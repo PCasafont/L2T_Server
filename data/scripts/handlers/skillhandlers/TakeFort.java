@@ -26,52 +26,55 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author _drunk_
- *
  */
 public class TakeFort implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS = { L2SkillType.TAKEFORT };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance) activeChar;
-		if (player.getClan() == null)
-			return;
-		
-		Fort fort = FortManager.getInstance().getFort(player);
-		if (fort == null || !player.checkIfOkToCastFlagDisplay(fort, true, skill))
-			return;
-		
-		try
-		{
-			fort.endOfSiege(player.getClan());
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	@Override
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
-	
-	public static void main(String[] args)
-	{
-		new TakeFort();
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.TAKEFORT};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    @Override
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) activeChar;
+        if (player.getClan() == null)
+        {
+            return;
+        }
+
+        Fort fort = FortManager.getInstance().getFort(player);
+        if (fort == null || !player.checkIfOkToCastFlagDisplay(fort, true, skill))
+        {
+            return;
+        }
+
+        try
+        {
+            fort.endOfSiege(player.getClan());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    @Override
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
+
+    public static void main(String[] args)
+    {
+        new TakeFort();
+    }
 }

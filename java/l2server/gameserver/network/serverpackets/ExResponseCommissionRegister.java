@@ -16,22 +16,21 @@
 package l2server.gameserver.network.serverpackets;
 
 /**
- *
  * @author Erlandys
  */
 public class ExResponseCommissionRegister extends L2GameServerPacket
 {
-	
-	private boolean _success;
-	
-	public ExResponseCommissionRegister(boolean success)
-	{
-		_success = success;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_success ? 1 : 0); // Success
-	}
+
+    private boolean _success;
+
+    public ExResponseCommissionRegister(boolean success)
+    {
+        _success = success;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_success ? 1 : 0); // Success
+    }
 }

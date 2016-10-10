@@ -21,24 +21,24 @@ import l2server.util.network.BaseRecievePacket;
 
 /**
  * @author mrTJO
- * Thanks to mochitto
+ *         Thanks to mochitto
  */
 public class ReplyCharacters extends BaseRecievePacket
 {
-	/**
-	 * @param decrypt
-	 */
-	public ReplyCharacters(byte[] decrypt, GameServerThread server)
-	{
-		super(decrypt);
-		String account = readS();
-		int chars = readC();
-		int charsToDel = readC();
-		long[] charsList = new long[charsToDel];
-		for (int i = 0; i < charsToDel; i++)
-		{
-			charsList[i] = readQ();
-		}
-		LoginController.getInstance().setCharactersOnServer(account, chars, charsList, server.getServerId());
-	}
+    /**
+     * @param decrypt
+     */
+    public ReplyCharacters(byte[] decrypt, GameServerThread server)
+    {
+        super(decrypt);
+        String account = readS();
+        int chars = readC();
+        int charsToDel = readC();
+        long[] charsList = new long[charsToDel];
+        for (int i = 0; i < charsToDel; i++)
+        {
+            charsList[i] = readQ();
+        }
+        LoginController.getInstance().setCharactersOnServer(account, chars, charsList, server.getServerId());
+    }
 }

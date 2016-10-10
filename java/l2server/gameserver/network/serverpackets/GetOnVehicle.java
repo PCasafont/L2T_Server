@@ -19,39 +19,37 @@ import l2server.util.Point3D;
 
 /**
  * @author Maktakien
- *
  */
 public class GetOnVehicle extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _boatObjId;
-	private Point3D _pos;
-	
-	/**
-	 * @param activeChar
-	 * @param boat
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
-	public GetOnVehicle(int charObjId, int boatObjId, Point3D pos)
-	{
-		_charObjId = charObjId;
-		_boatObjId = boatObjId;
-		_pos = pos;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
-		
-	}
+    private int _charObjId;
+    private int _boatObjId;
+    private Point3D _pos;
+
+    /**
+     * @param activeChar
+     * @param boat
+     * @param x
+     * @param y
+     * @param z
+     */
+    public GetOnVehicle(int charObjId, int boatObjId, Point3D pos)
+    {
+        _charObjId = charObjId;
+        _boatObjId = boatObjId;
+        _pos = pos;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_charObjId);
+        writeD(_boatObjId);
+        writeD(_pos.getX());
+        writeD(_pos.getY());
+        writeD(_pos.getZ());
+    }
 }

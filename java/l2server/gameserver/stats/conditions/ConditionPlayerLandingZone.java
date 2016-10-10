@@ -25,25 +25,25 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerLandingZone extends Condition
 {
-	
-	private boolean _val;
-	
-	/**
-	 * Instantiates a new condition player landing zone.
-	 *
-	 * @param val the val
-	 */
-	public ConditionPlayerLandingZone(boolean val)
-	{
-		_val = val;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		return env.player.isInsideZone(L2Character.ZONE_LANDING) == _val;
-	}
+
+    private boolean _val;
+
+    /**
+     * Instantiates a new condition player landing zone.
+     *
+     * @param val the val
+     */
+    public ConditionPlayerLandingZone(boolean val)
+    {
+        _val = val;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        return env.player.isInsideZone(L2Character.ZONE_LANDING) == _val;
+    }
 }

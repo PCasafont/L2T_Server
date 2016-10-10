@@ -1,80 +1,194 @@
-<html><title>Abnormal Menu</title><body>
+<html><title>Abnormal Menu</title>
+<body>
 <center>
-<table width=270>
-<tr>
-<td width=45><button value="Main" action="bypass -h admin_admin" width=45 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td width=180><center>Abnormal Menu</center></td>
-<td width=45><button value="Back" action="bypass -h admin_admin3" width=45 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-</tr>
-</table>
-<br>
-<table width=270>
-<tr>
-<td><button value="Page :1:" action="bypass -h admin_help abnormal.htm" width=125 height=18 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="Page :2:" action="bypass -h admin_help abnormal2.htm" width=125 height=18 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-</tr>
-</table>
-<br>
-<table width=270>
-<tr>
-<td>Values:</td>
-<td><edit var="qbox" width=100 height=15></td>
-<td><button value="Send" action="bypass -h admin_abnormal_menu $qbox" width=40 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-<td><button value="Help" action="bypass -h admin_help help/abnormal.htm" width=40 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-</tr>
-</table>
-<br>
-   <table width=260>
-       <tr>
-           <td><button value="Bleed" action="bypass -h admin_abnormal_menu 1 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Poison" action="bypass -h admin_abnormal_menu 2 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Red Circle" action="bypass -h admin_abnormal_menu 3 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Ice" action="bypass -h admin_abnormal_menu 4 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Wind" action="bypass -h admin_abnormal_menu 5 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Fear" action="bypass -h admin_abnormal_menu 6 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Stun" action="bypass -h admin_abnormal_menu 7 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Sleep" action="bypass -h admin_abnormal_menu 8 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Mute" action="bypass -h admin_abnormal_menu 9 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Root" action="bypass -h admin_abnormal_menu 10 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Hold 1" action="bypass -h admin_abnormal_menu 11 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Hold 2" action="bypass -h admin_abnormal_menu 12 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Big Head" action="bypass -h admin_abnormal_menu 14 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Flame" action="bypass -h admin_abnormal_menu 15 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Grow" action="bypass -h admin_abnormal_menu 17 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Float Root" action="bypass -h admin_abnormal_menu 18 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Dance Stun" action="bypass -h admin_abnormal_menu 19 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Fire Root Stun" action="bypass -h admin_abnormal_menu 20 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Stealth" action="bypass -h admin_abnormal_menu 21 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Imprision 1" action="bypass -h admin_abnormal_menu 22 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Imprision 2" action="bypass -h admin_abnormal_menu 23 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Magic Circle" action="bypass -h admin_abnormal_menu 24 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Ice 2" action="bypass -h admin_abnormal_menu 25 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Earthquake" action="bypass -h admin_abnormal_menu 26 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Invulnerable" action="bypass -h admin_abnormal_menu 28 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Vitality 1" action="bypass -h admin_abnormal_menu 29 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Real Target" action="bypass -h admin_abnormal_menu 30 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-       <tr>
-           <td><button value="Arcane Shield" action="bypass -h admin_abnormal_menu 31 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Skull Fear" action="bypass -h admin_abnormal_menu 32 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-           <td><button value="Invincible" action="bypass -h admin_abnormal_menu 33 1 $qbox" width=90 height=21 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-       </tr>
-   </table>
+    <table width=270>
+        <tr>
+            <td width=45>
+                <button value="Main" action="bypass -h admin_admin" width=45 height=21 back="L2UI_CT1.Button_DF_Down"
+                        fore="L2UI_CT1.Button_DF">
+            </td>
+            <td width=180>
+                <center>Abnormal Menu</center>
+            </td>
+            <td width=45>
+                <button value="Back" action="bypass -h admin_admin3" width=45 height=21 back="L2UI_CT1.Button_DF_Down"
+                        fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width=270>
+        <tr>
+            <td>
+                <button value="Page :1:" action="bypass -h admin_help abnormal.htm" width=125 height=18
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Page :2:" action="bypass -h admin_help abnormal2.htm" width=125 height=18
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width=270>
+        <tr>
+            <td>Values:</td>
+            <td>
+                <edit var="qbox" width=100 height=15>
+            </td>
+            <td>
+                <button value="Send" action="bypass -h admin_abnormal_menu $qbox" width=40 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Help" action="bypass -h admin_help help/abnormal.htm" width=40 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width=260>
+        <tr>
+            <td>
+                <button value="Bleed" action="bypass -h admin_abnormal_menu 1 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Poison" action="bypass -h admin_abnormal_menu 2 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Red Circle" action="bypass -h admin_abnormal_menu 3 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Ice" action="bypass -h admin_abnormal_menu 4 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Wind" action="bypass -h admin_abnormal_menu 5 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Fear" action="bypass -h admin_abnormal_menu 6 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Stun" action="bypass -h admin_abnormal_menu 7 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Sleep" action="bypass -h admin_abnormal_menu 8 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Mute" action="bypass -h admin_abnormal_menu 9 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Root" action="bypass -h admin_abnormal_menu 10 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Hold 1" action="bypass -h admin_abnormal_menu 11 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Hold 2" action="bypass -h admin_abnormal_menu 12 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Big Head" action="bypass -h admin_abnormal_menu 14 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Flame" action="bypass -h admin_abnormal_menu 15 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Grow" action="bypass -h admin_abnormal_menu 17 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Float Root" action="bypass -h admin_abnormal_menu 18 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Dance Stun" action="bypass -h admin_abnormal_menu 19 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Fire Root Stun" action="bypass -h admin_abnormal_menu 20 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Stealth" action="bypass -h admin_abnormal_menu 21 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Imprision 1" action="bypass -h admin_abnormal_menu 22 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Imprision 2" action="bypass -h admin_abnormal_menu 23 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Magic Circle" action="bypass -h admin_abnormal_menu 24 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Ice 2" action="bypass -h admin_abnormal_menu 25 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Earthquake" action="bypass -h admin_abnormal_menu 26 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Invulnerable" action="bypass -h admin_abnormal_menu 28 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Vitality 1" action="bypass -h admin_abnormal_menu 29 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Real Target" action="bypass -h admin_abnormal_menu 30 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Arcane Shield" action="bypass -h admin_abnormal_menu 31 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Skull Fear" action="bypass -h admin_abnormal_menu 32 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+            <td>
+                <button value="Invincible" action="bypass -h admin_abnormal_menu 33 1 $qbox" width=90 height=21
+                        back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF">
+            </td>
+        </tr>
+    </table>
 </center>
-</body></html>
+</body>
+</html>

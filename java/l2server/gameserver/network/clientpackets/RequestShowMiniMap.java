@@ -20,7 +20,7 @@ import l2server.gameserver.network.serverpackets.ShowMiniMap;
 
 /**
  * sample
-
+ * <p>
  * format
  * d
  *
@@ -28,25 +28,27 @@ import l2server.gameserver.network.serverpackets.ShowMiniMap;
  */
 public final class RequestShowMiniMap extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	@Override
-	protected final void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		activeChar.sendPacket(new ShowMiniMap(1665));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    @Override
+    protected final void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        activeChar.sendPacket(new ShowMiniMap(1665));
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

@@ -23,59 +23,56 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public class EffectSilenceMagicPhysical extends L2Effect
 {
-	public EffectSilenceMagicPhysical(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.MUTE;
-	}
-	
-	@Override
-	public long getEffectMask()
-	{
-		return L2EffectType.MUTE.getMask() | L2EffectType.PHYSICAL_MUTE.getMask();
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.SILENCE;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		getEffected().startMuted();
-		getEffected().startPsychicalMuted();
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopMuted(false);
-		getEffected().stopPsychicalMuted(false);
-	}
+    public EffectSilenceMagicPhysical(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.MUTE;
+    }
+
+    @Override
+    public long getEffectMask()
+    {
+        return L2EffectType.MUTE.getMask() | L2EffectType.PHYSICAL_MUTE.getMask();
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.SILENCE;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        getEffected().startMuted();
+        getEffected().startPsychicalMuted();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopMuted(false);
+        getEffected().stopPsychicalMuted(false);
+    }
 }

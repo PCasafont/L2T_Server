@@ -20,16 +20,16 @@ package l2server.gameserver.network.clientpackets;
  */
 public final class RequestInZonePartyInfoHistory extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+    }
 }

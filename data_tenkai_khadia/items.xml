@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!--  Custom tradable Items -->
-	<item id="34859" type="Armor" name="Enhanced Istina's Bracelet" isTradable="true" />
-	<item id="34860" type="Armor" name="Enhanced Octavis' Bracelet" isTradable="true" />
-	<item id="35294" type="Armor" name="Enhanced Tauti's Bracelet" isTradable="true" />
-	<item id="38565" type="Armor" name="Aria's Bracelet: CON" isTradable="true" />
-	<item id="38566" type="Armor" name="Aria's Bracelet: MEN" isTradable="true" />
-	<item id="38567" type="Armor" name="Aria's Bracelet: DEX" isTradable="true" />
-	<item id="38568" type="Armor" name="Aria's Bracelet: WIT" isTradable="true" />
-	<item id="38569" type="Armor" name="Aria's Bracelet: STR" isTradable="true" />
-	<item id="38570" type="Armor" name="Aria's Bracelet: INT" isTradable="true" />
-	<item id="20103" type="EtcItem" name="Holiday Scroll: Heavy Armor Warrior - 8-hour" isTradable="true" />
-	<item id="20104" type="EtcItem" name="Holiday Scroll: Light Armor Warrior - 8-hour" isTradable="true" />
-	<item id="20105" type="EtcItem" name="Holiday Scroll: Healer - 8-hour" isTradable="true" />
-	<item id="20106" type="EtcItem" name="Holiday Scroll: Mage - 8-hour" isTradable="true" />
-	<!-- Use to exchange or enhance special items. -->
-	<item id="35562" type="EtcItem" name="Energy of Destruction" isTradable="true" />
-	<!-- Allow Appearance on Tauti's Weapons -->
-	<item id="34998" type="Weapon" name="Tauti's One-handed Axe" canBeUsedAsApp="true" />
-	<item id="34999" type="Weapon" name="Tauti's Axe" canBeUsedAsApp="true" />
-	<item id="35000" type="Weapon" name="Tauti's Two-handed Axe" canBeUsedAsApp="true" />
-	<item id="35001" type="Weapon" name="Tauti's Dual Axe" canBeUsedAsApp="true" />
-	<!-- Allow Appearance on Shadow Weapons -->
-	<item id="46327" type="Weapon" name="Shadow Shaper" canBeUsedAsApp="true" />
-	<item id="46328" type="Weapon" name="Shadow Cutter" canBeUsedAsApp="true" />
-	<item id="46329" type="Weapon" name="Shadow Slasher" canBeUsedAsApp="true" />
-	<item id="46330" type="Weapon" name="Shadow Fighter" canBeUsedAsApp="true" />
-	<item id="46331" type="Weapon" name="Shadow Stormer" canBeUsedAsApp="true" />
-	<item id="46332" type="Weapon" name="Shadow Thrower" canBeUsedAsApp="true" />
-	<item id="46333" type="Weapon" name="Shadow Shooter" canBeUsedAsApp="true" />
-	<item id="46334" type="Weapon" name="Shadow Buster" canBeUsedAsApp="true" />
-	<item id="46335" type="Weapon" name="Shadow Retributer" canBeUsedAsApp="true" />
-	<item id="46336" type="Weapon" name="Shadow Dualsword" canBeUsedAsApp="true" />
-	<!-- Allow Appearance on Boss Weapons -->
-	<item id="36489" type="Weapon" name="Antharas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36490" type="Weapon" name="Antharas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36491" type="Weapon" name="Antharas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36492" type="Weapon" name="Antharas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36493" type="Weapon" name="Antharas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36494" type="Weapon" name="Antharas Stormer - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36495" type="Weapon" name="Antharas Fighter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36496" type="Weapon" name="Antharas Avenger - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36497" type="Weapon" name="Antharas Dual Blunt Weapon - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36498" type="Weapon" name="Antharas Dualsword - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36499" type="Weapon" name="Valakas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36500" type="Weapon" name="Valakas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36501" type="Weapon" name="Valakas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36502" type="Weapon" name="Valakas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36503" type="Weapon" name="Valakas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36504" type="Weapon" name="Valakas Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36505" type="Weapon" name="Valakas Retributer - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36506" type="Weapon" name="Lindvior Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36507" type="Weapon" name="Lindvior Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36508" type="Weapon" name="Lindvior Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36509" type="Weapon" name="Lindvior Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36510" type="Weapon" name="Lindvior Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36511" type="Weapon" name="Lindvior Shooter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
-	<item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+    <!--  Custom tradable Items -->
+    <item id="34859" type="Armor" name="Enhanced Istina's Bracelet" isTradable="true" />
+    <item id="34860" type="Armor" name="Enhanced Octavis' Bracelet" isTradable="true" />
+    <item id="35294" type="Armor" name="Enhanced Tauti's Bracelet" isTradable="true" />
+    <item id="38565" type="Armor" name="Aria's Bracelet: CON" isTradable="true" />
+    <item id="38566" type="Armor" name="Aria's Bracelet: MEN" isTradable="true" />
+    <item id="38567" type="Armor" name="Aria's Bracelet: DEX" isTradable="true" />
+    <item id="38568" type="Armor" name="Aria's Bracelet: WIT" isTradable="true" />
+    <item id="38569" type="Armor" name="Aria's Bracelet: STR" isTradable="true" />
+    <item id="38570" type="Armor" name="Aria's Bracelet: INT" isTradable="true" />
+    <item id="20103" type="EtcItem" name="Holiday Scroll: Heavy Armor Warrior - 8-hour" isTradable="true" />
+    <item id="20104" type="EtcItem" name="Holiday Scroll: Light Armor Warrior - 8-hour" isTradable="true" />
+    <item id="20105" type="EtcItem" name="Holiday Scroll: Healer - 8-hour" isTradable="true" />
+    <item id="20106" type="EtcItem" name="Holiday Scroll: Mage - 8-hour" isTradable="true" />
+    <!-- Use to exchange or enhance special items. -->
+    <item id="35562" type="EtcItem" name="Energy of Destruction" isTradable="true" />
+    <!-- Allow Appearance on Tauti's Weapons -->
+    <item id="34998" type="Weapon" name="Tauti's One-handed Axe" canBeUsedAsApp="true" />
+    <item id="34999" type="Weapon" name="Tauti's Axe" canBeUsedAsApp="true" />
+    <item id="35000" type="Weapon" name="Tauti's Two-handed Axe" canBeUsedAsApp="true" />
+    <item id="35001" type="Weapon" name="Tauti's Dual Axe" canBeUsedAsApp="true" />
+    <!-- Allow Appearance on Shadow Weapons -->
+    <item id="46327" type="Weapon" name="Shadow Shaper" canBeUsedAsApp="true" />
+    <item id="46328" type="Weapon" name="Shadow Cutter" canBeUsedAsApp="true" />
+    <item id="46329" type="Weapon" name="Shadow Slasher" canBeUsedAsApp="true" />
+    <item id="46330" type="Weapon" name="Shadow Fighter" canBeUsedAsApp="true" />
+    <item id="46331" type="Weapon" name="Shadow Stormer" canBeUsedAsApp="true" />
+    <item id="46332" type="Weapon" name="Shadow Thrower" canBeUsedAsApp="true" />
+    <item id="46333" type="Weapon" name="Shadow Shooter" canBeUsedAsApp="true" />
+    <item id="46334" type="Weapon" name="Shadow Buster" canBeUsedAsApp="true" />
+    <item id="46335" type="Weapon" name="Shadow Retributer" canBeUsedAsApp="true" />
+    <item id="46336" type="Weapon" name="Shadow Dualsword" canBeUsedAsApp="true" />
+    <!-- Allow Appearance on Boss Weapons -->
+    <item id="36489" type="Weapon" name="Antharas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36490" type="Weapon" name="Antharas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36491" type="Weapon" name="Antharas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36492" type="Weapon" name="Antharas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36493" type="Weapon" name="Antharas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36494" type="Weapon" name="Antharas Stormer - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36495" type="Weapon" name="Antharas Fighter - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36496" type="Weapon" name="Antharas Avenger - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36497" type="Weapon" name="Antharas Dual Blunt Weapon - Top-grade" canBeUsedAsApp="true"
+          overrideStats="true" overrideSkills="true" />
+    <item id="36498" type="Weapon" name="Antharas Dualsword - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36499" type="Weapon" name="Valakas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36500" type="Weapon" name="Valakas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36501" type="Weapon" name="Valakas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36502" type="Weapon" name="Valakas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36503" type="Weapon" name="Valakas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36504" type="Weapon" name="Valakas Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36505" type="Weapon" name="Valakas Retributer - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36506" type="Weapon" name="Lindvior Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36507" type="Weapon" name="Lindvior Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36508" type="Weapon" name="Lindvior Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36509" type="Weapon" name="Lindvior Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36510" type="Weapon" name="Lindvior Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36511" type="Weapon" name="Lindvior Shooter - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
+    <item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" canBeUsedAsApp="true" overrideStats="true"
+          overrideSkills="true" />
 </list>

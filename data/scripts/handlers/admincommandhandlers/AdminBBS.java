@@ -23,26 +23,24 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class AdminBBS implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS = { "admin_bbs" };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
-	 */
-	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		AdminBBSManager.getInstance().parsecmd(command, activeChar);
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
-	 */
-	@Override
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
+    private static final String[] ADMIN_COMMANDS = {"admin_bbs"};
+
+    /**
+     * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+     */
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        AdminBBSManager.getInstance().parsecmd(command, activeChar);
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+     */
+    @Override
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
 }

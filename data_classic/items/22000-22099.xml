@@ -1,1550 +1,1550 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Has a chance to contain an Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
-	<item id="22000" type="EtcItem" name="Small Fortuna Box">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26000-1" />
-	</item>
-	<!-- Has a chance to contain a high-grade Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
-	<item id="22001" type="EtcItem" name="Medium Fortune Box">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26001-1" />
-	</item>
-	<!-- A Heavenly Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon can be acquired at a constant rate. -->
-	<item id="22002" type="EtcItem" name="Large Fortuna Box">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26002-1" />
-	</item>
-	<!-- Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
-	<item id="22003" type="EtcItem" name="Small Fortuna Cube">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26003-1" />
-	</item>
-	<!-- High -grade Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
-	<item id="22004" type="EtcItem" name="Medium Fortuna Cube">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26004-1" />
-	</item>
-	<!-- A Heavenly Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor can be acquired at a constant rate. -->
-	<item id="22005" type="EtcItem" name="Large Fortuna Cube">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26005-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		P. Atk. for D-grade sword, one-handed blunt, one-handed dagger, spear, other swords, two-handed sword, two-handed blunt, dualsword, and combat/two-handed weapons increases by 2 when enchanted. P. Atk. for bow weapons increases by 4. M. Atk. for all weapons increases by 2. P. Atk. and M. Atk. Increases two times after + 4.
-	-->
-	<item id="22006" type="EtcItem" name="Scroll: Enchant Weapon (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26006-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		P. Atk. for C-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
-	-->
-	<item id="22007" type="EtcItem" name="Scroll: Enchant Weapon (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26007-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
-	-->
-	<item id="22008" type="EtcItem" name="Scroll: Enchant Weapon (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26008-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 4 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 5. P. Atk. for bow weapons increases by 8. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
-	-->
-	<item id="22009" type="EtcItem" name="Scroll: Enchant Weapon (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26009-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		Defense for D-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22010" type="EtcItem" name="Scroll: Enchant Armor (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26010-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		Defense for C-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22011" type="EtcItem" name="Scroll: Enchant Armor (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26011-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		Defense for B-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22012" type="EtcItem" name="Scroll: Enchant Armor (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26012-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		Defense for A-grade armor and accessories increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22013" type="EtcItem" name="Scroll: Enchant Armor (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26013-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4. Cannot use weapons enchanted by above 16.
-	-->
-	<item id="22014" type="EtcItem" name="Ancient Scroll: Enchant Weapon (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_wp_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26014-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 4 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 5. P. Atk. for bow weapons increases by 8. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4. Weapons enchanted by above 16 can be neither used, exchanged, nor dropped.
-	-->
-	<item id="22015" type="EtcItem" name="Ancient Scroll: Enchant Weapon (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_wp_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26015-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		Defense for B-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. Cannot use armor enchanted by above 16.
-	-->
-	<item id="22016" type="EtcItem" name="Ancient Scroll: Enchant Armor (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_am_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26016-1" />
-	</item>
-	<!--
-		10 % increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		Defense for A-grade armor and accessories increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. Cannot use armor enchanted by above 16.
-	-->
-	<item id="22017" type="EtcItem" name="Ancient Scroll: Enchant Armor (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_am_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26017-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		Increases P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 3 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 4. Increases P. Atk. for bows by 6. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
-	-->
-	<item id="22018" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26018-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		Increases P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 4 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 5. Increases P. Atk. for bows by 8. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
-	-->
-	<item id="22019" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26019-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		Defense for B-grade armor or accessory increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22020" type="EtcItem" name="Heavenly Scroll: Enchant Armor (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_am_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26020-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		Defense for B-grade armor or accessory by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
-	-->
-	<item id="22021" type="EtcItem" name="Heavenly Scroll: Enchant Armor (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_am_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="26021-1" />
-	</item>
-	<!-- Magic potion which increases Atk. Spd. by 33%. It is very light. -->
-	<item id="22022" type="EtcItem" name="Greater Haste Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_adv_swift_attack_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="4" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26022-1" />
-	</item>
-	<!-- Magic potion which increases Speed by 33. It is very light. -->
-	<item id="22023" type="EtcItem" name="Greater Wind Walk Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_adv_quick_step_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="4" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26023-1" />
-	</item>
-	<!-- Magic potion that instantly restores HP by 435. Instant effect with no duration. Very light. Cannot be used when HP is full. -->
-	<item id="22024" type="EtcItem" name="Quick Healing Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_quick_healing_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26024-1" />
-	</item>
-	<!-- Magic potion which quickly recovers HP. Lasts for 15 seconds. Very light. -->
-	<item id="22025" type="EtcItem" name="Major Healing Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_greater_healing_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="10000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26025-1" />
-	</item>
-	<!-- Magic potion which slowly recovers HP. It lasts for 15 seconds. It is very light. -->
-	<item id="22026" type="EtcItem" name="Major Healing Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_healing_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="10000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26026-1" />
-	</item>
-	<!-- It recovers CP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
-	<item id="22027" type="EtcItem" name="Elixir of CP (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26027-2" />
-	</item>
-	<!-- It recovers CP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
-	<item id="22028" type="EtcItem" name="Elixir of CP (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26027-3" />
-	</item>
-	<!-- It recovers CP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
-	<item id="22029" type="EtcItem" name="Elixir of CP (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26027-4" />
-	</item>
-	<!-- It recovers CP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
-	<item id="22030" type="EtcItem" name="Elixir of CP (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26027-5" />
-	</item>
-	<!-- It recovers CP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
-	<item id="22031" type="EtcItem" name="Elixir of CP (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26027-6" />
-	</item>
-	<!-- It recovers HP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
-	<item id="22032" type="EtcItem" name="Elixir of Life (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="2" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26028-2" />
-	</item>
-	<!-- It recovers HP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
-	<item id="22033" type="EtcItem" name="Elixir of Life (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="3" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26028-3" />
-	</item>
-	<!-- It recovers HP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
-	<item id="22034" type="EtcItem" name="Elixir of Life (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="4" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26028-4" />
-	</item>
-	<!-- It recovers HP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
-	<item id="22035" type="EtcItem" name="Elixir of Life (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="5" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26028-5" />
-	</item>
-	<!-- It recovers HP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
-	<item id="22036" type="EtcItem" name="Elixir of Life (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="6" />
-		<set name="reuse_delay" val="60000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="26028-6" />
-	</item>
-	<!-- It recovers CP by 50. Cooldown is very short. -->
-	<item id="22037" type="EtcItem" name="CP Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_cp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="25" />
-		<set name="reuse_delay" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26029-1" />
-	</item>
-	<!-- Magic potion which instantly recovers MP by 60. It is very light. -->
-	<item id="22038" type="EtcItem" name="Mana Potion">
-		<set name="icon" val="br_cashtex.item.br_cash_mana_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="26030-1" />
-	</item>
-	<!-- Increases Speed by 33 for 60 min. -->
-	<item id="22039" type="EtcItem" name="Scroll: Wind Walk">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26031-1" />
-	</item>
-	<!-- Increases Atk. Spd. by 33% for 60 min. -->
-	<item id="22040" type="EtcItem" name="Scroll: Haste">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_haste_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26032-1" />
-	</item>
-	<!-- P. Atk. + 15% for 60 min. -->
-	<item id="22041" type="EtcItem" name="Scroll: Might">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_might_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26033-1" />
-	</item>
-	<!-- P. Def. + 15% for 60 min. -->
-	<item id="22042" type="EtcItem" name="Scroll: Shield">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_shield_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26034-1" />
-	</item>
-	<!-- Increases the power of Critical Attacks by 35% for 60 min. -->
-	<item id="22043" type="EtcItem" name="Scroll: Death Whisper">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_death_whisper_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26035-1" />
-	</item>
-	<!-- Increases Accuracy by about 4. -->
-	<item id="22044" type="EtcItem" name="Scroll: Guidance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_guidance_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26036-1" />
-	</item>
-	<!-- M. Atk. + 75%. -->
-	<item id="22045" type="EtcItem" name="Scroll: Empower">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_empower_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26037-1" />
-	</item>
-	<!-- Increases Casting Spd. by 30% for 60 min. -->
-	<item id="22046" type="EtcItem" name="Scroll: Greater Acumen">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_greater_acumen_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26038-1" />
-	</item>
-	<!-- Chance of recovering 9% of the standard melee damage inflicted on the enemy as HP. -->
-	<item id="22047" type="EtcItem" name="Scroll: Vampiric Rage">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_vampiric_rage_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26039-1" />
-	</item>
-	<!-- Increases Max HP by 35%. -->
-	<item id="22048" type="EtcItem" name="Scroll: Blessed Body">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_body_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26040-1" />
-	</item>
-	<!-- Decreases a party member's P. Def. by 8%, M. Def. by 16%, and Evasion by 4. P. Atk. + 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
-	<item id="22049" type="EtcItem" name="Scroll: Berserker Spirit">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_berserker_spirit_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26041-1" />
-	</item>
-	<!-- M. Def. + 30%. -->
-	<item id="22050" type="EtcItem" name="Scroll: Magic Barrier">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_magic_barrier_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26042-1" />
-	</item>
-	<!-- Increases Max MP by 35%. -->
-	<item id="22051" type="EtcItem" name="Scroll: Blessed Soul">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_soul_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26043-1" />
-	</item>
-	<!-- Decreases physical skill MP consumption by 20%, magic skill's MP consumption by 10%, and song/dance skill's MP consumption by 20%. -->
-	<item id="22052" type="EtcItem" name="Scroll: Clarity">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_clarity_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26044-1" />
-	</item>
-	<!-- Increases the rate of causing exceptional magic damage by 2. -->
-	<item id="22053" type="EtcItem" name="Scroll: Wild Magic">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wild_magic_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26045-1" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22054" type="EtcItem" name="XP Rune III (Lv. 1-99) - 24-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22055" type="EtcItem" name="XP Rune III (Lv. 1-99) - 168-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22056" type="EtcItem" name="XP Rune III (Lv. 1-99) - 336-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
-		<set name="time" val="20160" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22057" type="EtcItem" name="XP Rune III (Lv. 1-99) - 720-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22058" type="EtcItem" name="SP Rune - 24-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22059" type="EtcItem" name="SP Rune - 168-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22060" type="EtcItem" name="SP Rune - 336-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
-		<set name="time" val="20160" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
-	<item id="22061" type="EtcItem" name="SP Rune - 720-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
-	<item id="22062" type="EtcItem" name="Rune of Crystal - 24-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
-	<item id="22063" type="EtcItem" name="Rune of Crystal - 168-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
-	<item id="22064" type="EtcItem" name="Rune of Crystal - 336-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
-		<set name="time" val="20160" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
-	<item id="22065" type="EtcItem" name="Rune of Crystal - 720-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune_select" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases the weight limit by 20%. The remaining time decreases even when not playing. -->
-	<item id="22066" type="EtcItem" name="Rune of Feather - 24-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="26049-1" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Arrow made of bone that was sharpened at the tip. Can be used with a D-grade bow. It is very light. -->
-	<item id="22067" type="EtcItem" name="Bone Arrow">
-		<set name="icon" val="br_cashtex.item.br_cash_bone_arrow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="etcitem_type" val="arrow" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- Powerful arrow made of steel. Can be used with a C-grade bow. It is very light. -->
-	<item id="22068" type="EtcItem" name="Steel Arrow">
-		<set name="icon" val="br_cashtex.item.br_cash_fine_steel_arrow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="etcitem_type" val="arrow" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- Steel arrow plated with silver. Can be used with a B-grade bow. It is very light. -->
-	<item id="22069" type="EtcItem" name="Silver Arrow">
-		<set name="icon" val="br_cashtex.item.br_cash_silver_arrow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="etcitem_type" val="arrow" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- Steel arrow plated with mithril. Can be used with an A-grade bow. It is very light. -->
-	<item id="22070" type="EtcItem" name="Mithril Arrow">
-		<set name="icon" val="br_cashtex.item.br_cash_mithril_arrow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="etcitem_type" val="arrow" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- The strongest arrow. Materials are unknown. It is very light. -->
-	<item id="22071" type="EtcItem" name="Arrow of Light">
-		<set name="icon" val="br_cashtex.item.br_cash_shining_arrow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="etcitem_type" val="arrow" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a D-grade weapon. -->
-	<item id="22072" type="EtcItem" name="Blessed Spiritshot (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_d_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BlessedSpiritShot" />
-		<set name="item_skill" val="26050-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a C-grade weapon. -->
-	<item id="22073" type="EtcItem" name="Blessed Spiritshot (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_c_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BlessedSpiritShot" />
-		<set name="item_skill" val="26051-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a B-grade weapon. -->
-	<item id="22074" type="EtcItem" name="Blessed Spiritshot (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_b_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BlessedSpiritShot" />
-		<set name="item_skill" val="26052-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an A-grade weapon. -->
-	<item id="22075" type="EtcItem" name="Blessed Spiritshot (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_a_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BlessedSpiritShot" />
-		<set name="item_skill" val="26053-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an S-grade weapon. -->
-	<item id="22076" type="EtcItem" name="Blessed Spiritshot (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_s_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BlessedSpiritShot" />
-		<set name="item_skill" val="26054-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a D-grade weapon. -->
-	<item id="22077" type="EtcItem" name="Spiritshot (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_spiritshot_d_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SpiritShot" />
-		<set name="item_skill" val="26055-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a C-grade weapon. -->
-	<item id="22078" type="EtcItem" name="Spiritshot (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_spiritshot_c_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SpiritShot" />
-		<set name="item_skill" val="26056-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a B-grade weapon. -->
-	<item id="22079" type="EtcItem" name="Spiritshot (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_spiritshot_b_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SpiritShot" />
-		<set name="item_skill" val="26057-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an A-grade weapon. -->
-	<item id="22080" type="EtcItem" name="Spiritshot (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_spiritshot_a_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SpiritShot" />
-		<set name="item_skill" val="26058-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an S-grade weapon. -->
-	<item id="22081" type="EtcItem" name="Spiritshot (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_spiritshot_s_i00" />
-		<set name="default_action" val="spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SpiritShot" />
-		<set name="item_skill" val="26059-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a D-grade weapon. -->
-	<item id="22082" type="EtcItem" name="Soulshot (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_soulshot_d_i00" />
-		<set name="default_action" val="soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SoulShots" />
-		<set name="item_skill" val="26060-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a C-grade weapon. -->
-	<item id="22083" type="EtcItem" name="Soulshot (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_soulshot_c_i00" />
-		<set name="default_action" val="soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SoulShots" />
-		<set name="item_skill" val="26061-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a B-grade weapon. -->
-	<item id="22084" type="EtcItem" name="Soulshot (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_soulshot_b_i00" />
-		<set name="default_action" val="soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SoulShots" />
-		<set name="item_skill" val="26062-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an A-grade weapon. -->
-	<item id="22085" type="EtcItem" name="Soulshot (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_soulshot_a_i00" />
-		<set name="default_action" val="soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SoulShots" />
-		<set name="item_skill" val="26063-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an S-grade weapon. -->
-	<item id="22086" type="EtcItem" name="Soulshot (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_soulshot_s_i00" />
-		<set name="default_action" val="soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="SoulShots" />
-		<set name="item_skill" val="26064-1" />
-	</item>
-	<!-- If used, every type of magic scroll for warriors can be acquired. -->
-	<item id="22087" type="EtcItem" name="Fighter's Scroll Bundle">
-		<set name="icon" val="br_cashtex.item.br_cash_fighter_buff_set_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26065-1" />
-	</item>
-	<!-- If used, every type of magic scroll for wizards can be acquired. -->
-	<item id="22088" type="EtcItem" name="Mage's Scroll Bundle">
-		<set name="icon" val="br_cashtex.item.br_cash_mage_buff_set_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26066-1" />
-	</item>
-	<!-- If used, ten thousand bone arrows are acquired. -->
-	<item id="22089" type="EtcItem" name="Bone Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26067-1" />
-	</item>
-	<!-- If used, ten thousand steel arrows are acquired. -->
-	<item id="22090" type="EtcItem" name="Steel Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26067-2" />
-	</item>
-	<!-- If used, ten thousand silver arrows are acquired. -->
-	<item id="22091" type="EtcItem" name="Silver Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26067-3" />
-	</item>
-	<!-- If used, ten thousand Mithril arrows are acquired. -->
-	<item id="22092" type="EtcItem" name="Mithril Quiver">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26067-4" />
-	</item>
-	<!-- If used, ten thousand arrows of light are acquired. -->
-	<item id="22093" type="EtcItem" name="Quiver of Light">
-		<set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26067-5" />
-	</item>
-	<!-- If used, five thousand Blessed Spiritshots in D-grade are acquired. -->
-	<item id="22094" type="EtcItem" name="Blessed Spiritshot Pack (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_d_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26068-1" />
-	</item>
-	<!-- If used, five thousand Blessed Spiritshots in C-grade are acquired. -->
-	<item id="22095" type="EtcItem" name="Blessed Spiritshot Pack (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_c_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26068-2" />
-	</item>
-	<!-- If used, five thousand Blessed Spiritshots in B-grade are acquired. -->
-	<item id="22096" type="EtcItem" name="Blessed Spiritshot Pack (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_b_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26068-3" />
-	</item>
-	<!-- If used, five thousand Blessed Spiritshots in A-grade are acquired. -->
-	<item id="22097" type="EtcItem" name="Blessed Spiritshot Pack (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_a_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26068-4" />
-	</item>
-	<!-- If used, five thousand Blessed Spiritshots in S-grade are acquired. -->
-	<item id="22098" type="EtcItem" name="Blessed Spiritshot Pack (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_s_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26068-5" />
-	</item>
-	<!-- If used, five thousand Spiritshots in D-grade are acquired. -->
-	<item id="22099" type="EtcItem" name="Spiritshot Pack (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_d_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="26069-1" />
-	</item>
+    <!-- Has a chance to contain an Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
+    <item id="22000" type="EtcItem" name="Small Fortuna Box">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26000-1" />
+    </item>
+    <!-- Has a chance to contain a high-grade Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
+    <item id="22001" type="EtcItem" name="Medium Fortune Box">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26001-1" />
+    </item>
+    <!-- A Heavenly Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon can be acquired at a constant rate. -->
+    <item id="22002" type="EtcItem" name="Large Fortuna Box">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26002-1" />
+    </item>
+    <!-- Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
+    <item id="22003" type="EtcItem" name="Small Fortuna Cube">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26003-1" />
+    </item>
+    <!-- High -grade Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
+    <item id="22004" type="EtcItem" name="Medium Fortuna Cube">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26004-1" />
+    </item>
+    <!-- A Heavenly Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor can be acquired at a constant rate. -->
+    <item id="22005" type="EtcItem" name="Large Fortuna Cube">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26005-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        P. Atk. for D-grade sword, one-handed blunt, one-handed dagger, spear, other swords, two-handed sword, two-handed blunt, dualsword, and combat/two-handed weapons increases by 2 when enchanted. P. Atk. for bow weapons increases by 4. M. Atk. for all weapons increases by 2. P. Atk. and M. Atk. Increases two times after + 4.
+    -->
+    <item id="22006" type="EtcItem" name="Scroll: Enchant Weapon (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26006-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        P. Atk. for C-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
+    -->
+    <item id="22007" type="EtcItem" name="Scroll: Enchant Weapon (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26007-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
+    -->
+    <item id="22008" type="EtcItem" name="Scroll: Enchant Weapon (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26008-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 4 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 5. P. Atk. for bow weapons increases by 8. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4.
+    -->
+    <item id="22009" type="EtcItem" name="Scroll: Enchant Weapon (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26009-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        Defense for D-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22010" type="EtcItem" name="Scroll: Enchant Armor (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26010-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        Defense for C-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22011" type="EtcItem" name="Scroll: Enchant Armor (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26011-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        Defense for B-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22012" type="EtcItem" name="Scroll: Enchant Armor (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26012-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        Defense for A-grade armor and accessories increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22013" type="EtcItem" name="Scroll: Enchant Armor (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_am_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26013-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 3 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 4. P. Atk. for bow weapons increases by 6. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4. Cannot use weapons enchanted by above 16.
+    -->
+    <item id="22014" type="EtcItem" name="Ancient Scroll: Enchant Weapon (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_wp_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26014-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 4 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 5. P. Atk. for bow weapons increases by 8. M. Atk. for all weapons increases by 3. P. Atk. and M. Atk. Increases two times after + 4. Weapons enchanted by above 16 can be neither used, exchanged, nor dropped.
+    -->
+    <item id="22015" type="EtcItem" name="Ancient Scroll: Enchant Weapon (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_wp_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26015-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        Defense for B-grade armor and accessories increases by 1. It increases by 3 after + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. Cannot use armor enchanted by above 16.
+    -->
+    <item id="22016" type="EtcItem" name="Ancient Scroll: Enchant Armor (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_am_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26016-1" />
+    </item>
+    <!--
+        10 % increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        Defense for A-grade armor and accessories increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. Cannot use armor enchanted by above 16.
+    -->
+    <item id="22017" type="EtcItem" name="Ancient Scroll: Enchant Armor (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_cry_of_ench_am_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26017-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        Increases P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 3 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 4. Increases P. Atk. for bows by 6. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
+    -->
+    <item id="22018" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26018-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        Increases P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 4 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 5. Increases P. Atk. for bows by 8. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
+    -->
+    <item id="22019" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26019-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        Defense for B-grade armor or accessory increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22020" type="EtcItem" name="Heavenly Scroll: Enchant Armor (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_am_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26020-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        Defense for B-grade armor or accessory by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+    -->
+    <item id="22021" type="EtcItem" name="Heavenly Scroll: Enchant Armor (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_cry_of_ench_am_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="26021-1" />
+    </item>
+    <!-- Magic potion which increases Atk. Spd. by 33%. It is very light. -->
+    <item id="22022" type="EtcItem" name="Greater Haste Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_adv_swift_attack_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="4" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26022-1" />
+    </item>
+    <!-- Magic potion which increases Speed by 33. It is very light. -->
+    <item id="22023" type="EtcItem" name="Greater Wind Walk Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_adv_quick_step_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="4" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26023-1" />
+    </item>
+    <!-- Magic potion that instantly restores HP by 435. Instant effect with no duration. Very light. Cannot be used when HP is full. -->
+    <item id="22024" type="EtcItem" name="Quick Healing Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_quick_healing_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26024-1" />
+    </item>
+    <!-- Magic potion which quickly recovers HP. Lasts for 15 seconds. Very light. -->
+    <item id="22025" type="EtcItem" name="Major Healing Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_greater_healing_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="10000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26025-1" />
+    </item>
+    <!-- Magic potion which slowly recovers HP. It lasts for 15 seconds. It is very light. -->
+    <item id="22026" type="EtcItem" name="Major Healing Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_healing_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="10000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26026-1" />
+    </item>
+    <!-- It recovers CP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
+    <item id="22027" type="EtcItem" name="Elixir of CP (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26027-2" />
+    </item>
+    <!-- It recovers CP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
+    <item id="22028" type="EtcItem" name="Elixir of CP (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26027-3" />
+    </item>
+    <!-- It recovers CP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
+    <item id="22029" type="EtcItem" name="Elixir of CP (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26027-4" />
+    </item>
+    <!-- It recovers CP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
+    <item id="22030" type="EtcItem" name="Elixir of CP (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26027-5" />
+    </item>
+    <!-- It recovers CP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
+    <item id="22031" type="EtcItem" name="Elixir of CP (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26027-6" />
+    </item>
+    <!-- It recovers HP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
+    <item id="22032" type="EtcItem" name="Elixir of Life (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="2" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26028-2" />
+    </item>
+    <!-- It recovers HP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
+    <item id="22033" type="EtcItem" name="Elixir of Life (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="3" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26028-3" />
+    </item>
+    <!-- It recovers HP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
+    <item id="22034" type="EtcItem" name="Elixir of Life (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="4" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26028-4" />
+    </item>
+    <!-- It recovers HP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
+    <item id="22035" type="EtcItem" name="Elixir of Life (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="5" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26028-5" />
+    </item>
+    <!-- It recovers HP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
+    <item id="22036" type="EtcItem" name="Elixir of Life (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="6" />
+        <set name="reuse_delay" val="60000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="26028-6" />
+    </item>
+    <!-- It recovers CP by 50. Cooldown is very short. -->
+    <item id="22037" type="EtcItem" name="CP Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_cp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="25" />
+        <set name="reuse_delay" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26029-1" />
+    </item>
+    <!-- Magic potion which instantly recovers MP by 60. It is very light. -->
+    <item id="22038" type="EtcItem" name="Mana Potion">
+        <set name="icon" val="br_cashtex.item.br_cash_mana_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="26030-1" />
+    </item>
+    <!-- Increases Speed by 33 for 60 min. -->
+    <item id="22039" type="EtcItem" name="Scroll: Wind Walk">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26031-1" />
+    </item>
+    <!-- Increases Atk. Spd. by 33% for 60 min. -->
+    <item id="22040" type="EtcItem" name="Scroll: Haste">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_haste_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26032-1" />
+    </item>
+    <!-- P. Atk. + 15% for 60 min. -->
+    <item id="22041" type="EtcItem" name="Scroll: Might">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_might_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26033-1" />
+    </item>
+    <!-- P. Def. + 15% for 60 min. -->
+    <item id="22042" type="EtcItem" name="Scroll: Shield">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_shield_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26034-1" />
+    </item>
+    <!-- Increases the power of Critical Attacks by 35% for 60 min. -->
+    <item id="22043" type="EtcItem" name="Scroll: Death Whisper">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_death_whisper_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26035-1" />
+    </item>
+    <!-- Increases Accuracy by about 4. -->
+    <item id="22044" type="EtcItem" name="Scroll: Guidance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_guidance_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26036-1" />
+    </item>
+    <!-- M. Atk. + 75%. -->
+    <item id="22045" type="EtcItem" name="Scroll: Empower">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_empower_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26037-1" />
+    </item>
+    <!-- Increases Casting Spd. by 30% for 60 min. -->
+    <item id="22046" type="EtcItem" name="Scroll: Greater Acumen">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_greater_acumen_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26038-1" />
+    </item>
+    <!-- Chance of recovering 9% of the standard melee damage inflicted on the enemy as HP. -->
+    <item id="22047" type="EtcItem" name="Scroll: Vampiric Rage">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_vampiric_rage_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26039-1" />
+    </item>
+    <!-- Increases Max HP by 35%. -->
+    <item id="22048" type="EtcItem" name="Scroll: Blessed Body">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_body_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26040-1" />
+    </item>
+    <!-- Decreases a party member's P. Def. by 8%, M. Def. by 16%, and Evasion by 4. P. Atk. + 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
+    <item id="22049" type="EtcItem" name="Scroll: Berserker Spirit">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_berserker_spirit_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26041-1" />
+    </item>
+    <!-- M. Def. + 30%. -->
+    <item id="22050" type="EtcItem" name="Scroll: Magic Barrier">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_magic_barrier_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26042-1" />
+    </item>
+    <!-- Increases Max MP by 35%. -->
+    <item id="22051" type="EtcItem" name="Scroll: Blessed Soul">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_bless_the_soul_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26043-1" />
+    </item>
+    <!-- Decreases physical skill MP consumption by 20%, magic skill's MP consumption by 10%, and song/dance skill's MP consumption by 20%. -->
+    <item id="22052" type="EtcItem" name="Scroll: Clarity">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_clarity_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26044-1" />
+    </item>
+    <!-- Increases the rate of causing exceptional magic damage by 2. -->
+    <item id="22053" type="EtcItem" name="Scroll: Wild Magic">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wild_magic_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26045-1" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22054" type="EtcItem" name="XP Rune III (Lv. 1-99) - 24-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22055" type="EtcItem" name="XP Rune III (Lv. 1-99) - 168-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22056" type="EtcItem" name="XP Rune III (Lv. 1-99) - 336-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
+        <set name="time" val="20160" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22057" type="EtcItem" name="XP Rune III (Lv. 1-99) - 720-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26046-1;26046-2;26046-3;26046-4;26046-5" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22058" type="EtcItem" name="SP Rune - 24-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22059" type="EtcItem" name="SP Rune - 168-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22060" type="EtcItem" name="SP Rune - 336-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
+        <set name="time" val="20160" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
+    <item id="22061" type="EtcItem" name="SP Rune - 720-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26047-1;26047-2;26047-3;26047-4;26047-5" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
+    <item id="22062" type="EtcItem" name="Rune of Crystal - 24-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
+    <item id="22063" type="EtcItem" name="Rune of Crystal - 168-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
+    <item id="22064" type="EtcItem" name="Rune of Crystal - 336-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
+        <set name="time" val="20160" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
+    <item id="22065" type="EtcItem" name="Rune of Crystal - 720-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune_select" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26048-1;26048-2;26048-3;26048-4;26048-5" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases the weight limit by 20%. The remaining time decreases even when not playing. -->
+    <item id="22066" type="EtcItem" name="Rune of Feather - 24-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="26049-1" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Arrow made of bone that was sharpened at the tip. Can be used with a D-grade bow. It is very light. -->
+    <item id="22067" type="EtcItem" name="Bone Arrow">
+        <set name="icon" val="br_cashtex.item.br_cash_bone_arrow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="etcitem_type" val="arrow" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- Powerful arrow made of steel. Can be used with a C-grade bow. It is very light. -->
+    <item id="22068" type="EtcItem" name="Steel Arrow">
+        <set name="icon" val="br_cashtex.item.br_cash_fine_steel_arrow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="etcitem_type" val="arrow" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- Steel arrow plated with silver. Can be used with a B-grade bow. It is very light. -->
+    <item id="22069" type="EtcItem" name="Silver Arrow">
+        <set name="icon" val="br_cashtex.item.br_cash_silver_arrow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="etcitem_type" val="arrow" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- Steel arrow plated with mithril. Can be used with an A-grade bow. It is very light. -->
+    <item id="22070" type="EtcItem" name="Mithril Arrow">
+        <set name="icon" val="br_cashtex.item.br_cash_mithril_arrow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="etcitem_type" val="arrow" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- The strongest arrow. Materials are unknown. It is very light. -->
+    <item id="22071" type="EtcItem" name="Arrow of Light">
+        <set name="icon" val="br_cashtex.item.br_cash_shining_arrow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="etcitem_type" val="arrow" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a D-grade weapon. -->
+    <item id="22072" type="EtcItem" name="Blessed Spiritshot (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_d_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BlessedSpiritShot" />
+        <set name="item_skill" val="26050-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a C-grade weapon. -->
+    <item id="22073" type="EtcItem" name="Blessed Spiritshot (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_c_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BlessedSpiritShot" />
+        <set name="item_skill" val="26051-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a B-grade weapon. -->
+    <item id="22074" type="EtcItem" name="Blessed Spiritshot (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_b_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BlessedSpiritShot" />
+        <set name="item_skill" val="26052-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an A-grade weapon. -->
+    <item id="22075" type="EtcItem" name="Blessed Spiritshot (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_a_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BlessedSpiritShot" />
+        <set name="item_skill" val="26053-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an S-grade weapon. -->
+    <item id="22076" type="EtcItem" name="Blessed Spiritshot (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_blessed_spiritshot_s_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BlessedSpiritShot" />
+        <set name="item_skill" val="26054-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a D-grade weapon. -->
+    <item id="22077" type="EtcItem" name="Spiritshot (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_spiritshot_d_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SpiritShot" />
+        <set name="item_skill" val="26055-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a C-grade weapon. -->
+    <item id="22078" type="EtcItem" name="Spiritshot (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_spiritshot_c_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SpiritShot" />
+        <set name="item_skill" val="26056-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a B-grade weapon. -->
+    <item id="22079" type="EtcItem" name="Spiritshot (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_spiritshot_b_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SpiritShot" />
+        <set name="item_skill" val="26057-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an A-grade weapon. -->
+    <item id="22080" type="EtcItem" name="Spiritshot (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_spiritshot_a_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SpiritShot" />
+        <set name="item_skill" val="26058-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an S-grade weapon. -->
+    <item id="22081" type="EtcItem" name="Spiritshot (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_spiritshot_s_i00" />
+        <set name="default_action" val="spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SpiritShot" />
+        <set name="item_skill" val="26059-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a D-grade weapon. -->
+    <item id="22082" type="EtcItem" name="Soulshot (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_soulshot_d_i00" />
+        <set name="default_action" val="soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SoulShots" />
+        <set name="item_skill" val="26060-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a C-grade weapon. -->
+    <item id="22083" type="EtcItem" name="Soulshot (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_soulshot_c_i00" />
+        <set name="default_action" val="soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SoulShots" />
+        <set name="item_skill" val="26061-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a B-grade weapon. -->
+    <item id="22084" type="EtcItem" name="Soulshot (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_soulshot_b_i00" />
+        <set name="default_action" val="soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SoulShots" />
+        <set name="item_skill" val="26062-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an A-grade weapon. -->
+    <item id="22085" type="EtcItem" name="Soulshot (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_soulshot_a_i00" />
+        <set name="default_action" val="soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SoulShots" />
+        <set name="item_skill" val="26063-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an S-grade weapon. -->
+    <item id="22086" type="EtcItem" name="Soulshot (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_soulshot_s_i00" />
+        <set name="default_action" val="soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="SoulShots" />
+        <set name="item_skill" val="26064-1" />
+    </item>
+    <!-- If used, every type of magic scroll for warriors can be acquired. -->
+    <item id="22087" type="EtcItem" name="Fighter's Scroll Bundle">
+        <set name="icon" val="br_cashtex.item.br_cash_fighter_buff_set_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26065-1" />
+    </item>
+    <!-- If used, every type of magic scroll for wizards can be acquired. -->
+    <item id="22088" type="EtcItem" name="Mage's Scroll Bundle">
+        <set name="icon" val="br_cashtex.item.br_cash_mage_buff_set_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26066-1" />
+    </item>
+    <!-- If used, ten thousand bone arrows are acquired. -->
+    <item id="22089" type="EtcItem" name="Bone Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26067-1" />
+    </item>
+    <!-- If used, ten thousand steel arrows are acquired. -->
+    <item id="22090" type="EtcItem" name="Steel Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26067-2" />
+    </item>
+    <!-- If used, ten thousand silver arrows are acquired. -->
+    <item id="22091" type="EtcItem" name="Silver Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26067-3" />
+    </item>
+    <!-- If used, ten thousand Mithril arrows are acquired. -->
+    <item id="22092" type="EtcItem" name="Mithril Quiver">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26067-4" />
+    </item>
+    <!-- If used, ten thousand arrows of light are acquired. -->
+    <item id="22093" type="EtcItem" name="Quiver of Light">
+        <set name="icon" val="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26067-5" />
+    </item>
+    <!-- If used, five thousand Blessed Spiritshots in D-grade are acquired. -->
+    <item id="22094" type="EtcItem" name="Blessed Spiritshot Pack (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_d_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26068-1" />
+    </item>
+    <!-- If used, five thousand Blessed Spiritshots in C-grade are acquired. -->
+    <item id="22095" type="EtcItem" name="Blessed Spiritshot Pack (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_c_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26068-2" />
+    </item>
+    <!-- If used, five thousand Blessed Spiritshots in B-grade are acquired. -->
+    <item id="22096" type="EtcItem" name="Blessed Spiritshot Pack (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_b_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26068-3" />
+    </item>
+    <!-- If used, five thousand Blessed Spiritshots in A-grade are acquired. -->
+    <item id="22097" type="EtcItem" name="Blessed Spiritshot Pack (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_a_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26068-4" />
+    </item>
+    <!-- If used, five thousand Blessed Spiritshots in S-grade are acquired. -->
+    <item id="22098" type="EtcItem" name="Blessed Spiritshot Pack (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_s_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26068-5" />
+    </item>
+    <!-- If used, five thousand Spiritshots in D-grade are acquired. -->
+    <item id="22099" type="EtcItem" name="Spiritshot Pack (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_d_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="26069-1" />
+    </item>
 </list>

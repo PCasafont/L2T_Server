@@ -21,35 +21,39 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class GMViewSkillInfo extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
-	private L2Skill[] _skills;
-	
-	public GMViewSkillInfo(L2PcInstance cha)
-	{
-		_activeChar = cha;
-		_skills = _activeChar.getAllSkills();
-		if (_skills.length == 0)
-			_skills = new L2Skill[0];
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeS(_activeChar.getName());
-		writeD(_skills.length);
-		
-		boolean isDisabled = false;
-		if (_activeChar.getClan() != null)
-			isDisabled = _activeChar.getClan().getReputationScore() < 0;
-		
-		for (L2Skill skill : _skills)
-		{
-			writeD(skill.isPassive() ? 1 : 0);
-			writeD(skill.getLevelHash());
-			writeD(skill.getId());
-			writeD(-1); // GoD ???
-			writeC(isDisabled && skill.isClanSkill() ? 1 : 0);
-			writeC(SkillTable.getInstance().isEnchantable(skill.getId()) ? 1 : 0);
-		}
-	}
+    private L2PcInstance _activeChar;
+    private L2Skill[] _skills;
+
+    public GMViewSkillInfo(L2PcInstance cha)
+    {
+        _activeChar = cha;
+        _skills = _activeChar.getAllSkills();
+        if (_skills.length == 0)
+        {
+            _skills = new L2Skill[0];
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeS(_activeChar.getName());
+        writeD(_skills.length);
+
+        boolean isDisabled = false;
+        if (_activeChar.getClan() != null)
+        {
+            isDisabled = _activeChar.getClan().getReputationScore() < 0;
+        }
+
+        for (L2Skill skill : _skills)
+        {
+            writeD(skill.isPassive() ? 1 : 0);
+            writeD(skill.getLevelHash());
+            writeD(skill.getId());
+            writeD(-1); // GoD ???
+            writeC(isDisabled && skill.isClanSkill() ? 1 : 0);
+            writeC(SkillTable.getInstance().isEnchantable(skill.getId()) ? 1 : 0);
+        }
+    }
 }

@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
- <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="23989" /> <!-- Agathion - Virgo - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24001" /> <!-- Agathion - Capricorn - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24013" /> <!-- Agathion - Libra - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24025" /> <!-- Agathion - Aries - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24037" /> <!-- Agathion - Taurus - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24049" /> <!-- Agathion - Leo - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24061" /> <!-- Agathion - Gemini - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24073" /> <!-- Agathion - Scorpio - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24085" /> <!-- Agathion - Aquarius - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24097" /> <!-- Agathion - Pisces - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24109" /> <!-- Agathion - Sagittarius - Stage 1 -->
-	</item>
-	<item>
-		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-		<production count="1" id="24121" /> <!-- Agathion - Cancer - Stage 1 -->
-	</item>
- </list>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="23989" /> <!-- Agathion - Virgo - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24001" /> <!-- Agathion - Capricorn - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24013" /> <!-- Agathion - Libra - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24025" /> <!-- Agathion - Aries - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24037" /> <!-- Agathion - Taurus - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24049" /> <!-- Agathion - Leo - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24061" /> <!-- Agathion - Gemini - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24073" /> <!-- Agathion - Scorpio - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24085" /> <!-- Agathion - Aquarius - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24097" /> <!-- Agathion - Pisces - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24109" /> <!-- Agathion - Sagittarius - Stage 1 -->
+    </item>
+    <item>
+        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+        <production count="1" id="24121" /> <!-- Agathion - Cancer - Stage 1 -->
+    </item>
+</list>

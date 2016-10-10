@@ -20,27 +20,27 @@ import java.util.List;
 /**
  * Format: (ch) d[d]
  *
- * @author  -Wooden-
+ * @author -Wooden-
  */
 public class ExCursedWeaponList extends L2GameServerPacket
 {
-	private List<Integer> _cursedWeaponIds;
-	
-	public ExCursedWeaponList(List<Integer> cursedWeaponIds)
-	{
-		_cursedWeaponIds = cursedWeaponIds;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_cursedWeaponIds.size());
-		for (int i : _cursedWeaponIds)
-		{
-			writeD(i);
-		}
-	}
+    private List<Integer> _cursedWeaponIds;
+
+    public ExCursedWeaponList(List<Integer> cursedWeaponIds)
+    {
+        _cursedWeaponIds = cursedWeaponIds;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_cursedWeaponIds.size());
+        for (int i : _cursedWeaponIds)
+        {
+            writeD(i);
+        }
+    }
 }

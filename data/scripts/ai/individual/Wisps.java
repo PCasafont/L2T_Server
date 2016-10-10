@@ -27,73 +27,80 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- *
- * Wisp AI
- *
- * Source:
- * 			- http://l2wiki.com/Fairy_Settlement
+ *         <p>
+ *         Wisp AI
+ *         <p>
+ *         Source:
+ *         - http://l2wiki.com/Fairy_Settlement
  */
 
 public class Wisps extends L2AttackableAIScript
 {
-	private static final int _wisp = 32915;
-	private static final int _largeWisp = 32916;
-	private static final L2Skill _healSkill = SkillTable.getInstance().getInfo(14064, 1);
-	
-	public Wisps(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		addSpawnId(_wisp);
-		addSpawnId(_largeWisp);
-		
-		addAggroRangeEnterId(_wisp);
-		addAggroRangeEnterId(_largeWisp);
-		
-		addSpellFinishedId(_wisp);
-		addSpellFinishedId(_largeWisp);
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-				continue;
-			
-			if (spawn.getNpcId() == _wisp || spawn.getNpcId() == _largeWisp)
-				notifySpawn(spawn.getNpc());
-		}
-	}
-	
-	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
-		npc.doDie(null);
-		
-		return super.onSpellFinished(npc, player, skill);
-	}
-	
-	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player.isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
-			return super.onAggroRangeEnter(npc, player, isPet);
-		
-		npc.setTarget(player);
-		npc.doCast(_healSkill);
-		
-		return super.onAggroRangeEnter(npc, player, isPet);
-	}
-	
-	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		npc.setIsImmobilized(true);
-		npc.setIsInvul(true);
-		
-		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Wisps(-1, "Wisps", "ai");
-	}
+    private static final int _wisp = 32915;
+    private static final int _largeWisp = 32916;
+    private static final L2Skill _healSkill = SkillTable.getInstance().getInfo(14064, 1);
+
+    public Wisps(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        addSpawnId(_wisp);
+        addSpawnId(_largeWisp);
+
+        addAggroRangeEnterId(_wisp);
+        addAggroRangeEnterId(_largeWisp);
+
+        addSpellFinishedId(_wisp);
+        addSpellFinishedId(_largeWisp);
+
+        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+        {
+            if (spawn == null)
+            {
+                continue;
+            }
+
+            if (spawn.getNpcId() == _wisp || spawn.getNpcId() == _largeWisp)
+            {
+                notifySpawn(spawn.getNpc());
+            }
+        }
+    }
+
+    @Override
+    public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
+    {
+        npc.doDie(null);
+
+        return super.onSpellFinished(npc, player, skill);
+    }
+
+    @Override
+    public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
+    {
+        if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player
+                .isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
+        {
+            return super.onAggroRangeEnter(npc, player, isPet);
+        }
+
+        npc.setTarget(player);
+        npc.doCast(_healSkill);
+
+        return super.onAggroRangeEnter(npc, player, isPet);
+    }
+
+    @Override
+    public final String onSpawn(L2Npc npc)
+    {
+        npc.setIsImmobilized(true);
+        npc.setIsInvul(true);
+
+        return super.onSpawn(npc);
+    }
+
+    public static void main(String[] args)
+    {
+        new Wisps(-1, "Wisps", "ai");
+    }
 }

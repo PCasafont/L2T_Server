@@ -22,39 +22,42 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * Sdh(h dddhh [dhhh] d)
  * Sdh ddddd ddddd ddddd ddddd
+ *
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2007/11/26 16:10:05 $
  */
 public class GMViewWarehouseWithdrawList extends L2ItemListPacket
 {
-	private L2ItemInstance[] _items;
-	private String _playerName;
-	private L2PcInstance _activeChar;
-	private long _money;
-	
-	public GMViewWarehouseWithdrawList(L2PcInstance cha)
-	{
-		_activeChar = cha;
-		_items = _activeChar.getWarehouse().getItems();
-		_playerName = _activeChar.getName();
-		_money = _activeChar.getWarehouse().getAdena();
-	}
-	
-	public GMViewWarehouseWithdrawList(L2Clan clan)
-	{
-		_playerName = clan.getLeaderName();
-		_items = clan.getWarehouse().getItems();
-		_money = clan.getWarehouse().getAdena();
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeS(_playerName);
-		writeQ(_money);
-		writeH(_items.length);
-		writeD(0x00); // GoD ???
-		
-		for (L2ItemInstance item : _items)
-			writeItem(item);
-	}
+    private L2ItemInstance[] _items;
+    private String _playerName;
+    private L2PcInstance _activeChar;
+    private long _money;
+
+    public GMViewWarehouseWithdrawList(L2PcInstance cha)
+    {
+        _activeChar = cha;
+        _items = _activeChar.getWarehouse().getItems();
+        _playerName = _activeChar.getName();
+        _money = _activeChar.getWarehouse().getAdena();
+    }
+
+    public GMViewWarehouseWithdrawList(L2Clan clan)
+    {
+        _playerName = clan.getLeaderName();
+        _items = clan.getWarehouse().getItems();
+        _money = clan.getWarehouse().getAdena();
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeS(_playerName);
+        writeQ(_money);
+        writeH(_items.length);
+        writeD(0x00); // GoD ???
+
+        for (L2ItemInstance item : _items)
+        {
+            writeItem(item);
+        }
+    }
 }

@@ -1,1103 +1,1103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Confirmation document received when delivering item. It is signed by Master Leona. -->
-	<item id="3600" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Blacksmith Pinter. -->
-	<item id="3601" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sentinel Knight Smallberry. -->
-	<item id="3602" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Pixy Murika. -->
-	<item id="3603" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Karna. -->
-	<item id="3604" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Magister Harne. -->
-	<item id="3605" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sir Ortho Lancer. -->
-	<item id="3606" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Martin. -->
-	<item id="3607" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Bishop Maximilian. -->
-	<item id="3608" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Master Stapin. -->
-	<item id="3609" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Master Genwitter. -->
-	<item id="3610" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by High Prefect Clogg. -->
-	<item id="3611" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sir Kiel Nighthawk. -->
-	<item id="3612" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Blacksmith Poitan. -->
-	<item id="3613" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Cardinal Seresin. -->
-	<item id="3614" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Duda-Mara Chief Takuna. -->
-	<item id="3615" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Hunter Guild Member Colin. -->
-	<item id="3616" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Guard Makhis. -->
-	<item id="3617" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item to Elder Cronos. It is signed. -->
-	<item id="3618" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Grand Magister Scraide. -->
-	<item id="3619" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Grocer Pano. -->
-	<item id="3620" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Alex. -->
-	<item id="3621" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Militiaman Leirynn. -->
-	<item id="3622" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Fisherman Evert. -->
-	<item id="3623" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Astrologer Creta. -->
-	<item id="3624" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Magister Kaiena. -->
-	<item id="3625" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Rex. -->
-	<item id="3626" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Uruha. -->
-	<item id="3627" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sentry Irene. -->
-	<item id="3628" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sentinel Trionell -->
-	<item id="3629" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Northwind. -->
-	<item id="3630" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Thalia. -->
-	<item id="3631" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Peter. -->
-	<item id="3632" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Bodyguard Jax. -->
-	<item id="3633" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Researcher Lorain. -->
-	<item id="3634" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Maestro Nikola. -->
-	<item id="3635" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Warden Roderik of the Execution Grounds. -->
-	<item id="3636" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Summoner Belthus. -->
-	<item id="3637" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Enku Chief Kepra. -->
-	<item id="3638" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Summoner Celestiel. -->
-	<item id="3639" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Orphanage Master Gupu. -->
-	<item id="3640" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Summoner Basillia. -->
-	<item id="3641" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Sir Aaron Tanford. -->
-	<item id="3642" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Prophet Sla. -->
-	<item id="3643" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Windy Shaoring. -->
-	<item id="3644" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item to Elder Casian. It is signed. -->
-	<item id="3645" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Annika. -->
-	<item id="3646" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Slein Shining Blade. -->
-	<item id="3647" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Shaman Varika. -->
-	<item id="3648" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Tyra. -->
-	<item id="3649" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Piper Longbow. -->
-	<item id="3650" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Katari. -->
-	<item id="3651" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Summoner Camoniell. -->
-	<item id="3652" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Orim the Shadow. -->
-	<item id="3653" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Breka Chief Voltar. -->
-	<item id="3654" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Confirmation document received when delivering item. It is signed by Summoner Brynthea. -->
-	<item id="3655" type="EtcItem" name="Delivery Receipt">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Eye obtained from killing a floating eye seer. Item specially ordered by Samed. -->
-	<item id="3656" type="EtcItem" name="Eye of Seer">
-		<set name="icon" val="icon.etc_eyeball_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Claw obtained from killing pincher spider. Item specially ordered by Blacksmith Pinter. -->
-	<item id="3657" type="EtcItem" name="Pincher Claw">
-		<set name="icon" val="icon.etc_fang_gray_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Ol Mahum uniform received from Ol Mahum Captain and Ol Mahum lord. Item specially ordered by Sir Ortho Lancer. -->
-	<item id="3658" type="EtcItem" name="Ol Mahum Uniform">
-		<set name="icon" val="icon.etc_debris_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Head of Enku Orc Champion. Item specially ordered by High Prefect Clogg. -->
-	<item id="3659" type="EtcItem" name="Enku Orc Champion's Head">
-		<set name="icon" val="icon.etc_skull_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Poison stinger from a bloody bee. Item specially ordered by Grocer Pano. -->
-	<item id="3660" type="EtcItem" name="Bloody Bee Stinger">
-		<set name="icon" val="icon.etc_sting_a_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Special item obtained by killing ghost fire. Item specially ordered by Sorceress Kaiena. -->
-	<item id="3661" type="EtcItem" name="Ignition of Ghost Fire">
-		<set name="icon" val="icon.etc_oriharukon_ore_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Ethereal blood received from killing a Mist Horror Ripper. Item specially ordered by Maestro Nikola. -->
-	<item id="3662" type="EtcItem" name="Ethereal Blood">
-		<set name="icon" val="icon.etc_potion_clear_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Box being returned by Samed. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3663" type="EtcItem" name="Box">
-		<set name="icon" val="icon.etc_squares_gray_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Jewelry box being returned by Pixy Murika. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3664" type="EtcItem" name="Jewelry Box">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Urn being returned by Elder Cronos. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3665" type="EtcItem" name="Urn">
-		<set name="icon" val="icon.etc_oil_pot_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Gold bar being returned by Alex. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3666" type="EtcItem" name="Gold Bar">
-		<set name="icon" val="icon.etc_lump_yellow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Book being returned by Sorceress Kaiena. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3667" type="EtcItem" name="Book">
-		<set name="icon" val="icon.etc_spellbook_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Shaft being returned by Bodyguard Jax. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3668" type="EtcItem" name="Shaft">
-		<set name="icon" val="icon.etc_pouch_brown_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Urn being returned by Prophet Sla. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3669" type="EtcItem" name="Urn">
-		<set name="icon" val="icon.etc_oil_pot_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Small boxes being returned by Shaman Varika. Let's take this to a nearby shipping service warehouse. -->
-	<item id="3670" type="EtcItem" name="Small Boxes">
-		<set name="icon" val="icon.etc_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Order from Chief Mercenary Sophya. Says to destroy the undead at the Execution Grounds. -->
-	<item id="3671" type="EtcItem" name="Sophya's 1st Order">
-		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Order from Chief Mercenary Sophya. It says to destroy Ol Mahums in the Fortress of Resistance. -->
-	<item id="3672" type="EtcItem" name="Sophya's 2nd Order">
-		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Order from Chief Mercenary Sophya. Says to destroy Delu lizardmen of the southern areas of the Dion and Giran regions. -->
-	<item id="3673" type="EtcItem" name="Sophya's 3rd Order">
-		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Order from Chief Mercenary Sophya. Says to destroy Marsh Stakatos of the Cruma Marshland. -->
-	<item id="3674" type="EtcItem" name="Sophya's 4th Order">
-		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark given to the person that achieves distinguished merits in the Black Lion Mercenaries. -->
-	<item id="3675" type="EtcItem" name="Lion Claw">
-		<set name="icon" val="icon.etc_claw_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark given to the person that achieves very distinguished merits in the Black Lion Mercenaries. -->
-	<item id="3676" type="EtcItem" name="Lion's Eye">
-		<set name="icon" val="icon.etc_eyeball_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Commemorative coin given as thanks by the members of the Aden Commercial Guild. -->
-	<item id="3677" type="EtcItem" name="Guild Coin">
-		<set name="icon" val="icon.etc_coins_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Book that can be obtained from Alchemist Matild. According to the instructions written in the book, go find the secret keeper tree located in the Cruma Marshlands and obtain the secret book. -->
-	<item id="3678" type="EtcItem" name="Alchemy Text">
-		<set name="icon" val="icon.etc_spell_books_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Ancient book received from the guardian trees of the secret. Take this to Alchemist Matild. -->
-	<item id="3679" type="EtcItem" name="Secret Book of Potion">
-		<set name="icon" val="icon.etc_spell_books_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Amber Basilisk Scale, Soulstone of the Whispering Wind, Glass Eye of the Glass Jaguar, and Turak Bugbear's Blood. -->
-	<item id="3680" type="EtcItem" name="1st Potion Recipe">
-		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Silenos Horn, Ant Soldier Aphid, Tyrant's Chitin, and Horror Ectoplasm of Mist Horror Ripper. -->
-	<item id="3681" type="EtcItem" name="2nd Potion Recipe">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Certificate of Friendship from Alchemist Matild. -->
-	<item id="3682" type="EtcItem" name="Matild's Orb">
-		<set name="icon" val="icon.etc_crystal_ball_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- The secrets of depraved but rapturous love are written. May be sold at a high price to an interested person... -->
-	<item id="3683" type="EtcItem" name="Forbidden Love Scroll">
-		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3684" type="EtcItem" name="Amber Basilisk Scale">
-		<set name="icon" val="icon.etc_scale_of_medusa_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3685" type="EtcItem" name="Wind Soulstone">
-		<set name="icon" val="icon.etc_gem_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3686" type="EtcItem" name="Glass Eye">
-		<set name="icon" val="icon.etc_eyeball_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3687" type="EtcItem" name="Horror Ectoplasm">
-		<set name="icon" val="icon.etc_lesser_potion_clear_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3688" type="EtcItem" name="Silenos Horn">
-		<set name="icon" val="icon.etc_horn_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3689" type="EtcItem" name="Ant Soldier Aphid">
-		<set name="icon" val="icon.etc_parasite_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3690" type="EtcItem" name="Tyrant's Chitin">
-		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
-	<item id="3691" type="EtcItem" name="Bugbear Blood">
-		<set name="icon" val="icon.etc_potion_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Certificate that proves eligibility as a 1st Circle Hunter. You must have this to be able to carry out orders given by the Hunter Guild. -->
-	<item id="3692" type="EtcItem" name="1st Circle Hunter License">
-		<set name="icon" val="icon.etc_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Certificate that proves eligibility as a 2nd Circle Hunter. You must have this to be able to carry out orders given by the Hunter Guild. -->
-	<item id="3693" type="EtcItem" name="2nd Circle Hunter License">
-		<set name="icon" val="icon.etc_paper_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark given to hunters that successfully carry out requests of the guild. The more experienced a hunter is, the more of these he or she Has. -->
-	<item id="3694" type="EtcItem" name="Laurel Leaf Pin">
-		<set name="icon" val="icon.etc_herb_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Instructions for the 1st Circle Hunter Certificate test. Says to complete at least three of the six tasks presented by Grey. -->
-	<item id="3695" type="EtcItem" name="1st Test Instructions">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Instructions for the 2nd Circle Hunter Certificate test. Says to complete at least three of the six tasks presented by Grey. -->
-	<item id="3696" type="EtcItem" name="2nd Test Instructions">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Asks you to raise the purity of blood crystal by killing Leto Lizardmen or Harit lizardmen with cybellin dagger. -->
-	<item id="3697" type="EtcItem" name="Cybellin's Request">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Bloody jewel that contains dreary magical power. Purity 1. The higher the purity of the crystal is, the higher the value. -->
-	<item id="3698" type="EtcItem" name="Blood Crystal: Purity 1">
-		<set name="icon" val="icon.etc_jewel_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Bloody jewel that contains dreary magical power. Purity 2. The higher the purity of the crystal is, the higher the value. -->
-	<item id="3699" type="EtcItem" name="Blood Crystal: Purity 2">
-		<set name="icon" val="icon.etc_jewel_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
+    <!-- Confirmation document received when delivering item. It is signed by Master Leona. -->
+    <item id="3600" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Blacksmith Pinter. -->
+    <item id="3601" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sentinel Knight Smallberry. -->
+    <item id="3602" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Pixy Murika. -->
+    <item id="3603" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Karna. -->
+    <item id="3604" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Magister Harne. -->
+    <item id="3605" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sir Ortho Lancer. -->
+    <item id="3606" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Martin. -->
+    <item id="3607" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Bishop Maximilian. -->
+    <item id="3608" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Master Stapin. -->
+    <item id="3609" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Master Genwitter. -->
+    <item id="3610" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by High Prefect Clogg. -->
+    <item id="3611" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sir Kiel Nighthawk. -->
+    <item id="3612" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Blacksmith Poitan. -->
+    <item id="3613" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Cardinal Seresin. -->
+    <item id="3614" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Duda-Mara Chief Takuna. -->
+    <item id="3615" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Hunter Guild Member Colin. -->
+    <item id="3616" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Guard Makhis. -->
+    <item id="3617" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item to Elder Cronos. It is signed. -->
+    <item id="3618" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Grand Magister Scraide. -->
+    <item id="3619" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Grocer Pano. -->
+    <item id="3620" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Alex. -->
+    <item id="3621" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Militiaman Leirynn. -->
+    <item id="3622" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Fisherman Evert. -->
+    <item id="3623" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Astrologer Creta. -->
+    <item id="3624" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Magister Kaiena. -->
+    <item id="3625" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Rex. -->
+    <item id="3626" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Uruha. -->
+    <item id="3627" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sentry Irene. -->
+    <item id="3628" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sentinel Trionell -->
+    <item id="3629" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Northwind. -->
+    <item id="3630" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Thalia. -->
+    <item id="3631" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Peter. -->
+    <item id="3632" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Bodyguard Jax. -->
+    <item id="3633" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Researcher Lorain. -->
+    <item id="3634" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Maestro Nikola. -->
+    <item id="3635" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Warden Roderik of the Execution Grounds. -->
+    <item id="3636" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Summoner Belthus. -->
+    <item id="3637" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Enku Chief Kepra. -->
+    <item id="3638" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Summoner Celestiel. -->
+    <item id="3639" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Orphanage Master Gupu. -->
+    <item id="3640" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Summoner Basillia. -->
+    <item id="3641" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Sir Aaron Tanford. -->
+    <item id="3642" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Prophet Sla. -->
+    <item id="3643" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Windy Shaoring. -->
+    <item id="3644" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item to Elder Casian. It is signed. -->
+    <item id="3645" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Annika. -->
+    <item id="3646" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Slein Shining Blade. -->
+    <item id="3647" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Shaman Varika. -->
+    <item id="3648" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Tyra. -->
+    <item id="3649" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Piper Longbow. -->
+    <item id="3650" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Katari. -->
+    <item id="3651" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Summoner Camoniell. -->
+    <item id="3652" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Orim the Shadow. -->
+    <item id="3653" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Breka Chief Voltar. -->
+    <item id="3654" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Confirmation document received when delivering item. It is signed by Summoner Brynthea. -->
+    <item id="3655" type="EtcItem" name="Delivery Receipt">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Eye obtained from killing a floating eye seer. Item specially ordered by Samed. -->
+    <item id="3656" type="EtcItem" name="Eye of Seer">
+        <set name="icon" val="icon.etc_eyeball_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Claw obtained from killing pincher spider. Item specially ordered by Blacksmith Pinter. -->
+    <item id="3657" type="EtcItem" name="Pincher Claw">
+        <set name="icon" val="icon.etc_fang_gray_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Ol Mahum uniform received from Ol Mahum Captain and Ol Mahum lord. Item specially ordered by Sir Ortho Lancer. -->
+    <item id="3658" type="EtcItem" name="Ol Mahum Uniform">
+        <set name="icon" val="icon.etc_debris_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Head of Enku Orc Champion. Item specially ordered by High Prefect Clogg. -->
+    <item id="3659" type="EtcItem" name="Enku Orc Champion's Head">
+        <set name="icon" val="icon.etc_skull_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Poison stinger from a bloody bee. Item specially ordered by Grocer Pano. -->
+    <item id="3660" type="EtcItem" name="Bloody Bee Stinger">
+        <set name="icon" val="icon.etc_sting_a_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Special item obtained by killing ghost fire. Item specially ordered by Sorceress Kaiena. -->
+    <item id="3661" type="EtcItem" name="Ignition of Ghost Fire">
+        <set name="icon" val="icon.etc_oriharukon_ore_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Ethereal blood received from killing a Mist Horror Ripper. Item specially ordered by Maestro Nikola. -->
+    <item id="3662" type="EtcItem" name="Ethereal Blood">
+        <set name="icon" val="icon.etc_potion_clear_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Box being returned by Samed. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3663" type="EtcItem" name="Box">
+        <set name="icon" val="icon.etc_squares_gray_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Jewelry box being returned by Pixy Murika. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3664" type="EtcItem" name="Jewelry Box">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Urn being returned by Elder Cronos. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3665" type="EtcItem" name="Urn">
+        <set name="icon" val="icon.etc_oil_pot_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Gold bar being returned by Alex. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3666" type="EtcItem" name="Gold Bar">
+        <set name="icon" val="icon.etc_lump_yellow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Book being returned by Sorceress Kaiena. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3667" type="EtcItem" name="Book">
+        <set name="icon" val="icon.etc_spellbook_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Shaft being returned by Bodyguard Jax. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3668" type="EtcItem" name="Shaft">
+        <set name="icon" val="icon.etc_pouch_brown_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Urn being returned by Prophet Sla. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3669" type="EtcItem" name="Urn">
+        <set name="icon" val="icon.etc_oil_pot_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Small boxes being returned by Shaman Varika. Let's take this to a nearby shipping service warehouse. -->
+    <item id="3670" type="EtcItem" name="Small Boxes">
+        <set name="icon" val="icon.etc_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Order from Chief Mercenary Sophya. Says to destroy the undead at the Execution Grounds. -->
+    <item id="3671" type="EtcItem" name="Sophya's 1st Order">
+        <set name="icon" val="icon.etc_roll_of_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Order from Chief Mercenary Sophya. It says to destroy Ol Mahums in the Fortress of Resistance. -->
+    <item id="3672" type="EtcItem" name="Sophya's 2nd Order">
+        <set name="icon" val="icon.etc_roll_of_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Order from Chief Mercenary Sophya. Says to destroy Delu lizardmen of the southern areas of the Dion and Giran regions. -->
+    <item id="3673" type="EtcItem" name="Sophya's 3rd Order">
+        <set name="icon" val="icon.etc_roll_of_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Order from Chief Mercenary Sophya. Says to destroy Marsh Stakatos of the Cruma Marshland. -->
+    <item id="3674" type="EtcItem" name="Sophya's 4th Order">
+        <set name="icon" val="icon.etc_roll_of_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark given to the person that achieves distinguished merits in the Black Lion Mercenaries. -->
+    <item id="3675" type="EtcItem" name="Lion Claw">
+        <set name="icon" val="icon.etc_claw_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark given to the person that achieves very distinguished merits in the Black Lion Mercenaries. -->
+    <item id="3676" type="EtcItem" name="Lion's Eye">
+        <set name="icon" val="icon.etc_eyeball_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Commemorative coin given as thanks by the members of the Aden Commercial Guild. -->
+    <item id="3677" type="EtcItem" name="Guild Coin">
+        <set name="icon" val="icon.etc_coins_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Book that can be obtained from Alchemist Matild. According to the instructions written in the book, go find the secret keeper tree located in the Cruma Marshlands and obtain the secret book. -->
+    <item id="3678" type="EtcItem" name="Alchemy Text">
+        <set name="icon" val="icon.etc_spell_books_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Ancient book received from the guardian trees of the secret. Take this to Alchemist Matild. -->
+    <item id="3679" type="EtcItem" name="Secret Book of Potion">
+        <set name="icon" val="icon.etc_spell_books_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Amber Basilisk Scale, Soulstone of the Whispering Wind, Glass Eye of the Glass Jaguar, and Turak Bugbear's Blood. -->
+    <item id="3680" type="EtcItem" name="1st Potion Recipe">
+        <set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Silenos Horn, Ant Soldier Aphid, Tyrant's Chitin, and Horror Ectoplasm of Mist Horror Ripper. -->
+    <item id="3681" type="EtcItem" name="2nd Potion Recipe">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Certificate of Friendship from Alchemist Matild. -->
+    <item id="3682" type="EtcItem" name="Matild's Orb">
+        <set name="icon" val="icon.etc_crystal_ball_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- The secrets of depraved but rapturous love are written. May be sold at a high price to an interested person... -->
+    <item id="3683" type="EtcItem" name="Forbidden Love Scroll">
+        <set name="icon" val="icon.etc_piece_of_paper_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3684" type="EtcItem" name="Amber Basilisk Scale">
+        <set name="icon" val="icon.etc_scale_of_medusa_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3685" type="EtcItem" name="Wind Soulstone">
+        <set name="icon" val="icon.etc_gem_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3686" type="EtcItem" name="Glass Eye">
+        <set name="icon" val="icon.etc_eyeball_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3687" type="EtcItem" name="Horror Ectoplasm">
+        <set name="icon" val="icon.etc_lesser_potion_clear_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3688" type="EtcItem" name="Silenos Horn">
+        <set name="icon" val="icon.etc_horn_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3689" type="EtcItem" name="Ant Soldier Aphid">
+        <set name="icon" val="icon.etc_parasite_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3690" type="EtcItem" name="Tyrant's Chitin">
+        <set name="icon" val="icon.etc_broken_crystal_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Necessary ingredient for making wish potion. Take it with the other ingredients to Alchemist Matild. -->
+    <item id="3691" type="EtcItem" name="Bugbear Blood">
+        <set name="icon" val="icon.etc_potion_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Certificate that proves eligibility as a 1st Circle Hunter. You must have this to be able to carry out orders given by the Hunter Guild. -->
+    <item id="3692" type="EtcItem" name="1st Circle Hunter License">
+        <set name="icon" val="icon.etc_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Certificate that proves eligibility as a 2nd Circle Hunter. You must have this to be able to carry out orders given by the Hunter Guild. -->
+    <item id="3693" type="EtcItem" name="2nd Circle Hunter License">
+        <set name="icon" val="icon.etc_paper_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark given to hunters that successfully carry out requests of the guild. The more experienced a hunter is, the more of these he or she Has. -->
+    <item id="3694" type="EtcItem" name="Laurel Leaf Pin">
+        <set name="icon" val="icon.etc_herb_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Instructions for the 1st Circle Hunter Certificate test. Says to complete at least three of the six tasks presented by Grey. -->
+    <item id="3695" type="EtcItem" name="1st Test Instructions">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Instructions for the 2nd Circle Hunter Certificate test. Says to complete at least three of the six tasks presented by Grey. -->
+    <item id="3696" type="EtcItem" name="2nd Test Instructions">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Asks you to raise the purity of blood crystal by killing Leto Lizardmen or Harit lizardmen with cybellin dagger. -->
+    <item id="3697" type="EtcItem" name="Cybellin's Request">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Bloody jewel that contains dreary magical power. Purity 1. The higher the purity of the crystal is, the higher the value. -->
+    <item id="3698" type="EtcItem" name="Blood Crystal: Purity 1">
+        <set name="icon" val="icon.etc_jewel_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Bloody jewel that contains dreary magical power. Purity 2. The higher the purity of the crystal is, the higher the value. -->
+    <item id="3699" type="EtcItem" name="Blood Crystal: Purity 2">
+        <set name="icon" val="icon.etc_jewel_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
 </list>

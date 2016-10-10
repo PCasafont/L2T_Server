@@ -20,58 +20,62 @@ import java.util.List;
 
 public class DiscussionManager
 {
-	private List<Integer> _voted = new ArrayList<Integer>();
-	private int[] _votes = new int[10];
-	private boolean _votesEnabled = false;
-	private boolean _globalChatDisabled = false;
-	
-	public static final DiscussionManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	public boolean vote(int objectId, byte option)
-	{
-		if (_voted.contains(objectId))
-			return false;
-		_voted.add(objectId);
-		_votes[option]++;
-		return true;
-	}
-	
-	public void startVotations()
-	{
-		_voted.clear();
-		for (int i = 0; i < _votes.length; i++)
-			_votes[i] = 0;
-		_votesEnabled = true;
-	}
-	
-	public int[] endVotations()
-	{
-		_voted.clear();
-		_votesEnabled = false;
-		return _votes;
-	}
-	
-	public boolean areVotesEnabled()
-	{
-		return _votesEnabled;
-	}
-	
-	public void setGlobalChatDisabled(boolean chatDisabled)
-	{
-		_globalChatDisabled = chatDisabled;
-	}
-	
-	public boolean isGlobalChatDisabled()
-	{
-		return _globalChatDisabled;
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final DiscussionManager _instance = new DiscussionManager();
-	}
+    private List<Integer> _voted = new ArrayList<Integer>();
+    private int[] _votes = new int[10];
+    private boolean _votesEnabled = false;
+    private boolean _globalChatDisabled = false;
+
+    public static final DiscussionManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    public boolean vote(int objectId, byte option)
+    {
+        if (_voted.contains(objectId))
+        {
+            return false;
+        }
+        _voted.add(objectId);
+        _votes[option]++;
+        return true;
+    }
+
+    public void startVotations()
+    {
+        _voted.clear();
+        for (int i = 0; i < _votes.length; i++)
+        {
+            _votes[i] = 0;
+        }
+        _votesEnabled = true;
+    }
+
+    public int[] endVotations()
+    {
+        _voted.clear();
+        _votesEnabled = false;
+        return _votes;
+    }
+
+    public boolean areVotesEnabled()
+    {
+        return _votesEnabled;
+    }
+
+    public void setGlobalChatDisabled(boolean chatDisabled)
+    {
+        _globalChatDisabled = chatDisabled;
+    }
+
+    public boolean isGlobalChatDisabled()
+    {
+        return _globalChatDisabled;
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final DiscussionManager _instance = new DiscussionManager();
+    }
 }

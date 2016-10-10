@@ -24,28 +24,32 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerHasSummon extends Condition
 {
-	private final boolean _value;
-	
-	public ConditionPlayerHasSummon(boolean value)
-	{
-		_value = value;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-			return false;
-		
-		for (L2SummonInstance summon : ((L2PcInstance) env.player).getSummons())
-		{
-			if (!summon.isDead())
-				return _value;
-		}
-		
-		return !_value;
-	}
+    private final boolean _value;
+
+    public ConditionPlayerHasSummon(boolean value)
+    {
+        _value = value;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!(env.player instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        for (L2SummonInstance summon : ((L2PcInstance) env.player).getSummons())
+        {
+            if (!summon.isDead())
+            {
+                return _value;
+            }
+        }
+
+        return !_value;
+    }
 }

@@ -22,40 +22,46 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveMemberInfo;
 
 /**
  * Format: (ch) dS
- * @author  -Wooden-
  *
+ * @author -Wooden-
  */
 public final class RequestPledgeMemberInfo extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int _unk1;
-	private String _player;
-	
-	@Override
-	protected void readImpl()
-	{
-		_unk1 = readD();
-		_player = readS();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		//Logozo.info("C5: RequestPledgeMemberInfo d:"+_unk1);
-		//Logozo.info("C5: RequestPledgeMemberInfo S:"+_player);
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		//do we need powers to do that??
-		L2Clan clan = activeChar.getClan();
-		if (clan == null)
-			return;
-		L2ClanMember member = clan.getClanMember(_player);
-		if (member == null)
-			return;
-		activeChar.sendPacket(new PledgeReceiveMemberInfo(member));
-	}
+    @SuppressWarnings("unused")
+    private int _unk1;
+    private String _player;
+
+    @Override
+    protected void readImpl()
+    {
+        _unk1 = readD();
+        _player = readS();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        //Logozo.info("C5: RequestPledgeMemberInfo d:"+_unk1);
+        //Logozo.info("C5: RequestPledgeMemberInfo S:"+_player);
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        //do we need powers to do that??
+        L2Clan clan = activeChar.getClan();
+        if (clan == null)
+        {
+            return;
+        }
+        L2ClanMember member = clan.getClanMember(_player);
+        if (member == null)
+        {
+            return;
+        }
+        activeChar.sendPacket(new PledgeReceiveMemberInfo(member));
+    }
 }

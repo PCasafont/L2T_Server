@@ -28,83 +28,91 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- *
- * Summon Tree of Sephiroth (skill id: 19210) AI
+ *         <p>
+ *         Summon Tree of Sephiroth (skill id: 19210) AI
  */
 
 public class TreeOfSephiroth extends L2AttackableAIScript
 {
-	private static final int _treeOfSephiroth = 15154;
-	private static final int _blessingOfLifeId = 19219;
-	
-	public TreeOfSephiroth(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		addSpawnId(_treeOfSephiroth);
-	}
-	
-	@Override
-	public final String onSpawn(L2Summon npc)
-	{
-		TreeOfLifeAI ai = new TreeOfLifeAI(npc);
-		
-		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
-		
-		return null;
-	}
-	
-	class TreeOfLifeAI implements Runnable
-	{
-		private L2Summon _treeOfLife;
-		private L2PcInstance _owner;
-		private ScheduledFuture<?> _schedule = null;
-		
-		protected TreeOfLifeAI(L2Summon npc)
-		{
-			_treeOfLife = npc;
-			_owner = npc.getOwner();
-		}
-		
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
-			_schedule = schedule;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_treeOfLife == null || _treeOfLife.isDead() || !_owner.getSummons().contains(_treeOfLife))
-			{
-				if (_schedule != null)
-				{
-					_schedule.cancel(true);
-					return;
-				}
-			}
-			
-			L2Party party = _treeOfLife.getOwner().getParty();
-			
-			if (party != null)
-			{
-				for (L2PcInstance player : party.getPartyMembers())
-				{
-					if (player == null || !GeoData.getInstance().canSeeTarget(_treeOfLife, player))
-						continue;
-					
-					SkillTable.getInstance().getInfo(_blessingOfLifeId, _treeOfLife.getSkillLevelHash(_blessingOfLifeId)).getEffects(_treeOfLife, player);
-				}
-			}
-			else
-			{
-				if (GeoData.getInstance().canSeeTarget(_treeOfLife, _owner))
-					SkillTable.getInstance().getInfo(_blessingOfLifeId, _treeOfLife.getSkillLevelHash(_blessingOfLifeId)).getEffects(_treeOfLife, _owner);
-			}
-		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new TreeOfSephiroth(-1, "TreeOfSephiroth", "ai/individual");
-	}
+    private static final int _treeOfSephiroth = 15154;
+    private static final int _blessingOfLifeId = 19219;
+
+    public TreeOfSephiroth(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        addSpawnId(_treeOfSephiroth);
+    }
+
+    @Override
+    public final String onSpawn(L2Summon npc)
+    {
+        TreeOfLifeAI ai = new TreeOfLifeAI(npc);
+
+        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
+
+        return null;
+    }
+
+    class TreeOfLifeAI implements Runnable
+    {
+        private L2Summon _treeOfLife;
+        private L2PcInstance _owner;
+        private ScheduledFuture<?> _schedule = null;
+
+        protected TreeOfLifeAI(L2Summon npc)
+        {
+            _treeOfLife = npc;
+            _owner = npc.getOwner();
+        }
+
+        public void setSchedule(ScheduledFuture<?> schedule)
+        {
+            _schedule = schedule;
+        }
+
+        @Override
+        public void run()
+        {
+            if (_treeOfLife == null || _treeOfLife.isDead() || !_owner.getSummons().contains(_treeOfLife))
+            {
+                if (_schedule != null)
+                {
+                    _schedule.cancel(true);
+                    return;
+                }
+            }
+
+            L2Party party = _treeOfLife.getOwner().getParty();
+
+            if (party != null)
+            {
+                for (L2PcInstance player : party.getPartyMembers())
+                {
+                    if (player == null || !GeoData.getInstance().canSeeTarget(_treeOfLife, player))
+                    {
+                        continue;
+                    }
+
+                    SkillTable.getInstance()
+                            .getInfo(_blessingOfLifeId, _treeOfLife.getSkillLevelHash(_blessingOfLifeId))
+                            .getEffects(_treeOfLife, player);
+                }
+            }
+            else
+            {
+                if (GeoData.getInstance().canSeeTarget(_treeOfLife, _owner))
+                {
+                    SkillTable.getInstance()
+                            .getInfo(_blessingOfLifeId, _treeOfLife.getSkillLevelHash(_blessingOfLifeId))
+                            .getEffects(_treeOfLife, _owner);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        new TreeOfSephiroth(-1, "TreeOfSephiroth", "ai/individual");
+    }
 }

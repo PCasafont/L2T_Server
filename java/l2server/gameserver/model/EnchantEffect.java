@@ -27,64 +27,68 @@ import l2server.gameserver.stats.funcs.Func;
  */
 public class EnchantEffect
 {
-	private final int _id;
-	private final int _rarity;
-	private final int _slot;
-	
-	private int _skillId = 0;
-	private int _skillLevel = 0;
-	private final List<Func> _funcs = new ArrayList<Func>();
-	
-	public EnchantEffect(int id, int rarity, int slot)
-	{
-		_id = id;
-		_rarity = rarity;
-		_slot = slot;
-	}
-	
-	public void setSkill(int skillId, int skillLevel)
-	{
-		_skillId = skillId;
-		_skillLevel = skillLevel;
-	}
-	
-	public void addFunc(Func func)
-	{
-		_funcs.add(func);
-	}
-	
-	public int getId()
-	{
-		return _id;
-	}
-	
-	public int getRarity()
-	{
-		return _rarity;
-	}
-	
-	public int getSlot()
-	{
-		return _slot;
-	}
-	
-	public L2Skill getSkill()
-	{
-		if (_skillId == 0)
-			return null;
-		
-		return SkillTable.getInstance().getInfo(_skillId, _skillLevel);
-	}
-	
-	public void applyBonus(L2PcInstance player)
-	{
-		player.removeStatsOwner(this);
-		for (Func f : _funcs)
-			player.addStatFunc(f);
-	}
-	
-	public void removeBonus(L2PcInstance player)
-	{
-		player.removeStatsOwner(this);
-	}
+    private final int _id;
+    private final int _rarity;
+    private final int _slot;
+
+    private int _skillId = 0;
+    private int _skillLevel = 0;
+    private final List<Func> _funcs = new ArrayList<Func>();
+
+    public EnchantEffect(int id, int rarity, int slot)
+    {
+        _id = id;
+        _rarity = rarity;
+        _slot = slot;
+    }
+
+    public void setSkill(int skillId, int skillLevel)
+    {
+        _skillId = skillId;
+        _skillLevel = skillLevel;
+    }
+
+    public void addFunc(Func func)
+    {
+        _funcs.add(func);
+    }
+
+    public int getId()
+    {
+        return _id;
+    }
+
+    public int getRarity()
+    {
+        return _rarity;
+    }
+
+    public int getSlot()
+    {
+        return _slot;
+    }
+
+    public L2Skill getSkill()
+    {
+        if (_skillId == 0)
+        {
+            return null;
+        }
+
+        return SkillTable.getInstance().getInfo(_skillId, _skillLevel);
+    }
+
+    public void applyBonus(L2PcInstance player)
+    {
+        player.removeStatsOwner(this);
+        for (Func f : _funcs)
+        {
+            player.addStatFunc(f);
+        }
+    }
+
+    public void removeBonus(L2PcInstance player)
+    {
+        player.removeStatsOwner(this);
+    }
 }

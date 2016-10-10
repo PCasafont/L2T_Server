@@ -25,61 +25,61 @@ import l2server.loginserver.LoginController;
 import l2server.util.network.BaseRecievePacket;
 
 /**
- *
  * @author mrTJO
  */
 public class RequestTempBan extends BaseRecievePacket
 {
-	String _accountName, _banReason, _ip;
-	long _banTime;
-	
-	/**
-	 * @param decrypt
-	 */
-	public RequestTempBan(byte[] decrypt)
-	{
-		super(decrypt);
-		_accountName = readS();
-		_ip = readS();
-		_banTime = readQ();
-		boolean haveReason = readC() == 0 ? false : true;
-		if (haveReason)
-		{
-			_banReason = readS();
-		}
-		banUser();
-	}
-	
-	private void banUser()
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
-			statement.setString(1, _accountName);
-			statement.setString(2, "ban_temp");
-			statement.setString(3, Long.toString(_banTime));
-			statement.setString(4, Long.toString(_banTime));
-			statement.execute();
-			statement.close();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-		
-		try
-		{
-			LoginController.getInstance().addBanForAddress(_ip, _banTime);
-		}
-		catch (UnknownHostException e)
-		{
-			e.printStackTrace();
-		}
-	}
+    String _accountName, _banReason, _ip;
+    long _banTime;
+
+    /**
+     * @param decrypt
+     */
+    public RequestTempBan(byte[] decrypt)
+    {
+        super(decrypt);
+        _accountName = readS();
+        _ip = readS();
+        _banTime = readQ();
+        boolean haveReason = readC() == 0 ? false : true;
+        if (haveReason)
+        {
+            _banReason = readS();
+        }
+        banUser();
+    }
+
+    private void banUser()
+    {
+        Connection con = null;
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = con
+                    .prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
+            statement.setString(1, _accountName);
+            statement.setString(2, "ban_temp");
+            statement.setString(3, Long.toString(_banTime));
+            statement.setString(4, Long.toString(_banTime));
+            statement.execute();
+            statement.close();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+
+        try
+        {
+            LoginController.getInstance().addBanForAddress(_ip, _banTime);
+        }
+        catch (UnknownHostException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

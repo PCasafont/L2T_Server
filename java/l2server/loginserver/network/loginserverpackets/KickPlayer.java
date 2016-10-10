@@ -21,23 +21,21 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author -Wooden-
- *
  */
 public class KickPlayer extends BaseSendablePacket
 {
-	public KickPlayer(String account)
-	{
-		writeC(0x04);
-		writeS(account);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public KickPlayer(String account)
+    {
+        writeC(0x04);
+        writeS(account);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

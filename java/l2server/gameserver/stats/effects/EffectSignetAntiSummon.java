@@ -34,99 +34,117 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectSignetAntiSummon extends L2Effect
 {
-	private L2EffectPointInstance _actor;
-	
-	public EffectSignetAntiSummon(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.SIGNET_GROUND;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (!(getEffector() instanceof L2PcInstance))
-			return false;
-		
-		_actor = (L2EffectPointInstance) getEffected();
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
-			return true; // do nothing first time
-			
-		int mpConsume = getSkill().getMpConsume();
-		
-		L2PcInstance caster = (L2PcInstance) getEffector();
-		
-		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
-		{
-			if (cha == null)
-				continue;
-			
-			if (cha instanceof L2PcInstance)
-			{
-				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
-					continue;
-			}
-			
-			if (cha instanceof L2Playable)
-			{
-				if (caster.canAttackCharacter(cha))
-				{
-					L2PcInstance owner = null;
-					if (cha instanceof L2Summon)
-						owner = ((L2Summon) cha).getOwner();
-					else
-						owner = (L2PcInstance) cha;
-					
-					if (owner != null && (owner.getPet() != null || !owner.getSummons().isEmpty()))
-					{
-						if (mpConsume > getEffector().getCurrentMp())
-						{
-							getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
-							return false;
-						}
-						else
-							getEffector().reduceCurrentMp(mpConsume);
-						
-						if (owner.getPet() != null)
-							owner.getPet().unSummon(owner);
-						for (L2SummonInstance summon : owner.getSummons())
-							summon.unSummon(owner);
-						owner.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
-					}
-				}
-			}
-		}
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		if (_actor != null)
-			_actor.deleteMe();
-	}
+    private L2EffectPointInstance _actor;
+
+    public EffectSignetAntiSummon(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.SIGNET_GROUND;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (!(getEffector() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        _actor = (L2EffectPointInstance) getEffected();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
+        {
+            return true; // do nothing first time
+        }
+
+        int mpConsume = getSkill().getMpConsume();
+
+        L2PcInstance caster = (L2PcInstance) getEffector();
+
+        for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+        {
+            if (cha == null)
+            {
+                continue;
+            }
+
+            if (cha instanceof L2PcInstance)
+            {
+                L2PcInstance player = (L2PcInstance) cha;
+                if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
+                {
+                    continue;
+                }
+            }
+
+            if (cha instanceof L2Playable)
+            {
+                if (caster.canAttackCharacter(cha))
+                {
+                    L2PcInstance owner = null;
+                    if (cha instanceof L2Summon)
+                    {
+                        owner = ((L2Summon) cha).getOwner();
+                    }
+                    else
+                    {
+                        owner = (L2PcInstance) cha;
+                    }
+
+                    if (owner != null && (owner.getPet() != null || !owner.getSummons().isEmpty()))
+                    {
+                        if (mpConsume > getEffector().getCurrentMp())
+                        {
+                            getEffector().sendPacket(SystemMessage
+                                    .getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+                            return false;
+                        }
+                        else
+                        {
+                            getEffector().reduceCurrentMp(mpConsume);
+                        }
+
+                        if (owner.getPet() != null)
+                        {
+                            owner.getPet().unSummon(owner);
+                        }
+                        for (L2SummonInstance summon : owner.getSummons())
+                        {
+                            summon.unSummon(owner);
+                        }
+                        owner.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        if (_actor != null)
+        {
+            _actor.deleteMe();
+        }
+    }
 }

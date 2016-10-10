@@ -23,18 +23,17 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
- *
  * @author nBd
  */
 public class TargetPartyMember implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		/*
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        /*
 		if ((target != null && target == activeChar)
 			|| (target != null && activeChar.getParty() != null && target.getParty() != null
 					&& activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
@@ -56,21 +55,21 @@ public class TargetPartyMember implements ISkillTargetTypeHandler
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}*/
-		return null;
-		// FIXME
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.TARGET_PARTY_MEMBER;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyMember());
-	}
+        return null;
+        // FIXME
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.TARGET_PARTY_MEMBER;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyMember());
+    }
 }

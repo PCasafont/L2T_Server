@@ -1,149 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill_tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pledgeSkillTree.xsd">
-	<!-- Clan Level 5 -->
-	<skill id="388" level="1" name="Clan Sleep Resistance" reputation="1000" clanLevel="5" />
-	<skill id="387" level="1" name="Clan Hold Resistance" reputation="1000" clanLevel="5" />
-	<skill id="386" level="1" name="Clan Stun Resistance" reputation="1000" clanLevel="5" />
-	<skill id="19110" level="1" name="Clan Resilience" reputation="1000" clanLevel="5" />
-	<skill id="19111" level="1" name="Clan Steadfastness" reputation="1000" clanLevel="5" />
-	<skill id="372" level="1" name="Clan Soul" reputation="1000" clanLevel="5" />
-	<skill id="370" level="1" name="Clan Body" reputation="1000" clanLevel="5" />
-	<skill id="382" level="1" name="Clan Shield Defense" reputation="1000" clanLevel="5" />
-	<skill id="391" level="1" name="Clan Imperium" reputation="3600" clanLevel="5" />
-	<skill id="378" level="1" name="Clan Empower" reputation="1000" clanLevel="5" />
-	<skill id="389" level="1" name="Clan Wind Walk" reputation="1000" clanLevel="5" />
-	<skill id="371" level="1" name="Clan Spirituality" reputation="1000" clanLevel="5" />
-	<skill id="19003" level="1" name="Clan Resistance Hall" reputation="1000" clanLevel="5" />
-	<skill id="373" level="1" name="Clan Regeneration" reputation="1000" clanLevel="5" />
-	<skill id="19004" level="1" name="Clan De-Buff Control" reputation="1000" clanLevel="5" />
-	<skill id="19006" level="1" name="Clan Mental Control" reputation="1000" clanLevel="5" />
-	<skill id="19005" level="1" name="Clan Muzzle Control" reputation="1000" clanLevel="5" />
-	<skill id="379" level="1" name="Clan M. Def." reputation="1000" clanLevel="5" />
-	<skill id="376" level="1" name="Clan Might" reputation="1000" clanLevel="5" />
-	<skill id="374" level="1" name="Clan Morale" reputation="1000" clanLevel="5" />
-	<skill id="380" level="1" name="Clan Guidance" reputation="1000" clanLevel="5" />
-	<skill id="390" level="1" name="Clan Luck" reputation="1000" clanLevel="5" />
-	<skill id="381" level="1" name="Clan Agility" reputation="1000" clanLevel="5" />
-	<skill id="19009" level="1" name="Clan Advent" reputation="3600" clanLevel="5" />
-	<skill id="385" level="1" name="Clan Magmatic Resistance" reputation="1000" clanLevel="5" />
-	<skill id="384" level="1" name="Clan Cyclonic Resistance" reputation="1000" clanLevel="5" />
-	<skill id="383" level="1" name="Clan Shield Block" reputation="1000" clanLevel="5" />
-	<skill id="375" level="1" name="Clan Clarity" reputation="1000" clanLevel="5" />
-	<skill id="377" level="1" name="Clan Shield" reputation="1000" clanLevel="5" />
-	<!-- Clan Level 7 -->
-	<skill id="388" level="2" name="Clan Sleep Resistance" reputation="3600" clanLevel="7" />
-	<skill id="387" level="2" name="Clan Hold Resistance" reputation="3600" clanLevel="7" />
-	<skill id="386" level="2" name="Clan Stun Resistance" reputation="3600" clanLevel="7" />
-	<skill id="19110" level="2" name="Clan Resilience" reputation="3600" clanLevel="7" />
-	<skill id="19111" level="2" name="Clan Steadfastness" reputation="3600" clanLevel="7" />
-	<skill id="19112" level="1" name="Clan Escape" reputation="15000" clanLevel="7" />
-	<skill id="372" level="2" name="Clan Soul" reputation="3600" clanLevel="7" />
-	<skill id="370" level="2" name="Clan Body" reputation="3600" clanLevel="7" />
-	<skill id="382" level="2" name="Clan Shield Defense" reputation="3600" clanLevel="7" />
-	<skill id="378" level="2" name="Clan Empower" reputation="3600" clanLevel="7" />
-	<skill id="389" level="2" name="Clan Wind Walk" reputation="3600" clanLevel="7" />
-	<skill id="371" level="2" name="Clan Spirituality" reputation="3600" clanLevel="7" />
-	<skill id="19003" level="2" name="Clan Resistance Hall" reputation="3600" clanLevel="7" />
-	<skill id="373" level="2" name="Clan Regeneration" reputation="3600" clanLevel="7" />
-	<skill id="19004" level="2" name="Clan De-Buff Control" reputation="3600" clanLevel="7" />
-	<skill id="19006" level="2" name="Clan Mental Control" reputation="3600" clanLevel="7" />
-	<skill id="19005" level="2" name="Clan Muzzle Control" reputation="3600" clanLevel="7" />
-	<skill id="379" level="2" name="Clan M. Def." reputation="3600" clanLevel="7" />
-	<skill id="376" level="2" name="Clan Might" reputation="3600" clanLevel="7" />
-	<skill id="374" level="2" name="Clan Morale" reputation="3600" clanLevel="7" />
-	<skill id="380" level="2" name="Clan Guidance" reputation="3600" clanLevel="7" />
-	<skill id="390" level="1" name="Clan Luck" reputation="3600" clanLevel="7" />
-	<skill id="19007" level="1" name="Clan Summon" reputation="10000" clanLevel="7" />
-	<skill id="381" level="2" name="Clan Agility" reputation="3600" clanLevel="7" />
-	<skill id="385" level="2" name="Clan Magmatic Resistance" reputation="3600" clanLevel="7" />
-	<skill id="384" level="2" name="Clan Cyclonic Resistance" reputation="3600" clanLevel="7" />
-	<skill id="383" level="2" name="Clan Shield Block" reputation="3600" clanLevel="7" />
-	<skill id="375" level="2" name="Clan Clarity" reputation="3600" clanLevel="7" />
-	<skill id="377" level="2" name="Clan Shield" reputation="3600" clanLevel="7" />
-	<!-- Clan Level 8 -->
-	<skill id="19016" level="1" name="Clan Boundary" reputation="15000" clanLevel="8" />
-	<!-- Clan Level 9 -->
-	<skill id="388" level="3" name="Clan Sleep Resistance" reputation="7700" clanLevel="9" />
-	<skill id="387" level="3" name="Clan Hold Resistance" reputation="7700" clanLevel="9" />
-	<skill id="386" level="3" name="Clan Stun Resistance" reputation="7700" clanLevel="9" />
-	<skill id="378" level="3" name="Clan Empower" reputation="7700" clanLevel="9" />
-	<skill id="19110" level="3" name="Clan Resilience" reputation="7700" clanLevel="9" />
-	<skill id="19111" level="3" name="Clan Steadfastness" reputation="7700" clanLevel="9" />
-	<skill id="372" level="3" name="Clan Soul" reputation="7700" clanLevel="9" />
-	<skill id="370" level="3" name="Clan Body" reputation="7700" clanLevel="9" />
-	<skill id="382" level="3" name="Clan Shield Defense" reputation="7700" clanLevel="9" />
-	<skill id="389" level="3" name="Clan Wind Walk" reputation="7700" clanLevel="9" />
-	<skill id="19015" level="1" name="Clan Friendly" reputation="15000" clanLevel="9" />
-	<skill id="371" level="3" name="Clan Spirituality" reputation="7700" clanLevel="9" />
-	<skill id="19003" level="3" name="Clan Resistance Hall" reputation="7700" clanLevel="9" />
-	<skill id="373" level="3" name="Clan Regeneration" reputation="7700" clanLevel="9" />
-	<skill id="19004" level="3" name="Clan De-Buff Control" reputation="7700" clanLevel="9" />
-	<skill id="19006" level="3" name="Clan Mental Control" reputation="7700" clanLevel="9" />
-	<skill id="19005" level="3" name="Clan Muzzle Control" reputation="7700" clanLevel="9" />
-	<skill id="19010" level="1" name="Clan Copy" reputation="15000" clanLevel="9" />
-	<skill id="379" level="3" name="Clan M. Def." reputation="7700" clanLevel="9" />
-	<skill id="376" level="3" name="Clan Might" reputation="7700" clanLevel="9" />
-	<skill id="374" level="3" name="Clan Morale" reputation="7700" clanLevel="9" />
-	<skill id="380" level="3" name="Clan Guidance" reputation="7700" clanLevel="9" />
-	<skill id="381" level="3" name="Clan Agility" reputation="7700" clanLevel="9" />
-	<skill id="19013" level="1" name="Clan Un-debuff" reputation="20000" clanLevel="9" />
-	<skill id="385" level="3" name="Clan Magmatic Resistance" reputation="7700" clanLevel="9" />
-	<skill id="384" level="3" name="Clan Cyclonic Resistance" reputation="7700" clanLevel="9" />
-	<skill id="383" level="3" name="Clan Shield Block" reputation="7700" clanLevel="9" />
-	<skill id="375" level="3" name="Clan Clarity" reputation="7700" clanLevel="9" />
-	<skill id="377" level="3" name="Clan Shield" reputation="7700" clanLevel="9" />
-	<!-- Clan Level 10 -->
-	<skill id="388" level="4" name="Clan Sleep Resistance" reputation="8200" clanLevel="10" />
-	<skill id="387" level="4" name="Clan Hold Resistance" reputation="8200" clanLevel="10" />
-	<skill id="386" level="4" name="Clan Stun Resistance" reputation="8200" clanLevel="10" />
-	<skill id="385" level="4" name="Clan Magmatic Resistance" reputation="8200" clanLevel="10" />
-	<skill id="383" level="4" name="Clan Shield Block" reputation="8200" clanLevel="10" />
-	<skill id="382" level="4" name="Clan Shield Defense" reputation="8200" clanLevel="10" />
-	<skill id="381" level="4" name="Clan Agility" reputation="8200" clanLevel="10" />
-	<skill id="380" level="4" name="Clan Guidance" reputation="8200" clanLevel="10" />
-	<skill id="378" level="4" name="Clan Empower" reputation="8200" clanLevel="10" />
-	<skill id="19110" level="4" name="Clan Resilience" reputation="8200" clanLevel="10" />
-	<skill id="19111" level="4" name="Clan Steadfastness" reputation="8200" clanLevel="10" />
-	<skill id="19113" level="1" name="Clan Escape Lock" reputation="25000" clanLevel="10" />
-	<skill id="19113" level="1" name="Clan Resurrection Lock" reputation="25000" clanLevel="10" />
-	<skill id="372" level="4" name="Clan Soul" reputation="8200" clanLevel="10" />
-	<skill id="370" level="4" name="Clan Body" reputation="8200" clanLevel="10" />
-	<skill id="371" level="4" name="Clan Spirituality" reputation="8200" clanLevel="10" />
-	<skill id="19003" level="4" name="Clan Resistance Hall" reputation="8200" clanLevel="10" />
-	<skill id="373" level="4" name="Clan Regeneration" reputation="8200" clanLevel="10" />
-	<skill id="19004" level="4" name="Clan De-Buff Control" reputation="8200" clanLevel="10" />
-	<skill id="19006" level="4" name="Clan Mental Control" reputation="8200" clanLevel="10" />
-	<skill id="19005" level="4" name="Clan Muzzle Control" reputation="8200" clanLevel="10" />
-	<skill id="379" level="4" name="Clan M. Def." reputation="8200" clanLevel="10" />
-	<skill id="376" level="4" name="Clan Might" reputation="8200" clanLevel="10" />
-	<skill id="374" level="4" name="Clan Morale" reputation="8200" clanLevel="10" />
-	<skill id="19017" level="1" name="Clan Prison" reputation="20000" clanLevel="10" />
-	<skill id="375" level="4" name="Clan Clarity" reputation="8200" clanLevel="10" />
-	<skill id="377" level="4" name="Clan Shield" reputation="8200" clanLevel="10" />
-	<!-- Clan Level 11 -->
-	<skill id="388" level="5" name="Clan Sleep Resistance" reputation="10000" clanLevel="11" />
-	<skill id="387" level="5" name="Clan Hold Resistance" reputation="10000" clanLevel="11" />
-	<skill id="386" level="5" name="Clan Stun Resistance" reputation="10000" clanLevel="11" />
-	<skill id="385" level="5" name="Clan Magmatic Resistance" reputation="10000" clanLevel="11" />
-	<skill id="383" level="5" name="Clan Shield Block" reputation="10000" clanLevel="11" />
-	<skill id="382" level="5" name="Clan Shield Defense" reputation="10000" clanLevel="11" />
-	<skill id="381" level="5" name="Clan Agility" reputation="10000" clanLevel="11" />
-	<skill id="380" level="5" name="Clan Guidance" reputation="10000" clanLevel="11" />
-	<skill id="378" level="5" name="Clan Empower" reputation="10000" clanLevel="11" />
-	<skill id="19110" level="5" name="Clan Resilience" reputation="10000" clanLevel="11" />
-	<skill id="19111" level="5" name="Clan Steadfastness" reputation="10000" clanLevel="11" />
-	<skill id="372" level="5" name="Clan Soul" reputation="10000" clanLevel="11" />
-	<skill id="370" level="5" name="Clan Body" reputation="10000" clanLevel="11" />
-	<skill id="371" level="5" name="Clan Spirituality" reputation="10000" clanLevel="11" />
-	<skill id="19014" level="1" name="Clan Defense" reputation="20000" clanLevel="11" />
-	<skill id="19008" level="1" name="Clan Guardian" reputation="25000" clanLevel="11" />
-	<skill id="373" level="5" name="Clan Regeneration" reputation="10000" clanLevel="11" />
-	<skill id="19004" level="5" name="Clan De-Buff Control" reputation="10000" clanLevel="11" />
-	<skill id="19006" level="5" name="Clan Mental Control" reputation="10000" clanLevel="11" />
-	<skill id="19005" level="5" name="Clan Muzzle Control" reputation="10000" clanLevel="11" />
-	<skill id="379" level="5" name="Clan M. Def." reputation="10000" clanLevel="11" />
-	<skill id="376" level="5" name="Clan Might" reputation="10000" clanLevel="11" />
-	<skill id="374" level="5" name="Clan Morale" reputation="10000" clanLevel="11" />
-	<skill id="375" level="5" name="Clan Clarity" reputation="10000" clanLevel="11" />
-	<skill id="377" level="5" name="Clan Shield" reputation="10000" clanLevel="11" />
+    <!-- Clan Level 5 -->
+    <skill id="388" level="1" name="Clan Sleep Resistance" reputation="1000" clanLevel="5" />
+    <skill id="387" level="1" name="Clan Hold Resistance" reputation="1000" clanLevel="5" />
+    <skill id="386" level="1" name="Clan Stun Resistance" reputation="1000" clanLevel="5" />
+    <skill id="19110" level="1" name="Clan Resilience" reputation="1000" clanLevel="5" />
+    <skill id="19111" level="1" name="Clan Steadfastness" reputation="1000" clanLevel="5" />
+    <skill id="372" level="1" name="Clan Soul" reputation="1000" clanLevel="5" />
+    <skill id="370" level="1" name="Clan Body" reputation="1000" clanLevel="5" />
+    <skill id="382" level="1" name="Clan Shield Defense" reputation="1000" clanLevel="5" />
+    <skill id="391" level="1" name="Clan Imperium" reputation="3600" clanLevel="5" />
+    <skill id="378" level="1" name="Clan Empower" reputation="1000" clanLevel="5" />
+    <skill id="389" level="1" name="Clan Wind Walk" reputation="1000" clanLevel="5" />
+    <skill id="371" level="1" name="Clan Spirituality" reputation="1000" clanLevel="5" />
+    <skill id="19003" level="1" name="Clan Resistance Hall" reputation="1000" clanLevel="5" />
+    <skill id="373" level="1" name="Clan Regeneration" reputation="1000" clanLevel="5" />
+    <skill id="19004" level="1" name="Clan De-Buff Control" reputation="1000" clanLevel="5" />
+    <skill id="19006" level="1" name="Clan Mental Control" reputation="1000" clanLevel="5" />
+    <skill id="19005" level="1" name="Clan Muzzle Control" reputation="1000" clanLevel="5" />
+    <skill id="379" level="1" name="Clan M. Def." reputation="1000" clanLevel="5" />
+    <skill id="376" level="1" name="Clan Might" reputation="1000" clanLevel="5" />
+    <skill id="374" level="1" name="Clan Morale" reputation="1000" clanLevel="5" />
+    <skill id="380" level="1" name="Clan Guidance" reputation="1000" clanLevel="5" />
+    <skill id="390" level="1" name="Clan Luck" reputation="1000" clanLevel="5" />
+    <skill id="381" level="1" name="Clan Agility" reputation="1000" clanLevel="5" />
+    <skill id="19009" level="1" name="Clan Advent" reputation="3600" clanLevel="5" />
+    <skill id="385" level="1" name="Clan Magmatic Resistance" reputation="1000" clanLevel="5" />
+    <skill id="384" level="1" name="Clan Cyclonic Resistance" reputation="1000" clanLevel="5" />
+    <skill id="383" level="1" name="Clan Shield Block" reputation="1000" clanLevel="5" />
+    <skill id="375" level="1" name="Clan Clarity" reputation="1000" clanLevel="5" />
+    <skill id="377" level="1" name="Clan Shield" reputation="1000" clanLevel="5" />
+    <!-- Clan Level 7 -->
+    <skill id="388" level="2" name="Clan Sleep Resistance" reputation="3600" clanLevel="7" />
+    <skill id="387" level="2" name="Clan Hold Resistance" reputation="3600" clanLevel="7" />
+    <skill id="386" level="2" name="Clan Stun Resistance" reputation="3600" clanLevel="7" />
+    <skill id="19110" level="2" name="Clan Resilience" reputation="3600" clanLevel="7" />
+    <skill id="19111" level="2" name="Clan Steadfastness" reputation="3600" clanLevel="7" />
+    <skill id="19112" level="1" name="Clan Escape" reputation="15000" clanLevel="7" />
+    <skill id="372" level="2" name="Clan Soul" reputation="3600" clanLevel="7" />
+    <skill id="370" level="2" name="Clan Body" reputation="3600" clanLevel="7" />
+    <skill id="382" level="2" name="Clan Shield Defense" reputation="3600" clanLevel="7" />
+    <skill id="378" level="2" name="Clan Empower" reputation="3600" clanLevel="7" />
+    <skill id="389" level="2" name="Clan Wind Walk" reputation="3600" clanLevel="7" />
+    <skill id="371" level="2" name="Clan Spirituality" reputation="3600" clanLevel="7" />
+    <skill id="19003" level="2" name="Clan Resistance Hall" reputation="3600" clanLevel="7" />
+    <skill id="373" level="2" name="Clan Regeneration" reputation="3600" clanLevel="7" />
+    <skill id="19004" level="2" name="Clan De-Buff Control" reputation="3600" clanLevel="7" />
+    <skill id="19006" level="2" name="Clan Mental Control" reputation="3600" clanLevel="7" />
+    <skill id="19005" level="2" name="Clan Muzzle Control" reputation="3600" clanLevel="7" />
+    <skill id="379" level="2" name="Clan M. Def." reputation="3600" clanLevel="7" />
+    <skill id="376" level="2" name="Clan Might" reputation="3600" clanLevel="7" />
+    <skill id="374" level="2" name="Clan Morale" reputation="3600" clanLevel="7" />
+    <skill id="380" level="2" name="Clan Guidance" reputation="3600" clanLevel="7" />
+    <skill id="390" level="1" name="Clan Luck" reputation="3600" clanLevel="7" />
+    <skill id="19007" level="1" name="Clan Summon" reputation="10000" clanLevel="7" />
+    <skill id="381" level="2" name="Clan Agility" reputation="3600" clanLevel="7" />
+    <skill id="385" level="2" name="Clan Magmatic Resistance" reputation="3600" clanLevel="7" />
+    <skill id="384" level="2" name="Clan Cyclonic Resistance" reputation="3600" clanLevel="7" />
+    <skill id="383" level="2" name="Clan Shield Block" reputation="3600" clanLevel="7" />
+    <skill id="375" level="2" name="Clan Clarity" reputation="3600" clanLevel="7" />
+    <skill id="377" level="2" name="Clan Shield" reputation="3600" clanLevel="7" />
+    <!-- Clan Level 8 -->
+    <skill id="19016" level="1" name="Clan Boundary" reputation="15000" clanLevel="8" />
+    <!-- Clan Level 9 -->
+    <skill id="388" level="3" name="Clan Sleep Resistance" reputation="7700" clanLevel="9" />
+    <skill id="387" level="3" name="Clan Hold Resistance" reputation="7700" clanLevel="9" />
+    <skill id="386" level="3" name="Clan Stun Resistance" reputation="7700" clanLevel="9" />
+    <skill id="378" level="3" name="Clan Empower" reputation="7700" clanLevel="9" />
+    <skill id="19110" level="3" name="Clan Resilience" reputation="7700" clanLevel="9" />
+    <skill id="19111" level="3" name="Clan Steadfastness" reputation="7700" clanLevel="9" />
+    <skill id="372" level="3" name="Clan Soul" reputation="7700" clanLevel="9" />
+    <skill id="370" level="3" name="Clan Body" reputation="7700" clanLevel="9" />
+    <skill id="382" level="3" name="Clan Shield Defense" reputation="7700" clanLevel="9" />
+    <skill id="389" level="3" name="Clan Wind Walk" reputation="7700" clanLevel="9" />
+    <skill id="19015" level="1" name="Clan Friendly" reputation="15000" clanLevel="9" />
+    <skill id="371" level="3" name="Clan Spirituality" reputation="7700" clanLevel="9" />
+    <skill id="19003" level="3" name="Clan Resistance Hall" reputation="7700" clanLevel="9" />
+    <skill id="373" level="3" name="Clan Regeneration" reputation="7700" clanLevel="9" />
+    <skill id="19004" level="3" name="Clan De-Buff Control" reputation="7700" clanLevel="9" />
+    <skill id="19006" level="3" name="Clan Mental Control" reputation="7700" clanLevel="9" />
+    <skill id="19005" level="3" name="Clan Muzzle Control" reputation="7700" clanLevel="9" />
+    <skill id="19010" level="1" name="Clan Copy" reputation="15000" clanLevel="9" />
+    <skill id="379" level="3" name="Clan M. Def." reputation="7700" clanLevel="9" />
+    <skill id="376" level="3" name="Clan Might" reputation="7700" clanLevel="9" />
+    <skill id="374" level="3" name="Clan Morale" reputation="7700" clanLevel="9" />
+    <skill id="380" level="3" name="Clan Guidance" reputation="7700" clanLevel="9" />
+    <skill id="381" level="3" name="Clan Agility" reputation="7700" clanLevel="9" />
+    <skill id="19013" level="1" name="Clan Un-debuff" reputation="20000" clanLevel="9" />
+    <skill id="385" level="3" name="Clan Magmatic Resistance" reputation="7700" clanLevel="9" />
+    <skill id="384" level="3" name="Clan Cyclonic Resistance" reputation="7700" clanLevel="9" />
+    <skill id="383" level="3" name="Clan Shield Block" reputation="7700" clanLevel="9" />
+    <skill id="375" level="3" name="Clan Clarity" reputation="7700" clanLevel="9" />
+    <skill id="377" level="3" name="Clan Shield" reputation="7700" clanLevel="9" />
+    <!-- Clan Level 10 -->
+    <skill id="388" level="4" name="Clan Sleep Resistance" reputation="8200" clanLevel="10" />
+    <skill id="387" level="4" name="Clan Hold Resistance" reputation="8200" clanLevel="10" />
+    <skill id="386" level="4" name="Clan Stun Resistance" reputation="8200" clanLevel="10" />
+    <skill id="385" level="4" name="Clan Magmatic Resistance" reputation="8200" clanLevel="10" />
+    <skill id="383" level="4" name="Clan Shield Block" reputation="8200" clanLevel="10" />
+    <skill id="382" level="4" name="Clan Shield Defense" reputation="8200" clanLevel="10" />
+    <skill id="381" level="4" name="Clan Agility" reputation="8200" clanLevel="10" />
+    <skill id="380" level="4" name="Clan Guidance" reputation="8200" clanLevel="10" />
+    <skill id="378" level="4" name="Clan Empower" reputation="8200" clanLevel="10" />
+    <skill id="19110" level="4" name="Clan Resilience" reputation="8200" clanLevel="10" />
+    <skill id="19111" level="4" name="Clan Steadfastness" reputation="8200" clanLevel="10" />
+    <skill id="19113" level="1" name="Clan Escape Lock" reputation="25000" clanLevel="10" />
+    <skill id="19113" level="1" name="Clan Resurrection Lock" reputation="25000" clanLevel="10" />
+    <skill id="372" level="4" name="Clan Soul" reputation="8200" clanLevel="10" />
+    <skill id="370" level="4" name="Clan Body" reputation="8200" clanLevel="10" />
+    <skill id="371" level="4" name="Clan Spirituality" reputation="8200" clanLevel="10" />
+    <skill id="19003" level="4" name="Clan Resistance Hall" reputation="8200" clanLevel="10" />
+    <skill id="373" level="4" name="Clan Regeneration" reputation="8200" clanLevel="10" />
+    <skill id="19004" level="4" name="Clan De-Buff Control" reputation="8200" clanLevel="10" />
+    <skill id="19006" level="4" name="Clan Mental Control" reputation="8200" clanLevel="10" />
+    <skill id="19005" level="4" name="Clan Muzzle Control" reputation="8200" clanLevel="10" />
+    <skill id="379" level="4" name="Clan M. Def." reputation="8200" clanLevel="10" />
+    <skill id="376" level="4" name="Clan Might" reputation="8200" clanLevel="10" />
+    <skill id="374" level="4" name="Clan Morale" reputation="8200" clanLevel="10" />
+    <skill id="19017" level="1" name="Clan Prison" reputation="20000" clanLevel="10" />
+    <skill id="375" level="4" name="Clan Clarity" reputation="8200" clanLevel="10" />
+    <skill id="377" level="4" name="Clan Shield" reputation="8200" clanLevel="10" />
+    <!-- Clan Level 11 -->
+    <skill id="388" level="5" name="Clan Sleep Resistance" reputation="10000" clanLevel="11" />
+    <skill id="387" level="5" name="Clan Hold Resistance" reputation="10000" clanLevel="11" />
+    <skill id="386" level="5" name="Clan Stun Resistance" reputation="10000" clanLevel="11" />
+    <skill id="385" level="5" name="Clan Magmatic Resistance" reputation="10000" clanLevel="11" />
+    <skill id="383" level="5" name="Clan Shield Block" reputation="10000" clanLevel="11" />
+    <skill id="382" level="5" name="Clan Shield Defense" reputation="10000" clanLevel="11" />
+    <skill id="381" level="5" name="Clan Agility" reputation="10000" clanLevel="11" />
+    <skill id="380" level="5" name="Clan Guidance" reputation="10000" clanLevel="11" />
+    <skill id="378" level="5" name="Clan Empower" reputation="10000" clanLevel="11" />
+    <skill id="19110" level="5" name="Clan Resilience" reputation="10000" clanLevel="11" />
+    <skill id="19111" level="5" name="Clan Steadfastness" reputation="10000" clanLevel="11" />
+    <skill id="372" level="5" name="Clan Soul" reputation="10000" clanLevel="11" />
+    <skill id="370" level="5" name="Clan Body" reputation="10000" clanLevel="11" />
+    <skill id="371" level="5" name="Clan Spirituality" reputation="10000" clanLevel="11" />
+    <skill id="19014" level="1" name="Clan Defense" reputation="20000" clanLevel="11" />
+    <skill id="19008" level="1" name="Clan Guardian" reputation="25000" clanLevel="11" />
+    <skill id="373" level="5" name="Clan Regeneration" reputation="10000" clanLevel="11" />
+    <skill id="19004" level="5" name="Clan De-Buff Control" reputation="10000" clanLevel="11" />
+    <skill id="19006" level="5" name="Clan Mental Control" reputation="10000" clanLevel="11" />
+    <skill id="19005" level="5" name="Clan Muzzle Control" reputation="10000" clanLevel="11" />
+    <skill id="379" level="5" name="Clan M. Def." reputation="10000" clanLevel="11" />
+    <skill id="376" level="5" name="Clan Might" reputation="10000" clanLevel="11" />
+    <skill id="374" level="5" name="Clan Morale" reputation="10000" clanLevel="11" />
+    <skill id="375" level="5" name="Clan Clarity" reputation="10000" clanLevel="11" />
+    <skill id="377" level="5" name="Clan Shield" reputation="10000" clanLevel="11" />
 </skill_tree>

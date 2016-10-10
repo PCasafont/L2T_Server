@@ -1,992 +1,992 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Speak with a warehouse keeper to exchange this for an S-grade Blessed Scroll: Enchant Armor. -->
-	<item id="21100" type="EtcItem" name="Shiny Cube Fragment Armor (S-grade)">
-		<set name="icon" val="Branchsys2.icon.shine_cubic_a_piece_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Speak with a warehouse keeper to exchange this for a D-grade Blessed Scroll: Enchant Weapon. -->
-	<item id="21101" type="EtcItem" name="Shiny Cube Fragment Weapon (D-grade)">
-		<set name="icon" val="icon.event_cubic_piece_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Speak with a warehouse keeper to exchange this for a C-grade Blessed Scroll: Enchant Weapon. -->
-	<item id="21102" type="EtcItem" name="Shiny Cube Fragment Weapon (C-grade)">
-		<set name="icon" val="icon.event_cubic_piece_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Speak with a warehouse keeper to exchange this for a B-grade Blessed Scroll: Enchant Weapon. -->
-	<item id="21103" type="EtcItem" name="Shiny Cube Fragment Weapon (B-grade)">
-		<set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Speak with a warehouse keeper to exchange this for an A-grade Blessed Scroll: Enchant Weapon. -->
-	<item id="21104" type="EtcItem" name="Shiny Cube Fragment Weapon (A-grade)">
-		<set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Speak with a warehouse keeper to exchange this for an S-grade Blessed Scroll: Enchant Weapon. -->
-	<item id="21105" type="EtcItem" name="Shiny Cube Fragment Weapon (S-grade)">
-		<set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Double-click to create a cube fragment that can be exchanged for a weapon/armor enchant scroll. (Disappears after 1 time use.) -->
-	<item id="21106" type="EtcItem" name="Wondrous Cubic - 1 time use">
-		<set name="icon" val="Branchsys2.icon.cube_event_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Double-click to create augmenting stones according to type. (Disappears after 1 time use.) -->
-	<item id="21107" type="EtcItem" name="Refined Cube - 1 time use">
-		<set name="icon" val="Branchsys2.icon.cube_event_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Polar bear hat that makes you feel cozy just by looking at it. Uses 2 hair accessory slot(s). -->
-	<item id="21108" type="Armor" name="Warm Bear Hat">
-		<set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Polar bear hat that makes you feel cozy just by looking at it. Uses 2 hair accessory slots. Cannot be exchanged or dropped or sold. -->
-	<item id="21109" type="Armor" name="Warm Bear Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Fist weapon that looks like cozy bear paws. It Has a very low P. Atk. -->
-	<item id="21110" type="Weapon" name="Warm Bear Paws">
-		<set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="450" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Fist weapon that looks like cozy bear paws. P. Atk. is very low. -->
-	<item id="21111" type="Weapon" name="Warm Bear Paws - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="450" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Hat shaped like a stag beetle with 2 tough jaws. Uses 2 hair accessory slot(s). -->
-	<item id="21112" type="Armor" name="Stag Beetle Hat">
-		<set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a stag beetle with 2 tough jaws. Uses 2 hair accessory slot(s). -->
-	<item id="21113" type="Armor" name="Stag Beetle Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a beetle with a great horn. Uses 2 hair accessory slot(s). -->
-	<item id="21114" type="Armor" name="Beetle Hat">
-		<set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a beetle with a great horn. Uses 2 hair accessory slot(s). -->
-	<item id="21115" type="Armor" name="Beetle Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a ladybug with its black and red pattern. Uses 2 hair accessory slot(s). -->
-	<item id="21116" type="Armor" name="Ladybug Hat">
-		<set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a ladybug with its black and red pattern. Uses 2 hair accessory slot(s). -->
-	<item id="21117" type="Armor" name="Ladybug Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a praying mantis with sharp claws. Uses 2 hair accessory slot(s). -->
-	<item id="21118" type="Armor" name="Praying Mantis Hat">
-		<set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a praying mantis with sharp claws. Uses 2 hair accessory slot(s). -->
-	<item id="21119" type="Armor" name="Praying Mantis Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a grasshopper with large eyes. Uses 2 hair accessory slot(s). -->
-	<item id="21120" type="Armor" name="Grasshopper Hat">
-		<set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat shaped like a grasshopper with large eyes. Uses 2 hair accessory slot(s). -->
-	<item id="21121" type="Armor" name="Grasshopper Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Expensive-looking gold-rimmed glasses. Uses 1 hair accessory slot(s). -->
-	<item id="21122" type="Armor" name="Gold-rimmed Glasses">
-		<set name="icon" val="BranchSys2.icon.br_gold_eyeglass_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Expensive-looking gold-rimmed glasses. Uses 1 hair accessory slot(s). -->
-	<item id="21123" type="Armor" name="Gold-rimmed Glasses - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_gold_eyeglass_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- White uniform hat that makes you feel the energy of a man of the sea. Uses 2 hair accessory slot(s). -->
-	<item id="21124" type="Armor" name="White Uniform Hat">
-		<set name="icon" val="BranchSys2.icon.br_navy_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- White uniform hat that makes you feel the energy of a man of the sea. Uses 2 hair accessory slot(s). -->
-	<item id="21125" type="Armor" name="White Uniform Hat - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_navy_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Helmet of a brave ancient warrior. Uses 2 hair accessory slot(s). -->
-	<item id="21126" type="Armor" name="Warrior's Helmet">
-		<set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Helmet of a brave ancient warrior. Uses 2 hair accessory slots. -->
-	<item id="21127" type="Armor" name="Warrior's Helmet - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing warm bear hat. -->
-	<item id="21128" type="EtcItem" name="Warm Bear Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing warm bear hat (7-day). -->
-	<item id="21129" type="EtcItem" name="Warm Bear Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing warm bear paws. -->
-	<item id="21130" type="EtcItem" name="Warm Bear Paws Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing warm beat paws (7-day). -->
-	<item id="21131" type="EtcItem" name="Warm Bear Paws Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing stag beetle hat. -->
-	<item id="21132" type="EtcItem" name="Stag Beetle Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing stag beetle hat (7-day). -->
-	<item id="21133" type="EtcItem" name="Stag Beetle Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing beetle hat. -->
-	<item id="21134" type="EtcItem" name="Beetle Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing beetle hat (7-day). -->
-	<item id="21135" type="EtcItem" name="Beetle Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ladybug hat. -->
-	<item id="21136" type="EtcItem" name="Ladybug Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ladybug hat (7-day). -->
-	<item id="21137" type="EtcItem" name="Ladybug Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing praying mantis hat. -->
-	<item id="21138" type="EtcItem" name="Praying Mantis Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing praying mantis hat (7-day). -->
-	<item id="21139" type="EtcItem" name="Praying Mantis Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing grasshopper hat. -->
-	<item id="21140" type="EtcItem" name="Grasshopper Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing grasshopper hat (7-day). -->
-	<item id="21141" type="EtcItem" name="Grasshopper Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing gold-rimmed glasses. -->
-	<item id="21142" type="EtcItem" name="Gold-rimmed Glasses Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing gold-rimmed glasses (7-day). -->
-	<item id="21143" type="EtcItem" name="Gold-rimmed Glasses Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing white uniform hat. -->
-	<item id="21144" type="EtcItem" name="White Uniform Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing white uniform hat (7-day). -->
-	<item id="21145" type="EtcItem" name="White Uniform Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing warrior's helmet. -->
-	<item id="21146" type="EtcItem" name="Warrior's Helmet Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Warrior's Helmet (7-day). -->
-	<item id="21147" type="EtcItem" name="Warrior's Helmet Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Scroll for transforming into a Dragon Master Lee. The effect lasts for 1 hour. -->
-	<item id="21148" type="EtcItem" name="Transformation Scroll: Dragon Master Lee">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Scroll for transforming into a Dragon Master Karin. The effect lasts for 1 hour. -->
-	<item id="21149" type="EtcItem" name="Transformation Scroll: Dragon Master Karin">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can stand upon the Shiny Platform with brilliant lighting when equipped. -->
-	<item id="21150" type="Armor" name="Shiny Platform Summon Bracelet">
-		<set name="icon" val="BranchSys2.Icon.br_shiny_platform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll that summons brilliant, shiny lighting. Can strike a cool pose with lighting from below. -->
-	<item id="21151" type="EtcItem" name="Shiny Lighting">
-		<set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can summon Agathion - Singer & Dancer that gleefully sings and dances when equipped. -->
-	<item id="21152" type="Armor" name="Agathion - Singer &amp; Dancer">
-		<set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon Agathion - Singer & Dancer that gleefully sings and dances when equipped. -->
-	<item id="21153" type="Armor" name="Agathion - Singer &amp; Dancer - 7-day">
-		<set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Singer & Dancer. -->
-	<item id="21154" type="EtcItem" name="Agathion - Singer &amp; Dancer Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Singer & Dancer (7-day). -->
-	<item id="21155" type="EtcItem" name="Agathion - Singer &amp; Dancer Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Scroll that summons a large 3-layer wedding cake, a must-have at any wedding. -->
-	<item id="21156" type="EtcItem" name="Big Wedding Cake">
-		<set name="icon" val="BranchSys2.Icon.br_big_wedding_cake_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Flower shower sprinkled on the bride and groom. -->
-	<item id="21157" type="EtcItem" name="Flower Shower">
-		<set name="icon" val="BranchSys2.Icon.br_flower_shower_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Crystal that emits a fantasy-like sound when used. -->
-	<item id="21158" type="EtcItem" name="Echo Crystal">
-		<set name="icon" val="BranchSys2.Icon.br_eco_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wedding ring exchanged by an engaged couple. Male only. -->
-	<item id="21159" type="Armor" name="Wedding Ring - Male">
-		<set name="icon" val="BranchSys2.Icon.br_wedding_ring_m_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="1" />
-		</for>
-	</item>
-	<!-- Wedding ring exchanged by an engaged couple. Female only. -->
-	<item id="21160" type="Armor" name="Wedding Ring - Female">
-		<set name="icon" val="BranchSys2.Icon.br_wedding_ring_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="1" />
-		</for>
-	</item>
-	<!-- Wrapped wedding pack containing honeymoon ticket and a big wedding cake. -->
-	<item id="21161" type="EtcItem" name="Wedding Cake Pack">
-		<set name="icon" val="BranchSys2.Icon.br_wedding_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Pure white wedding veil. Female only. Uses 2 hair accessory slots. -->
-	<item id="21162" type="Armor" name="Wedding Veil">
-		<set name="icon" val="BranchSys2.icon.br_wedding_vail_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Beautiful wedding bouquet. Female only. -->
-	<item id="21163" type="Weapon" name="Wedding Bouquet">
-		<set name="icon" val="BranchSys2.icon.br_wedding_bouquet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="etc" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1600" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="1" />
-			<set stat="mCritRate" val="1" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Honeymoon ticket given to the bride and groom as a gift. When used, Vitality is maintained for 1 hour. Vitality item with limited usage. -->
-	<item id="21164" type="EtcItem" name="Honeymoon Ticket - 7-day">
-		<set name="icon" val="BranchSys2.Icon.br_weddin_ticket_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="20" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet that summons Zaken's Spirit Sword, which is made up of Zaken's 6 swords. -->
-	<item id="21165" type="Armor" name="Agathion - Zaken's Spirit Swords">
-		<set name="icon" val="BranchSys2.Icon.br_aga_zaken_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="23236-1;21234-1;3267-1" />
-	</item>
-	<!-- Can summon Zaken's Spirit Swords when equipped. Cooldown is 2 hours. 7-day. -->
-	<item id="21166" type="Armor" name="Agathion - Zaken's Spirit Swords - 7-day">
-		<set name="icon" val="BranchSys2.Icon.br_aga_zaken_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Zaken's Spirit Swords. -->
-	<item id="21167" type="EtcItem" name="Agathion - Zaken's Spirit Swords Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Zaken's Spirit Swords (7-day). -->
-	<item id="21168" type="EtcItem" name="Agathion - Zaken's Spirit Swords Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Birthday present given to you by Alegria on your birthday. When used, you will obtain (1) Cake Topper hat, (1) Birthday Vitality Potion and (1) Birthday Cake. -->
-	<item id="21169" type="EtcItem" name="Birthday Present Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Upon use, for 12 hours, when XP is acquired through hunting, Vitality is recovered. Vitality item with limited usage. -->
-	<item id="21170" type="EtcItem" name="Birthday Vitality Potion">
-		<set name="icon" val="icon.etc_potion_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="80" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Treasure Hunter for 10 min. If used on Fantasy Isle, you can find Event Treasure Chests. No effect if used while already transformed. -->
-	<item id="21171" type="EtcItem" name="Transformation Scroll: Treasure Hunter - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into an Onyx Beast for 30 min. No effect if used while transformed. -->
-	<item id="21172" type="EtcItem" name="Transformation Scroll: Onyx Beast - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Doom Wraith for 30 min. No effect if used while transformed. -->
-	<item id="21173" type="EtcItem" name="Transformation Scroll: Doom Wraith - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Grail Apostle for 30 min. No effect if used while transformed. -->
-	<item id="21174" type="EtcItem" name="Transformation Scroll: Grail Apostle - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Unicorn for 30 min. No effect if used while transformed. -->
-	<item id="21175" type="EtcItem" name="Transformation Scroll: Unicorn - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Lilim Knight for 30 min. No effect if used while transformed. -->
-	<item id="21176" type="EtcItem" name="Transformation Scroll: Lilim Knight - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Golem Guardian for 30 min. No effect if used while transformed. -->
-	<item id="21177" type="EtcItem" name="Transformation Scroll: Golem Guardian - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into an Inferno Drake for 30 min. No effect if used while transformed. -->
-	<item id="21178" type="EtcItem" name="Transformation Scroll: Inferno Drake - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Dragon Bomber for 30 min. No effect if used while transformed. -->
-	<item id="21179" type="EtcItem" name="Transformation Scroll: Dragon Bomber - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Heretic for 30 min. No effect if used while transformed. -->
-	<item id="21180" type="EtcItem" name="Transformation Scroll: Heretic - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Veil Master for 30 min. No effect if used while transformed. -->
-	<item id="21181" type="EtcItem" name="Transformation Scroll: Veil Master - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Saber Tooth Tiger for 30 min. No effect if used while transformed. -->
-	<item id="21182" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into an Ol Mahum for 30 min. No effect if used while transformed. -->
-	<item id="21183" type="EtcItem" name="Transformation Scroll: Oel Mahum - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Doll Blader for 30 min. No effect if used while transformed. -->
-	<item id="21184" type="EtcItem" name="Transformation Scroll: Doll Blader - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into Zaken for 30 min. No effect if used while transformed. -->
-	<item id="21185" type="EtcItem" name="Transformation Scroll: Zaken - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into Anakim for 30 min. No effect if used while transformed. -->
-	<item id="21186" type="EtcItem" name="Transformation Scroll: Anakim - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Venom for 30 min. No effect if used while transformed. -->
-	<item id="21187" type="EtcItem" name="Transformation Scroll: Venom - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Gordon for 30 min. No effect if used while transformed. -->
-	<item id="21188" type="EtcItem" name="Transformation Scroll: Gordon - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Ranku for 30 min. No effect if used while transformed. -->
-	<item id="21189" type="EtcItem" name="Transformation Scroll: Ranku - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into Kechi for 30 min. No effect if used while transformed. -->
-	<item id="21190" type="EtcItem" name="Transformation Scroll: Kechi - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transforms you into a Demon Prince for 30 min. No effect if used while transformed. -->
-	<item id="21191" type="EtcItem" name="Transformation Scroll: Demon Prince - Event">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 50 Dimensional Diamonds. -->
-	<item id="21192" type="EtcItem" name="Dimensional Diamond Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Magic crystal needed when casting instant moving magic. If you collect them and bring them to the Gatekeeper, you can exchange them for various types of escape scrolls. -->
-	<item id="21193" type="EtcItem" name="Dimensional Diamond - Event">
-		<set name="icon" val="icon.etc_gem_clear_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing blessed scroll of escape. -->
-	<item id="21194" type="EtcItem" name="Blessed Scroll of Escape Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Magic scroll that moves you to the nearest village. -->
-	<item id="21195" type="EtcItem" name="Blessed Scroll of Escape">
-		<set name="icon" val="icon.etc_scroll_of_return_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 5 Superior Quick Healing Potions. -->
-	<item id="21196" type="EtcItem" name="Superior Quick Healing Potion Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Magic potion that instantly restores a significant amount of HP. -->
-	<item id="21197" type="EtcItem" name="Superior Quick Healing Potion">
-		<set name="icon" val="icon.etc_potion_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="180" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 2 Mysterious Scroll: Drum Melody. -->
-	<item id="21198" type="EtcItem" name="Mysterious Scroll: Drum Melody 2-unit Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 8 Mysterious Scroll: Drum Melody. -->
-	<item id="21199" type="EtcItem" name="Mysterious Scroll: Drum Melody 8-unit Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
+    <!-- Speak with a warehouse keeper to exchange this for an S-grade Blessed Scroll: Enchant Armor. -->
+    <item id="21100" type="EtcItem" name="Shiny Cube Fragment Armor (S-grade)">
+        <set name="icon" val="Branchsys2.icon.shine_cubic_a_piece_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Speak with a warehouse keeper to exchange this for a D-grade Blessed Scroll: Enchant Weapon. -->
+    <item id="21101" type="EtcItem" name="Shiny Cube Fragment Weapon (D-grade)">
+        <set name="icon" val="icon.event_cubic_piece_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Speak with a warehouse keeper to exchange this for a C-grade Blessed Scroll: Enchant Weapon. -->
+    <item id="21102" type="EtcItem" name="Shiny Cube Fragment Weapon (C-grade)">
+        <set name="icon" val="icon.event_cubic_piece_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Speak with a warehouse keeper to exchange this for a B-grade Blessed Scroll: Enchant Weapon. -->
+    <item id="21103" type="EtcItem" name="Shiny Cube Fragment Weapon (B-grade)">
+        <set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Speak with a warehouse keeper to exchange this for an A-grade Blessed Scroll: Enchant Weapon. -->
+    <item id="21104" type="EtcItem" name="Shiny Cube Fragment Weapon (A-grade)">
+        <set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Speak with a warehouse keeper to exchange this for an S-grade Blessed Scroll: Enchant Weapon. -->
+    <item id="21105" type="EtcItem" name="Shiny Cube Fragment Weapon (S-grade)">
+        <set name="icon" val="Branchsys2.icon.shine_cubic_w_piece_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Double-click to create a cube fragment that can be exchanged for a weapon/armor enchant scroll. (Disappears after 1 time use.) -->
+    <item id="21106" type="EtcItem" name="Wondrous Cubic - 1 time use">
+        <set name="icon" val="Branchsys2.icon.cube_event_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Double-click to create augmenting stones according to type. (Disappears after 1 time use.) -->
+    <item id="21107" type="EtcItem" name="Refined Cube - 1 time use">
+        <set name="icon" val="Branchsys2.icon.cube_event_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Polar bear hat that makes you feel cozy just by looking at it. Uses 2 hair accessory slot(s). -->
+    <item id="21108" type="Armor" name="Warm Bear Hat">
+        <set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Polar bear hat that makes you feel cozy just by looking at it. Uses 2 hair accessory slots. Cannot be exchanged or dropped or sold. -->
+    <item id="21109" type="Armor" name="Warm Bear Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_polar_bear_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Fist weapon that looks like cozy bear paws. It Has a very low P. Atk. -->
+    <item id="21110" type="Weapon" name="Warm Bear Paws">
+        <set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="450" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="5" />
+            <set stat="mAtk" val="5" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Fist weapon that looks like cozy bear paws. P. Atk. is very low. -->
+    <item id="21111" type="Weapon" name="Warm Bear Paws - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_polar_bear_wp_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="450" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="5" />
+            <set stat="mAtk" val="5" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Hat shaped like a stag beetle with 2 tough jaws. Uses 2 hair accessory slot(s). -->
+    <item id="21112" type="Armor" name="Stag Beetle Hat">
+        <set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a stag beetle with 2 tough jaws. Uses 2 hair accessory slot(s). -->
+    <item id="21113" type="Armor" name="Stag Beetle Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_stagbeetle_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a beetle with a great horn. Uses 2 hair accessory slot(s). -->
+    <item id="21114" type="Armor" name="Beetle Hat">
+        <set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a beetle with a great horn. Uses 2 hair accessory slot(s). -->
+    <item id="21115" type="Armor" name="Beetle Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_hornbeetle_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a ladybug with its black and red pattern. Uses 2 hair accessory slot(s). -->
+    <item id="21116" type="Armor" name="Ladybug Hat">
+        <set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a ladybug with its black and red pattern. Uses 2 hair accessory slot(s). -->
+    <item id="21117" type="Armor" name="Ladybug Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_ladybug_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a praying mantis with sharp claws. Uses 2 hair accessory slot(s). -->
+    <item id="21118" type="Armor" name="Praying Mantis Hat">
+        <set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a praying mantis with sharp claws. Uses 2 hair accessory slot(s). -->
+    <item id="21119" type="Armor" name="Praying Mantis Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_mantis_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a grasshopper with large eyes. Uses 2 hair accessory slot(s). -->
+    <item id="21120" type="Armor" name="Grasshopper Hat">
+        <set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat shaped like a grasshopper with large eyes. Uses 2 hair accessory slot(s). -->
+    <item id="21121" type="Armor" name="Grasshopper Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_locust_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Expensive-looking gold-rimmed glasses. Uses 1 hair accessory slot(s). -->
+    <item id="21122" type="Armor" name="Gold-rimmed Glasses">
+        <set name="icon" val="BranchSys2.icon.br_gold_eyeglass_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Expensive-looking gold-rimmed glasses. Uses 1 hair accessory slot(s). -->
+    <item id="21123" type="Armor" name="Gold-rimmed Glasses - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_gold_eyeglass_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- White uniform hat that makes you feel the energy of a man of the sea. Uses 2 hair accessory slot(s). -->
+    <item id="21124" type="Armor" name="White Uniform Hat">
+        <set name="icon" val="BranchSys2.icon.br_navy_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- White uniform hat that makes you feel the energy of a man of the sea. Uses 2 hair accessory slot(s). -->
+    <item id="21125" type="Armor" name="White Uniform Hat - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_navy_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Helmet of a brave ancient warrior. Uses 2 hair accessory slot(s). -->
+    <item id="21126" type="Armor" name="Warrior's Helmet">
+        <set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Helmet of a brave ancient warrior. Uses 2 hair accessory slots. -->
+    <item id="21127" type="Armor" name="Warrior's Helmet - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing warm bear hat. -->
+    <item id="21128" type="EtcItem" name="Warm Bear Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing warm bear hat (7-day). -->
+    <item id="21129" type="EtcItem" name="Warm Bear Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing warm bear paws. -->
+    <item id="21130" type="EtcItem" name="Warm Bear Paws Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing warm beat paws (7-day). -->
+    <item id="21131" type="EtcItem" name="Warm Bear Paws Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing stag beetle hat. -->
+    <item id="21132" type="EtcItem" name="Stag Beetle Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing stag beetle hat (7-day). -->
+    <item id="21133" type="EtcItem" name="Stag Beetle Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing beetle hat. -->
+    <item id="21134" type="EtcItem" name="Beetle Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing beetle hat (7-day). -->
+    <item id="21135" type="EtcItem" name="Beetle Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ladybug hat. -->
+    <item id="21136" type="EtcItem" name="Ladybug Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ladybug hat (7-day). -->
+    <item id="21137" type="EtcItem" name="Ladybug Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing praying mantis hat. -->
+    <item id="21138" type="EtcItem" name="Praying Mantis Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing praying mantis hat (7-day). -->
+    <item id="21139" type="EtcItem" name="Praying Mantis Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing grasshopper hat. -->
+    <item id="21140" type="EtcItem" name="Grasshopper Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing grasshopper hat (7-day). -->
+    <item id="21141" type="EtcItem" name="Grasshopper Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing gold-rimmed glasses. -->
+    <item id="21142" type="EtcItem" name="Gold-rimmed Glasses Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing gold-rimmed glasses (7-day). -->
+    <item id="21143" type="EtcItem" name="Gold-rimmed Glasses Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing white uniform hat. -->
+    <item id="21144" type="EtcItem" name="White Uniform Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing white uniform hat (7-day). -->
+    <item id="21145" type="EtcItem" name="White Uniform Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing warrior's helmet. -->
+    <item id="21146" type="EtcItem" name="Warrior's Helmet Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Warrior's Helmet (7-day). -->
+    <item id="21147" type="EtcItem" name="Warrior's Helmet Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Scroll for transforming into a Dragon Master Lee. The effect lasts for 1 hour. -->
+    <item id="21148" type="EtcItem" name="Transformation Scroll: Dragon Master Lee">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Scroll for transforming into a Dragon Master Karin. The effect lasts for 1 hour. -->
+    <item id="21149" type="EtcItem" name="Transformation Scroll: Dragon Master Karin">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can stand upon the Shiny Platform with brilliant lighting when equipped. -->
+    <item id="21150" type="Armor" name="Shiny Platform Summon Bracelet">
+        <set name="icon" val="BranchSys2.Icon.br_shiny_platform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll that summons brilliant, shiny lighting. Can strike a cool pose with lighting from below. -->
+    <item id="21151" type="EtcItem" name="Shiny Lighting">
+        <set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can summon Agathion - Singer & Dancer that gleefully sings and dances when equipped. -->
+    <item id="21152" type="Armor" name="Agathion - Singer &amp; Dancer">
+        <set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon Agathion - Singer & Dancer that gleefully sings and dances when equipped. -->
+    <item id="21153" type="Armor" name="Agathion - Singer &amp; Dancer - 7-day">
+        <set name="icon" val="BranchSys2.icon.br_aga_singer_dancer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Singer & Dancer. -->
+    <item id="21154" type="EtcItem" name="Agathion - Singer &amp; Dancer Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Singer & Dancer (7-day). -->
+    <item id="21155" type="EtcItem" name="Agathion - Singer &amp; Dancer Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Scroll that summons a large 3-layer wedding cake, a must-have at any wedding. -->
+    <item id="21156" type="EtcItem" name="Big Wedding Cake">
+        <set name="icon" val="BranchSys2.Icon.br_big_wedding_cake_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Flower shower sprinkled on the bride and groom. -->
+    <item id="21157" type="EtcItem" name="Flower Shower">
+        <set name="icon" val="BranchSys2.Icon.br_flower_shower_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Crystal that emits a fantasy-like sound when used. -->
+    <item id="21158" type="EtcItem" name="Echo Crystal">
+        <set name="icon" val="BranchSys2.Icon.br_eco_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wedding ring exchanged by an engaged couple. Male only. -->
+    <item id="21159" type="Armor" name="Wedding Ring - Male">
+        <set name="icon" val="BranchSys2.Icon.br_wedding_ring_m_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="1" />
+        </for>
+    </item>
+    <!-- Wedding ring exchanged by an engaged couple. Female only. -->
+    <item id="21160" type="Armor" name="Wedding Ring - Female">
+        <set name="icon" val="BranchSys2.Icon.br_wedding_ring_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="1" />
+        </for>
+    </item>
+    <!-- Wrapped wedding pack containing honeymoon ticket and a big wedding cake. -->
+    <item id="21161" type="EtcItem" name="Wedding Cake Pack">
+        <set name="icon" val="BranchSys2.Icon.br_wedding_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Pure white wedding veil. Female only. Uses 2 hair accessory slots. -->
+    <item id="21162" type="Armor" name="Wedding Veil">
+        <set name="icon" val="BranchSys2.icon.br_wedding_vail_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Beautiful wedding bouquet. Female only. -->
+    <item id="21163" type="Weapon" name="Wedding Bouquet">
+        <set name="icon" val="BranchSys2.icon.br_wedding_bouquet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="etc" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1600" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="1" />
+            <set stat="mCritRate" val="1" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Honeymoon ticket given to the bride and groom as a gift. When used, Vitality is maintained for 1 hour. Vitality item with limited usage. -->
+    <item id="21164" type="EtcItem" name="Honeymoon Ticket - 7-day">
+        <set name="icon" val="BranchSys2.Icon.br_weddin_ticket_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="20" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet that summons Zaken's Spirit Sword, which is made up of Zaken's 6 swords. -->
+    <item id="21165" type="Armor" name="Agathion - Zaken's Spirit Swords">
+        <set name="icon" val="BranchSys2.Icon.br_aga_zaken_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="23236-1;21234-1;3267-1" />
+    </item>
+    <!-- Can summon Zaken's Spirit Swords when equipped. Cooldown is 2 hours. 7-day. -->
+    <item id="21166" type="Armor" name="Agathion - Zaken's Spirit Swords - 7-day">
+        <set name="icon" val="BranchSys2.Icon.br_aga_zaken_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Zaken's Spirit Swords. -->
+    <item id="21167" type="EtcItem" name="Agathion - Zaken's Spirit Swords Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Zaken's Spirit Swords (7-day). -->
+    <item id="21168" type="EtcItem" name="Agathion - Zaken's Spirit Swords Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Birthday present given to you by Alegria on your birthday. When used, you will obtain (1) Cake Topper hat, (1) Birthday Vitality Potion and (1) Birthday Cake. -->
+    <item id="21169" type="EtcItem" name="Birthday Present Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Upon use, for 12 hours, when XP is acquired through hunting, Vitality is recovered. Vitality item with limited usage. -->
+    <item id="21170" type="EtcItem" name="Birthday Vitality Potion">
+        <set name="icon" val="icon.etc_potion_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="80" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Treasure Hunter for 10 min. If used on Fantasy Isle, you can find Event Treasure Chests. No effect if used while already transformed. -->
+    <item id="21171" type="EtcItem" name="Transformation Scroll: Treasure Hunter - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into an Onyx Beast for 30 min. No effect if used while transformed. -->
+    <item id="21172" type="EtcItem" name="Transformation Scroll: Onyx Beast - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Doom Wraith for 30 min. No effect if used while transformed. -->
+    <item id="21173" type="EtcItem" name="Transformation Scroll: Doom Wraith - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Grail Apostle for 30 min. No effect if used while transformed. -->
+    <item id="21174" type="EtcItem" name="Transformation Scroll: Grail Apostle - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Unicorn for 30 min. No effect if used while transformed. -->
+    <item id="21175" type="EtcItem" name="Transformation Scroll: Unicorn - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Lilim Knight for 30 min. No effect if used while transformed. -->
+    <item id="21176" type="EtcItem" name="Transformation Scroll: Lilim Knight - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Golem Guardian for 30 min. No effect if used while transformed. -->
+    <item id="21177" type="EtcItem" name="Transformation Scroll: Golem Guardian - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into an Inferno Drake for 30 min. No effect if used while transformed. -->
+    <item id="21178" type="EtcItem" name="Transformation Scroll: Inferno Drake - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Dragon Bomber for 30 min. No effect if used while transformed. -->
+    <item id="21179" type="EtcItem" name="Transformation Scroll: Dragon Bomber - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Heretic for 30 min. No effect if used while transformed. -->
+    <item id="21180" type="EtcItem" name="Transformation Scroll: Heretic - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Veil Master for 30 min. No effect if used while transformed. -->
+    <item id="21181" type="EtcItem" name="Transformation Scroll: Veil Master - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Saber Tooth Tiger for 30 min. No effect if used while transformed. -->
+    <item id="21182" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into an Ol Mahum for 30 min. No effect if used while transformed. -->
+    <item id="21183" type="EtcItem" name="Transformation Scroll: Oel Mahum - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Doll Blader for 30 min. No effect if used while transformed. -->
+    <item id="21184" type="EtcItem" name="Transformation Scroll: Doll Blader - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into Zaken for 30 min. No effect if used while transformed. -->
+    <item id="21185" type="EtcItem" name="Transformation Scroll: Zaken - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into Anakim for 30 min. No effect if used while transformed. -->
+    <item id="21186" type="EtcItem" name="Transformation Scroll: Anakim - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Venom for 30 min. No effect if used while transformed. -->
+    <item id="21187" type="EtcItem" name="Transformation Scroll: Venom - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Gordon for 30 min. No effect if used while transformed. -->
+    <item id="21188" type="EtcItem" name="Transformation Scroll: Gordon - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Ranku for 30 min. No effect if used while transformed. -->
+    <item id="21189" type="EtcItem" name="Transformation Scroll: Ranku - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into Kechi for 30 min. No effect if used while transformed. -->
+    <item id="21190" type="EtcItem" name="Transformation Scroll: Kechi - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transforms you into a Demon Prince for 30 min. No effect if used while transformed. -->
+    <item id="21191" type="EtcItem" name="Transformation Scroll: Demon Prince - Event">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 50 Dimensional Diamonds. -->
+    <item id="21192" type="EtcItem" name="Dimensional Diamond Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Magic crystal needed when casting instant moving magic. If you collect them and bring them to the Gatekeeper, you can exchange them for various types of escape scrolls. -->
+    <item id="21193" type="EtcItem" name="Dimensional Diamond - Event">
+        <set name="icon" val="icon.etc_gem_clear_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing blessed scroll of escape. -->
+    <item id="21194" type="EtcItem" name="Blessed Scroll of Escape Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Magic scroll that moves you to the nearest village. -->
+    <item id="21195" type="EtcItem" name="Blessed Scroll of Escape">
+        <set name="icon" val="icon.etc_scroll_of_return_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 5 Superior Quick Healing Potions. -->
+    <item id="21196" type="EtcItem" name="Superior Quick Healing Potion Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Magic potion that instantly restores a significant amount of HP. -->
+    <item id="21197" type="EtcItem" name="Superior Quick Healing Potion">
+        <set name="icon" val="icon.etc_potion_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="180" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 2 Mysterious Scroll: Drum Melody. -->
+    <item id="21198" type="EtcItem" name="Mysterious Scroll: Drum Melody 2-unit Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 8 Mysterious Scroll: Drum Melody. -->
+    <item id="21199" type="EtcItem" name="Mysterious Scroll: Drum Melody 8-unit Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
 </list>

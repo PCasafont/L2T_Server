@@ -22,29 +22,33 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Erlandys
  */
 public class ExResponseCommissionItemList extends L2ItemListPacket
 {
-	
-	private List<L2ItemInstance> _items = new ArrayList<L2ItemInstance>();
-	
-	public ExResponseCommissionItemList(L2PcInstance player)
-	{
-		for (L2ItemInstance item : player.getInventory().getItems())
-		{
-			if (item.isSellable() && item.isTradeable() && !item.isEquipped() && item.getItemId() != 57 && !item.isQuestItem())
-				_items.add(item);
-		}
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_items.size());
-		
-		for (L2ItemInstance item : _items)
-			writeItem(item);
-	}
+
+    private List<L2ItemInstance> _items = new ArrayList<L2ItemInstance>();
+
+    public ExResponseCommissionItemList(L2PcInstance player)
+    {
+        for (L2ItemInstance item : player.getInventory().getItems())
+        {
+            if (item.isSellable() && item.isTradeable() && !item.isEquipped() && item.getItemId() != 57 && !item
+                    .isQuestItem())
+            {
+                _items.add(item);
+            }
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_items.size());
+
+        for (L2ItemInstance item : _items)
+        {
+            writeItem(item);
+        }
+    }
 }

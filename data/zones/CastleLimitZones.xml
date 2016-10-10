@@ -1,106 +1,106 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list enabled="true">
-	<zone id='25500' type='CustomCastleZone' shape='NPoly' minZ='-2200' maxZ='2500'>
-		<stat name='name' val='Aden Castle' />
-		<stat name="castleId" val="5" />
-		<node X="146814" Y="20195" />
-		<node X="144416" Y="20286" />
-		<node X="143138" Y="18335" />
-		<node X="143092" Y="12321" />
-		<node X="144046" Y="10465" />
-		<node X="143038" Y="9216" />
-		<node X="142533" Y="7939" />
-		<node X="142538" Y="4895" />
-		<node X="142792" Y="3968" />
-		<node X="143103" Y="1567" />
-		<node X="143957" Y="832" />
-		<node X="150970" Y="836" />
-		<node X="151832" Y="1574" />
-		<node X="152434" Y="4863" />
-		<node X="152432" Y="7955" />
-		<node X="151928" Y="9204" />
-		<node X="151036" Y="10205" />
-		<node X="151061" Y="10715" />
-		<node X="151864" Y="12315" />
-		<node X="151865" Y="14272" />
-		<node X="151859" Y="18700" />
-		<node X="150226" Y="20246" />
-		<node X="148088" Y="20239" />
-	</zone>
-	<zone id='25501' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
-		<stat name='name' val='Giran Castle' />
-		<stat name="castleId" val="3" />
-		<node X="115148" Y="145107" />
-	</zone>
-	<zone id='25502' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
-		<stat name='name' val='Oren Castle' />
-		<stat name="castleId" val="4" />
-		<node X="81414" Y="37187" />
-	</zone>
-	<zone id='25503' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
-		<stat name='name' val='Dion Castle' />
-		<stat name="castleId" val="2" />
-		<node X="22072" Y="159125" />
-	</zone>
-	<zone id='25504' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
-		<stat name='name' val='Gludio Castle' />
-		<stat name="castleId" val="1" />
-		<node X="-18120" Y="110704" />
-	</zone>
-	<zone id='25505' type='CustomCastleZone' shape='Cylinder' minZ='-3000' maxZ='5000' rad="15000">
-		<stat name='name' val='Innadril Castle' />
-		<stat name="castleId" val="6" />
-		<node X="116024" Y="247825" />
-	</zone>
-	<zone id='25506' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='8000' rad="20000">
-		<stat name='name' val='Schuttgart Castle' />
-		<stat name="castleId" val="9" />
-		<node X="77548" Y="-152504" />
-	</zone>
-	<zone id='25507' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='8000' rad="20000">
-		<stat name='name' val='Goddard Castle' />
-		<stat name="castleId" val="7" />
-		<node X="147463" Y="-48410" />
-	</zone>
-	<zone id='26000' type='CustomCastleZone' shape='NPoly' minZ='-7000' maxZ='1000'>
-		<stat name='name' val='Queen Ant Nest' />
-		<stat name="maximumLevel" val="48" />
-		<node X="-41692" Y="164560" />
-		<node X="-5233" Y="164113" />
-		<node X="-4632" Y="198977" />
-		<node X="-41285" Y="202475" />
-	</zone>
-	<zone id='26001' type='CustomCastleZone' shape='NPoly' minZ='-7000' maxZ='-2000'>
-		<stat name='name' val='Orfen Nest' />
-		<stat name="maximumLevel" val="66" />
-		<node X="45466" Y="27955" />
-		<node X="44423" Y="11875" />
-		<node X="61219" Y="6158" />
-		<node X="68557" Y="29637" />
-	</zone>
-	<zone id='26002' type='CustomCastleZone' shape='Cylinder' minZ='-10000' maxZ='12000' rad="5000">
-		<stat name='name' val='Baium Lair' />
-		<stat name="maximumLevel" val="80" />
-		<node X="114453" Y="15880" />
-	</zone>
-	<zone id='26003' type='CustomCastleZone' shape='Cylinder' minZ='-20000' maxZ='10000' rad="5000">
-		<stat name='name' val='Core Tower' />
-		<stat name="maximumLevel" val="58" />
-		<node X="16403" Y="114494" />
-	</zone>
-	<zone id='26004' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2000' rad="15000">
-		<stat name='name' val='Antharas Lair' />
-		<stat name="maximumLevel" val="85" />
-		<node X="148858" Y="115345" />
-	</zone>
-	<zone id='26005' type='CustomCastleZone' shape='Cylinder' minZ='-7500' maxZ='5000' rad="15000">
-		<stat name='name' val='Valakas Lair' />
-		<stat name="maximumLevel" val="85" />
-		<node X="189949" Y="-107863" />
-	</zone>
-	<zone id='26006' type='CustomCastleZone' shape='Cylinder' minZ='-8000' maxZ='5000' rad="25000">
-		<stat name='name' val='Primeval Island' />
-		<stat name="maximumLevel" val="85" />
-		<node X="16687" Y="-15297" />
-	</zone>
+    <zone id='25500' type='CustomCastleZone' shape='NPoly' minZ='-2200' maxZ='2500'>
+        <stat name='name' val='Aden Castle' />
+        <stat name="castleId" val="5" />
+        <node X="146814" Y="20195" />
+        <node X="144416" Y="20286" />
+        <node X="143138" Y="18335" />
+        <node X="143092" Y="12321" />
+        <node X="144046" Y="10465" />
+        <node X="143038" Y="9216" />
+        <node X="142533" Y="7939" />
+        <node X="142538" Y="4895" />
+        <node X="142792" Y="3968" />
+        <node X="143103" Y="1567" />
+        <node X="143957" Y="832" />
+        <node X="150970" Y="836" />
+        <node X="151832" Y="1574" />
+        <node X="152434" Y="4863" />
+        <node X="152432" Y="7955" />
+        <node X="151928" Y="9204" />
+        <node X="151036" Y="10205" />
+        <node X="151061" Y="10715" />
+        <node X="151864" Y="12315" />
+        <node X="151865" Y="14272" />
+        <node X="151859" Y="18700" />
+        <node X="150226" Y="20246" />
+        <node X="148088" Y="20239" />
+    </zone>
+    <zone id='25501' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
+        <stat name='name' val='Giran Castle' />
+        <stat name="castleId" val="3" />
+        <node X="115148" Y="145107" />
+    </zone>
+    <zone id='25502' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
+        <stat name='name' val='Oren Castle' />
+        <stat name="castleId" val="4" />
+        <node X="81414" Y="37187" />
+    </zone>
+    <zone id='25503' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
+        <stat name='name' val='Dion Castle' />
+        <stat name="castleId" val="2" />
+        <node X="22072" Y="159125" />
+    </zone>
+    <zone id='25504' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2500' rad="15000">
+        <stat name='name' val='Gludio Castle' />
+        <stat name="castleId" val="1" />
+        <node X="-18120" Y="110704" />
+    </zone>
+    <zone id='25505' type='CustomCastleZone' shape='Cylinder' minZ='-3000' maxZ='5000' rad="15000">
+        <stat name='name' val='Innadril Castle' />
+        <stat name="castleId" val="6" />
+        <node X="116024" Y="247825" />
+    </zone>
+    <zone id='25506' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='8000' rad="20000">
+        <stat name='name' val='Schuttgart Castle' />
+        <stat name="castleId" val="9" />
+        <node X="77548" Y="-152504" />
+    </zone>
+    <zone id='25507' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='8000' rad="20000">
+        <stat name='name' val='Goddard Castle' />
+        <stat name="castleId" val="7" />
+        <node X="147463" Y="-48410" />
+    </zone>
+    <zone id='26000' type='CustomCastleZone' shape='NPoly' minZ='-7000' maxZ='1000'>
+        <stat name='name' val='Queen Ant Nest' />
+        <stat name="maximumLevel" val="48" />
+        <node X="-41692" Y="164560" />
+        <node X="-5233" Y="164113" />
+        <node X="-4632" Y="198977" />
+        <node X="-41285" Y="202475" />
+    </zone>
+    <zone id='26001' type='CustomCastleZone' shape='NPoly' minZ='-7000' maxZ='-2000'>
+        <stat name='name' val='Orfen Nest' />
+        <stat name="maximumLevel" val="66" />
+        <node X="45466" Y="27955" />
+        <node X="44423" Y="11875" />
+        <node X="61219" Y="6158" />
+        <node X="68557" Y="29637" />
+    </zone>
+    <zone id='26002' type='CustomCastleZone' shape='Cylinder' minZ='-10000' maxZ='12000' rad="5000">
+        <stat name='name' val='Baium Lair' />
+        <stat name="maximumLevel" val="80" />
+        <node X="114453" Y="15880" />
+    </zone>
+    <zone id='26003' type='CustomCastleZone' shape='Cylinder' minZ='-20000' maxZ='10000' rad="5000">
+        <stat name='name' val='Core Tower' />
+        <stat name="maximumLevel" val="58" />
+        <node X="16403" Y="114494" />
+    </zone>
+    <zone id='26004' type='CustomCastleZone' shape='Cylinder' minZ='-5000' maxZ='2000' rad="15000">
+        <stat name='name' val='Antharas Lair' />
+        <stat name="maximumLevel" val="85" />
+        <node X="148858" Y="115345" />
+    </zone>
+    <zone id='26005' type='CustomCastleZone' shape='Cylinder' minZ='-7500' maxZ='5000' rad="15000">
+        <stat name='name' val='Valakas Lair' />
+        <stat name="maximumLevel" val="85" />
+        <node X="189949" Y="-107863" />
+    </zone>
+    <zone id='26006' type='CustomCastleZone' shape='Cylinder' minZ='-8000' maxZ='5000' rad="25000">
+        <stat name='name' val='Primeval Island' />
+        <stat name="maximumLevel" val="85" />
+        <node X="16687" Y="-15297" />
+    </zone>
 </list>

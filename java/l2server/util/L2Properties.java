@@ -32,99 +32,101 @@ import l2server.log.Log;
 
 public final class L2Properties extends Properties
 {
-	private static final long serialVersionUID = 1L;
-	
-	public L2Properties()
-	{
-	}
-	
-	public L2Properties(String name) throws IOException
-	{
-		load(new FileInputStream(name));
-	}
-	
-	public L2Properties(File file) throws IOException
-	{
-		load(new FileInputStream(file));
-	}
-	
-	public L2Properties(InputStream inStream) throws IOException
-	{
-		load(inStream);
-	}
-	
-	public L2Properties(Reader reader) throws IOException
-	{
-		load(reader);
-	}
-	
-	public void load(String name) throws IOException
-	{
-		load(new FileInputStream(name));
-	}
-	
-	public void load(File file) throws IOException
-	{
-		load(new FileInputStream(file));
-	}
-	
-	@Override
-	public void load(InputStream inStream) throws IOException
-	{
-		InputStreamReader reader = null;
-		try
-		{
-			reader = new InputStreamReader(inStream, Charset.defaultCharset());
-			super.load(reader);
-		}
-		finally
-		{
-			inStream.close();
-			if (reader != null)
-				reader.close();
-		}
-	}
-	
-	@Override
-	public void load(Reader reader) throws IOException
-	{
-		try
-		{
-			super.load(reader);
-		}
-		finally
-		{
-			reader.close();
-		}
-	}
-	
-	@Override
-	public String getProperty(String key)
-	{
-		String property = super.getProperty(key);
-		
-		if (property == null)
-		{
-			//Log.info("L2Properties: Missing property for key - " + key);
-			
-			return null;
-		}
-		
-		return property.trim();
-	}
-	
-	@Override
-	public String getProperty(String key, String defaultValue)
-	{
-		String property = super.getProperty(key, defaultValue);
-		
-		if (property == null)
-		{
-			Log.warning("L2Properties: Missing defaultValue for key - " + key);
-			
-			return null;
-		}
-		
-		return property.trim();
-	}
+    private static final long serialVersionUID = 1L;
+
+    public L2Properties()
+    {
+    }
+
+    public L2Properties(String name) throws IOException
+    {
+        load(new FileInputStream(name));
+    }
+
+    public L2Properties(File file) throws IOException
+    {
+        load(new FileInputStream(file));
+    }
+
+    public L2Properties(InputStream inStream) throws IOException
+    {
+        load(inStream);
+    }
+
+    public L2Properties(Reader reader) throws IOException
+    {
+        load(reader);
+    }
+
+    public void load(String name) throws IOException
+    {
+        load(new FileInputStream(name));
+    }
+
+    public void load(File file) throws IOException
+    {
+        load(new FileInputStream(file));
+    }
+
+    @Override
+    public void load(InputStream inStream) throws IOException
+    {
+        InputStreamReader reader = null;
+        try
+        {
+            reader = new InputStreamReader(inStream, Charset.defaultCharset());
+            super.load(reader);
+        }
+        finally
+        {
+            inStream.close();
+            if (reader != null)
+            {
+                reader.close();
+            }
+        }
+    }
+
+    @Override
+    public void load(Reader reader) throws IOException
+    {
+        try
+        {
+            super.load(reader);
+        }
+        finally
+        {
+            reader.close();
+        }
+    }
+
+    @Override
+    public String getProperty(String key)
+    {
+        String property = super.getProperty(key);
+
+        if (property == null)
+        {
+            //Log.info("L2Properties: Missing property for key - " + key);
+
+            return null;
+        }
+
+        return property.trim();
+    }
+
+    @Override
+    public String getProperty(String key, String defaultValue)
+    {
+        String property = super.getProperty(key, defaultValue);
+
+        if (property == null)
+        {
+            Log.warning("L2Properties: Missing defaultValue for key - " + key);
+
+            return null;
+        }
+
+        return property.trim();
+    }
 }

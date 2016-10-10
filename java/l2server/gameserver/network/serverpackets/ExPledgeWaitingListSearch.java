@@ -22,29 +22,28 @@ import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitWaiting
 
 /**
  * @author Pere
- *
  */
 public class ExPledgeWaitingListSearch extends L2GameServerPacket
 {
-	private List<ClanRecruitWaitingUser> _users;
-	
-	public ExPledgeWaitingListSearch(int minLevel, int maxLevel, int role, int sortBy, boolean desc, String name)
-	{
-		_users = ClanRecruitManager.getInstance().getWaitingUsers(minLevel, maxLevel, role, sortBy, desc, name);
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_users.size());
-		
-		for (ClanRecruitWaitingUser user : _users)
-		{
-			writeD(user.id);
-			writeS(user.name);
-			writeD(user.karma);
-			writeD(user.classId);
-			writeD(user.level);
-		}
-	}
+    private List<ClanRecruitWaitingUser> _users;
+
+    public ExPledgeWaitingListSearch(int minLevel, int maxLevel, int role, int sortBy, boolean desc, String name)
+    {
+        _users = ClanRecruitManager.getInstance().getWaitingUsers(minLevel, maxLevel, role, sortBy, desc, name);
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_users.size());
+
+        for (ClanRecruitWaitingUser user : _users)
+        {
+            writeD(user.id);
+            writeS(user.name);
+            writeD(user.karma);
+            writeD(user.classId);
+            writeD(user.level);
+        }
+    }
 }

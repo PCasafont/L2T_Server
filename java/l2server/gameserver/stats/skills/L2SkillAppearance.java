@@ -24,54 +24,67 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillAppearance extends L2Skill
 {
-	private final int _faceId;
-	private final int _hairColorId;
-	private final int _hairStyleId;
-	
-	public L2SkillAppearance(StatsSet set)
-	{
-		super(set);
-		
-		_faceId = set.getInteger("faceId", -1);
-		_hairColorId = set.getInteger("hairColorId", -1);
-		_hairStyleId = set.getInteger("hairStyleId", -1);
-	}
-	
-	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		for (L2Object target : targets)
-		{
-			if (target instanceof L2PcInstance)
-			{
-				L2PcInstance targetPlayer = (L2PcInstance) target;
-				
-				int maxHairStyle = targetPlayer.getAppearance().getSex() ? 5 : 7;
-				int maxHairColor = targetPlayer.getRace() == Race.Kamael || targetPlayer.getRace() == Race.Ertheia ? 2 : 3;
-				int maxFace = 3;
-				
-				int faceId = _faceId;
-				int hairStyleId = _hairStyleId;
-				int hairColorId = _hairColorId;
-				
-				if (hairStyleId > maxHairStyle)
-					hairStyleId = -1;
-				
-				if (hairColorId > maxHairColor)
-					hairColorId = -1;
-				
-				if (faceId > maxFace)
-					faceId = -1;
-				
-				if (faceId >= 0)
-					targetPlayer.getAppearance().setFace(faceId);
-				if (hairColorId >= 0)
-					targetPlayer.getAppearance().setHairColor(hairColorId);
-				if (hairStyleId >= 0)
-					targetPlayer.getAppearance().setHairStyle(hairStyleId);
-				
-				targetPlayer.broadcastUserInfo();
-			}
-		}
-	}
+    private final int _faceId;
+    private final int _hairColorId;
+    private final int _hairStyleId;
+
+    public L2SkillAppearance(StatsSet set)
+    {
+        super(set);
+
+        _faceId = set.getInteger("faceId", -1);
+        _hairColorId = set.getInteger("hairColorId", -1);
+        _hairStyleId = set.getInteger("hairStyleId", -1);
+    }
+
+    @Override
+    public void useSkill(L2Character caster, L2Object[] targets)
+    {
+        for (L2Object target : targets)
+        {
+            if (target instanceof L2PcInstance)
+            {
+                L2PcInstance targetPlayer = (L2PcInstance) target;
+
+                int maxHairStyle = targetPlayer.getAppearance().getSex() ? 5 : 7;
+                int maxHairColor = targetPlayer.getRace() == Race.Kamael || targetPlayer
+                        .getRace() == Race.Ertheia ? 2 : 3;
+                int maxFace = 3;
+
+                int faceId = _faceId;
+                int hairStyleId = _hairStyleId;
+                int hairColorId = _hairColorId;
+
+                if (hairStyleId > maxHairStyle)
+                {
+                    hairStyleId = -1;
+                }
+
+                if (hairColorId > maxHairColor)
+                {
+                    hairColorId = -1;
+                }
+
+                if (faceId > maxFace)
+                {
+                    faceId = -1;
+                }
+
+                if (faceId >= 0)
+                {
+                    targetPlayer.getAppearance().setFace(faceId);
+                }
+                if (hairColorId >= 0)
+                {
+                    targetPlayer.getAppearance().setHairColor(hairColorId);
+                }
+                if (hairStyleId >= 0)
+                {
+                    targetPlayer.getAppearance().setHairStyle(hairStyleId);
+                }
+
+                targetPlayer.broadcastUserInfo();
+            }
+        }
+    }
 }

@@ -24,30 +24,30 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
  * b7 f1 00 00 		y
  * 60 f2 ff ff 		z
  * 00 00 00 00 		??
- *
+ * <p>
  * format  dddd	rev 377  ID:%d X:%d Y:%d Z:%d
- *		 ddddd   rev 419
+ * ddddd   rev 419
  *
  * @version $Revision: 1.3.2.2.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class DoorStatusUpdate extends L2GameServerPacket
 {
-	private L2DoorInstance _door;
-	
-	public DoorStatusUpdate(L2DoorInstance door)
-	{
-		_door = door;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_door.getObjectId());
-		writeD(_door.getOpen() ? 0 : 1);
-		writeD(_door.getDamage());
-		writeD(_door.isEnemy() ? 1 : 0);
-		writeD(_door.getDoorId());
-		writeD((int) _door.getCurrentHp());
-		writeD(_door.getMaxVisibleHp());
-	}
+    private L2DoorInstance _door;
+
+    public DoorStatusUpdate(L2DoorInstance door)
+    {
+        _door = door;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_door.getObjectId());
+        writeD(_door.getOpen() ? 0 : 1);
+        writeD(_door.getDamage());
+        writeD(_door.isEnemy() ? 1 : 0);
+        writeD(_door.getDoorId());
+        writeD((int) _door.getCurrentHp());
+        writeD(_door.getMaxVisibleHp());
+    }
 }

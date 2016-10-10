@@ -19,28 +19,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExMenteeSearch;
 
 /**
- *
  * @author Erlandys
  */
 public class RequestMenteeSearch extends L2GameClientPacket
 {
-	int _page, _minLevel, _maxLevel;
-	
-	@Override
-	protected void readImpl()
-	{
-		_page = readD();
-		_minLevel = readD();
-		_maxLevel = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		activeChar.sendPacket(new ExMenteeSearch(_page, _minLevel, _maxLevel));
-	}
+    int _page, _minLevel, _maxLevel;
+
+    @Override
+    protected void readImpl()
+    {
+        _page = readD();
+        _minLevel = readD();
+        _maxLevel = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+        activeChar.sendPacket(new ExMenteeSearch(_page, _minLevel, _maxLevel));
+    }
 }

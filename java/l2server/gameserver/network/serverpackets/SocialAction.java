@@ -22,31 +22,31 @@ package l2server.gameserver.network.serverpackets;
  */
 public class SocialAction extends L2GameServerPacket
 {
-	public static final int THROW_BALL = 30;
-	public static final int HIT_BALL = 31;
-	public static final int CHEER = 32;
-	public static final int PLAY = 33;
-	public static final int CLAP = 34;
-	public static final int LEVEL_UP = 2122;
-	
-	private int _charObjId;
-	private int _actionId;
-	
-	/**
-	 * @param objectId
-	 * @param actionId
-	 */
-	public SocialAction(int objectId, int actionId)
-	{
-		_charObjId = objectId;
-		_actionId = actionId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_charObjId);
-		writeD(_actionId);
-		writeD(0x00); // GoD ??? (maybe npcstringId or npcTextId)
-	}
+    public static final int THROW_BALL = 30;
+    public static final int HIT_BALL = 31;
+    public static final int CHEER = 32;
+    public static final int PLAY = 33;
+    public static final int CLAP = 34;
+    public static final int LEVEL_UP = 2122;
+
+    private int _charObjId;
+    private int _actionId;
+
+    /**
+     * @param objectId
+     * @param actionId
+     */
+    public SocialAction(int objectId, int actionId)
+    {
+        _charObjId = objectId;
+        _actionId = actionId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_charObjId);
+        writeD(_actionId);
+        writeD(0x00); // GoD ??? (maybe npcstringId or npcTextId)
+    }
 }

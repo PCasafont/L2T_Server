@@ -23,49 +23,48 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class TerritoryStatus implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"TerritoryStatus"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc npc)
-	{
-		if (npc == null)
-			return false;
-		
-		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-		{
-			if (npc.getCastle().getOwnerId() > 0)
-			{
-				html.setFile(activeChar.getHtmlPrefix(), "territorystatus.htm");
-				L2Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
-				html.replace("%clanname%", clan.getName());
-				html.replace("%clanleadername%", clan.getLeaderName());
-			}
-			else
-			{
-				html.setFile(activeChar.getHtmlPrefix(), "territorynoclan.htm");
-			}
-		}
-		html.replace("%castlename%", npc.getCastle().getName());
-		html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent());
-		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
-		{
-			if (npc.getCastle().getCastleId() > 6)
-			{
-				html.replace("%territory%", "The Kingdom of Elmore");
-			}
-			else
-			{
-				html.replace("%territory%", "The Kingdom of Aden");
-			}
-		}
-		activeChar.sendPacket(html);
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"TerritoryStatus"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc npc)
+    {
+        if (npc == null)
+        {
+            return false;
+        }
+
+        final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
+        {
+            if (npc.getCastle().getOwnerId() > 0)
+            {
+                html.setFile(activeChar.getHtmlPrefix(), "territorystatus.htm");
+                L2Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
+                html.replace("%clanname%", clan.getName());
+                html.replace("%clanleadername%", clan.getLeaderName());
+            }
+            else
+            {
+                html.setFile(activeChar.getHtmlPrefix(), "territorynoclan.htm");
+            }
+        }
+        html.replace("%castlename%", npc.getCastle().getName());
+        html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent());
+        html.replace("%objectId%", String.valueOf(npc.getObjectId()));
+        {
+            if (npc.getCastle().getCastleId() > 6)
+            {
+                html.replace("%territory%", "The Kingdom of Elmore");
+            }
+            else
+            {
+                html.replace("%territory%", "The Kingdom of Aden");
+            }
+        }
+        activeChar.sendPacket(html);
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

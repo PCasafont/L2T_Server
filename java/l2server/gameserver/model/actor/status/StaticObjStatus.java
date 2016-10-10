@@ -19,14 +19,14 @@ import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 
 public class StaticObjStatus extends CharStatus
 {
-	public StaticObjStatus(L2StaticObjectInstance activeChar)
-	{
-		super(activeChar);
-	}
-	
-	@Override
-	public L2StaticObjectInstance getActiveChar()
-	{
-		return (L2StaticObjectInstance) super.getActiveChar();
-	}
+    public StaticObjStatus(L2StaticObjectInstance activeChar)
+    {
+        super(activeChar);
+    }
+
+    @Override
+    public L2StaticObjectInstance getActiveChar()
+    {
+        return (L2StaticObjectInstance) super.getActiveChar();
+    }
 }

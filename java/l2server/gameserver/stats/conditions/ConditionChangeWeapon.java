@@ -26,45 +26,52 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class ConditionChangeWeapon extends Condition
 {
-	private final boolean _required;
-	
-	/**
-	 * Instantiates a new condition change weapon.
-	 *
-	 * @param required the required
-	 */
-	public ConditionChangeWeapon(boolean required)
-	{
-		_required = required;
-	}
-	
-	/**
-	 * Test impl.
-	 *
-	 * @param env the env
-	 * @return true, if successful
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-			return false;
-		
-		if (_required)
-		{
-			L2Weapon weaponItem = env.player.getActiveWeaponItem();
-			
-			if (weaponItem == null)
-				return false;
-			
-			if (weaponItem.getChangeWeaponId() == 0)
-				return false;
-			
-			if (((L2PcInstance) env.player).isEnchanting())
-				return false;
-		}
-		return true;
-	}
-	
+    private final boolean _required;
+
+    /**
+     * Instantiates a new condition change weapon.
+     *
+     * @param required the required
+     */
+    public ConditionChangeWeapon(boolean required)
+    {
+        _required = required;
+    }
+
+    /**
+     * Test impl.
+     *
+     * @param env the env
+     * @return true, if successful
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    boolean testImpl(Env env)
+    {
+        if (!(env.player instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        if (_required)
+        {
+            L2Weapon weaponItem = env.player.getActiveWeaponItem();
+
+            if (weaponItem == null)
+            {
+                return false;
+            }
+
+            if (weaponItem.getChangeWeaponId() == 0)
+            {
+                return false;
+            }
+
+            if (((L2PcInstance) env.player).isEnchanting())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }

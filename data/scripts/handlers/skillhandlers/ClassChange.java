@@ -35,81 +35,82 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class ClassChange implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS = { L2SkillType.CLASS_CHANGE };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance) activeChar;
-		
-		if (player.isInCombat() || player.getPvpFlag() > 0) // Cannot switch or change subclasses in combat
-		{
-			player.sendMessage("You cannot switch your subclass while you are fighting.");
-			return;
-		}
-		
-		if (player.getTemporaryLevel() != 0)
-		{
-			player.sendMessage("You canno't switch a subclass while on a temporary level.");
-			return;
-		}
-		
-		if (player.isInOlympiadMode())
-		{
-			player.sendMessage("You cannot switch your subclass while involved in the Grand Olympiads.");
-			return;
-		}
-		
-		if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null)
-		{
-			player.sendMessage("You cannot switch your subclass while involved in an event.");
-			return;
-		}
-		
-		if (player.hasIdentityCrisis()) // Cannot switch or change subclasses while he has identity crisis
-		{
-			player.sendMessage("You cannot switch your subclass while Identity crisis id in progress.");
-			return;
-		}
-		
-		if (player.getInstanceId() != 0 || GrandBossManager.getInstance().checkIfInZone(player))
-		{
-			player.sendMessage("You cannot switch your subclass in this situation!");
-			return;
-		}
-		
-		if (!player.getFloodProtectors().getSubclass().tryPerformAction("change subclass"))
-		{
-			_log.warning("Player " + player.getName() + " has performed a subclass change too fast");
-			return;
-		}
-		
-		int classIndex = skill.getId() - 1566;
-		
-		if (!player.setActiveClass(classIndex))
-		{
-			player.sendMessage("You cannot switch your class right now!.");
-			return;
-		}
-		
-		player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED)); // Transfer completed.
-		player.sendPacket(new ExSubjobInfo(player));
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	@Override
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.CLASS_CHANGE};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    @Override
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) activeChar;
+
+        if (player.isInCombat() || player.getPvpFlag() > 0) // Cannot switch or change subclasses in combat
+        {
+            player.sendMessage("You cannot switch your subclass while you are fighting.");
+            return;
+        }
+
+        if (player.getTemporaryLevel() != 0)
+        {
+            player.sendMessage("You canno't switch a subclass while on a temporary level.");
+            return;
+        }
+
+        if (player.isInOlympiadMode())
+        {
+            player.sendMessage("You cannot switch your subclass while involved in the Grand Olympiads.");
+            return;
+        }
+
+        if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null)
+        {
+            player.sendMessage("You cannot switch your subclass while involved in an event.");
+            return;
+        }
+
+        if (player.hasIdentityCrisis()) // Cannot switch or change subclasses while he has identity crisis
+        {
+            player.sendMessage("You cannot switch your subclass while Identity crisis id in progress.");
+            return;
+        }
+
+        if (player.getInstanceId() != 0 || GrandBossManager.getInstance().checkIfInZone(player))
+        {
+            player.sendMessage("You cannot switch your subclass in this situation!");
+            return;
+        }
+
+        if (!player.getFloodProtectors().getSubclass().tryPerformAction("change subclass"))
+        {
+            _log.warning("Player " + player.getName() + " has performed a subclass change too fast");
+            return;
+        }
+
+        int classIndex = skill.getId() - 1566;
+
+        if (!player.setActiveClass(classIndex))
+        {
+            player.sendMessage("You cannot switch your class right now!.");
+            return;
+        }
+
+        player.sendPacket(SystemMessage
+                .getSystemMessage(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED)); // Transfer completed.
+        player.sendPacket(new ExSubjobInfo(player));
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    @Override
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

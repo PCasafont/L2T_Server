@@ -18,49 +18,55 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Erlandys
  */
 public class ExResponseCommissionList extends L2GameServerPacket
 {
-	
-	@SuppressWarnings("unused")
-	private L2PcInstance _player;
-	@SuppressWarnings("unused")
-	private long _category;
-	@SuppressWarnings("unused")
-	private int _type;
-	@SuppressWarnings("unused")
-	private int _grade;
-	@SuppressWarnings("unused")
-	private String _search;
-	@SuppressWarnings("unused")
-	private boolean _yourAuction;
-	@SuppressWarnings("unused")
-	private int _yourAuctionsSize = 0;
-	@SuppressWarnings("unused")
-	private int _categories[][] = { { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 }, { 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 }, { 29, 30, 31, 32, 33, 34 }, { 35, 36, 37, 38, 39, 40 }, { 41, 42 }, { 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 } };
-	
-	public ExResponseCommissionList(L2PcInstance player, long category, int type, int grade, String searchName)
-	{
-		_player = player;
-		_category = category;
-		_type = type;
-		_grade = grade;
-		_search = searchName;
-		_yourAuction = false;
-	}
-	
-	public ExResponseCommissionList(L2PcInstance player)
-	{
-		_player = player;
-		_yourAuction = true;
-	}
-	
-	@Override
-	protected void writeImpl()
-	{
-		/*writeC(0xFE);
+
+    @SuppressWarnings("unused")
+    private L2PcInstance _player;
+    @SuppressWarnings("unused")
+    private long _category;
+    @SuppressWarnings("unused")
+    private int _type;
+    @SuppressWarnings("unused")
+    private int _grade;
+    @SuppressWarnings("unused")
+    private String _search;
+    @SuppressWarnings("unused")
+    private boolean _yourAuction;
+    @SuppressWarnings("unused")
+    private int _yourAuctionsSize = 0;
+    @SuppressWarnings("unused")
+    private int _categories[][] = {
+            {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18},
+            {19, 20, 21, 22, 23, 24, 25, 26, 27, 28},
+            {29, 30, 31, 32, 33, 34},
+            {35, 36, 37, 38, 39, 40},
+            {41, 42},
+            {43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58}
+    };
+
+    public ExResponseCommissionList(L2PcInstance player, long category, int type, int grade, String searchName)
+    {
+        _player = player;
+        _category = category;
+        _type = type;
+        _grade = grade;
+        _search = searchName;
+        _yourAuction = false;
+    }
+
+    public ExResponseCommissionList(L2PcInstance player)
+    {
+        _player = player;
+        _yourAuction = true;
+    }
+
+    @Override
+    protected void writeImpl()
+    {
+        /*writeC(0xFE);
 		writeH(0xF7);
 		if (_yourAuction)
 		{
@@ -146,10 +152,10 @@ public class ExResponseCommissionList extends L2GameServerPacket
 				}
 			}
 		}*/
-	}
-	
-	//private void writeItems(Auctions auction)
-	{
+    }
+
+    //private void writeItems(Auctions auction)
+    {
 		/*writeQ(auction.getAuctionId()); // Auction id
 		writeQ(auction.getPrice()); // Price
 		writeD(auction.getCategory()); // Category
@@ -173,5 +179,5 @@ public class ExResponseCommissionList extends L2GameServerPacket
 		writeH(0x00); // Enchant Effect 3
 
 		writeD(auction.getItem().getAppearance());*/
-	}
+    }
 }

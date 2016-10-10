@@ -1,571 +1,573 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Decreases Max HP and increases P. Atk. Enables the character to attack multiple opponents. -->
-	<skill id="3600" levels="6" name="Special Ability: Anger">
-		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 75 80 </table>
-		<table name="#pAtk"> 20.44 22.64 24.77 26.78 28.59 30.12 31.30 39 45 78.33 </table>
-		<table name="#pvpBonus"> 0 0 0 0 0 0 5 5 5 5 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<for>
-			<add stat="pAtk" val="#pAtk" />
-			<subPercent stat="maxHp" val="15" />
-			<add stat="atkCountMax" val="4" />
-			<addPercent stat="pvpPhysDmg" val="#pvpBonus" />
-			<addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
-			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
-		</for>
-	</skill>
-	<!-- Increases Atk. Spd. Enables the character to attack multiple opponents. -->
-	<skill id="3601" levels="6" name="Special Ability: Haste">
-		<table name="#pAtkSpd"> 8 7 7 7 6 6 6 6 7 9 </table>
-		<table name="#pvpBonus"> 0 0 0 0 0 0 5 5 5 5 </table>
-		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 75 84 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<for>
-			<addPercent stat="pAtkSpd" val="#pAtkSpd" />
-			<add stat="atkCountMax" val="4" />
-			<addPercent stat="pvpPhysDmg" val="#pvpBonus" />
-			<addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
-			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
-		</for>
-	</skill>
-	<!-- Increases Accuracy. Enables the character to attack multiple opponents. -->
-	<skill id="3602" levels="6" name="Special Ability: Guidance">
-		<table name="#accCombat"> 6.88 6.07 5.72 5.37 5.02 4.68 4.34 3.95 5.27 7.5 </table>
-		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 75 84 </table>
-		<table name="#pvpBonus"> 0 0 0 0 0 0 5 5 5 5 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<for>
-			<add stat="accCombat" val="#accCombat" />
-			<add stat="atkCountMax" val="4" />
-			<addPercent stat="pvpPhysDmg" val="#pvpBonus" />
-			<addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
-			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
-		</for>
-	</skill>
-	<!-- The Demon Bremmnon used this mystical sword to slaughter his enemies. The more blood the sword sheds, the more powerful it becomes. -->
-	<skill id="3603" levels="10" name="Demonic Sword Zariche">
-		<table name="#pAtk"> 220 242 266 292 322 354 389 428 471 518 </table>
-		<table name="#atkAdd"> 600 720 864 1036 1244 1492 1791 2149 2579 3095 </table>
-		<table name="#mAtk"> 210 220 231 243 255 268 281 295 310 325 </table>
-		<table name="#pDef"> 204 208 212 216 220 225 229 234 239 243 </table>
-		<table name="#pDefAdd"> 510 520 530 541 552 563 574 585 597 609 </table>
-		<table name="#mDef"> 206 212 218 225 231 238 245 253 260 268 </table>
-		<table name="#mDefAdd"> 515 530 546 562 579 597 614 633 652 671 </table>
-		<table name="#runSpd"> 2 4 6 8 10 12 14 16 18 20 </table>
-		<table name="#maxCp"> 1050 1102 1157 1215 1276 1340 1407 1477 1551 1628 </table>
-		<table name="#maxCpAdd"> 1300 1690 2197 2856 3712 4826 6274 8157 10604 13785 </table>
-		<table name="#regCp"> 1100 1210 1331 1464 1610 1771 1948 2143 2357 2593 </table>
-		<table name="#debuffRes"> 85 86 87 88 89 90 91 92 93 94 </table>
-		<table name="#accCombat"> 1 4 9 16 25 36 49 64 81 100 </table>
-		<table name="#absorbDam"> 22 24 26 29 32 35 38 42 47 50 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="78" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<addPercent stat="pAtk" val="#pAtk" />
-			<add stat="pAtk" val="#atkAdd" />
-			<addPercent stat="mAtk" val="#mAtk" />
-			<add stat="mAtk" val="#atkAdd" />
-			<addPercent stat="pDef" val="#pDef" />
-			<add stat="pDef" val="#pDefAdd" />
-			<addPercent stat="mDef" val="#mDef" />
-			<add stat="mDef" val="#mDefAdd" />
-			<add stat="runSpd" val="#runSpd" />
-			<addPercent stat="maxCp" val="#maxCp" />
-			<add stat="maxCp" val="#maxCpAdd" />
-			<addPercent stat="regCp" val="#regCp" />
-			<addPercent stat="debuffRes" val="#debuffRes" />
-			<add stat="accCombat" val="#accCombat" />
-			<add stat="absorbDam" val="#absorbDam" />
-			<set stat="STR" val="40" />
-			<set stat="DEX" val="30" />
-			<set stat="CON" val="43" />
-			<set stat="INT" val="21" />
-			<set stat="WIT" val="15" />
-			<set stat="MEN" val="21" />
-		</for>
-	</skill>
-	<!-- Increases Dark Attack/Poison/Bleed/Paralysis/Stun/Sleep Resistance, and Poison/Bleed/Paralysis/Stun/Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
-	<skill id="3604" levels="1" name="Frintezza's Necklace">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<for>
-			<add stat="darkRes" val="15" />
-			<addPercent stat="poisonRes" val="25" />
-			<addPercent stat="bleedRes" val="25" />
-			<addPercent stat="paralysisRes" val="15" />
-			<addPercent stat="stunRes" val="15" />
-			<addPercent stat="sleepRes" val="15" />
-			<addPercent stat="poisonProf" val="25" />
-			<addPercent stat="bleedProf" val="25" />
-			<addPercent stat="paralysisProf" val="15" />
-			<addPercent stat="stunProf" val="15" />
-			<addPercent stat="sleepProf" val="15" />
-			<subPercent stat="mReuse" val="5" />
-			<subPercent stat="pReuse" val="5" />
-			<add stat="reflectDam" val="4" />
-		</for>
-	</skill>
-	<!-- Increases Atk. Spd. and damage of general attacks by 5%. -->
-	<skill id="3605" levels="1" name="Clan Oath Heavy Armor Set">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<for>
-			<addPercent stat="pAtkSpd" val="5" />
-			<addPercent stat="pAtk" val="5" />
-		</for>
-	</skill>
-	<!-- Increases Atk. Spd. and Critical Damage by 5%. -->
-	<skill id="3606" levels="1" name="Clan Oath Light Armor Set">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<for>
-			<addPercent stat="pAtkSpd" val="5" />
-			<addPercentBase stat="pCritDmg" val="5" />
-		</for>
-	</skill>
-	<!-- Increases MP Recovery Rate and Casting Spd. By 5% -->
-	<skill id="3607" levels="1" name="Clan Oath Robe Set">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<for>
-			<addPercent stat="regMp" val="5" />
-			<addPercent stat="mAtkSpd" val="5" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the skill player's death XP penalty. Increases one's own M. Def. when attacked. Decreases Critical Damage success rate.
-		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases one's own M. Def. and Critical Rate when attacked. Decreases Critical Damage success rate.
-	-->
-	<skill id="3608" levels="3" name="Apella Heavy Armor Set">
-		<table name="#names">Apella Heavy Armor Set;Improved Apella Heavy Armor Set;Apella Combat Heavy Armor Set</table>
-		<table name="#maxCP"> 1035 1116 1116 </table>
-		<table name="#triggeredLevel"> 1 2 2 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="name" val="#names" />
-		<set name="activationChance" val="10" />
-		<set name="chanceType" val="ON_ATTACKED_HIT" />
-		<set name="triggeredId" val="5605" />
-		<set name="triggeredLevel" val="#triggeredLevel" />
-		<for>
-			<add stat="maxCp" val="#maxCP" />
-			<addPercent stat="regCp" val="40" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Evasion when attacked. Decreases received Critical Damage.
-		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Evasion and Atk. Spd. when attacked. Decreases received Critical Damage.
-	-->
-	<skill id="3609" levels="3" name="Apella Light Armor Set">
-		<table name="#names">Apella Light Armor Set;Improved Apella Light Armor Set;Apella Combat Light Armor Set</table>
-		<table name="#maxCP"> 1035 1116 1116 </table>
-		<table name="#triggeredLevel"> 1 2 2 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="name" val="#names" />
-		<set name="activationChance" val="10" />
-		<set name="chanceType" val="ON_ATTACKED_HIT" />
-		<set name="triggeredId" val="5607" />
-		<set name="triggeredLevel" val="#triggeredLevel" />
-		<for>
-			<add stat="maxCp" val="#maxCP" />
-			<addPercent stat="regCp" val="40" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Speed and P. Def. when attacked.
-		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Speed, P. Def., and M. Atk. when attacked.
-	-->
-	<skill id="3610" levels="3" name="Apella Robe Set">
-		<table name="#names">Apella Robe Set;Improved Apella Robe Set;Apella Combat Robe Set</table>
-		<table name="#maxCP"> 1035 1116 1116 </table>
-		<table name="#triggeredLevel"> 1 2 2 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="name" val="#names" />
-		<set name="activationChance" val="10" />
-		<set name="chanceType" val="ON_ATTACKED_HIT" />
-		<set name="triggeredId" val="5608" />
-		<set name="triggeredLevel" val="#triggeredLevel" />
-		<for>
-			<add stat="maxCp" val="#maxCP" />
-			<addPercent stat="regCp" val="40" />
-		</for>
-	</skill>
-	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
-	<skill id="3611" levels="1" name="Enchant Heavy Armor (D-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="25">
-				<using kind="Heavy" />
-			</add>
-			<add stat="regMp" val="1.518">
-				<and>
-					<player resting="true" />
-					<or>
-						<player standing="true" />
-					</or>
-				</and>
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Def. and Evasion by enchanting set items. -->
-	<skill id="3612" levels="1" name="Enchant Light Armor (D-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="rEvas" val="2">
-				<using kind="Light" />
-			</add>
-			<add stat="mDef" val="14">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
-	<skill id="3613" levels="1" name="Enchant Robe (D-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="16">
-				<using kind="Magic" />
-			</add>
-			<addPercent stat="maxLoad" val="30" />
-		</for>
-	</skill>
-	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
-	<skill id="3614" levels="1" name="Enchant Heavy Armor (C-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="38">
-				<using kind="Heavy" />
-			</add>
-			<add stat="regMp" val="2.019">
-				<and>
-					<player resting="true" />
-					<or>
-						<player standing="true" />
-					</or>
-				</and>
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Def. and Evasion by enchanting set items. -->
-	<skill id="3615" levels="1" name="Enchant Light Armor (C-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="rEvas" val="2">
-				<using kind="Light" />
-			</add>
-			<add stat="mDef" val="20">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
-	<skill id="3616" levels="1" name="Enchant Robe (C-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="24">
-				<using kind="Magic" />
-			</add>
-			<addPercent stat="maxLoad" val="30" />
-		</for>
-	</skill>
-	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
-	<skill id="3617" levels="1" name="Enchant Heavy Armor (B-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="44">
-				<using kind="Heavy" />
-			</add>
-			<add stat="regMp" val="2.25">
-				<and>
-					<player resting="true" />
-					<or>
-						<player standing="true" />
-					</or>
-				</and>
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Def. and Evasion by enchanting set items. -->
-	<skill id="3618" levels="1" name="Enchant Light Armor (B-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="rEvas" val="2">
-				<using kind="Light" />
-			</add>
-			<add stat="mDef" val="24">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
-	<skill id="3619" levels="1" name="Enchant Robe (B-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="28">
-				<using kind="Magic" />
-			</add>
-			<addPercent stat="maxLoad" val="30" />
-		</for>
-	</skill>
-	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
-	<skill id="3620" levels="1" name="Enchant Heavy Armor (A-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="50">
-				<using kind="Heavy" />
-			</add>
-			<add stat="regMp" val="2.43">
-				<and>
-					<player resting="true" />
-					<or>
-						<player standing="true" />
-					</or>
-				</and>
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Def. and Evasion by enchanting set items. -->
-	<skill id="3621" levels="1" name="Enchant Light Armor (A-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="rEvas" val="2">
-				<using kind="Light" />
-			</add>
-			<add stat="mDef" val="27">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
-	<skill id="3622" levels="1" name="Enchant Robe (A-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="32">
-				<using kind="Magic" />
-			</add>
-			<addPercent stat="maxLoad" val="30" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and MP Recovery Bonus by enchanting set items.
-		Level 2: Increases P. Def and MP Recovery Bonus by enchanting a set item.
-	-->
-	<skill id="3623" levels="3" name="Enchant Heavy Armor (S-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="59">
-				<using kind="Heavy" />
-			</add>
-			<add stat="regMp" val="2.823">
-				<and>
-					<player resting="true" />
-					<or>
-						<player standing="true" />
-					</or>
-				</and>
-			</add>
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases M. Def. and Evasion by enchanting set items.
-		Level 2: Increases M. Def. and Evasion by enchanting a set item.
-	-->
-	<skill id="3624" levels="3" name="Enchant Light Armor (S-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="rEvas" val="2">
-				<using kind="Light" />
-			</add>
-			<add stat="mDef" val="33">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and weight capacity by enchanting set items.
-		Level 2: Increases P. Def. and weight capacity by enchanting a set item.
-	-->
-	<skill id="3625" levels="3" name="Enchant Robe (S-grade)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<for>
-			<add stat="pDef" val="38">
-				<using kind="Magic" />
-			</add>
-			<addPercent stat="maxLoad" val="30" />
-		</for>
-	</skill>
-	<!-- A demonic twin blade forged in blood by Gran Kain, the god of chaos. The blade dies over and over again when it touches the air, and it craves blood to forge it anew. It becomes stronger every time it is supplied with blood. -->
-	<skill id="3629" levels="10" name="Blood Sword Akamanah">
-		<table name="#pAtk"> 220 242 266 292 322 354 389 428 471 518 </table>
-		<table name="#atkAdd"> 600 720 864 1036 1244 1492 1791 2149 2579 3095 </table>
-		<table name="#mAtk"> 210 220 231 243 255 268 281 295 310 325 </table>
-		<table name="#pDef"> 204 208 212 216 220 225 229 234 239 243 </table>
-		<table name="#pDefAdd"> 510 520 530 541 552 563 574 585 597 609 </table>
-		<table name="#mDef"> 206 212 218 225 231 238 245 253 260 268 </table>
-		<table name="#mDefAdd"> 515 530 546 562 579 597 614 633 652 671 </table>
-		<table name="#runSpd"> 2 4 6 8 10 12 14 16 18 20 </table>
-		<table name="#maxCp"> 1050 1102 1157 1215 1276 1340 1407 1477 1551 1628 </table>
-		<table name="#maxCpAdd"> 1300 1690 2197 2856 3712 4826 6274 8157 10604 13785 </table>
-		<table name="#regCp"> 1100 1210 1331 1464 1610 1771 1948 2143 2357 2593 </table>
-		<table name="#debuffRes"> 85 86 87 88 89 90 91 92 93 94 </table>
-		<table name="#accCombat"> 1 4 9 16 25 36 49 64 81 100 </table>
-		<table name="#absorbDam"> 22 24 26 29 32 35 38 42 47 50 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="78" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<addPercent stat="pAtk" val="#pAtk" />
-			<add stat="pAtk" val="#atkAdd" />
-			<addPercent stat="mAtk" val="#mAtk" />
-			<add stat="mAtk" val="#atkAdd" />
-			<addPercent stat="pDef" val="#pDef" />
-			<add stat="pDef" val="#pDefAdd" />
-			<addPercent stat="mDef" val="#mDef" />
-			<add stat="mDef" val="#mDefAdd" />
-			<add stat="runSpd" val="#runSpd" />
-			<addPercent stat="maxCp" val="#maxCp" />
-			<add stat="maxCp" val="#maxCpAdd" />
-			<addPercent stat="regCp" val="#regCp" />
-			<addPercent stat="debuffRes" val="#debuffRes" />
-			<add stat="accCombat" val="#accCombat" />
-			<add stat="absorbDam" val="#absorbDam" />
-			<set stat="STR" val="40" />
-			<set stat="DEX" val="30" />
-			<set stat="CON" val="43" />
-			<set stat="INT" val="21" />
-			<set stat="WIT" val="15" />
-			<set stat="MEN" val="21" />
-		</for>
-	</skill>
-	<!-- Discharges cursed energy to attack nearby enemies. -->
-	<skill id="3630" levels="1" name="Void Burst">
-		<set name="target" val="TARGET_AURA" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="140" />
-		<set name="power" val="11500" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="60000" />
-		<set name="skillRadius" val="200" />
-	</skill>
-	<!-- Emits cursed energy to strike a distant enemy. -->
-	<skill id="3631" levels="1" name="Void Flow">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="140" />
-		<set name="power" val="15000" />
-		<set name="hitTime" val="1900" />
-		<set name="reuseDelay" val="60000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Active: Creates a gate that summons clan members. You cannot move while this skill is active. -->
-	<skill id="3632" levels="1" name="Clan Gate">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="60" />
-		<set name="hitTime" val="10000" />
-		<set name="reuseDelay" val="3600000" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
-		<for>
-			<abnormal duration="120" stackLvl="1" stackType="abnormal_item">
-				<effect type="ClanGate" val="0" />
-				<effect type="ImmobileBuff" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Active: Momentarily increases Stun Resistance.
-		Level 2: Active: Momentarily immune to Stun.
-	-->
-	<skill id="3633" levels="2" name="Residential Stun Immunity">
-		<table name="#vuln"> 80 100 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="60" />
-		<set name="reuseDelay" val="600000" />
-		<for>
-			<abnormal duration="7" stackLvl="1" stackType="abnormal_item">
-				<effect type="Buff" val="0" />
-				<addPercent stat="stunRes" val="#vuln" />
-			</abnormal>
-		</for>
-	</skill>
+    <!-- Decreases Max HP and increases P. Atk. Enables the character to attack multiple opponents. -->
+    <skill id="3600" levels="6" name="Special Ability: Anger">
+        <table name="#magicLvl">46 49 52 55 58 61 64 67 75 80</table>
+        <table name="#pAtk">20.44 22.64 24.77 26.78 28.59 30.12 31.30 39 45 78.33</table>
+        <table name="#pvpBonus">0 0 0 0 0 0 5 5 5 5</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <for>
+            <add stat="pAtk" val="#pAtk" />
+            <subPercent stat="maxHp" val="15" />
+            <add stat="atkCountMax" val="4" />
+            <addPercent stat="pvpPhysDmg" val="#pvpBonus" />
+            <addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
+            <addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
+        </for>
+    </skill>
+    <!-- Increases Atk. Spd. Enables the character to attack multiple opponents. -->
+    <skill id="3601" levels="6" name="Special Ability: Haste">
+        <table name="#pAtkSpd">8 7 7 7 6 6 6 6 7 9</table>
+        <table name="#pvpBonus">0 0 0 0 0 0 5 5 5 5</table>
+        <table name="#magicLvl">46 49 52 55 58 61 64 67 75 84</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <for>
+            <addPercent stat="pAtkSpd" val="#pAtkSpd" />
+            <add stat="atkCountMax" val="4" />
+            <addPercent stat="pvpPhysDmg" val="#pvpBonus" />
+            <addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
+            <addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
+        </for>
+    </skill>
+    <!-- Increases Accuracy. Enables the character to attack multiple opponents. -->
+    <skill id="3602" levels="6" name="Special Ability: Guidance">
+        <table name="#accCombat">6.88 6.07 5.72 5.37 5.02 4.68 4.34 3.95 5.27 7.5</table>
+        <table name="#magicLvl">46 49 52 55 58 61 64 67 75 84</table>
+        <table name="#pvpBonus">0 0 0 0 0 0 5 5 5 5</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <for>
+            <add stat="accCombat" val="#accCombat" />
+            <add stat="atkCountMax" val="4" />
+            <addPercent stat="pvpPhysDmg" val="#pvpBonus" />
+            <addPercent stat="pvpPhysSkillsDmg" val="#pvpBonus" />
+            <addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
+        </for>
+    </skill>
+    <!-- The Demon Bremmnon used this mystical sword to slaughter his enemies. The more blood the sword sheds, the more powerful it becomes. -->
+    <skill id="3603" levels="10" name="Demonic Sword Zariche">
+        <table name="#pAtk">220 242 266 292 322 354 389 428 471 518</table>
+        <table name="#atkAdd">600 720 864 1036 1244 1492 1791 2149 2579 3095</table>
+        <table name="#mAtk">210 220 231 243 255 268 281 295 310 325</table>
+        <table name="#pDef">204 208 212 216 220 225 229 234 239 243</table>
+        <table name="#pDefAdd">510 520 530 541 552 563 574 585 597 609</table>
+        <table name="#mDef">206 212 218 225 231 238 245 253 260 268</table>
+        <table name="#mDefAdd">515 530 546 562 579 597 614 633 652 671</table>
+        <table name="#runSpd">2 4 6 8 10 12 14 16 18 20</table>
+        <table name="#maxCp">1050 1102 1157 1215 1276 1340 1407 1477 1551 1628</table>
+        <table name="#maxCpAdd">1300 1690 2197 2856 3712 4826 6274 8157 10604 13785</table>
+        <table name="#regCp">1100 1210 1331 1464 1610 1771 1948 2143 2357 2593</table>
+        <table name="#debuffRes">85 86 87 88 89 90 91 92 93 94</table>
+        <table name="#accCombat">1 4 9 16 25 36 49 64 81 100</table>
+        <table name="#absorbDam">22 24 26 29 32 35 38 42 47 50</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="78" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <addPercent stat="pAtk" val="#pAtk" />
+            <add stat="pAtk" val="#atkAdd" />
+            <addPercent stat="mAtk" val="#mAtk" />
+            <add stat="mAtk" val="#atkAdd" />
+            <addPercent stat="pDef" val="#pDef" />
+            <add stat="pDef" val="#pDefAdd" />
+            <addPercent stat="mDef" val="#mDef" />
+            <add stat="mDef" val="#mDefAdd" />
+            <add stat="runSpd" val="#runSpd" />
+            <addPercent stat="maxCp" val="#maxCp" />
+            <add stat="maxCp" val="#maxCpAdd" />
+            <addPercent stat="regCp" val="#regCp" />
+            <addPercent stat="debuffRes" val="#debuffRes" />
+            <add stat="accCombat" val="#accCombat" />
+            <add stat="absorbDam" val="#absorbDam" />
+            <set stat="STR" val="40" />
+            <set stat="DEX" val="30" />
+            <set stat="CON" val="43" />
+            <set stat="INT" val="21" />
+            <set stat="WIT" val="15" />
+            <set stat="MEN" val="21" />
+        </for>
+    </skill>
+    <!-- Increases Dark Attack/Poison/Bleed/Paralysis/Stun/Sleep Resistance, and Poison/Bleed/Paralysis/Stun/Sleep attack bonus. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
+    <skill id="3604" levels="1" name="Frintezza's Necklace">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <for>
+            <add stat="darkRes" val="15" />
+            <addPercent stat="poisonRes" val="25" />
+            <addPercent stat="bleedRes" val="25" />
+            <addPercent stat="paralysisRes" val="15" />
+            <addPercent stat="stunRes" val="15" />
+            <addPercent stat="sleepRes" val="15" />
+            <addPercent stat="poisonProf" val="25" />
+            <addPercent stat="bleedProf" val="25" />
+            <addPercent stat="paralysisProf" val="15" />
+            <addPercent stat="stunProf" val="15" />
+            <addPercent stat="sleepProf" val="15" />
+            <subPercent stat="mReuse" val="5" />
+            <subPercent stat="pReuse" val="5" />
+            <add stat="reflectDam" val="4" />
+        </for>
+    </skill>
+    <!-- Increases Atk. Spd. and damage of general attacks by 5%. -->
+    <skill id="3605" levels="1" name="Clan Oath Heavy Armor Set">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="pAtkSpd" val="5" />
+            <addPercent stat="pAtk" val="5" />
+        </for>
+    </skill>
+    <!-- Increases Atk. Spd. and Critical Damage by 5%. -->
+    <skill id="3606" levels="1" name="Clan Oath Light Armor Set">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="pAtkSpd" val="5" />
+            <addPercentBase stat="pCritDmg" val="5" />
+        </for>
+    </skill>
+    <!-- Increases MP Recovery Rate and Casting Spd. By 5% -->
+    <skill id="3607" levels="1" name="Clan Oath Robe Set">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="regMp" val="5" />
+            <addPercent stat="mAtkSpd" val="5" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases Max CP/CP Recovery Bonus, and decreases the skill player's death XP penalty. Increases one's own M. Def. when attacked. Decreases Critical Damage success rate.
+        Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases one's own M. Def. and Critical Rate when attacked. Decreases Critical Damage success rate.
+    -->
+    <skill id="3608" levels="3" name="Apella Heavy Armor Set">
+        <table name="#names">Apella Heavy Armor Set;Improved Apella Heavy Armor Set;Apella Combat Heavy Armor Set
+        </table>
+        <table name="#maxCP">1035 1116 1116</table>
+        <table name="#triggeredLevel">1 2 2</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="name" val="#names" />
+        <set name="activationChance" val="10" />
+        <set name="chanceType" val="ON_ATTACKED_HIT" />
+        <set name="triggeredId" val="5605" />
+        <set name="triggeredLevel" val="#triggeredLevel" />
+        <for>
+            <add stat="maxCp" val="#maxCP" />
+            <addPercent stat="regCp" val="40" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Evasion when attacked. Decreases received Critical Damage.
+        Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Evasion and Atk. Spd. when attacked. Decreases received Critical Damage.
+    -->
+    <skill id="3609" levels="3" name="Apella Light Armor Set">
+        <table name="#names">Apella Light Armor Set;Improved Apella Light Armor Set;Apella Combat Light Armor Set
+        </table>
+        <table name="#maxCP">1035 1116 1116</table>
+        <table name="#triggeredLevel">1 2 2</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="name" val="#names" />
+        <set name="activationChance" val="10" />
+        <set name="chanceType" val="ON_ATTACKED_HIT" />
+        <set name="triggeredId" val="5607" />
+        <set name="triggeredLevel" val="#triggeredLevel" />
+        <for>
+            <add stat="maxCp" val="#maxCP" />
+            <addPercent stat="regCp" val="40" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Speed and P. Def. when attacked.
+        Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Speed, P. Def., and M. Atk. when attacked.
+    -->
+    <skill id="3610" levels="3" name="Apella Robe Set">
+        <table name="#names">Apella Robe Set;Improved Apella Robe Set;Apella Combat Robe Set</table>
+        <table name="#maxCP">1035 1116 1116</table>
+        <table name="#triggeredLevel">1 2 2</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="name" val="#names" />
+        <set name="activationChance" val="10" />
+        <set name="chanceType" val="ON_ATTACKED_HIT" />
+        <set name="triggeredId" val="5608" />
+        <set name="triggeredLevel" val="#triggeredLevel" />
+        <for>
+            <add stat="maxCp" val="#maxCP" />
+            <addPercent stat="regCp" val="40" />
+        </for>
+    </skill>
+    <!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
+    <skill id="3611" levels="1" name="Enchant Heavy Armor (D-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="25">
+                <using kind="Heavy" />
+            </add>
+            <add stat="regMp" val="1.518">
+                <and>
+                    <player resting="true" />
+                    <or>
+                        <player standing="true" />
+                    </or>
+                </and>
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Def. and Evasion by enchanting set items. -->
+    <skill id="3612" levels="1" name="Enchant Light Armor (D-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="rEvas" val="2">
+                <using kind="Light" />
+            </add>
+            <add stat="mDef" val="14">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases P. Def. and weight capacity by enchanting set items. -->
+    <skill id="3613" levels="1" name="Enchant Robe (D-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="16">
+                <using kind="Magic" />
+            </add>
+            <addPercent stat="maxLoad" val="30" />
+        </for>
+    </skill>
+    <!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
+    <skill id="3614" levels="1" name="Enchant Heavy Armor (C-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="38">
+                <using kind="Heavy" />
+            </add>
+            <add stat="regMp" val="2.019">
+                <and>
+                    <player resting="true" />
+                    <or>
+                        <player standing="true" />
+                    </or>
+                </and>
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Def. and Evasion by enchanting set items. -->
+    <skill id="3615" levels="1" name="Enchant Light Armor (C-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="rEvas" val="2">
+                <using kind="Light" />
+            </add>
+            <add stat="mDef" val="20">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases P. Def. and weight capacity by enchanting set items. -->
+    <skill id="3616" levels="1" name="Enchant Robe (C-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="24">
+                <using kind="Magic" />
+            </add>
+            <addPercent stat="maxLoad" val="30" />
+        </for>
+    </skill>
+    <!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
+    <skill id="3617" levels="1" name="Enchant Heavy Armor (B-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="44">
+                <using kind="Heavy" />
+            </add>
+            <add stat="regMp" val="2.25">
+                <and>
+                    <player resting="true" />
+                    <or>
+                        <player standing="true" />
+                    </or>
+                </and>
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Def. and Evasion by enchanting set items. -->
+    <skill id="3618" levels="1" name="Enchant Light Armor (B-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="rEvas" val="2">
+                <using kind="Light" />
+            </add>
+            <add stat="mDef" val="24">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases P. Def. and weight capacity by enchanting set items. -->
+    <skill id="3619" levels="1" name="Enchant Robe (B-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="28">
+                <using kind="Magic" />
+            </add>
+            <addPercent stat="maxLoad" val="30" />
+        </for>
+    </skill>
+    <!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
+    <skill id="3620" levels="1" name="Enchant Heavy Armor (A-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="50">
+                <using kind="Heavy" />
+            </add>
+            <add stat="regMp" val="2.43">
+                <and>
+                    <player resting="true" />
+                    <or>
+                        <player standing="true" />
+                    </or>
+                </and>
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Def. and Evasion by enchanting set items. -->
+    <skill id="3621" levels="1" name="Enchant Light Armor (A-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="rEvas" val="2">
+                <using kind="Light" />
+            </add>
+            <add stat="mDef" val="27">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases P. Def. and weight capacity by enchanting set items. -->
+    <skill id="3622" levels="1" name="Enchant Robe (A-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="32">
+                <using kind="Magic" />
+            </add>
+            <addPercent stat="maxLoad" val="30" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases P. Def. and MP Recovery Bonus by enchanting set items.
+        Level 2: Increases P. Def and MP Recovery Bonus by enchanting a set item.
+    -->
+    <skill id="3623" levels="3" name="Enchant Heavy Armor (S-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="59">
+                <using kind="Heavy" />
+            </add>
+            <add stat="regMp" val="2.823">
+                <and>
+                    <player resting="true" />
+                    <or>
+                        <player standing="true" />
+                    </or>
+                </and>
+            </add>
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases M. Def. and Evasion by enchanting set items.
+        Level 2: Increases M. Def. and Evasion by enchanting a set item.
+    -->
+    <skill id="3624" levels="3" name="Enchant Light Armor (S-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="rEvas" val="2">
+                <using kind="Light" />
+            </add>
+            <add stat="mDef" val="33">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases P. Def. and weight capacity by enchanting set items.
+        Level 2: Increases P. Def. and weight capacity by enchanting a set item.
+    -->
+    <skill id="3625" levels="3" name="Enchant Robe (S-grade)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <add stat="pDef" val="38">
+                <using kind="Magic" />
+            </add>
+            <addPercent stat="maxLoad" val="30" />
+        </for>
+    </skill>
+    <!-- A demonic twin blade forged in blood by Gran Kain, the god of chaos. The blade dies over and over again when it touches the air, and it craves blood to forge it anew. It becomes stronger every time it is supplied with blood. -->
+    <skill id="3629" levels="10" name="Blood Sword Akamanah">
+        <table name="#pAtk">220 242 266 292 322 354 389 428 471 518</table>
+        <table name="#atkAdd">600 720 864 1036 1244 1492 1791 2149 2579 3095</table>
+        <table name="#mAtk">210 220 231 243 255 268 281 295 310 325</table>
+        <table name="#pDef">204 208 212 216 220 225 229 234 239 243</table>
+        <table name="#pDefAdd">510 520 530 541 552 563 574 585 597 609</table>
+        <table name="#mDef">206 212 218 225 231 238 245 253 260 268</table>
+        <table name="#mDefAdd">515 530 546 562 579 597 614 633 652 671</table>
+        <table name="#runSpd">2 4 6 8 10 12 14 16 18 20</table>
+        <table name="#maxCp">1050 1102 1157 1215 1276 1340 1407 1477 1551 1628</table>
+        <table name="#maxCpAdd">1300 1690 2197 2856 3712 4826 6274 8157 10604 13785</table>
+        <table name="#regCp">1100 1210 1331 1464 1610 1771 1948 2143 2357 2593</table>
+        <table name="#debuffRes">85 86 87 88 89 90 91 92 93 94</table>
+        <table name="#accCombat">1 4 9 16 25 36 49 64 81 100</table>
+        <table name="#absorbDam">22 24 26 29 32 35 38 42 47 50</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="78" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <addPercent stat="pAtk" val="#pAtk" />
+            <add stat="pAtk" val="#atkAdd" />
+            <addPercent stat="mAtk" val="#mAtk" />
+            <add stat="mAtk" val="#atkAdd" />
+            <addPercent stat="pDef" val="#pDef" />
+            <add stat="pDef" val="#pDefAdd" />
+            <addPercent stat="mDef" val="#mDef" />
+            <add stat="mDef" val="#mDefAdd" />
+            <add stat="runSpd" val="#runSpd" />
+            <addPercent stat="maxCp" val="#maxCp" />
+            <add stat="maxCp" val="#maxCpAdd" />
+            <addPercent stat="regCp" val="#regCp" />
+            <addPercent stat="debuffRes" val="#debuffRes" />
+            <add stat="accCombat" val="#accCombat" />
+            <add stat="absorbDam" val="#absorbDam" />
+            <set stat="STR" val="40" />
+            <set stat="DEX" val="30" />
+            <set stat="CON" val="43" />
+            <set stat="INT" val="21" />
+            <set stat="WIT" val="15" />
+            <set stat="MEN" val="21" />
+        </for>
+    </skill>
+    <!-- Discharges cursed energy to attack nearby enemies. -->
+    <skill id="3630" levels="1" name="Void Burst">
+        <set name="target" val="TARGET_AURA" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="140" />
+        <set name="power" val="11500" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="60000" />
+        <set name="skillRadius" val="200" />
+    </skill>
+    <!-- Emits cursed energy to strike a distant enemy. -->
+    <skill id="3631" levels="1" name="Void Flow">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="140" />
+        <set name="power" val="15000" />
+        <set name="hitTime" val="1900" />
+        <set name="reuseDelay" val="60000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Active: Creates a gate that summons clan members. You cannot move while this skill is active. -->
+    <skill id="3632" levels="1" name="Clan Gate">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="60" />
+        <set name="hitTime" val="10000" />
+        <set name="reuseDelay" val="3600000" />
+        <cond msgId="1509">
+            <player olympiad="false" />
+        </cond>
+        <for>
+            <abnormal duration="120" stackLvl="1" stackType="abnormal_item">
+                <effect type="ClanGate" val="0" />
+                <effect type="ImmobileBuff" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!--
+        Level 1: Active: Momentarily increases Stun Resistance.
+        Level 2: Active: Momentarily immune to Stun.
+    -->
+    <skill id="3633" levels="2" name="Residential Stun Immunity">
+        <table name="#vuln">80 100</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="60" />
+        <set name="reuseDelay" val="600000" />
+        <for>
+            <abnormal duration="7" stackLvl="1" stackType="abnormal_item">
+                <effect type="Buff" val="0" />
+                <addPercent stat="stunRes" val="#vuln" />
+            </abnormal>
+        </for>
+    </skill>
 </list>

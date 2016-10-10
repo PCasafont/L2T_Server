@@ -20,49 +20,55 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.QuestState;
 
 /**
- *
  * @author DS
- *
  */
 public final class OlympiadParticipant
 {
-	public final int objectId;
-	public L2PcInstance player;
-	public final String name;
-	public final int side;
-	public final int baseClass;
-	public boolean disconnected = false;
-	public boolean defaulted = false;
-	public final OlympiadNobleInfo nobleInfo;
-	
-	public OlympiadParticipant(L2PcInstance plr, int olympiadSide)
-	{
-		objectId = plr.getObjectId();
-		player = plr;
-		name = plr.getName();
-		side = olympiadSide;
-		baseClass = plr.getBaseClass();
-		nobleInfo = Olympiad.getInstance().getNobleInfo(objectId);
-	}
-	
-	public final void updatePlayer()
-	{
-		if (player == null || !player.isOnline())
-			player = L2World.getInstance().getPlayer(objectId);
-	}
-	
-	public final void competitionDone(CompetitionType type, boolean hasWon)
-	{
-		QuestState st = player.getQuestState("Q551_OlympiadStarter");
-		if (st != null)
-			st.getQuest().notifyOlympiadCombat(player, type, hasWon);
-		
-		st = player.getQuestState("Q552_OlympiadVeteran");
-		if (st != null)
-			st.getQuest().notifyOlympiadCombat(player, type, hasWon);
-		
-		st = player.getQuestState("Q553_OlympiadUndefeated");
-		if (st != null)
-			st.getQuest().notifyOlympiadCombat(player, type, hasWon);
-	}
+    public final int objectId;
+    public L2PcInstance player;
+    public final String name;
+    public final int side;
+    public final int baseClass;
+    public boolean disconnected = false;
+    public boolean defaulted = false;
+    public final OlympiadNobleInfo nobleInfo;
+
+    public OlympiadParticipant(L2PcInstance plr, int olympiadSide)
+    {
+        objectId = plr.getObjectId();
+        player = plr;
+        name = plr.getName();
+        side = olympiadSide;
+        baseClass = plr.getBaseClass();
+        nobleInfo = Olympiad.getInstance().getNobleInfo(objectId);
+    }
+
+    public final void updatePlayer()
+    {
+        if (player == null || !player.isOnline())
+        {
+            player = L2World.getInstance().getPlayer(objectId);
+        }
+    }
+
+    public final void competitionDone(CompetitionType type, boolean hasWon)
+    {
+        QuestState st = player.getQuestState("Q551_OlympiadStarter");
+        if (st != null)
+        {
+            st.getQuest().notifyOlympiadCombat(player, type, hasWon);
+        }
+
+        st = player.getQuestState("Q552_OlympiadVeteran");
+        if (st != null)
+        {
+            st.getQuest().notifyOlympiadCombat(player, type, hasWon);
+        }
+
+        st = player.getQuestState("Q553_OlympiadUndefeated");
+        if (st != null)
+        {
+            st.getQuest().notifyOlympiadCombat(player, type, hasWon);
+        }
+    }
 }

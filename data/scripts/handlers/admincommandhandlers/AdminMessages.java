@@ -24,29 +24,29 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminMessages implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS = { "admin_msg" };
-	
-	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_msg"))
-		{
-			try
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(Integer.parseInt(command.substring(10).trim())));
-				return true;
-			}
-			catch (Exception e)
-			{
-				activeChar.sendMessage("Command format: //msg <SYSTEM_MSG_ID>");
-			}
-		}
-		return false;
-	}
-	
-	@Override
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
+    private static final String[] ADMIN_COMMANDS = {"admin_msg"};
+
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        if (command.startsWith("admin_msg"))
+        {
+            try
+            {
+                activeChar.sendPacket(SystemMessage.getSystemMessage(Integer.parseInt(command.substring(10).trim())));
+                return true;
+            }
+            catch (Exception e)
+            {
+                activeChar.sendMessage("Command format: //msg <SYSTEM_MSG_ID>");
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
 }

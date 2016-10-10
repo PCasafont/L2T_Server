@@ -19,19 +19,21 @@ import l2server.gameserver.network.serverpackets.ExInstanceList;
 
 public final class RequestInstanceList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-			return;
-		
-		sendPacket(new ExInstanceList(getClient().getActiveChar()));
-	}
+
+    @Override
+    protected void readImpl()
+    {
+
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        if (getClient().getActiveChar() == null)
+        {
+            return;
+        }
+
+        sendPacket(new ExInstanceList(getClient().getActiveChar()));
+    }
 }

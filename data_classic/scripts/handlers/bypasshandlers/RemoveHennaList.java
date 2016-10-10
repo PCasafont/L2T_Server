@@ -23,32 +23,35 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public class RemoveHennaList implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"RemoveList"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2SymbolMakerInstance))
-			return false;
-		
-		boolean hasHennas = false;
-		for (int i = 1; i <= 3; i++)
-		{
-			L2Henna henna = activeChar.getHenna(i);
-			
-			if (henna != null)
-				hasHennas = true;
-		}
-		if (hasHennas)
-			activeChar.sendPacket(new HennaRemoveList(activeChar));
-		
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"RemoveList"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (!(target instanceof L2SymbolMakerInstance))
+        {
+            return false;
+        }
+
+        boolean hasHennas = false;
+        for (int i = 1; i <= 3; i++)
+        {
+            L2Henna henna = activeChar.getHenna(i);
+
+            if (henna != null)
+            {
+                hasHennas = true;
+            }
+        }
+        if (hasHennas)
+        {
+            activeChar.sendPacket(new HennaRemoveList(activeChar));
+        }
+
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

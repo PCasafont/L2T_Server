@@ -1,1958 +1,1958 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17400" type="Armor" name="Seraph Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t401_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17401" type="Armor" name="Seraph Shield - Heavy Armor">
-		<set name="icon" val="icon.beranka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1130" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="515" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17402" type="Armor" name="Seraph Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="boundItem" val="17919" />
-		<set name="blessedItem" val="18055" />
-		<for>
-			<baseAdd stat="pDef" val="141" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="17403" type="Armor" name="Seraph Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t402_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="4140" />
-		<set name="boundItem" val="17920" />
-		<set name="blessedItem" val="18056" />
-		<for>
-			<baseAdd stat="pDef" val="301" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17404" type="Armor" name="Seraph Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t402_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1320" />
-		<set name="boundItem" val="17921" />
-		<set name="blessedItem" val="18057" />
-		<for>
-			<baseAdd stat="pDef" val="188" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17405" type="Armor" name="Seraph Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t402_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="boundItem" val="17922" />
-		<set name="blessedItem" val="18058" />
-		<for>
-			<baseAdd stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17406" type="Armor" name="Seraph Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t402_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="boundItem" val="17923" />
-		<set name="blessedItem" val="18059" />
-		<for>
-			<baseAdd stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17407" type="Armor" name="Seraph Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="boundItem" val="17924" />
-		<set name="blessedItem" val="18060" />
-		<for>
-			<baseAdd stat="pDef" val="141" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="17408" type="Armor" name="Seraph Tunic - Robe">
-		<set name="icon" val="icon.armor_t403_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1750" />
-		<set name="boundItem" val="17925" />
-		<set name="blessedItem" val="18061" />
-		<for>
-			<baseAdd stat="mDef" val="47" />
-			<baseAdd stat="pDef" val="207" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17409" type="Armor" name="Seraph Stockings - Robe">
-		<set name="icon" val="icon.armor_t403_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="850" />
-		<set name="boundItem" val="17926" />
-		<set name="blessedItem" val="18062" />
-		<for>
-			<baseAdd stat="mDef" val="31" />
-			<baseAdd stat="pDef" val="129" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17410" type="Armor" name="Seraph Gloves - Robe">
-		<set name="icon" val="icon.armor_t403_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="boundItem" val="17927" />
-		<set name="blessedItem" val="18063" />
-		<for>
-			<baseAdd stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17411" type="Armor" name="Seraph Shoes - Robe">
-		<set name="icon" val="icon.armor_t403_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="boundItem" val="17928" />
-		<set name="blessedItem" val="18064" />
-		<for>
-			<baseAdd stat="pDef" val="94" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<item id="17412" type="Armor" name="Seraph Sigil - Robe">
-		<set name="icon" val="icon.airtoil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="920" />
-		<set name="boundItem" val="17929" />
-		<set name="blessedItem" val="18065" />
-		<for>
-			<baseAdd stat="pDef" val="47" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Seraph Necklace. MP + 62 effect. -->
-	<item id="17413" type="Armor" name="Seraph Necklace">
-		<set name="icon" val="icon.r95_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17930" />
-		<set name="blessedItem" val="18066" />
-		<for>
-			<baseAdd stat="mDef" val="161" />
-			<add stat="maxMp" val="62" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Seraph Earring. MP + 46 effect. -->
-	<item id="17414" type="Armor" name="Seraph Earring">
-		<set name="icon" val="icon.r95_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17931" />
-		<set name="blessedItem" val="18067" />
-		<for>
-			<baseAdd stat="mDef" val="121" />
-			<add stat="maxMp" val="46" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Seraph Ring. MP + 31 effect. -->
-	<item id="17415" type="Armor" name="Seraph Ring">
-		<set name="icon" val="icon.r95_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17932" />
-		<set name="blessedItem" val="18068" />
-		<for>
-			<baseAdd stat="mDef" val="80" />
-			<add stat="maxMp" val="31" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="17416" type="Weapon" name="Amaranthine Shaper">
-		<set name="icon" val="icon.weapon_stanpid_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13282-3" />
-		<set name="boundItem" val="17933" />
-		<set name="blessedItem" val="18069" />
-		<for>
-			<set stat="pAtk" val="558" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
-	<item id="17417" type="Weapon" name="Amaranthine Cutter">
-		<set name="icon" val="icon.weapon_plenitas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13252-3" />
-		<set name="boundItem" val="17934" />
-		<set name="blessedItem" val="18070" />
-		<for>
-			<set stat="pAtk" val="638" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
-	<item id="17418" type="Weapon" name="Amaranthine Slasher">
-		<set name="icon" val="icon.weapon_bauen_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13261-3" />
-		<set name="boundItem" val="17935" />
-		<set name="blessedItem" val="18071" />
-		<for>
-			<set stat="pAtk" val="777" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="17419" type="Weapon" name="Amaranthine Avenger">
-		<set name="icon" val="icon.weapon_qutram_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13256-3" />
-		<set name="boundItem" val="17936" />
-		<set name="blessedItem" val="18072" />
-		<for>
-			<set stat="pAtk" val="638" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
-	<item id="17420" type="Weapon" name="Amaranthine Fighter">
-		<set name="icon" val="icon.weapon_durga_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13267-3" />
-		<set name="boundItem" val="17937" />
-		<set name="blessedItem" val="18073" />
-		<for>
-			<set stat="pAtk" val="777" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
-	<item id="17421" type="Weapon" name="Amaranthine Stormer">
-		<set name="icon" val="icon.weapon_crabel_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13263-3" />
-		<set name="boundItem" val="17938" />
-		<set name="blessedItem" val="18074" />
-		<for>
-			<set stat="pAtk" val="638" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
-	<item id="17422" type="Weapon" name="Amaranthine Thrower">
-		<set name="icon" val="icon.weapon_castron_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="enchant4_skill" val="13292-3" />
-		<set name="boundItem" val="17939" />
-		<set name="blessedItem" val="18075" />
-		<for>
-			<set stat="pAtk" val="1257" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
-	<item id="17423" type="Weapon" name="Amaranthine Shooter">
-		<set name="icon" val="icon.weapon_stilla_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<set name="enchant4_skill" val="13294-3" />
-		<set name="boundItem" val="17940" />
-		<set name="blessedItem" val="18076" />
-		<for>
-			<set stat="pAtk" val="1132" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
-	<item id="17424" type="Weapon" name="Amaranthine Buster">
-		<set name="icon" val="icon.weaon_serapear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13295-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="boundItem" val="17941" />
-		<set name="blessedItem" val="18077" />
-		<for>
-			<set stat="pAtk" val="511" />
-			<set stat="mAtk" val="371" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
-	<item id="17425" type="Weapon" name="Amaranthine Caster">
-		<set name="icon" val="icon.weapon_pilia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13299-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="boundItem" val="17942" />
-		<set name="blessedItem" val="18078" />
-		<for>
-			<set stat="pAtk" val="511" />
-			<set stat="mAtk" val="371" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
-	<item id="17426" type="Weapon" name="Amaranthine Retributer">
-		<set name="icon" val="icon.weapon_shaelon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13304-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="boundItem" val="17943" />
-		<set name="blessedItem" val="18079" />
-		<for>
-			<set stat="pAtk" val="622" />
-			<set stat="mAtk" val="408" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
-	<item id="17427" type="Weapon" name="Amaranthine Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13277-3" />
-		<set name="boundItem" val="17944" />
-		<set name="blessedItem" val="18080" />
-		<for>
-			<set stat="pAtk" val="777" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
-	<item id="17428" type="Weapon" name="Amaranthine Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13287-3" />
-		<set name="boundItem" val="17945" />
-		<set name="blessedItem" val="18081" />
-		<for>
-			<set stat="pAtk" val="638" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
-	<item id="17429" type="Weapon" name="Amaranthine Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13272-3" />
-		<set name="boundItem" val="17946" />
-		<set name="blessedItem" val="18082" />
-		<for>
-			<set stat="pAtk" val="777" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17430" type="Armor" name="Eternal Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="boundItem" val="17947" />
-		<set name="blessedItem" val="18083" />
-		<for>
-			<baseAdd stat="pDef" val="150" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="17431" type="Armor" name="Eternal Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="7520" />
-		<set name="boundItem" val="17948" />
-		<set name="blessedItem" val="18084" />
-		<for>
-			<baseAdd stat="pDef" val="400" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17432" type="Armor" name="Eternal Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="3170" />
-		<set name="boundItem" val="17949" />
-		<set name="blessedItem" val="18085" />
-		<for>
-			<baseAdd stat="pDef" val="250" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17433" type="Armor" name="Eternal Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="boundItem" val="17950" />
-		<set name="blessedItem" val="18086" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17434" type="Armor" name="Eternal Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="boundItem" val="17951" />
-		<set name="blessedItem" val="18087" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17435" type="Armor" name="Eternal Shield - Heavy Armor">
-		<set name="icon" val="icon.weapon_akra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1130" />
-		<set name="boundItem" val="17952" />
-		<set name="blessedItem" val="18088" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="546" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17436" type="Armor" name="Eternal Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="boundItem" val="17953" />
-		<set name="blessedItem" val="18089" />
-		<for>
-			<baseAdd stat="pDef" val="150" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="17437" type="Armor" name="Eternal Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t702_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="4140" />
-		<set name="boundItem" val="17954" />
-		<set name="blessedItem" val="18090" />
-		<for>
-			<baseAdd stat="pDef" val="320" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17438" type="Armor" name="Eternal Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t702_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1320" />
-		<set name="boundItem" val="17955" />
-		<set name="blessedItem" val="18091" />
-		<for>
-			<baseAdd stat="pDef" val="200" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17439" type="Armor" name="Eternal Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t702_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="boundItem" val="17956" />
-		<set name="blessedItem" val="18092" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17440" type="Armor" name="Eternal Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t702_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="boundItem" val="17957" />
-		<set name="blessedItem" val="18093" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17441" type="Armor" name="Eternal Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="boundItem" val="17958" />
-		<set name="blessedItem" val="18094" />
-		<for>
-			<baseAdd stat="pDef" val="150" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="17442" type="Armor" name="Eternal Tunic - Robe">
-		<set name="icon" val="icon.armor_t703_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1750" />
-		<set name="boundItem" val="17959" />
-		<set name="blessedItem" val="18095" />
-		<for>
-			<baseAdd stat="mDef" val="49" />
-			<baseAdd stat="pDef" val="220" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17443" type="Armor" name="Eternal Stockings - Robe">
-		<set name="icon" val="icon.armor_t703_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="850" />
-		<set name="boundItem" val="17960" />
-		<set name="blessedItem" val="18096" />
-		<for>
-			<baseAdd stat="mDef" val="33" />
-			<baseAdd stat="pDef" val="137" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17444" type="Armor" name="Eternal Gloves - Robe">
-		<set name="icon" val="icon.armor_t703_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="boundItem" val="17961" />
-		<set name="blessedItem" val="18097" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17445" type="Armor" name="Eternal Shoes - Robe">
-		<set name="icon" val="icon.armor_t703_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="boundItem" val="17962" />
-		<set name="blessedItem" val="18098" />
-		<for>
-			<baseAdd stat="pDef" val="100" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<item id="17446" type="Armor" name="Eternal Sigil - Robe">
-		<set name="icon" val="icon.elos_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="920" />
-		<set name="boundItem" val="17963" />
-		<set name="blessedItem" val="18099" />
-		<for>
-			<baseAdd stat="pDef" val="50" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Eternal Necklace. MP + 65 effect. -->
-	<item id="17447" type="Armor" name="Eternal Necklace">
-		<set name="icon" val="icon.r991_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17964" />
-		<set name="blessedItem" val="18100" />
-		<for>
-			<baseAdd stat="mDef" val="174" />
-			<add stat="maxMp" val="65" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Eternal Earring. MP + 49 effect. -->
-	<item id="17448" type="Armor" name="Eternal Earring">
-		<set name="icon" val="icon.r991_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17965" />
-		<set name="blessedItem" val="18101" />
-		<for>
-			<baseAdd stat="mDef" val="130" />
-			<add stat="maxMp" val="49" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Eternal Ring. MP + 33 effect. -->
-	<item id="17449" type="Armor" name="Eternal Ring">
-		<set name="icon" val="icon.r991_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<set name="boundItem" val="17966" />
-		<set name="blessedItem" val="18102" />
-		<for>
-			<baseAdd stat="mDef" val="87" />
-			<add stat="maxMp" val="33" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="17450" type="Weapon" name="Blessed Kaliel Shaper">
-		<set name="icon" val="icon.weapon_vesper_shaper_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="629" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
-	<item id="17451" type="Weapon" name="Blessed Kaliel Cutter">
-		<set name="icon" val="icon.weapon_vesper_cutter_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="719" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
-	<item id="17452" type="Weapon" name="Blessed Kaliel Slasher">
-		<set name="icon" val="icon.weapon_vesper_slasher_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="875" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="17453" type="Weapon" name="Blessed Kaliel Avenger">
-		<set name="icon" val="icon.weapon_vesper_avenger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="719" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
-	<item id="17454" type="Weapon" name="Blessed Kaliel Fighter">
-		<set name="icon" val="icon.weapon_octoclaw_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="875" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
-	<item id="17455" type="Weapon" name="Blessed Kaliel Stormer">
-		<set name="icon" val="icon.weapon_vesper_stormer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="719" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
-	<item id="17456" type="Weapon" name="Blessed Kaliel Thrower">
-		<set name="icon" val="icon.weapon_vesper_thrower_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="1415" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
-	<item id="17457" type="Weapon" name="Blessed Kaliel Shooter">
-		<set name="icon" val="icon.weapon_vesper_schutze_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<for>
-			<set stat="pAtk" val="1274" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
-	<item id="17458" type="Weapon" name="Blessed Kaliel Buster">
-		<set name="icon" val="icon.weapon_vesper_burster_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="575" />
-			<set stat="mAtk" val="417" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
-	<item id="17459" type="Weapon" name="Blessed Kaliel Caster">
-		<set name="icon" val="icon.weapon_vesper_caster_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="575" />
-			<set stat="mAtk" val="417" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
-	<item id="17460" type="Weapon" name="Blessed Kaliel Retributer">
-		<set name="icon" val="icon.weapon_vesper_singer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="700" />
-			<set stat="mAtk" val="459" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
-	<item id="17461" type="Weapon" name="Blessed Kaliel Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="875" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
-	<item id="17462" type="Weapon" name="Blessed Kaliel Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="719" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
-	<item id="17463" type="Weapon" name="Blessed Kaliel Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="875" />
-			<set stat="mAtk" val="313" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17464" type="Armor" name="Blessed Durandia Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="162" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="17465" type="Armor" name="Blessed Durandia Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t97_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="7520" />
-		<for>
-			<baseAdd stat="pDef" val="238" />
-			<set stat="pAtk" val="41" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17466" type="Armor" name="Blessed Durandia Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t97_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="3170" />
-		<for>
-			<baseAdd stat="pDef" val="148" />
-			<set stat="rCrit" val="2.9" />
-			<set stat="mCritRate" val="2.9" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17467" type="Armor" name="Blessed Durandia Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t97_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17468" type="Armor" name="Blessed Durandia Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t97_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="17469" type="Armor" name="Blessed Durandia Shield - Heavy Armor">
-		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1130" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="592" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17470" type="Armor" name="Blessed Durandia Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="162" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="17471" type="Armor" name="Blessed Durandia Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t98_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="4140" />
-		<for>
-			<baseAdd stat="pDef" val="238" />
-			<set stat="pAtk" val="41" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17472" type="Armor" name="Blessed Durandia Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t98_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1320" />
-		<for>
-			<baseAdd stat="pDef" val="148" />
-			<set stat="rCrit" val="2.9" />
-			<set stat="mCritRate" val="2.9" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17473" type="Armor" name="Blessed Durandia Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t98_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="17474" type="Armor" name="Blessed Durandia Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t98_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17475" type="Armor" name="Blessed Durandia Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="162" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="17476" type="Armor" name="Blessed Durandia Tunic - Robe">
-		<set name="icon" val="icon.armor_t99_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1750" />
-		<for>
-			<baseAdd stat="mDef" val="63" />
-			<baseAdd stat="pDef" val="238" />
-			<set stat="pAtk" val="41" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17477" type="Armor" name="Blessed Durandia Stockings - Robe">
-		<set name="icon" val="icon.armor_t99_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="850" />
-		<for>
-			<baseAdd stat="mDef" val="42" />
-			<baseAdd stat="pDef" val="148" />
-			<set stat="rCrit" val="2.9" />
-			<set stat="mCritRate" val="2.9" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17478" type="Armor" name="Blessed Durandia Gloves - Robe">
-		<set name="icon" val="icon.armor_t99_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="17479" type="Armor" name="Blessed Durandia Shoes - Robe">
-		<set name="icon" val="icon.armor_t99_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="108" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<item id="17480" type="Armor" name="Blessed Durandia Sigil - Robe">
-		<set name="icon" val="icon.verper_sigil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="920" />
-		<for>
-			<baseAdd stat="pDef" val="54" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17481" type="Armor" name="Blessed Durandia Necklace">
-		<set name="icon" val="icon.vesper_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="192" />
-			<add stat="maxMp" val="67" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17482" type="Armor" name="Blessed Durandia Earring">
-		<set name="icon" val="icon.vesper_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="144" />
-			<add stat="maxMp" val="50" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17483" type="Armor" name="Blessed Durandia Ring">
-		<set name="icon" val="icon.vesper_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="96" />
-			<add stat="maxMp" val="34" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
-	<item id="17484" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
-	<item id="17485" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
-	<item id="17486" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
-	<item id="17487" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
-	<item id="17488" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
-	<item id="17489" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17490" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17491" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17492" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
-	<item id="17493" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
-	<item id="17494" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
-	<item id="17495" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
-	<item id="17496" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
-	<item id="17497" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
-	<item id="17498" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17499" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17400" type="Armor" name="Seraph Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t401_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="94" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17401" type="Armor" name="Seraph Shield - Heavy Armor">
+        <set name="icon" val="icon.beranka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1130" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="515" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17402" type="Armor" name="Seraph Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="boundItem" val="17919" />
+        <set name="blessedItem" val="18055" />
+        <for>
+            <baseAdd stat="pDef" val="141" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="17403" type="Armor" name="Seraph Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t402_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="4140" />
+        <set name="boundItem" val="17920" />
+        <set name="blessedItem" val="18056" />
+        <for>
+            <baseAdd stat="pDef" val="301" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17404" type="Armor" name="Seraph Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t402_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1320" />
+        <set name="boundItem" val="17921" />
+        <set name="blessedItem" val="18057" />
+        <for>
+            <baseAdd stat="pDef" val="188" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17405" type="Armor" name="Seraph Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t402_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="boundItem" val="17922" />
+        <set name="blessedItem" val="18058" />
+        <for>
+            <baseAdd stat="pDef" val="94" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17406" type="Armor" name="Seraph Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t402_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="boundItem" val="17923" />
+        <set name="blessedItem" val="18059" />
+        <for>
+            <baseAdd stat="pDef" val="94" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17407" type="Armor" name="Seraph Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="boundItem" val="17924" />
+        <set name="blessedItem" val="18060" />
+        <for>
+            <baseAdd stat="pDef" val="141" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="17408" type="Armor" name="Seraph Tunic - Robe">
+        <set name="icon" val="icon.armor_t403_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1750" />
+        <set name="boundItem" val="17925" />
+        <set name="blessedItem" val="18061" />
+        <for>
+            <baseAdd stat="mDef" val="47" />
+            <baseAdd stat="pDef" val="207" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17409" type="Armor" name="Seraph Stockings - Robe">
+        <set name="icon" val="icon.armor_t403_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="850" />
+        <set name="boundItem" val="17926" />
+        <set name="blessedItem" val="18062" />
+        <for>
+            <baseAdd stat="mDef" val="31" />
+            <baseAdd stat="pDef" val="129" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17410" type="Armor" name="Seraph Gloves - Robe">
+        <set name="icon" val="icon.armor_t403_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="boundItem" val="17927" />
+        <set name="blessedItem" val="18063" />
+        <for>
+            <baseAdd stat="pDef" val="94" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17411" type="Armor" name="Seraph Shoes - Robe">
+        <set name="icon" val="icon.armor_t403_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="boundItem" val="17928" />
+        <set name="blessedItem" val="18064" />
+        <for>
+            <baseAdd stat="pDef" val="94" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <item id="17412" type="Armor" name="Seraph Sigil - Robe">
+        <set name="icon" val="icon.airtoil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="920" />
+        <set name="boundItem" val="17929" />
+        <set name="blessedItem" val="18065" />
+        <for>
+            <baseAdd stat="pDef" val="47" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Seraph Necklace. MP + 62 effect. -->
+    <item id="17413" type="Armor" name="Seraph Necklace">
+        <set name="icon" val="icon.r95_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17930" />
+        <set name="blessedItem" val="18066" />
+        <for>
+            <baseAdd stat="mDef" val="161" />
+            <add stat="maxMp" val="62" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Seraph Earring. MP + 46 effect. -->
+    <item id="17414" type="Armor" name="Seraph Earring">
+        <set name="icon" val="icon.r95_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17931" />
+        <set name="blessedItem" val="18067" />
+        <for>
+            <baseAdd stat="mDef" val="121" />
+            <add stat="maxMp" val="46" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Seraph Ring. MP + 31 effect. -->
+    <item id="17415" type="Armor" name="Seraph Ring">
+        <set name="icon" val="icon.r95_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17932" />
+        <set name="blessedItem" val="18068" />
+        <for>
+            <baseAdd stat="mDef" val="80" />
+            <add stat="maxMp" val="31" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="17416" type="Weapon" name="Amaranthine Shaper">
+        <set name="icon" val="icon.weapon_stanpid_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13282-3" />
+        <set name="boundItem" val="17933" />
+        <set name="blessedItem" val="18069" />
+        <for>
+            <set stat="pAtk" val="558" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+    <item id="17417" type="Weapon" name="Amaranthine Cutter">
+        <set name="icon" val="icon.weapon_plenitas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13252-3" />
+        <set name="boundItem" val="17934" />
+        <set name="blessedItem" val="18070" />
+        <for>
+            <set stat="pAtk" val="638" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+    <item id="17418" type="Weapon" name="Amaranthine Slasher">
+        <set name="icon" val="icon.weapon_bauen_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13261-3" />
+        <set name="boundItem" val="17935" />
+        <set name="blessedItem" val="18071" />
+        <for>
+            <set stat="pAtk" val="777" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="17419" type="Weapon" name="Amaranthine Avenger">
+        <set name="icon" val="icon.weapon_qutram_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13256-3" />
+        <set name="boundItem" val="17936" />
+        <set name="blessedItem" val="18072" />
+        <for>
+            <set stat="pAtk" val="638" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+    <item id="17420" type="Weapon" name="Amaranthine Fighter">
+        <set name="icon" val="icon.weapon_durga_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13267-3" />
+        <set name="boundItem" val="17937" />
+        <set name="blessedItem" val="18073" />
+        <for>
+            <set stat="pAtk" val="777" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+    <item id="17421" type="Weapon" name="Amaranthine Stormer">
+        <set name="icon" val="icon.weapon_crabel_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13263-3" />
+        <set name="boundItem" val="17938" />
+        <set name="blessedItem" val="18074" />
+        <for>
+            <set stat="pAtk" val="638" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+    <item id="17422" type="Weapon" name="Amaranthine Thrower">
+        <set name="icon" val="icon.weapon_castron_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="enchant4_skill" val="13292-3" />
+        <set name="boundItem" val="17939" />
+        <set name="blessedItem" val="18075" />
+        <for>
+            <set stat="pAtk" val="1257" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+    <item id="17423" type="Weapon" name="Amaranthine Shooter">
+        <set name="icon" val="icon.weapon_stilla_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <set name="enchant4_skill" val="13294-3" />
+        <set name="boundItem" val="17940" />
+        <set name="blessedItem" val="18076" />
+        <for>
+            <set stat="pAtk" val="1132" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+    <item id="17424" type="Weapon" name="Amaranthine Buster">
+        <set name="icon" val="icon.weaon_serapear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13295-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="boundItem" val="17941" />
+        <set name="blessedItem" val="18077" />
+        <for>
+            <set stat="pAtk" val="511" />
+            <set stat="mAtk" val="371" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+    <item id="17425" type="Weapon" name="Amaranthine Caster">
+        <set name="icon" val="icon.weapon_pilia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13299-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="boundItem" val="17942" />
+        <set name="blessedItem" val="18078" />
+        <for>
+            <set stat="pAtk" val="511" />
+            <set stat="mAtk" val="371" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+    <item id="17426" type="Weapon" name="Amaranthine Retributer">
+        <set name="icon" val="icon.weapon_shaelon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13304-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="boundItem" val="17943" />
+        <set name="blessedItem" val="18079" />
+        <for>
+            <set stat="pAtk" val="622" />
+            <set stat="mAtk" val="408" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+    <item id="17427" type="Weapon" name="Amaranthine Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13277-3" />
+        <set name="boundItem" val="17944" />
+        <set name="blessedItem" val="18080" />
+        <for>
+            <set stat="pAtk" val="777" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+    <item id="17428" type="Weapon" name="Amaranthine Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13287-3" />
+        <set name="boundItem" val="17945" />
+        <set name="blessedItem" val="18081" />
+        <for>
+            <set stat="pAtk" val="638" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+    <item id="17429" type="Weapon" name="Amaranthine Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13272-3" />
+        <set name="boundItem" val="17946" />
+        <set name="blessedItem" val="18082" />
+        <for>
+            <set stat="pAtk" val="777" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17430" type="Armor" name="Eternal Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="boundItem" val="17947" />
+        <set name="blessedItem" val="18083" />
+        <for>
+            <baseAdd stat="pDef" val="150" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="17431" type="Armor" name="Eternal Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="7520" />
+        <set name="boundItem" val="17948" />
+        <set name="blessedItem" val="18084" />
+        <for>
+            <baseAdd stat="pDef" val="400" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17432" type="Armor" name="Eternal Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="3170" />
+        <set name="boundItem" val="17949" />
+        <set name="blessedItem" val="18085" />
+        <for>
+            <baseAdd stat="pDef" val="250" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17433" type="Armor" name="Eternal Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="boundItem" val="17950" />
+        <set name="blessedItem" val="18086" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17434" type="Armor" name="Eternal Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="boundItem" val="17951" />
+        <set name="blessedItem" val="18087" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17435" type="Armor" name="Eternal Shield - Heavy Armor">
+        <set name="icon" val="icon.weapon_akra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1130" />
+        <set name="boundItem" val="17952" />
+        <set name="blessedItem" val="18088" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="546" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17436" type="Armor" name="Eternal Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="boundItem" val="17953" />
+        <set name="blessedItem" val="18089" />
+        <for>
+            <baseAdd stat="pDef" val="150" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="17437" type="Armor" name="Eternal Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t702_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="4140" />
+        <set name="boundItem" val="17954" />
+        <set name="blessedItem" val="18090" />
+        <for>
+            <baseAdd stat="pDef" val="320" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17438" type="Armor" name="Eternal Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t702_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1320" />
+        <set name="boundItem" val="17955" />
+        <set name="blessedItem" val="18091" />
+        <for>
+            <baseAdd stat="pDef" val="200" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17439" type="Armor" name="Eternal Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t702_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="boundItem" val="17956" />
+        <set name="blessedItem" val="18092" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17440" type="Armor" name="Eternal Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t702_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="boundItem" val="17957" />
+        <set name="blessedItem" val="18093" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17441" type="Armor" name="Eternal Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="boundItem" val="17958" />
+        <set name="blessedItem" val="18094" />
+        <for>
+            <baseAdd stat="pDef" val="150" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="17442" type="Armor" name="Eternal Tunic - Robe">
+        <set name="icon" val="icon.armor_t703_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1750" />
+        <set name="boundItem" val="17959" />
+        <set name="blessedItem" val="18095" />
+        <for>
+            <baseAdd stat="mDef" val="49" />
+            <baseAdd stat="pDef" val="220" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17443" type="Armor" name="Eternal Stockings - Robe">
+        <set name="icon" val="icon.armor_t703_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="850" />
+        <set name="boundItem" val="17960" />
+        <set name="blessedItem" val="18096" />
+        <for>
+            <baseAdd stat="mDef" val="33" />
+            <baseAdd stat="pDef" val="137" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17444" type="Armor" name="Eternal Gloves - Robe">
+        <set name="icon" val="icon.armor_t703_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="boundItem" val="17961" />
+        <set name="blessedItem" val="18097" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17445" type="Armor" name="Eternal Shoes - Robe">
+        <set name="icon" val="icon.armor_t703_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="boundItem" val="17962" />
+        <set name="blessedItem" val="18098" />
+        <for>
+            <baseAdd stat="pDef" val="100" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <item id="17446" type="Armor" name="Eternal Sigil - Robe">
+        <set name="icon" val="icon.elos_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="920" />
+        <set name="boundItem" val="17963" />
+        <set name="blessedItem" val="18099" />
+        <for>
+            <baseAdd stat="pDef" val="50" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Eternal Necklace. MP + 65 effect. -->
+    <item id="17447" type="Armor" name="Eternal Necklace">
+        <set name="icon" val="icon.r991_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17964" />
+        <set name="blessedItem" val="18100" />
+        <for>
+            <baseAdd stat="mDef" val="174" />
+            <add stat="maxMp" val="65" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Eternal Earring. MP + 49 effect. -->
+    <item id="17448" type="Armor" name="Eternal Earring">
+        <set name="icon" val="icon.r991_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17965" />
+        <set name="blessedItem" val="18101" />
+        <for>
+            <baseAdd stat="mDef" val="130" />
+            <add stat="maxMp" val="49" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Eternal Ring. MP + 33 effect. -->
+    <item id="17449" type="Armor" name="Eternal Ring">
+        <set name="icon" val="icon.r991_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <set name="boundItem" val="17966" />
+        <set name="blessedItem" val="18102" />
+        <for>
+            <baseAdd stat="mDef" val="87" />
+            <add stat="maxMp" val="33" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="17450" type="Weapon" name="Blessed Kaliel Shaper">
+        <set name="icon" val="icon.weapon_vesper_shaper_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="629" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+    <item id="17451" type="Weapon" name="Blessed Kaliel Cutter">
+        <set name="icon" val="icon.weapon_vesper_cutter_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="719" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+    <item id="17452" type="Weapon" name="Blessed Kaliel Slasher">
+        <set name="icon" val="icon.weapon_vesper_slasher_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="875" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="17453" type="Weapon" name="Blessed Kaliel Avenger">
+        <set name="icon" val="icon.weapon_vesper_avenger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="719" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+    <item id="17454" type="Weapon" name="Blessed Kaliel Fighter">
+        <set name="icon" val="icon.weapon_octoclaw_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="875" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+    <item id="17455" type="Weapon" name="Blessed Kaliel Stormer">
+        <set name="icon" val="icon.weapon_vesper_stormer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="719" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+    <item id="17456" type="Weapon" name="Blessed Kaliel Thrower">
+        <set name="icon" val="icon.weapon_vesper_thrower_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <for>
+            <set stat="pAtk" val="1415" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+    <item id="17457" type="Weapon" name="Blessed Kaliel Shooter">
+        <set name="icon" val="icon.weapon_vesper_schutze_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <for>
+            <set stat="pAtk" val="1274" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+    <item id="17458" type="Weapon" name="Blessed Kaliel Buster">
+        <set name="icon" val="icon.weapon_vesper_burster_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="575" />
+            <set stat="mAtk" val="417" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+    <item id="17459" type="Weapon" name="Blessed Kaliel Caster">
+        <set name="icon" val="icon.weapon_vesper_caster_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="575" />
+            <set stat="mAtk" val="417" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+    <item id="17460" type="Weapon" name="Blessed Kaliel Retributer">
+        <set name="icon" val="icon.weapon_vesper_singer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="700" />
+            <set stat="mAtk" val="459" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+    <item id="17461" type="Weapon" name="Blessed Kaliel Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="875" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+    <item id="17462" type="Weapon" name="Blessed Kaliel Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="719" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+    <item id="17463" type="Weapon" name="Blessed Kaliel Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="875" />
+            <set stat="mAtk" val="313" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17464" type="Armor" name="Blessed Durandia Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="162" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="17465" type="Armor" name="Blessed Durandia Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t97_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="7520" />
+        <for>
+            <baseAdd stat="pDef" val="238" />
+            <set stat="pAtk" val="41" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17466" type="Armor" name="Blessed Durandia Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t97_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="3170" />
+        <for>
+            <baseAdd stat="pDef" val="148" />
+            <set stat="rCrit" val="2.9" />
+            <set stat="mCritRate" val="2.9" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17467" type="Armor" name="Blessed Durandia Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t97_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17468" type="Armor" name="Blessed Durandia Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t97_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="17469" type="Armor" name="Blessed Durandia Shield - Heavy Armor">
+        <set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1130" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="592" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17470" type="Armor" name="Blessed Durandia Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="162" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="17471" type="Armor" name="Blessed Durandia Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t98_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="4140" />
+        <for>
+            <baseAdd stat="pDef" val="238" />
+            <set stat="pAtk" val="41" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17472" type="Armor" name="Blessed Durandia Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t98_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1320" />
+        <for>
+            <baseAdd stat="pDef" val="148" />
+            <set stat="rCrit" val="2.9" />
+            <set stat="mCritRate" val="2.9" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17473" type="Armor" name="Blessed Durandia Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t98_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="17474" type="Armor" name="Blessed Durandia Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t98_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17475" type="Armor" name="Blessed Durandia Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="162" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="17476" type="Armor" name="Blessed Durandia Tunic - Robe">
+        <set name="icon" val="icon.armor_t99_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1750" />
+        <for>
+            <baseAdd stat="mDef" val="63" />
+            <baseAdd stat="pDef" val="238" />
+            <set stat="pAtk" val="41" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17477" type="Armor" name="Blessed Durandia Stockings - Robe">
+        <set name="icon" val="icon.armor_t99_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="850" />
+        <for>
+            <baseAdd stat="mDef" val="42" />
+            <baseAdd stat="pDef" val="148" />
+            <set stat="rCrit" val="2.9" />
+            <set stat="mCritRate" val="2.9" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17478" type="Armor" name="Blessed Durandia Gloves - Robe">
+        <set name="icon" val="icon.armor_t99_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="17479" type="Armor" name="Blessed Durandia Shoes - Robe">
+        <set name="icon" val="icon.armor_t99_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="108" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <item id="17480" type="Armor" name="Blessed Durandia Sigil - Robe">
+        <set name="icon" val="icon.verper_sigil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="920" />
+        <for>
+            <baseAdd stat="pDef" val="54" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17481" type="Armor" name="Blessed Durandia Necklace">
+        <set name="icon" val="icon.vesper_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="192" />
+            <add stat="maxMp" val="67" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17482" type="Armor" name="Blessed Durandia Earring">
+        <set name="icon" val="icon.vesper_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="144" />
+            <add stat="maxMp" val="50" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17483" type="Armor" name="Blessed Durandia Ring">
+        <set name="icon" val="icon.vesper_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="96" />
+            <add stat="maxMp" val="34" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
+    <item id="17484" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
+    <item id="17485" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
+    <item id="17486" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
+    <item id="17487" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
+    <item id="17488" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
+    <item id="17489" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17490" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17491" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17492" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
+    <item id="17493" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
+    <item id="17494" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
+    <item id="17495" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sacrifice..." -->
+    <item id="17496" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
+    <item id="17497" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
+    <item id="17498" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17499" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
 </list>

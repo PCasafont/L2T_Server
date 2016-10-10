@@ -1,1377 +1,1377 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<item id="8600" type="EtcItem" name="Herb of Life">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2278-1" />
-	</item>
-	<item id="8601" type="EtcItem" name="Major Herb of Life">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2278-2" />
-	</item>
-	<item id="8602" type="EtcItem" name="Superior Herb of Life">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2278-3" />
-	</item>
-	<item id="8603" type="EtcItem" name="Herb of Mana">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2279-1" />
-	</item>
-	<item id="8604" type="EtcItem" name="Major Herb of Mana">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2279-2" />
-	</item>
-	<item id="8605" type="EtcItem" name="Superior Herb of Mana">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2279-3" />
-	</item>
-	<item id="8606" type="EtcItem" name="Herb of Power">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2280-1" />
-	</item>
-	<item id="8607" type="EtcItem" name="Herb of Magic">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2281-1" />
-	</item>
-	<item id="8608" type="EtcItem" name="Haste Herb">
-		<set name="icon" val="BranchSys2.icon.etc_attack_sp_herb_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2282-1" />
-	</item>
-	<item id="8609" type="EtcItem" name="Herb of Casting Spd.">
-		<set name="icon" val="icon.etc_magic_sp_herb_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2283-1" />
-	</item>
-	<item id="8610" type="EtcItem" name="Herb of Critical Attack - Probability">
-		<set name="icon" val="icon.etc_critical_herb_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2284-1" />
-	</item>
-	<item id="8611" type="EtcItem" name="Wind Walk Herb">
-		<set name="icon" val="BranchSys2.icon.etc_move_herb_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2285-1" />
-	</item>
-	<item id="8612" type="EtcItem" name="Herb of the Warrior">
-		<set name="icon" val="icon.etc_warrior_set_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2280-1;2282-1;2284-1" />
-	</item>
-	<item id="8613" type="EtcItem" name="Wizard Herb">
-		<set name="icon" val="icon.etc_magic_set_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2281-1;2283-1" />
-	</item>
-	<item id="8614" type="EtcItem" name="Herb of Recovery">
-		<set name="icon" val="icon.etc_recovery_set_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2278-3;2279-3" />
-	</item>
-	<!-- Crystal imbued with mystical power. Used for teleportation magic. -->
-	<item id="8615" type="EtcItem" name="Summoning Crystal">
-		<set name="icon" val="icon.etc_recall_crystal_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="35000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Spellbook needed to learn Summon Friend. Used by Warlocks, Elemental Summoners and Phantom Summoners.
-		Required level: 56
-	-->
-	<item id="8616" type="EtcItem" name="Spellbook: Summon Friend">
-		<set name="icon" val="icon.etc_party_sommons_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="6250" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Word of Invitation. Used by Sorcerers, Spellsingers and Spellhowlers. -->
-	<item id="8617" type="EtcItem" name="Spellbook: Word of Invitation">
-		<set name="icon" val="icon.etc_party_sommons_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="8700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Restores forgotten abilities. The book was re-published after being translated into a the modern language. (Can only be used by characters level 52 or above.) -->
-	<item id="8618" type="EtcItem" name="Ancient Book: Divine Inspiration (Modern Language Version)">
-		<set name="icon" val="icon.etc_add_buffslot_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Restores forgotten abilities. This book was published by ancient scholars for research purposes. It contains more information than the modern language version. (Can only be used by characters level 61 or above.) -->
-	<item id="8619" type="EtcItem" name="Ancient Book: Divine Inspiration (Original Language Version)">
-		<set name="icon" val="icon.etc_add_buffslot_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="500000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Restores forgotten abilities. This book is a hand-written copy of the original. It is almost the same as the original version. (Can only be used by characters level 76 or above.) -->
-	<item id="8620" type="EtcItem" name="Ancient Book: Divine Inspiration (Manuscript)">
-		<set name="icon" val="icon.etc_add_buffslot_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="500000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Awakens a forgotten ability. Those who lack the requisite knowledge cannot understand its contents. (Can only be used by characters level 76 or above.) -->
-	<item id="8621" type="EtcItem" name="Ancient Book: Divine Inspiration (Original Version)">
-		<set name="icon" val="icon.etc_add_buffslot_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="1000000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Regenerates HP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
-	<item id="8622" type="EtcItem" name="Elixir of Life (No-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="price" val="1300" />
-		<set name="shared_reuse_group" val="1" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates HP. This item can only be used by characters level 20 - 39. Cooldown is 5 min. -->
-	<item id="8623" type="EtcItem" name="Elixir of Life (D-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="price" val="3450" />
-		<set name="shared_reuse_group" val="2" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-2" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates HP. This item can only be used by characters level 40 - 51. Cooldown is 5 min. -->
-	<item id="8624" type="EtcItem" name="Elixir of Life (C-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i02" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="price" val="7200" />
-		<set name="shared_reuse_group" val="3" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-3" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates HP. This item can only be used by characters level 52 - 60. Cooldown is 5 min. -->
-	<item id="8625" type="EtcItem" name="Elixir of Life (B-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i03" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="price" val="10000" />
-		<set name="shared_reuse_group" val="4" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-4" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates HP. This item can only be used by characters level 61 - 75. Cooldown is 5 min. -->
-	<item id="8626" type="EtcItem" name="Elixir of Life (A-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i04" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="price" val="12500" />
-		<set name="shared_reuse_group" val="5" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-5" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates HP. This item can only be used by characters level 76 - 84. Cooldown is 5 min. -->
-	<item id="8627" type="EtcItem" name="Elixir of Life (S-grade)">
-		<set name="icon" val="icon.etc_super_hp_potion_i05" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="price" val="15000" />
-		<set name="shared_reuse_group" val="6" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2287-6" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
-	<item id="8628" type="EtcItem" name="Elixir of Mind (No-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="price" val="1400" />
-		<set name="shared_reuse_group" val="1" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can be used by characters level 20 - 39 upon themselves. Cooldown 5 min. -->
-	<item id="8629" type="EtcItem" name="Elixir of Mind (D-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="price" val="3400" />
-		<set name="shared_reuse_group" val="2" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-2" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can be used by characters level 40 - 51 upon themselves. Cooldown 5 min. -->
-	<item id="8630" type="EtcItem" name="Elixir of Mind (C-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i02" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="price" val="8700" />
-		<set name="shared_reuse_group" val="3" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-3" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can be used by characters level 52 - 60 upon themselves. Cooldown 5 min. -->
-	<item id="8631" type="EtcItem" name="Elixir of Mind (B-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i03" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="price" val="11600" />
-		<set name="shared_reuse_group" val="4" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-4" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can be used by characters level 61 - 75 upon themselves. Cooldown 5 min. -->
-	<item id="8632" type="EtcItem" name="Elixir of Mind (A-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i04" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="price" val="14400" />
-		<set name="shared_reuse_group" val="5" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-5" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates MP. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
-	<item id="8633" type="EtcItem" name="Elixir of Mind (S-grade)">
-		<set name="icon" val="icon.etc_super_mp_potion_i05" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="price" val="16800" />
-		<set name="shared_reuse_group" val="6" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2288-6" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Regenerates CP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
-	<item id="8634" type="EtcItem" name="Elixir of CP (No-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="price" val="600" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-1" />
-	</item>
-	<!-- Regenerates CP. This item can only be used by characters level 20 - 39. Cooldown is 5 min. -->
-	<item id="8635" type="EtcItem" name="Elixir of CP (D-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="price" val="1400" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-2" />
-	</item>
-	<!-- Regenerates CP. This item can only be used by characters level 40 - 51. Cooldown is 5 min. -->
-	<item id="8636" type="EtcItem" name="Elixir of CP (C-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i02" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="price" val="3000" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-3" />
-	</item>
-	<!-- Regenerates CP. This item can only be used by characters level 52 - 60. Cooldown is 5 min. -->
-	<item id="8637" type="EtcItem" name="Elixir of CP (B-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i03" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="price" val="4000" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-4" />
-	</item>
-	<!-- Regenerates CP. This item can only be used by characters level 61 - 75. Cooldown is 5 min. -->
-	<item id="8638" type="EtcItem" name="Elixir of CP (A-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i04" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="price" val="5000" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-5" />
-	</item>
-	<!-- Regenerates CP. This item can only be used by characters level 76 - 84. Cooldown is 5 min. -->
-	<item id="8639" type="EtcItem" name="Elixir of CP (S-grade)">
-		<set name="icon" val="icon.etc_super_cp_potion_i05" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="price" val="6000" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="2289-6" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (No-grade). Requires Create Common Item Skill Lv. 1. -->
-	<item id="8640" type="EtcItem" name="Recipe: Elixir of Life (No-grade)">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="260" />
-		<set name="recipe_id" val="826" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (D-grade). Requires Create Common Item Skill Lv. 2. -->
-	<item id="8641" type="EtcItem" name="Recipe: Elixir of Life (D-grade)">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="700" />
-		<set name="recipe_id" val="827" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (C-grade). Requires Create Common Item Skill Lv. 3. -->
-	<item id="8642" type="EtcItem" name="Recipe: Elixir of Life (C-grade)">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="1440" />
-		<set name="recipe_id" val="828" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (B-grade). Requires Create Common Item Skill Lv. 4. -->
-	<item id="8643" type="EtcItem" name="Recipe: Elixir of Life (B-grade)">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="2000" />
-		<set name="recipe_id" val="829" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (A-grade). Requires Create Common Item Skill Lv. 5. -->
-	<item id="8644" type="EtcItem" name="Recipe: Elixir of Life (A-grade)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="2500" />
-		<set name="recipe_id" val="830" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Life (S-grade). Requires Create Common Item Skill Lv. 6. -->
-	<item id="8645" type="EtcItem" name="Recipe: Elixir of Life (S-grade)">
-		<set name="icon" val="icon.etc_recipe_black_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="3000" />
-		<set name="recipe_id" val="831" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (No-grade). Requires Create Common Item Skill Lv. 1. -->
-	<item id="8646" type="EtcItem" name="Recipe: Elixir of Mind (No-grade)">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="280" />
-		<set name="recipe_id" val="832" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (D-grade). Requires Create Common Item Skill Lv. 2. -->
-	<item id="8647" type="EtcItem" name="Recipe: Elixir of Mind (D-grade)">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="640" />
-		<set name="recipe_id" val="833" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (C-grade). Requires Create Common Item Skill Lv. 3. -->
-	<item id="8648" type="EtcItem" name="Recipe: Elixir of Mind (C-grade)">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="1760" />
-		<set name="recipe_id" val="834" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (B-grade). Requires Create Common Item Skill Lv. 4. -->
-	<item id="8649" type="EtcItem" name="Recipe: Elixir of Mind (B-grade)">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="2320" />
-		<set name="recipe_id" val="835" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (A-grade). Requires Create Common Item Skill Lv. 5. -->
-	<item id="8650" type="EtcItem" name="Recipe: Elixir of Mind (A-grade)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="2880" />
-		<set name="recipe_id" val="836" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of Mind (S-grade). Requires Create Common Item Skill Lv. 6. -->
-	<item id="8651" type="EtcItem" name="Recipe: Elixir of Mind (S-grade)">
-		<set name="icon" val="icon.etc_recipe_black_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="3360" />
-		<set name="recipe_id" val="837" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (No-grade). Requires Create Common Item Skill Lv. 1. -->
-	<item id="8652" type="EtcItem" name="Recipe: Elixir of CP (No-grade)">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="120" />
-		<set name="recipe_id" val="838" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (D-grade). Requires Create Common Item Skill Lv. 2. -->
-	<item id="8653" type="EtcItem" name="Recipe: Elixir of CP (D-grade)">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="280" />
-		<set name="recipe_id" val="839" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (C-grade). Requires Create Common Item Skill Lv. 3. -->
-	<item id="8654" type="EtcItem" name="Recipe: Elixir of CP (C-grade)">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="600" />
-		<set name="recipe_id" val="840" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (B-grade). Requires Create Common Item Skill Lv. 4. -->
-	<item id="8655" type="EtcItem" name="Recipe: Elixir of CP (B-grade)">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="800" />
-		<set name="recipe_id" val="841" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (A-grade). Requires Create Common Item Skill Lv. 5. -->
-	<item id="8656" type="EtcItem" name="Recipe: Elixir of CP (A-grade)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="1000" />
-		<set name="recipe_id" val="842" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Usable by all races. Recipe for the Elixir of CP (S-grade). Requires Create Common Item Skill Lv. 6. -->
-	<item id="8657" type="EtcItem" name="Recipe: Elixir of CP (S-grade)">
-		<set name="icon" val="icon.etc_recipe_black_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="1200" />
-		<set name="recipe_id" val="843" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Dilutes any substance it is mixed with. Used when creating an elixir. -->
-	<item id="8658" type="EtcItem" name="Mysterious Solvent">
-		<set name="icon" val="icon.etc_dragon_blood_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="price" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Mystical object that has a tiny bit of unstable dark energy trapped inside. Double-click to transform into a random special item. -->
-	<item id="8659" type="EtcItem" name="Coffer of Shadows">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-		<set name="item_skill" val="2290-1" />
-	</item>
-	<!-- Hair accessory for the 2006 Halloween Event. -->
-	<item id="8660" type="Armor" name="Demon Horns">
-		<set name="icon" val="icon.accessory_hair_cornu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hair accessory for the 2006 Halloween Event. -->
-	<item id="8661" type="Armor" name="Mask of Spirits">
-		<set name="icon" val="icon.accessory_worldcup_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Cute antennae hair accessory with stars. This is an event item. -->
-	<item id="8662" type="Armor" name="Fairy Antennae (Event)">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. Results are temporary at best." -->
-	<item id="8663" type="EtcItem" name="Mysterious Potion (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_clear_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2103-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8664" type="EtcItem" name="Facelifting Potion - A (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_purple_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2291-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8665" type="EtcItem" name="Facelifting Potion - B (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_purple_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2292-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8666" type="EtcItem" name="Facelifting Potion - C (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_purple_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2293-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8667" type="EtcItem" name="Dye Potion - A (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2294-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8668" type="EtcItem" name="Dye Potion - B (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2295-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8669" type="EtcItem" name="Dye Potion - C (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2296-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8670" type="EtcItem" name="Dye Potion - D (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2297-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8671" type="EtcItem" name="Hair Style Change Potion - A (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2298-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8672" type="EtcItem" name="Hair Style Change Potion - B (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2299-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8673" type="EtcItem" name="Hair Style Change Potion - C (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2300-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8674" type="EtcItem" name="Hair Style Change Potion - D (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2301-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8675" type="EtcItem" name="Hair Style Change Potion - E (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2302-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8676" type="EtcItem" name="Hair Style Change Potion - F (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2303-1" />
-	</item>
-	<!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
-	<item id="8677" type="EtcItem" name="Hair Style Change Potion - G (Event)">
-		<set name="icon" val="icon.etc_lesser_potion_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="50" />
-		<set name="reuse_delay" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2304-1" />
-	</item>
-	<!-- Bestows one of the following functions: Haste, Health, or Critical Poison. -->
-	<item id="8678" type="Weapon" name="Sirra's Blade">
-		<set name="icon" val="icon.weapon_sirr_blade_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1300" />
-		<set name="price" val="26968400" />
-		<set name="change_weaponId" val="9352" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. -->
-	<item id="8679" type="Weapon" name="Sword of Ipos">
-		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1820" />
-		<set name="price" val="26968400" />
-		<set name="change_weaponId" val="9356" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Health, Haste, or Focus. -->
-	<item id="8680" type="Weapon" name="Barakiel's Axe">
-		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1550" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Anger. -->
-	<item id="8681" type="Weapon" name="Behemoth' Tuning Fork">
-		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1890" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage, or Back Blow. -->
-	<item id="8682" type="Weapon" name="Naga Storm">
-		<set name="icon" val="icon.weapon_naga_storm_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="930" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
-	<item id="8683" type="Weapon" name="Tiphon's Spear">
-		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1820" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3599-1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Cheap Shot, Focus, or Quick Recovery. -->
-	<item id="8684" type="Weapon" name="Shyeed's Bow">
-		<set name="icon" val="icon.weapon_shyid_bow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
-		<set name="damage_range" val="0;0;10;0" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1640" />
-		<set name="price" val="26968400" />
-		<set name="change_weaponId" val="9360" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="1" />
-		<set name="mp_consume" val="5" />
-		<set name="enchant_enabled" val="1" />
-		<set name="reuse_delay" val="820" />
-		<for>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="227" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Rsk. Haste, Haste, or Critical Drain. -->
-	<item id="8685" type="Weapon" name="Sobekk's Hurricane">
-		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;32;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1330" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Mana Up, Mental Shield, or Magic Focus. -->
-	<item id="8686" type="Weapon" name="Themis' Tongue">
-		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="820" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Conversion, Mana Up, or Magic Silence. -->
-	<item id="8687" type="Weapon" name="Cabrio's Hand">
-		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1510" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Mana Up, Acumen, or Mental Shield. -->
-	<item id="8688" type="Weapon" name="Daimon Crystal">
-		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="880" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="177" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- This demonic twin blade was forged by Gran Kain, the god of chaos. It needs the fresh blood of a PK at least every 24 hours or it will disappear. Cannot be transferred between servers. -->
-	<item id="8689" type="Weapon" name="Blood Sword Akamanah">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1840" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="item_skill" val="3629-1" />
-		<for>
-			<set stat="pAtk" val="1548" />
-			<set stat="mAtk" val="255" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- For Dwarves only. Recipe for making Sirra's Blade. Requires Create Item - Skill Lv. 8. 60% success rate. -->
-	<item id="8690" type="EtcItem" name="Recipe: Sirra's Blade (60%)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="844" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Sirra's Blade. Requires Create Item - Skill Lv. 8. 100% success rate. -->
-	<item id="8691" type="EtcItem" name="Recipe: Sirra's Blade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="845" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Sword of Ipos. Requires Create Item - Skill Lv. 8. 60% success rate. -->
-	<item id="8692" type="EtcItem" name="Recipe: Sword of Ipos (60%)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="846" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Sword of Ipos. Requires Create Item - Skill Lv. 8. 100% success rate. -->
-	<item id="8693" type="EtcItem" name="Recipe: Sword of Ipos">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="847" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Barakiel's Axe. Requires Create Item - Skill Lv. 8. 60% success rate. -->
-	<item id="8694" type="EtcItem" name="Recipe: Barakiel's Axe (60%)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="848" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Barakiel's Axe. Requires Create Item - Skill Lv. 8. 100% success rate. -->
-	<item id="8695" type="EtcItem" name="Recipe: Barakiel's Axe">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="849" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Behemoth' Tuning Fork. Requires Create Item - Skill Lv. 8. 60% success rate. -->
-	<item id="8696" type="EtcItem" name="Recipe: Behemoth' Tuning Fork (60%)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="850" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Behemoth' Tuning Fork. Requires Create Item - Skill Lv. 8. 100% success rate. -->
-	<item id="8697" type="EtcItem" name="Recipe: Behemoth' Tuning Fork">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="851" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Naga Storm. Requires Create Item - Skill Lv. 8. 60% success rate. -->
-	<item id="8698" type="EtcItem" name="Recipe: Naga Storm (60%)">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="852" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for making Naga Storm. Requires Create Item - Skill Lv. 8. 100% success rate. -->
-	<item id="8699" type="EtcItem" name="Recipe: Naga Storm">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="706000" />
-		<set name="recipe_id" val="853" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
+    <item id="8600" type="EtcItem" name="Herb of Life">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2278-1" />
+    </item>
+    <item id="8601" type="EtcItem" name="Major Herb of Life">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2278-2" />
+    </item>
+    <item id="8602" type="EtcItem" name="Superior Herb of Life">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2278-3" />
+    </item>
+    <item id="8603" type="EtcItem" name="Herb of Mana">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2279-1" />
+    </item>
+    <item id="8604" type="EtcItem" name="Major Herb of Mana">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2279-2" />
+    </item>
+    <item id="8605" type="EtcItem" name="Superior Herb of Mana">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2279-3" />
+    </item>
+    <item id="8606" type="EtcItem" name="Herb of Power">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2280-1" />
+    </item>
+    <item id="8607" type="EtcItem" name="Herb of Magic">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2281-1" />
+    </item>
+    <item id="8608" type="EtcItem" name="Haste Herb">
+        <set name="icon" val="BranchSys2.icon.etc_attack_sp_herb_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2282-1" />
+    </item>
+    <item id="8609" type="EtcItem" name="Herb of Casting Spd.">
+        <set name="icon" val="icon.etc_magic_sp_herb_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2283-1" />
+    </item>
+    <item id="8610" type="EtcItem" name="Herb of Critical Attack - Probability">
+        <set name="icon" val="icon.etc_critical_herb_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2284-1" />
+    </item>
+    <item id="8611" type="EtcItem" name="Wind Walk Herb">
+        <set name="icon" val="BranchSys2.icon.etc_move_herb_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2285-1" />
+    </item>
+    <item id="8612" type="EtcItem" name="Herb of the Warrior">
+        <set name="icon" val="icon.etc_warrior_set_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2280-1;2282-1;2284-1" />
+    </item>
+    <item id="8613" type="EtcItem" name="Wizard Herb">
+        <set name="icon" val="icon.etc_magic_set_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2281-1;2283-1" />
+    </item>
+    <item id="8614" type="EtcItem" name="Herb of Recovery">
+        <set name="icon" val="icon.etc_recovery_set_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2278-3;2279-3" />
+    </item>
+    <!-- Crystal imbued with mystical power. Used for teleportation magic. -->
+    <item id="8615" type="EtcItem" name="Summoning Crystal">
+        <set name="icon" val="icon.etc_recall_crystal_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="35000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Spellbook needed to learn Summon Friend. Used by Warlocks, Elemental Summoners and Phantom Summoners.
+        Required level: 56
+    -->
+    <item id="8616" type="EtcItem" name="Spellbook: Summon Friend">
+        <set name="icon" val="icon.etc_party_sommons_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="6250" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Word of Invitation. Used by Sorcerers, Spellsingers and Spellhowlers. -->
+    <item id="8617" type="EtcItem" name="Spellbook: Word of Invitation">
+        <set name="icon" val="icon.etc_party_sommons_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="8700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Restores forgotten abilities. The book was re-published after being translated into a the modern language. (Can only be used by characters level 52 or above.) -->
+    <item id="8618" type="EtcItem" name="Ancient Book: Divine Inspiration (Modern Language Version)">
+        <set name="icon" val="icon.etc_add_buffslot_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Restores forgotten abilities. This book was published by ancient scholars for research purposes. It contains more information than the modern language version. (Can only be used by characters level 61 or above.) -->
+    <item id="8619" type="EtcItem" name="Ancient Book: Divine Inspiration (Original Language Version)">
+        <set name="icon" val="icon.etc_add_buffslot_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="500000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Restores forgotten abilities. This book is a hand-written copy of the original. It is almost the same as the original version. (Can only be used by characters level 76 or above.) -->
+    <item id="8620" type="EtcItem" name="Ancient Book: Divine Inspiration (Manuscript)">
+        <set name="icon" val="icon.etc_add_buffslot_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="500000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Awakens a forgotten ability. Those who lack the requisite knowledge cannot understand its contents. (Can only be used by characters level 76 or above.) -->
+    <item id="8621" type="EtcItem" name="Ancient Book: Divine Inspiration (Original Version)">
+        <set name="icon" val="icon.etc_add_buffslot_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="1000000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Regenerates HP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
+    <item id="8622" type="EtcItem" name="Elixir of Life (No-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="price" val="1300" />
+        <set name="shared_reuse_group" val="1" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates HP. This item can only be used by characters level 20 - 39. Cooldown is 5 min. -->
+    <item id="8623" type="EtcItem" name="Elixir of Life (D-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="price" val="3450" />
+        <set name="shared_reuse_group" val="2" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-2" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates HP. This item can only be used by characters level 40 - 51. Cooldown is 5 min. -->
+    <item id="8624" type="EtcItem" name="Elixir of Life (C-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i02" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="price" val="7200" />
+        <set name="shared_reuse_group" val="3" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-3" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates HP. This item can only be used by characters level 52 - 60. Cooldown is 5 min. -->
+    <item id="8625" type="EtcItem" name="Elixir of Life (B-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i03" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="price" val="10000" />
+        <set name="shared_reuse_group" val="4" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-4" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates HP. This item can only be used by characters level 61 - 75. Cooldown is 5 min. -->
+    <item id="8626" type="EtcItem" name="Elixir of Life (A-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i04" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="price" val="12500" />
+        <set name="shared_reuse_group" val="5" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-5" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates HP. This item can only be used by characters level 76 - 84. Cooldown is 5 min. -->
+    <item id="8627" type="EtcItem" name="Elixir of Life (S-grade)">
+        <set name="icon" val="icon.etc_super_hp_potion_i05" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="price" val="15000" />
+        <set name="shared_reuse_group" val="6" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2287-6" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
+    <item id="8628" type="EtcItem" name="Elixir of Mind (No-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="price" val="1400" />
+        <set name="shared_reuse_group" val="1" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can be used by characters level 20 - 39 upon themselves. Cooldown 5 min. -->
+    <item id="8629" type="EtcItem" name="Elixir of Mind (D-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="price" val="3400" />
+        <set name="shared_reuse_group" val="2" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-2" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can be used by characters level 40 - 51 upon themselves. Cooldown 5 min. -->
+    <item id="8630" type="EtcItem" name="Elixir of Mind (C-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i02" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="price" val="8700" />
+        <set name="shared_reuse_group" val="3" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-3" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can be used by characters level 52 - 60 upon themselves. Cooldown 5 min. -->
+    <item id="8631" type="EtcItem" name="Elixir of Mind (B-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i03" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="price" val="11600" />
+        <set name="shared_reuse_group" val="4" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-4" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can be used by characters level 61 - 75 upon themselves. Cooldown 5 min. -->
+    <item id="8632" type="EtcItem" name="Elixir of Mind (A-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i04" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="price" val="14400" />
+        <set name="shared_reuse_group" val="5" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-5" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates MP. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
+    <item id="8633" type="EtcItem" name="Elixir of Mind (S-grade)">
+        <set name="icon" val="icon.etc_super_mp_potion_i05" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="price" val="16800" />
+        <set name="shared_reuse_group" val="6" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2288-6" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Regenerates CP. Can only be used by characters level 19 or below upon themselves. Cooldown is 5 min. -->
+    <item id="8634" type="EtcItem" name="Elixir of CP (No-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="price" val="600" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-1" />
+    </item>
+    <!-- Regenerates CP. This item can only be used by characters level 20 - 39. Cooldown is 5 min. -->
+    <item id="8635" type="EtcItem" name="Elixir of CP (D-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="price" val="1400" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-2" />
+    </item>
+    <!-- Regenerates CP. This item can only be used by characters level 40 - 51. Cooldown is 5 min. -->
+    <item id="8636" type="EtcItem" name="Elixir of CP (C-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i02" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="price" val="3000" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-3" />
+    </item>
+    <!-- Regenerates CP. This item can only be used by characters level 52 - 60. Cooldown is 5 min. -->
+    <item id="8637" type="EtcItem" name="Elixir of CP (B-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i03" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="price" val="4000" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-4" />
+    </item>
+    <!-- Regenerates CP. This item can only be used by characters level 61 - 75. Cooldown is 5 min. -->
+    <item id="8638" type="EtcItem" name="Elixir of CP (A-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i04" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="price" val="5000" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-5" />
+    </item>
+    <!-- Regenerates CP. This item can only be used by characters level 76 - 84. Cooldown is 5 min. -->
+    <item id="8639" type="EtcItem" name="Elixir of CP (S-grade)">
+        <set name="icon" val="icon.etc_super_cp_potion_i05" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="price" val="6000" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="2289-6" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (No-grade). Requires Create Common Item Skill Lv. 1. -->
+    <item id="8640" type="EtcItem" name="Recipe: Elixir of Life (No-grade)">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="260" />
+        <set name="recipe_id" val="826" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (D-grade). Requires Create Common Item Skill Lv. 2. -->
+    <item id="8641" type="EtcItem" name="Recipe: Elixir of Life (D-grade)">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="700" />
+        <set name="recipe_id" val="827" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (C-grade). Requires Create Common Item Skill Lv. 3. -->
+    <item id="8642" type="EtcItem" name="Recipe: Elixir of Life (C-grade)">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="1440" />
+        <set name="recipe_id" val="828" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (B-grade). Requires Create Common Item Skill Lv. 4. -->
+    <item id="8643" type="EtcItem" name="Recipe: Elixir of Life (B-grade)">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="2000" />
+        <set name="recipe_id" val="829" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (A-grade). Requires Create Common Item Skill Lv. 5. -->
+    <item id="8644" type="EtcItem" name="Recipe: Elixir of Life (A-grade)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="2500" />
+        <set name="recipe_id" val="830" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Life (S-grade). Requires Create Common Item Skill Lv. 6. -->
+    <item id="8645" type="EtcItem" name="Recipe: Elixir of Life (S-grade)">
+        <set name="icon" val="icon.etc_recipe_black_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="3000" />
+        <set name="recipe_id" val="831" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (No-grade). Requires Create Common Item Skill Lv. 1. -->
+    <item id="8646" type="EtcItem" name="Recipe: Elixir of Mind (No-grade)">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="280" />
+        <set name="recipe_id" val="832" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (D-grade). Requires Create Common Item Skill Lv. 2. -->
+    <item id="8647" type="EtcItem" name="Recipe: Elixir of Mind (D-grade)">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="640" />
+        <set name="recipe_id" val="833" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (C-grade). Requires Create Common Item Skill Lv. 3. -->
+    <item id="8648" type="EtcItem" name="Recipe: Elixir of Mind (C-grade)">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="1760" />
+        <set name="recipe_id" val="834" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (B-grade). Requires Create Common Item Skill Lv. 4. -->
+    <item id="8649" type="EtcItem" name="Recipe: Elixir of Mind (B-grade)">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="2320" />
+        <set name="recipe_id" val="835" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (A-grade). Requires Create Common Item Skill Lv. 5. -->
+    <item id="8650" type="EtcItem" name="Recipe: Elixir of Mind (A-grade)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="2880" />
+        <set name="recipe_id" val="836" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of Mind (S-grade). Requires Create Common Item Skill Lv. 6. -->
+    <item id="8651" type="EtcItem" name="Recipe: Elixir of Mind (S-grade)">
+        <set name="icon" val="icon.etc_recipe_black_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="3360" />
+        <set name="recipe_id" val="837" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (No-grade). Requires Create Common Item Skill Lv. 1. -->
+    <item id="8652" type="EtcItem" name="Recipe: Elixir of CP (No-grade)">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="120" />
+        <set name="recipe_id" val="838" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (D-grade). Requires Create Common Item Skill Lv. 2. -->
+    <item id="8653" type="EtcItem" name="Recipe: Elixir of CP (D-grade)">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="280" />
+        <set name="recipe_id" val="839" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (C-grade). Requires Create Common Item Skill Lv. 3. -->
+    <item id="8654" type="EtcItem" name="Recipe: Elixir of CP (C-grade)">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="600" />
+        <set name="recipe_id" val="840" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (B-grade). Requires Create Common Item Skill Lv. 4. -->
+    <item id="8655" type="EtcItem" name="Recipe: Elixir of CP (B-grade)">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="800" />
+        <set name="recipe_id" val="841" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (A-grade). Requires Create Common Item Skill Lv. 5. -->
+    <item id="8656" type="EtcItem" name="Recipe: Elixir of CP (A-grade)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="1000" />
+        <set name="recipe_id" val="842" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Usable by all races. Recipe for the Elixir of CP (S-grade). Requires Create Common Item Skill Lv. 6. -->
+    <item id="8657" type="EtcItem" name="Recipe: Elixir of CP (S-grade)">
+        <set name="icon" val="icon.etc_recipe_black_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="1200" />
+        <set name="recipe_id" val="843" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Dilutes any substance it is mixed with. Used when creating an elixir. -->
+    <item id="8658" type="EtcItem" name="Mysterious Solvent">
+        <set name="icon" val="icon.etc_dragon_blood_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="price" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Mystical object that has a tiny bit of unstable dark energy trapped inside. Double-click to transform into a random special item. -->
+    <item id="8659" type="EtcItem" name="Coffer of Shadows">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+        <set name="item_skill" val="2290-1" />
+    </item>
+    <!-- Hair accessory for the 2006 Halloween Event. -->
+    <item id="8660" type="Armor" name="Demon Horns">
+        <set name="icon" val="icon.accessory_hair_cornu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hair accessory for the 2006 Halloween Event. -->
+    <item id="8661" type="Armor" name="Mask of Spirits">
+        <set name="icon" val="icon.accessory_worldcup_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Cute antennae hair accessory with stars. This is an event item. -->
+    <item id="8662" type="Armor" name="Fairy Antennae (Event)">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. Results are temporary at best." -->
+    <item id="8663" type="EtcItem" name="Mysterious Potion (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_clear_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="SummonItems" />
+        <set name="item_skill" val="2103-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8664" type="EtcItem" name="Facelifting Potion - A (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_purple_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2291-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8665" type="EtcItem" name="Facelifting Potion - B (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_purple_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2292-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8666" type="EtcItem" name="Facelifting Potion - C (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_purple_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2293-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8667" type="EtcItem" name="Dye Potion - A (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2294-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8668" type="EtcItem" name="Dye Potion - B (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2295-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8669" type="EtcItem" name="Dye Potion - C (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2296-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8670" type="EtcItem" name="Dye Potion - D (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2297-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8671" type="EtcItem" name="Hair Style Change Potion - A (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2298-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8672" type="EtcItem" name="Hair Style Change Potion - B (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2299-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8673" type="EtcItem" name="Hair Style Change Potion - C (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2300-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8674" type="EtcItem" name="Hair Style Change Potion - D (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2301-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8675" type="EtcItem" name="Hair Style Change Potion - E (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2302-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8676" type="EtcItem" name="Hair Style Change Potion - F (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2303-1" />
+    </item>
+    <!-- Altered Realities Event Item. The label reads "Effects of this oil may be unpredictable. BEWARE! Changes caused will be permanent. Drink at your own risk!" -->
+    <item id="8677" type="EtcItem" name="Hair Style Change Potion - G (Event)">
+        <set name="icon" val="icon.etc_lesser_potion_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="50" />
+        <set name="reuse_delay" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2304-1" />
+    </item>
+    <!-- Bestows one of the following functions: Haste, Health, or Critical Poison. -->
+    <item id="8678" type="Weapon" name="Sirra's Blade">
+        <set name="icon" val="icon.weapon_sirr_blade_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1300" />
+        <set name="price" val="26968400" />
+        <set name="change_weaponId" val="9352" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="251" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Haste, or Health. -->
+    <item id="8679" type="Weapon" name="Sword of Ipos">
+        <set name="icon" val="icon.weapon_sword_of_ipos_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1820" />
+        <set name="price" val="26968400" />
+        <set name="change_weaponId" val="9356" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="305" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Health, Haste, or Focus. -->
+    <item id="8680" type="Weapon" name="Barakiel's Axe">
+        <set name="icon" val="icon.weapon_barakiel_axe_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1550" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="251" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Health, or Anger. -->
+    <item id="8681" type="Weapon" name="Behemoth' Tuning Fork">
+        <set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1890" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="305" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, P. Critical Damage, or Back Blow. -->
+    <item id="8682" type="Weapon" name="Naga Storm">
+        <set name="icon" val="icon.weapon_naga_storm_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="930" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="220" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
+    <item id="8683" type="Weapon" name="Tiphon's Spear">
+        <set name="icon" val="icon.weapon_tiphon_spear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="80" />
+        <set name="damage_range" val="0;0;66;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1820" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="item_skill" val="3599-1" />
+        <for>
+            <set stat="pAtk" val="251" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Cheap Shot, Focus, or Quick Recovery. -->
+    <item id="8684" type="Weapon" name="Shyeed's Bow">
+        <set name="icon" val="icon.weapon_shyid_bow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="500" />
+        <set name="damage_range" val="0;0;10;0" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1640" />
+        <set name="price" val="26968400" />
+        <set name="change_weaponId" val="9360" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="1" />
+        <set name="mp_consume" val="5" />
+        <set name="enchant_enabled" val="1" />
+        <set name="reuse_delay" val="820" />
+        <for>
+            <set stat="pAtk" val="570" />
+            <set stat="mAtk" val="133" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="227" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Rsk. Haste, Haste, or Critical Drain. -->
+    <item id="8685" type="Weapon" name="Sobekk's Hurricane">
+        <set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;32;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1330" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="305" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Mana Up, Mental Shield, or Magic Focus. -->
+    <item id="8686" type="Weapon" name="Themis' Tongue">
+        <set name="icon" val="icon.weapon_tongue_of_themis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="820" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="202" />
+            <set stat="mAtk" val="161" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Conversion, Mana Up, or Magic Silence. -->
+    <item id="8687" type="Weapon" name="Cabrio's Hand">
+        <set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1510" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="202" />
+            <set stat="mAtk" val="161" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Mana Up, Acumen, or Mental Shield. -->
+    <item id="8688" type="Weapon" name="Daimon Crystal">
+        <set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="880" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="245" />
+            <set stat="mAtk" val="177" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- This demonic twin blade was forged by Gran Kain, the god of chaos. It needs the fresh blood of a PK at least every 24 hours or it will disappear. Cannot be transferred between servers. -->
+    <item id="8689" type="Weapon" name="Blood Sword Akamanah">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1840" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_destroyable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="item_skill" val="3629-1" />
+        <for>
+            <set stat="pAtk" val="1548" />
+            <set stat="mAtk" val="255" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- For Dwarves only. Recipe for making Sirra's Blade. Requires Create Item - Skill Lv. 8. 60% success rate. -->
+    <item id="8690" type="EtcItem" name="Recipe: Sirra's Blade (60%)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="844" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Sirra's Blade. Requires Create Item - Skill Lv. 8. 100% success rate. -->
+    <item id="8691" type="EtcItem" name="Recipe: Sirra's Blade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="845" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Sword of Ipos. Requires Create Item - Skill Lv. 8. 60% success rate. -->
+    <item id="8692" type="EtcItem" name="Recipe: Sword of Ipos (60%)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="846" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Sword of Ipos. Requires Create Item - Skill Lv. 8. 100% success rate. -->
+    <item id="8693" type="EtcItem" name="Recipe: Sword of Ipos">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="847" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Barakiel's Axe. Requires Create Item - Skill Lv. 8. 60% success rate. -->
+    <item id="8694" type="EtcItem" name="Recipe: Barakiel's Axe (60%)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="848" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Barakiel's Axe. Requires Create Item - Skill Lv. 8. 100% success rate. -->
+    <item id="8695" type="EtcItem" name="Recipe: Barakiel's Axe">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="849" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Behemoth' Tuning Fork. Requires Create Item - Skill Lv. 8. 60% success rate. -->
+    <item id="8696" type="EtcItem" name="Recipe: Behemoth' Tuning Fork (60%)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="850" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Behemoth' Tuning Fork. Requires Create Item - Skill Lv. 8. 100% success rate. -->
+    <item id="8697" type="EtcItem" name="Recipe: Behemoth' Tuning Fork">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="851" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Naga Storm. Requires Create Item - Skill Lv. 8. 60% success rate. -->
+    <item id="8698" type="EtcItem" name="Recipe: Naga Storm (60%)">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="852" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for making Naga Storm. Requires Create Item - Skill Lv. 8. 100% success rate. -->
+    <item id="8699" type="EtcItem" name="Recipe: Naga Storm">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="706000" />
+        <set name="recipe_id" val="853" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
 </list>

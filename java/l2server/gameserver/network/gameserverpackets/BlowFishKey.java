@@ -27,40 +27,39 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author -Wooden-
- *
  */
 public class BlowFishKey extends BaseSendablePacket
 {
-	
-	/**
-	 * @param blowfishKey
-	 * @param publicKey
-	 */
-	public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey)
-	{
-		writeC(0x00);
-		byte[] encrypted = null;
-		try
-		{
-			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
-			rsaCipher.init(Cipher.ENCRYPT_MODE, publicKey);
-			encrypted = rsaCipher.doFinal(blowfishKey);
-		}
-		catch (GeneralSecurityException e)
-		{
-			Log.log(Level.SEVERE, "Error While encrypting blowfish key for transmision (Crypt error): " + e.getMessage(), e);
-		}
-		writeD(encrypted.length);
-		writeB(encrypted);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+
+    /**
+     * @param blowfishKey
+     * @param publicKey
+     */
+    public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey)
+    {
+        writeC(0x00);
+        byte[] encrypted = null;
+        try
+        {
+            Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
+            rsaCipher.init(Cipher.ENCRYPT_MODE, publicKey);
+            encrypted = rsaCipher.doFinal(blowfishKey);
+        }
+        catch (GeneralSecurityException e)
+        {
+            Log.log(Level.SEVERE, "Error While encrypting blowfish key for transmision (Crypt error): " + e
+                    .getMessage(), e);
+        }
+        writeD(encrypted.length);
+        writeB(encrypted);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

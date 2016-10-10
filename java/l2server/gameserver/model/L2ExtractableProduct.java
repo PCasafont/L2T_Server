@@ -16,48 +16,48 @@
 package l2server.gameserver.model;
 
 /**
- *
  * @author JIV
  */
 public class L2ExtractableProduct
 {
-	private final int _id;
-	private final int _min;
-	private final int _max;
-	private final int _chance;
-	
-	/**
-	 * Create Extractable product
-	 * @param id crete item id
-	 * @param min item count max
-	 * @param max item count min
-	 * @param chance chance for creating
-	 */
-	public L2ExtractableProduct(int id, int min, int max, double chance)
-	{
-		_id = id;
-		_min = min;
-		_max = max;
-		_chance = (int) (chance * 1000);
-	}
-	
-	public int getId()
-	{
-		return _id;
-	}
-	
-	public int getMin()
-	{
-		return _min;
-	}
-	
-	public int getMax()
-	{
-		return _max;
-	}
-	
-	public int getChance()
-	{
-		return _chance;
-	}
+    private final int _id;
+    private final int _min;
+    private final int _max;
+    private final int _chance;
+
+    /**
+     * Create Extractable product
+     *
+     * @param id     crete item id
+     * @param min    item count max
+     * @param max    item count min
+     * @param chance chance for creating
+     */
+    public L2ExtractableProduct(int id, int min, int max, double chance)
+    {
+        _id = id;
+        _min = min;
+        _max = max;
+        _chance = (int) (chance * 1000);
+    }
+
+    public int getId()
+    {
+        return _id;
+    }
+
+    public int getMin()
+    {
+        return _min;
+    }
+
+    public int getMax()
+    {
+        return _max;
+    }
+
+    public int getChance()
+    {
+        return _chance;
+    }
 }

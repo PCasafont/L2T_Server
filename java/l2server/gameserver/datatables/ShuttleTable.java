@@ -34,81 +34,84 @@ import l2server.util.xml.XmlNode;
  */
 public class ShuttleTable
 {
-	private TIntObjectHashMap<L2ShuttleInstance> _shuttles = new TIntObjectHashMap<L2ShuttleInstance>();
-	
-	private static ShuttleTable _instance;
-	
-	public static ShuttleTable getInstance()
-	{
-		if (_instance == null)
-			_instance = new ShuttleTable();
-		
-		return _instance;
-	}
-	
-	private ShuttleTable()
-	{
-		readShuttles();
-	}
-	
-	private void readShuttles()
-	{
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "shuttles.xml");
-		XmlDocument doc = new XmlDocument(file);
-		
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode shuttleNode : n.getChildren())
-				{
-					if (shuttleNode.getName().equalsIgnoreCase("shuttle"))
-					{
-						int id = shuttleNode.getInt("id");
-						
-						StatsSet npcDat = new StatsSet();
-						npcDat.set("npcId", id);
-						npcDat.set("level", 0);
-						
-						npcDat.set("collisionRadius", 0);
-						npcDat.set("collisionHeight", 0);
-						npcDat.set("type", "");
-						npcDat.set("walkSpd", 300);
-						npcDat.set("eunSpd", 300);
-						npcDat.set("name", "AirShip");
-						npcDat.set("hpMax", 50000);
-						npcDat.set("hpReg", 3.e-3f);
-						npcDat.set("mpReg", 3.e-3f);
-						npcDat.set("pDef", 100);
-						npcDat.set("mDef", 100);
-						
-						L2ShuttleInstance shuttle = new L2ShuttleInstance(IdFactory.getInstance().getNextId(), new L2CharTemplate(npcDat), id);
-						L2World.getInstance().storeObject(shuttle);
-						
-						for (XmlNode stopNode : shuttleNode.getChildren())
-						{
-							if (stopNode.getName().equalsIgnoreCase("stop"))
-							{
-								int x = stopNode.getInt("x");
-								int y = stopNode.getInt("y");
-								int z = stopNode.getInt("z");
-								int time = stopNode.getInt("time");
-								int doorId = stopNode.getInt("doorId");
-								int outerDoorId = stopNode.getInt("outerDoorId");
-								int oustX = stopNode.getInt("oustX");
-								int oustY = stopNode.getInt("oustY");
-								int oustZ = stopNode.getInt("oustZ");
-								
-								shuttle.addStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ);
-							}
-						}
-						
-						shuttle.moveToNextRoutePoint();
-						_shuttles.put(id, shuttle);
-					}
-				}
-			}
-		}
-		Log.info("ShuttleTable: Loaded " + _shuttles.size() + " shuttles.");
-	}
+    private TIntObjectHashMap<L2ShuttleInstance> _shuttles = new TIntObjectHashMap<L2ShuttleInstance>();
+
+    private static ShuttleTable _instance;
+
+    public static ShuttleTable getInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new ShuttleTable();
+        }
+
+        return _instance;
+    }
+
+    private ShuttleTable()
+    {
+        readShuttles();
+    }
+
+    private void readShuttles()
+    {
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "shuttles.xml");
+        XmlDocument doc = new XmlDocument(file);
+
+        for (XmlNode n : doc.getChildren())
+        {
+            if (n.getName().equalsIgnoreCase("list"))
+            {
+                for (XmlNode shuttleNode : n.getChildren())
+                {
+                    if (shuttleNode.getName().equalsIgnoreCase("shuttle"))
+                    {
+                        int id = shuttleNode.getInt("id");
+
+                        StatsSet npcDat = new StatsSet();
+                        npcDat.set("npcId", id);
+                        npcDat.set("level", 0);
+
+                        npcDat.set("collisionRadius", 0);
+                        npcDat.set("collisionHeight", 0);
+                        npcDat.set("type", "");
+                        npcDat.set("walkSpd", 300);
+                        npcDat.set("eunSpd", 300);
+                        npcDat.set("name", "AirShip");
+                        npcDat.set("hpMax", 50000);
+                        npcDat.set("hpReg", 3.e-3f);
+                        npcDat.set("mpReg", 3.e-3f);
+                        npcDat.set("pDef", 100);
+                        npcDat.set("mDef", 100);
+
+                        L2ShuttleInstance shuttle = new L2ShuttleInstance(IdFactory.getInstance()
+                                .getNextId(), new L2CharTemplate(npcDat), id);
+                        L2World.getInstance().storeObject(shuttle);
+
+                        for (XmlNode stopNode : shuttleNode.getChildren())
+                        {
+                            if (stopNode.getName().equalsIgnoreCase("stop"))
+                            {
+                                int x = stopNode.getInt("x");
+                                int y = stopNode.getInt("y");
+                                int z = stopNode.getInt("z");
+                                int time = stopNode.getInt("time");
+                                int doorId = stopNode.getInt("doorId");
+                                int outerDoorId = stopNode.getInt("outerDoorId");
+                                int oustX = stopNode.getInt("oustX");
+                                int oustY = stopNode.getInt("oustY");
+                                int oustZ = stopNode.getInt("oustZ");
+
+                                shuttle.addStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ);
+                            }
+                        }
+
+                        shuttle.moveToNextRoutePoint();
+                        _shuttles.put(id, shuttle);
+                    }
+                }
+            }
+        }
+        Log.info("ShuttleTable: Loaded " + _shuttles.size() + " shuttles.");
+    }
 }

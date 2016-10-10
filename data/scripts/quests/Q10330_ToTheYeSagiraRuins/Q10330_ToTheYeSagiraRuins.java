@@ -28,92 +28,102 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
  */
 public class Q10330_ToTheYeSagiraRuins extends Quest
 {
-	// Quest
-	public static String qn = "Q10330_ToTheYeSagiraRuins";
-	
-	// NPC
-	private int _atran = 33448;
-	private int _lakcis = 32977;
-	
-	public Q10330_ToTheYeSagiraRuins(int questId, String name, String descr)
-	{
-		super(questId, name, descr);
-		addStartNpc(_atran);
-		addTalkId(_atran);
-		addTalkId(_lakcis);
-	}
-	
-	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		String htmltext = event;
-		QuestState st = player.getQuestState(qn);
-		
-		if (st == null)
-			return htmltext;
-		
-		if (npc.getNpcId() == _atran && event.equalsIgnoreCase("33448-03.htm"))
-		{
-			st.setState(State.STARTED);
-			st.set("cond", "1");
-			st.playSound("ItemSound.quest_accept");
-		}
-		else if (npc.getNpcId() == _lakcis && event.equalsIgnoreCase("32977-03.htm") && st.getInt("cond") == 1)
-		{
-			st.unset("cond");
-			st.giveItems(22, 1);
-			st.giveItems(29, 1);
-			st.giveItems(57, 28000);
-			st.addExpAndSp(23000, 5800);
-			st.playSound("ItemSound.quest_finish");
-			player.sendPacket(new ExShowScreenMessage(11022202, 1, false, 10000));
-			st.exitQuest(false);
-			
-			// Main quests state
-			player.setGlobalQuestFlag(GlobalQuest.STARTING, 11);
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-			return htmltext;
-		
-		if (npc.getNpcId() == _atran)
-		{
-			switch (st.getState())
-			{
-				case State.CREATED:
-					if (canStart(player))
-						htmltext = "33448-01.htm";
-					else
-						htmltext = "33448-00.htm";
-					break;
-				case State.STARTED:
-					htmltext = "33448-04.htm"; // TODO
-					break;
-				case State.COMPLETED:
-					htmltext = "33448-05.htm"; // TODO
-					break;
-			}
-		}
-		else if (npc.getNpcId() == _lakcis && st.getInt("cond") == 1)
-			htmltext = "32977-01.htm";
-		return htmltext;
-	}
-	
-	@Override
-	public boolean canStart(L2PcInstance player)
-	{
-		return player.getLevel() >= 8 && player.getLevel() <= 20;
-	}
-	
-	public static void main(String[] args)
-	{
-		new Q10330_ToTheYeSagiraRuins(10330, qn, "Going to the Ye Sagira Ruins. Opportunity to obtain no-Grade armor.");
-	}
+    // Quest
+    public static String qn = "Q10330_ToTheYeSagiraRuins";
+
+    // NPC
+    private int _atran = 33448;
+    private int _lakcis = 32977;
+
+    public Q10330_ToTheYeSagiraRuins(int questId, String name, String descr)
+    {
+        super(questId, name, descr);
+        addStartNpc(_atran);
+        addTalkId(_atran);
+        addTalkId(_lakcis);
+    }
+
+    @Override
+    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+    {
+        String htmltext = event;
+        QuestState st = player.getQuestState(qn);
+
+        if (st == null)
+        {
+            return htmltext;
+        }
+
+        if (npc.getNpcId() == _atran && event.equalsIgnoreCase("33448-03.htm"))
+        {
+            st.setState(State.STARTED);
+            st.set("cond", "1");
+            st.playSound("ItemSound.quest_accept");
+        }
+        else if (npc.getNpcId() == _lakcis && event.equalsIgnoreCase("32977-03.htm") && st.getInt("cond") == 1)
+        {
+            st.unset("cond");
+            st.giveItems(22, 1);
+            st.giveItems(29, 1);
+            st.giveItems(57, 28000);
+            st.addExpAndSp(23000, 5800);
+            st.playSound("ItemSound.quest_finish");
+            player.sendPacket(new ExShowScreenMessage(11022202, 1, false, 10000));
+            st.exitQuest(false);
+
+            // Main quests state
+            player.setGlobalQuestFlag(GlobalQuest.STARTING, 11);
+        }
+        return htmltext;
+    }
+
+    @Override
+    public String onTalk(L2Npc npc, L2PcInstance player)
+    {
+        String htmltext = getNoQuestMsg(player);
+        QuestState st = player.getQuestState(qn);
+        if (st == null)
+        {
+            return htmltext;
+        }
+
+        if (npc.getNpcId() == _atran)
+        {
+            switch (st.getState())
+            {
+                case State.CREATED:
+                    if (canStart(player))
+                    {
+                        htmltext = "33448-01.htm";
+                    }
+                    else
+                    {
+                        htmltext = "33448-00.htm";
+                    }
+                    break;
+                case State.STARTED:
+                    htmltext = "33448-04.htm"; // TODO
+                    break;
+                case State.COMPLETED:
+                    htmltext = "33448-05.htm"; // TODO
+                    break;
+            }
+        }
+        else if (npc.getNpcId() == _lakcis && st.getInt("cond") == 1)
+        {
+            htmltext = "32977-01.htm";
+        }
+        return htmltext;
+    }
+
+    @Override
+    public boolean canStart(L2PcInstance player)
+    {
+        return player.getLevel() >= 8 && player.getLevel() <= 20;
+    }
+
+    public static void main(String[] args)
+    {
+        new Q10330_ToTheYeSagiraRuins(10330, qn, "Going to the Ye Sagira Ruins. Opportunity to obtain no-Grade armor.");
+    }
 }

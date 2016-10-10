@@ -21,20 +21,20 @@ package l2server.gameserver.network.serverpackets;
 @Deprecated
 public class GMHide extends L2GameServerPacket
 {
-	// cd
-	private static int _mode;
-	
-	/**
-	 * @param _mode (0 = display windows, 1 = hide windows)
-	 */
-	public GMHide(int mode)
-	{
-		_mode = mode;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_mode);
-	}
+    // cd
+    private static int _mode;
+
+    /**
+     * @param _mode (0 = display windows, 1 = hide windows)
+     */
+    public GMHide(int mode)
+    {
+        _mode = mode;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_mode);
+    }
 }

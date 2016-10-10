@@ -22,27 +22,26 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author mrTJO
- * Thanks to mochitto
+ *         Thanks to mochitto
  */
 public class ReplyCharacters extends BaseSendablePacket
 {
-	
-	public ReplyCharacters(String account, int chars, List<Long> timeToDel)
-	{
-		writeC(0x08);
-		writeS(account);
-		writeC(chars);
-		writeC(timeToDel.size());
-		for (long time : timeToDel)
-		{
-			writeQ(time);
-		}
-	}
-	
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+
+    public ReplyCharacters(String account, int chars, List<Long> timeToDel)
+    {
+        writeC(0x08);
+        writeS(account);
+        writeC(chars);
+        writeC(timeToDel.size());
+        for (long time : timeToDel)
+        {
+            writeQ(time);
+        }
+    }
+
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

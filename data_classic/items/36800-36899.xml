@@ -1,935 +1,935 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Main ingredient for making a Requiem Thrower. -->
-	<item id="36800" type="EtcItem" name="Requiem Thrower Fragment">
-		<set name="icon" val="icon.weapon_grabathus_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Requiem Shooter. -->
-	<item id="36801" type="EtcItem" name="Requiem Shooter Fragment">
-		<set name="icon" val="icon.weapon_shyayaka_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Requiem Buster. -->
-	<item id="36802" type="EtcItem" name="Requiem Buster Fragment">
-		<set name="icon" val="icon.weapon_kaynon_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Requiem Caster. -->
-	<item id="36803" type="EtcItem" name="Requiem Caster Fragment">
-		<set name="icon" val="icon.weapon_anatrian_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Requiem Retributer. -->
-	<item id="36804" type="EtcItem" name="Requiem Retributer Fragment">
-		<set name="icon" val="icon.weapon_grankaz_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Helmet. -->
-	<item id="36805" type="EtcItem" name="Immortal Helmet Ingredient">
-		<set name="icon" val="icon.armor_helmet_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Breastplate. -->
-	<item id="36806" type="EtcItem" name="Immortal Breastplate Ingredient">
-		<set name="icon" val="icon.armor_t501_u_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Gaiters. -->
-	<item id="36807" type="EtcItem" name="Immortal Gaiter Ingredient">
-		<set name="icon" val="icon.armor_t501_l_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Gauntlets. -->
-	<item id="36808" type="EtcItem" name="Immortal Gauntlet Ingredient">
-		<set name="icon" val="icon.armor_t501_g_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Boots. -->
-	<item id="36809" type="EtcItem" name="Immortal Boot Ingredient">
-		<set name="icon" val="icon.armor_t501_b_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Shield. -->
-	<item id="36810" type="EtcItem" name="Immortal Shield Ingredient">
-		<set name="icon" val="icon.weapon_sacon_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Leather Helmet. -->
-	<item id="36811" type="EtcItem" name="Immortal Leather Helmet Ingredient">
-		<set name="icon" val="icon.armor_leather_helmet_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Leather Armor. -->
-	<item id="36812" type="EtcItem" name="Immortal Leather Armor Ingredient">
-		<set name="icon" val="icon.armor_t502_u_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Leather Leggings. -->
-	<item id="36813" type="EtcItem" name="Immortal Leather Legging Ingredient">
-		<set name="icon" val="icon.armor_t502_l_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Leather Gloves. -->
-	<item id="36814" type="EtcItem" name="Immortal Leather Glove Ingredient">
-		<set name="icon" val="icon.armor_t502_g_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Leather Boots. -->
-	<item id="36815" type="EtcItem" name="Immortal Leather Boot Ingredient">
-		<set name="icon" val="icon.armor_t502_b_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Circlet. -->
-	<item id="36816" type="EtcItem" name="Immortal Circlet Ingredient">
-		<set name="icon" val="icon.armor_circlet_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Tunic. -->
-	<item id="36817" type="EtcItem" name="Immortal Tunic Ingredient">
-		<set name="icon" val="icon.armor_t503_u_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Stockings. -->
-	<item id="36818" type="EtcItem" name="Immortal Stocking Ingredient">
-		<set name="icon" val="icon.armor_t503_l_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Gloves. -->
-	<item id="36819" type="EtcItem" name="Immortal Glove Ingredient">
-		<set name="icon" val="icon.armor_t503_g_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Immortal Shoes. -->
-	<item id="36820" type="EtcItem" name="Immortal Shoe Ingredient">
-		<set name="icon" val="icon.armor_t503_b_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Sigil. -->
-	<item id="36821" type="EtcItem" name="Immortal Sigil Ingredient">
-		<set name="icon" val="icon.weapon_karyen_i00_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Necklace. -->
-	<item id="36822" type="EtcItem" name="Immortal Necklace Gem">
-		<set name="icon" val="icon.etc_r1_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Earring. -->
-	<item id="36823" type="EtcItem" name="Immortal Earring Gem">
-		<set name="icon" val="icon.etc_r1_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Immortal Ring. -->
-	<item id="36824" type="EtcItem" name="Immortal Ring Gem">
-		<set name="icon" val="icon.etc_r1_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Shaper. -->
-	<item id="36825" type="EtcItem" name="Apocalypse Shaper Fragment">
-		<set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Cutter. -->
-	<item id="36826" type="EtcItem" name="Apocalypse Cutter Fragment">
-		<set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Slasher. -->
-	<item id="36827" type="EtcItem" name="Apocalypse Slasher Fragment">
-		<set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Avenger. -->
-	<item id="36828" type="EtcItem" name="Apocalypse Avenger Fragment">
-		<set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Fighter. -->
-	<item id="36829" type="EtcItem" name="Apocalypse Fighter Fragment">
-		<set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Stormer. -->
-	<item id="36830" type="EtcItem" name="Apocalypse Stormer Fragment">
-		<set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Thrower. -->
-	<item id="36831" type="EtcItem" name="Apocalypse Thrower Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Shooter. -->
-	<item id="36832" type="EtcItem" name="Apocalypse Shooter Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Buster. -->
-	<item id="36833" type="EtcItem" name="Apocalypse Buster Fragment">
-		<set name="icon" val="icon.etc_vesper_burster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Caster. -->
-	<item id="36834" type="EtcItem" name="Apocalypse Caster Fragment">
-		<set name="icon" val="icon.etc_vesper_caster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Apocalypse Retributer. -->
-	<item id="36835" type="EtcItem" name="Apocalypse Retributer Fragment">
-		<set name="icon" val="icon.etc_vesper_singer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Helmet. -->
-	<item id="36836" type="EtcItem" name="Twilight Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Breastplate. -->
-	<item id="36837" type="EtcItem" name="Twilight Breastplate Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Gaiters. -->
-	<item id="36838" type="EtcItem" name="Twilight Gaiter Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Gauntlets. -->
-	<item id="36839" type="EtcItem" name="Twilight Gauntlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Boots. -->
-	<item id="36840" type="EtcItem" name="Twilight Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Shield. -->
-	<item id="36841" type="EtcItem" name="Twilight Shield Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Leather Helmet. -->
-	<item id="36842" type="EtcItem" name="Twilight Leather Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Leather Armor. -->
-	<item id="36843" type="EtcItem" name="Twilight Leather Armor Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Leather Leggings. -->
-	<item id="36844" type="EtcItem" name="Twilight Leather Legging Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Leather Gloves. -->
-	<item id="36845" type="EtcItem" name="Twilight Leather Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Leather Boots. -->
-	<item id="36846" type="EtcItem" name="Twilight Leather Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Circlet. -->
-	<item id="36847" type="EtcItem" name="Twilight Circlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Tunic. -->
-	<item id="36848" type="EtcItem" name="Twilight Tunic Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Stockings. -->
-	<item id="36849" type="EtcItem" name="Twilight Stocking Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Gloves. -->
-	<item id="36850" type="EtcItem" name="Twilight Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Twilight Shoes. -->
-	<item id="36851" type="EtcItem" name="Twilight Shoe Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Sigil. -->
-	<item id="36852" type="EtcItem" name="Twilight Sigil Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Necklace. -->
-	<item id="36853" type="EtcItem" name="Twilight Necklace Gem">
-		<set name="icon" val="icon.etc_r2_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Earring. -->
-	<item id="36854" type="EtcItem" name="Twilight Earring Gem">
-		<set name="icon" val="icon.etc_r2_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making a Twilight Ring. -->
-	<item id="36855" type="EtcItem" name="Twilight Ring Gem">
-		<set name="icon" val="icon.etc_r2_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) into Worn Leather(Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36856" type="EtcItem" name="Recipe: Worn Leather - Downgrade">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4062" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Leather (Lv. 2). Requires Create Item (Lv. 8). -->
-	<item id="36857" type="EtcItem" name="Recipe: Leather - Downgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4063" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Worn Leather(Lv. 1) into Leather (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36858" type="EtcItem" name="Recipe: Leather - Upgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4064" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) into Durable Leather (Lv. 3). Requires Create Item (Lv. 11). -->
-	<item id="36859" type="EtcItem" name="Recipe: Durable Leather - Downgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4065" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) into Durable Leather (Lv. 3). Requires Create Item (Lv. 8). -->
-	<item id="36860" type="EtcItem" name="Recipe: Durable Leather - Upgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4066" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Exquisite Leather (Lv. 5) into Quality Leather (Lv. 4). Requires Create Item (Lv. 14). -->
-	<item id="36861" type="EtcItem" name="Recipe: Quality Leather - Downgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4067" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Quality Leather (Lv. 4). Requires Create Item (Lv. 11). -->
-	<item id="36862" type="EtcItem" name="Recipe: Quality Leather - Upgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4068" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) into Exquisite Leather (Lv. 5). Requires Create Item (Lv. 14). -->
-	<item id="36863" type="EtcItem" name="Recipe: Exquisite Leather - Upgrade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4069" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Silver (Lv. 2) into Iron Ore (Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36864" type="EtcItem" name="Recipe: Iron Ore - Downgrade">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4070" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Adamantite (Lv. 3) into Silver (Lv. 2). Requires Create Item (Lv. 8). -->
-	<item id="36865" type="EtcItem" name="Recipe: Silver - Downgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4071" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Iron Ore (Lv. 1) into Silver (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36866" type="EtcItem" name="Recipe: Silver - Upgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4072" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Orichalcum (Lv. 4) into Adamantite (Lv. 3). Requires Create Item (Lv. 11). -->
-	<item id="36867" type="EtcItem" name="Recipe: Adamantite - Downgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4073" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Silver (Lv. 2) into Adamantite (Lv. 3). Requires Create Item (Lv. 8). -->
-	<item id="36868" type="EtcItem" name="Recipe: Adamantite - Upgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4074" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durandil (Lv. 5) into Orichalcum (Lv. 4). Requires Create Item (Lv. 14). -->
-	<item id="36869" type="EtcItem" name="Recipe: Orichalcum - Downgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4075" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Adamantite (Lv. 3) into Orichalcum (Lv. 4). Requires Create Item (Lv. 11). -->
-	<item id="36870" type="EtcItem" name="Recipe: Orichalcum - Upgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4076" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Orichalcum (Lv. 4) into Durandil (Lv. 5). Requires Create Item (Lv. 14). -->
-	<item id="36871" type="EtcItem" name="Recipe: Durandil - Upgrade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4077" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Synthetic Fiber (Lv. 2) into Fiber (Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36872" type="EtcItem" name="Recipe: Fiber - Downgrade">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4078" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Metallic Fiber (Lv. 3) into Synthetic Fiber (Lv. 2). Requires Create Item (Lv. 8). -->
-	<item id="36873" type="EtcItem" name="Recipe: Synthetic Fiber - Downgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4079" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Fiber (Lv. 1) into Synthetic Fiber (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36874" type="EtcItem" name="Recipe: Synthetic Fiber - Upgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4080" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Fiber (Lv. 4) into Metallic Fiber (Lv. 3). Requires Create Item (Lv. 11). -->
-	<item id="36875" type="EtcItem" name="Recipe: Metallic Fiber - Downgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4081" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Synthetic Fiber (Lv. 2) into Metallic Fiber (Lv. 3). Requires Create Item (Lv. 8). -->
-	<item id="36876" type="EtcItem" name="Recipe: Metallic Fiber - Upgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4082" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Exquisite Fiber (Lv. 5) into Quality Fiber (Lv. 4). Requires Create Item (Lv. 14). -->
-	<item id="36877" type="EtcItem" name="Recipe: Quality Fiber - Downgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4083" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Metallic Fiber (Lv. 3) into Quality Fiber (Lv. 4). Requires Create Item (Lv. 11). -->
-	<item id="36878" type="EtcItem" name="Recipe: Quality Fiber - Upgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4084" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Fiber (Lv. 4) into Exquisite Fiber (Lv. 5). Requires Create Item (Lv. 14). -->
-	<item id="36879" type="EtcItem" name="Recipe: Exquisite Fiber - Upgrade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4085" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Thin Braid (Lv. 2) into Thread (Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36880" type="EtcItem" name="Recipe: Thread - Downgrade">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4086" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Synthetic Braid (Lv. 2) into Thin Braid (Lv. 2). Requires Create Item (Lv. 8). -->
-	<item id="36881" type="EtcItem" name="Recipe: Thin Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4087" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Thread (Lv. 1) into Thin Braid (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36882" type="EtcItem" name="Recipe: Thin Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4088" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Braid (Lv. 4) into Synthetic Braid (Lv. 3). Requires Create Item (Lv. 11). -->
-	<item id="36883" type="EtcItem" name="Recipe: Synthetic Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4089" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Thin Braid (Lv. 2) into Synthetic Braid (Lv. 3). Requires Create Item (Lv. 8). -->
-	<item id="36884" type="EtcItem" name="Recipe: Synthetic Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4090" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Braid (Lv. 5) into Durable Braid (Lv. 4). Requires Create Item (Lv. 14). -->
-	<item id="36885" type="EtcItem" name="Recipe: Durable Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4091" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Synthetic Braid (Lv. 2) into Durable Braid (Lv. 4). Requires Create Item (Lv. 11). -->
-	<item id="36886" type="EtcItem" name="Recipe: Durable Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4092" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Braid (Lv. 4) into Quality Braid (Lv. 5). Requires Create Item (Lv. 14). -->
-	<item id="36887" type="EtcItem" name="Recipe: Quality Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4093" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Leather Braid (Lv. 2) into Worn Leather Braid (Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36888" type="EtcItem" name="Recipe: Worn Leather Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4094" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Worn Leather(Lv. 1) and Thread (Lv. 1) into Worn Leather Braid (Lv. 1). Requires Create Item (Lv. 6). -->
-	<item id="36889" type="EtcItem" name="Recipe: Worn Leather Braid - Combination">
-		<set name="icon" val="icon.etc_recipe_white_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4095" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Leather Braid (Lv. 2). Requires Create Item (Lv. 8). -->
-	<item id="36890" type="EtcItem" name="Recipe: Leather Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4096" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Worn Leather Braid (Lv. 1) into Leather Braid (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36891" type="EtcItem" name="Recipe: Leather Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4097" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) and Thin Braid (Lv. 2) into Worn Leather Braid (Lv. 2). Requires Create Item (Lv. 6). -->
-	<item id="36892" type="EtcItem" name="Recipe: Leather Braid - Combination">
-		<set name="icon" val="icon.etc_recipe_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4098" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Leather Braid (Lv. 4) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 11). -->
-	<item id="36893" type="EtcItem" name="Recipe: Durable Leather Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4099" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Leather Braid (Lv. 2) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 8). -->
-	<item id="36894" type="EtcItem" name="Recipe: Durable Leather Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4100" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) and Synthetic Braid (Lv. 3) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 6). -->
-	<item id="36895" type="EtcItem" name="Recipe: Durable Leather Braid - Combination">
-		<set name="icon" val="icon.etc_recipe_yellow_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4101" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Exquisite Leather Braid (Lv. 5) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 14). -->
-	<item id="36896" type="EtcItem" name="Recipe: Quality Leather Braid - Downgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4102" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Durable Leather Braid (Lv. 3) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 11). -->
-	<item id="36897" type="EtcItem" name="Recipe: Quality Leather Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4103" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) and Durable Braid (Lv. 4) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 6). -->
-	<item id="36898" type="EtcItem" name="Recipe: Quality Leather Braid - Combination">
-		<set name="icon" val="icon.etc_recipe_red_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4104" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Tyrr Maestros only. Recipe for changing Quality Leather Braid (Lv. 4) into Exquisite Leather Braid (Lv. 5). Requires Create Item (Lv. 14). -->
-	<item id="36899" type="EtcItem" name="Recipe: Exquisite Leather Braid - Upgrade">
-		<set name="icon" val="icon.etc_recipe_violet_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="4105" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
+    <!-- Main ingredient for making a Requiem Thrower. -->
+    <item id="36800" type="EtcItem" name="Requiem Thrower Fragment">
+        <set name="icon" val="icon.weapon_grabathus_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Requiem Shooter. -->
+    <item id="36801" type="EtcItem" name="Requiem Shooter Fragment">
+        <set name="icon" val="icon.weapon_shyayaka_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Requiem Buster. -->
+    <item id="36802" type="EtcItem" name="Requiem Buster Fragment">
+        <set name="icon" val="icon.weapon_kaynon_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Requiem Caster. -->
+    <item id="36803" type="EtcItem" name="Requiem Caster Fragment">
+        <set name="icon" val="icon.weapon_anatrian_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Requiem Retributer. -->
+    <item id="36804" type="EtcItem" name="Requiem Retributer Fragment">
+        <set name="icon" val="icon.weapon_grankaz_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Helmet. -->
+    <item id="36805" type="EtcItem" name="Immortal Helmet Ingredient">
+        <set name="icon" val="icon.armor_helmet_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Breastplate. -->
+    <item id="36806" type="EtcItem" name="Immortal Breastplate Ingredient">
+        <set name="icon" val="icon.armor_t501_u_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Gaiters. -->
+    <item id="36807" type="EtcItem" name="Immortal Gaiter Ingredient">
+        <set name="icon" val="icon.armor_t501_l_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Gauntlets. -->
+    <item id="36808" type="EtcItem" name="Immortal Gauntlet Ingredient">
+        <set name="icon" val="icon.armor_t501_g_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Boots. -->
+    <item id="36809" type="EtcItem" name="Immortal Boot Ingredient">
+        <set name="icon" val="icon.armor_t501_b_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Shield. -->
+    <item id="36810" type="EtcItem" name="Immortal Shield Ingredient">
+        <set name="icon" val="icon.weapon_sacon_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Leather Helmet. -->
+    <item id="36811" type="EtcItem" name="Immortal Leather Helmet Ingredient">
+        <set name="icon" val="icon.armor_leather_helmet_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Leather Armor. -->
+    <item id="36812" type="EtcItem" name="Immortal Leather Armor Ingredient">
+        <set name="icon" val="icon.armor_t502_u_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Leather Leggings. -->
+    <item id="36813" type="EtcItem" name="Immortal Leather Legging Ingredient">
+        <set name="icon" val="icon.armor_t502_l_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Leather Gloves. -->
+    <item id="36814" type="EtcItem" name="Immortal Leather Glove Ingredient">
+        <set name="icon" val="icon.armor_t502_g_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Leather Boots. -->
+    <item id="36815" type="EtcItem" name="Immortal Leather Boot Ingredient">
+        <set name="icon" val="icon.armor_t502_b_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Circlet. -->
+    <item id="36816" type="EtcItem" name="Immortal Circlet Ingredient">
+        <set name="icon" val="icon.armor_circlet_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Tunic. -->
+    <item id="36817" type="EtcItem" name="Immortal Tunic Ingredient">
+        <set name="icon" val="icon.armor_t503_u_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Stockings. -->
+    <item id="36818" type="EtcItem" name="Immortal Stocking Ingredient">
+        <set name="icon" val="icon.armor_t503_l_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Gloves. -->
+    <item id="36819" type="EtcItem" name="Immortal Glove Ingredient">
+        <set name="icon" val="icon.armor_t503_g_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Immortal Shoes. -->
+    <item id="36820" type="EtcItem" name="Immortal Shoe Ingredient">
+        <set name="icon" val="icon.armor_t503_b_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Sigil. -->
+    <item id="36821" type="EtcItem" name="Immortal Sigil Ingredient">
+        <set name="icon" val="icon.weapon_karyen_i00_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Necklace. -->
+    <item id="36822" type="EtcItem" name="Immortal Necklace Gem">
+        <set name="icon" val="icon.etc_r1_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Earring. -->
+    <item id="36823" type="EtcItem" name="Immortal Earring Gem">
+        <set name="icon" val="icon.etc_r1_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Immortal Ring. -->
+    <item id="36824" type="EtcItem" name="Immortal Ring Gem">
+        <set name="icon" val="icon.etc_r1_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Shaper. -->
+    <item id="36825" type="EtcItem" name="Apocalypse Shaper Fragment">
+        <set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Cutter. -->
+    <item id="36826" type="EtcItem" name="Apocalypse Cutter Fragment">
+        <set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Slasher. -->
+    <item id="36827" type="EtcItem" name="Apocalypse Slasher Fragment">
+        <set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Avenger. -->
+    <item id="36828" type="EtcItem" name="Apocalypse Avenger Fragment">
+        <set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Fighter. -->
+    <item id="36829" type="EtcItem" name="Apocalypse Fighter Fragment">
+        <set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Stormer. -->
+    <item id="36830" type="EtcItem" name="Apocalypse Stormer Fragment">
+        <set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Thrower. -->
+    <item id="36831" type="EtcItem" name="Apocalypse Thrower Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Shooter. -->
+    <item id="36832" type="EtcItem" name="Apocalypse Shooter Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Buster. -->
+    <item id="36833" type="EtcItem" name="Apocalypse Buster Fragment">
+        <set name="icon" val="icon.etc_vesper_burster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Caster. -->
+    <item id="36834" type="EtcItem" name="Apocalypse Caster Fragment">
+        <set name="icon" val="icon.etc_vesper_caster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Apocalypse Retributer. -->
+    <item id="36835" type="EtcItem" name="Apocalypse Retributer Fragment">
+        <set name="icon" val="icon.etc_vesper_singer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Helmet. -->
+    <item id="36836" type="EtcItem" name="Twilight Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Breastplate. -->
+    <item id="36837" type="EtcItem" name="Twilight Breastplate Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Gaiters. -->
+    <item id="36838" type="EtcItem" name="Twilight Gaiter Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Gauntlets. -->
+    <item id="36839" type="EtcItem" name="Twilight Gauntlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Boots. -->
+    <item id="36840" type="EtcItem" name="Twilight Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Shield. -->
+    <item id="36841" type="EtcItem" name="Twilight Shield Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Leather Helmet. -->
+    <item id="36842" type="EtcItem" name="Twilight Leather Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Leather Armor. -->
+    <item id="36843" type="EtcItem" name="Twilight Leather Armor Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Leather Leggings. -->
+    <item id="36844" type="EtcItem" name="Twilight Leather Legging Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Leather Gloves. -->
+    <item id="36845" type="EtcItem" name="Twilight Leather Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Leather Boots. -->
+    <item id="36846" type="EtcItem" name="Twilight Leather Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Circlet. -->
+    <item id="36847" type="EtcItem" name="Twilight Circlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Tunic. -->
+    <item id="36848" type="EtcItem" name="Twilight Tunic Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Stockings. -->
+    <item id="36849" type="EtcItem" name="Twilight Stocking Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Gloves. -->
+    <item id="36850" type="EtcItem" name="Twilight Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Twilight Shoes. -->
+    <item id="36851" type="EtcItem" name="Twilight Shoe Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Sigil. -->
+    <item id="36852" type="EtcItem" name="Twilight Sigil Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Necklace. -->
+    <item id="36853" type="EtcItem" name="Twilight Necklace Gem">
+        <set name="icon" val="icon.etc_r2_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Earring. -->
+    <item id="36854" type="EtcItem" name="Twilight Earring Gem">
+        <set name="icon" val="icon.etc_r2_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making a Twilight Ring. -->
+    <item id="36855" type="EtcItem" name="Twilight Ring Gem">
+        <set name="icon" val="icon.etc_r2_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) into Worn Leather(Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36856" type="EtcItem" name="Recipe: Worn Leather - Downgrade">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4062" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Leather (Lv. 2). Requires Create Item (Lv. 8). -->
+    <item id="36857" type="EtcItem" name="Recipe: Leather - Downgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4063" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Worn Leather(Lv. 1) into Leather (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36858" type="EtcItem" name="Recipe: Leather - Upgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4064" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) into Durable Leather (Lv. 3). Requires Create Item (Lv. 11). -->
+    <item id="36859" type="EtcItem" name="Recipe: Durable Leather - Downgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4065" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) into Durable Leather (Lv. 3). Requires Create Item (Lv. 8). -->
+    <item id="36860" type="EtcItem" name="Recipe: Durable Leather - Upgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4066" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Exquisite Leather (Lv. 5) into Quality Leather (Lv. 4). Requires Create Item (Lv. 14). -->
+    <item id="36861" type="EtcItem" name="Recipe: Quality Leather - Downgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4067" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Quality Leather (Lv. 4). Requires Create Item (Lv. 11). -->
+    <item id="36862" type="EtcItem" name="Recipe: Quality Leather - Upgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4068" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) into Exquisite Leather (Lv. 5). Requires Create Item (Lv. 14). -->
+    <item id="36863" type="EtcItem" name="Recipe: Exquisite Leather - Upgrade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4069" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Silver (Lv. 2) into Iron Ore (Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36864" type="EtcItem" name="Recipe: Iron Ore - Downgrade">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4070" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Adamantite (Lv. 3) into Silver (Lv. 2). Requires Create Item (Lv. 8). -->
+    <item id="36865" type="EtcItem" name="Recipe: Silver - Downgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4071" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Iron Ore (Lv. 1) into Silver (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36866" type="EtcItem" name="Recipe: Silver - Upgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4072" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Orichalcum (Lv. 4) into Adamantite (Lv. 3). Requires Create Item (Lv. 11). -->
+    <item id="36867" type="EtcItem" name="Recipe: Adamantite - Downgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4073" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Silver (Lv. 2) into Adamantite (Lv. 3). Requires Create Item (Lv. 8). -->
+    <item id="36868" type="EtcItem" name="Recipe: Adamantite - Upgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4074" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durandil (Lv. 5) into Orichalcum (Lv. 4). Requires Create Item (Lv. 14). -->
+    <item id="36869" type="EtcItem" name="Recipe: Orichalcum - Downgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4075" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Adamantite (Lv. 3) into Orichalcum (Lv. 4). Requires Create Item (Lv. 11). -->
+    <item id="36870" type="EtcItem" name="Recipe: Orichalcum - Upgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4076" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Orichalcum (Lv. 4) into Durandil (Lv. 5). Requires Create Item (Lv. 14). -->
+    <item id="36871" type="EtcItem" name="Recipe: Durandil - Upgrade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4077" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Synthetic Fiber (Lv. 2) into Fiber (Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36872" type="EtcItem" name="Recipe: Fiber - Downgrade">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4078" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Metallic Fiber (Lv. 3) into Synthetic Fiber (Lv. 2). Requires Create Item (Lv. 8). -->
+    <item id="36873" type="EtcItem" name="Recipe: Synthetic Fiber - Downgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4079" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Fiber (Lv. 1) into Synthetic Fiber (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36874" type="EtcItem" name="Recipe: Synthetic Fiber - Upgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4080" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Fiber (Lv. 4) into Metallic Fiber (Lv. 3). Requires Create Item (Lv. 11). -->
+    <item id="36875" type="EtcItem" name="Recipe: Metallic Fiber - Downgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4081" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Synthetic Fiber (Lv. 2) into Metallic Fiber (Lv. 3). Requires Create Item (Lv. 8). -->
+    <item id="36876" type="EtcItem" name="Recipe: Metallic Fiber - Upgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4082" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Exquisite Fiber (Lv. 5) into Quality Fiber (Lv. 4). Requires Create Item (Lv. 14). -->
+    <item id="36877" type="EtcItem" name="Recipe: Quality Fiber - Downgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4083" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Metallic Fiber (Lv. 3) into Quality Fiber (Lv. 4). Requires Create Item (Lv. 11). -->
+    <item id="36878" type="EtcItem" name="Recipe: Quality Fiber - Upgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4084" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Fiber (Lv. 4) into Exquisite Fiber (Lv. 5). Requires Create Item (Lv. 14). -->
+    <item id="36879" type="EtcItem" name="Recipe: Exquisite Fiber - Upgrade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4085" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Thin Braid (Lv. 2) into Thread (Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36880" type="EtcItem" name="Recipe: Thread - Downgrade">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4086" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Synthetic Braid (Lv. 2) into Thin Braid (Lv. 2). Requires Create Item (Lv. 8). -->
+    <item id="36881" type="EtcItem" name="Recipe: Thin Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4087" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Thread (Lv. 1) into Thin Braid (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36882" type="EtcItem" name="Recipe: Thin Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4088" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Braid (Lv. 4) into Synthetic Braid (Lv. 3). Requires Create Item (Lv. 11). -->
+    <item id="36883" type="EtcItem" name="Recipe: Synthetic Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4089" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Thin Braid (Lv. 2) into Synthetic Braid (Lv. 3). Requires Create Item (Lv. 8). -->
+    <item id="36884" type="EtcItem" name="Recipe: Synthetic Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4090" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Braid (Lv. 5) into Durable Braid (Lv. 4). Requires Create Item (Lv. 14). -->
+    <item id="36885" type="EtcItem" name="Recipe: Durable Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4091" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Synthetic Braid (Lv. 2) into Durable Braid (Lv. 4). Requires Create Item (Lv. 11). -->
+    <item id="36886" type="EtcItem" name="Recipe: Durable Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4092" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Braid (Lv. 4) into Quality Braid (Lv. 5). Requires Create Item (Lv. 14). -->
+    <item id="36887" type="EtcItem" name="Recipe: Quality Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4093" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Leather Braid (Lv. 2) into Worn Leather Braid (Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36888" type="EtcItem" name="Recipe: Worn Leather Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4094" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Worn Leather(Lv. 1) and Thread (Lv. 1) into Worn Leather Braid (Lv. 1). Requires Create Item (Lv. 6). -->
+    <item id="36889" type="EtcItem" name="Recipe: Worn Leather Braid - Combination">
+        <set name="icon" val="icon.etc_recipe_white_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4095" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) into Leather Braid (Lv. 2). Requires Create Item (Lv. 8). -->
+    <item id="36890" type="EtcItem" name="Recipe: Leather Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4096" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Worn Leather Braid (Lv. 1) into Leather Braid (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36891" type="EtcItem" name="Recipe: Leather Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4097" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Leather (Lv. 2) and Thin Braid (Lv. 2) into Worn Leather Braid (Lv. 2). Requires Create Item (Lv. 6). -->
+    <item id="36892" type="EtcItem" name="Recipe: Leather Braid - Combination">
+        <set name="icon" val="icon.etc_recipe_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4098" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Leather Braid (Lv. 4) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 11). -->
+    <item id="36893" type="EtcItem" name="Recipe: Durable Leather Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4099" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Leather Braid (Lv. 2) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 8). -->
+    <item id="36894" type="EtcItem" name="Recipe: Durable Leather Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4100" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Leather (Lv. 3) and Synthetic Braid (Lv. 3) into Durable Leather Braid (Lv. 3). Requires Create Item (Lv. 6). -->
+    <item id="36895" type="EtcItem" name="Recipe: Durable Leather Braid - Combination">
+        <set name="icon" val="icon.etc_recipe_yellow_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4101" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Exquisite Leather Braid (Lv. 5) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 14). -->
+    <item id="36896" type="EtcItem" name="Recipe: Quality Leather Braid - Downgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4102" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Durable Leather Braid (Lv. 3) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 11). -->
+    <item id="36897" type="EtcItem" name="Recipe: Quality Leather Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4103" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Leather (Lv. 4) and Durable Braid (Lv. 4) into Quality Leather Braid (Lv. 4). Requires Create Item (Lv. 6). -->
+    <item id="36898" type="EtcItem" name="Recipe: Quality Leather Braid - Combination">
+        <set name="icon" val="icon.etc_recipe_red_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4104" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Tyrr Maestros only. Recipe for changing Quality Leather Braid (Lv. 4) into Exquisite Leather Braid (Lv. 5). Requires Create Item (Lv. 14). -->
+    <item id="36899" type="EtcItem" name="Recipe: Exquisite Leather Braid - Upgrade">
+        <set name="icon" val="icon.etc_recipe_violet_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="4105" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
 </list>

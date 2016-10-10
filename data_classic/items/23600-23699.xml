@@ -1,758 +1,758 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Enchant success rate + 15% for armor (R-grade). Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
-	<item id="23600" type="EtcItem" name="Lucky Enchant Stone: Armor (R-grade) - Event">
-		<set name="icon" val="icon.ench_am_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Gift given after accumulating 1-hr worth of PC Points. Double-click to use. -->
-	<item id="23601" type="EtcItem" name="Player Commendation - Gift Box - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Special armor used first by the Polish army between the 16th - 18th century. Equip on cloak slot. -->
-	<item id="23602" type="Armor" name="Hussar's Wing">
-		<set name="icon" val="BranchSys3.icon1.g_agathion_hussar_pl" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Changes the appearance of all weapons into those of Emerald Weapons of corresponding types. Can be used on shields and sigils.
-		
-		Note: Appearance may reset when the Change Weapon skill is used.
-	-->
-	<item id="23603" type="EtcItem" name="Automatic Appearance: Emerald Weapon">
-		<set name="icon" val="BranchSys3.icon1.g_auto_shape_shift" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Changes the appearance of all weapons into those of Japanese Weapons of corresponding types. Can be used on shields and sigils.
-		
-		Note: Appearance may reset when the Change Weapon skill is used.
-	-->
-	<item id="23604" type="EtcItem" name="Automatic Appearance: Japanese Weapon">
-		<set name="icon" val="BranchSys3.icon1.g_auto_shape_shift" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 50% (1-hour). -->
-	<item id="23605" type="EtcItem" name="SP Rune 50% Pack (1-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23606" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23607" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23608" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23609" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23610" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="23611" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party">
-		<set name="icon" val="icon.etc_kalie_instantzone_re" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Recovers HP by 50%. Only for Lv. 84 or below to use on themselves. Cooldown is 5 min. -->
-	<item id="23612" type="EtcItem" name="Elixir of Life (Novice)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Crown bestowed upon the winner of the tournament. The hero's name will be forever engraved in server history. -->
-	<item id="23613" type="Armor" name="2012 Tournament Winner's Crown - Cain">
-		<set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Maintains Vitality for 10 min. Cooldown is 30 min. No weekly usage limit. -->
-	<item id="23614" type="EtcItem" name="Vitality Maintaining Potion (10-minute) - No Weekly Usage Limit">
-		<set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Black gem mask made of luxurious metal. -->
-	<item id="23615" type="Armor" name="Black Gem Mask - Vitality (7-day) (No Weekly Usage Limit)">
-		<set name="icon" val="BranchSys.icon.br_black_gem_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large round goggles to protect your eyes. Uses 2 accessory slots. -->
-	<item id="23616" type="Armor" name="Artisan's Goggles - Vitality (7-day) (No Weekly Usage Limit)">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Vitality Maintaining Potion with no weekly usage limit. -->
-	<item id="23617" type="EtcItem" name="Vitality Maintaining Potion Pack - No Weekly Usage Limit">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Wrapped Pack containing Black Gem Mask (7-day). -->
-	<item id="23618" type="EtcItem" name="Black Gem Mask Pack (7-day) - Vitality (No Weekly Usage Limit)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Wrapped Pack containing Artisan's Goggles (7-day). -->
-	<item id="23619" type="EtcItem" name="Artisan's Goggles Pack (7-day) - Vitality (No Weekly Usage Limit)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Replenishes a certain amount of Vitality. Cooldown is 1 min. No weekly usage limit. -->
-	<item id="23620" type="EtcItem" name="Dragon Vitality Replenishing Potion - No Weekly Usage Limit">
-		<set name="icon" val="icon.etc_potion_of_energy_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Stops Vitality consumption and bonuses for 30 min. Cooldown is 60 min. No weekly usage limit. -->
-	<item id="23621" type="EtcItem" name="Vitality Suspending Potion (30-minute) - No Weekly Usage Limit">
-		<set name="icon" val="BranchSys3.lcon.g_vitality_potion_stop" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		To change your character's name, follow these steps:
-		1. Create a new character with the desired name on your Account.
-		2. Submit a ticket to Support with "Rename Character" in the title and indicate the new nickname.
-		3. The character with the item in the inventory will be renamed.
-	-->
-	<item id="23622" type="EtcItem" name="Name Change Ticket">
-		<set name="icon" val="icon.etc_exchange_ticket_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!--
-		To change the gender of your character, follow these steps:
-		1. Submit a ticket to our Support from this account.
-		2. Put "Change gender" in the ticket title. The gender of the character with this item in the inventory will be changed.
-		Note: You cannot change the gender of a Kamael.
-	-->
-	<item id="23623" type="EtcItem" name="Gender Change Ticket">
-		<set name="icon" val="icon.etc_exchange_ticket_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Hat worn by mountain dwellers. Uses 2 hair accessory slots. -->
-	<item id="23624" type="Armor" name="Gorale Hat">
-		<set name="icon" val="BranchSys3.icon1.g_hair_gorale_hat_pl" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Fancy hat with feathers worn by Polish aristocrats in the 17th century. Requires 2 hair accessory slots. -->
-	<item id="23625" type="Armor" name="Fancy Hat">
-		<set name="icon" val="BranchSys3.icon1.g_hair_fancy_hat_pl" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Red and white hat worn by Polish fans at soccer games. Uses 2 hair accessory slots. -->
-	<item id="23626" type="Armor" name="Hat of Cheers">
-		<set name="icon" val="BranchSys3.icon1.g_hair_jester_hat_pl" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Famous Polish chocolate doughnut. Maintains vitality for 30 min. Cooldown is 60 min. Vitality item with limited usage. -->
-	<item id="23627" type="EtcItem" name="Chocolate Doughnut">
-		<set name="icon" val="BranchSys3.icon1.g_chocolate_doughnut_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Famous Polish dish. Restores vitality upon XP gain through hunting for 30 min. Vitality item with limited usage. -->
-	<item id="23628" type="EtcItem" name="Piroscki">
-		<set name="icon" val="BranchSys3.icon1.g_dumpling_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23629" type="EtcItem" name="Torun Gingerbread - 1-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23630" type="EtcItem" name="Torun Gingerbread - 1.5-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23631" type="EtcItem" name="Torun Gingerbread - 2-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23632" type="EtcItem" name="Torun Gingerbread - 2.5-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23633" type="EtcItem" name="Torun Gingerbread - 3-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
-	<item id="23634" type="EtcItem" name="Torun Gingerbread - 4-hour">
-		<set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Creates a campfire that lasts for 30 min. The warmth of the bonfire reduces the amount of MP consumption during skill use, and increases HP/MP/CP Recovery Rate. The closer you sit to the fire, the better the effect. All members. -->
-	<item id="23635" type="EtcItem" name="Flint">
-		<set name="icon" val="BranchSys2.icon.g_campfire_flint" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Cloak for Poland only. Elaborately embroidered. -->
-	<item id="23636" type="Armor" name="Cloak (Poland)">
-		<set name="icon" val="BranchSys3.icon1.g_pl_cape" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="25" />
-		</for>
-	</item>
-	<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 3-day. Equipping two will only give the effect of one. -->
-	<item id="23637" type="Armor" name="Blessed Antharas' Earring - 3-day">
-		<set name="icon" val="icon.accessory_earring_of_antaras_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="170" />
-		</for>
-	</item>
-	<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 7-day. Equipping two will only give the effect of one. -->
-	<item id="23638" type="Armor" name="Blessed Antharas' Earring - 7-day">
-		<set name="icon" val="icon.accessory_earring_of_antaras_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="170" />
-		</for>
-	</item>
-	<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% momentarily. 3-day. -->
-	<item id="23639" type="Armor" name="Blessed Valakas' Necklace - 3-day">
-		<set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="226" />
-		</for>
-	</item>
-	<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% temporarily. 7-day. -->
-	<item id="23640" type="Armor" name="Blessed Valakas' Necklace - 7-day">
-		<set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="226" />
-		</for>
-	</item>
-	<!-- Double-click to obtain a random Star Agathion (7-day). -->
-	<item id="23641" type="EtcItem" name="Star Agathion Pack">
-		<set name="icon" val="icon.etc_pi_box_joy_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Replenishes an amount of Vitality. Can be used more than 5 times a week. -->
-	<item id="23642" type="EtcItem" name="Vitality Replenishing Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
-	<item id="23643" type="EtcItem" name="Vitality Recovering Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_purple_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
-	<item id="23644" type="EtcItem" name="Vitality Maintaining Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-	</item>
-	<!-- Restores 50% of Max MP. -->
-	<item id="23645" type="EtcItem" name="MP Recovery Potion">
-		<set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-	</item>
-	<!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="23646" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade)">
-		<set name="icon" val="icon.ench_wp_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="23647" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade)">
-		<set name="icon" val="icon.ench_am_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Wrapped Pack containing supplies used by knights, such as various XP Rune Packs, Vitailty Star Candies, firecrackers, etc. -->
-	<item id="23648" type="EtcItem" name="Knighthood's Fortune Box">
-		<set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing supplies used by royal guards, such as Blessed Scrolls, Unbind Scrolls, Enchant Scrolls, and Enchant Stones of various levels and types. -->
-	<item id="23649" type="EtcItem" name="Royal Guard's Fortune Box">
-		<set name="icon" val="BranchSys.icon.br_fortuna_cube_s_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23650" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23651" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23652" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23653" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23654" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23655" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 1-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23656" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23657" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23658" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23659" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23660" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23661" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 7-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23662" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23663" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23664" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23665" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23666" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23667" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 30-day">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23668" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23669" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23670" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23671" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23672" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
-	<item id="23673" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23674" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23675" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23676" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23677" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23678" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
-	<item id="23679" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 7-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23680" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23681" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23682" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23683" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23684" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
-	<item id="23685" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 30-day">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores some Vitality. -->
-	<item id="23686" type="EtcItem" name="Dimension Traveler's Red Vitality Potion">
-		<set name="icon" val="icon.etc_potion_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Traveler's Red Vitality Potion. -->
-	<item id="23687" type="EtcItem" name="Dimension Traveler's Blue Vitality Potion">
-		<set name="icon" val="icon.etc_potion_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Traveler's Blue Vitality Potion. -->
-	<item id="23688" type="EtcItem" name="Dimension Traveler's Gold Vitality Potion">
-		<set name="icon" val="icon.etc_potion_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores some Vitality. -->
-	<item id="23689" type="EtcItem" name="Dimension Protector's Red Vitality Potion">
-		<set name="icon" val="icon.etc_hot_spring_sulfur_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Protector's Red Vitality Potion. -->
-	<item id="23690" type="EtcItem" name="Dimension Protector's Blue Vitality Potion">
-		<set name="icon" val="icon.etc_hot_spring_mineral_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Protector's Blue Vitality Potion. -->
-	<item id="23691" type="EtcItem" name="Dimension Protector's Gold Vitality Potion">
-		<set name="icon" val="icon.etc_hot_spring_nectar_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Ninja Top. Part of a costume. Modifying the full set creates a new skill. -->
-	<item id="23692" type="Armor" name="Ninja Top - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_co_ninja_u" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="19" />
-	</item>
-	<!-- Ninja Pants. Part of a costume. Modifying the full set creates a new skill. -->
-	<item id="23693" type="Armor" name="Ninja Pants - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_co_ninja_l" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="19" />
-	</item>
-	<!-- Ninja Gloves. Part of a costume. Modifying the full set creates a new skill. -->
-	<item id="23694" type="Armor" name="Ninja Gloves - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_co_ninja_g" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="19" />
-	</item>
-	<!-- Ninja Shoes. Part of a costume. Modifying the full set creates a new skill. -->
-	<item id="23695" type="Armor" name="Ninja Shoes - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_co_ninja_b" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="19" />
-	</item>
-	<!-- Changes the appearance of a top to that of a Ninja outfit. An appearance-modified item has no change in abilities. All armor types. Modifying the full set creates a new skill. -->
-	<item id="23696" type="EtcItem" name="Ninja Top Appearance Stone - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of pants to that of a Ninja outfit. An appearance-modified item has no change in abilities. All armor types. Modifying the full set creates a new skill. -->
-	<item id="23697" type="EtcItem" name="Ninja Pants Appearance Stone - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_scrl_change_legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of gloves to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
-	<item id="23698" type="EtcItem" name="Ninja Gloves Appearance Stone - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_scrl_change_gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of shoes to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
-	<item id="23699" type="EtcItem" name="Ninja Shoes Appearance Stone - Modified Set">
-		<set name="icon" val="BranchSys3.icon1.g_scrl_change_feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
+    <!-- Enchant success rate + 15% for armor (R-grade). Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
+    <item id="23600" type="EtcItem" name="Lucky Enchant Stone: Armor (R-grade) - Event">
+        <set name="icon" val="icon.ench_am_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Gift given after accumulating 1-hr worth of PC Points. Double-click to use. -->
+    <item id="23601" type="EtcItem" name="Player Commendation - Gift Box - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Special armor used first by the Polish army between the 16th - 18th century. Equip on cloak slot. -->
+    <item id="23602" type="Armor" name="Hussar's Wing">
+        <set name="icon" val="BranchSys3.icon1.g_agathion_hussar_pl" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Changes the appearance of all weapons into those of Emerald Weapons of corresponding types. Can be used on shields and sigils.
+
+        Note: Appearance may reset when the Change Weapon skill is used.
+    -->
+    <item id="23603" type="EtcItem" name="Automatic Appearance: Emerald Weapon">
+        <set name="icon" val="BranchSys3.icon1.g_auto_shape_shift" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Changes the appearance of all weapons into those of Japanese Weapons of corresponding types. Can be used on shields and sigils.
+
+        Note: Appearance may reset when the Change Weapon skill is used.
+    -->
+    <item id="23604" type="EtcItem" name="Automatic Appearance: Japanese Weapon">
+        <set name="icon" val="BranchSys3.icon1.g_auto_shape_shift" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 50% (1-hour). -->
+    <item id="23605" type="EtcItem" name="SP Rune 50% Pack (1-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23606" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23607" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth solo dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23608" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 85 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23609" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 90 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23610" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to reset cooldown to Lv. 95 Kartia's Labyrinth party dungeon. Usable once a day outside instances while on a cooldown. -->
+    <item id="23611" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party">
+        <set name="icon" val="icon.etc_kalie_instantzone_re" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Recovers HP by 50%. Only for Lv. 84 or below to use on themselves. Cooldown is 5 min. -->
+    <item id="23612" type="EtcItem" name="Elixir of Life (Novice)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Crown bestowed upon the winner of the tournament. The hero's name will be forever engraved in server history. -->
+    <item id="23613" type="Armor" name="2012 Tournament Winner's Crown - Cain">
+        <set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Maintains Vitality for 10 min. Cooldown is 30 min. No weekly usage limit. -->
+    <item id="23614" type="EtcItem" name="Vitality Maintaining Potion (10-minute) - No Weekly Usage Limit">
+        <set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Black gem mask made of luxurious metal. -->
+    <item id="23615" type="Armor" name="Black Gem Mask - Vitality (7-day) (No Weekly Usage Limit)">
+        <set name="icon" val="BranchSys.icon.br_black_gem_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large round goggles to protect your eyes. Uses 2 accessory slots. -->
+    <item id="23616" type="Armor" name="Artisan's Goggles - Vitality (7-day) (No Weekly Usage Limit)">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Vitality Maintaining Potion with no weekly usage limit. -->
+    <item id="23617" type="EtcItem" name="Vitality Maintaining Potion Pack - No Weekly Usage Limit">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Wrapped Pack containing Black Gem Mask (7-day). -->
+    <item id="23618" type="EtcItem" name="Black Gem Mask Pack (7-day) - Vitality (No Weekly Usage Limit)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Wrapped Pack containing Artisan's Goggles (7-day). -->
+    <item id="23619" type="EtcItem" name="Artisan's Goggles Pack (7-day) - Vitality (No Weekly Usage Limit)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Replenishes a certain amount of Vitality. Cooldown is 1 min. No weekly usage limit. -->
+    <item id="23620" type="EtcItem" name="Dragon Vitality Replenishing Potion - No Weekly Usage Limit">
+        <set name="icon" val="icon.etc_potion_of_energy_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Stops Vitality consumption and bonuses for 30 min. Cooldown is 60 min. No weekly usage limit. -->
+    <item id="23621" type="EtcItem" name="Vitality Suspending Potion (30-minute) - No Weekly Usage Limit">
+        <set name="icon" val="BranchSys3.lcon.g_vitality_potion_stop" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        To change your character's name, follow these steps:
+        1. Create a new character with the desired name on your Account.
+        2. Submit a ticket to Support with "Rename Character" in the title and indicate the new nickname.
+        3. The character with the item in the inventory will be renamed.
+    -->
+    <item id="23622" type="EtcItem" name="Name Change Ticket">
+        <set name="icon" val="icon.etc_exchange_ticket_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!--
+        To change the gender of your character, follow these steps:
+        1. Submit a ticket to our Support from this account.
+        2. Put "Change gender" in the ticket title. The gender of the character with this item in the inventory will be changed.
+        Note: You cannot change the gender of a Kamael.
+    -->
+    <item id="23623" type="EtcItem" name="Gender Change Ticket">
+        <set name="icon" val="icon.etc_exchange_ticket_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Hat worn by mountain dwellers. Uses 2 hair accessory slots. -->
+    <item id="23624" type="Armor" name="Gorale Hat">
+        <set name="icon" val="BranchSys3.icon1.g_hair_gorale_hat_pl" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Fancy hat with feathers worn by Polish aristocrats in the 17th century. Requires 2 hair accessory slots. -->
+    <item id="23625" type="Armor" name="Fancy Hat">
+        <set name="icon" val="BranchSys3.icon1.g_hair_fancy_hat_pl" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Red and white hat worn by Polish fans at soccer games. Uses 2 hair accessory slots. -->
+    <item id="23626" type="Armor" name="Hat of Cheers">
+        <set name="icon" val="BranchSys3.icon1.g_hair_jester_hat_pl" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Famous Polish chocolate doughnut. Maintains vitality for 30 min. Cooldown is 60 min. Vitality item with limited usage. -->
+    <item id="23627" type="EtcItem" name="Chocolate Doughnut">
+        <set name="icon" val="BranchSys3.icon1.g_chocolate_doughnut_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Famous Polish dish. Restores vitality upon XP gain through hunting for 30 min. Vitality item with limited usage. -->
+    <item id="23628" type="EtcItem" name="Piroscki">
+        <set name="icon" val="BranchSys3.icon1.g_dumpling_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23629" type="EtcItem" name="Torun Gingerbread - 1-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23630" type="EtcItem" name="Torun Gingerbread - 1.5-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23631" type="EtcItem" name="Torun Gingerbread - 2-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23632" type="EtcItem" name="Torun Gingerbread - 2.5-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23633" type="EtcItem" name="Torun Gingerbread - 3-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Polish bread. Increases acquired XP by 50% for a certain amount of time. All levels. -->
+    <item id="23634" type="EtcItem" name="Torun Gingerbread - 4-hour">
+        <set name="icon" val="BranchSys3.icon1.g_torun_gingerbread_pl" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Creates a campfire that lasts for 30 min. The warmth of the bonfire reduces the amount of MP consumption during skill use, and increases HP/MP/CP Recovery Rate. The closer you sit to the fire, the better the effect. All members. -->
+    <item id="23635" type="EtcItem" name="Flint">
+        <set name="icon" val="BranchSys2.icon.g_campfire_flint" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Cloak for Poland only. Elaborately embroidered. -->
+    <item id="23636" type="Armor" name="Cloak (Poland)">
+        <set name="icon" val="BranchSys3.icon1.g_pl_cape" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="25" />
+        </for>
+    </item>
+    <!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 3-day. Equipping two will only give the effect of one. -->
+    <item id="23637" type="Armor" name="Blessed Antharas' Earring - 3-day">
+        <set name="icon" val="icon.accessory_earring_of_antaras_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="170" />
+        </for>
+    </item>
+    <!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 7-day. Equipping two will only give the effect of one. -->
+    <item id="23638" type="Armor" name="Blessed Antharas' Earring - 7-day">
+        <set name="icon" val="icon.accessory_earring_of_antaras_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="170" />
+        </for>
+    </item>
+    <!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% momentarily. 3-day. -->
+    <item id="23639" type="Armor" name="Blessed Valakas' Necklace - 3-day">
+        <set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="226" />
+        </for>
+    </item>
+    <!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% temporarily. 7-day. -->
+    <item id="23640" type="Armor" name="Blessed Valakas' Necklace - 7-day">
+        <set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="226" />
+        </for>
+    </item>
+    <!-- Double-click to obtain a random Star Agathion (7-day). -->
+    <item id="23641" type="EtcItem" name="Star Agathion Pack">
+        <set name="icon" val="icon.etc_pi_box_joy_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Replenishes an amount of Vitality. Can be used more than 5 times a week. -->
+    <item id="23642" type="EtcItem" name="Vitality Replenishing Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
+    <item id="23643" type="EtcItem" name="Vitality Recovering Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_purple_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Replenishes Vitality for 10 min. Can be used more than 5 times a week. -->
+    <item id="23644" type="EtcItem" name="Vitality Maintaining Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+    </item>
+    <!-- Restores 50% of Max MP. -->
+    <item id="23645" type="EtcItem" name="MP Recovery Potion">
+        <set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+    </item>
+    <!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="23646" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade)">
+        <set name="icon" val="icon.ench_wp_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="23647" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade)">
+        <set name="icon" val="icon.ench_am_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Wrapped Pack containing supplies used by knights, such as various XP Rune Packs, Vitailty Star Candies, firecrackers, etc. -->
+    <item id="23648" type="EtcItem" name="Knighthood's Fortune Box">
+        <set name="icon" val="br_cashtex.item.br_cash_lucky_cube_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing supplies used by royal guards, such as Blessed Scrolls, Unbind Scrolls, Enchant Scrolls, and Enchant Stones of various levels and types. -->
+    <item id="23649" type="EtcItem" name="Royal Guard's Fortune Box">
+        <set name="icon" val="BranchSys.icon.br_fortuna_cube_s_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23650" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23651" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23652" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23653" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23654" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23655" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 1-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23656" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23657" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23658" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23659" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23660" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23661" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 7-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23662" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23663" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23664" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23665" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23666" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23667" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade) - 30-day">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23668" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23669" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23670" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23671" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23672" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 1-day. -->
+    <item id="23673" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23674" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23675" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23676" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23677" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23678" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 7-day. -->
+    <item id="23679" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 7-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23680" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23681" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23682" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23683" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23684" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. 30-day. -->
+    <item id="23685" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade) - 30-day">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores some Vitality. -->
+    <item id="23686" type="EtcItem" name="Dimension Traveler's Red Vitality Potion">
+        <set name="icon" val="icon.etc_potion_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Traveler's Red Vitality Potion. -->
+    <item id="23687" type="EtcItem" name="Dimension Traveler's Blue Vitality Potion">
+        <set name="icon" val="icon.etc_potion_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Traveler's Blue Vitality Potion. -->
+    <item id="23688" type="EtcItem" name="Dimension Traveler's Gold Vitality Potion">
+        <set name="icon" val="icon.etc_potion_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores some Vitality. -->
+    <item id="23689" type="EtcItem" name="Dimension Protector's Red Vitality Potion">
+        <set name="icon" val="icon.etc_hot_spring_sulfur_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Protector's Red Vitality Potion. -->
+    <item id="23690" type="EtcItem" name="Dimension Protector's Blue Vitality Potion">
+        <set name="icon" val="icon.etc_hot_spring_mineral_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Vitality Potion given as a reward from Aden Kingdom for clearing Kartia's Labyrinth. Restores more Vitality than the Dimension Protector's Blue Vitality Potion. -->
+    <item id="23691" type="EtcItem" name="Dimension Protector's Gold Vitality Potion">
+        <set name="icon" val="icon.etc_hot_spring_nectar_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Ninja Top. Part of a costume. Modifying the full set creates a new skill. -->
+    <item id="23692" type="Armor" name="Ninja Top - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_co_ninja_u" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="19" />
+    </item>
+    <!-- Ninja Pants. Part of a costume. Modifying the full set creates a new skill. -->
+    <item id="23693" type="Armor" name="Ninja Pants - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_co_ninja_l" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="19" />
+    </item>
+    <!-- Ninja Gloves. Part of a costume. Modifying the full set creates a new skill. -->
+    <item id="23694" type="Armor" name="Ninja Gloves - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_co_ninja_g" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="19" />
+    </item>
+    <!-- Ninja Shoes. Part of a costume. Modifying the full set creates a new skill. -->
+    <item id="23695" type="Armor" name="Ninja Shoes - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_co_ninja_b" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="19" />
+    </item>
+    <!-- Changes the appearance of a top to that of a Ninja outfit. An appearance-modified item has no change in abilities. All armor types. Modifying the full set creates a new skill. -->
+    <item id="23696" type="EtcItem" name="Ninja Top Appearance Stone - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of pants to that of a Ninja outfit. An appearance-modified item has no change in abilities. All armor types. Modifying the full set creates a new skill. -->
+    <item id="23697" type="EtcItem" name="Ninja Pants Appearance Stone - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_scrl_change_legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of gloves to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
+    <item id="23698" type="EtcItem" name="Ninja Gloves Appearance Stone - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_scrl_change_gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of shoes to that of a Ninja outfit. An appearance-modified item has no change in abilities. Modifying the full set creates a new skill. -->
+    <item id="23699" type="EtcItem" name="Ninja Shoes Appearance Stone - Modified Set">
+        <set name="icon" val="BranchSys3.icon1.g_scrl_change_feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
 </list>

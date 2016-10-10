@@ -32,82 +32,102 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ItemAuctionLink implements IBypassHandler
 {
-	private static final SimpleDateFormat fmt = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy");
-	
-	private static final String[] COMMANDS = { "ItemAuction" };
-	
-	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		if (!Config.ALT_ITEM_AUCTION_ENABLED)
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_AUCTION_PERIOD));
-			return true;
-		}
-		
-		final ItemAuctionInstance au = ItemAuctionManager.getInstance().getManagerInstance(target.getNpcId());
-		if (au == null)
-			return false;
-		
-		try
-		{
-			StringTokenizer st = new StringTokenizer(command);
-			st.nextToken(); // bypass "ItemAuction"
-			if (!st.hasMoreTokens())
-				return false;
-			
-			String cmd = st.nextToken();
-			if (cmd.equalsIgnoreCase("show"))
-			{
-				if (!activeChar.getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
-					return false;
-				
-				if (activeChar.isItemAuctionPolling())
-					return false;
-				
-				final ItemAuction currentAuction = au.getCurrentAuction();
-				final ItemAuction nextAuction = au.getNextAuction();
-				
-				if (currentAuction == null)
-				{
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_AUCTION_PERIOD));
-					
-					if (nextAuction != null) // used only once when database is empty
-						activeChar.sendMessage("The next auction will begin on the " + fmt.format(new Date(nextAuction.getStartingTime())) + ".");
-					return true;
-				}
-				
-				activeChar.sendPacket(new ExItemAuctionInfoPacket(false, currentAuction, nextAuction));
-			}
-			else if (cmd.equalsIgnoreCase("cancel"))
-			{
-				final ItemAuction[] auctions = au.getAuctionsByBidder(activeChar.getObjectId());
-				boolean returned = false;
-				for (final ItemAuction auction : auctions)
-				{
-					if (auction.cancelBid(activeChar))
-						returned = true;
-				}
-				if (!returned)
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_OFFERINGS_OWN_OR_MADE_BID_FOR));
-			}
-			else
-				return false;
-		}
-		catch (Exception e)
-		{
-			_log.severe("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
-		}
-		
-		return true;
-	}
-	
-	@Override
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final SimpleDateFormat fmt = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy");
+
+    private static final String[] COMMANDS = {"ItemAuction"};
+
+    @Override
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        if (!Config.ALT_ITEM_AUCTION_ENABLED)
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_AUCTION_PERIOD));
+            return true;
+        }
+
+        final ItemAuctionInstance au = ItemAuctionManager.getInstance().getManagerInstance(target.getNpcId());
+        if (au == null)
+        {
+            return false;
+        }
+
+        try
+        {
+            StringTokenizer st = new StringTokenizer(command);
+            st.nextToken(); // bypass "ItemAuction"
+            if (!st.hasMoreTokens())
+            {
+                return false;
+            }
+
+            String cmd = st.nextToken();
+            if (cmd.equalsIgnoreCase("show"))
+            {
+                if (!activeChar.getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
+                {
+                    return false;
+                }
+
+                if (activeChar.isItemAuctionPolling())
+                {
+                    return false;
+                }
+
+                final ItemAuction currentAuction = au.getCurrentAuction();
+                final ItemAuction nextAuction = au.getNextAuction();
+
+                if (currentAuction == null)
+                {
+                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_AUCTION_PERIOD));
+
+                    if (nextAuction != null) // used only once when database is empty
+                    {
+                        activeChar.sendMessage("The next auction will begin on the " + fmt
+                                .format(new Date(nextAuction.getStartingTime())) + ".");
+                    }
+                    return true;
+                }
+
+                activeChar.sendPacket(new ExItemAuctionInfoPacket(false, currentAuction, nextAuction));
+            }
+            else if (cmd.equalsIgnoreCase("cancel"))
+            {
+                final ItemAuction[] auctions = au.getAuctionsByBidder(activeChar.getObjectId());
+                boolean returned = false;
+                for (final ItemAuction auction : auctions)
+                {
+                    if (auction.cancelBid(activeChar))
+                    {
+                        returned = true;
+                    }
+                }
+                if (!returned)
+                {
+                    activeChar.sendPacket(SystemMessage
+                            .getSystemMessage(SystemMessageId.NO_OFFERINGS_OWN_OR_MADE_BID_FOR));
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            _log.severe("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
+        }
+
+        return true;
+    }
+
+    @Override
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

@@ -23,50 +23,54 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 
 public class ChatAlliance implements IChatHandler
 {
-	private static final int[] COMMAND_IDS = { 9 };
-	
-	/**
-	 * Handle chat type 'alliance'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		/*if (activeChar.isGM())
+    private static final int[] COMMAND_IDS = {9};
+
+    /**
+     * Handle chat type 'alliance'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    @Override
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        /*if (activeChar.isGM())
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			GmListTable.broadcastToGMs(cs);
 		}
-		else*/if (activeChar.getClan() != null)
-		{
-			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-			activeChar.getClan().broadcastToOnlineAllyMembers(cs);
+		else*/
+        if (activeChar.getClan() != null)
+        {
+            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+            activeChar.getClan().broadcastToOnlineAllyMembers(cs);
 			
 			/*if (Config.isServer(Config.TENKAI))
 			{
 				cs = new CreatureSay(activeChar, type, "[" + activeChar.getClan().getAllyName() + "] " + activeChar.getName(), text);
 				GmListTable.broadcastToGMs(cs);
 			}*/
-			
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			String allyName = activeChar.getClan().getAllyName();
-			ConsoleTab.appendMessage(ConsoleFilter.AllyChat, "[" + allyName + "] " + activeChar.getName() + ": " + text, allyName, activeChar.getName());
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	@Override
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+
+            while (text.contains("Type=") && text.contains("Title="))
+            {
+                int index1 = text.indexOf("Type=");
+                int index2 = text.indexOf("Title=") + 6;
+                text = text.substring(0, index1) + text.substring(index2);
+            }
+
+            String allyName = activeChar.getClan().getAllyName();
+            ConsoleTab.appendMessage(ConsoleFilter.AllyChat, "[" + allyName + "] " + activeChar
+                    .getName() + ": " + text, allyName, activeChar.getName());
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    @Override
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

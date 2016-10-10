@@ -25,46 +25,47 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public final class RequestPrivateStoreManageSell extends L2GameClientPacket
 {
-	
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-		// TODO: implement me properly
-		//readD();
-		//readQ();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		// Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
-		if (player.isAlikeDead())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (player.isInOlympiadMode())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		if (player.getMountType() != 0)
-		{
-			return;
-		}
-		
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    //
+
+    @Override
+    protected void readImpl()
+    {
+        // TODO: implement me properly
+        //readD();
+        //readQ();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        // Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
+        if (player.isAlikeDead())
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (player.isInOlympiadMode())
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+        if (player.getMountType() != 0)
+        {
+            return;
+        }
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

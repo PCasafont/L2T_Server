@@ -30,115 +30,135 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class SpecializeClass implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"SpecializeClass"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
-			return false;
-		
-		boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
-		if (activeChar.getClassId() == activeChar.getBaseClass()
-				&& (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
-		{
-			activeChar.sendMessage("I can't change your class while you are involved in the olympiads! Come back after this month has ended.");
-			return false;
-		}
-		
-		if (command.length() < 16)
-		{
-			String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "classmaster/specialize.htm");
-			String buttons = "";
-			List<PlayerClass> classes = new HashMap<PlayerClass>();
-			for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
-			{
-				if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
-				{
-					for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
-					{
-						if (cl2.getParent() == cl1)
-							classes.add(cl2);
-					}
-				}
-			}
-			
-			if (classes.isEmpty())
-			{
-				for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
-				{
-					if (cl.getLevel() == 85 && cl.getParent() != null)
-					{
-						if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
-							classes.add(cl);
-						else if (activeChar.getCurrentClass().getParent() != null
-								&& cl.getParent().getAwakeningClassId() == activeChar.getCurrentClass().getParent().getAwakeningClassId())
-							classes.add(cl);
-					}
-				}
-			}
-			
-			for (PlayerClass cl : classes)
-				buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " + cl.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
+    private static final String[] COMMANDS = {"SpecializeClass"};
 
-			html = html.replace("%classButtons%", buttons);
-			NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
-			packet.setHtml(html);
-			packet.replace("%objectId%", String.valueOf(target.getObjectId()));
-			
-			activeChar.sendPacket(packet);
-		}
-		else
-		{
-			try
-			{
-				int classId = Integer.parseInt(command.substring(16));
-				PlayerClass prev = activeChar.getCurrentClass();
-				PlayerClass next = PlayerClassTable.getInstance().getClassById(classId);
-				if (!hasDeprecatedClass && prev.getLevel() == 85)
-				{
-					if (!activeChar.isSubClassActive())
-					{
-						if (!activeChar.destroyItemByItemId("Specialize Class", 36949, 1, activeChar, true))
-							return false;
-					}
-					else
-					{
-						if (!activeChar.destroyItemByItemId("Specialize Class", 37494, 1, activeChar, true))
-							return false;
-					}
-				}
-				
-				activeChar.setClassId(classId);
-				if (!activeChar.isSubClassActive())
-					activeChar.setBaseClass(classId);
-				
-				for (L2Skill skill : activeChar.getAllSkills())
-				{
-					int hash = SkillTable.getSkillHashCode(skill);
-					if (prev.getSkills().containsKey(hash)
-							&& !next.getSkills().containsKey(hash))
-						activeChar.removeSkill(skill, true);
-				}
-				
-				activeChar.sendSkillList();
-				
-				activeChar.store();
-				activeChar.broadcastUserInfo();
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
+        {
+            return false;
+        }
+
+        boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
+        if (activeChar.getClassId() == activeChar.getBaseClass() && (activeChar.isHero() || Olympiad.getInstance()
+                .getNobleInfo(activeChar.getObjectId()) != null))
+        {
+            activeChar
+                    .sendMessage(
+                            "I can't change your class while you are involved in the olympiads! Come back after this month has ended.");
+            return false;
+        }
+
+        if (command.length() < 16)
+        {
+            String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "classmaster/specialize.htm");
+            String buttons = "";
+            List<PlayerClass> classes = new HashMap<PlayerClass>();
+            for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
+            {
+                if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
+                {
+                    for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
+                    {
+                        if (cl2.getParent() == cl1)
+                        {
+                            classes.add(cl2);
+                        }
+                    }
+                }
+            }
+
+            if (classes.isEmpty())
+            {
+                for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
+                {
+                    if (cl.getLevel() == 85 && cl.getParent() != null)
+                    {
+                        if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
+                        {
+                            classes.add(cl);
+                        }
+                        else if (activeChar.getCurrentClass().getParent() != null && cl.getParent()
+                                .getAwakeningClassId() == activeChar.getCurrentClass().getParent()
+                                .getAwakeningClassId())
+                        {
+                            classes.add(cl);
+                        }
+                    }
+                }
+            }
+
+            for (PlayerClass cl : classes)
+            {
+                buttons += "<button value=\"" + cl
+                        .getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " + cl
+                        .getId() +
+                        "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
+            }
+
+            html = html.replace("%classButtons%", buttons);
+            NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
+            packet.setHtml(html);
+            packet.replace("%objectId%", String.valueOf(target.getObjectId()));
+
+            activeChar.sendPacket(packet);
+        }
+        else
+        {
+            try
+            {
+                int classId = Integer.parseInt(command.substring(16));
+                PlayerClass prev = activeChar.getCurrentClass();
+                PlayerClass next = PlayerClassTable.getInstance().getClassById(classId);
+                if (!hasDeprecatedClass && prev.getLevel() == 85)
+                {
+                    if (!activeChar.isSubClassActive())
+                    {
+                        if (!activeChar.destroyItemByItemId("Specialize Class", 36949, 1, activeChar, true))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (!activeChar.destroyItemByItemId("Specialize Class", 37494, 1, activeChar, true))
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                activeChar.setClassId(classId);
+                if (!activeChar.isSubClassActive())
+                {
+                    activeChar.setBaseClass(classId);
+                }
+
+                for (L2Skill skill : activeChar.getAllSkills())
+                {
+                    int hash = SkillTable.getSkillHashCode(skill);
+                    if (prev.getSkills().containsKey(hash) && !next.getSkills().containsKey(hash))
+                    {
+                        activeChar.removeSkill(skill, true);
+                    }
+                }
+
+                activeChar.sendSkillList();
+
+                activeChar.store();
+                activeChar.broadcastUserInfo();
+            }
+            catch (StringIndexOutOfBoundsException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

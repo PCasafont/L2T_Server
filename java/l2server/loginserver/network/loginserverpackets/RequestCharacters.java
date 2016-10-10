@@ -21,23 +21,22 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author mrTJO
- * Thanks to mochitto
+ *         Thanks to mochitto
  */
 public class RequestCharacters extends BaseSendablePacket
 {
-	public RequestCharacters(String account)
-	{
-		writeC(0x05);
-		writeS(account);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.util.network.BaseSendablePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public RequestCharacters(String account)
+    {
+        writeC(0x05);
+        writeS(account);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.util.network.BaseSendablePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

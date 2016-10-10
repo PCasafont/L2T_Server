@@ -29,79 +29,86 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 
 /**
- *
  * @author nBd
  */
 public class TargetParty implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		List<L2Character> targetList = new ArrayList<L2Character>();
-		
-		if (onlyFirst)
-			return new L2Character[] { activeChar };
-		
-		targetList.add(activeChar);
-		
-		L2PcInstance player = null;
-		
-		if (activeChar instanceof L2Summon)
-		{
-			player = ((L2Summon) activeChar).getOwner();
-			targetList.add(player);
-		}
-		else if (activeChar instanceof L2PcInstance)
-		{
-			player = (L2PcInstance) activeChar;
-			for (L2Summon summon : ((L2PcInstance) activeChar).getSummons())
-			{
-				if (!summon.isDead())
-					targetList.add(summon);
-			}
-		}
-		
-		if (activeChar.getParty() != null)
-		{
-			// Get all visible objects in a spherical area near the L2Character
-			// Get a list of Party Members
-			List<L2PcInstance> partyList = activeChar.getParty().getPartyMembers();
-			
-			for (L2PcInstance partyMember : partyList)
-			{
-				if (partyMember == null)
-					continue;
-				if (partyMember == player)
-					continue;
-				
-				if (!partyMember.isDead() && Util.checkIfInRange(skill.getSkillRadius(), activeChar, partyMember, true))
-				{
-					targetList.add(partyMember);
-					
-					if (partyMember.getPet() != null && !partyMember.getPet().isDead())
-					{
-						targetList.add(partyMember.getPet());
-					}
-				}
-			}
-		}
-		return targetList.toArray(new L2Character[targetList.size()]);
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.TARGET_PARTY;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetParty());
-	}
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        List<L2Character> targetList = new ArrayList<L2Character>();
+
+        if (onlyFirst)
+        {
+            return new L2Character[]{activeChar};
+        }
+
+        targetList.add(activeChar);
+
+        L2PcInstance player = null;
+
+        if (activeChar instanceof L2Summon)
+        {
+            player = ((L2Summon) activeChar).getOwner();
+            targetList.add(player);
+        }
+        else if (activeChar instanceof L2PcInstance)
+        {
+            player = (L2PcInstance) activeChar;
+            for (L2Summon summon : ((L2PcInstance) activeChar).getSummons())
+            {
+                if (!summon.isDead())
+                {
+                    targetList.add(summon);
+                }
+            }
+        }
+
+        if (activeChar.getParty() != null)
+        {
+            // Get all visible objects in a spherical area near the L2Character
+            // Get a list of Party Members
+            List<L2PcInstance> partyList = activeChar.getParty().getPartyMembers();
+
+            for (L2PcInstance partyMember : partyList)
+            {
+                if (partyMember == null)
+                {
+                    continue;
+                }
+                if (partyMember == player)
+                {
+                    continue;
+                }
+
+                if (!partyMember.isDead() && Util.checkIfInRange(skill.getSkillRadius(), activeChar, partyMember, true))
+                {
+                    targetList.add(partyMember);
+
+                    if (partyMember.getPet() != null && !partyMember.getPet().isDead())
+                    {
+                        targetList.add(partyMember.getPet());
+                    }
+                }
+            }
+        }
+        return targetList.toArray(new L2Character[targetList.size()]);
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.TARGET_PARTY;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetParty());
+    }
 }

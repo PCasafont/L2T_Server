@@ -1,314 +1,314 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Tenkai Event Manager -->
 <list>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Little Angel  -->
-	<item id="1">
-		<ingredient id="57" count="100000" />
-		<production id="12779" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Little Devil -->
-	<item id="2">
-		<ingredient id="57" count="100000" />
-		<production id="12780" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion of Love (Event) -->
-	<item id="3">
-		<ingredient id="57" count="100000" />
-		<production id="20253" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Yellow-robed Tojigong -->
-	<item id="4">
-		<ingredient id="57" count="100000" />
-		<production id="20245" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Blue-robed Tojigong -->
-	<item id="5">
-		<ingredient id="57" count="100000" />
-		<production id="20246" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Green-robed Tojigong -->
-	<item id="6">
-		<ingredient id="57" count="100000" />
-		<production id="20247" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Bugbear -->
-	<item id="7">
-		<ingredient id="57" count="100000" />
-		<production id="20252" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Blue Sumo Wrestler -->
-	<item id="8">
-		<ingredient id="57" count="100000" />
-		<production id="20299" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Red Sumo Wrestler -->
-	<item id="9">
-		<ingredient id="57" count="100000" />
-		<production id="20297" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Dryad -->
-	<item id="10">
-		<ingredient id="57" count="100000" />
-		<production id="20309" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Wonboso -->
-	<item id="11">
-		<ingredient id="57" count="100000" />
-		<production id="20310" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Majo -->
-	<item id="12">
-		<ingredient id="57" count="100000" />
-		<production id="20006" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Gold Majo -->
-	<item id="13">
-		<ingredient id="57" count="100000" />
-		<production id="20007" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Black Majo -->
-	<item id="14">
-		<ingredient id="57" count="100000" />
-		<production id="20008" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Plaipitak -->
-	<item id="15">
-		<ingredient id="57" count="100000" />
-		<production id="20012" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Charming Cupid -->
-	<item id="16">
-		<ingredient id="57" count="100000" />
-		<production id="20212" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Naughty Cupid -->
-	<item id="17">
-		<ingredient id="57" count="100000" />
-		<production id="20213" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - White Maneki Neko -->
-	<item id="18">
-		<ingredient id="57" count="100000" />
-		<production id="20221" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Black Maneki Neko -->
-	<item id="19">
-		<ingredient id="57" count="100000" />
-		<production id="20222" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Brown Maneki Neko -->
-	<item id="20">
-		<ingredient id="57" count="100000" />
-		<production id="20223" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Baby Panda -->
-	<item id="21">
-		<ingredient id="57" count="100000" />
-		<production id="20063" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Bamboo Panda -->
-	<item id="22">
-		<ingredient id="57" count="100000" />
-		<production id="20064" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Sexy Panda -->
-	<item id="23">
-		<ingredient id="57" count="100000" />
-		<production id="20065" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Great Sumo Match -->
-	<item id="24">
-		<ingredient id="57" count="100000" />
-		<production id="20301" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Button-Eyed Bear Doll -->
-	<item id="25">
-		<ingredient id="57" count="100000" />
-		<production id="20303" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - God of Fortune -->
-	<item id="26">
-		<ingredient id="57" count="100000" />
-		<production id="20307" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Daewoonso -->
-	<item id="27">
-		<ingredient id="57" count="100000" />
-		<production id="20312" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Boy Teddy Bear -->
-	<item id="28">
-		<ingredient id="57" count="100000" />
-		<production id="13544" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Girl Teddy Bear -->
-	<item id="29">
-		<ingredient id="57" count="100000" />
-		<production id="13545" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Summon Bracelet - Monkey -->
-	<item id="30">
-		<ingredient id="57" count="100000" />
-		<production id="10659" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Summon Bracelet - Griffin -->
-	<item id="31">
-		<ingredient id="57" count="100000" />
-		<production id="10660" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Chon-Chon -->
-	<item id="32">
-		<ingredient id="57" count="100000" />
-		<production id="20654" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Tang-Tang -->
-	<item id="33">
-		<ingredient id="57" count="100000" />
-		<production id="20656" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Baekyi Hwamae -->
-	<item id="34">
-		<ingredient id="57" count="100000" />
-		<production id="20732" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Pomona -->
-	<item id="35">
-		<ingredient id="57" count="100000" />
-		<production id="20495" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Weaver -->
-	<item id="36">
-		<ingredient id="57" count="100000" />
-		<production id="20591" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Monkey King -->
-	<item id="37">
-		<ingredient id="57" count="100000" />
-		<production id="20660" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Utanka -->
-	<item id="38">
-		<ingredient id="57" count="100000" />
-		<production id="20662" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Bonus B -->
-	<item id="39">
-		<ingredient id="57" count="100000" />
-		<production id="20664" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Zombie -->
-	<item id="40">
-		<ingredient id="57" count="100000" />
-		<production id="20726" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Ladder Snow -->
-	<item id="41">
-		<ingredient id="57" count="100000" />
-		<production id="20784" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - One-eyed Bat Drove -->
-	<item id="42">
-		<ingredient id="57" count="100000" />
-		<production id="20230" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Pegasus -->
-	<item id="43">
-		<ingredient id="57" count="100000" />
-		<production id="20236" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Ball Trapping Gnosian -->
-	<item id="44">
-		<ingredient id="57" count="100000" />
-		<production id="20983" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Penalty Kick -->
-	<item id="45">
-		<ingredient id="57" count="100000" />
-		<production id="20985" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Three-headed Dragon -->
-	<item id="46">
-		<ingredient id="57" count="100000" />
-		<production id="20970" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Neolithica -->
-	<item id="47">
-		<ingredient id="57" count="100000" />
-		<production id="14675" count="1" />
-	</item>
-	<!-- Silver Shilen x Agathion Seal Bracelet - Oink Oink -->
-	<item id="48">
-		<ingredient id="57" count="100000" />
-		<production id="15220" count="1" />
-	</item>
-	<!-- Silver Shilen x Aghation Seal Bracelet - Nepal Snow -->
-	<item id="49">
-		<ingredient id="57" count="100000" />
-		<production id="20782" count="1" />
-	</item>
-	<!-- Silver Shilen x Aghation Seal Bracelet - Round Ball Snow -->
-	<item id="50">
-		<ingredient id="57" count="100000" />
-		<production id="20783" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Iken -->
-	<item id="51">
-		<ingredient id="57" count="100000" />
-		<production id="20818" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Lana -->
-	<item id="52">
-		<ingredient id="57" count="100000" />
-		<production id="20820" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Gnosian -->
-	<item id="53">
-		<ingredient id="57" count="100000" />
-		<production id="20822" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Orodriel -->
-	<item id="54">
-		<ingredient id="57" count="100000" />
-		<production id="20824" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Lakinos -->
-	<item id="55">
-		<ingredient id="57" count="100000" />
-		<production id="20826" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Mortia -->
-	<item id="56">
-		<ingredient id="57" count="100000" />
-		<production id="20828" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Heintz -->
-	<item id="57">
-		<ingredient id="57" count="100000" />
-		<production id="20830" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Meruril -->
-	<item id="58">
-		<ingredient id="57" count="100000" />
-		<production id="20832" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Taman Zu Rapatui -->
-	<item id="59">
-		<ingredient id="57" count="100000" />
-		<production id="20834" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Kaurin -->
-	<item id="60">
-		<ingredient id="57" count="100000" />
-		<production id="20836" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Ahertbein -->
-	<item id="61">
-		<ingredient id="57" count="100000" />
-		<production id="20838" count="1" />
-	</item>
-	<!-- Silver Shilen x Soul Avatar Seal Bracelet - Naonin -->
-	<item id="62">
-		<ingredient id="57" count="100000" />
-		<production id="20840" count="1" />
-	</item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Little Angel  -->
+    <item id="1">
+        <ingredient id="57" count="100000" />
+        <production id="12779" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Little Devil -->
+    <item id="2">
+        <ingredient id="57" count="100000" />
+        <production id="12780" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion of Love (Event) -->
+    <item id="3">
+        <ingredient id="57" count="100000" />
+        <production id="20253" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Yellow-robed Tojigong -->
+    <item id="4">
+        <ingredient id="57" count="100000" />
+        <production id="20245" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Blue-robed Tojigong -->
+    <item id="5">
+        <ingredient id="57" count="100000" />
+        <production id="20246" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Green-robed Tojigong -->
+    <item id="6">
+        <ingredient id="57" count="100000" />
+        <production id="20247" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Bugbear -->
+    <item id="7">
+        <ingredient id="57" count="100000" />
+        <production id="20252" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Blue Sumo Wrestler -->
+    <item id="8">
+        <ingredient id="57" count="100000" />
+        <production id="20299" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Red Sumo Wrestler -->
+    <item id="9">
+        <ingredient id="57" count="100000" />
+        <production id="20297" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Dryad -->
+    <item id="10">
+        <ingredient id="57" count="100000" />
+        <production id="20309" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Wonboso -->
+    <item id="11">
+        <ingredient id="57" count="100000" />
+        <production id="20310" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Majo -->
+    <item id="12">
+        <ingredient id="57" count="100000" />
+        <production id="20006" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Gold Majo -->
+    <item id="13">
+        <ingredient id="57" count="100000" />
+        <production id="20007" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Black Majo -->
+    <item id="14">
+        <ingredient id="57" count="100000" />
+        <production id="20008" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Plaipitak -->
+    <item id="15">
+        <ingredient id="57" count="100000" />
+        <production id="20012" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Charming Cupid -->
+    <item id="16">
+        <ingredient id="57" count="100000" />
+        <production id="20212" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Naughty Cupid -->
+    <item id="17">
+        <ingredient id="57" count="100000" />
+        <production id="20213" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - White Maneki Neko -->
+    <item id="18">
+        <ingredient id="57" count="100000" />
+        <production id="20221" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Black Maneki Neko -->
+    <item id="19">
+        <ingredient id="57" count="100000" />
+        <production id="20222" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Brown Maneki Neko -->
+    <item id="20">
+        <ingredient id="57" count="100000" />
+        <production id="20223" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Baby Panda -->
+    <item id="21">
+        <ingredient id="57" count="100000" />
+        <production id="20063" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Bamboo Panda -->
+    <item id="22">
+        <ingredient id="57" count="100000" />
+        <production id="20064" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Sexy Panda -->
+    <item id="23">
+        <ingredient id="57" count="100000" />
+        <production id="20065" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Great Sumo Match -->
+    <item id="24">
+        <ingredient id="57" count="100000" />
+        <production id="20301" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Button-Eyed Bear Doll -->
+    <item id="25">
+        <ingredient id="57" count="100000" />
+        <production id="20303" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - God of Fortune -->
+    <item id="26">
+        <ingredient id="57" count="100000" />
+        <production id="20307" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Daewoonso -->
+    <item id="27">
+        <ingredient id="57" count="100000" />
+        <production id="20312" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Boy Teddy Bear -->
+    <item id="28">
+        <ingredient id="57" count="100000" />
+        <production id="13544" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Girl Teddy Bear -->
+    <item id="29">
+        <ingredient id="57" count="100000" />
+        <production id="13545" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Summon Bracelet - Monkey -->
+    <item id="30">
+        <ingredient id="57" count="100000" />
+        <production id="10659" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Summon Bracelet - Griffin -->
+    <item id="31">
+        <ingredient id="57" count="100000" />
+        <production id="10660" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Chon-Chon -->
+    <item id="32">
+        <ingredient id="57" count="100000" />
+        <production id="20654" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Tang-Tang -->
+    <item id="33">
+        <ingredient id="57" count="100000" />
+        <production id="20656" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Baekyi Hwamae -->
+    <item id="34">
+        <ingredient id="57" count="100000" />
+        <production id="20732" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Pomona -->
+    <item id="35">
+        <ingredient id="57" count="100000" />
+        <production id="20495" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Weaver -->
+    <item id="36">
+        <ingredient id="57" count="100000" />
+        <production id="20591" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Monkey King -->
+    <item id="37">
+        <ingredient id="57" count="100000" />
+        <production id="20660" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Utanka -->
+    <item id="38">
+        <ingredient id="57" count="100000" />
+        <production id="20662" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Bonus B -->
+    <item id="39">
+        <ingredient id="57" count="100000" />
+        <production id="20664" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Zombie -->
+    <item id="40">
+        <ingredient id="57" count="100000" />
+        <production id="20726" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Ladder Snow -->
+    <item id="41">
+        <ingredient id="57" count="100000" />
+        <production id="20784" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - One-eyed Bat Drove -->
+    <item id="42">
+        <ingredient id="57" count="100000" />
+        <production id="20230" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Pegasus -->
+    <item id="43">
+        <ingredient id="57" count="100000" />
+        <production id="20236" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Ball Trapping Gnosian -->
+    <item id="44">
+        <ingredient id="57" count="100000" />
+        <production id="20983" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Penalty Kick -->
+    <item id="45">
+        <ingredient id="57" count="100000" />
+        <production id="20985" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Three-headed Dragon -->
+    <item id="46">
+        <ingredient id="57" count="100000" />
+        <production id="20970" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Neolithica -->
+    <item id="47">
+        <ingredient id="57" count="100000" />
+        <production id="14675" count="1" />
+    </item>
+    <!-- Silver Shilen x Agathion Seal Bracelet - Oink Oink -->
+    <item id="48">
+        <ingredient id="57" count="100000" />
+        <production id="15220" count="1" />
+    </item>
+    <!-- Silver Shilen x Aghation Seal Bracelet - Nepal Snow -->
+    <item id="49">
+        <ingredient id="57" count="100000" />
+        <production id="20782" count="1" />
+    </item>
+    <!-- Silver Shilen x Aghation Seal Bracelet - Round Ball Snow -->
+    <item id="50">
+        <ingredient id="57" count="100000" />
+        <production id="20783" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Iken -->
+    <item id="51">
+        <ingredient id="57" count="100000" />
+        <production id="20818" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Lana -->
+    <item id="52">
+        <ingredient id="57" count="100000" />
+        <production id="20820" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Gnosian -->
+    <item id="53">
+        <ingredient id="57" count="100000" />
+        <production id="20822" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Orodriel -->
+    <item id="54">
+        <ingredient id="57" count="100000" />
+        <production id="20824" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Lakinos -->
+    <item id="55">
+        <ingredient id="57" count="100000" />
+        <production id="20826" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Mortia -->
+    <item id="56">
+        <ingredient id="57" count="100000" />
+        <production id="20828" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Heintz -->
+    <item id="57">
+        <ingredient id="57" count="100000" />
+        <production id="20830" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Meruril -->
+    <item id="58">
+        <ingredient id="57" count="100000" />
+        <production id="20832" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Taman Zu Rapatui -->
+    <item id="59">
+        <ingredient id="57" count="100000" />
+        <production id="20834" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Kaurin -->
+    <item id="60">
+        <ingredient id="57" count="100000" />
+        <production id="20836" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Ahertbein -->
+    <item id="61">
+        <ingredient id="57" count="100000" />
+        <production id="20838" count="1" />
+    </item>
+    <!-- Silver Shilen x Soul Avatar Seal Bracelet - Naonin -->
+    <item id="62">
+        <ingredient id="57" count="100000" />
+        <production id="20840" count="1" />
+    </item>
 </list>

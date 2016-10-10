@@ -16,13 +16,12 @@
 package l2server.gameserver.network.serverpackets;
 
 /**
- *
  * sample
  * <p>
  * 4c
  * 01 00 00 00
  * <p>
- *
+ * <p>
  * format
  * cd
  *
@@ -30,21 +29,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class JoinParty extends L2GameServerPacket
 {
-	//
-	
-	private int _response;
-	
-	/**
-	 * @param int
-	 */
-	public JoinParty(int response)
-	{
-		_response = response;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_response);
-	}
+    //
+
+    private int _response;
+
+    /**
+     * @param int
+     */
+    public JoinParty(int response)
+    {
+        _response = response;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_response);
+    }
 }

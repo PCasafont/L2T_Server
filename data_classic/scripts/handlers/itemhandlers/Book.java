@@ -24,34 +24,35 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Book implements IItemHandler
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		final int itemId = item.getItemId();
-		
-		String filename = "help/" + itemId + ".htm";
-		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
-		
-		if (content == null)
-		{
-			NpcHtmlMessage html = new NpcHtmlMessage(1);
-			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
-			activeChar.sendPacket(html);
-		}
-		else
-		{
-			NpcHtmlMessage itemReply = new NpcHtmlMessage(5, itemId);
-			itemReply.setHtml(content);
-			itemReply.disableValidation();
-			activeChar.sendPacket(itemReply);
-		}
-		
-		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+        L2PcInstance activeChar = (L2PcInstance) playable;
+        final int itemId = item.getItemId();
+
+        String filename = "help/" + itemId + ".htm";
+        String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
+
+        if (content == null)
+        {
+            NpcHtmlMessage html = new NpcHtmlMessage(1);
+            html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
+            activeChar.sendPacket(html);
+        }
+        else
+        {
+            NpcHtmlMessage itemReply = new NpcHtmlMessage(5, itemId);
+            itemReply.setHtml(content);
+            itemReply.disableValidation();
+            activeChar.sendPacket(itemReply);
+        }
+
+        activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+    }
 }

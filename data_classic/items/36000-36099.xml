@@ -1,1123 +1,1123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- For 1 hour, increases Atk. by 12%, P. Critical Damage by 35%, P. Critical Rate by 100%, Defense by 45%, Shield Defense Rate by 30%, and Shield Defense by 50%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36000" type="EtcItem" name="Heavenly P. Def. Cookie">
-		<set name="icon" val="icon.etc_bm_defence_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hour, M. Atk. + 40%, M. Critical Rate by100%, Casting Spd. by 8%, P. Atk. by 8%, Atk. Spd. by 8%. Speed by 8, M. Def. by 14%, and MP Recovery Rate by 20%. For 1 hour, decreases Magic Skill MP Consumption by 15%, Physical Skill MP Consumption by 5%, and Skill Cooldown by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36001" type="EtcItem" name="Heavenly Magic Cookie">
-		<set name="icon" val="icon.etc_bm_magic_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hour, increases maximum CP by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36002" type="EtcItem" name="Heavenly CP Cookie">
-		<set name="icon" val="icon.etc_bm_cp_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Atk. Cookies. Cannot use Olympiad. -->
-	<item id="36003" type="EtcItem" name="Heavenly P. Atk. Special Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Def. Cookies. Cannot use Olympiad. -->
-	<item id="36004" type="EtcItem" name="Heavenly P. Def. Special Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly Magic Cookies. Cannot use Olympiad. -->
-	<item id="36005" type="EtcItem" name="Heavenly Magic Special Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly CP Cookie s. Cannot use Olympiad. -->
-	<item id="36006" type="EtcItem" name="Heavenly CP Increase Special Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can get High-grade Lucky Enchant Stone: Weapon (R-grade) and High-grade Lucky Enchant Stone: Armor (R-grade). -->
-	<item id="36007" type="EtcItem" name="High-grade Lucky Enchant Stone Special Box">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="36008" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade)">
-		<set name="icon" val="icon.ench_wp_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="36009" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade)">
-		<set name="icon" val="icon.ench_am_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hour, increases Atk. by 35%, P. Critical Damage by 35%, P. Critical Rate by 100%, Atk. Spd. by 8%, M. Atk. by 16%, Casting Spd. by 8%, and Speed by 8. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36010" type="EtcItem" name="Heavenly P. Atk. Cookie - Event">
-		<set name="icon" val="icon.etc_bm_attack_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hour, increases Atk. by 12%, P. Critical Damage by 35%, P. Critical Rate by 100%, Defense by 45%, Shield Defense Rate by 30%, and Shield Defense by 50%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36011" type="EtcItem" name="Heavenly P. Def. Cookie - Event">
-		<set name="icon" val="icon.etc_bm_defence_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hour, M. Atk. + 40%, M. Critical Rate by100%, Casting Spd. by 8%, P. Atk. by 8%, Atk. Spd. by 8%. Speed by 8, M. Def. by 14%, and MP Recovery Rate by 20%. For 1 hour, decreases Magic Skill MP Consumption by 15%, Physical Skill MP Consumption by 5%, and Skill Cooldown by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36012" type="EtcItem" name="Heavenly Magic Cookie - Event">
-		<set name="icon" val="icon.etc_bm_magic_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- For 1 hr., increases Max CP by 20%. Cooldown is 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
-	<item id="36013" type="EtcItem" name="Heavenly CP Cookie - Event">
-		<set name="icon" val="icon.etc_bm_cp_cookie" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Atk. Cookies. Cannot use Olympiad. -->
-	<item id="36014" type="EtcItem" name="Heavenly P. Atk. Special Box - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Def. Cookies. Cannot use Olympiad. -->
-	<item id="36015" type="EtcItem" name="Heavenly P. Def. Special Box - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly Magic Cookies. Cannot use Olympiad. -->
-	<item id="36016" type="EtcItem" name="Heavenly Magic Special Box - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly CP Cookie s. Cannot use Olympiad. -->
-	<item id="36017" type="EtcItem" name="Heavenly CP Increase Special Box - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can get High-grade Lucky Enchant Stone: Weapon (R-grade) and High-grade Lucky Enchant Stone: Armor (R-grade). -->
-	<item id="36018" type="EtcItem" name="High-grade Lucky Enchant Stone Special Box - Event">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="36019" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade) - Event">
-		<set name="icon" val="icon.ench_wp_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
-	<item id="36020" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade) - Event">
-		<set name="icon" val="icon.ench_am_potion_violet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Gift box that contains 30 Returning Hero's Health Potions, 1 Returning Hero's Vitality Replenishing Juice 3-unit Pack, and 6 Heavenly Cocktails. -->
-	<item id="36021" type="EtcItem" name="Returning Hero's Potion Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Upon use, it restores 3000 HP and the remaining power restores CP instantly. Instant effect with no duration. Cannot use Olympiad. -->
-	<item id="36022" type="EtcItem" name="Returning Hero's Health Potion">
-		<set name="icon" val="icon.etc_bm_hero_red_potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Gift box that contains 1 Returning Hero's Shirt, 1 Returning Hero's Belt, and 1 Returning Hero's Wondrous Cubic. -->
-	<item id="36023" type="EtcItem" name="Returning Hero's Support Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Double-click to acquire one of the following: 30-minute Vitality Recovering Potion, 700 PC Coupon Points, 2 Heavenly Cocktails, Scroll of Escape Box: Village, and Blessed Scroll of Escape. (Can only be used once a-day) -->
-	<item id="36024" type="EtcItem" name="Returning Hero's Wondrous Cubic">
-		<set name="icon" val="Branchsys2.icon.cube_event_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can resurrect right away if you die in Kartia's Labyrinth - Tainted Dimension Attacker. (XP Recovery Rate 50%) -->
-	<item id="36025" type="EtcItem" name="Feather of Blessing - Kartia's Labyrinth">
-		<set name="icon" val="icon.etc_feather_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can resurrect right away if you die in Kartia's Labyrinth - Tainted Dimension Attacker. (XP Recovery Rate 100%) -->
-	<item id="36026" type="EtcItem" name="High-grade Feather of Blessing - Kartia's Labyrinth">
-		<set name="icon" val="icon.etc_feather_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Clan Production Request A - Provide the leather machine with a Lump of Fur from Cute Buffalo. -->
-	<item id="36027" type="EtcItem" name="Lump of Fur">
-		<set name="icon" val="icon.etc_mane_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Clan Production Request B - Deliver a Fruit Charged with Water to Impatient Mahum Chef. -->
-	<item id="36028" type="EtcItem" name="Fruit Charged with Water">
-		<set name="icon" val="icon.etc_codran_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Clan Production Request B - Deliver a Fruit Charged with Fire to Impatient Mahum Chef. -->
-	<item id="36029" type="EtcItem" name="Fruit Charged with Fire">
-		<set name="icon" val="icon.etc_codran_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Clan Production Request B - Deliver a Fruit Charged with Wind to Impatient Mahum Chef. -->
-	<item id="36030" type="EtcItem" name="Fruit Charged with Wind">
-		<set name="icon" val="icon.etc_codran_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Clan Handicraft Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
-	<item id="36031" type="Weapon" name="Multi Hammer - 1">
-		<set name="icon" val="icon.weapon_iron_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Item used in clan requests. -->
-	<item id="36032" type="Weapon" name="Multi Hammer">
-		<set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Clan Production Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
-	<item id="36033" type="Weapon" name="Multi Hammer - 3">
-		<set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Clan Production Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
-	<item id="36034" type="Weapon" name="Multi Hammer - 4">
-		<set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Alternative Clan Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
-	<item id="36035" type="Weapon" name="Multi Hammer - 5">
-		<set name="icon" val="icon.weapon_iron_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Alternative Clan Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
-	<item id="36036" type="Weapon" name="Multi Hammer - 6">
-		<set name="icon" val="icon.weapon_iron_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Item that can be used only in the Ceremony of Chaos Arena. Drags the selected target to your location. -->
-	<item id="36037" type="EtcItem" name="Mysterious Incantation">
-		<set name="icon" val="icon.etc_grankain_chain" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Item that can be used only in the Ceremony of Chaos Arena. Makes you invincible for 5 seconds. -->
-	<item id="36038" type="EtcItem" name="Mysterious Defense">
-		<set name="icon" val="icon.etc_grankain_protect" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<item id="36039" type="Weapon" name="Eternal Core Sword - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<item id="36040" type="Weapon" name="Lava Saw - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_lavamond_saw_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36041" type="Weapon" name="Eversor Mace - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_expowder_mace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<item id="36042" type="Weapon" name="Sacredium - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_sacredumors_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<item id="36043" type="Weapon" name="Contristo Hammer - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_pereztear_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36044" type="Weapon" name="Cyclic Cane - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_psyskilt_cane_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36045" type="Weapon" name="Mamba Edge - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_mambaedge_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<item id="36046" type="Weapon" name="Jade Claw - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_jademice_claw_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36047" type="Weapon" name="Demitelum - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_ghostcleaner_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36048" type="Weapon" name="Eternal Core Dualsword - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<item id="36049" type="Weapon" name="Mamba Edge Dual Dagger - Ceremony of Chaos">
-		<set name="icon" val="icon.dual_dagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<item id="36050" type="Weapon" name="Recurve Thorne Bow - Ceremony of Chaos">
-		<set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="mp_consume" val="6" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be acquired through a clan request. Can be used only on clan members. -->
-	<item id="36051" type="Armor" name="Clan Cloak - Standard">
-		<set name="icon" val="icon.vesper_cloack_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13403-1" />
-		<cond msgId="1518">
-			<and>
-				<player cloakStatus="1" />
-				<player castle="-1" />
-			</and>
-		</cond>
-		<for>
-			<baseAdd stat="mDef" val="40" />
-			<baseAdd stat="pDef" val="50" />
-		</for>
-	</item>
-	<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own auction-type Clan Halls. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
-	<item id="36052" type="Armor" name="Clan Cloak - Clan Hall (Auction)">
-		<set name="icon" val="icon.vesper_cloack_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13404-1" />
-		<cond msgId="1518">
-			<and>
-				<player cloakStatus="1" />
-				<player clanHall="-1" />
-			</and>
-		</cond>
-		<for>
-			<baseAdd stat="mDef" val="40" />
-			<baseAdd stat="pDef" val="50" />
-		</for>
-	</item>
-	<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own a castle. STR + 2 / INT + 2 effect. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
-	<item id="36053" type="Armor" name="Clan Cloak - Castle">
-		<set name="icon" val="icon.vesper_cloack_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13405-1" />
-		<cond msgId="1518">
-			<and>
-				<player cloakStatus="1" />
-				<player castle="-1" />
-			</and>
-		</cond>
-		<for>
-			<baseAdd stat="mDef" val="40" />
-			<baseAdd stat="pDef" val="50" />
-		</for>
-	</item>
-	<!-- Key that the Spiculas in Nornil's Cave have. Its use is not known. -->
-	<item id="36054" type="EtcItem" name="Red Gate Key">
-		<set name="icon" val="icon.etc_old_key_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 10 seconds. -->
-	<item id="36055" type="EtcItem" name="Scroll: Stronghold Siege (10-second)">
-		<set name="icon" val="icon.etc_doom_capture" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 20 seconds. -->
-	<item id="36056" type="EtcItem" name="Scroll: Stronghold Siege (20-second)">
-		<set name="icon" val="icon.etc_doom_capture" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 30 seconds. -->
-	<item id="36057" type="EtcItem" name="Scroll: Stronghold Siege (30-second)">
-		<set name="icon" val="icon.etc_doom_capture" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 40 seconds. -->
-	<item id="36058" type="EtcItem" name="Scroll: Stronghold Siege (40-second)">
-		<set name="icon" val="icon.etc_doom_capture" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 50 seconds. -->
-	<item id="36059" type="EtcItem" name="Scroll: Stronghold Siege (50-second)">
-		<set name="icon" val="icon.etc_doom_capture" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
-	<item id="36060" type="Armor" name="Penitent's Manacles">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
-	<item id="36061" type="Armor" name="Penitent's Manacles">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
-	<item id="36062" type="Armor" name="Penitent's Manacles">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
-	<item id="36063" type="Armor" name="Penitent's Manacles">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
-	<item id="36064" type="Armor" name="Penitent's Manacles">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Vaccine made by Verna. Can be used on Golem Generators that occasionally come out of Scout Golems in Nornil's Cave. -->
-	<item id="36065" type="EtcItem" name="Verna's Vaccine">
-		<set name="icon" val="icon.etc_mechanic_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Water scooped from deep inside the Garden of Eva. Probably not the Clearest Water. -->
-	<item id="36066" type="EtcItem" name="Water from the Garden of Eva">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The cleanest water received from the Lady of the Lake. Can be used on the Mother Tree at the center of Elven Village. -->
-	<item id="36067" type="EtcItem" name="Clearest Water">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The Brightest Light received from Nerupa in the Arms of Timiniel in Magmeld. Can be used in front of Shilen's Stone Statue towering at the center of Dark Elf Village. -->
-	<item id="36068" type="EtcItem" name="Brightest Light">
-		<set name="icon" val="icon.tersi_specter_seed" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The Purest Soul received from Enfeux in the Valley of Saints. Can be used in front of the Cave of Souls close to Kamael Village. -->
-	<item id="36069" type="EtcItem" name="Purest Soul">
-		<set name="icon" val="icon.etc_crystal_ball_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The Fiercest Flame received from the Blacksmith of Flame Vulcan at the Forge of the Gods. Can be used in front of the Pa'agrio Temple in Orc Village. -->
-	<item id="36070" type="EtcItem" name="Fiercest Flame">
-		<set name="icon" val="icon.etc_torch_on_i09" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Letter that shows the Fondest Heart of the Blacksmith of Flame Vulcan. Can be used in the Deserted Dwarven House. -->
-	<item id="36071" type="EtcItem" name="Fondest Heart">
-		<set name="icon" val="icon.etc_letter_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Mysterious Letter handed over by Subclass Master Raina of Talking Island Village. Double-click to check the content. -->
-	<item id="36072" type="EtcItem" name="Mysterious Letter">
-		<set name="icon" val="icon.etc_roll_of_paper_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Box that contains a vaccine for Virus Laido. Deliver it to Dwarves who are sealing Spicula Clone Generator Brand. -->
-	<item id="36073" type="EtcItem" name="Vaccine Box">
-		<set name="icon" val="icon.etc_squares_wood_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Fragments with information about Metusela Clone Generator Brand. When you collect them all, take them to Hesed of the Black Anvil Guild. -->
-	<item id="36074" type="EtcItem" name="Yin's Trace">
-		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Fragments from which information about Metusela Clone Generator Brand has been erased. When you collect them all, take them to Hesed of the Black Anvil Guild. -->
-	<item id="36075" type="EtcItem" name="Yin's Enigmatic Trace">
-		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Key for opening the Red Gate of Nornil Dungeon. -->
-	<item id="36076" type="EtcItem" name="Verna's Red Gate Key">
-		<set name="icon" val="icon.etc_old_key_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Mark of Penitence. Sins scattered in the world have been made into crumbs by the Sin Eater. -->
-	<item id="36077" type="EtcItem" name="Crumbs of Penitence">
-		<set name="icon" val="icon.etc_powder_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Spellbook that contains the concentrated power of a dual class. It is said that if you take it to Trandon in Talking Island Village, you can get the power in this spellbook. -->
-	<item id="36078" type="EtcItem" name="Certificate - Dual Class">
-		<set name="icon" val="icon.etc_dualchange" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Yum Yum Candy made of the peanuts grown by Maphr, the goddess of earth, for Valentine's Day.
-		Increases additionally obtained XP/SP by 25%.
-		Its effect applies together with that of Nom Nom Candy (limited to 1).  Temporary event item.
-	-->
-	<item id="36079" type="EtcItem" name="Yum Yum Candy">
-		<set name="icon" val="icon.etc_whiteday_candy_i05" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!--
-		Nom Nom Candy made of the peanuts grown by Maphr, the goddess of earth, for Valentine's Day.
-		Increases additionally obtained XP/SP by 25%.
-		Its effect applies together with that of Yum Yum Candy (limited to 1).  Temporary event item.
-	-->
-	<item id="36080" type="EtcItem" name="Nom Nom Candy">
-		<set name="icon" val="icon.etc_whiteday_candy_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Special gift box for Valentine's Day that you can get once per account. Click to get 2 Yum Yum Candies or 2 Nom Nom Candies randomly. Temporary event item. -->
-	<item id="36081" type="EtcItem" name="Yummy Gift Box">
-		<set name="icon" val="icon.etc_candy_basket_i04_1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Magic scroll that takes you to Isle of Souls - Dystopia. Cannot be sold in a store. -->
-	<item id="36082" type="EtcItem" name="Scroll of Escape: Isle of Souls - Dystopia">
-		<set name="icon" val="icon.etc_scroll_of_return_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Innocent Heejin (30-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36083" type="Armor" name="Star Agathion - Innocent Heejin">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Dandy Hyuk (30-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36084" type="Armor" name="Star Agathion - Dandy Hyuk">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Powerful Sooro (30-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36085" type="Armor" name="Star Agathion - Powerful Sooro">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Chic Jaebum (30-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36086" type="Armor" name="Star Agathion - Chic Jaebum">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Cute Shinyoung (30-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36087" type="Armor" name="Star Agathion - Cute Shinyoung">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box that contains 1 Agathion Summoning Bracelet - Innocent Heejin (30-day). -->
-	<item id="36088" type="EtcItem" name="Agathion - Innocent Heejin Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box that contains 1 Agathion Summoning Bracelet - Dandy Hyuk (30-day). -->
-	<item id="36089" type="EtcItem" name="Agathion - Dandy Hyuk Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box that contains 1 Agathion Summoning Bracelet - Powerful Sooro (30-day). -->
-	<item id="36090" type="EtcItem" name="Agathion - Powerful Sooro Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box that contains 1 Agathion Summoning Bracelet - Chic Jaebum (30-day). -->
-	<item id="36091" type="EtcItem" name="Agathion - Chic Jaebum Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box that contains 1 Agathion Summoning Bracelet - Cute Shinyoung (30-day). -->
-	<item id="36092" type="EtcItem" name="Agathion - Cute Shinyoung Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_box_wish_pack" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Double-click to obtain one of the following randomly: Vitality Replenishing Star Candy, Vitality Recovering Star Candy and Vitality Maintaining Star Candy. -->
-	<item id="36093" type="EtcItem" name="Star Agathion's Gift">
-		<set name="icon" val="icon.etc_pi_gift_box_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Replenishes a certain amount of vitality. The limit on usage of 5 times per week does not apply. -->
-	<item id="36094" type="EtcItem" name="Vitality Replenishing Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When used, vitality is recovered for 10 minutes. When vitality is recovered through hunting and XP is acquired, some of it is replenished. The limit on usage of 5 times per week does not apply. -->
-	<item id="36095" type="EtcItem" name="Vitality Recovering Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_purple_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Maintains vitality for 10 min. The limit on usage of 5 times per week does not apply. -->
-	<item id="36096" type="EtcItem" name="Vitality Maintaining Star Candy">
-		<set name="icon" val="BranchSys.br_rudolf_food_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Innocent Heejin (7-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36097" type="Armor" name="Star Agathion - Innocent Heejin">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Dandy Hyuk (7-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36098" type="Armor" name="Star Agathion - Dandy Hyuk">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Bracelet for summoning Agathion - Powerful Sooro (7-day)
-		<Used Skill>
-		1. Blessing of Star Agathion
-		Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
-		2. Star Agathion Teleport
-		Lets you teleport to various strongholds. (cooldown 30 minutes)
-		3. Gift of Star Agathion
-		Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
-	-->
-	<item id="36099" type="Armor" name="Star Agathion - Powerful Sooro">
-		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
+    <!-- For 1 hour, increases Atk. by 12%, P. Critical Damage by 35%, P. Critical Rate by 100%, Defense by 45%, Shield Defense Rate by 30%, and Shield Defense by 50%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36000" type="EtcItem" name="Heavenly P. Def. Cookie">
+        <set name="icon" val="icon.etc_bm_defence_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hour, M. Atk. + 40%, M. Critical Rate by100%, Casting Spd. by 8%, P. Atk. by 8%, Atk. Spd. by 8%. Speed by 8, M. Def. by 14%, and MP Recovery Rate by 20%. For 1 hour, decreases Magic Skill MP Consumption by 15%, Physical Skill MP Consumption by 5%, and Skill Cooldown by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36001" type="EtcItem" name="Heavenly Magic Cookie">
+        <set name="icon" val="icon.etc_bm_magic_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hour, increases maximum CP by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36002" type="EtcItem" name="Heavenly CP Cookie">
+        <set name="icon" val="icon.etc_bm_cp_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Atk. Cookies. Cannot use Olympiad. -->
+    <item id="36003" type="EtcItem" name="Heavenly P. Atk. Special Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Def. Cookies. Cannot use Olympiad. -->
+    <item id="36004" type="EtcItem" name="Heavenly P. Def. Special Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly Magic Cookies. Cannot use Olympiad. -->
+    <item id="36005" type="EtcItem" name="Heavenly Magic Special Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly CP Cookie s. Cannot use Olympiad. -->
+    <item id="36006" type="EtcItem" name="Heavenly CP Increase Special Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can get High-grade Lucky Enchant Stone: Weapon (R-grade) and High-grade Lucky Enchant Stone: Armor (R-grade). -->
+    <item id="36007" type="EtcItem" name="High-grade Lucky Enchant Stone Special Box">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="36008" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade)">
+        <set name="icon" val="icon.ench_wp_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="36009" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade)">
+        <set name="icon" val="icon.ench_am_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hour, increases Atk. by 35%, P. Critical Damage by 35%, P. Critical Rate by 100%, Atk. Spd. by 8%, M. Atk. by 16%, Casting Spd. by 8%, and Speed by 8. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36010" type="EtcItem" name="Heavenly P. Atk. Cookie - Event">
+        <set name="icon" val="icon.etc_bm_attack_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hour, increases Atk. by 12%, P. Critical Damage by 35%, P. Critical Rate by 100%, Defense by 45%, Shield Defense Rate by 30%, and Shield Defense by 50%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36011" type="EtcItem" name="Heavenly P. Def. Cookie - Event">
+        <set name="icon" val="icon.etc_bm_defence_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hour, M. Atk. + 40%, M. Critical Rate by100%, Casting Spd. by 8%, P. Atk. by 8%, Atk. Spd. by 8%. Speed by 8, M. Def. by 14%, and MP Recovery Rate by 20%. For 1 hour, decreases Magic Skill MP Consumption by 15%, Physical Skill MP Consumption by 5%, and Skill Cooldown by 20%. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36012" type="EtcItem" name="Heavenly Magic Cookie - Event">
+        <set name="icon" val="icon.etc_bm_magic_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- For 1 hr., increases Max CP by 20%. Cooldown is 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+    <item id="36013" type="EtcItem" name="Heavenly CP Cookie - Event">
+        <set name="icon" val="icon.etc_bm_cp_cookie" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Atk. Cookies. Cannot use Olympiad. -->
+    <item id="36014" type="EtcItem" name="Heavenly P. Atk. Special Box - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly P. Def. Cookies. Cannot use Olympiad. -->
+    <item id="36015" type="EtcItem" name="Heavenly P. Def. Special Box - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly Magic Cookies. Cannot use Olympiad. -->
+    <item id="36016" type="EtcItem" name="Heavenly Magic Special Box - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack that contains 10 Heavenly Cocktails/10 Heavenly CP Cookie s. Cannot use Olympiad. -->
+    <item id="36017" type="EtcItem" name="Heavenly CP Increase Special Box - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can get High-grade Lucky Enchant Stone: Weapon (R-grade) and High-grade Lucky Enchant Stone: Armor (R-grade). -->
+    <item id="36018" type="EtcItem" name="High-grade Lucky Enchant Stone Special Box - Event">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="36019" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade) - Event">
+        <set name="icon" val="icon.ench_wp_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Enchant success rate + 30% for armor (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
+    <item id="36020" type="EtcItem" name="High-grade Lucky Enchant Stone: Armor (R-grade) - Event">
+        <set name="icon" val="icon.ench_am_potion_violet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Gift box that contains 30 Returning Hero's Health Potions, 1 Returning Hero's Vitality Replenishing Juice 3-unit Pack, and 6 Heavenly Cocktails. -->
+    <item id="36021" type="EtcItem" name="Returning Hero's Potion Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Upon use, it restores 3000 HP and the remaining power restores CP instantly. Instant effect with no duration. Cannot use Olympiad. -->
+    <item id="36022" type="EtcItem" name="Returning Hero's Health Potion">
+        <set name="icon" val="icon.etc_bm_hero_red_potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Gift box that contains 1 Returning Hero's Shirt, 1 Returning Hero's Belt, and 1 Returning Hero's Wondrous Cubic. -->
+    <item id="36023" type="EtcItem" name="Returning Hero's Support Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Double-click to acquire one of the following: 30-minute Vitality Recovering Potion, 700 PC Coupon Points, 2 Heavenly Cocktails, Scroll of Escape Box: Village, and Blessed Scroll of Escape. (Can only be used once a-day) -->
+    <item id="36024" type="EtcItem" name="Returning Hero's Wondrous Cubic">
+        <set name="icon" val="Branchsys2.icon.cube_event_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can resurrect right away if you die in Kartia's Labyrinth - Tainted Dimension Attacker. (XP Recovery Rate 50%) -->
+    <item id="36025" type="EtcItem" name="Feather of Blessing - Kartia's Labyrinth">
+        <set name="icon" val="icon.etc_feather_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can resurrect right away if you die in Kartia's Labyrinth - Tainted Dimension Attacker. (XP Recovery Rate 100%) -->
+    <item id="36026" type="EtcItem" name="High-grade Feather of Blessing - Kartia's Labyrinth">
+        <set name="icon" val="icon.etc_feather_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Clan Production Request A - Provide the leather machine with a Lump of Fur from Cute Buffalo. -->
+    <item id="36027" type="EtcItem" name="Lump of Fur">
+        <set name="icon" val="icon.etc_mane_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Clan Production Request B - Deliver a Fruit Charged with Water to Impatient Mahum Chef. -->
+    <item id="36028" type="EtcItem" name="Fruit Charged with Water">
+        <set name="icon" val="icon.etc_codran_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Clan Production Request B - Deliver a Fruit Charged with Fire to Impatient Mahum Chef. -->
+    <item id="36029" type="EtcItem" name="Fruit Charged with Fire">
+        <set name="icon" val="icon.etc_codran_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Clan Production Request B - Deliver a Fruit Charged with Wind to Impatient Mahum Chef. -->
+    <item id="36030" type="EtcItem" name="Fruit Charged with Wind">
+        <set name="icon" val="icon.etc_codran_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Clan Handicraft Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
+    <item id="36031" type="Weapon" name="Multi Hammer - 1">
+        <set name="icon" val="icon.weapon_iron_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Item used in clan requests. -->
+    <item id="36032" type="Weapon" name="Multi Hammer">
+        <set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Clan Production Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
+    <item id="36033" type="Weapon" name="Multi Hammer - 3">
+        <set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Clan Production Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
+    <item id="36034" type="Weapon" name="Multi Hammer - 4">
+        <set name="icon" val="icon.weapon_bbyong_hammer_a_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Alternative Clan Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
+    <item id="36035" type="Weapon" name="Multi Hammer - 5">
+        <set name="icon" val="icon.weapon_iron_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Alternative Clan Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
+    <item id="36036" type="Weapon" name="Multi Hammer - 6">
+        <set name="icon" val="icon.weapon_iron_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="10" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Item that can be used only in the Ceremony of Chaos Arena. Drags the selected target to your location. -->
+    <item id="36037" type="EtcItem" name="Mysterious Incantation">
+        <set name="icon" val="icon.etc_grankain_chain" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Item that can be used only in the Ceremony of Chaos Arena. Makes you invincible for 5 seconds. -->
+    <item id="36038" type="EtcItem" name="Mysterious Defense">
+        <set name="icon" val="icon.etc_grankain_protect" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <item id="36039" type="Weapon" name="Eternal Core Sword - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_incessantcore_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <item id="36040" type="Weapon" name="Lava Saw - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_lavamond_saw_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36041" type="Weapon" name="Eversor Mace - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_expowder_mace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <item id="36042" type="Weapon" name="Sacredium - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_sacredumors_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <item id="36043" type="Weapon" name="Contristo Hammer - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_pereztear_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36044" type="Weapon" name="Cyclic Cane - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_psyskilt_cane_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36045" type="Weapon" name="Mamba Edge - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_mambaedge_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <item id="36046" type="Weapon" name="Jade Claw - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_jademice_claw_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36047" type="Weapon" name="Demitelum - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_ghostcleaner_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36048" type="Weapon" name="Eternal Core Dualsword - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <item id="36049" type="Weapon" name="Mamba Edge Dual Dagger - Ceremony of Chaos">
+        <set name="icon" val="icon.dual_dagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <item id="36050" type="Weapon" name="Recurve Thorne Bow - Ceremony of Chaos">
+        <set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="mp_consume" val="6" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be acquired through a clan request. Can be used only on clan members. -->
+    <item id="36051" type="Armor" name="Clan Cloak - Standard">
+        <set name="icon" val="icon.vesper_cloack_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13403-1" />
+        <cond msgId="1518">
+            <and>
+                <player cloakStatus="1" />
+                <player castle="-1" />
+            </and>
+        </cond>
+        <for>
+            <baseAdd stat="mDef" val="40" />
+            <baseAdd stat="pDef" val="50" />
+        </for>
+    </item>
+    <!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own auction-type Clan Halls. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
+    <item id="36052" type="Armor" name="Clan Cloak - Clan Hall (Auction)">
+        <set name="icon" val="icon.vesper_cloack_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13404-1" />
+        <cond msgId="1518">
+            <and>
+                <player cloakStatus="1" />
+                <player clanHall="-1" />
+            </and>
+        </cond>
+        <for>
+            <baseAdd stat="mDef" val="40" />
+            <baseAdd stat="pDef" val="50" />
+        </for>
+    </item>
+    <!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own a castle. STR + 2 / INT + 2 effect. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
+    <item id="36053" type="Armor" name="Clan Cloak - Castle">
+        <set name="icon" val="icon.vesper_cloack_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13405-1" />
+        <cond msgId="1518">
+            <and>
+                <player cloakStatus="1" />
+                <player castle="-1" />
+            </and>
+        </cond>
+        <for>
+            <baseAdd stat="mDef" val="40" />
+            <baseAdd stat="pDef" val="50" />
+        </for>
+    </item>
+    <!-- Key that the Spiculas in Nornil's Cave have. Its use is not known. -->
+    <item id="36054" type="EtcItem" name="Red Gate Key">
+        <set name="icon" val="icon.etc_old_key_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 10 seconds. -->
+    <item id="36055" type="EtcItem" name="Scroll: Stronghold Siege (10-second)">
+        <set name="icon" val="icon.etc_doom_capture" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 20 seconds. -->
+    <item id="36056" type="EtcItem" name="Scroll: Stronghold Siege (20-second)">
+        <set name="icon" val="icon.etc_doom_capture" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 30 seconds. -->
+    <item id="36057" type="EtcItem" name="Scroll: Stronghold Siege (30-second)">
+        <set name="icon" val="icon.etc_doom_capture" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 40 seconds. -->
+    <item id="36058" type="EtcItem" name="Scroll: Stronghold Siege (40-second)">
+        <set name="icon" val="icon.etc_doom_capture" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll that enables you to occupy Demolished Throne Stronghold, Transportation Stronghold, and Attack Stronghold in 50 seconds. -->
+    <item id="36059" type="EtcItem" name="Scroll: Stronghold Siege (50-second)">
+        <set name="icon" val="icon.etc_doom_capture" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
+    <item id="36060" type="Armor" name="Penitent's Manacles">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
+    <item id="36061" type="Armor" name="Penitent's Manacles">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
+    <item id="36062" type="Armor" name="Penitent's Manacles">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
+    <item id="36063" type="Armor" name="Penitent's Manacles">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet used to summon Agathion, the Sin Eater. It must be removed to seal Agathion. Hour of Penitence not in effect for 10 seconds after you remove the bracelet. -->
+    <item id="36064" type="Armor" name="Penitent's Manacles">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Vaccine made by Verna. Can be used on Golem Generators that occasionally come out of Scout Golems in Nornil's Cave. -->
+    <item id="36065" type="EtcItem" name="Verna's Vaccine">
+        <set name="icon" val="icon.etc_mechanic_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Water scooped from deep inside the Garden of Eva. Probably not the Clearest Water. -->
+    <item id="36066" type="EtcItem" name="Water from the Garden of Eva">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The cleanest water received from the Lady of the Lake. Can be used on the Mother Tree at the center of Elven Village. -->
+    <item id="36067" type="EtcItem" name="Clearest Water">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The Brightest Light received from Nerupa in the Arms of Timiniel in Magmeld. Can be used in front of Shilen's Stone Statue towering at the center of Dark Elf Village. -->
+    <item id="36068" type="EtcItem" name="Brightest Light">
+        <set name="icon" val="icon.tersi_specter_seed" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The Purest Soul received from Enfeux in the Valley of Saints. Can be used in front of the Cave of Souls close to Kamael Village. -->
+    <item id="36069" type="EtcItem" name="Purest Soul">
+        <set name="icon" val="icon.etc_crystal_ball_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The Fiercest Flame received from the Blacksmith of Flame Vulcan at the Forge of the Gods. Can be used in front of the Pa'agrio Temple in Orc Village. -->
+    <item id="36070" type="EtcItem" name="Fiercest Flame">
+        <set name="icon" val="icon.etc_torch_on_i09" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Letter that shows the Fondest Heart of the Blacksmith of Flame Vulcan. Can be used in the Deserted Dwarven House. -->
+    <item id="36071" type="EtcItem" name="Fondest Heart">
+        <set name="icon" val="icon.etc_letter_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Mysterious Letter handed over by Subclass Master Raina of Talking Island Village. Double-click to check the content. -->
+    <item id="36072" type="EtcItem" name="Mysterious Letter">
+        <set name="icon" val="icon.etc_roll_of_paper_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Box that contains a vaccine for Virus Laido. Deliver it to Dwarves who are sealing Spicula Clone Generator Brand. -->
+    <item id="36073" type="EtcItem" name="Vaccine Box">
+        <set name="icon" val="icon.etc_squares_wood_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Fragments with information about Metusela Clone Generator Brand. When you collect them all, take them to Hesed of the Black Anvil Guild. -->
+    <item id="36074" type="EtcItem" name="Yin's Trace">
+        <set name="icon" val="icon.etc_broken_crystal_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Fragments from which information about Metusela Clone Generator Brand has been erased. When you collect them all, take them to Hesed of the Black Anvil Guild. -->
+    <item id="36075" type="EtcItem" name="Yin's Enigmatic Trace">
+        <set name="icon" val="icon.etc_broken_crystal_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Key for opening the Red Gate of Nornil Dungeon. -->
+    <item id="36076" type="EtcItem" name="Verna's Red Gate Key">
+        <set name="icon" val="icon.etc_old_key_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Mark of Penitence. Sins scattered in the world have been made into crumbs by the Sin Eater. -->
+    <item id="36077" type="EtcItem" name="Crumbs of Penitence">
+        <set name="icon" val="icon.etc_powder_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Spellbook that contains the concentrated power of a dual class. It is said that if you take it to Trandon in Talking Island Village, you can get the power in this spellbook. -->
+    <item id="36078" type="EtcItem" name="Certificate - Dual Class">
+        <set name="icon" val="icon.etc_dualchange" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_destroyable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Yum Yum Candy made of the peanuts grown by Maphr, the goddess of earth, for Valentine's Day.
+        Increases additionally obtained XP/SP by 25%.
+        Its effect applies together with that of Nom Nom Candy (limited to 1).  Temporary event item.
+    -->
+    <item id="36079" type="EtcItem" name="Yum Yum Candy">
+        <set name="icon" val="icon.etc_whiteday_candy_i05" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!--
+        Nom Nom Candy made of the peanuts grown by Maphr, the goddess of earth, for Valentine's Day.
+        Increases additionally obtained XP/SP by 25%.
+        Its effect applies together with that of Yum Yum Candy (limited to 1).  Temporary event item.
+    -->
+    <item id="36080" type="EtcItem" name="Nom Nom Candy">
+        <set name="icon" val="icon.etc_whiteday_candy_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Special gift box for Valentine's Day that you can get once per account. Click to get 2 Yum Yum Candies or 2 Nom Nom Candies randomly. Temporary event item. -->
+    <item id="36081" type="EtcItem" name="Yummy Gift Box">
+        <set name="icon" val="icon.etc_candy_basket_i04_1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Magic scroll that takes you to Isle of Souls - Dystopia. Cannot be sold in a store. -->
+    <item id="36082" type="EtcItem" name="Scroll of Escape: Isle of Souls - Dystopia">
+        <set name="icon" val="icon.etc_scroll_of_return_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Innocent Heejin (30-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36083" type="Armor" name="Star Agathion - Innocent Heejin">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Dandy Hyuk (30-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36084" type="Armor" name="Star Agathion - Dandy Hyuk">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Powerful Sooro (30-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36085" type="Armor" name="Star Agathion - Powerful Sooro">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Chic Jaebum (30-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36086" type="Armor" name="Star Agathion - Chic Jaebum">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Cute Shinyoung (30-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36087" type="Armor" name="Star Agathion - Cute Shinyoung">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box that contains 1 Agathion Summoning Bracelet - Innocent Heejin (30-day). -->
+    <item id="36088" type="EtcItem" name="Agathion - Innocent Heejin Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box that contains 1 Agathion Summoning Bracelet - Dandy Hyuk (30-day). -->
+    <item id="36089" type="EtcItem" name="Agathion - Dandy Hyuk Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box that contains 1 Agathion Summoning Bracelet - Powerful Sooro (30-day). -->
+    <item id="36090" type="EtcItem" name="Agathion - Powerful Sooro Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box that contains 1 Agathion Summoning Bracelet - Chic Jaebum (30-day). -->
+    <item id="36091" type="EtcItem" name="Agathion - Chic Jaebum Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box that contains 1 Agathion Summoning Bracelet - Cute Shinyoung (30-day). -->
+    <item id="36092" type="EtcItem" name="Agathion - Cute Shinyoung Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_box_wish_pack" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Double-click to obtain one of the following randomly: Vitality Replenishing Star Candy, Vitality Recovering Star Candy and Vitality Maintaining Star Candy. -->
+    <item id="36093" type="EtcItem" name="Star Agathion's Gift">
+        <set name="icon" val="icon.etc_pi_gift_box_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Replenishes a certain amount of vitality. The limit on usage of 5 times per week does not apply. -->
+    <item id="36094" type="EtcItem" name="Vitality Replenishing Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When used, vitality is recovered for 10 minutes. When vitality is recovered through hunting and XP is acquired, some of it is replenished. The limit on usage of 5 times per week does not apply. -->
+    <item id="36095" type="EtcItem" name="Vitality Recovering Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_purple_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Maintains vitality for 10 min. The limit on usage of 5 times per week does not apply. -->
+    <item id="36096" type="EtcItem" name="Vitality Maintaining Star Candy">
+        <set name="icon" val="BranchSys.br_rudolf_food_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Innocent Heejin (7-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36097" type="Armor" name="Star Agathion - Innocent Heejin">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Dandy Hyuk (7-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36098" type="Armor" name="Star Agathion - Dandy Hyuk">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Bracelet for summoning Agathion - Powerful Sooro (7-day)
+        <Used Skill>
+        1. Blessing of Star Agathion
+        Increases acquired XP and SP by 30% for 60 minutes (cooldown 5 minutes)
+        2. Star Agathion Teleport
+        Lets you teleport to various strongholds. (cooldown 30 minutes)
+        3. Gift of Star Agathion
+        Can get one of Vitality Replenishing/Maintaining/Recovering Items randomly. (cooldown 20 hours)
+    -->
+    <item id="36099" type="Armor" name="Star Agathion - Powerful Sooro">
+        <set name="icon" val="icon.bracelet_agathion_bm_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
 </list>

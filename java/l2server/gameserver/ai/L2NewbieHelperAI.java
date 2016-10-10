@@ -30,117 +30,138 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * This class manages AI of L2Attackable.<BR><BR>
- *
  */
 public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 {
-	private List<Integer> _alreadyBuffed = new ArrayList<Integer>();
-	
-	public L2NewbieHelperAI(L2Character.AIAccessor accessor)
-	{
-		super(accessor);
-		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 20000, 2000);
-	}
-	
-	@Override
-	public void run()
-	{
-		final L2Character npc = getActor();
-		if (npc == null)
-			return;
-		
-		if (npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
-			return;
-		
-		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
-		{
-			if (activeChar == null || !(activeChar instanceof L2Playable) || _alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
-				continue;
-			
-			final L2Playable playable = (L2Playable) activeChar;
-			
-			if (!playable.isInsideRadius(npc, 200, true, false) || playable.getActingPlayer().isCursedWeaponEquipped())
-				continue;
-			
-			int player_level = playable.getLevel();
-			int lowestLevel = 0;
-			int highestLevel = 0;
-			
-			npc.setTarget(playable);
-			
-			if (playable instanceof L2Summon)
-			{
-				lowestLevel = HelperBuffTable.getInstance().getServitorLowestLevel();
-				highestLevel = HelperBuffTable.getInstance().getServitorHighestLevel();
-			}
-			else
-			{
-				// 	Calculate the min and max level between which the player must be to obtain buff
-				if (playable.getActingPlayer().isMageClass())
-				{
-					lowestLevel = HelperBuffTable.getInstance().getMagicClassLowestLevel();
-					highestLevel = HelperBuffTable.getInstance().getMagicClassHighestLevel();
-				}
-				else
-				{
-					lowestLevel = HelperBuffTable.getInstance().getPhysicClassLowestLevel();
-					highestLevel = HelperBuffTable.getInstance().getPhysicClassHighestLevel();
-				}
-			}
-			
-			if (player_level > highestLevel || player_level < lowestLevel)
-				continue;
-			
-			L2Skill skill = null;
-			if (playable instanceof L2Summon)
-			{
-				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-				{
-					if (helperBuffItem.isForSummon())
-					{
-						skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-						if (skill != null)
-							npc.doCast(skill);
-					}
-				}
-			}
-			else
-			{
-				// 	Go through the Helper Buff list define in sql table helper_buff_list and cast skill
-				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-				{
-					if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
-					{
-						if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel())
-						{
-							skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-							if (skill.getSkillType() == L2SkillType.SUMMON)
-								playable.doSimultaneousCast(skill);
-							else
-								npc.doCast(skill);
-						}
-					}
-				}
-			}
-			
-			_alreadyBuffed.add(playable.getObjectId());
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
-				@Override
-				public void run()
-				{
-					if (playable.getActingPlayer() == null || !playable.getActingPlayer().isOnline())
-						return;
-					
-					if (playable.isInsideRadius(npc, 200, true, false))
-					{
-						ThreadPoolManager.getInstance().scheduleAi(this, 300000L);
-						return;
-					}
-					
-					_alreadyBuffed.remove((Integer) playable.getObjectId());
-				}
-			}, 600000L);
-		}
-	}
+    private List<Integer> _alreadyBuffed = new ArrayList<Integer>();
+
+    public L2NewbieHelperAI(L2Character.AIAccessor accessor)
+    {
+        super(accessor);
+        ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 20000, 2000);
+    }
+
+    @Override
+    public void run()
+    {
+        final L2Character npc = getActor();
+        if (npc == null)
+        {
+            return;
+        }
+
+        if (npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
+        {
+            return;
+        }
+
+        for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
+        {
+            if (activeChar == null || !(activeChar instanceof L2Playable) || _alreadyBuffed
+                    .contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
+            {
+                continue;
+            }
+
+            final L2Playable playable = (L2Playable) activeChar;
+
+            if (!playable.isInsideRadius(npc, 200, true, false) || playable.getActingPlayer().isCursedWeaponEquipped())
+            {
+                continue;
+            }
+
+            int player_level = playable.getLevel();
+            int lowestLevel = 0;
+            int highestLevel = 0;
+
+            npc.setTarget(playable);
+
+            if (playable instanceof L2Summon)
+            {
+                lowestLevel = HelperBuffTable.getInstance().getServitorLowestLevel();
+                highestLevel = HelperBuffTable.getInstance().getServitorHighestLevel();
+            }
+            else
+            {
+                // 	Calculate the min and max level between which the player must be to obtain buff
+                if (playable.getActingPlayer().isMageClass())
+                {
+                    lowestLevel = HelperBuffTable.getInstance().getMagicClassLowestLevel();
+                    highestLevel = HelperBuffTable.getInstance().getMagicClassHighestLevel();
+                }
+                else
+                {
+                    lowestLevel = HelperBuffTable.getInstance().getPhysicClassLowestLevel();
+                    highestLevel = HelperBuffTable.getInstance().getPhysicClassHighestLevel();
+                }
+            }
+
+            if (player_level > highestLevel || player_level < lowestLevel)
+            {
+                continue;
+            }
+
+            L2Skill skill = null;
+            if (playable instanceof L2Summon)
+            {
+                for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
+                {
+                    if (helperBuffItem.isForSummon())
+                    {
+                        skill = SkillTable.getInstance()
+                                .getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+                        if (skill != null)
+                        {
+                            npc.doCast(skill);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // 	Go through the Helper Buff list define in sql table helper_buff_list and cast skill
+                for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
+                {
+                    if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
+                    {
+                        if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem
+                                .getUpperLevel())
+                        {
+                            skill = SkillTable.getInstance()
+                                    .getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+                            if (skill.getSkillType() == L2SkillType.SUMMON)
+                            {
+                                playable.doSimultaneousCast(skill);
+                            }
+                            else
+                            {
+                                npc.doCast(skill);
+                            }
+                        }
+                    }
+                }
+            }
+
+            _alreadyBuffed.add(playable.getObjectId());
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    if (playable.getActingPlayer() == null || !playable.getActingPlayer().isOnline())
+                    {
+                        return;
+                    }
+
+                    if (playable.isInsideRadius(npc, 200, true, false))
+                    {
+                        ThreadPoolManager.getInstance().scheduleAi(this, 300000L);
+                        return;
+                    }
+
+                    _alreadyBuffed.remove((Integer) playable.getObjectId());
+                }
+            }, 600000L);
+        }
+    }
 }

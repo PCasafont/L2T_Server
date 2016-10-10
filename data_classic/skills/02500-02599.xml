@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<skill id="2531" levels="1" name="Adventurer's Scroll of Escape">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="RECALL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="20000" />
-	</skill>
-	<skill id="2584" levels="1" name="Item - Special Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2585" levels="1" name="Item - Special Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
+    <skill id="2531" levels="1" name="Adventurer's Scroll of Escape">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="RECALL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="20000" />
+    </skill>
+    <skill id="2584" levels="1" name="Item - Special Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2585" levels="1" name="Item - Special Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
 </list>

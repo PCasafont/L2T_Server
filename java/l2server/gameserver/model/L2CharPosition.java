@@ -20,18 +20,17 @@ package l2server.gameserver.model;
  */
 public final class L2CharPosition
 {
-	
-	public final int x, y, z, heading;
-	
-	/**
-	 * Constructor of L2CharPosition.<BR><BR>
-	 */
-	public L2CharPosition(int pX, int pY, int pZ, int pHeading)
-	{
-		x = pX;
-		y = pY;
-		z = pZ;
-		heading = pHeading;
-	}
-	
+
+    public final int x, y, z, heading;
+
+    /**
+     * Constructor of L2CharPosition.<BR><BR>
+     */
+    public L2CharPosition(int pX, int pY, int pZ, int pHeading)
+    {
+        x = pX;
+        y = pY;
+        z = pZ;
+        heading = pHeading;
+    }
 }

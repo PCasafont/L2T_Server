@@ -17,26 +17,28 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExSendUIEventRemove extends L2GameServerPacket
 {
-	private int _uiType;
-	
-	public ExSendUIEventRemove()
-	{
-		_uiType = 1;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		if (getClient() == null || getClient().getActiveChar() == null)
-			return;
-		
-		writeD(getClient().getActiveChar().getObjectId());
-		writeD(_uiType);
-	}
-	
-	@Override
-	protected final Class<?> getOpCodeClass()
-	{
-		return ExSendUIEvent.class;
-	}
+    private int _uiType;
+
+    public ExSendUIEventRemove()
+    {
+        _uiType = 1;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        if (getClient() == null || getClient().getActiveChar() == null)
+        {
+            return;
+        }
+
+        writeD(getClient().getActiveChar().getObjectId());
+        writeD(_uiType);
+    }
+
+    @Override
+    protected final Class<?> getOpCodeClass()
+    {
+        return ExSendUIEvent.class;
+    }
 }

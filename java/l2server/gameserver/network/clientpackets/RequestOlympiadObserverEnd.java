@@ -21,35 +21,41 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * format ch
  * c: (id) 0xD0
  * h: (subid) 0x12
- * @author -Wooden-
  *
+ * @author -Wooden-
  */
 public final class RequestOlympiadObserverEnd extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (activeChar.inObserverMode())
-		{
-			if (activeChar.getOlympiadGameId() == -1)
-				activeChar.leaveEventObserverMode();
-			else
-				activeChar.leaveOlympiadObserverMode();
-		}
-	}
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (activeChar.inObserverMode())
+        {
+            if (activeChar.getOlympiadGameId() == -1)
+            {
+                activeChar.leaveEventObserverMode();
+            }
+            else
+            {
+                activeChar.leaveOlympiadObserverMode();
+            }
+        }
+    }
 }

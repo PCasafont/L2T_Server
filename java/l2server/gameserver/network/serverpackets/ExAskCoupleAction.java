@@ -17,23 +17,22 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author JIV
- *
  */
 public class ExAskCoupleAction extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _actionId;
-	
-	public ExAskCoupleAction(int charObjId, int social)
-	{
-		_charObjId = charObjId;
-		_actionId = social;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_actionId);
-		writeD(_charObjId);
-	}
+    private int _charObjId;
+    private int _actionId;
+
+    public ExAskCoupleAction(int charObjId, int social)
+    {
+        _charObjId = charObjId;
+        _actionId = social;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_actionId);
+        writeD(_charObjId);
+    }
 }

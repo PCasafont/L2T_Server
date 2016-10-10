@@ -24,46 +24,49 @@ import l2server.log.Log;
 
 /**
  * Format: (ch) d
- * @author  -Wooden-
  *
+ * @author -Wooden-
  */
 public class RequestGetBossRecord extends L2GameClientPacket
 {
-	private int _bossId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_bossId = readD();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (_bossId != 0)
-		{
-			Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " + activeChar); // should be always 0, log it if isnt 0 for furture research
-		}
-		
-		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
-		int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
-		
-		Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
-		
-		// trigger packet
-		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+    private int _bossId;
+
+    @Override
+    protected void readImpl()
+    {
+        _bossId = readD();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (_bossId != 0)
+        {
+            Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " +
+                    activeChar); // should be always 0, log it if isnt 0 for furture research
+        }
+
+        int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
+        int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
+
+        Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
+
+        // trigger packet
+        activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

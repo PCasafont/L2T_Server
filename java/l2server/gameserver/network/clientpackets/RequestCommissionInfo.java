@@ -19,26 +19,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExResponseCommissionInfo;
 
 /**
- *
  * @author Erlandys
  */
 public final class RequestCommissionInfo extends L2GameClientPacket
 {
-	
-	int _itemOID;
-	
-	@Override
-	protected void readImpl()
-	{
-		_itemOID = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		player.sendPacket(new ExResponseCommissionInfo(player, _itemOID, true));
-	}
+
+    int _itemOID;
+
+    @Override
+    protected void readImpl()
+    {
+        _itemOID = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+        player.sendPacket(new ExResponseCommissionInfo(player, _itemOID, true));
+    }
 }

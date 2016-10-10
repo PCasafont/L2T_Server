@@ -1,147 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33875" /> <!-- Requiem Shaper - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33876" /> <!-- Requiem Cutter - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33877" /> <!-- Requiem Slasher - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33878" /> <!-- Requiem Avenger - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33879" /> <!-- Requiem Fighter - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33880" /> <!-- Requiem Stormer - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33881" /> <!-- Requiem Thrower - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33882" /> <!-- Requiem Shooter - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33883" /> <!-- Requiem Buster - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33884" /> <!-- Requiem Caster - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33885" /> <!-- Requiem Retributer - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33886" /> <!-- Requiem Dualsword - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33887" /> <!-- Requiem Dual Dagger - Event -->
-	</item>
-	<item>
-		<ingredient count="20" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33888" /> <!-- Requiem Dual Blunt Weapon - Event -->
-	</item>
-	<item>
-		<ingredient count="2" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33889" /> <!-- Immortal Helmet - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="5" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33890" /> <!-- Immortal Breastplate - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="3" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33891" /> <!-- Immortal Gaiters - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33892" /> <!-- Immortal Gauntlets - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33893" /> <!-- Immortal Boots - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33894" /> <!-- Immortal Shield - Heavy (Event) -->
-	</item>
-	<item>
-		<ingredient count="2" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33895" /> <!-- Immortal Leather Helmet - Light Armor (Event) -->
-	</item>
-	<item>
-		<ingredient count="5" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33896" /> <!-- Immortal Leather Armor - Light Armor (Event) -->
-	</item>
-	<item>
-		<ingredient count="3" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33897" /> <!-- Immortal Leather Leggings - Light Armor (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33898" /> <!-- Immortal Leather Gloves - Light Armor (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33899" /> <!-- Immortal Leather Boots - Light Armor (Event) -->
-	</item>
-	<item>
-		<ingredient count="2" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33900" /> <!-- Immortal Circlet - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="5" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33901" /> <!-- Immortal Tunic - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="3" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33902" /> <!-- Immortal Stockings - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33903" /> <!-- Immortal Gloves - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33904" /> <!-- Immortal Shoes - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33905" /> <!-- Immortal Sigil - Robe (Event) -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33906" /> <!-- Immortal Necklace - Event -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33907" /> <!-- Immortal Earring - Event -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="1" id="33908" /> <!-- Immortal Ring - Event -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="5000" id="33780" /> <!-- Soulshot (R-grade) - Event -->
-	</item>
-	<item>
-		<ingredient count="1" id="33805" /> <!-- Diploma -->
-		<production count="2500" id="33794" /> <!-- Blessed Spiritshot (R-grade) - Event -->
-	</item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33875" /> <!-- Requiem Shaper - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33876" /> <!-- Requiem Cutter - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33877" /> <!-- Requiem Slasher - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33878" /> <!-- Requiem Avenger - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33879" /> <!-- Requiem Fighter - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33880" /> <!-- Requiem Stormer - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33881" /> <!-- Requiem Thrower - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33882" /> <!-- Requiem Shooter - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33883" /> <!-- Requiem Buster - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33884" /> <!-- Requiem Caster - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33885" /> <!-- Requiem Retributer - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33886" /> <!-- Requiem Dualsword - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33887" /> <!-- Requiem Dual Dagger - Event -->
+    </item>
+    <item>
+        <ingredient count="20" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33888" /> <!-- Requiem Dual Blunt Weapon - Event -->
+    </item>
+    <item>
+        <ingredient count="2" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33889" /> <!-- Immortal Helmet - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="5" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33890" /> <!-- Immortal Breastplate - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="3" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33891" /> <!-- Immortal Gaiters - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33892" /> <!-- Immortal Gauntlets - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33893" /> <!-- Immortal Boots - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33894" /> <!-- Immortal Shield - Heavy (Event) -->
+    </item>
+    <item>
+        <ingredient count="2" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33895" /> <!-- Immortal Leather Helmet - Light Armor (Event) -->
+    </item>
+    <item>
+        <ingredient count="5" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33896" /> <!-- Immortal Leather Armor - Light Armor (Event) -->
+    </item>
+    <item>
+        <ingredient count="3" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33897" /> <!-- Immortal Leather Leggings - Light Armor (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33898" /> <!-- Immortal Leather Gloves - Light Armor (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33899" /> <!-- Immortal Leather Boots - Light Armor (Event) -->
+    </item>
+    <item>
+        <ingredient count="2" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33900" /> <!-- Immortal Circlet - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="5" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33901" /> <!-- Immortal Tunic - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="3" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33902" /> <!-- Immortal Stockings - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33903" /> <!-- Immortal Gloves - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33904" /> <!-- Immortal Shoes - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33905" /> <!-- Immortal Sigil - Robe (Event) -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33906" /> <!-- Immortal Necklace - Event -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33907" /> <!-- Immortal Earring - Event -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="1" id="33908" /> <!-- Immortal Ring - Event -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="5000" id="33780" /> <!-- Soulshot (R-grade) - Event -->
+    </item>
+    <item>
+        <ingredient count="1" id="33805" /> <!-- Diploma -->
+        <production count="2500" id="33794" /> <!-- Blessed Spiritshot (R-grade) - Event -->
+    </item>
 </list>

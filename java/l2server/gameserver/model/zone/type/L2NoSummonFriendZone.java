@@ -25,32 +25,31 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoSummonFriendZone extends L2ZoneType
 {
-	
-	public L2NoSummonFriendZone(int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
-	
+
+    public L2NoSummonFriendZone(int id)
+    {
+        super(id);
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
 }

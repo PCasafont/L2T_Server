@@ -19,28 +19,29 @@ import l2server.gameserver.model.L2ClanMember;
 
 /**
  * Format : (ch) dSd
- * @author  -Wooden-
+ *
+ * @author -Wooden-
  */
 public class PledgeReceivePowerInfo extends L2GameServerPacket
 {
-	private L2ClanMember _member;
-	
-	/**
-	 * @param member
-	 */
-	public PledgeReceivePowerInfo(L2ClanMember member)
-	{
-		_member = member;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_member.getPowerGrade()); //power grade
-		writeS(_member.getName());
-		writeD(_member.getClan().getRankPrivs(_member.getPowerGrade())); //privileges
-	}
+    private L2ClanMember _member;
+
+    /**
+     * @param member
+     */
+    public PledgeReceivePowerInfo(L2ClanMember member)
+    {
+        _member = member;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_member.getPowerGrade()); //power grade
+        writeS(_member.getName());
+        writeD(_member.getClan().getRankPrivs(_member.getPowerGrade())); //privileges
+    }
 }

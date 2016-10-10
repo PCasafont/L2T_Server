@@ -20,7 +20,7 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
 
 /**
  * Seven Signs Record Update Request
- *
+ * <p>
  * packet type id 0xc7
  * format: cc
  *
@@ -28,23 +28,25 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
  */
 public final class RequestSSQStatus extends L2GameClientPacket
 {
-	
-	private int _page;
-	
-	@Override
-	protected void readImpl()
-	{
-		_page = readC();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		SSQStatus ssqs = new SSQStatus(activeChar.getObjectId(), _page);
-		activeChar.sendPacket(ssqs);
-	}
+
+    private int _page;
+
+    @Override
+    protected void readImpl()
+    {
+        _page = readC();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        SSQStatus ssqs = new SSQStatus(activeChar.getObjectId(), _page);
+        activeChar.sendPacket(ssqs);
+    }
 }

@@ -25,48 +25,48 @@ import l2server.gameserver.model.entity.Fort;
  * format: d (dSdd)
  * cnt:%d (fortressID:%d ownerName:%s, siegeState:%d, lastOwnedTime:%d)
  *
- * @author  KenM
+ * @author KenM
  */
 public class ExShowFortressInfo extends L2GameServerPacket
 {
-	//
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		List<Fort> forts = FortManager.getInstance().getForts();
-		writeD(forts.size());
-		for (Fort fort : forts)
-		{
-			L2Clan clan = fort.getOwnerClan();
-			writeD(fort.getFortId());
-			if (clan != null)
-			{
-				writeS(clan.getName());
-			}
-			else
-			{
-				writeS("");
-			}
-			
-			if (fort.getSiege().getIsInProgress())
-			{
-				writeD(1);
-			}
-			else
-			{
-				writeD(0);
-			}
-			
-			// Time of possession
-			writeD(fort.getOwnedTime());
-		}
-	}
+    //
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        List<Fort> forts = FortManager.getInstance().getForts();
+        writeD(forts.size());
+        for (Fort fort : forts)
+        {
+            L2Clan clan = fort.getOwnerClan();
+            writeD(fort.getFortId());
+            if (clan != null)
+            {
+                writeS(clan.getName());
+            }
+            else
+            {
+                writeS("");
+            }
+
+            if (fort.getSiege().getIsInProgress())
+            {
+                writeD(1);
+            }
+            else
+            {
+                writeD(0);
+            }
+
+            // Time of possession
+            writeD(fort.getOwnedTime());
+        }
+    }
 }

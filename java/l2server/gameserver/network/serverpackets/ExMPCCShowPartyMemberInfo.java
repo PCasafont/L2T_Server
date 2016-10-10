@@ -20,29 +20,30 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Format: ch d[Sdd]
- * @author  chris_00
+ *
+ * @author chris_00
  */
 public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket
 {
-	private L2Party _party;
-	
-	public ExMPCCShowPartyMemberInfo(L2Party party)
-	{
-		_party = party;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_party.getMemberCount()); // Number of Members
-		for (L2PcInstance pc : _party.getPartyMembers())
-		{
-			writeS(pc.getName()); // Membername
-			writeD(pc.getObjectId()); // ObjId
-			writeD(pc.getCurrentClass().getId()); // Classid
-		}
-	}
+    private L2Party _party;
+
+    public ExMPCCShowPartyMemberInfo(L2Party party)
+    {
+        _party = party;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_party.getMemberCount()); // Number of Members
+        for (L2PcInstance pc : _party.getPartyMembers())
+        {
+            writeS(pc.getName()); // Membername
+            writeD(pc.getObjectId()); // ObjId
+            writeD(pc.getCurrentClass().getId()); // Classid
+        }
+    }
 }

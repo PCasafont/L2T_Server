@@ -1,126 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!--
-		The address on which login will listen for GameServers, use * to bind on all available IPs
-		WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
-		WARNING: <u><b><font color="red">External/Internal IPs are now inside "ipconfig.xml" file.</font></b></u>
-	-->
-	<config name="LoginHostname" var="GAME_SERVER_LOGIN_HOST" default="*" />
-	
-	<!-- The port on which login will listen for GameServers -->
-	<config name="ListenLoginPort" var="GAME_SERVER_LOGIN_PORT" default="9014" />
-	
-	<!--
-		-
-		Login Server Settings
-		-
-		This is the server configuration file. Here you can set up the connection information for your server.
-		This was written with the assumption that you are behind a router.
-		Dumbed Down Definitions...
-		LAN (LOCAL area network) - typically consists of computers connected to the same router as you.
-		WAN (WIDE area network) - typically consists of computers OUTSIDE of your router (ie. the internet).
-		x.x.x.x - Format of an IP address. Do not include the x'es into settings. Must be real numbers.
-		-
-		Networking
-		-
-		Bind ip of the LoginServer, use * to bind on all available IPs
-		WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
-		WARNING: <u><b><font color="red">External/Internal IPs are now inside "ipconfig.xml" file.</font></b></u>
-	-->
-	<config name="LoginserverHostname" var="LOGIN_BIND_ADDRESS" default="*" />
-	
-	<config name="LoginserverPort" var="PORT_LOGIN" default="2106" />
-	
-	<!--
-		-
-		Developer Settings
-		-
-	-->
-	<config name="LoginDebug" var="DEBUG" default="False" />
-	
-	<config name="LoginDeveloper" var="DEVELOPER" default="False" />
-	
-	<!-- If set to True any GameServer can register on your login's free slots -->
-	<config name="AcceptNewGameServer" var="ACCEPT_NEW_GAMESERVER" default="True" />
-	
-	<!-- How many times you can provide an invalid account/pass before the IP gets banned. -->
-	<config name="LoginTryBeforeBan" var="LOGIN_TRY_BEFORE_BAN" default="10" />
-	
-	<!-- Time you won't be able to login back again after LoginTryBeforeBan tries to login. -->
-	<config name="LoginBlockAfterBan" var="LOGIN_BLOCK_AFTER_BAN" default="600" />
-	
-	<!--
-		-
-		Security
-		-
-	-->
-	<config name="LogLoginController" var="LOG_LOGIN_CONTROLLER" default="True" />
-	
-	<config name="LoginDbDriver" var="DATABASE_DRIVER" default="com.mysql.jdbc.Driver" />
-	
-	<config name="LoginDbURL" var="DATABASE_URL" default="jdbc:mysql://localhost:3306/l2tenkai_common" />
-	
-	<config name="LoginDbLogin" var="DATABASE_LOGIN" default="l2tenkai_common" />
-	
-	<config name="LoginDbPassword" var="DATABASE_PASSWORD" default="ADrxu63mdu2iA7G" />
-	
-	<config name="LoginMaximumDbConnections" var="DATABASE_MAX_CONNECTIONS" default="10" />
-	
-	<config name="LoginMaximumDbIdleTime" var="DATABASE_MAX_IDLE_TIME" default="0" />
-	
-	<!--
-		-
-		Misc.
-		-
-		If False, the license (after the login) will not be shown.
-	-->
-	<config name="ShowLicence" var="SHOW_LICENCE" default="False" />
-	
-	<!--
-		Enforce GameGuard authorization from client?
-		If True, login server will kick client if the client bypassed GameGuard authentication.
-	-->
-	<config name="ForceGGAuth" var="FORCE_GGAUTH" default="False" />
-	
-	<config name="AutoCreateAccounts" var="AUTO_CREATE_ACCOUNTS" default="False" />
-	
-	<!-- Flood Protection. All values are in MILISECONDS. -->
-	<config name="EnableFloodProtection" var="FLOOD_PROTECTION" default="True" />
-	
-	<config name="LoginFastConnectionLimit" var="FAST_CONNECTION_LIMIT" default="15" />
-	
-	<config name="LoginNormalConnectionTime" var="NORMAL_CONNECTION_TIME" default="700" />
-	
-	<config name="LoginFastConnectionTime" var="FAST_CONNECTION_TIME" default="350" />
-	
-	<config name="MaxConnectionPerIP" var="MAX_CONNECTION_PER_IP" default="50" />
-	
-	<!--
-		-
-		MMO
-		-
-		Sleep time for all Selectors
-		After he finished his job the Selector waits the given time in milliseconds
-		Lower values will speed up the loop and the Ping is smaller
-	-->
-	<config name="SleepTime" var="MMO_SELECTOR_SLEEP_TIME" default="10" />
-	
-	<!--
-		Every loop it send a maximum of the given packages to each connection
-		Lower values will speed up the loop and the Ping is smaller but cause less output
-	-->
-	<config name="MaxSendPerPass" var="MMO_MAX_SEND_PER_PASS" default="12" />
-	
-	<!--
-		Every loop it read a maximum of the given packages from each connection
-		Lower values will speed up the loop and the Ping is smaller but cause less input
-	-->
-	<config name="MaxReadPerPass" var="MMO_MAX_READ_PER_PASS" default="12" />
-	
-	<!--
-		Each unfinished read/write need a TEMP storage Buffer
-		on large player amount we need more Buffers
-		if there are not enough buffers new ones are generated but not stored for future usage
-	-->
-	<config name="HelperBufferCount" var="MMO_HELPER_BUFFER_COUNT" default="20" />
+    <!--
+        The address on which login will listen for GameServers, use * to bind on all available IPs
+        WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
+        WARNING: <u><b><font color="red">External/Internal IPs are now inside "ipconfig.xml" file.</font></b></u>
+    -->
+    <config name="LoginHostname" var="GAME_SERVER_LOGIN_HOST" default="*" />
+
+    <!-- The port on which login will listen for GameServers -->
+    <config name="ListenLoginPort" var="GAME_SERVER_LOGIN_PORT" default="9014" />
+
+    <!--
+        -
+        Login Server Settings
+        -
+        This is the server configuration file. Here you can set up the connection information for your server.
+        This was written with the assumption that you are behind a router.
+        Dumbed Down Definitions...
+        LAN (LOCAL area network) - typically consists of computers connected to the same router as you.
+        WAN (WIDE area network) - typically consists of computers OUTSIDE of your router (ie. the internet).
+        x.x.x.x - Format of an IP address. Do not include the x'es into settings. Must be real numbers.
+        -
+        Networking
+        -
+        Bind ip of the LoginServer, use * to bind on all available IPs
+        WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
+        WARNING: <u><b><font color="red">External/Internal IPs are now inside "ipconfig.xml" file.</font></b></u>
+    -->
+    <config name="LoginserverHostname" var="LOGIN_BIND_ADDRESS" default="*" />
+
+    <config name="LoginserverPort" var="PORT_LOGIN" default="2106" />
+
+    <!--
+        -
+        Developer Settings
+        -
+    -->
+    <config name="LoginDebug" var="DEBUG" default="False" />
+
+    <config name="LoginDeveloper" var="DEVELOPER" default="False" />
+
+    <!-- If set to True any GameServer can register on your login's free slots -->
+    <config name="AcceptNewGameServer" var="ACCEPT_NEW_GAMESERVER" default="True" />
+
+    <!-- How many times you can provide an invalid account/pass before the IP gets banned. -->
+    <config name="LoginTryBeforeBan" var="LOGIN_TRY_BEFORE_BAN" default="10" />
+
+    <!-- Time you won't be able to login back again after LoginTryBeforeBan tries to login. -->
+    <config name="LoginBlockAfterBan" var="LOGIN_BLOCK_AFTER_BAN" default="600" />
+
+    <!--
+        -
+        Security
+        -
+    -->
+    <config name="LogLoginController" var="LOG_LOGIN_CONTROLLER" default="True" />
+
+    <config name="LoginDbDriver" var="DATABASE_DRIVER" default="com.mysql.jdbc.Driver" />
+
+    <config name="LoginDbURL" var="DATABASE_URL" default="jdbc:mysql://localhost:3306/l2tenkai_common" />
+
+    <config name="LoginDbLogin" var="DATABASE_LOGIN" default="l2tenkai_common" />
+
+    <config name="LoginDbPassword" var="DATABASE_PASSWORD" default="ADrxu63mdu2iA7G" />
+
+    <config name="LoginMaximumDbConnections" var="DATABASE_MAX_CONNECTIONS" default="10" />
+
+    <config name="LoginMaximumDbIdleTime" var="DATABASE_MAX_IDLE_TIME" default="0" />
+
+    <!--
+        -
+        Misc.
+        -
+        If False, the license (after the login) will not be shown.
+    -->
+    <config name="ShowLicence" var="SHOW_LICENCE" default="False" />
+
+    <!--
+        Enforce GameGuard authorization from client?
+        If True, login server will kick client if the client bypassed GameGuard authentication.
+    -->
+    <config name="ForceGGAuth" var="FORCE_GGAUTH" default="False" />
+
+    <config name="AutoCreateAccounts" var="AUTO_CREATE_ACCOUNTS" default="False" />
+
+    <!-- Flood Protection. All values are in MILISECONDS. -->
+    <config name="EnableFloodProtection" var="FLOOD_PROTECTION" default="True" />
+
+    <config name="LoginFastConnectionLimit" var="FAST_CONNECTION_LIMIT" default="15" />
+
+    <config name="LoginNormalConnectionTime" var="NORMAL_CONNECTION_TIME" default="700" />
+
+    <config name="LoginFastConnectionTime" var="FAST_CONNECTION_TIME" default="350" />
+
+    <config name="MaxConnectionPerIP" var="MAX_CONNECTION_PER_IP" default="50" />
+
+    <!--
+        -
+        MMO
+        -
+        Sleep time for all Selectors
+        After he finished his job the Selector waits the given time in milliseconds
+        Lower values will speed up the loop and the Ping is smaller
+    -->
+    <config name="SleepTime" var="MMO_SELECTOR_SLEEP_TIME" default="10" />
+
+    <!--
+        Every loop it send a maximum of the given packages to each connection
+        Lower values will speed up the loop and the Ping is smaller but cause less output
+    -->
+    <config name="MaxSendPerPass" var="MMO_MAX_SEND_PER_PASS" default="12" />
+
+    <!--
+        Every loop it read a maximum of the given packages from each connection
+        Lower values will speed up the loop and the Ping is smaller but cause less input
+    -->
+    <config name="MaxReadPerPass" var="MMO_MAX_READ_PER_PASS" default="12" />
+
+    <!--
+        Each unfinished read/write need a TEMP storage Buffer
+        on large player amount we need more Buffers
+        if there are not enough buffers new ones are generated but not stored for future usage
+    -->
+    <config name="HelperBufferCount" var="MMO_HELPER_BUFFER_COUNT" default="20" />
 </list>

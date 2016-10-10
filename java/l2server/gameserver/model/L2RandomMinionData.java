@@ -20,53 +20,53 @@ import java.util.List;
 
 public class L2RandomMinionData
 {
-	private List<Integer> _randomMinionIds = new ArrayList<Integer>();
-	private List<Integer> _lastSpawnedMinionIds = new ArrayList<Integer>();
-	private int _minionAmount;
-	
-	public L2RandomMinionData()
-	{
-	}
-	
-	/**
-	 * Copy constructor
-	 *
-	 * @param rhs The minion data to copy from
-	 */
-	public L2RandomMinionData(L2RandomMinionData rhs)
-	{
-		_randomMinionIds = new ArrayList<Integer>(rhs._randomMinionIds);
-		_lastSpawnedMinionIds = new ArrayList<Integer>(rhs._lastSpawnedMinionIds);
-		_minionAmount = rhs._minionAmount;
-	}
-	
-	public void addMinionId(int id)
-	{
-		_randomMinionIds.add(id);
-	}
-	
-	public void addLastSpawnedMinionId(int id)
-	{
-		_lastSpawnedMinionIds.add(id);
-	}
-	
-	public List<Integer> getMinionIds()
-	{
-		return _randomMinionIds;
-	}
-	
-	public List<Integer> getLastSpawnedMinionIds()
-	{
-		return _lastSpawnedMinionIds;
-	}
-	
-	public void setAmount(int amount)
-	{
-		_minionAmount = amount;
-	}
-	
-	public int getAmount()
-	{
-		return _minionAmount;
-	}
+    private List<Integer> _randomMinionIds = new ArrayList<Integer>();
+    private List<Integer> _lastSpawnedMinionIds = new ArrayList<Integer>();
+    private int _minionAmount;
+
+    public L2RandomMinionData()
+    {
+    }
+
+    /**
+     * Copy constructor
+     *
+     * @param rhs The minion data to copy from
+     */
+    public L2RandomMinionData(L2RandomMinionData rhs)
+    {
+        _randomMinionIds = new ArrayList<Integer>(rhs._randomMinionIds);
+        _lastSpawnedMinionIds = new ArrayList<Integer>(rhs._lastSpawnedMinionIds);
+        _minionAmount = rhs._minionAmount;
+    }
+
+    public void addMinionId(int id)
+    {
+        _randomMinionIds.add(id);
+    }
+
+    public void addLastSpawnedMinionId(int id)
+    {
+        _lastSpawnedMinionIds.add(id);
+    }
+
+    public List<Integer> getMinionIds()
+    {
+        return _randomMinionIds;
+    }
+
+    public List<Integer> getLastSpawnedMinionIds()
+    {
+        return _lastSpawnedMinionIds;
+    }
+
+    public void setAmount(int amount)
+    {
+        _minionAmount = amount;
+    }
+
+    public int getAmount()
+    {
+        return _minionAmount;
+    }
 }

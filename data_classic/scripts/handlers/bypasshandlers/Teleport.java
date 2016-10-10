@@ -27,87 +27,90 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class Teleport implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"teleto",
-		"solo",
-		"pvpzone"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		StringTokenizer st = new StringTokenizer(command, " ");
-		st.nextToken();
-		
-		if (command.startsWith("teleto"))	// Tenkai custom - raw teleport coordinates, only check for TW ward
-		{
-			if (activeChar.isCombatFlagEquipped())
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD));
-				return false;
-			}
-			
-			if (activeChar.getPvpFlag() > 0)
-			{
-				activeChar.sendMessage("You can't teleport while flagged!");
-				return false;
-			}
-			
-			int[] coords = new int[3];
-			try
-			{
-				for (int i = 0; i < 3; i++)
-				{
-					coords[i] = Integer.valueOf(st.nextToken());
-				}
-				activeChar.teleToLocation(coords[0], coords[1], coords[2]);
-				activeChar.setInstanceId(0);
-			}
-			catch (Exception e)
-			{
-				_log.warning("L2Teleporter - " + target.getName()+"("+ target.getNpcId() +") - failed to parse raw teleport coordinates from html");
-				e.printStackTrace();
-			}
-			
-			return true;
-		}
-		else if (command.startsWith("pvpzone"))
-		{
-			boolean parties = st.nextToken().equals("1");
-			boolean artificialPlayers = st.nextToken().equals("1");
-			
-			if (!parties && activeChar.isInParty() && !activeChar.isGM())
-			{
-				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
-				return true;
-			}
-			
-			if (activeChar.getPvpFlag() > 0)
-			{
-				activeChar.sendMessage("You can't teleport while flagged!");
-				return false;
-			}
-			
-			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
-			
-			if (mostPvP != null)
-			{
-				activeChar.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
-				activeChar.setInstanceId(0);
-			}
-			else
-				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "Sorry, I can't find anyone in flag status right now."));
-			
-			return true;
-		}
-		return false;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"teleto", "solo", "pvpzone"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        StringTokenizer st = new StringTokenizer(command, " ");
+        st.nextToken();
+
+        if (command.startsWith("teleto"))    // Tenkai custom - raw teleport coordinates, only check for TW ward
+        {
+            if (activeChar.isCombatFlagEquipped())
+            {
+                activeChar.sendPacket(SystemMessage
+                        .getSystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD));
+                return false;
+            }
+
+            if (activeChar.getPvpFlag() > 0)
+            {
+                activeChar.sendMessage("You can't teleport while flagged!");
+                return false;
+            }
+
+            int[] coords = new int[3];
+            try
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    coords[i] = Integer.valueOf(st.nextToken());
+                }
+                activeChar.teleToLocation(coords[0], coords[1], coords[2]);
+                activeChar.setInstanceId(0);
+            }
+            catch (Exception e)
+            {
+                _log.warning("L2Teleporter - " + target.getName() + "(" + target
+                        .getNpcId() + ") - failed to parse raw teleport coordinates from html");
+                e.printStackTrace();
+            }
+
+            return true;
+        }
+        else if (command.startsWith("pvpzone"))
+        {
+            boolean parties = st.nextToken().equals("1");
+            boolean artificialPlayers = st.nextToken().equals("1");
+
+            if (!parties && activeChar.isInParty() && !activeChar.isGM())
+            {
+                activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target
+                        .getName(), "You can't go there being in a party."));
+                return true;
+            }
+
+            if (activeChar.getPvpFlag() > 0)
+            {
+                activeChar.sendMessage("You can't teleport while flagged!");
+                return false;
+            }
+
+            L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
+
+            if (mostPvP != null)
+            {
+                activeChar.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
+                activeChar.setInstanceId(0);
+            }
+            else
+            {
+                activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target
+                        .getName(), "Sorry, I can't find anyone in flag status right now."));
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

@@ -18,26 +18,25 @@ package l2server.gameserver.network.serverpackets;
 /**
  * This class ...
  *
- * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
- *
  * @author godson
+ * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public class ExOlympiadMode extends L2GameServerPacket
 {
-	// chc
-	private int _mode;
-	
-	/**
-	 * @param _mode (0 = return, 3 = spectate)
-	 */
-	public ExOlympiadMode(int mode)
-	{
-		_mode = mode;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeC(_mode);
-	}
+    // chc
+    private int _mode;
+
+    /**
+     * @param _mode (0 = return, 3 = spectate)
+     */
+    public ExOlympiadMode(int mode)
+    {
+        _mode = mode;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeC(_mode);
+    }
 }

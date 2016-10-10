@@ -18,21 +18,21 @@ package l2server.gameserver.network.serverpackets;
 /**
  * This class makes runImpl() and writeImpl() abstract for custom classes outside of this package
  *
+ * @author galun
  * @version $Revision: $ $Date: $
- * @author  galun
  */
 public abstract class AbstractServerBasePacket extends L2GameServerPacket
 {
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#runImpl()
-	 */
-	@Override
-	abstract public void runImpl();
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	abstract protected void writeImpl();
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#runImpl()
+     */
+    @Override
+    abstract public void runImpl();
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    abstract protected void writeImpl();
 }

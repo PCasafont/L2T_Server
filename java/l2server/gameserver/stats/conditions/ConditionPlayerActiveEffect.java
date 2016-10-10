@@ -20,25 +20,27 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerActiveEffect extends Condition
 {
-	
-	private final String _effectName;
-	
-	/**
-	 * Instantiates a new condition player active effect id.
-	 *
-	 * @param effectId the effect id
-	 */
-	public ConditionPlayerActiveEffect(String effectName)
-	{
-		_effectName = effectName;
-	}
-	
-	@Override
-	public boolean testImpl(Env env)
-	{
-		final L2Abnormal e = env.player.getFirstEffectByName(_effectName);
-		if (e != null)
-			return true;
-		return false;
-	}
+
+    private final String _effectName;
+
+    /**
+     * Instantiates a new condition player active effect id.
+     *
+     * @param effectId the effect id
+     */
+    public ConditionPlayerActiveEffect(String effectName)
+    {
+        _effectName = effectName;
+    }
+
+    @Override
+    public boolean testImpl(Env env)
+    {
+        final L2Abnormal e = env.player.getFirstEffectByName(_effectName);
+        if (e != null)
+        {
+            return true;
+        }
+        return false;
+    }
 }

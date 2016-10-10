@@ -28,44 +28,48 @@ import l2server.log.Log;
  */
 public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 {
-	
-	int _arena;
-	int _team;
-	
-	@Override
-	protected void readImpl()
-	{
-		// client sends -1,0,1,2 for arena parameter
-		_arena = readD() + 1;
-		_team = readD();
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		// do not remove players after start
-		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(_arena))
-			return;
-		L2PcInstance player = getClient().getActiveChar();
-		
-		switch (_team)
-		{
-			case 0:
-			case 1:
-				// Change Player Team
-				HandysBlockCheckerManager.getInstance().changePlayerToTeam(player, _arena, _team);
-				break;
-			case -1:
-				// Remove Player (me)
-				int team = HandysBlockCheckerManager.getInstance().getHolder(_arena).getPlayerTeam(player);
-				// client sends two times this packet if click on exit
-				// client did not send this packet on restart
-				if (team > -1)
-					HandysBlockCheckerManager.getInstance().removePlayer(player, _arena, team);
-				break;
-			default:
-				Log.warning("Wrong Cube Game Team ID: " + _team);
-				break;
-		}
-	}
+
+    int _arena;
+    int _team;
+
+    @Override
+    protected void readImpl()
+    {
+        // client sends -1,0,1,2 for arena parameter
+        _arena = readD() + 1;
+        _team = readD();
+    }
+
+    @Override
+    public void runImpl()
+    {
+        // do not remove players after start
+        if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(_arena))
+        {
+            return;
+        }
+        L2PcInstance player = getClient().getActiveChar();
+
+        switch (_team)
+        {
+            case 0:
+            case 1:
+                // Change Player Team
+                HandysBlockCheckerManager.getInstance().changePlayerToTeam(player, _arena, _team);
+                break;
+            case -1:
+                // Remove Player (me)
+                int team = HandysBlockCheckerManager.getInstance().getHolder(_arena).getPlayerTeam(player);
+                // client sends two times this packet if click on exit
+                // client did not send this packet on restart
+                if (team > -1)
+                {
+                    HandysBlockCheckerManager.getInstance().removePlayer(player, _arena, team);
+                }
+                break;
+            default:
+                Log.warning("Wrong Cube Game Team ID: " + _team);
+                break;
+        }
+    }
 }

@@ -30,74 +30,83 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class L2FlyMoveZone extends L2ZoneType
 {
-	private L2FlyMove _flyMove;
-	
-	public L2FlyMoveZone(int id)
-	{
-		super(id + 70500);
-	}
-	
-	public void setFlyMove(L2FlyMove move)
-	{
-		_flyMove = move;
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (!(character instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance) character;
-		
-		if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 || player.getReputation() < 0 || player.isMounted() || player.isTransformed())
-			return;
-		
-		if (!player.getSummons().isEmpty())
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
-			return;
-		}
-		
-		player.setFlyMove(_flyMove);
-		
-		ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance) character), 10L);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
-	
-	private class FlyMoveStartSendTask implements Runnable
-	{
-		L2PcInstance _player;
-		
-		public FlyMoveStartSendTask(L2PcInstance player)
-		{
-			_player = player;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (!isCharacterInZone(_player))
-				return;
-			
-			if (!(_player.isPerformingFlyMove() && _player.isChoosingFlyMove()))
-				_player.sendPacket(new ExNotifyFlyMoveStart());
-			
-			ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
-		}
-	}
+    private L2FlyMove _flyMove;
+
+    public L2FlyMoveZone(int id)
+    {
+        super(id + 70500);
+    }
+
+    public void setFlyMove(L2FlyMove move)
+    {
+        _flyMove = move;
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        if (!(character instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) character;
+
+        if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 || player
+                .getReputation() < 0 || player.isMounted() || player.isTransformed())
+        {
+            return;
+        }
+
+        if (!player.getSummons().isEmpty())
+        {
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
+            return;
+        }
+
+        player.setFlyMove(_flyMove);
+
+        ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance) character), 10L);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
+
+    private class FlyMoveStartSendTask implements Runnable
+    {
+        L2PcInstance _player;
+
+        public FlyMoveStartSendTask(L2PcInstance player)
+        {
+            _player = player;
+        }
+
+        @Override
+        public void run()
+        {
+            if (!isCharacterInZone(_player))
+            {
+                return;
+            }
+
+            if (!(_player.isPerformingFlyMove() && _player.isChoosingFlyMove()))
+            {
+                _player.sendPacket(new ExNotifyFlyMoveStart());
+            }
+
+            ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
+        }
+    }
 }

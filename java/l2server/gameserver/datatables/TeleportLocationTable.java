@@ -34,83 +34,87 @@ import l2server.util.xml.XmlNode;
  */
 public class TeleportLocationTable implements Reloadable
 {
-	
-	private TIntObjectHashMap<L2TeleportLocation> _teleports;
-	
-	public static TeleportLocationTable getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private TeleportLocationTable()
-	{
-		reload();
-		
-		ReloadableManager.getInstance().register("teleports", this);
-	}
-	
-	@Override
-	public boolean reload()
-	{
-		_teleports = new TIntObjectHashMap<L2TeleportLocation>();
-		boolean success = true;
-		
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
-		XmlDocument doc = new XmlDocument(file);
-		
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("tele"))
-					{
-						L2TeleportLocation teleport = new L2TeleportLocation();
-						
-						teleport.setTeleId(d.getInt("id"));
-						teleport.setDescription(d.getString("description"));
-						teleport.setLocX(d.getInt("x"));
-						teleport.setLocY(d.getInt("y"));
-						teleport.setLocZ(d.getInt("z"));
-						
-						teleport.setPrice(d.getInt("price", 0));
-						if (Config.isServer(Config.TENKAI_ESTHUS))
-							teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
-						teleport.setIsForNoble(d.getBool("fornoble", false));
-						teleport.setItemId(d.getInt("itemId", 57));
-						
-						_teleports.put(teleport.getTeleId(), teleport);
-					}
-				}
-			}
-		}
-		
-		Log.info("TeleportLocationTable: Loaded " + _teleports.size() + " Teleport Location Templates.");
-		
-		return success;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success)
-	{
-		if (success)
-			return "Teleport Locations have been reloaded";
-		return "There was an error while reloading Teleport Locations";
-	}
-	
-	/**
-	 * @param template id
-	 * @return
-	 */
-	public L2TeleportLocation getTemplate(int id)
-	{
-		return _teleports.get(id);
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final TeleportLocationTable _instance = new TeleportLocationTable();
-	}
+
+    private TIntObjectHashMap<L2TeleportLocation> _teleports;
+
+    public static TeleportLocationTable getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private TeleportLocationTable()
+    {
+        reload();
+
+        ReloadableManager.getInstance().register("teleports", this);
+    }
+
+    @Override
+    public boolean reload()
+    {
+        _teleports = new TIntObjectHashMap<L2TeleportLocation>();
+        boolean success = true;
+
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
+        XmlDocument doc = new XmlDocument(file);
+
+        for (XmlNode n : doc.getChildren())
+        {
+            if (n.getName().equalsIgnoreCase("list"))
+            {
+                for (XmlNode d : n.getChildren())
+                {
+                    if (d.getName().equalsIgnoreCase("tele"))
+                    {
+                        L2TeleportLocation teleport = new L2TeleportLocation();
+
+                        teleport.setTeleId(d.getInt("id"));
+                        teleport.setDescription(d.getString("description"));
+                        teleport.setLocX(d.getInt("x"));
+                        teleport.setLocY(d.getInt("y"));
+                        teleport.setLocZ(d.getInt("z"));
+
+                        teleport.setPrice(d.getInt("price", 0));
+                        if (Config.isServer(Config.TENKAI_ESTHUS))
+                        {
+                            teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
+                        }
+                        teleport.setIsForNoble(d.getBool("fornoble", false));
+                        teleport.setItemId(d.getInt("itemId", 57));
+
+                        _teleports.put(teleport.getTeleId(), teleport);
+                    }
+                }
+            }
+        }
+
+        Log.info("TeleportLocationTable: Loaded " + _teleports.size() + " Teleport Location Templates.");
+
+        return success;
+    }
+
+    @Override
+    public String getReloadMessage(boolean success)
+    {
+        if (success)
+        {
+            return "Teleport Locations have been reloaded";
+        }
+        return "There was an error while reloading Teleport Locations";
+    }
+
+    /**
+     * @param template id
+     * @return
+     */
+    public L2TeleportLocation getTemplate(int id)
+    {
+        return _teleports.get(id);
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final TeleportLocationTable _instance = new TeleportLocationTable();
+    }
 }

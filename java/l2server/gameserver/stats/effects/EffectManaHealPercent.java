@@ -24,57 +24,61 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectManaHealPercent extends L2Effect
 {
-	public EffectManaHealPercent(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	// Special constructor to steal this effect
-	public EffectManaHealPercent(Env env, L2Effect effect)
-	{
-		super(env, effect);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.HEAL_OVER_TIME;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead())
-			return false;
-		
-		if (getEffected() instanceof L2DoorInstance)
-			return false;
-		
-		double mp = getEffected().getCurrentMp();
-		double maxmp = getEffected().getMaxMp();
-		mp += calc() * maxmp / 100.0;
-		if (mp > maxmp)
-			mp = maxmp;
-		
-		getEffected().setCurrentMp(mp);
-		StatusUpdate sump = new StatusUpdate(getEffected());
-		sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
-		getEffected().sendPacket(sump);
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectManaHealPercent(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    // Special constructor to steal this effect
+    public EffectManaHealPercent(Env env, L2Effect effect)
+    {
+        super(env, effect);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.HEAL_OVER_TIME;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected().isDead())
+        {
+            return false;
+        }
+
+        if (getEffected() instanceof L2DoorInstance)
+        {
+            return false;
+        }
+
+        double mp = getEffected().getCurrentMp();
+        double maxmp = getEffected().getMaxMp();
+        mp += calc() * maxmp / 100.0;
+        if (mp > maxmp)
+        {
+            mp = maxmp;
+        }
+
+        getEffected().setCurrentMp(mp);
+        StatusUpdate sump = new StatusUpdate(getEffected());
+        sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
+        getEffected().sendPacket(sump);
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

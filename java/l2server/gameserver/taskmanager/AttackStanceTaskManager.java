@@ -38,129 +38,141 @@ import l2server.log.Log;
 /**
  * This class ...
  *
- * @version $Revision: $ $Date: $
  * @author Luca Baldi
+ * @version $Revision: $ $Date: $
  */
 public class AttackStanceTaskManager
 {
-	
-	protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
-	
-	private AttackStanceTaskManager()
-	{
-		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FightModeScheduler(), 0, 1000);
-	}
-	
-	public static AttackStanceTaskManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	public void addAttackStanceTask(L2Character actor)
-	{
-		if (actor instanceof L2Summon)
-		{
-			L2Summon summon = (L2Summon) actor;
-			actor = summon.getOwner();
-		}
-		if (actor instanceof L2PcInstance)
-		{
-			L2PcInstance player = (L2PcInstance) actor;
-			player.setFightStanceTime(System.currentTimeMillis());
-			player.onCombatStanceStart();
-			for (L2CubicInstance cubic : player.getCubics().values())
-			{
-				if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)
-					cubic.doAction();
-			}
-			
-			for (L2SummonInstance summon : player.getSummons())
-			{
-				if (summon instanceof L2MobSummonInstance)
-					summon.unSummon(player);
-			}
-		}
-		_attackStanceTasks.put(actor, System.currentTimeMillis());
-	}
-	
-	public void removeAttackStanceTask(L2Character actor)
-	{
-		if (actor instanceof L2Summon)
-		{
-			L2Summon summon = (L2Summon) actor;
-			actor = summon.getOwner();
-		}
-		if (actor instanceof L2PcInstance)
-			((L2PcInstance) actor).onCombatStanceEnd();
-		
-		_attackStanceTasks.remove(actor);
-	}
-	
-	public boolean getAttackStanceTask(L2Character actor)
-	{
-		if (actor instanceof L2Summon)
-		{
-			L2Summon summon = (L2Summon) actor;
-			actor = summon.getOwner();
-		}
-		
-		return _attackStanceTasks.containsKey(actor);
-	}
-	
-	private class FightModeScheduler implements Runnable
-	{
-		protected FightModeScheduler()
-		{
-			// Do nothing
-		}
-		
-		@Override
-		public void run()
-		{
-			Long current = System.currentTimeMillis();
-			try
-			{
-				if (_attackStanceTasks != null)
-				{
-					synchronized (this)
-					{
-						for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
-						{
-							L2Character actor = entry.getKey();
-							if (current - entry.getValue() > 15000)
-							{
-								actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
-								if (actor instanceof L2PcInstance)
-								{
-									if (((L2PcInstance) actor).getPet() != null)
-										((L2PcInstance) actor).getPet().broadcastPacket(new AutoAttackStop(((L2PcInstance) actor).getPet().getObjectId()));
-									
-									if (((L2PcInstance) actor).getSummons() != null)
-									{
-										for (L2SummonInstance summon : ((L2PcInstance) actor).getSummons())
-										{
-											if (summon != null)
-												summon.broadcastPacket(new AutoAttackStop(summon.getObjectId()));
-										}
-									}
-								}
-								actor.getAI().setAutoAttacking(false);
-								removeAttackStanceTask(actor);
-							}
-						}
-					}
-				}
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.WARNING, "Error in FightModeScheduler: " + e.getMessage(), e);
-			}
-		}
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
-	}
+
+    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
+
+    private AttackStanceTaskManager()
+    {
+        ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FightModeScheduler(), 0, 1000);
+    }
+
+    public static AttackStanceTaskManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    public void addAttackStanceTask(L2Character actor)
+    {
+        if (actor instanceof L2Summon)
+        {
+            L2Summon summon = (L2Summon) actor;
+            actor = summon.getOwner();
+        }
+        if (actor instanceof L2PcInstance)
+        {
+            L2PcInstance player = (L2PcInstance) actor;
+            player.setFightStanceTime(System.currentTimeMillis());
+            player.onCombatStanceStart();
+            for (L2CubicInstance cubic : player.getCubics().values())
+            {
+                if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+                {
+                    cubic.doAction();
+                }
+            }
+
+            for (L2SummonInstance summon : player.getSummons())
+            {
+                if (summon instanceof L2MobSummonInstance)
+                {
+                    summon.unSummon(player);
+                }
+            }
+        }
+        _attackStanceTasks.put(actor, System.currentTimeMillis());
+    }
+
+    public void removeAttackStanceTask(L2Character actor)
+    {
+        if (actor instanceof L2Summon)
+        {
+            L2Summon summon = (L2Summon) actor;
+            actor = summon.getOwner();
+        }
+        if (actor instanceof L2PcInstance)
+        {
+            ((L2PcInstance) actor).onCombatStanceEnd();
+        }
+
+        _attackStanceTasks.remove(actor);
+    }
+
+    public boolean getAttackStanceTask(L2Character actor)
+    {
+        if (actor instanceof L2Summon)
+        {
+            L2Summon summon = (L2Summon) actor;
+            actor = summon.getOwner();
+        }
+
+        return _attackStanceTasks.containsKey(actor);
+    }
+
+    private class FightModeScheduler implements Runnable
+    {
+        protected FightModeScheduler()
+        {
+            // Do nothing
+        }
+
+        @Override
+        public void run()
+        {
+            Long current = System.currentTimeMillis();
+            try
+            {
+                if (_attackStanceTasks != null)
+                {
+                    synchronized (this)
+                    {
+                        for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
+                        {
+                            L2Character actor = entry.getKey();
+                            if (current - entry.getValue() > 15000)
+                            {
+                                actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
+                                if (actor instanceof L2PcInstance)
+                                {
+                                    if (((L2PcInstance) actor).getPet() != null)
+                                    {
+                                        ((L2PcInstance) actor).getPet()
+                                                .broadcastPacket(new AutoAttackStop(((L2PcInstance) actor).getPet()
+                                                        .getObjectId()));
+                                    }
+
+                                    if (((L2PcInstance) actor).getSummons() != null)
+                                    {
+                                        for (L2SummonInstance summon : ((L2PcInstance) actor).getSummons())
+                                        {
+                                            if (summon != null)
+                                            {
+                                                summon.broadcastPacket(new AutoAttackStop(summon.getObjectId()));
+                                            }
+                                        }
+                                    }
+                                }
+                                actor.getAI().setAutoAttacking(false);
+                                removeAttackStanceTask(actor);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.log(Level.WARNING, "Error in FightModeScheduler: " + e.getMessage(), e);
+            }
+        }
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
+    }
 }

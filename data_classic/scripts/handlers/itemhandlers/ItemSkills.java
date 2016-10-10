@@ -26,26 +26,26 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ItemSkills extends ItemSkillsTemplate
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		final L2PcInstance activeChar = playable.getActingPlayer();
-		if (activeChar != null && activeChar.isInOlympiadMode())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
-			return;
-		}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    @Override
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        final L2PcInstance activeChar = playable.getActingPlayer();
+        if (activeChar != null && activeChar.isInOlympiadMode())
+        {
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            return;
+        }
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
-		{
-			playable.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		super.useItem(playable, item, forceUse);
-	}
+        if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
+        {
+            playable.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        super.useItem(playable, item, forceUse);
+    }
 }

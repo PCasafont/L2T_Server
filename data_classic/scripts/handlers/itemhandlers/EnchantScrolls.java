@@ -24,26 +24,29 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class EnchantScrolls implements IItemHandler
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		final L2PcInstance activeChar = (L2PcInstance) playable;
-		if (activeChar.isCastingNow())
-			return;
-		
-		if (activeChar.isEnchanting())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENCHANTMENT_ALREADY_IN_PROGRESS));
-			return;
-		}
-		
-		activeChar.setActiveEnchantItem(item);
-		activeChar.sendPacket(new ChooseInventoryItem(item.getItemId()));
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        final L2PcInstance activeChar = (L2PcInstance) playable;
+        if (activeChar.isCastingNow())
+        {
+            return;
+        }
+
+        if (activeChar.isEnchanting())
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENCHANTMENT_ALREADY_IN_PROGRESS));
+            return;
+        }
+
+        activeChar.setActiveEnchantItem(item);
+        activeChar.sendPacket(new ChooseInventoryItem(item.getItemId()));
+    }
 }

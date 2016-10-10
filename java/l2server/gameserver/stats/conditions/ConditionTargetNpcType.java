@@ -23,28 +23,30 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetNpcType extends Condition
 {
-	
-	private final InstanceType[] _npcType;
-	
-	/**
-	 * Instantiates a new condition target npc type.
-	 *
-	 * @param type the type
-	 */
-	public ConditionTargetNpcType(InstanceType[] type)
-	{
-		_npcType = type;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.target == null)
-			return false;
-		
-		return env.target.getInstanceType().isTypes(_npcType);
-	}
+
+    private final InstanceType[] _npcType;
+
+    /**
+     * Instantiates a new condition target npc type.
+     *
+     * @param type the type
+     */
+    public ConditionTargetNpcType(InstanceType[] type)
+    {
+        _npcType = type;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (env.target == null)
+        {
+            return false;
+        }
+
+        return env.target.getInstanceType().isTypes(_npcType);
+    }
 }

@@ -36,8 +36,8 @@ A list can have the following attributes:
 TAGS:
 <list></list>                            : start and end the list
 <item id="1"></item>                     : start and end a single entry within the list
-<production id="itemID" count="amount"/> : add a product for the entry
-<ingredient id="ItemID" count="amount"/> : add an ingredient for the entry.
+<production id="itemID" count="amount" /> : add a product for the entry
+<ingredient id="ItemID" count="amount" /> : add an ingredient for the entry.
 
 Sample:
 <list applyTaxes="true">

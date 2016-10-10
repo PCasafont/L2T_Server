@@ -1,355 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="30600" id="13722" /> <!-- Olympiad Token -->
-		<production count="1" id="13751" /> <!-- Warrior's T-shirt -->
-	</item>
-	<item>
-		<ingredient count="22000" id="13722" /> <!-- Olympiad Token -->
-		<production count="1" id="13752" /> <!-- Olympiad Warrior's Ring -->
-	</item>
-	<item>
-		<ingredient count="44000" id="13722" /> <!-- Olympiad Token -->
-		<production count="1" id="13753" /> <!-- Olympiad Warrior's Necklace -->
-	</item>
-	<item>
-		<ingredient count="33000" id="13722" /> <!-- Olympiad Token -->
-		<production count="1" id="13754" /> <!-- Olympiad Warrior's Earring -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17382" /> <!-- Specter Shaper -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17383" /> <!-- Specter Cutter -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17384" /> <!-- Specter Slasher -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17385" /> <!-- Specter Avenger -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17386" /> <!-- Specter Fighter -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17387" /> <!-- Specter Stormer -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17388" /> <!-- Specter Thrower -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17389" /> <!-- Specter Shooter -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17390" /> <!-- Specter Buster -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17391" /> <!-- Specter Caster -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1360000" id="-300" /> <!-- Fame -->
-		<ingredient count="127060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17392" /> <!-- Specter Retributer -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="270000" id="-300" /> <!-- Fame -->
-		<ingredient count="24320000" id="57" /> <!-- Adena -->
-		<production count="1" id="17396" /> <!-- Seraph Helmet - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="730000" id="-300" /> <!-- Fame -->
-		<ingredient count="65340000" id="57" /> <!-- Adena -->
-		<production count="1" id="17397" /> <!-- Seraph Breastplate - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="440000" id="-300" /> <!-- Fame -->
-		<ingredient count="43560000" id="57" /> <!-- Adena -->
-		<production count="1" id="17398" /> <!-- Seraph Gaiters - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17399" /> <!-- Seraph Gauntlets - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17400" /> <!-- Seraph Boots - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="180000" id="-300" /> <!-- Fame -->
-		<ingredient count="17060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17401" /> <!-- Seraph Shield - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="270000" id="-300" /> <!-- Fame -->
-		<ingredient count="24320000" id="57" /> <!-- Adena -->
-		<production count="1" id="17402" /> <!-- Seraph Leather Helmet - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="730000" id="-300" /> <!-- Fame -->
-		<ingredient count="65340000" id="57" /> <!-- Adena -->
-		<production count="1" id="17403" /> <!-- Seraph Leather Armor - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="440000" id="-300" /> <!-- Fame -->
-		<ingredient count="43560000" id="57" /> <!-- Adena -->
-		<production count="1" id="17404" /> <!-- Seraph Leather Leggings - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17405" /> <!-- Seraph Leather Gloves - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17406" /> <!-- Seraph Leather Boots - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="270000" id="-300" /> <!-- Fame -->
-		<ingredient count="24320000" id="57" /> <!-- Adena -->
-		<production count="1" id="17407" /> <!-- Seraph Circlet - Robe -->
-	</item>
-	<item>
-		<ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="730000" id="-300" /> <!-- Fame -->
-		<ingredient count="65340000" id="57" /> <!-- Adena -->
-		<production count="1" id="17408" /> <!-- Seraph Tunic - Robe -->
-	</item>
-	<item>
-		<ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="440000" id="-300" /> <!-- Fame -->
-		<ingredient count="43560000" id="57" /> <!-- Adena -->
-		<production count="1" id="17409" /> <!-- Seraph Stockings - Robe -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17410" /> <!-- Seraph Gloves - Robe -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="170000" id="-300" /> <!-- Fame -->
-		<ingredient count="16330000" id="57" /> <!-- Adena -->
-		<production count="1" id="17411" /> <!-- Seraph Shoes - Robe -->
-	</item>
-	<item>
-		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="180000" id="-300" /> <!-- Fame -->
-		<ingredient count="17060000" id="57" /> <!-- Adena -->
-		<production count="1" id="17412" /> <!-- Seraph Sigil - Robe -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17416" /> <!-- Amaranthine Shaper -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17417" /> <!-- Amaranthine Cutter -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17418" /> <!-- Amaranthine Slasher -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17419" /> <!-- Amaranthine Avenger -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17420" /> <!-- Amaranthine Fighter -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17421" /> <!-- Amaranthine Stormer -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17422" /> <!-- Amaranthine Thrower -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17423" /> <!-- Amaranthine Shooter -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17424" /> <!-- Amaranthine Buster -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17425" /> <!-- Amaranthine Caster -->
-	</item>
-	<item>
-		<ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="5000000" id="-300" /> <!-- Fame -->
-		<ingredient count="350000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17426" /> <!-- Amaranthine Retributer -->
-	</item>
-	<item>
-		<ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1000000" id="-300" /> <!-- Fame -->
-		<ingredient count="67000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17430" /> <!-- Eternal Helmet - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="2700000" id="-300" /> <!-- Fame -->
-		<ingredient count="180000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17431" /> <!-- Eternal Breastplate - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1650000" id="-300" /> <!-- Fame -->
-		<ingredient count="120000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17432" /> <!-- Eternal Gaiters - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17433" /> <!-- Eternal Gauntlets - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17434" /> <!-- Eternal Boots - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="43000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="690000" id="-300" /> <!-- Fame -->
-		<ingredient count="47000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17435" /> <!-- Eternal Shield - Heavy Armor -->
-	</item>
-	<item>
-		<ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1000000" id="-300" /> <!-- Fame -->
-		<ingredient count="67000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17436" /> <!-- Eternal Leather Helmet - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="2700000" id="-300" /> <!-- Fame -->
-		<ingredient count="180000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17437" /> <!-- Eternal Leather Armor - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1650000" id="-300" /> <!-- Fame -->
-		<ingredient count="120000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17438" /> <!-- Eternal Leather Leggings - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17439" /> <!-- Eternal Leather Gloves - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17440" /> <!-- Eternal Leather Boots - Light Armor -->
-	</item>
-	<item>
-		<ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1000000" id="-300" /> <!-- Fame -->
-		<ingredient count="67000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17441" /> <!-- Eternal Circlet - Robe -->
-	</item>
-	<item>
-		<ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="2700000" id="-300" /> <!-- Fame -->
-		<ingredient count="180000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17442" /> <!-- Eternal Tunic - Robe -->
-	</item>
-	<item>
-		<ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="1650000" id="-300" /> <!-- Fame -->
-		<ingredient count="120000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17443" /> <!-- Eternal Stockings - Robe -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17444" /> <!-- Eternal Gloves - Robe -->
-	</item>
-	<item>
-		<ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="650000" id="-300" /> <!-- Fame -->
-		<ingredient count="45000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17445" /> <!-- Eternal Shoes - Robe -->
-	</item>
-	<item>
-		<ingredient count="43000" id="13722" /> <!-- Olympiad Token -->
-		<ingredient count="690000" id="-300" /> <!-- Fame -->
-		<ingredient count="47000000" id="57" /> <!-- Adena -->
-		<production count="1" id="17446" /> <!-- Eternal Sigil - Robe -->
-	</item>
+    <item>
+        <ingredient count="30600" id="13722" /> <!-- Olympiad Token -->
+        <production count="1" id="13751" /> <!-- Warrior's T-shirt -->
+    </item>
+    <item>
+        <ingredient count="22000" id="13722" /> <!-- Olympiad Token -->
+        <production count="1" id="13752" /> <!-- Olympiad Warrior's Ring -->
+    </item>
+    <item>
+        <ingredient count="44000" id="13722" /> <!-- Olympiad Token -->
+        <production count="1" id="13753" /> <!-- Olympiad Warrior's Necklace -->
+    </item>
+    <item>
+        <ingredient count="33000" id="13722" /> <!-- Olympiad Token -->
+        <production count="1" id="13754" /> <!-- Olympiad Warrior's Earring -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17382" /> <!-- Specter Shaper -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17383" /> <!-- Specter Cutter -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17384" /> <!-- Specter Slasher -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17385" /> <!-- Specter Avenger -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17386" /> <!-- Specter Fighter -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17387" /> <!-- Specter Stormer -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17388" /> <!-- Specter Thrower -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17389" /> <!-- Specter Shooter -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17390" /> <!-- Specter Buster -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17391" /> <!-- Specter Caster -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1360000" id="-300" /> <!-- Fame -->
+        <ingredient count="127060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17392" /> <!-- Specter Retributer -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="270000" id="-300" /> <!-- Fame -->
+        <ingredient count="24320000" id="57" /> <!-- Adena -->
+        <production count="1" id="17396" /> <!-- Seraph Helmet - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="730000" id="-300" /> <!-- Fame -->
+        <ingredient count="65340000" id="57" /> <!-- Adena -->
+        <production count="1" id="17397" /> <!-- Seraph Breastplate - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="440000" id="-300" /> <!-- Fame -->
+        <ingredient count="43560000" id="57" /> <!-- Adena -->
+        <production count="1" id="17398" /> <!-- Seraph Gaiters - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17399" /> <!-- Seraph Gauntlets - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17400" /> <!-- Seraph Boots - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="180000" id="-300" /> <!-- Fame -->
+        <ingredient count="17060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17401" /> <!-- Seraph Shield - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="270000" id="-300" /> <!-- Fame -->
+        <ingredient count="24320000" id="57" /> <!-- Adena -->
+        <production count="1" id="17402" /> <!-- Seraph Leather Helmet - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="730000" id="-300" /> <!-- Fame -->
+        <ingredient count="65340000" id="57" /> <!-- Adena -->
+        <production count="1" id="17403" /> <!-- Seraph Leather Armor - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="440000" id="-300" /> <!-- Fame -->
+        <ingredient count="43560000" id="57" /> <!-- Adena -->
+        <production count="1" id="17404" /> <!-- Seraph Leather Leggings - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17405" /> <!-- Seraph Leather Gloves - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17406" /> <!-- Seraph Leather Boots - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="270000" id="-300" /> <!-- Fame -->
+        <ingredient count="24320000" id="57" /> <!-- Adena -->
+        <production count="1" id="17407" /> <!-- Seraph Circlet - Robe -->
+    </item>
+    <item>
+        <ingredient count="50000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="730000" id="-300" /> <!-- Fame -->
+        <ingredient count="65340000" id="57" /> <!-- Adena -->
+        <production count="1" id="17408" /> <!-- Seraph Tunic - Robe -->
+    </item>
+    <item>
+        <ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="440000" id="-300" /> <!-- Fame -->
+        <ingredient count="43560000" id="57" /> <!-- Adena -->
+        <production count="1" id="17409" /> <!-- Seraph Stockings - Robe -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17410" /> <!-- Seraph Gloves - Robe -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="170000" id="-300" /> <!-- Fame -->
+        <ingredient count="16330000" id="57" /> <!-- Adena -->
+        <production count="1" id="17411" /> <!-- Seraph Shoes - Robe -->
+    </item>
+    <item>
+        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="180000" id="-300" /> <!-- Fame -->
+        <ingredient count="17060000" id="57" /> <!-- Adena -->
+        <production count="1" id="17412" /> <!-- Seraph Sigil - Robe -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17416" /> <!-- Amaranthine Shaper -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17417" /> <!-- Amaranthine Cutter -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17418" /> <!-- Amaranthine Slasher -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17419" /> <!-- Amaranthine Avenger -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17420" /> <!-- Amaranthine Fighter -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17421" /> <!-- Amaranthine Stormer -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17422" /> <!-- Amaranthine Thrower -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17423" /> <!-- Amaranthine Shooter -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17424" /> <!-- Amaranthine Buster -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17425" /> <!-- Amaranthine Caster -->
+    </item>
+    <item>
+        <ingredient count="320000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="5000000" id="-300" /> <!-- Fame -->
+        <ingredient count="350000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17426" /> <!-- Amaranthine Retributer -->
+    </item>
+    <item>
+        <ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1000000" id="-300" /> <!-- Fame -->
+        <ingredient count="67000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17430" /> <!-- Eternal Helmet - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="2700000" id="-300" /> <!-- Fame -->
+        <ingredient count="180000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17431" /> <!-- Eternal Breastplate - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1650000" id="-300" /> <!-- Fame -->
+        <ingredient count="120000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17432" /> <!-- Eternal Gaiters - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17433" /> <!-- Eternal Gauntlets - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17434" /> <!-- Eternal Boots - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="43000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="690000" id="-300" /> <!-- Fame -->
+        <ingredient count="47000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17435" /> <!-- Eternal Shield - Heavy Armor -->
+    </item>
+    <item>
+        <ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1000000" id="-300" /> <!-- Fame -->
+        <ingredient count="67000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17436" /> <!-- Eternal Leather Helmet - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="2700000" id="-300" /> <!-- Fame -->
+        <ingredient count="180000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17437" /> <!-- Eternal Leather Armor - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1650000" id="-300" /> <!-- Fame -->
+        <ingredient count="120000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17438" /> <!-- Eternal Leather Leggings - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17439" /> <!-- Eternal Leather Gloves - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17440" /> <!-- Eternal Leather Boots - Light Armor -->
+    </item>
+    <item>
+        <ingredient count="62000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1000000" id="-300" /> <!-- Fame -->
+        <ingredient count="67000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17441" /> <!-- Eternal Circlet - Robe -->
+    </item>
+    <item>
+        <ingredient count="165000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="2700000" id="-300" /> <!-- Fame -->
+        <ingredient count="180000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17442" /> <!-- Eternal Tunic - Robe -->
+    </item>
+    <item>
+        <ingredient count="100000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="1650000" id="-300" /> <!-- Fame -->
+        <ingredient count="120000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17443" /> <!-- Eternal Stockings - Robe -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17444" /> <!-- Eternal Gloves - Robe -->
+    </item>
+    <item>
+        <ingredient count="41000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="650000" id="-300" /> <!-- Fame -->
+        <ingredient count="45000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17445" /> <!-- Eternal Shoes - Robe -->
+    </item>
+    <item>
+        <ingredient count="43000" id="13722" /> <!-- Olympiad Token -->
+        <ingredient count="690000" id="-300" /> <!-- Fame -->
+        <ingredient count="47000000" id="57" /> <!-- Adena -->
+        <production count="1" id="17446" /> <!-- Eternal Sigil - Robe -->
+    </item>
 </list>

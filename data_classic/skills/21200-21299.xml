@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Removes the Agathion's seal. -->
-	<skill id="21233" levels="1" name="Release Agathion's Seal - Singer &amp; Dancer">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-	</skill>
+    <!-- Removes the Agathion's seal. -->
+    <skill id="21233" levels="1" name="Release Agathion's Seal - Singer &amp; Dancer">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+    </skill>
 </list>

@@ -25,28 +25,28 @@ import l2server.util.Rnd;
  */
 public class ConditionGameChance extends Condition
 {
-	private final int _chance;
-	
-	/**
-	 * Instantiates a new condition game chance.
-	 *
-	 * @param chance the chance
-	 */
-	public ConditionGameChance(int chance)
-	{
-		_chance = chance;
-	}
-	
-	/**
-	 * Test impl.
-	 *
-	 * @param env the env
-	 * @return true, if successful
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		return Rnd.get(100) < _chance;
-	}
+    private final int _chance;
+
+    /**
+     * Instantiates a new condition game chance.
+     *
+     * @param chance the chance
+     */
+    public ConditionGameChance(int chance)
+    {
+        _chance = chance;
+    }
+
+    /**
+     * Test impl.
+     *
+     * @param env the env
+     * @return true, if successful
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        return Rnd.get(100) < _chance;
+    }
 }

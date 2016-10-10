@@ -29,55 +29,62 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
  * Used by all herb skills.
+ *
  * @author ZaKaX.
  */
 public class HerbTarget implements ISkillTargetTypeHandler
 {
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		L2PcInstance aPlayer = null;
-		L2Summon aSummon = null;
-		
-		final ArrayList<L2Character> _aResult = new ArrayList<L2Character>();
-		
-		if (activeChar instanceof L2PcInstance)
-		{
-			aPlayer = (L2PcInstance) activeChar;
-			aSummon = aPlayer.getPet();
-		}
-		else if (activeChar instanceof L2Summon)
-			aSummon = (L2Summon) activeChar;
-		else if (activeChar instanceof L2PetInstance)
-			aSummon = (L2PetInstance) activeChar;
-		
-		// If it's a player that picked up the herb...
-		if (aPlayer != null)
-		{
-			// Affect the player.
-			_aResult.add(aPlayer);
-			
-			// As well as his summon, if it's a summon and NOT a pet.
-			if (aSummon != null && !(aSummon instanceof L2PetInstance))
-				_aResult.add(aSummon);
-		}
-		else
-		{
-			// Otherwise, a summon picked it up. Only the summon is affected in this case.
-			_aResult.add(aSummon);
-		}
-		
-		return _aResult.toArray(new L2Character[_aResult.size()]);
-	}
-	
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.HERB_TARGET;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new HerbTarget());
-	}
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        L2PcInstance aPlayer = null;
+        L2Summon aSummon = null;
+
+        final ArrayList<L2Character> _aResult = new ArrayList<L2Character>();
+
+        if (activeChar instanceof L2PcInstance)
+        {
+            aPlayer = (L2PcInstance) activeChar;
+            aSummon = aPlayer.getPet();
+        }
+        else if (activeChar instanceof L2Summon)
+        {
+            aSummon = (L2Summon) activeChar;
+        }
+        else if (activeChar instanceof L2PetInstance)
+        {
+            aSummon = (L2PetInstance) activeChar;
+        }
+
+        // If it's a player that picked up the herb...
+        if (aPlayer != null)
+        {
+            // Affect the player.
+            _aResult.add(aPlayer);
+
+            // As well as his summon, if it's a summon and NOT a pet.
+            if (aSummon != null && !(aSummon instanceof L2PetInstance))
+            {
+                _aResult.add(aSummon);
+            }
+        }
+        else
+        {
+            // Otherwise, a summon picked it up. Only the summon is affected in this case.
+            _aResult.add(aSummon);
+        }
+
+        return _aResult.toArray(new L2Character[_aResult.size()]);
+    }
+
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.HERB_TARGET;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new HerbTarget());
+    }
 }

@@ -1,1998 +1,1998 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Proof received as a campaign reward. Can exchange for a gift from the Kingdom Mark Manager in the Town of each castle. -->
-	<item id="33500" type="EtcItem" name="Mark of Lords">
-		<set name="icon" val="icon.campaign_high_rank_reward" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- High-level proof received by those with high achievements during the campaign. Can exchange for a special gift from the Kingdom Mark Manager in the Town of each castle. -->
-	<item id="33501" type="EtcItem" name="Mark of the King">
-		<set name="icon" val="icon.campaign_public_reward" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to change the attribute of an S(S80) grade weapon that cannot be bound. Can be used when an S-grade weapon with a bestowed attribute exists in the inventory. Cannot be exchanged, dropped, sold in shops, or used in a private store. -->
-	<item id="33502" type="EtcItem" name="Weapon Attribute Change Crystal (S-grade)">
-		<set name="icon" val="icon.change_elemental_crystal" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_attr" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="25000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="true" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="false" />
-		<set name="isOlyRestricted" val="false" />
-		<set name="handler" val="ChangeAttribute" />
-		<set name="is_freightable" val="false" />
-	</item>
-	<!-- When used, HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. -->
-	<item id="33503" type="EtcItem" name="Hero's Blessed Buff Scroll">
-		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Contains 5 scrolls that have the following effects for 1 hour: HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration. -->
-	<item id="33504" type="EtcItem" name="Hero's Blessed Buff Scroll 5-unit Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- For 60 minutes, maintains buffs upon death. -->
-	<item id="33505" type="EtcItem" name="Scroll: Noblesse Blessing">
-		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Contains 5 scrolls that maintain buffs upon death, for 60 min. -->
-	<item id="33506" type="EtcItem" name="Scroll: Noblesse Blessing 5-unit Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. -->
-	<item id="33507" type="EtcItem" name="Scroll: Mount Kukuru">
-		<set name="icon" val="icon.scroll_of_kukur_event" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. Contains 30 scrolls that allow 10 minutes of mounting. -->
-	<item id="33508" type="EtcItem" name="Scroll: Mount Kukuru 30-unit Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- T-shirt for a returning hero. When equipped, STR + 1 and Int + 1. -->
-	<item id="33509" type="Armor" name="Returning Hero's Shirt">
-		<set name="icon" val="icon.shirt_of_destination_event" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="3" />
-		</for>
-	</item>
-	<!-- Belt for a returning hero. When equipped, Weight Gauge + 5000. -->
-	<item id="33510" type="Armor" name="Returning Hero's Belt">
-		<set name="icon" val="icon.belt_of_destination_event" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="none" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="440" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Mark for a returning hero. If you bring it to the Dimensional Merchant, you can exchange for a returning hero's equipment. -->
-	<item id="33511" type="EtcItem" name="Returning Hero's Mark">
-		<set name="icon" val="icon.return_user_item" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Recovers Vitality while acquiring XP through hunting for 4 hours. No effect applies when used while the "Birthday Vitality" buff is in effect. Cooldown is 60 minutes. Vitality item with limited usage. -->
-	<item id="33512" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice">
-		<set name="icon" val="BranchSys2.icon.br_breath_of_hero_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing 5 Vitality Recovering Cakes (4-hour) that recover Vitality of nearby party members while acquiring XP through hunting. -->
-	<item id="33513" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice 5-unit Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can acquire a 5-unit Hero's Blessing Buff Scroll pack, a 3-unit Minion Coupon pack, a 5-unit Noblesse Blessing buff scroll pack, a 30-unit Kukuru mounting scroll pack, and a 3-unit Feather of Blessing pack. -->
-	<item id="33514" type="EtcItem" name="Hero's Gift Box">
-		<set name="icon" val="icon.present_of_destination_event" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can acquire 250 Returning Hero's Marks, 1 Returning Hero's Vitality Replenishing Juice pack of 5, and a Superior Minion coupon pack of 2. -->
-	<item id="33515" type="EtcItem" name="Gift Box of Destiny">
-		<set name="icon" val="icon.new_user_box" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Has a low chance to transforms R-grade Bound items to Standard items. -->
-	<item id="33516" type="EtcItem" name="Unbind Scroll (R-grade) - Campaign">
-		<set name="icon" val="icon.cursed_free_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-	</item>
-	<!-- Has a low chance to transforms R95-grade Bound items to Standard items. -->
-	<item id="33517" type="EtcItem" name="Unbind Scroll (R95-grade) - Campaign">
-		<set name="icon" val="icon.cursed_free_r95" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-	</item>
-	<!-- Magic scroll that resurrects a dead character and restores his or her XP completely. -->
-	<item id="33518" type="EtcItem" name="Blessed Scroll of Resurrection">
-		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- P. Atk. + 6 for R-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 7 for two-handed sword, two-handed blunt, dualsword, two-handed fist weapon, and crossbow. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases starting at + 4. All amounts are increased for blessed weapons. -->
-	<item id="33519" type="EtcItem" name="Scroll: Enchant Weapon (R-grade) - Campaign">
-		<set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories. Greatly increased starting at + 4. Can be enhanced safely to + 3. When enhanced + 4 or more, HP also increases according to the enchant value. -->
-	<item id="33520" type="EtcItem" name="Scroll: Enchant Armor (R-grade) - Campaign">
-		<set name="icon" val="icon.scroll_of_enchant_armor_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Box containing various wigs. -->
-	<item id="33521" type="EtcItem" name="Wig Box - Campaign">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Box containing attribute stones, attribute crystals, and attribute changing crystals. -->
-	<item id="33522" type="EtcItem" name="Attribute Pack - Campaign">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- M. Critical Rate + 2% when equipped. Shadow weapon. -->
-	<item id="33523" type="Armor" name="Talisman - M. Critical (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_mc_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Accuracy + 2 when equipped. Shadow weapon. -->
-	<item id="33524" type="Armor" name="Talisman - P. Accuracy (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_ph_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Accuracy + 2 when equipped. Shadow weapon. -->
-	<item id="33525" type="Armor" name="Talisman - M. Accuracy (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_mh_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Evasion + 2 when equipped. Shadow weapon. -->
-	<item id="33526" type="Armor" name="Talisman - Evasion (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_pm_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Evasion + 2 when equipped. Shadow weapon. -->
-	<item id="33527" type="Armor" name="Talisman - M. Evasion (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_mm_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Critical Rate + 2% when equipped. Shadow weapon. -->
-	<item id="33528" type="Armor" name="Talisman - P. Critical Rate (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_cr_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- The rate of receiving a physical Critical Attacks - 2% when equipped. Shadow weapon. -->
-	<item id="33529" type="Armor" name="Talisman - Critical Evasion (Passive) - Campaign">
-		<set name="icon" val="icon.r_talisman_cm_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Critical Rate + 4% when used. Shadow weapon. -->
-	<item id="33530" type="Armor" name="Talisman - M. Critical (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_mc_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Accuracy + 4 when used. Shadow weapon. -->
-	<item id="33531" type="Armor" name="Talisman - P. Accuracy (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_ph_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Accuracy + 4 when used. Shadow weapon. -->
-	<item id="33532" type="Armor" name="Talisman - M. Accuracy (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_mh_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Evasion + 4 when used. Shadow weapon. -->
-	<item id="33533" type="Armor" name="Talisman - Evasion (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_pm_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Evasion + 4 when used. Shadow weapon. -->
-	<item id="33534" type="Armor" name="Talisman - M. Evasion (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_mm_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Critical Rate + 4% when used. Shadow weapon. -->
-	<item id="33535" type="Armor" name="Talisman - P. Critical Rate (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_cr_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- The rate of receiving a physical Critical Attacks - 4% when used. Shadow weapon. -->
-	<item id="33536" type="Armor" name="Talisman - Critical Evasion (Active) - Campaign">
-		<set name="icon" val="icon.r_talisman_cm_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Atk. Spd. + 2% when equipped. Shadow weapon. -->
-	<item id="33537" type="Armor" name="Basic Talisman - P. Atk. Spd. - Campaign">
-		<set name="icon" val="icon.r85_talisman_pa_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Atk. + 2% when equipped. Shadow weapon. -->
-	<item id="33538" type="Armor" name="Basic Talisman - P. Atk. - Campaign">
-		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Def. + 3% when equipped. Shadow weapon. -->
-	<item id="33539" type="Armor" name="Basic Talisman - P. Def. - Campaign">
-		<set name="icon" val="icon.r85_talisman_pd_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Casting Spd. + 2% when equipped. Shadow weapon. -->
-	<item id="33540" type="Armor" name="Basic Talisman - Casting Spd. - Campaign">
-		<set name="icon" val="icon.r85_talisman_ma_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- P. Def. + 3% when equipped. Shadow weapon. -->
-	<item id="33541" type="Armor" name="Basic Talisman - M. Def. - Campaign">
-		<set name="icon" val="icon.r85_talisman_md_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- M. Atk. + 2% when equipped. Shadow weapon. -->
-	<item id="33542" type="Armor" name="Basic Talisman - M. Atk. - Campaign">
-		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 4%. -->
-	<item id="33543" type="Weapon" name="Bound Samurai Long Sword*Samurai Long Sword - Event">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="2080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="236" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Samurai Long Sword*Samurai Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="33544" type="EtcItem" name="Unidentified Samurai Long Sword*Samurai Long Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
-	<item id="33545" type="Weapon" name="Bound Tallum Blade*Damascus - Event">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1890" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Tallum blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="33546" type="EtcItem" name="Unidentified Tallum Blade*Damascus">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33547" type="Weapon" name="Bound Dynasty Sword - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33548" type="Weapon" name="Bound Dynasty Sword - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33549" type="Weapon" name="Bound Dynasty Sword - Light Armor (Event)">
-		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33550" type="Weapon" name="Bound Dynasty Blade - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33551" type="Weapon" name="Bound Dynasty Blade - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33552" type="Weapon" name="Bound Dynasty Blade - Light Armor (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33553" type="Weapon" name="Bound Dynasty Phantom - Acumen (Event)">
-		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33554" type="Weapon" name="Bound Dynasty Phantom - Mana Up (Event)">
-		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33555" type="Weapon" name="Bound Dynasty Phantom - Conversion (Event)">
-		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Decreases MP consumption by 4% during a skill attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33556" type="Weapon" name="Bound Dynasty Bow - Cheap Shot (Event)">
-		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="mp_consume" val="6" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="654" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33557" type="Weapon" name="Bound Dynasty Bow - Guidance (Event)">
-		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="mp_consume" val="6" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="654" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33558" type="Weapon" name="Bound Dynasty Bow - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="mp_consume" val="6" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="654" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33559" type="Weapon" name="Bound Dynasty Knife - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Evasion by 5. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33560" type="Weapon" name="Bound Dynasty Knife - Evasion (Event)">
-		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		P. Atk. + 559 during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33561" type="Weapon" name="Bound Dynasty Knife - Critical Damage (Event)">
-		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33562" type="Weapon" name="Bound Dynasty Halberd - Anger (Event)">
-		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Has a 48% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33563" type="Weapon" name="Bound Dynasty Halberd - Critical Stun (Event)">
-		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33564" type="Weapon" name="Bound Dynasty Halberd - Light Armor (Event)">
-		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33565" type="Weapon" name="Bound Dynasty Cudgel - Anger (Event)">
-		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33566" type="Weapon" name="Bound Dynasty Cudgel - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33567" type="Weapon" name="Bound Dynasty Cudgel - Rsk. Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33568" type="Weapon" name="Bound Dynasty Mace - Mana Up (Event)">
-		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33569" type="Weapon" name="Bound Dynasty Mace - Conversion (Event)">
-		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33570" type="Weapon" name="Bound Dynasty Mace - Acumen (Event)">
-		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Evasion by 6.8 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33571" type="Weapon" name="Bound Dynasty Bagh-Nakh - Rsk. Evasion (Event)">
-		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 106. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33572" type="Weapon" name="Bound Dynasty Bagh-Nakh - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Atk. Spd. by 10%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33573" type="Weapon" name="Bound Dynasty Bagh-Nakh - Haste (Event)">
-		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33574" type="Weapon" name="Bound Dynasty Staff - Mana Up (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="325" />
-			<set stat="mAtk" val="222" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33575" type="Weapon" name="Bound Dynasty Staff - Conversion (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="325" />
-			<set stat="mAtk" val="222" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33576" type="Weapon" name="Bound Dynasty Staff - Acumen (Event)">
-		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="325" />
-			<set stat="mAtk" val="222" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33577" type="Weapon" name="Bound Dynasty Crusher - Anger (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33578" type="Weapon" name="Bound Dynasty Crusher - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33579" type="Weapon" name="Bound Dynasty Crusher - Rsk. Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- When enchanted, P. Atk. of a Dual Dagger increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 109 and Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. Can be equipped by Dagger Masters above level 81. Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33580" type="Weapon" name="Bound Dynasty Dual Dagger - Event">
-		<set name="icon" val="icon.dual_dagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="2150" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33581" type="Weapon" name="Bound Dynasty Dualsword - Event">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="405" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
-		Increases Critical by 111. Increases damage inflicted during PvP.
-		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33582" type="Weapon" name="Bound Dynasty Rapier - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="rapier" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1280" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="40" />
-		<for>
-			<set stat="pAtk" val="302" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP.
-		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33583" type="Weapon" name="Bound Dynasty Rapier - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="rapier" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1280" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="40" />
-		<for>
-			<set stat="pAtk" val="302" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
-		Increases Weight Gauge by 20%. Increases damage inflicted during PvP.
-		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33584" type="Weapon" name="Bound Dynasty Rapier - Light Armor (Event)">
-		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="rapier" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1280" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="40" />
-		<for>
-			<set stat="pAtk" val="302" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="406" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
-		Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33585" type="Weapon" name="Bound Dynasty Ancient Sword - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="ancientsword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1800" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="15" />
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseAdd stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
-		Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33586" type="Weapon" name="Bound Dynasty Ancient Sword - Health (Event)">
-		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="ancientsword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1800" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="15" />
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseAdd stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
-		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33587" type="Weapon" name="Bound Dynasty Ancient Sword - Light Armor (Event)">
-		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="ancientsword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1800" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="15" />
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<baseAdd stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>
-		Decreases MP consumption by 12% when using skills. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33588" type="Weapon" name="Bound Dynasty Crossbow - Cheap Shot (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbowk" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="401" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>
-		Increases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33589" type="Weapon" name="Bound Dynasty Crossbow - Guidance (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbowk" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="401" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!--
-		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>
-		Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
-	-->
-	<item id="33590" type="Weapon" name="Bound Dynasty Crossbow - Focus (Event)">
-		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbowk" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="401" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33591" type="Armor" name="Bound Dynasty Breastplate - Event">
-		<set name="icon" val="icon.armor_t91_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="7570" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="226" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33592" type="Armor" name="Bound Dynasty Gaiters - Event">
-		<set name="icon" val="icon.armor_t91_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="3210" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="141" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33593" type="Armor" name="Bound Dynasty Helmet - Event">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="530" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33594" type="Armor" name="Bound Dynasty Gauntlets - Event">
-		<set name="icon" val="icon.armor_t91_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="520" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33595" type="Armor" name="Bound Dynasty Boots - Event">
-		<set name="icon" val="icon.armor_t91_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1090" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="61" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33596" type="Armor" name="Bound Dynasty Shield - Event">
-		<set name="icon" val="icon.shield_dynasty_shield_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1150" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33597" type="Armor" name="Bound Dynasty Leather Armor - Event">
-		<set name="icon" val="icon.armor_t92_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="4180" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33598" type="Armor" name="Bound Dynasty Leather Leggings - Event">
-		<set name="icon" val="icon.armor_t92_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1370" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="106" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
-	<item id="33599" type="Armor" name="Bound Dynasty Leather Helmet - Event">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="530" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="92" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
+    <!-- Proof received as a campaign reward. Can exchange for a gift from the Kingdom Mark Manager in the Town of each castle. -->
+    <item id="33500" type="EtcItem" name="Mark of Lords">
+        <set name="icon" val="icon.campaign_high_rank_reward" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- High-level proof received by those with high achievements during the campaign. Can exchange for a special gift from the Kingdom Mark Manager in the Town of each castle. -->
+    <item id="33501" type="EtcItem" name="Mark of the King">
+        <set name="icon" val="icon.campaign_public_reward" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to change the attribute of an S(S80) grade weapon that cannot be bound. Can be used when an S-grade weapon with a bestowed attribute exists in the inventory. Cannot be exchanged, dropped, sold in shops, or used in a private store. -->
+    <item id="33502" type="EtcItem" name="Weapon Attribute Change Crystal (S-grade)">
+        <set name="icon" val="icon.change_elemental_crystal" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_attr" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="25000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="true" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="false" />
+        <set name="isOlyRestricted" val="false" />
+        <set name="handler" val="ChangeAttribute" />
+        <set name="is_freightable" val="false" />
+    </item>
+    <!-- When used, HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. -->
+    <item id="33503" type="EtcItem" name="Hero's Blessed Buff Scroll">
+        <set name="icon" val="icon.etc_piece_of_paper_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Contains 5 scrolls that have the following effects for 1 hour: HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration. -->
+    <item id="33504" type="EtcItem" name="Hero's Blessed Buff Scroll 5-unit Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- For 60 minutes, maintains buffs upon death. -->
+    <item id="33505" type="EtcItem" name="Scroll: Noblesse Blessing">
+        <set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Contains 5 scrolls that maintain buffs upon death, for 60 min. -->
+    <item id="33506" type="EtcItem" name="Scroll: Noblesse Blessing 5-unit Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. -->
+    <item id="33507" type="EtcItem" name="Scroll: Mount Kukuru">
+        <set name="icon" val="icon.scroll_of_kukur_event" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. Contains 30 scrolls that allow 10 minutes of mounting. -->
+    <item id="33508" type="EtcItem" name="Scroll: Mount Kukuru 30-unit Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- T-shirt for a returning hero. When equipped, STR + 1 and Int + 1. -->
+    <item id="33509" type="Armor" name="Returning Hero's Shirt">
+        <set name="icon" val="icon.shirt_of_destination_event" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="3" />
+        </for>
+    </item>
+    <!-- Belt for a returning hero. When equipped, Weight Gauge + 5000. -->
+    <item id="33510" type="Armor" name="Returning Hero's Belt">
+        <set name="icon" val="icon.belt_of_destination_event" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="none" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="440" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Mark for a returning hero. If you bring it to the Dimensional Merchant, you can exchange for a returning hero's equipment. -->
+    <item id="33511" type="EtcItem" name="Returning Hero's Mark">
+        <set name="icon" val="icon.return_user_item" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Recovers Vitality while acquiring XP through hunting for 4 hours. No effect applies when used while the "Birthday Vitality" buff is in effect. Cooldown is 60 minutes. Vitality item with limited usage. -->
+    <item id="33512" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice">
+        <set name="icon" val="BranchSys2.icon.br_breath_of_hero_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing 5 Vitality Recovering Cakes (4-hour) that recover Vitality of nearby party members while acquiring XP through hunting. -->
+    <item id="33513" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice 5-unit Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can acquire a 5-unit Hero's Blessing Buff Scroll pack, a 3-unit Minion Coupon pack, a 5-unit Noblesse Blessing buff scroll pack, a 30-unit Kukuru mounting scroll pack, and a 3-unit Feather of Blessing pack. -->
+    <item id="33514" type="EtcItem" name="Hero's Gift Box">
+        <set name="icon" val="icon.present_of_destination_event" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can acquire 250 Returning Hero's Marks, 1 Returning Hero's Vitality Replenishing Juice pack of 5, and a Superior Minion coupon pack of 2. -->
+    <item id="33515" type="EtcItem" name="Gift Box of Destiny">
+        <set name="icon" val="icon.new_user_box" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Has a low chance to transforms R-grade Bound items to Standard items. -->
+    <item id="33516" type="EtcItem" name="Unbind Scroll (R-grade) - Campaign">
+        <set name="icon" val="icon.cursed_free_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+    </item>
+    <!-- Has a low chance to transforms R95-grade Bound items to Standard items. -->
+    <item id="33517" type="EtcItem" name="Unbind Scroll (R95-grade) - Campaign">
+        <set name="icon" val="icon.cursed_free_r95" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+    </item>
+    <!-- Magic scroll that resurrects a dead character and restores his or her XP completely. -->
+    <item id="33518" type="EtcItem" name="Blessed Scroll of Resurrection">
+        <set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- P. Atk. + 6 for R-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 7 for two-handed sword, two-handed blunt, dualsword, two-handed fist weapon, and crossbow. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases starting at + 4. All amounts are increased for blessed weapons. -->
+    <item id="33519" type="EtcItem" name="Scroll: Enchant Weapon (R-grade) - Campaign">
+        <set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- When enchanted, P. Def. + 2 for R-grade armor and accessories. Greatly increased starting at + 4. Can be enhanced safely to + 3. When enhanced + 4 or more, HP also increases according to the enchant value. -->
+    <item id="33520" type="EtcItem" name="Scroll: Enchant Armor (R-grade) - Campaign">
+        <set name="icon" val="icon.scroll_of_enchant_armor_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Box containing various wigs. -->
+    <item id="33521" type="EtcItem" name="Wig Box - Campaign">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Box containing attribute stones, attribute crystals, and attribute changing crystals. -->
+    <item id="33522" type="EtcItem" name="Attribute Pack - Campaign">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- M. Critical Rate + 2% when equipped. Shadow weapon. -->
+    <item id="33523" type="Armor" name="Talisman - M. Critical (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_mc_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Accuracy + 2 when equipped. Shadow weapon. -->
+    <item id="33524" type="Armor" name="Talisman - P. Accuracy (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_ph_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Accuracy + 2 when equipped. Shadow weapon. -->
+    <item id="33525" type="Armor" name="Talisman - M. Accuracy (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_mh_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Evasion + 2 when equipped. Shadow weapon. -->
+    <item id="33526" type="Armor" name="Talisman - Evasion (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_pm_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Evasion + 2 when equipped. Shadow weapon. -->
+    <item id="33527" type="Armor" name="Talisman - M. Evasion (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_mm_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Critical Rate + 2% when equipped. Shadow weapon. -->
+    <item id="33528" type="Armor" name="Talisman - P. Critical Rate (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_cr_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- The rate of receiving a physical Critical Attacks - 2% when equipped. Shadow weapon. -->
+    <item id="33529" type="Armor" name="Talisman - Critical Evasion (Passive) - Campaign">
+        <set name="icon" val="icon.r_talisman_cm_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Critical Rate + 4% when used. Shadow weapon. -->
+    <item id="33530" type="Armor" name="Talisman - M. Critical (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_mc_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Accuracy + 4 when used. Shadow weapon. -->
+    <item id="33531" type="Armor" name="Talisman - P. Accuracy (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_ph_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Accuracy + 4 when used. Shadow weapon. -->
+    <item id="33532" type="Armor" name="Talisman - M. Accuracy (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_mh_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Evasion + 4 when used. Shadow weapon. -->
+    <item id="33533" type="Armor" name="Talisman - Evasion (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_pm_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Evasion + 4 when used. Shadow weapon. -->
+    <item id="33534" type="Armor" name="Talisman - M. Evasion (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_mm_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Critical Rate + 4% when used. Shadow weapon. -->
+    <item id="33535" type="Armor" name="Talisman - P. Critical Rate (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_cr_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- The rate of receiving a physical Critical Attacks - 4% when used. Shadow weapon. -->
+    <item id="33536" type="Armor" name="Talisman - Critical Evasion (Active) - Campaign">
+        <set name="icon" val="icon.r_talisman_cm_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Atk. Spd. + 2% when equipped. Shadow weapon. -->
+    <item id="33537" type="Armor" name="Basic Talisman - P. Atk. Spd. - Campaign">
+        <set name="icon" val="icon.r85_talisman_pa_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Atk. + 2% when equipped. Shadow weapon. -->
+    <item id="33538" type="Armor" name="Basic Talisman - P. Atk. - Campaign">
+        <set name="icon" val="icon.r85_talisman_pa_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Def. + 3% when equipped. Shadow weapon. -->
+    <item id="33539" type="Armor" name="Basic Talisman - P. Def. - Campaign">
+        <set name="icon" val="icon.r85_talisman_pd_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Casting Spd. + 2% when equipped. Shadow weapon. -->
+    <item id="33540" type="Armor" name="Basic Talisman - Casting Spd. - Campaign">
+        <set name="icon" val="icon.r85_talisman_ma_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- P. Def. + 3% when equipped. Shadow weapon. -->
+    <item id="33541" type="Armor" name="Basic Talisman - M. Def. - Campaign">
+        <set name="icon" val="icon.r85_talisman_md_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- M. Atk. + 2% when equipped. Shadow weapon. -->
+    <item id="33542" type="Armor" name="Basic Talisman - M. Atk. - Campaign">
+        <set name="icon" val="icon.r85_talisman_ma_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 4%. -->
+    <item id="33543" type="Weapon" name="Bound Samurai Long Sword*Samurai Long Sword - Event">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="2080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="236" />
+            <set stat="mAtk" val="99" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Samurai Long Sword*Samurai Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="33544" type="EtcItem" name="Unidentified Samurai Long Sword*Samurai Long Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
+    <item id="33545" type="Weapon" name="Bound Tallum Blade*Damascus - Event">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1890" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="305" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Tallum blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="33546" type="EtcItem" name="Unidentified Tallum Blade*Damascus">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33547" type="Weapon" name="Bound Dynasty Sword - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_blade_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33548" type="Weapon" name="Bound Dynasty Sword - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_blade_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33549" type="Weapon" name="Bound Dynasty Sword - Light Armor (Event)">
+        <set name="icon" val="icon.weapon_dynasty_blade_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33550" type="Weapon" name="Bound Dynasty Blade - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33551" type="Weapon" name="Bound Dynasty Blade - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33552" type="Weapon" name="Bound Dynasty Blade - Light Armor (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33553" type="Weapon" name="Bound Dynasty Phantom - Acumen (Event)">
+        <set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33554" type="Weapon" name="Bound Dynasty Phantom - Mana Up (Event)">
+        <set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33555" type="Weapon" name="Bound Dynasty Phantom - Conversion (Event)">
+        <set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Decreases MP consumption by 4% during a skill attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33556" type="Weapon" name="Bound Dynasty Bow - Cheap Shot (Event)">
+        <set name="icon" val="icon.weapon_dynasty_bow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="mp_consume" val="6" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="654" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33557" type="Weapon" name="Bound Dynasty Bow - Guidance (Event)">
+        <set name="icon" val="icon.weapon_dynasty_bow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="mp_consume" val="6" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="654" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33558" type="Weapon" name="Bound Dynasty Bow - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_bow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="mp_consume" val="6" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="654" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33559" type="Weapon" name="Bound Dynasty Knife - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_dagger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="291" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Evasion by 5. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33560" type="Weapon" name="Bound Dynasty Knife - Evasion (Event)">
+        <set name="icon" val="icon.weapon_dynasty_dagger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="291" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        P. Atk. + 559 during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33561" type="Weapon" name="Bound Dynasty Knife - Critical Damage (Event)">
+        <set name="icon" val="icon.weapon_dynasty_dagger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="291" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33562" type="Weapon" name="Bound Dynasty Halberd - Anger (Event)">
+        <set name="icon" val="icon.weapon_dynasty_spear_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Has a 48% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33563" type="Weapon" name="Bound Dynasty Halberd - Critical Stun (Event)">
+        <set name="icon" val="icon.weapon_dynasty_spear_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33564" type="Weapon" name="Bound Dynasty Halberd - Light Armor (Event)">
+        <set name="icon" val="icon.weapon_dynasty_spear_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33565" type="Weapon" name="Bound Dynasty Cudgel - Anger (Event)">
+        <set name="icon" val="icon.weapon_dynasty_hammer_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33566" type="Weapon" name="Bound Dynasty Cudgel - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_hammer_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33567" type="Weapon" name="Bound Dynasty Cudgel - Rsk. Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_hammer_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="333" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33568" type="Weapon" name="Bound Dynasty Mace - Mana Up (Event)">
+        <set name="icon" val="icon.weapon_dynasty_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33569" type="Weapon" name="Bound Dynasty Mace - Conversion (Event)">
+        <set name="icon" val="icon.weapon_dynasty_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33570" type="Weapon" name="Bound Dynasty Mace - Acumen (Event)">
+        <set name="icon" val="icon.weapon_dynasty_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="267" />
+            <set stat="mAtk" val="202" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Evasion by 6.8 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33571" type="Weapon" name="Bound Dynasty Bagh-Nakh - Rsk. Evasion (Event)">
+        <set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 106. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33572" type="Weapon" name="Bound Dynasty Bagh-Nakh - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Atk. Spd. by 10%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33573" type="Weapon" name="Bound Dynasty Bagh-Nakh - Haste (Event)">
+        <set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33574" type="Weapon" name="Bound Dynasty Staff - Mana Up (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="325" />
+            <set stat="mAtk" val="222" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33575" type="Weapon" name="Bound Dynasty Staff - Conversion (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="325" />
+            <set stat="mAtk" val="222" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33576" type="Weapon" name="Bound Dynasty Staff - Acumen (Event)">
+        <set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="325" />
+            <set stat="mAtk" val="222" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        P. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33577" type="Weapon" name="Bound Dynasty Crusher - Anger (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crusher_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33578" type="Weapon" name="Bound Dynasty Crusher - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crusher_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33579" type="Weapon" name="Bound Dynasty Crusher - Rsk. Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crusher_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- When enchanted, P. Atk. of a Dual Dagger increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 109 and Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. Can be equipped by Dagger Masters above level 81. Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33580" type="Weapon" name="Bound Dynasty Dual Dagger - Event">
+        <set name="icon" val="icon.dual_dagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="2150" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="304" />
+            <set stat="mAtk" val="157" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33581" type="Weapon" name="Bound Dynasty Dualsword - Event">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="405" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Sword Conversion
+        <Soul Crystal Enhancement>
+        Increases Critical by 111. Increases damage inflicted during PvP.
+        When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33582" type="Weapon" name="Bound Dynasty Rapier - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_rapier_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="rapier" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1280" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="40" />
+        <for>
+            <set stat="pAtk" val="302" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="406" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Sword Conversion
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP.
+        When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33583" type="Weapon" name="Bound Dynasty Rapier - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_rapier_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="rapier" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1280" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="40" />
+        <for>
+            <set stat="pAtk" val="302" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="406" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Sword Conversion
+        <Soul Crystal Enhancement>
+        Increases Weight Gauge by 20%. Increases damage inflicted during PvP.
+        When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33584" type="Weapon" name="Bound Dynasty Rapier - Light Armor (Event)">
+        <set name="icon" val="icon.weapon_dynasty_rapier_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="rapier" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1280" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="40" />
+        <for>
+            <set stat="pAtk" val="302" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="406" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Blade Conversion
+        <Soul Crystal Enhancement>
+        Increases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33585" type="Weapon" name="Bound Dynasty Ancient Sword - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="ancientsword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1800" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="15" />
+        <for>
+            <set stat="pAtk" val="361" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseAdd stat="accCombat" val="2" />
+            <set stat="pAtkSpd" val="350" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Blade Conversion
+        <Soul Crystal Enhancement>
+        Increases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33586" type="Weapon" name="Bound Dynasty Ancient Sword - Health (Event)">
+        <set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="ancientsword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1800" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="15" />
+        <for>
+            <set stat="pAtk" val="361" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseAdd stat="accCombat" val="2" />
+            <set stat="pAtkSpd" val="350" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Blade Conversion
+        <Soul Crystal Enhancement>
+        Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33587" type="Weapon" name="Bound Dynasty Ancient Sword - Light Armor (Event)">
+        <set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="ancientsword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1800" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="15" />
+        <for>
+            <set stat="pAtk" val="361" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="8" />
+            <baseAdd stat="accCombat" val="2" />
+            <set stat="pAtkSpd" val="350" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Bow Conversion
+        <Soul Crystal Enhancement>
+        Decreases MP consumption by 12% when using skills. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33588" type="Weapon" name="Bound Dynasty Crossbow - Cheap Shot (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbowk" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="401" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Bow Conversion
+        <Soul Crystal Enhancement>
+        Increases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33589" type="Weapon" name="Bound Dynasty Crossbow - Guidance (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbowk" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="401" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!--
+        Kamael-exclusive Weapon: Dynasty Bow Conversion
+        <Soul Crystal Enhancement>
+        Increases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise.
+    -->
+    <item id="33590" type="Weapon" name="Bound Dynasty Crossbow - Focus (Event)">
+        <set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbowk" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="401" />
+            <set stat="mAtk" val="151" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33591" type="Armor" name="Bound Dynasty Breastplate - Event">
+        <set name="icon" val="icon.armor_t91_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="7570" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="226" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33592" type="Armor" name="Bound Dynasty Gaiters - Event">
+        <set name="icon" val="icon.armor_t91_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="3210" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="141" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33593" type="Armor" name="Bound Dynasty Helmet - Event">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="530" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="92" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33594" type="Armor" name="Bound Dynasty Gauntlets - Event">
+        <set name="icon" val="icon.armor_t91_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="520" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="61" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33595" type="Armor" name="Bound Dynasty Boots - Event">
+        <set name="icon" val="icon.armor_t91_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1090" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="61" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33596" type="Armor" name="Bound Dynasty Shield - Event">
+        <set name="icon" val="icon.shield_dynasty_shield_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1150" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="321" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33597" type="Armor" name="Bound Dynasty Leather Armor - Event">
+        <set name="icon" val="icon.armor_t92_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="4180" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="170" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33598" type="Armor" name="Bound Dynasty Leather Leggings - Event">
+        <set name="icon" val="icon.armor_t92_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1370" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="106" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
+    <item id="33599" type="Armor" name="Bound Dynasty Leather Helmet - Event">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="530" />
+        <set name="enchant_enabled" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="92" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
 </list>

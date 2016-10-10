@@ -19,37 +19,36 @@ import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExShowCastleInfo;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class RequestAllCastleInfo extends L2GameClientPacket
 {
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2GameClient client = getClient();
-		if (client != null)
-		{
-			client.sendPacket(new ExShowCastleInfo());
-		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2GameClient client = getClient();
+        if (client != null)
+        {
+            client.sendPacket(new ExShowCastleInfo());
+        }
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

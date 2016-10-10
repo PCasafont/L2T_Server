@@ -19,7 +19,7 @@ import l2server.gameserver.model.actor.L2Character;
 
 /**
  * format   ddddd
- *
+ * <p>
  * sample
  * 0000: 59 1a 95 20 48 44 17 02 00 03 f0 fc ff 98 f1 ff	Y.. HD..........
  * 0010: ff c1 1a 00 00									 .....
@@ -28,36 +28,36 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public final class StopMove extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _heading;
-	
-	public StopMove(L2Character cha)
-	{
-		this(cha.getObjectId(), cha.getX(), cha.getY(), cha.getZ(), cha.getHeading());
-	}
-	
-	/**
-	 * @param _characters
-	 */
-	public StopMove(int objectId, int x, int y, int z, int heading)
-	{
-		_objectId = objectId;
-		_x = x;
-		_y = y;
-		_z = z;
-		_heading = heading;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objectId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_heading);
-	}
+    private int _objectId;
+    private int _x;
+    private int _y;
+    private int _z;
+    private int _heading;
+
+    public StopMove(L2Character cha)
+    {
+        this(cha.getObjectId(), cha.getX(), cha.getY(), cha.getZ(), cha.getHeading());
+    }
+
+    /**
+     * @param _characters
+     */
+    public StopMove(int objectId, int x, int y, int z, int heading)
+    {
+        _objectId = objectId;
+        _x = x;
+        _y = y;
+        _z = z;
+        _heading = heading;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objectId);
+        writeD(_x);
+        writeD(_y);
+        writeD(_z);
+        writeD(_heading);
+    }
 }

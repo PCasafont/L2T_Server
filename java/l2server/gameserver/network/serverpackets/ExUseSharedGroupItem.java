@@ -17,29 +17,30 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * Format: ch dddd
+ *
  * @author KenM
  */
 public class ExUseSharedGroupItem extends L2GameServerPacket
 {
-	private int _itemId, _grpId, _remainedTime, _totalTime;
-	
-	public ExUseSharedGroupItem(int itemId, int grpId, int remainedTime, int totalTime)
-	{
-		_itemId = itemId;
-		_grpId = grpId;
-		_remainedTime = remainedTime / 1000;
-		_totalTime = totalTime / 1000;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_itemId);
-		writeD(_grpId);
-		writeD(_remainedTime);
-		writeD(_totalTime);
-	}
+    private int _itemId, _grpId, _remainedTime, _totalTime;
+
+    public ExUseSharedGroupItem(int itemId, int grpId, int remainedTime, int totalTime)
+    {
+        _itemId = itemId;
+        _grpId = grpId;
+        _remainedTime = remainedTime / 1000;
+        _totalTime = totalTime / 1000;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_itemId);
+        writeD(_grpId);
+        writeD(_remainedTime);
+        writeD(_totalTime);
+    }
 }

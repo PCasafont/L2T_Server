@@ -31,60 +31,68 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestFriendList extends L2GameClientPacket
 {
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		
-		SystemMessage sm;
-		
-		// ======<Friend List>======
-		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_HEADER);
-		
-		L2PcInstance friend = null;
-		for (int id : activeChar.getFriendList())
-		{
-			// int friendId = rset.getInt("friendId");
-			String friendName = CharNameTable.getInstance().getNameById(id);
-			
-			if (friendName == null)
-				continue;
-			
-			friend = L2World.getInstance().getPlayer(friendName);
-			
-			if (friend == null || !friend.isOnline())
-			{
-				// (Currently: Offline)
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_OFFLINE);
-				sm.addString(friendName);
-			}
-			else
-			{
-				// (Currently: Online)
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ONLINE);
-				sm.addString(friendName);
-			}
-			
-			activeChar.sendPacket(sm);
-		}
-		
-		// =========================
-		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_FOOTER);
-		activeChar.sendPacket(new FriendList(activeChar));
-		if (activeChar.getFriendList().size() > 0)
-			for (int objId : activeChar.getFriendList())
-				activeChar.sendPacket(new FriendPacket(true, objId, activeChar));
-		activeChar.sendPacket(new BlockListPacket(activeChar));
-	}
+    //
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        SystemMessage sm;
+
+        // ======<Friend List>======
+        activeChar.sendPacket(SystemMessageId.FRIEND_LIST_HEADER);
+
+        L2PcInstance friend = null;
+        for (int id : activeChar.getFriendList())
+        {
+            // int friendId = rset.getInt("friendId");
+            String friendName = CharNameTable.getInstance().getNameById(id);
+
+            if (friendName == null)
+            {
+                continue;
+            }
+
+            friend = L2World.getInstance().getPlayer(friendName);
+
+            if (friend == null || !friend.isOnline())
+            {
+                // (Currently: Offline)
+                sm = SystemMessage.getSystemMessage(SystemMessageId.S1_OFFLINE);
+                sm.addString(friendName);
+            }
+            else
+            {
+                // (Currently: Online)
+                sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ONLINE);
+                sm.addString(friendName);
+            }
+
+            activeChar.sendPacket(sm);
+        }
+
+        // =========================
+        activeChar.sendPacket(SystemMessageId.FRIEND_LIST_FOOTER);
+        activeChar.sendPacket(new FriendList(activeChar));
+        if (activeChar.getFriendList().size() > 0)
+        {
+            for (int objId : activeChar.getFriendList())
+            {
+                activeChar.sendPacket(new FriendPacket(true, objId, activeChar));
+            }
+        }
+        activeChar.sendPacket(new BlockListPacket(activeChar));
+    }
 }

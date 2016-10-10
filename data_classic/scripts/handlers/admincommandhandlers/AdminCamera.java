@@ -22,26 +22,23 @@ import l2server.gameserver.network.serverpackets.SpecialCamera;
 
 public class AdminCamera implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_camera"
-	};
-	
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		try
-		{
-			final L2Character target = (L2Character)activeChar.getTarget();
-			final String[] com = command.split(" ");
-			
-			target.broadcastPacket(new SpecialCamera(target.getObjectId(), Integer.parseInt(com[1]),
-					Integer.parseInt(com[2]), Integer.parseInt(com[3]), Integer.parseInt(com[4]),
-					Integer.parseInt(com[5]), Integer.parseInt(com[6]), Integer.parseInt(com[7]),
-					Integer.parseInt(com[8]), Integer.parseInt(com[9])));
-		}
-		catch (Exception e)
-		{
-			/*List<Point3D> positions = new HashMap<Point3D>();
+    private static final String[] ADMIN_COMMANDS = {"admin_camera"};
+
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        try
+        {
+            final L2Character target = (L2Character) activeChar.getTarget();
+            final String[] com = command.split(" ");
+
+            target.broadcastPacket(new SpecialCamera(target.getObjectId(), Integer.parseInt(com[1]), Integer
+                    .parseInt(com[2]), Integer.parseInt(com[3]), Integer.parseInt(com[4]), Integer
+                    .parseInt(com[5]), Integer.parseInt(com[6]), Integer.parseInt(com[7]), Integer
+                    .parseInt(com[8]), Integer.parseInt(com[9])));
+        }
+        catch (Exception e)
+        {
+            /*List<Point3D> positions = new HashMap<Point3D>();
 			for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
 			{
 				if (player == null)
@@ -90,21 +87,23 @@ public class AdminCamera implements IAdminCommandHandler
 					0,		// Rise
 					0,		// WideScreen
 					0));*/
-			
-			L2PcInstance watcher = activeChar;
-			if (activeChar.getTarget() instanceof L2PcInstance)
-				watcher = (L2PcInstance)activeChar.getTarget();
-			
-			GamePlayWatcher.getInstance().makeWatcher(watcher);
-			
-			activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");
-			return false;
-		}
-		return true;
-	}
-	
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
+
+            L2PcInstance watcher = activeChar;
+            if (activeChar.getTarget() instanceof L2PcInstance)
+            {
+                watcher = (L2PcInstance) activeChar.getTarget();
+            }
+
+            GamePlayWatcher.getInstance().makeWatcher(watcher);
+
+            activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");
+            return false;
+        }
+        return true;
+    }
+
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
 }

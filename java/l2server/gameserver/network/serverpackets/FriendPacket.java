@@ -25,7 +25,7 @@ import l2server.log.Log;
 
 /**
  * Support for "Chat with Friends" dialog.
- *
+ * <p>
  * Add new friend or delete.
  * <BR>
  * Format: cddSdd <BR>
@@ -36,115 +36,120 @@ import l2server.log.Log;
  * d: Unknown (0 if offline)<BR>
  *
  * @author JIV
- *
  */
 public class FriendPacket extends L2GameServerPacket
 {
-	//
-	private boolean _action, _online;
-	private int _objid;
-	private String _name;
-	private L2PcInstance _player;
-	private int _level = 0;
-	private int _classId = 0;
-	private String _memo;
-	
-	/**
-	 *
-	 * @param action - true for adding, false for remove
-	 */
-	public FriendPacket(boolean action, int objId, L2PcInstance activeChar)
-	{
-		_action = action;
-		_objid = objId;
-		_name = CharNameTable.getInstance().getNameById(objId);
-		_online = L2World.getInstance().getPlayer(objId) != null;
-		_player = L2World.getInstance().getPlayer(objId);
-		_memo = activeChar.getFriendMemo(objId);
-		if (_player != null)
-		{
-			_level = _player.getLevel();
-			_classId = _player.getClassId();
-		}
-		else
-			offlineFriendInfo(objId);
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_action ? 1 : 3); // 1-add 3-remove
-		writeD(_objid);
-		writeS(_name);
-		writeD(_online ? 1 : 0);
-		writeD(_online ? _objid : 0);
-		writeD(_level);
-		writeD(_classId);
-		writeS(_memo);
-		
-	}
-	
-	private void offlineFriendInfo(int objId)
-	{
-		int level = 0;
-		int bClassId = 0;
-		Connection con = null;
-		
-		try
-		{
-			// Retrieve the L2PcInstance from the characters table of the database
-			con = L2DatabaseFactory.getInstance().getConnection();
-			
-			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
-			statement.setInt(1, objId);
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
-				level = rset.getByte("level");
-				_classId = rset.getInt("classid");
-				bClassId = rset.getInt("base_class");
-			}
-			rset.close();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.warning("Failed loading character.");
-			e.printStackTrace();
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-		if (_classId != bClassId)
-		{
-			try
-			{
-				// Retrieve the L2PcInstance from the characters table of the database
-				con = L2DatabaseFactory.getInstance().getConnection();
-				
-				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
-				statement.setInt(1, objId);
-				statement.setInt(2, _classId);
-				ResultSet rset = statement.executeQuery();
-				
-				while (rset.next())
-					_level = rset.getByte("level");
-				
-				rset.close();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				Log.warning("Failed loading character_subclasses.");
-				e.printStackTrace();
-			}
-			finally
-			{
-				L2DatabaseFactory.close(con);
-			}
-		}
-		else
-			_level = level;
-	}
+    //
+    private boolean _action, _online;
+    private int _objid;
+    private String _name;
+    private L2PcInstance _player;
+    private int _level = 0;
+    private int _classId = 0;
+    private String _memo;
+
+    /**
+     * @param action - true for adding, false for remove
+     */
+    public FriendPacket(boolean action, int objId, L2PcInstance activeChar)
+    {
+        _action = action;
+        _objid = objId;
+        _name = CharNameTable.getInstance().getNameById(objId);
+        _online = L2World.getInstance().getPlayer(objId) != null;
+        _player = L2World.getInstance().getPlayer(objId);
+        _memo = activeChar.getFriendMemo(objId);
+        if (_player != null)
+        {
+            _level = _player.getLevel();
+            _classId = _player.getClassId();
+        }
+        else
+        {
+            offlineFriendInfo(objId);
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_action ? 1 : 3); // 1-add 3-remove
+        writeD(_objid);
+        writeS(_name);
+        writeD(_online ? 1 : 0);
+        writeD(_online ? _objid : 0);
+        writeD(_level);
+        writeD(_classId);
+        writeS(_memo);
+    }
+
+    private void offlineFriendInfo(int objId)
+    {
+        int level = 0;
+        int bClassId = 0;
+        Connection con = null;
+
+        try
+        {
+            // Retrieve the L2PcInstance from the characters table of the database
+            con = L2DatabaseFactory.getInstance().getConnection();
+
+            PreparedStatement statement = con
+                    .prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
+            statement.setInt(1, objId);
+            ResultSet rset = statement.executeQuery();
+            while (rset.next())
+            {
+                level = rset.getByte("level");
+                _classId = rset.getInt("classid");
+                bClassId = rset.getInt("base_class");
+            }
+            rset.close();
+            statement.close();
+        }
+        catch (Exception e)
+        {
+            Log.warning("Failed loading character.");
+            e.printStackTrace();
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+        if (_classId != bClassId)
+        {
+            try
+            {
+                // Retrieve the L2PcInstance from the characters table of the database
+                con = L2DatabaseFactory.getInstance().getConnection();
+
+                PreparedStatement statement = con
+                        .prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
+                statement.setInt(1, objId);
+                statement.setInt(2, _classId);
+                ResultSet rset = statement.executeQuery();
+
+                while (rset.next())
+                {
+                    _level = rset.getByte("level");
+                }
+
+                rset.close();
+                statement.close();
+            }
+            catch (Exception e)
+            {
+                Log.warning("Failed loading character_subclasses.");
+                e.printStackTrace();
+            }
+            finally
+            {
+                L2DatabaseFactory.close(con);
+            }
+        }
+        else
+        {
+            _level = level;
+        }
+    }
 }

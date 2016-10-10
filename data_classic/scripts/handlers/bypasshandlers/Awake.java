@@ -22,24 +22,23 @@ import l2server.gameserver.network.serverpackets.ExChangeToAwakenedClass;
 
 public class Awake implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Awake"
-	};
+    private static final String[] COMMANDS = {"Awake"};
 
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		int classId = PlayerClassTable.getInstance().getAwakening(activeChar.getCurrentClass().getId());
-		activeChar.setLastCheckedAwakeningClassId(classId);
-		activeChar.sendPacket(new ExChangeToAwakenedClass(classId));
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        int classId = PlayerClassTable.getInstance().getAwakening(activeChar.getCurrentClass().getId());
+        activeChar.setLastCheckedAwakeningClassId(classId);
+        activeChar.sendPacket(new ExChangeToAwakenedClass(classId));
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

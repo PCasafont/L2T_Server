@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * format   ddddd
- *
+ * <p>
  * sample
  * 0000: 39  0b 07 10 48  3e 31 10 48  3a f6 00 00  91 5b 00	9...H>1.H:....[.
  * 0010: 00  4c f1 ff ff									 .L...
@@ -26,32 +26,32 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class TargetSelected extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _targetObjId;
-	private int _x;
-	private int _y;
-	private int _z;
-	
-	/**
-	 * @param _characters
-	 */
-	public TargetSelected(int objectId, int targetId, int x, int y, int z)
-	{
-		_objectId = objectId;
-		_targetObjId = targetId;
-		_x = x;
-		_y = y;
-		_z = z;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objectId);
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(0x00);
-	}
+    private int _objectId;
+    private int _targetObjId;
+    private int _x;
+    private int _y;
+    private int _z;
+
+    /**
+     * @param _characters
+     */
+    public TargetSelected(int objectId, int targetId, int x, int y, int z)
+    {
+        _objectId = objectId;
+        _targetObjId = targetId;
+        _x = x;
+        _y = y;
+        _z = z;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objectId);
+        writeD(_targetObjId);
+        writeD(_x);
+        writeD(_y);
+        writeD(_z);
+        writeD(0x00);
+    }
 }

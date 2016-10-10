@@ -18,7 +18,7 @@ package l2server.gameserver.network.serverpackets;
 /**
  * Changes the sky color depending on the outcome
  * of the Seven Signs competition.
- *
+ * <p>
  * packet type id 0xf8
  * format: c h
  *
@@ -26,32 +26,32 @@ package l2server.gameserver.network.serverpackets;
  */
 public class SSQInfo extends L2GameServerPacket
 {
-	
-	private static int _state = 0;
-	
-	public SSQInfo(int state)
-	{
-		_state = state;
-	}
-	
-	public SSQInfo()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		if (_state == 2) // Dawn Sky
-		{
-			writeH(258);
-		}
-		else if (_state == 1) // Dusk Sky
-		{
-			writeH(257);
-		}
-		else
-		{
-			writeH(256);
-		}
-	}
+
+    private static int _state = 0;
+
+    public SSQInfo(int state)
+    {
+        _state = state;
+    }
+
+    public SSQInfo()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        if (_state == 2) // Dawn Sky
+        {
+            writeH(258);
+        }
+        else if (_state == 1) // Dusk Sky
+        {
+            writeH(257);
+        }
+        else
+        {
+            writeH(256);
+        }
+    }
 }

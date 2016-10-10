@@ -26,49 +26,46 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 /**
  * A chat handler
  *
- * @author  durgus
+ * @author durgus
  */
 public class ChatClan implements IChatHandler
 {
-	private static final int[] COMMAND_IDS = { 4 };
-	
-	/**
-	 * Handle chat type 'clan'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.getClan() != null)
-		{
-			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
-			
-			if (Config.isServer(Config.DREAMS))
-			{
-				cs = new CreatureSay(activeChar, type, "[" + activeChar.getClan().getName() + "] " + activeChar.getName(), text);
-				GmListTable.broadcastToGMs(cs);
-			}
-			
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			String clanName = activeChar.getClan().getName();
-			ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text, clanName, activeChar.getName());
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	@Override
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {4};
+
+    /**
+     * Handle chat type 'clan'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    @Override
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        if (activeChar.getClan() != null)
+        {
+            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+            activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
+
+            while (text.contains("Type=") && text.contains("Title="))
+            {
+                int index1 = text.indexOf("Type=");
+                int index2 = text.indexOf("Title=") + 6;
+                text = text.substring(0, index1) + text.substring(index2);
+            }
+
+            String clanName = activeChar.getClan().getName();
+            ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar
+                    .getName() + ": " + text, clanName, activeChar.getName());
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    @Override
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

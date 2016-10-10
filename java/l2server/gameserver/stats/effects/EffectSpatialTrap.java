@@ -21,67 +21,64 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- *
  * @author ZaKaX
  */
 public class EffectSpatialTrap extends L2Effect
 {
-	private int _trapX;
-	private int _trapY;
-	private int _trapZ;
-	
-	public EffectSpatialTrap(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	public EffectSpatialTrap(Env env, L2Effect effect)
-	{
-		super(env, effect);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.SPATIAL_TRAP;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		_trapX = getEffector().getX();
-		_trapY = getEffector().getY();
-		_trapZ = getEffector().getZ();
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return true;
-	}
-	
-	public final int getTrapX()
-	{
-		return _trapX;
-	}
-	
-	public final int getTrapY()
-	{
-		return _trapY;
-	}
-	
-	public final int getTrapZ()
-	{
-		return _trapZ;
-	}
+    private int _trapX;
+    private int _trapY;
+    private int _trapZ;
+
+    public EffectSpatialTrap(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    public EffectSpatialTrap(Env env, L2Effect effect)
+    {
+        super(env, effect);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.SPATIAL_TRAP;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        _trapX = getEffector().getX();
+        _trapY = getEffector().getY();
+        _trapZ = getEffector().getZ();
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return true;
+    }
+
+    public final int getTrapX()
+    {
+        return _trapX;
+    }
+
+    public final int getTrapY()
+    {
+        return _trapY;
+    }
+
+    public final int getTrapZ()
+    {
+        return _trapZ;
+    }
 }

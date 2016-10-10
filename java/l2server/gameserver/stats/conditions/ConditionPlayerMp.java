@@ -22,25 +22,25 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerMp extends Condition
 {
-	
-	private final int _mp;
-	
-	/**
-	 * Instantiates a new condition player mp.
-	 *
-	 * @param mp the mp
-	 */
-	public ConditionPlayerMp(int mp)
-	{
-		_mp = mp;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= _mp;
-	}
+
+    private final int _mp;
+
+    /**
+     * Instantiates a new condition player mp.
+     *
+     * @param mp the mp
+     */
+    public ConditionPlayerMp(int mp)
+    {
+        _mp = mp;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= _mp;
+    }
 }

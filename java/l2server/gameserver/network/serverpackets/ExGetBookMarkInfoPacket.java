@@ -19,36 +19,35 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance.TeleportBookmark;
 
 /**
- *
  * @author ShanSoft
  * @Structure d dd (ddddSdS)
  */
 public class ExGetBookMarkInfoPacket extends L2GameServerPacket
 {
-	
-	private L2PcInstance player;
-	
-	public ExGetBookMarkInfoPacket(L2PcInstance cha)
-	{
-		player = cha;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(0x00); // Dummy
-		writeD(player.getBookmarkslot());
-		writeD(player.getTpbookmark().size());
-		
-		for (TeleportBookmark tpbm : player.getTpbookmark())
-		{
-			writeD(tpbm._id);
-			writeD(tpbm._x);
-			writeD(tpbm._y);
-			writeD(tpbm._z);
-			writeS(tpbm._name);
-			writeD(tpbm._icon);
-			writeS(tpbm._tag);
-		}
-	}
+
+    private L2PcInstance player;
+
+    public ExGetBookMarkInfoPacket(L2PcInstance cha)
+    {
+        player = cha;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(0x00); // Dummy
+        writeD(player.getBookmarkslot());
+        writeD(player.getTpbookmark().size());
+
+        for (TeleportBookmark tpbm : player.getTpbookmark())
+        {
+            writeD(tpbm._id);
+            writeD(tpbm._x);
+            writeD(tpbm._y);
+            writeD(tpbm._z);
+            writeS(tpbm._name);
+            writeD(tpbm._icon);
+            writeS(tpbm._tag);
+        }
+    }
 }

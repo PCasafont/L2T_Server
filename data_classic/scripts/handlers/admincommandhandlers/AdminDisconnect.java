@@ -26,43 +26,44 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AdminDisconnect implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_character_disconnect"
-	};
-	
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_character_disconnect"))
-		{
-			disconnectCharacter(activeChar);
-		}
-		return true;
-	}
-	
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
-	
-	private void disconnectCharacter(L2PcInstance activeChar)
-	{
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
-			player = (L2PcInstance) target;
-		else
-			return;
-		
-		if (player == activeChar)
-		{
-			activeChar.sendMessage("You cannot logout your own character.");
-		}
-		else
-		{
-			activeChar.sendMessage("Character " + player.getName() + " disconnected from server.");
-			
-			player.logout();
-		}
-	}
+    private static final String[] ADMIN_COMMANDS = {"admin_character_disconnect"};
+
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        if (command.equals("admin_character_disconnect"))
+        {
+            disconnectCharacter(activeChar);
+        }
+        return true;
+    }
+
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
+
+    private void disconnectCharacter(L2PcInstance activeChar)
+    {
+        L2Object target = activeChar.getTarget();
+        L2PcInstance player = null;
+        if (target instanceof L2PcInstance)
+        {
+            player = (L2PcInstance) target;
+        }
+        else
+        {
+            return;
+        }
+
+        if (player == activeChar)
+        {
+            activeChar.sendMessage("You cannot logout your own character.");
+        }
+        else
+        {
+            activeChar.sendMessage("Character " + player.getName() + " disconnected from server.");
+
+            player.logout();
+        }
+    }
 }

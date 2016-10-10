@@ -24,45 +24,48 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author kerberos_20
- *
  */
 public class EffectProtectionBlessing extends L2Effect
 {
-	public EffectProtectionBlessing(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.PROTECTION_BLESSING;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/** Notify started */
-	@Override
-	public boolean onStart()
-	{
-		return false;
-	}
-	
-	/** Notify exited */
-	@Override
-	public void onExit()
-	{
-		((L2Playable) getEffected()).stopProtectionBlessing(getAbnormal());
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		// just stop this effect
-		return false;
-	}
+    public EffectProtectionBlessing(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.PROTECTION_BLESSING;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * Notify started
+     */
+    @Override
+    public boolean onStart()
+    {
+        return false;
+    }
+
+    /**
+     * Notify exited
+     */
+    @Override
+    public void onExit()
+    {
+        ((L2Playable) getEffected()).stopProtectionBlessing(getAbnormal());
+    }
+
+    @Override
+    public boolean onActionTime()
+    {
+        // just stop this effect
+        return false;
+    }
 }

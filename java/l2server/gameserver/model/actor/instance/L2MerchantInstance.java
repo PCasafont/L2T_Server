@@ -33,81 +33,91 @@ import l2server.log.Log;
  */
 public class L2MerchantInstance extends L2NpcInstance
 {
-	private MerchantPriceConfig _mpc;
-	
-	/**
-	 * @param template
-	 */
-	public L2MerchantInstance(int objectId, L2NpcTemplate template)
-	{
-		super(objectId, template);
-		setInstanceType(InstanceType.L2MerchantInstance);
-	}
-	
-	@Override
-	public void onSpawn()
-	{
-		super.onSpawn();
-		_mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(this);
-	}
-	
-	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
-		String pom = "";
-		
-		if (val == 0)
-			pom = "" + npcId;
-		else
-			pom = npcId + "-" + val;
-		
-		return "merchant/" + pom + ".htm";
-	}
-	
-	@Override
-	public String getHtmlPath(int npcId, String val)
-	{
-		String pom = "";
-		if (val.isEmpty() || val.equals("0"))
-			pom = "" + npcId;
-		else
-			pom = npcId + "-" + val;
-		
-		return "merchant/" + pom + ".htm";
-	}
-	
-	/**
-	 * @return Returns the mpc.
-	 */
-	public MerchantPriceConfig getMpc()
-	{
-		return _mpc;
-	}
-	
-	public final void showBuyWindow(L2PcInstance player, int val)
-	{
-		double taxRate = 0;
-		
-		taxRate = getMpc().getTotalTaxRate();
-		
-		player.tempInventoryDisable();
-		
-		if (Config.DEBUG)
-			Log.fine("Showing buylist");
-		
-		L2TradeList list = TradeController.getInstance().getBuyList(val);
-		
-		if (list != null && list.getNpcId() == getNpcId())
-		{
-			player.sendPacket(new ExBuyList(list, player.getAdena(), taxRate));
-			player.sendPacket(new ExSellList(player, list, taxRate, false));
-		}
-		else
-		{
-			Log.warning("possible client hacker: " + player.getName() + " attempting to buy from GM shop! < Ban him!");
-			Log.warning("buylist id:" + val);
-		}
-		
-		player.sendPacket(ActionFailed.STATIC_PACKET);
-	}
+    private MerchantPriceConfig _mpc;
+
+    /**
+     * @param template
+     */
+    public L2MerchantInstance(int objectId, L2NpcTemplate template)
+    {
+        super(objectId, template);
+        setInstanceType(InstanceType.L2MerchantInstance);
+    }
+
+    @Override
+    public void onSpawn()
+    {
+        super.onSpawn();
+        _mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(this);
+    }
+
+    @Override
+    public String getHtmlPath(int npcId, int val)
+    {
+        String pom = "";
+
+        if (val == 0)
+        {
+            pom = "" + npcId;
+        }
+        else
+        {
+            pom = npcId + "-" + val;
+        }
+
+        return "merchant/" + pom + ".htm";
+    }
+
+    @Override
+    public String getHtmlPath(int npcId, String val)
+    {
+        String pom = "";
+        if (val.isEmpty() || val.equals("0"))
+        {
+            pom = "" + npcId;
+        }
+        else
+        {
+            pom = npcId + "-" + val;
+        }
+
+        return "merchant/" + pom + ".htm";
+    }
+
+    /**
+     * @return Returns the mpc.
+     */
+    public MerchantPriceConfig getMpc()
+    {
+        return _mpc;
+    }
+
+    public final void showBuyWindow(L2PcInstance player, int val)
+    {
+        double taxRate = 0;
+
+        taxRate = getMpc().getTotalTaxRate();
+
+        player.tempInventoryDisable();
+
+        if (Config.DEBUG)
+        {
+            Log.fine("Showing buylist");
+        }
+
+        L2TradeList list = TradeController.getInstance().getBuyList(val);
+
+        if (list != null && list.getNpcId() == getNpcId())
+        {
+            player.sendPacket(new ExBuyList(list, player.getAdena(), taxRate));
+            player.sendPacket(new ExSellList(player, list, taxRate, false));
+        }
+        else
+        {
+            Log.warning("possible client hacker: " + player.getName() + " attempting to buy from GM shop! < Ban him!");
+            Log.warning("buylist id:" + val);
+        }
+
+        player.sendPacket(ActionFailed.STATIC_PACKET);
+    }
 }

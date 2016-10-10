@@ -24,34 +24,37 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
  * Used by skills that affects your own summon.
+ *
  * @author nBd
  */
 public class TargetMySummon implements ISkillTargetTypeHandler
 {
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		// FIXME target = activeChar.getPet();
-		
-		if (target != null && !target.isDead())
-		{
-			if (skill.getCastRange() > 0 && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
-				return null;
-			
-			return new L2Character[] { target };
-		}
-		
-		return null;
-	}
-	
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.TARGET_MY_SUMMON;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetMySummon());
-	}
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        // FIXME target = activeChar.getPet();
+
+        if (target != null && !target.isDead())
+        {
+            if (skill.getCastRange() > 0 && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
+            {
+                return null;
+            }
+
+            return new L2Character[]{target};
+        }
+
+        return null;
+    }
+
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.TARGET_MY_SUMMON;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetMySummon());
+    }
 }

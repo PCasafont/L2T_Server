@@ -23,25 +23,27 @@ import l2server.gameserver.network.serverpackets.ExDivideAdenaDone;
  */
 public final class RequestDivideAdenaConfirm extends L2GameClientPacket
 {
-	private long _adenaCount;
-	
-	@Override
-	protected void readImpl()
-	{
-		readD(); // object id
-		_adenaCount = readQ();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		sendPacket(new ExDivideAdenaDone(1, _adenaCount, _adenaCount, player.getName()));
-	}
+    private long _adenaCount;
+
+    @Override
+    protected void readImpl()
+    {
+        readD(); // object id
+        _adenaCount = readQ();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        sendPacket(new ExDivideAdenaDone(1, _adenaCount, _adenaCount, player.getName()));
+    }
 }

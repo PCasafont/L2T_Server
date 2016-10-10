@@ -26,41 +26,43 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public class ExGetOffShuttle extends L2GameClientPacket
 {
-	private int _shuttleId;
-	private int _posX;
-	private int _posY;
-	private int _posZ;
-	
-	@Override
-	protected void readImpl()
-	{
-		_shuttleId = readD();
-		_posX = readD();
-		_posY = readD();
-		_posZ = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null || !player.canGetOnOffShuttle())
-			return;
-		
-		L2Object obj = L2World.getInstance().findObject(_shuttleId);
-		if (!(obj instanceof L2ShuttleInstance))
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
-		if (shuttle.isClosed())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		shuttle.oustPlayer(player, _posX, _posY, _posZ);
-	}
+    private int _shuttleId;
+    private int _posX;
+    private int _posY;
+    private int _posZ;
+
+    @Override
+    protected void readImpl()
+    {
+        _shuttleId = readD();
+        _posX = readD();
+        _posY = readD();
+        _posZ = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null || !player.canGetOnOffShuttle())
+        {
+            return;
+        }
+
+        L2Object obj = L2World.getInstance().findObject(_shuttleId);
+        if (!(obj instanceof L2ShuttleInstance))
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
+        if (shuttle.isClosed())
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        shuttle.oustPlayer(player, _posX, _posY, _posZ);
+    }
 }

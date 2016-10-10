@@ -19,22 +19,21 @@ import l2server.gameserver.datatables.CharNameTable;
 
 /**
  * @author Erlando
- *
  */
 public class ExBlockRemoveResult extends L2GameServerPacket
 {
-	
-	private int objId;
-	
-	public ExBlockRemoveResult(int OID)
-	{
-		objId = OID;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(0x00);
-		writeS(CharNameTable.getInstance().getNameById(objId));
-	}
+
+    private int objId;
+
+    public ExBlockRemoveResult(int OID)
+    {
+        objId = OID;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(0x00);
+        writeS(CharNameTable.getInstance().getNameById(objId));
+    }
 }

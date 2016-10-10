@@ -22,31 +22,31 @@ import l2server.gameserver.network.serverpackets.PledgePowerGradeList;
 
 /**
  * Format: (ch)
- * @author  -Wooden-
  *
+ * @author -Wooden-
  */
 public final class RequestPledgePowerGradeList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		L2Clan clan = player.getClan();
-		if (clan != null)
-		{
-			RankPrivs[] privs = clan.getAllRankPrivs();
-			player.sendPacket(new PledgePowerGradeList(privs));
-			//Logozo.warning("plegdepowergradelist send, privs length: "+privs.length);
-		}
-	}
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        L2Clan clan = player.getClan();
+        if (clan != null)
+        {
+            RankPrivs[] privs = clan.getAllRankPrivs();
+            player.sendPacket(new PledgePowerGradeList(privs));
+            //Logozo.warning("plegdepowergradelist send, privs length: "+privs.length);
+        }
+    }
 }

@@ -29,67 +29,70 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author _drunk_
- *
  */
 public class Spoil implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS = { L2SkillType.SPOIL };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		if (targets == null)
-			return;
-		
-		for (L2Object tgt : targets)
-		{
-			if (!(tgt instanceof L2MonsterInstance))
-				continue;
-			
-			L2MonsterInstance target = (L2MonsterInstance) tgt;
-			
-			if (target.isSpoil())
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
-				continue;
-			}
-			
-			// SPOIL SYSTEM by Lbaldi
-			if (target.isDead() == false)
-			{
-				boolean spoil = Formulas.calcMagicSuccess(activeChar, (L2Character) tgt, skill);
-				if (spoil)
-				{
-					target.setSpoil(true);
-					target.setIsSpoiledBy(activeChar.getObjectId());
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
-				}
-				else
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
-					sm.addCharName(target);
-					sm.addSkillName(skill);
-					activeChar.sendPacket(sm);
-				}
-				target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
-			}
-		}
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	@Override
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.SPOIL};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    @Override
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        if (targets == null)
+        {
+            return;
+        }
+
+        for (L2Object tgt : targets)
+        {
+            if (!(tgt instanceof L2MonsterInstance))
+            {
+                continue;
+            }
+
+            L2MonsterInstance target = (L2MonsterInstance) tgt;
+
+            if (target.isSpoil())
+            {
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
+                continue;
+            }
+
+            // SPOIL SYSTEM by Lbaldi
+            if (target.isDead() == false)
+            {
+                boolean spoil = Formulas.calcMagicSuccess(activeChar, (L2Character) tgt, skill);
+                if (spoil)
+                {
+                    target.setSpoil(true);
+                    target.setIsSpoiledBy(activeChar.getObjectId());
+                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
+                }
+                else
+                {
+                    SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
+                    sm.addCharName(target);
+                    sm.addSkillName(skill);
+                    activeChar.sendPacket(sm);
+                }
+                target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
+            }
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    @Override
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

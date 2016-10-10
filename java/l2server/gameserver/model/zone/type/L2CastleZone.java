@@ -25,87 +25,98 @@ import l2server.gameserver.model.zone.L2SpawnZone;
 /**
  * A castle zone
  *
- * @author  durgus
+ * @author durgus
  */
 public class L2CastleZone extends L2SpawnZone
 {
-	private int _castleId;
-	private Castle _castle = null;
-	
-	public L2CastleZone(int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("castleId"))
-		{
-			_castleId = Integer.parseInt(value);
-		}
-		else
-			super.setParameter(name, value);
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (getCastle() != null)
-		{
-			character.setInsideZone(L2Character.ZONE_CASTLE, true);
-		}
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		if (getCastle() != null)
-		{
-			character.setInsideZone(L2Character.ZONE_CASTLE, false);
-		}
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
-	
-	/**
-	 * Removes all foreigners from the castle
-	 * @param owningClanId
-	 */
-	public void banishForeigners(int owningClanId)
-	{
-		for (L2Character temp : _characterList.values())
-		{
-			if (!(temp instanceof L2PcInstance))
-				continue;
-			
-			if (temp.getInstanceId() != 0) //Don't kick players which are at another instance
-				continue;
-			
-			if (((L2PcInstance) temp).getClanId() == owningClanId)
-				continue;
-			
-			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);
-		}
-	}
-	
-	public int getCastleId()
-	{
-		return _castleId;
-	}
-	
-	private final Castle getCastle()
-	{
-		if (_castle == null)
-			_castle = CastleManager.getInstance().getCastleById(_castleId);
-		return _castle;
-	}
+    private int _castleId;
+    private Castle _castle = null;
+
+    public L2CastleZone(int id)
+    {
+        super(id);
+    }
+
+    @Override
+    public void setParameter(String name, String value)
+    {
+        if (name.equals("castleId"))
+        {
+            _castleId = Integer.parseInt(value);
+        }
+        else
+        {
+            super.setParameter(name, value);
+        }
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        if (getCastle() != null)
+        {
+            character.setInsideZone(L2Character.ZONE_CASTLE, true);
+        }
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        if (getCastle() != null)
+        {
+            character.setInsideZone(L2Character.ZONE_CASTLE, false);
+        }
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
+
+    /**
+     * Removes all foreigners from the castle
+     *
+     * @param owningClanId
+     */
+    public void banishForeigners(int owningClanId)
+    {
+        for (L2Character temp : _characterList.values())
+        {
+            if (!(temp instanceof L2PcInstance))
+            {
+                continue;
+            }
+
+            if (temp.getInstanceId() != 0) //Don't kick players which are at another instance
+            {
+                continue;
+            }
+
+            if (((L2PcInstance) temp).getClanId() == owningClanId)
+            {
+                continue;
+            }
+
+            ((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);
+        }
+    }
+
+    public int getCastleId()
+    {
+        return _castleId;
+    }
+
+    private final Castle getCastle()
+    {
+        if (_castle == null)
+        {
+            _castle = CastleManager.getInstance().getCastleById(_castleId);
+        }
+        return _castle;
+    }
 }

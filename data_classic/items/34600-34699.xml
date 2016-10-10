@@ -1,716 +1,716 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Inflicts magic-type attack. Transforms into a Rose (F) for 10 min. -->
-	<item id="34600" type="EtcItem" name="Player Commendation - Transformation Scroll: Rose (F) - PC-exclusive">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Inflicts warrior-type attack. Transforms into a Rose (M) for 10 min. -->
-	<item id="34601" type="EtcItem" name="Player Commendation - Transformation Scroll: Rose (M) - PC-exclusive">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Magic potion that instantly restores HP. Cannot be used when HP is full. -->
-	<item id="34602" type="EtcItem" name="Player Commendation - Quick Healing Potion - PC-exclusive">
-		<set name="icon" val="icon.etc_potion_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="180" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a No-grade weapon. -->
-	<item id="34603" type="EtcItem" name="Mysterious No-grade Soulshot - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a D-grade weapon. -->
-	<item id="34604" type="EtcItem" name="Mysterious Soulshot (D-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a C-grade weapon. -->
-	<item id="34605" type="EtcItem" name="Mysterious Soulshot (C-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_green_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a B-grade weapon. -->
-	<item id="34606" type="EtcItem" name="Mysterious Soulshot (B-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an A-grade weapon. -->
-	<item id="34607" type="EtcItem" name="Mysterious Soulshot (A-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an S-grade weapon. -->
-	<item id="34608" type="EtcItem" name="Mysterious Soulshot (S-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an R-grade weapon. -->
-	<item id="34609" type="EtcItem" name="Mysterious Soulshot (R-grade) - Event">
-		<set name="icon" val="icon.soulshot_r_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with No-grade weapons. -->
-	<item id="34610" type="EtcItem" name="Mysterious Blessed No-grade Spiritshot - Event">
-		<set name="icon" val="icon.etc_spell_shot_white_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with D-grade weapons. -->
-	<item id="34611" type="EtcItem" name="Mysterious Blessed Spiritshot (D-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_blue_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with C-grade weapons. -->
-	<item id="34612" type="EtcItem" name="Mysterious Blessed Spiritshot (C-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_green_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with B-grade weapons. -->
-	<item id="34613" type="EtcItem" name="Mysterious Blessed Spiritshot (B-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_red_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with A-grade weapons. -->
-	<item id="34614" type="EtcItem" name="Mysterious Blessed Spiritshot (A-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_silver_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with S-grade weapons. -->
-	<item id="34615" type="EtcItem" name="Mysterious Blessed Spiritshot (S-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_gold_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an R-grade weapon. -->
-	<item id="34616" type="EtcItem" name="Mysterious Blessed Spiritshot (R-grade) - Event">
-		<set name="icon" val="icon.blessed_spiritshot_r_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- When used, you can receive an Agathion's gift. -->
-	<item id="34617" type="EtcItem" name="Player Commendation - Agathion's Gift - PC-exclusive">
-		<set name="icon" val="icon.present_of_destination_event" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="20" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Cocktail that contains the flavors of many rare fruits. When consumed, you will feel the effects of Horn Melody, Lute Melody, Pipe Organ Melody, Guitar Melody, Harp Melody, and Drum Melody. -->
-	<item id="34618" type="EtcItem" name="Player Commendation - Enhanced Cocktail - PC-exclusive">
-		<set name="icon" val="icon.etc_fruit_cocktail_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Click on the item to acquire PC Points. -->
-	<item id="34619" type="EtcItem" name="Player Commendation Points Coupon - PC-exclusive">
-		<set name="icon" val="icon.etc_ticket_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- For 60 minutes, it receives the following level 1 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
-	<item id="34620" type="EtcItem" name="Heavenly Cocktail">
-		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Increases resistance to half-kill and lethal strike when equipped. Shadow weapon. -->
-	<item id="34621" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive)">
-		<set name="icon" val="icon.r85_talisman_md_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13368-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Increases resistance to half-kill and lethal strike when used. Shadow weapon. -->
-	<item id="34622" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active)">
-		<set name="icon" val="icon.r85_talisman_md_up_passive" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13367-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!--
-		Magic shirt filled with the power of Pa'agrio, the god of fire.
-		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can remove abnormal conditions and use the ultimate invincibility skill for a certain amount of time.
-	-->
-	<item id="34623" type="Armor" name="Pa'agrio's Shirt">
-		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_fire" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="28" />
-		</for>
-	</item>
-	<!--
-		Magic shirt filled with the power of Sayha, the god of wind.
-		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use a portal teleport skill that allows you to create a portal at a selected location and teleport to that portal. No effect in the Olympiad.
-	-->
-	<item id="34624" type="Armor" name="Sayha's Shirt">
-		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_wind" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="28" />
-		</for>
-	</item>
-	<!--
-		Magic shirt filled with the power of Eva, the goddess of water.
-		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use HP/MP/CP recovering skills.
-	-->
-	<item id="34625" type="Armor" name="Eva's Shirt">
-		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_water" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="28" />
-		</for>
-	</item>
-	<!--
-		Magic shirt filled with the power of Maphr, the goddess of earth.
-		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, the enchant success rate is increased. No effect in the Olympiad.
-	-->
-	<item id="34626" type="Armor" name="Maphr's Shirt">
-		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_earth" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="28" />
-		</for>
-	</item>
-	<!-- Enchant scroll that is exclusive to Pa'agrio's Shirt, Sayha's Shirt, Eva's Shirt, Maphr's Shirt, and the Shiny Elemental Shirt. When enchanted, increases P. Def. and M. Def. by 1. P. Def. + 3 starting from +4. Can be safely enchanted to +3 and up to a maximum of +10. From +4, basic abilities (CON, MEN, STR, INT, DEX, WT) are raised n stages. Depending on the shirt type, various additional options can be applied from +4 to +10. -->
-	<item id="34627" type="EtcItem" name="Scroll: Enchant Elemental Shirt">
-		<set name="icon" val="icon.g_scrl_of_ench_wolf_shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Vitality is replenished for 1 hr. -->
-	<item id="34628" type="EtcItem" name="Einhasad's Energy">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Pirate's Eyepatch -->
-	<item id="34629" type="Armor" name="Pirate's Eyepatch">
-		<set name="icon" val="icon.accessory_eye_bandage_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Outlaw's Eyepatch -->
-	<item id="34630" type="Armor" name="Outlaw's Eyepatch">
-		<set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Eyepatch -->
-	<item id="34631" type="Armor" name="Eyepatch">
-		<set name="icon" val="icon.Accessary_one_eye_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Party Hat -->
-	<item id="34632" type="Armor" name="Party Hat">
-		<set name="icon" val="icon.accessory_party_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined Angel Ring -->
-	<item id="34633" type="Armor" name="Refined Angel Ring">
-		<set name="icon" val="icon.accessory_angel_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined Devil Horn -->
-	<item id="34634" type="Armor" name="Refined Devil Horn">
-		<set name="icon" val="icon.accessory_devil_horn_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Can increases STR by equipping the Pirate's Eyepatch. -->
-	<item id="34635" type="EtcItem" name="Pirate's Eyepatch - STR Pendant">
-		<set name="icon" val="icon.accessory_eye_bandage_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases DEX by equipping the Pirate's Eyepatch. -->
-	<item id="34636" type="EtcItem" name="Pirate's Eyepatch - DEX Pendant">
-		<set name="icon" val="icon.accessory_eye_bandage_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases CON by equipping the Outlaw's Eyepatch. -->
-	<item id="34637" type="EtcItem" name="Outlaw's Eyepatch - CON Pendant">
-		<set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases MEN by equipping the Outlaw's Eyepatch. -->
-	<item id="34638" type="EtcItem" name="Outlaw's Eyepatch - MEN Pendant">
-		<set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases INT by equipping the Eyepatch. -->
-	<item id="34639" type="EtcItem" name="Eyepatch - INT Pendant">
-		<set name="icon" val="icon.Accessary_one_eye_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases WIT by equipping the Eyepatch. -->
-	<item id="34640" type="EtcItem" name="Eyepatch - WIT Pendant">
-		<set name="icon" val="icon.Accessary_one_eye_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases P. Critical Rate by equipping a Party Hat. -->
-	<item id="34641" type="EtcItem" name="Party Hat - Critical Rate Pendant">
-		<set name="icon" val="icon.accessory_party_hat_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases P. Critical Damage by equipping a Party Hat. -->
-	<item id="34642" type="EtcItem" name="Party Hat - Critical Damage Pendant">
-		<set name="icon" val="icon.accessory_party_hat_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can P. Def. + equipping a Refined Angel Ring. -->
-	<item id="34643" type="EtcItem" name="Refined Angel Ring - P. Def. Pendant">
-		<set name="icon" val="icon.accessory_angel_ring_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can M. Def. + equipping a Refined Angel Ring. -->
-	<item id="34644" type="EtcItem" name="Refined Angel Ring - M. Def. Pendant">
-		<set name="icon" val="icon.accessory_angel_ring_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases Evasion by equipping a Refined Angel Ring. -->
-	<item id="34645" type="EtcItem" name="Refined Angel Ring - Evasion Pendant">
-		<set name="icon" val="icon.accessory_angel_ring_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can P. Atk. + equipping a Refined Devil Horn. -->
-	<item id="34646" type="EtcItem" name="Refined Devil Horn - P. Atk. Pendant">
-		<set name="icon" val="icon.accessory_devil_horn_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can M. Atk. + equipping a Refined Devil Horn. -->
-	<item id="34647" type="EtcItem" name="Refined Devil Horn - M. Atk. Pendant">
-		<set name="icon" val="icon.accessory_devil_horn_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can increases Accuracy by equipping a Refined Devil Horn. -->
-	<item id="34648" type="EtcItem" name="Refined Devil Horn - Accuracy Pendant">
-		<set name="icon" val="icon.accessory_devil_horn_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
-	<item id="34649" type="EtcItem" name="Fire Stone Fragment">
-		<set name="icon" val="icon.etc_fire_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
-	<item id="34650" type="EtcItem" name="Water Stone Fragment">
-		<set name="icon" val="icon.etc_water_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
-	<item id="34651" type="EtcItem" name="Wind Stone Fragment">
-		<set name="icon" val="icon.etc_wind_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
-	<item id="34652" type="EtcItem" name="Earth Stone Fragment">
-		<set name="icon" val="icon.etc_earth_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
-	<item id="34653" type="EtcItem" name="Holy Stone Fragment">
-		<set name="icon" val="icon.etc_holy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
-	<item id="34654" type="EtcItem" name="Dark Stone Fragment">
-		<set name="icon" val="icon.etc_unholy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
-	<item id="34655" type="EtcItem" name="Fire Crystal Fragment">
-		<set name="icon" val="icon.etc_fire_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
-	<item id="34656" type="EtcItem" name="Water Crystal Fragment">
-		<set name="icon" val="icon.etc_water_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
-	<item id="34657" type="EtcItem" name="Wind Crystal Fragment">
-		<set name="icon" val="icon.etc_wind_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
-	<item id="34658" type="EtcItem" name="Earth Crystal Fragment">
-		<set name="icon" val="icon.etc_earth_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
-	<item id="34659" type="EtcItem" name="Holy Crystal Fragment">
-		<set name="icon" val="icon.etc_holy_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
-	<item id="34660" type="EtcItem" name="Dark Crystal Fragment">
-		<set name="icon" val="icon.etc_unholy_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow fire attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34661" type="EtcItem" name="Fire Stone (+ 60)">
-		<set name="icon" val="icon.etc_fire_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow water attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34662" type="EtcItem" name="Water Stone (+ 60)">
-		<set name="icon" val="icon.etc_water_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow earth attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34663" type="EtcItem" name="Earth Stone (+ 60)">
-		<set name="icon" val="icon.etc_earth_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow wind attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34664" type="EtcItem" name="Wind Stone (+ 60)">
-		<set name="icon" val="icon.etc_wind_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow dark attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34665" type="EtcItem" name="Dark Stone (+ 60)">
-		<set name="icon" val="icon.etc_unholy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow holy attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34666" type="EtcItem" name="Holy Stone (+ 60)">
-		<set name="icon" val="icon.etc_holy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-	</item>
-	<!-- Can bestow fire attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34667" type="EtcItem" name="Fire Stone (+ 150)">
-		<set name="icon" val="icon.etc_fire_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow water attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34668" type="EtcItem" name="Water Stone (+ 150)">
-		<set name="icon" val="icon.etc_water_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow earth attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34669" type="EtcItem" name="Earth Stone (+ 150)">
-		<set name="icon" val="icon.etc_earth_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow wind attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34670" type="EtcItem" name="Wind Stone (+ 150)">
-		<set name="icon" val="icon.etc_wind_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow dark attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34671" type="EtcItem" name="Dark Stone (+ 150)">
-		<set name="icon" val="icon.etc_unholy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Can bestow holy attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34672" type="EtcItem" name="Holy Stone (+ 150)">
-		<set name="icon" val="icon.etc_holy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34673" type="EtcItem" name="Scroll: Seal Weapon (D-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34674" type="EtcItem" name="Scroll: Seal Weapon (C-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34675" type="EtcItem" name="Scroll: Seal Weapon (B-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34676" type="EtcItem" name="Scroll: Seal Weapon (A-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34677" type="EtcItem" name="Scroll: Seal Weapon (S-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34678" type="EtcItem" name="Scroll: Seal Weapon (S80-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34679" type="EtcItem" name="Scroll: Seal Weapon (R-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34680" type="EtcItem" name="Scroll: Seal Weapon (R95-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34681" type="EtcItem" name="Scroll: Seal Weapon (R99-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_wp_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34682" type="EtcItem" name="Scroll: Seal Armor (D-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34683" type="EtcItem" name="Scroll: Seal Armor (C-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34684" type="EtcItem" name="Scroll: Seal Armor (B-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34685" type="EtcItem" name="Scroll: Seal Armor (A-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34686" type="EtcItem" name="Scroll: Seal Armor (S-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34687" type="EtcItem" name="Scroll: Seal Armor (S80-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34688" type="EtcItem" name="Scroll: Seal Armor (R-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34689" type="EtcItem" name="Scroll: Seal Armor (R95-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34690" type="EtcItem" name="Scroll: Seal Armor (R99-grade)">
-		<set name="icon" val="icon.scroll_of_unidentify_am_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Chest containing Hair Accessory. -->
-	<item id="34691" type="EtcItem" name="Hair Accessory Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Chest containing Hair Accessory Pendant. -->
-	<item id="34692" type="EtcItem" name="Pendant Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing attribute stone. -->
-	<item id="34693" type="EtcItem" name="Attribute Stone Fragment Box">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing Lucky Enchant Stone. -->
-	<item id="34694" type="EtcItem" name="Hero's Lucky Enchant Stone Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing Enchant Scroll of Destruction. -->
-	<item id="34695" type="EtcItem" name="Hero's Destruction Enchant Scroll Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing Blessed Enchant Scroll. -->
-	<item id="34696" type="EtcItem" name="Hero's Blessed Enchant Scroll Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing Bind Removing Scroll. -->
-	<item id="34697" type="EtcItem" name="Hero's Unbind Scroll Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Box containing attribute crystal or stone (Super - 60/150). -->
-	<item id="34698" type="EtcItem" name="Hero's Attribute Crystal Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- Item that is added to the Aden reconstruction renewal. It's functions have not materialized yet. -->
-	<item id="34699" type="EtcItem" name="Giant's Attribute Crystal Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-	</item>
+    <!-- Inflicts magic-type attack. Transforms into a Rose (F) for 10 min. -->
+    <item id="34600" type="EtcItem" name="Player Commendation - Transformation Scroll: Rose (F) - PC-exclusive">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Inflicts warrior-type attack. Transforms into a Rose (M) for 10 min. -->
+    <item id="34601" type="EtcItem" name="Player Commendation - Transformation Scroll: Rose (M) - PC-exclusive">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Magic potion that instantly restores HP. Cannot be used when HP is full. -->
+    <item id="34602" type="EtcItem" name="Player Commendation - Quick Healing Potion - PC-exclusive">
+        <set name="icon" val="icon.etc_potion_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="180" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a No-grade weapon. -->
+    <item id="34603" type="EtcItem" name="Mysterious No-grade Soulshot - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a D-grade weapon. -->
+    <item id="34604" type="EtcItem" name="Mysterious Soulshot (D-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a C-grade weapon. -->
+    <item id="34605" type="EtcItem" name="Mysterious Soulshot (C-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_green_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a B-grade weapon. -->
+    <item id="34606" type="EtcItem" name="Mysterious Soulshot (B-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an A-grade weapon. -->
+    <item id="34607" type="EtcItem" name="Mysterious Soulshot (A-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an S-grade weapon. -->
+    <item id="34608" type="EtcItem" name="Mysterious Soulshot (S-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an R-grade weapon. -->
+    <item id="34609" type="EtcItem" name="Mysterious Soulshot (R-grade) - Event">
+        <set name="icon" val="icon.soulshot_r_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with No-grade weapons. -->
+    <item id="34610" type="EtcItem" name="Mysterious Blessed No-grade Spiritshot - Event">
+        <set name="icon" val="icon.etc_spell_shot_white_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with D-grade weapons. -->
+    <item id="34611" type="EtcItem" name="Mysterious Blessed Spiritshot (D-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_blue_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with C-grade weapons. -->
+    <item id="34612" type="EtcItem" name="Mysterious Blessed Spiritshot (C-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_green_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with B-grade weapons. -->
+    <item id="34613" type="EtcItem" name="Mysterious Blessed Spiritshot (B-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_red_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with A-grade weapons. -->
+    <item id="34614" type="EtcItem" name="Mysterious Blessed Spiritshot (A-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_silver_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with S-grade weapons. -->
+    <item id="34615" type="EtcItem" name="Mysterious Blessed Spiritshot (S-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_gold_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an R-grade weapon. -->
+    <item id="34616" type="EtcItem" name="Mysterious Blessed Spiritshot (R-grade) - Event">
+        <set name="icon" val="icon.blessed_spiritshot_r_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- When used, you can receive an Agathion's gift. -->
+    <item id="34617" type="EtcItem" name="Player Commendation - Agathion's Gift - PC-exclusive">
+        <set name="icon" val="icon.present_of_destination_event" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="20" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Cocktail that contains the flavors of many rare fruits. When consumed, you will feel the effects of Horn Melody, Lute Melody, Pipe Organ Melody, Guitar Melody, Harp Melody, and Drum Melody. -->
+    <item id="34618" type="EtcItem" name="Player Commendation - Enhanced Cocktail - PC-exclusive">
+        <set name="icon" val="icon.etc_fruit_cocktail_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Click on the item to acquire PC Points. -->
+    <item id="34619" type="EtcItem" name="Player Commendation Points Coupon - PC-exclusive">
+        <set name="icon" val="icon.etc_ticket_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- For 60 minutes, it receives the following level 1 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
+    <item id="34620" type="EtcItem" name="Heavenly Cocktail">
+        <set name="icon" val="icon.etc_fruit_cocktail_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Increases resistance to half-kill and lethal strike when equipped. Shadow weapon. -->
+    <item id="34621" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive)">
+        <set name="icon" val="icon.r85_talisman_md_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13368-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Increases resistance to half-kill and lethal strike when used. Shadow weapon. -->
+    <item id="34622" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active)">
+        <set name="icon" val="icon.r85_talisman_md_up_passive" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13367-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!--
+        Magic shirt filled with the power of Pa'agrio, the god of fire.
+        Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can remove abnormal conditions and use the ultimate invincibility skill for a certain amount of time.
+    -->
+    <item id="34623" type="Armor" name="Pa'agrio's Shirt">
+        <set name="icon" val="icon.pi_shirt_of_wolf_2nd_fire" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="28" />
+        </for>
+    </item>
+    <!--
+        Magic shirt filled with the power of Sayha, the god of wind.
+        Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use a portal teleport skill that allows you to create a portal at a selected location and teleport to that portal. No effect in the Olympiad.
+    -->
+    <item id="34624" type="Armor" name="Sayha's Shirt">
+        <set name="icon" val="icon.pi_shirt_of_wolf_2nd_wind" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="28" />
+        </for>
+    </item>
+    <!--
+        Magic shirt filled with the power of Eva, the goddess of water.
+        Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use HP/MP/CP recovering skills.
+    -->
+    <item id="34625" type="Armor" name="Eva's Shirt">
+        <set name="icon" val="icon.pi_shirt_of_wolf_2nd_water" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="28" />
+        </for>
+    </item>
+    <!--
+        Magic shirt filled with the power of Maphr, the goddess of earth.
+        Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, the enchant success rate is increased. No effect in the Olympiad.
+    -->
+    <item id="34626" type="Armor" name="Maphr's Shirt">
+        <set name="icon" val="icon.pi_shirt_of_wolf_2nd_earth" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="28" />
+        </for>
+    </item>
+    <!-- Enchant scroll that is exclusive to Pa'agrio's Shirt, Sayha's Shirt, Eva's Shirt, Maphr's Shirt, and the Shiny Elemental Shirt. When enchanted, increases P. Def. and M. Def. by 1. P. Def. + 3 starting from +4. Can be safely enchanted to +3 and up to a maximum of +10. From +4, basic abilities (CON, MEN, STR, INT, DEX, WT) are raised n stages. Depending on the shirt type, various additional options can be applied from +4 to +10. -->
+    <item id="34627" type="EtcItem" name="Scroll: Enchant Elemental Shirt">
+        <set name="icon" val="icon.g_scrl_of_ench_wolf_shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Vitality is replenished for 1 hr. -->
+    <item id="34628" type="EtcItem" name="Einhasad's Energy">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Pirate's Eyepatch -->
+    <item id="34629" type="Armor" name="Pirate's Eyepatch">
+        <set name="icon" val="icon.accessory_eye_bandage_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Outlaw's Eyepatch -->
+    <item id="34630" type="Armor" name="Outlaw's Eyepatch">
+        <set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Eyepatch -->
+    <item id="34631" type="Armor" name="Eyepatch">
+        <set name="icon" val="icon.Accessary_one_eye_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Party Hat -->
+    <item id="34632" type="Armor" name="Party Hat">
+        <set name="icon" val="icon.accessory_party_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined Angel Ring -->
+    <item id="34633" type="Armor" name="Refined Angel Ring">
+        <set name="icon" val="icon.accessory_angel_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined Devil Horn -->
+    <item id="34634" type="Armor" name="Refined Devil Horn">
+        <set name="icon" val="icon.accessory_devil_horn_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Can increases STR by equipping the Pirate's Eyepatch. -->
+    <item id="34635" type="EtcItem" name="Pirate's Eyepatch - STR Pendant">
+        <set name="icon" val="icon.accessory_eye_bandage_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases DEX by equipping the Pirate's Eyepatch. -->
+    <item id="34636" type="EtcItem" name="Pirate's Eyepatch - DEX Pendant">
+        <set name="icon" val="icon.accessory_eye_bandage_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases CON by equipping the Outlaw's Eyepatch. -->
+    <item id="34637" type="EtcItem" name="Outlaw's Eyepatch - CON Pendant">
+        <set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases MEN by equipping the Outlaw's Eyepatch. -->
+    <item id="34638" type="EtcItem" name="Outlaw's Eyepatch - MEN Pendant">
+        <set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases INT by equipping the Eyepatch. -->
+    <item id="34639" type="EtcItem" name="Eyepatch - INT Pendant">
+        <set name="icon" val="icon.Accessary_one_eye_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases WIT by equipping the Eyepatch. -->
+    <item id="34640" type="EtcItem" name="Eyepatch - WIT Pendant">
+        <set name="icon" val="icon.Accessary_one_eye_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases P. Critical Rate by equipping a Party Hat. -->
+    <item id="34641" type="EtcItem" name="Party Hat - Critical Rate Pendant">
+        <set name="icon" val="icon.accessory_party_hat_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases P. Critical Damage by equipping a Party Hat. -->
+    <item id="34642" type="EtcItem" name="Party Hat - Critical Damage Pendant">
+        <set name="icon" val="icon.accessory_party_hat_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can P. Def. + equipping a Refined Angel Ring. -->
+    <item id="34643" type="EtcItem" name="Refined Angel Ring - P. Def. Pendant">
+        <set name="icon" val="icon.accessory_angel_ring_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can M. Def. + equipping a Refined Angel Ring. -->
+    <item id="34644" type="EtcItem" name="Refined Angel Ring - M. Def. Pendant">
+        <set name="icon" val="icon.accessory_angel_ring_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases Evasion by equipping a Refined Angel Ring. -->
+    <item id="34645" type="EtcItem" name="Refined Angel Ring - Evasion Pendant">
+        <set name="icon" val="icon.accessory_angel_ring_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can P. Atk. + equipping a Refined Devil Horn. -->
+    <item id="34646" type="EtcItem" name="Refined Devil Horn - P. Atk. Pendant">
+        <set name="icon" val="icon.accessory_devil_horn_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can M. Atk. + equipping a Refined Devil Horn. -->
+    <item id="34647" type="EtcItem" name="Refined Devil Horn - M. Atk. Pendant">
+        <set name="icon" val="icon.accessory_devil_horn_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can increases Accuracy by equipping a Refined Devil Horn. -->
+    <item id="34648" type="EtcItem" name="Refined Devil Horn - Accuracy Pendant">
+        <set name="icon" val="icon.accessory_devil_horn_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
+    <item id="34649" type="EtcItem" name="Fire Stone Fragment">
+        <set name="icon" val="icon.etc_fire_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
+    <item id="34650" type="EtcItem" name="Water Stone Fragment">
+        <set name="icon" val="icon.etc_water_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
+    <item id="34651" type="EtcItem" name="Wind Stone Fragment">
+        <set name="icon" val="icon.etc_wind_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
+    <item id="34652" type="EtcItem" name="Earth Stone Fragment">
+        <set name="icon" val="icon.etc_earth_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
+    <item id="34653" type="EtcItem" name="Holy Stone Fragment">
+        <set name="icon" val="icon.etc_holy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
+    <item id="34654" type="EtcItem" name="Dark Stone Fragment">
+        <set name="icon" val="icon.etc_unholy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
+    <item id="34655" type="EtcItem" name="Fire Crystal Fragment">
+        <set name="icon" val="icon.etc_fire_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
+    <item id="34656" type="EtcItem" name="Water Crystal Fragment">
+        <set name="icon" val="icon.etc_water_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
+    <item id="34657" type="EtcItem" name="Wind Crystal Fragment">
+        <set name="icon" val="icon.etc_wind_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
+    <item id="34658" type="EtcItem" name="Earth Crystal Fragment">
+        <set name="icon" val="icon.etc_earth_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
+    <item id="34659" type="EtcItem" name="Holy Crystal Fragment">
+        <set name="icon" val="icon.etc_holy_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
+    <item id="34660" type="EtcItem" name="Dark Crystal Fragment">
+        <set name="icon" val="icon.etc_unholy_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow fire attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34661" type="EtcItem" name="Fire Stone (+ 60)">
+        <set name="icon" val="icon.etc_fire_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow water attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34662" type="EtcItem" name="Water Stone (+ 60)">
+        <set name="icon" val="icon.etc_water_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow earth attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34663" type="EtcItem" name="Earth Stone (+ 60)">
+        <set name="icon" val="icon.etc_earth_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow wind attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34664" type="EtcItem" name="Wind Stone (+ 60)">
+        <set name="icon" val="icon.etc_wind_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow dark attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34665" type="EtcItem" name="Dark Stone (+ 60)">
+        <set name="icon" val="icon.etc_unholy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow holy attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34666" type="EtcItem" name="Holy Stone (+ 60)">
+        <set name="icon" val="icon.etc_holy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+    </item>
+    <!-- Can bestow fire attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34667" type="EtcItem" name="Fire Stone (+ 150)">
+        <set name="icon" val="icon.etc_fire_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow water attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34668" type="EtcItem" name="Water Stone (+ 150)">
+        <set name="icon" val="icon.etc_water_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow earth attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34669" type="EtcItem" name="Earth Stone (+ 150)">
+        <set name="icon" val="icon.etc_earth_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow wind attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34670" type="EtcItem" name="Wind Stone (+ 150)">
+        <set name="icon" val="icon.etc_wind_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow dark attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34671" type="EtcItem" name="Dark Stone (+ 150)">
+        <set name="icon" val="icon.etc_unholy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Can bestow holy attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
+    <item id="34672" type="EtcItem" name="Holy Stone (+ 150)">
+        <set name="icon" val="icon.etc_holy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34673" type="EtcItem" name="Scroll: Seal Weapon (D-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34674" type="EtcItem" name="Scroll: Seal Weapon (C-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34675" type="EtcItem" name="Scroll: Seal Weapon (B-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34676" type="EtcItem" name="Scroll: Seal Weapon (A-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34677" type="EtcItem" name="Scroll: Seal Weapon (S-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34678" type="EtcItem" name="Scroll: Seal Weapon (S80-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34679" type="EtcItem" name="Scroll: Seal Weapon (R-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34680" type="EtcItem" name="Scroll: Seal Weapon (R95-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34681" type="EtcItem" name="Scroll: Seal Weapon (R99-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_wp_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34682" type="EtcItem" name="Scroll: Seal Armor (D-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34683" type="EtcItem" name="Scroll: Seal Armor (C-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34684" type="EtcItem" name="Scroll: Seal Armor (B-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34685" type="EtcItem" name="Scroll: Seal Armor (A-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34686" type="EtcItem" name="Scroll: Seal Armor (S-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34687" type="EtcItem" name="Scroll: Seal Armor (S80-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34688" type="EtcItem" name="Scroll: Seal Armor (R-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34689" type="EtcItem" name="Scroll: Seal Armor (R95-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
+    <item id="34690" type="EtcItem" name="Scroll: Seal Armor (R99-grade)">
+        <set name="icon" val="icon.scroll_of_unidentify_am_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Chest containing Hair Accessory. -->
+    <item id="34691" type="EtcItem" name="Hair Accessory Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Chest containing Hair Accessory Pendant. -->
+    <item id="34692" type="EtcItem" name="Pendant Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing attribute stone. -->
+    <item id="34693" type="EtcItem" name="Attribute Stone Fragment Box">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing Lucky Enchant Stone. -->
+    <item id="34694" type="EtcItem" name="Hero's Lucky Enchant Stone Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing Enchant Scroll of Destruction. -->
+    <item id="34695" type="EtcItem" name="Hero's Destruction Enchant Scroll Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing Blessed Enchant Scroll. -->
+    <item id="34696" type="EtcItem" name="Hero's Blessed Enchant Scroll Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing Bind Removing Scroll. -->
+    <item id="34697" type="EtcItem" name="Hero's Unbind Scroll Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Box containing attribute crystal or stone (Super - 60/150). -->
+    <item id="34698" type="EtcItem" name="Hero's Attribute Crystal Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- Item that is added to the Aden reconstruction renewal. It's functions have not materialized yet. -->
+    <item id="34699" type="EtcItem" name="Giant's Attribute Crystal Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+    </item>
 </list>

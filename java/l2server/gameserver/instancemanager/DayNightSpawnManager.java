@@ -30,80 +30,84 @@ import l2server.log.Log;
  */
 public class DayNightSpawnManager
 {
-	
-	private Map<L2Spawn, L2RaidBossInstance> _bosses;
-	
-	public static DayNightSpawnManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private DayNightSpawnManager()
-	{
-		_bosses = new HashMap<L2Spawn, L2RaidBossInstance>();
-		
-		Log.info("DayNightSpawnManager: Day/Night handler initialized");
-	}
-	
-	/**
-	 * Spawn Day Creatures, and Unspawn Night Creatures
-	 */
-	public void spawnDayCreatures()
-	{
-		SpawnTable.getInstance().spawnSpecificTable("day_spawns");
-		
-		SpawnTable.getInstance().despawnSpecificTable("night_spawns");
-	}
-	
-	/**
-	 * Spawn Night Creatures, and Unspawn Day Creatures
-	 */
-	public void spawnNightCreatures()
-	{
-		SpawnTable.getInstance().spawnSpecificTable("night_spawns");
-		
-		SpawnTable.getInstance().despawnSpecificTable("day_spawns");
-	}
-	
-	private void changeMode(int mode)
-	{
-		switch (mode)
-		{
-			case 0:
-				spawnDayCreatures();
-				break;
-			case 1:
-				spawnNightCreatures();
-				break;
-			default:
-				Log.warning("DayNightSpawnManager: Wrong mode sent");
-				break;
-		}
-	}
-	
-	public void notifyChangeMode()
-	{
-		try
-		{
-			if (TimeController.getInstance().isNowNight())
-				changeMode(1);
-			else
-				changeMode(0);
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Error while notifyChangeMode(): " + e.getMessage(), e);
-		}
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final DayNightSpawnManager _instance = new DayNightSpawnManager();
-	}
-	
-	public void cleanUp()
-	{
-		_bosses.clear();
-	}
+
+    private Map<L2Spawn, L2RaidBossInstance> _bosses;
+
+    public static DayNightSpawnManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private DayNightSpawnManager()
+    {
+        _bosses = new HashMap<L2Spawn, L2RaidBossInstance>();
+
+        Log.info("DayNightSpawnManager: Day/Night handler initialized");
+    }
+
+    /**
+     * Spawn Day Creatures, and Unspawn Night Creatures
+     */
+    public void spawnDayCreatures()
+    {
+        SpawnTable.getInstance().spawnSpecificTable("day_spawns");
+
+        SpawnTable.getInstance().despawnSpecificTable("night_spawns");
+    }
+
+    /**
+     * Spawn Night Creatures, and Unspawn Day Creatures
+     */
+    public void spawnNightCreatures()
+    {
+        SpawnTable.getInstance().spawnSpecificTable("night_spawns");
+
+        SpawnTable.getInstance().despawnSpecificTable("day_spawns");
+    }
+
+    private void changeMode(int mode)
+    {
+        switch (mode)
+        {
+            case 0:
+                spawnDayCreatures();
+                break;
+            case 1:
+                spawnNightCreatures();
+                break;
+            default:
+                Log.warning("DayNightSpawnManager: Wrong mode sent");
+                break;
+        }
+    }
+
+    public void notifyChangeMode()
+    {
+        try
+        {
+            if (TimeController.getInstance().isNowNight())
+            {
+                changeMode(1);
+            }
+            else
+            {
+                changeMode(0);
+            }
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Error while notifyChangeMode(): " + e.getMessage(), e);
+        }
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final DayNightSpawnManager _instance = new DayNightSpawnManager();
+    }
+
+    public void cleanUp()
+    {
+        _bosses.clear();
+    }
 }

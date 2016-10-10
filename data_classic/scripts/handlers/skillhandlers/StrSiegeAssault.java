@@ -31,107 +31,124 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author _tomciaaa_
- *
  */
 public class StrSiegeAssault implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.STRSIEGEASSAULT
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance) activeChar;
-		
-		if (!player.isRidingStrider())
-			return;
-		if (!(player.getTarget() instanceof L2DoorInstance))
-			return;
-		
-		Castle castle = CastleManager.getInstance().getCastle(player);
-		Fort fort = FortManager.getInstance().getFort(player);
-		
-		if ((castle == null) && (fort == null))
-			return;
-		
-		if (castle != null)
-		{
-			if (!player.checkIfOkToUseStriderSiegeAssault(castle))
-				return;
-		}
-		else
-		{
-			if (!player.checkIfOkToUseStriderSiegeAssault(fort))
-				return;
-		}
-		
-		try
-		{
-			// damage calculation
-			int damage = 0;
-			
-			for (L2Character target: (L2Character[]) targets)
-			{
-				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance)target).isFakeDeath())
-				{
-					target.stopFakeDeath(true);
-				}
-				else if (target.isDead())
-					continue;
-				
-				boolean dual = activeChar.isUsingDualWeapon();
-				byte shld = Formulas.calcShldUse(activeChar, target, skill);
-				boolean crit = Formulas.calcCrit(activeChar.getCriticalHit(target, skill), target);
-				double soul = L2ItemInstance.CHARGED_NONE;
-				if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
-					soul = weapon.getChargedSoulShot();
-				
-				if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
-					damage = 0;
-				else
-					damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shld, crit, dual, soul);
-				
-				if (damage > 0)
-				{
-					target.reduceCurrentHp(damage, activeChar, skill);
-					if (weapon != null)
-						weapon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-					
-					activeChar.sendDamageMessage(target, damage, false, false, false);
-					
-				}
-				else
-					activeChar.sendMessage(skill.getName() + " failed.");
-			}
-		}
-		catch (Exception e)
-		{
-			player.sendMessage("Error using siege assault:" + e);
-		}
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
-	
-	public static void main(String[] args)
-	{
-		new StrSiegeAssault();
-	}
-	
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.STRSIEGEASSAULT};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) activeChar;
+
+        if (!player.isRidingStrider())
+        {
+            return;
+        }
+        if (!(player.getTarget() instanceof L2DoorInstance))
+        {
+            return;
+        }
+
+        Castle castle = CastleManager.getInstance().getCastle(player);
+        Fort fort = FortManager.getInstance().getFort(player);
+
+        if ((castle == null) && (fort == null))
+        {
+            return;
+        }
+
+        if (castle != null)
+        {
+            if (!player.checkIfOkToUseStriderSiegeAssault(castle))
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (!player.checkIfOkToUseStriderSiegeAssault(fort))
+            {
+                return;
+            }
+        }
+
+        try
+        {
+            // damage calculation
+            int damage = 0;
+
+            for (L2Character target : (L2Character[]) targets)
+            {
+                L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
+                if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target)
+                        .isFakeDeath())
+                {
+                    target.stopFakeDeath(true);
+                }
+                else if (target.isDead())
+                {
+                    continue;
+                }
+
+                boolean dual = activeChar.isUsingDualWeapon();
+                byte shld = Formulas.calcShldUse(activeChar, target, skill);
+                boolean crit = Formulas.calcCrit(activeChar.getCriticalHit(target, skill), target);
+                double soul = L2ItemInstance.CHARGED_NONE;
+                if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
+                {
+                    soul = weapon.getChargedSoulShot();
+                }
+
+                if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
+                {
+                    damage = 0;
+                }
+                else
+                {
+                    damage = (int) Formulas.calcPhysDam(activeChar, target, skill, shld, crit, dual, soul);
+                }
+
+                if (damage > 0)
+                {
+                    target.reduceCurrentHp(damage, activeChar, skill);
+                    if (weapon != null)
+                    {
+                        weapon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+                    }
+
+                    activeChar.sendDamageMessage(target, damage, false, false, false);
+                }
+                else
+                {
+                    activeChar.sendMessage(skill.getName() + " failed.");
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            player.sendMessage("Error using siege assault:" + e);
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
+
+    public static void main(String[] args)
+    {
+        new StrSiegeAssault();
+    }
 }

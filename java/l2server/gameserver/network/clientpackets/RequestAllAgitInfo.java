@@ -19,31 +19,30 @@ import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExShowAgitInfo;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class RequestAllAgitInfo extends L2GameClientPacket
 {
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2GameClient client = getClient();
-		if (client != null)
-		{
-			client.sendPacket(new ExShowAgitInfo());
-		}
-	}
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2GameClient client = getClient();
+        if (client != null)
+        {
+            client.sendPacket(new ExShowAgitInfo());
+        }
+    }
 }

@@ -27,38 +27,48 @@ import l2server.gameserver.network.serverpackets.TargetUnselected;
  */
 public final class RequestTargetCancel extends L2GameClientPacket
 {
-	
-	private int _unselect;
-	
-	@Override
-	protected void readImpl()
-	{
-		_unselect = readH();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (activeChar.isLockedTarget())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_DISABLE_TARGET));
-			return;
-		}
-		
-		if (_unselect == 0)
-		{
-			if (activeChar.isCastingNow() && activeChar.canAbortCast())
-				activeChar.abortCast();
-			else if (activeChar.getTarget() != null)
-				activeChar.setTarget(null);
-		}
-		else if (activeChar.getTarget() != null)
-			activeChar.setTarget(null);
-		else if (activeChar.isInAirShip())
-			activeChar.broadcastPacket(new TargetUnselected(activeChar));
-	}
+
+    private int _unselect;
+
+    @Override
+    protected void readImpl()
+    {
+        _unselect = readH();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (activeChar.isLockedTarget())
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_DISABLE_TARGET));
+            return;
+        }
+
+        if (_unselect == 0)
+        {
+            if (activeChar.isCastingNow() && activeChar.canAbortCast())
+            {
+                activeChar.abortCast();
+            }
+            else if (activeChar.getTarget() != null)
+            {
+                activeChar.setTarget(null);
+            }
+        }
+        else if (activeChar.getTarget() != null)
+        {
+            activeChar.setTarget(null);
+        }
+        else if (activeChar.isInAirShip())
+        {
+            activeChar.broadcastPacket(new TargetUnselected(activeChar));
+        }
+    }
 }

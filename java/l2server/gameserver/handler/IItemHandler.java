@@ -29,13 +29,14 @@ import l2server.gameserver.model.actor.L2Playable;
 
 public interface IItemHandler
 {
-	public static Logger _log = Logger.getLogger(IItemHandler.class.getName());
-	
-	/**
-	 * Launch task associated to the item.
-	 * @param playable : L2PlayableInstance designating the player
-	 * @param item : L2ItemInstance designating the item to use
-	 * @param forceUse: ctrl hold on item use
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
+    public static Logger _log = Logger.getLogger(IItemHandler.class.getName());
+
+    /**
+     * Launch task associated to the item.
+     *
+     * @param playable  : L2PlayableInstance designating the player
+     * @param item      : L2ItemInstance designating the item to use
+     * @param forceUse: ctrl hold on item use
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
 }

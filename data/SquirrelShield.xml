@@ -1,68 +1,68 @@
 <list>
-	<software name='L2Tower'>
-		<process size='407552' />
-		<process size='407040' />
-		<files>
-			<file name='L2TowerEditor.exe' />
-			<file name='L2TowerHelp.exe' />
-			<file name='L2TowerScript.exe' />
-			<file name='L2TowerUpdate.exe' />
-		</files>
-	</software>
-	<software name='Adrenalin'>
-		<process size='1998336' />
-		<files>
-			<file name='L2DB.dat' />
-			<file name='L2ICO.dat' />
-		</files>
-	</software>
-	<software name='zRanger'>
-		<process size='2977792' />
-		<process size='3921408' />
-		<files>
-			<file name='ZLauncher.exe' />
-			<file name='L2Ranger.exe' />
-			<file name='L2Ranger-Conf.exe' />
-			<file name='loadhook.dll' />
-		</files>
-	</software>
-	<software name='L2Phx'>
-		<process size='4315648' />
-		<files>
-			<file name='LSPProvider.dll' />
-		</files>
-	</software>
-	<software name='L2Walker'>
-		<process size='946176' />
-		<files>
-			<file name='L2Walker.dll' />
-		</files>
-	</software>
-	<software name='L2Net'>
-		<process size='11133440' />
-	</software>
-	<software name='L2Zur'>
-		<process size='1007097' />
-	</software>
-	<software name='L2Bot'>
-		<process size='3002368' />
-	</software>
-	<software name='L2 Codename'>
-		<process size='230912' />
-	</software>
-	<software name='MacroRecorder'>
-		<process size='1167888' />
-	</software>
-	<software name='MacroGamer'>
-		<process size='546830' />
-	</software>
-	<software name='nTracker'>
-		<process size='4468736' />
-	</software>
-	<software name='LA 2 ROBOT' />
-	<software name='LA2Robot'>
-		<process size='311297' />
-	</software>
-	<software name='L2Divine' />
-	<software name='AutoHotKey' />
+    <software name='L2Tower'>
+        <process size='407552' />
+        <process size='407040' />
+        <files>
+            <file name='L2TowerEditor.exe' />
+            <file name='L2TowerHelp.exe' />
+            <file name='L2TowerScript.exe' />
+            <file name='L2TowerUpdate.exe' />
+        </files>
+    </software>
+    <software name='Adrenalin'>
+        <process size='1998336' />
+        <files>
+            <file name='L2DB.dat' />
+            <file name='L2ICO.dat' />
+        </files>
+    </software>
+    <software name='zRanger'>
+        <process size='2977792' />
+        <process size='3921408' />
+        <files>
+            <file name='ZLauncher.exe' />
+            <file name='L2Ranger.exe' />
+            <file name='L2Ranger-Conf.exe' />
+            <file name='loadhook.dll' />
+        </files>
+    </software>
+    <software name='L2Phx'>
+        <process size='4315648' />
+        <files>
+            <file name='LSPProvider.dll' />
+        </files>
+    </software>
+    <software name='L2Walker'>
+        <process size='946176' />
+        <files>
+            <file name='L2Walker.dll' />
+        </files>
+    </software>
+    <software name='L2Net'>
+        <process size='11133440' />
+    </software>
+    <software name='L2Zur'>
+        <process size='1007097' />
+    </software>
+    <software name='L2Bot'>
+        <process size='3002368' />
+    </software>
+    <software name='L2 Codename'>
+        <process size='230912' />
+    </software>
+    <software name='MacroRecorder'>
+        <process size='1167888' />
+    </software>
+    <software name='MacroGamer'>
+        <process size='546830' />
+    </software>
+    <software name='nTracker'>
+        <process size='4468736' />
+    </software>
+    <software name='LA 2 ROBOT' />
+    <software name='LA2Robot'>
+        <process size='311297' />
+    </software>
+    <software name='L2Divine' />
+    <software name='AutoHotKey' />
 </list>

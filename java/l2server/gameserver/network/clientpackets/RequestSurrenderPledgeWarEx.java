@@ -28,66 +28,73 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- *
  * @author Erlandys
  */
 public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 {
-	
-	private String _pledgeName;
-	
-	@Override
-	protected void readImpl()
-	{
-		_pledgeName = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		L2Clan playerClan = player.getClan();
-		if (playerClan == null)
-			return;
-		
-		L2Clan clan = ClanTable.getInstance().getClanByName(_pledgeName);
-		
-		if (clan == null)
-		{
-			player.sendMessage("No such clan.");
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (!playerClan.getClanWars().contains(clan))
-		{
-			player.sendMessage("Your clan does not have any war relation with " + clan.getName() + "'s clan.");
-			return;
-		}
-		
-		if (!playerClan.isAtWarWith(clan.getClanId()) && !clan.isAtWarWith(playerClan.getClanId()))
-		{
-			//player.sendPacket(SystemMessageId.CANT_STOP_CLAN_WAR_WHILE_IN_COMBAT);
-			player.sendMessage("War with " + clan.getName() + " isn't started or in repose state!");
-			return;
-		}
-		
-		// Check if player who does the request has the correct rights to do it
-		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
-			return;
-		}
-		
-		ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
-		war.setLoser(playerClan);
-		war.setWinner(clan);
-		war.stop();
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance cha : pls)
-			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
-				cha.broadcastUserInfo();
-	}
+
+    private String _pledgeName;
+
+    @Override
+    protected void readImpl()
+    {
+        _pledgeName = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+        L2Clan playerClan = player.getClan();
+        if (playerClan == null)
+        {
+            return;
+        }
+
+        L2Clan clan = ClanTable.getInstance().getClanByName(_pledgeName);
+
+        if (clan == null)
+        {
+            player.sendMessage("No such clan.");
+            player.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (!playerClan.getClanWars().contains(clan))
+        {
+            player.sendMessage("Your clan does not have any war relation with " + clan.getName() + "'s clan.");
+            return;
+        }
+
+        if (!playerClan.isAtWarWith(clan.getClanId()) && !clan.isAtWarWith(playerClan.getClanId()))
+        {
+            //player.sendPacket(SystemMessageId.CANT_STOP_CLAN_WAR_WHILE_IN_COMBAT);
+            player.sendMessage("War with " + clan.getName() + " isn't started or in repose state!");
+            return;
+        }
+
+        // Check if player who does the request has the correct rights to do it
+        if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
+        {
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+            return;
+        }
+
+        ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
+        war.setLoser(playerClan);
+        war.setWinner(clan);
+        war.stop();
+        Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+        for (L2PcInstance cha : pls)
+        {
+            if (cha.getClan() == player.getClan() || cha.getClan() == clan)
+            {
+                cha.broadcastUserInfo();
+            }
+        }
+    }
 }

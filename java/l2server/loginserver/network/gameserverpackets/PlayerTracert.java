@@ -24,29 +24,28 @@ import l2server.util.network.BaseRecievePacket;
 
 /**
  * @author mrTJO
- *
  */
 public class PlayerTracert extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(PlayerTracert.class.getName());
-	
-	/**
-	 * @param decrypt
-	 */
-	public PlayerTracert(byte[] decrypt)
-	{
-		super(decrypt);
-		String account = readS();
-		String pcIp = readS();
-		String hop1 = readS();
-		String hop2 = readS();
-		String hop3 = readS();
-		String hop4 = readS();
-		
-		LoginController.getInstance().setAccountLastTracert(account, pcIp, hop1, hop2, hop3, hop4);
-		if (Config.DEBUG)
-		{
-			Log.info("Saved " + account + " last tracert");
-		}
-	}
+    protected static Logger _log = Logger.getLogger(PlayerTracert.class.getName());
+
+    /**
+     * @param decrypt
+     */
+    public PlayerTracert(byte[] decrypt)
+    {
+        super(decrypt);
+        String account = readS();
+        String pcIp = readS();
+        String hop1 = readS();
+        String hop2 = readS();
+        String hop3 = readS();
+        String hop4 = readS();
+
+        LoginController.getInstance().setAccountLastTracert(account, pcIp, hop1, hop2, hop3, hop4);
+        if (Config.DEBUG)
+        {
+            Log.info("Saved " + account + " last tracert");
+        }
+    }
 }

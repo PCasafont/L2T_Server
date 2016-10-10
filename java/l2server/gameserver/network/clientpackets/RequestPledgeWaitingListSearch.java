@@ -23,34 +23,38 @@ import l2server.gameserver.network.serverpackets.ExPledgeWaitingListSearch;
  */
 public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 {
-	private int _minLevel;
-	private int _maxLevel;
-	private int _role;
-	private int _sortBy;
-	private boolean _desc;
-	private String _name;
-	
-	@Override
-	protected void readImpl()
-	{
-		_minLevel = readD();
-		_maxLevel = readD();
-		_role = readD();
-		_name = readS();
-		_sortBy = readD();
-		_desc = readD() == 1;
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
-			return;
-		
-		sendPacket(new ExPledgeWaitingListSearch(_minLevel, _maxLevel, _role, _sortBy, _desc, _name));
-	}
+    private int _minLevel;
+    private int _maxLevel;
+    private int _role;
+    private int _sortBy;
+    private boolean _desc;
+    private String _name;
+
+    @Override
+    protected void readImpl()
+    {
+        _minLevel = readD();
+        _maxLevel = readD();
+        _role = readD();
+        _name = readS();
+        _sortBy = readD();
+        _desc = readD() == 1;
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
+        {
+            return;
+        }
+
+        sendPacket(new ExPledgeWaitingListSearch(_minLevel, _maxLevel, _role, _sortBy, _desc, _name));
+    }
 }

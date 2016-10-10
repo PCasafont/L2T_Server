@@ -1,31 +1,31 @@
 <list>
-	<!-- [21_23_NPC_031201_01] -->
-	<spawn npcId="30879" x="48564" y="186548" z="-3445" heading="42000" respawn="60" /> <!-- Felton -->
-	<!-- [21_23_NPC_031201_02] -->
-	<spawn npcId="30878" x="47984" y="186832" z="-3445" heading="42000" respawn="60" /> <!-- Angelina -->
-	<!-- [quest_21_23_001] -->
-	<group minZ="-3284" maxZ="-2784">
-		<vertex x="34972" y="174816" />
-		<vertex x="36672" y="174540" />
-		<vertex x="37168" y="175460" />
-		<vertex x="36468" y="176640" />
-		<vertex x="35144" y="175932" />
-		<spawn npcId="27046" respawn="300" amount="1" /> <!-- Sumi -->
-	</group>
-	<!-- [quest_030919_21_23_001] -->
-	<group minZ="-2736" maxZ="-2336">
-		<vertex x="56080" y="179228" />
-		<vertex x="57616" y="179048" />
-		<vertex x="57692" y="179788" />
-		<vertex x="56488" y="180260" />
-		<spawn npcId="27093" respawn="180" amount="1" /> <!-- Delu Chief Kalkis -->
-	</group>
-	<!-- [quest_030919_22_23_002] -->
-	<group minZ="-3684" maxZ="-3284">
-		<vertex x="75020" y="165688" />
-		<vertex x="75892" y="165920" />
-		<vertex x="75932" y="166212" />
-		<vertex x="74872" y="166096" />
-		<spawn npcId="27097" respawn="180" amount="3" /> <!-- Singing Flower of Darkness -->
-	</group>
+    <!-- [21_23_NPC_031201_01] -->
+    <spawn npcId="30879" x="48564" y="186548" z="-3445" heading="42000" respawn="60" /> <!-- Felton -->
+    <!-- [21_23_NPC_031201_02] -->
+    <spawn npcId="30878" x="47984" y="186832" z="-3445" heading="42000" respawn="60" /> <!-- Angelina -->
+    <!-- [quest_21_23_001] -->
+    <group minZ="-3284" maxZ="-2784">
+        <vertex x="34972" y="174816" />
+        <vertex x="36672" y="174540" />
+        <vertex x="37168" y="175460" />
+        <vertex x="36468" y="176640" />
+        <vertex x="35144" y="175932" />
+        <spawn npcId="27046" respawn="300" amount="1" /> <!-- Sumi -->
+    </group>
+    <!-- [quest_030919_21_23_001] -->
+    <group minZ="-2736" maxZ="-2336">
+        <vertex x="56080" y="179228" />
+        <vertex x="57616" y="179048" />
+        <vertex x="57692" y="179788" />
+        <vertex x="56488" y="180260" />
+        <spawn npcId="27093" respawn="180" amount="1" /> <!-- Delu Chief Kalkis -->
+    </group>
+    <!-- [quest_030919_22_23_002] -->
+    <group minZ="-3684" maxZ="-3284">
+        <vertex x="75020" y="165688" />
+        <vertex x="75892" y="165920" />
+        <vertex x="75932" y="166212" />
+        <vertex x="74872" y="166096" />
+        <spawn npcId="27097" respawn="180" amount="3" /> <!-- Singing Flower of Darkness -->
+    </group>
 </list>

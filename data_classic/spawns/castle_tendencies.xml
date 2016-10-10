@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<specificSpawnList name="dion_darkness_tendency">
-		<!-- Chamberlain of Darkness -->
-		<spawn npcId="36654" x="22172" y="160923" z="-2666" heading="49152" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="dion_light_tendency">
-		<!-- Chamberlain of Light -->
-		<spawn npcId="35142" x="22172" y="160923" z="-2666" heading="49152" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="giran_darkness_tendency">
-		<!-- Chamberlain of Darkness -->
-		<spawn npcId="36655" x="117095" y="144997" z="-2539" heading="32768" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="giran_light_tendency">
-		<!-- Chamberlain of Light -->
-		<spawn npcId="35184" x="117095" y="144997" z="-2539" heading="32768" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="gludio_darkness_tendency">
-		<!-- Chamberlain of Darkness -->
-		<spawn npcId="36653" x="-18212" y="108827" z="-2472" heading="16384" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="gludio_light_tendency">
-		<!-- Chamberlain of Light -->
-		<spawn npcId="35100" x="-18212" y="108827" z="-2472" heading="16384" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="oren_darkness_tendency">
-		<!-- Chamberlain of Darkness -->
-		<spawn npcId="36656" x="83171" y="37092" z="-2266" heading="32768" respawn="60" />
-	</specificSpawnList>
-	<specificSpawnList name="oren_light_tendency">
-		<!-- Chamberlain of Light -->
-		<spawn npcId="35226" x="83171" y="37092" z="-2266" heading="32768" respawn="60"/>
-	</specificSpawnList>
+    <specificSpawnList name="dion_darkness_tendency">
+        <!-- Chamberlain of Darkness -->
+        <spawn npcId="36654" x="22172" y="160923" z="-2666" heading="49152" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="dion_light_tendency">
+        <!-- Chamberlain of Light -->
+        <spawn npcId="35142" x="22172" y="160923" z="-2666" heading="49152" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="giran_darkness_tendency">
+        <!-- Chamberlain of Darkness -->
+        <spawn npcId="36655" x="117095" y="144997" z="-2539" heading="32768" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="giran_light_tendency">
+        <!-- Chamberlain of Light -->
+        <spawn npcId="35184" x="117095" y="144997" z="-2539" heading="32768" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="gludio_darkness_tendency">
+        <!-- Chamberlain of Darkness -->
+        <spawn npcId="36653" x="-18212" y="108827" z="-2472" heading="16384" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="gludio_light_tendency">
+        <!-- Chamberlain of Light -->
+        <spawn npcId="35100" x="-18212" y="108827" z="-2472" heading="16384" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="oren_darkness_tendency">
+        <!-- Chamberlain of Darkness -->
+        <spawn npcId="36656" x="83171" y="37092" z="-2266" heading="32768" respawn="60" />
+    </specificSpawnList>
+    <specificSpawnList name="oren_light_tendency">
+        <!-- Chamberlain of Light -->
+        <spawn npcId="35226" x="83171" y="37092" z="-2266" heading="32768" respawn="60" />
+    </specificSpawnList>
 </list>

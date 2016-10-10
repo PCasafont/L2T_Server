@@ -29,40 +29,44 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AdminDelete implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS = { "admin_delete" };
-	
-	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_delete"))
-			handleDelete(activeChar);
-		return true;
-	}
-	
-	@Override
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
-	
-	private void handleDelete(L2PcInstance activeChar)
-	{
-		L2Object obj = activeChar.getTarget();
-		if (obj instanceof L2Npc)
-		{
-			L2Npc target = (L2Npc) obj;
-			target.deleteMe();
-			
-			L2Spawn spawn = target.getSpawn();
-			if (spawn != null)
-			{
-				spawn.stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(spawn, true);
-			}
-			
-			activeChar.sendMessage("Deleted " + target.getName() + " from " + target.getObjectId() + ".");
-		}
-		else
-			activeChar.sendMessage("Incorrect target.");
-	}
+    private static final String[] ADMIN_COMMANDS = {"admin_delete"};
+
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        if (command.equals("admin_delete"))
+        {
+            handleDelete(activeChar);
+        }
+        return true;
+    }
+
+    @Override
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
+
+    private void handleDelete(L2PcInstance activeChar)
+    {
+        L2Object obj = activeChar.getTarget();
+        if (obj instanceof L2Npc)
+        {
+            L2Npc target = (L2Npc) obj;
+            target.deleteMe();
+
+            L2Spawn spawn = target.getSpawn();
+            if (spawn != null)
+            {
+                spawn.stopRespawn();
+                SpawnTable.getInstance().deleteSpawn(spawn, true);
+            }
+
+            activeChar.sendMessage("Deleted " + target.getName() + " from " + target.getObjectId() + ".");
+        }
+        else
+        {
+            activeChar.sendMessage("Incorrect target.");
+        }
+    }
 }

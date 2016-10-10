@@ -26,46 +26,47 @@ import l2server.gameserver.network.serverpackets.StaticObject;
 
 public class L2DoorInstanceActionShift implements IActionHandler
 {
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (activeChar.getAccessLevel().isGm())
-		{
-			activeChar.setTarget(target);
-			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
-			
-			StaticObject su = new StaticObject((L2DoorInstance)target, activeChar.isGM());
-			
-			activeChar.sendPacket(su);
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(0);
-			html.setFile(activeChar.getHtmlPrefix(), "admin/doorinfo.htm");
-			html.replace("%class%", target.getClass().getSimpleName());
-			html.replace("%hp%",    String.valueOf((int)((L2Character)target).getCurrentHp()));
-			html.replace("%hpmax%", String.valueOf(((L2Character)target).getMaxHp()));
-			html.replace("%objid%", String.valueOf(target.getObjectId()));
-			html.replace("%doorid%",  String.valueOf(((L2DoorInstance)target).getDoorId()));
-			
-			html.replace("%minx%", String.valueOf(((L2DoorInstance)target).getX(1)));
-			html.replace("%miny%", String.valueOf(((L2DoorInstance)target).getY(1)));
-			// html.replace("%minx%", String.valueOf(((L2DoorInstance)target).getXMin()));
-			// html.replace("%miny%", String.valueOf(((L2DoorInstance)target).getYMin()));
-			// html.replace("%minz%", String.valueOf(((L2DoorInstance)target).getZMin()));
-			
-			html.replace("%maxx%", String.valueOf(((L2DoorInstance)target).getX(3)));
-			html.replace("%maxy%", String.valueOf(((L2DoorInstance)target).getY(3)));
-			// html.replace("%maxx%", String.valueOf(((L2DoorInstance)target).getXMax()));
-			// html.replace("%maxy%", String.valueOf(((L2DoorInstance)target).getYMax()));
-			// html.replace("%maxz%", String.valueOf(((L2DoorInstance)target).getZMax()));
-			html.replace("%unlock%", ((L2DoorInstance)target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
-			// html.replace("%unlock%", ((L2DoorInstance)target).isUnlockable() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
-			
-			activeChar.sendPacket(html);
-		}
-		return true;
-	}
-	
-	public InstanceType getInstanceType()
-	{
-		return InstanceType.L2DoorInstance;
-	}
+    public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+    {
+        if (activeChar.getAccessLevel().isGm())
+        {
+            activeChar.setTarget(target);
+            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
+
+            StaticObject su = new StaticObject((L2DoorInstance) target, activeChar.isGM());
+
+            activeChar.sendPacket(su);
+
+            NpcHtmlMessage html = new NpcHtmlMessage(0);
+            html.setFile(activeChar.getHtmlPrefix(), "admin/doorinfo.htm");
+            html.replace("%class%", target.getClass().getSimpleName());
+            html.replace("%hp%", String.valueOf((int) ((L2Character) target).getCurrentHp()));
+            html.replace("%hpmax%", String.valueOf(((L2Character) target).getMaxHp()));
+            html.replace("%objid%", String.valueOf(target.getObjectId()));
+            html.replace("%doorid%", String.valueOf(((L2DoorInstance) target).getDoorId()));
+
+            html.replace("%minx%", String.valueOf(((L2DoorInstance) target).getX(1)));
+            html.replace("%miny%", String.valueOf(((L2DoorInstance) target).getY(1)));
+            // html.replace("%minx%", String.valueOf(((L2DoorInstance)target).getXMin()));
+            // html.replace("%miny%", String.valueOf(((L2DoorInstance)target).getYMin()));
+            // html.replace("%minz%", String.valueOf(((L2DoorInstance)target).getZMin()));
+
+            html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
+            html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
+            // html.replace("%maxx%", String.valueOf(((L2DoorInstance)target).getXMax()));
+            // html.replace("%maxy%", String.valueOf(((L2DoorInstance)target).getYMax()));
+            // html.replace("%maxz%", String.valueOf(((L2DoorInstance)target).getZMax()));
+            html.replace("%unlock%", ((L2DoorInstance) target)
+                    .isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
+            // html.replace("%unlock%", ((L2DoorInstance)target).isUnlockable() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
+
+            activeChar.sendPacket(html);
+        }
+        return true;
+    }
+
+    public InstanceType getInstanceType()
+    {
+        return InstanceType.L2DoorInstance;
+    }
 }

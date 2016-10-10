@@ -1,1097 +1,1097 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Wrapped Pack containing Lucky Enchant Stone: Armor (S-grade). -->
-	<item id="21300" type="EtcItem" name="Lucky Enchant Stone: Armor Pack (S-grade) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing a Crystal of Fortune Treasure Sack. -->
-	<item id="21301" type="EtcItem" name="Crystal of Fortune Treasure Sack Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing a Crystal of Fortune Treasure Sack. -->
-	<item id="21302" type="EtcItem" name="Crystal of Fortune Treasure Sack Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 Attribute Crystal or Attribute Stone. -->
-	<item id="21303" type="EtcItem" name="Crystal of Fortune Treasure Sack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 Attribute Crystal or Attribute Stone. -->
-	<item id="21304" type="EtcItem" name="Crystal of Fortune Treasure Sack - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Enchant Scroll of Fortune Treasure Sack. -->
-	<item id="21305" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Enchant Scroll of Fortune Treasure Sack. -->
-	<item id="21306" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 C-grade ~S regular or blessed weapon/armor enchant scroll. -->
-	<item id="21307" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 C-grade ~S regular or blessed weapon/armor enchant scroll. -->
-	<item id="21308" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Bead of Fortune Treasure Sack. -->
-	<item id="21309" type="EtcItem" name="Bead of Fortune Treasure Sack Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Bead of Fortune Treasure Sack. -->
-	<item id="21310" type="EtcItem" name="Bead of Fortune Treasure Sack Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 Neolithic Crystal (B~S84), Vitality Replenishing Potion, or Superior Minion coupon (5-hour). -->
-	<item id="21311" type="EtcItem" name="Bead of Fortune Treasure Sack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- When you open the treasure sack, you can obtain 1 Neolithic Crystal (B~S84), Vitality Replenishing Potion, or Superior Minion coupon (5-hour). -->
-	<item id="21312" type="EtcItem" name="Bead of Fortune Treasure Sack - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- Wrapped Pack containing rider pouch. -->
-	<item id="21313" type="EtcItem" name="Rider Pouch Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing rider pouch. -->
-	<item id="21314" type="EtcItem" name="Rider Pouch Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent mount bracelet for Darkmane Pacer, Steam Beetle, Gold Maned Lion, or Jet Bike. -->
-	<item id="21315" type="EtcItem" name="Rider Pouch">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent mount bracelet for Darkmane Pacer, Steam Beetle, Gold Maned Lion, or Jet Bike. -->
-	<item id="21316" type="EtcItem" name="Rider Pouch - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing fashion pouch. -->
-	<item id="21317" type="EtcItem" name="Fashion Pouch Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing fashion pouch. -->
-	<item id="21318" type="EtcItem" name="Fashion Pouch Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent Refined Dapper Cap, Valkyrie Circlet, or Plastic Hair. -->
-	<item id="21319" type="EtcItem" name="Fashion Pouch">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent Refined Dapper Cap, Valkyrie Circlet, or Plastic Hair. -->
-	<item id="21320" type="EtcItem" name="Fashion Pouch - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing buff pouch. -->
-	<item id="21321" type="EtcItem" name="Buff Pouch Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing buff pouch. -->
-	<item id="21322" type="EtcItem" name="Buff Pouch Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the pouch, you can obtain 1 of the following: cookie (Gludio, Dion, Aden, Giran, Rune), super healthy juice (HP, CP), sweet/fresh fruit cocktail, or fresh milk. -->
-	<item id="21323" type="EtcItem" name="Buff Pouch">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When you open the pouch, you can obtain 1 of the following: cookie (Gludio, Dion, Aden, Giran, Rune), super healthy juice (HP, CP), sweet/fresh fruit cocktail, or fresh milk. -->
-	<item id="21324" type="EtcItem" name="Buff Pouch - Event">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin (7-day). -->
-	<item id="21325" type="EtcItem" name="Agathion - Griffin Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin (7-day). -->
-	<item id="21326" type="EtcItem" name="Agathion - Griffin Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin (30-day). -->
-	<item id="21327" type="EtcItem" name="Agathion - Griffin Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin (30-day). -->
-	<item id="21328" type="EtcItem" name="Agathion - Griffin Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin. -->
-	<item id="21329" type="EtcItem" name="Agathion - Griffin Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Griffin. -->
-	<item id="21330" type="EtcItem" name="Agathion - Griffin Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. 7-day. -->
-	<item id="21331" type="Armor" name="Agathion - Griffin - 7-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. 7-day. -->
-	<item id="21332" type="Armor" name="Agathion - Griffin - 7-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. 30-day. -->
-	<item id="21333" type="Armor" name="Agathion - Griffin - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. 30-day. -->
-	<item id="21334" type="Armor" name="Agathion - Griffin - 30-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. -->
-	<item id="21335" type="Armor" name="Agathion - Griffin">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Griffin when equipped. -->
-	<item id="21336" type="Armor" name="Agathion - Griffin - Event">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow (7-day). -->
-	<item id="21337" type="EtcItem" name="Agathion - Cow Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow (7-day). -->
-	<item id="21338" type="EtcItem" name="Agathion - Cow Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow (30-day). -->
-	<item id="21339" type="EtcItem" name="Agathion - Cow Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow (30-day). -->
-	<item id="21340" type="EtcItem" name="Agathion - Cow Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow. -->
-	<item id="21341" type="EtcItem" name="Agathion - Cow Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Cow. -->
-	<item id="21342" type="EtcItem" name="Agathion - Cow Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can summon an Agathion - Cow when equipped. 7-day. -->
-	<item id="21343" type="Armor" name="Agathion - Cow - 7-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Cow when equipped. 7-day. -->
-	<item id="21344" type="Armor" name="Agathion - Cow - 7-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Cow when equipped. 30-day. -->
-	<item id="21345" type="Armor" name="Agathion - Cow - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Cow when equipped. 30-day. -->
-	<item id="21346" type="Armor" name="Agathion - Cow - 30-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Cow when equipped. -->
-	<item id="21347" type="Armor" name="Agathion - Cow">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon Agathion - Cow when equipped. -->
-	<item id="21348" type="Armor" name="Agathion - Cow - Event">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat (7-day). -->
-	<item id="21349" type="EtcItem" name="Agathion - Makeshift Bat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat (7-day). -->
-	<item id="21350" type="EtcItem" name="Agathion - Makeshift Bat Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat (30-day). -->
-	<item id="21351" type="EtcItem" name="Agathion - Makeshift Bat Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat (30-day). -->
-	<item id="21352" type="EtcItem" name="Agathion - Makeshift Bat Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat. -->
-	<item id="21353" type="EtcItem" name="Agathion - Makeshift Bat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Makeshift Bat. -->
-	<item id="21354" type="EtcItem" name="Agathion - Makeshift Bat Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can summon an Agathion - Makeshift Bat when equipped. 7-day. -->
-	<item id="21355" type="Armor" name="Agathion - Makeshift Bat - 7-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Makeshift Bat when equipped. 7-day. -->
-	<item id="21356" type="Armor" name="Agathion - Makeshift Bat - 7-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Makeshift Bat when equipped. 30-day. -->
-	<item id="21357" type="Armor" name="Agathion - Makeshift Bat - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Makeshift Bat when equipped. 30-day. -->
-	<item id="21358" type="Armor" name="Agathion - Makeshift Bat - 30-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon Agathion - Makeshift Bat when equipped. -->
-	<item id="21359" type="Armor" name="Agathion - Makeshift Bat">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can summon an Agathion - Makeshift Bat when equipped. -->
-	<item id="21360" type="Armor" name="Agathion - Makeshift Bat - Event">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp (7-day). -->
-	<item id="21361" type="EtcItem" name="Aqua Elf Transformation Harp Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp (7-day). -->
-	<item id="21362" type="EtcItem" name="Aqua Elf Transformation Harp Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp (30-day). -->
-	<item id="21363" type="EtcItem" name="Aqua Elf Transformation Harp Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp (30-day). -->
-	<item id="21364" type="EtcItem" name="Aqua Elf Transformation Harp Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp. -->
-	<item id="21365" type="EtcItem" name="Aqua Elf Transformation Harp Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Aqua Elf Transformation Harp. -->
-	<item id="21366" type="EtcItem" name="Aqua Elf Transformation Harp Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. 7-day. -->
-	<item id="21367" type="Weapon" name="Aqua Elf Transformation Harp - 7-day">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. 7-day. -->
-	<item id="21368" type="Weapon" name="Aqua Elf Transformation Harp - 7-day (Event)">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. 30-day. -->
-	<item id="21369" type="Weapon" name="Aqua Elf Transformation Harp - 30-day">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. 30-day. -->
-	<item id="21370" type="Weapon" name="Aqua Elf Transformation Harp - 30-day (Event)">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. -->
-	<item id="21371" type="Weapon" name="Aqua Elf Transformation Harp">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Transformation Harp that turns you into an Aqua Elf. -->
-	<item id="21372" type="Weapon" name="Aqua Elf Transformation Harp - Event">
-		<set name="icon" val="icon.harp_of_transform_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer (7-day). -->
-	<item id="21373" type="EtcItem" name="Mount - Darkmane Pacer Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer (7-day). -->
-	<item id="21374" type="EtcItem" name="Mount - Darkmane Pacer Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
-	<item id="21375" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
-	<item id="21376" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
-	<item id="21377" type="EtcItem" name="Mount - Darkmane Pacer Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
-	<item id="21378" type="EtcItem" name="Mount - Darkmane Pacer Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Allows you to mount a Darkmane Pacer when equipped. 7-day. -->
-	<item id="21379" type="Armor" name="Mount - Darkmane Pacer - 7-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. 7-day. -->
-	<item id="21380" type="Armor" name="Mount - Darkmane Pacer - 7-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can ride a Darkmane Pacer when equipped. 30-day. -->
-	<item id="21381" type="Armor" name="Mount - Darkmane Pacer - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. 30-day. -->
-	<item id="21382" type="Armor" name="Mount - Darkmane Pacer - 30-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. -->
-	<item id="21383" type="Armor" name="Mount - Darkmane Pacer">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. -->
-	<item id="21384" type="Armor" name="Mount - Darkmane Pacer - Event">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle (7-day). -->
-	<item id="21385" type="EtcItem" name="Mount - Steam Beetle Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle (7-day). -->
-	<item id="21386" type="EtcItem" name="Mount - Steam Beetle Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- A wrapped box containing Mount - Steam Beetle (30-day). -->
-	<item id="21387" type="EtcItem" name="Mount - Steam Beetle Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
-	<item id="21388" type="EtcItem" name="Mount - Steam Beetle Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle. -->
-	<item id="21389" type="EtcItem" name="Mount - Steam Beetle Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle. -->
-	<item id="21390" type="EtcItem" name="Mount - Steam Beetle Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. 7-day. -->
-	<item id="21391" type="Armor" name="Mount - Steam Beetle - 7-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. 7-day. -->
-	<item id="21392" type="Armor" name="Mount - Steam Beetle - 7-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can ride a Steam Beetle when equipped. 30-day. -->
-	<item id="21393" type="Armor" name="Mount - Steam Beetle - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. 30-day. -->
-	<item id="21394" type="Armor" name="Mount - Steam Beetle - 30-day (Event)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. -->
-	<item id="21395" type="Armor" name="Mount - Steam Beetle">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. -->
-	<item id="21396" type="Armor" name="Mount - Steam Beetle - Event">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="none" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion (7-day). -->
-	<item id="21397" type="EtcItem" name="Mount - Gold Maned Lion Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion (7-day). -->
-	<item id="21398" type="EtcItem" name="Mount - Gold Maned Lion Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
-	<item id="21399" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
+    <!-- Wrapped Pack containing Lucky Enchant Stone: Armor (S-grade). -->
+    <item id="21300" type="EtcItem" name="Lucky Enchant Stone: Armor Pack (S-grade) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing a Crystal of Fortune Treasure Sack. -->
+    <item id="21301" type="EtcItem" name="Crystal of Fortune Treasure Sack Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing a Crystal of Fortune Treasure Sack. -->
+    <item id="21302" type="EtcItem" name="Crystal of Fortune Treasure Sack Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 Attribute Crystal or Attribute Stone. -->
+    <item id="21303" type="EtcItem" name="Crystal of Fortune Treasure Sack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 Attribute Crystal or Attribute Stone. -->
+    <item id="21304" type="EtcItem" name="Crystal of Fortune Treasure Sack - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Enchant Scroll of Fortune Treasure Sack. -->
+    <item id="21305" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Enchant Scroll of Fortune Treasure Sack. -->
+    <item id="21306" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 C-grade ~S regular or blessed weapon/armor enchant scroll. -->
+    <item id="21307" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 C-grade ~S regular or blessed weapon/armor enchant scroll. -->
+    <item id="21308" type="EtcItem" name="Enchant Scroll of Fortune Treasure Sack - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Bead of Fortune Treasure Sack. -->
+    <item id="21309" type="EtcItem" name="Bead of Fortune Treasure Sack Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Bead of Fortune Treasure Sack. -->
+    <item id="21310" type="EtcItem" name="Bead of Fortune Treasure Sack Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 Neolithic Crystal (B~S84), Vitality Replenishing Potion, or Superior Minion coupon (5-hour). -->
+    <item id="21311" type="EtcItem" name="Bead of Fortune Treasure Sack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- When you open the treasure sack, you can obtain 1 Neolithic Crystal (B~S84), Vitality Replenishing Potion, or Superior Minion coupon (5-hour). -->
+    <item id="21312" type="EtcItem" name="Bead of Fortune Treasure Sack - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- Wrapped Pack containing rider pouch. -->
+    <item id="21313" type="EtcItem" name="Rider Pouch Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing rider pouch. -->
+    <item id="21314" type="EtcItem" name="Rider Pouch Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent mount bracelet for Darkmane Pacer, Steam Beetle, Gold Maned Lion, or Jet Bike. -->
+    <item id="21315" type="EtcItem" name="Rider Pouch">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent mount bracelet for Darkmane Pacer, Steam Beetle, Gold Maned Lion, or Jet Bike. -->
+    <item id="21316" type="EtcItem" name="Rider Pouch - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing fashion pouch. -->
+    <item id="21317" type="EtcItem" name="Fashion Pouch Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing fashion pouch. -->
+    <item id="21318" type="EtcItem" name="Fashion Pouch Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent Refined Dapper Cap, Valkyrie Circlet, or Plastic Hair. -->
+    <item id="21319" type="EtcItem" name="Fashion Pouch">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Open the pouch to obtain a time-limited (7-day or 30-day) or permanent Refined Dapper Cap, Valkyrie Circlet, or Plastic Hair. -->
+    <item id="21320" type="EtcItem" name="Fashion Pouch - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing buff pouch. -->
+    <item id="21321" type="EtcItem" name="Buff Pouch Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing buff pouch. -->
+    <item id="21322" type="EtcItem" name="Buff Pouch Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the pouch, you can obtain 1 of the following: cookie (Gludio, Dion, Aden, Giran, Rune), super healthy juice (HP, CP), sweet/fresh fruit cocktail, or fresh milk. -->
+    <item id="21323" type="EtcItem" name="Buff Pouch">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When you open the pouch, you can obtain 1 of the following: cookie (Gludio, Dion, Aden, Giran, Rune), super healthy juice (HP, CP), sweet/fresh fruit cocktail, or fresh milk. -->
+    <item id="21324" type="EtcItem" name="Buff Pouch - Event">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin (7-day). -->
+    <item id="21325" type="EtcItem" name="Agathion - Griffin Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin (7-day). -->
+    <item id="21326" type="EtcItem" name="Agathion - Griffin Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin (30-day). -->
+    <item id="21327" type="EtcItem" name="Agathion - Griffin Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin (30-day). -->
+    <item id="21328" type="EtcItem" name="Agathion - Griffin Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin. -->
+    <item id="21329" type="EtcItem" name="Agathion - Griffin Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Griffin. -->
+    <item id="21330" type="EtcItem" name="Agathion - Griffin Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. 7-day. -->
+    <item id="21331" type="Armor" name="Agathion - Griffin - 7-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. 7-day. -->
+    <item id="21332" type="Armor" name="Agathion - Griffin - 7-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. 30-day. -->
+    <item id="21333" type="Armor" name="Agathion - Griffin - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. 30-day. -->
+    <item id="21334" type="Armor" name="Agathion - Griffin - 30-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. -->
+    <item id="21335" type="Armor" name="Agathion - Griffin">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Griffin when equipped. -->
+    <item id="21336" type="Armor" name="Agathion - Griffin - Event">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow (7-day). -->
+    <item id="21337" type="EtcItem" name="Agathion - Cow Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow (7-day). -->
+    <item id="21338" type="EtcItem" name="Agathion - Cow Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow (30-day). -->
+    <item id="21339" type="EtcItem" name="Agathion - Cow Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow (30-day). -->
+    <item id="21340" type="EtcItem" name="Agathion - Cow Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow. -->
+    <item id="21341" type="EtcItem" name="Agathion - Cow Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Cow. -->
+    <item id="21342" type="EtcItem" name="Agathion - Cow Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can summon an Agathion - Cow when equipped. 7-day. -->
+    <item id="21343" type="Armor" name="Agathion - Cow - 7-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Cow when equipped. 7-day. -->
+    <item id="21344" type="Armor" name="Agathion - Cow - 7-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Cow when equipped. 30-day. -->
+    <item id="21345" type="Armor" name="Agathion - Cow - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Cow when equipped. 30-day. -->
+    <item id="21346" type="Armor" name="Agathion - Cow - 30-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Cow when equipped. -->
+    <item id="21347" type="Armor" name="Agathion - Cow">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon Agathion - Cow when equipped. -->
+    <item id="21348" type="Armor" name="Agathion - Cow - Event">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat (7-day). -->
+    <item id="21349" type="EtcItem" name="Agathion - Makeshift Bat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat (7-day). -->
+    <item id="21350" type="EtcItem" name="Agathion - Makeshift Bat Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat (30-day). -->
+    <item id="21351" type="EtcItem" name="Agathion - Makeshift Bat Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat (30-day). -->
+    <item id="21352" type="EtcItem" name="Agathion - Makeshift Bat Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat. -->
+    <item id="21353" type="EtcItem" name="Agathion - Makeshift Bat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Makeshift Bat. -->
+    <item id="21354" type="EtcItem" name="Agathion - Makeshift Bat Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can summon an Agathion - Makeshift Bat when equipped. 7-day. -->
+    <item id="21355" type="Armor" name="Agathion - Makeshift Bat - 7-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Makeshift Bat when equipped. 7-day. -->
+    <item id="21356" type="Armor" name="Agathion - Makeshift Bat - 7-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Makeshift Bat when equipped. 30-day. -->
+    <item id="21357" type="Armor" name="Agathion - Makeshift Bat - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Makeshift Bat when equipped. 30-day. -->
+    <item id="21358" type="Armor" name="Agathion - Makeshift Bat - 30-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon Agathion - Makeshift Bat when equipped. -->
+    <item id="21359" type="Armor" name="Agathion - Makeshift Bat">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can summon an Agathion - Makeshift Bat when equipped. -->
+    <item id="21360" type="Armor" name="Agathion - Makeshift Bat - Event">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp (7-day). -->
+    <item id="21361" type="EtcItem" name="Aqua Elf Transformation Harp Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp (7-day). -->
+    <item id="21362" type="EtcItem" name="Aqua Elf Transformation Harp Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp (30-day). -->
+    <item id="21363" type="EtcItem" name="Aqua Elf Transformation Harp Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp (30-day). -->
+    <item id="21364" type="EtcItem" name="Aqua Elf Transformation Harp Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp. -->
+    <item id="21365" type="EtcItem" name="Aqua Elf Transformation Harp Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Aqua Elf Transformation Harp. -->
+    <item id="21366" type="EtcItem" name="Aqua Elf Transformation Harp Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. 7-day. -->
+    <item id="21367" type="Weapon" name="Aqua Elf Transformation Harp - 7-day">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. 7-day. -->
+    <item id="21368" type="Weapon" name="Aqua Elf Transformation Harp - 7-day (Event)">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. 30-day. -->
+    <item id="21369" type="Weapon" name="Aqua Elf Transformation Harp - 30-day">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. 30-day. -->
+    <item id="21370" type="Weapon" name="Aqua Elf Transformation Harp - 30-day (Event)">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. -->
+    <item id="21371" type="Weapon" name="Aqua Elf Transformation Harp">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Transformation Harp that turns you into an Aqua Elf. -->
+    <item id="21372" type="Weapon" name="Aqua Elf Transformation Harp - Event">
+        <set name="icon" val="icon.harp_of_transform_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer (7-day). -->
+    <item id="21373" type="EtcItem" name="Mount - Darkmane Pacer Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer (7-day). -->
+    <item id="21374" type="EtcItem" name="Mount - Darkmane Pacer Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
+    <item id="21375" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
+    <item id="21376" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
+    <item id="21377" type="EtcItem" name="Mount - Darkmane Pacer Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
+    <item id="21378" type="EtcItem" name="Mount - Darkmane Pacer Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Allows you to mount a Darkmane Pacer when equipped. 7-day. -->
+    <item id="21379" type="Armor" name="Mount - Darkmane Pacer - 7-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. 7-day. -->
+    <item id="21380" type="Armor" name="Mount - Darkmane Pacer - 7-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can ride a Darkmane Pacer when equipped. 30-day. -->
+    <item id="21381" type="Armor" name="Mount - Darkmane Pacer - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. 30-day. -->
+    <item id="21382" type="Armor" name="Mount - Darkmane Pacer - 30-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. -->
+    <item id="21383" type="Armor" name="Mount - Darkmane Pacer">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. -->
+    <item id="21384" type="Armor" name="Mount - Darkmane Pacer - Event">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle (7-day). -->
+    <item id="21385" type="EtcItem" name="Mount - Steam Beetle Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle (7-day). -->
+    <item id="21386" type="EtcItem" name="Mount - Steam Beetle Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- A wrapped box containing Mount - Steam Beetle (30-day). -->
+    <item id="21387" type="EtcItem" name="Mount - Steam Beetle Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
+    <item id="21388" type="EtcItem" name="Mount - Steam Beetle Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle. -->
+    <item id="21389" type="EtcItem" name="Mount - Steam Beetle Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle. -->
+    <item id="21390" type="EtcItem" name="Mount - Steam Beetle Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. 7-day. -->
+    <item id="21391" type="Armor" name="Mount - Steam Beetle - 7-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. 7-day. -->
+    <item id="21392" type="Armor" name="Mount - Steam Beetle - 7-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can ride a Steam Beetle when equipped. 30-day. -->
+    <item id="21393" type="Armor" name="Mount - Steam Beetle - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. 30-day. -->
+    <item id="21394" type="Armor" name="Mount - Steam Beetle - 30-day (Event)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. -->
+    <item id="21395" type="Armor" name="Mount - Steam Beetle">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. -->
+    <item id="21396" type="Armor" name="Mount - Steam Beetle - Event">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="none" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion (7-day). -->
+    <item id="21397" type="EtcItem" name="Mount - Gold Maned Lion Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion (7-day). -->
+    <item id="21398" type="EtcItem" name="Mount - Gold Maned Lion Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
+    <item id="21399" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
 </list>

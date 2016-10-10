@@ -18,82 +18,84 @@ SWALLOWED_STERNUM = 13873
 SWALLOWED_BONES = 13874
 
 # MOBS
-MOBS = [22602,22603,22604,22605]
+MOBS = [22602, 22603, 22604, 22605]
 
 DROPLIST = {
-	 0:SWALLOWED_BONES,
-	75:SWALLOWED_STERNUM,
-	95:SWALLOWED_SKULL
+    0: SWALLOWED_BONES,
+    75: SWALLOWED_STERNUM,
+    95: SWALLOWED_SKULL
 }
 
-class Quest (JQuest) :
-	def __init__(self,id,name,descr):
-		JQuest.__init__(self,id,name,descr)
-		self.questItemIds = [SWALLOWED_SKULL,SWALLOWED_STERNUM,SWALLOWED_BONES]
 
-	def onAdvEvent(self, event, npc, player) :
-		htmltext = event
-		st = player.getQuestState(qn)
-		if not st : return
+class Quest(JQuest):
+    def __init__(self, id, name, descr):
+        JQuest.__init__(self, id, name, descr)
+        self.questItemIds = [SWALLOWED_SKULL, SWALLOWED_STERNUM, SWALLOWED_BONES]
 
-		if event == "32560-03.htm" :
-			st.setState(State.STARTED)
-			st.set("cond","1")
-			st.playSound("ItemSound.quest_accept")
-		elif event == "32560-quit.htm" :
-			st.unset("cond")
-			st.exitQuest(True)
-			st.playSound("ItemSound.quest_finish")
-		return htmltext
+    def onAdvEvent(self, event, npc, player):
+        htmltext = event
+        st = player.getQuestState(qn)
+        if not st: return
 
-	def onTalk (self, npc, player) :
-		htmltext = Quest.getNoQuestMsg(player)
-		st = player.getQuestState(qn)
-		if not st : return htmltext
+        if event == "32560-03.htm":
+            st.setState(State.STARTED)
+            st.set("cond", "1")
+            st.playSound("ItemSound.quest_accept")
+        elif event == "32560-quit.htm":
+            st.unset("cond")
+            st.exitQuest(True)
+            st.playSound("ItemSound.quest_finish")
+        return htmltext
 
-		cond = st.getInt("cond")
+    def onTalk(self, npc, player):
+        htmltext = Quest.getNoQuestMsg(player)
+        st = player.getQuestState(qn)
+        if not st: return htmltext
 
-		if npc.getNpcId() == ORBYU :
-			first = player.getQuestState("10273_GoodDayToFly")
-			if first and first.getState() == State.COMPLETED and st.getState() == State.CREATED and player.getLevel() >= 75 :
-				htmltext = "32560-01.htm"
-			elif cond == 1 :
-				count1 = st.getQuestItemsCount(SWALLOWED_BONES)
-				count2 = st.getQuestItemsCount(SWALLOWED_STERNUM)
-				count3 = st.getQuestItemsCount(SWALLOWED_SKULL)
-				if count1 > 0 or count2 > 0 or count3 > 0 :
-					reward = (count1 * 500) + (count2 * 5000) + (count3 * 50000)
-					st.takeItems(SWALLOWED_BONES,-1)
-					st.takeItems(SWALLOWED_STERNUM,-1)
-					st.takeItems(SWALLOWED_SKULL,-1)
-					st.giveItems(57,reward)
-					st.playSound("ItemSound.quest_itemget")
-					htmltext = "32560-06.htm"
-				else :
-					htmltext = "32560-04.htm"
-			elif cond == 0 :
-				htmltext = "32560-00.htm"
-		return htmltext
+        cond = st.getInt("cond")
 
-	def onKill(self, npc, player, isPet) :
-		st = player.getQuestState(qn)
-		if not st : return
+        if npc.getNpcId() == ORBYU:
+            first = player.getQuestState("10273_GoodDayToFly")
+            if first and first.getState() == State.COMPLETED and st.getState() == State.CREATED and player.getLevel() >= 75:
+                htmltext = "32560-01.htm"
+            elif cond == 1:
+                count1 = st.getQuestItemsCount(SWALLOWED_BONES)
+                count2 = st.getQuestItemsCount(SWALLOWED_STERNUM)
+                count3 = st.getQuestItemsCount(SWALLOWED_SKULL)
+                if count1 > 0 or count2 > 0 or count3 > 0:
+                    reward = (count1 * 500) + (count2 * 5000) + (count3 * 50000)
+                    st.takeItems(SWALLOWED_BONES, -1)
+                    st.takeItems(SWALLOWED_STERNUM, -1)
+                    st.takeItems(SWALLOWED_SKULL, -1)
+                    st.giveItems(57, reward)
+                    st.playSound("ItemSound.quest_itemget")
+                    htmltext = "32560-06.htm"
+                else:
+                    htmltext = "32560-04.htm"
+            elif cond == 0:
+                htmltext = "32560-00.htm"
+        return htmltext
 
-		if st.getInt("cond") == 1 and npc.getNpcId() in MOBS :
-			chance = st.getRandom(100)
-			if chance < 5 :
-				st.giveItems(SWALLOWED_SKULL,1)
-			elif chance < 20 :
-				st.giveItems(SWALLOWED_STERNUM,1)
-			else :
-				st.giveItems(SWALLOWED_BONES,1)
-			st.playSound("ItemSound.quest_itemget")
-		return
+    def onKill(self, npc, player, isPet):
+        st = player.getQuestState(qn)
+        if not st: return
 
-QUEST	= Quest(700,qn,"Cursed Life")
+        if st.getInt("cond") == 1 and npc.getNpcId() in MOBS:
+            chance = st.getRandom(100)
+            if chance < 5:
+                st.giveItems(SWALLOWED_SKULL, 1)
+            elif chance < 20:
+                st.giveItems(SWALLOWED_STERNUM, 1)
+            else:
+                st.giveItems(SWALLOWED_BONES, 1)
+            st.playSound("ItemSound.quest_itemget")
+        return
+
+
+QUEST = Quest(700, qn, "Cursed Life")
 
 QUEST.addStartNpc(ORBYU)
 QUEST.addTalkId(ORBYU)
 
-for i in MOBS :
-	QUEST.addKillId(i)
+for i in MOBS:
+    QUEST.addKillId(i)

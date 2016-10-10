@@ -20,5 +20,5 @@ package l2server.gameserver.templates.skills;
  */
 public enum L2SkillBehaviorType
 {
-	FRIENDLY, UNFRIENDLY, ATTACK, UNKNOWN
+    FRIENDLY, UNFRIENDLY, ATTACK, UNKNOWN
 }

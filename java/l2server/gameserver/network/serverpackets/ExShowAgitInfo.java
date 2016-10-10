@@ -22,30 +22,31 @@ import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.model.entity.ClanHall;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class ExShowAgitInfo extends L2GameServerPacket
 {
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		Map<Integer, ClanHall> clannhalls = ClanHallManager.getInstance().getAllClanHalls();
-		writeD(clannhalls.size());
-		for (ClanHall ch : clannhalls.values())
-		{
-			writeD(ch.getId());
-			writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId()).getName()); // owner clan name
-			writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId()).getLeaderName()); // leader name
-			writeD(ch.getGrade() > 0 ? 0x00 : 0x01); // 0 - auction  1 - war clanhall  2 - ETC (rainbow spring clanhall)
-		}
-	}
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        Map<Integer, ClanHall> clannhalls = ClanHallManager.getInstance().getAllClanHalls();
+        writeD(clannhalls.size());
+        for (ClanHall ch : clannhalls.values())
+        {
+            writeD(ch.getId());
+            writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId())
+                    .getName()); // owner clan name
+            writeS(ch.getOwnerId() <= 0 ? "" : ClanTable.getInstance().getClan(ch.getOwnerId())
+                    .getLeaderName()); // leader name
+            writeD(ch.getGrade() > 0 ? 0x00 : 0x01); // 0 - auction  1 - war clanhall  2 - ETC (rainbow spring clanhall)
+        }
+    }
 }

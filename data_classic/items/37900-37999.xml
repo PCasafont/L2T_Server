@@ -1,862 +1,862 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Double-click to obtain an SP Rune (High-grade) (1-day). -->
-	<item id="37900" type="EtcItem" name="SP Rune Pack (Top-grade) (1-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain an SP Rune (Low-grade) (7-day). -->
-	<item id="37901" type="EtcItem" name="SP Rune Pack (Low-grade) (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain an SP Rune (Mid-grade) (7-day). -->
-	<item id="37902" type="EtcItem" name="SP Rune Pack (Mid-grade) (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain an SP Rune (High-grade) (7-day). -->
-	<item id="37903" type="EtcItem" name="SP Rune Pack (Top-grade) (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Scroll the replenishes 1,000,000,000 SP. -->
-	<item id="37904" type="EtcItem" name="Scroll: 1,000,000,000 SP">
-		<set name="icon" val="icon.etc_sp_scroll3_i00" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Box containing Kat the Cat's gift. Double click to acquire 1 of the following at random: 150 Heavenly Recovery Potions, 1 Kat the Cat's Box of Roses, or 1 Emperor's Rune Box. Can be shared within the same account through the Dimensional Merchant. To be deleted on 30.10.13. -->
-	<item id="37905" type="EtcItem" name="Kat the Cat's Surprise Gift">
-		<set name="icon" val="icon.etc_pi_gift_box_i03" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Double click to acquire 1 Enhanced Rose Spirit Coupon (5 hours) and 150 Rose Essences. -->
-	<item id="37906" type="EtcItem" name="Kat the Cat's Box of Roses">
-		<set name="icon" val="icon.etc_pi_box_love_pack" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Pig Lollipop. -->
-	<item id="37907" type="EtcItem" name="Pig Lollipop Appearance Stone: One-handed Sword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
-	<item id="37908" type="EtcItem" name="Chrono Cithara Appearance Stone: One-handed Sword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a fist weapon into that of a Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
-	<item id="37909" type="EtcItem" name="Chrono Unitus Appearance Stone: Fist Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a spear into that of a Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
-	<item id="37910" type="EtcItem" name="Chrono Campana Appearance Stone: Spear">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a two-handed blunt weapon into that of a Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
-	<item id="37911" type="EtcItem" name="Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a dualsword into that of a Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
-	<item id="37912" type="EtcItem" name="Chrono Maracas Appearance Stone: Dualsword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a dagger into that of a Pumpkin Dagger. -->
-	<item id="37913" type="EtcItem" name="Pumpkin Dagger Appearance Stone: Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a dual dagger into that of a Pumpkin Dual Dagger. -->
-	<item id="37914" type="EtcItem" name="Pumpkin Dual Dagger Appearance Stone: Dual Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed magic sword into that of a Scarecrow Sword. -->
-	<item id="37915" type="EtcItem" name="Scarecrow Sword Appearance Stone: One-handed Magic Sword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Cute, pumpkin-shaped dagger. -->
-	<item id="37916" type="Weapon" name="Pumpkin Dagger">
-		<set name="icon" val="icon.weapon_pumpkin_stick_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Cute, pumpkin-shaped dual dagger. -->
-	<item id="37917" type="Weapon" name="Pumpkin Dual Dagger">
-		<set name="icon" val="icon.weapon_pumpin_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Cute, scarecrow-shaped one-handed magic sword. -->
-	<item id="37918" type="Weapon" name="Scarecrow Sword">
-		<set name="icon" val="icon.weapon_scarescow_stick_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Pig Lollipop. 15-day. -->
-	<item id="37919" type="EtcItem" name="Pig Lollipop Appearance Stone: One-handed Sword - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37920" type="EtcItem" name="Chrono Cithara Appearance Stone: One-handed Sword - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37921" type="EtcItem" name="Chrono Unitus Appearance Stone: Fist Weapon - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37922" type="EtcItem" name="Chrono Campana Appearance Stone: Spear - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37923" type="EtcItem" name="Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed sword into that of a Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37924" type="EtcItem" name="Chrono Maracas Appearance Stone: Dualsword - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a dagger into that of a Pumpkin Dagger. 15-day. -->
-	<item id="37925" type="EtcItem" name="Pumpkin Dagger Appearance Stone: Dagger - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a dual dagger into that of a Pumpkin Dual Dagger. 15-day. -->
-	<item id="37926" type="EtcItem" name="Pumpkin Dual Dagger Appearance Stone: Dual Dagger - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Changes the appearance of a one-handed magic sword into that of a Scarecrow Sword. 15-day. -->
-	<item id="37927" type="EtcItem" name="Scarecrow Sword Appearance Stone: One-handed Magic Sword - 15-day">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- For 30 min., Max HP/MP/CP + 30%, P. Def./ M. Def. +30%, P. Atk. + 10%, M. Atk.+ 20%. Cooldown is 5min. Double-click to use. Effect disappears if you receive the Art of Seduction buff. Cannot be used in the Olympiad. Can be used in the Ceremony of Chaos. -->
-	<item id="37928" type="EtcItem" name="Player Commendation - Art of Seduction">
-		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_blue_i00" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Awakened warrior's weapon. One-handed sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a Rapier. Cannot be used by Chaotic characters. -->
-	<item id="37929" type="Weapon" name="Awakened Warrior's Blade (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_sword_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="435" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Two-handed Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into an Ancient Sword. Cannot be used by Chaotic characters. -->
-	<item id="37930" type="Weapon" name="Awakened Warrior's Cleaver (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="529" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. One-handed Blunt Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37931" type="Weapon" name="Awakened Warrior's Axe (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_axe_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="435" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. One-handed Magic Blunt Weapon. Increases Casting Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37932" type="Weapon" name="Awakened Warrior's Rod (7-day) - Acumen">
-		<set name="icon" val="icon.weapon_the_mace_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="348" />
-			<set stat="mAtk" val="252" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Two-handed Blunt Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37933" type="Weapon" name="Awakened Warrior's Crusher (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_hammer_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="643" />
-			<set stat="mAtk" val="230" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Two-handed Magic Blunt Weapon. Increases Casting Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37934" type="Weapon" name="Awakened Warrior's Scepter (7-day) - Acumen">
-		<set name="icon" val="icon.weapon_the_staff_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="423" />
-			<set stat="mAtk" val="278" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. One-handed Dagger. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37935" type="Weapon" name="Awakened Warrior's Stinger (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_dagger_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="380" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Fist Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37936" type="Weapon" name="Awakened Warrior's Fang (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_fist_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="529" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Bow. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a Shooter. Cannot be used by Chaotic characters. -->
-	<item id="37937" type="Weapon" name="Awakened Warrior's Bow (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_bow_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="856" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Dual Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37938" type="Weapon" name="Awakened Warrior's Wing (7-day) - Haste">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="529" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Spear. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
-	<item id="37939" type="Weapon" name="Awakened Warrior's Spear (7-day) - Haste">
-		<set name="icon" val="icon.weapon_the_pole_of_hero_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="435" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Rapier. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a one-handed sword. Cannot be used by Chaotic characters. -->
-	<item id="37940" type="Weapon" name="Awakened Warrior's Rapier (7-day) - Haste">
-		<set name="icon" val="icon.weapon_infinity_rapier_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="40" />
-		<for>
-			<set stat="pAtk" val="479" />
-			<set stat="mAtk" val="230" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Ancient Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a two-handed sword. Cannot be used by Chaotic characters. -->
-	<item id="37941" type="Weapon" name="Awakened Warrior's Sword (7-day) - Haste">
-		<set name="icon" val="icon.weapon_infinity_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="15" />
-		<for>
-			<set stat="pAtk" val="572" />
-			<set stat="mAtk" val="230" />
-			<set stat="rCrit" val="8" />
-			<baseAdd stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
-	</item>
-	<!-- Awakened warrior's weapon. Crossbow. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a bow. Cannot be used by Chaotic characters. -->
-	<item id="37942" type="Weapon" name="Awakened Warrior's Shooter (7-day) - Haste">
-		<set name="icon" val="icon.weapon_infinity_shooter_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1300" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="771" />
-			<set stat="mAtk" val="189" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Dimensional Item
-		Talk to the Dimensional Merchant to exchange for an Awakened Warrior's Weapon (7-day).
-		
-		Note: Cannot be shared once exchanged.
-	-->
-	<item id="37943" type="EtcItem" name="Awakened Warrior's Weapon Coupon (7-day)">
-		<set name="icon" val="icon.etc_lottery_card_i00" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- For 1 hr., Prevailing/ Combat/ Refreshing Sonata buffs are applied. Cooldown is 60min. Double-click to use. Buff remains even after death. -->
-	<item id="37944" type="EtcItem" name="Emperor's Cookie">
-		<set name="icon" val="icon.etc_bm_sonata_cookie" />
-		<set name="weight" val="120" />
-	</item>
-	<!-- Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37945" type="Weapon" name="Chrono Cithara">
-		<set name="icon" val="icon.weapon_chrono_cithara_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37946" type="Weapon" name="Chrono Unitus">
-		<set name="icon" val="icon.weapon_chrono_tambourine_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37947" type="Weapon" name="Chrono Campana">
-		<set name="icon" val="icon.weapon_chrono_campana_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37948" type="Weapon" name="Chrono Darbuka">
-		<set name="icon" val="icon.weapon_chrono_darbuka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
-	<item id="37949" type="Weapon" name="Chrono Maracas">
-		<set name="icon" val="icon.weapon_chrono_maracas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Shaper. -->
-	<item id="37950" type="EtcItem" name="Requiem Shaper Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Cutter. -->
-	<item id="37951" type="EtcItem" name="Requiem Cutter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Slasher. -->
-	<item id="37952" type="EtcItem" name="Requiem Slasher Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Avenger. -->
-	<item id="37953" type="EtcItem" name="Requiem Avenger Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Fighter. -->
-	<item id="37954" type="EtcItem" name="Requiem Fighter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Stormer. -->
-	<item id="37955" type="EtcItem" name="Requiem Stormer Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Thrower. -->
-	<item id="37956" type="EtcItem" name="Requiem Thrower Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Shooter. -->
-	<item id="37957" type="EtcItem" name="Requiem Shooter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Buster. -->
-	<item id="37958" type="EtcItem" name="Requiem Buster Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Caster. -->
-	<item id="37959" type="EtcItem" name="Requiem Caster Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Requiem Retributer. -->
-	<item id="37960" type="EtcItem" name="Requiem Retributer Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Helmet. -->
-	<item id="37961" type="EtcItem" name="Immortal Helmet Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Breastplate. -->
-	<item id="37962" type="EtcItem" name="Immortal Breastplate Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gaiter. -->
-	<item id="37963" type="EtcItem" name="Immortal Gaiters Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gauntlets. -->
-	<item id="37964" type="EtcItem" name="Immortal Gauntlets Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Boots. -->
-	<item id="37965" type="EtcItem" name="Immortal Boots Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Shield. -->
-	<item id="37966" type="EtcItem" name="Immortal Shield Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Helmet. -->
-	<item id="37967" type="EtcItem" name="Immortal Leather Helmet Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Armor. -->
-	<item id="37968" type="EtcItem" name="Immortal Leather Armor Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Leggings. -->
-	<item id="37969" type="EtcItem" name="Immortal Leather Leggings Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Gloves. -->
-	<item id="37970" type="EtcItem" name="Immortal Leather Gloves Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Boots. -->
-	<item id="37971" type="EtcItem" name="Immortal Leather Boots Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Circlet. -->
-	<item id="37972" type="EtcItem" name="Immortal Circlet Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Tunic. -->
-	<item id="37973" type="EtcItem" name="Immortal Tunic Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Stockings. -->
-	<item id="37974" type="EtcItem" name="Immortal Stockings Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gloves. -->
-	<item id="37975" type="EtcItem" name="Immortal Gloves Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Shoes. -->
-	<item id="37976" type="EtcItem" name="Immortal Shoes Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Sigil. -->
-	<item id="37977" type="EtcItem" name="Immortal Sigil Crafting Pack - Robe">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Necklace. -->
-	<item id="37978" type="EtcItem" name="Immortal Necklace Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Earring. -->
-	<item id="37979" type="EtcItem" name="Immortal Earring Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Immortal Ring. -->
-	<item id="37980" type="EtcItem" name="Immortal Ring Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Shaper. -->
-	<item id="37981" type="EtcItem" name="Apocalypse Shaper Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Cutter. -->
-	<item id="37982" type="EtcItem" name="Apocalypse Cutter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Slasher. -->
-	<item id="37983" type="EtcItem" name="Apocalypse Slasher Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Avenger. -->
-	<item id="37984" type="EtcItem" name="Apocalypse Avenger Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Fighter. -->
-	<item id="37985" type="EtcItem" name="Apocalypse Fighter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Stormer. -->
-	<item id="37986" type="EtcItem" name="Apocalypse Stormer Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Thrower. -->
-	<item id="37987" type="EtcItem" name="Apocalypse Thrower Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Shooter. -->
-	<item id="37988" type="EtcItem" name="Apocalypse Shooter Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Buster. -->
-	<item id="37989" type="EtcItem" name="Apocalypse Buster Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Caster. -->
-	<item id="37990" type="EtcItem" name="Apocalypse Caster Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Retributer. -->
-	<item id="37991" type="EtcItem" name="Apocalypse Retributer Crafting Pack">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Helmet. -->
-	<item id="37992" type="EtcItem" name="Twilight Helmet Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Breastplate. -->
-	<item id="37993" type="EtcItem" name="Twilight Breastplate Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Gaiter. -->
-	<item id="37994" type="EtcItem" name="Twilight Gaiters Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Gauntlets. -->
-	<item id="37995" type="EtcItem" name="Twilight Gauntlets Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Boots. -->
-	<item id="37996" type="EtcItem" name="Twilight Boots Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Shield. -->
-	<item id="37997" type="EtcItem" name="Twilight Shield Crafting Pack - Heavy Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Leather Helmet. -->
-	<item id="37998" type="EtcItem" name="Twilight Leather Helmet Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Wrapped Pack containing all ingredients needed for crafting Twilight Leather Armor. -->
-	<item id="37999" type="EtcItem" name="Twilight Leather Armor Crafting Pack - Light Armor">
-		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="weight" val="0" />
-	</item>
+    <!-- Double-click to obtain an SP Rune (High-grade) (1-day). -->
+    <item id="37900" type="EtcItem" name="SP Rune Pack (Top-grade) (1-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain an SP Rune (Low-grade) (7-day). -->
+    <item id="37901" type="EtcItem" name="SP Rune Pack (Low-grade) (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain an SP Rune (Mid-grade) (7-day). -->
+    <item id="37902" type="EtcItem" name="SP Rune Pack (Mid-grade) (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain an SP Rune (High-grade) (7-day). -->
+    <item id="37903" type="EtcItem" name="SP Rune Pack (Top-grade) (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Scroll the replenishes 1,000,000,000 SP. -->
+    <item id="37904" type="EtcItem" name="Scroll: 1,000,000,000 SP">
+        <set name="icon" val="icon.etc_sp_scroll3_i00" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Box containing Kat the Cat's gift. Double click to acquire 1 of the following at random: 150 Heavenly Recovery Potions, 1 Kat the Cat's Box of Roses, or 1 Emperor's Rune Box. Can be shared within the same account through the Dimensional Merchant. To be deleted on 30.10.13. -->
+    <item id="37905" type="EtcItem" name="Kat the Cat's Surprise Gift">
+        <set name="icon" val="icon.etc_pi_gift_box_i03" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Double click to acquire 1 Enhanced Rose Spirit Coupon (5 hours) and 150 Rose Essences. -->
+    <item id="37906" type="EtcItem" name="Kat the Cat's Box of Roses">
+        <set name="icon" val="icon.etc_pi_box_love_pack" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Pig Lollipop. -->
+    <item id="37907" type="EtcItem" name="Pig Lollipop Appearance Stone: One-handed Sword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
+    <item id="37908" type="EtcItem" name="Chrono Cithara Appearance Stone: One-handed Sword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a fist weapon into that of a Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
+    <item id="37909" type="EtcItem" name="Chrono Unitus Appearance Stone: Fist Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a spear into that of a Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
+    <item id="37910" type="EtcItem" name="Chrono Campana Appearance Stone: Spear">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a two-handed blunt weapon into that of a Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
+    <item id="37911" type="EtcItem" name="Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a dualsword into that of a Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. -->
+    <item id="37912" type="EtcItem" name="Chrono Maracas Appearance Stone: Dualsword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a dagger into that of a Pumpkin Dagger. -->
+    <item id="37913" type="EtcItem" name="Pumpkin Dagger Appearance Stone: Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a dual dagger into that of a Pumpkin Dual Dagger. -->
+    <item id="37914" type="EtcItem" name="Pumpkin Dual Dagger Appearance Stone: Dual Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed magic sword into that of a Scarecrow Sword. -->
+    <item id="37915" type="EtcItem" name="Scarecrow Sword Appearance Stone: One-handed Magic Sword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Cute, pumpkin-shaped dagger. -->
+    <item id="37916" type="Weapon" name="Pumpkin Dagger">
+        <set name="icon" val="icon.weapon_pumpkin_stick_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Cute, pumpkin-shaped dual dagger. -->
+    <item id="37917" type="Weapon" name="Pumpkin Dual Dagger">
+        <set name="icon" val="icon.weapon_pumpin_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Cute, scarecrow-shaped one-handed magic sword. -->
+    <item id="37918" type="Weapon" name="Scarecrow Sword">
+        <set name="icon" val="icon.weapon_scarescow_stick_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Pig Lollipop. 15-day. -->
+    <item id="37919" type="EtcItem" name="Pig Lollipop Appearance Stone: One-handed Sword - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37920" type="EtcItem" name="Chrono Cithara Appearance Stone: One-handed Sword - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37921" type="EtcItem" name="Chrono Unitus Appearance Stone: Fist Weapon - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37922" type="EtcItem" name="Chrono Campana Appearance Stone: Spear - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37923" type="EtcItem" name="Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed sword into that of a Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37924" type="EtcItem" name="Chrono Maracas Appearance Stone: Dualsword - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a dagger into that of a Pumpkin Dagger. 15-day. -->
+    <item id="37925" type="EtcItem" name="Pumpkin Dagger Appearance Stone: Dagger - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a dual dagger into that of a Pumpkin Dual Dagger. 15-day. -->
+    <item id="37926" type="EtcItem" name="Pumpkin Dual Dagger Appearance Stone: Dual Dagger - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Changes the appearance of a one-handed magic sword into that of a Scarecrow Sword. 15-day. -->
+    <item id="37927" type="EtcItem" name="Scarecrow Sword Appearance Stone: One-handed Magic Sword - 15-day">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- For 30 min., Max HP/MP/CP + 30%, P. Def./ M. Def. +30%, P. Atk. + 10%, M. Atk.+ 20%. Cooldown is 5min. Double-click to use. Effect disappears if you receive the Art of Seduction buff. Cannot be used in the Olympiad. Can be used in the Ceremony of Chaos. -->
+    <item id="37928" type="EtcItem" name="Player Commendation - Art of Seduction">
+        <set name="icon" val="BranchSys2.icon.br_rosalia_rose_blue_i00" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Awakened warrior's weapon. One-handed sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a Rapier. Cannot be used by Chaotic characters. -->
+    <item id="37929" type="Weapon" name="Awakened Warrior's Blade (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_sword_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="435" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Two-handed Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into an Ancient Sword. Cannot be used by Chaotic characters. -->
+    <item id="37930" type="Weapon" name="Awakened Warrior's Cleaver (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="529" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. One-handed Blunt Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37931" type="Weapon" name="Awakened Warrior's Axe (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_axe_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="435" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. One-handed Magic Blunt Weapon. Increases Casting Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37932" type="Weapon" name="Awakened Warrior's Rod (7-day) - Acumen">
+        <set name="icon" val="icon.weapon_the_mace_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="348" />
+            <set stat="mAtk" val="252" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Two-handed Blunt Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37933" type="Weapon" name="Awakened Warrior's Crusher (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_hammer_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="643" />
+            <set stat="mAtk" val="230" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Two-handed Magic Blunt Weapon. Increases Casting Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37934" type="Weapon" name="Awakened Warrior's Scepter (7-day) - Acumen">
+        <set name="icon" val="icon.weapon_the_staff_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="423" />
+            <set stat="mAtk" val="278" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. One-handed Dagger. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37935" type="Weapon" name="Awakened Warrior's Stinger (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_dagger_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="380" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Fist Weapon. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37936" type="Weapon" name="Awakened Warrior's Fang (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_fist_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="529" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Bow. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a Shooter. Cannot be used by Chaotic characters. -->
+    <item id="37937" type="Weapon" name="Awakened Warrior's Bow (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_bow_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="856" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Dual Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37938" type="Weapon" name="Awakened Warrior's Wing (7-day) - Haste">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="529" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Spear. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Cannot be used by Chaotic characters. -->
+    <item id="37939" type="Weapon" name="Awakened Warrior's Spear (7-day) - Haste">
+        <set name="icon" val="icon.weapon_the_pole_of_hero_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="435" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Rapier. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a one-handed sword. Cannot be used by Chaotic characters. -->
+    <item id="37940" type="Weapon" name="Awakened Warrior's Rapier (7-day) - Haste">
+        <set name="icon" val="icon.weapon_infinity_rapier_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="40" />
+        <for>
+            <set stat="pAtk" val="479" />
+            <set stat="mAtk" val="230" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="406" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Ancient Sword. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a two-handed sword. Cannot be used by Chaotic characters. -->
+    <item id="37941" type="Weapon" name="Awakened Warrior's Sword (7-day) - Haste">
+        <set name="icon" val="icon.weapon_infinity_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="15" />
+        <for>
+            <set stat="pAtk" val="572" />
+            <set stat="mAtk" val="230" />
+            <set stat="rCrit" val="8" />
+            <baseAdd stat="accCombat" val="2" />
+            <set stat="pAtkSpd" val="350" />
+        </for>
+    </item>
+    <!-- Awakened warrior's weapon. Crossbow. Increases Atk. Spd. 7-day. Cannot be used in the Olympiad. Kamaels can use the Change Weapon skill to turn this into a bow. Cannot be used by Chaotic characters. -->
+    <item id="37942" type="Weapon" name="Awakened Warrior's Shooter (7-day) - Haste">
+        <set name="icon" val="icon.weapon_infinity_shooter_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1300" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="771" />
+            <set stat="mAtk" val="189" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Dimensional Item
+        Talk to the Dimensional Merchant to exchange for an Awakened Warrior's Weapon (7-day).
+
+        Note: Cannot be shared once exchanged.
+    -->
+    <item id="37943" type="EtcItem" name="Awakened Warrior's Weapon Coupon (7-day)">
+        <set name="icon" val="icon.etc_lottery_card_i00" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- For 1 hr., Prevailing/ Combat/ Refreshing Sonata buffs are applied. Cooldown is 60min. Double-click to use. Buff remains even after death. -->
+    <item id="37944" type="EtcItem" name="Emperor's Cookie">
+        <set name="icon" val="icon.etc_bm_sonata_cookie" />
+        <set name="weight" val="120" />
+    </item>
+    <!-- Chrono Cithara. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37945" type="Weapon" name="Chrono Cithara">
+        <set name="icon" val="icon.weapon_chrono_cithara_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Chrono Unitus. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37946" type="Weapon" name="Chrono Unitus">
+        <set name="icon" val="icon.weapon_chrono_tambourine_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Chrono Campana. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37947" type="Weapon" name="Chrono Campana">
+        <set name="icon" val="icon.weapon_chrono_campana_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Chrono Darbuka. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37948" type="Weapon" name="Chrono Darbuka">
+        <set name="icon" val="icon.weapon_chrono_darbuka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Chrono Maracas. It has been retouched by Celdion, the master of the Black Anvil Guild. 15-day. -->
+    <item id="37949" type="Weapon" name="Chrono Maracas">
+        <set name="icon" val="icon.weapon_chrono_maracas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Shaper. -->
+    <item id="37950" type="EtcItem" name="Requiem Shaper Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Cutter. -->
+    <item id="37951" type="EtcItem" name="Requiem Cutter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Slasher. -->
+    <item id="37952" type="EtcItem" name="Requiem Slasher Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Avenger. -->
+    <item id="37953" type="EtcItem" name="Requiem Avenger Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Fighter. -->
+    <item id="37954" type="EtcItem" name="Requiem Fighter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Stormer. -->
+    <item id="37955" type="EtcItem" name="Requiem Stormer Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Thrower. -->
+    <item id="37956" type="EtcItem" name="Requiem Thrower Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Shooter. -->
+    <item id="37957" type="EtcItem" name="Requiem Shooter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Buster. -->
+    <item id="37958" type="EtcItem" name="Requiem Buster Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Caster. -->
+    <item id="37959" type="EtcItem" name="Requiem Caster Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Requiem Retributer. -->
+    <item id="37960" type="EtcItem" name="Requiem Retributer Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Helmet. -->
+    <item id="37961" type="EtcItem" name="Immortal Helmet Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Breastplate. -->
+    <item id="37962" type="EtcItem" name="Immortal Breastplate Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gaiter. -->
+    <item id="37963" type="EtcItem" name="Immortal Gaiters Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gauntlets. -->
+    <item id="37964" type="EtcItem" name="Immortal Gauntlets Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Boots. -->
+    <item id="37965" type="EtcItem" name="Immortal Boots Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Shield. -->
+    <item id="37966" type="EtcItem" name="Immortal Shield Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Helmet. -->
+    <item id="37967" type="EtcItem" name="Immortal Leather Helmet Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Armor. -->
+    <item id="37968" type="EtcItem" name="Immortal Leather Armor Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Leggings. -->
+    <item id="37969" type="EtcItem" name="Immortal Leather Leggings Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Gloves. -->
+    <item id="37970" type="EtcItem" name="Immortal Leather Gloves Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Leather Boots. -->
+    <item id="37971" type="EtcItem" name="Immortal Leather Boots Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Circlet. -->
+    <item id="37972" type="EtcItem" name="Immortal Circlet Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Tunic. -->
+    <item id="37973" type="EtcItem" name="Immortal Tunic Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Stockings. -->
+    <item id="37974" type="EtcItem" name="Immortal Stockings Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Gloves. -->
+    <item id="37975" type="EtcItem" name="Immortal Gloves Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Shoes. -->
+    <item id="37976" type="EtcItem" name="Immortal Shoes Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Sigil. -->
+    <item id="37977" type="EtcItem" name="Immortal Sigil Crafting Pack - Robe">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Necklace. -->
+    <item id="37978" type="EtcItem" name="Immortal Necklace Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Earring. -->
+    <item id="37979" type="EtcItem" name="Immortal Earring Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Immortal Ring. -->
+    <item id="37980" type="EtcItem" name="Immortal Ring Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Shaper. -->
+    <item id="37981" type="EtcItem" name="Apocalypse Shaper Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Cutter. -->
+    <item id="37982" type="EtcItem" name="Apocalypse Cutter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Slasher. -->
+    <item id="37983" type="EtcItem" name="Apocalypse Slasher Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Avenger. -->
+    <item id="37984" type="EtcItem" name="Apocalypse Avenger Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Fighter. -->
+    <item id="37985" type="EtcItem" name="Apocalypse Fighter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Stormer. -->
+    <item id="37986" type="EtcItem" name="Apocalypse Stormer Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Thrower. -->
+    <item id="37987" type="EtcItem" name="Apocalypse Thrower Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Shooter. -->
+    <item id="37988" type="EtcItem" name="Apocalypse Shooter Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Buster. -->
+    <item id="37989" type="EtcItem" name="Apocalypse Buster Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Caster. -->
+    <item id="37990" type="EtcItem" name="Apocalypse Caster Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Apocalypse Retributer. -->
+    <item id="37991" type="EtcItem" name="Apocalypse Retributer Crafting Pack">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Helmet. -->
+    <item id="37992" type="EtcItem" name="Twilight Helmet Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Breastplate. -->
+    <item id="37993" type="EtcItem" name="Twilight Breastplate Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Gaiter. -->
+    <item id="37994" type="EtcItem" name="Twilight Gaiters Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Gauntlets. -->
+    <item id="37995" type="EtcItem" name="Twilight Gauntlets Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Boots. -->
+    <item id="37996" type="EtcItem" name="Twilight Boots Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Shield. -->
+    <item id="37997" type="EtcItem" name="Twilight Shield Crafting Pack - Heavy Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Leather Helmet. -->
+    <item id="37998" type="EtcItem" name="Twilight Leather Helmet Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Wrapped Pack containing all ingredients needed for crafting Twilight Leather Armor. -->
+    <item id="37999" type="EtcItem" name="Twilight Leather Armor Crafting Pack - Light Armor">
+        <set name="icon" val="icon.event_hero_treasure_box_i00" />
+        <set name="weight" val="0" />
+    </item>
 </list>

@@ -20,41 +20,41 @@ import java.util.List;
 import l2server.Config;
 
 /**
- *
  * @author DS
- *
  */
 public class OlympiadGameNonClassed extends OlympiadGameNormal
 {
-	private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents)
-	{
-		super(id, opponents);
-	}
-	
-	@Override
-	public final CompetitionType getType()
-	{
-		return CompetitionType.NON_CLASSED;
-	}
-	
-	@Override
-	protected final int getDivider()
-	{
-		return 5;
-	}
-	
-	@Override
-	protected final int[][] getReward()
-	{
-		return Config.ALT_OLY_NONCLASSED_REWARD;
-	}
-	
-	protected static final OlympiadGameNonClassed createGame(int id, List<Integer> list)
-	{
-		final OlympiadParticipant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
-		if (opponents == null)
-			return null;
-		
-		return new OlympiadGameNonClassed(id, opponents);
-	}
+    private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents)
+    {
+        super(id, opponents);
+    }
+
+    @Override
+    public final CompetitionType getType()
+    {
+        return CompetitionType.NON_CLASSED;
+    }
+
+    @Override
+    protected final int getDivider()
+    {
+        return 5;
+    }
+
+    @Override
+    protected final int[][] getReward()
+    {
+        return Config.ALT_OLY_NONCLASSED_REWARD;
+    }
+
+    protected static final OlympiadGameNonClassed createGame(int id, List<Integer> list)
+    {
+        final OlympiadParticipant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
+        if (opponents == null)
+        {
+            return null;
+        }
+
+        return new OlympiadGameNonClassed(id, opponents);
+    }
 }

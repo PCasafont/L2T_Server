@@ -27,91 +27,102 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- *
- * Summon Death Gate (skill id: 11266) AI
+ *         <p>
+ *         Summon Death Gate (skill id: 11266) AI
  */
 
 public class DeathGate extends L2AttackableAIScript
 {
-	private static final int[] _deathGateIds = { 14927, 15200, 15201, 15202 };
-	private static final int _summonDeathGateId = 11266;
-	
-	public DeathGate(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		for (int i : _deathGateIds)
-			addSpawnId(i);
-	}
-	
-	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		npc.disableCoreAI(true);
-		npc.setIsInvul(true);
-		
-		DeathGateAI ai = new DeathGateAI(npc, npc.getOwner());
-		
-		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 1000, 4000));
-		
-		return null;
-	}
-	
-	class DeathGateAI implements Runnable
-	{
-		private L2Skill _gateVortex;
-		private L2Skill _gateRoot;
-		private L2Skill lastSkillUsed;
-		private L2Npc _deathGate;
-		private L2PcInstance _owner;
-		private ScheduledFuture<?> _schedule = null;
-		
-		protected DeathGateAI(L2Npc npc, L2PcInstance owner)
-		{
-			_deathGate = npc;
-			
-			_owner = owner;
-			if (_owner == null)
-				return;
-			
-			int skillLevel = _owner.getSkillLevel(_summonDeathGateId);
-			if (skillLevel == -1)
-				return;
-			
-			_gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
-			_gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
-		}
-		
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
-			_schedule = schedule;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_deathGate == null || _deathGate.isDead() || _deathGate.isDecayed() || _deathGate.getOwner().isAlikeDead())
-			{
-				if (_schedule != null)
-				{
-					_schedule.cancel(true);
-					return;
-				}
-			}
-			
-			_deathGate.setTarget(_deathGate);
-			
-			if (lastSkillUsed == _gateVortex)
-				lastSkillUsed = _gateRoot;
-			else
-				lastSkillUsed = _gateVortex;
-			
-			_deathGate.doCast(lastSkillUsed);
-		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new DeathGate(-1, "DeathGate", "ai/individual");
-	}
+    private static final int[] _deathGateIds = {14927, 15200, 15201, 15202};
+    private static final int _summonDeathGateId = 11266;
+
+    public DeathGate(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        for (int i : _deathGateIds)
+        {
+            addSpawnId(i);
+        }
+    }
+
+    @Override
+    public final String onSpawn(L2Npc npc)
+    {
+        npc.disableCoreAI(true);
+        npc.setIsInvul(true);
+
+        DeathGateAI ai = new DeathGateAI(npc, npc.getOwner());
+
+        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 1000, 4000));
+
+        return null;
+    }
+
+    class DeathGateAI implements Runnable
+    {
+        private L2Skill _gateVortex;
+        private L2Skill _gateRoot;
+        private L2Skill lastSkillUsed;
+        private L2Npc _deathGate;
+        private L2PcInstance _owner;
+        private ScheduledFuture<?> _schedule = null;
+
+        protected DeathGateAI(L2Npc npc, L2PcInstance owner)
+        {
+            _deathGate = npc;
+
+            _owner = owner;
+            if (_owner == null)
+            {
+                return;
+            }
+
+            int skillLevel = _owner.getSkillLevel(_summonDeathGateId);
+            if (skillLevel == -1)
+            {
+                return;
+            }
+
+            _gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
+            _gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
+        }
+
+        public void setSchedule(ScheduledFuture<?> schedule)
+        {
+            _schedule = schedule;
+        }
+
+        @Override
+        public void run()
+        {
+            if (_deathGate == null || _deathGate.isDead() || _deathGate.isDecayed() || _deathGate.getOwner()
+                    .isAlikeDead())
+            {
+                if (_schedule != null)
+                {
+                    _schedule.cancel(true);
+                    return;
+                }
+            }
+
+            _deathGate.setTarget(_deathGate);
+
+            if (lastSkillUsed == _gateVortex)
+            {
+                lastSkillUsed = _gateRoot;
+            }
+            else
+            {
+                lastSkillUsed = _gateVortex;
+            }
+
+            _deathGate.doCast(lastSkillUsed);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        new DeathGate(-1, "DeathGate", "ai/individual");
+    }
 }

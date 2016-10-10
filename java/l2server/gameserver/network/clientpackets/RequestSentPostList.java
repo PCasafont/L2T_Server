@@ -24,32 +24,34 @@ import l2server.gameserver.network.serverpackets.ExShowSentPostList;
  */
 public final class RequestSentPostList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger packet
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL)
-			return;
-		
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger packet
+    }
+
+    @Override
+    public void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null || !Config.ALLOW_MAIL)
+        {
+            return;
+        }
+
 		/*if (!activeChar.isInsideZone(ZONE_PEACE))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			return;
 		}*/
-		
-		activeChar.sendPacket(new ExShowSentPostList(activeChar.getObjectId()));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+        activeChar.sendPacket(new ExShowSentPostList(activeChar.getObjectId()));
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

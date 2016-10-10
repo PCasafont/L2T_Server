@@ -16,23 +16,22 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class KillThePriests extends TerritoryWarSuperClass
 {
-	public static String qn1 = "737_DenyBlessings";
-	public static int qnu = 737;
-	public static String qna = "Deny Blessings";
-	
-	public KillThePriests()
-	{
-		super(qnu, qn1, qna);
-		CLASS_IDS = new int[] { 43, 112, 30, 105, 16, 97, 17, 98, 52, 116, 146, 179, 180, 181 };
-		qn = qn1;
-		RANDOM_MIN = 3;
-		RANDOM_MAX = 8;
-		Text = new String[] { "Out of MAX Priests you have defeated KILL.", "You weakened the enemy's attack!" };
-	}
+    public static String qn1 = "737_DenyBlessings";
+    public static int qnu = 737;
+    public static String qna = "Deny Blessings";
+
+    public KillThePriests()
+    {
+        super(qnu, qn1, qna);
+        CLASS_IDS = new int[]{43, 112, 30, 105, 16, 97, 17, 98, 52, 116, 146, 179, 180, 181};
+        qn = qn1;
+        RANDOM_MIN = 3;
+        RANDOM_MAX = 8;
+        Text = new String[]{"Out of MAX Priests you have defeated KILL.", "You weakened the enemy's attack!"};
+    }
 }

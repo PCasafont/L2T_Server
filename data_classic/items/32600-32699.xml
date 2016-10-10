@@ -1,1392 +1,1392 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<item id="32600" type="Armor" name="Fantasy Vesper Leather Helmet - Not in Use">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="116" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="32601" type="Armor" name="Fantasy Vesper Helmet - Not in Use">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="116" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="32602" type="Armor" name="Fantasy Vesper Shield - Not in Use">
-		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="1130" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="371" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="32603" type="Armor" name="Fantasy Vesper Sigil - Not in Use">
-		<set name="icon" val="icon.verper_sigil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="none" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="920" />
-		<for>
-			<baseAdd stat="pDef" val="17" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Support Orbis Reward Box -->
-	<item id="32604" type="EtcItem" name="Orbis Reward Box (Support)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- High-grade Orbis Reward Box -->
-	<item id="32605" type="EtcItem" name="Orbis Reward Box (High-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Luxury-grade Orbis Reward Box -->
-	<item id="32606" type="EtcItem" name="Orbis Reward Box (Luxury-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Top-grade Orbis Reward Box -->
-	<item id="32607" type="EtcItem" name="Orbis Reward Box (Top-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Increases Max HP by 301 when enchanted to + 4 or higher. -->
-	<item id="32608" type="Armor" name="Immortal Shirt - HP">
-		<set name="icon" val="icon.r1_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="38" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max MP by 148 when enchanted to + 4 or higher. -->
-	<item id="32609" type="Armor" name="Immortal Shirt - MP">
-		<set name="icon" val="icon.r1_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="38" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max CP by 811 when enchanted to + 4 or higher. -->
-	<item id="32610" type="Armor" name="Immortal Shirt - CP">
-		<set name="icon" val="icon.r1_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="38" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max HP by 316 when enchanted to + 4 or higher. -->
-	<item id="32611" type="Armor" name="Twilight Shirt - HP">
-		<set name="icon" val="icon.r2_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="42" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max MP by 162 when enchanted to + 4 or higher. -->
-	<item id="32612" type="Armor" name="Twilight Shirt - MP">
-		<set name="icon" val="icon.r2_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="42" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max CP by 851 when enchanted to + 4 or higher. -->
-	<item id="32613" type="Armor" name="Twilight Shirt - CP">
-		<set name="icon" val="icon.r2_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="42" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max HP by 332 when enchanted to + 4 or higher. -->
-	<item id="32614" type="Armor" name="Seraph Shirt - HP">
-		<set name="icon" val="icon.r95_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="46" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max MP by 176 when enchanted to + 4 or higher. -->
-	<item id="32615" type="Armor" name="Seraph Shirt - MP">
-		<set name="icon" val="icon.r95_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="46" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max CP by 894 when enchanted to + 4 or higher. -->
-	<item id="32616" type="Armor" name="Seraph Shirt - CP">
-		<set name="icon" val="icon.r95_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="46" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max HP by 339 when enchanted to + 4 or higher. -->
-	<item id="32617" type="Armor" name="Eternal Shirt - HP">
-		<set name="icon" val="icon.r991_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max MP by 182 when enchanted to + 4 or higher. -->
-	<item id="32618" type="Armor" name="Eternal Shirt - MP">
-		<set name="icon" val="icon.r991_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases Max CP by 912 when enchanted to + 4 or higher. -->
-	<item id="32619" type="Armor" name="Eternal Shirt - CP">
-		<set name="icon" val="icon.r991_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="48" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32620" type="Armor" name="Low-grade Magic Rune Clip Immortal Belt - HP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32621" type="Armor" name="Standard Magic Rune Clip Immortal Belt - HP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32622" type="Armor" name="High-grade Magic Rune Clip Immortal Belt - HP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32623" type="Armor" name="Top-grade Magic Rune Clip Immortal Belt - HP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32624" type="Armor" name="Low-grade Magic Rune Clip Immortal Belt - MP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32625" type="Armor" name="Standard Magic Rune Clip Immortal Belt - MP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32626" type="Armor" name="High-grade Magic Rune Clip Immortal Belt - MP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32627" type="Armor" name="Top-grade Magic Rune Clip Immortal Belt - MP Recovery">
-		<set name="icon" val="icon.r1_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32628" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32629" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32630" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32631" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32632" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32633" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32634" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32635" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32636" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Defense">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32637" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Defense">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32638" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Defense">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32639" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Defense">
-		<set name="icon" val="icon.r1_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="19" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32640" type="Armor" name="Low-grade Magic Rune Clip Twilight Belt - HP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32641" type="Armor" name="Standard Magic Rune Clip Twilight Belt - HP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32642" type="Armor" name="High-grade Magic Rune Clip Twilight Belt - HP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32643" type="Armor" name="Top-grade Magic Rune Clip Twilight Belt - HP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32644" type="Armor" name="Low-grade Magic Rune Clip Twilight Belt - MP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32645" type="Armor" name="Standard Magic Rune Clip Twilight Belt - MP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32646" type="Armor" name="High-grade Magic Rune Clip Twilight Belt - MP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32647" type="Armor" name="Top-grade Magic Rune Clip Twilight Belt - MP Recovery">
-		<set name="icon" val="icon.r2_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32648" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32649" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32650" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32651" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32652" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32653" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32654" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32655" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32656" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Defense">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32657" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Defense">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32658" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Defense">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32659" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Defense">
-		<set name="icon" val="icon.r2_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="21" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32660" type="Armor" name="Low-grade Magic Rune Clip Seraph Belt - HP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32661" type="Armor" name="Standard Magic Rune Clip Seraph Belt - HP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32662" type="Armor" name="High-grade Magic Rune Clip Seraph Belt - HP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32663" type="Armor" name="Top-grade Magic Rune Clip Seraph Belt - HP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32664" type="Armor" name="Low-grade Magic Rune Clip Seraph Belt - MP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32665" type="Armor" name="Standard Magic Rune Clip Seraph Belt - MP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32666" type="Armor" name="High-grade Magic Rune Clip Seraph Belt - MP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32667" type="Armor" name="Top-grade Magic Rune Clip Seraph Belt - MP Recovery">
-		<set name="icon" val="icon.r95_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32668" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32669" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32670" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32671" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32672" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32673" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32674" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32675" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32676" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Defense">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32677" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Defense">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32678" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Defense">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32679" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Defense">
-		<set name="icon" val="icon.r95_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="440" />
-		<for>
-			<baseAdd stat="pDef" val="23" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32680" type="Armor" name="Low-grade Magic Rune Clip Eternal Belt - HP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13220-1" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32681" type="Armor" name="Standard Magic Rune Clip Eternal Belt - HP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13221-2" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32682" type="Armor" name="High-grade Magic Rune Clip Eternal Belt - HP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13222-3" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases HP Recovery Rate. -->
-	<item id="32683" type="Armor" name="Top-grade Magic Rune Clip Eternal Belt - HP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13223-4" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32684" type="Armor" name="Low-grade Magic Rune Clip Eternal Belt - MP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13224-1" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32685" type="Armor" name="Standard Magic Rune Clip Eternal Belt - MP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13225-2" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32686" type="Armor" name="High-grade Magic Rune Clip Eternal Belt - MP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13226-3" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases MP Recovery Rate. -->
-	<item id="32687" type="Armor" name="Top-grade Magic Rune Clip Eternal Belt - MP Recovery">
-		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13227-4" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32688" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13228-1" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32689" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13229-2" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32690" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13230-3" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP damage during an attack with a weapon. -->
-	<item id="32691" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Physical Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13231-4" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32692" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13232-1" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32693" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13233-2" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32694" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13234-3" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increased PvP damage during an attack with a skill. -->
-	<item id="32695" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Skill Attack">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13235-4" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32696" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Defense">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13236-1" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32697" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Defense">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13237-2" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32698" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Defense">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13238-3" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Increases PvP defense against physical and skill attacks. -->
-	<item id="32699" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Defense">
-		<set name="icon" val="icon.r99_magic_pin_belt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="waist" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="440" />
-		<set name="item_skill" val="13239-4" />
-		<for>
-			<baseAdd stat="pDef" val="24" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
+    <item id="32600" type="Armor" name="Fantasy Vesper Leather Helmet - Not in Use">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="116" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="32601" type="Armor" name="Fantasy Vesper Helmet - Not in Use">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="116" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="32602" type="Armor" name="Fantasy Vesper Shield - Not in Use">
+        <set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="1130" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="371" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="32603" type="Armor" name="Fantasy Vesper Sigil - Not in Use">
+        <set name="icon" val="icon.verper_sigil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="none" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="920" />
+        <for>
+            <baseAdd stat="pDef" val="17" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Support Orbis Reward Box -->
+    <item id="32604" type="EtcItem" name="Orbis Reward Box (Support)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- High-grade Orbis Reward Box -->
+    <item id="32605" type="EtcItem" name="Orbis Reward Box (High-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Luxury-grade Orbis Reward Box -->
+    <item id="32606" type="EtcItem" name="Orbis Reward Box (Luxury-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Top-grade Orbis Reward Box -->
+    <item id="32607" type="EtcItem" name="Orbis Reward Box (Top-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Increases Max HP by 301 when enchanted to + 4 or higher. -->
+    <item id="32608" type="Armor" name="Immortal Shirt - HP">
+        <set name="icon" val="icon.r1_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="38" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max MP by 148 when enchanted to + 4 or higher. -->
+    <item id="32609" type="Armor" name="Immortal Shirt - MP">
+        <set name="icon" val="icon.r1_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="38" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max CP by 811 when enchanted to + 4 or higher. -->
+    <item id="32610" type="Armor" name="Immortal Shirt - CP">
+        <set name="icon" val="icon.r1_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="38" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max HP by 316 when enchanted to + 4 or higher. -->
+    <item id="32611" type="Armor" name="Twilight Shirt - HP">
+        <set name="icon" val="icon.r2_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="42" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max MP by 162 when enchanted to + 4 or higher. -->
+    <item id="32612" type="Armor" name="Twilight Shirt - MP">
+        <set name="icon" val="icon.r2_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="42" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max CP by 851 when enchanted to + 4 or higher. -->
+    <item id="32613" type="Armor" name="Twilight Shirt - CP">
+        <set name="icon" val="icon.r2_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="42" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max HP by 332 when enchanted to + 4 or higher. -->
+    <item id="32614" type="Armor" name="Seraph Shirt - HP">
+        <set name="icon" val="icon.r95_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="46" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max MP by 176 when enchanted to + 4 or higher. -->
+    <item id="32615" type="Armor" name="Seraph Shirt - MP">
+        <set name="icon" val="icon.r95_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="46" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max CP by 894 when enchanted to + 4 or higher. -->
+    <item id="32616" type="Armor" name="Seraph Shirt - CP">
+        <set name="icon" val="icon.r95_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="46" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max HP by 339 when enchanted to + 4 or higher. -->
+    <item id="32617" type="Armor" name="Eternal Shirt - HP">
+        <set name="icon" val="icon.r991_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="48" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max MP by 182 when enchanted to + 4 or higher. -->
+    <item id="32618" type="Armor" name="Eternal Shirt - MP">
+        <set name="icon" val="icon.r991_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="48" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases Max CP by 912 when enchanted to + 4 or higher. -->
+    <item id="32619" type="Armor" name="Eternal Shirt - CP">
+        <set name="icon" val="icon.r991_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="48" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32620" type="Armor" name="Low-grade Magic Rune Clip Immortal Belt - HP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32621" type="Armor" name="Standard Magic Rune Clip Immortal Belt - HP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32622" type="Armor" name="High-grade Magic Rune Clip Immortal Belt - HP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32623" type="Armor" name="Top-grade Magic Rune Clip Immortal Belt - HP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32624" type="Armor" name="Low-grade Magic Rune Clip Immortal Belt - MP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32625" type="Armor" name="Standard Magic Rune Clip Immortal Belt - MP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32626" type="Armor" name="High-grade Magic Rune Clip Immortal Belt - MP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32627" type="Armor" name="Top-grade Magic Rune Clip Immortal Belt - MP Recovery">
+        <set name="icon" val="icon.r1_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32628" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32629" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32630" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32631" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32632" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32633" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32634" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32635" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32636" type="Armor" name="Low-grade Magic Ornament Immortal Belt - PvP Defense">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32637" type="Armor" name="Standard Magic Ornament Immortal Belt - PvP Defense">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32638" type="Armor" name="High-grade Magic Ornament Immortal Belt - PvP Defense">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32639" type="Armor" name="Top-grade Magic Ornament Immortal Belt - PvP Defense">
+        <set name="icon" val="icon.r1_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="19" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32640" type="Armor" name="Low-grade Magic Rune Clip Twilight Belt - HP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32641" type="Armor" name="Standard Magic Rune Clip Twilight Belt - HP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32642" type="Armor" name="High-grade Magic Rune Clip Twilight Belt - HP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32643" type="Armor" name="Top-grade Magic Rune Clip Twilight Belt - HP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32644" type="Armor" name="Low-grade Magic Rune Clip Twilight Belt - MP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32645" type="Armor" name="Standard Magic Rune Clip Twilight Belt - MP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32646" type="Armor" name="High-grade Magic Rune Clip Twilight Belt - MP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32647" type="Armor" name="Top-grade Magic Rune Clip Twilight Belt - MP Recovery">
+        <set name="icon" val="icon.r2_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32648" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32649" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32650" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32651" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32652" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32653" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32654" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32655" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32656" type="Armor" name="Low-grade Magic Ornament Twilight Belt - PvP Defense">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32657" type="Armor" name="Standard Magic Ornament Twilight Belt - PvP Defense">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32658" type="Armor" name="High-grade Magic Ornament Twilight Belt - PvP Defense">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32659" type="Armor" name="Top-grade Magic Ornament Twilight Belt - PvP Defense">
+        <set name="icon" val="icon.r2_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="21" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32660" type="Armor" name="Low-grade Magic Rune Clip Seraph Belt - HP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32661" type="Armor" name="Standard Magic Rune Clip Seraph Belt - HP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32662" type="Armor" name="High-grade Magic Rune Clip Seraph Belt - HP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32663" type="Armor" name="Top-grade Magic Rune Clip Seraph Belt - HP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32664" type="Armor" name="Low-grade Magic Rune Clip Seraph Belt - MP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32665" type="Armor" name="Standard Magic Rune Clip Seraph Belt - MP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32666" type="Armor" name="High-grade Magic Rune Clip Seraph Belt - MP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32667" type="Armor" name="Top-grade Magic Rune Clip Seraph Belt - MP Recovery">
+        <set name="icon" val="icon.r95_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32668" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32669" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32670" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32671" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32672" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32673" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32674" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32675" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32676" type="Armor" name="Low-grade Magic Ornament Seraph Belt - PvP Defense">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32677" type="Armor" name="Standard Magic Ornament Seraph Belt - PvP Defense">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32678" type="Armor" name="High-grade Magic Ornament Seraph Belt - PvP Defense">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32679" type="Armor" name="Top-grade Magic Ornament Seraph Belt - PvP Defense">
+        <set name="icon" val="icon.r95_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="440" />
+        <for>
+            <baseAdd stat="pDef" val="23" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32680" type="Armor" name="Low-grade Magic Rune Clip Eternal Belt - HP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13220-1" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32681" type="Armor" name="Standard Magic Rune Clip Eternal Belt - HP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13221-2" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32682" type="Armor" name="High-grade Magic Rune Clip Eternal Belt - HP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13222-3" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases HP Recovery Rate. -->
+    <item id="32683" type="Armor" name="Top-grade Magic Rune Clip Eternal Belt - HP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13223-4" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32684" type="Armor" name="Low-grade Magic Rune Clip Eternal Belt - MP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13224-1" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32685" type="Armor" name="Standard Magic Rune Clip Eternal Belt - MP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13225-2" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32686" type="Armor" name="High-grade Magic Rune Clip Eternal Belt - MP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13226-3" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases MP Recovery Rate. -->
+    <item id="32687" type="Armor" name="Top-grade Magic Rune Clip Eternal Belt - MP Recovery">
+        <set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13227-4" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32688" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13228-1" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32689" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13229-2" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32690" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13230-3" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP damage during an attack with a weapon. -->
+    <item id="32691" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Physical Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13231-4" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32692" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13232-1" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32693" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13233-2" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32694" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13234-3" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increased PvP damage during an attack with a skill. -->
+    <item id="32695" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Skill Attack">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13235-4" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32696" type="Armor" name="Low-grade Magic Ornament Eternal Belt - PvP Defense">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13236-1" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32697" type="Armor" name="Standard Magic Ornament Eternal Belt - PvP Defense">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13237-2" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32698" type="Armor" name="High-grade Magic Ornament Eternal Belt - PvP Defense">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13238-3" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Increases PvP defense against physical and skill attacks. -->
+    <item id="32699" type="Armor" name="Top-grade Magic Ornament Eternal Belt - PvP Defense">
+        <set name="icon" val="icon.r99_magic_pin_belt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="waist" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="440" />
+        <set name="item_skill" val="13239-4" />
+        <for>
+            <baseAdd stat="pDef" val="24" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
 </list>

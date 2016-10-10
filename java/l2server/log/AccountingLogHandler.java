@@ -20,8 +20,8 @@ import java.util.logging.FileHandler;
 
 public class AccountingLogHandler extends FileHandler
 {
-	public AccountingLogHandler() throws IOException, SecurityException
-	{
-		super();
-	}
+    public AccountingLogHandler() throws IOException, SecurityException
+    {
+        super();
+    }
 }

@@ -37,74 +37,85 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Resurrect implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.RESURRECT
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		L2PcInstance player = null;
-		if (activeChar instanceof L2PcInstance)
-			player = (L2PcInstance) activeChar;
-		
-		if (player.isInOlympiadMode() && player.isOlympiadStart())
-			return;
-		
-		L2PcInstance targetPlayer;
-		List<L2Character> targetToRes = new HashMap<L2Character>();
-		
-		for (L2Character target: (L2Character[]) targets)
-		{
-			if (target instanceof L2PcInstance)
-			{
-				targetPlayer = (L2PcInstance)target;
-				
-				// Check for same party or for same clan, if target is for clan.
-				if (skill.getTargetType() == SkillTargetType.TARGET_CORPSE_CLAN)
-				{
-					if (player.getClanId() != targetPlayer.getClanId())
-						continue;
-				}
-				
-				if (targetPlayer.getEvent() != null && targetPlayer.getEvent().isState(EventState.STARTED))
-					continue;
-			}
-			if (target.isVisible())
-				targetToRes.add(target);
-		}
-		
-		if (targetToRes.isEmpty())
-		{
-			activeChar.abortCast();
-			return;
-		}
-		
-		for (L2Character cha : targetToRes)
-			if (activeChar instanceof L2PcInstance)
-			{
-				if (cha instanceof L2PcInstance)
-					((L2PcInstance) cha).reviveRequest((L2PcInstance) activeChar, skill, false);
-				else if (cha instanceof L2PetInstance)
-					((L2PetInstance) cha).getOwner().reviveRequest((L2PcInstance) activeChar, skill, true);
-			}
-			else
-			{
-				DecayTaskManager.getInstance().cancelDecayTask(cha);
-				cha.doRevive(Formulas.calculateSkillResurrectRestorePercent(skill.getPower(), activeChar));
-			}
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.RESURRECT};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        L2PcInstance player = null;
+        if (activeChar instanceof L2PcInstance)
+        {
+            player = (L2PcInstance) activeChar;
+        }
+
+        if (player.isInOlympiadMode() && player.isOlympiadStart())
+        {
+            return;
+        }
+
+        L2PcInstance targetPlayer;
+        List<L2Character> targetToRes = new HashMap<L2Character>();
+
+        for (L2Character target : (L2Character[]) targets)
+        {
+            if (target instanceof L2PcInstance)
+            {
+                targetPlayer = (L2PcInstance) target;
+
+                // Check for same party or for same clan, if target is for clan.
+                if (skill.getTargetType() == SkillTargetType.TARGET_CORPSE_CLAN)
+                {
+                    if (player.getClanId() != targetPlayer.getClanId())
+                    {
+                        continue;
+                    }
+                }
+
+                if (targetPlayer.getEvent() != null && targetPlayer.getEvent().isState(EventState.STARTED))
+                {
+                    continue;
+                }
+            }
+            if (target.isVisible())
+            {
+                targetToRes.add(target);
+            }
+        }
+
+        if (targetToRes.isEmpty())
+        {
+            activeChar.abortCast();
+            return;
+        }
+
+        for (L2Character cha : targetToRes)
+        {
+            if (activeChar instanceof L2PcInstance)
+            {
+                if (cha instanceof L2PcInstance)
+                {
+                    ((L2PcInstance) cha).reviveRequest((L2PcInstance) activeChar, skill, false);
+                }
+                else if (cha instanceof L2PetInstance)
+                {
+                    ((L2PetInstance) cha).getOwner().reviveRequest((L2PcInstance) activeChar, skill, true);
+                }
+            }
+            else
+            {
+                DecayTaskManager.getInstance().cancelDecayTask(cha);
+                cha.doRevive(Formulas.calculateSkillResurrectRestorePercent(skill.getPower(), activeChar));
+            }
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

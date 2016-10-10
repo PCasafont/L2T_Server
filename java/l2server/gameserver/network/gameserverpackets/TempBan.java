@@ -20,38 +20,38 @@ import java.io.IOException;
 import l2server.util.network.BaseSendablePacket;
 
 /**
- *
  * @author mrTJO
  */
 public class TempBan extends BaseSendablePacket
 {
-	public TempBan(String accountName, String ip, long time, String reason)
-	{
-		writeC(0x0A);
-		writeS(accountName);
-		writeS(ip);
-		writeQ(System.currentTimeMillis() + time * 60000);
-		if (reason != null)
-		{
-			writeC(0x01);
-			writeS(reason);
-		}
-		else
-			writeC(0x00);
-	}
-	
-	public TempBan(String accountName, String ip, long time)
-	{
-		this(accountName, ip, time, null);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.util.network.BaseSendablePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public TempBan(String accountName, String ip, long time, String reason)
+    {
+        writeC(0x0A);
+        writeS(accountName);
+        writeS(ip);
+        writeQ(System.currentTimeMillis() + time * 60000);
+        if (reason != null)
+        {
+            writeC(0x01);
+            writeS(reason);
+        }
+        else
+        {
+            writeC(0x00);
+        }
+    }
+
+    public TempBan(String accountName, String ip, long time)
+    {
+        this(accountName, ip, time, null);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.util.network.BaseSendablePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

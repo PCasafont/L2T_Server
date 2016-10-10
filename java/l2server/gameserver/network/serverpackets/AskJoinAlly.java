@@ -16,14 +16,13 @@
 package l2server.gameserver.network.serverpackets;
 
 /**
- *
  * sample
  * <p>
  * 7d
  * c1 b2 e0 4a
  * 00 00 00 00
  * <p>
- *
+ * <p>
  * format
  * cdd
  *
@@ -31,24 +30,24 @@ package l2server.gameserver.network.serverpackets;
  */
 public class AskJoinAlly extends L2GameServerPacket
 {
-	//
-	
-	private String _requestorName;
-	private int _requestorObjId;
-	
-	/**
-	 *
-	 */
-	public AskJoinAlly(int requestorObjId, String requestorName)
-	{
-		_requestorName = requestorName;
-		_requestorObjId = requestorObjId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_requestorObjId);
-		writeS(_requestorName);
-	}
+    //
+
+    private String _requestorName;
+    private int _requestorObjId;
+
+    /**
+     *
+     */
+    public AskJoinAlly(int requestorObjId, String requestorName)
+    {
+        _requestorName = requestorName;
+        _requestorObjId = requestorObjId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_requestorObjId);
+        writeS(_requestorName);
+    }
 }

@@ -17,27 +17,26 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author Erlandys
- *
  */
 public class ExAlterSkillRequest extends L2GameServerPacket
 {
-	
-	private int _nextSkillId;
-	private int _currentSkillId;
-	private int _alterTime;
-	
-	public ExAlterSkillRequest(int nextSkillId, int currentSkillId, int alterTime)
-	{
-		_nextSkillId = nextSkillId;
-		_currentSkillId = currentSkillId;
-		_alterTime = alterTime;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_nextSkillId);
-		writeD(_currentSkillId);
-		writeD(_alterTime);
-	}
+
+    private int _nextSkillId;
+    private int _currentSkillId;
+    private int _alterTime;
+
+    public ExAlterSkillRequest(int nextSkillId, int currentSkillId, int alterTime)
+    {
+        _nextSkillId = nextSkillId;
+        _currentSkillId = currentSkillId;
+        _alterTime = alterTime;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_nextSkillId);
+        writeD(_currentSkillId);
+        writeD(_alterTime);
+    }
 }

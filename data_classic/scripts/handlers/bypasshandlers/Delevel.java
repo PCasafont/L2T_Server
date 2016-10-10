@@ -24,83 +24,85 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Delevel implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Delevel"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null || !Config.isServer(Config.TENKAI))
-			return false;
-		
-		if (command.equalsIgnoreCase("Delevel"))
-		{
-			int minLevel = activeChar.getCurrentClass().level() > 1 ? 40 : 1;
-			for (L2Skill skill : activeChar.getAllSkills())
-			{
-				if (skill.getLevel() > 100)
-				{
-					minLevel = activeChar.getLevel() + 1;
-					break;
-				}
-			}
-			String html = "<html>" +
-			"<title>Tenkai</title>" +
-			"<body>" +
-			"<center><br><tr><td>Change Level</tr></td><br>" +
-			"<br>" +
-			"What level do you wish to be?<br>" +
-			"<table>";
-			for (int i = minLevel; i < activeChar.getLevel(); i += 10)
-			{
-				html += "<tr>";
-				for (int j = i; j < i + 10 && j < activeChar.getLevel(); j++)
-					html += "<td fixwidth=\"15\"><a action=\"bypass -h npc_%objectId%_Delevel " + j + "\">" + j + "</a></td>";
-				html += "</tr>";
-			}
-			html += "</table></center></body></html>";
-			NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
-			packet.setHtml(html);
-			packet.replace("%objectId%", String.valueOf(target.getObjectId()));
-			activeChar.sendPacket(packet);
-		}
-		else
-		{
-			int val = 0;
-			try
-			{
-				val = Integer.parseInt(command.substring(8));
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
-			byte lvl = (byte)val;
-			if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1)
-			{
-				long pXp = activeChar.getExp();
-				long tXp = Experience.getAbsoluteExp(lvl);
-				
-				int rep = activeChar.getReputation();
-				if (pXp > tXp)
-					activeChar.removeExpAndSp(pXp - tXp, 0);
-				else if (pXp < tXp)
-					activeChar.addExpAndSp(tXp - pXp, 0);
-				activeChar.setReputation(rep);
-			}
-			else
-			{
-				activeChar.sendMessage("There was an error while changing your level.");
-				return false;
-			}
-		}
-		
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"Delevel"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null || !Config.isServer(Config.TENKAI))
+        {
+            return false;
+        }
+
+        if (command.equalsIgnoreCase("Delevel"))
+        {
+            int minLevel = activeChar.getCurrentClass().level() > 1 ? 40 : 1;
+            for (L2Skill skill : activeChar.getAllSkills())
+            {
+                if (skill.getLevel() > 100)
+                {
+                    minLevel = activeChar.getLevel() + 1;
+                    break;
+                }
+            }
+            String html =
+                    "<html>" + "<title>Tenkai</title>" + "<body>" + "<center><br><tr><td>Change Level</tr></td><br>" +
+                            "<br>" + "What level do you wish to be?<br>" + "<table>";
+            for (int i = minLevel; i < activeChar.getLevel(); i += 10)
+            {
+                html += "<tr>";
+                for (int j = i; j < i + 10 && j < activeChar.getLevel(); j++)
+                {
+                    html += "<td fixwidth=\"15\"><a action=\"bypass -h npc_%objectId%_Delevel " + j + "\">" + j +
+                            "</a></td>";
+                }
+                html += "</tr>";
+            }
+            html += "</table></center></body></html>";
+            NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
+            packet.setHtml(html);
+            packet.replace("%objectId%", String.valueOf(target.getObjectId()));
+            activeChar.sendPacket(packet);
+        }
+        else
+        {
+            int val = 0;
+            try
+            {
+                val = Integer.parseInt(command.substring(8));
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            byte lvl = (byte) val;
+            if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1)
+            {
+                long pXp = activeChar.getExp();
+                long tXp = Experience.getAbsoluteExp(lvl);
+
+                int rep = activeChar.getReputation();
+                if (pXp > tXp)
+                {
+                    activeChar.removeExpAndSp(pXp - tXp, 0);
+                }
+                else if (pXp < tXp)
+                {
+                    activeChar.addExpAndSp(tXp - pXp, 0);
+                }
+                activeChar.setReputation(rep);
+            }
+            else
+            {
+                activeChar.sendMessage("There was an error while changing your level.");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

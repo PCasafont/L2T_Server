@@ -31,85 +31,109 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 
 /**
- *
  * @author One
  */
 public class TargetCorpseAlly implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		List<L2Character> targetList = new ArrayList<L2Character>();
-		
-		if (activeChar instanceof L2PcInstance)
-		{
-			int radius = skill.getSkillRadius();
-			L2PcInstance player = (L2PcInstance) activeChar;
-			L2Clan clan = player.getClan();
-			
-			if (player.isInOlympiadMode())
-				return new L2Character[] { player };
-			
-			if (clan != null)
-			{
-				// Get all visible objects in a spherical area near the L2Character
-				// Get Clan Members
-				Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
-				//synchronized (activeChar.getKnownList().getKnownObjects())
-				{
-					for (L2Object newTarget : objs)
-					{
-						if (!(newTarget instanceof L2PcInstance))
-							continue;
-						if ((((L2PcInstance) newTarget).getAllyId() == 0 || ((L2PcInstance) newTarget).getAllyId() != player.getAllyId()) && (((L2PcInstance) newTarget).getClan() == null || ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
-							continue;
-						if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || player.getParty() != null && !player.getParty().isInParty(newTarget)))
-							continue;
-						
-						if (!((L2PcInstance) newTarget).isDead())
-							continue;
-						
-						if (skill.getSkillType() == L2SkillType.RESURRECT)
-						{
-							// check target is not in a active siege
-							// zone
-							if (((L2PcInstance) newTarget).isInsideZone(L2Character.ZONE_SIEGE) && ((L2PcInstance) newTarget).getSiegeState() == 0)
-								continue;
-						}
-						
-						if (!Util.checkIfInRange(radius, activeChar, newTarget, true))
-							continue;
-						
-						// Don't add this target if this is a Pc->Pc pvp
-						// casting and pvp condition not met
-						if (!player.checkPvpSkill(newTarget, skill))
-							continue;
-						
-						if (!onlyFirst)
-							targetList.add((L2Character) newTarget);
-						else
-							return new L2Character[] { (L2Character) newTarget };
-					}
-				}
-			}
-		}
-		return targetList.toArray(new L2Character[targetList.size()]);
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.TARGET_CORPSE_ALLY;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpseAlly());
-	}
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        List<L2Character> targetList = new ArrayList<L2Character>();
+
+        if (activeChar instanceof L2PcInstance)
+        {
+            int radius = skill.getSkillRadius();
+            L2PcInstance player = (L2PcInstance) activeChar;
+            L2Clan clan = player.getClan();
+
+            if (player.isInOlympiadMode())
+            {
+                return new L2Character[]{player};
+            }
+
+            if (clan != null)
+            {
+                // Get all visible objects in a spherical area near the L2Character
+                // Get Clan Members
+                Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+                //synchronized (activeChar.getKnownList().getKnownObjects())
+                {
+                    for (L2Object newTarget : objs)
+                    {
+                        if (!(newTarget instanceof L2PcInstance))
+                        {
+                            continue;
+                        }
+                        if ((((L2PcInstance) newTarget).getAllyId() == 0 || ((L2PcInstance) newTarget)
+                                .getAllyId() != player.getAllyId()) && (((L2PcInstance) newTarget)
+                                .getClan() == null || ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
+                        {
+                            continue;
+                        }
+                        if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || player
+                                .getParty() != null && !player.getParty().isInParty(newTarget)))
+                        {
+                            continue;
+                        }
+
+                        if (!((L2PcInstance) newTarget).isDead())
+                        {
+                            continue;
+                        }
+
+                        if (skill.getSkillType() == L2SkillType.RESURRECT)
+                        {
+                            // check target is not in a active siege
+                            // zone
+                            if (((L2PcInstance) newTarget)
+                                    .isInsideZone(L2Character.ZONE_SIEGE) && ((L2PcInstance) newTarget)
+                                    .getSiegeState() == 0)
+                            {
+                                continue;
+                            }
+                        }
+
+                        if (!Util.checkIfInRange(radius, activeChar, newTarget, true))
+                        {
+                            continue;
+                        }
+
+                        // Don't add this target if this is a Pc->Pc pvp
+                        // casting and pvp condition not met
+                        if (!player.checkPvpSkill(newTarget, skill))
+                        {
+                            continue;
+                        }
+
+                        if (!onlyFirst)
+                        {
+                            targetList.add((L2Character) newTarget);
+                        }
+                        else
+                        {
+                            return new L2Character[]{(L2Character) newTarget};
+                        }
+                    }
+                }
+            }
+        }
+        return targetList.toArray(new L2Character[targetList.size()]);
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.TARGET_CORPSE_ALLY;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpseAlly());
+    }
 }

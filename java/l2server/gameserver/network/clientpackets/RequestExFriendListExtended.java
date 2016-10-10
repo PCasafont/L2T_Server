@@ -24,23 +24,27 @@ import l2server.gameserver.network.serverpackets.FriendListExtended;
  */
 public final class RequestExFriendListExtended extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger packet
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		if (!Config.ALLOW_MAIL)
-			return;
-		
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		activeChar.sendPacket(new FriendListExtended(activeChar));
-	}
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger packet
+    }
+
+    @Override
+    public void runImpl()
+    {
+        if (!Config.ALLOW_MAIL)
+        {
+            return;
+        }
+
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        activeChar.sendPacket(new FriendListExtended(activeChar));
+    }
 }

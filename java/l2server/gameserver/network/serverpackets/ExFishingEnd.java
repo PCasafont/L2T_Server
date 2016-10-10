@@ -22,28 +22,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * Format: (ch) dc
  * d: character object id
  * c: 1 if won 0 if failed
- * @author -Wooden-
  *
+ * @author -Wooden-
  */
 public class ExFishingEnd extends L2GameServerPacket
 {
-	private boolean _win;
-	L2Character _activeChar;
-	
-	public ExFishingEnd(boolean win, L2PcInstance character)
-	{
-		_win = win;
-		_activeChar = character;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_activeChar.getObjectId());
-		writeC(_win ? 1 : 0);
-		
-	}
+    private boolean _win;
+    L2Character _activeChar;
+
+    public ExFishingEnd(boolean win, L2PcInstance character)
+    {
+        _win = win;
+        _activeChar = character;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_activeChar.getObjectId());
+        writeC(_win ? 1 : 0);
+    }
 }

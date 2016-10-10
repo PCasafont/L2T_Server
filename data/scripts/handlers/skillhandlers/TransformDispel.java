@@ -29,42 +29,50 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class TransformDispel implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS = { L2SkillType.TRANSFORMDISPEL };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead())
-			return;
-		
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance pc = (L2PcInstance) activeChar;
-		
-		if (pc.isAlikeDead() || pc.isCursedWeaponEquipped())
-			return;
-		
-		if (pc.isTransformed() || pc.isInStance())
-		{
-			if (pc.isFlyingMounted() && !pc.isInsideZone(L2Character.ZONE_LANDING))
-				pc.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BOARD_OR_CANCEL_NOT_POSSIBLE_HERE));
-			else
-				pc.stopTransformation(true);
-		}
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	@Override
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.TRANSFORMDISPEL};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    @Override
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (activeChar.isAlikeDead())
+        {
+            return;
+        }
+
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance pc = (L2PcInstance) activeChar;
+
+        if (pc.isAlikeDead() || pc.isCursedWeaponEquipped())
+        {
+            return;
+        }
+
+        if (pc.isTransformed() || pc.isInStance())
+        {
+            if (pc.isFlyingMounted() && !pc.isInsideZone(L2Character.ZONE_LANDING))
+            {
+                pc.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BOARD_OR_CANCEL_NOT_POSSIBLE_HERE));
+            }
+            else
+            {
+                pc.stopTransformation(true);
+            }
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    @Override
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

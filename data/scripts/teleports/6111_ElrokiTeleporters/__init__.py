@@ -7,22 +7,23 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "6111_ElrokiTeleporters"
 
-class Quest (JQuest) :
 
- def __init__(self,id,name,descr): 
-   JQuest.__init__(self,id,name,descr)
- 
- def onTalk (self,npc,player):
-    npcId = npc.getNpcId()
-    if npcId == 32111 :
-        if player.isInCombat() :
-           return "32111-no.htm"
-        player.teleToLocation(4990,-1879,-3178)
-    if npcId == 32112 :
-        player.teleToLocation(7557,-5513,-3221)
-    return
+class Quest(JQuest):
+    def __init__(self, id, name, descr):
+        JQuest.__init__(self, id, name, descr)
 
-QUEST       = Quest(-1, qn, "Teleports")
+    def onTalk(self, npc, player):
+        npcId = npc.getNpcId()
+        if npcId == 32111:
+            if player.isInCombat():
+                return "32111-no.htm"
+            player.teleToLocation(4990, -1879, -3178)
+        if npcId == 32112:
+            player.teleToLocation(7557, -5513, -3221)
+        return
+
+
+QUEST = Quest(-1, qn, "Teleports")
 
 QUEST.addStartNpc(32111)
 QUEST.addTalkId(32111)

@@ -24,64 +24,64 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- *
- * Spicula Scout Golem AI
+ *         <p>
+ *         Spicula Scout Golem AI
  */
 
 public class SpiculaScoutGolem extends L2AttackableAIScript
 {
-	private static final int _spiculaScoutGolem = 23268;
-	private static final int _golemGenerator = 19296;
-	private static final int _battleGolem = 23269;
-	
-	public SpiculaScoutGolem(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		addKillId(_spiculaScoutGolem);
-		addFirstTalkId(_golemGenerator);
-	}
-	
-	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		npc.deleteMe();
-		
-		for (int a = 0; a < Rnd.get(2, 3); a++)
-		{
-			L2Npc golem = addSpawn(_battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
-			
-			golem.setIsRunning(true);
-			
-			golem.setTarget(player);
-			
-			((L2MonsterInstance) golem).addDamageHate(player, 500, 99999);
-			
-			golem.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-		}
-		
-		return super.onFirstTalk(npc, player);
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (Rnd.get(10) > 7)
-		{
-			addSpawn(_golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
-		}
-		
-		return super.onKill(npc, killer, isPet);
-	}
-	
-	@Override
-	public int getOnKillDelay(int npcId)
-	{
-		return 0;
-	}
-	
-	public static void main(String[] args)
-	{
-		new SpiculaScoutGolem(-1, "SpiculaScoutGolem", "ai");
-	}
+    private static final int _spiculaScoutGolem = 23268;
+    private static final int _golemGenerator = 19296;
+    private static final int _battleGolem = 23269;
+
+    public SpiculaScoutGolem(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        addKillId(_spiculaScoutGolem);
+        addFirstTalkId(_golemGenerator);
+    }
+
+    @Override
+    public String onFirstTalk(L2Npc npc, L2PcInstance player)
+    {
+        npc.deleteMe();
+
+        for (int a = 0; a < Rnd.get(2, 3); a++)
+        {
+            L2Npc golem = addSpawn(_battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
+
+            golem.setIsRunning(true);
+
+            golem.setTarget(player);
+
+            ((L2MonsterInstance) golem).addDamageHate(player, 500, 99999);
+
+            golem.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
+        }
+
+        return super.onFirstTalk(npc, player);
+    }
+
+    @Override
+    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+    {
+        if (Rnd.get(10) > 7)
+        {
+            addSpawn(_golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
+        }
+
+        return super.onKill(npc, killer, isPet);
+    }
+
+    @Override
+    public int getOnKillDelay(int npcId)
+    {
+        return 0;
+    }
+
+    public static void main(String[] args)
+    {
+        new SpiculaScoutGolem(-1, "SpiculaScoutGolem", "ai");
+    }
 }

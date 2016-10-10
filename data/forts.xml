@@ -1,140 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<fort id="101" name="Shanty" type="0" flagPoleId="18220500">
-		<envoy npcId="36393" castleId="1" />
-		<flag itemId="9819" x="-53086" y="156493" z="-1896" />
-		<flag itemId="9819" x="-53054" y="156605" z="-1896" />
-		<flag itemId="9819" x="-53032" y="156689" z="-1896" />
-	</fort>
-	<fort id="102" name="Southern" type="1" flagPoleId="19240500">
-		<envoy npcId="36394" castleId="1" />
-		<flag itemId="9819" x="-22386" y="219917" z="-3079" />
-		<flag itemId="9819" x="-22386" y="219798" z="-3079" />
-		<flag itemId="9819" x="-22386" y="219679" z="-3079" />
-	</fort>
-	<fort id="103" name="Hive" type="0" flagPoleId="20230500">
-		<envoy npcId="36395" castleId="2" />
-		<flag itemId="9819" x="16685" y="188358" z="-2770" />
-		<flag itemId="9819" x="16761" y="188306" z="-2770" />
-		<flag itemId="9819" x="16847" y="188257" z="-2770" />
-	</fort>
-	<fort id="104" name="Valley" type="1" flagPoleId="23210500">
-		<envoy npcId="36396" castleId="3" />
-		<flag itemId="9819" x="125970" y="123653" z="-2429" />
-		<flag itemId="9819" x="126092" y="123650" z="-2429" />
-		<flag itemId="9819" x="126205" y="123648" z="-2429" />
-	</fort>
-	<fort id="105" name="Ivory" type="0" flagPoleId="22180500">
-		<envoy npcId="36397" castleId="4" />
-		<flag itemId="9819" x="72565" y="4436" z="-2888" />
-		<flag itemId="9819" x="72660" y="4512" z="-2888" />
-		<flag itemId="9819" x="72759" y="4594" z="-2888" />
-	</fort>
-	<fort id="106" name="Narsell" type="0" flagPoleId="24190500">
-		<envoy npcId="36398" castleId="5" />
-		<flag itemId="9819" x="154567" y="55397" z="-3097" />
-		<flag itemId="9819" x="154650" y="55493" z="-3097" />
-		<flag itemId="9819" x="154715" y="55587" z="-3097" />
-	</fort>
-	<fort id="107" name="Bayou" type="1" flagPoleId="25190500">
-		<envoy npcId="36399" castleId="5" />
-		<flag itemId="9819" x="189838" y="40063" z="-3253" />
-		<flag itemId="9819" x="189931" y="40060" z="-3253" />
-		<flag itemId="9819" x="190052" y="40062" z="-3253" />
-	</fort>
-	<fort id="108" name="White Sands" type="0" flagPoleId="23240500">
-		<envoy npcId="36400" castleId="6" />
-		<flag itemId="9819" x="118640" y="205151" z="-3176" />
-		<flag itemId="9819" x="118690" y="205062" z="-3176" />
-		<flag itemId="9819" x="118742" y="204968" z="-3176" />
-	</fort>
-	<fort id="109" name="Borderland" type="1" flagPoleId="24150500">
-		<envoy npcId="36401" castleId="7" />
-		<flag itemId="9819" x="158817" y="-70229" z="-2708" />
-		<flag itemId="9819" x="158883" y="-70145" z="-2708" />
-		<flag itemId="9819" x="158946" y="-70045" z="-2708" />
-	</fort>
-	<fort id="110" name="Swamp" type="1" flagPoleId="22160500">
-		<envoy npcId="36433" castleId="8" />
-		<flag itemId="9819" x="69829" y="-61087" z="-2629" />
-		<flag itemId="9819" x="69979" y="-61144" z="-2632" />
-		<flag itemId="9819" x="70069" y="-61182" z="-2629" />
-	</fort>
-	<fort id="111" name="Archaic" type="0" flagPoleId="23130500">
-		<envoy npcId="36434" castleId="9" />
-		<flag itemId="9819" x="109142" y="-141243" z="-2801" />
-		<flag itemId="9819" x="109184" y="-141129" z="-2801" />
-		<flag itemId="9819" x="109214" y="-141016" z="-2801" />
-	</fort>
-	<fort id="112" name="Floran" type="1" flagPoleId="20220500">
-		<envoy npcId="36435" castleId="1" />
-		<envoy npcId="36436" castleId="2" />
-		<flag itemId="9819" x="5293" y="149624" z="-2732" />
-		<flag itemId="9819" x="5306" y="149743" z="-2732" />
-		<flag itemId="9819" x="5299" y="149870" z="-2732" />
-	</fort>
-	<fort id="113" name="Cloud Mountain" type="1" flagPoleId="18200500">
-		<envoy npcId="36437" castleId="1" />
-		<envoy npcId="36438" castleId="4" />
-		<flag itemId="9819" x="-53354" y="91537" z="-2664" />
-		<flag itemId="9819" x="-53237" y="91537" z="-2664" />
-		<flag itemId="9819" x="-53112" y="91537" z="-2664" />
-	</fort>
-	<fort id="114" name="Tanor" type="0" flagPoleId="21220500">
-		<envoy npcId="36439" castleId="2" />
-		<envoy npcId="36440" castleId="3" />
-		<flag itemId="9819" x="60225" y="139771" z="-1597" />
-		<flag itemId="9819" x="60362" y="139742" z="-1597" />
-		<flag itemId="9819" x="60467" y="139727" z="-1597" />
-	</fort>
-	<fort id="115" name="Dragonspine" type="0" flagPoleId="20200500">
-		<envoy npcId="36441" castleId="2" />
-		<envoy npcId="36442" castleId="4" />
-		<flag itemId="9819" x="11459" y="95308" z="-3264" />
-		<flag itemId="9819" x="11527" y="95301" z="-3264" />
-		<flag itemId="9819" x="11623" y="95311" z="-3264" />
-	</fort>
-	<fort id="116" name="Antharas" type="1" flagPoleId="22200500">
-		<envoy npcId="36443" castleId="4" />
-		<envoy npcId="36444" castleId="3" />
-		<flag itemId="9819" x="79470" y="91299" z="-2728" />
-		<flag itemId="9819" x="79528" y="91187" z="-2728" />
-		<flag itemId="9819" x="79580" y="91095" z="-2728" />
-	</fort>
-	<fort id="117" name="Western" type="1" flagPoleId="23170500">
-		<envoy npcId="36445" castleId="5" />
-		<envoy npcId="36446" castleId="4" />
-		<envoy npcId="36447" castleId="7" />
-		<flag itemId="9819" x="111280" y="-14820" z="-839" />
-		<flag itemId="9819" x="111380" y="-14820" z="-839" />
-		<flag itemId="9819" x="111480" y="-14820" z="-839" />
-	</fort>
-	<fort id="118" name="Hunters" type="1" flagPoleId="23200500">
-		<envoy npcId="36448" castleId="5" />
-		<envoy npcId="36449" castleId="3" />
-		<flag itemId="9819" x="125155" y="95455" z="-1984" />
-		<flag itemId="9819" x="125255" y="95455" z="-1984" />
-		<flag itemId="9819" x="125355" y="95455" z="-1984" />
-	</fort>
-	<fort id="119" name="Aaru" type="0" flagPoleId="22230500">
-		<envoy npcId="36450" castleId="6" />
-		<envoy npcId="36451" castleId="3" />
-		<flag itemId="9819" x="73029" y="186303" z="-2424" />
-		<flag itemId="9819" x="73923" y="186247" z="-2424" />
-		<flag itemId="9819" x="72833" y="186178" z="-2424" />
-	</fort>
-	<fort id="120" name="Demon" type="0" flagPoleId="23160500">
-		<envoy npcId="36452" castleId="8" />
-		<envoy npcId="36453" castleId="7" />
-		<flag itemId="9819" x="100400" y="-55401" z="-488" />
-		<flag itemId="9819" x="100400" y="-55301" z="-488" />
-		<flag itemId="9819" x="100400" y="-55201" z="-488" />
-	</fort>
-	<fort id="121" name="Monastic" type="0" flagPoleId="22150500">
-		<envoy npcId="36454" castleId="8" />
-		<envoy npcId="36455" castleId="9" />
-		<flag itemId="9819" x="72174" y="-94437" z="-1271" />
-		<flag itemId="9819" x="72294" y="-94481" z="-1271" />
-		<flag itemId="9819" x="72401" y="-94526" z="-1271" />
-	</fort>
+    <fort id="101" name="Shanty" type="0" flagPoleId="18220500">
+        <envoy npcId="36393" castleId="1" />
+        <flag itemId="9819" x="-53086" y="156493" z="-1896" />
+        <flag itemId="9819" x="-53054" y="156605" z="-1896" />
+        <flag itemId="9819" x="-53032" y="156689" z="-1896" />
+    </fort>
+    <fort id="102" name="Southern" type="1" flagPoleId="19240500">
+        <envoy npcId="36394" castleId="1" />
+        <flag itemId="9819" x="-22386" y="219917" z="-3079" />
+        <flag itemId="9819" x="-22386" y="219798" z="-3079" />
+        <flag itemId="9819" x="-22386" y="219679" z="-3079" />
+    </fort>
+    <fort id="103" name="Hive" type="0" flagPoleId="20230500">
+        <envoy npcId="36395" castleId="2" />
+        <flag itemId="9819" x="16685" y="188358" z="-2770" />
+        <flag itemId="9819" x="16761" y="188306" z="-2770" />
+        <flag itemId="9819" x="16847" y="188257" z="-2770" />
+    </fort>
+    <fort id="104" name="Valley" type="1" flagPoleId="23210500">
+        <envoy npcId="36396" castleId="3" />
+        <flag itemId="9819" x="125970" y="123653" z="-2429" />
+        <flag itemId="9819" x="126092" y="123650" z="-2429" />
+        <flag itemId="9819" x="126205" y="123648" z="-2429" />
+    </fort>
+    <fort id="105" name="Ivory" type="0" flagPoleId="22180500">
+        <envoy npcId="36397" castleId="4" />
+        <flag itemId="9819" x="72565" y="4436" z="-2888" />
+        <flag itemId="9819" x="72660" y="4512" z="-2888" />
+        <flag itemId="9819" x="72759" y="4594" z="-2888" />
+    </fort>
+    <fort id="106" name="Narsell" type="0" flagPoleId="24190500">
+        <envoy npcId="36398" castleId="5" />
+        <flag itemId="9819" x="154567" y="55397" z="-3097" />
+        <flag itemId="9819" x="154650" y="55493" z="-3097" />
+        <flag itemId="9819" x="154715" y="55587" z="-3097" />
+    </fort>
+    <fort id="107" name="Bayou" type="1" flagPoleId="25190500">
+        <envoy npcId="36399" castleId="5" />
+        <flag itemId="9819" x="189838" y="40063" z="-3253" />
+        <flag itemId="9819" x="189931" y="40060" z="-3253" />
+        <flag itemId="9819" x="190052" y="40062" z="-3253" />
+    </fort>
+    <fort id="108" name="White Sands" type="0" flagPoleId="23240500">
+        <envoy npcId="36400" castleId="6" />
+        <flag itemId="9819" x="118640" y="205151" z="-3176" />
+        <flag itemId="9819" x="118690" y="205062" z="-3176" />
+        <flag itemId="9819" x="118742" y="204968" z="-3176" />
+    </fort>
+    <fort id="109" name="Borderland" type="1" flagPoleId="24150500">
+        <envoy npcId="36401" castleId="7" />
+        <flag itemId="9819" x="158817" y="-70229" z="-2708" />
+        <flag itemId="9819" x="158883" y="-70145" z="-2708" />
+        <flag itemId="9819" x="158946" y="-70045" z="-2708" />
+    </fort>
+    <fort id="110" name="Swamp" type="1" flagPoleId="22160500">
+        <envoy npcId="36433" castleId="8" />
+        <flag itemId="9819" x="69829" y="-61087" z="-2629" />
+        <flag itemId="9819" x="69979" y="-61144" z="-2632" />
+        <flag itemId="9819" x="70069" y="-61182" z="-2629" />
+    </fort>
+    <fort id="111" name="Archaic" type="0" flagPoleId="23130500">
+        <envoy npcId="36434" castleId="9" />
+        <flag itemId="9819" x="109142" y="-141243" z="-2801" />
+        <flag itemId="9819" x="109184" y="-141129" z="-2801" />
+        <flag itemId="9819" x="109214" y="-141016" z="-2801" />
+    </fort>
+    <fort id="112" name="Floran" type="1" flagPoleId="20220500">
+        <envoy npcId="36435" castleId="1" />
+        <envoy npcId="36436" castleId="2" />
+        <flag itemId="9819" x="5293" y="149624" z="-2732" />
+        <flag itemId="9819" x="5306" y="149743" z="-2732" />
+        <flag itemId="9819" x="5299" y="149870" z="-2732" />
+    </fort>
+    <fort id="113" name="Cloud Mountain" type="1" flagPoleId="18200500">
+        <envoy npcId="36437" castleId="1" />
+        <envoy npcId="36438" castleId="4" />
+        <flag itemId="9819" x="-53354" y="91537" z="-2664" />
+        <flag itemId="9819" x="-53237" y="91537" z="-2664" />
+        <flag itemId="9819" x="-53112" y="91537" z="-2664" />
+    </fort>
+    <fort id="114" name="Tanor" type="0" flagPoleId="21220500">
+        <envoy npcId="36439" castleId="2" />
+        <envoy npcId="36440" castleId="3" />
+        <flag itemId="9819" x="60225" y="139771" z="-1597" />
+        <flag itemId="9819" x="60362" y="139742" z="-1597" />
+        <flag itemId="9819" x="60467" y="139727" z="-1597" />
+    </fort>
+    <fort id="115" name="Dragonspine" type="0" flagPoleId="20200500">
+        <envoy npcId="36441" castleId="2" />
+        <envoy npcId="36442" castleId="4" />
+        <flag itemId="9819" x="11459" y="95308" z="-3264" />
+        <flag itemId="9819" x="11527" y="95301" z="-3264" />
+        <flag itemId="9819" x="11623" y="95311" z="-3264" />
+    </fort>
+    <fort id="116" name="Antharas" type="1" flagPoleId="22200500">
+        <envoy npcId="36443" castleId="4" />
+        <envoy npcId="36444" castleId="3" />
+        <flag itemId="9819" x="79470" y="91299" z="-2728" />
+        <flag itemId="9819" x="79528" y="91187" z="-2728" />
+        <flag itemId="9819" x="79580" y="91095" z="-2728" />
+    </fort>
+    <fort id="117" name="Western" type="1" flagPoleId="23170500">
+        <envoy npcId="36445" castleId="5" />
+        <envoy npcId="36446" castleId="4" />
+        <envoy npcId="36447" castleId="7" />
+        <flag itemId="9819" x="111280" y="-14820" z="-839" />
+        <flag itemId="9819" x="111380" y="-14820" z="-839" />
+        <flag itemId="9819" x="111480" y="-14820" z="-839" />
+    </fort>
+    <fort id="118" name="Hunters" type="1" flagPoleId="23200500">
+        <envoy npcId="36448" castleId="5" />
+        <envoy npcId="36449" castleId="3" />
+        <flag itemId="9819" x="125155" y="95455" z="-1984" />
+        <flag itemId="9819" x="125255" y="95455" z="-1984" />
+        <flag itemId="9819" x="125355" y="95455" z="-1984" />
+    </fort>
+    <fort id="119" name="Aaru" type="0" flagPoleId="22230500">
+        <envoy npcId="36450" castleId="6" />
+        <envoy npcId="36451" castleId="3" />
+        <flag itemId="9819" x="73029" y="186303" z="-2424" />
+        <flag itemId="9819" x="73923" y="186247" z="-2424" />
+        <flag itemId="9819" x="72833" y="186178" z="-2424" />
+    </fort>
+    <fort id="120" name="Demon" type="0" flagPoleId="23160500">
+        <envoy npcId="36452" castleId="8" />
+        <envoy npcId="36453" castleId="7" />
+        <flag itemId="9819" x="100400" y="-55401" z="-488" />
+        <flag itemId="9819" x="100400" y="-55301" z="-488" />
+        <flag itemId="9819" x="100400" y="-55201" z="-488" />
+    </fort>
+    <fort id="121" name="Monastic" type="0" flagPoleId="22150500">
+        <envoy npcId="36454" castleId="8" />
+        <envoy npcId="36455" castleId="9" />
+        <flag itemId="9819" x="72174" y="-94437" z="-1271" />
+        <flag itemId="9819" x="72294" y="-94481" z="-1271" />
+        <flag itemId="9819" x="72401" y="-94526" z="-1271" />
+    </fort>
 </list>

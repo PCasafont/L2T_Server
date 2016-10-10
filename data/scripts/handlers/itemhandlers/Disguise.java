@@ -31,39 +31,40 @@ import l2server.gameserver.network.SystemMessageId;
 
 public class Disguise implements IItemHandler
 {
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		int regId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(activeChar);
-		if (regId > 0 && regId == item.getItemId() - 13596)
-		{
-			if (activeChar.getClan() != null && activeChar.getClan().getHasCastle() > 0)
-			{
-				activeChar.sendPacket(SystemMessageId.TERRITORY_OWNING_CLAN_CANNOT_USE_DISGUISE_SCROLL);
-				return;
-			}
-			TerritoryWarManager.getInstance().addDisguisedPlayer(activeChar.getObjectId());
-			activeChar.broadcastUserInfo();
-			playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
-		}
-		else if (regId > 0)
-		{
-			activeChar.sendPacket(SystemMessageId.THE_DISGUISE_SCROLL_MEANT_FOR_DIFFERENT_TERRITORY);
-			return;
-		}
-		else
-		{
-			activeChar.sendPacket(SystemMessageId.TERRITORY_WAR_SCROLL_CAN_NOT_USED_NOW);
-			return;
-		}
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    @Override
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) playable;
+
+        int regId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(activeChar);
+        if (regId > 0 && regId == item.getItemId() - 13596)
+        {
+            if (activeChar.getClan() != null && activeChar.getClan().getHasCastle() > 0)
+            {
+                activeChar.sendPacket(SystemMessageId.TERRITORY_OWNING_CLAN_CANNOT_USE_DISGUISE_SCROLL);
+                return;
+            }
+            TerritoryWarManager.getInstance().addDisguisedPlayer(activeChar.getObjectId());
+            activeChar.broadcastUserInfo();
+            playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
+        }
+        else if (regId > 0)
+        {
+            activeChar.sendPacket(SystemMessageId.THE_DISGUISE_SCROLL_MEANT_FOR_DIFFERENT_TERRITORY);
+            return;
+        }
+        else
+        {
+            activeChar.sendPacket(SystemMessageId.TERRITORY_WAR_SCROLL_CAN_NOT_USED_NOW);
+            return;
+        }
+    }
 }

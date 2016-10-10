@@ -19,30 +19,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExListMpccWaiting;
 
 /**
- * @author  Pere
+ * @author Pere
  */
 public class RequestListMpccWaiting extends L2GameClientPacket
 {
-	private static int _page;
-	private static int _location;
-	private static int _anyLevel;
-	
-	@Override
-	protected void readImpl()
-	{
-		_page = readD();
-		_location = readD();
-		_anyLevel = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
-		
-		if (_activeChar == null)
-			return;
-		
-		_activeChar.sendPacket(new ExListMpccWaiting(_activeChar, _page, _location, _anyLevel));
-	}
+    private static int _page;
+    private static int _location;
+    private static int _anyLevel;
+
+    @Override
+    protected void readImpl()
+    {
+        _page = readD();
+        _location = readD();
+        _anyLevel = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance _activeChar = getClient().getActiveChar();
+
+        if (_activeChar == null)
+        {
+            return;
+        }
+
+        _activeChar.sendPacket(new ExListMpccWaiting(_activeChar, _page, _location, _anyLevel));
+    }
 }

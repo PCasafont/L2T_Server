@@ -28,68 +28,69 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- *
- * Genesis Statues AI
+ *         <p>
+ *         Genesis Statues AI
  */
 
 public class GenesisStatues extends L2AttackableAIScript
 {
-	private static final int[] _statues = { 33138, 33139, 33140 };
-	private static final int[] _keepers = { 23038, 23039, 23040 };
-	private static final L2Skill _blessingOfGarden = SkillTable.getInstance().getInfo(14200, 1);
-	private static Map<Integer, Long> _spawns = new HashMap<Integer, Long>(3);
-	
-	public GenesisStatues(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		for (int statues : _statues)
-		{
-			addTalkId(statues);
-			addStartNpc(statues);
-			
-			_spawns.put(statues, 0L);
-		}
-		
-		for (int keepers : _keepers)
-		{
-			addKillId(keepers);
-		}
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		long currentTime = System.currentTimeMillis();
-		if (!_spawns.containsKey(npc.getNpcId()) || _spawns.get(npc.getNpcId()) + 3600000 > currentTime)
-		{
-			//final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
-			
-			//player.sendMessage("Magic will happen again on the " + dateFormatter.format(_spawns.get(npc.getNpcId()) + 3600000) + ".");
-			return npc.getNpcId() + "-no.html";
-		}
-		else
-		{
-			_spawns.put(npc.getNpcId(), currentTime);
-			
-			L2MonsterInstance angelStatue = (L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player.getY(), player.getZ(), 0, false, 0, false);
-			angelStatue.setTarget(player);
-			angelStatue.addDamageHate(player, 500, 99999);
-			angelStatue.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-		}
-		return super.onTalk(npc, player);
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		_blessingOfGarden.getEffects(killer, killer);
-		
-		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new GenesisStatues(-1, "GenesisStatues", "ai/individual");
-	}
+    private static final int[] _statues = {33138, 33139, 33140};
+    private static final int[] _keepers = {23038, 23039, 23040};
+    private static final L2Skill _blessingOfGarden = SkillTable.getInstance().getInfo(14200, 1);
+    private static Map<Integer, Long> _spawns = new HashMap<Integer, Long>(3);
+
+    public GenesisStatues(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        for (int statues : _statues)
+        {
+            addTalkId(statues);
+            addStartNpc(statues);
+
+            _spawns.put(statues, 0L);
+        }
+
+        for (int keepers : _keepers)
+        {
+            addKillId(keepers);
+        }
+    }
+
+    @Override
+    public String onTalk(L2Npc npc, L2PcInstance player)
+    {
+        long currentTime = System.currentTimeMillis();
+        if (!_spawns.containsKey(npc.getNpcId()) || _spawns.get(npc.getNpcId()) + 3600000 > currentTime)
+        {
+            //final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
+
+            //player.sendMessage("Magic will happen again on the " + dateFormatter.format(_spawns.get(npc.getNpcId()) + 3600000) + ".");
+            return npc.getNpcId() + "-no.html";
+        }
+        else
+        {
+            _spawns.put(npc.getNpcId(), currentTime);
+
+            L2MonsterInstance angelStatue = (L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player
+                    .getY(), player.getZ(), 0, false, 0, false);
+            angelStatue.setTarget(player);
+            angelStatue.addDamageHate(player, 500, 99999);
+            angelStatue.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
+        }
+        return super.onTalk(npc, player);
+    }
+
+    @Override
+    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+    {
+        _blessingOfGarden.getEffects(killer, killer);
+
+        return super.onKill(npc, killer, isPet);
+    }
+
+    public static void main(String[] args)
+    {
+        new GenesisStatues(-1, "GenesisStatues", "ai/individual");
+    }
 }

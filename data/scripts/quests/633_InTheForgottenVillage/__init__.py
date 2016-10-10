@@ -8,55 +8,55 @@ from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "633_InTheForgottenVillage"
 
-#NPC
+# NPC
 MINA = 31388
-#ITEMS
+# ITEMS
 RIB_BONE = 7544
 Z_LIVER = 7545
 # Mobid : DROP CHANCES
 DAMOBS = {
-    21557 : 328,#Bone Snatcher
-    21558 : 328,#Bone Snatcher
-    21559 : 337,#Bone Maker
-    21560 : 337,#Bone Shaper
-    21563 : 342,#Bone Collector
-    21564 : 348,#Skull Collector
-    21565 : 351,#Bone Animator
-    21566 : 359,#Skull Animator
-    21567 : 359,#Bone Slayer
-    21572 : 365,#Bone Sweeper
-    21574 : 383,#Bone Grinder
-    21575 : 383,#Bone Grinder
-    21580 : 385,#Bone Caster
-    21581 : 395,#Bone Puppeteer
-    21583 : 397,#Bone Scavenger
-    21584 : 401 #Bone Scavenger
-    }
+    21557: 328,  # Bone Snatcher
+    21558: 328,  # Bone Snatcher
+    21559: 337,  # Bone Maker
+    21560: 337,  # Bone Shaper
+    21563: 342,  # Bone Collector
+    21564: 348,  # Skull Collector
+    21565: 351,  # Bone Animator
+    21566: 359,  # Skull Animator
+    21567: 359,  # Bone Slayer
+    21572: 365,  # Bone Sweeper
+    21574: 383,  # Bone Grinder
+    21575: 383,  # Bone Grinder
+    21580: 385,  # Bone Caster
+    21581: 395,  # Bone Puppeteer
+    21583: 397,  # Bone Scavenger
+    21584: 401  # Bone Scavenger
+}
 UNDEADS = {
-    21553 : 347,#Trampled Man
-    21554 : 347,#Trampled Man
-    21561 : 450,#Sacrificed Man
-    21578 : 501,#Behemoth Zombie
-    21596 : 359,#Requiem Lord
-    21597 : 370,#Requiem Behemoth
-    21598 : 441,#Requiem Behemoth
-    21599 : 395,#Requiem Priest
-    21600 : 408,#Requiem Behemoth
-    21601 : 411 #Requiem Behemoth
-    }
+    21553: 347,  # Trampled Man
+    21554: 347,  # Trampled Man
+    21561: 450,  # Sacrificed Man
+    21578: 501,  # Behemoth Zombie
+    21596: 359,  # Requiem Lord
+    21597: 370,  # Requiem Behemoth
+    21598: 441,  # Requiem Behemoth
+    21599: 395,  # Requiem Priest
+    21600: 408,  # Requiem Behemoth
+    21601: 411  # Requiem Behemoth
+}
 
-class Quest (JQuest):
-    
-    def __init__(self,id,name,descr):
-        JQuest.__init__(self,id,name,descr)
+
+class Quest(JQuest):
+    def __init__(self, id, name, descr):
+        JQuest.__init__(self, id, name, descr)
         self.questItemIds = [RIB_BONE, Z_LIVER]
-    
-    def onAdvEvent (self,event,npc, player) :
+
+    def onAdvEvent(self, event, npc, player):
         htmltext = event
         st = player.getQuestState(qn)
-        if not st : return
-        if event == "accept" :
-            st.set("cond","1")                        
+        if not st: return
+        if event == "accept":
+            st.set("cond", "1")
             st.setState(State.STARTED)
             st.playSound("ItemSound.quest_accept")
             htmltext = "31388-04.htm"
@@ -74,14 +74,13 @@ class Quest (JQuest):
                     st.rewardItems(57, 25000)
                     st.addExpAndSp(305235, 0)
                     st.playSound("ItemSound.quest_finish")
-                    st.set("cond","1")
+                    st.set("cond", "1")
                     htmltext = "31388-08.htm"
-                else :
+                else:
                     htmltext = "31388-09.htm"
         return htmltext
-    
 
-    def onTalk (self,npc,player):        
+    def onTalk(self, npc, player):
         htmltext = Quest.getNoQuestMsg(player)
         st = player.getQuestState(qn)
         if not st: return
@@ -94,43 +93,44 @@ class Quest (JQuest):
                     htmltext = "31388-01.htm"
                 else:
                     htmltext = "31388-03.htm"
-                    st.exitQuest(1)        
+                    st.exitQuest(1)
             elif cond == 1:
-                htmltext = "31388-06.htm"            
+                htmltext = "31388-06.htm"
             elif cond == 2:
-                htmltext = "31388-05.htm"                
+                htmltext = "31388-05.htm"
         return htmltext
 
-    def onKill(self,npc,player,isPet):        
+    def onKill(self, npc, player, isPet):
         npcId = npc.getNpcId()
-        if npcId in UNDEADS.keys():            
+        if npcId in UNDEADS.keys():
             partyMember = self.getRandomPartyMemberState(player, State.STARTED)
             if not partyMember: return
             st = partyMember.getQuestState(qn)
-            if not st : return
-            if st.getRandom(1000) < UNDEADS[npcId]:  
-                st.giveItems(Z_LIVER, 1)  
-                st.playSound("ItemSound.quest_itemget")  
+            if not st: return
+            if st.getRandom(1000) < UNDEADS[npcId]:
+                st.giveItems(Z_LIVER, 1)
+                st.playSound("ItemSound.quest_itemget")
         elif npcId in DAMOBS.keys():
             partyMember = self.getRandomPartyMember(player, "cond", "1")
-            if not partyMember: return                
+            if not partyMember: return
             st = partyMember.getQuestState(qn)
-            if not st : return
-            if st.getRandom(1000) < DAMOBS[npcId]:                  
-                st.giveItems(RIB_BONE, 1)  
-                if st.getQuestItemsCount(RIB_BONE) == 200:  
-                    st.set("cond","2")  
-                    st.playSound("ItemSound.quest_middle")  
-                else:  
-                    st.playSound("ItemSound.quest_itemget") 
-        return        
+            if not st: return
+            if st.getRandom(1000) < DAMOBS[npcId]:
+                st.giveItems(RIB_BONE, 1)
+                if st.getQuestItemsCount(RIB_BONE) == 200:
+                    st.set("cond", "2")
+                    st.playSound("ItemSound.quest_middle")
+                else:
+                    st.playSound("ItemSound.quest_itemget")
+        return
 
-QUEST       = Quest(633, qn, "In The Forgotten Village")
+
+QUEST = Quest(633, qn, "In The Forgotten Village")
 
 for i in DAMOBS.keys():
     QUEST.addKillId(i)
 for i in UNDEADS.keys():
     QUEST.addKillId(i)
-    
+
 QUEST.addStartNpc(MINA)
 QUEST.addTalkId(MINA)

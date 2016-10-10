@@ -21,22 +21,19 @@ import l2server.gameserver.network.serverpackets.ExShowCommission;
 
 public class ShowAuction implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"showAuction"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance player, L2Npc target)
-	{
-		if (command.startsWith("showAuction"))
-		{
-			player.sendPacket(new ExShowCommission());
-		}
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"showAuction"};
+
+    public boolean useBypass(String command, L2PcInstance player, L2Npc target)
+    {
+        if (command.startsWith("showAuction"))
+        {
+            player.sendPacket(new ExShowCommission());
+        }
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

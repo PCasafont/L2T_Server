@@ -23,36 +23,37 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Buy implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Buy"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2MerchantInstance))
-			return false;
-		
-		try
-		{
-			StringTokenizer st = new StringTokenizer(command, " ");
-			st.nextToken();
-			
-			if (st.countTokens() < 1)
-				return false;
-			
-			((L2MerchantInstance)target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
-			return true;
-		}
-		catch (Exception e)
-		{
-			_log.info("Exception in " + getClass().getSimpleName());
-		}
-		return false;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"Buy"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (!(target instanceof L2MerchantInstance))
+        {
+            return false;
+        }
+
+        try
+        {
+            StringTokenizer st = new StringTokenizer(command, " ");
+            st.nextToken();
+
+            if (st.countTokens() < 1)
+            {
+                return false;
+            }
+
+            ((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
+            return true;
+        }
+        catch (Exception e)
+        {
+            _log.info("Exception in " + getClass().getSimpleName());
+        }
+        return false;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

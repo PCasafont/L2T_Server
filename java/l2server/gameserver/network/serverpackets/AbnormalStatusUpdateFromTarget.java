@@ -26,75 +26,85 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 {
-	private L2Character _character;
-	private List<Effect> _effects;
-	
-	private static class Effect
-	{
-		protected int _skillId;
-		protected int _level;
-		protected int _comboId;
-		protected int _duration;
-		protected int _effector;
-		
-		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
-		{
-			_skillId = pSkillId;
-			_level = pLevel;
-			_comboId = pComboId;
-			_duration = pDuration;
-			_effector = pEffector;
-		}
-	}
-	
-	public AbnormalStatusUpdateFromTarget(L2Character c)
-	{
-		_character = c;
-		_effects = new ArrayList<Effect>();
-		
-		for (L2Abnormal e : c.getAllEffects())
-		{
-			if (e == null || !e.getShowIcon())
-				continue;
-			
-			switch (e.getType())
-			{
-				case CHARGE: // handled by EtcStatusUpdate
-				case SIGNET_GROUND:
-					continue;
-			}
-			
-			if (e.getInUse())
-				e.addIcon(this);
-		}
-	}
-	
-	public void addEffect(int skillId, int level, int comboId, int duration, int effector)
-	{
-		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
-			return;
-		
-		_effects.add(new Effect(skillId, level, comboId, duration, effector));
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_character.getObjectId());
-		
-		writeH(_effects.size());
-		
-		for (Effect temp : _effects)
-		{
-			writeD(temp._skillId);
-			writeD(temp._level);
-			writeH(temp._comboId);
-			if (temp._duration == -1)
-				writeH(-1);
-			else
-				writeH(temp._duration / 1000 + 1);
-			
-			writeD(temp._effector);
-		}
-	}
+    private L2Character _character;
+    private List<Effect> _effects;
+
+    private static class Effect
+    {
+        protected int _skillId;
+        protected int _level;
+        protected int _comboId;
+        protected int _duration;
+        protected int _effector;
+
+        public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
+        {
+            _skillId = pSkillId;
+            _level = pLevel;
+            _comboId = pComboId;
+            _duration = pDuration;
+            _effector = pEffector;
+        }
+    }
+
+    public AbnormalStatusUpdateFromTarget(L2Character c)
+    {
+        _character = c;
+        _effects = new ArrayList<Effect>();
+
+        for (L2Abnormal e : c.getAllEffects())
+        {
+            if (e == null || !e.getShowIcon())
+            {
+                continue;
+            }
+
+            switch (e.getType())
+            {
+                case CHARGE: // handled by EtcStatusUpdate
+                case SIGNET_GROUND:
+                    continue;
+            }
+
+            if (e.getInUse())
+            {
+                e.addIcon(this);
+            }
+        }
+    }
+
+    public void addEffect(int skillId, int level, int comboId, int duration, int effector)
+    {
+        if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
+        {
+            return;
+        }
+
+        _effects.add(new Effect(skillId, level, comboId, duration, effector));
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_character.getObjectId());
+
+        writeH(_effects.size());
+
+        for (Effect temp : _effects)
+        {
+            writeD(temp._skillId);
+            writeD(temp._level);
+            writeH(temp._comboId);
+            if (temp._duration == -1)
+            {
+                writeH(-1);
+            }
+            else
+            {
+                writeH(temp._duration / 1000 + 1);
+            }
+
+            writeD(temp._effector);
+        }
+    }
 }

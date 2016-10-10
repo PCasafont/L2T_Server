@@ -1,4 +1,3 @@
-
 package l2server.gameserver.network.serverpackets;
 
 /**
@@ -6,8 +5,8 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExNCGuardReceiveDataFromServer extends L2GameServerPacket
 {
-	@Override
-	public void writeImpl()
-	{
-	}
+    @Override
+    public void writeImpl()
+    {
+    }
 }

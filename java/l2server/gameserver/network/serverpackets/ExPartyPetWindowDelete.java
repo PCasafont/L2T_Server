@@ -18,30 +18,29 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.L2Summon;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class ExPartyPetWindowDelete extends L2GameServerPacket
 {
-	private final L2Summon _summon;
-	
-	public ExPartyPetWindowDelete(L2Summon summon)
-	{
-		_summon = summon;
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_summon.getObjectId());
-		writeC(0x01); // ???
-		writeD(_summon.getOwner().getObjectId());
-	}
+    private final L2Summon _summon;
+
+    public ExPartyPetWindowDelete(L2Summon summon)
+    {
+        _summon = summon;
+    }
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_summon.getObjectId());
+        writeC(0x01); // ???
+        writeD(_summon.getOwner().getObjectId());
+    }
 }

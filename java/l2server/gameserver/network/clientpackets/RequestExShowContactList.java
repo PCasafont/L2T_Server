@@ -26,24 +26,30 @@ import l2server.gameserver.network.serverpackets.ExShowContactList;
  */
 public final class RequestExShowContactList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger packet
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		if (!Config.ALLOW_MAIL)
-			return;
-		
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (!activeChar.getContactList().getAllContacts().isEmpty())
-			activeChar.sendPacket(new ExShowContactList(activeChar));
-	}
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger packet
+    }
+
+    @Override
+    public void runImpl()
+    {
+        if (!Config.ALLOW_MAIL)
+        {
+            return;
+        }
+
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (!activeChar.getContactList().getAllContacts().isEmpty())
+        {
+            activeChar.sendPacket(new ExShowContactList(activeChar));
+        }
+    }
 }

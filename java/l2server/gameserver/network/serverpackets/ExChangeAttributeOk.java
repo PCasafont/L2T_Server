@@ -17,17 +17,16 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author Erlandys
- *
  */
 public class ExChangeAttributeOk extends L2GameServerPacket
 {
-	
-	public ExChangeAttributeOk()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    public ExChangeAttributeOk()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

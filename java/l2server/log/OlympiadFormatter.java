@@ -24,24 +24,28 @@ import l2server.util.StringUtil;
 
 public class OlympiadFormatter extends Formatter
 {
-	private static final String CRLF = "\r\n";
-	private SimpleDateFormat dateFmt = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
-	
-	@Override
-	public String format(LogRecord record)
-	{
-		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), dateFmt.format(new Date(record.getMillis())), ",", record.getMessage());
-		if (params != null)
-		{
-			for (Object p : params)
-			{
-				if (p == null)
-					continue;
-				StringUtil.append(output, ",", p.toString());
-			}
-		}
-		output.append(CRLF);
-		return output.toString();
-	}
+    private static final String CRLF = "\r\n";
+    private SimpleDateFormat dateFmt = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
+
+    @Override
+    public String format(LogRecord record)
+    {
+        final Object[] params = record.getParameters();
+        final StringBuilder output = StringUtil
+                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), dateFmt
+                        .format(new Date(record.getMillis())), ",", record.getMessage());
+        if (params != null)
+        {
+            for (Object p : params)
+            {
+                if (p == null)
+                {
+                    continue;
+                }
+                StringUtil.append(output, ",", p.toString());
+            }
+        }
+        output.append(CRLF);
+        return output.toString();
+    }
 }

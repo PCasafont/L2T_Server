@@ -26,40 +26,39 @@ import l2server.gameserver.model.actor.L2Character;
  * c:
  * c: 00 if fish gets damage 02 if fish regens
  * d:
- * @author -Wooden-
  *
+ * @author -Wooden-
  */
 public class ExFishingHpRegen extends L2GameServerPacket
 {
-	private L2Character _activeChar;
-	private int _time, _fishHP, _hpMode, _anim, _goodUse, _penalty, _hpBarColor;
-	
-	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
-	{
-		_activeChar = character;
-		_time = time;
-		_fishHP = fishHP;
-		_hpMode = HPmode;
-		_goodUse = GoodUse;
-		_anim = anim;
-		_penalty = penalty;
-		_hpBarColor = hpBarColor;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_activeChar.getObjectId());
-		writeD(_time);
-		writeD(_fishHP);
-		writeC(_hpMode); // 0 = HP stop, 1 = HP raise
-		writeC(_goodUse); // 0 = none, 1 = success, 2 = failed
-		writeC(_anim); // Anim: 0 = none, 1 = reeling, 2 = pumping
-		writeD(_penalty); // Penalty
-		writeC(_hpBarColor); // 0 = normal hp bar, 1 = purple hp bar
-		
-	}
+    private L2Character _activeChar;
+    private int _time, _fishHP, _hpMode, _anim, _goodUse, _penalty, _hpBarColor;
+
+    public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
+    {
+        _activeChar = character;
+        _time = time;
+        _fishHP = fishHP;
+        _hpMode = HPmode;
+        _goodUse = GoodUse;
+        _anim = anim;
+        _penalty = penalty;
+        _hpBarColor = hpBarColor;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_activeChar.getObjectId());
+        writeD(_time);
+        writeD(_fishHP);
+        writeC(_hpMode); // 0 = HP stop, 1 = HP raise
+        writeC(_goodUse); // 0 = none, 1 = success, 2 = failed
+        writeC(_anim); // Anim: 0 = none, 1 = reeling, 2 = pumping
+        writeD(_penalty); // Penalty
+        writeC(_hpBarColor); // 0 = normal hp bar, 1 = purple hp bar
+    }
 }

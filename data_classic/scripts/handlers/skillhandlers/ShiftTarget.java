@@ -25,53 +25,61 @@ import l2server.util.Rnd;
 
 public class ShiftTarget implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.SHIFT_TARGET
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (targets == null)
-			return;
-		L2Character target = (L2Character)targets[0];
-		
-		if (activeChar.isAlikeDead() || target == null || !(target instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance targetPlayer = (L2PcInstance)target;
-		if (!targetPlayer.isInParty())
-			return;
-		
-		L2PcInstance otherMember = targetPlayer;
-		while (otherMember == targetPlayer)
-			otherMember = targetPlayer.getParty().getPartyMembers().get(Rnd.get(targetPlayer.getParty().getMemberCount()));
-		
-		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-		{
-			if (!(obj instanceof L2Attackable) || obj.isDead())
-				continue;
-			
-			L2Attackable hater = ((L2Attackable) obj);
-			int hating = hater.getHating(targetPlayer);
-			if (hating == 0)
-				continue;
-			
-			hater.addDamageHate(otherMember, 0, hating);
-			hater.reduceHate(targetPlayer, hating);
-		}
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.SHIFT_TARGET};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (targets == null)
+        {
+            return;
+        }
+        L2Character target = (L2Character) targets[0];
+
+        if (activeChar.isAlikeDead() || target == null || !(target instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance targetPlayer = (L2PcInstance) target;
+        if (!targetPlayer.isInParty())
+        {
+            return;
+        }
+
+        L2PcInstance otherMember = targetPlayer;
+        while (otherMember == targetPlayer)
+        {
+            otherMember = targetPlayer.getParty().getPartyMembers()
+                    .get(Rnd.get(targetPlayer.getParty().getMemberCount()));
+        }
+
+        for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
+        {
+            if (!(obj instanceof L2Attackable) || obj.isDead())
+            {
+                continue;
+            }
+
+            L2Attackable hater = ((L2Attackable) obj);
+            int hating = hater.getHating(targetPlayer);
+            if (hating == 0)
+            {
+                continue;
+            }
+
+            hater.addDamageHate(otherMember, 0, hating);
+            hater.reduceHate(targetPlayer, hating);
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

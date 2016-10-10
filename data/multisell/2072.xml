@@ -1,353 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="6708" id="6908" /> <!-- Corroded Fish Oil -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1342" id="6909" /> <!-- Corroded Greater Fish Oil -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="269" id="6910" /> <!-- Corroded Premium Fish Oil -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1677" id="6911" /> <!-- Corroded Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1118" id="6912" /> <!-- Corroded Shiny Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="671" id="6913" /> <!-- Corroded Fish Gem -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="336" id="6914" /> <!-- Corroded Shiny Fish Gem -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1118" id="38166" /> <!-- Fish Bone -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="746" id="6916" /> <!-- Corroded Thick Fish Bone -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="373" id="8351" /> <!-- Corroded Black Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="480" id="8352" /> <!-- Corroded Red Colored Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="3354" id="8353" /> <!-- Corroded Green Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="839" id="8354" /> <!-- Corroded Yellow Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1118" id="8355" /> <!-- Corroded Blue Colored Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="420" id="8356" /> <!-- Corroded White Colored Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="671" id="8357" /> <!-- Corroded Orange Colored Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="559" id="8358" /> <!-- Corroded Purple Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1677" id="8359" /> <!-- Corroded Jade Colored Fish Scale -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="224" id="7609" /> <!-- Corroded Mark of Fishing -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="6708" id="7807" /> <!-- Corroded Green Bait (Novice) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="4791" id="7808" /> <!-- Corroded Purple Bait (Novice) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="5590" id="7809" /> <!-- Corroded Yellow Bait (Novice) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="6520" /> <!-- Corroded Green Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="6521" /> <!-- Corroded Green Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="6522" /> <!-- Corroded Purple Bait (Low-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1864" id="6523" /> <!-- Corroded Purple Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1677" id="6524" /> <!-- Corroded Purple Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="6525" /> <!-- Corroded Yellow Bait (Low-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="6526" /> <!-- Corroded Yellow Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1864" id="6527" /> <!-- Corroded Yellow Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="3354" id="6528" /> <!-- Corroded Event bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8496" /> <!-- Corroded Gludio Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8497" /> <!-- Corroded Dion Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8498" /> <!-- Corroded Giran Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8499" /> <!-- Corroded Oren Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8500" /> <!-- Corroded Aden Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8501" /> <!-- Corroded Innadril Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8502" /> <!-- Corroded Goddard Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8503" /> <!-- Corroded Rune Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8504" /> <!-- Corroded Schuttgart Luminous Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="3354" id="8505" /> <!-- Corroded Luminous Green Bait (Low-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8506" /> <!-- Corroded Luminous Green Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="8507" /> <!-- Corroded Luminous Green Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="8508" /> <!-- Corroded Luminous Purple Bait (Low-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1864" id="8509" /> <!-- Corroded Luminous Purple Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1677" id="8510" /> <!-- Corroded Luminous Purple Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2795" id="8511" /> <!-- Corroded Luminous Yellow Bait (Low-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="2236" id="8512" /> <!-- Corroded Luminous Yellow Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1864" id="8513" /> <!-- Corroded Luminous Yellow Bait (High-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8193" /> <!-- Corroded Fisherman's Potion - Green -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8194" /> <!-- Corroded Fisherman's Potion - Jade -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8195" /> <!-- Corroded Fisherman's Potion - Blue -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8196" /> <!-- Corroded Fisherman's Potion - Yellow -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8197" /> <!-- Corroded Fisherman's Potion - Orange -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8198" /> <!-- Corroded Fisherman's Potion - Purple -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8199" /> <!-- Corroded Fisherman's Potion - Red -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8200" /> <!-- Corroded Fisherman's Potion - White -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8201" /> <!-- Corroded Fisherman's Potion - Black -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="68" id="8202" /> <!-- Corroded Fisherman's Recovery Potion -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="111790" id="6535" /> <!-- Corroded Fishing Shot (No-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="67074" id="6536" /> <!-- Corroded Fishing Shot (D-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="47910" id="6537" /> <!-- Corroded Fishing Shot (C-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="13415" id="6538" /> <!-- Corroded Fishing Shot (B-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="8385" id="6539" /> <!-- Corroded Fishing Shot (A-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="6708" id="6540" /> <!-- Corroded Fishing Shot (S-grade) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="6708" id="6920" /> <!-- Recipe: Corroded Greater Fish Oil -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1342" id="6921" /> <!-- Recipe: Corroded Premium Fish Oil -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1396" id="8484" /> <!-- Corroded Prize-Winning Bait -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="1396" id="8485" /> <!-- Corroded Prize-Winning Bait (Night Fishing) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
-	<item>
-		<ingredient count="3350" id="8486" /> <!-- Corroded Prize-Winning Bait (Novice) -->
-		<ingredient count="300000" id="57" /> <!-- Adena -->
-		<production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
-	</item>
+    <item>
+        <ingredient count="6708" id="6908" /> <!-- Corroded Fish Oil -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1342" id="6909" /> <!-- Corroded Greater Fish Oil -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="269" id="6910" /> <!-- Corroded Premium Fish Oil -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1677" id="6911" /> <!-- Corroded Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1118" id="6912" /> <!-- Corroded Shiny Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="671" id="6913" /> <!-- Corroded Fish Gem -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="336" id="6914" /> <!-- Corroded Shiny Fish Gem -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1118" id="38166" /> <!-- Fish Bone -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="746" id="6916" /> <!-- Corroded Thick Fish Bone -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="373" id="8351" /> <!-- Corroded Black Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="480" id="8352" /> <!-- Corroded Red Colored Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="3354" id="8353" /> <!-- Corroded Green Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="839" id="8354" /> <!-- Corroded Yellow Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1118" id="8355" /> <!-- Corroded Blue Colored Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="420" id="8356" /> <!-- Corroded White Colored Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="671" id="8357" /> <!-- Corroded Orange Colored Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="559" id="8358" /> <!-- Corroded Purple Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1677" id="8359" /> <!-- Corroded Jade Colored Fish Scale -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="224" id="7609" /> <!-- Corroded Mark of Fishing -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="6708" id="7807" /> <!-- Corroded Green Bait (Novice) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="4791" id="7808" /> <!-- Corroded Purple Bait (Novice) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="5590" id="7809" /> <!-- Corroded Yellow Bait (Novice) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="6520" /> <!-- Corroded Green Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="6521" /> <!-- Corroded Green Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="6522" /> <!-- Corroded Purple Bait (Low-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1864" id="6523" /> <!-- Corroded Purple Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1677" id="6524" /> <!-- Corroded Purple Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="6525" /> <!-- Corroded Yellow Bait (Low-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="6526" /> <!-- Corroded Yellow Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1864" id="6527" /> <!-- Corroded Yellow Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="3354" id="6528" /> <!-- Corroded Event bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8496" /> <!-- Corroded Gludio Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8497" /> <!-- Corroded Dion Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8498" /> <!-- Corroded Giran Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8499" /> <!-- Corroded Oren Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8500" /> <!-- Corroded Aden Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8501" /> <!-- Corroded Innadril Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8502" /> <!-- Corroded Goddard Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8503" /> <!-- Corroded Rune Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8504" /> <!-- Corroded Schuttgart Luminous Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="3354" id="8505" /> <!-- Corroded Luminous Green Bait (Low-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8506" /> <!-- Corroded Luminous Green Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="8507" /> <!-- Corroded Luminous Green Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="8508" /> <!-- Corroded Luminous Purple Bait (Low-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1864" id="8509" /> <!-- Corroded Luminous Purple Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1677" id="8510" /> <!-- Corroded Luminous Purple Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2795" id="8511" /> <!-- Corroded Luminous Yellow Bait (Low-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="2236" id="8512" /> <!-- Corroded Luminous Yellow Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1864" id="8513" /> <!-- Corroded Luminous Yellow Bait (High-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8193" /> <!-- Corroded Fisherman's Potion - Green -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8194" /> <!-- Corroded Fisherman's Potion - Jade -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8195" /> <!-- Corroded Fisherman's Potion - Blue -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8196" /> <!-- Corroded Fisherman's Potion - Yellow -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8197" /> <!-- Corroded Fisherman's Potion - Orange -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8198" /> <!-- Corroded Fisherman's Potion - Purple -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8199" /> <!-- Corroded Fisherman's Potion - Red -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8200" /> <!-- Corroded Fisherman's Potion - White -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8201" /> <!-- Corroded Fisherman's Potion - Black -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="68" id="8202" /> <!-- Corroded Fisherman's Recovery Potion -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="111790" id="6535" /> <!-- Corroded Fishing Shot (No-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="67074" id="6536" /> <!-- Corroded Fishing Shot (D-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="47910" id="6537" /> <!-- Corroded Fishing Shot (C-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="13415" id="6538" /> <!-- Corroded Fishing Shot (B-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="8385" id="6539" /> <!-- Corroded Fishing Shot (A-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="6708" id="6540" /> <!-- Corroded Fishing Shot (S-grade) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="6708" id="6920" /> <!-- Recipe: Corroded Greater Fish Oil -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1342" id="6921" /> <!-- Recipe: Corroded Premium Fish Oil -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1396" id="8484" /> <!-- Corroded Prize-Winning Bait -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1396" id="8485" /> <!-- Corroded Prize-Winning Bait (Night Fishing) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="3350" id="8486" /> <!-- Corroded Prize-Winning Bait (Novice) -->
+        <ingredient count="300000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
 </list>

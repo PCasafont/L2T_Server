@@ -27,68 +27,68 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class PartyInfo implements IUserCommandHandler
 {
-	private static final int[] COMMAND_IDS = { 81 };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
-	 */
-	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-			return false;
-		
-		if (!activeChar.isInParty())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
-			return false;
-		}
-		
-		L2Party playerParty = activeChar.getParty();
-		int memberCount = playerParty.getMemberCount();
-		int lootDistribution = playerParty.getLootDistribution();
-		String partyLeader = playerParty.getPartyMembers().get(0).getName();
-		
-		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
-		
-		switch (lootDistribution)
-		{
-			case L2Party.ITEM_LOOTER:
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_FINDERS_KEEPERS));
-				break;
-			case L2Party.ITEM_ORDER:
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_BY_TURN));
-				break;
-			case L2Party.ITEM_ORDER_SPOIL:
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_BY_TURN_INCLUDE_SPOIL));
-				break;
-			case L2Party.ITEM_RANDOM:
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_RANDOM));
-				break;
-			case L2Party.ITEM_RANDOM_SPOIL:
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_RANDOM_INCLUDE_SPOIL));
-				break;
-		}
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LEADER_C1);
-		sm.addString(partyLeader);
-		activeChar.sendPacket(sm);
-		
-		activeChar.sendMessage("Members: " + memberCount + "/9");
-		
-		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
-	 */
-	@Override
-	public int[] getUserCommandList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {81};
+
+    /**
+     * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+     */
+    @Override
+    public boolean useUserCommand(int id, L2PcInstance activeChar)
+    {
+        if (id != COMMAND_IDS[0])
+        {
+            return false;
+        }
+
+        if (!activeChar.isInParty())
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
+            return false;
+        }
+
+        L2Party playerParty = activeChar.getParty();
+        int memberCount = playerParty.getMemberCount();
+        int lootDistribution = playerParty.getLootDistribution();
+        String partyLeader = playerParty.getPartyMembers().get(0).getName();
+
+        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
+
+        switch (lootDistribution)
+        {
+            case L2Party.ITEM_LOOTER:
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_FINDERS_KEEPERS));
+                break;
+            case L2Party.ITEM_ORDER:
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_BY_TURN));
+                break;
+            case L2Party.ITEM_ORDER_SPOIL:
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_BY_TURN_INCLUDE_SPOIL));
+                break;
+            case L2Party.ITEM_RANDOM:
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_RANDOM));
+                break;
+            case L2Party.ITEM_RANDOM_SPOIL:
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_RANDOM_INCLUDE_SPOIL));
+                break;
+        }
+
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LEADER_C1);
+        sm.addString(partyLeader);
+        activeChar.sendPacket(sm);
+
+        activeChar.sendMessage("Members: " + memberCount + "/9");
+
+        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
+     */
+    @Override
+    public int[] getUserCommandList()
+    {
+        return COMMAND_IDS;
+    }
 }

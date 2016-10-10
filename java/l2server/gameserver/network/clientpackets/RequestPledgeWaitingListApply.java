@@ -24,34 +24,40 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
  */
 public final class RequestPledgeWaitingListApply extends L2GameClientPacket
 {
-	private boolean _apply;
-	private int _karma;
-	
-	@Override
-	protected void readImpl()
-	{
-		_apply = readD() == 1;
-		_karma = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || activeChar.getClan() != null)
-			return;
-		
-		if (_apply)
-		{
-			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, _karma))
-				;
-			sendPacket(new ExPledgeRecruitApplyInfo(3));
-		}
-		else
-		{
-			if (ClanRecruitManager.getInstance().removeWaitingUser(activeChar))
-				;
-			sendPacket(new ExPledgeRecruitApplyInfo(0));
-		}
-	}
+    private boolean _apply;
+    private int _karma;
+
+    @Override
+    protected void readImpl()
+    {
+        _apply = readD() == 1;
+        _karma = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null || activeChar.getClan() != null)
+        {
+            return;
+        }
+
+        if (_apply)
+        {
+            if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, _karma))
+            {
+                ;
+            }
+            sendPacket(new ExPledgeRecruitApplyInfo(3));
+        }
+        else
+        {
+            if (ClanRecruitManager.getInstance().removeWaitingUser(activeChar))
+            {
+                ;
+            }
+            sendPacket(new ExPledgeRecruitApplyInfo(0));
+        }
+    }
 }

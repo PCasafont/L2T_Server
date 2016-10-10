@@ -25,26 +25,30 @@ import l2server.gameserver.network.serverpackets.ExPledgeApplicant;
  */
 public final class RequestPledgeApplicant extends L2GameClientPacket
 {
-	private int _applicantId;
-	
-	@Override
-	protected void readImpl()
-	{
-		readD(); // Useless clanId
-		_applicantId = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !activeChar.isClanLeader())
-			return;
-		
-		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(_applicantId);
-		if (applicant == null)
-			return;
-		
-		sendPacket(new ExPledgeApplicant(applicant));
-	}
+    private int _applicantId;
+
+    @Override
+    protected void readImpl()
+    {
+        readD(); // Useless clanId
+        _applicantId = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null || !activeChar.isClanLeader())
+        {
+            return;
+        }
+
+        ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(_applicantId);
+        if (applicant == null)
+        {
+            return;
+        }
+
+        sendPacket(new ExPledgeApplicant(applicant));
+    }
 }

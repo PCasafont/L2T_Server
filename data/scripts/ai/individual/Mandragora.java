@@ -25,43 +25,44 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- *
- * Mandragora AI
+ *         <p>
+ *         Mandragora AI
  */
 
 public class Mandragora extends L2AttackableAIScript
 {
-	private static final int[] _mandragoras = { 23240, 23241 };
-	private static final int[] _sumonedMandragoras = { 23210, 23211 };
-	
-	public Mandragora(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		for (int a : _mandragoras)
-		{
-			addAttackId(a);
-		}
-	}
-	
-	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-	{
-		npc.deleteMe();
-		
-		L2Npc mandragora = addSpawn(_sumonedMandragoras[Rnd.get(_sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 60000);
-		
-		mandragora.setTarget(attacker);
-		
-		((L2MonsterInstance) mandragora).addDamageHate(attacker, 500, 99999);
-		
-		mandragora.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
-		
-		return super.onAttack(npc, attacker, damage, isPet, skill);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Mandragora(-1, "Mandragora", "ai");
-	}
+    private static final int[] _mandragoras = {23240, 23241};
+    private static final int[] _sumonedMandragoras = {23210, 23211};
+
+    public Mandragora(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        for (int a : _mandragoras)
+        {
+            addAttackId(a);
+        }
+    }
+
+    @Override
+    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
+    {
+        npc.deleteMe();
+
+        L2Npc mandragora = addSpawn(_sumonedMandragoras[Rnd.get(_sumonedMandragoras.length)], npc.getX(), npc
+                .getY(), npc.getZ(), npc.getHeading(), false, 60000);
+
+        mandragora.setTarget(attacker);
+
+        ((L2MonsterInstance) mandragora).addDamageHate(attacker, 500, 99999);
+
+        mandragora.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+
+        return super.onAttack(npc, attacker, damage, isPet, skill);
+    }
+
+    public static void main(String[] args)
+    {
+        new Mandragora(-1, "Mandragora", "ai");
+    }
 }

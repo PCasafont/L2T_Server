@@ -19,40 +19,42 @@ import l2server.gameserver.model.VehiclePathPoint;
 
 public class ExAirShipTeleportList extends L2GameServerPacket
 {
-	
-	private int _dockId;
-	private VehiclePathPoint[][] _teleports;
-	private int[] _fuelConsumption;
-	
-	public ExAirShipTeleportList(int dockId, VehiclePathPoint[][] teleports, int[] fuelConsumption)
-	{
-		_dockId = dockId;
-		_teleports = teleports;
-		_fuelConsumption = fuelConsumption;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_dockId);
-		if (_teleports != null)
-		{
-			writeD(_teleports.length);
-			
-			VehiclePathPoint[] path;
-			VehiclePathPoint dst;
-			for (int i = 0; i < _teleports.length; i++)
-			{
-				writeD(i - 1);
-				writeD(_fuelConsumption[i]);
-				path = _teleports[i];
-				dst = path[path.length - 1];
-				writeD(dst.x);
-				writeD(dst.y);
-				writeD(dst.z);
-			}
-		}
-		else
-			writeD(0);
-	}
+
+    private int _dockId;
+    private VehiclePathPoint[][] _teleports;
+    private int[] _fuelConsumption;
+
+    public ExAirShipTeleportList(int dockId, VehiclePathPoint[][] teleports, int[] fuelConsumption)
+    {
+        _dockId = dockId;
+        _teleports = teleports;
+        _fuelConsumption = fuelConsumption;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_dockId);
+        if (_teleports != null)
+        {
+            writeD(_teleports.length);
+
+            VehiclePathPoint[] path;
+            VehiclePathPoint dst;
+            for (int i = 0; i < _teleports.length; i++)
+            {
+                writeD(i - 1);
+                writeD(_fuelConsumption[i]);
+                path = _teleports[i];
+                dst = path[path.length - 1];
+                writeD(dst.x);
+                writeD(dst.y);
+                writeD(dst.z);
+            }
+        }
+        else
+        {
+            writeD(0);
+        }
+    }
 }

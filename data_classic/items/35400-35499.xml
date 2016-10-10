@@ -1,1063 +1,1063 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Main ingredient for making a Blessed Eternal Helmet. -->
-	<item id="35400" type="EtcItem" name="Blessed Eternal Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Breastplate. -->
-	<item id="35401" type="EtcItem" name="Blessed Eternal Breastplate Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Gaiters. -->
-	<item id="35402" type="EtcItem" name="Blessed Eternal Gaiter Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Gauntlets. -->
-	<item id="35403" type="EtcItem" name="Blessed Eternal Gauntlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Boots. -->
-	<item id="35404" type="EtcItem" name="Blessed Eternal Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Shield. -->
-	<item id="35405" type="EtcItem" name="Blessed Eternal Shield Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Leather Helmet. -->
-	<item id="35406" type="EtcItem" name="Blessed Eternal Leather Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Leather Armor. -->
-	<item id="35407" type="EtcItem" name="Blessed Eternal Leather Armor Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Leather Leggings. -->
-	<item id="35408" type="EtcItem" name="Blessed Eternal Leather Legging Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Leather Gloves. -->
-	<item id="35409" type="EtcItem" name="Blessed Eternal Leather Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Leather Boots. -->
-	<item id="35410" type="EtcItem" name="Blessed Eternal Leather Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Circlet. -->
-	<item id="35411" type="EtcItem" name="Blessed Eternal Circlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Tunic. -->
-	<item id="35412" type="EtcItem" name="Blessed Eternal Tunic Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Stockings. -->
-	<item id="35413" type="EtcItem" name="Blessed Eternal Stocking Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Gloves. -->
-	<item id="35414" type="EtcItem" name="Blessed Eternal Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making Blessed Eternal Shoes. -->
-	<item id="35415" type="EtcItem" name="Blessed Eternal Shoe Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Sigil. -->
-	<item id="35416" type="EtcItem" name="Blessed Eternal Sigil Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Necklace. -->
-	<item id="35417" type="EtcItem" name="Blessed Eternal Necklace Gem">
-		<set name="icon" val="icon.etc_r991_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Earring. -->
-	<item id="35418" type="EtcItem" name="Blessed Eternal Earring Gem">
-		<set name="icon" val="icon.etc_r991_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- Main ingredient for making a Blessed Eternal Ring. -->
-	<item id="35419" type="EtcItem" name="Blessed Eternal Ring Gem">
-		<set name="icon" val="icon.etc_r991_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-		<set name="isBlessed" val="true" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35420" type="EtcItem" name="Recipe: Specter Shaper (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1166" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35421" type="EtcItem" name="Recipe: Specter Cutter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1167" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35422" type="EtcItem" name="Recipe: Specter Slasher (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1168" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35423" type="EtcItem" name="Recipe: Specter Avenger (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1169" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35424" type="EtcItem" name="Recipe: Specter Fighter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1170" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35425" type="EtcItem" name="Recipe: Specter Stormer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1171" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35426" type="EtcItem" name="Recipe: Specter Thrower (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1172" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35427" type="EtcItem" name="Recipe: Specter Shooter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1173" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35428" type="EtcItem" name="Recipe: Specter Buster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1174" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35429" type="EtcItem" name="Recipe: Specter Caster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1175" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35430" type="EtcItem" name="Recipe: Specter Retributer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1176" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35431" type="EtcItem" name="Recipe: Seraph Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1177" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35432" type="EtcItem" name="Recipe: Seraph Breastplate (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1178" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35433" type="EtcItem" name="Recipe: Seraph Gaiters (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1179" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35434" type="EtcItem" name="Recipe: Seraph Gauntlets (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1180" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35435" type="EtcItem" name="Recipe: Seraph Boots (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1181" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35436" type="EtcItem" name="Recipe: Seraph Shield (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1182" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35437" type="EtcItem" name="Recipe: Seraph Leather Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1183" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Leather Armor. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35438" type="EtcItem" name="Recipe: Seraph Leather Armor (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1184" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Leather Leggings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35439" type="EtcItem" name="Recipe: Seraph Leather Leggings (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1185" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Leather Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35440" type="EtcItem" name="Recipe: Seraph Leather Gloves (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1186" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Leather Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35441" type="EtcItem" name="Recipe: Seraph Leather Boots (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1187" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Circlet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35442" type="EtcItem" name="Recipe: Seraph Circlet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1188" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Tunic. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35443" type="EtcItem" name="Recipe: Seraph Tunic (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1189" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Stockings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35444" type="EtcItem" name="Recipe: Seraph Stockings (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1190" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35445" type="EtcItem" name="Recipe: Seraph Gloves (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1191" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Seraph Shoes. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35446" type="EtcItem" name="Recipe: Seraph Shoes (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1192" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Sigil. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35447" type="EtcItem" name="Recipe: Seraph Sigil (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1193" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Necklace. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35448" type="EtcItem" name="Recipe: Seraph Necklace (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1194" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Earring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35449" type="EtcItem" name="Recipe: Seraph Earring (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1195" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Seraph Ring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35450" type="EtcItem" name="Recipe: Seraph Ring (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1196" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Shaper. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35451" type="EtcItem" name="Recipe: Amaranthine Shaper (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1197" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Cutter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35452" type="EtcItem" name="Recipe: Amaranthine Cutter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1198" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Slasher. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35453" type="EtcItem" name="Recipe: Amaranthine Slasher (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1199" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Avenger. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35454" type="EtcItem" name="Recipe: Amaranthine Avenger (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1200" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Fighter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35455" type="EtcItem" name="Recipe: Amaranthine Fighter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1201" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Stormer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35456" type="EtcItem" name="Recipe: Amaranthine Stormer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1202" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Thrower. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35457" type="EtcItem" name="Recipe: Amaranthine Thrower (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1203" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Shooter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35458" type="EtcItem" name="Recipe: Amaranthine Shooter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1204" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Buster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35459" type="EtcItem" name="Recipe: Amaranthine Buster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1205" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Caster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35460" type="EtcItem" name="Recipe: Amaranthine Caster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1206" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Amaranthine Retributer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35461" type="EtcItem" name="Recipe: Amaranthine Retributer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1207" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35462" type="EtcItem" name="Recipe: Eternal Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1208" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Breastplate. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35463" type="EtcItem" name="Recipe: Eternal Breastplate (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1209" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Gaiters. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35464" type="EtcItem" name="Recipe: Eternal Gaiters (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1210" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Gauntlets. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35465" type="EtcItem" name="Recipe: Eternal Gauntlets (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1211" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35466" type="EtcItem" name="Recipe: Eternal Boots (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1212" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Shield. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35467" type="EtcItem" name="Recipe: Eternal Shield (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1213" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Leather Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35468" type="EtcItem" name="Recipe: Eternal Leather Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1214" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Leather Armor. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35469" type="EtcItem" name="Recipe: Eternal Leather Armor (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1215" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Leather Leggings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35470" type="EtcItem" name="Recipe: Eternal Leather Leggings (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1216" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Leather Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35471" type="EtcItem" name="Recipe: Eternal Leather Gloves (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1217" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Leather Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35472" type="EtcItem" name="Recipe: Eternal Leather Boots (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1218" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Circlet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35473" type="EtcItem" name="Recipe: Eternal Circlet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1219" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Tunic. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35474" type="EtcItem" name="Recipe: Eternal Tunic (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1220" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Stockings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35475" type="EtcItem" name="Recipe: Eternal Stockings (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1221" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35476" type="EtcItem" name="Recipe: Eternal Gloves (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1222" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Eternal Shoes. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35477" type="EtcItem" name="Recipe: Eternal Shoes (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1223" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Sigil. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35478" type="EtcItem" name="Recipe: Eternal Sigil (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1224" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Necklace. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35479" type="EtcItem" name="Recipe: Eternal Necklace (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1225" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Earring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35480" type="EtcItem" name="Recipe: Eternal Earring (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1226" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for an Eternal Ring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35481" type="EtcItem" name="Recipe: Eternal Ring (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1227" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35482" type="EtcItem" name="Recipe: Blessed Specter Shaper (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1228" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35483" type="EtcItem" name="Recipe: Blessed Specter Cutter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1229" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35484" type="EtcItem" name="Recipe: Blessed Specter Slasher (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1230" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35485" type="EtcItem" name="Recipe: Blessed Specter Avenger (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1231" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35486" type="EtcItem" name="Recipe: Blessed Specter Fighter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1232" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35487" type="EtcItem" name="Recipe: Blessed Specter Stormer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1233" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35488" type="EtcItem" name="Recipe: Blessed Specter Thrower (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1234" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35489" type="EtcItem" name="Recipe: Blessed Specter Shooter (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1235" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35490" type="EtcItem" name="Recipe: Blessed Specter Buster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1236" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35491" type="EtcItem" name="Recipe: Blessed Specter Caster (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1237" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35492" type="EtcItem" name="Recipe: Blessed Specter Retributer (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1238" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35493" type="EtcItem" name="Recipe: Blessed Seraph Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1239" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35494" type="EtcItem" name="Recipe: Blessed Seraph Breastplate (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1240" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Blessed Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35495" type="EtcItem" name="Recipe: Blessed Seraph Gaiters (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1241" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35496" type="EtcItem" name="Recipe: Blessed Seraph Gauntlets (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1242" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for Blessed Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35497" type="EtcItem" name="Recipe: Blessed Seraph Boots (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1243" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35498" type="EtcItem" name="Recipe: Blessed Seraph Shield (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1244" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- For Dwarves only. Recipe for a Blessed Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35499" type="EtcItem" name="Recipe: Blessed Seraph Leather Helmet (60%)">
-		<set name="icon" val="icon.etc_recipe_gold_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="recipe_id" val="1245" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
+    <!-- Main ingredient for making a Blessed Eternal Helmet. -->
+    <item id="35400" type="EtcItem" name="Blessed Eternal Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Breastplate. -->
+    <item id="35401" type="EtcItem" name="Blessed Eternal Breastplate Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Gaiters. -->
+    <item id="35402" type="EtcItem" name="Blessed Eternal Gaiter Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Gauntlets. -->
+    <item id="35403" type="EtcItem" name="Blessed Eternal Gauntlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Boots. -->
+    <item id="35404" type="EtcItem" name="Blessed Eternal Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Shield. -->
+    <item id="35405" type="EtcItem" name="Blessed Eternal Shield Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Leather Helmet. -->
+    <item id="35406" type="EtcItem" name="Blessed Eternal Leather Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Leather Armor. -->
+    <item id="35407" type="EtcItem" name="Blessed Eternal Leather Armor Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Leather Leggings. -->
+    <item id="35408" type="EtcItem" name="Blessed Eternal Leather Legging Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Leather Gloves. -->
+    <item id="35409" type="EtcItem" name="Blessed Eternal Leather Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Leather Boots. -->
+    <item id="35410" type="EtcItem" name="Blessed Eternal Leather Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Circlet. -->
+    <item id="35411" type="EtcItem" name="Blessed Eternal Circlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Tunic. -->
+    <item id="35412" type="EtcItem" name="Blessed Eternal Tunic Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Stockings. -->
+    <item id="35413" type="EtcItem" name="Blessed Eternal Stocking Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Gloves. -->
+    <item id="35414" type="EtcItem" name="Blessed Eternal Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making Blessed Eternal Shoes. -->
+    <item id="35415" type="EtcItem" name="Blessed Eternal Shoe Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Sigil. -->
+    <item id="35416" type="EtcItem" name="Blessed Eternal Sigil Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Necklace. -->
+    <item id="35417" type="EtcItem" name="Blessed Eternal Necklace Gem">
+        <set name="icon" val="icon.etc_r991_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Earring. -->
+    <item id="35418" type="EtcItem" name="Blessed Eternal Earring Gem">
+        <set name="icon" val="icon.etc_r991_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- Main ingredient for making a Blessed Eternal Ring. -->
+    <item id="35419" type="EtcItem" name="Blessed Eternal Ring Gem">
+        <set name="icon" val="icon.etc_r991_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+        <set name="isBlessed" val="true" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35420" type="EtcItem" name="Recipe: Specter Shaper (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1166" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35421" type="EtcItem" name="Recipe: Specter Cutter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1167" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35422" type="EtcItem" name="Recipe: Specter Slasher (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1168" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35423" type="EtcItem" name="Recipe: Specter Avenger (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1169" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35424" type="EtcItem" name="Recipe: Specter Fighter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1170" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35425" type="EtcItem" name="Recipe: Specter Stormer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1171" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35426" type="EtcItem" name="Recipe: Specter Thrower (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1172" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35427" type="EtcItem" name="Recipe: Specter Shooter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1173" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35428" type="EtcItem" name="Recipe: Specter Buster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1174" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35429" type="EtcItem" name="Recipe: Specter Caster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1175" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35430" type="EtcItem" name="Recipe: Specter Retributer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1176" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35431" type="EtcItem" name="Recipe: Seraph Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1177" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35432" type="EtcItem" name="Recipe: Seraph Breastplate (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1178" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35433" type="EtcItem" name="Recipe: Seraph Gaiters (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1179" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35434" type="EtcItem" name="Recipe: Seraph Gauntlets (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1180" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35435" type="EtcItem" name="Recipe: Seraph Boots (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1181" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35436" type="EtcItem" name="Recipe: Seraph Shield (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1182" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35437" type="EtcItem" name="Recipe: Seraph Leather Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1183" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Leather Armor. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35438" type="EtcItem" name="Recipe: Seraph Leather Armor (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1184" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Leather Leggings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35439" type="EtcItem" name="Recipe: Seraph Leather Leggings (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1185" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Leather Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35440" type="EtcItem" name="Recipe: Seraph Leather Gloves (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1186" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Leather Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35441" type="EtcItem" name="Recipe: Seraph Leather Boots (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1187" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Circlet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35442" type="EtcItem" name="Recipe: Seraph Circlet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1188" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Tunic. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35443" type="EtcItem" name="Recipe: Seraph Tunic (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1189" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Stockings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35444" type="EtcItem" name="Recipe: Seraph Stockings (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1190" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35445" type="EtcItem" name="Recipe: Seraph Gloves (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1191" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Seraph Shoes. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35446" type="EtcItem" name="Recipe: Seraph Shoes (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1192" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Sigil. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35447" type="EtcItem" name="Recipe: Seraph Sigil (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1193" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Necklace. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35448" type="EtcItem" name="Recipe: Seraph Necklace (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1194" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Earring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35449" type="EtcItem" name="Recipe: Seraph Earring (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1195" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Seraph Ring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35450" type="EtcItem" name="Recipe: Seraph Ring (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1196" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Shaper. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35451" type="EtcItem" name="Recipe: Amaranthine Shaper (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1197" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Cutter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35452" type="EtcItem" name="Recipe: Amaranthine Cutter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1198" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Slasher. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35453" type="EtcItem" name="Recipe: Amaranthine Slasher (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1199" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Avenger. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35454" type="EtcItem" name="Recipe: Amaranthine Avenger (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1200" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Fighter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35455" type="EtcItem" name="Recipe: Amaranthine Fighter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1201" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Stormer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35456" type="EtcItem" name="Recipe: Amaranthine Stormer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1202" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Thrower. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35457" type="EtcItem" name="Recipe: Amaranthine Thrower (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1203" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Shooter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35458" type="EtcItem" name="Recipe: Amaranthine Shooter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1204" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Buster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35459" type="EtcItem" name="Recipe: Amaranthine Buster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1205" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Caster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35460" type="EtcItem" name="Recipe: Amaranthine Caster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1206" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Amaranthine Retributer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35461" type="EtcItem" name="Recipe: Amaranthine Retributer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1207" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35462" type="EtcItem" name="Recipe: Eternal Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1208" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Breastplate. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35463" type="EtcItem" name="Recipe: Eternal Breastplate (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1209" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Gaiters. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35464" type="EtcItem" name="Recipe: Eternal Gaiters (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1210" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Gauntlets. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35465" type="EtcItem" name="Recipe: Eternal Gauntlets (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1211" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35466" type="EtcItem" name="Recipe: Eternal Boots (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1212" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Shield. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35467" type="EtcItem" name="Recipe: Eternal Shield (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1213" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Leather Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35468" type="EtcItem" name="Recipe: Eternal Leather Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1214" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Leather Armor. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35469" type="EtcItem" name="Recipe: Eternal Leather Armor (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1215" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Leather Leggings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35470" type="EtcItem" name="Recipe: Eternal Leather Leggings (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1216" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Leather Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35471" type="EtcItem" name="Recipe: Eternal Leather Gloves (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1217" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Leather Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35472" type="EtcItem" name="Recipe: Eternal Leather Boots (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1218" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Circlet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35473" type="EtcItem" name="Recipe: Eternal Circlet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1219" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Tunic. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35474" type="EtcItem" name="Recipe: Eternal Tunic (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1220" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Stockings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35475" type="EtcItem" name="Recipe: Eternal Stockings (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1221" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35476" type="EtcItem" name="Recipe: Eternal Gloves (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1222" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Eternal Shoes. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35477" type="EtcItem" name="Recipe: Eternal Shoes (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1223" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Sigil. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35478" type="EtcItem" name="Recipe: Eternal Sigil (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1224" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Necklace. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35479" type="EtcItem" name="Recipe: Eternal Necklace (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1225" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Earring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35480" type="EtcItem" name="Recipe: Eternal Earring (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1226" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for an Eternal Ring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+    <item id="35481" type="EtcItem" name="Recipe: Eternal Ring (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1227" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35482" type="EtcItem" name="Recipe: Blessed Specter Shaper (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1228" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35483" type="EtcItem" name="Recipe: Blessed Specter Cutter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1229" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35484" type="EtcItem" name="Recipe: Blessed Specter Slasher (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1230" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35485" type="EtcItem" name="Recipe: Blessed Specter Avenger (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1231" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35486" type="EtcItem" name="Recipe: Blessed Specter Fighter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1232" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35487" type="EtcItem" name="Recipe: Blessed Specter Stormer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1233" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35488" type="EtcItem" name="Recipe: Blessed Specter Thrower (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1234" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35489" type="EtcItem" name="Recipe: Blessed Specter Shooter (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1235" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35490" type="EtcItem" name="Recipe: Blessed Specter Buster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1236" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35491" type="EtcItem" name="Recipe: Blessed Specter Caster (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1237" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35492" type="EtcItem" name="Recipe: Blessed Specter Retributer (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1238" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35493" type="EtcItem" name="Recipe: Blessed Seraph Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1239" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35494" type="EtcItem" name="Recipe: Blessed Seraph Breastplate (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1240" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Blessed Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35495" type="EtcItem" name="Recipe: Blessed Seraph Gaiters (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1241" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35496" type="EtcItem" name="Recipe: Blessed Seraph Gauntlets (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1242" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for Blessed Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35497" type="EtcItem" name="Recipe: Blessed Seraph Boots (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1243" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35498" type="EtcItem" name="Recipe: Blessed Seraph Shield (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1244" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- For Dwarves only. Recipe for a Blessed Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+    <item id="35499" type="EtcItem" name="Recipe: Blessed Seraph Leather Helmet (60%)">
+        <set name="icon" val="icon.etc_recipe_gold_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="recipe_id" val="1245" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
 </list>

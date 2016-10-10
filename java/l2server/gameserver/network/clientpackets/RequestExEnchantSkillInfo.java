@@ -27,59 +27,71 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
  * h: (subid) 0x06
  * d: skill id
  * d: skill lvl
- * @author -Wooden-
  *
+ * @author -Wooden-
  */
 public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 {
-	
-	private int _skillId;
-	private int _skillLvl;
-	private int _skillEnchant;
-	
-	@Override
-	protected void readImpl()
-	{
-		_skillId = readD();
-		_skillLvl = readH();
-		_skillEnchant = readH();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		if (_skillId <= 0 || _skillLvl <= 0) // minimal sanity check
-			return;
-		
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		
-		if (activeChar.getLevel() < 76)
-			return;
-		
+
+    private int _skillId;
+    private int _skillLvl;
+    private int _skillEnchant;
+
+    @Override
+    protected void readImpl()
+    {
+        _skillId = readD();
+        _skillLvl = readH();
+        _skillEnchant = readH();
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        if (_skillId <= 0 || _skillLvl <= 0) // minimal sanity check
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (activeChar.getLevel() < 76)
+        {
+            return;
+        }
+
 		/* L2Npc trainer = activeChar.getLastFolkNPC();
 		if (!(trainer instanceof L2NpcInstance))
 			return;
 
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())
 			return;*/
-		
-		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, _skillEnchant);
-		if (skill == null || skill.getId() != _skillId)
-			return;
-		
-		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId) == null)
-			return;
-		
-		int playerSkillLvl = activeChar.getSkillLevelHash(_skillId);
-		if (playerSkillLvl == -1 || playerSkillLvl != _skillLvl + (_skillEnchant << 16))
-			return;
-		
-		activeChar.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl, _skillEnchant / 1000, _skillEnchant % 1000));
-	}
+
+        L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, _skillEnchant);
+        if (skill == null || skill.getId() != _skillId)
+        {
+            return;
+        }
+
+        if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId) == null)
+        {
+            return;
+        }
+
+        int playerSkillLvl = activeChar.getSkillLevelHash(_skillId);
+        if (playerSkillLvl == -1 || playerSkillLvl != _skillLvl + (_skillEnchant << 16))
+        {
+            return;
+        }
+
+        activeChar.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl, _skillEnchant / 1000, _skillEnchant % 1000));
+    }
 }

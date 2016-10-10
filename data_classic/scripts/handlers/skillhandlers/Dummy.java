@@ -32,61 +32,69 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Dummy implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.DUMMY
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		switch(skill.getId())
-		{
-			case 5852:
-			case 5853:
-			{
-				final L2Object obj = targets[0];
-				if (obj != null)
-					useBlockCheckerSkill((L2PcInstance)activeChar, skill, obj);
-				break;
-			}
-		}
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
-	
-	private final void useBlockCheckerSkill(L2PcInstance activeChar, L2Skill skill, L2Object target)
-	{
-		if (!(target instanceof L2BlockInstance))
-			return;
-		
-		L2BlockInstance block = (L2BlockInstance)target;
-		
-		final int arena = activeChar.getBlockCheckerArena();
-		if (arena != -1)
-		{
-			final ArenaParticipantsHolder holder = HandysBlockCheckerManager.getInstance().getHolder(arena);
-			if (holder == null) return;
-			
-			final int team = holder.getPlayerTeam(activeChar);
-			final int color = block.getColorEffect();
-			if (team == 0 && color == 0x00)
-				block.changeColor(activeChar, holder, team);
-			else if (team == 1 && color == 0x53)
-				block.changeColor(activeChar, holder, team);
-		}
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.DUMMY};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        switch (skill.getId())
+        {
+            case 5852:
+            case 5853:
+            {
+                final L2Object obj = targets[0];
+                if (obj != null)
+                {
+                    useBlockCheckerSkill((L2PcInstance) activeChar, skill, obj);
+                }
+                break;
+            }
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
+
+    private final void useBlockCheckerSkill(L2PcInstance activeChar, L2Skill skill, L2Object target)
+    {
+        if (!(target instanceof L2BlockInstance))
+        {
+            return;
+        }
+
+        L2BlockInstance block = (L2BlockInstance) target;
+
+        final int arena = activeChar.getBlockCheckerArena();
+        if (arena != -1)
+        {
+            final ArenaParticipantsHolder holder = HandysBlockCheckerManager.getInstance().getHolder(arena);
+            if (holder == null)
+            {
+                return;
+            }
+
+            final int team = holder.getPlayerTeam(activeChar);
+            final int color = block.getColorEffect();
+            if (team == 0 && color == 0x00)
+            {
+                block.changeColor(activeChar, holder, team);
+            }
+            else if (team == 1 && color == 0x53)
+            {
+                block.changeColor(activeChar, holder, team);
+            }
+        }
+    }
 }

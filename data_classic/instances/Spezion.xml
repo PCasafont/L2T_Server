@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Prison Of Darkness">
-	<activityTime val="60" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="5" />
-	<spawnPoint spawnX="175350" spawnY="143429" spawnZ="-11771" />
-	<spawnlist>
-			<spawn npcId="32939" x="175882" y="143122" z="-11768" heading="11476" respawn="60" />
-			<spawn npcId="32940" x="175975" y="142257" z="-11768" heading="60752" respawn="60" />
-			<spawn npcId="32941" x="175024" y="142216" z="-11768" heading="40952" respawn="60" />
-			<spawn npcId="32942" x="175076" y="143197" z="-11768" heading="25000" respawn="60" />
-	</spawnlist>
+    <activityTime val="60" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="5" />
+    <spawnPoint spawnX="175350" spawnY="143429" spawnZ="-11771" />
+    <spawnlist>
+        <spawn npcId="32939" x="175882" y="143122" z="-11768" heading="11476" respawn="60" />
+        <spawn npcId="32940" x="175975" y="142257" z="-11768" heading="60752" respawn="60" />
+        <spawn npcId="32941" x="175024" y="142216" z="-11768" heading="40952" respawn="60" />
+        <spawn npcId="32942" x="175076" y="143197" z="-11768" heading="25000" respawn="60" />
+    </spawnlist>
 </instance>

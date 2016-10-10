@@ -20,8 +20,8 @@ import java.util.logging.FileHandler;
 
 public class EnchantSkillLogHandler extends FileHandler
 {
-	public EnchantSkillLogHandler() throws IOException, SecurityException
-	{
-		super();
-	}
+    public EnchantSkillLogHandler() throws IOException, SecurityException
+    {
+        super();
+    }
 }

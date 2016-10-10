@@ -37,128 +37,134 @@ import l2server.util.xml.XmlNode;
  */
 public final class ItemAuctionManager
 {
-	public static final ItemAuctionManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private final TIntObjectHashMap<ItemAuctionInstance> _managerInstances;
-	private final AtomicInteger _auctionIds;
-	
-	private ItemAuctionManager()
-	{
-		_managerInstances = new TIntObjectHashMap<ItemAuctionInstance>();
-		_auctionIds = new AtomicInteger(1);
-		
-		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC)
-		{
-			Log.info("ItemAuctionManager: Disabled by config.");
-			return;
-		}
-		
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
-			ResultSet rset = statement.executeQuery();
-			if (rset.next())
-				_auctionIds.set(rset.getInt(1) + 1);
-		}
-		catch (final SQLException e)
-		{
-			Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions.", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-		
-		final File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "ItemAuctions.xml");
-		if (!file.exists())
-		{
-			Log.warning("ItemAuctionManager: Missing ItemAuctions.xml!");
-			return;
-		}
-		
-		try
-		{
-			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode na : doc.getChildren())
-			{
-				if (na.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode nb : na.getChildren())
-					{
-						if (nb.getName().equalsIgnoreCase("instance"))
-						{
-							final int instanceId = nb.getInt("id");
-							
-							if (_managerInstances.containsKey(instanceId))
-								throw new Exception("Dublicated instanceId " + instanceId);
-							
-							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
-							_managerInstances.put(instanceId, instance);
-						}
-					}
-				}
-			}
-			Log.info("ItemAuctionManager: Loaded " + _managerInstances.size() + " instance(s).");
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions from xml.", e);
-		}
-	}
-	
-	public final void shutdown()
-	{
-		final ItemAuctionInstance[] instances = _managerInstances.getValues(new ItemAuctionInstance[_managerInstances.size()]);
-		for (final ItemAuctionInstance instance : instances)
-		{
-			instance.shutdown();
-		}
-	}
-	
-	public final ItemAuctionInstance getManagerInstance(final int instanceId)
-	{
-		return _managerInstances.get(instanceId);
-	}
-	
-	public final int getNextAuctionId()
-	{
-		return _auctionIds.getAndIncrement();
-	}
-	
-	public final static void deleteAuction(final int auctionId)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");
-			statement.setInt(1, auctionId);
-			statement.execute();
-			statement.close();
-			
-			statement = con.prepareStatement("DELETE FROM item_auction_bid WHERE auctionId=?");
-			statement.setInt(1, auctionId);
-			statement.execute();
-			statement.close();
-		}
-		catch (final SQLException e)
-		{
-			Log.log(Level.SEVERE, "L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final ItemAuctionManager _instance = new ItemAuctionManager();
-	}
+    public static final ItemAuctionManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private final TIntObjectHashMap<ItemAuctionInstance> _managerInstances;
+    private final AtomicInteger _auctionIds;
+
+    private ItemAuctionManager()
+    {
+        _managerInstances = new TIntObjectHashMap<ItemAuctionInstance>();
+        _auctionIds = new AtomicInteger(1);
+
+        if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC)
+        {
+            Log.info("ItemAuctionManager: Disabled by config.");
+            return;
+        }
+
+        Connection con = null;
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = con
+                    .prepareStatement("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
+            ResultSet rset = statement.executeQuery();
+            if (rset.next())
+            {
+                _auctionIds.set(rset.getInt(1) + 1);
+            }
+        }
+        catch (final SQLException e)
+        {
+            Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions.", e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+
+        final File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "ItemAuctions.xml");
+        if (!file.exists())
+        {
+            Log.warning("ItemAuctionManager: Missing ItemAuctions.xml!");
+            return;
+        }
+
+        try
+        {
+            XmlDocument doc = new XmlDocument(file);
+            for (XmlNode na : doc.getChildren())
+            {
+                if (na.getName().equalsIgnoreCase("list"))
+                {
+                    for (XmlNode nb : na.getChildren())
+                    {
+                        if (nb.getName().equalsIgnoreCase("instance"))
+                        {
+                            final int instanceId = nb.getInt("id");
+
+                            if (_managerInstances.containsKey(instanceId))
+                            {
+                                throw new Exception("Dublicated instanceId " + instanceId);
+                            }
+
+                            final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
+                            _managerInstances.put(instanceId, instance);
+                        }
+                    }
+                }
+            }
+            Log.info("ItemAuctionManager: Loaded " + _managerInstances.size() + " instance(s).");
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions from xml.", e);
+        }
+    }
+
+    public final void shutdown()
+    {
+        final ItemAuctionInstance[] instances = _managerInstances
+                .getValues(new ItemAuctionInstance[_managerInstances.size()]);
+        for (final ItemAuctionInstance instance : instances)
+        {
+            instance.shutdown();
+        }
+    }
+
+    public final ItemAuctionInstance getManagerInstance(final int instanceId)
+    {
+        return _managerInstances.get(instanceId);
+    }
+
+    public final int getNextAuctionId()
+    {
+        return _auctionIds.getAndIncrement();
+    }
+
+    public final static void deleteAuction(final int auctionId)
+    {
+        Connection con = null;
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");
+            statement.setInt(1, auctionId);
+            statement.execute();
+            statement.close();
+
+            statement = con.prepareStatement("DELETE FROM item_auction_bid WHERE auctionId=?");
+            statement.setInt(1, auctionId);
+            statement.execute();
+            statement.close();
+        }
+        catch (final SQLException e)
+        {
+            Log.log(Level.SEVERE, "L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final ItemAuctionManager _instance = new ItemAuctionManager();
+    }
 }

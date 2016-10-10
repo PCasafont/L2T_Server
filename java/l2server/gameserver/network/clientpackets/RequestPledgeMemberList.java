@@ -26,26 +26,28 @@ import l2server.gameserver.network.serverpackets.PledgeShowMemberListAll;
  */
 public final class RequestPledgeMemberList extends L2GameClientPacket
 {
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		L2Clan clan = activeChar.getClan();
-		if (clan != null)
-		{
-			PledgeShowMemberListAll pm = new PledgeShowMemberListAll(clan, activeChar);
-			activeChar.sendPacket(pm);
-		}
-	}
+    //
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        L2Clan clan = activeChar.getClan();
+        if (clan != null)
+        {
+            PledgeShowMemberListAll pm = new PledgeShowMemberListAll(clan, activeChar);
+            activeChar.sendPacket(pm);
+        }
+    }
 }

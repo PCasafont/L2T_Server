@@ -21,92 +21,91 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class TransformationManager
 {
-	
-	public static TransformationManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private TIntObjectHashMap<L2Transformation> _transformations;
-	
-	private TransformationManager()
-	{
-		_transformations = new TIntObjectHashMap<L2Transformation>();
-	}
-	
-	public void report()
-	{
-		Log.info("Loaded: " + _transformations.size() + " transformations.");
-	}
-	
-	public boolean transformPlayer(int id, L2PcInstance player)
-	{
-		L2Transformation template = getTransformationById(id);
-		if (template != null)
-		{
-			L2Transformation trans = template.createTransformationForPlayer(player);
-			trans.start();
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	
-	public L2Transformation getTransformationById(int id)
-	{
-		return _transformations.get(id);
-	}
-	
-	public L2Transformation registerTransformation(L2Transformation transformation)
-	{
-		return _transformations.put(transformation.getId(), transformation);
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final TransformationManager _instance = new TransformationManager();
-	}
-	
-	/**
-	 * @param transformId
-	 * @return
-	 */
-	public boolean isMountable(int transformId)
-	{
-		switch (transformId)
-		{
-			case 109: //TawnyManedLion
-			case 123: //GuardianStrider
-			case 20001: //JetBike
-			case 20008: //TamePrincessAnt
-			case 110: //SteamBeatle
-			case 20004: //ShinyPlatform
-			case 20010: //HalloweenWitchsBroomstick
-			case 20007: //WoodHorse
-			case 20009: //BlackBear
-			case 129: //KnightHorse
-			case 130: //WarriorHorse
-			case 131: //RustySteelHorse
-			case 132: //ArcherHorse
-			case 133: //PhantomHorse
-			case 134: //CobaltHorse
-			case 135: //EnchanterHorse
-			case 136: //HealerHorse
-			case 137: //ClockWorkCucuru
-			case 138: //Kukurin
-			case 106: //LightPurpleManedHorse
-			case 147: //Lyn Draco
-			case 146: //Air Bike
-				return true;
-		}
-		return false;
-	}
+
+    public static TransformationManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private TIntObjectHashMap<L2Transformation> _transformations;
+
+    private TransformationManager()
+    {
+        _transformations = new TIntObjectHashMap<L2Transformation>();
+    }
+
+    public void report()
+    {
+        Log.info("Loaded: " + _transformations.size() + " transformations.");
+    }
+
+    public boolean transformPlayer(int id, L2PcInstance player)
+    {
+        L2Transformation template = getTransformationById(id);
+        if (template != null)
+        {
+            L2Transformation trans = template.createTransformationForPlayer(player);
+            trans.start();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public L2Transformation getTransformationById(int id)
+    {
+        return _transformations.get(id);
+    }
+
+    public L2Transformation registerTransformation(L2Transformation transformation)
+    {
+        return _transformations.put(transformation.getId(), transformation);
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final TransformationManager _instance = new TransformationManager();
+    }
+
+    /**
+     * @param transformId
+     * @return
+     */
+    public boolean isMountable(int transformId)
+    {
+        switch (transformId)
+        {
+            case 109: //TawnyManedLion
+            case 123: //GuardianStrider
+            case 20001: //JetBike
+            case 20008: //TamePrincessAnt
+            case 110: //SteamBeatle
+            case 20004: //ShinyPlatform
+            case 20010: //HalloweenWitchsBroomstick
+            case 20007: //WoodHorse
+            case 20009: //BlackBear
+            case 129: //KnightHorse
+            case 130: //WarriorHorse
+            case 131: //RustySteelHorse
+            case 132: //ArcherHorse
+            case 133: //PhantomHorse
+            case 134: //CobaltHorse
+            case 135: //EnchanterHorse
+            case 136: //HealerHorse
+            case 137: //ClockWorkCucuru
+            case 138: //Kukurin
+            case 106: //LightPurpleManedHorse
+            case 147: //Lyn Draco
+            case 146: //Air Bike
+                return true;
+        }
+        return false;
+    }
 }

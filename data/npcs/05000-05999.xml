@@ -1,59 +1,91 @@
 <list>
-	<npc id="5001" name="Norhand" title="Steward" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0" mpMax="3066"
-			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="3723" pDef="3840" mDef="908" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="50" runSpd="186" collisionRadius="45" collisionHeight="25" elemAtkType="5"
-			elemAtkValue="33" fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="267" darkRes="464" aiType="fighter">
-		<skill id="4416" level="9" /> <!-- Demons -->
-		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
-	</npc>
-	<npc id="5002" name="Santa Girl" title="Happy Holidays" level="79" type="L2Npc" atkRange="40" hpMax="2894" hpReg="6.94"
-			mpMax="2044" mpReg="2.86" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
-			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="4" collisionHeight="17"
-			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-		<skill id="4416" level="4" /> <!-- Animals -->
-	</npc>
-	<npc id="5003" name="Snow Man Grouch" level="1" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.55" mpMax="622" mpReg="1.99"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="20" collisionHeight="30" fireRes="300" waterRes="300"
-			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-		<skill id="4416" level="4" /> <!-- Animals -->
-	</npc>
-	<npc id="5004" name="Snow Man Grouch" level="1" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.55" mpMax="622" mpReg="1.99"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="20" collisionHeight="30" fireRes="300" waterRes="300"
-			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-		<skill id="4416" level="4" /> <!-- Animals -->
-	</npc>
-	<npc id="5005" name="Game Master" title="Customer Support" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
-			mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
-			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="10" collisionHeight="20"
-			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-	</npc>
-	<npc id="5006" name="Holiday Tree" level="79" type="L2Npc" atkRange="40" hpMax="2894" hpReg="6.94" mpMax="2044" mpReg="2.86"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30" collisionHeight="73" targetable="false"
-			showName="false" fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-	</npc>
-	<npc id="5007" name="Evolution Deliverer" title="Beginning of Flames" level="99" type="L2Npc" atkRange="40" hpMax="4983"
-			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
-			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="9" collisionHeight="14.5"
-			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-	</npc>
-	<npc id="5008" name="Evolution Guide" title="Root of Flames" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
-			mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
-			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30" collisionHeight="53.5"
-			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-	</npc>
-	<npc id="5009" name="Instant Zone Roadblock DÃ©cor" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0" mpMax="3066"
-			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30" collisionHeight="50" fireRes="300"
-			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-	</npc>
-	<npc id="5010" name="Queen of Hearts" title="Valentine Messenger" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95"
-			mpMax="1642" mpReg="5.77" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
-			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="8" collisionHeight="15"
-			fireRes="300" waterRes="300" windRes="390" earthRes="275" holyRes="300" darkRes="300" aiType="fighter">
-		<skill id="4416" level="7" /> <!-- Spirits -->
-	</npc>
+    <npc id="5001" name="Norhand" title="Steward" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+         mpMax="3066"
+         mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="3723" pDef="3840"
+         mDef="908" pAtkSpd="253"
+         mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="50" runSpd="186" collisionRadius="45" collisionHeight="25"
+         elemAtkType="5"
+         elemAtkValue="33" fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="267" darkRes="464"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+        <skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+    </npc>
+    <npc id="5002" name="Santa Girl" title="Happy Holidays" level="79" type="L2Npc" atkRange="40" hpMax="2894"
+         hpReg="6.94"
+         mpMax="2044" mpReg="2.86" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+         pDef="3840"
+         mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186"
+         collisionRadius="4" collisionHeight="17"
+         fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+    </npc>
+    <npc id="5003" name="Snow Man Grouch" level="1" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.55" mpMax="622"
+         mpReg="1.99"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
+         pAtkSpd="253" mAtkSpd="500"
+         pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="20" collisionHeight="30" fireRes="300"
+         waterRes="300"
+         windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+    </npc>
+    <npc id="5004" name="Snow Man Grouch" level="1" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.55" mpMax="622"
+         mpReg="1.99"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
+         pAtkSpd="253" mAtkSpd="500"
+         pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="20" collisionHeight="30" fireRes="300"
+         waterRes="300"
+         windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+    </npc>
+    <npc id="5005" name="Game Master" title="Customer Support" level="99" type="L2Npc" atkRange="40" hpMax="4983"
+         hpReg="0.0"
+         mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+         pDef="3840" mDef="825"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="10"
+         collisionHeight="20"
+         fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+    </npc>
+    <npc id="5006" name="Holiday Tree" level="79" type="L2Npc" atkRange="40" hpMax="2894" hpReg="6.94" mpMax="2044"
+         mpReg="2.86"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
+         pAtkSpd="253" mAtkSpd="500"
+         pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30" collisionHeight="73"
+         targetable="false"
+         showName="false" fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300"
+         aiType="fighter">
+    </npc>
+    <npc id="5007" name="Evolution Deliverer" title="Beginning of Flames" level="99" type="L2Npc" atkRange="40"
+         hpMax="4983"
+         hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900"
+         mAtk="2550" pDef="3840"
+         mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186"
+         collisionRadius="9" collisionHeight="14.5"
+         fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+    </npc>
+    <npc id="5008" name="Evolution Guide" title="Root of Flames" level="99" type="L2Npc" atkRange="40" hpMax="4983"
+         hpReg="0.0"
+         mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+         pDef="3840" mDef="825"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30"
+         collisionHeight="53.5"
+         fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+    </npc>
+    <npc id="5009" name="Instant Zone Roadblock DÃ©cor" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+         mpMax="3066"
+         mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+         mDef="825" pAtkSpd="253"
+         mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="30" collisionHeight="50"
+         fireRes="300"
+         waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+    </npc>
+    <npc id="5010" name="Queen of Hearts" title="Valentine Messenger" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+         hpReg="7.95"
+         mpMax="1642" mpReg="5.77" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+         pDef="3840"
+         mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186"
+         collisionRadius="8" collisionHeight="15"
+         fireRes="300" waterRes="300" windRes="390" earthRes="275" holyRes="300" darkRes="300" aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+    </npc>
 </list>

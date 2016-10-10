@@ -24,33 +24,38 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ManaPotion extends ItemSkillsTemplate
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
-		
-		if (playable instanceof L2PcInstance)
-			activeChar = (L2PcInstance) playable;
-		else if (playable instanceof L2PetInstance)
-			activeChar = ((L2PetInstance) playable).getOwner();
-		else
-			return;
-		
-		if (activeChar.isInOlympiadMode())
-		{
-			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
-			return;
-		}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    @Override
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
-		{
-			playable.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		super.useItem(playable, item, forceUse);
-	}
+        if (playable instanceof L2PcInstance)
+        {
+            activeChar = (L2PcInstance) playable;
+        }
+        else if (playable instanceof L2PetInstance)
+        {
+            activeChar = ((L2PetInstance) playable).getOwner();
+        }
+        else
+        {
+            return;
+        }
+
+        if (activeChar.isInOlympiadMode())
+        {
+            playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
+            return;
+        }
+
+        if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
+        {
+            playable.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+        super.useItem(playable, item, forceUse);
+    }
 }

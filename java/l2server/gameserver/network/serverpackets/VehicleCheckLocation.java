@@ -19,28 +19,27 @@ import l2server.gameserver.model.actor.L2Character;
 
 /**
  * @author Maktakien
- *
  */
 public class VehicleCheckLocation extends L2GameServerPacket
 {
-	private L2Character _boat;
-	
-	/**
-	 * @param instance
-	 */
-	public VehicleCheckLocation(L2Character boat)
-	{
-		_boat = boat;
-	}
-	
-	@Override
-	protected void writeImpl()
-	{
-		writeC(0x6d);
-		writeD(_boat.getObjectId());
-		writeD(_boat.getX());
-		writeD(_boat.getY());
-		writeD(_boat.getZ());
-		writeD(_boat.getHeading());
-	}
+    private L2Character _boat;
+
+    /**
+     * @param instance
+     */
+    public VehicleCheckLocation(L2Character boat)
+    {
+        _boat = boat;
+    }
+
+    @Override
+    protected void writeImpl()
+    {
+        writeC(0x6d);
+        writeD(_boat.getObjectId());
+        writeD(_boat.getX());
+        writeD(_boat.getY());
+        writeD(_boat.getZ());
+        writeD(_boat.getHeading());
+    }
 }

@@ -1,72 +1,92 @@
 <list>
-	<npc id="13001" name="Heart of Warding" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="17.0" collisionHeight="75.0">
-		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="13002" name="Life Control Tower" level="20" type="L2ControlTower" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2" sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0" collisionHeight="35.0">
-		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="13003" name="Life Control Tower" level="20" type="L2ControlTower" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2" sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0" collisionHeight="35.0">
-		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="13004" name="Flame Control Tower" level="20" type="L2FlameTower" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2" sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0" collisionHeight="35.0">
-		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="13005" name="Flame Control Tower" level="20" type="L2FlameTower" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2" sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0" collisionHeight="35.0">
-		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
+    <npc id="13001" name="Heart of Warding" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10"
+         exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300"
+         collisionRadius="17.0" collisionHeight="75.0">
+        <elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="13002" name="Life Control Tower" level="20" type="L2ControlTower" baseAtkRange="40" baseHpMax="342.5127"
+         baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2"
+         sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257"
+         baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="35.0">
+        <elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="13003" name="Life Control Tower" level="20" type="L2ControlTower" baseAtkRange="40" baseHpMax="342.5127"
+         baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2"
+         sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257"
+         baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="35.0">
+        <elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="13004" name="Flame Control Tower" level="20" type="L2FlameTower" baseAtkRange="40" baseHpMax="342.5127"
+         baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2"
+         sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257"
+         baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="35.0">
+        <elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="13005" name="Flame Control Tower" level="20" type="L2FlameTower" baseAtkRange="40" baseHpMax="342.5127"
+         baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2"
+         sp="1" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="257"
+         baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="35.0">
+        <elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
 </list>

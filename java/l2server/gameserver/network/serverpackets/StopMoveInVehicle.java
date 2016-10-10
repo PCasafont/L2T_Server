@@ -20,34 +20,33 @@ import l2server.util.Point3D;
 
 /**
  * @author Maktakien
- *
  */
 public class StopMoveInVehicle extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _boatId;
-	private Point3D _pos;
-	private int _heading;
-	
-	public StopMoveInVehicle(L2PcInstance player, int boatId)
-	{
-		_charObjId = player.getObjectId();
-		_boatId = boatId;
-		_pos = player.getInVehiclePosition();
-		_heading = player.getHeading();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_charObjId);
-		writeD(_boatId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
-		writeD(_heading);
-	}
+    private int _charObjId;
+    private int _boatId;
+    private Point3D _pos;
+    private int _heading;
+
+    public StopMoveInVehicle(L2PcInstance player, int boatId)
+    {
+        _charObjId = player.getObjectId();
+        _boatId = boatId;
+        _pos = player.getInVehiclePosition();
+        _heading = player.getHeading();
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_charObjId);
+        writeD(_boatId);
+        writeD(_pos.getX());
+        writeD(_pos.getY());
+        writeD(_pos.getZ());
+        writeD(_heading);
+    }
 }

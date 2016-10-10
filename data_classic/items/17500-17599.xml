@@ -1,1130 +1,1130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17500" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
-	<item id="17501" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
-	<item id="17502" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
-	<item id="17503" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
-	<item id="17504" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
-	<item id="17505" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
-	<item id="17506" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
-	<item id="17507" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
-	<item id="17508" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your tenacity..." -->
-	<item id="17509" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your two fists..." -->
-	<item id="17510" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17511" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17512" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your fortune..." -->
-	<item id="17513" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your two hands..." -->
-	<item id="17514" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
-	<item id="17515" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
-	<item id="17516" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
-	<item id="17517" type="Armor" name="Cry of Destiny">
-		<set name="icon" val="icon.accessary_blessed_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17518" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17519" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17520" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17521" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17522" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17523" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Can move to a special location inside the Ruins of Ye Sagira. -->
-	<item id="17524" type="EtcItem" name="Ruins Teleport Device">
-		<set name="icon" val="icon.esagira_telepo_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Purple Viking Circlet. Uses 2 hair accessory slots. Shadow item. Has 1,000 minutes of use time. -->
-	<item id="17525" type="Armor" name="Shadow Item: Fortuna Viking Circlet">
-		<set name="icon" val="icon.accessory_animal_warrior_skeleton_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- When enchanted, P. Atk. + 6 for R-grade one-handed swords/blunts, daggers, spears, etc. P. Atk. + 7 for two-handed swords/blunts/fist weapons, dualswords, and crossbows. P. Atk. + 12 for bows, and M. Atk. + 5 for all weapons. Starting at + 4, P. Atk. / M. Atk. Increases significantly, especially for blessed weapons. Enchanting is safe up to + 3. Can be exchanged or dropped. -->
-	<item id="17526" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
-		<set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="9185-1" />
-	</item>
-	<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories, especially starting at + 4. Can be enchanted safely to + 3. When armor is enchanted + 4 or more, HP also increases according to the enchant value. -->
-	<item id="17527" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
-		<set name="icon" val="icon.scroll_of_enchant_armor_i06" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="9186-1" />
-	</item>
-	<item id="17528" type="Armor" name="Test-Heavy Armor-Helmet - Human Knight">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17529" type="Armor" name="Test-Heavy Armor-Armor - Human Knight">
-		<set name="icon" val="icon.armor_t94_u_i01" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="7520" />
-		<for>
-			<baseAdd stat="pDef" val="385" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17530" type="Armor" name="Test-Heavy Armor-Gaiters - Human Knight">
-		<set name="icon" val="icon.armor_t94_l_i01" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="3170" />
-		<for>
-			<baseAdd stat="pDef" val="240" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17531" type="Armor" name="Test-Heavy Armor-Gloves - Human Knight">
-		<set name="icon" val="icon.armor_t94_g_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17532" type="Armor" name="Test-Heavy Armor-Shoes - Human Knight">
-		<set name="icon" val="icon.armor_t94_b_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17533" type="Armor" name="Test-Light Armor-Helmet - Rogue">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17534" type="Armor" name="Test-Light Armor-Armor - Rogue">
-		<set name="icon" val="icon.armor_t101_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="4140" />
-		<for>
-			<baseAdd stat="pDef" val="289" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17535" type="Armor" name="Test-Light Armor-Gaiters - Rogue">
-		<set name="icon" val="icon.armor_t101_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1320" />
-		<for>
-			<baseAdd stat="pDef" val="180" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17536" type="Armor" name="Test-Light Armor-Gloves - Rogue">
-		<set name="icon" val="icon.armor_t101_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17537" type="Armor" name="Test-Light Armor-Shoes - Rogue">
-		<set name="icon" val="icon.armor_t101_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17538" type="Armor" name="Test-Light Armor-Helmet - Archer">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17539" type="Armor" name="Test-Light Armor-Armor - Archer">
-		<set name="icon" val="icon.armor_t95_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="4140" />
-		<for>
-			<baseAdd stat="pDef" val="289" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17540" type="Armor" name="Test-Light Armor-Gaiters - Archer">
-		<set name="icon" val="icon.armor_t95_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1320" />
-		<for>
-			<baseAdd stat="pDef" val="180" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17541" type="Armor" name="Test-Light Armor-Gloves - Archer">
-		<set name="icon" val="icon.armor_t95_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17542" type="Armor" name="Test-Light Armor-Shoes - Archer">
-		<set name="icon" val="icon.armor_t95_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17543" type="Armor" name="Test-Light Armor-Helmet - Warrior">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17544" type="Armor" name="Test-Light Armor-Armor - Warrior">
-		<set name="icon" val="icon.armor_t95_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="4140" />
-		<for>
-			<baseAdd stat="pDef" val="289" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17545" type="Armor" name="Test-Light Armor-Gaiters - Warrior">
-		<set name="icon" val="icon.armor_t95_l_i03" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1320" />
-		<for>
-			<baseAdd stat="pDef" val="180" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17546" type="Armor" name="Test-Light Armor-Gloves - Warrior">
-		<set name="icon" val="icon.armor_t95_g_i03" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17547" type="Armor" name="Test-Light Armor-Shoes - Warrior">
-		<set name="icon" val="icon.armor_t95_b_i03" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17548" type="Armor" name="Test-Robe-Helmet - Healer">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17549" type="Armor" name="Test-Robe-Armor - Healer">
-		<set name="icon" val="icon.armor_t99_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1750" />
-		<for>
-			<baseAdd stat="pDef" val="193" />
-			<add stat="maxMp" val="637" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17550" type="Armor" name="Test-Robe-Gaiters - Healer">
-		<set name="icon" val="icon.armor_t99_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="850" />
-		<for>
-			<baseAdd stat="pDef" val="143" />
-			<add stat="maxMp" val="415" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17551" type="Armor" name="Test-Robe-Gloves - Healer">
-		<set name="icon" val="icon.armor_t99_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17552" type="Armor" name="Test-Robe-Shoes - Healer">
-		<set name="icon" val="icon.armor_t99_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17553" type="Armor" name="Test-Robe-Helmet - Wizard">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17554" type="Armor" name="Test-Robe-Armor - Wizard">
-		<set name="icon" val="icon.armor_t93_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1750" />
-		<for>
-			<baseAdd stat="pDef" val="193" />
-			<add stat="maxMp" val="637" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17555" type="Armor" name="Test-Robe-Gaiters - Wizard">
-		<set name="icon" val="icon.armor_t93_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="850" />
-		<for>
-			<baseAdd stat="pDef" val="143" />
-			<add stat="maxMp" val="415" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17556" type="Armor" name="Test-Robe-Gloves - Wizard">
-		<set name="icon" val="icon.armor_t93_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17557" type="Armor" name="Test-Robe-Shoes - Wizard">
-		<set name="icon" val="icon.armor_t93_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17558" type="Armor" name="Test-Robe-Helmet - Summoner">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17559" type="Armor" name="Test-Robe-Armor - Summoner">
-		<set name="icon" val="icon.armor_t70_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1750" />
-		<for>
-			<baseAdd stat="pDef" val="193" />
-			<add stat="maxMp" val="637" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17560" type="Armor" name="Test-Robe-Gaiters - Summoner">
-		<set name="icon" val="icon.armor_t70_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="850" />
-		<for>
-			<baseAdd stat="pDef" val="143" />
-			<add stat="maxMp" val="415" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17561" type="Armor" name="Test-Robe-Gloves - Summoner">
-		<set name="icon" val="icon.armor_t70_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17562" type="Armor" name="Test-Robe-Shoes - Summoner">
-		<set name="icon" val="icon.armor_t70_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17563" type="Armor" name="Test-Light Armor-Helmet - Enchanter">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="530" />
-		<for>
-			<baseAdd stat="pDef" val="194" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17564" type="Armor" name="Test-Light Armor-Armor - Enchanter">
-		<set name="icon" val="icon.armor_t75_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="4140" />
-		<for>
-			<baseAdd stat="pDef" val="289" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17565" type="Armor" name="Test-Light Armor-Gaiters - Enchanter">
-		<set name="icon" val="icon.armor_t75_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1320" />
-		<for>
-			<baseAdd stat="pDef" val="180" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17566" type="Armor" name="Test-Light Armor-Gloves - Enchanter">
-		<set name="icon" val="icon.armor_t75_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="510" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17567" type="Armor" name="Test-Light Armor-Shoes - Enchanter">
-		<set name="icon" val="icon.armor_t75_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1070" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17568" type="Armor" name="Test-Ring">
-		<set name="icon" val="icon.vesper_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="29" />
-			<add stat="maxMp" val="25" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17569" type="Armor" name="Test-Earring">
-		<set name="icon" val="icon.vesper_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="44" />
-			<add stat="maxMp" val="37" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17570" type="Armor" name="Test-Necklace">
-		<set name="icon" val="icon.vesper_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="150" />
-		<for>
-			<baseAdd stat="mDef" val="59" />
-			<add stat="maxMp" val="50" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17571" type="Armor" name="Test-Undergarments">
-		<set name="icon" val="icon.etc_shirts_s_i05" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="130" />
-		<for>
-			<baseAdd stat="pDef" val="41" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="17572" type="Armor" name="Test-Shield">
-		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="1130" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="457" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="17573" type="Armor" name="Test-Sigil">
-		<set name="icon" val="icon.verper_sigil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="none" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="s84" />
-		<set name="weight" val="920" />
-		<for>
-			<baseAdd stat="pDef" val="20" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Key that lets you enter the Training Grounds Underground Facility. -->
-	<item id="17574" type="EtcItem" name="Training Grounds Underground Facility Key">
-		<set name="icon" val="icon.etc_old_key_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Ancient book that records the war between the Gods and the Giants. Take it to Pantheon. -->
-	<item id="17575" type="EtcItem" name="The War of Gods and Giants">
-		<set name="icon" val="icon.etc_old_evil_book_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Key that lets you enter the closed underground training ground in the military region. -->
-	<item id="17576" type="EtcItem" name="Closed Underground Training Ground Key">
-		<set name="icon" val="icon.etc_old_key_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Ancient Evil Fragment found in the Ruins of Ye Sagira. Pantheon might now more about it. -->
-	<item id="17577" type="EtcItem" name="Evil Fragment">
-		<set name="icon" val="icon.etc_dragon_egg_i05" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Only a tattered piece of paper. -->
-	<item id="17578" type="EtcItem" name="Dirty Piece of Paper">
-		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Old map that was made during the era of the giants. Bring it to Sebion in front of the Labyrinth of Belis. -->
-	<item id="17579" type="EtcItem" name="Old Maze Map">
-		<set name="icon" val="icon.etc_map_yellow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Saril's Necklace. Bring it to Sebion in Exploration Zone 5. -->
-	<item id="17580" type="EtcItem" name="Saril's Necklace">
-		<set name="icon" val="icon.etc_resonance_amulet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Key that lets you enter the Labyrinth of Belis. -->
-	<item id="17581" type="EtcItem" name="Key to the Labyrinth of Belis">
-		<set name="icon" val="icon.etc_old_key_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Letter of introduction that Pa'agrio Lord Kakai wrote himself. Bring it to Captain Bathis in the Town of Gludio. -->
-	<item id="17582" type="EtcItem" name="Letter of Introduction">
-		<set name="icon" val="icon.etc_letter_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Suspicious badge found on the corpse of a spider. It appears to be something that came from Sakum. -->
-	<item id="17583" type="EtcItem" name="Suspicious Badge">
-		<set name="icon" val="icon.etc_mark_yellow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- A Hastily drawn side profile of Sakum. -->
-	<item id="17584" type="EtcItem" name="Sakum's Sketch A">
-		<set name="icon" val="icon.etc_roll_of_paper_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- A Hastily drawn face of Sakum. -->
-	<item id="17585" type="EtcItem" name="Sakum's Sketch B">
-		<set name="icon" val="icon.etc_roll_of_paper_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Dropped Sakum's scale. -->
-	<item id="17586" type="EtcItem" name="Suspicious Fragment">
-		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Stone that stores energy that was used during the era of the Giants. -->
-	<item id="17587" type="EtcItem" name="Shine Stone">
-		<set name="icon" val="icon.etc_energy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Bottle for capturing the wisps that flow from Magmeld's Fairy Settlement. Bring it to Chief Slaski at the Ancient City Arcan. -->
-	<item id="17588" type="EtcItem" name="Captured Wisp">
-		<set name="icon" val="icon.etc_mammon_varnish_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Mark that proves Shilen's apostlehood. The bearer of this mark is a high-level apostle of Shilen. -->
-	<item id="17589" type="EtcItem" name="Shilen's Mark">
-		<set name="icon" val="icon.yogi_stick_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Mark that proves Shilen's apostlehood. The bearer of this mark is a high-level apostle of Shilen. -->
-	<item id="17590" type="EtcItem" name="Shilen's High-level Mark">
-		<set name="icon" val="icon.yogi_stick_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The black magic mark of a summoned demon. It also represents a contract with Beleth. -->
-	<item id="17591" type="EtcItem" name="Beleth's Mark">
-		<set name="icon" val="icon.etc_orcish_talisman_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The mark of a high-level demon that was called from hell through a black magic contract. It also represents a contract between Beleth and the demons. -->
-	<item id="17592" type="EtcItem" name="Beleth's Contract">
-		<set name="icon" val="icon.etc_spell_books_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- The sharp claw of Queen Rachicues of the Rachiche. -->
-	<item id="17593" type="EtcItem" name="Rachicues Claw">
-		<set name="icon" val="icon.weapon_iron_glove_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Tissue energy crystal fragment obtained through hunting in the Seed of Annihilation area. If you bring it to Kirklan, you can exchange it for something else. -->
-	<item id="17594" type="EtcItem" name="Tissue Energy Crystal Fragment">
-		<set name="icon" val="icon.general_star_stone_piece_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Empty bottle for capturing and storing wisps. -->
-	<item id="17595" type="EtcItem" name="Empty Bottle">
-		<set name="icon" val="icon.empty_bottle" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Tonic that can protect the trees in the Fairy Settlement from decaying by the darkness. It is uncertain whether it is effective on all trees. -->
-	<item id="17596" type="EtcItem" name="Timiniel's Tonic">
-		<set name="icon" val="icon.etc_reagent_blue_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="recipe_id" val="1000" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Wing fallen from a reckless fairy. It is an ingredient for the Timiniel's Tonic. -->
-	<item id="17597" type="EtcItem" name="Fairy Wing">
-		<set name="icon" val="icon.q466_fairy_wing" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Cocoon fragment from the Fairy Settlement. It is an ingredient for the Timiniel's Tonic. -->
-	<item id="17598" type="EtcItem" name="Cocoon Fragment">
-		<set name="icon" val="icon.etc_crafted_leather_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Bottle containing Kimerian's Breath, which was being held by a fairy whose metamorphosis was blocked. It is an ingredient for the Timiniel's Tonic. -->
-	<item id="17599" type="EtcItem" name="Kimerian's Breath">
-		<set name="icon" val="icon.etc_fish_oil_i02" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_stackable" val="true" />
-	</item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17500" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
+    <item id="17501" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your spirit..." -->
+    <item id="17502" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
+    <item id="17503" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your dagger..." -->
+    <item id="17504" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
+    <item id="17505" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
+    <item id="17506" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
+    <item id="17507" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your darkness..." -->
+    <item id="17508" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your tenacity..." -->
+    <item id="17509" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your two fists..." -->
+    <item id="17510" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17511" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17512" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your fortune..." -->
+    <item id="17513" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your two hands..." -->
+    <item id="17514" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your sword..." -->
+    <item id="17515" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your wisdom..." -->
+    <item id="17516" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Brilliant ring containing the blessing of light from the angel Nevit. - "May the gods always bless your arrow..." -->
+    <item id="17517" type="Armor" name="Cry of Destiny">
+        <set name="icon" val="icon.accessary_blessed_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17518" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17519" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17520" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17521" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17522" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17523" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Can move to a special location inside the Ruins of Ye Sagira. -->
+    <item id="17524" type="EtcItem" name="Ruins Teleport Device">
+        <set name="icon" val="icon.esagira_telepo_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Purple Viking Circlet. Uses 2 hair accessory slots. Shadow item. Has 1,000 minutes of use time. -->
+    <item id="17525" type="Armor" name="Shadow Item: Fortuna Viking Circlet">
+        <set name="icon" val="icon.accessory_animal_warrior_skeleton_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- When enchanted, P. Atk. + 6 for R-grade one-handed swords/blunts, daggers, spears, etc. P. Atk. + 7 for two-handed swords/blunts/fist weapons, dualswords, and crossbows. P. Atk. + 12 for bows, and M. Atk. + 5 for all weapons. Starting at + 4, P. Atk. / M. Atk. Increases significantly, especially for blessed weapons. Enchanting is safe up to + 3. Can be exchanged or dropped. -->
+    <item id="17526" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
+        <set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="9185-1" />
+    </item>
+    <!-- When enchanted, P. Def. + 2 for R-grade armor and accessories, especially starting at + 4. Can be enchanted safely to + 3. When armor is enchanted + 4 or more, HP also increases according to the enchant value. -->
+    <item id="17527" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
+        <set name="icon" val="icon.scroll_of_enchant_armor_i06" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="9186-1" />
+    </item>
+    <item id="17528" type="Armor" name="Test-Heavy Armor-Helmet - Human Knight">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17529" type="Armor" name="Test-Heavy Armor-Armor - Human Knight">
+        <set name="icon" val="icon.armor_t94_u_i01" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="7520" />
+        <for>
+            <baseAdd stat="pDef" val="385" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17530" type="Armor" name="Test-Heavy Armor-Gaiters - Human Knight">
+        <set name="icon" val="icon.armor_t94_l_i01" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="3170" />
+        <for>
+            <baseAdd stat="pDef" val="240" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17531" type="Armor" name="Test-Heavy Armor-Gloves - Human Knight">
+        <set name="icon" val="icon.armor_t94_g_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17532" type="Armor" name="Test-Heavy Armor-Shoes - Human Knight">
+        <set name="icon" val="icon.armor_t94_b_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17533" type="Armor" name="Test-Light Armor-Helmet - Rogue">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17534" type="Armor" name="Test-Light Armor-Armor - Rogue">
+        <set name="icon" val="icon.armor_t101_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="4140" />
+        <for>
+            <baseAdd stat="pDef" val="289" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17535" type="Armor" name="Test-Light Armor-Gaiters - Rogue">
+        <set name="icon" val="icon.armor_t101_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1320" />
+        <for>
+            <baseAdd stat="pDef" val="180" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17536" type="Armor" name="Test-Light Armor-Gloves - Rogue">
+        <set name="icon" val="icon.armor_t101_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17537" type="Armor" name="Test-Light Armor-Shoes - Rogue">
+        <set name="icon" val="icon.armor_t101_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17538" type="Armor" name="Test-Light Armor-Helmet - Archer">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17539" type="Armor" name="Test-Light Armor-Armor - Archer">
+        <set name="icon" val="icon.armor_t95_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="4140" />
+        <for>
+            <baseAdd stat="pDef" val="289" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17540" type="Armor" name="Test-Light Armor-Gaiters - Archer">
+        <set name="icon" val="icon.armor_t95_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1320" />
+        <for>
+            <baseAdd stat="pDef" val="180" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17541" type="Armor" name="Test-Light Armor-Gloves - Archer">
+        <set name="icon" val="icon.armor_t95_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17542" type="Armor" name="Test-Light Armor-Shoes - Archer">
+        <set name="icon" val="icon.armor_t95_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17543" type="Armor" name="Test-Light Armor-Helmet - Warrior">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17544" type="Armor" name="Test-Light Armor-Armor - Warrior">
+        <set name="icon" val="icon.armor_t95_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="4140" />
+        <for>
+            <baseAdd stat="pDef" val="289" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17545" type="Armor" name="Test-Light Armor-Gaiters - Warrior">
+        <set name="icon" val="icon.armor_t95_l_i03" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1320" />
+        <for>
+            <baseAdd stat="pDef" val="180" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17546" type="Armor" name="Test-Light Armor-Gloves - Warrior">
+        <set name="icon" val="icon.armor_t95_g_i03" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17547" type="Armor" name="Test-Light Armor-Shoes - Warrior">
+        <set name="icon" val="icon.armor_t95_b_i03" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17548" type="Armor" name="Test-Robe-Helmet - Healer">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17549" type="Armor" name="Test-Robe-Armor - Healer">
+        <set name="icon" val="icon.armor_t99_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1750" />
+        <for>
+            <baseAdd stat="pDef" val="193" />
+            <add stat="maxMp" val="637" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17550" type="Armor" name="Test-Robe-Gaiters - Healer">
+        <set name="icon" val="icon.armor_t99_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="850" />
+        <for>
+            <baseAdd stat="pDef" val="143" />
+            <add stat="maxMp" val="415" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17551" type="Armor" name="Test-Robe-Gloves - Healer">
+        <set name="icon" val="icon.armor_t99_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17552" type="Armor" name="Test-Robe-Shoes - Healer">
+        <set name="icon" val="icon.armor_t99_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17553" type="Armor" name="Test-Robe-Helmet - Wizard">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17554" type="Armor" name="Test-Robe-Armor - Wizard">
+        <set name="icon" val="icon.armor_t93_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1750" />
+        <for>
+            <baseAdd stat="pDef" val="193" />
+            <add stat="maxMp" val="637" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17555" type="Armor" name="Test-Robe-Gaiters - Wizard">
+        <set name="icon" val="icon.armor_t93_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="850" />
+        <for>
+            <baseAdd stat="pDef" val="143" />
+            <add stat="maxMp" val="415" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17556" type="Armor" name="Test-Robe-Gloves - Wizard">
+        <set name="icon" val="icon.armor_t93_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17557" type="Armor" name="Test-Robe-Shoes - Wizard">
+        <set name="icon" val="icon.armor_t93_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17558" type="Armor" name="Test-Robe-Helmet - Summoner">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17559" type="Armor" name="Test-Robe-Armor - Summoner">
+        <set name="icon" val="icon.armor_t70_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1750" />
+        <for>
+            <baseAdd stat="pDef" val="193" />
+            <add stat="maxMp" val="637" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17560" type="Armor" name="Test-Robe-Gaiters - Summoner">
+        <set name="icon" val="icon.armor_t70_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="850" />
+        <for>
+            <baseAdd stat="pDef" val="143" />
+            <add stat="maxMp" val="415" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17561" type="Armor" name="Test-Robe-Gloves - Summoner">
+        <set name="icon" val="icon.armor_t70_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17562" type="Armor" name="Test-Robe-Shoes - Summoner">
+        <set name="icon" val="icon.armor_t70_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17563" type="Armor" name="Test-Light Armor-Helmet - Enchanter">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="530" />
+        <for>
+            <baseAdd stat="pDef" val="194" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17564" type="Armor" name="Test-Light Armor-Armor - Enchanter">
+        <set name="icon" val="icon.armor_t75_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="4140" />
+        <for>
+            <baseAdd stat="pDef" val="289" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17565" type="Armor" name="Test-Light Armor-Gaiters - Enchanter">
+        <set name="icon" val="icon.armor_t75_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1320" />
+        <for>
+            <baseAdd stat="pDef" val="180" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17566" type="Armor" name="Test-Light Armor-Gloves - Enchanter">
+        <set name="icon" val="icon.armor_t75_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="510" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17567" type="Armor" name="Test-Light Armor-Shoes - Enchanter">
+        <set name="icon" val="icon.armor_t75_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1070" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17568" type="Armor" name="Test-Ring">
+        <set name="icon" val="icon.vesper_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="29" />
+            <add stat="maxMp" val="25" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17569" type="Armor" name="Test-Earring">
+        <set name="icon" val="icon.vesper_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="44" />
+            <add stat="maxMp" val="37" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17570" type="Armor" name="Test-Necklace">
+        <set name="icon" val="icon.vesper_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="150" />
+        <for>
+            <baseAdd stat="mDef" val="59" />
+            <add stat="maxMp" val="50" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17571" type="Armor" name="Test-Undergarments">
+        <set name="icon" val="icon.etc_shirts_s_i05" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="130" />
+        <for>
+            <baseAdd stat="pDef" val="41" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="17572" type="Armor" name="Test-Shield">
+        <set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="1130" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="457" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="17573" type="Armor" name="Test-Sigil">
+        <set name="icon" val="icon.verper_sigil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="none" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="s84" />
+        <set name="weight" val="920" />
+        <for>
+            <baseAdd stat="pDef" val="20" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Key that lets you enter the Training Grounds Underground Facility. -->
+    <item id="17574" type="EtcItem" name="Training Grounds Underground Facility Key">
+        <set name="icon" val="icon.etc_old_key_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Ancient book that records the war between the Gods and the Giants. Take it to Pantheon. -->
+    <item id="17575" type="EtcItem" name="The War of Gods and Giants">
+        <set name="icon" val="icon.etc_old_evil_book_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Key that lets you enter the closed underground training ground in the military region. -->
+    <item id="17576" type="EtcItem" name="Closed Underground Training Ground Key">
+        <set name="icon" val="icon.etc_old_key_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Ancient Evil Fragment found in the Ruins of Ye Sagira. Pantheon might now more about it. -->
+    <item id="17577" type="EtcItem" name="Evil Fragment">
+        <set name="icon" val="icon.etc_dragon_egg_i05" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Only a tattered piece of paper. -->
+    <item id="17578" type="EtcItem" name="Dirty Piece of Paper">
+        <set name="icon" val="icon.etc_piece_of_paper_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Old map that was made during the era of the giants. Bring it to Sebion in front of the Labyrinth of Belis. -->
+    <item id="17579" type="EtcItem" name="Old Maze Map">
+        <set name="icon" val="icon.etc_map_yellow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Saril's Necklace. Bring it to Sebion in Exploration Zone 5. -->
+    <item id="17580" type="EtcItem" name="Saril's Necklace">
+        <set name="icon" val="icon.etc_resonance_amulet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Key that lets you enter the Labyrinth of Belis. -->
+    <item id="17581" type="EtcItem" name="Key to the Labyrinth of Belis">
+        <set name="icon" val="icon.etc_old_key_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Letter of introduction that Pa'agrio Lord Kakai wrote himself. Bring it to Captain Bathis in the Town of Gludio. -->
+    <item id="17582" type="EtcItem" name="Letter of Introduction">
+        <set name="icon" val="icon.etc_letter_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Suspicious badge found on the corpse of a spider. It appears to be something that came from Sakum. -->
+    <item id="17583" type="EtcItem" name="Suspicious Badge">
+        <set name="icon" val="icon.etc_mark_yellow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- A Hastily drawn side profile of Sakum. -->
+    <item id="17584" type="EtcItem" name="Sakum's Sketch A">
+        <set name="icon" val="icon.etc_roll_of_paper_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- A Hastily drawn face of Sakum. -->
+    <item id="17585" type="EtcItem" name="Sakum's Sketch B">
+        <set name="icon" val="icon.etc_roll_of_paper_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Dropped Sakum's scale. -->
+    <item id="17586" type="EtcItem" name="Suspicious Fragment">
+        <set name="icon" val="icon.etc_broken_crystal_green_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Stone that stores energy that was used during the era of the Giants. -->
+    <item id="17587" type="EtcItem" name="Shine Stone">
+        <set name="icon" val="icon.etc_energy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Bottle for capturing the wisps that flow from Magmeld's Fairy Settlement. Bring it to Chief Slaski at the Ancient City Arcan. -->
+    <item id="17588" type="EtcItem" name="Captured Wisp">
+        <set name="icon" val="icon.etc_mammon_varnish_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Mark that proves Shilen's apostlehood. The bearer of this mark is a high-level apostle of Shilen. -->
+    <item id="17589" type="EtcItem" name="Shilen's Mark">
+        <set name="icon" val="icon.yogi_stick_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Mark that proves Shilen's apostlehood. The bearer of this mark is a high-level apostle of Shilen. -->
+    <item id="17590" type="EtcItem" name="Shilen's High-level Mark">
+        <set name="icon" val="icon.yogi_stick_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The black magic mark of a summoned demon. It also represents a contract with Beleth. -->
+    <item id="17591" type="EtcItem" name="Beleth's Mark">
+        <set name="icon" val="icon.etc_orcish_talisman_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The mark of a high-level demon that was called from hell through a black magic contract. It also represents a contract between Beleth and the demons. -->
+    <item id="17592" type="EtcItem" name="Beleth's Contract">
+        <set name="icon" val="icon.etc_spell_books_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- The sharp claw of Queen Rachicues of the Rachiche. -->
+    <item id="17593" type="EtcItem" name="Rachicues Claw">
+        <set name="icon" val="icon.weapon_iron_glove_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Tissue energy crystal fragment obtained through hunting in the Seed of Annihilation area. If you bring it to Kirklan, you can exchange it for something else. -->
+    <item id="17594" type="EtcItem" name="Tissue Energy Crystal Fragment">
+        <set name="icon" val="icon.general_star_stone_piece_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Empty bottle for capturing and storing wisps. -->
+    <item id="17595" type="EtcItem" name="Empty Bottle">
+        <set name="icon" val="icon.empty_bottle" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Tonic that can protect the trees in the Fairy Settlement from decaying by the darkness. It is uncertain whether it is effective on all trees. -->
+    <item id="17596" type="EtcItem" name="Timiniel's Tonic">
+        <set name="icon" val="icon.etc_reagent_blue_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="recipe_id" val="1000" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Wing fallen from a reckless fairy. It is an ingredient for the Timiniel's Tonic. -->
+    <item id="17597" type="EtcItem" name="Fairy Wing">
+        <set name="icon" val="icon.q466_fairy_wing" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Cocoon fragment from the Fairy Settlement. It is an ingredient for the Timiniel's Tonic. -->
+    <item id="17598" type="EtcItem" name="Cocoon Fragment">
+        <set name="icon" val="icon.etc_crafted_leather_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Bottle containing Kimerian's Breath, which was being held by a fairy whose metamorphosis was blocked. It is an ingredient for the Timiniel's Tonic. -->
+    <item id="17599" type="EtcItem" name="Kimerian's Breath">
+        <set name="icon" val="icon.etc_fish_oil_i02" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_stackable" val="true" />
+    </item>
 </list>

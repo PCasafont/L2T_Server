@@ -25,33 +25,34 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerWeight extends Condition
 {
-	
-	private final int _weight;
-	
-	/**
-	 * Instantiates a new condition player weight.
-	 *
-	 * @param weight the weight
-	 */
-	public ConditionPlayerWeight(int weight)
-	{
-		_weight = weight;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
-			if (((L2PcInstance) env.player).getMaxLoad() > 0)
-			{
-				int weightproc = ((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player).getMaxLoad();
-				return weightproc < _weight || ((L2PcInstance) env.player).getDietMode();
-			}
-		}
-		return true;
-	}
+
+    private final int _weight;
+
+    /**
+     * Instantiates a new condition player weight.
+     *
+     * @param weight the weight
+     */
+    public ConditionPlayerWeight(int weight)
+    {
+        _weight = weight;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (env.player instanceof L2PcInstance)
+        {
+            if (((L2PcInstance) env.player).getMaxLoad() > 0)
+            {
+                int weightproc = ((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player)
+                        .getMaxLoad();
+                return weightproc < _weight || ((L2PcInstance) env.player).getDietMode();
+            }
+        }
+        return true;
+    }
 }

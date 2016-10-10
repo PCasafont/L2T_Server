@@ -19,26 +19,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExFriendDetailInfo;
 
 /**
- *
  * @author Erlandys
  */
 public class RequestFriendDetailInfo extends L2GameClientPacket
 {
-	String _charName;
-	
-	@Override
-	protected void readImpl()
-	{
-		_charName = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		activeChar.sendPacket(new ExFriendDetailInfo(activeChar, _charName));
-	}
+    String _charName;
+
+    @Override
+    protected void readImpl()
+    {
+        _charName = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+        activeChar.sendPacket(new ExFriendDetailInfo(activeChar, _charName));
+    }
 }

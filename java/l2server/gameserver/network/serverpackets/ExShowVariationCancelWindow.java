@@ -18,16 +18,17 @@ package l2server.gameserver.network.serverpackets;
 /**
  * Format: ch
  * Trigger packet
- * @author  KenM
+ *
+ * @author KenM
  */
 public class ExShowVariationCancelWindow extends L2GameServerPacket
 {
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

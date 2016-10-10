@@ -24,50 +24,50 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectGrow extends L2Effect
 {
-	public EffectGrow(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Npc)
-		{
-			L2Npc npc = (L2Npc) getEffected();
-			//TODO: Uncomment line when fix for mobs falling underground is found
-			//npc.setCollisionHeight((int) (npc.getCollisionHeight() * 1.24));
-			npc.setCollisionRadius(npc.getCollisionRadius() * 1.19);
-			
-			getEffected().startVisualEffect(VisualEffect.GROW);
-			return true;
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		if (getEffected() instanceof L2Npc)
-		{
-			L2Npc npc = (L2Npc) getEffected();
-			//TODO: Uncomment line when fix for mobs falling underground is found
-			//npc.setCollisionHeight(npc.getTemplate().collisionHeight);
-			npc.setCollisionRadius(npc.getTemplate().fCollisionRadius);
-			
-			getEffected().stopVisualEffect(VisualEffect.GROW);
-		}
-	}
+    public EffectGrow(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() instanceof L2Npc)
+        {
+            L2Npc npc = (L2Npc) getEffected();
+            //TODO: Uncomment line when fix for mobs falling underground is found
+            //npc.setCollisionHeight((int) (npc.getCollisionHeight() * 1.24));
+            npc.setCollisionRadius(npc.getCollisionRadius() * 1.19);
+
+            getEffected().startVisualEffect(VisualEffect.GROW);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
+
+    @Override
+    public void onExit()
+    {
+        if (getEffected() instanceof L2Npc)
+        {
+            L2Npc npc = (L2Npc) getEffected();
+            //TODO: Uncomment line when fix for mobs falling underground is found
+            //npc.setCollisionHeight(npc.getTemplate().collisionHeight);
+            npc.setCollisionRadius(npc.getTemplate().fCollisionRadius);
+
+            getEffected().stopVisualEffect(VisualEffect.GROW);
+        }
+    }
 }

@@ -20,27 +20,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author Erlando
- *
  */
 public class BlockListPacket extends L2GameServerPacket
 {
-	
-	private L2PcInstance player;
-	
-	public BlockListPacket(L2PcInstance activeChar)
-	{
-		player = activeChar;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(player.getBlockList().getBlockList().size());
-		for (int objId : player.getBlockList().getBlockList())
-		{
-			writeS(CharNameTable.getInstance().getNameById(objId));
-			writeS(player.getBlockMemo(objId));
-		}
-		
-	}
+
+    private L2PcInstance player;
+
+    public BlockListPacket(L2PcInstance activeChar)
+    {
+        player = activeChar;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(player.getBlockList().getBlockList().size());
+        for (int objId : player.getBlockList().getBlockList())
+        {
+            writeS(CharNameTable.getInstance().getNameById(objId));
+            writeS(player.getBlockMemo(objId));
+        }
+    }
 }

@@ -21,31 +21,38 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Erlandys
  */
 public class ExChangeAttributeItemList extends L2ItemListPacket
 {
-	
-	private ArrayList<L2ItemInstance> _itemsList;
-	private int _itemOID;
-	
-	public ExChangeAttributeItemList(L2PcInstance player, int itemOID)
-	{
-		_itemsList = new ArrayList<L2ItemInstance>();
-		for (L2ItemInstance item : player.getInventory().getItems())
-			if (item.isWeapon())
-				if (item.getAttackElementPower() > 0)
-					_itemsList.add(item);
-		_itemOID = itemOID;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_itemOID);
-		writeD(_itemsList.size());
-		for (L2ItemInstance item : _itemsList)
-			writeItem(item);
-	}
+
+    private ArrayList<L2ItemInstance> _itemsList;
+    private int _itemOID;
+
+    public ExChangeAttributeItemList(L2PcInstance player, int itemOID)
+    {
+        _itemsList = new ArrayList<L2ItemInstance>();
+        for (L2ItemInstance item : player.getInventory().getItems())
+        {
+            if (item.isWeapon())
+            {
+                if (item.getAttackElementPower() > 0)
+                {
+                    _itemsList.add(item);
+                }
+            }
+        }
+        _itemOID = itemOID;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_itemOID);
+        writeD(_itemsList.size());
+        for (L2ItemInstance item : _itemsList)
+        {
+            writeItem(item);
+        }
+    }
 }

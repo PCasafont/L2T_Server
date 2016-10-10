@@ -16,30 +16,33 @@
 package l2server.gameserver.network.serverpackets;
 
 /**
- *
  * @author mrTJO
  */
 public class Ex2ndPasswordAck extends L2GameServerPacket
 {
-	
-	int _response;
-	
-	public static int SUCCESS = 0x00;
-	public static int WRONG_PATTERN = 0x01;
-	
-	public Ex2ndPasswordAck(int response)
-	{
-		_response = response;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeC(0x00);
-		if (_response == WRONG_PATTERN)
-			writeD(0x01);
-		else
-			writeD(0x00);
-		writeD(0x00);
-	}
+
+    int _response;
+
+    public static int SUCCESS = 0x00;
+    public static int WRONG_PATTERN = 0x01;
+
+    public Ex2ndPasswordAck(int response)
+    {
+        _response = response;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeC(0x00);
+        if (_response == WRONG_PATTERN)
+        {
+            writeD(0x01);
+        }
+        else
+        {
+            writeD(0x00);
+        }
+        writeD(0x00);
+    }
 }

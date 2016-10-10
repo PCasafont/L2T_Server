@@ -1,1180 +1,1187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Accuracy of clan members in residence increases by 4. -->
-	<skill id="600" levels="1" name="Residence Guidance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="accCombat" val="4" />
-		</for>
-	</skill>
-	<!-- Evasion of clan members in residence increases by 4. -->
-	<skill id="601" levels="1" name="Residence Agility">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="rEvas" val="4" />
-		</for>
-	</skill>
-	<!-- Shield Defense of clan members in residence increases by 20%. -->
-	<skill id="602" levels="1" name="Residence Shield Block">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="rShld" val="20" />
-		</for>
-	</skill>
-	<!-- Shield Defense. of clan members in residence increases by 225. -->
-	<skill id="603" levels="1" name="Residence Shield Defense">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="sDef" val="225" />
-		</for>
-	</skill>
-	<!-- Water/Wind Resistance of clan members in residence increases by 10. -->
-	<skill id="604" levels="1" name="Residence Typhoon Resistance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="waterRes" val="10" />
-			<add stat="windRes" val="10" />
-		</for>
-	</skill>
-	<!-- Fire/Earth Resistance of clan members in residence increases by 10. -->
-	<skill id="605" levels="1" name="Residence Lava Resistance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="fireRes" val="10" />
-			<add stat="earthRes" val="10" />
-		</for>
-	</skill>
-	<!-- Stun Resistance of clan members in residence increases by 10. -->
-	<skill id="606" levels="1" name="Residence Fortitude">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<addPercent stat="stunRes" val="10" />
-		</for>
-	</skill>
-	<!-- Hold Resistance of clan members in residence increases by 10. -->
-	<skill id="607" levels="1" name="Residence Freedom">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<addPercent stat="holdRes" val="10" />
-		</for>
-	</skill>
-	<!-- Sleep Resistance of clan members in residence increases by 10. -->
-	<skill id="608" levels="1" name="Residence Vigilance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<addPercent stat="sleepRes" val="10" />
-		</for>
-	</skill>
-	<!-- The Speed of clan members in residence increases by 6. -->
-	<skill id="609" levels="1" name="Residence Movement">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-		<for>
-			<add stat="runSpd" val="6" />
-		</for>
-	</skill>
-	<!-- When a clan member within the residence is killed by PK/ordinary monster, the item drop rate and XP decrease rate are decreased. -->
-	<skill id="610" levels="1" name="Residence Death Fortune">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="COREDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="2" />
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' P. Atk. increase by 17.3.
-		Level 2: The corresponding troops' P. Atk. increase by 17.3 and Critical Rate increase by 15.
-		Level 3: The corresponding troops' P. Atk. increase by 17.3, Critical Rate increase by 15, and Critical Damage increase by 100.
-	-->
-	<skill id="611" levels="3" name="Fire Squad">
-		<table name="#rCrit"> 0 15 15 </table>
-		<table name="#cAtkAdd"> 0 0 100 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="pAtk" val="17.3" />
-			<add stat="rCrit" val="#rCrit" />
-			<add stat="pCritDmgAdd" val="#cAtkAdd" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' P. Def. increase by 27.3.
-		Level 2: The corresponding troops' P. Def. increase by 27.3 and M. Def. increase by 17.6.
-		Level 3: The corresponding troops' P. Def. increase by 27.3, M. Def. increase by 17.6, and Shield Defense. increase by 6%.
-	-->
-	<skill id="612" levels="3" name="Water Squad">
-		<table name="#mDef"> 0 17.6 17.6 </table>
-		<table name="#sDef"> 0 0 6 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="pDef" val="27.3" />
-			<add stat="mDef" val="#mDef" />
-			<addPercent stat="sDef" val="#sDef" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' Accuracy increase by 2.
-		Level 2: The corresponding troops' Accuracy increase by 2 and Evasion increase by 2.
-		Level 3: The corresponding troops' Accuracy increase by 2, Evasion increase by 2, and Speed increase by 3.
-	-->
-	<skill id="613" levels="3" name="Wind Squad">
-		<table name="#rEvas"> 0 2 2 </table>
-		<table name="#runSpd"> 0 0 3 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="accCombat" val="2" />
-			<add stat="rEvas" val="#rEvas" />
-			<add stat="runSpd" val="#runSpd" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' M. Def. increase by 17.
-		Level 2: The corresponding troops' M. Def. increase by 31.1.
-		Level 3: The corresponding troops' M. Def. increase by 44.
-	-->
-	<skill id="614" levels="3" name="Earth Squad">
-		<table name="#mDef"> 17 31.1 44 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="mDef" val="#mDef" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' heal power increase by 20.
-		Level 2: The corresponding troops' heal power increase by 20 and Max MP increase by 30%.
-		Level 3: The corresponding troops' heal power increase by 20, Max MP increase by 30%, and MP Consumption decreases by 5%.
-	-->
-	<skill id="615" levels="3" name="Holy Squad">
-		<table name="#maxMp"> 0 30 30 </table>
-		<table name="#MpConsumeRate"> 0 0 5 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="bonusHp" val="20" />
-			<addPercent stat="maxMp" val="#maxMp" />
-			<subPercent stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
-			<subPercent stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
-			<subPercent stat="DanceMpConsumeRate" val="#MpConsumeRate" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: The corresponding troops' M. Atk. increase by 7.17.
-		Level 2: The corresponding troops' M. Atk. increase by 19.32.
-		Level 3: The corresponding troops' M. Atk. increase by 19.32 and M. Critical Damage rate increases by 1%.
-	-->
-	<skill id="616" levels="3" name="Dark Squad">
-		<table name="#mAtk"> 7.17 19.32 19.32 </table>
-		<table name="#mCritRate"> 0 0 1 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="isClanSkill" val="true" />
-		<set name="minPledgeClass" val="4" />
-		<for>
-			<add stat="mAtk" val="#mAtk" />
-			<addPercentBase stat="mCritRate" val="#mCritRate" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases Evasion by 20 and Speed by 33 for 20 seconds.
-		Level 2: Increases Evasion by 35, Speed by 66 and physical attack skill Evasion Rate by 25% for 20 seconds.
-	-->
-	<skill id="622" levels="2" name="Ultimate Escape">
-		<table name="#rEvas"> 20 35 </table>
-		<table name="#runSpd"> 33 66 </table>
-		<table name="#pSkillEvas"> 0 25 </table>
-		<table name="#mpConsume"> 31 47 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="900000" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-		<for>
-			<abnormal duration="20" stackLvl="1" stackType="avoid_up_special">
-				<effect type="Buff" val="0" />
-				<add stat="rEvas" val="#rEvas" />
-				<add stat="runSpd" val="#runSpd" />
-				<add stat="pSkillEvas" val="#pSkillEvas" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Gathers in nearby souls. Up to 8 souls can be absorbed at once. Consumes 10 Spirit Ore. -->
-	<skill id="625" levels="1" name="Soul Gathering">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHARGESOUL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeId" val="3031" />
-		<set name="itemConsumeCount" val="10" />
-		<set name="hpConsume" val="200" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="1800000" />
-		<set name="staticReuse" val="true" />
-		<set name="num_souls" val="40" />
-	</skill>
-	<!-- 
-		Level 1: Increases Critical Rate by 10% and Critical Damage by 111.
-		Level 2: Increases Critical Rate by 15% and Critical Damage by 177.
-		Level 3: Increases Critical Rate by 20% and Critical Damage by 253.
-		Level 4: Increases Critical Rate by 25% and Critical Damage by 317.
-	-->
-	<skill id="626" levels="4" name="Critical Sense">
-		<table name="#rCrit"> 10 15 20 25 </table>
-		<table name="#cAtk"> 111 177 253 317 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<for>
-			<addPercentBase stat="rCrit" val="#rCrit" />
-			<add stat="pCritDmgAdd" val="#cAtk" />
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Attacks the enemy with 344 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 2: Attacks the enemy with 367 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 3: Attacks the enemy with 391 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 4: Attacks the enemy with 443 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 5: Attacks the enemy with 471 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 6: Attacks the enemy with 500 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 7: Attacks the enemy with 530 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 8: Attacks the enemy with 562 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 9: Attacks the enemy with 595 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 10: Attacks the enemy with 630 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 11: Attacks the enemy with 666 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 12: Attacks the enemy with 703 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 13: Attacks the enemy with 742 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 14: Attacks the enemy with 782 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 15: Attacks the enemy with 823 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 16: Attacks the enemy with 866 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 17: Attacks the enemy with 910 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 18: Attacks the enemy with 955 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 19: Attacks the enemy with 1002 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 20: Attacks the enemy with 1050 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 21: Attacks the enemy with 1100 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 22: Attacks the enemy with 1150 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 23: Attacks the enemy with 1202 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 24: Attacks the enemy with 1255 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 25: Attacks the enemy with 1309 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 26: Attacks the enemy with 1364 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 27: Attacks the enemy with 1420 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 28: Attacks the enemy with 1476 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 29: Attacks the enemy with 1534 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 30: Attacks the enemy with 1592 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 31: Attacks the enemy with 1651 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 32: Attacks the enemy with 1710 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 33: Attacks the enemy with 1770 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 34: Attacks the enemy with 1830 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 35: Attacks the enemy with 1891 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 36: Attacks the enemy with 1951 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 37: Attacks the enemy with 2012 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 38: Attacks the enemy with 2072 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 39: Attacks the enemy with 2132 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-		Level 40: Attacks the enemy with 2192 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
-	-->
-	<skill id="627" levels="40" name="Soul Shock">
-		<table name="#mpConsume"> 48 49 51 52 54 56 56 58 59 61 63 65 66 68 70 72 72 74 76 78 80 81 83 85 87 88 89 91 92 94 96 97 99 100 102 103 105 106 108 109 </table>
-		<table name="#power"> 344 367 391 443 471 500 530 562 595 630 666 703 742 782 823 866 910 955 1002 1050 1100 1150 1202 1255 1309 1364 1420 1476 1534 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192 </table>
-		<table name="#magicLvl"> 40 41 42 43 44 44 45 46 47 48 49 50 51 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 </table>
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="lvlDepend" val="1" />
-		<set name="mpConsume" val="#mpConsume" />
-		<set name="power" val="#power" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="15000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="isDebuff" val="true" />
-		<set name="weaponsAllowed" val="Bow, Crossbow" />
-		<set name="saveVs" val="MEN" />
-		<set name="soulMaxConsumeCount" val="5" />
-		<for>
-			<abnormal count="3" duration="1" effectType="FEAR" landRate="40" stackLvl="1" stackType="turn_flee">
-				<effect type="Fear" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Opens a treasure chest with a spinning kick. -->
-	<skill id="630" levels="1" name="Rabbit Tornado">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="60000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="staticHitTime" val="true" />
-		<set name="neutral" val="true" />
-		<cond msgId="109">
-			<target npcId="13098,900102" />
-		</cond>
-	</skill>
-	<!-- Increases P. Atk. -->
-	<skill id="631" levels="6" name="Emergent Ability: Attack">
-		<table name="#magicLvl"> 60 75 80 80 80 80 </table>
-		<table name="#pAtkAncient"> 9.1 17.4 24.8 31.4 37.2 41.4 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="pAtk" val="#pAtkAncient">
-				<using kind="Ancient" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases P. Def. -->
-	<skill id="632" levels="6" name="Emergent Ability: Defense">
-		<table name="#magicLvl"> 60 75 80 80 80 80 </table>
-		<table name="#pDefLight"> 13.4 26.8 40.2 53.6 67 80.3 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="pDef" val="#pDefLight">
-				<using kind="Light" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Atk. -->
-	<skill id="633" levels="6" name="Emergent Ability: Empower">
-		<table name="#magicLvl"> 60 75 80 80 80 80 </table>
-		<table name="#matk"> 10.5 20.1 28.7 36.3 43 47.8 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="mAtk" val="#matk" />
-		</for>
-	</skill>
-	<!-- Increases M. Def. -->
-	<skill id="634" levels="6" name="Emergent Ability: M. Def.">
-		<table name="#magicLvl"> 60 75 80 80 80 80 </table>
-		<table name="#mdef"> 15.1 30.2 45.4 60.5 75.6 90.7 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="mDef" val="#mdef" />
-		</for>
-	</skill>
-	<skill id="635" levels="3" name="Not in Use">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="636" levels="3" name="Not in Use">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<!-- Increases P. Atk. -->
-	<skill id="637" levels="1" name="Master Ability: Attack">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="60" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="pAtk" val="22.9">
-				<using kind="Sword,Big Sword,Blunt,Big Blunt,Pole" />
-			</add>
-			<add stat="pAtk" val="27.9">
-				<using kind="Dual Sword,Dual Fist" />
-			</add>
-			<add stat="pAtk" val="20.1">
-				<using kind="Dagger,Dual Dagger" />
-			</add>
-			<add stat="pAtk" val="59.2">
-				<using kind="Bow" />
-			</add>
-			<add stat="pAtk" val="36.3">
-				<using kind="Crossbow" />
-			</add>
-			<add stat="pAtk" val="5">
-				<using kind="Big Sword" />
-			</add>
-			<add stat="pAtk" val="21.4">
-				<using kind="Rapier" />
-			</add>
-			<add stat="pAtk" val="24.8">
-				<using kind="Ancient" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases M. Atk. -->
-	<skill id="638" levels="1" name="Master Ability: Empower">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="60" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="mAtk" val="28.65" />
-		</for>
-	</skill>
-	<!-- Increases Casting Spd. -->
-	<skill id="639" levels="1" name="Master Ability: Casting">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="mAtkSpd" val="11" />
-		</for>
-	</skill>
-	<!-- Increases Critical Rate. -->
-	<skill id="640" levels="1" name="Master Ability: Focus">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="rCrit" val="30" />
-		</for>
-	</skill>
-	<!-- Increases Max HP. -->
-	<skill id="641" levels="1" name="Knight Ability: Boost HP">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="maxHp" val="295.32" />
-		</for>
-	</skill>
-	<!-- Increases Max MP. -->
-	<skill id="642" levels="1" name="Enchanter Ability: Boost Mana">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="maxMp" val="148.2" />
-		</for>
-	</skill>
-	<!-- Increases Max HP and Max MP. -->
-	<skill id="643" levels="1" name="Summoner Ability: Boost HP/MP">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="maxHp" val="147.66" />
-			<add stat="maxMp" val="74.1" />
-		</for>
-	</skill>
-	<!-- Increase Evasion. -->
-	<skill id="644" levels="1" name="Rogue Ability: Evasion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="rEvas" val="4" />
-		</for>
-	</skill>
-	<!-- Increases bow range. -->
-	<skill id="645" levels="1" name="Rogue Ability: Long Shot">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="pAtkRange" val="100">
-				<using kind="Bow" />
-			</add>
-		</for>
-	</skill>
-	<!-- Increases the recovery rate of MP. -->
-	<skill id="646" levels="1" name="Wizard Ability: Mana Gain">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<add stat="gainMp" val="20" />
-		</for>
-	</skill>
-	<!-- Increases MP regeneration. -->
-	<skill id="647" levels="1" name="Enchanter Ability: Mana Recovery">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<addPercent stat="regMp" val="10" />
-		</for>
-	</skill>
-	<!-- The effect of receiving HP recovery magic increases. Effect 1. -->
-	<skill id="648" levels="1" name="Healer Ability: Prayer">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<addPercent stat="gainHp" val="6" />
-		</for>
-	</skill>
-	<!-- Increases the Paralysis/Hold/Sleep/Stun/Buff-canceling Attack Resistance. -->
-	<skill id="650" levels="1" name="Warrior Ability: Attribute Resistance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<for>
-			<addPercent stat="cancelRes" val="5" />
-			<addPercent stat="stunRes" val="5" />
-			<addPercent stat="holdRes" val="5" />
-			<addPercent stat="sleepRes" val="5" />
-			<addPercent stat="paralysisRes" val="5" />
-		</for>
-	</skill>
-	<!-- Has a chance to increase Atk. Spd. while attacking. Excludes damage caused by a skill or ranged attack. -->
-	<skill id="651" levels="1" name="Warrior Ability: Haste">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<set name="activationChance" val="2" />
-		<set name="chanceType" val="ON_HIT" />
-		<set name="triggeredId" val="5572" />
-		<set name="triggeredLevel" val="1" />
-	</skill>
-	<!-- Has a chance to increase P. Def./M. Def. while being attacked. -->
-	<skill id="652" levels="1" name="Knight Ability: Defense">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<set name="activationChance" val="2" />
-		<set name="chanceType" val="ON_ATTACKED" />
-		<set name="triggeredId" val="5573" />
-		<set name="triggeredLevel" val="1" />
-	</skill>
-	<!-- Has a chance to increase Critical Rate while attacking. -->
-	<skill id="653" levels="1" name="Rogue Ability: Critical Chance">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<set name="activationChance" val="2" />
-		<set name="chanceType" val="ON_HIT" />
-		<set name="triggeredId" val="5574" />
-		<set name="triggeredLevel" val="1" />
-	</skill>
-	<!-- Has a chance to recover MP while attacking. -->
-	<skill id="654" levels="1" name="Wizard Ability: Mana Steal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<set name="activationChance" val="2" />
-		<set name="chanceType" val="ON_HIT" />
-		<set name="triggeredId" val="5575" />
-		<set name="triggeredLevel" val="1" />
-	</skill>
-	<!-- Has a chance to grant invincibility while being attacked. -->
-	<skill id="655" levels="1" name="Enchanter Ability: Barrier">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="75" />
-		<set name="excludedFromCheck" val="true" />
-		<set name="activationChance" val="2" />
-		<set name="chanceType" val="ON_ATTACKED" />
-		<set name="triggeredId" val="5576" />
-		<set name="triggeredLevel" val="1" />
-	</skill>
-	<!-- Attacks the enemy with 2904 Power added to P. Atk. Over-hit and Critical are possible. -->
-	<skill id="675" levels="1" name="Divine Warrior Cross Slash">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="112" />
-		<set name="power" val="2904" />
-		<set name="hitTime" val="1733" />
-		<set name="coolTime" val="167" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="SSBoost" val="2.0" />
-		<set name="baseCritRate" val="15" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-	</skill>
-	<!-- Hurls Momentum to attack the enemy with 2323 Power added to P. Atk. Over-hit and Critical are possible. -->
-	<skill id="676" levels="1" name="Divine Warrior Sonic Blaster">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="56" />
-		<set name="power" val="2323" />
-		<set name="hitTime" val="1900" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="SSBoost" val="2.0" />
-		<set name="baseCritRate" val="15" />
-		<set name="overHit" val="true" />
-	</skill>
-	<!-- Cuts with a downward blow to attack nearby enemies with 2323 Power added to P. Atk. Ignores Shield Defense. Over-hit is possible. -->
-	<skill id="677" levels="1" name="Divine Warrior Transfixion of Earth">
-		<set name="target" val="TARGET_AURA" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="80" />
-		<set name="power" val="2323" />
-		<set name="hitTime" val="1067" />
-		<set name="coolTime" val="733" />
-		<set name="reuseDelay" val="4000" />
-		<set name="skillRadius" val="150" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="ignoreShld" val="true" />
-	</skill>
-	<!-- Increases P. Atk. by 25% for 1 minute. -->
-	<skill id="678" levels="1" name="Divine Warrior War Cry">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="36" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="45000" />
-		<set name="aggroPoints" val="408" />
-		<for>
-			<abnormal duration="60" stackLvl="2" stackType="pa_up_special">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pAtk" val="25" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Sacrifices oneself to increase P. Atk. of all party members by 20% for 30 seconds. Available only when HP is under 30%. -->
-	<skill id="679" levels="1" name="Sacrifice Warrior">
-		<set name="target" val="TARGET_PARTY" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="1800000" />
-		<set name="staticReuse" val="true" />
-		<set name="skillRadius" val="1000" />
-		<cond addName="1" msgId="113">
-			<player hp="30" />
-		</cond>
-		<for>
-			<abnormal noicon="1" self="1">
-				<effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
-				<subPercent stat="limitHp" val="90" />
-			</abnormal>
-			<abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pAtk" val="20" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Provokes the enemy to attack with 6752 Power. -->
-	<skill id="680" levels="1" name="Divine Knight Hate">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="AGGDAMAGE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="2" />
-		<set name="mpConsume" val="51" />
-		<set name="power" val="6752" />
-		<set name="hitTime" val="700" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="6000" />
-		<set name="staticReuse" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="MEN" />
-		<for>
-			<abnormal duration="3" stackLvl="1" stackType="target_lock">
-				<effect type="TargetMe" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Provokes nearby enemies to attack by 6752 Power. -->
-	<skill id="681" levels="1" name="Divine Knight Aggression Aura">
-		<set name="target" val="TARGET_AURA" />
-		<set name="skillType" val="AGGDAMAGE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="2" />
-		<set name="mpConsume" val="144" />
-		<set name="power" val="6752" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="40000" />
-		<set name="staticReuse" val="true" />
-		<set name="skillRadius" val="200" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="MEN" />
-		<for>
-			<abnormal duration="3" stackLvl="1" stackType="target_lock">
-				<effect type="TargetMe" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Cause damage and shock together at the same time. Make the enemies shocked momentarily. Over-hit is possible. Power 1162. -->
-	<skill id="682" levels="1" name="Divine Knight Stun Attack">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="1" />
-		<set name="mpConsume" val="76" />
-		<set name="power" val="1162" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
-				<effect type="Stun" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- inflicts Stun and damage to the enemies nearby at the same time. Momentarily stuns nearby enemies. Ignores Shield Defense. Over-hit is possible. Power 775. -->
-	<skill id="683" levels="1" name="Divine Knight Thunder Storm">
-		<set name="target" val="TARGET_AURA" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="1" />
-		<set name="mpConsume" val="114" />
-		<set name="power" val="775" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="reuseDelay" val="5000" />
-		<set name="skillRadius" val="150" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="ignoreShld" val="true" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
-				<effect type="Stun" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Momentarily and drastically increases resistance to attacks that decreases P. Def./M. Def. or cancels buffs. The player cannot move while the effect lasts. Effect 2. -->
-	<skill id="684" levels="1" name="Divine Knight Ultimate Defense">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="36" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="900000" />
-		<set name="aggroPoints" val="438" />
-		<for>
-			<abnormal duration="30" stackLvl="2" stackType="pd_up_special">
-				<effect type="ImmobileBuff" val="0" />
-				<add stat="pDef" val="3600" />
-				<add stat="mDef" val="2700" />
-				<addPercent stat="cancelRes" val="80" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Increases P. Def. of the party members by sacrificing yourself. Available only when HP is under 30 percent. -->
-	<skill id="685" levels="1" name="Sacrifice Knight">
-		<set name="target" val="TARGET_PARTY" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="1800000" />
-		<set name="staticReuse" val="true" />
-		<set name="skillRadius" val="1000" />
-		<cond addName="1" msgId="113">
-			<player hp="30" />
-		</cond>
-		<for>
-			<abnormal noicon="1" self="1">
-				<effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
-				<subPercent stat="limitHp" val="90" />
-			</abnormal>
-			<abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pDef" val="20" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Shoots arrows that inflict both damage and shock to the enemy in order to cancel target state. Momentarily stuns target. Over-hit is possible. Power 2323. -->
-	<skill id="686" levels="1" name="Divine Rogue Stun Shot">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="1" />
-		<set name="mpConsume" val="116" />
-		<set name="power" val="2323" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="900" />
-		<set name="effectRange" val="1400" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
-				<effect type="Stun" val="0" />
-			</abnormal>
-			<abnormal effectType="DEBUFF" landRate="50" noicon="1">
-				<effect type="RemoveTarget" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Shoots 2 arrows continuously. Critical hit is possible. Over-hit is possible. Power 6195. -->
-	<skill id="687" levels="1" name="Divine Rogue Double Shot">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="159" />
-		<set name="power" val="6195" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="900" />
-		<set name="effectRange" val="1400" />
-		<set name="SSBoost" val="2.0" />
-		<set name="baseCritRate" val="15" />
-		<set name="overHit" val="true" />
-	</skill>
-	<!-- Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit is possible. Power 1549. Effect 3. -->
-	<skill id="688" levels="1" name="Divine Rogue Bleed Attack">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="lvlDepend" val="1" />
-		<set name="mpConsume" val="80" />
-		<set name="power" val="1549" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="SSBoost" val="2.0" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal count="7" duration="3" effectType="BLEED" landRate="50" stackLvl="3" stackType="bleeding" visualEffect="bleed">
-				<effect type="DamOverTime" val="67" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Attacks the target's vital points. CP Siphon. Over-hit is possible. Power 6969. -->
-	<skill id="689" levels="1" name="Divine Rogue Deadly Blow">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="BLOW" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="72" />
-		<set name="power" val="6969" />
-		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="blowChance" val="20" />
-		<set name="lethal1" val="10" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-		<set name="condition" val="16" />
-	</skill>
-	<!-- Temporarily increase Evasion by 4. -->
-	<skill id="690" levels="1" name="Divine Rogue Agility">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="73" />
-		<set name="hitTime" val="4000" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-		<set name="aggroPoints" val="495" />
-		<for>
-			<abnormal duration="1200" stackLvl="3" stackType="avoid_up">
-				<effect type="Buff" val="0" />
-				<add stat="rEvas" val="4" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Increase party member's Evasion by sacrificing yourself. Available only when HP is under 30 percent. -->
-	<skill id="691" levels="1" name="Sacrifice Rogue">
-		<set name="target" val="TARGET_PARTY" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="1800000" />
-		<set name="staticReuse" val="true" />
-		<set name="skillRadius" val="1000" />
-		<cond addName="1" msgId="113">
-			<player hp="30" />
-		</cond>
-		<for>
-			<abnormal noicon="1" self="1">
-				<effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
-				<subPercent stat="limitHp" val="90" />
-			</abnormal>
-			<abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
-				<effect type="Buff" val="0" />
-				<add stat="rEvas" val="10" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Attacks a contacted target with non-attribute attack. Momentarily decreases your M. Atk. during PvP. Power 102. -->
-	<skill id="692" levels="1" name="Divine Wizard Divine Flare">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="73" />
-		<set name="power" val="102" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-		<for>
-			<abnormal duration="3" self="1" stackLvl="0" stackType="ma_down">
-				<effect type="Buff" val="0" />
-				<subPercent stat="pvpMagicalDmg" val="50" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Unleashes holy attack. Over-hit is possible. Power 128. -->
-	<skill id="693" levels="1" name="Divine Wizard Holy Strike">
-		<set name="target" val="TARGET_UNDEAD" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="90" />
-		<set name="power" val="128" />
-		<set name="hitTime" val="5000" />
-		<set name="reuseDelay" val="8000" />
-		<set name="castRange" val="900" />
-		<set name="effectRange" val="1400" />
-		<set name="overHit" val="true" />
-		<set name="element" val="4" />
-		<set name="elementPower" val="20" />
-	</skill>
-	<!-- Attack a large number of enemies with divine rainstorm. Power 64. -->
-	<skill id="694" levels="1" name="Divine Wizard Divine Curtain">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="109" />
-		<set name="power" val="64" />
-		<set name="hitTime" val="5000" />
-		<set name="reuseDelay" val="4000" />
-		<set name="castRange" val="500" />
-		<set name="effectRange" val="1000" />
-		<set name="skillRadius" val="100" />
-		<set name="element" val="4" />
-		<set name="elementPower" val="20" />
-	</skill>
-	<!-- Momentarily bring divine clouds making nearby enemies Sleep. Decrease probability of additional Sleep state while effects last. -->
-	<skill id="695" levels="1" name="Divine Wizard Divine Cloud">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="lvlDepend" val="2" />
-		<set name="mpConsume" val="109" />
-		<set name="hitTime" val="5000" />
-		<set name="reuseDelay" val="8000" />
-		<set name="castRange" val="500" />
-		<set name="effectRange" val="1000" />
-		<set name="skillRadius" val="200" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="MEN" />
-		<for>
-			<abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
-				<effect type="Sleep" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Momentarily decrease Holy Attack Resistance, and increase Dark Attack Resistance. Effect 3. -->
-	<skill id="696" levels="1" name="Divine Wizard Surrender to Holy">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="lvlDepend" val="2" />
-		<set name="mpConsume" val="73" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="750" />
-		<set name="effectRange" val="1250" />
-		<set name="isDebuff" val="true" />
-		<set name="saveVs" val="MEN" />
-		<for>
-			<abnormal duration="30" landRate="80" stackLvl="3" stackType="armor_unholy">
-				<effect type="Debuff" val="0" />
-				<sub stat="holyRes" val="25" />
-				<add stat="darkRes" val="12" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Increase party member's M. Atk. by sacrificing yourself. Usable only when MP is under 10 percent. -->
-	<skill id="697" levels="1" name="Sacrifice Wizard">
-		<set name="target" val="TARGET_PARTY" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2500" />
-		<set name="reuseDelay" val="1800000" />
-		<set name="staticReuse" val="true" />
-		<set name="skillRadius" val="1000" />
-		<cond addName="1" msgId="113">
-			<player mp="10" />
-		</cond>
-		<for>
-			<abnormal noicon="1" self="1">
-				<effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
-				<subPercent stat="limitHp" val="90" />
-			</abnormal>
-			<abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
-				<effect type="Buff" val="0" />
-				<addPercent stat="mAtk" val="20" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Restores HP by 946 power. -->
-	<skill id="698" levels="1" name="Divine Healer Major Heal">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="84" />
-		<set name="power" val="946" />
-		<set name="hitTime" val="5000" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="aggroPoints" val="630" />
-	</skill>
-	<!-- Restores HP by 826 power. -->
-	<skill id="699" levels="1" name="Divine Healer Battle Heal">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="189" />
-		<set name="power" val="826" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="aggroPoints" val="274" />
-	</skill>
+    <!-- Accuracy of clan members in residence increases by 4. -->
+    <skill id="600" levels="1" name="Residence Guidance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="accCombat" val="4" />
+        </for>
+    </skill>
+    <!-- Evasion of clan members in residence increases by 4. -->
+    <skill id="601" levels="1" name="Residence Agility">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="rEvas" val="4" />
+        </for>
+    </skill>
+    <!-- Shield Defense of clan members in residence increases by 20%. -->
+    <skill id="602" levels="1" name="Residence Shield Block">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="rShld" val="20" />
+        </for>
+    </skill>
+    <!-- Shield Defense. of clan members in residence increases by 225. -->
+    <skill id="603" levels="1" name="Residence Shield Defense">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="sDef" val="225" />
+        </for>
+    </skill>
+    <!-- Water/Wind Resistance of clan members in residence increases by 10. -->
+    <skill id="604" levels="1" name="Residence Typhoon Resistance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="waterRes" val="10" />
+            <add stat="windRes" val="10" />
+        </for>
+    </skill>
+    <!-- Fire/Earth Resistance of clan members in residence increases by 10. -->
+    <skill id="605" levels="1" name="Residence Lava Resistance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="fireRes" val="10" />
+            <add stat="earthRes" val="10" />
+        </for>
+    </skill>
+    <!-- Stun Resistance of clan members in residence increases by 10. -->
+    <skill id="606" levels="1" name="Residence Fortitude">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <addPercent stat="stunRes" val="10" />
+        </for>
+    </skill>
+    <!-- Hold Resistance of clan members in residence increases by 10. -->
+    <skill id="607" levels="1" name="Residence Freedom">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <addPercent stat="holdRes" val="10" />
+        </for>
+    </skill>
+    <!-- Sleep Resistance of clan members in residence increases by 10. -->
+    <skill id="608" levels="1" name="Residence Vigilance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <addPercent stat="sleepRes" val="10" />
+        </for>
+    </skill>
+    <!-- The Speed of clan members in residence increases by 6. -->
+    <skill id="609" levels="1" name="Residence Movement">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+        <for>
+            <add stat="runSpd" val="6" />
+        </for>
+    </skill>
+    <!-- When a clan member within the residence is killed by PK/ordinary monster, the item drop rate and XP decrease rate are decreased. -->
+    <skill id="610" levels="1" name="Residence Death Fortune">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="COREDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="2" />
+    </skill>
+    <!--
+        Level 1: The corresponding troops' P. Atk. increase by 17.3.
+        Level 2: The corresponding troops' P. Atk. increase by 17.3 and Critical Rate increase by 15.
+        Level 3: The corresponding troops' P. Atk. increase by 17.3, Critical Rate increase by 15, and Critical Damage increase by 100.
+    -->
+    <skill id="611" levels="3" name="Fire Squad">
+        <table name="#rCrit">0 15 15</table>
+        <table name="#cAtkAdd">0 0 100</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="pAtk" val="17.3" />
+            <add stat="rCrit" val="#rCrit" />
+            <add stat="pCritDmgAdd" val="#cAtkAdd" />
+        </for>
+    </skill>
+    <!--
+        Level 1: The corresponding troops' P. Def. increase by 27.3.
+        Level 2: The corresponding troops' P. Def. increase by 27.3 and M. Def. increase by 17.6.
+        Level 3: The corresponding troops' P. Def. increase by 27.3, M. Def. increase by 17.6, and Shield Defense. increase by 6%.
+    -->
+    <skill id="612" levels="3" name="Water Squad">
+        <table name="#mDef">0 17.6 17.6</table>
+        <table name="#sDef">0 0 6</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="pDef" val="27.3" />
+            <add stat="mDef" val="#mDef" />
+            <addPercent stat="sDef" val="#sDef" />
+        </for>
+    </skill>
+    <!--
+        Level 1: The corresponding troops' Accuracy increase by 2.
+        Level 2: The corresponding troops' Accuracy increase by 2 and Evasion increase by 2.
+        Level 3: The corresponding troops' Accuracy increase by 2, Evasion increase by 2, and Speed increase by 3.
+    -->
+    <skill id="613" levels="3" name="Wind Squad">
+        <table name="#rEvas">0 2 2</table>
+        <table name="#runSpd">0 0 3</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="accCombat" val="2" />
+            <add stat="rEvas" val="#rEvas" />
+            <add stat="runSpd" val="#runSpd" />
+        </for>
+    </skill>
+    <!--
+        Level 1: The corresponding troops' M. Def. increase by 17.
+        Level 2: The corresponding troops' M. Def. increase by 31.1.
+        Level 3: The corresponding troops' M. Def. increase by 44.
+    -->
+    <skill id="614" levels="3" name="Earth Squad">
+        <table name="#mDef">17 31.1 44</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="mDef" val="#mDef" />
+        </for>
+    </skill>
+    <!--
+        Level 1: The corresponding troops' heal power increase by 20.
+        Level 2: The corresponding troops' heal power increase by 20 and Max MP increase by 30%.
+        Level 3: The corresponding troops' heal power increase by 20, Max MP increase by 30%, and MP Consumption decreases by 5%.
+    -->
+    <skill id="615" levels="3" name="Holy Squad">
+        <table name="#maxMp">0 30 30</table>
+        <table name="#MpConsumeRate">0 0 5</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="bonusHp" val="20" />
+            <addPercent stat="maxMp" val="#maxMp" />
+            <subPercent stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
+            <subPercent stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
+            <subPercent stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+        </for>
+    </skill>
+    <!--
+        Level 1: The corresponding troops' M. Atk. increase by 7.17.
+        Level 2: The corresponding troops' M. Atk. increase by 19.32.
+        Level 3: The corresponding troops' M. Atk. increase by 19.32 and M. Critical Damage rate increases by 1%.
+    -->
+    <skill id="616" levels="3" name="Dark Squad">
+        <table name="#mAtk">7.17 19.32 19.32</table>
+        <table name="#mCritRate">0 0 1</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="isClanSkill" val="true" />
+        <set name="minPledgeClass" val="4" />
+        <for>
+            <add stat="mAtk" val="#mAtk" />
+            <addPercentBase stat="mCritRate" val="#mCritRate" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases Evasion by 20 and Speed by 33 for 20 seconds.
+        Level 2: Increases Evasion by 35, Speed by 66 and physical attack skill Evasion Rate by 25% for 20 seconds.
+    -->
+    <skill id="622" levels="2" name="Ultimate Escape">
+        <table name="#rEvas">20 35</table>
+        <table name="#runSpd">33 66</table>
+        <table name="#pSkillEvas">0 25</table>
+        <table name="#mpConsume">31 47</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="900000" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+        <for>
+            <abnormal duration="20" stackLvl="1" stackType="avoid_up_special">
+                <effect type="Buff" val="0" />
+                <add stat="rEvas" val="#rEvas" />
+                <add stat="runSpd" val="#runSpd" />
+                <add stat="pSkillEvas" val="#pSkillEvas" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Gathers in nearby souls. Up to 8 souls can be absorbed at once. Consumes 10 Spirit Ore. -->
+    <skill id="625" levels="1" name="Soul Gathering">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHARGESOUL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeId" val="3031" />
+        <set name="itemConsumeCount" val="10" />
+        <set name="hpConsume" val="200" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="1800000" />
+        <set name="staticReuse" val="true" />
+        <set name="num_souls" val="40" />
+    </skill>
+    <!--
+        Level 1: Increases Critical Rate by 10% and Critical Damage by 111.
+        Level 2: Increases Critical Rate by 15% and Critical Damage by 177.
+        Level 3: Increases Critical Rate by 20% and Critical Damage by 253.
+        Level 4: Increases Critical Rate by 25% and Critical Damage by 317.
+    -->
+    <skill id="626" levels="4" name="Critical Sense">
+        <table name="#rCrit">10 15 20 25</table>
+        <table name="#cAtk">111 177 253 317</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercentBase stat="rCrit" val="#rCrit" />
+            <add stat="pCritDmgAdd" val="#cAtk" />
+        </for>
+    </skill>
+    <!--
+        Level 1: Attacks the enemy with 344 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 2: Attacks the enemy with 367 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 3: Attacks the enemy with 391 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 4: Attacks the enemy with 443 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 5: Attacks the enemy with 471 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 6: Attacks the enemy with 500 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 7: Attacks the enemy with 530 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 8: Attacks the enemy with 562 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 9: Attacks the enemy with 595 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 10: Attacks the enemy with 630 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 11: Attacks the enemy with 666 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 12: Attacks the enemy with 703 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 13: Attacks the enemy with 742 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 14: Attacks the enemy with 782 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 15: Attacks the enemy with 823 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 16: Attacks the enemy with 866 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 17: Attacks the enemy with 910 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 18: Attacks the enemy with 955 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 19: Attacks the enemy with 1002 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 20: Attacks the enemy with 1050 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 21: Attacks the enemy with 1100 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 22: Attacks the enemy with 1150 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 23: Attacks the enemy with 1202 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 24: Attacks the enemy with 1255 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 25: Attacks the enemy with 1309 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 26: Attacks the enemy with 1364 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 27: Attacks the enemy with 1420 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 28: Attacks the enemy with 1476 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 29: Attacks the enemy with 1534 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 30: Attacks the enemy with 1592 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 31: Attacks the enemy with 1651 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 32: Attacks the enemy with 1710 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 33: Attacks the enemy with 1770 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 34: Attacks the enemy with 1830 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 35: Attacks the enemy with 1891 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 36: Attacks the enemy with 1951 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 37: Attacks the enemy with 2012 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 38: Attacks the enemy with 2072 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 39: Attacks the enemy with 2132 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+        Level 40: Attacks the enemy with 2192 Power added to P. Atk. and causes fear for 3 seconds. Requires a crossbow. Over-hit is possible. Consumes 5 Souls.
+    -->
+    <skill id="627" levels="40" name="Soul Shock">
+        <table name="#mpConsume">48 49 51 52 54 56 56 58 59 61 63 65 66 68 70 72 72 74 76 78 80 81 83 85 87 88 89 91 92
+            94 96 97 99 100 102 103 105 106 108 109
+        </table>
+        <table name="#power">344 367 391 443 471 500 530 562 595 630 666 703 742 782 823 866 910 955 1002 1050 1100 1150
+            1202 1255 1309 1364 1420 1476 1534 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192
+        </table>
+        <table name="#magicLvl">40 41 42 43 44 44 45 46 47 48 49 50 51 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65
+            66 67 68 69 70 71 72 73 74 75 76
+        </table>
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="power" val="#power" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="300" />
+        <set name="reuseDelay" val="15000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="isDebuff" val="true" />
+        <set name="weaponsAllowed" val="Bow, Crossbow" />
+        <set name="saveVs" val="MEN" />
+        <set name="soulMaxConsumeCount" val="5" />
+        <for>
+            <abnormal count="3" duration="1" effectType="FEAR" landRate="40" stackLvl="1" stackType="turn_flee">
+                <effect type="Fear" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Opens a treasure chest with a spinning kick. -->
+    <skill id="630" levels="1" name="Rabbit Tornado">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="60000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="staticHitTime" val="true" />
+        <set name="neutral" val="true" />
+        <cond msgId="109">
+            <target npcId="13098,900102" />
+        </cond>
+    </skill>
+    <!-- Increases P. Atk. -->
+    <skill id="631" levels="6" name="Emergent Ability: Attack">
+        <table name="#magicLvl">60 75 80 80 80 80</table>
+        <table name="#pAtkAncient">9.1 17.4 24.8 31.4 37.2 41.4</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="pAtk" val="#pAtkAncient">
+                <using kind="Ancient" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases P. Def. -->
+    <skill id="632" levels="6" name="Emergent Ability: Defense">
+        <table name="#magicLvl">60 75 80 80 80 80</table>
+        <table name="#pDefLight">13.4 26.8 40.2 53.6 67 80.3</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="pDef" val="#pDefLight">
+                <using kind="Light" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Atk. -->
+    <skill id="633" levels="6" name="Emergent Ability: Empower">
+        <table name="#magicLvl">60 75 80 80 80 80</table>
+        <table name="#matk">10.5 20.1 28.7 36.3 43 47.8</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="mAtk" val="#matk" />
+        </for>
+    </skill>
+    <!-- Increases M. Def. -->
+    <skill id="634" levels="6" name="Emergent Ability: M. Def.">
+        <table name="#magicLvl">60 75 80 80 80 80</table>
+        <table name="#mdef">15.1 30.2 45.4 60.5 75.6 90.7</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="mDef" val="#mdef" />
+        </for>
+    </skill>
+    <skill id="635" levels="3" name="Not in Use">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="636" levels="3" name="Not in Use">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <!-- Increases P. Atk. -->
+    <skill id="637" levels="1" name="Master Ability: Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="60" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="pAtk" val="22.9">
+                <using kind="Sword,Big Sword,Blunt,Big Blunt,Pole" />
+            </add>
+            <add stat="pAtk" val="27.9">
+                <using kind="Dual Sword,Dual Fist" />
+            </add>
+            <add stat="pAtk" val="20.1">
+                <using kind="Dagger,Dual Dagger" />
+            </add>
+            <add stat="pAtk" val="59.2">
+                <using kind="Bow" />
+            </add>
+            <add stat="pAtk" val="36.3">
+                <using kind="Crossbow" />
+            </add>
+            <add stat="pAtk" val="5">
+                <using kind="Big Sword" />
+            </add>
+            <add stat="pAtk" val="21.4">
+                <using kind="Rapier" />
+            </add>
+            <add stat="pAtk" val="24.8">
+                <using kind="Ancient" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases M. Atk. -->
+    <skill id="638" levels="1" name="Master Ability: Empower">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="60" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="mAtk" val="28.65" />
+        </for>
+    </skill>
+    <!-- Increases Casting Spd. -->
+    <skill id="639" levels="1" name="Master Ability: Casting">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="mAtkSpd" val="11" />
+        </for>
+    </skill>
+    <!-- Increases Critical Rate. -->
+    <skill id="640" levels="1" name="Master Ability: Focus">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="rCrit" val="30" />
+        </for>
+    </skill>
+    <!-- Increases Max HP. -->
+    <skill id="641" levels="1" name="Knight Ability: Boost HP">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="maxHp" val="295.32" />
+        </for>
+    </skill>
+    <!-- Increases Max MP. -->
+    <skill id="642" levels="1" name="Enchanter Ability: Boost Mana">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="maxMp" val="148.2" />
+        </for>
+    </skill>
+    <!-- Increases Max HP and Max MP. -->
+    <skill id="643" levels="1" name="Summoner Ability: Boost HP/MP">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="maxHp" val="147.66" />
+            <add stat="maxMp" val="74.1" />
+        </for>
+    </skill>
+    <!-- Increase Evasion. -->
+    <skill id="644" levels="1" name="Rogue Ability: Evasion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="rEvas" val="4" />
+        </for>
+    </skill>
+    <!-- Increases bow range. -->
+    <skill id="645" levels="1" name="Rogue Ability: Long Shot">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="pAtkRange" val="100">
+                <using kind="Bow" />
+            </add>
+        </for>
+    </skill>
+    <!-- Increases the recovery rate of MP. -->
+    <skill id="646" levels="1" name="Wizard Ability: Mana Gain">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <add stat="gainMp" val="20" />
+        </for>
+    </skill>
+    <!-- Increases MP regeneration. -->
+    <skill id="647" levels="1" name="Enchanter Ability: Mana Recovery">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <addPercent stat="regMp" val="10" />
+        </for>
+    </skill>
+    <!-- The effect of receiving HP recovery magic increases. Effect 1. -->
+    <skill id="648" levels="1" name="Healer Ability: Prayer">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <addPercent stat="gainHp" val="6" />
+        </for>
+    </skill>
+    <!-- Increases the Paralysis/Hold/Sleep/Stun/Buff-canceling Attack Resistance. -->
+    <skill id="650" levels="1" name="Warrior Ability: Attribute Resistance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <for>
+            <addPercent stat="cancelRes" val="5" />
+            <addPercent stat="stunRes" val="5" />
+            <addPercent stat="holdRes" val="5" />
+            <addPercent stat="sleepRes" val="5" />
+            <addPercent stat="paralysisRes" val="5" />
+        </for>
+    </skill>
+    <!-- Has a chance to increase Atk. Spd. while attacking. Excludes damage caused by a skill or ranged attack. -->
+    <skill id="651" levels="1" name="Warrior Ability: Haste">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <set name="activationChance" val="2" />
+        <set name="chanceType" val="ON_HIT" />
+        <set name="triggeredId" val="5572" />
+        <set name="triggeredLevel" val="1" />
+    </skill>
+    <!-- Has a chance to increase P. Def./M. Def. while being attacked. -->
+    <skill id="652" levels="1" name="Knight Ability: Defense">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <set name="activationChance" val="2" />
+        <set name="chanceType" val="ON_ATTACKED" />
+        <set name="triggeredId" val="5573" />
+        <set name="triggeredLevel" val="1" />
+    </skill>
+    <!-- Has a chance to increase Critical Rate while attacking. -->
+    <skill id="653" levels="1" name="Rogue Ability: Critical Chance">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <set name="activationChance" val="2" />
+        <set name="chanceType" val="ON_HIT" />
+        <set name="triggeredId" val="5574" />
+        <set name="triggeredLevel" val="1" />
+    </skill>
+    <!-- Has a chance to recover MP while attacking. -->
+    <skill id="654" levels="1" name="Wizard Ability: Mana Steal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <set name="activationChance" val="2" />
+        <set name="chanceType" val="ON_HIT" />
+        <set name="triggeredId" val="5575" />
+        <set name="triggeredLevel" val="1" />
+    </skill>
+    <!-- Has a chance to grant invincibility while being attacked. -->
+    <skill id="655" levels="1" name="Enchanter Ability: Barrier">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="75" />
+        <set name="excludedFromCheck" val="true" />
+        <set name="activationChance" val="2" />
+        <set name="chanceType" val="ON_ATTACKED" />
+        <set name="triggeredId" val="5576" />
+        <set name="triggeredLevel" val="1" />
+    </skill>
+    <!-- Attacks the enemy with 2904 Power added to P. Atk. Over-hit and Critical are possible. -->
+    <skill id="675" levels="1" name="Divine Warrior Cross Slash">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="112" />
+        <set name="power" val="2904" />
+        <set name="hitTime" val="1733" />
+        <set name="coolTime" val="167" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="SSBoost" val="2.0" />
+        <set name="baseCritRate" val="15" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+    </skill>
+    <!-- Hurls Momentum to attack the enemy with 2323 Power added to P. Atk. Over-hit and Critical are possible. -->
+    <skill id="676" levels="1" name="Divine Warrior Sonic Blaster">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="56" />
+        <set name="power" val="2323" />
+        <set name="hitTime" val="1900" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="SSBoost" val="2.0" />
+        <set name="baseCritRate" val="15" />
+        <set name="overHit" val="true" />
+    </skill>
+    <!-- Cuts with a downward blow to attack nearby enemies with 2323 Power added to P. Atk. Ignores Shield Defense. Over-hit is possible. -->
+    <skill id="677" levels="1" name="Divine Warrior Transfixion of Earth">
+        <set name="target" val="TARGET_AURA" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="80" />
+        <set name="power" val="2323" />
+        <set name="hitTime" val="1067" />
+        <set name="coolTime" val="733" />
+        <set name="reuseDelay" val="4000" />
+        <set name="skillRadius" val="150" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="ignoreShld" val="true" />
+    </skill>
+    <!-- Increases P. Atk. by 25% for 1 minute. -->
+    <skill id="678" levels="1" name="Divine Warrior War Cry">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="36" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="45000" />
+        <set name="aggroPoints" val="408" />
+        <for>
+            <abnormal duration="60" stackLvl="2" stackType="pa_up_special">
+                <effect type="Buff" val="0" />
+                <addPercent stat="pAtk" val="25" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Sacrifices oneself to increase P. Atk. of all party members by 20% for 30 seconds. Available only when HP is under 30%. -->
+    <skill id="679" levels="1" name="Sacrifice Warrior">
+        <set name="target" val="TARGET_PARTY" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="1800000" />
+        <set name="staticReuse" val="true" />
+        <set name="skillRadius" val="1000" />
+        <cond addName="1" msgId="113">
+            <player hp="30" />
+        </cond>
+        <for>
+            <abnormal noicon="1" self="1">
+                <effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+                <subPercent stat="limitHp" val="90" />
+            </abnormal>
+            <abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
+                <effect type="Buff" val="0" />
+                <addPercent stat="pAtk" val="20" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Provokes the enemy to attack with 6752 Power. -->
+    <skill id="680" levels="1" name="Divine Knight Hate">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="AGGDAMAGE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="2" />
+        <set name="mpConsume" val="51" />
+        <set name="power" val="6752" />
+        <set name="hitTime" val="700" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="6000" />
+        <set name="staticReuse" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="MEN" />
+        <for>
+            <abnormal duration="3" stackLvl="1" stackType="target_lock">
+                <effect type="TargetMe" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Provokes nearby enemies to attack by 6752 Power. -->
+    <skill id="681" levels="1" name="Divine Knight Aggression Aura">
+        <set name="target" val="TARGET_AURA" />
+        <set name="skillType" val="AGGDAMAGE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="2" />
+        <set name="mpConsume" val="144" />
+        <set name="power" val="6752" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="40000" />
+        <set name="staticReuse" val="true" />
+        <set name="skillRadius" val="200" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="MEN" />
+        <for>
+            <abnormal duration="3" stackLvl="1" stackType="target_lock">
+                <effect type="TargetMe" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Cause damage and shock together at the same time. Make the enemies shocked momentarily. Over-hit is possible. Power 1162. -->
+    <skill id="682" levels="1" name="Divine Knight Stun Attack">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="76" />
+        <set name="power" val="1162" />
+        <set name="hitTime" val="1080" />
+        <set name="coolTime" val="720" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
+                <effect type="Stun" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- inflicts Stun and damage to the enemies nearby at the same time. Momentarily stuns nearby enemies. Ignores Shield Defense. Over-hit is possible. Power 775. -->
+    <skill id="683" levels="1" name="Divine Knight Thunder Storm">
+        <set name="target" val="TARGET_AURA" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="114" />
+        <set name="power" val="775" />
+        <set name="hitTime" val="1080" />
+        <set name="coolTime" val="720" />
+        <set name="reuseDelay" val="5000" />
+        <set name="skillRadius" val="150" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="ignoreShld" val="true" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
+                <effect type="Stun" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Momentarily and drastically increases resistance to attacks that decreases P. Def./M. Def. or cancels buffs. The player cannot move while the effect lasts. Effect 2. -->
+    <skill id="684" levels="1" name="Divine Knight Ultimate Defense">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="36" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="900000" />
+        <set name="aggroPoints" val="438" />
+        <for>
+            <abnormal duration="30" stackLvl="2" stackType="pd_up_special">
+                <effect type="ImmobileBuff" val="0" />
+                <add stat="pDef" val="3600" />
+                <add stat="mDef" val="2700" />
+                <addPercent stat="cancelRes" val="80" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Increases P. Def. of the party members by sacrificing yourself. Available only when HP is under 30 percent. -->
+    <skill id="685" levels="1" name="Sacrifice Knight">
+        <set name="target" val="TARGET_PARTY" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="1800000" />
+        <set name="staticReuse" val="true" />
+        <set name="skillRadius" val="1000" />
+        <cond addName="1" msgId="113">
+            <player hp="30" />
+        </cond>
+        <for>
+            <abnormal noicon="1" self="1">
+                <effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+                <subPercent stat="limitHp" val="90" />
+            </abnormal>
+            <abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
+                <effect type="Buff" val="0" />
+                <addPercent stat="pDef" val="20" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Shoots arrows that inflict both damage and shock to the enemy in order to cancel target state. Momentarily stuns target. Over-hit is possible. Power 2323. -->
+    <skill id="686" levels="1" name="Divine Rogue Stun Shot">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="116" />
+        <set name="power" val="2323" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="900" />
+        <set name="effectRange" val="1400" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
+                <effect type="Stun" val="0" />
+            </abnormal>
+            <abnormal effectType="DEBUFF" landRate="50" noicon="1">
+                <effect type="RemoveTarget" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Shoots 2 arrows continuously. Critical hit is possible. Over-hit is possible. Power 6195. -->
+    <skill id="687" levels="1" name="Divine Rogue Double Shot">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="159" />
+        <set name="power" val="6195" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="900" />
+        <set name="effectRange" val="1400" />
+        <set name="SSBoost" val="2.0" />
+        <set name="baseCritRate" val="15" />
+        <set name="overHit" val="true" />
+    </skill>
+    <!-- Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit is possible. Power 1549. Effect 3. -->
+    <skill id="688" levels="1" name="Divine Rogue Bleed Attack">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="80" />
+        <set name="power" val="1549" />
+        <set name="hitTime" val="1080" />
+        <set name="coolTime" val="720" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="SSBoost" val="2.0" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal count="7" duration="3" effectType="BLEED" landRate="50" stackLvl="3" stackType="bleeding"
+                      visualEffect="bleed">
+                <effect type="DamOverTime" val="67" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Attacks the target's vital points. CP Siphon. Over-hit is possible. Power 6969. -->
+    <skill id="689" levels="1" name="Divine Rogue Deadly Blow">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="BLOW" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="72" />
+        <set name="power" val="6969" />
+        <set name="hitTime" val="1080" />
+        <set name="coolTime" val="720" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="blowChance" val="20" />
+        <set name="lethal1" val="10" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+        <set name="condition" val="16" />
+    </skill>
+    <!-- Temporarily increase Evasion by 4. -->
+    <skill id="690" levels="1" name="Divine Rogue Agility">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="73" />
+        <set name="hitTime" val="4000" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+        <set name="aggroPoints" val="495" />
+        <for>
+            <abnormal duration="1200" stackLvl="3" stackType="avoid_up">
+                <effect type="Buff" val="0" />
+                <add stat="rEvas" val="4" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Increase party member's Evasion by sacrificing yourself. Available only when HP is under 30 percent. -->
+    <skill id="691" levels="1" name="Sacrifice Rogue">
+        <set name="target" val="TARGET_PARTY" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="1800000" />
+        <set name="staticReuse" val="true" />
+        <set name="skillRadius" val="1000" />
+        <cond addName="1" msgId="113">
+            <player hp="30" />
+        </cond>
+        <for>
+            <abnormal noicon="1" self="1">
+                <effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+                <subPercent stat="limitHp" val="90" />
+            </abnormal>
+            <abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
+                <effect type="Buff" val="0" />
+                <add stat="rEvas" val="10" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Attacks a contacted target with non-attribute attack. Momentarily decreases your M. Atk. during PvP. Power 102. -->
+    <skill id="692" levels="1" name="Divine Wizard Divine Flare">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="73" />
+        <set name="power" val="102" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="1000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+        <for>
+            <abnormal duration="3" self="1" stackLvl="0" stackType="ma_down">
+                <effect type="Buff" val="0" />
+                <subPercent stat="pvpMagicalDmg" val="50" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Unleashes holy attack. Over-hit is possible. Power 128. -->
+    <skill id="693" levels="1" name="Divine Wizard Holy Strike">
+        <set name="target" val="TARGET_UNDEAD" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="90" />
+        <set name="power" val="128" />
+        <set name="hitTime" val="5000" />
+        <set name="reuseDelay" val="8000" />
+        <set name="castRange" val="900" />
+        <set name="effectRange" val="1400" />
+        <set name="overHit" val="true" />
+        <set name="element" val="4" />
+        <set name="elementPower" val="20" />
+    </skill>
+    <!-- Attack a large number of enemies with divine rainstorm. Power 64. -->
+    <skill id="694" levels="1" name="Divine Wizard Divine Curtain">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="109" />
+        <set name="power" val="64" />
+        <set name="hitTime" val="5000" />
+        <set name="reuseDelay" val="4000" />
+        <set name="castRange" val="500" />
+        <set name="effectRange" val="1000" />
+        <set name="skillRadius" val="100" />
+        <set name="element" val="4" />
+        <set name="elementPower" val="20" />
+    </skill>
+    <!-- Momentarily bring divine clouds making nearby enemies Sleep. Decrease probability of additional Sleep state while effects last. -->
+    <skill id="695" levels="1" name="Divine Wizard Divine Cloud">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="lvlDepend" val="2" />
+        <set name="mpConsume" val="109" />
+        <set name="hitTime" val="5000" />
+        <set name="reuseDelay" val="8000" />
+        <set name="castRange" val="500" />
+        <set name="effectRange" val="1000" />
+        <set name="skillRadius" val="200" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="MEN" />
+        <for>
+            <abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
+                <effect type="Sleep" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Momentarily decrease Holy Attack Resistance, and increase Dark Attack Resistance. Effect 3. -->
+    <skill id="696" levels="1" name="Divine Wizard Surrender to Holy">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="lvlDepend" val="2" />
+        <set name="mpConsume" val="73" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="750" />
+        <set name="effectRange" val="1250" />
+        <set name="isDebuff" val="true" />
+        <set name="saveVs" val="MEN" />
+        <for>
+            <abnormal duration="30" landRate="80" stackLvl="3" stackType="armor_unholy">
+                <effect type="Debuff" val="0" />
+                <sub stat="holyRes" val="25" />
+                <add stat="darkRes" val="12" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Increase party member's M. Atk. by sacrificing yourself. Usable only when MP is under 10 percent. -->
+    <skill id="697" levels="1" name="Sacrifice Wizard">
+        <set name="target" val="TARGET_PARTY" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2500" />
+        <set name="reuseDelay" val="1800000" />
+        <set name="staticReuse" val="true" />
+        <set name="skillRadius" val="1000" />
+        <cond addName="1" msgId="113">
+            <player mp="10" />
+        </cond>
+        <for>
+            <abnormal noicon="1" self="1">
+                <effect chanceType="ON_EXIT" triggeredId="5602" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+                <subPercent stat="limitHp" val="90" />
+            </abnormal>
+            <abnormal duration="30" stackLvl="1" stackType="transform_sacrifice">
+                <effect type="Buff" val="0" />
+                <addPercent stat="mAtk" val="20" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Restores HP by 946 power. -->
+    <skill id="698" levels="1" name="Divine Healer Major Heal">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="84" />
+        <set name="power" val="946" />
+        <set name="hitTime" val="5000" />
+        <set name="reuseDelay" val="1000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="aggroPoints" val="630" />
+    </skill>
+    <!-- Restores HP by 826 power. -->
+    <skill id="699" levels="1" name="Divine Healer Battle Heal">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="189" />
+        <set name="power" val="826" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="1000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="aggroPoints" val="274" />
+    </skill>
 </list>

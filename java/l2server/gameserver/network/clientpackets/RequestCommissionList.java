@@ -18,37 +18,38 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Erlandys
  */
 public final class RequestCommissionList extends L2GameClientPacket
 {
-	
-	@SuppressWarnings("unused")
-	private long _category;
-	@SuppressWarnings("unused")
-	private int _type;
-	@SuppressWarnings("unused")
-	private int _grade;
-	@SuppressWarnings("unused")
-	private String _searchName;
-	
-	@Override
-	protected void readImpl()
-	{
-		_category = readQ();
-		_type = readD();
-		_grade = readD();
-		_searchName = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
+
+    @SuppressWarnings("unused")
+    private long _category;
+    @SuppressWarnings("unused")
+    private int _type;
+    @SuppressWarnings("unused")
+    private int _grade;
+    @SuppressWarnings("unused")
+    private String _searchName;
+
+    @Override
+    protected void readImpl()
+    {
+        _category = readQ();
+        _type = readD();
+        _grade = readD();
+        _searchName = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
 		/*AuctionManager am = AuctionManager.getInstance();
 
 		if (_category == 0)
@@ -75,5 +76,5 @@ public final class RequestCommissionList extends L2GameClientPacket
 
 		am.checkForAuctionsDeletion();
 		activeChar.sendPacket(new ExResponseCommissionList(activeChar, _category, _type, _grade, _searchName));*/
-	}
+    }
 }

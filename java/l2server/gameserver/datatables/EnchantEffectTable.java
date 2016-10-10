@@ -39,103 +39,117 @@ import l2server.util.xml.XmlNode;
  */
 public class EnchantEffectTable
 {
-	public static final EnchantEffectTable getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private final Map<Integer, EnchantEffect> _effects = new HashMap<Integer, EnchantEffect>();
-	
-	// =========================================================
-	// Constructor
-	private EnchantEffectTable()
-	{
-		load();
-	}
-	
-	private final void load()
-	{
-		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchanteffects");
-		if (!dir.exists())
-		{
-			Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
-			return;
-		}
-		
-		List<File> validFiles = new ArrayList<File>();
-		File[] files = dir.listFiles();
-		for (File f : files)
-		{
-			if (f.getName().endsWith(".xml"))
-				validFiles.add(f);
-		}
-		
-		for (File f : validFiles)
-		{
-			try
-			{
-				XmlDocument doc = new XmlDocument(f);
-				for (XmlNode n : doc.getChildren())
-				{
-					if (!n.getName().equalsIgnoreCase("list"))
-						continue;
-					
-					for (XmlNode e : n.getChildren())
-					{
-						if (!e.getName().equalsIgnoreCase("effect"))
-							continue;
-						
-						int id = e.getInt("id");
-						int rarity = e.getInt("rarity");
-						int slot = e.getInt("slot");
-						EnchantEffect effect = new EnchantEffect(id, rarity, slot);
-						
-						for (XmlNode effectNode : e.getChildren())
-						{
-							if (effectNode.getName().equalsIgnoreCase("skill"))
-							{
-								int skillId = effectNode.getInt("id");
-								int skillLevel = effectNode.getInt("level");
-								effect.setSkill(skillId, skillLevel);
-								continue;
-							}
-							
-							String stat = effectNode.getString("stat", "");
-							double val = effectNode.getDouble("val", 0.0);
-							Func func = null;
-							if (effectNode.getName().equalsIgnoreCase("add"))
-								func = new FuncAdd(Stats.fromString(stat), effect, new LambdaConst(val));
-							else if (effectNode.getName().equalsIgnoreCase("baseAdd"))
-								func = new FuncBaseAdd(Stats.fromString(stat), effect, new LambdaConst(val));
-							else if (effectNode.getName().equalsIgnoreCase("addPercent"))
-								func = new FuncAddPercent(Stats.fromString(stat), effect, new LambdaConst(val));
-							
-							if (func != null)
-								effect.addFunc(func);
-						}
-						
-						_effects.put(id, effect);
-					}
-				}
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.SEVERE, "Error loading enchant effects", e);
-				return;
-			}
-		}
-		
-		Log.info("EnchantEffectTable: Loaded " + _effects.size() + " enchant effects.");
-	}
-	
-	public final EnchantEffect getEffect(int id)
-	{
-		return _effects.get(id);
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final EnchantEffectTable _instance = new EnchantEffectTable();
-	}
+    public static final EnchantEffectTable getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private final Map<Integer, EnchantEffect> _effects = new HashMap<Integer, EnchantEffect>();
+
+    // =========================================================
+    // Constructor
+    private EnchantEffectTable()
+    {
+        load();
+    }
+
+    private final void load()
+    {
+        File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchanteffects");
+        if (!dir.exists())
+        {
+            Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
+            return;
+        }
+
+        List<File> validFiles = new ArrayList<File>();
+        File[] files = dir.listFiles();
+        for (File f : files)
+        {
+            if (f.getName().endsWith(".xml"))
+            {
+                validFiles.add(f);
+            }
+        }
+
+        for (File f : validFiles)
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument(f);
+                for (XmlNode n : doc.getChildren())
+                {
+                    if (!n.getName().equalsIgnoreCase("list"))
+                    {
+                        continue;
+                    }
+
+                    for (XmlNode e : n.getChildren())
+                    {
+                        if (!e.getName().equalsIgnoreCase("effect"))
+                        {
+                            continue;
+                        }
+
+                        int id = e.getInt("id");
+                        int rarity = e.getInt("rarity");
+                        int slot = e.getInt("slot");
+                        EnchantEffect effect = new EnchantEffect(id, rarity, slot);
+
+                        for (XmlNode effectNode : e.getChildren())
+                        {
+                            if (effectNode.getName().equalsIgnoreCase("skill"))
+                            {
+                                int skillId = effectNode.getInt("id");
+                                int skillLevel = effectNode.getInt("level");
+                                effect.setSkill(skillId, skillLevel);
+                                continue;
+                            }
+
+                            String stat = effectNode.getString("stat", "");
+                            double val = effectNode.getDouble("val", 0.0);
+                            Func func = null;
+                            if (effectNode.getName().equalsIgnoreCase("add"))
+                            {
+                                func = new FuncAdd(Stats.fromString(stat), effect, new LambdaConst(val));
+                            }
+                            else if (effectNode.getName().equalsIgnoreCase("baseAdd"))
+                            {
+                                func = new FuncBaseAdd(Stats.fromString(stat), effect, new LambdaConst(val));
+                            }
+                            else if (effectNode.getName().equalsIgnoreCase("addPercent"))
+                            {
+                                func = new FuncAddPercent(Stats.fromString(stat), effect, new LambdaConst(val));
+                            }
+
+                            if (func != null)
+                            {
+                                effect.addFunc(func);
+                            }
+                        }
+
+                        _effects.put(id, effect);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.log(Level.SEVERE, "Error loading enchant effects", e);
+                return;
+            }
+        }
+
+        Log.info("EnchantEffectTable: Loaded " + _effects.size() + " enchant effects.");
+    }
+
+    public final EnchantEffect getEffect(int id)
+    {
+        return _effects.get(id);
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final EnchantEffectTable _instance = new EnchantEffectTable();
+    }
 }

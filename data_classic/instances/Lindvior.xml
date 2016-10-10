@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Lindvior">
-	<activityTime val="120" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="10" />
-	<spawnPoint spawnX="48257" spawnY="-30181" spawnZ="-1683" />
-	<spawnlist>
-		<!-- Guard Generator -->
-		<spawn npcId="19479" x="48542" y="-27469" z="-1408" heading="32172" respawn="0" />
-		<spawn npcId="19479" x="48563" y="-26857" z="-1408" heading="33049" respawn="0" />
-		<spawn npcId="19479" x="45593" y="-23874" z="-1408" heading="49016" respawn="0" />
-		<spawn npcId="19479" x="44979" y="-23863" z="-1408" heading="49017" respawn="0" />
-		<spawn npcId="19479" x="41935" y="-26836" z="-1408" heading="65006" respawn="0" />
-		<spawn npcId="19479" x="41941" y="-27496" z="-1408" heading="64884" respawn="0" />
-		<spawn npcId="19479" x="45002" y="-30406" z="-1408" heading="15082" respawn="0" />
-		<spawn npcId="19479" x="45593" y="-30387" z="-1408" heading="16747" respawn="0" />
-		<!-- Generators -->
-		<spawn npcId="19426" x="45282" y="-23965" z="-1404" heading="12313" respawn="0" />
-		<spawn npcId="19426" x="42091" y="-27162" z="-1404" heading="12313" respawn="0" />
-		<spawn npcId="19426" x="45281" y="-30367" z="-1404" heading="44315" respawn="0" />
-		<spawn npcId="19426" x="48486" y="-27175" z="-1404" heading="3637" respawn="0" />
-		<!-- Lyn Draco -->
-		<spawn npcId="25897" x="48344" y="-27477" z="-1408" heading="942" respawn="0" />
-		<spawn npcId="25897" x="42193" y="-26841" z="-1408" heading="32911" respawn="0" />
-		<spawn npcId="25897" x="42176" y="-27493" z="-1408" heading="32369" respawn="0" />
-		<spawn npcId="25897" x="44996" y="-30173" z="-1408" heading="49007" respawn="0" />
-		<!-- Lyn Draco -->
-		<spawn npcId="25895" x="48361" y="-26856" z="-1408" heading="309" respawn="0" />
-		<spawn npcId="25895" x="45595" y="-24120" z="-1408" heading="15685" respawn="0" />
-		<spawn npcId="25895" x="44977" y="-24075" z="-1408" heading="16874" respawn="0" />
-		<spawn npcId="25895" x="45592" y="-30206" z="-1408" heading="49151" respawn="0" />
-	</spawnlist>
+    <activityTime val="120" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="48257" spawnY="-30181" spawnZ="-1683" />
+    <spawnlist>
+        <!-- Guard Generator -->
+        <spawn npcId="19479" x="48542" y="-27469" z="-1408" heading="32172" respawn="0" />
+        <spawn npcId="19479" x="48563" y="-26857" z="-1408" heading="33049" respawn="0" />
+        <spawn npcId="19479" x="45593" y="-23874" z="-1408" heading="49016" respawn="0" />
+        <spawn npcId="19479" x="44979" y="-23863" z="-1408" heading="49017" respawn="0" />
+        <spawn npcId="19479" x="41935" y="-26836" z="-1408" heading="65006" respawn="0" />
+        <spawn npcId="19479" x="41941" y="-27496" z="-1408" heading="64884" respawn="0" />
+        <spawn npcId="19479" x="45002" y="-30406" z="-1408" heading="15082" respawn="0" />
+        <spawn npcId="19479" x="45593" y="-30387" z="-1408" heading="16747" respawn="0" />
+        <!-- Generators -->
+        <spawn npcId="19426" x="45282" y="-23965" z="-1404" heading="12313" respawn="0" />
+        <spawn npcId="19426" x="42091" y="-27162" z="-1404" heading="12313" respawn="0" />
+        <spawn npcId="19426" x="45281" y="-30367" z="-1404" heading="44315" respawn="0" />
+        <spawn npcId="19426" x="48486" y="-27175" z="-1404" heading="3637" respawn="0" />
+        <!-- Lyn Draco -->
+        <spawn npcId="25897" x="48344" y="-27477" z="-1408" heading="942" respawn="0" />
+        <spawn npcId="25897" x="42193" y="-26841" z="-1408" heading="32911" respawn="0" />
+        <spawn npcId="25897" x="42176" y="-27493" z="-1408" heading="32369" respawn="0" />
+        <spawn npcId="25897" x="44996" y="-30173" z="-1408" heading="49007" respawn="0" />
+        <!-- Lyn Draco -->
+        <spawn npcId="25895" x="48361" y="-26856" z="-1408" heading="309" respawn="0" />
+        <spawn npcId="25895" x="45595" y="-24120" z="-1408" heading="15685" respawn="0" />
+        <spawn npcId="25895" x="44977" y="-24075" z="-1408" heading="16874" respawn="0" />
+        <spawn npcId="25895" x="45592" y="-30206" z="-1408" heading="49151" respawn="0" />
+    </spawnlist>
 </instance>

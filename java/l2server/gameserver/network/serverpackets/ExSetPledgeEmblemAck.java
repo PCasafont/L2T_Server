@@ -20,19 +20,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExSetPledgeEmblemAck extends L2GameServerPacket
 {
-	private int _ack;
-	
-	public ExSetPledgeEmblemAck(int ack)
-	{
-		_ack = ack;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_ack);
-	}
+    private int _ack;
+
+    public ExSetPledgeEmblemAck(int ack)
+    {
+        _ack = ack;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_ack);
+    }
 }

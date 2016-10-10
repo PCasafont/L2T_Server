@@ -32,42 +32,46 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler
 {
-	/**
-	 * 
-	 * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance magicGem, boolean forcedUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance)playable;
-		
-		if (!player.getFloodProtectors().getMagicGem().tryPerformAction("Magic Gem"))
-			return;
-		
-		if (Config.isServer(Config.TENKAI))
-		{
-			if (player.getInstanceId() == 0 && !player.isInsideZone(L2Character.ZONE_PVP)
-					&& (!player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND)
-							|| player.isInsideZone(L2Character.ZONE_TOWN))
-					&& player.getEvent() == null && !player.isInOlympiadMode()
-					&& !AttackStanceTaskManager.getInstance().getAttackStanceTask(player)
-					&& InstanceManager.getInstance().getInstance(player.getObjectId()) == null
-					&& player.getPvpFlag() == 0)
-			{
-				player.spawnServitors();
-				player.sendMessage("You use a Magic Gem.");
-			}
-			else
-				player.sendMessage("You cannot use a Magic Gem right now.");
-		}
-		else if (Config.isServer(Config.FUSION | Config.RAMPAGE))
-		{
-			NpcHtmlMessage nhm = new NpcHtmlMessage(0, 1);
-			nhm.setFile(player.getHtmlPrefix(), "MagicGem/Index.htm");
-			player.sendPacket(nhm);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-		}
-	}
+    /**
+     * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance magicGem, boolean forcedUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) playable;
+
+        if (!player.getFloodProtectors().getMagicGem().tryPerformAction("Magic Gem"))
+        {
+            return;
+        }
+
+        if (Config.isServer(Config.TENKAI))
+        {
+            if (player.getInstanceId() == 0 && !player.isInsideZone(L2Character.ZONE_PVP) && (!player
+                    .isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player
+                    .isInsideZone(L2Character.ZONE_TOWN)) && player.getEvent() == null && !player
+                    .isInOlympiadMode() && !AttackStanceTaskManager.getInstance()
+                    .getAttackStanceTask(player) && InstanceManager.getInstance()
+                    .getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0)
+            {
+                player.spawnServitors();
+                player.sendMessage("You use a Magic Gem.");
+            }
+            else
+            {
+                player.sendMessage("You cannot use a Magic Gem right now.");
+            }
+        }
+        else if (Config.isServer(Config.FUSION | Config.RAMPAGE))
+        {
+            NpcHtmlMessage nhm = new NpcHtmlMessage(0, 1);
+            nhm.setFile(player.getHtmlPrefix(), "MagicGem/Index.htm");
+            player.sendPacket(nhm);
+            player.sendPacket(ActionFailed.STATIC_PACKET);
+        }
+    }
 }

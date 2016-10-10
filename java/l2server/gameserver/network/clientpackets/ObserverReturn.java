@@ -24,21 +24,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class ObserverReturn extends L2GameClientPacket
 {
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		if (activeChar.inObserverMode())
-			activeChar.leaveObserverMode();
-		//activeChar.teleToLocation(activeChar.getObsX(), activeChar.getObsY(), activeChar.getObsZ());
-	}
+    //
+
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        if (activeChar.inObserverMode())
+        {
+            activeChar.leaveObserverMode();
+        }
+        //activeChar.teleToLocation(activeChar.getObsX(), activeChar.getObsY(), activeChar.getObsZ());
+    }
 }

@@ -20,20 +20,22 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerEvent extends Condition
 {
-	private final boolean _val;
-	
-	public ConditionPlayerEvent(boolean val)
-	{
-		_val = val;
-	}
-	
-	@Override
-	public boolean testImpl(Env env)
-	{
-		final L2PcInstance player = env.player.getActingPlayer();
-		if (player == null || !player.isPlayingEvent())
-			return !_val;
-		
-		return _val;
-	}
+    private final boolean _val;
+
+    public ConditionPlayerEvent(boolean val)
+    {
+        _val = val;
+    }
+
+    @Override
+    public boolean testImpl(Env env)
+    {
+        final L2PcInstance player = env.player.getActingPlayer();
+        if (player == null || !player.isPlayingEvent())
+        {
+            return !_val;
+        }
+
+        return _val;
+    }
 }

@@ -17,22 +17,22 @@ package l2server.gameserver.network.serverpackets;
 
 public final class TutorialShowHtml extends L2GameServerPacket
 {
-	private int _type;
-	private String _html;
-	
-	public TutorialShowHtml(int type, String html)
-	{
-		_type = type;
-		_html = html;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_type);
-		writeS(_html);
-	}
+    private int _type;
+    private String _html;
+
+    public TutorialShowHtml(int type, String html)
+    {
+        _type = type;
+        _html = html;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_type);
+        writeS(_html);
+    }
 }

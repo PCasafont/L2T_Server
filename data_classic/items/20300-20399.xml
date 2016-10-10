@@ -1,1485 +1,1486 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Bracelet that summons Agathion - Blue Sumo Wrestler. Cooldown is 1 hour. -->
-	<item id="20300" type="Armor" name="Agathion - Blue Sumo Wrestler - Wild Magic (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_sumo_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21044-1;23058-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - Great Sumo Match. -->
-	<item id="20301" type="Armor" name="Agathion - Great Sumo Match">
-		<set name="icon" val="BranchSys.icon.br_aga_sumo_match_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21045-1;23051-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - Great Sumo Match. Cooldown is 1 hour. -->
-	<item id="20302" type="Armor" name="Agathion - Great Sumo Match - Big Head / Firework (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_sumo_match_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21045-1;23059-1;23060-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - Button-eyed Bear Doll. -->
-	<item id="20303" type="Armor" name="Agathion - Button-eyed Bear Doll">
-		<set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21046-1;23052-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 12 hours. -->
-	<item id="20304" type="Armor" name="Agathion - Button-eyed Bear Doll - Escape (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21046-1;23061-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 12 hours. -->
-	<item id="20305" type="Armor" name="Agathion - Button-eyed Bear Doll - Resurrection (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21046-1;23062-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 1 hour. -->
-	<item id="20306" type="Armor" name="Agathion - Button-eyed Bear Doll - Vitality (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21046-1;23063-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - God of Fortune. -->
-	<item id="20307" type="Armor" name="Agathion - God of Fortune">
-		<set name="icon" val="BranchSys.icon.br_aga_wealth_god_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21047-1;23053-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - God of Fortune. Cooldown is 1 hour. -->
-	<item id="20308" type="Armor" name="Agathion - God of Fortune - Vitality (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_wealth_god_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21047-1;23064-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Can summon Agathion - Dryad when equipped. -->
-	<item id="20309" type="Armor" name="Agathion - Dryad">
-		<set name="icon" val="BranchSys.icon.br_aga_dryad_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21048-1;23054-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - Wonboso. -->
-	<item id="20310" type="Armor" name="Agathion - Wonboso">
-		<set name="icon" val="BranchSys.icon.br_aga_cashcow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21049-1;23055-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - Wonboso. Cooldown is 1 hour. -->
-	<item id="20311" type="Armor" name="Agathion - Wonboso - Wind Walk (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_cashcow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21049-1;23065-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Bracelet that summons Agathion - Daewoonso. -->
-	<item id="20312" type="Armor" name="Agathion - Daewoonso">
-		<set name="icon" val="BranchSys.icon.br_aga_luckycow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21050-1;23056-1" />
-	</item>
-	<!-- Bracelet that summons Agathion - Daewoonso. Cooldown is 1 hour. -->
-	<item id="20313" type="Armor" name="Agathion - Daewoonso - New Year's Gift (7-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_luckycow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21050-1;23066-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Wrapped Pack containing Birthday Cake. -->
-	<item id="20314" type="EtcItem" name="Birthday Cake Pack - Vitality">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20320,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Goggles. -->
-	<item id="20315" type="EtcItem" name="Goggles Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20321,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Napoleon Hat. -->
-	<item id="20316" type="EtcItem" name="Napoleon Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20322,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Horn Hairband. Females only. -->
-	<item id="20317" type="EtcItem" name="Horn Hairband Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20323,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Black Gem Mask. -->
-	<item id="20318" type="EtcItem" name="Black Gem Mask Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20324,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Plastic Hair. -->
-	<item id="20319" type="EtcItem" name="Plastic Hair Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20325,1,1,100" />
-	</item>
-	<!-- Summons a Birthday Cake that recovers Vitality when XP are acquired. It'll be effective only when summoned at a certain distance away from the village. It lasts for 20 min. -->
-	<item id="20320" type="EtcItem" name="Birthday Cake - Vitality (24-hour)">
-		<set name="icon" val="BranchSys.icon.br_birthday_cake_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22034-1" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- A stylish goggle accessory with a fine silver decoration. Uses 1 hair accessory slot. -->
-	<item id="20321" type="Armor" name="Goggles">
-		<set name="icon" val="BranchSys.icon.br_goggles_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- A Napoleon Hat bursting with enough energy to conquer the world. -->
-	<item id="20322" type="Armor" name="Napoleon Hat">
-		<set name="icon" val="BranchSys.icon.br_napoleonic_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Pink hairband accessory with a cute horn dangling. Females only. -->
-	<item id="20323" type="Armor" name="Horn Hairband">
-		<set name="icon" val="BranchSys.icon.br_horn_hairband_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Black gem mask accessory made of luxurious metal material. -->
-	<item id="20324" type="Armor" name="Black Gem Mask">
-		<set name="icon" val="BranchSys.icon.br_black_gem_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic Hair. It changes to an attractive pink wig for female and a blue wig for male. Uses 2 accessory slots. -->
-	<item id="20325" type="Armor" name="Plastic Hair">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- If used, five thousand Beast Soulshots are acquired. -->
-	<item id="20326" type="EtcItem" name="Beast Soulshot Pack">
-		<set name="icon" val="BranchSys.icon.br_box_beast_soul_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20332,5000,5000,100" />
-	</item>
-	<!-- If used, five thousand Beast Spiritshots are acquired. -->
-	<item id="20327" type="EtcItem" name="Beast Spiritshot Pack">
-		<set name="icon" val="BranchSys.icon.br_box_beast_spirit_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20333,5000,5000,100" />
-	</item>
-	<!-- If used, five thousand Blessed Beast Spiritshots are acquired. -->
-	<item id="20328" type="EtcItem" name="Blessed Beast Spiritshot Pack">
-		<set name="icon" val="BranchSys.icon.br_box_blessed_beast_spirit_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20334,5000,5000,100" />
-	</item>
-	<!-- If used, ten thousand Beast Soulshots are acquired. -->
-	<item id="20329" type="EtcItem" name="Beast Soulshot Large Pack">
-		<set name="icon" val="BranchSys.icon.br_box_beast_soul_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20332,10000,10000,100" />
-	</item>
-	<!-- If used, ten thousand Beast Spiritshots are acquired. -->
-	<item id="20330" type="EtcItem" name="Beast Spiritshot Large Pack">
-		<set name="icon" val="BranchSys.icon.br_box_beast_spirit_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20333,10000,10000,100" />
-	</item>
-	<!-- If used, ten thousand Blessed Beast Spiritshots are acquired. -->
-	<item id="20331" type="EtcItem" name="Blessed Beast Spiritshot Large Pack">
-		<set name="icon" val="BranchSys.icon.br_box_blessed_beast_spirit_shot_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20334,10000,10000,100" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its P. Atk. significantly. Used from the master's inventory. -->
-	<item id="20332" type="EtcItem" name="Beast Soulshot">
-		<set name="icon" val="BranchSys.icon.br_beast_soul_shot_i00" />
-		<set name="default_action" val="summon_soulshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BeastSoulShot" />
-		<set name="item_skill" val="22036-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its M. Atk. Used from the master's inventory. -->
-	<item id="20333" type="EtcItem" name="Beast Spiritshot">
-		<set name="icon" val="BranchSys.icon.br_beast_spirit_shot_i00" />
-		<set name="default_action" val="summon_spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BeastSpiritShot" />
-		<set name="item_skill" val="22037-1" />
-	</item>
-	<!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its M. Atk. significantly. Used from the master's inventory. -->
-	<item id="20334" type="EtcItem" name="Blessed Beast Spiritshot">
-		<set name="icon" val="BranchSys.icon.br_blessed_beast_spirit_shot_i00" />
-		<set name="default_action" val="summon_spiritshot" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="BeastSpiritShot" />
-		<set name="item_skill" val="22038-1" />
-	</item>
-	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, increases acquired XP by 30%. The timer decreases even during log-off state. Only one XP Rune can be applied at any given time regardless of additional XP Runes in ones inventory. -->
-	<item id="20335" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-1" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20336" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-2" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 30%. The remaining time decreases even when not playing. -->
-	<item id="20337" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-1" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20338" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-2" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 30%. The remaining time decreases even when not playing. -->
-	<item id="20339" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20340" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22039-2" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20341" type="EtcItem" name="SP Rune 30% - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-1" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20342" type="EtcItem" name="SP Rune 50% - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-2" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 30%. The remaining time decreases even when not playing. -->
-	<item id="20343" type="EtcItem" name="SP Rune 30% - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-1" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20344" type="EtcItem" name="SP Rune 50% - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-2" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 30%. The remaining time decreases even when not playing. -->
-	<item id="20345" type="EtcItem" name="SP Rune 30% - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
-	<item id="20346" type="EtcItem" name="SP Rune 50% - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22040-2" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20347" type="EtcItem" name="Rune of Crystal (Lv. 3) - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-1" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20348" type="EtcItem" name="Rune of Crystal (Lv. 5) - 5-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-2" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20349" type="EtcItem" name="Rune of Crystal (Lv. 3) - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-1" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20350" type="EtcItem" name="Rune of Crystal (Lv. 5) - 10-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-2" />
-		<set name="time" val="600" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20351" type="EtcItem" name="Rune of Crystal (Lv. 3) - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-1" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
-	<item id="20352" type="EtcItem" name="Rune of Crystal (Lv. 5) - 7-day">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22041-2" />
-		<set name="time" val="10080" />
-	</item>
-	<!-- It recovers CP by 200. Cooldown is very short. -->
-	<item id="20353" type="EtcItem" name="Greater CP Potion">
-		<set name="icon" val="BranchSys.icon.br_cp_potion_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="reuse_delay" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22042-1" />
-	</item>
-	<!-- It recovers CP by 800. Any character between levels 20 and 39 can use it only for oneself. Cooldown 5 min. -->
-	<item id="20354" type="EtcItem" name="Elixir of CP (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22043-2" />
-	</item>
-	<!-- It recovers CP by 1500. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown 5 min. -->
-	<item id="20355" type="EtcItem" name="Elixir of CP (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22043-3" />
-	</item>
-	<!-- It recovers CP by 2000. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown 5 min. -->
-	<item id="20356" type="EtcItem" name="Elixir of CP (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22043-4" />
-	</item>
-	<!-- It recovers CP by 2500. Any character between levels 61 and 75 can use it only for oneself. Cooldown 5 min. -->
-	<item id="20357" type="EtcItem" name="Elixir of CP (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22043-5" />
-	</item>
-	<!-- It recovers CP by 3000. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
-	<item id="20358" type="EtcItem" name="Elixir of CP (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="7" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22043-6" />
-	</item>
-	<!-- Recovers HP by 50%. Any character between levels 20 and 39 can use it only for oneself. Cooldown 5 min. -->
-	<item id="20359" type="EtcItem" name="Elixir of Life (D-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_d_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="2" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22044-2" />
-	</item>
-	<!-- Recovers HP by 50%. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown 5 min. -->
-	<item id="20360" type="EtcItem" name="Elixir of Life (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_c_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="3" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22044-3" />
-	</item>
-	<!-- Recovers HP by 50%. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown 5 min. -->
-	<item id="20361" type="EtcItem" name="Elixir of Life (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_b_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="4" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22044-4" />
-	</item>
-	<!-- Recovers HP by 50%. Any character between levels 61 and 75 can use it only for oneself. Cooldown 5 min. -->
-	<item id="20362" type="EtcItem" name="Elixir of Life (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_a_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="5" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22044-5" />
-	</item>
-	<!-- Recovers HP by 50%. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
-	<item id="20363" type="EtcItem" name="Elixir of Life (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="6" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="Elixir" />
-		<set name="item_skill" val="22044-6" />
-	</item>
-	<!-- Transforms you into an Onyx Beast for 30 min. -->
-	<item id="20364" type="EtcItem" name="Transformation Scroll: Onyx Beast">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22045-1" />
-	</item>
-	<!-- Transforms you into a Doom Wraith for 30 min. -->
-	<item id="20365" type="EtcItem" name="Transformation Scroll: Doom Wraith">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22046-1" />
-	</item>
-	<!-- Transforms you into a Grail Apostle for 30 min. -->
-	<item id="20366" type="EtcItem" name="Transformation Scroll: Grail Apostle">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22047-1" />
-	</item>
-	<!-- Transforms you into a Unicorn for 30 min. -->
-	<item id="20367" type="EtcItem" name="Transformation Scroll: Unicorn">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22048-1" />
-	</item>
-	<!-- Transforms you into a Lilim Knight for 30 min. -->
-	<item id="20368" type="EtcItem" name="Transformation Scroll: Lilim Knight">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22049-1" />
-	</item>
-	<!-- Transforms you into a Golem Guardian for 30 min. -->
-	<item id="20369" type="EtcItem" name="Transformation Scroll: Golem Guardian">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22050-1" />
-	</item>
-	<!-- Transforms you into an Inferno Drake for 30 min. -->
-	<item id="20370" type="EtcItem" name="Transformation Scroll: Inferno Drake">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22051-1" />
-	</item>
-	<!-- Transforms you into a Dragon Bomber for 30 min. -->
-	<item id="20371" type="EtcItem" name="Transformation Scroll: Dragon Bomber">
-		<set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22052-1" />
-	</item>
-	<!-- Magic scroll that moves you to Talking Island Village. -->
-	<item id="20372" type="EtcItem" name="Scroll of Escape: Talking Island Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Elven Village. -->
-	<item id="20373" type="EtcItem" name="Scroll of Escape: Elven Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-2" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Dark Elf Village. -->
-	<item id="20374" type="EtcItem" name="Scroll of Escape: Dark Elf Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-3" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Orc Village. -->
-	<item id="20375" type="EtcItem" name="Scroll of Escape: Orc Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-4" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Dwarven Village. -->
-	<item id="20376" type="EtcItem" name="Scroll of Escape: Dwarven Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-5" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Gludin Village. -->
-	<item id="20377" type="EtcItem" name="Scroll of Escape: Gludin Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-6" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that teleports you to the Town of Gludio. -->
-	<item id="20378" type="EtcItem" name="Scroll of Escape: Town of Gludio">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-7" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Town of Dion. -->
-	<item id="20379" type="EtcItem" name="Scroll of Escape: Town of Dion">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-8" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Floran Village. -->
-	<item id="20380" type="EtcItem" name="Scroll of Escape: Floran Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-9" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that teleports you to the Town of Giran. -->
-	<item id="20381" type="EtcItem" name="Scroll of Escape: Town of Giran">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-10" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Hardin's Academy. -->
-	<item id="20382" type="EtcItem" name="Scroll of Escape: Hardin's Academy">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-11" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Heine. -->
-	<item id="20383" type="EtcItem" name="Scroll of Escape: Heine">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-12" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Town of Oren. -->
-	<item id="20384" type="EtcItem" name="Scroll of Escape: Town of Oren">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-13" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Ivory Tower. -->
-	<item id="20385" type="EtcItem" name="Scroll of Escape: Ivory Tower">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-14" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Hunter's Village. -->
-	<item id="20386" type="EtcItem" name="Scroll of Escape: Hunter's Village">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-15" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that teleports you to the Town of Aden. -->
-	<item id="20387" type="EtcItem" name="Scroll of Escape: Town of Aden">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-16" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Town of Goddard. -->
-	<item id="20388" type="EtcItem" name="Scroll of Escape: Town of Goddard">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-17" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to the Town of Rune. -->
-	<item id="20389" type="EtcItem" name="Scroll of Escape: Town of Rune">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-18" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magic scroll that moves you to Town of Schuttgart. -->
-	<item id="20390" type="EtcItem" name="Scroll of Escape: Town of Schuttgart">
-		<set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22053-19" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Retains Vitality for 10 min. Cooldown is 30min. Vitality item with limited usage. -->
-	<item id="20391" type="EtcItem" name="Vitality Maintaining Potion">
-		<set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="1800000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22054-1" />
-	</item>
-	<!-- Magic potion that replenishes some Vitality. Cooldown is 60 minutes. Vitality item with limited usage. -->
-	<item id="20392" type="EtcItem" name="Vitality Replenishing Potion">
-		<set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="shared_reuse_group" val="15" />
-		<set name="reuse_delay" val="1800000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22055-1" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- A Cocktail made of various rare fruits. When consumed, the effects of Wind Walk, Haste, Vampiric Rage, Might, Shield, Death Whisper, Guidance and Blessed Body can be felt for 1 hour . -->
-	<item id="20393" type="EtcItem" name="Sweet Fruit Cocktail">
-		<set name="icon" val="BranchSys.icon.br_fruit_cocktail_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22056-1;22057-1;22064-1;22058-1;22059-1;22060-1;22061-1;22065-1" />
-	</item>
-	<!-- A Cocktail made of various rare fruits. When consumed, the effects of Berserker Spirit, Magic Barrier, Blessed Soul, Empower, Greater Acumen, Clarity, Blessed Body and Wild Magic can be felt for 1 hour. -->
-	<item id="20394" type="EtcItem" name="Fresh Fruit Cocktail">
-		<set name="icon" val="BranchSys.icon.br_fruit_cocktail_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22066-1;22067-1;22068-1;22062-1;22063-1;22069-1;22065-1;22070-1" />
-	</item>
-	<!-- Wrapped Pack containing bracelet that summons Steam Beetle. -->
-	<item id="20395" type="EtcItem" name="Mount - Steam Beetle Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20396,1,1,100" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. -->
-	<item id="20396" type="Armor" name="Mount - Steam Beetle">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="839-1" />
-		<set name="item_skill" val="21051-1" />
-	</item>
-	<!-- When used, several types of items that help hunting can be acquired. -->
-	<item id="20397" type="EtcItem" name="Newbie Level-Up Pack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="6354,1,1,100;6355,1,1,100;13121,1,1,100;1060,20,20,100;5789,1000,1000,100;5790,1000,1000,100;9191,1,1,100;5593,1,1,100" />
-	</item>
-	<!-- When used, several types of items that help hunting can be acquired. -->
-	<item id="20398" type="EtcItem" name="Fast Growth Pack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="13421,10,10,100;22000,1,1,100;22003,1,1,100;10649,3,3,100" />
-	</item>
-	<!-- Hat that was worn by Reipung. -->
-	<item id="20399" type="Armor" name="Laborer Hat - Blessed Body (7-day)">
-		<set name="icon" val="BranchSys.icon.br_people_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21052-4" />
-		<set name="time" val="10080" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
+    <!-- Bracelet that summons Agathion - Blue Sumo Wrestler. Cooldown is 1 hour. -->
+    <item id="20300" type="Armor" name="Agathion - Blue Sumo Wrestler - Wild Magic (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_sumo_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21044-1;23058-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - Great Sumo Match. -->
+    <item id="20301" type="Armor" name="Agathion - Great Sumo Match">
+        <set name="icon" val="BranchSys.icon.br_aga_sumo_match_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21045-1;23051-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - Great Sumo Match. Cooldown is 1 hour. -->
+    <item id="20302" type="Armor" name="Agathion - Great Sumo Match - Big Head / Firework (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_sumo_match_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21045-1;23059-1;23060-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - Button-eyed Bear Doll. -->
+    <item id="20303" type="Armor" name="Agathion - Button-eyed Bear Doll">
+        <set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21046-1;23052-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 12 hours. -->
+    <item id="20304" type="Armor" name="Agathion - Button-eyed Bear Doll - Escape (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21046-1;23061-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 12 hours. -->
+    <item id="20305" type="Armor" name="Agathion - Button-eyed Bear Doll - Resurrection (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21046-1;23062-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - Button-eyed Bear Doll. Cooldown is 1 hour. -->
+    <item id="20306" type="Armor" name="Agathion - Button-eyed Bear Doll - Vitality (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_toybear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21046-1;23063-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - God of Fortune. -->
+    <item id="20307" type="Armor" name="Agathion - God of Fortune">
+        <set name="icon" val="BranchSys.icon.br_aga_wealth_god_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21047-1;23053-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - God of Fortune. Cooldown is 1 hour. -->
+    <item id="20308" type="Armor" name="Agathion - God of Fortune - Vitality (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_wealth_god_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21047-1;23064-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Can summon Agathion - Dryad when equipped. -->
+    <item id="20309" type="Armor" name="Agathion - Dryad">
+        <set name="icon" val="BranchSys.icon.br_aga_dryad_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21048-1;23054-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - Wonboso. -->
+    <item id="20310" type="Armor" name="Agathion - Wonboso">
+        <set name="icon" val="BranchSys.icon.br_aga_cashcow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21049-1;23055-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - Wonboso. Cooldown is 1 hour. -->
+    <item id="20311" type="Armor" name="Agathion - Wonboso - Wind Walk (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_cashcow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21049-1;23065-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Bracelet that summons Agathion - Daewoonso. -->
+    <item id="20312" type="Armor" name="Agathion - Daewoonso">
+        <set name="icon" val="BranchSys.icon.br_aga_luckycow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21050-1;23056-1" />
+    </item>
+    <!-- Bracelet that summons Agathion - Daewoonso. Cooldown is 1 hour. -->
+    <item id="20313" type="Armor" name="Agathion - Daewoonso - New Year's Gift (7-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_luckycow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21050-1;23066-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Wrapped Pack containing Birthday Cake. -->
+    <item id="20314" type="EtcItem" name="Birthday Cake Pack - Vitality">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20320,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Goggles. -->
+    <item id="20315" type="EtcItem" name="Goggles Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20321,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Napoleon Hat. -->
+    <item id="20316" type="EtcItem" name="Napoleon Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20322,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Horn Hairband. Females only. -->
+    <item id="20317" type="EtcItem" name="Horn Hairband Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20323,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Black Gem Mask. -->
+    <item id="20318" type="EtcItem" name="Black Gem Mask Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20324,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Plastic Hair. -->
+    <item id="20319" type="EtcItem" name="Plastic Hair Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20325,1,1,100" />
+    </item>
+    <!-- Summons a Birthday Cake that recovers Vitality when XP are acquired. It'll be effective only when summoned at a certain distance away from the village. It lasts for 20 min. -->
+    <item id="20320" type="EtcItem" name="Birthday Cake - Vitality (24-hour)">
+        <set name="icon" val="BranchSys.icon.br_birthday_cake_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22034-1" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- A stylish goggle accessory with a fine silver decoration. Uses 1 hair accessory slot. -->
+    <item id="20321" type="Armor" name="Goggles">
+        <set name="icon" val="BranchSys.icon.br_goggles_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- A Napoleon Hat bursting with enough energy to conquer the world. -->
+    <item id="20322" type="Armor" name="Napoleon Hat">
+        <set name="icon" val="BranchSys.icon.br_napoleonic_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Pink hairband accessory with a cute horn dangling. Females only. -->
+    <item id="20323" type="Armor" name="Horn Hairband">
+        <set name="icon" val="BranchSys.icon.br_horn_hairband_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <cond msgId="1518">
+            <player sex="1" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Black gem mask accessory made of luxurious metal material. -->
+    <item id="20324" type="Armor" name="Black Gem Mask">
+        <set name="icon" val="BranchSys.icon.br_black_gem_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic Hair. It changes to an attractive pink wig for female and a blue wig for male. Uses 2 accessory slots. -->
+    <item id="20325" type="Armor" name="Plastic Hair">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- If used, five thousand Beast Soulshots are acquired. -->
+    <item id="20326" type="EtcItem" name="Beast Soulshot Pack">
+        <set name="icon" val="BranchSys.icon.br_box_beast_soul_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20332,5000,5000,100" />
+    </item>
+    <!-- If used, five thousand Beast Spiritshots are acquired. -->
+    <item id="20327" type="EtcItem" name="Beast Spiritshot Pack">
+        <set name="icon" val="BranchSys.icon.br_box_beast_spirit_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20333,5000,5000,100" />
+    </item>
+    <!-- If used, five thousand Blessed Beast Spiritshots are acquired. -->
+    <item id="20328" type="EtcItem" name="Blessed Beast Spiritshot Pack">
+        <set name="icon" val="BranchSys.icon.br_box_blessed_beast_spirit_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20334,5000,5000,100" />
+    </item>
+    <!-- If used, ten thousand Beast Soulshots are acquired. -->
+    <item id="20329" type="EtcItem" name="Beast Soulshot Large Pack">
+        <set name="icon" val="BranchSys.icon.br_box_beast_soul_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20332,10000,10000,100" />
+    </item>
+    <!-- If used, ten thousand Beast Spiritshots are acquired. -->
+    <item id="20330" type="EtcItem" name="Beast Spiritshot Large Pack">
+        <set name="icon" val="BranchSys.icon.br_box_beast_spirit_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20333,10000,10000,100" />
+    </item>
+    <!-- If used, ten thousand Blessed Beast Spiritshots are acquired. -->
+    <item id="20331" type="EtcItem" name="Blessed Beast Spiritshot Large Pack">
+        <set name="icon" val="BranchSys.icon.br_box_blessed_beast_spirit_shot_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20334,10000,10000,100" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its P. Atk. significantly. Used from the master's inventory. -->
+    <item id="20332" type="EtcItem" name="Beast Soulshot">
+        <set name="icon" val="BranchSys.icon.br_beast_soul_shot_i00" />
+        <set name="default_action" val="summon_soulshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BeastSoulShot" />
+        <set name="item_skill" val="22036-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its M. Atk. Used from the master's inventory. -->
+    <item id="20333" type="EtcItem" name="Beast Spiritshot">
+        <set name="icon" val="BranchSys.icon.br_beast_spirit_shot_i00" />
+        <set name="default_action" val="summon_spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BeastSpiritShot" />
+        <set name="item_skill" val="22037-1" />
+    </item>
+    <!-- The power of a higher-level spirit is bestowed upon a pet/servitor, temporarily increasing its M. Atk. significantly. Used from the master's inventory. -->
+    <item id="20334" type="EtcItem" name="Blessed Beast Spiritshot">
+        <set name="icon" val="BranchSys.icon.br_blessed_beast_spirit_shot_i00" />
+        <set name="default_action" val="summon_spiritshot" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="BeastSpiritShot" />
+        <set name="item_skill" val="22038-1" />
+    </item>
+    <!-- Ancient charm endowed with mysterious symbols. When held in your inventory, increases acquired XP by 30%. The timer decreases even during log-off state. Only one XP Rune can be applied at any given time regardless of additional XP Runes in ones inventory. -->
+    <item id="20335" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-1" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20336" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-2" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 30%. The remaining time decreases even when not playing. -->
+    <item id="20337" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-1" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20338" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-2" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 30%. The remaining time decreases even when not playing. -->
+    <item id="20339" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20340" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22039-2" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20341" type="EtcItem" name="SP Rune 30% - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-1" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20342" type="EtcItem" name="SP Rune 50% - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-2" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 30%. The remaining time decreases even when not playing. -->
+    <item id="20343" type="EtcItem" name="SP Rune 30% - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-1" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20344" type="EtcItem" name="SP Rune 50% - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-2" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 30%. The remaining time decreases even when not playing. -->
+    <item id="20345" type="EtcItem" name="SP Rune 30% - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired SP by 50%. The remaining time decreases even when not playing. -->
+    <item id="20346" type="EtcItem" name="SP Rune 50% - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22040-2" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20347" type="EtcItem" name="Rune of Crystal (Lv. 3) - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-1" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20348" type="EtcItem" name="Rune of Crystal (Lv. 5) - 5-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-2" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20349" type="EtcItem" name="Rune of Crystal (Lv. 3) - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-1" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20350" type="EtcItem" name="Rune of Crystal (Lv. 5) - 10-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-2" />
+        <set name="time" val="600" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 3 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20351" type="EtcItem" name="Rune of Crystal (Lv. 3) - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-1" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases 5 levels of penalty for your equipment grade. The remaining time decreases even when not playing. -->
+    <item id="20352" type="EtcItem" name="Rune of Crystal (Lv. 5) - 7-day">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_rp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22041-2" />
+        <set name="time" val="10080" />
+    </item>
+    <!-- It recovers CP by 200. Cooldown is very short. -->
+    <item id="20353" type="EtcItem" name="Greater CP Potion">
+        <set name="icon" val="BranchSys.icon.br_cp_potion_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="reuse_delay" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22042-1" />
+    </item>
+    <!-- It recovers CP by 800. Any character between levels 20 and 39 can use it only for oneself. Cooldown 5 min. -->
+    <item id="20354" type="EtcItem" name="Elixir of CP (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22043-2" />
+    </item>
+    <!-- It recovers CP by 1500. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown 5 min. -->
+    <item id="20355" type="EtcItem" name="Elixir of CP (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22043-3" />
+    </item>
+    <!-- It recovers CP by 2000. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown 5 min. -->
+    <item id="20356" type="EtcItem" name="Elixir of CP (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22043-4" />
+    </item>
+    <!-- It recovers CP by 2500. Any character between levels 61 and 75 can use it only for oneself. Cooldown 5 min. -->
+    <item id="20357" type="EtcItem" name="Elixir of CP (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22043-5" />
+    </item>
+    <!-- It recovers CP by 3000. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
+    <item id="20358" type="EtcItem" name="Elixir of CP (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_combative_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="7" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22043-6" />
+    </item>
+    <!-- Recovers HP by 50%. Any character between levels 20 and 39 can use it only for oneself. Cooldown 5 min. -->
+    <item id="20359" type="EtcItem" name="Elixir of Life (D-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_d_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="2" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22044-2" />
+    </item>
+    <!-- Recovers HP by 50%. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown 5 min. -->
+    <item id="20360" type="EtcItem" name="Elixir of Life (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_c_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="3" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22044-3" />
+    </item>
+    <!-- Recovers HP by 50%. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown 5 min. -->
+    <item id="20361" type="EtcItem" name="Elixir of Life (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_b_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="4" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22044-4" />
+    </item>
+    <!-- Recovers HP by 50%. Any character between levels 61 and 75 can use it only for oneself. Cooldown 5 min. -->
+    <item id="20362" type="EtcItem" name="Elixir of Life (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_a_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="5" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22044-5" />
+    </item>
+    <!-- Recovers HP by 50%. Can only be used by characters level 76 - 84 upon themselves. Cooldown 5 min. -->
+    <item id="20363" type="EtcItem" name="Elixir of Life (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_elixir_of_life_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="6" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="Elixir" />
+        <set name="item_skill" val="22044-6" />
+    </item>
+    <!-- Transforms you into an Onyx Beast for 30 min. -->
+    <item id="20364" type="EtcItem" name="Transformation Scroll: Onyx Beast">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22045-1" />
+    </item>
+    <!-- Transforms you into a Doom Wraith for 30 min. -->
+    <item id="20365" type="EtcItem" name="Transformation Scroll: Doom Wraith">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22046-1" />
+    </item>
+    <!-- Transforms you into a Grail Apostle for 30 min. -->
+    <item id="20366" type="EtcItem" name="Transformation Scroll: Grail Apostle">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22047-1" />
+    </item>
+    <!-- Transforms you into a Unicorn for 30 min. -->
+    <item id="20367" type="EtcItem" name="Transformation Scroll: Unicorn">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22048-1" />
+    </item>
+    <!-- Transforms you into a Lilim Knight for 30 min. -->
+    <item id="20368" type="EtcItem" name="Transformation Scroll: Lilim Knight">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22049-1" />
+    </item>
+    <!-- Transforms you into a Golem Guardian for 30 min. -->
+    <item id="20369" type="EtcItem" name="Transformation Scroll: Golem Guardian">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22050-1" />
+    </item>
+    <!-- Transforms you into an Inferno Drake for 30 min. -->
+    <item id="20370" type="EtcItem" name="Transformation Scroll: Inferno Drake">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22051-1" />
+    </item>
+    <!-- Transforms you into a Dragon Bomber for 30 min. -->
+    <item id="20371" type="EtcItem" name="Transformation Scroll: Dragon Bomber">
+        <set name="icon" val="BranchSys.icon.br_scroll_of_transformation_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22052-1" />
+    </item>
+    <!-- Magic scroll that moves you to Talking Island Village. -->
+    <item id="20372" type="EtcItem" name="Scroll of Escape: Talking Island Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Elven Village. -->
+    <item id="20373" type="EtcItem" name="Scroll of Escape: Elven Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-2" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Dark Elf Village. -->
+    <item id="20374" type="EtcItem" name="Scroll of Escape: Dark Elf Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-3" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Orc Village. -->
+    <item id="20375" type="EtcItem" name="Scroll of Escape: Orc Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-4" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Dwarven Village. -->
+    <item id="20376" type="EtcItem" name="Scroll of Escape: Dwarven Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-5" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Gludin Village. -->
+    <item id="20377" type="EtcItem" name="Scroll of Escape: Gludin Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-6" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that teleports you to the Town of Gludio. -->
+    <item id="20378" type="EtcItem" name="Scroll of Escape: Town of Gludio">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-7" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Town of Dion. -->
+    <item id="20379" type="EtcItem" name="Scroll of Escape: Town of Dion">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-8" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Floran Village. -->
+    <item id="20380" type="EtcItem" name="Scroll of Escape: Floran Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-9" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that teleports you to the Town of Giran. -->
+    <item id="20381" type="EtcItem" name="Scroll of Escape: Town of Giran">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-10" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Hardin's Academy. -->
+    <item id="20382" type="EtcItem" name="Scroll of Escape: Hardin's Academy">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-11" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Heine. -->
+    <item id="20383" type="EtcItem" name="Scroll of Escape: Heine">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-12" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Town of Oren. -->
+    <item id="20384" type="EtcItem" name="Scroll of Escape: Town of Oren">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-13" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Ivory Tower. -->
+    <item id="20385" type="EtcItem" name="Scroll of Escape: Ivory Tower">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-14" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Hunter's Village. -->
+    <item id="20386" type="EtcItem" name="Scroll of Escape: Hunter's Village">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-15" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that teleports you to the Town of Aden. -->
+    <item id="20387" type="EtcItem" name="Scroll of Escape: Town of Aden">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-16" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Town of Goddard. -->
+    <item id="20388" type="EtcItem" name="Scroll of Escape: Town of Goddard">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-17" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to the Town of Rune. -->
+    <item id="20389" type="EtcItem" name="Scroll of Escape: Town of Rune">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-18" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magic scroll that moves you to Town of Schuttgart. -->
+    <item id="20390" type="EtcItem" name="Scroll of Escape: Town of Schuttgart">
+        <set name="icon" val="BranchSys.icon.br_escape_scroll_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22053-19" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Retains Vitality for 10 min. Cooldown is 30min. Vitality item with limited usage. -->
+    <item id="20391" type="EtcItem" name="Vitality Maintaining Potion">
+        <set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="shared_reuse_group" val="15" />
+        <set name="reuse_delay" val="1800000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22054-1" />
+    </item>
+    <!-- Magic potion that replenishes some Vitality. Cooldown is 60 minutes. Vitality item with limited usage. -->
+    <item id="20392" type="EtcItem" name="Vitality Replenishing Potion">
+        <set name="icon" val="BranchSys.icon.br_vitality_potion_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="shared_reuse_group" val="15" />
+        <set name="reuse_delay" val="1800000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22055-1" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- A Cocktail made of various rare fruits. When consumed, the effects of Wind Walk, Haste, Vampiric Rage, Might, Shield, Death Whisper, Guidance and Blessed Body can be felt for 1 hour . -->
+    <item id="20393" type="EtcItem" name="Sweet Fruit Cocktail">
+        <set name="icon" val="BranchSys.icon.br_fruit_cocktail_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22056-1;22057-1;22064-1;22058-1;22059-1;22060-1;22061-1;22065-1" />
+    </item>
+    <!-- A Cocktail made of various rare fruits. When consumed, the effects of Berserker Spirit, Magic Barrier, Blessed Soul, Empower, Greater Acumen, Clarity, Blessed Body and Wild Magic can be felt for 1 hour. -->
+    <item id="20394" type="EtcItem" name="Fresh Fruit Cocktail">
+        <set name="icon" val="BranchSys.icon.br_fruit_cocktail_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22066-1;22067-1;22068-1;22062-1;22063-1;22069-1;22065-1;22070-1" />
+    </item>
+    <!-- Wrapped Pack containing bracelet that summons Steam Beetle. -->
+    <item id="20395" type="EtcItem" name="Mount - Steam Beetle Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20396,1,1,100" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. -->
+    <item id="20396" type="Armor" name="Mount - Steam Beetle">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="839-1" />
+        <set name="item_skill" val="21051-1" />
+    </item>
+    <!-- When used, several types of items that help hunting can be acquired. -->
+    <item id="20397" type="EtcItem" name="Newbie Level-Up Pack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items"
+             val="6354,1,1,100;6355,1,1,100;13121,1,1,100;1060,20,20,100;5789,1000,1000,100;5790,1000,1000,100;9191,1,1,100;5593,1,1,100" />
+    </item>
+    <!-- When used, several types of items that help hunting can be acquired. -->
+    <item id="20398" type="EtcItem" name="Fast Growth Pack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="13421,10,10,100;22000,1,1,100;22003,1,1,100;10649,3,3,100" />
+    </item>
+    <!-- Hat that was worn by Reipung. -->
+    <item id="20399" type="Armor" name="Laborer Hat - Blessed Body (7-day)">
+        <set name="icon" val="BranchSys.icon.br_people_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21052-4" />
+        <set name="time" val="10080" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
 </list>

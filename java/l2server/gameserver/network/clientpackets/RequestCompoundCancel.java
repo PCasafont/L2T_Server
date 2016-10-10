@@ -22,19 +22,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCompoundCancel extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		activeChar.setCompoundItem1(null);
-		activeChar.setCompoundItem2(null);
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        activeChar.setCompoundItem1(null);
+        activeChar.setCompoundItem2(null);
+    }
 }

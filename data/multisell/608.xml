@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="9997" /> <!-- Fire Potion -->
-	</item>
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="9998" /> <!-- Water Potion -->
-	</item>
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="9999" /> <!-- Earth Potion -->
-	</item>
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="10000" /> <!-- Wind Potion -->
-	</item>
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="10001" /> <!-- Dark Potion -->
-	</item>
-	<item>
-		<ingredient count="30000" id="57" /> <!-- Adena -->
-		<production count="1" id="10002" /> <!-- Holy Potion -->
-	</item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="9997" /> <!-- Fire Potion -->
+    </item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="9998" /> <!-- Water Potion -->
+    </item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="9999" /> <!-- Earth Potion -->
+    </item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="10000" /> <!-- Wind Potion -->
+    </item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="10001" /> <!-- Dark Potion -->
+    </item>
+    <item>
+        <ingredient count="30000" id="57" /> <!-- Adena -->
+        <production count="1" id="10002" /> <!-- Holy Potion -->
+    </item>
 </list>

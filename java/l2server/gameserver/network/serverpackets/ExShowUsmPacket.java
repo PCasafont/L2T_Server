@@ -21,16 +21,16 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExShowUsmPacket extends L2GameServerPacket
 {
-	private int _movieId;
-	
-	public ExShowUsmPacket(int id)
-	{
-		_movieId = id;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_movieId);
-	}
+    private int _movieId;
+
+    public ExShowUsmPacket(int id)
+    {
+        _movieId = id;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_movieId);
+    }
 }

@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient id="4358" count="1000" /> <!-- Bloody Pa'agrio -->
-		<production id="4357" count="8000000" /> <!-- Silver Shilen -->
-	</item>
-	<item>
-		<ingredient id="4358" count="2670" /> <!-- Bloody Pa'agrio -->
-		<production id="4355" count="20" /> <!-- Blue Eva -->
-	</item>
-	<item>
-		<ingredient id="4358" count="55000" /> <!-- Bloody Pa'agrio -->
-		<production id="38571" count="1" /> <!-- Aria's Life Stone -->
-	</item>
-	<item>
-		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
-		<production id="6656" count="1" /> <!-- Antharas' Earring -->
-	</item>
-	<item>
-		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
-		<production id="6657" count="1" /> <!-- Valakas' Necklace -->
-	</item>
-	<item>
-		<ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
-		<production id="6658" count="1" /> <!-- Baium's Ring -->
-	</item>
-	<item>
-		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
-		<production id="6659" count="1" /> <!-- Zaken's Earring -->
-	</item>
-	<item>
-		<ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
-		<production id="6660" count="1" /> <!-- Queen Ant's Ring -->
-	</item>
-	<item>
-		<ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
-		<production id="6661" count="1" /> <!-- Orfen's Earring -->
-	</item>
-	<item>
-		<ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
-		<production id="6662" count="1" /> <!-- Ring of Core -->
-	</item>
-	<item>
-		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
-		<production id="8191" count="1" /> <!-- Frintezza's Necklace -->
-	</item>
-	<item>
-		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
-		<production id="16025" count="1" /> <!-- Freya's Necklace -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46327" count="1" /> <!-- Shadow Shaper -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46328" count="1" /> <!-- Shadow Cutter -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46329" count="1" /> <!-- Shadow Slasher -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46330" count="1" /> <!-- Shadow Fighter -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46331" count="1" /> <!-- Shadow Stormer -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46332" count="1" /> <!-- Shadow Thrower -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46333" count="1" /> <!-- Shadow Shooter -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46334" count="1" /> <!-- Shadow Buster -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46335" count="1" /> <!-- Shadow Retributer -->
-	</item>
-	<item>
-		<ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
-		<production id="46336" count="1" /> <!-- Shadow Dualsword -->
-	</item>
+    <item>
+        <ingredient id="4358" count="1000" /> <!-- Bloody Pa'agrio -->
+        <production id="4357" count="8000000" /> <!-- Silver Shilen -->
+    </item>
+    <item>
+        <ingredient id="4358" count="2670" /> <!-- Bloody Pa'agrio -->
+        <production id="4355" count="20" /> <!-- Blue Eva -->
+    </item>
+    <item>
+        <ingredient id="4358" count="55000" /> <!-- Bloody Pa'agrio -->
+        <production id="38571" count="1" /> <!-- Aria's Life Stone -->
+    </item>
+    <item>
+        <ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
+        <production id="6656" count="1" /> <!-- Antharas' Earring -->
+    </item>
+    <item>
+        <ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
+        <production id="6657" count="1" /> <!-- Valakas' Necklace -->
+    </item>
+    <item>
+        <ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
+        <production id="6658" count="1" /> <!-- Baium's Ring -->
+    </item>
+    <item>
+        <ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
+        <production id="6659" count="1" /> <!-- Zaken's Earring -->
+    </item>
+    <item>
+        <ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
+        <production id="6660" count="1" /> <!-- Queen Ant's Ring -->
+    </item>
+    <item>
+        <ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
+        <production id="6661" count="1" /> <!-- Orfen's Earring -->
+    </item>
+    <item>
+        <ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
+        <production id="6662" count="1" /> <!-- Ring of Core -->
+    </item>
+    <item>
+        <ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
+        <production id="8191" count="1" /> <!-- Frintezza's Necklace -->
+    </item>
+    <item>
+        <ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
+        <production id="16025" count="1" /> <!-- Freya's Necklace -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46327" count="1" /> <!-- Shadow Shaper -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46328" count="1" /> <!-- Shadow Cutter -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46329" count="1" /> <!-- Shadow Slasher -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46330" count="1" /> <!-- Shadow Fighter -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46331" count="1" /> <!-- Shadow Stormer -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46332" count="1" /> <!-- Shadow Thrower -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46333" count="1" /> <!-- Shadow Shooter -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46334" count="1" /> <!-- Shadow Buster -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46335" count="1" /> <!-- Shadow Retributer -->
+    </item>
+    <item>
+        <ingredient id="4358" count="150000" /> <!-- Bloody Pa'agrio -->
+        <production id="46336" count="1" /> <!-- Shadow Dualsword -->
+    </item>
 </list>

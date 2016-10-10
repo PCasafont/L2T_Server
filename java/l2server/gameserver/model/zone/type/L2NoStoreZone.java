@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.zone.type;
 
-import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
@@ -27,36 +26,36 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoStoreZone extends L2ZoneType
 {
-	public L2NoStoreZone(final int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	protected void onEnter(final L2Character character)
-	{
-		if (!Config.isServer(Config.DREAMS) && character instanceof L2PcInstance)
-		{
-			character.setInsideZone(L2Character.ZONE_NOSTORE, true);
-		}
-	}
-	
-	@Override
-	protected void onExit(final L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
-			character.setInsideZone(L2Character.ZONE_NOSTORE, false);
-		}
-	}
-	
-	@Override
-	public void onDieInside(final L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(final L2Character character)
-	{
-	}
+    public L2NoStoreZone(final int id)
+    {
+        super(id);
+    }
+
+    @Override
+    protected void onEnter(final L2Character character)
+    {
+        if (character instanceof L2PcInstance)
+        {
+            character.setInsideZone(L2Character.ZONE_NOSTORE, true);
+        }
+    }
+
+    @Override
+    protected void onExit(final L2Character character)
+    {
+        if (character instanceof L2PcInstance)
+        {
+            character.setInsideZone(L2Character.ZONE_NOSTORE, false);
+        }
+    }
+
+    @Override
+    public void onDieInside(final L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(final L2Character character)
+    {
+    }
 }

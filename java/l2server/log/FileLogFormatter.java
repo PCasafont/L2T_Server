@@ -30,19 +30,21 @@ import l2server.util.StringUtil;
 
 public class FileLogFormatter extends Formatter
 {
-	
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.util.logging.Formatter#format(java.util.logging.LogRecord)
-	 */
-	private static final String CRLF = "\r\n";
-	private static final String TAB = "\t";
-	private SimpleDateFormat dateFmt = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss,SSS");
-	
-	@Override
-	public String format(LogRecord record)
-	{
-		return StringUtil.concat(dateFmt.format(new Date(record.getMillis())), TAB, record.getLevel().getName(), TAB, String.valueOf(record.getThreadID()), TAB, record.getLoggerName(), TAB, record.getMessage(), CRLF);
-	}
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.util.logging.Formatter#format(java.util.logging.LogRecord)
+     */
+    private static final String CRLF = "\r\n";
+    private static final String TAB = "\t";
+    private SimpleDateFormat dateFmt = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss,SSS");
+
+    @Override
+    public String format(LogRecord record)
+    {
+        return StringUtil
+                .concat(dateFmt.format(new Date(record.getMillis())), TAB, record.getLevel().getName(), TAB, String
+                        .valueOf(record.getThreadID()), TAB, record.getLoggerName(), TAB, record.getMessage(), CRLF);
+    }
 }

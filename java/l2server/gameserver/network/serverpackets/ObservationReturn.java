@@ -24,23 +24,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ObservationReturn extends L2GameServerPacket
 {
-	// ddSS
-	private L2PcInstance _activeChar;
-	
-	/**
-	 * @param _characters
-	 */
-	public ObservationReturn(L2PcInstance observer)
-	{
-		_activeChar = observer;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeC(0xec);
-		writeD(_activeChar.getLastX());
-		writeD(_activeChar.getLastY());
-		writeD(_activeChar.getLastZ());
-	}
+    // ddSS
+    private L2PcInstance _activeChar;
+
+    /**
+     * @param _characters
+     */
+    public ObservationReturn(L2PcInstance observer)
+    {
+        _activeChar = observer;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeC(0xec);
+        writeD(_activeChar.getLastX());
+        writeD(_activeChar.getLastY());
+        writeD(_activeChar.getLastZ());
+    }
 }

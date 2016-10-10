@@ -24,41 +24,39 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class set implements IVoicedCommandHandler
 {
-	private static final String[] VOICED_COMMANDS = { "set name", "set home", "set group" };
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
-	{
-		if (command.startsWith("set privileges"))
-		{
-			int n = Integer.parseInt(command.substring(15));
-			L2PcInstance pc = (L2PcInstance) activeChar.getTarget();
-			if (pc != null)
-			{
-				if (activeChar.getClan().getClanId() == pc.getClan().getClanId() && activeChar.getClanPrivileges() > n || activeChar.isClanLeader())
-				{
-					pc.setClanPrivileges(n);
-					activeChar.sendMessage("Your clan privileges have been set to " + n + " by " + activeChar.getName());
-				}
-				
-			}
-			
-		}
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
-	 */
-	@Override
-	public String[] getVoicedCommandList()
-	{
-		return VOICED_COMMANDS;
-	}
+    private static final String[] VOICED_COMMANDS = {"set name", "set home", "set group"};
+
+    /**
+     * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    @Override
+    public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+    {
+        if (command.startsWith("set privileges"))
+        {
+            int n = Integer.parseInt(command.substring(15));
+            L2PcInstance pc = (L2PcInstance) activeChar.getTarget();
+            if (pc != null)
+            {
+                if (activeChar.getClan().getClanId() == pc.getClan().getClanId() && activeChar
+                        .getClanPrivileges() > n || activeChar.isClanLeader())
+                {
+                    pc.setClanPrivileges(n);
+                    activeChar
+                            .sendMessage("Your clan privileges have been set to " + n + " by " + activeChar.getName());
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+     */
+    @Override
+    public String[] getVoicedCommandList()
+    {
+        return VOICED_COMMANDS;
+    }
 }

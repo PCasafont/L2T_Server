@@ -33,79 +33,94 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
  */
 public class AdminTerritoryWar implements IAdminCommandHandler
 {
-	private static final String[] _adminCommands = { "admin_territory_war", "admin_territory_war_time", "admin_territory_war_start", "admin_territory_war_end" };
-	
-	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		StringTokenizer st = new StringTokenizer(command);
-		command = st.nextToken();
-		
-		if (command.equals("admin_territory_war"))
-		{
-			showMainPage(activeChar);
-		}
-		else if (command.equalsIgnoreCase("admin_territory_war_time"))
-		{
-			String val = "";
-			if (st.hasMoreTokens())
-			{
-				val = st.nextToken();
-				Calendar newAdminTWDate = Calendar.getInstance();
-				newAdminTWDate.setTimeInMillis(TerritoryWarManager.getInstance().getTWStartTimeInMillis());
-				if (val.equalsIgnoreCase("day"))
-					newAdminTWDate.set(Calendar.DAY_OF_WEEK, Integer.parseInt(st.nextToken()));
-				else if (val.equalsIgnoreCase("hour"))
-					newAdminTWDate.set(Calendar.HOUR_OF_DAY, Integer.parseInt(st.nextToken()));
-				else if (val.equalsIgnoreCase("min"))
-					newAdminTWDate.set(Calendar.MINUTE, Integer.parseInt(st.nextToken()));
-				
-				if (newAdminTWDate.getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
-				{
-					activeChar.sendMessage("Unable to change TW Date!");
-				}
-				else if (newAdminTWDate.getTimeInMillis() != TerritoryWarManager.getInstance().getTWStartTimeInMillis())
-				{
-					Quest twQuest = QuestManager.getInstance().getQuest(TerritoryWarManager.qn);
-					if (twQuest != null)
-						twQuest.onAdvEvent("setTWDate " + newAdminTWDate.getTimeInMillis(), null, null);
-					else
-						activeChar.sendMessage("Missing Territory War Quest!");
-				}
-			}
-			showSiegeTimePage(activeChar);
-		}
-		else if (command.equalsIgnoreCase("admin_territory_war_start"))
-		{
-			Quest twQuest = QuestManager.getInstance().getQuest(TerritoryWarManager.qn);
-			if (twQuest != null)
-				twQuest.onAdvEvent("setTWDate " + (Calendar.getInstance().getTimeInMillis() + 60000), null, null);
-			else
-				activeChar.sendMessage("Missing Territory War Quest!");
-		}
-		else if (command.equalsIgnoreCase("admin_territory_war_end"))
-		{
-			TerritoryWarManager.getInstance().endTerritoryWar(true);
-		}
-		return true;
-	}
-	
-	@Override
-	public String[] getAdminCommandList()
-	{
-		return _adminCommands;
-	}
-	
-	private void showSiegeTimePage(L2PcInstance activeChar)
-	{
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/territorywartime.htm");
-		adminReply.replace("%time%", TerritoryWarManager.getInstance().getTWStart().getTime().toString());
-		activeChar.sendPacket(adminReply);
-	}
-	
-	private void showMainPage(L2PcInstance activeChar)
-	{
-		AdminHelpPage.showHelpPage(activeChar, "territorywar.htm");
-	}
+    private static final String[] _adminCommands =
+            {"admin_territory_war", "admin_territory_war_time", "admin_territory_war_start", "admin_territory_war_end"};
+
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        StringTokenizer st = new StringTokenizer(command);
+        command = st.nextToken();
+
+        if (command.equals("admin_territory_war"))
+        {
+            showMainPage(activeChar);
+        }
+        else if (command.equalsIgnoreCase("admin_territory_war_time"))
+        {
+            String val = "";
+            if (st.hasMoreTokens())
+            {
+                val = st.nextToken();
+                Calendar newAdminTWDate = Calendar.getInstance();
+                newAdminTWDate.setTimeInMillis(TerritoryWarManager.getInstance().getTWStartTimeInMillis());
+                if (val.equalsIgnoreCase("day"))
+                {
+                    newAdminTWDate.set(Calendar.DAY_OF_WEEK, Integer.parseInt(st.nextToken()));
+                }
+                else if (val.equalsIgnoreCase("hour"))
+                {
+                    newAdminTWDate.set(Calendar.HOUR_OF_DAY, Integer.parseInt(st.nextToken()));
+                }
+                else if (val.equalsIgnoreCase("min"))
+                {
+                    newAdminTWDate.set(Calendar.MINUTE, Integer.parseInt(st.nextToken()));
+                }
+
+                if (newAdminTWDate.getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
+                {
+                    activeChar.sendMessage("Unable to change TW Date!");
+                }
+                else if (newAdminTWDate.getTimeInMillis() != TerritoryWarManager.getInstance().getTWStartTimeInMillis())
+                {
+                    Quest twQuest = QuestManager.getInstance().getQuest(TerritoryWarManager.qn);
+                    if (twQuest != null)
+                    {
+                        twQuest.onAdvEvent("setTWDate " + newAdminTWDate.getTimeInMillis(), null, null);
+                    }
+                    else
+                    {
+                        activeChar.sendMessage("Missing Territory War Quest!");
+                    }
+                }
+            }
+            showSiegeTimePage(activeChar);
+        }
+        else if (command.equalsIgnoreCase("admin_territory_war_start"))
+        {
+            Quest twQuest = QuestManager.getInstance().getQuest(TerritoryWarManager.qn);
+            if (twQuest != null)
+            {
+                twQuest.onAdvEvent("setTWDate " + (Calendar.getInstance().getTimeInMillis() + 60000), null, null);
+            }
+            else
+            {
+                activeChar.sendMessage("Missing Territory War Quest!");
+            }
+        }
+        else if (command.equalsIgnoreCase("admin_territory_war_end"))
+        {
+            TerritoryWarManager.getInstance().endTerritoryWar(true);
+        }
+        return true;
+    }
+
+    @Override
+    public String[] getAdminCommandList()
+    {
+        return _adminCommands;
+    }
+
+    private void showSiegeTimePage(L2PcInstance activeChar)
+    {
+        NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+        adminReply.setFile(activeChar.getHtmlPrefix(), "admin/territorywartime.htm");
+        adminReply.replace("%time%", TerritoryWarManager.getInstance().getTWStart().getTime().toString());
+        activeChar.sendPacket(adminReply);
+    }
+
+    private void showMainPage(L2PcInstance activeChar)
+    {
+        AdminHelpPage.showHelpPage(activeChar, "territorywar.htm");
+    }
 }

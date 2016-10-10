@@ -15,67 +15,69 @@ RAPIDUS = 36479
 # ITEMS
 CLOAK = 14603
 
-class Quest (JQuest) :
-	def __init__(self,id,name,descr):
-		JQuest.__init__(self,id,name,descr)
-		self.questItemIds = []
 
-	def onAdvEvent(self, event, npc, player) :
-		htmltext = event
-		st = player.getQuestState(qn)
-		if not st : return
+class Quest(JQuest):
+    def __init__(self, id, name, descr):
+        JQuest.__init__(self, id, name, descr)
+        self.questItemIds = []
 
-		if event == "36479-02.htm" :
-			st.setState(State.STARTED)
-			st.set("cond","1")
-			st.playSound("ItemSound.quest_accept")
-		return htmltext
+    def onAdvEvent(self, event, npc, player):
+        htmltext = event
+        st = player.getQuestState(qn)
+        if not st: return
 
-	def onTalk (self, npc, player) :
-		htmltext = Quest.getNoQuestMsg(player)
-		st = player.getQuestState(qn)
-		if not st : return htmltext
+        if event == "36479-02.htm":
+            st.setState(State.STARTED)
+            st.set("cond", "1")
+            st.playSound("ItemSound.quest_accept")
+        return htmltext
 
-		cond = st.getInt("cond")
+    def onTalk(self, npc, player):
+        htmltext = Quest.getNoQuestMsg(player)
+        st = player.getQuestState(qn)
+        if not st: return htmltext
 
-		if npc.getNpcId() == RAPIDUS :
-			if st.getState() == State.STARTED :
-				if cond == 1 :
-					htmltext = "36479-03.htm"
-				elif cond == 2 :
-					st.playSound("ItemSound.quest_middle")
-					st.set("cond","3")
-					htmltext = "36479-04.htm"
-				elif cond == 3 :
-					htmltext = "36479-05.htm"
-				elif cond == 4 :
-					st.playSound("ItemSound.quest_middle")
-					st.set("cond","5")
-					htmltext = "36479-06.htm"
-				elif cond == 5 :
-					htmltext = "36479-07.htm"
-				elif cond == 6 :
-					st.playSound("ItemSound.quest_middle")
-					st.set("cond","7")
-					htmltext = "36479-08.htm"
-				elif cond == 7 :
-					htmltext = "36479-09.htm"
-				elif cond == 8 :
-					st.giveItems(CLOAK,1)
-					st.exitQuest(False)
-					st.playSound("ItemSound.quest_finish")
-					htmltext = "36479-10.htm"
-			elif st.getState() == State.CREATED :
-				if player.getLevel() >= 80 :
-					htmltext = "36479-01.htm"
-				else :
-					htmltext = "36479-00.htm"
-			elif st.getState() == State.COMPLETED :
-				htmltext = "36479-11.htm"
+        cond = st.getInt("cond")
 
-		return htmltext
+        if npc.getNpcId() == RAPIDUS:
+            if st.getState() == State.STARTED:
+                if cond == 1:
+                    htmltext = "36479-03.htm"
+                elif cond == 2:
+                    st.playSound("ItemSound.quest_middle")
+                    st.set("cond", "3")
+                    htmltext = "36479-04.htm"
+                elif cond == 3:
+                    htmltext = "36479-05.htm"
+                elif cond == 4:
+                    st.playSound("ItemSound.quest_middle")
+                    st.set("cond", "5")
+                    htmltext = "36479-06.htm"
+                elif cond == 5:
+                    htmltext = "36479-07.htm"
+                elif cond == 6:
+                    st.playSound("ItemSound.quest_middle")
+                    st.set("cond", "7")
+                    htmltext = "36479-08.htm"
+                elif cond == 7:
+                    htmltext = "36479-09.htm"
+                elif cond == 8:
+                    st.giveItems(CLOAK, 1)
+                    st.exitQuest(False)
+                    st.playSound("ItemSound.quest_finish")
+                    htmltext = "36479-10.htm"
+            elif st.getState() == State.CREATED:
+                if player.getLevel() >= 80:
+                    htmltext = "36479-01.htm"
+                else:
+                    htmltext = "36479-00.htm"
+            elif st.getState() == State.COMPLETED:
+                htmltext = "36479-11.htm"
 
-QUEST	= Quest(176,qn,"Steps for honor")
+        return htmltext
+
+
+QUEST = Quest(176, qn, "Steps for honor")
 
 QUEST.addStartNpc(RAPIDUS)
 QUEST.addTalkId(RAPIDUS)

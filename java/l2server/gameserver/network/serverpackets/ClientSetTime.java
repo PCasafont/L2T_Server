@@ -19,16 +19,16 @@ import l2server.gameserver.TimeController;
 
 public class ClientSetTime extends L2GameServerPacket
 {
-	public static final ClientSetTime STATIC_PACKET = new ClientSetTime();
-	
-	private ClientSetTime()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(TimeController.getInstance().getGameTime()); // time in client minutes
-		writeD(6); //constant to match the server time( this determines the speed of the client clock)
-	}
+    public static final ClientSetTime STATIC_PACKET = new ClientSetTime();
+
+    private ClientSetTime()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(TimeController.getInstance().getGameTime()); // time in client minutes
+        writeD(6); //constant to match the server time( this determines the speed of the client clock)
+    }
 }

@@ -27,97 +27,97 @@ import l2server.util.Point3D;
  */
 public class L2FlyMove
 {
-	public enum L2FlyMoveType
-	{
-		START, CHOOSE, MOVE
-	}
-	
-	private int _id;
-	private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<Point3D>();
-	private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<L2FlyMoveChoose>();
-	
-	public L2FlyMove(int id)
-	{
-		_id = id;
-	}
-	
-	public int getId()
-	{
-		return _id;
-	}
-	
-	public void addStep(int id, Point3D s)
-	{
-		_steps.put(id, s);
-	}
-	
-	public Point3D getStep(int id)
-	{
-		return _steps.get(id);
-	}
-	
-	public void addChoose(int id, L2FlyMoveChoose c)
-	{
-		_chooses.put(id, c);
-	}
-	
-	public L2FlyMoveChoose getChoose(int id)
-	{
-		return _chooses.get(id);
-	}
-	
-	public class L2FlyMoveChoose
-	{
-		private int _at;
-		private List<L2FlyMoveOption> _options = new ArrayList<L2FlyMoveOption>();
-		
-		public L2FlyMoveChoose(int at)
-		{
-			_at = at;
-		}
-		
-		public int getAt()
-		{
-			return _at;
-		}
-		
-		public void addOption(L2FlyMoveOption o)
-		{
-			_options.add(o);
-		}
-		
-		public List<L2FlyMoveOption> getOptions()
-		{
-			return _options;
-		}
-	}
-	
-	public class L2FlyMoveOption
-	{
-		private int _start;
-		private int _end;
-		private int _last;
-		
-		public L2FlyMoveOption(int start, int end, int last)
-		{
-			_start = start;
-			_end = end;
-			_last = last;
-		}
-		
-		public int getStart()
-		{
-			return _start;
-		}
-		
-		public int getEnd()
-		{
-			return _end;
-		}
-		
-		public int getLast()
-		{
-			return _last;
-		}
-	}
+    public enum L2FlyMoveType
+    {
+        START, CHOOSE, MOVE
+    }
+
+    private int _id;
+    private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<Point3D>();
+    private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<L2FlyMoveChoose>();
+
+    public L2FlyMove(int id)
+    {
+        _id = id;
+    }
+
+    public int getId()
+    {
+        return _id;
+    }
+
+    public void addStep(int id, Point3D s)
+    {
+        _steps.put(id, s);
+    }
+
+    public Point3D getStep(int id)
+    {
+        return _steps.get(id);
+    }
+
+    public void addChoose(int id, L2FlyMoveChoose c)
+    {
+        _chooses.put(id, c);
+    }
+
+    public L2FlyMoveChoose getChoose(int id)
+    {
+        return _chooses.get(id);
+    }
+
+    public class L2FlyMoveChoose
+    {
+        private int _at;
+        private List<L2FlyMoveOption> _options = new ArrayList<L2FlyMoveOption>();
+
+        public L2FlyMoveChoose(int at)
+        {
+            _at = at;
+        }
+
+        public int getAt()
+        {
+            return _at;
+        }
+
+        public void addOption(L2FlyMoveOption o)
+        {
+            _options.add(o);
+        }
+
+        public List<L2FlyMoveOption> getOptions()
+        {
+            return _options;
+        }
+    }
+
+    public class L2FlyMoveOption
+    {
+        private int _start;
+        private int _end;
+        private int _last;
+
+        public L2FlyMoveOption(int start, int end, int last)
+        {
+            _start = start;
+            _end = end;
+            _last = last;
+        }
+
+        public int getStart()
+        {
+            return _start;
+        }
+
+        public int getEnd()
+        {
+            return _end;
+        }
+
+        public int getLast()
+        {
+            return _last;
+        }
+    }
 }

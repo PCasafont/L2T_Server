@@ -33,157 +33,165 @@ import l2server.util.xml.XmlNode;
 
 public class BeautyTable implements Reloadable
 {
-	public class BeautyTemplate
-	{
-		private int _id;
-		private Map<Integer, BeautyInfo> _hairStyles = new HashMap<Integer, BeautyInfo>();
-		private Map<Integer, BeautyInfo> _faceStyles = new HashMap<Integer, BeautyInfo>();
-		private Map<Integer, BeautyInfo> _hairColors = new HashMap<Integer, BeautyInfo>();
-		
-		public BeautyTemplate(int id)
-		{
-			_id = id;
-		}
-		
-		public int getId()
-		{
-			return _id;
-		}
-		
-		public Map<Integer, BeautyInfo> getHairStyles()
-		{
-			return _hairStyles;
-		}
-		
-		public Map<Integer, BeautyInfo> getFaceStyles()
-		{
-			return _faceStyles;
-		}
-		
-		public Map<Integer, BeautyInfo> getHairColors()
-		{
-			return _hairColors;
-		}
-	}
-	
-	public class BeautyInfo
-	{
-		private int _id;
-		private int _parentId;
-		private int _unk;
-		private int _adenaCost;
-		private int _ticketCost;
-		
-		private BeautyInfo(int id, int parentId, int unk, int adena, int tickets)
-		{
-			_id = id;
-			_parentId = parentId;
-			_unk = unk;
-			_adenaCost = adena;
-			_ticketCost = tickets;
-		}
-		
-		public int getId()
-		{
-			return _id;
-		}
-		
-		public int getParentId()
-		{
-			return _parentId;
-		}
-		
-		public int getUnk()
-		{
-			return _unk;
-		}
-		
-		public int getAdenaPrice()
-		{
-			return _adenaCost;
-		}
-		
-		public int getTicketPrice()
-		{
-			return _ticketCost;
-		}
-	}
-	
-	private Map<Integer, BeautyTemplate> _beautyTable = new HashMap<Integer, BeautyTemplate>();
-	
-	private BeautyTable()
-	{
-		if (!Config.IS_CLASSIC)
-		{
-			reload();
-			ReloadableManager.getInstance().register("beauty", this);
-		}
-	}
-	
-	@Override
-	public boolean reload()
-	{
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
-		
-		XmlDocument doc = new XmlDocument(file);
-		_beautyTable.clear();
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				BeautyTemplate template = new BeautyTemplate(0);
-				for (XmlNode d : n.getChildren())
-				{
-					boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
-					boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
-					boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
-					if (isHairStyle || isFaceStyle || isHairColor)
-					{
-						int id = d.getInt("id");
-						int parentId = d.getInt("parentId", 0);
-						int unk = d.getInt("unk");
-						int adenaCost = d.getInt("adenaCost");
-						int ticketCost = d.getInt("ticketCost");
-						
-						BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
-						
-						if (isHairStyle)
-							template.getHairStyles().put(id, info);
-						else if (isFaceStyle)
-							template.getFaceStyles().put(id, info);
-						else
-							template.getHairColors().put(id, info);
-					}
-				}
-				
-				_beautyTable.put(0, template);
-				
-				Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() + " hair colors!");
-			}
-		}
-		
-		return false;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success)
-	{
-		return "Beauty Table reloaded";
-	}
-	
-	public BeautyTemplate getTemplate(int id)
-	{
-		return _beautyTable.get(id);
-	}
-	
-	public static BeautyTable getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final BeautyTable _instance = new BeautyTable();
-	}
+    public class BeautyTemplate
+    {
+        private int _id;
+        private Map<Integer, BeautyInfo> _hairStyles = new HashMap<Integer, BeautyInfo>();
+        private Map<Integer, BeautyInfo> _faceStyles = new HashMap<Integer, BeautyInfo>();
+        private Map<Integer, BeautyInfo> _hairColors = new HashMap<Integer, BeautyInfo>();
+
+        public BeautyTemplate(int id)
+        {
+            _id = id;
+        }
+
+        public int getId()
+        {
+            return _id;
+        }
+
+        public Map<Integer, BeautyInfo> getHairStyles()
+        {
+            return _hairStyles;
+        }
+
+        public Map<Integer, BeautyInfo> getFaceStyles()
+        {
+            return _faceStyles;
+        }
+
+        public Map<Integer, BeautyInfo> getHairColors()
+        {
+            return _hairColors;
+        }
+    }
+
+    public class BeautyInfo
+    {
+        private int _id;
+        private int _parentId;
+        private int _unk;
+        private int _adenaCost;
+        private int _ticketCost;
+
+        private BeautyInfo(int id, int parentId, int unk, int adena, int tickets)
+        {
+            _id = id;
+            _parentId = parentId;
+            _unk = unk;
+            _adenaCost = adena;
+            _ticketCost = tickets;
+        }
+
+        public int getId()
+        {
+            return _id;
+        }
+
+        public int getParentId()
+        {
+            return _parentId;
+        }
+
+        public int getUnk()
+        {
+            return _unk;
+        }
+
+        public int getAdenaPrice()
+        {
+            return _adenaCost;
+        }
+
+        public int getTicketPrice()
+        {
+            return _ticketCost;
+        }
+    }
+
+    private Map<Integer, BeautyTemplate> _beautyTable = new HashMap<Integer, BeautyTemplate>();
+
+    private BeautyTable()
+    {
+        if (!Config.IS_CLASSIC)
+        {
+            reload();
+            ReloadableManager.getInstance().register("beauty", this);
+        }
+    }
+
+    @Override
+    public boolean reload()
+    {
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
+
+        XmlDocument doc = new XmlDocument(file);
+        _beautyTable.clear();
+        for (XmlNode n : doc.getChildren())
+        {
+            if (n.getName().equalsIgnoreCase("list"))
+            {
+                BeautyTemplate template = new BeautyTemplate(0);
+                for (XmlNode d : n.getChildren())
+                {
+                    boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
+                    boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
+                    boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
+                    if (isHairStyle || isFaceStyle || isHairColor)
+                    {
+                        int id = d.getInt("id");
+                        int parentId = d.getInt("parentId", 0);
+                        int unk = d.getInt("unk");
+                        int adenaCost = d.getInt("adenaCost");
+                        int ticketCost = d.getInt("ticketCost");
+
+                        BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
+
+                        if (isHairStyle)
+                        {
+                            template.getHairStyles().put(id, info);
+                        }
+                        else if (isFaceStyle)
+                        {
+                            template.getFaceStyles().put(id, info);
+                        }
+                        else
+                        {
+                            template.getHairColors().put(id, info);
+                        }
+                    }
+                }
+
+                _beautyTable.put(0, template);
+
+                Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template
+                        .getFaceStyles().size() + " face styles and " + template.getHairColors()
+                        .size() + " hair colors!");
+            }
+        }
+
+        return false;
+    }
+
+    @Override
+    public String getReloadMessage(boolean success)
+    {
+        return "Beauty Table reloaded";
+    }
+
+    public BeautyTemplate getTemplate(int id)
+    {
+        return _beautyTable.get(id);
+    }
+
+    public static BeautyTable getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final BeautyTable _instance = new BeautyTable();
+    }
 }

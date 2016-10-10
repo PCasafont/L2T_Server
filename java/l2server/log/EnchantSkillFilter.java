@@ -20,9 +20,9 @@ import java.util.logging.LogRecord;
 
 public class EnchantSkillFilter implements Filter
 {
-	@Override
-	public boolean isLoggable(LogRecord record)
-	{
-		return record.getLoggerName().equalsIgnoreCase("skill");
-	}
+    @Override
+    public boolean isLoggable(LogRecord record)
+    {
+        return record.getLoggerName().equalsIgnoreCase("skill");
+    }
 }

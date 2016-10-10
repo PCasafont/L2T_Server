@@ -24,42 +24,46 @@ import l2server.Config;
  */
 public final class KeyPacket extends L2GameServerPacket
 {
-	
-	private byte[] _key;
-	private int _id;
-	
-	public KeyPacket(byte[] key, int id)
-	{
-		_key = key;
-		_id = id;
-	}
-	
-	public KeyPacket(byte data[])
-	{
-		_key = data;
-		_id = 2;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		if (_id == 2)
-		{
-			writeC(_key == null ? 0x00 : 0x01);
-			if (_key != null)
-				writeB(_key);
-		}
-		else
-		{
-			writeC(_id); //0 - wrong protocol, 1 - protocol ok
-			for (int i = 0; i < 8; i++)
-				writeC(_key[i]); // key
-		}
-		writeD(0x01);
-		writeD(0x01); // server id
-		writeC(0x01);
-		writeD(0x00); // obfuscation key
-		writeC(Config.IS_CLASSIC ? 0x01 : 0x00); // is classic
-		writeC(0x00); // ???
-	}
+
+    private byte[] _key;
+    private int _id;
+
+    public KeyPacket(byte[] key, int id)
+    {
+        _key = key;
+        _id = id;
+    }
+
+    public KeyPacket(byte data[])
+    {
+        _key = data;
+        _id = 2;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        if (_id == 2)
+        {
+            writeC(_key == null ? 0x00 : 0x01);
+            if (_key != null)
+            {
+                writeB(_key);
+            }
+        }
+        else
+        {
+            writeC(_id); //0 - wrong protocol, 1 - protocol ok
+            for (int i = 0; i < 8; i++)
+            {
+                writeC(_key[i]); // key
+            }
+        }
+        writeD(0x01);
+        writeD(0x01); // server id
+        writeC(0x01);
+        writeD(0x00); // obfuscation key
+        writeC(Config.IS_CLASSIC ? 0x01 : 0x00); // is classic
+        writeC(0x00); // ???
+    }
 }

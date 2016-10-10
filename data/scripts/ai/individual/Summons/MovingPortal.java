@@ -30,43 +30,45 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- *
- * Summon Moving Portal (skill id: 11361) AI
+ *         <p>
+ *         Summon Moving Portal (skill id: 11361) AI
  */
 
 public class MovingPortal extends L2AttackableAIScript
 {
-	private static final int _portalId = 13426;
-	private static final L2Skill _instantTeleport = SkillTable.getInstance().getInfo(11363, 1);
-	
-	public MovingPortal(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		addSkillSeeId(_portalId);
-	}
-	
-	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
-	{
-		if (skill.getId() == _instantTeleport.getId())
-		{
-			if (!caster.isPlayingEvent() && npc.getOwner() == caster && GeoData.getInstance().canSeeTarget(npc, caster) && caster.isInsideRadius(npc, _instantTeleport.getSkillRadius(), true, false))
-			{
-				int x = npc.getX() + Rnd.get(-50, 50);
-				int y = npc.getY() + Rnd.get(-50, 50);
-				int z = npc.getZ();
-				caster.broadcastPacket(new FlyToLocation(caster, x, y, z, FlyType.MAGIC));
-				
-				caster.setXYZ(x, y, z);
-				caster.broadcastPacket(new ValidateLocation(caster));
-			}
-		}
-		return super.onSkillSee(npc, caster, skill, targets, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new MovingPortal(-1, "MovingPortal", "ai/individual");
-	}
+    private static final int _portalId = 13426;
+    private static final L2Skill _instantTeleport = SkillTable.getInstance().getInfo(11363, 1);
+
+    public MovingPortal(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        addSkillSeeId(_portalId);
+    }
+
+    @Override
+    public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
+    {
+        if (skill.getId() == _instantTeleport.getId())
+        {
+            if (!caster.isPlayingEvent() && npc.getOwner() == caster && GeoData.getInstance()
+                    .canSeeTarget(npc, caster) && caster
+                    .isInsideRadius(npc, _instantTeleport.getSkillRadius(), true, false))
+            {
+                int x = npc.getX() + Rnd.get(-50, 50);
+                int y = npc.getY() + Rnd.get(-50, 50);
+                int z = npc.getZ();
+                caster.broadcastPacket(new FlyToLocation(caster, x, y, z, FlyType.MAGIC));
+
+                caster.setXYZ(x, y, z);
+                caster.broadcastPacket(new ValidateLocation(caster));
+            }
+        }
+        return super.onSkillSee(npc, caster, skill, targets, isPet);
+    }
+
+    public static void main(String[] args)
+    {
+        new MovingPortal(-1, "MovingPortal", "ai/individual");
+    }
 }

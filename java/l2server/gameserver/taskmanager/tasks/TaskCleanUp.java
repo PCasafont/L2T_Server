@@ -20,30 +20,27 @@ import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 
 /**
  * @author Tempy
- *
  */
 public final class TaskCleanUp extends Task
 {
-	public static final String NAME = "clean_up";
-	
-	/**
-	 *
-	 * @see l2server.gameserver.taskmanager.Task#getName()
-	 */
-	@Override
-	public String getName()
-	{
-		return NAME;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
-	 */
-	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
-		System.runFinalization();
-		System.gc();
-	}
+    public static final String NAME = "clean_up";
+
+    /**
+     * @see l2server.gameserver.taskmanager.Task#getName()
+     */
+    @Override
+    public String getName()
+    {
+        return NAME;
+    }
+
+    /**
+     * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
+     */
+    @Override
+    public void onTimeElapsed(ExecutedTask task)
+    {
+        System.runFinalization();
+        System.gc();
+    }
 }

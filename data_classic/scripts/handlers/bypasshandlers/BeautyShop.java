@@ -22,32 +22,31 @@ import l2server.gameserver.network.serverpackets.ExShowBeautyMenuPacket;
 
 public class BeautyShop implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"use_beauty",
-		"restore_beauty"
-	};
+    private static final String[] COMMANDS = {"use_beauty", "restore_beauty"};
 
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		if (command.equalsIgnoreCase("use_beauty"))
-		{
-			activeChar.sendPacket(new ExShowBeautyMenuPacket(false, activeChar));
-			activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0), false));
-		}
-		else if (command.equalsIgnoreCase("restore_beauty"))
-		{
-			activeChar.sendPacket(new ExShowBeautyMenuPacket(true, activeChar));
-		}
-		
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        if (command.equalsIgnoreCase("use_beauty"))
+        {
+            activeChar.sendPacket(new ExShowBeautyMenuPacket(false, activeChar));
+            activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory()
+                    .getInventoryItemCount(36308, 0), false));
+        }
+        else if (command.equalsIgnoreCase("restore_beauty"))
+        {
+            activeChar.sendPacket(new ExShowBeautyMenuPacket(true, activeChar));
+        }
+
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 
 /**
- *
  * the HTML parser in the client knowns these standard and non-standard tags and attributes
  * VOLUMN
  * UNKNOWN
@@ -121,93 +120,103 @@ import l2server.log.Log;
  * HREF
  * ACTION
  *
- *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class NpcQuestHtmlMessage extends L2GameServerPacket
 {
-	
-	private int _npcObjId;
-	private String _html;
-	private int _questId = 0;
-	
-	/**
-	 *
-	 * @param npcObjId
-	 * @param text
-	 * @param questId
-	 */
-	public NpcQuestHtmlMessage(int npcObjId, int questId)
-	{
-		_npcObjId = npcObjId;
-		_questId = questId;
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		if (Config.BYPASS_VALIDATION)
-			buildBypassCache(getClient().getActiveChar());
-	}
-	
-	public void setHtml(String text)
-	{
-		if (!text.contains("<html>"))
-			text = "<html><body>" + text + "</body></html>";
-		
-		_html = text;
-	}
-	
-	public boolean setFile(String path)
-	{
-		String content = HtmCache.getInstance().getHtm(getClient().getActiveChar().getHtmlPrefix(), path);
-		
-		if (content == null)
-		{
-			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
-			Log.warning("missing html page " + path);
-			return false;
-		}
-		
-		setHtml(content);
-		return true;
-	}
-	
-	public void replace(String pattern, String value)
-	{
-		_html = _html.replaceAll(pattern, value);
-	}
-	
-	private final void buildBypassCache(L2PcInstance activeChar)
-	{
-		if (activeChar == null)
-			return;
-		
-		activeChar.clearBypass();
-		int len = _html.length();
-		for (int i = 0; i < len; i++)
-		{
-			int start = _html.indexOf("bypass -h", i);
-			int finish = _html.indexOf("\"", start);
-			
-			if (start < 0 || finish < 0)
-				break;
-			
-			start += 10;
-			i = finish;
-			int finish2 = _html.indexOf("$", start);
-			if (finish2 < finish && finish2 > 0)
-				activeChar.addBypass2(_html.substring(start, finish2).trim());
-			else
-				activeChar.addBypass(_html.substring(start, finish).trim());
-		}
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_npcObjId);
-		writeS(_html);
-		writeD(_questId);
-	}
+
+    private int _npcObjId;
+    private String _html;
+    private int _questId = 0;
+
+    /**
+     * @param npcObjId
+     * @param text
+     * @param questId
+     */
+    public NpcQuestHtmlMessage(int npcObjId, int questId)
+    {
+        _npcObjId = npcObjId;
+        _questId = questId;
+    }
+
+    @Override
+    public void runImpl()
+    {
+        if (Config.BYPASS_VALIDATION)
+        {
+            buildBypassCache(getClient().getActiveChar());
+        }
+    }
+
+    public void setHtml(String text)
+    {
+        if (!text.contains("<html>"))
+        {
+            text = "<html><body>" + text + "</body></html>";
+        }
+
+        _html = text;
+    }
+
+    public boolean setFile(String path)
+    {
+        String content = HtmCache.getInstance().getHtm(getClient().getActiveChar().getHtmlPrefix(), path);
+
+        if (content == null)
+        {
+            setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
+            Log.warning("missing html page " + path);
+            return false;
+        }
+
+        setHtml(content);
+        return true;
+    }
+
+    public void replace(String pattern, String value)
+    {
+        _html = _html.replaceAll(pattern, value);
+    }
+
+    private final void buildBypassCache(L2PcInstance activeChar)
+    {
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        activeChar.clearBypass();
+        int len = _html.length();
+        for (int i = 0; i < len; i++)
+        {
+            int start = _html.indexOf("bypass -h", i);
+            int finish = _html.indexOf("\"", start);
+
+            if (start < 0 || finish < 0)
+            {
+                break;
+            }
+
+            start += 10;
+            i = finish;
+            int finish2 = _html.indexOf("$", start);
+            if (finish2 < finish && finish2 > 0)
+            {
+                activeChar.addBypass2(_html.substring(start, finish2).trim());
+            }
+            else
+            {
+                activeChar.addBypass(_html.substring(start, finish).trim());
+            }
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_npcObjId);
+        writeS(_html);
+        writeD(_questId);
+    }
 }

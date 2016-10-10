@@ -25,37 +25,37 @@ import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
  */
 public class BossManager
 {
-	private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<Integer, L2RaidBossInstance>();
-	
-	public static BossManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	public void registerBoss(L2RaidBossInstance boss)
-	{
-		_bosses.put(boss.getNpcId(), boss);
-	}
-	
-	public Map<Integer, L2RaidBossInstance> getBosses()
-	{
-		return _bosses;
-	}
-	
-	public L2RaidBossInstance getBoss(int id)
-	{
-		return _bosses.get(id);
-	}
-	
-	public boolean isAlive(int id)
-	{
-		L2RaidBossInstance boss = _bosses.get(id);
-		return boss != null && !boss.isDead();
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final BossManager _instance = new BossManager();
-	}
+    private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<Integer, L2RaidBossInstance>();
+
+    public static BossManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    public void registerBoss(L2RaidBossInstance boss)
+    {
+        _bosses.put(boss.getNpcId(), boss);
+    }
+
+    public Map<Integer, L2RaidBossInstance> getBosses()
+    {
+        return _bosses;
+    }
+
+    public L2RaidBossInstance getBoss(int id)
+    {
+        return _bosses.get(id);
+    }
+
+    public boolean isAlive(int id)
+    {
+        L2RaidBossInstance boss = _bosses.get(id);
+        return boss != null && !boss.isDead();
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final BossManager _instance = new BossManager();
+    }
 }

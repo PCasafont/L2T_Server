@@ -29,39 +29,46 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class Ensoul implements IBypassHandler
 {
-	private static final String[] COMMANDS = { "ensoul", "remove_ensoul", };
-	
-	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		if (command.equals("ensoul"))
-			activeChar.sendPacket(new ExShowEnsoulWindow());
-		else
-		{
-			L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-			if (weapon == null)
-			{
-				activeChar.sendPacket(new ExShowScreenMessage("You must equip a weapon in order to remove its soul crystal effect!", 5000));
-				return false;
-			}
-			if (weapon.isSoulEnhanced())
-			{
-				weapon.removeEnsoulEffects();
-				activeChar.getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
-				activeChar.broadcastUserInfo();
-				activeChar.sendPacket(new ItemList(activeChar, false));
-				activeChar.sendPacket(new ExShowScreenMessage("The Ensoul Effects of your " + weapon.getName() + " have been removed", 5000));
-			}
-		}
-		return true;
-	}
-	
-	@Override
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"ensoul", "remove_ensoul",};
+
+    @Override
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        if (command.equals("ensoul"))
+        {
+            activeChar.sendPacket(new ExShowEnsoulWindow());
+        }
+        else
+        {
+            L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
+            if (weapon == null)
+            {
+                activeChar
+                        .sendPacket(new ExShowScreenMessage(
+                                "You must equip a weapon in order to remove its soul crystal effect!", 5000));
+                return false;
+            }
+            if (weapon.isSoulEnhanced())
+            {
+                weapon.removeEnsoulEffects();
+                activeChar.getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
+                activeChar.broadcastUserInfo();
+                activeChar.sendPacket(new ItemList(activeChar, false));
+                activeChar.sendPacket(new ExShowScreenMessage("The Ensoul Effects of your " + weapon
+                        .getName() + " have been removed", 5000));
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

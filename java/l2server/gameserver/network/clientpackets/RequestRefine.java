@@ -28,94 +28,114 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Format:(ch) dddd
- * @author  -Wooden-
+ *
+ * @author -Wooden-
  */
 public final class RequestRefine extends L2GameClientPacket
 {
-	private int _targetItemObjId;
-	private int _refinerItemObjId;
-	private int _gemStoneItemObjId;
-	private long _gemStoneCount;
-	
-	@Override
-	protected void readImpl()
-	{
-		_targetItemObjId = readD();
-		_refinerItemObjId = readD();
-		_gemStoneItemObjId = readD();
-		_gemStoneCount = readQ();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
-		if (targetItem == null)
-			return;
-		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
-		if (refinerItem == null)
-			return;
-		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemStoneItemObjId);
-		if (gemStoneItem == null)
-			return;
-		
-		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
-		{
-			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
-			return;
-		}
-		
-		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
-		if (ls == null)
-			return;
-		
-		if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
-		{
-			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
-			return;
-		}
-		
-		// unequip item
-		if (targetItem.isEquipped())
-		{
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
-			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped)
-				iu.addModifiedItem(itm);
-			
-			activeChar.sendPacket(iu);
-			activeChar.broadcastUserInfo();
-		}
-		
-		// consume the life stone
-		if (!activeChar.destroyItem("RequestRefine", refinerItem, 1, null, false))
-			return;
-		
-		// consume the gemstones
-		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, _gemStoneCount, null, false))
-			return;
-		
-		final L2Augmentation aug = LifeStoneTable.getInstance().generateRandomAugmentation(ls, targetItem);
-		targetItem.setAugmentation(aug);
-		
-		final int stat12 = aug.getAugment1().getId();
-		final int stat34 = aug.getAugment2().getId();
-		activeChar.sendPacket(new ExVariationResult(stat12, stat34, 1));
-		
-		InventoryUpdate iu = new InventoryUpdate();
-		iu.addModifiedItem(targetItem);
-		activeChar.sendPacket(iu);
-		
-		StatusUpdate su = new StatusUpdate(activeChar);
-		su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
-		activeChar.sendPacket(su);
-	}
+    private int _targetItemObjId;
+    private int _refinerItemObjId;
+    private int _gemStoneItemObjId;
+    private long _gemStoneCount;
+
+    @Override
+    protected void readImpl()
+    {
+        _targetItemObjId = readD();
+        _refinerItemObjId = readD();
+        _gemStoneItemObjId = readD();
+        _gemStoneCount = readQ();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+        if (targetItem == null)
+        {
+            return;
+        }
+        L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
+        if (refinerItem == null)
+        {
+            return;
+        }
+        L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemStoneItemObjId);
+        if (gemStoneItem == null)
+        {
+            return;
+        }
+
+        if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
+        {
+            activeChar.sendPacket(new ExVariationResult(0, 0, 0));
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
+            return;
+        }
+
+        final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
+        if (ls == null)
+        {
+            return;
+        }
+
+        if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+        {
+            activeChar.sendPacket(new ExVariationResult(0, 0, 0));
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
+            return;
+        }
+
+        // unequip item
+        if (targetItem.isEquipped())
+        {
+            L2ItemInstance[] unequiped = activeChar.getInventory()
+                    .unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+            InventoryUpdate iu = new InventoryUpdate();
+            for (L2ItemInstance itm : unequiped)
+            {
+                iu.addModifiedItem(itm);
+            }
+
+            activeChar.sendPacket(iu);
+            activeChar.broadcastUserInfo();
+        }
+
+        // consume the life stone
+        if (!activeChar.destroyItem("RequestRefine", refinerItem, 1, null, false))
+        {
+            return;
+        }
+
+        // consume the gemstones
+        if (!activeChar.destroyItem("RequestRefine", gemStoneItem, _gemStoneCount, null, false))
+        {
+            return;
+        }
+
+        final L2Augmentation aug = LifeStoneTable.getInstance().generateRandomAugmentation(ls, targetItem);
+        targetItem.setAugmentation(aug);
+
+        final int stat12 = aug.getAugment1().getId();
+        final int stat34 = aug.getAugment2().getId();
+        activeChar.sendPacket(new ExVariationResult(stat12, stat34, 1));
+
+        InventoryUpdate iu = new InventoryUpdate();
+        iu.addModifiedItem(targetItem);
+        activeChar.sendPacket(iu);
+
+        StatusUpdate su = new StatusUpdate(activeChar);
+        su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
+        activeChar.sendPacket(su);
+    }
 }

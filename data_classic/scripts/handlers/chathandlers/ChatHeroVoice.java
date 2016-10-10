@@ -27,76 +27,81 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
-
 /**
  * Hero chat handler.
  *
- * @author  durgus
+ * @author durgus
  */
 public class ChatHeroVoice implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		17
-	};
-	
-	/**
-	 * Handle chat type 'hero voice'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isHero() && (!EventsManager.getInstance().isPlayerParticipant(activeChar.getObjectId()) && activeChar.getEvent() == null) || activeChar.isGM())
-		{
-			if (!activeChar.isGM())
-			{
-				if (DiscussionManager.getInstance().isGlobalChatDisabled())
-				{
-					activeChar.sendMessage("Global chat is disabled right now.");
-					return;
-				}
-				else if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
-				{
-					activeChar.sendMessage("Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
-					return;
-				}
-			}
-			
-			for (int i = 0; i < text.length(); i++)
-			{
-				if ((text.charAt(i) & (char)0xff00) != 0)
-					text = text.substring(0, i) + text.substring(i + 1);
-			}
-			
-			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-			
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			for (L2PcInstance player : pls)
-			{
-				if (player != null && !BlockList.isBlocked(player, activeChar))
-					player.sendPacket(cs);
-			}
-		}
-		
-		if (Server.gui != null)
-		{
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			ConsoleTab.appendMessage(ConsoleFilter.HeroChat, activeChar.getName() + ": " + text);
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {17};
+
+    /**
+     * Handle chat type 'hero voice'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        if (activeChar.isHero() && (!EventsManager.getInstance()
+                .isPlayerParticipant(activeChar.getObjectId()) && activeChar.getEvent() == null) || activeChar.isGM())
+        {
+            if (!activeChar.isGM())
+            {
+                if (DiscussionManager.getInstance().isGlobalChatDisabled())
+                {
+                    activeChar.sendMessage("Global chat is disabled right now.");
+                    return;
+                }
+                else if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
+                {
+                    activeChar
+                            .sendMessage(
+                                    "Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
+                    return;
+                }
+            }
+
+            for (int i = 0; i < text.length(); i++)
+            {
+                if ((text.charAt(i) & (char) 0xff00) != 0)
+                {
+                    text = text.substring(0, i) + text.substring(i + 1);
+                }
+            }
+
+            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+
+            Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+            for (L2PcInstance player : pls)
+            {
+                if (player != null && !BlockList.isBlocked(player, activeChar))
+                {
+                    player.sendPacket(cs);
+                }
+            }
+        }
+
+        if (Server.gui != null)
+        {
+            while (text.contains("Type=") && text.contains("Title="))
+            {
+                int index1 = text.indexOf("Type=");
+                int index2 = text.indexOf("Title=") + 6;
+                text = text.substring(0, index1) + text.substring(index2);
+            }
+
+            ConsoleTab.appendMessage(ConsoleFilter.HeroChat, activeChar.getName() + ": " + text);
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

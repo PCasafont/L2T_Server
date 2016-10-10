@@ -31,75 +31,80 @@ import l2server.log.Log;
  */
 public class SellList extends L2GameServerPacket
 {
-	
-	private final L2PcInstance _activeChar;
-	private final L2MerchantInstance _lease;
-	private long _money;
-	private List<L2ItemInstance> _selllist = new ArrayList<L2ItemInstance>();
-	
-	public SellList(L2PcInstance player)
-	{
-		_activeChar = player;
-		_lease = null;
-		_money = _activeChar.getAdena();
-		doLease();
-	}
-	
-	public SellList(L2PcInstance player, L2MerchantInstance lease)
-	{
-		_activeChar = player;
-		_lease = lease;
-		_money = _activeChar.getAdena();
-		doLease();
-	}
-	
-	private void doLease()
-	{
-		if (_lease == null)
-		{
-			for (L2ItemInstance item : _activeChar.getInventory().getItems())
-			{
-				if (!item.isEquipped() && // Not equipped
-				item.isSellable() && // Item is sellable
-				(_activeChar.getPet() == null || // Pet not summoned or
-				item.getObjectId() != _activeChar.getPet().getControlObjectId())) // Pet is summoned and not the item that summoned the pet
-				{
-					_selllist.add(item);
-					if (Config.DEBUG)
-						Log.fine("item added to selllist: " + item.getItem().getName());
-				}
-			}
-		}
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeQ(_money);
-		writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().NpcId);
-		writeH(_selllist.size());
-		
-		for (L2ItemInstance item : _selllist)
-		{
-			writeH(item.getItem().getType1());
-			writeD(item.getObjectId());
-			writeD(item.getItemId());
-			writeQ(item.getCount());
-			writeH(item.getItem().getType2());
-			writeH(0x00);
-			writeQ(item.getItem().getBodyPart());
-			writeH(item.getEnchantLevel());
-			writeQ(item.getItem().getSalePrice());
-			
-			// T1
-			writeH(item.getAttackElementType());
-			writeH(item.getAttackElementPower());
-			for (byte i = 0; i < 6; i++)
-				writeH(item.getElementDefAttr(i));
-			
-			writeH(0x00); // Enchant effect 1
-			writeH(0x00); // Enchant effect 2
-			writeH(0x00); // Enchant effect 3
-		}
-	}
+
+    private final L2PcInstance _activeChar;
+    private final L2MerchantInstance _lease;
+    private long _money;
+    private List<L2ItemInstance> _selllist = new ArrayList<L2ItemInstance>();
+
+    public SellList(L2PcInstance player)
+    {
+        _activeChar = player;
+        _lease = null;
+        _money = _activeChar.getAdena();
+        doLease();
+    }
+
+    public SellList(L2PcInstance player, L2MerchantInstance lease)
+    {
+        _activeChar = player;
+        _lease = lease;
+        _money = _activeChar.getAdena();
+        doLease();
+    }
+
+    private void doLease()
+    {
+        if (_lease == null)
+        {
+            for (L2ItemInstance item : _activeChar.getInventory().getItems())
+            {
+                if (!item.isEquipped() && // Not equipped
+                        item.isSellable() && // Item is sellable
+                        (_activeChar.getPet() == null || // Pet not summoned or
+                                item.getObjectId() != _activeChar.getPet()
+                                        .getControlObjectId())) // Pet is summoned and not the item that summoned the pet
+                {
+                    _selllist.add(item);
+                    if (Config.DEBUG)
+                    {
+                        Log.fine("item added to selllist: " + item.getItem().getName());
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeQ(_money);
+        writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().NpcId);
+        writeH(_selllist.size());
+
+        for (L2ItemInstance item : _selllist)
+        {
+            writeH(item.getItem().getType1());
+            writeD(item.getObjectId());
+            writeD(item.getItemId());
+            writeQ(item.getCount());
+            writeH(item.getItem().getType2());
+            writeH(0x00);
+            writeQ(item.getItem().getBodyPart());
+            writeH(item.getEnchantLevel());
+            writeQ(item.getItem().getSalePrice());
+
+            // T1
+            writeH(item.getAttackElementType());
+            writeH(item.getAttackElementPower());
+            for (byte i = 0; i < 6; i++)
+            {
+                writeH(item.getElementDefAttr(i));
+            }
+
+            writeH(0x00); // Enchant effect 1
+            writeH(0x00); // Enchant effect 2
+            writeH(0x00); // Enchant effect 3
+        }
+    }
 }

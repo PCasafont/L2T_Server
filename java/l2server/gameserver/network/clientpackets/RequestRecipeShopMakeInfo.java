@@ -22,34 +22,38 @@ import l2server.gameserver.network.serverpackets.RecipeShopItemInfo;
 /**
  * This class ...
  * cdd
+ *
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
 public final class RequestRecipeShopMakeInfo extends L2GameClientPacket
 {
-	//
-	
-	private int _playerObjectId;
-	private int _recipeId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_playerObjectId = readD();
-		_recipeId = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		final L2PcInstance shop = L2World.getInstance().getPlayer(_playerObjectId);
-		if (shop == null || shop.getPrivateStoreType() != 5)
-			return;
-		
-		player.sendPacket(new RecipeShopItemInfo(shop, _recipeId));
-		
-	}
+    //
+
+    private int _playerObjectId;
+    private int _recipeId;
+
+    @Override
+    protected void readImpl()
+    {
+        _playerObjectId = readD();
+        _recipeId = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        final L2PcInstance shop = L2World.getInstance().getPlayer(_playerObjectId);
+        if (shop == null || shop.getPrivateStoreType() != 5)
+        {
+            return;
+        }
+
+        player.sendPacket(new RecipeShopItemInfo(shop, _recipeId));
+    }
 }

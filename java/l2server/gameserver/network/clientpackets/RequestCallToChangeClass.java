@@ -22,25 +22,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCallToChangeClass extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		// Port to the reliquary of giants
-		activeChar.teleToLocation(-115042, 226613, -2876);
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    public void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        // Port to the reliquary of giants
+        activeChar.teleToLocation(-115042, 226613, -2876);
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

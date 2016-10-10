@@ -19,26 +19,26 @@ import l2server.gameserver.model.PartyMatchWaitingList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Gnacik
- *
  */
 public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
-		
-		if (_activeChar == null)
-			return;
-		
-		PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
-	}
+
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance _activeChar = getClient().getActiveChar();
+
+        if (_activeChar == null)
+        {
+            return;
+        }
+
+        PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
+    }
 }

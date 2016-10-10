@@ -23,24 +23,26 @@ import l2server.gameserver.stats.Stats;
  */
 public class FuncAddPercentBase extends Func
 {
-	private final Lambda _lambda;
-	
-	public FuncAddPercentBase(Stats pStat, Object owner, Lambda lambda)
-	{
-		super(pStat, owner);
-		_lambda = lambda;
-	}
-	
-	@Override
-	public int getOrder()
-	{
-		return 0x30;
-	}
-	
-	@Override
-	public void calc(Env env)
-	{
-		if (cond == null || cond.test(env))
-			env.value += env.baseValue * (_lambda.calc(env) / 100.0);
-	}
+    private final Lambda _lambda;
+
+    public FuncAddPercentBase(Stats pStat, Object owner, Lambda lambda)
+    {
+        super(pStat, owner);
+        _lambda = lambda;
+    }
+
+    @Override
+    public int getOrder()
+    {
+        return 0x30;
+    }
+
+    @Override
+    public void calc(Env env)
+    {
+        if (cond == null || cond.test(env))
+        {
+            env.value += env.baseValue * (_lambda.calc(env) / 100.0);
+        }
+    }
 }

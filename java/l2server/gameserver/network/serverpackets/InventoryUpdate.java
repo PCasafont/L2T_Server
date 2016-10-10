@@ -24,10 +24,9 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.log.Log;
 
 /**
- *
  * 37				// Packet Identifier <BR>
  * 01 00 			 // Number of ItemInfo Trame of the Packet <BR><BR>
- *
+ * <p>
  * 03 00			 // Update type : 01-add, 02-modify, 03-remove <BR>
  * 04 00 			 // Item Type 1 : 00-weapon/ring/earring/necklace, 01-armor/shield, 04-item/questitem/adena <BR>
  * c6 37 50 40	   // ObjectId <BR>
@@ -39,92 +38,107 @@ import l2server.log.Log;
  * 00 00 			 // Slot		: 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand <BR>
  * 00 00 			 // Enchant level (pet level shown in control item) <BR>
  * 00 00			 // Pet name exists or not shown in control item <BR><BR><BR>
- *
- *
+ * <p>
+ * <p>
  * format   h (hh dddhhhh hh)	 revision 377 <BR>
  * format   h (hh dddhhhd hh)   revision 415 <BR><BR>
  *
  * @version $Revision: 1.3.2.2.2.4 $ $Date: 2005/03/27 15:29:39 $
- * Rebuild 23.2.2006 by Advi
+ *          Rebuild 23.2.2006 by Advi
  */
 
 public class InventoryUpdate extends L2ItemListPacket
 {
-	
-	private List<ItemInfo> _items;
-	
-	public InventoryUpdate()
-	{
-		_items = new ArrayList<ItemInfo>();
-		if (Config.DEBUG)
-		{
-			showDebug();
-		}
-	}
-	
-	/**
-	 * @param items
-	 */
-	public InventoryUpdate(List<ItemInfo> items)
-	{
-		_items = items;
-		if (Config.DEBUG)
-		{
-			showDebug();
-		}
-	}
-	
-	public void addItem(L2ItemInstance item)
-	{
-		if (item != null)
-			_items.add(new ItemInfo(item));
-	}
-	
-	public void addNewItem(L2ItemInstance item)
-	{
-		if (item != null)
-			_items.add(new ItemInfo(item, 1));
-	}
-	
-	public void addModifiedItem(L2ItemInstance item)
-	{
-		if (item != null)
-			_items.add(new ItemInfo(item, 2));
-	}
-	
-	public void addRemovedItem(L2ItemInstance item)
-	{
-		if (item != null)
-			_items.add(new ItemInfo(item, 3));
-	}
-	
-	public void addItems(List<L2ItemInstance> items)
-	{
-		if (items != null)
-			for (L2ItemInstance item : items)
-				if (item != null)
-					_items.add(new ItemInfo(item));
-	}
-	
-	private void showDebug()
-	{
-		for (ItemInfo item : _items)
-		{
-			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
-		}
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		int count = _items.size();
-		writeH(count);
-		for (ItemInfo item : _items)
-		{
-			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
-			writeItem(item);
-		}
-		_items.clear();
-		_items = null;
-	}
+
+    private List<ItemInfo> _items;
+
+    public InventoryUpdate()
+    {
+        _items = new ArrayList<ItemInfo>();
+        if (Config.DEBUG)
+        {
+            showDebug();
+        }
+    }
+
+    /**
+     * @param items
+     */
+    public InventoryUpdate(List<ItemInfo> items)
+    {
+        _items = items;
+        if (Config.DEBUG)
+        {
+            showDebug();
+        }
+    }
+
+    public void addItem(L2ItemInstance item)
+    {
+        if (item != null)
+        {
+            _items.add(new ItemInfo(item));
+        }
+    }
+
+    public void addNewItem(L2ItemInstance item)
+    {
+        if (item != null)
+        {
+            _items.add(new ItemInfo(item, 1));
+        }
+    }
+
+    public void addModifiedItem(L2ItemInstance item)
+    {
+        if (item != null)
+        {
+            _items.add(new ItemInfo(item, 2));
+        }
+    }
+
+    public void addRemovedItem(L2ItemInstance item)
+    {
+        if (item != null)
+        {
+            _items.add(new ItemInfo(item, 3));
+        }
+    }
+
+    public void addItems(List<L2ItemInstance> items)
+    {
+        if (items != null)
+        {
+            for (L2ItemInstance item : items)
+            {
+                if (item != null)
+                {
+                    _items.add(new ItemInfo(item));
+                }
+            }
+        }
+    }
+
+    private void showDebug()
+    {
+        for (ItemInfo item : _items)
+        {
+            Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem()
+                    .getName() + " last change:" + item.getChange());
+        }
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        int count = _items.size();
+        writeH(count);
+        for (ItemInfo item : _items)
+        {
+            writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
+            writeItem(item);
+        }
+        _items.clear();
+        _items = null;
+    }
 }

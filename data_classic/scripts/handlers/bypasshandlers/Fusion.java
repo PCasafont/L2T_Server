@@ -24,53 +24,49 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class Fusion implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"join_mini_game",
-		"magic_gem_view_page"
-	};
+    private static final String[] COMMANDS = {"join_mini_game", "magic_gem_view_page"};
 
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (command.startsWith("join_mini_game"))
-		{
-			MiniGame _Event = MiniGamesManager.getCurrentMiniGame();
-			
-			SystemMessage s = null;
-			if (_Event == null)
-			{
-				s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
-				s.addString("There is no mini game going on.");
-			}
-			else if (!_Event.inRegistrations())
-			{
-				s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
-				s.addString("The registrations for " + _Event.getName() + " are closed.");
-			}
-			else if (!_Event.onPlayerRegistration(activeChar))
-			{
-				s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
-				s.addString("You are not allowed to participate to this mini game.");
-			}
-			else
-			{
-				s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
-				s.addString("You are now registered to the " + _Event.getName() + ".");
-			}
-			
-			activeChar.sendPacket(s);
-			return false;
-		}
-		else if (command.startsWith("magic_gem_view_page"))
-		{
-			
-		}
-		
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (command.startsWith("join_mini_game"))
+        {
+            MiniGame _Event = MiniGamesManager.getCurrentMiniGame();
+
+            SystemMessage s = null;
+            if (_Event == null)
+            {
+                s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
+                s.addString("There is no mini game going on.");
+            }
+            else if (!_Event.inRegistrations())
+            {
+                s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
+                s.addString("The registrations for " + _Event.getName() + " are closed.");
+            }
+            else if (!_Event.onPlayerRegistration(activeChar))
+            {
+                s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
+                s.addString("You are not allowed to participate to this mini game.");
+            }
+            else
+            {
+                s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
+                s.addString("You are now registered to the " + _Event.getName() + ".");
+            }
+
+            activeChar.sendPacket(s);
+            return false;
+        }
+        else if (command.startsWith("magic_gem_view_page"))
+        {
+
+        }
+
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

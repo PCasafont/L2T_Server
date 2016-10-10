@@ -23,34 +23,34 @@ import l2server.gameserver.model.zone.L2ZoneType;
  * Creation of such a zone should require somekind
  * of jython script reference which can handle onEnter() / onExit()
  *
- * @author  durgus
+ * @author durgus
  */
 public class L2ScriptZone extends L2ZoneType
 {
-	public L2ScriptZone(int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_SCRIPT, true);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_SCRIPT, false);
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
+    public L2ScriptZone(int id)
+    {
+        super(id);
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_SCRIPT, true);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_SCRIPT, false);
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
 }

@@ -19,32 +19,31 @@ import l2server.gameserver.model.actor.instance.L2BoatInstance;
 
 /**
  * @author Maktakien
- *
  */
 public class VehicleInfo extends L2GameServerPacket
 {
-	// Store some parameters here because they can be changed during broadcast
-	private final int _objId, _x, _y, _z, _heading;
-	
-	public VehicleInfo(L2BoatInstance boat)
-	{
-		_objId = boat.getObjectId();
-		_x = boat.getX();
-		_y = boat.getY();
-		_z = boat.getZ();
-		_heading = boat.getHeading();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_heading);
-	}
+    // Store some parameters here because they can be changed during broadcast
+    private final int _objId, _x, _y, _z, _heading;
+
+    public VehicleInfo(L2BoatInstance boat)
+    {
+        _objId = boat.getObjectId();
+        _x = boat.getX();
+        _y = boat.getY();
+        _z = boat.getZ();
+        _heading = boat.getHeading();
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objId);
+        writeD(_x);
+        writeD(_y);
+        writeD(_z);
+        writeD(_heading);
+    }
 }

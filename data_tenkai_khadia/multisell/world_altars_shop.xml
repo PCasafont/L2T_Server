@@ -1,411 +1,415 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient id="4355" count="15" /> <!-- Blue Eva -->
-		<production id="4357" count="165000" /> <!-- Silver Shilen -->
-	</item>
-	<item>
-		<ingredient id="4355" count="1000" /> <!-- Blue Eva -->
-		<production id="4358" count="840" /> <!-- Bloody Pa'agrio -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34581" /> <!-- Player Commendation - Talisman - M. Def. (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34582" /> <!-- Player Commendation - Talisman - M. Def. (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34583" /> <!-- Player Commendation - Talisman - M. Atk. (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34584" /> <!-- Player Commendation - Talisman - M. Atk. (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34585" /> <!-- Player Commendation - Talisman - P. Atk. (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34586" /> <!-- Player Commendation - Talisman - P. Atk. (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34587" /> <!-- Player Commendation - Talisman - P. Def. (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34588" /> <!-- Player Commendation - Talisman - P. Def. (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34589" /> <!-- Player Commendation - Talisman - CP (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34590" /> <!-- Player Commendation - Talisman - CP (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34591" /> <!-- Player Commendation - Talisman - HP (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34592" /> <!-- Player Commendation - Talisman - HP (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34593" /> <!-- Player Commendation - Talisman - MP (Active) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34594" /> <!-- Player Commendation - Talisman - MP (Passive) - PC-exclusive -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34621" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="34622" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18359" /> <!-- Special Talisman (R85-grade) - Shield Defense (Passive) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18360" /> <!-- Special Talisman (R90-grade) - Shield Defense (Passive) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18361" /> <!-- Special Talisman (R95-grade) - Shield Defense (Passive) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18362" /> <!-- Special Talisman (R99-grade) - Shield Defense (Passive) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18363" /> <!-- Special Talisman (R85-grade) - Shield Defense (Active) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18364" /> <!-- Special Talisman (R90-grade) - Shield Defense (Active) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18365" /> <!-- Special Talisman (R95-grade) - Shield Defense (Active) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18366" /> <!-- Special Talisman (R99-grade) - Shield Defense (Active) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18375" /> <!-- Special Talisman (R85-grade) - Mana Drain (Active) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18376" /> <!-- Special Talisman (R90-grade) - Mana Drain (Active) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18377" /> <!-- Special Talisman (R95-grade) - Mana Drain (Active) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18378" /> <!-- Special Talisman (R99-grade) - Mana Drain (Active) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18379" /> <!-- Special Talisman (R85-grade) - Blood Siphon (Active) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18380" /> <!-- Special Talisman (R90-grade) - Blood Siphon (Active) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18381" /> <!-- Special Talisman (R95-grade) - Blood Siphon (Active) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18382" /> <!-- Special Talisman (R99-grade) - Blood Siphon (Active) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18383" /> <!-- Special Talisman (R85-grade) - Increase Range(Passive) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18384" /> <!-- Special Talisman (R90-grade) - Increase Range(Passive) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18385" /> <!-- Special Talisman (R95-grade) - Increase Range(Passive) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18386" /> <!-- Special Talisman (R99-grade) - Increase Range(Passive) -->
-	</item>
-	<item>
-		<ingredient count="2" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18387" /> <!-- Special Talisman (R85-grade) - Increase Range (Active) -->
-	</item>
-	<item>
-		<ingredient count="4" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18388" /> <!-- Special Talisman (R90-grade) - Increase Range (Active) -->
-	</item>
-	<item>
-		<ingredient count="6" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18389" /> <!-- Special Talisman (R95-grade) - Increase Range (Active) -->
-	</item>
-	<item>
-		<ingredient count="10" id="4355" /> <!-- Blue Eva -->
-		<production count="1" id="18390" /> <!-- Special Talisman (R99-grade) - Increase Range (Active) -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="39568" count="1"/> <!-- Talisman - Wind: P. Critical Damage -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="39569" count="1"/> <!-- Talisman - Wind: M. Critical Damage -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="39570" count="1"/> <!-- Talisman - Wind: Defense -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="39571" count="1"/> <!-- Talisman - Wind: Debuff Resistance -->
-	</item>
-	<item>
-		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
-		<production id="23833" count="1"/> <!-- Talisman - Abundance - War -->
-	</item>
-	<item>
-		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
-		<production id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
-	</item>
-	<item>
-		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
-		<production id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
-	</item>
-	<item>
-		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
-		<production id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
-	</item>
-	<item>
-		<ingredient id="23833" count="1"/> <!-- Talisman - Abundance - War -->
-		<ingredient id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
-		<ingredient id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
-		<ingredient id="4355" count="400"/> <!-- Blue Eva -->
-		<production id="23837" count="1"/> <!-- Talisman - Hunter - Abundance -->
-	</item>
-	<item>
-		<ingredient id="23833" count="1"/> <!-- Talisman - Abundance - War -->
-		<ingredient id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
-		<ingredient id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
-		<ingredient id="4355" count="400"/> <!-- Blue Eva -->
-		<production id="23838" count="1"/> <!-- Talisman - Slaughterer - Abundance -->
-	</item>
-	<item>
-		<ingredient id="23833" count="1"/> <!-- Talisman - Abundance - War -->
-		<ingredient id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
-		<ingredient id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
-		<ingredient id="4355" count="400"/> <!-- Blue Eva -->
-		<production id="23839" count="1"/> <!-- Talisman - Conquerer - Abundance -->
-	</item>
-	<item>
-		<ingredient id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
-		<ingredient id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
-		<ingredient id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
-		<ingredient id="4355" count="400"/> <!-- Blue Eva -->
-		<production id="23840" count="1"/> <!-- Talisman - Outlaw - Abundance -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36176" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Sigel Knight -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36177" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Yul Archer -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36178" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Tyrr Warrior -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36179" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Othell Rogue -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36180" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Iss Enchanter -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36181" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Wynn Summoner -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36182" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Aeore Healer -->
-	</item>
-	<item>
-		<ingredient id="4355" count="875"/> <!-- Blue Eva -->
-		<production id="36183" count="1"/> <!-- 2012 World Olympiad Hero's Accessory - Feoh Wizard -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23825" count="1"/> <!-- Mysterious Human Dye - Aim, Mental, Unbind, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23826" count="1"/> <!-- Mysterious Elf Dye - Blessing of Water, Delicacy, Prevision, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23827" count="1"/> <!-- Mysterious Dark Elf Dye - Sharpness, Blessing of Wind, Disparition, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23828" count="1"/> <!-- Mysterious Orc Dye - Blessing of Fire, Energetic, Savage, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23829" count="1"/> <!-- Mysterious Dwarf Dye - Dexterity, Blessing of Earth, Endurance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23830" count="1"/> <!-- Mysterious Kamael Dye - Battle Instinct, Dark Silence, Soul Protection, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="30"/> <!-- Blue Eva -->
-		<production id="23845" count="1"/> <!-- Mysterious Hunt Dye - P. Def., Speed, 1-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23901" count="1"/> <!-- Mysterious Dark Resistance Dye - Dark Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23902" count="1"/> <!-- Mysterious Holy Resistance Dye - Holy Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23903" count="1"/> <!-- Mysterious Fire Resistance Dye - Fire Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23904" count="1"/> <!-- Mysterious Water Resistance Dye - Water Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23905" count="1"/> <!-- Mysterious Wind Resistance Dye - Wind Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23906" count="1"/> <!-- Mysterious Earth Resistance Dye - Earth Resistance, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23907" count="1"/> <!-- Mysterious Abnormal State Resistance Dye - Abnormal State/ Buff Cancellation Resistance, Abnormal State Reflect, 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23909" count="1"/> <!-- Mysterious World Boss Defense Dye - P. Def., M. Def., 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23910" count="1"/> <!-- Mysterious Antharas Defense Dye - P. Def., M. Def., 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23911" count="1"/> <!-- Mysterious Valakas Defense Dye - P. Def., M. Def., 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="200"/> <!-- Blue Eva -->
-		<production id="23912" count="1"/> <!-- Mysterious Lindvior Defense Dye - P. Def., M. Def., 7-day -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39415" count="1"/> <!-- Lv. 5 Legendary STR Dye (Charisma) - STR + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39416" count="1"/> <!-- Lv. 5 Legendary DEX Dye (Charisma) - DEX + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39417" count="1"/> <!-- Lv. 5 Legendary CON Dye (Charisma) - CON + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39418" count="1"/> <!-- Lv. 5 Legendary INT Dye (Charisma) - INT + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39419" count="1"/> <!-- Lv. 5 Legendary WIT Dye (Charisma) - WIT + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="88"/> <!-- Blue Eva -->
-		<production id="39420" count="1"/> <!-- Lv. 5 Legendary MEN Dye (Charisma) - MEN + 5 CHA + 5 -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40253" count="5"/> <!-- Potion of Protection: Stun - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40254" count="5"/> <!-- Potion of Protection: Hold - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40255" count="5"/> <!-- Potion of Protection: Bleed - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40256" count="5"/> <!-- Potion of Protection: Paralyze - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40257" count="5"/> <!-- Potion of Protection: Mental - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40258" count="5"/> <!-- Potion of Protection: Sleep - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40259" count="5"/> <!-- Potion of Protection: Poison - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40260" count="5"/> <!-- Potion of Protection: Knock Back / Knock Down - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="100"/> <!-- Blue Eva -->
-		<production id="40261" count="5"/> <!-- Potion of Protection: Aerial Yoke - Top-grade -->
-	</item>
-	<item>
-		<ingredient id="4355" count="300"/> <!-- Blue Eva -->
-		<production id="26342" count="1"/> <!-- Recipe: Talisman - Abundance Lv. 1 (High-grade) -->
-	</item>
-	<item>
-		<ingredient id="4355" count="500"/> <!-- Blue Eva -->
-		<production id="26343" count="1"/> <!-- Recipe: Talisman - Abundance Lv. 2 (High-grade) -->
-	</item>
-	<item>
-		<ingredient id="4355" count="600"/> <!-- Blue Eva -->
-		<production id="26344" count="1"/> <!-- Recipe: Talisman - Abundance Lv. 3 (High-grade) -->
-	</item>
-	<item>
-		<ingredient id="4355" count="700"/> <!-- Blue Eva -->
-		<production id="26345" count="1"/> <!-- Recipe: Talisman - Abundance Lv. 4 (High-grade) -->
-	</item>
- </list>
+    <item>
+        <ingredient id="4355" count="15" /> <!-- Blue Eva -->
+        <production id="4357" count="165000" /> <!-- Silver Shilen -->
+    </item>
+    <item>
+        <ingredient id="4355" count="1000" /> <!-- Blue Eva -->
+        <production id="4358" count="840" /> <!-- Bloody Pa'agrio -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34581" /> <!-- Player Commendation - Talisman - M. Def. (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34582" /> <!-- Player Commendation - Talisman - M. Def. (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34583" /> <!-- Player Commendation - Talisman - M. Atk. (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34584" /> <!-- Player Commendation - Talisman - M. Atk. (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34585" /> <!-- Player Commendation - Talisman - P. Atk. (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34586" /> <!-- Player Commendation - Talisman - P. Atk. (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34587" /> <!-- Player Commendation - Talisman - P. Def. (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34588" /> <!-- Player Commendation - Talisman - P. Def. (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34589" /> <!-- Player Commendation - Talisman - CP (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34590" /> <!-- Player Commendation - Talisman - CP (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34591" /> <!-- Player Commendation - Talisman - HP (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34592" /> <!-- Player Commendation - Talisman - HP (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34593" /> <!-- Player Commendation - Talisman - MP (Active) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34594" /> <!-- Player Commendation - Talisman - MP (Passive) - PC-exclusive -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34621" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="34622" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18359" /> <!-- Special Talisman (R85-grade) - Shield Defense (Passive) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18360" /> <!-- Special Talisman (R90-grade) - Shield Defense (Passive) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18361" /> <!-- Special Talisman (R95-grade) - Shield Defense (Passive) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18362" /> <!-- Special Talisman (R99-grade) - Shield Defense (Passive) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18363" /> <!-- Special Talisman (R85-grade) - Shield Defense (Active) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18364" /> <!-- Special Talisman (R90-grade) - Shield Defense (Active) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18365" /> <!-- Special Talisman (R95-grade) - Shield Defense (Active) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18366" /> <!-- Special Talisman (R99-grade) - Shield Defense (Active) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18375" /> <!-- Special Talisman (R85-grade) - Mana Drain (Active) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18376" /> <!-- Special Talisman (R90-grade) - Mana Drain (Active) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18377" /> <!-- Special Talisman (R95-grade) - Mana Drain (Active) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18378" /> <!-- Special Talisman (R99-grade) - Mana Drain (Active) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18379" /> <!-- Special Talisman (R85-grade) - Blood Siphon (Active) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18380" /> <!-- Special Talisman (R90-grade) - Blood Siphon (Active) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18381" /> <!-- Special Talisman (R95-grade) - Blood Siphon (Active) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18382" /> <!-- Special Talisman (R99-grade) - Blood Siphon (Active) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18383" /> <!-- Special Talisman (R85-grade) - Increase Range(Passive) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18384" /> <!-- Special Talisman (R90-grade) - Increase Range(Passive) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18385" /> <!-- Special Talisman (R95-grade) - Increase Range(Passive) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18386" /> <!-- Special Talisman (R99-grade) - Increase Range(Passive) -->
+    </item>
+    <item>
+        <ingredient count="2" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18387" /> <!-- Special Talisman (R85-grade) - Increase Range (Active) -->
+    </item>
+    <item>
+        <ingredient count="4" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18388" /> <!-- Special Talisman (R90-grade) - Increase Range (Active) -->
+    </item>
+    <item>
+        <ingredient count="6" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18389" /> <!-- Special Talisman (R95-grade) - Increase Range (Active) -->
+    </item>
+    <item>
+        <ingredient count="10" id="4355" /> <!-- Blue Eva -->
+        <production count="1" id="18390" /> <!-- Special Talisman (R99-grade) - Increase Range (Active) -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="39568" count="1" /> <!-- Talisman - Wind: P. Critical Damage -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="39569" count="1" /> <!-- Talisman - Wind: M. Critical Damage -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="39570" count="1" /> <!-- Talisman - Wind: Defense -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="39571" count="1" /> <!-- Talisman - Wind: Debuff Resistance -->
+    </item>
+    <item>
+        <ingredient id="4355" count="150" /> <!-- Blue Eva -->
+        <production id="23833" count="1" /> <!-- Talisman - Abundance - War -->
+    </item>
+    <item>
+        <ingredient id="4355" count="150" /> <!-- Blue Eva -->
+        <production id="23834" count="1" /> <!-- Talisman - Abundance - Tactics -->
+    </item>
+    <item>
+        <ingredient id="4355" count="150" /> <!-- Blue Eva -->
+        <production id="23835" count="1" /> <!-- Talisman - Abundance - Morale -->
+    </item>
+    <item>
+        <ingredient id="4355" count="150" /> <!-- Blue Eva -->
+        <production id="23836" count="1" /> <!-- Talisman - Abundance - Physique -->
+    </item>
+    <item>
+        <ingredient id="23833" count="1" /> <!-- Talisman - Abundance - War -->
+        <ingredient id="23834" count="1" /> <!-- Talisman - Abundance - Tactics -->
+        <ingredient id="23835" count="1" /> <!-- Talisman - Abundance - Morale -->
+        <ingredient id="4355" count="400" /> <!-- Blue Eva -->
+        <production id="23837" count="1" /> <!-- Talisman - Hunter - Abundance -->
+    </item>
+    <item>
+        <ingredient id="23833" count="1" /> <!-- Talisman - Abundance - War -->
+        <ingredient id="23834" count="1" /> <!-- Talisman - Abundance - Tactics -->
+        <ingredient id="23836" count="1" /> <!-- Talisman - Abundance - Physique -->
+        <ingredient id="4355" count="400" /> <!-- Blue Eva -->
+        <production id="23838" count="1" /> <!-- Talisman - Slaughterer - Abundance -->
+    </item>
+    <item>
+        <ingredient id="23833" count="1" /> <!-- Talisman - Abundance - War -->
+        <ingredient id="23835" count="1" /> <!-- Talisman - Abundance - Morale -->
+        <ingredient id="23836" count="1" /> <!-- Talisman - Abundance - Physique -->
+        <ingredient id="4355" count="400" /> <!-- Blue Eva -->
+        <production id="23839" count="1" /> <!-- Talisman - Conquerer - Abundance -->
+    </item>
+    <item>
+        <ingredient id="23835" count="1" /> <!-- Talisman - Abundance - Morale -->
+        <ingredient id="23834" count="1" /> <!-- Talisman - Abundance - Tactics -->
+        <ingredient id="23836" count="1" /> <!-- Talisman - Abundance - Physique -->
+        <ingredient id="4355" count="400" /> <!-- Blue Eva -->
+        <production id="23840" count="1" /> <!-- Talisman - Outlaw - Abundance -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36176" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Sigel Knight -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36177" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Yul Archer -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36178" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Tyrr Warrior -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36179" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Othell Rogue -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36180" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Iss Enchanter -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36181" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Wynn Summoner -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36182" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Aeore Healer -->
+    </item>
+    <item>
+        <ingredient id="4355" count="875" /> <!-- Blue Eva -->
+        <production id="36183" count="1" /> <!-- 2012 World Olympiad Hero's Accessory - Feoh Wizard -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23825" count="1" /> <!-- Mysterious Human Dye - Aim, Mental, Unbind, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23826" count="1" /> <!-- Mysterious Elf Dye - Blessing of Water, Delicacy, Prevision, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23827"
+                    count="1" /> <!-- Mysterious Dark Elf Dye - Sharpness, Blessing of Wind, Disparition, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23828" count="1" /> <!-- Mysterious Orc Dye - Blessing of Fire, Energetic, Savage, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23829"
+                    count="1" /> <!-- Mysterious Dwarf Dye - Dexterity, Blessing of Earth, Endurance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23830"
+                    count="1" /> <!-- Mysterious Kamael Dye - Battle Instinct, Dark Silence, Soul Protection, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="30" /> <!-- Blue Eva -->
+        <production id="23845" count="1" /> <!-- Mysterious Hunt Dye - P. Def., Speed, 1-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23901" count="1" /> <!-- Mysterious Dark Resistance Dye - Dark Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23902" count="1" /> <!-- Mysterious Holy Resistance Dye - Holy Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23903" count="1" /> <!-- Mysterious Fire Resistance Dye - Fire Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23904" count="1" /> <!-- Mysterious Water Resistance Dye - Water Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23905" count="1" /> <!-- Mysterious Wind Resistance Dye - Wind Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23906" count="1" /> <!-- Mysterious Earth Resistance Dye - Earth Resistance, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23907"
+                    count="1" /> <!-- Mysterious Abnormal State Resistance Dye - Abnormal State/ Buff Cancellation Resistance, Abnormal State Reflect, 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23909" count="1" /> <!-- Mysterious World Boss Defense Dye - P. Def., M. Def., 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23910" count="1" /> <!-- Mysterious Antharas Defense Dye - P. Def., M. Def., 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23911" count="1" /> <!-- Mysterious Valakas Defense Dye - P. Def., M. Def., 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="200" /> <!-- Blue Eva -->
+        <production id="23912" count="1" /> <!-- Mysterious Lindvior Defense Dye - P. Def., M. Def., 7-day -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39415" count="1" /> <!-- Lv. 5 Legendary STR Dye (Charisma) - STR + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39416" count="1" /> <!-- Lv. 5 Legendary DEX Dye (Charisma) - DEX + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39417" count="1" /> <!-- Lv. 5 Legendary CON Dye (Charisma) - CON + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39418" count="1" /> <!-- Lv. 5 Legendary INT Dye (Charisma) - INT + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39419" count="1" /> <!-- Lv. 5 Legendary WIT Dye (Charisma) - WIT + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="88" /> <!-- Blue Eva -->
+        <production id="39420" count="1" /> <!-- Lv. 5 Legendary MEN Dye (Charisma) - MEN + 5 CHA + 5 -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40253" count="5" /> <!-- Potion of Protection: Stun - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40254" count="5" /> <!-- Potion of Protection: Hold - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40255" count="5" /> <!-- Potion of Protection: Bleed - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40256" count="5" /> <!-- Potion of Protection: Paralyze - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40257" count="5" /> <!-- Potion of Protection: Mental - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40258" count="5" /> <!-- Potion of Protection: Sleep - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40259" count="5" /> <!-- Potion of Protection: Poison - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40260" count="5" /> <!-- Potion of Protection: Knock Back / Knock Down - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="100" /> <!-- Blue Eva -->
+        <production id="40261" count="5" /> <!-- Potion of Protection: Aerial Yoke - Top-grade -->
+    </item>
+    <item>
+        <ingredient id="4355" count="300" /> <!-- Blue Eva -->
+        <production id="26342" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 1 (High-grade) -->
+    </item>
+    <item>
+        <ingredient id="4355" count="500" /> <!-- Blue Eva -->
+        <production id="26343" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 2 (High-grade) -->
+    </item>
+    <item>
+        <ingredient id="4355" count="600" /> <!-- Blue Eva -->
+        <production id="26344" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 3 (High-grade) -->
+    </item>
+    <item>
+        <ingredient id="4355" count="700" /> <!-- Blue Eva -->
+        <production id="26345" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 4 (High-grade) -->
+    </item>
+</list>

@@ -1,1451 +1,1451 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Restores the original appearance of R-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22700" type="EtcItem" name="Equipment Restoration Stone (R-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of S-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22701" type="EtcItem" name="Equipment Restoration Stone (S-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of A-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22702" type="EtcItem" name="Equipment Restoration Stone (A-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of B-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22703" type="EtcItem" name="Equipment Restoration Stone (B-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of C-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22704" type="EtcItem" name="Equipment Restoration Stone (C-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of D-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22705" type="EtcItem" name="Equipment Restoration Stone (D-grade)">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- For test use. Changes whole outfit to formal wear. -->
-	<item id="22706" type="EtcItem" name="(Test) Formal Wear Appearance Stone">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="6408" />
-	</item>
-	<!-- For test use. Top only. Immortal heavy armor. -->
-	<item id="22707" type="EtcItem" name="(Test) Immortal Top Appearance Stone">
-		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!--
-		Item that can change a hair accessory's appearance. Changes the appearance of an item that has the same number of slots. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 125000 adena for a 1-slot hair accessory and 200000 adena for a 2-slot hair accessory.
-		
-		Warning: When changed to the appearance of a female-only hair accessory, it cannot be equipped by a male character.
-	-->
-	<item id="22708" type="EtcItem" name="Hair Accessory Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2_stone" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!--
-		Item that can change a hair accessory's appearance. Changes the appearance of an item that has the same number of slots. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use.
-		
-		Warning: When changed to the appearance of a female-only hair accessory, it cannot be equipped by a male character.
-	-->
-	<item id="22709" type="EtcItem" name="Blessed Hair Accessory Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting_hair2_stone" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Magic potion that suspends vitality. Vitality consumption stops, but you also cannot receive Vitality bonuses. Cooldown is 30 min. -->
-	<item id="22710" type="EtcItem" name="Vitality Suspending Potion">
-		<set name="icon" val="BranchSys3.lcon.g_vitality_potion_stop" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Japanese weapon. One-handed sword form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22711" type="Weapon" name="Japanese Sword">
-		<set name="icon" val="BranchSys3.Icon.g_japan_sword" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="144" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Dagger form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22712" type="Weapon" name="Japanese Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_japan_dagger" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="106" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="80" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Two-handed sword form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22713" type="Weapon" name="Japanese Long Sword">
-		<set name="icon" val="BranchSys3.Icon.g_japan_twohand_sword" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="209" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Fist weapon form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22714" type="Weapon" name="Japanese Fist Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_dualfist" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="152" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Spear form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22715" type="Weapon" name="Japanese Great Spear">
-		<set name="icon" val="BranchSys3.Icon.g_japan_pole" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="205" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Bow form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22716" type="Weapon" name="Japanese Bow">
-		<set name="icon" val="BranchSys3.Icon.g_japan_bow" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="181" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="191" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Crossbow form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22717" type="Weapon" name="Japanese Crossbow">
-		<set name="icon" val="BranchSys3.Icon.g_japan_twohand_crossbow" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbowk" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="181" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="117" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
-	</item>
-	<!-- Japanese weapon. One-handed blunt form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22718" type="Weapon" name="Japanese Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="172" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Two-handed blunt form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22719" type="Weapon" name="Japanese Giant Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_twohand_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="101" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. One-handed magic blunt form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22720" type="Weapon" name="Japanese Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_magic_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="172" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Two-handed magic blunt form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22721" type="Weapon" name="Japanese Giant Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_magic_twohand_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="101" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="152" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Dualsword form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22722" type="Weapon" name="Japanese Dualsword">
-		<set name="icon" val="BranchSys3.Icon.g_japan_dual" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="247" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Dual dagger form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22723" type="Weapon" name="Japanese Double Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_japan_dualdagger" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="205" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Dual blunt form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22724" type="Weapon" name="Japanese Double Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_japan_dualblunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="250" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Shield form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22725" type="Armor" name="Japanese Shield">
-		<set name="icon" val="BranchSys3.Icon.g_japan_shield" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="none" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="200" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<baseSub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
-		</for>
-	</item>
-	<!-- Japanese weapon. Sigil form. Basic Japanese Weapon Appearance Stone. -->
-	<item id="22726" type="Armor" name="Japanese Sigil">
-		<set name="icon" val="BranchSys3.Icon.g_japan_sigil" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="100" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="47" />
-		</for>
-	</item>
-	<!-- Changes the appearance of a one-handed sword to that of a Japanese Sword. -->
-	<item id="22727" type="EtcItem" name="Japanese Sword Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22711" />
-	</item>
-	<!-- Changes the appearance of a dagger to that of a Japanese Dagger. -->
-	<item id="22728" type="EtcItem" name="Japanese Dagger Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22712" />
-	</item>
-	<!-- Changes the appearance of a two-handed sword to that of a Japanese Long Sword. -->
-	<item id="22729" type="EtcItem" name="Japanese Long Sword Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_sword" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22713" />
-	</item>
-	<!-- Changes the appearance of a fist weapon to that of a Japanese fist weapon. -->
-	<item id="22730" type="EtcItem" name="Japanese Fist Weapon Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22714" />
-	</item>
-	<!-- Changes the appearance of a spear to that of a Japanese Great Spear. -->
-	<item id="22731" type="EtcItem" name="Japanese Great Spear Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22715" />
-	</item>
-	<!-- Changes the appearance of a bow to that of a Japanese Bow. -->
-	<item id="22732" type="EtcItem" name="Japanese Bow Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_bow" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22716" />
-	</item>
-	<!-- Changes the appearance of a crossbow to that of a Japanese crossbow. -->
-	<item id="22733" type="EtcItem" name="Japanese Crossbow Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_crossbow" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22717" />
-	</item>
-	<!-- Changes the appearance of a one-handed blunt to that of a Japanese blunt. -->
-	<item id="22734" type="EtcItem" name="Japanese Blunt Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22718" />
-	</item>
-	<!-- Changes the appearance of a two-handed blunt to that of a Japanese blunt. -->
-	<item id="22735" type="EtcItem" name="Japanese Giant Blunt Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22719" />
-	</item>
-	<!-- Changes the appearance of a one-handed magic blunt to that of a Japanese magic blunt. -->
-	<item id="22736" type="EtcItem" name="Japanese Magic Blunt Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22720" />
-	</item>
-	<!-- Changes the appearance of a two-handed magic blunt to that of a Japanese giant magic blunt. -->
-	<item id="22737" type="EtcItem" name="Japanese Giant Magic Blunt Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_twohand_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22721" />
-	</item>
-	<!-- Changes the appearance of a dualsword to that of a Japanese dualsword. -->
-	<item id="22738" type="EtcItem" name="Japanese Dualsword Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22722" />
-	</item>
-	<!-- Changes the appearance of a dual dagger to that of a Japanese Double Dagger. -->
-	<item id="22739" type="EtcItem" name="Japanese Double Dagger Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22723" />
-	</item>
-	<!-- Changes the appearance of a dual blunt to that of a Japanese double blunt. -->
-	<item id="22740" type="EtcItem" name="Japanese Double Blunt Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualblunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22724" />
-	</item>
-	<!-- Changes the appearance of a shield to that of a Japanese shield. -->
-	<item id="22741" type="EtcItem" name="Japanese Shield Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_shield" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22725" />
-	</item>
-	<!-- Changes the appearance of a sigil to that of a Japanese sigil. -->
-	<item id="22742" type="EtcItem" name="Japanese Sigil Appearance Stone">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sigil" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22726" />
-	</item>
-	<!-- For 30 min., transform into a Fairweather Borna, who has the abilities of the Feoh Wizard and Aeore Healer and can also use the Escape: Clan Hall skill. Lv. 80 or above. -->
-	<item id="22743" type="EtcItem" name="Transformation Scroll: Fairweather Borna">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Vitality Suspending Potion. -->
-	<item id="22744" type="EtcItem" name="Vitality Suspending Potion Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="36" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Increases the number of Vitality items that can be used per week by 1. Cooldown is 3 days. -->
-	<item id="22745" type="EtcItem" name="Scroll: Increase Vitality">
-		<set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Scroll: increase Vitality. -->
-	<item id="22746" type="EtcItem" name="Scroll: Increase Vitality Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Increases the number of Vitality items that can be used per week by 2. Cooldown is 3 days. -->
-	<item id="22747" type="EtcItem" name="Scroll: Increase Vitality (High-grade)">
-		<set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up_2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Scroll: increase Vitality (High-grade). -->
-	<item id="22748" type="EtcItem" name="Scroll: Increase Vitality Pack (High-grade)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Increases the number of Vitality items that can be used per week by 3. Cooldown is 3 days. -->
-	<item id="22749" type="EtcItem" name="Scroll: Increase Vitality (Top-grade)">
-		<set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up_3" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Scroll: increase Vitality (Top-grade). -->
-	<item id="22750" type="EtcItem" name="Scroll: Increase Vitality Pack (Top-grade)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
-	<item id="22751" type="EtcItem" name="Drop Rate Rune 30% (3-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
-	<item id="22752" type="EtcItem" name="Drop Rate Rune 30% (5-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
-	<item id="22753" type="EtcItem" name="Drop Rate Rune 30% (7-day)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 50%. -->
-	<item id="22754" type="EtcItem" name="Drop Rate Rune 50% (3-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 50%. -->
-	<item id="22755" type="EtcItem" name="Drop Rate Rune 50% (5-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 50%. -->
-	<item id="22756" type="EtcItem" name="Drop Rate Rune 50% (7-day)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 100%. -->
-	<item id="22757" type="EtcItem" name="Drop Rate Rune 100% (3-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 100%. -->
-	<item id="22758" type="EtcItem" name="Drop Rate Rune 100% (5-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 100%. -->
-	<item id="22759" type="EtcItem" name="Drop Rate Rune 100% (7-day)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 200%. -->
-	<item id="22760" type="EtcItem" name="Drop Rate Rune 200% (3-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 200%. -->
-	<item id="22761" type="EtcItem" name="Drop Rate Rune 200% (5-hour)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When stored in the inventory, item acquisition through hunting + 200%. -->
-	<item id="22762" type="EtcItem" name="Drop Rate Rune 200% (7-day)">
-		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 30% (3-hour). -->
-	<item id="22763" type="EtcItem" name="Drop Rate Rune 30% Pack (3-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 30% (5-hour). -->
-	<item id="22764" type="EtcItem" name="Drop Rate Rune 30% Pack (5-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 30% (7-day. -->
-	<item id="22765" type="EtcItem" name="Drop Rate Rune 30% Pack (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 50% (3-hour). -->
-	<item id="22766" type="EtcItem" name="Drop Rate Rune 50% Pack (3-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 50% (5-hour). -->
-	<item id="22767" type="EtcItem" name="Drop Rate Rune 50% Pack (5-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 50% (7-day. -->
-	<item id="22768" type="EtcItem" name="Drop Rate Rune 50% Pack (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 100% (3-hour). -->
-	<item id="22769" type="EtcItem" name="Drop Rate Rune 100% Pack (3-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 100% (5-hour). -->
-	<item id="22770" type="EtcItem" name="Drop Rate Rune 100% Pack (5-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 100% (7-day. -->
-	<item id="22771" type="EtcItem" name="Drop Rate Rune 100% Pack (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 200% (3-hour). -->
-	<item id="22772" type="EtcItem" name="Drop Rate Rune 200% Pack (3-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 200% (5-hour). -->
-	<item id="22773" type="EtcItem" name="Drop Rate Rune 200% Pack (5-hour)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Drop Rate Rune 200% (7-day). -->
-	<item id="22774" type="EtcItem" name="Drop Rate Rune 200% Pack (7-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. -->
-	<item id="22775" type="Weapon" name="Drake Maul">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP.
-	-->
-	<item id="22776" type="Weapon" name="Drake Maul - HP Drain">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP.
-	-->
-	<item id="22777" type="Weapon" name="Drake Maul - HP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP.
-	-->
-	<item id="22778" type="Weapon" name="Drake Maul - Health">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
-	<item id="22779" type="Weapon" name="Drake Maul (PvP)">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22780" type="Weapon" name="Drake Maul (PvP) - HP Drain">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22781" type="Weapon" name="Drake Maul (PvP) - HP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22782" type="Weapon" name="Drake Maul (PvP) - Health">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack.
-		Bestows either Health, HP Drain, or HP Regeneration.
-	-->
-	<item id="22783" type="Weapon" name="Drake Maul - Evil Spirit">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP.
-	-->
-	<item id="22784" type="Weapon" name="Drake Maul - Evil Spirit - HP Drain">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22785" type="Weapon" name="Drake Maul - Evil Spirit - HP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22786" type="Weapon" name="Drake Maul - Evil Spirit - Health">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack.
-		Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
-	-->
-	<item id="22787" type="Weapon" name="Drake Maul - Evil Spirit (PvP)">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22788" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Drain">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22789" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
-		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
-	-->
-	<item id="22790" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - Health">
-		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. -->
-	<item id="22791" type="Weapon" name="Freya's Staff">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP.
-	-->
-	<item id="22792" type="Weapon" name="Freya's Staff - Magic Hold">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP.
-	-->
-	<item id="22793" type="Weapon" name="Freya's Staff - Empower">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP.
-	-->
-	<item id="22794" type="Weapon" name="Freya's Staff - MP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
-	<item id="22795" type="Weapon" name="Freya's Staff (PvP)">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. A 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
-	-->
-	<item id="22796" type="Weapon" name="Freya's Staff (PvP) - Magic Hold">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
-	-->
-	<item id="22797" type="Weapon" name="Freya's Staff (PvP) - Empower">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		<Soul Crystal Enhancement>
-		Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
-	-->
-	<item id="22798" type="Weapon" name="Freya's Staff (PvP) - MP Regeneration">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!--
-		Masterwork Item with chance of MP absorption.
-		Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Has a chance of recovering CP during an attack.
-	-->
-	<item id="22799" type="Weapon" name="Freya's Staff - Cleverness">
-		<set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
+    <!-- Restores the original appearance of R-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22700" type="EtcItem" name="Equipment Restoration Stone (R-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of S-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22701" type="EtcItem" name="Equipment Restoration Stone (S-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of A-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22702" type="EtcItem" name="Equipment Restoration Stone (A-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of B-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22703" type="EtcItem" name="Equipment Restoration Stone (B-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of C-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22704" type="EtcItem" name="Equipment Restoration Stone (C-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of D-grade equipment (weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22705" type="EtcItem" name="Equipment Restoration Stone (D-grade)">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- For test use. Changes whole outfit to formal wear. -->
+    <item id="22706" type="EtcItem" name="(Test) Formal Wear Appearance Stone">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="6408" />
+    </item>
+    <!-- For test use. Top only. Immortal heavy armor. -->
+    <item id="22707" type="EtcItem" name="(Test) Immortal Top Appearance Stone">
+        <set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!--
+        Item that can change a hair accessory's appearance. Changes the appearance of an item that has the same number of slots. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 125000 adena for a 1-slot hair accessory and 200000 adena for a 2-slot hair accessory.
+
+        Warning: When changed to the appearance of a female-only hair accessory, it cannot be equipped by a male character.
+    -->
+    <item id="22708" type="EtcItem" name="Hair Accessory Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2_stone" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!--
+        Item that can change a hair accessory's appearance. Changes the appearance of an item that has the same number of slots. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use.
+
+        Warning: When changed to the appearance of a female-only hair accessory, it cannot be equipped by a male character.
+    -->
+    <item id="22709" type="EtcItem" name="Blessed Hair Accessory Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting_hair2_stone" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Magic potion that suspends vitality. Vitality consumption stops, but you also cannot receive Vitality bonuses. Cooldown is 30 min. -->
+    <item id="22710" type="EtcItem" name="Vitality Suspending Potion">
+        <set name="icon" val="BranchSys3.lcon.g_vitality_potion_stop" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Japanese weapon. One-handed sword form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22711" type="Weapon" name="Japanese Sword">
+        <set name="icon" val="BranchSys3.Icon.g_japan_sword" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="144" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Dagger form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22712" type="Weapon" name="Japanese Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_japan_dagger" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="106" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="80" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Two-handed sword form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22713" type="Weapon" name="Japanese Long Sword">
+        <set name="icon" val="BranchSys3.Icon.g_japan_twohand_sword" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="209" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="112" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Fist weapon form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22714" type="Weapon" name="Japanese Fist Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_dualfist" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="152" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="112" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Spear form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22715" type="Weapon" name="Japanese Great Spear">
+        <set name="icon" val="BranchSys3.Icon.g_japan_pole" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="205" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Bow form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22716" type="Weapon" name="Japanese Bow">
+        <set name="icon" val="BranchSys3.Icon.g_japan_bow" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="181" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="191" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Crossbow form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22717" type="Weapon" name="Japanese Crossbow">
+        <set name="icon" val="BranchSys3.Icon.g_japan_twohand_crossbow" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbowk" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="181" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="117" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+        </for>
+    </item>
+    <!-- Japanese weapon. One-handed blunt form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22718" type="Weapon" name="Japanese Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="172" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Two-handed blunt form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22719" type="Weapon" name="Japanese Giant Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_twohand_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="101" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="90" />
+            <set stat="mAtk" val="79" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. One-handed magic blunt form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22720" type="Weapon" name="Japanese Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_magic_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="172" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Two-handed magic blunt form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22721" type="Weapon" name="Japanese Giant Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_magic_twohand_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="101" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="152" />
+            <set stat="mAtk" val="122" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Dualsword form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22722" type="Weapon" name="Japanese Dualsword">
+        <set name="icon" val="BranchSys3.Icon.g_japan_dual" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="247" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="107" />
+            <set stat="mAtk" val="51" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Dual dagger form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22723" type="Weapon" name="Japanese Double Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_japan_dualdagger" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="205" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="107" />
+            <set stat="mAtk" val="51" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Dual blunt form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22724" type="Weapon" name="Japanese Double Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_japan_dualblunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="250" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="125" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Shield form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22725" type="Armor" name="Japanese Shield">
+        <set name="icon" val="BranchSys3.Icon.g_japan_shield" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="none" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="200" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <baseSub stat="rEvas" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="216" />
+        </for>
+    </item>
+    <!-- Japanese weapon. Sigil form. Basic Japanese Weapon Appearance Stone. -->
+    <item id="22726" type="Armor" name="Japanese Sigil">
+        <set name="icon" val="BranchSys3.Icon.g_japan_sigil" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="100" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="47" />
+        </for>
+    </item>
+    <!-- Changes the appearance of a one-handed sword to that of a Japanese Sword. -->
+    <item id="22727" type="EtcItem" name="Japanese Sword Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22711" />
+    </item>
+    <!-- Changes the appearance of a dagger to that of a Japanese Dagger. -->
+    <item id="22728" type="EtcItem" name="Japanese Dagger Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22712" />
+    </item>
+    <!-- Changes the appearance of a two-handed sword to that of a Japanese Long Sword. -->
+    <item id="22729" type="EtcItem" name="Japanese Long Sword Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_sword" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22713" />
+    </item>
+    <!-- Changes the appearance of a fist weapon to that of a Japanese fist weapon. -->
+    <item id="22730" type="EtcItem" name="Japanese Fist Weapon Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22714" />
+    </item>
+    <!-- Changes the appearance of a spear to that of a Japanese Great Spear. -->
+    <item id="22731" type="EtcItem" name="Japanese Great Spear Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22715" />
+    </item>
+    <!-- Changes the appearance of a bow to that of a Japanese Bow. -->
+    <item id="22732" type="EtcItem" name="Japanese Bow Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_bow" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22716" />
+    </item>
+    <!-- Changes the appearance of a crossbow to that of a Japanese crossbow. -->
+    <item id="22733" type="EtcItem" name="Japanese Crossbow Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_crossbow" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22717" />
+    </item>
+    <!-- Changes the appearance of a one-handed blunt to that of a Japanese blunt. -->
+    <item id="22734" type="EtcItem" name="Japanese Blunt Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22718" />
+    </item>
+    <!-- Changes the appearance of a two-handed blunt to that of a Japanese blunt. -->
+    <item id="22735" type="EtcItem" name="Japanese Giant Blunt Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22719" />
+    </item>
+    <!-- Changes the appearance of a one-handed magic blunt to that of a Japanese magic blunt. -->
+    <item id="22736" type="EtcItem" name="Japanese Magic Blunt Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22720" />
+    </item>
+    <!-- Changes the appearance of a two-handed magic blunt to that of a Japanese giant magic blunt. -->
+    <item id="22737" type="EtcItem" name="Japanese Giant Magic Blunt Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_twohand_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22721" />
+    </item>
+    <!-- Changes the appearance of a dualsword to that of a Japanese dualsword. -->
+    <item id="22738" type="EtcItem" name="Japanese Dualsword Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22722" />
+    </item>
+    <!-- Changes the appearance of a dual dagger to that of a Japanese Double Dagger. -->
+    <item id="22739" type="EtcItem" name="Japanese Double Dagger Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22723" />
+    </item>
+    <!-- Changes the appearance of a dual blunt to that of a Japanese double blunt. -->
+    <item id="22740" type="EtcItem" name="Japanese Double Blunt Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualblunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22724" />
+    </item>
+    <!-- Changes the appearance of a shield to that of a Japanese shield. -->
+    <item id="22741" type="EtcItem" name="Japanese Shield Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_shield" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22725" />
+    </item>
+    <!-- Changes the appearance of a sigil to that of a Japanese sigil. -->
+    <item id="22742" type="EtcItem" name="Japanese Sigil Appearance Stone">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sigil" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22726" />
+    </item>
+    <!-- For 30 min., transform into a Fairweather Borna, who has the abilities of the Feoh Wizard and Aeore Healer and can also use the Escape: Clan Hall skill. Lv. 80 or above. -->
+    <item id="22743" type="EtcItem" name="Transformation Scroll: Fairweather Borna">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Vitality Suspending Potion. -->
+    <item id="22744" type="EtcItem" name="Vitality Suspending Potion Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="36" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Increases the number of Vitality items that can be used per week by 1. Cooldown is 3 days. -->
+    <item id="22745" type="EtcItem" name="Scroll: Increase Vitality">
+        <set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Scroll: increase Vitality. -->
+    <item id="22746" type="EtcItem" name="Scroll: Increase Vitality Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Increases the number of Vitality items that can be used per week by 2. Cooldown is 3 days. -->
+    <item id="22747" type="EtcItem" name="Scroll: Increase Vitality (High-grade)">
+        <set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up_2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Scroll: increase Vitality (High-grade). -->
+    <item id="22748" type="EtcItem" name="Scroll: Increase Vitality Pack (High-grade)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Increases the number of Vitality items that can be used per week by 3. Cooldown is 3 days. -->
+    <item id="22749" type="EtcItem" name="Scroll: Increase Vitality (Top-grade)">
+        <set name="icon" val="BranchSys3.lcon.g_scrl_vitality_count_up_3" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Scroll: increase Vitality (Top-grade). -->
+    <item id="22750" type="EtcItem" name="Scroll: Increase Vitality Pack (Top-grade)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 30%. -->
+    <item id="22751" type="EtcItem" name="Drop Rate Rune 30% (3-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 30%. -->
+    <item id="22752" type="EtcItem" name="Drop Rate Rune 30% (5-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 30%. -->
+    <item id="22753" type="EtcItem" name="Drop Rate Rune 30% (7-day)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 50%. -->
+    <item id="22754" type="EtcItem" name="Drop Rate Rune 50% (3-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 50%. -->
+    <item id="22755" type="EtcItem" name="Drop Rate Rune 50% (5-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 50%. -->
+    <item id="22756" type="EtcItem" name="Drop Rate Rune 50% (7-day)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 100%. -->
+    <item id="22757" type="EtcItem" name="Drop Rate Rune 100% (3-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 100%. -->
+    <item id="22758" type="EtcItem" name="Drop Rate Rune 100% (5-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 100%. -->
+    <item id="22759" type="EtcItem" name="Drop Rate Rune 100% (7-day)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 200%. -->
+    <item id="22760" type="EtcItem" name="Drop Rate Rune 200% (3-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 200%. -->
+    <item id="22761" type="EtcItem" name="Drop Rate Rune 200% (5-hour)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When stored in the inventory, item acquisition through hunting + 200%. -->
+    <item id="22762" type="EtcItem" name="Drop Rate Rune 200% (7-day)">
+        <set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 30% (3-hour). -->
+    <item id="22763" type="EtcItem" name="Drop Rate Rune 30% Pack (3-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 30% (5-hour). -->
+    <item id="22764" type="EtcItem" name="Drop Rate Rune 30% Pack (5-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 30% (7-day. -->
+    <item id="22765" type="EtcItem" name="Drop Rate Rune 30% Pack (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 50% (3-hour). -->
+    <item id="22766" type="EtcItem" name="Drop Rate Rune 50% Pack (3-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 50% (5-hour). -->
+    <item id="22767" type="EtcItem" name="Drop Rate Rune 50% Pack (5-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 50% (7-day. -->
+    <item id="22768" type="EtcItem" name="Drop Rate Rune 50% Pack (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 100% (3-hour). -->
+    <item id="22769" type="EtcItem" name="Drop Rate Rune 100% Pack (3-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 100% (5-hour). -->
+    <item id="22770" type="EtcItem" name="Drop Rate Rune 100% Pack (5-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 100% (7-day. -->
+    <item id="22771" type="EtcItem" name="Drop Rate Rune 100% Pack (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 200% (3-hour). -->
+    <item id="22772" type="EtcItem" name="Drop Rate Rune 200% Pack (3-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 200% (5-hour). -->
+    <item id="22773" type="EtcItem" name="Drop Rate Rune 200% Pack (5-hour)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Drop Rate Rune 200% (7-day). -->
+    <item id="22774" type="EtcItem" name="Drop Rate Rune 200% Pack (7-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. -->
+    <item id="22775" type="Weapon" name="Drake Maul">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP.
+    -->
+    <item id="22776" type="Weapon" name="Drake Maul - HP Drain">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP.
+    -->
+    <item id="22777" type="Weapon" name="Drake Maul - HP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP.
+    -->
+    <item id="22778" type="Weapon" name="Drake Maul - Health">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+    <item id="22779" type="Weapon" name="Drake Maul (PvP)">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22780" type="Weapon" name="Drake Maul (PvP) - HP Drain">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22781" type="Weapon" name="Drake Maul (PvP) - HP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22782" type="Weapon" name="Drake Maul (PvP) - Health">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack.
+        Bestows either Health, HP Drain, or HP Regeneration.
+    -->
+    <item id="22783" type="Weapon" name="Drake Maul - Evil Spirit">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP.
+    -->
+    <item id="22784" type="Weapon" name="Drake Maul - Evil Spirit - HP Drain">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22785" type="Weapon" name="Drake Maul - Evil Spirit - HP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22786" type="Weapon" name="Drake Maul - Evil Spirit - Health">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack.
+        Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+    -->
+    <item id="22787" type="Weapon" name="Drake Maul - Evil Spirit (PvP)">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22788" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Drain">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22789" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of HP absorption during an attack
+        <Soul Crystal Enhancement>
+        Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+    -->
+    <item id="22790" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - Health">
+        <set name="icon" val="BranchSys3.Icon.g_drake_maul_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="532" />
+            <set stat="mAtk" val="192" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. -->
+    <item id="22791" type="Weapon" name="Freya's Staff">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP.
+    -->
+    <item id="22792" type="Weapon" name="Freya's Staff - Magic Hold">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP.
+    -->
+    <item id="22793" type="Weapon" name="Freya's Staff - Empower">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP.
+    -->
+    <item id="22794" type="Weapon" name="Freya's Staff - MP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+    <item id="22795" type="Weapon" name="Freya's Staff (PvP)">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. A 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+    -->
+    <item id="22796" type="Weapon" name="Freya's Staff (PvP) - Magic Hold">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+    -->
+    <item id="22797" type="Weapon" name="Freya's Staff (PvP) - Empower">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        <Soul Crystal Enhancement>
+        Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+    -->
+    <item id="22798" type="Weapon" name="Freya's Staff (PvP) - MP Regeneration">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i01" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!--
+        Masterwork Item with chance of MP absorption.
+        Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Has a chance of recovering CP during an attack.
+    -->
+    <item id="22799" type="Weapon" name="Freya's Staff - Cleverness">
+        <set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="426" />
+            <set stat="mAtk" val="281" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
 </list>
