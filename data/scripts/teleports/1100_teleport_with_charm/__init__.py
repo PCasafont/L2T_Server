@@ -1,11 +1,7 @@
 #
 # Created by DraX on 2005.07.20
 #
-import sys
 
-from l2server.gameserver.model.actor.instance import L2PcInstance
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "1100_teleport_with_charm"

@@ -20,11 +20,6 @@
 
 package l2server.gameserver.taskmanager;
 
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
@@ -34,6 +29,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.serverpackets.AutoAttackStop;
 import l2server.log.Log;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 
 /**
  * This class ...

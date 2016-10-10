@@ -19,13 +19,6 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.communitybbs.BB.Forum;
 import l2server.gameserver.communitybbs.BB.Post;
 import l2server.gameserver.communitybbs.BB.Post.CPost;
@@ -33,6 +26,9 @@ import l2server.gameserver.communitybbs.BB.Topic;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.util.StringUtil;
+
+import java.text.DateFormat;
+import java.util.*;
 
 public class PostBBSManager extends BaseBBSManager
 {

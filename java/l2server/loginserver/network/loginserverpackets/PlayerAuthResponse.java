@@ -15,9 +15,9 @@
 
 package l2server.loginserver.network.loginserverpackets;
 
-import java.io.IOException;
-
 import l2server.util.network.BaseSendablePacket;
+
+import java.io.IOException;
 
 /**
  * @author -Wooden-

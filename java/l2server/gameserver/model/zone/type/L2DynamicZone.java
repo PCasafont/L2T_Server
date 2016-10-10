@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.concurrent.Future;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2WorldRegion;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
+
+import java.util.concurrent.Future;
 
 /**
  * A dynamic zone?

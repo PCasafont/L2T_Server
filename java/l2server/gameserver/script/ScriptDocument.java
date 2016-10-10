@@ -15,18 +15,16 @@
 
 package l2server.gameserver.script;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
+import l2server.log.Log;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import l2server.log.Log;
-
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
 
 /**
  *

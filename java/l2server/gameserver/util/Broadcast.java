@@ -25,9 +25,6 @@
 
 package l2server.gameserver.util;
 
-import java.util.Collection;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -41,6 +38,9 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.RelationChanged;
 import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.logging.Level;
 
 /**
  * This class ...

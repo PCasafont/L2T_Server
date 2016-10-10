@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.olympiad;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author DS

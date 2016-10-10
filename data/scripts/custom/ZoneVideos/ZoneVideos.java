@@ -15,7 +15,6 @@
 
 package custom.ZoneVideos;
 
-import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Race;

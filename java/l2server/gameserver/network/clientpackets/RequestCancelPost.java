@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.L2ItemInstance;
@@ -26,12 +24,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExChangePostState;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.ItemList;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
+
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 
 /**
  * @author Pere, DS

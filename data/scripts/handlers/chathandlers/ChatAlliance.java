@@ -43,7 +43,7 @@ public class ChatAlliance implements IChatHandler
         {
             CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
             activeChar.getClan().broadcastToOnlineAllyMembers(cs);
-			
+
 			/*if (Config.isServer(Config.TENKAI))
 			{
 				cs = new CreatureSay(activeChar, type, "[" + activeChar.getClan().getAllyName() + "] " + activeChar.getName(), text);

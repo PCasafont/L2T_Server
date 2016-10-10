@@ -15,26 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GmListTable;
@@ -45,6 +25,16 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 /**
  * @author Zakaxx
@@ -611,7 +601,7 @@ public class AntiBotsManager
             }
 
             // We're now going to look if there's any player that should gtfo...
-			/*if (_pendingBans.size() != 0)
+            /*if (_pendingBans.size() != 0)
 			{
 				final long currentTime = System.currentTimeMillis();
 				PlayerBanTrace toBan = null;

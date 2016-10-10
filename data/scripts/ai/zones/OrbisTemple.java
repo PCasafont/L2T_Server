@@ -1,6 +1,5 @@
 package ai.zones;
 
-import l2server.Config;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.quest.Quest;

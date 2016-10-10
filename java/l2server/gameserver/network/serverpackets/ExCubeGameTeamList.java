@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.List;
 
 /**
  * Format: (chd) ddd[dS]d[dS]

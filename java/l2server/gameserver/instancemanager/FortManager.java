@@ -15,10 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.InstanceListManager;
 import l2server.gameserver.model.CombatFlag;
@@ -28,6 +24,10 @@ import l2server.gameserver.model.entity.Fort;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FortManager implements InstanceListManager
 {

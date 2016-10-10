@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.Config;
-
 /**
  * @author Pere
  */

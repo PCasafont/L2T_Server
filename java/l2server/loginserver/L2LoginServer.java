@@ -15,20 +15,6 @@
 
 package l2server.loginserver;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.security.GeneralSecurityException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.ServerMode;
@@ -37,6 +23,14 @@ import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.L2LoginPacketHandler;
 import l2server.network.Core;
 import l2server.network.CoreConfig;
+
+import java.io.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.security.GeneralSecurityException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
 
 /**
  * @author KenM

@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model;
 
-import java.util.Arrays;
-import java.util.logging.Level;
-
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.Arrays;
+import java.util.logging.Level;
 
 /**
  * @author kombat

@@ -2,10 +2,7 @@
 # This script is part of the TnS Datapack
 # http://www.l2server.com
 
-import sys
-from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "692_HowToOpposeEvil"

@@ -1,19 +1,7 @@
 package l2server.gameserver.events.instanced;
 
 import l2server.gameserver.events.instanced.EventInstance.EventType;
-import l2server.gameserver.events.instanced.types.CaptureTheFlag;
-import l2server.gameserver.events.instanced.types.CursedBattle;
-import l2server.gameserver.events.instanced.types.DeathMatch;
-import l2server.gameserver.events.instanced.types.DestroyTheGolem;
-import l2server.gameserver.events.instanced.types.FieldDomination;
-import l2server.gameserver.events.instanced.types.KingOfTheHill;
-import l2server.gameserver.events.instanced.types.LuckyChests;
-import l2server.gameserver.events.instanced.types.SimonSays;
-import l2server.gameserver.events.instanced.types.StalkedStalkers;
-import l2server.gameserver.events.instanced.types.Survival;
-import l2server.gameserver.events.instanced.types.TeamSurvival;
-import l2server.gameserver.events.instanced.types.TeamVsTeam;
-import l2server.gameserver.events.instanced.types.VIPTeamVsTeam;
+import l2server.gameserver.events.instanced.types.*;
 import l2server.util.Rnd;
 
 /**

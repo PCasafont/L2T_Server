@@ -15,13 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.idfactory.IdFactory;
@@ -34,6 +27,9 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Petition Manager

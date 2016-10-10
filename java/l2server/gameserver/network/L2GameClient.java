@@ -15,21 +15,6 @@
 
 package l2server.gameserver.network;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.nio.ByteBuffer;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.Future;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.LoginServerThread;
@@ -58,6 +43,21 @@ import l2server.log.Log;
 import l2server.network.MMOClient;
 import l2server.network.MMOConnection;
 import l2server.network.ReceivablePacket;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.nio.ByteBuffer;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Future;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * Represents a client connected on Game Server
@@ -416,7 +416,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
     public void markRestoredChar(int charslot) throws Exception
     {
         //have to make sure active character must be nulled
-		/*if (getActiveChar() != null)
+        /*if (getActiveChar() != null)
 		{
 			saveCharToDisk (getActiveChar());
 			if (Config.DEBUG) Logozo.fine("active Char saved");

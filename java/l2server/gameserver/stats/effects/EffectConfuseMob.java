@@ -15,10 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.L2Object;
@@ -29,6 +25,10 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author littlecrow

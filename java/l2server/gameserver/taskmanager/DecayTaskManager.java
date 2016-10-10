@@ -15,17 +15,17 @@
 
 package l2server.gameserver.taskmanager;
 
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.log.Log;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
-
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.log.Log;
 
 /**
  * @author la2 Lets drink to code!

@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.actor.L2Playable;
@@ -24,6 +22,8 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
 
 /**
  * @author Kilian

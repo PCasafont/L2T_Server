@@ -25,10 +25,10 @@
 
 package l2server.util;
 
-import java.util.Iterator;
-
 import l2server.Config;
 import l2server.gameserver.model.L2Object;
+
+import java.util.Iterator;
 
 /**
  * This class ...

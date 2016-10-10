@@ -1,8 +1,5 @@
 package l2server.gameserver.events.instanced.types;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.events.instanced.EventConfig;
 import l2server.gameserver.events.instanced.EventInstance;
@@ -13,6 +10,9 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

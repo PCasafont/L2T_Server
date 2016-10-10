@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Set;
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
@@ -28,6 +26,8 @@ import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+
+import java.util.Set;
 
 /**
  * 0000: 03 32 15 00 00 44 fe 00 00 80 f1 ff ff 00 00 00	.2...D..........<p>

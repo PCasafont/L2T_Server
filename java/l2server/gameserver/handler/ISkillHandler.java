@@ -15,12 +15,12 @@
 
 package l2server.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.logging.Logger;
 
 /**
  * an IItemHandler implementation has to be stateless

@@ -15,14 +15,6 @@
 
 package l2server.gameserver.stats;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.model.ChanceCondition;
@@ -36,6 +28,9 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
+
+import java.util.*;
+import java.util.logging.Level;
 
 /**
  * @author mkizub

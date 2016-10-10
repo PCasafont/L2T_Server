@@ -15,9 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -29,6 +26,9 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class EffectDisarmArmor extends L2Effect
 {

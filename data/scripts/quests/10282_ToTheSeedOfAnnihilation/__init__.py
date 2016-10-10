@@ -1,8 +1,6 @@
 # 2010-08-13 by Gnacik
 # Based on Freya PTS
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "10282_ToTheSeedOfAnnihilation"

@@ -15,6 +15,9 @@
 
 package l2server.loginserver;
 
+import l2server.Config;
+import l2server.log.Log;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -22,9 +25,6 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.log.Log;
 
 /**
  * @author -Wooden-

@@ -1,11 +1,6 @@
 package ai.individual.GrandBosses.Lindvior;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -23,16 +18,17 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.model.zone.type.L2BossZone;
-import l2server.gameserver.network.serverpackets.Earthquake;
-import l2server.gameserver.network.serverpackets.EventTrigger;
-import l2server.gameserver.network.serverpackets.ExSendUIEvent;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel

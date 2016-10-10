@@ -15,10 +15,6 @@
 
 package handlers.chathandlers;
 
-import java.util.Collection;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.gui.ConsoleTab;
@@ -29,6 +25,10 @@ import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
+
+import java.util.Collection;
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
 
 /**
  * A chat handler

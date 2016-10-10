@@ -15,9 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.logging.Logger;
 
 /**
  * This class ...

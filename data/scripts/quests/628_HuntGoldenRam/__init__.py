@@ -1,10 +1,8 @@
 # Hunt of the Golden Ram Mercenary Force
 # Made by Polo - Have fun!..... fix & addition by t0rm3nt0r and LEX
-import sys
 from l2server import Config
 from l2server.gameserver.datatables import SkillTable
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "628_HuntGoldenRam"

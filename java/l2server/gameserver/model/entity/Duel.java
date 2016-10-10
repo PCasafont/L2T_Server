@@ -15,11 +15,6 @@
 
 package l2server.gameserver.model.entity;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.logging.Level;
-
-import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.DuelManager;
@@ -27,16 +22,12 @@ import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ExDuelEnd;
-import l2server.gameserver.network.serverpackets.ExDuelReady;
-import l2server.gameserver.network.serverpackets.ExDuelStart;
-import l2server.gameserver.network.serverpackets.ExDuelUpdateUserInfo;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.logging.Level;
 
 public class Duel
 {

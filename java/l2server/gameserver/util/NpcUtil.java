@@ -15,14 +15,14 @@
 
 package l2server.gameserver.util;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
 
 public class NpcUtil
 {

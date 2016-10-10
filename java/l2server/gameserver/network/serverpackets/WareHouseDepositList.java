@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+
+import java.util.ArrayList;
 
 /**
  * 0x53 WareHouseDepositList  dh (h dddhh dhhh d)

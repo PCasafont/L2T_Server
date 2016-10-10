@@ -784,7 +784,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
             case DEATHLINK:
             {
                 return power * Math.pow(1.7165 - activeChar.getCurrentHp() / activeChar.getMaxHp(), 2) * 0.577;
-				/*
+                /*
 				 * DrHouse:
 				 * Rolling back to old formula (look below) for DEATHLINK due to this one based on logarithm is not
 				 * accurate enough. Commented here because probably is a matter of just adjusting a constant

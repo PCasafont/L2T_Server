@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import l2server.gameserver.network.L2GameClient;
+import l2server.log.Log;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.logging.Level;
-
-import l2server.gameserver.network.L2GameClient;
-import l2server.log.Log;
 
 /**
  * Format: c dddd

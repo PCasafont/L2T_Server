@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2Manor;
+
+import java.util.ArrayList;
 
 /**
  * format(packet 0xFE) ch cd [ddddcdcd] c - id h - sub id

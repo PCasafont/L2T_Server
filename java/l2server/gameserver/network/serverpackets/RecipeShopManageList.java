@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.L2ManufactureItem;
 import l2server.gameserver.model.L2ManufactureList;
 import l2server.gameserver.model.L2RecipeList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * dd d(dd) d(ddd)

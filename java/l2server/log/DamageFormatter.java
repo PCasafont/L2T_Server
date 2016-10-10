@@ -15,17 +15,17 @@
 
 package l2server.log;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.StringUtil;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Formatter;
+import java.util.logging.LogRecord;
 
 public class DamageFormatter extends Formatter
 {

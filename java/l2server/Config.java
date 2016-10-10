@@ -24,10 +24,7 @@ import l2server.util.L2Properties;
 import l2server.util.StringUtil;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -39,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 public final class Config
 {

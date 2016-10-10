@@ -15,9 +15,9 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.HashMap;
-
 import l2server.log.Log;
+
+import java.util.HashMap;
 
 /**
  * @author Erlandys

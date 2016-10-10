@@ -19,7 +19,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 

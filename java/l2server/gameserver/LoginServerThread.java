@@ -15,6 +15,23 @@
 
 package l2server.gameserver;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.L2GameClient;
+import l2server.gameserver.network.L2GameClient.GameClientState;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.gameserverpackets.*;
+import l2server.gameserver.network.loginserverpackets.*;
+import l2server.gameserver.network.serverpackets.CharSelectionInfo;
+import l2server.gameserver.network.serverpackets.LoginFail;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.log.Log;
+import l2server.util.Util;
+import l2server.util.crypt.NewCrypt;
+import l2server.util.network.BaseSendablePacket;
+
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,37 +57,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.L2GameClient;
-import l2server.gameserver.network.L2GameClient.GameClientState;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.gameserverpackets.AuthRequest;
-import l2server.gameserver.network.gameserverpackets.BlowFishKey;
-import l2server.gameserver.network.gameserverpackets.ChangeAccessLevel;
-import l2server.gameserver.network.gameserverpackets.PlayerAuthRequest;
-import l2server.gameserver.network.gameserverpackets.PlayerInGame;
-import l2server.gameserver.network.gameserverpackets.PlayerLogout;
-import l2server.gameserver.network.gameserverpackets.PlayerTracert;
-import l2server.gameserver.network.gameserverpackets.ReplyCharacters;
-import l2server.gameserver.network.gameserverpackets.ServerStatus;
-import l2server.gameserver.network.gameserverpackets.TempBan;
-import l2server.gameserver.network.loginserverpackets.AuthResponse;
-import l2server.gameserver.network.loginserverpackets.InitLS;
-import l2server.gameserver.network.loginserverpackets.KickPlayer;
-import l2server.gameserver.network.loginserverpackets.LoginServerFail;
-import l2server.gameserver.network.loginserverpackets.PlayerAuthResponse;
-import l2server.gameserver.network.loginserverpackets.RequestCharacters;
-import l2server.gameserver.network.serverpackets.CharSelectionInfo;
-import l2server.gameserver.network.serverpackets.LoginFail;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
-import l2server.util.Util;
-import l2server.util.crypt.NewCrypt;
-import l2server.util.network.BaseSendablePacket;
 
 public class LoginServerThread extends Thread
 {

@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.L2Skill;
@@ -31,6 +29,8 @@ import l2server.gameserver.stats.skills.L2SkillSignet;
 import l2server.gameserver.stats.skills.L2SkillSignetCasttime;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
+
+import java.util.ArrayList;
 
 /**
  * @authors Forsaiken, Sami

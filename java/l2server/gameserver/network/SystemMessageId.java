@@ -15,15 +15,14 @@
 
 package l2server.gameserver.network;
 
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.log.Log;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * @author Noctarius & Nille02 & crion & Forsaiken & Pere

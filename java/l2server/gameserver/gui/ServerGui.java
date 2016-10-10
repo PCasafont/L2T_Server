@@ -1,10 +1,7 @@
 package l2server.gameserver.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Pere
@@ -78,7 +75,7 @@ public class ServerGui
     private void addListeners()
     {
         //Window Closing
-		/*_frame.addWindowListener(new WindowAdapter()
+        /*_frame.addWindowListener(new WindowAdapter()
 		{
 			public void windowClosing(WindowEvent event)
 			{

@@ -25,14 +25,13 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
-
-import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.TradeList.TradeItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.templates.item.L2Item;
+
+import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
 
 /**
  * This class ...

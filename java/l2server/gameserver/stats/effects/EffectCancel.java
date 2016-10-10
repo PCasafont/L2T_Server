@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.ArrayList;
-
 import l2server.Config;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Effect;
@@ -28,6 +26,8 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
 
 /**
  * @author Pere

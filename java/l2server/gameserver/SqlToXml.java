@@ -16,20 +16,6 @@
 package l2server.gameserver;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
@@ -43,6 +29,19 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * @author Pere

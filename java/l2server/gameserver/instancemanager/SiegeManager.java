@@ -15,17 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
@@ -38,6 +27,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Siege;
 import l2server.log.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import java.util.logging.Level;
 
 public class SiegeManager
 {

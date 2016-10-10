@@ -15,13 +15,13 @@
 
 package l2server.util.lib;
 
+import l2server.L2DatabaseFactory;
+import l2server.log.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
-
-import l2server.L2DatabaseFactory;
-import l2server.log.Log;
 
 public class SqlUtils
 {

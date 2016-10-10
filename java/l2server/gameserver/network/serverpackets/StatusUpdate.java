@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
+
+import java.util.ArrayList;
 
 /**
  * 01				// Packet Identifier <BR>
@@ -124,7 +124,7 @@ public final class StatusUpdate extends L2GameServerPacket
 
     public void addAttribute(int id, int level)
     {
-		/*if (_maxHp != -1)
+        /*if (_maxHp != -1)
 		{
 			if (id == CUR_HP)
 			{

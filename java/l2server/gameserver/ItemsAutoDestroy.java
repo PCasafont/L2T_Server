@@ -15,15 +15,15 @@
 
 package l2server.gameserver;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.ItemsOnGroundManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.log.Log;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ItemsAutoDestroy
 {

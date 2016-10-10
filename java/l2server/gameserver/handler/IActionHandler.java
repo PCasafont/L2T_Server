@@ -15,11 +15,11 @@
 
 package l2server.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Object.InstanceType;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.logging.Logger;
 
 public interface IActionHandler
 {

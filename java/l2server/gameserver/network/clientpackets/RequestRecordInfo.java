@@ -15,14 +15,14 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.Collection;
-
 import l2server.gameserver.TaskPriority;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.SpawnItem;
 import l2server.gameserver.network.serverpackets.UserInfo;
+
+import java.util.Collection;
 
 public class RequestRecordInfo extends L2GameClientPacket
 {

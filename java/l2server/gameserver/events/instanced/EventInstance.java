@@ -1,7 +1,5 @@
 package l2server.gameserver.events.instanced;
 
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
@@ -13,14 +11,12 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.List;
 
 /**
  * @author Pere
@@ -708,7 +704,7 @@ public abstract class EventInstance
         if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
         {
             removeParticipant(playerInstance.getObjectId());
-			/*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
+            /*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
 			team.addPlayer(playerInstance);
 			if (isState(EventState.STARTING) || isState(EventState.STARTED))
 			{

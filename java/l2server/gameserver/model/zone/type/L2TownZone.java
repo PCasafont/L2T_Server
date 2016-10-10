@@ -111,7 +111,7 @@ public class L2TownZone extends L2SpawnZone
 
         // if (character instanceof L2PcInstance)
         //((L2PcInstance)character).sendMessage("You left "+_townName);
-		
+
 		/*if (character instanceof L2PcInstance)
 		{
 			((L2PcInstance)character).setHostileZone(false);

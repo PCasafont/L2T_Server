@@ -15,11 +15,6 @@
 
 package l2server.gameserver.model.actor.status;
 
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.Future;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.L2Character;
@@ -31,6 +26,11 @@ import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Formulas;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.Future;
+import java.util.logging.Level;
 
 public class CharStatus
 {

@@ -15,6 +15,19 @@
 
 package l2server.loginserver;
 
+import l2server.Base64;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.log.Log;
+import l2server.loginserver.GameServerTable.GameServerInfo;
+import l2server.loginserver.network.L2LoginClient;
+import l2server.loginserver.network.gameserverpackets.ServerStatus;
+import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import l2server.util.Rnd;
+import l2server.util.crypt.ScrambledKeyPair;
+import l2server.util.lib.LoginLog;
+
+import javax.crypto.Cipher;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
@@ -30,20 +43,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
-
-import javax.crypto.Cipher;
-
-import l2server.Base64;
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.log.Log;
-import l2server.loginserver.GameServerTable.GameServerInfo;
-import l2server.loginserver.network.L2LoginClient;
-import l2server.loginserver.network.gameserverpackets.ServerStatus;
-import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
-import l2server.util.Rnd;
-import l2server.util.crypt.ScrambledKeyPair;
-import l2server.util.lib.LoginLog;
 
 /**
  * This class ...

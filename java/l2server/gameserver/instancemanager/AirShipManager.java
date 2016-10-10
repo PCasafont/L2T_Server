@@ -16,13 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.VehiclePathPoint;
@@ -33,6 +26,12 @@ import l2server.gameserver.network.serverpackets.ExAirShipTeleportList;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
 
 public class AirShipManager
 {

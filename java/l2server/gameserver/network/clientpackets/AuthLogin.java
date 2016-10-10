@@ -15,11 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.LoginServerThread;
@@ -28,6 +23,11 @@ import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExLoginVitalityEffectInfo;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.logging.Level;
 
 /**
  * This class ...

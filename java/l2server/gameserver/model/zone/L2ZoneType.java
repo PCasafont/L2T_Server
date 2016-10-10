@@ -15,12 +15,6 @@
 
 package l2server.gameserver.model.zone;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -39,6 +33,12 @@ import l2server.gameserver.network.serverpackets.ExServerPrimitive;
 import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.log.Log;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Abstract base class for any zone type

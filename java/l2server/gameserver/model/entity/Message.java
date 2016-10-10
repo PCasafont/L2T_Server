@@ -15,18 +15,18 @@
 
 package l2server.gameserver.model.entity;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.util.Rnd;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Migi, DS

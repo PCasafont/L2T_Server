@@ -1,10 +1,8 @@
 # The Finest Food - v0.1 by disKret & DrLecter
-import sys
 from l2server import Config
-from l2server.util import Rnd
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.util import Rnd
 
 qn = "623_TheFinestFood"
 

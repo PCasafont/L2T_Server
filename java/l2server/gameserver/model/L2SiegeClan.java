@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model;
 
+import l2server.gameserver.model.actor.L2Npc;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import l2server.gameserver.model.actor.L2Npc;
 
 public class L2SiegeClan
 {

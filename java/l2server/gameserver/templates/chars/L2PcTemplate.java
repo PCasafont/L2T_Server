@@ -15,12 +15,12 @@
 
 package l2server.gameserver.templates.chars;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author mkizub

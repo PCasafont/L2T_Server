@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.model.olympiad.OlympiadGameClassed;
 import l2server.gameserver.model.olympiad.OlympiadGameNonClassed;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
+
+import java.util.List;
 
 /**
  * Format: (chd) ddd[dddS]

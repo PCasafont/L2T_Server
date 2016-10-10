@@ -15,13 +15,13 @@
 
 package l2server.util;
 
+import l2server.network.IAcceptFilter;
+
 import java.net.InetAddress;
 import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
-
-import l2server.network.IAcceptFilter;
 
 /**
  * Formatted Forsaiken's IPv4 filter [DrHouse]

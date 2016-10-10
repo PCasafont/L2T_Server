@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.PacketOpcodes;
 import l2server.log.Log;
 import l2server.network.SendablePacket;
+
+import java.util.logging.Level;
 
 /**
  * @author KenM

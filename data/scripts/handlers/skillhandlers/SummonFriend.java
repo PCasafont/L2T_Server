@@ -15,8 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
@@ -27,6 +25,8 @@ import l2server.gameserver.network.serverpackets.ConfirmDlg;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
+
+import java.util.logging.Level;
 
 /**
  * @authors BiTi, Sami

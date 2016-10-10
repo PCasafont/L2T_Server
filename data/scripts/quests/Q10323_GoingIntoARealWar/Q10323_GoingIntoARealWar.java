@@ -15,9 +15,6 @@
 
 package quests.Q10323_GoingIntoARealWar;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.instancemanager.InstanceManager;
@@ -33,6 +30,9 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.TutorialShowHtml;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

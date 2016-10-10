@@ -15,10 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2World;
@@ -28,6 +24,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BoatManager
 {

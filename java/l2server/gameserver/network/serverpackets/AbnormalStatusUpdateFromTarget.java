@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.actor.L2Character;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

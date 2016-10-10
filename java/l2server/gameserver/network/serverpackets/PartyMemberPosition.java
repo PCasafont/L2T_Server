@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author zabbix

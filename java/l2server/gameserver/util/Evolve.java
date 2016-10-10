@@ -15,10 +15,6 @@
 
 package l2server.gameserver.util;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -31,13 +27,13 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
 
 public final class Evolve
 {

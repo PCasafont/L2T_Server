@@ -15,6 +15,9 @@
 
 package l2server.gameserver.util;
 
+import l2server.log.Log;
+
+import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -22,10 +25,6 @@ import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
-
-import l2server.log.Log;
 
 /**
  * @author Maxime

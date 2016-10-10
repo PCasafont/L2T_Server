@@ -1,10 +1,8 @@
 # Mimir's Elixir version 0.1 
 # by Fulminus
-import sys
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.model.base import Race
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 # Quest info
 qn = "235_MimirsElixir"

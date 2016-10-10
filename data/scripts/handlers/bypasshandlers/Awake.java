@@ -15,7 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import l2server.Config;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;

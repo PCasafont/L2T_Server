@@ -1,11 +1,5 @@
 package l2server.gameserver.events.instanced;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
@@ -18,6 +12,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.log.Log;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Pere
@@ -844,7 +844,7 @@ public class EventsMatchMaker
                 Instances.get(eventId).observe(activeChar);
             }
         }
-		
+
 		/*else if (_command.startsWith("TenkaiEventParticipation"))
 		{
 			int eventId = Integer.valueOf(_command.substring(25));

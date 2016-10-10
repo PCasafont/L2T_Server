@@ -1,8 +1,6 @@
 # Guardians of the Holy Grail made by Bloodshed
-import sys
 from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "639_GuardiansOfTheHolyGrail"

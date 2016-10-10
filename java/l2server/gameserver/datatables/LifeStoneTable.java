@@ -15,13 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.model.EnchantEffect;
 import l2server.gameserver.model.L2Augmentation;
@@ -36,6 +29,13 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
 
 /**
  * @author Pere

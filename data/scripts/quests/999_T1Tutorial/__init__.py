@@ -2,12 +2,9 @@
 # C5 addons by DrLecter
 # C4 addons by Kerberos
 # updated to Kamael by Kerberos
-import sys
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets import PlaySound
 from l2server import Config
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "999_T1Tutorial"
 qnTutorial = "255_Tutorial"

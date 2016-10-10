@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class ...

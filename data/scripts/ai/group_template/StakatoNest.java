@@ -15,8 +15,6 @@
 
 package ai.group_template;
 
-import java.util.List;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Object;
@@ -29,6 +27,8 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.List;
 
 public class StakatoNest extends L2AttackableAIScript
 {

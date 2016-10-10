@@ -1,9 +1,7 @@
 # Fix by Cromir & Black Night for Kilah
 # Quest: Influx of Machines
-import sys
 from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "647_InfluxOfMachines"

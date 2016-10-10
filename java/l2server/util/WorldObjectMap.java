@@ -25,11 +25,11 @@
 
 package l2server.util;
 
+import l2server.gameserver.model.L2Object;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import l2server.gameserver.model.L2Object;
 
 /**
  * This class ...

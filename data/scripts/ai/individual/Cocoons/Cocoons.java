@@ -15,6 +15,7 @@
 
 package ai.individual.Cocoons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
@@ -23,7 +24,6 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel

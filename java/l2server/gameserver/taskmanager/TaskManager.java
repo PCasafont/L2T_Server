@@ -15,9 +15,11 @@
 
 package l2server.gameserver.taskmanager;
 
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_NONE;
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_SHEDULED;
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_TIME;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.taskmanager.tasks.*;
+import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,21 +33,7 @@ import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.taskmanager.tasks.TaskCleanUp;
-import l2server.gameserver.taskmanager.tasks.TaskCustomTasks;
-import l2server.gameserver.taskmanager.tasks.TaskDailyChangeRates;
-import l2server.gameserver.taskmanager.tasks.TaskDailyQuestClean;
-import l2server.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
-import l2server.gameserver.taskmanager.tasks.TaskJython;
-import l2server.gameserver.taskmanager.tasks.TaskOlympiadSave;
-import l2server.gameserver.taskmanager.tasks.TaskRaidPointsReset;
-import l2server.gameserver.taskmanager.tasks.TaskRecom;
-import l2server.gameserver.taskmanager.tasks.TaskScript;
-import l2server.gameserver.taskmanager.tasks.TaskVitalityReset;
-import l2server.log.Log;
+import static l2server.gameserver.taskmanager.TaskTypes.*;
 
 /**
  * @author Layane

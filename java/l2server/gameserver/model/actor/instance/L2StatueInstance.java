@@ -15,16 +15,16 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharTemplateTable;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.chars.L2PcTemplate;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  * @author Pere

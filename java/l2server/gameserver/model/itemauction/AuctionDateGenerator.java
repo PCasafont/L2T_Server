@@ -15,10 +15,10 @@ package l2server.gameserver.model.itemauction;
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+import l2server.gameserver.templates.StatsSet;
+
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-
-import l2server.gameserver.templates.StatsSet;
 
 /**
  * @author Forsaiken

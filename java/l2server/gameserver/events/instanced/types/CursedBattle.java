@@ -1,8 +1,5 @@
 package l2server.gameserver.events.instanced.types;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.EventConfig;
@@ -16,6 +13,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.stats.VisualEffect;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

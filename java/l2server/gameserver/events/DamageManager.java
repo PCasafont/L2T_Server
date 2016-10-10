@@ -1,15 +1,5 @@
 package l2server.gameserver.events;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
@@ -22,6 +12,16 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -140,7 +140,7 @@ public class DamageManager
 
         if (dmg > info.getCurrentDamage())
         {
-			/*if (playerMatch(pl.getHWID(), pl.getClassId()))
+            /*if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
 				pl.sendMessage("You already have another record, only one per person is allowed");
 				return;

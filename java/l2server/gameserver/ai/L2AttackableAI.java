@@ -15,15 +15,6 @@
 
 package l2server.gameserver.ai;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Future;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -32,20 +23,9 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.L2Attackable.AggroInfo;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2EventGolemInstance;
-import l2server.gameserver.model.actor.instance.L2FriendlyMobInstance;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.chars.L2NpcTemplate.AIType;
@@ -56,6 +36,13 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.Future;
+import java.util.logging.Level;
+
+import static l2server.gameserver.ai.CtrlIntention.*;
 
 /**
  * This class manages AI of L2Attackable.<BR><BR>
@@ -2065,7 +2052,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
                 }
                 //-------------------------------------------------------------
                 //if there is no ATK skill to use, then try Universal skill
-				/*
+                /*
 				if (_skillrender.hasUniversalSkill())
 				{
 					for (L2Skill sk:_skillrender._universalskills)

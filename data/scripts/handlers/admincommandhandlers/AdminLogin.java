@@ -15,14 +15,14 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.LoginServerThread;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.gameserverpackets.ServerStatus;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+
+import java.util.StringTokenizer;
 
 /**
  * This class handles the admin commands that acts on the login

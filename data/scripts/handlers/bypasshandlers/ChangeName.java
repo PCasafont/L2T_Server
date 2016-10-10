@@ -22,11 +22,7 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.PartySmallWindowAll;
-import l2server.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
 public class ChangeName implements IBypassHandler

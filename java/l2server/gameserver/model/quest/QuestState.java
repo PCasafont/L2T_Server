@@ -16,15 +16,6 @@
 package l2server.gameserver.model.quest;
 
 import gnu.trove.TIntIntHashMap;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.TimeController;
@@ -38,19 +29,18 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExShowQuestMark;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.QuestList;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.TutorialCloseHtml;
-import l2server.gameserver.network.serverpackets.TutorialEnableClientEvent;
-import l2server.gameserver.network.serverpackets.TutorialShowHtml;
-import l2server.gameserver.network.serverpackets.TutorialShowQuestionMark;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 
 /**
  * @author Luis Arias

@@ -15,8 +15,6 @@
 
 package l2server.loginserver.network.clientpackets;
 
-import java.net.InetAddress;
-
 import l2server.Config;
 import l2server.log.Log;
 import l2server.loginserver.GameServerTable.GameServerInfo;
@@ -30,6 +28,8 @@ import l2server.loginserver.network.serverpackets.AccountKicked.AccountKickedRea
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
+
+import java.net.InetAddress;
 
 /**
  * @author Pere

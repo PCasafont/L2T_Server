@@ -19,16 +19,10 @@
 
 package l2server.gameserver.gui;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-
 import l2server.gameserver.gui.playertable.PlayerTablePane;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Pere

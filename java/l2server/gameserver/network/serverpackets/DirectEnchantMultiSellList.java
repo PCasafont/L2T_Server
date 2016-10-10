@@ -25,16 +25,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import l2server.Config;
 import l2server.gameserver.datatables.EnchantItemTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class DirectEnchantMultiSellList extends L2GameServerPacket
 {

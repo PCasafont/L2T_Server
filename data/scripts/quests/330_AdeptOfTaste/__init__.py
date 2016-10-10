@@ -1,7 +1,5 @@
 # Made by Mr. Have fun! Version 0.2
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "330_AdeptOfTaste"

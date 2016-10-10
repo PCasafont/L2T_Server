@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model.zone;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.model.Location;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Abstract zone with spawn locations

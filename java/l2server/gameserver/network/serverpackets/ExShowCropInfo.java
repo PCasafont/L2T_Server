@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import l2server.gameserver.model.L2Manor;
+
+import java.util.List;
 
 /**
  * Format: ch cddd[ddddcdcdcd]

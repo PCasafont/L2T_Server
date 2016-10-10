@@ -1,10 +1,7 @@
 package instances.DimensionalDoor.Balok;
 
+import ai.group_template.L2AttackableAIScript;
 import instances.DimensionalDoor.DimensionalDoor;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
@@ -24,7 +21,9 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author LasTravel

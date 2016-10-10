@@ -15,6 +15,7 @@
 
 package ai.individual.Apherus;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -30,7 +31,6 @@ import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel

@@ -16,9 +16,6 @@
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.io.File;
-
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -27,6 +24,8 @@ import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
 
 public class StaticObjects
 {

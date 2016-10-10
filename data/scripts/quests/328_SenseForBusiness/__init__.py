@@ -1,7 +1,5 @@
 # Made by Mr. Have fun! - Version 0.3 by Drlecter
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "328_SenseForBusiness"

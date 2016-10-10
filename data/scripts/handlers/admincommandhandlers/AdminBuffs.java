@@ -1,7 +1,5 @@
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -12,6 +10,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.util.GMAudit;
 import l2server.util.StringUtil;
+
+import java.util.StringTokenizer;
 
 public class AdminBuffs implements IAdminCommandHandler
 {

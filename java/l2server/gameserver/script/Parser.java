@@ -15,9 +15,9 @@
 
 package l2server.gameserver.script;
 
-import javax.script.ScriptContext;
-
 import org.w3c.dom.Node;
+
+import javax.script.ScriptContext;
 
 /**
  * @author Luis Arias

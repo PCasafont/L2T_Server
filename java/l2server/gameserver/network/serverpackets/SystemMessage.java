@@ -15,10 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.logging.Level;
-
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SkillTable;
@@ -37,6 +33,10 @@ import l2server.gameserver.network.SystemMessageId.SMLocalisation;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.logging.Level;
 
 public final class SystemMessage extends L2GameServerPacket
 {

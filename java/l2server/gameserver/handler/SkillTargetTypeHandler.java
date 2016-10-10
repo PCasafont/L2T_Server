@@ -15,11 +15,11 @@
 
 package l2server.gameserver.handler;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Max

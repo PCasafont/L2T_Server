@@ -15,13 +15,6 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.L2Character;
@@ -32,6 +25,13 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
+import java.util.logging.Level;
 
 /**
  * Auto Chat Handler

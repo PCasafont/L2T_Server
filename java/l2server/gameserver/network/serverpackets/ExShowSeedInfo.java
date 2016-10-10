@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.instancemanager.CastleManorManager.SeedProduction;
 import l2server.gameserver.model.L2Manor;
+
+import java.util.List;
 
 /**
  * format(packet 0xFE)

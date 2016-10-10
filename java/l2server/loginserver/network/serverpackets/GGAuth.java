@@ -15,10 +15,10 @@
 
 package l2server.loginserver.network.serverpackets;
 
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * Fromat: d

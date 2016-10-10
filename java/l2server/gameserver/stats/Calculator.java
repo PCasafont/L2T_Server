@@ -15,9 +15,9 @@
 
 package l2server.gameserver.stats;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.stats.funcs.Func;
+
+import java.util.ArrayList;
 
 /**
  * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).

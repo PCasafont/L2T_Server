@@ -277,7 +277,7 @@ public class MultiSellChoose extends L2GameClientPacket
                             player.setMultiSell(null);
                             return;
                         }
-						
+
 						/*if (itemToTake.isEquipped())
 						{ //this is a cheat, transaction will be aborted and if any items already taken will not be returned back to inventory!
 							Logozo.severe("Character: " + player.getName() + " is trying to cheat in multisell, exchanging equipped item, merchatnt id:" + merchant.getNpcId());

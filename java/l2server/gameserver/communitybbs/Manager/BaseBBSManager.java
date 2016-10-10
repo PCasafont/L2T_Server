@@ -19,11 +19,11 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ShowBoard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BaseBBSManager
 {

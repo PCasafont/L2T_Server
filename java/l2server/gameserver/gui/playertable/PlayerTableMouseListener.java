@@ -4,12 +4,11 @@
 
 package l2server.gameserver.gui.playertable;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import javax.swing.JPopupMenu;
 
 /**
  * @author KenM
@@ -42,7 +41,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
     public void mouseReleased(MouseEvent e)
     {
         checkPopup(e);
-		/*if (e.isPopupTrigger())
+        /*if (e.isPopupTrigger())
 		{
 			showPopupMenu(e);
 		}*/

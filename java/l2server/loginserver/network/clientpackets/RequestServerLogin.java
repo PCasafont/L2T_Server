@@ -15,10 +15,6 @@
 
 package l2server.loginserver.network.clientpackets;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.log.Log;
@@ -27,6 +23,10 @@ import l2server.loginserver.SessionKey;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.PlayFail.PlayFailReason;
 import l2server.loginserver.network.serverpackets.PlayOk;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
 
 /**
  * Fromat is ddc

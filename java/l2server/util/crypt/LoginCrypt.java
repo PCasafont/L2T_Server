@@ -15,9 +15,9 @@
 
 package l2server.util.crypt;
 
-import java.io.IOException;
-
 import l2server.util.Rnd;
+
+import java.io.IOException;
 
 /**
  * @author KenM

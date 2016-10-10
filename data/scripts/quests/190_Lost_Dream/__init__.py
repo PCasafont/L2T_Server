@@ -2,10 +2,7 @@
 # this script is part of the Official L2J Datapack Project.
 # Visit http://www.l2jdp.com/forum for more details.
 
-import sys
-
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "190_Lost_Dream"

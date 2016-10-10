@@ -116,7 +116,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
             //int[][] speeds1 = MonsterRace.getInstance().getSpeeds();
             //MonsterRace.getInstance().newSpeeds();
             //int[][] speeds2 = MonsterRace.getInstance().getSpeeds();
-			/*
+            /*
 			 int[] speed = new int[8];
 			 for (int i=0; i<8; i++)
 			 {

@@ -1,12 +1,8 @@
 #
 # Created by Gigiikun on 2009.06.01.
 
-import sys
-
 from l2server.gameserver.datatables import CharTemplateTable
-from l2server.gameserver.model.base import Race
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.network import SystemMessageId
 from l2server.gameserver.network.serverpackets import SystemMessage

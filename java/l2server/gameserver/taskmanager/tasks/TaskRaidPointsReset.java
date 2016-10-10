@@ -15,9 +15,6 @@
 
 package l2server.gameserver.taskmanager.tasks;
 
-import java.util.Calendar;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
@@ -27,6 +24,9 @@ import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.log.Log;
+
+import java.util.Calendar;
+import java.util.Map;
 
 public class TaskRaidPointsReset extends Task
 {

@@ -1,8 +1,5 @@
 package l2server.gameserver.events.instanced.types;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.events.instanced.EventConfig;
@@ -11,6 +8,9 @@ import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

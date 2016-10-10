@@ -15,13 +15,13 @@
 
 package l2server.gameserver.stats;
 
-import java.io.File;
-import java.util.NoSuchElementException;
-
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.NoSuchElementException;
 
 /**
  * @author DS

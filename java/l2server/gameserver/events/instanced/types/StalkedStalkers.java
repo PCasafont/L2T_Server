@@ -1,9 +1,5 @@
 package l2server.gameserver.events.instanced.types;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
@@ -20,6 +16,10 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Point3D;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Pere

@@ -156,7 +156,7 @@ public class ExResponseCommissionList extends L2GameServerPacket
 
     //private void writeItems(Auctions auction)
     {
-		/*writeQ(auction.getAuctionId()); // Auction id
+        /*writeQ(auction.getAuctionId()); // Auction id
 		writeQ(auction.getPrice()); // Price
 		writeD(auction.getCategory()); // Category
 		writeD(auction.getDuration()); // Duration / maybe in days???

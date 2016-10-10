@@ -1,8 +1,5 @@
 #  Created by Kerberos
-import sys
-from l2server.gameserver import TimeController
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.network.serverpackets import NpcSay
 

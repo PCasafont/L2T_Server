@@ -15,14 +15,6 @@ package l2server.gameserver.datatables;
 
 import gnu.trove.TIntIntHashMap;
 import gnu.trove.TLongObjectHashMap;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -31,6 +23,13 @@ import l2server.gameserver.stats.SkillParser;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.logging.Level;
 
 /**
  *

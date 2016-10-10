@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import l2server.gameserver.model.L2Manor;
 import l2server.gameserver.model.entity.Castle;
+
+import java.util.ArrayList;
 
 /**
  * format(packet 0xFE) ch dd [ddcdcdddddddcddc] c - id h - sub id

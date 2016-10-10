@@ -15,9 +15,6 @@
 
 package ai.group_template;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
@@ -33,6 +30,9 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Growth-capable mobs: Polymorphing upon successful feeding.

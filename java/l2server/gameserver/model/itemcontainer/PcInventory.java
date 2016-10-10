@@ -15,13 +15,6 @@
 
 package l2server.gameserver.model.itemcontainer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
@@ -41,6 +34,13 @@ import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 public class PcInventory extends Inventory
 {

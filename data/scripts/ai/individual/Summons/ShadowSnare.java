@@ -15,13 +15,13 @@
 
 package ai.individual.Summons;
 
-import java.util.concurrent.ScheduledFuture;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel

@@ -15,13 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharTemplateTable;
@@ -36,6 +29,13 @@ import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.L2GameClient;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 /**
  * This class ...

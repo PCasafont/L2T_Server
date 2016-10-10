@@ -15,10 +15,10 @@
 
 package l2server.gameserver.util;
 
+import l2server.L2DatabaseFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
-import l2server.L2DatabaseFactory;
 
 public class GMAudit
 {

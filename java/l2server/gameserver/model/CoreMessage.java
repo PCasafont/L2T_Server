@@ -1,11 +1,11 @@
 package l2server.gameserver.model;
 
-import java.util.Vector;
-
 import l2server.gameserver.datatables.CoreMessageTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.Vector;
 
 /**
  * @author Pere

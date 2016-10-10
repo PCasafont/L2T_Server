@@ -15,6 +15,7 @@
 
 package ai.individual.GrandBosses;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
@@ -24,7 +25,6 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel

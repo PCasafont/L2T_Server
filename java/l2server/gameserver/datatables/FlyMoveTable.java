@@ -15,8 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.io.File;
-
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -32,6 +30,8 @@ import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
 
 /**
  * @author Pere

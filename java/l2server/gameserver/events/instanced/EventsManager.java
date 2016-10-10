@@ -1,12 +1,5 @@
 package l2server.gameserver.events.instanced;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.Reloadable;
@@ -26,6 +19,13 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Pere
@@ -800,7 +800,7 @@ public class EventsManager implements Reloadable
         return false;
 
         //TODO LasTravel: Hwid check don't work if we don't have LG
-		/*String hwId = player.getClient().getHWId();
+        /*String hwId = player.getClient().getHWId();
 		for (L2PcInstance registered : _registeredPlayers.values())
 		{
 			if (registered.getClient() != null

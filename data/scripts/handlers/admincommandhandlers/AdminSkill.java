@@ -15,10 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -31,6 +27,10 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PledgeSkillList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
+
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:

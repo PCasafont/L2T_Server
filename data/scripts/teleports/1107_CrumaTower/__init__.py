@@ -1,4 +1,3 @@
-import sys
 from l2server.gameserver.model.quest.jython import QuestJython
 
 

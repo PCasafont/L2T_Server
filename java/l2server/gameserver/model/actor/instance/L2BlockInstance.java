@@ -20,13 +20,7 @@ import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaPartic
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.entity.BlockCheckerEngine;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ExCubeGameChangePoints;
-import l2server.gameserver.network.serverpackets.ExCubeGameExtendedChangePoints;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.NpcInfo;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
 

@@ -15,15 +15,15 @@
 
 package l2server.gameserver.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
 
 /**
  * Clan member class.

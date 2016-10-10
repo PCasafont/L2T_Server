@@ -15,43 +15,15 @@
 
 package l2server.gameserver.stats;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
-import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.ClanHallManager;
-import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.SiegeManager;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2CubicInstance;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.model.actor.instance.L2TrapInstance;
+import l2server.gameserver.instancemanager.*;
+import l2server.gameserver.model.*;
+import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.model.entity.Castle;
@@ -71,19 +43,18 @@ import l2server.gameserver.stats.conditions.ConditionPlayerState;
 import l2server.gameserver.stats.conditions.ConditionUsingItemType;
 import l2server.gameserver.stats.effects.EffectInvincible;
 import l2server.gameserver.stats.funcs.Func;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2ArmorType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.*;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
 
 /**
  * Global calculations, can be modified by server admins
@@ -402,7 +373,7 @@ public final class Formulas
         {
             if (env.player instanceof L2PcInstance)
             {
-				/*L2PcInstance p = (L2PcInstance) env.player;
+                /*L2PcInstance p = (L2PcInstance) env.player;
 				boolean hasMagePDef = false;
 				if (p.getCurrentClass() != null
 						&& (p.getCurrentClass().isMage()

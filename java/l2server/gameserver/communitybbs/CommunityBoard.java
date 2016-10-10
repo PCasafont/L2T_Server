@@ -20,12 +20,7 @@
 package l2server.gameserver.communitybbs;
 
 import l2server.Config;
-import l2server.gameserver.communitybbs.Manager.ClanBBSManager;
-import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.communitybbs.Manager.PostBBSManager;
-import l2server.gameserver.communitybbs.Manager.RegionBBSManager;
-import l2server.gameserver.communitybbs.Manager.TopBBSManager;
-import l2server.gameserver.communitybbs.Manager.TopicBBSManager;
+import l2server.gameserver.communitybbs.Manager.*;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;

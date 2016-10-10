@@ -19,17 +19,17 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.communitybbs.BB.Forum;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.log.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.communitybbs.BB.Forum;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
 
 public class ForumsBBSManager extends BaseBBSManager
 {

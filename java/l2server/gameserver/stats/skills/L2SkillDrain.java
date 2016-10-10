@@ -15,10 +15,6 @@
 
 package l2server.gameserver.stats.skills;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
@@ -37,6 +33,10 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 public class L2SkillDrain extends L2Skill
 {
@@ -204,7 +204,7 @@ public class L2SkillDrain extends L2Skill
             }
         }
         //effect self :]
-		/*L2Abnormal effect = activeChar.getFirstEffect(getId());
+        /*L2Abnormal effect = activeChar.getFirstEffect(getId());
 		if (effect != null && effect.isSelfEffect())
 		{
 			//Replace old effect with new one.

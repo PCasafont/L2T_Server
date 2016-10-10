@@ -15,16 +15,16 @@
 
 package l2server.gameserver.templates.skills;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.FuncTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * @author mkizub

@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * A clone.

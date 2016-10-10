@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -32,6 +28,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * This class ...

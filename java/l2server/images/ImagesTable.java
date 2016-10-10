@@ -15,10 +15,9 @@
 
 package l2server.images;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.swing.ImageIcon;
 
 /**
  * Usage of this class causes images to be loaded and kept in memory, and therefore should only be used by helper applications.

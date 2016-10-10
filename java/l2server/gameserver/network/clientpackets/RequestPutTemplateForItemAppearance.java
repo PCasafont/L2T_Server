@@ -15,9 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -31,6 +28,9 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2ItemType;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.util.Util;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Pere

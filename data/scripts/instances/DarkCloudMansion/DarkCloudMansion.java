@@ -1,8 +1,5 @@
 package instances.DarkCloudMansion;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -20,6 +17,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DarkCloudMansion extends Quest
 {

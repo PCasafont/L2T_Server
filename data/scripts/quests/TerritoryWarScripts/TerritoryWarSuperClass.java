@@ -15,11 +15,6 @@
 
 package quests.TerritoryWarScripts;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.instancemanager.TerritoryWarManager.TerritoryNPCSpawn;
 import l2server.gameserver.model.L2Object;
@@ -36,6 +31,11 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class TerritoryWarSuperClass extends Quest
 {

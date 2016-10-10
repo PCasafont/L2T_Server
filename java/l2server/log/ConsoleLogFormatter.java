@@ -15,11 +15,11 @@
 
 package l2server.log;
 
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-
 import l2server.util.StringUtil;
 import l2server.util.Util;
+
+import java.util.logging.Formatter;
+import java.util.logging.LogRecord;
 
 /**
  * This class ...

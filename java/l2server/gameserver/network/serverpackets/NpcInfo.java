@@ -15,10 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Set;
-
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
@@ -26,6 +22,10 @@ import l2server.gameserver.model.actor.L2Trap;
 import l2server.gameserver.model.actor.instance.L2CloneInstance;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.stats.VisualEffect;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Set;
 
 /**
  * @author Pere
@@ -288,7 +288,7 @@ public final class NpcInfo extends L2GameServerPacket
         buffer.putInt(-1); // Title NpcStringId
         buffer.put(npc.getOwner().getPvpFlag()); // PvP Flag
         buffer.putInt(0); // Reputation
-		/*if (npc.getOwner() != null)
+        /*if (npc.getOwner() != null)
 		{
 			buffer.putInt(npc.getOwner().getClanId());
 			buffer.putInt(npc.getOwner().getClanCrestId());

@@ -514,7 +514,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
                     }
                     break;
                 case 5: // Change Class - Action
-					/*
+                    /*
 					 * If the character is less than level 75 on any of their previously chosen
 					 * classes then disallow them to change to their most recently added sub-class choice.
 					 *

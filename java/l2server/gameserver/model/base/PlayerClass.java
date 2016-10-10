@@ -25,13 +25,13 @@
 
 package l2server.gameserver.model.base;
 
+import l2server.gameserver.model.L2SkillLearn;
+import l2server.gameserver.templates.item.L2Henna;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.templates.item.L2Henna;
 
 /**
  * This class ...

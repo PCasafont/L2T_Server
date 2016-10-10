@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats.skills;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
@@ -32,6 +30,8 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
 
 public class L2SkillSpawn extends L2Skill
 {

@@ -15,14 +15,14 @@
 
 package l2server.gsregistering;
 
+import l2server.loginserver.GameServerTable;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.sql.SQLException;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
-
-import l2server.loginserver.GameServerTable;
 
 public class GameServerRegister extends BaseGameServerRegister
 {

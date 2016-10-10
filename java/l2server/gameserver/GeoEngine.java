@@ -16,22 +16,6 @@
 package l2server.gameserver;
 
 import gnu.trove.TShortObjectHashMap;
-
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.LineNumberReader;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.IntBuffer;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.model.L2Object;
@@ -44,6 +28,15 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.Point3D;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.IntBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * @author -Nemesiss-
@@ -581,7 +574,7 @@ public class GeoEngine extends GeoData
             // Avoid too long check
             // Currently we calculate a middle point
             // for wyvern users and otherwise for comfort
-			/*double divider = Math.sqrt((double) 30000 / distance2);
+            /*double divider = Math.sqrt((double) 30000 / distance2);
 			tx = x + (int) (divider * dx);
 			ty = y + (int) (divider * dy);
 			int dz = (tz - startpoint.getZ());

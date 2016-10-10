@@ -15,10 +15,10 @@
 
 package l2server.gameserver.handler;
 
+import l2server.gameserver.model.L2Object.InstanceType;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import l2server.gameserver.model.L2Object.InstanceType;
 
 public class ActionHandler
 {

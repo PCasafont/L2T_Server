@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Map;
-
 import l2server.gameserver.model.itemcontainer.Inventory;
+
+import java.util.Map;
 
 /**
  * * @author Gnacik

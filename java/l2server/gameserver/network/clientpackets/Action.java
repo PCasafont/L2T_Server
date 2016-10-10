@@ -165,7 +165,7 @@ public final class Action extends L2GameClientPacket
         {
             getClient().sendPacket(ActionFailed.STATIC_PACKET);
         }
-		
+
 		/*if (!L2World.getInstance().getAllPlayersArray().contains(activeChar))
 		{
 			GmListTable.broadcastMessageToGMs("WARNING: " + activeChar.getName() + "("+activeChar.getAccountName()+") is using the target exploit!");

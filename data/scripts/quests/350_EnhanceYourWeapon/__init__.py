@@ -1,8 +1,6 @@
 # Weapon SA Quest Written By MickyLee
 # rewritten by Questdevs Team
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "350_EnhanceYourWeapon"

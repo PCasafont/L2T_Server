@@ -25,12 +25,6 @@
 
 package l2server.gameserver.model.waypoint;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
-
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Object;
@@ -38,6 +32,8 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.util.Point3D;
+
+import java.util.*;
 
 /**
  * This class ...

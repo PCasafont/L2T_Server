@@ -15,10 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
@@ -31,6 +27,10 @@ import l2server.gameserver.network.serverpackets.CharSelected;
 import l2server.gameserver.network.serverpackets.ExSubjobInfo;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.log.Log;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * This class ...

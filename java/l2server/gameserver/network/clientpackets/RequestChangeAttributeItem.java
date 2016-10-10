@@ -19,13 +19,7 @@ import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeFail;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeItemList;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeOk;
-import l2server.gameserver.network.serverpackets.ExStorageMaxCount;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
 import l2server.util.Rnd;
 

@@ -2,10 +2,7 @@
 # Created by DraX on 2005.08.08
 #
 
-import sys
-
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "30358_thifiell_occupation_change"

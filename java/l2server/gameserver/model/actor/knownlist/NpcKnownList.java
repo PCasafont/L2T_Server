@@ -15,20 +15,16 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import java.util.Collection;
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
+
+import java.util.Collection;
+import java.util.concurrent.ScheduledFuture;
 
 public class NpcKnownList extends CharKnownList
 {

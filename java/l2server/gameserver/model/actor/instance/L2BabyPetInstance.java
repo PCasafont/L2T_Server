@@ -15,11 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.Future;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.PetDataTable;
@@ -35,6 +30,11 @@ import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.Future;
 
 /**
  * This class ...

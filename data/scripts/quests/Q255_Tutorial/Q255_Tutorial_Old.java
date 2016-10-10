@@ -189,7 +189,7 @@ public class Q255_Tutorial_Old extends Quest
 						50) "tutorial_22ka.htm";
 						}*/
                     // TODO
-					/*if (classId in TCLb.keys():
+                    /*if (classId in TCLb.keys():
 						htmltext = TCLb[classId];*/
                     break;
                 case 24:

@@ -15,8 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Object;
@@ -26,6 +24,8 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
+
+import java.util.StringTokenizer;
 
 /**
  * @author evill33t, GodKratos

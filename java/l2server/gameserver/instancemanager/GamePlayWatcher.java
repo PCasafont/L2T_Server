@@ -15,8 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2World;
@@ -27,6 +25,8 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Pere

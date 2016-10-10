@@ -15,8 +15,6 @@
 
 package l2server.gameserver.taskmanager.tasks;
 
-import java.util.Calendar;
-
 import l2server.Config;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
@@ -24,6 +22,8 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
+
+import java.util.Calendar;
 
 public class TaskCustomTasks extends Task
 {

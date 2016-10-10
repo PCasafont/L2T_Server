@@ -450,7 +450,7 @@ public final class L2NpcTemplate extends L2CharTemplate
                     addUniversalSkill(skill);
                     addRangeSkill(skill);
                     break;
-				/*case POISON:
+                /*case POISON:
 				case DOT:
 				case MDOT:
 				case BLEED:

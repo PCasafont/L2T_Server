@@ -15,8 +15,6 @@
 
 package l2server.gameserver.ai.aplayer;
 
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -26,12 +24,7 @@ import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Character.AIAccessor;
@@ -44,6 +37,8 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Pere
@@ -499,7 +494,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
                 return;
             }
         }
-		
+
 		/*if (_player.getDistanceSq(target) > 2000 * 2000)
 			travelTo(target);
 		else*/

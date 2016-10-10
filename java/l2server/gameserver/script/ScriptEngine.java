@@ -15,9 +15,9 @@
 
 package l2server.gameserver.script;
 
-import java.util.Hashtable;
-
 import l2server.gameserver.script.faenor.FaenorInterface;
+
+import java.util.Hashtable;
 
 /**
  * @author Luis Arias

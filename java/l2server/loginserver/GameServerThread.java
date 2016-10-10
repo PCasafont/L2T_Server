@@ -15,17 +15,6 @@
 
 package l2server.loginserver;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.security.KeyPair;
-import java.security.interfaces.RSAPrivateKey;
-import java.security.interfaces.RSAPublicKey;
-import java.util.HashSet;
-import java.util.Set;
-
 import l2server.Config;
 import l2server.log.Log;
 import l2server.loginserver.GameServerTable.GameServerInfo;
@@ -39,6 +28,17 @@ import l2server.util.Rnd;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
 import l2server.util.network.BaseSendablePacket;
+
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.security.KeyPair;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author -Wooden-

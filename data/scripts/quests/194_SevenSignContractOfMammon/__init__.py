@@ -1,14 +1,10 @@
 # 2010-06-26 by Gnacik
 # Based on official server Franz
 
-import sys
 import time
 from l2server.gameserver.datatables import SkillTable
-from l2server.gameserver.model.actor.instance import L2PcInstance
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets import ExStartScenePlayer
 
 qn = "194_SevenSignContractOfMammon"
 

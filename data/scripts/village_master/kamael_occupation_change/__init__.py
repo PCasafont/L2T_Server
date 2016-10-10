@@ -2,10 +2,7 @@
 # Visit us at http://www.l2jdp.com/
 # See readme-dp.txt and gpl.txt for license and distribution details
 # Let us know if you did not receive a copy of such files.
-import sys
 
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "kamael_occupation_change"

@@ -15,7 +15,15 @@
 
 package l2server.gsregistering;
 
-import java.awt.HeadlessException;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.ServerMode;
+import l2server.i18n.LanguageControl;
+import l2server.loginserver.GameServerTable;
+import l2server.util.Util;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,16 +36,6 @@ import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.ResourceBundle;
-
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.ServerMode;
-import l2server.i18n.LanguageControl;
-import l2server.loginserver.GameServerTable;
-import l2server.util.Util;
 
 /**
  * @author KenM
@@ -79,7 +77,7 @@ public abstract class BaseGameServerRegister
                 gui = false;
             }
             /* --force
-			 * Forces GameServer register operations to overwrite a server if necessary
+             * Forces GameServer register operations to overwrite a server if necessary
 			 */
             else if (arg.equals("-f") || arg.equals("--force"))
             {

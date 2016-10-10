@@ -444,7 +444,7 @@ public final class UseItem extends L2GameClientPacket
         }
 
         _itemId = item.getItemId();
-		/*
+        /*
 		 * Alt game - Karma punishment // SOE
 		 * 736  	Scroll of Escape
 		 * 1538  	Blessed Scroll of Escape

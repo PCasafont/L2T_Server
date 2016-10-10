@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.itemcontainer;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+
+import java.util.logging.Level;
 
 /**
  * @author DS

@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Collection;
-import java.util.Iterator;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
+
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * @author KenM

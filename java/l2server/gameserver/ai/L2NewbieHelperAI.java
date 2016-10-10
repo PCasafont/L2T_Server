@@ -15,9 +15,6 @@
 
 package l2server.gameserver.ai;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.HelperBuffTable;
 import l2server.gameserver.datatables.SkillTable;
@@ -27,6 +24,9 @@ import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.templates.L2HelperBuff;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class manages AI of L2Attackable.<BR><BR>

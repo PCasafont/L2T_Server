@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.actor;
 
-import java.util.Collection;
-import java.util.logging.Level;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
@@ -32,6 +29,9 @@ import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.logging.Level;
 
 /**
  * @author nBd

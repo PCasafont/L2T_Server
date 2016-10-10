@@ -15,16 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -36,6 +26,10 @@ import l2server.gameserver.model.base.Race;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author Pere

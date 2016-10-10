@@ -15,10 +15,10 @@
 
 package l2server.gameserver.instancemanager;
 
+import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
 
 /**
  * @author Pere

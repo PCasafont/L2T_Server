@@ -1,12 +1,5 @@
 package l2server.gameserver.events;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.CharNameTable;
@@ -17,6 +10,13 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel

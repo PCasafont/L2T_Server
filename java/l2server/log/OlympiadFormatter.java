@@ -15,12 +15,12 @@
 
 package l2server.log;
 
+import l2server.util.StringUtil;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
-
-import l2server.util.StringUtil;
 
 public class OlympiadFormatter extends Formatter
 {

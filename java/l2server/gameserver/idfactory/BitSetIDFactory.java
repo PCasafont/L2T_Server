@@ -25,13 +25,13 @@
 
 package l2server.gameserver.idfactory;
 
-import java.util.BitSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.log.Log;
 import l2server.util.PrimeFinder;
+
+import java.util.BitSet;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
 
 /**
  * This class ..

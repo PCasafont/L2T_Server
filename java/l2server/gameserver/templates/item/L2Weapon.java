@@ -15,10 +15,6 @@
 
 package l2server.gameserver.templates.item;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -40,6 +36,10 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * This class is dedicated to the management of weapons.

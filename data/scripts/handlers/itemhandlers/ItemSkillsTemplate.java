@@ -15,8 +15,6 @@
 
 package handlers.itemhandlers;
 
-import java.util.Map;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -31,6 +29,8 @@ import l2server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.item.L2EtcItemType;
+
+import java.util.Map;
 
 /**
  * Template for item skills handler

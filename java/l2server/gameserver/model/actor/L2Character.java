@@ -1092,7 +1092,7 @@ public abstract class L2Character extends L2Object
         }
         else
         {
-			/* ADDED BY nexus - 2006-08-17
+            /* ADDED BY nexus - 2006-08-17
 			 *
 			 * As soon as we know that our hit landed, we must discharge any active soulshots.
 			 * This must be done so to avoid unwanted soulshot consumption.

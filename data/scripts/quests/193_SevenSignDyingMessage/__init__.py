@@ -1,12 +1,9 @@
 # 2010-06-26 by Gnacik
 # Based on official server Franz
 
-import sys
 from l2server.gameserver.ai import CtrlIntention
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets import ExStartScenePlayer
 from l2server.gameserver.network.serverpackets import NpcSay
 
 qn = "193_SevenSignDyingMessage"

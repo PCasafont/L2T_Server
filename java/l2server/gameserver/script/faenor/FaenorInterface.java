@@ -15,9 +15,6 @@
 
 package l2server.gameserver.script.faenor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.EventDroplist;
@@ -27,6 +24,9 @@ import l2server.gameserver.script.DateRange;
 import l2server.gameserver.script.EngineInterface;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Luis Arias

@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.instancemanager.ClanRecruitManager;
 import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitWaitingUser;
+
+import java.util.List;
 
 /**
  * @author Pere

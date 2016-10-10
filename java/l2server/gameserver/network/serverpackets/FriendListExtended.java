@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Support for "Chat with Friends" dialog.

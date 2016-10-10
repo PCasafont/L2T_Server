@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
 import l2server.gameserver.model.L2EnchantSkillLearn;
+
+import java.util.ArrayList;
 
 public final class ExEnchantSkillInfo extends L2GameServerPacket
 {

@@ -15,10 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.Collection;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.model.L2World;
@@ -27,6 +23,10 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * @author Kerberos

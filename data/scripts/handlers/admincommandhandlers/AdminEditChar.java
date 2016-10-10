@@ -15,20 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ai.CtrlIntention;
@@ -45,18 +31,15 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.CharInfo;
-import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
-import l2server.gameserver.network.serverpackets.GMViewItemList;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.PartySmallWindowAll;
-import l2server.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
-import l2server.gameserver.network.serverpackets.SetSummonRemainTime;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 import l2server.util.StringUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:

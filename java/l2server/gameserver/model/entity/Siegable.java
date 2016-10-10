@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.entity;
 
-import java.util.Calendar;
-import java.util.List;
-
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * @author JIV

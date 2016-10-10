@@ -16,11 +16,10 @@
 package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
+import l2server.util.Point3D;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import l2server.util.Point3D;
 
 /**
  * @author Pere

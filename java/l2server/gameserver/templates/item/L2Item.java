@@ -15,16 +15,9 @@
 
 package l2server.gameserver.templates.item;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2CrystallizeReward;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.network.SystemMessageId;
@@ -38,6 +31,9 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2AbnormalTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class contains all informations concerning the item (weapon, armor, etc).<BR>

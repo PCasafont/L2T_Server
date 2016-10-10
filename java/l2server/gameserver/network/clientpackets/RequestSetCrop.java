@@ -15,12 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
@@ -31,6 +25,12 @@ import l2server.gameserver.model.actor.instance.L2CastleChamberlainInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
  * Format: (ch) dd [dddc]

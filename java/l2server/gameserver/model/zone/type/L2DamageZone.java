@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.Collection;
-import java.util.concurrent.Future;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Object.InstanceType;
@@ -25,6 +22,9 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.L2ZoneType;
+
+import java.util.Collection;
+import java.util.concurrent.Future;
 
 /**
  * A damage zone

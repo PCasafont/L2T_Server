@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.HashSet;
-
 import l2server.Config;
 import l2server.gameserver.model.ItemRequest;
 import l2server.gameserver.model.L2Object;
@@ -26,6 +24,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.util.HashSet;
 
 /**
  * This class ...

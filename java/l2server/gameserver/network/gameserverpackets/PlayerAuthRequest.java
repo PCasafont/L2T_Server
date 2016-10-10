@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.gameserverpackets;
 
-import java.io.IOException;
-
 import l2server.gameserver.LoginServerThread.SessionKey;
 import l2server.util.network.BaseSendablePacket;
+
+import java.io.IOException;
 
 /**
  * @author -Wooden-

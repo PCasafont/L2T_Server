@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats.skills;
 
-import java.util.logging.Level;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -31,6 +29,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
+
+import java.util.logging.Level;
 
 public class L2SkillTeleport extends L2Skill
 {

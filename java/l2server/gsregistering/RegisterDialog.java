@@ -15,24 +15,17 @@
 
 package l2server.gsregistering;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import l2server.loginserver.GameServerTable;
+
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.ResourceBundle;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
-import javax.swing.filechooser.FileFilter;
-
-import l2server.loginserver.GameServerTable;
 
 /**
  * @author KenM

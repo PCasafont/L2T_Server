@@ -15,6 +15,11 @@
 
 package l2server.accountmanager;
 
+import l2server.Base64;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.ServerMode;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
@@ -25,11 +30,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import l2server.Base64;
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.ServerMode;
 
 /**
  * This class SQL Account Manager

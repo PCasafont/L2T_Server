@@ -121,10 +121,8 @@ TRADE_LIST = {
     916: [[NIAS_SILVER_FAIRY, 5], [SILVER_FAIRY, 3], [GOLD_KNIGHT, 3], [BLOOD_DREVANUL, 3]],  # Necklace of Protection
 }
 
-import sys
 from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 

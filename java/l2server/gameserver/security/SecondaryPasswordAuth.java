@@ -15,14 +15,6 @@
 
 package l2server.gameserver.security;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.logging.Level;
-
 import l2server.Base64;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
@@ -33,6 +25,14 @@ import l2server.gameserver.network.serverpackets.Ex2ndPasswordCheck;
 import l2server.gameserver.network.serverpackets.Ex2ndPasswordVerify;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.logging.Level;
 
 /**
  * @author mrTJO

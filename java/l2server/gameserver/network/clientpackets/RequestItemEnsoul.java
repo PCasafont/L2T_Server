@@ -1,8 +1,5 @@
 package l2server.gameserver.network.clientpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.datatables.EnsoulDataTable;
 import l2server.gameserver.model.EnsoulEffect;
 import l2server.gameserver.model.L2ItemInstance;
@@ -11,6 +8,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExEnsoulResult;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.ItemList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Collection;
-
 import l2server.Config;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
+
+import java.util.Collection;
 
 /**
  * sample

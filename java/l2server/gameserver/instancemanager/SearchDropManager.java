@@ -15,12 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
@@ -32,6 +26,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel

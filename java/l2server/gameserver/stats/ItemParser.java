@@ -15,9 +15,6 @@
 
 package l2server.gameserver.stats;
 
-import java.lang.reflect.Constructor;
-import java.util.Map.Entry;
-
 import l2server.gameserver.model.L2CrystallizeReward;
 import l2server.gameserver.model.L2ExtractableProduct;
 import l2server.gameserver.stats.conditions.Condition;
@@ -27,6 +24,9 @@ import l2server.gameserver.templates.item.L2EtcItem;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
+
+import java.lang.reflect.Constructor;
+import java.util.Map.Entry;
 
 /**
  * @author mkizub, JIV

@@ -15,11 +15,11 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+
+import java.util.StringTokenizer;
 
 public class L2FortDoormenInstance extends L2DoormenInstance
 {

@@ -15,12 +15,6 @@
 
 package l2server.loginserver.network.clientpackets;
 
-import java.net.InetAddress;
-import java.security.GeneralSecurityException;
-import java.util.logging.Level;
-
-import javax.crypto.Cipher;
-
 import l2server.Config;
 import l2server.log.Log;
 import l2server.loginserver.GameServerTable.GameServerInfo;
@@ -34,6 +28,11 @@ import l2server.loginserver.network.serverpackets.AccountKicked.AccountKickedRea
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
+
+import javax.crypto.Cipher;
+import java.net.InetAddress;
+import java.security.GeneralSecurityException;
+import java.util.logging.Level;
 
 /**
  * Format: x

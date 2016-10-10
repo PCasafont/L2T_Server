@@ -15,9 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -25,6 +22,9 @@ import l2server.gameserver.model.base.SubClass;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
 import l2server.gameserver.util.Broadcast;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CertificateSkillTable
 {

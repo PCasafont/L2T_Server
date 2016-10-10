@@ -15,13 +15,13 @@
 
 package l2server.loginserver;
 
+import l2server.Config;
+import l2server.log.Log;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-
-import l2server.Config;
-import l2server.log.Log;
 
 /**
  * @author KenM

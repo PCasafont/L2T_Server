@@ -15,12 +15,12 @@
 
 package l2server.loginserver.network.gameserverpackets;
 
-import java.util.logging.Logger;
-
 import l2server.log.Log;
 import l2server.loginserver.GameServerThread;
 import l2server.loginserver.LoginController;
 import l2server.util.network.BaseRecievePacket;
+
+import java.util.logging.Logger;
 
 /**
  * @author -Wooden-

@@ -15,8 +15,6 @@
 
 package handlers.chathandlers;
 
-import l2server.Config;
-import l2server.gameserver.GmListTable;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;

@@ -4,9 +4,7 @@
 # Updated by ElgarL on 28.09.2005
 # Updated by DrLecter on 19.06.2007
 
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "30026_bitz_occupation_change"

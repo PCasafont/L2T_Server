@@ -16,25 +16,9 @@
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.SearchDropManager;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2DropCategory;
-import l2server.gameserver.model.L2DropData;
-import l2server.gameserver.model.L2MinionData;
-import l2server.gameserver.model.L2NpcAIData;
-import l2server.gameserver.model.L2RandomMinionData;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Stats;
@@ -47,6 +31,15 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * This class ...

@@ -15,9 +15,6 @@
 
 package quests.Q10326_RespectYourElders;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
@@ -29,6 +26,9 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

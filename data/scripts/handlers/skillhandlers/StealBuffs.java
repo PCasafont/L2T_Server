@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
@@ -37,6 +33,10 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 public class StealBuffs implements ISkillHandler
 {

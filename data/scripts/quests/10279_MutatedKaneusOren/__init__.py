@@ -1,9 +1,7 @@
 # 2010-06-29 by Gnacik
 # Based on official server Franz and Rpg
 
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.util import Rnd
 

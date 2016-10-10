@@ -16,9 +16,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.model.Elementals;
@@ -26,6 +23,9 @@ import l2server.gameserver.model.L2Transformation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /**
  * @author Pere

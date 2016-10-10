@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.gameserver.model.L2PremiumItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Structure:  "QdQdS"

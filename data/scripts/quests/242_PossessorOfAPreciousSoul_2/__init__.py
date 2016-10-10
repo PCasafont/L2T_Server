@@ -1,8 +1,6 @@
 # Made by disKret
-import sys
 import time
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "242_PossessorOfAPreciousSoul_2"

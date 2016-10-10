@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.HashMap;
-
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import l2server.gameserver.model.entity.Castle;
+
+import java.util.HashMap;
 
 /**
  * format(packet 0xFE) ch dd [dddc] c - id h - sub id

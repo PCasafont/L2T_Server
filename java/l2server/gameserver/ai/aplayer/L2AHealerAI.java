@@ -267,7 +267,7 @@ public class L2AHealerAI extends L2APlayerAI
             }
         }
     }
-	
+
 	/*private boolean isHealingSkill(L2Skill skill)
 	{
 		switch(skill.getSkillType())

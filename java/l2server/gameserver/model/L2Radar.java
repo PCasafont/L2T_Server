@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.RadarControl;
+
+import java.util.ArrayList;
 
 /**
  * @author dalrond

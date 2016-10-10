@@ -15,6 +15,20 @@
 
 package l2server.gameserver.instancemanager;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.model.CursedWeapon;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.Broadcast;
+import l2server.log.Log;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
+
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,25 +39,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.CursedWeapon;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2FeedableBeastInstance;
-import l2server.gameserver.model.actor.instance.L2FortCommanderInstance;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 /**
  * @author Micht
@@ -360,7 +355,7 @@ public class CursedWeaponsManager
         if (player.isCursedWeaponEquipped()) // cannot own 2 cursed swords
         {
             CursedWeapon cw2 = _cursedWeapons.get(player.getCursedWeaponEquippedId());
-			/* TODO: give the bonus level in a more appropriate manner.
+            /* TODO: give the bonus level in a more appropriate manner.
 			 *  The following code adds "_stageKills" levels.  This will also show in the char status.
 			 * I do not have enough info to know if the bonus should be shown in the pk count, or if it
 			 * should be a full "_stageKills" bonus or just the remaining from the current count till the

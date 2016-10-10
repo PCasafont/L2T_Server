@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;

@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.Collection;
-
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
@@ -26,6 +24,8 @@ import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.Collection;
 
 public final class RequestStartPledgeWar extends L2GameClientPacket
 {

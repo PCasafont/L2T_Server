@@ -22,12 +22,12 @@
 
 package l2server.gameserver.util;
 
+import l2server.Config;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
-
-import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class ...

@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model.zone.form;
 
-import java.awt.Color;
-
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.model.zone.L2ZoneForm;
 import l2server.gameserver.network.serverpackets.ExServerPrimitive;
 import l2server.util.Rnd;
+
+import java.awt.*;
 
 /**
  * A not so primitive npoly zone

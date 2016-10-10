@@ -15,13 +15,6 @@
 
 package custom.SquadSkills;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
@@ -35,6 +28,13 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel

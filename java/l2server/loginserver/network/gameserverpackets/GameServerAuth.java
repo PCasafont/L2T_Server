@@ -15,9 +15,6 @@
 
 package l2server.loginserver.network.gameserverpackets;
 
-import java.util.Arrays;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.log.Log;
 import l2server.loginserver.GameServerTable;
@@ -27,6 +24,9 @@ import l2server.loginserver.network.L2JGameServerPacketHandler.GameServerState;
 import l2server.loginserver.network.loginserverpackets.AuthResponse;
 import l2server.loginserver.network.loginserverpackets.LoginServerFail;
 import l2server.util.network.BaseRecievePacket;
+
+import java.util.Arrays;
+import java.util.logging.Logger;
 
 /**
  * Format: cccddb

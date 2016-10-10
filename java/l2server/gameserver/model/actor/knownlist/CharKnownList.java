@@ -15,17 +15,17 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CharKnownList extends ObjectKnownList
 {

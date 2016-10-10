@@ -15,12 +15,12 @@
 
 package l2server.util;
 
+import l2server.gameserver.model.L2Object;
+
 import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import l2server.gameserver.model.L2Object;
 
 /**
  * @author dishkols

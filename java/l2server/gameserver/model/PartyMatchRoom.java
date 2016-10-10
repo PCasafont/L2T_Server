@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExManagePartyRoomMember;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Gnacik

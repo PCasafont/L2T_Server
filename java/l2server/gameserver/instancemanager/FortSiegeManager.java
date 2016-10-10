@@ -15,20 +15,9 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.CombatFlag;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Fort;
@@ -36,6 +25,13 @@ import l2server.gameserver.model.entity.FortSiege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 public class FortSiegeManager
 {

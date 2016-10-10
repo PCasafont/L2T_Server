@@ -1,7 +1,5 @@
 package l2server.gameserver.events.instanced.types;
 
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.NpcTable;
@@ -19,6 +17,8 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+
+import java.util.List;
 
 /**
  * @author Pere

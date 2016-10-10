@@ -15,11 +15,11 @@
 
 package l2server.gameserver.stats.conditions;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.stats.Env;
+
+import java.util.ArrayList;
 
 /**
  * The Class ConditionTargetNpcId.

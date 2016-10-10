@@ -15,10 +15,10 @@
 
 package l2server.gameserver.pathfinding.cellnodes;
 
+import l2server.Config;
+
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
-
-import l2server.Config;
 
 /**
  * @author DS

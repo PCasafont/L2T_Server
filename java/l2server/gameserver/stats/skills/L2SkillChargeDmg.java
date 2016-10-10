@@ -15,10 +15,6 @@
 
 package l2server.gameserver.stats.skills;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
@@ -35,6 +31,10 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2WeaponType;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 public class L2SkillChargeDmg extends L2Skill
 {

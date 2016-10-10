@@ -1,10 +1,7 @@
 # 2010-08-27 by Gnacik
 # Based on official server Franz
 
-import sys
-from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "700_CursedLife"

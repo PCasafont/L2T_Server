@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.network.serverpackets.ExCursedWeaponList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Format: (ch)

@@ -15,11 +15,11 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.funcs.Func;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

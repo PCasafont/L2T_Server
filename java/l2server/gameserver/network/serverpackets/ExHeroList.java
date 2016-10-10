@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Map;
-
 import l2server.gameserver.model.olympiad.HeroInfo;
 import l2server.gameserver.model.olympiad.HeroesManager;
+
+import java.util.Map;
 
 /**
  * Format: (ch) d [SdSdSdd]

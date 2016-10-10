@@ -15,10 +15,10 @@
 
 package l2server.gameserver.stats.conditions;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
+
+import java.util.ArrayList;
 
 public class ConditionPlayerClassNameStartsWith extends Condition
 {

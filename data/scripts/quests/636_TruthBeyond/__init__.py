@@ -1,8 +1,6 @@
 # Made by Polo - Have fun! - Fixed by BiTi
 # v0.3.1 by DrLecter
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "636_TruthBeyond"

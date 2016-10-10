@@ -16,6 +16,12 @@
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntObjectHashMap;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.model.itemauction.ItemAuctionInstance;
+import l2server.log.Log;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.sql.Connection;
@@ -24,13 +30,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.itemauction.ItemAuctionInstance;
-import l2server.log.Log;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 /**
  * @author Forsaiken

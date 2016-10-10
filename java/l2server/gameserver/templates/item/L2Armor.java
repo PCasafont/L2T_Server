@@ -16,9 +16,6 @@
 package l2server.gameserver.templates.item;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.stats.SkillHolder;
@@ -27,6 +24,8 @@ import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.util.ArrayList;
 
 /**
  * This class is dedicated to the management of armors.

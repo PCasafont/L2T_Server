@@ -15,6 +15,12 @@
 
 package l2server.gameserver.instancemanager;
 
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.log.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,12 +28,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.log.Log;
 
 /**
  * @author Pere

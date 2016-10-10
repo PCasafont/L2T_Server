@@ -15,11 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.model.L2ItemInstance;
@@ -33,6 +28,11 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.util.Util;
+
+import java.util.List;
+
+import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
  * RequestSellItem client packet class.

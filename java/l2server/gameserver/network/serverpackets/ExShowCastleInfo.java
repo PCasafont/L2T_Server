@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.entity.Castle;
 import l2server.log.Log;
+
+import java.util.List;
 
 /**
  * @author KenM

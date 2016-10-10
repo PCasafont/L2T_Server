@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.olympiad.CompetitionType;
 import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

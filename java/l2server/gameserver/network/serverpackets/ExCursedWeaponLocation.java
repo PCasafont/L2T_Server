@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.util.Point3D;
+
+import java.util.List;
 
 /**
  * Format: (ch) d[ddddd]

@@ -27,11 +27,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.status.SiegeFlagStatus;
 import l2server.gameserver.model.entity.Siegable;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SiegeFlagInstance extends L2Npc

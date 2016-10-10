@@ -15,10 +15,10 @@
 
 package l2server.log;
 
+import l2server.gameserver.model.L2ItemInstance;
+
 import java.util.logging.Filter;
 import java.util.logging.LogRecord;
-
-import l2server.gameserver.model.L2ItemInstance;
 
 /**
  * @author Advi

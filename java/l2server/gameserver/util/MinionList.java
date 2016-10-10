@@ -15,13 +15,6 @@
 
 package l2server.gameserver.util;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
@@ -33,6 +26,9 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author luisantonioa, DS

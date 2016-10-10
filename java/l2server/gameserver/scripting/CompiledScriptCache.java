@@ -15,25 +15,16 @@
 
 package l2server.gameserver.scripting;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import l2server.Config;
+import l2server.log.Log;
 
 import javax.script.Compilable;
 import javax.script.CompiledScript;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
-
-import l2server.Config;
-import l2server.log.Log;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Cache of Compiled Scripts

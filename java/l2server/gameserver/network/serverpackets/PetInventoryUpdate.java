@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.model.ItemInfo;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.log.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class ...

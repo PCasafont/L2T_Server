@@ -15,9 +15,9 @@
 
 package l2server.gameserver.model.olympiad;
 
-import java.util.List;
-
 import l2server.Config;
+
+import java.util.List;
 
 /**
  * @author DS

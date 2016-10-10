@@ -15,13 +15,13 @@
 
 package l2server.gameserver.stats.funcs;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.log.Log;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
 
 /**
  * @author mkizub

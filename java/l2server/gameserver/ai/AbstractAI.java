@@ -15,13 +15,6 @@
 
 package l2server.gameserver.ai;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
-
-import java.util.concurrent.Future;
-import java.util.logging.Level;
-
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
@@ -34,18 +27,16 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.AutoAttackStart;
-import l2server.gameserver.network.serverpackets.AutoAttackStop;
-import l2server.gameserver.network.serverpackets.Die;
-import l2server.gameserver.network.serverpackets.MoveToLocation;
-import l2server.gameserver.network.serverpackets.MoveToPawn;
-import l2server.gameserver.network.serverpackets.StopMove;
-import l2server.gameserver.network.serverpackets.StopRotation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.concurrent.Future;
+import java.util.logging.Level;
+
+import static l2server.gameserver.ai.CtrlIntention.*;
 
 /**
  * Mother class of all objects AI in the world.<BR><BR>
@@ -291,7 +282,7 @@ abstract class AbstractAI implements Ctrl
      * @param arg0      The first parameter of the Intention (optional target)
      * @param arg1      The second parameter of the Intention (optional target)
      */
-	/*
+    /*
 	public final void informAIIntention(CtrlIntention intent, Object arg0) {
 		ThreadPoolManager.getInstance().executeAi(new InformAIMsg(this, intent, arg0));
 	}

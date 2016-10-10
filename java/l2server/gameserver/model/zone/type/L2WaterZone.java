@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.Collection;
-
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.NpcInfo;
 import l2server.gameserver.network.serverpackets.ServerObjectInfo;
+
+import java.util.Collection;
 
 public class L2WaterZone extends L2ZoneType
 {
@@ -78,7 +78,7 @@ public class L2WaterZone extends L2ZoneType
     protected void onExit(L2Character character)
     {
         character.setInsideZone(L2Character.ZONE_WATER, false);
-		
+
 		/*if (character instanceof L2PcInstance)
 		{
 			((L2PcInstance)character).sendMessage("You exited water!");

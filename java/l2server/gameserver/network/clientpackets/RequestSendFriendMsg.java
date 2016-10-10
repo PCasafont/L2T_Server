@@ -15,9 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2World;
@@ -25,6 +22,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.L2FriendSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 /**
  * Recieve Private (Friend) Message - 0xCC

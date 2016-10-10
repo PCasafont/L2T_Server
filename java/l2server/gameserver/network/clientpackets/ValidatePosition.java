@@ -123,7 +123,7 @@ public class ValidatePosition extends L2GameClientPacket
         dy = _y - realY;
         dz = _z - realZ;
         diffSq = dx * dx + dy * dy;
-		
+
 		/*L2Party party = activeChar.getParty();
 		if (party != null && activeChar.getLastPartyPositionDistance(_x, _y, _z) > 150)
 		{

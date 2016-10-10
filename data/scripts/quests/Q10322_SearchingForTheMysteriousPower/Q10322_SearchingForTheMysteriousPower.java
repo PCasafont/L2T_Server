@@ -15,9 +15,6 @@
 
 package quests.Q10322_SearchingForTheMysteriousPower;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.datatables.HelperBuffTable;
@@ -36,6 +33,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.TutorialShowHtml;
 import l2server.gameserver.templates.L2HelperBuff;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

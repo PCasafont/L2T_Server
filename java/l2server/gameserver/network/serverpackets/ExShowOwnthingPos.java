@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 /**
  * Format: (ch) d[dddd]
  *

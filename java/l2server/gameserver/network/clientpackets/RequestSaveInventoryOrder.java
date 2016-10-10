@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Format:(ch) d[dd]

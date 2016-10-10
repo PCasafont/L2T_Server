@@ -15,16 +15,16 @@
 
 package l2server.gameserver.taskmanager.tasks;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.logging.Level;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
 
 /**
  * @author Layane

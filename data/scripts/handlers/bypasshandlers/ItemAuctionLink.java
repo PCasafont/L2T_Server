@@ -15,10 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.ItemAuctionManager;
@@ -29,6 +25,10 @@ import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.StringTokenizer;
 
 public class ItemAuctionLink implements IBypassHandler
 {

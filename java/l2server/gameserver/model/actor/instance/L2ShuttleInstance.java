@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.DoorTable;
@@ -28,6 +25,9 @@ import l2server.gameserver.network.serverpackets.ExShuttleInfo;
 import l2server.gameserver.network.serverpackets.ExShuttleMove;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.util.Point3D;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

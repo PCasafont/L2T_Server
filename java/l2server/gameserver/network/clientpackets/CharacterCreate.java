@@ -15,13 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.Shutdown;
@@ -33,12 +26,8 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.MainTownManager;
 import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Macro;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
-import l2server.gameserver.model.L2ShortCut;
-import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -52,6 +41,13 @@ import l2server.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 @SuppressWarnings("unused")
 public final class CharacterCreate extends L2GameClientPacket
@@ -473,7 +469,7 @@ public final class CharacterCreate extends L2GameClientPacket
             shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
             player.registerShortCut(shortcut);
             // .landrates macro
-			/*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
+            /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1006, 0, 0);
 			player.registerShortCut(shortcut);*/

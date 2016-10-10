@@ -18,7 +18,6 @@ package l2server.gameserver.taskmanager.tasks;
 import l2server.Config;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
-
 import org.python.util.PythonInterpreter;
 
 /**

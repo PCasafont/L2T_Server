@@ -15,10 +15,10 @@
 
 package l2server.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Playable;
+
+import java.util.logging.Logger;
 
 /**
  * Mother class of all itemHandlers.<BR><BR>

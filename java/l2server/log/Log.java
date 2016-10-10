@@ -1,10 +1,10 @@
 package l2server.log;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Log
 {

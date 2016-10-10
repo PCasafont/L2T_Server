@@ -15,11 +15,6 @@
 
 package l2server.gameserver.ai;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
-
-import java.util.concurrent.Future;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -29,6 +24,11 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.util.Rnd;
+
+import java.util.concurrent.Future;
+
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 public class L2SummonAI extends L2PlayableAI implements Runnable
 {

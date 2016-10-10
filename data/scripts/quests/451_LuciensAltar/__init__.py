@@ -1,9 +1,7 @@
 # Created by Bloodshed
-import sys
 from java.lang import System
 from java.util import Calendar
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "451_LuciensAltar"

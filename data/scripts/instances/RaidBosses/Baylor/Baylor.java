@@ -15,9 +15,7 @@
 
 package instances.RaidBosses.Baylor;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
@@ -30,14 +28,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.SpecialCamera;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author LasTravel

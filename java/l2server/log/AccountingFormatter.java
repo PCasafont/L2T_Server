@@ -15,14 +15,14 @@
 
 package l2server.log;
 
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.L2GameClient;
+import l2server.util.StringUtil;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
-
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.L2GameClient;
-import l2server.util.StringUtil;
 
 public class AccountingFormatter extends Formatter
 {

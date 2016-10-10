@@ -15,18 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.io.File;
-import java.lang.reflect.Constructor;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2Object;
@@ -43,6 +31,14 @@ import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.lang.reflect.Constructor;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+import java.util.logging.Level;
 
 /**
  * This class manages the zones

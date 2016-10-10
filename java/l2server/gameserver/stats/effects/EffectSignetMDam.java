@@ -19,8 +19,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
@@ -43,6 +41,8 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.util.Point3D;
+
+import java.util.ArrayList;
 
 public class EffectSignetMDam extends L2Effect
 {

@@ -1,7 +1,5 @@
 package l2server.gameserver.events;
 
-import java.util.Calendar;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
@@ -13,6 +11,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
+
+import java.util.Calendar;
 
 /**
  * @author Pere

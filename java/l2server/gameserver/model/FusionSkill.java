@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model;
 
-import java.util.concurrent.Future;
-
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
@@ -24,6 +22,8 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.stats.effects.EffectFusion;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.util.concurrent.Future;
 
 /**
  * @author kombat, Forsaiken

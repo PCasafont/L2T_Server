@@ -15,8 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.ISkillHandler;
@@ -32,6 +30,8 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Rnd;
+
+import java.util.logging.Logger;
 
 /**
  * @author l3x

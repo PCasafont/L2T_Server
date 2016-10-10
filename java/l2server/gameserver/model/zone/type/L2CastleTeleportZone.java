@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
 
 /**
  * A castle teleporter zone

@@ -15,12 +15,6 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.Config;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.CharNameTable;
@@ -34,6 +28,12 @@ import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.StringUtil;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * This class ...

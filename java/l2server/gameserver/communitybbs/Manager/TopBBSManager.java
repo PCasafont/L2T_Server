@@ -19,11 +19,11 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ShowBoard;
+
+import java.util.StringTokenizer;
 
 public class TopBBSManager extends BaseBBSManager
 {

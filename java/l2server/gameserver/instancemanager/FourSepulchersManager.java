@@ -17,18 +17,6 @@ package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntIntHashMap;
 import gnu.trove.TIntObjectHashMap;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -50,6 +38,13 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+import java.util.concurrent.ScheduledFuture;
+import java.util.logging.Level;
 
 /**
  * @author sandman

@@ -34,17 +34,7 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.entity.RecoBonus;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExCallToChangeClass;
-import l2server.gameserver.network.serverpackets.ExMentorList;
-import l2server.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
-import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
-import l2server.gameserver.network.serverpackets.FriendList;
-import l2server.gameserver.network.serverpackets.FriendPacket;
-import l2server.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 
 public class PcStat extends PlayableStat

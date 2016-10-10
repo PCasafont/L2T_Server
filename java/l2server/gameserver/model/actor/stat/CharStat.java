@@ -23,11 +23,7 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.stats.BaseStats;
-import l2server.gameserver.stats.Calculator;
-import l2server.gameserver.stats.Env;
-import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.stats.Stats;
+import l2server.gameserver.stats.*;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2SkillType;
@@ -324,7 +320,7 @@ public class CharStat
                 return monster.getTemplate().FixedEvasion;
             }
         }
-		
+
 		/*if (val > 300 && !_activeChar.isGM())
 			val = 300;*/
         return val;

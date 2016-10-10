@@ -1,8 +1,5 @@
 package instances.DimensionalDoor;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
@@ -12,6 +9,9 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DimensionalDoor extends Quest
 {

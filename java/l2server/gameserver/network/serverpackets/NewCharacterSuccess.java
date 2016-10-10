@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
+import l2server.gameserver.templates.chars.L2PcTemplate;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import l2server.gameserver.templates.chars.L2PcTemplate;
 
 /**
  * This class ...

@@ -1,12 +1,10 @@
 # Made by Kerberos - based on a L2Fortress script
 # this script is part of the Official L2J Datapack Project.
 # Visit http://www.l2jdp.com/forum/ for more details.
-import sys
 from l2server.gameserver.ai import CtrlIntention
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.model import L2CharPosition
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.network.serverpackets import NpcSay
 
 qn = "21_HiddenTruth"

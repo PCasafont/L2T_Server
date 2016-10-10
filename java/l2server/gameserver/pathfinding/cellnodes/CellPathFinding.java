@@ -15,11 +15,6 @@
 
 package l2server.gameserver.pathfinding.cellnodes;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.idfactory.IdFactory;
@@ -30,6 +25,11 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.logging.Level;
 
 /**
  * @author Sami, DS

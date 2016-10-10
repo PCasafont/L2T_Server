@@ -15,12 +15,12 @@
 
 package l2server.gameserver.script;
 
+import l2server.log.Log;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.logging.Level;
-
-import l2server.log.Log;
 
 /**
  * @author Luis Arias

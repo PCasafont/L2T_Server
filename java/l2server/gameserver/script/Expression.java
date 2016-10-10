@@ -15,12 +15,11 @@
 
 package l2server.gameserver.script;
 
-import java.util.logging.Level;
-
-import javax.script.ScriptContext;
-
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.log.Log;
+
+import javax.script.ScriptContext;
+import java.util.logging.Level;
 
 public class Expression
 {

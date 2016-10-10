@@ -919,7 +919,7 @@ public class Olympiad
             player.sendMessage("Noble Ranks Empty");
             return 0;
         }
-		/*
+        /*
 		if (!player.getName().equals("iStab"))
 		{
 			player.sendMessage("Try again shortly.");

@@ -15,10 +15,7 @@
 
 package ai.individual.GrandBosses.AntharasOpenWorld;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
@@ -33,15 +30,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2BossZone;
-import l2server.gameserver.network.serverpackets.Earthquake;
-import l2server.gameserver.network.serverpackets.ExSendUIEvent;
-import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SpecialCamera;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author LasTravel

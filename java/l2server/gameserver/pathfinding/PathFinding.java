@@ -15,12 +15,12 @@
 
 package l2server.gameserver.pathfinding;
 
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.pathfinding.cellnodes.CellPathFinding;
 import l2server.gameserver.pathfinding.geonodes.GeoPathFinding;
+
+import java.util.List;
 
 /**
  * @author -Nemesiss-
@@ -96,7 +96,7 @@ public abstract class PathFinding
 		return null;
 	}
 	 */
-	/*
+    /*
 	public List<AbstractNodeLoc> searchAStar(XmlNode start, Node end, int instanceId)
 	{
 		// Not operational yet?

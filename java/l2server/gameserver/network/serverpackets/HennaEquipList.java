@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Henna;
+
+import java.util.List;
 
 public class HennaEquipList extends L2GameServerPacket
 {

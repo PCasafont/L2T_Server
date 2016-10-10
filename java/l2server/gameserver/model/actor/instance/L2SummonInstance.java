@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.concurrent.Future;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
@@ -33,6 +30,9 @@ import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.log.Log;
+
+import java.util.concurrent.Future;
+import java.util.logging.Level;
 
 public class L2SummonInstance extends L2Summon
 {

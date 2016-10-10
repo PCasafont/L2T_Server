@@ -15,6 +15,8 @@
 
 package l2server.gameserver.util;
 
+import l2server.log.Log;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +24,6 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
-import l2server.log.Log;
 
 /**
  * This is a class loader for the dynamic extensions used by DynamicExtension class.

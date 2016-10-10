@@ -1,9 +1,7 @@
 # Made by Mr. Have fun! Version 0.2
 # fixed by Elektra and Rolarga Version 0.3
 # fixed by Mr and Drlecter
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "364_JovialAccordion"

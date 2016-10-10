@@ -13,14 +13,14 @@
 
 package l2server.gameserver.util;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-
 import l2server.gameserver.TimeController;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
 
 /**
  * Flood protector implementation.

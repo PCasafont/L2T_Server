@@ -15,11 +15,11 @@
 
 package l2server.gameserver.cache;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author -Nemesiss-

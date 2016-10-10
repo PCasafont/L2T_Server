@@ -1,9 +1,7 @@
 # Made by BiTi! v0.2
 # v0.2.1 by DrLecter
-import sys
 from l2server import Config
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "637_ThroughOnceMore"

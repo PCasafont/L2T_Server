@@ -245,7 +245,7 @@ public final class Say2 extends L2GameClientPacket
             {
                 L2DatabaseFactory.close(con);
             }
-			
+
 			/*LogRecord record = new LogRecord(Level.INFO, _text);
 			record.setLoggerName("chat");
 

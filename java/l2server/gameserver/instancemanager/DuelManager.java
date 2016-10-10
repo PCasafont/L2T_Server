@@ -15,13 +15,13 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Duel;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.log.Log;
+
+import java.util.ArrayList;
 
 public class DuelManager
 {

@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+
+import java.util.StringTokenizer;
 
 public class L2CastleDoormenInstance extends L2DoormenInstance
 {

@@ -15,8 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.actor.L2Npc;
@@ -25,6 +23,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.StringTokenizer;
 
 public class Observation implements IBypassHandler
 {

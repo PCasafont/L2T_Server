@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.util.StringUtil;
+
+import java.util.List;
 
 public class ShowBoard extends L2GameServerPacket
 {

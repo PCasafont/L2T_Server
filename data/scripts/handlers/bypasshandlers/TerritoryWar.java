@@ -15,8 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.CastleManager;
@@ -27,6 +25,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExShowDominionRegistry;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+
+import java.util.StringTokenizer;
 
 public class TerritoryWar implements IBypassHandler
 {

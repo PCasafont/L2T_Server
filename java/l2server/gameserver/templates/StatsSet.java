@@ -15,12 +15,12 @@
 
 package l2server.gameserver.templates;
 
+import l2server.log.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
-
-import l2server.log.Log;
 
 /**
  * @author mkizub

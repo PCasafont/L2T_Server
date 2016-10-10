@@ -20,18 +20,9 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2CloneInstance;
-import l2server.gameserver.model.actor.instance.L2CubicInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeSummonInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.FlyToLocation;
@@ -162,7 +153,7 @@ public class L2SkillSummon extends L2Skill
                 }
 
                 //Since GoD can resummon a summon if it's die instantly
-				/*for (L2SummonInstance summon : player.getSummons())
+                /*for (L2SummonInstance summon : player.getSummons())
 				{
 					if (summon == null)
 					{

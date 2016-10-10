@@ -15,10 +15,6 @@
 
 package vehicles;
 
-import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.ZoneManager;
@@ -37,6 +33,10 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.concurrent.Future;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class AirShipController extends Quest
 {

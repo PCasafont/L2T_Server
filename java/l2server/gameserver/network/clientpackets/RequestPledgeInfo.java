@@ -15,14 +15,14 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.PledgeInfo;
 import l2server.log.Log;
+
+import java.util.logging.Level;
 
 /**
  * This class ...

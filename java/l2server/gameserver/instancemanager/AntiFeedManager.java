@@ -17,15 +17,14 @@ package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectProcedure;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AntiFeedManager
 {

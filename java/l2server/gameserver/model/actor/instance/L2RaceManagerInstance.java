@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.MonsterRace;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
@@ -25,16 +22,12 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.knownlist.RaceManagerKnownList;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.DeleteObject;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.MonRaceInfo;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Broadcast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class L2RaceManagerInstance extends L2Npc
 {

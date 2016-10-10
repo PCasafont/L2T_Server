@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Set;
-
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.stats.VisualEffect;
+
+import java.util.Set;
 
 /**
  * This class ...

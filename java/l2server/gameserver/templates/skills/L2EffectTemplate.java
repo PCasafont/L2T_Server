@@ -15,17 +15,17 @@
 
 package l2server.gameserver.templates.skills;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.ChanceCondition;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.Lambda;
 import l2server.log.Log;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author mkizub

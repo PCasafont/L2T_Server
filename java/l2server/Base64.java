@@ -15,11 +15,11 @@
 
 package l2server;
 
+import l2server.util.StringUtil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import l2server.util.StringUtil;
 
 /**
  * Encodes and decodes to and from Base64 notation.
@@ -210,7 +210,7 @@ public class Base64
             26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, // Letters 'a' through 'm'
             39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, // Letters 'n' through 'z'
             -9, -9, -9, -9 // Decimal 123 - 126
-	/*
+    /*
 	 * ,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 127 - 139
 	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 140 - 152
 	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 153 - 165

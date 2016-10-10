@@ -15,16 +15,16 @@
 
 package ai.individual;
 
-import java.util.HashSet;
-import java.util.concurrent.ConcurrentHashMap;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DarkWaterDragon extends L2AttackableAIScript
 {

@@ -15,9 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.communitybbs.CommunityBoard;
@@ -43,13 +40,12 @@ import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ConfirmDlg;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
+
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * This class ...

@@ -2,13 +2,10 @@
 # With invaluable support from: [TI]Blue, warrax
 # v0.1.r0 2005.12.05
 # v1.1.r0 2008.03.27: Update/Rewrite by Emperorc
-import sys
 from l2server.gameserver.datatables import SkillTable
-from l2server.gameserver.network.serverpackets import NpcSay
-from l2server.gameserver.network.serverpackets import MagicSkillUse
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.network.serverpackets import NpcSay
 
 qn = "501_ProofOfClanAlliance"
 

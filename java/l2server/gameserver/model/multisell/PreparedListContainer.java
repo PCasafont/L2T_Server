@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.multisell;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Armor;
 import l2server.gameserver.templates.item.L2Weapon;
+
+import java.util.ArrayList;
 
 public class PreparedListContainer extends ListContainer
 {

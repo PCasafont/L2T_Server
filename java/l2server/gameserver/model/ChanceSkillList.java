@@ -15,11 +15,6 @@
 
 package l2server.gameserver.model;
 
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
@@ -34,6 +29,11 @@ import l2server.gameserver.stats.effects.EffectChanceSkillTrigger;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 
 /**
  * CT2.3: Added support for allowing effect as a chance skill trigger (DrHouse)

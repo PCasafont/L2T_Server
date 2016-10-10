@@ -4,13 +4,10 @@
 
 package l2server.gameserver.gui;
 
+import javax.swing.*;
+import javax.swing.table.TableColumnModel;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JTable;
-import javax.swing.table.TableColumnModel;
 
 /**
  * @author KenM

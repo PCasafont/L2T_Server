@@ -15,11 +15,11 @@
 
 package l2server.util.crypt;
 
+import l2server.log.Log;
+
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
-
-import l2server.log.Log;
 
 /**
  *

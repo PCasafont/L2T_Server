@@ -15,10 +15,6 @@
 
 package l2server.gameserver.taskmanager;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Object;
@@ -29,6 +25,10 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.logging.Level;
 
 public class KnownListUpdateTaskManager
 {

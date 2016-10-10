@@ -15,11 +15,11 @@
 
 package l2server.gameserver.stats.conditions;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
+
+import java.util.ArrayList;
 
 /**
  * The Class ConditionPlayerHasClanHall.

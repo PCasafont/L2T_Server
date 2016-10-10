@@ -15,14 +15,14 @@
 
 package l2server.gameserver.network;
 
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.log.Log;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
-
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.log.Log;
 
 /**
  * NpcStringId implementation, based on

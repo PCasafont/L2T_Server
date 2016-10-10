@@ -10,11 +10,7 @@ import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.types.CaptureTheFlag;
 import l2server.gameserver.events.instanced.types.FieldDomination;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.SetupGauge;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 /**

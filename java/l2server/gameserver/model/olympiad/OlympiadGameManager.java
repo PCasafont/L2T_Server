@@ -15,14 +15,14 @@
 
 package l2server.gameserver.model.olympiad;
 
-import java.util.Collection;
-import java.util.List;
-
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author GodKratos, DS

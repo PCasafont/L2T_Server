@@ -15,9 +15,9 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
 
 /**
  * @author Fulminus

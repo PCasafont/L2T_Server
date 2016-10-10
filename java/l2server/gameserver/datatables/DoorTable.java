@@ -16,12 +16,6 @@
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
@@ -34,6 +28,11 @@ import l2server.gameserver.templates.chars.L2DoorTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DoorTable
 {

@@ -25,15 +25,15 @@
 
 package l2server.gameserver.idfactory;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.log.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -142,7 +142,7 @@ public class CompactionIDFactory extends IdFactory
         /*if (_freeSize == 0)*/
         return _curOID++;
         /* else
-		 	return _freeOIDs[--_freeSize];*/
+             return _freeOIDs[--_freeSize];*/
     }
 
     @Override

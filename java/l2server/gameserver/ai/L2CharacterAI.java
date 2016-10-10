@@ -15,30 +15,13 @@
 
 package l2server.gameserver.ai;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_CAST;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_INTERACT;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_MOVE_TO;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_PICK_UP;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -54,6 +37,11 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static l2server.gameserver.ai.CtrlIntention.*;
 
 /**
  * This class manages AI of L2Character.<BR><BR>
@@ -1263,7 +1251,7 @@ public class L2CharacterAI extends AbstractAI
                     case BUFF:
                         buffSkills.add(sk);
                         continue; // won't be considered something for fighting
-						/*case PARALYZE:
+                        /*case PARALYZE:
 						case STUN:
 							// hardcoding petrification until improvements are made to
 							// EffectTemplate... petrification is totally different for

@@ -15,6 +15,7 @@
 
 package ai.individual.Summons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Object;
@@ -25,7 +26,6 @@ import l2server.gameserver.network.serverpackets.FlyToLocation;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel

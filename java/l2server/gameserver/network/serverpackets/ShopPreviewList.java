@@ -15,12 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.Collection;
-
 import l2server.Config;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
 import l2server.gameserver.templates.item.L2Item;
+
+import java.util.Collection;
 
 public class ShopPreviewList extends L2GameServerPacket
 {

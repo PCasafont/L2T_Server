@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.datatables.SubPledgeSkillTree;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
 import l2server.gameserver.model.L2SquadTrainer;
@@ -27,6 +25,8 @@ import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
+
+import java.util.StringTokenizer;
 
 /**
  * @author Vice

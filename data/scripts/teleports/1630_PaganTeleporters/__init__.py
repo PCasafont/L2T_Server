@@ -2,11 +2,7 @@
 # Needed for Quests 636 and 637
 # v1.1 Done by BiTi
 
-import sys
 from l2server.gameserver.datatables import DoorTable
-from l2server.gameserver.model.actor.instance import L2PcInstance
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "1630_PaganTeleporters"

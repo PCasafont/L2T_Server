@@ -1,11 +1,8 @@
 #
 # Created by DraX on 2005.07.27. updated by DrLecter.
 #
-import sys
 
-from l2server.gameserver.model.actor.instance import L2PcInstance
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.network.serverpackets import NpcSay
 

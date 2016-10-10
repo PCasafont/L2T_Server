@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.instancemanager.ClanRecruitManager;
 import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

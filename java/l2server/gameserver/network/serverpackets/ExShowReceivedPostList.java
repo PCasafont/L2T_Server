@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.entity.Message;
+
+import java.util.List;
 
 /**
  * @author Pere, DS

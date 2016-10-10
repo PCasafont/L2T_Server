@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.model.actor.L2Character;
@@ -34,6 +31,9 @@ import l2server.gameserver.network.serverpackets.ExOlympiadMatchEnd;
 import l2server.gameserver.network.serverpackets.ExOlympiadUserInfo;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An olympiad stadium

@@ -15,11 +15,11 @@
 
 package l2server.loginserver.network.clientpackets;
 
-import java.util.logging.Level;
-
 import l2server.log.Log;
 import l2server.loginserver.network.L2LoginClient;
 import l2server.network.ReceivablePacket;
+
+import java.util.logging.Level;
 
 /**
  * @author KenM

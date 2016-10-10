@@ -15,11 +15,11 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ManagePledgePower;
+
+import java.util.logging.Logger;
 
 public final class RequestPledgePower extends L2GameClientPacket
 {

@@ -14,14 +14,14 @@
 
 package l2server.gameserver;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.Fort;
 import l2server.log.Log;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Vice - 2008

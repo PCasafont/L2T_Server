@@ -15,12 +15,6 @@
 
 package l2server.gameserver.model.zone.type;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.Future;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Object.InstanceType;
@@ -32,6 +26,12 @@ import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.Future;
 
 /**
  * another type of damage zone with skills

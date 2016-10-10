@@ -2,10 +2,7 @@
 # Created by DraX on 2005.08.12
 # minor fixes by DrLecter 2005.09.10
 
-import sys
-
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "9000_clan"

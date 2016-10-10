@@ -4,12 +4,12 @@
 
 package l2server.gameserver.gui.playertable;
 
-import javax.swing.table.AbstractTableModel;
-
 import l2server.Config;
 import l2server.gameserver.gui.ServerGui;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import javax.swing.table.AbstractTableModel;
 
 /**
  * @author KenM

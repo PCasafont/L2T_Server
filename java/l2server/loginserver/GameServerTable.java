@@ -15,15 +15,20 @@
 
 package l2server.loginserver;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.log.Log;
+import l2server.loginserver.network.gameserverpackets.ServerStatus;
+import l2server.util.IPSubnet;
+import l2server.util.Rnd;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
+
 import java.io.File;
 import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.security.GeneralSecurityException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,15 +40,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.log.Log;
-import l2server.loginserver.network.gameserverpackets.ServerStatus;
-import l2server.util.IPSubnet;
-import l2server.util.Rnd;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 /**
  * @author KenM

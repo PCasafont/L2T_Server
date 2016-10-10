@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import java.util.List;
-
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.entity.Fort;
+
+import java.util.List;
 
 /**
  * @author KenM

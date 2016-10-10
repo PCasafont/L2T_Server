@@ -15,15 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ItemsAutoDestroy;
@@ -32,6 +23,11 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.log.Log;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 /**
  * This class manage all items on ground

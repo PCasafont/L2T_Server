@@ -15,13 +15,13 @@
 
 package l2server.gameserver.templates.item;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class ...

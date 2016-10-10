@@ -1,8 +1,5 @@
 # Jython-based miss queen implementation v0.1
 # written by DrLecter, based in Eduu, biti and Newbie contributions.
-import sys
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "5000_MissQueen"

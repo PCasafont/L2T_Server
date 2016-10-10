@@ -430,7 +430,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
                             }
                         }
                     }
-					
+
 					/*
 					 * If quest checking is enabled, verify if the character has completed the Mimir's Elixir (Path to Subclass)
 					 * and Fate's Whisper (A Grade Weapon) quests by checking for instances of their unique reward items.

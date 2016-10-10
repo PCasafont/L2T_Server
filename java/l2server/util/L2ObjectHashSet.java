@@ -15,10 +15,10 @@
 
 package l2server.util;
 
+import l2server.gameserver.model.L2Object;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
-import l2server.gameserver.model.L2Object;
 
 /**
  * This class is a highly optimized hashtable, where

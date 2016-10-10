@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model.olympiad;
 
-import java.util.List;
-
 import l2server.Config;
 import l2server.util.Rnd;
+
+import java.util.List;
 
 /**
  * @author DS

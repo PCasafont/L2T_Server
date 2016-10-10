@@ -15,36 +15,27 @@
 
 package l2server.gameserver.model.itemcontainer;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.datatables.ArmorSetsTable;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2ItemInstance.ItemLocation;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.SkillCoolTime;
+import l2server.gameserver.stats.SkillHolder;
+import l2server.gameserver.stats.Stats;
+import l2server.gameserver.templates.item.*;
+import l2server.log.Log;
+import l2server.util.StringUtil;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.datatables.ArmorSetsTable;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.EnsoulEffect;
-import l2server.gameserver.model.L2ArmorSet;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.SkillCoolTime;
-import l2server.gameserver.stats.SkillHolder;
-import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2ArmorType;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.log.Log;
-import l2server.util.StringUtil;
 
 /**
  * This class manages inventory
@@ -278,7 +269,7 @@ public abstract class Inventory extends ItemContainer
         @Override
         public void notifyEquiped(int slot, L2ItemInstance item, Inventory inventory)
         {
-			/*if (slot == PAPERDOLL_RHAND)
+            /*if (slot == PAPERDOLL_RHAND)
 				return;*/
             inventory.getOwner().addStatFuncs(item.getStatFuncs());
         }

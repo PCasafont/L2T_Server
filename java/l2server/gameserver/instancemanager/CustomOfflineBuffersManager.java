@@ -15,15 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.LoginServerThread;
@@ -46,6 +37,15 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel

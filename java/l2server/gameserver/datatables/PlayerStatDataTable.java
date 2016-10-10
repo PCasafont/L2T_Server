@@ -15,14 +15,14 @@
 
 package l2server.gameserver.datatables;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PlayerStatDataTable
 {

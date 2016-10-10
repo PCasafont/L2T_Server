@@ -15,13 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Level;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
@@ -29,6 +22,13 @@ import l2server.gameserver.model.entity.Auction;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.zone.type.L2ClanHallZone;
 import l2server.log.Log;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
 
 /**
  * @author Steuf
@@ -224,7 +224,7 @@ public class ClanHallManager
     /**
      * Get Clan Hall by x,y,z
      */
-	/*
+    /*
 		public final ClanHall getClanHall(int x, int y, int z)
 		{
 			for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())

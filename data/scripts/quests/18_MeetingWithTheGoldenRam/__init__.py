@@ -2,9 +2,7 @@
 # With some minor cleanup by DrLecter.
 # Visit http://www.l2jdp.com/forum/ for more details.
 
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "18_MeetingWithTheGoldenRam"

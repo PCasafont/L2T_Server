@@ -1,7 +1,5 @@
 # Silver Haired Shaman - Version 0.1 by DrLecter
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "366_SilverHairedShaman"

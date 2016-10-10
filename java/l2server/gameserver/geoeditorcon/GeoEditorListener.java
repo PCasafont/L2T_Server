@@ -15,12 +15,12 @@
 
 package l2server.gameserver.geoeditorcon;
 
+import l2server.log.Log;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
-
-import l2server.log.Log;
 
 /**
  * @author Dezmond

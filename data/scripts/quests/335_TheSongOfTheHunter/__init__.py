@@ -1,10 +1,8 @@
 # Made by Emperorc
-import sys
 from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.util import Rnd
 from l2server.gameserver.network.serverpackets import NpcSay
+from l2server.util import Rnd
 
 qn = "335_TheSongOfTheHunter"
 

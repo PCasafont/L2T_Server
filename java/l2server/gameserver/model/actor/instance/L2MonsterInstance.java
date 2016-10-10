@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import java.util.Map;
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.CoreMessage;
@@ -29,6 +26,9 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.MinionList;
 import l2server.util.Rnd;
+
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * This class manages all Monsters.
@@ -267,7 +267,7 @@ public class L2MonsterInstance extends L2Attackable
     @Override
     public int getMaxHp()
     {
-		/*
+        /*
 		if (getTemplate().isMiniRaid())
 			return getStat().getMaxMp() * 10;
 		 */

@@ -15,9 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.List;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
@@ -28,6 +25,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
+
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * This class handles all siege commands:

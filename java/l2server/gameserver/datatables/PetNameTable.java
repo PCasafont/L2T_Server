@@ -15,6 +15,10 @@
 
 package l2server.gameserver.datatables;
 
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.log.Log;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,10 +27,6 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.log.Log;
 
 public class PetNameTable
 {

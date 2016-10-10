@@ -15,6 +15,13 @@
 
 package custom.VoteNpc;
 
+import l2server.Config;
+import l2server.gameserver.cache.HtmCache;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.util.Util;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,13 +29,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-
-import l2server.Config;
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.util.Util;
 
 /**
  * @author LasTravel
@@ -179,7 +179,7 @@ public class VoteNpc extends Quest
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-		/*if (!_debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
+        /*if (!_debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 		{
 			player.sendMessage("You can't claim items right now!");
 			return "";

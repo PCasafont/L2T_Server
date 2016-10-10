@@ -19,12 +19,12 @@
 
 package l2server.gameserver.model.actor;
 
-import java.awt.Rectangle;
-
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExColosseumFenceInfo;
+
+import java.awt.*;
 
 /**
  * @author FBIagent

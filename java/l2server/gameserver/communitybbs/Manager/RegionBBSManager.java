@@ -19,18 +19,6 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.Server;
 import l2server.gameserver.model.BlockList;
@@ -43,6 +31,12 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 public class RegionBBSManager extends BaseBBSManager
 {

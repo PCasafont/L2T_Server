@@ -15,10 +15,7 @@
 
 package ai.individual;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
+import ai.group_template.L2AttackableAIScript;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -33,7 +30,10 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class SuperMewCatZ extends L2AttackableAIScript
 {
