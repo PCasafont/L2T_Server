@@ -55,9 +55,8 @@ public class AncientCityArcan extends Quest
     {
         if (character instanceof L2PcInstance)
         {
-            character
-                    .broadcastPacket(
-                            new EventTrigger(_currentEffect == _blueEffectId ? _blueEffectId : _redEffectId, false));
+            character.broadcastPacket(
+                    new EventTrigger(_currentEffect == _blueEffectId ? _blueEffectId : _redEffectId, false));
             character.broadcastPacket(new EventTrigger(_currentEffect, true));
         }
         return null;

@@ -59,8 +59,8 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 
         if (_answer == 0)
         {
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION);
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION);
             sm.addString(requestor.getName());
             activeChar.sendPacket(sm);
             sm = null;
@@ -78,8 +78,8 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
             }
             else if (requestor.getRequest().getRequestPacket() instanceof RequestPledgeApplicationAccept)
             {
-                pledgeType = ((RequestPledgeApplicationAccept) requestor.getRequest().getRequestPacket())
-                        .getPledgeType();
+                pledgeType =
+                        ((RequestPledgeApplicationAccept) requestor.getRequest().getRequestPacket()).getPledgeType();
             }
             else
             {

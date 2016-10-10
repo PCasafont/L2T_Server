@@ -35,8 +35,8 @@ public class EnchantFormatter extends Formatter
     {
         final Object[] params = record.getParameters();
         final StringBuilder output = StringUtil
-                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt
-                        .format(new Date(record.getMillis())), "] ", record.getMessage());
+                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[",
+                        dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
         for (Object p : params)
         {
             if (p == null)
@@ -49,12 +49,12 @@ public class EnchantFormatter extends Formatter
             if (p instanceof L2PcInstance)
             {
                 L2PcInstance player = (L2PcInstance) p;
-                StringUtil.append(output, "Character:", player.getName(), " [" + String
-                        .valueOf(player.getObjectId()) + "] Account:", player.getAccountName());
+                StringUtil.append(output, "Character:", player.getName(),
+                        " [" + String.valueOf(player.getObjectId()) + "] Account:", player.getAccountName());
                 if (player.getClient() != null && !player.getClient().isDetached())
                 {
-                    StringUtil.append(output, " IP:", player.getClient().getConnection().getInetAddress()
-                            .getHostAddress());
+                    StringUtil.append(output, " IP:",
+                            player.getClient().getConnection().getInetAddress().getHostAddress());
                 }
             }
             else if (p instanceof L2ItemInstance)
@@ -75,8 +75,8 @@ public class EnchantFormatter extends Formatter
                     StringUtil.append(output, "+", String.valueOf(skill.getEnchantLevel()), " ");
                 }
 
-                StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId()), " ", String
-                        .valueOf(skill.getLevelHash()), ")");
+                StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId()), " ",
+                        String.valueOf(skill.getLevelHash()), ")");
             }
             else
             {

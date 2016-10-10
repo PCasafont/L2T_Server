@@ -72,8 +72,8 @@ public class L2SkillSiegeFlag extends L2Skill
         try
         {
             // Spawn a new flag
-            L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcTable
-                    .getInstance().getTemplate(35062), _isAdvanced, false);
+            L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(),
+                    NpcTable.getInstance().getTemplate(35062), _isAdvanced, false);
             flag.setTitle(player.getClan().getName());
             flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
             flag.setHeading(player.getHeading());
@@ -156,8 +156,8 @@ public class L2SkillSiegeFlag extends L2Skill
         {
             text = "You must be a clan leader to place a flag.";
         }
-        else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= SiegeManager.getInstance()
-                .getFlagMaxCount())
+        else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >=
+                SiegeManager.getInstance().getFlagMaxCount())
         {
             text = "You have already placed the maximum number of flags possible.";
         }

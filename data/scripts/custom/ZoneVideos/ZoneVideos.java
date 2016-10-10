@@ -71,8 +71,8 @@ public class ZoneVideos extends Quest
                     return null;
                 }
 
-                if (videoId == 0 && player
-                        .getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
+                if (videoId == 0 &&
+                        player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
                 {
                     videoId = 1;
                 }

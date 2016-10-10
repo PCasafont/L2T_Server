@@ -79,8 +79,8 @@ public class DragonVortex extends Quest
             if (st.getQuestItemsCount(largeDragonBone) > 0)
             {
                 st.takeItems(largeDragonBone, 1);
-                raid = addSpawn(bosses[Rnd.get(bosses.length)], player.getX() - Rnd.get(500, 800), player.getY() - Rnd
-                        .get(500, 800), player.getZ(), 0, true, 0, true, 0);
+                raid = addSpawn(bosses[Rnd.get(bosses.length)], player.getX() - Rnd.get(500, 800),
+                        player.getY() - Rnd.get(500, 800), player.getZ(), 0, true, 0, true, 0);
                 return "32871-1.htm";
             }
             else

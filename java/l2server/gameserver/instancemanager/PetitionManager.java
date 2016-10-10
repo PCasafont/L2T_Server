@@ -146,8 +146,8 @@ public final class PetitionManager
             // End petition consultation and inform them, if they are still online.
             if (getPetitioner() != null && getPetitioner().isOnline())
             {
-                getPetitioner().sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.THIS_END_THE_PETITION_PLEASE_PROVIDE_FEEDBACK));
+                getPetitioner().sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.THIS_END_THE_PETITION_PLEASE_PROVIDE_FEEDBACK));
             }
 
             getCompletedPetitions().put(getId(), this);
@@ -289,14 +289,14 @@ public final class PetitionManager
     {
         for (Petition currPetition : getPendingPetitions().values())
         {
-            if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getPetitioner() != null &&
+                    currPetition.getPetitioner().getObjectId() == player.getObjectId())
             {
                 return currPetition.endPetitionConsultation(PetitionState.Petitioner_Cancel);
             }
 
-            if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getResponder() != null &&
+                    currPetition.getResponder().getObjectId() == player.getObjectId())
             {
                 return currPetition.endPetitionConsultation(PetitionState.Responder_Cancel);
             }
@@ -316,8 +316,8 @@ public final class PetitionManager
                     continue;
                 }
 
-                if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == petitioner
-                        .getObjectId())
+                if (currPetition.getPetitioner() != null &&
+                        currPetition.getPetitioner().getObjectId() == petitioner.getObjectId())
                 {
                     for (CreatureSay logMessage : currPetition.getLogMessages())
                     {
@@ -344,8 +344,8 @@ public final class PetitionManager
                 continue;
             }
 
-            if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getResponder() != null &&
+                    currPetition.getResponder().getObjectId() == player.getObjectId())
             {
                 return currPetition.endPetitionConsultation(PetitionState.Completed);
             }
@@ -385,8 +385,8 @@ public final class PetitionManager
                 continue;
             }
 
-            if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getPetitioner() != null &&
+                    currPetition.getPetitioner().getObjectId() == player.getObjectId())
             {
                 petitionCount++;
             }
@@ -399,8 +399,8 @@ public final class PetitionManager
                 continue;
             }
 
-            if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getPetitioner() != null &&
+                    currPetition.getPetitioner().getObjectId() == player.getObjectId())
             {
                 petitionCount++;
             }
@@ -454,9 +454,10 @@ public final class PetitionManager
                     continue;
                 }
 
-                if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player
-                        .getObjectId() || currPetition.getResponder() != null && currPetition.getResponder()
-                        .getObjectId() == player.getObjectId())
+                if (currPetition.getPetitioner() != null &&
+                        currPetition.getPetitioner().getObjectId() == player.getObjectId() ||
+                        currPetition.getResponder() != null &&
+                                currPetition.getResponder().getObjectId() == player.getObjectId())
                 {
                     return true;
                 }
@@ -482,8 +483,8 @@ public final class PetitionManager
                     continue;
                 }
 
-                if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == petitioner
-                        .getObjectId())
+                if (currPetition.getPetitioner() != null &&
+                        currPetition.getPetitioner().getObjectId() == petitioner.getObjectId())
                 {
                     return true;
                 }
@@ -530,8 +531,8 @@ public final class PetitionManager
                 continue;
             }
 
-            if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getPetitioner() != null &&
+                    currPetition.getPetitioner().getObjectId() == player.getObjectId())
             {
                 cs = new CreatureSay(player.getObjectId(), Say2.PETITION_PLAYER, player.getName(), messageText);
                 currPetition.addLogMessage(cs);
@@ -541,8 +542,8 @@ public final class PetitionManager
                 return true;
             }
 
-            if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player
-                    .getObjectId())
+            if (currPetition.getResponder() != null &&
+                    currPetition.getResponder().getObjectId() == player.getObjectId())
             {
                 cs = new CreatureSay(player.getObjectId(), Say2.PETITION_GM, player.getName(), messageText);
                 currPetition.addLogMessage(cs);
@@ -558,8 +559,8 @@ public final class PetitionManager
 
     public void sendPendingPetitionList(L2PcInstance activeChar)
     {
-        final StringBuilder htmlContent = StringUtil
-                .startAppend(600 + getPendingPetitionCount() * 300, "<html><body><center><table width=270><tr>" +
+        final StringBuilder htmlContent = StringUtil.startAppend(600 + getPendingPetitionCount() * 300,
+                "<html><body><center><table width=270><tr>" +
                         "<td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
                         "<td width=180><center>Petition Menu</center></td>" +
                         "<td width=45><button value=\"Back\" action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>" +
@@ -587,35 +588,30 @@ public final class PetitionManager
                 continue;
             }
 
-            StringUtil
-                    .append(htmlContent, "<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=",
-                            color ? "131210" : "444444", "><tr><td width=\"130\">", dateFormat
-                                    .format(new Date(currPetition.getSubmitTime())));
-            StringUtil.append(htmlContent, "</td><td width=\"140\" align=right><font color=\"", currPetition
-                    .getPetitioner().isOnline() ? "00FF00" : "999999", "\">", currPetition.getPetitioner()
-                    .getName(), "</font></td></tr>");
+            StringUtil.append(htmlContent, "<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=",
+                    color ? "131210" : "444444", "><tr><td width=\"130\">",
+                    dateFormat.format(new Date(currPetition.getSubmitTime())));
+            StringUtil.append(htmlContent, "</td><td width=\"140\" align=right><font color=\"",
+                    currPetition.getPetitioner().isOnline() ? "00FF00" : "999999", "\">",
+                    currPetition.getPetitioner().getName(), "</font></td></tr>");
             StringUtil.append(htmlContent, "<tr><td width=\"130\">");
             if (currPetition.getState() != PetitionState.In_Process)
             {
-                StringUtil
-                        .append(htmlContent, "<table width=\"130\" cellpadding=\"2\"><tr>" +
-                                        "<td><button value=\"View\" action=\"bypass -h admin_view_petition ", String
-                                        .valueOf(currPetition
-                                                .getId()),
-                                "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
-                                        "<td><button value=\"Reject\" action=\"bypass -h admin_reject_petition ", String
-                                        .valueOf(currPetition
-                                                .getId()),
-                                "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
+                StringUtil.append(htmlContent, "<table width=\"130\" cellpadding=\"2\"><tr>" +
+                                "<td><button value=\"View\" action=\"bypass -h admin_view_petition ",
+                        String.valueOf(currPetition.getId()),
+                        "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
+                                "<td><button value=\"Reject\" action=\"bypass -h admin_reject_petition ",
+                        String.valueOf(currPetition.getId()),
+                        "\" width=\"50\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
             }
             else
             {
-                htmlContent.append("<font color=\"" + (currPetition.getResponder()
-                        .isOnline() ? "00FF00" : "999999") + "\">" + currPetition.getResponder().getName() + "</font>");
+                htmlContent.append("<font color=\"" + (currPetition.getResponder().isOnline() ? "00FF00" : "999999") +
+                        "\">" + currPetition.getResponder().getName() + "</font>");
             }
-            StringUtil.append(htmlContent, "</td>", currPetition
-                    .getTypeAsString(), "<td width=\"140\" align=right>", currPetition
-                    .getTypeAsString(), "</td></tr></table></td></tr>");
+            StringUtil.append(htmlContent, "</td>", currPetition.getTypeAsString(), "<td width=\"140\" align=right>",
+                    currPetition.getTypeAsString(), "</td></tr></table></td></tr>");
             color = !color;
             petcount++;
             if (petcount > 10)
@@ -642,8 +638,8 @@ public final class PetitionManager
 
         // Notify all GMs that a new petition has been submitted.
         String msgContent = petitioner.getName() + " has submitted a new petition."; //(ID: " + newPetitionId + ").";
-        GmListTable.broadcastToGMs(new CreatureSay(petitioner
-                .getObjectId(), Say2.HERO_VOICE, "Petition System", msgContent));
+        GmListTable.broadcastToGMs(
+                new CreatureSay(petitioner.getObjectId(), Say2.HERO_VOICE, "Petition System", msgContent));
 
         return newPetitionId;
     }

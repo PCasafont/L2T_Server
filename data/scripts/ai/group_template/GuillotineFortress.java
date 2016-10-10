@@ -53,8 +53,8 @@ public class GuillotineFortress extends L2AttackableAIScript
 
                 for (L2Character attacker : npc.getAttackByList())
                 {
-                    if (attacker == null || !(attacker instanceof L2PcInstance) || !attacker
-                            .isInsideRadius(npc, 1600, false, false))
+                    if (attacker == null || !(attacker instanceof L2PcInstance) ||
+                            !attacker.isInsideRadius(npc, 1600, false, false))
                     {
                         continue;
                     }

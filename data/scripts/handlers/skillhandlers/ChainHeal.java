@@ -79,8 +79,8 @@ public class ChainHeal implements ISkillHandler
             int members = 0;
             for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers())
             {
-                if (partyMember.getCurrentClass().getParent() != null && partyMember.getCurrentClass().getParent()
-                        .getAwakeningClassId() == classId)
+                if (partyMember.getCurrentClass().getParent() != null &&
+                        partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId)
                 {
                     members++;
                 }
@@ -106,8 +106,8 @@ public class ChainHeal implements ISkillHandler
                 continue;
             }
 
-            if (character != activeChar && character.getFaceoffTarget() != null && character
-                    .getFaceoffTarget() != activeChar)
+            if (character != activeChar && character.getFaceoffTarget() != null &&
+                    character.getFaceoffTarget() != activeChar)
             {
                 continue;
             }
@@ -116,8 +116,8 @@ public class ChainHeal implements ISkillHandler
 
             amount = Math.min(amount, character.getMaxHp() - character.getCurrentHp());
             amount *= character.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) / 100;
-            amount = Math.min(character.calcStat(Stats.GAIN_HP_LIMIT, character.getMaxHp(), null, null), character
-                    .getCurrentHp() + amount) - character.getCurrentHp();
+            amount = Math.min(character.calcStat(Stats.GAIN_HP_LIMIT, character.getMaxHp(), null, null),
+                    character.getCurrentHp() + amount) - character.getCurrentHp();
             if (amount < 0)
             {
                 amount = 0;
@@ -243,8 +243,8 @@ public class ChainHeal implements ISkillHandler
             {
                 return false;
             }
-            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar
-                    .isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
+            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
+                    activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
             {
                 return true;
             }

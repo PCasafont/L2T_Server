@@ -443,8 +443,8 @@ public class Stage1 extends Quest
             }
             if (!Util.checkIfInRange(1000, player, partyMember, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(partyMember);
                 party.broadcastToPartyMembers(sm);
                 return false;
@@ -477,8 +477,8 @@ public class Stage1 extends Quest
         {
             if (!(world instanceof SOD1World))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return 0;
             }
             teleportPlayer(player, coords, world.instanceId);
@@ -505,8 +505,7 @@ public class Stage1 extends Quest
                 }
             }
             Log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             // teleport players
             if (player.getParty() == null || player.getParty().getCommandChannel() == null)
             {
@@ -557,8 +556,8 @@ public class Stage1 extends Quest
                             {
                                 int[] point = _spawnZoneList.get(spw.zone).getRandomPoint();
                                 spawn(world, spw.npcId, point[0], point[1], GeoData.getInstance()
-                                        .getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd
-                                        .get(65535), spw.isNeededNextFlag);
+                                                .getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd.get(65535),
+                                        spw.isNeededNextFlag);
                             }
                             else
                             {
@@ -837,12 +836,13 @@ public class Stage1 extends Quest
             if (event.equalsIgnoreCase("Spawn"))
             {
                 L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
-                if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null && target
-                        .getInstanceId() == npc.getInstanceId() && !target.isDead())
+                if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null &&
+                        target.getInstanceId() == npc.getInstanceId() && !target.isDead())
                 {
-                    L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc
-                            .getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn()
-                            .getHeading(), false, 0, false, world.instanceId);
+                    L2Attackable mob =
+                            (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc.getSpawn().getX(),
+                                    npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false, 0,
+                                    false, world.instanceId);
                     world.deviceSpawnedMobCount++;
                     mob.setCanSeeThroughSilentMove(true);
                     mob.setRunning();
@@ -858,8 +858,8 @@ public class Stage1 extends Quest
             }
             else if (event.equalsIgnoreCase("DoorCheck"))
             {
-                L2DoorInstance tmp = InstanceManager.getInstance().getInstance(npc.getInstanceId())
-                        .getDoor(FORTRESS_DOOR);
+                L2DoorInstance tmp =
+                        InstanceManager.getInstance().getInstance(npc.getInstanceId()).getDoor(FORTRESS_DOOR);
                 if (tmp.getCurrentHp() < tmp.getMaxHp())
                 {
                     world.deviceSpawnedMobCount = 0;
@@ -885,9 +885,8 @@ public class Stage1 extends Quest
                 L2Character mostHate = ((L2Attackable) npc).getMostHated();
                 if (mostHate != null)
                 {
-                    double dist = Util
-                            .calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(), npc.getSpawn()
-                                    .getX(), npc.getSpawn().getY());
+                    double dist = Util.calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(),
+                            npc.getSpawn().getX(), npc.getSpawn().getY());
                     if (dist > 900)
                     {
                         ((L2Attackable) npc).reduceHate(mostHate, ((L2Attackable) npc).getHating(mostHate));
@@ -1018,16 +1017,16 @@ public class Stage1 extends Quest
                     {
                         for (int npcId : TRAP_18771_NPCS)
                         {
-                            addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap
-                                    .getHeading(), true, 0, true, world.instanceId);
+                            addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap.getHeading(), true, 0, true,
+                                    world.instanceId);
                         }
                     }
                     else
                     {
                         for (int npcId : TRAP_OTHER_NPCS)
                         {
-                            addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap
-                                    .getHeading(), true, 0, true, world.instanceId);
+                            addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap.getHeading(), true, 0, true,
+                                    world.instanceId);
                         }
                     }
                     break;

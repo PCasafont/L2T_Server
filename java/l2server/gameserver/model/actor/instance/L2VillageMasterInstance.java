@@ -279,10 +279,9 @@ public class L2VillageMasterInstance extends L2NpcInstance
                         for (int subClassId : subsAvailable)
                         {
                             PlayerClass subClass = PlayerClassTable.getInstance().getClassById(subClassId);
-                            StringUtil.append(content1, "<a action=\"bypass -h npc_%objectId%_Subclass 4 ", String
-                                            .valueOf(subClass
-                                                    .getId()), "\" msg=\"1268;", formatClassForDisplay(subClass), "\">",
-                                    formatClassForDisplay(subClass), "</a><br>");
+                            StringUtil.append(content1, "<a action=\"bypass -h npc_%objectId%_Subclass 4 ",
+                                    String.valueOf(subClass.getId()), "\" msg=\"1268;", formatClassForDisplay(subClass),
+                                    "\">", formatClassForDisplay(subClass), "</a><br>");
                         }
                     }
                     else
@@ -294,8 +293,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
                     html.replace("%list%", content1.toString());
                     break;
                 case 2: // Change Class - Initial
-                    if (player.getSubClasses().isEmpty() || EventsManager.getInstance()
-                            .isPlayerParticipant(player.getObjectId()))
+                    if (player.getSubClasses().isEmpty() ||
+                            EventsManager.getInstance().isPlayerParticipant(player.getObjectId()))
                     {
                         html.setFile(player.getHtmlPrefix(), "villagemaster/SubClass_ChangeNo.htm");
                     }
@@ -305,10 +304,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
 
                         if (checkVillageMaster(player.getBaseClass()))
                         {
-                            StringUtil
-                                    .append(content2, "<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">",
-                                            PlayerClassTable
-                                                    .getInstance().getClassNameById(player.getBaseClass()), "</a><br>");
+                            StringUtil.append(content2, "<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">",
+                                    PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()), "</a><br>");
                         }
 
                         for (Iterator<SubClass> subList = iterSubClasses(player); subList.hasNext(); )
@@ -316,10 +313,10 @@ public class L2VillageMasterInstance extends L2NpcInstance
                             SubClass subClass = subList.next();
                             if (checkVillageMaster(subClass.getClassDefinition()))
                             {
-                                StringUtil.append(content2, "<a action=\"bypass -h npc_%objectId%_Subclass 5 ", String
-                                        .valueOf(subClass
-                                                .getClassIndex()), "\">", formatClassForDisplay(PlayerClassTable
-                                        .getInstance().getClassById(subClass.getClassId())), "</a><br>");
+                                StringUtil.append(content2, "<a action=\"bypass -h npc_%objectId%_Subclass 5 ",
+                                        String.valueOf(subClass.getClassIndex()), "\">", formatClassForDisplay(
+                                                PlayerClassTable.getInstance().getClassById(subClass.getClassId())),
+                                        "</a><br>");
                             }
                         }
 
@@ -352,11 +349,10 @@ public class L2VillageMasterInstance extends L2NpcInstance
                         {
                             SubClass subClass = subList.next();
 
-                            StringUtil.append(content3, "Sub-class ", String
-                                            .valueOf(classIndex++), "<br>", "<a action=\"bypass -h npc_%objectId%_Subclass 6 ",
-                                    String
-                                            .valueOf(subClass.getClassIndex()), "\">", PlayerClassTable.getInstance()
-                                            .getClassNameById(subClass.getClassId()), "</a><br>");
+                            StringUtil.append(content3, "Sub-class ", String.valueOf(classIndex++), "<br>",
+                                    "<a action=\"bypass -h npc_%objectId%_Subclass 6 ",
+                                    String.valueOf(subClass.getClassIndex()), "\">",
+                                    PlayerClassTable.getInstance().getClassNameById(subClass.getClassId()), "</a><br>");
                         }
                         html.replace("%list%", content3.toString());
                     }
@@ -397,7 +393,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
                     break;
                 case 4: // Add Subclass - Action (Subclass 4 x[x])
                     /*
-					 * If the character is less than level 75 on any of their previously chosen
+                     * If the character is less than level 75 on any of their previously chosen
 					 * classes then disallow them to change to their most recently added sub-class choice.
 					 */
 
@@ -457,8 +453,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
 
                         html.setFile(player.getHtmlPrefix(), "villagemaster/SubClass_AddOk.htm");
 
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.ADD_NEW_SUBCLASS)); // Subclass added.
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.ADD_NEW_SUBCLASS)); // Subclass added.
                         player.sendPacket(new ExSubjobInfo(player));
                     }
                     else
@@ -542,9 +538,9 @@ public class L2VillageMasterInstance extends L2NpcInstance
                     for (int subClassId : subsAvailable)
                     {
                         PlayerClass subClass = PlayerClassTable.getInstance().getClassById(subClassId);
-                        StringUtil.append(content6, "<a action=\"bypass -h npc_%objectId%_Subclass 7 ", String
-                                .valueOf(paramOne), " ", String.valueOf(subClass
-                                .getId()), "\" msg=\"1445;", "\">", formatClassForDisplay(subClass), "</a><br>");
+                        StringUtil.append(content6, "<a action=\"bypass -h npc_%objectId%_Subclass 7 ",
+                                String.valueOf(paramOne), " ", String.valueOf(subClass.getId()), "\" msg=\"1445;",
+                                "\">", formatClassForDisplay(subClass), "</a><br>");
                     }
 
                     switch (paramOne)
@@ -596,8 +592,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
                         html.setFile(player.getHtmlPrefix(), "villagemaster/SubClass_ModifyOk.htm");
                         html.replace("%name%", PlayerClassTable.getInstance().getClassNameById(paramTwo));
 
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.ADD_NEW_SUBCLASS)); // Subclass added.
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.ADD_NEW_SUBCLASS)); // Subclass added.
                         player.sendPacket(new ExSubjobInfo(player));
                     }
                     else
@@ -961,8 +957,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
         }
         if (clan.getHasCastle() != 0 || clan.getHasHideout() != 0 || clan.getHasFort() != 0)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_WHILE_OWNING_CLAN_HALL_OR_CASTLE));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_WHILE_OWNING_CLAN_HALL_OR_CASTLE));
             return;
         }
 
@@ -994,8 +990,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
             return;
         }
 
-        clan.setDissolvingExpiryTime(System
-                .currentTimeMillis() + Config.ALT_CLAN_DISSOLVE_DAYS * 86400000L); //24*60*60*1000 = 86400000
+        clan.setDissolvingExpiryTime(
+                System.currentTimeMillis() + Config.ALT_CLAN_DISSOLVE_DAYS * 86400000L); //24*60*60*1000 = 86400000
         clan.updateClanInDB();
 
         ClanTable.getInstance().scheduleRemoveClan(clan.getClanId());
@@ -1140,8 +1136,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
                 }
                 else if (pledgeType >= L2Clan.SUBUNIT_ROYAL1)
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
+                    player.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
                 }
 
                 return;
@@ -1236,8 +1232,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
         }
         if (player.getName().equals(leaderName))
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
             return;
         }
 
@@ -1258,8 +1254,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
             }
             else if (subPledge.getId() >= L2Clan.SUBUNIT_ROYAL1)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.CAPTAIN_OF_ROYAL_GUARD_CANNOT_BE_APPOINTED));
             }
 
             return;
@@ -1316,8 +1312,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
         {
             if (player.getClan().getLevel() < 8)
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
                 if (player.getClan().getLevel() < 5)
                 {
                     sm.addNumber(5);

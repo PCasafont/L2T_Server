@@ -139,9 +139,10 @@ public class AccessLevels
                 boolean takeAggro = n.getBool("takeAggro");
                 boolean gainExp = n.getBool("gainExp");
 
-                _accessLevels.put(accessLevel, new L2AccessLevel(accessLevel, name, nameColor, titleColor, childs
-                        .isEmpty() ? null : childs, isGm, allowPeaceAttack, allowFixedRes, allowTransaction, allowAltG,
-                        giveDamage, takeAggro, gainExp));
+                _accessLevels.put(accessLevel,
+                        new L2AccessLevel(accessLevel, name, nameColor, titleColor, childs.isEmpty() ? null : childs,
+                                isGm, allowPeaceAttack, allowFixedRes, allowTransaction, allowAltG, giveDamage,
+                                takeAggro, gainExp));
             }
         }
 
@@ -174,10 +175,9 @@ public class AccessLevels
                 return;
             }
 
-            _accessLevels
-                    .put(accessLevel,
-                            new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false,
-                                    false, false, false));
+            _accessLevels.put(accessLevel,
+                    new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false,
+                            false, false));
         }
     }
 

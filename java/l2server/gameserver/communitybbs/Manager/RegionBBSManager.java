@@ -120,9 +120,8 @@ public class RegionBBSManager extends BaseBBSManager
      */
     private void showOldCommunityPI(L2PcInstance activeChar, String name)
     {
-        final StringBuilder htmlCode = StringUtil
-                .startAppend(1000,
-                        "<html><body><br><table border=0><tr><td FIXWIDTH=15></td><td align=center>L2J Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
+        final StringBuilder htmlCode = StringUtil.startAppend(1000,
+                "<html><body><br><table border=0><tr><td FIXWIDTH=15></td><td align=center>L2J Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
         L2PcInstance player = L2World.getInstance().getPlayer(name);
 
         if (player != null)
@@ -146,12 +145,11 @@ public class RegionBBSManager extends BaseBBSManager
                 levelApprox = "medium";
             }
 
-            StringUtil.append(htmlCode, "<table border=0><tr><td>", player
-                            .getName(), " (", sex, " ", "", "):</td></tr><tr><td>Level: ", levelApprox,
-                    "</td></tr><tr><td><br></td></tr>");
+            StringUtil.append(htmlCode, "<table border=0><tr><td>", player.getName(), " (", sex, " ", "",
+                    "):</td></tr><tr><td>Level: ", levelApprox, "</td></tr><tr><td><br></td></tr>");
 
-            if (activeChar != null && (activeChar.isGM() || player.getObjectId() == activeChar
-                    .getObjectId() || Config.SHOW_LEVEL_COMMUNITYBOARD))
+            if (activeChar != null && (activeChar.isGM() || player.getObjectId() == activeChar.getObjectId() ||
+                    Config.SHOW_LEVEL_COMMUNITYBOARD))
             {
                 long nextLevelExp = 0;
                 long nextLevelExpNeeded = 0;
@@ -161,11 +159,10 @@ public class RegionBBSManager extends BaseBBSManager
                     nextLevelExpNeeded = nextLevelExp - player.getExp();
                 }
 
-                StringUtil.append(htmlCode, "<tr><td>Level: ", String
-                        .valueOf(player.getLevel()), "</td></tr><tr><td>Experience: ", String
-                        .valueOf(player.getExp()), "/", String
-                        .valueOf(nextLevelExp), "</td></tr><tr><td>Experience needed for level up: ", String
-                        .valueOf(nextLevelExpNeeded), "</td></tr><tr><td><br></td></tr>");
+                StringUtil.append(htmlCode, "<tr><td>Level: ", String.valueOf(player.getLevel()),
+                        "</td></tr><tr><td>Experience: ", String.valueOf(player.getExp()), "/",
+                        String.valueOf(nextLevelExp), "</td></tr><tr><td>Experience needed for level up: ",
+                        String.valueOf(nextLevelExpNeeded), "</td></tr><tr><td><br></td></tr>");
             }
 
             int uptime = (int) player.getUptime() / 1000;
@@ -173,28 +170,25 @@ public class RegionBBSManager extends BaseBBSManager
             int m = (uptime - h * 3600) / 60;
             int s = uptime - h * 3600 - m * 60;
 
-            StringUtil.append(htmlCode, "<tr><td>Uptime: ", String.valueOf(h), "h ", String.valueOf(m), "m ", String
-                    .valueOf(s), "s</td></tr><tr><td><br></td></tr>");
+            StringUtil.append(htmlCode, "<tr><td>Uptime: ", String.valueOf(h), "h ", String.valueOf(m), "m ",
+                    String.valueOf(s), "s</td></tr><tr><td><br></td></tr>");
 
             if (player.getClan() != null)
             {
-                StringUtil.append(htmlCode, "<tr><td>Clan: ", player.getClan()
-                        .getName(), "</td></tr><tr><td><br></td></tr>");
+                StringUtil.append(htmlCode, "<tr><td>Clan: ", player.getClan().getName(),
+                        "</td></tr><tr><td><br></td></tr>");
             }
 
-            StringUtil
-                    .append(htmlCode,
-                            "<tr><td><multiedit var=\"pm\" width=240 height=40><button value=\"Send PM\" action=\"Write Region PM ",
-                            player
-                                    .getName(),
-                            " pm pm pm\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><br><button value=\"Back\" action=\"bypass _bbsloc\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></td></tr></table></body></html>");
+            StringUtil.append(htmlCode,
+                    "<tr><td><multiedit var=\"pm\" width=240 height=40><button value=\"Send PM\" action=\"Write Region PM ",
+                    player.getName(),
+                    " pm pm pm\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td><br><button value=\"Back\" action=\"bypass _bbsloc\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></td></tr></table></body></html>");
             separateAndSend(htmlCode.toString(), activeChar);
         }
         else
         {
-            ShowBoard sb = new ShowBoard(StringUtil
-                    .concat("<html><body><br><br><center>No player with name ", name,
-                            "</center><br><br></body></html>"), "101");
+            ShowBoard sb = new ShowBoard(StringUtil.concat("<html><body><br><br><center>No player with name ", name,
+                    "</center><br><br></body></html>"), "101");
             activeChar.sendPacket(sb);
             activeChar.sendPacket(new ShowBoard(null, "102"));
             activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -222,9 +216,8 @@ public class RegionBBSManager extends BaseBBSManager
 
         if (ar1.equals("PM"))
         {
-            final StringBuilder htmlCode = StringUtil
-                    .startAppend(500,
-                            "<html><body><br><table border=0><tr><td FIXWIDTH=15></td><td align=center>L2J Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
+            final StringBuilder htmlCode = StringUtil.startAppend(500,
+                    "<html><body><br><table border=0><tr><td FIXWIDTH=15></td><td align=center>L2J Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
 
             try
             {
@@ -232,11 +225,9 @@ public class RegionBBSManager extends BaseBBSManager
                 L2PcInstance receiver = L2World.getInstance().getPlayer(ar2);
                 if (receiver == null)
                 {
-                    StringUtil
-                            .append(htmlCode,
-                                    "Player not found!<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;",
-                                    ar2,
-                                    "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
+                    StringUtil.append(htmlCode,
+                            "Player not found!<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;", ar2,
+                            "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
                     separateAndSend(htmlCode.toString(), activeChar);
                     return;
                 }
@@ -266,8 +257,7 @@ public class RegionBBSManager extends BaseBBSManager
                     LogRecord record = new LogRecord(Level.INFO, ar3);
                     record.setLoggerName("chat");
                     record.setParameters(new Object[]{
-                            "TELL", "[" + activeChar.getName() + " to " + receiver
-                            .getName() + "]"
+                            "TELL", "[" + activeChar.getName() + " to " + receiver.getName() + "]"
                     });
                     _logChat.log(record);
                 }
@@ -275,20 +265,18 @@ public class RegionBBSManager extends BaseBBSManager
                 if (!receiver.isSilenceMode() && !BlockList.isBlocked(receiver, activeChar))
                 {
                     receiver.sendPacket(cs);
-                    activeChar.sendPacket(new CreatureSay(activeChar.getObjectId(), Say2.TELL, "->" + receiver
-                            .getName(), ar3));
-                    StringUtil
-                            .append(htmlCode,
-                                    "Message Sent<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;",
-                                    receiver
-                                            .getName(),
-                                    "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
+                    activeChar.sendPacket(
+                            new CreatureSay(activeChar.getObjectId(), Say2.TELL, "->" + receiver.getName(), ar3));
+                    StringUtil.append(htmlCode,
+                            "Message Sent<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;",
+                            receiver.getName(),
+                            "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
                     separateAndSend(htmlCode.toString(), activeChar);
                 }
                 else
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
                     activeChar.sendPacket(sm);
                     parsecmd("_bbsloc;playerinfo;" + receiver.getName(), activeChar);
                 }
@@ -300,8 +288,9 @@ public class RegionBBSManager extends BaseBBSManager
         }
         else
         {
-            ShowBoard sb = new ShowBoard(StringUtil
-                    .concat("<html><body><br><br><center></center><br><br></body></html>"), "101");
+            ShowBoard sb =
+                    new ShowBoard(StringUtil.concat("<html><body><br><br><center></center><br><br></body></html>"),
+                            "101");
             activeChar.sendPacket(sb);
             activeChar.sendPacket(new ShowBoard(null, "102"));
             activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -401,35 +390,26 @@ public class RegionBBSManager extends BaseBBSManager
         {
             Map<String, String> communityPage = new HashMap<String, String>();
             htmlCode.setLength(0);
-            StringUtil
-                    .append(htmlCode,
-                            "<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String
-                                    .valueOf(Server.dateTimeServerStarted
-                                            .getTime()),
-                            tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: x", String
-                                    .valueOf(Config.RATE_XP), tdClose + colSpacer + tdOpen + "Party XP Rate: x", String
-                                    .valueOf(Config.RATE_XP * Config.RATE_PARTY_XP),
-                            tdClose + colSpacer + tdOpen + "XP Exponent: ", String
-                                    .valueOf(Config.ALT_GAME_EXPONENT_XP),
-                            tdClose + trClose + trOpen + tdOpen + "SP Rate: x", String
-                                    .valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP Rate: x", String
-                                    .valueOf(Config.RATE_SP * Config.RATE_PARTY_SP),
-                            tdClose + colSpacer + tdOpen + "SP Exponent: ", String
-                                    .valueOf(Config.ALT_GAME_EXPONENT_SP),
-                            tdClose + trClose + trOpen + tdOpen + "Drop Rate: ", String
-                                    .valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen + "Spoil Rate: ",
-                            String
-                                    .valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ",
-                            String
-                                    .valueOf(Config.RATE_DROP_ITEMS_ID
-                                            .get(PcInventory.ADENA_ID)),
-                            tdClose + trClose + "</table><table>" + trOpen +
-                                    "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen +
-                                    tdOpen, String
-                                    .valueOf(L2World.getInstance()
-                                            .getAllVisibleObjectsCount()),
-                            " Object count</td>" + trClose + trOpen + tdOpen, String
-                                    .valueOf(getOnlineCount("gm")), " Player(s) Online</td>" + trClose + "</table>");
+            StringUtil.append(htmlCode,
+                    "<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ",
+                    String.valueOf(Server.dateTimeServerStarted.getTime()),
+                    tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: x",
+                    String.valueOf(Config.RATE_XP), tdClose + colSpacer + tdOpen + "Party XP Rate: x",
+                    String.valueOf(Config.RATE_XP * Config.RATE_PARTY_XP),
+                    tdClose + colSpacer + tdOpen + "XP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_XP),
+                    tdClose + trClose + trOpen + tdOpen + "SP Rate: x", String.valueOf(Config.RATE_SP),
+                    tdClose + colSpacer + tdOpen + "Party SP Rate: x",
+                    String.valueOf(Config.RATE_SP * Config.RATE_PARTY_SP),
+                    tdClose + colSpacer + tdOpen + "SP Exponent: ", String.valueOf(Config.ALT_GAME_EXPONENT_SP),
+                    tdClose + trClose + trOpen + tdOpen + "Drop Rate: ", String.valueOf(Config.RATE_DROP_ITEMS),
+                    tdClose + colSpacer + tdOpen + "Spoil Rate: ", String.valueOf(Config.RATE_DROP_SPOIL),
+                    tdClose + colSpacer + tdOpen + "Adena Rate: ",
+                    String.valueOf(Config.RATE_DROP_ITEMS_ID.get(PcInventory.ADENA_ID)),
+                    tdClose + trClose + "</table><table>" + trOpen +
+                            "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen + tdOpen,
+                    String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()),
+                    " Object count</td>" + trClose + trOpen + tdOpen, String.valueOf(getOnlineCount("gm")),
+                    " Player(s) Online</td>" + trClose + "</table>");
 
             int cell = 0;
             if (Config.BBS_SHOW_PLAYERLIST)
@@ -445,11 +425,9 @@ public class RegionBBSManager extends BaseBBSManager
                         htmlCode.append(trOpen);
                     }
 
-                    StringUtil
-                            .append(htmlCode,
-                                    "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
-                                    player
-                                            .getName(), "\">");
+                    StringUtil.append(htmlCode,
+                            "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
+                            player.getName(), "\">");
 
                     if (player.isGM())
                     {
@@ -492,21 +470,16 @@ public class RegionBBSManager extends BaseBBSManager
                 }
                 else
                 {
-                    StringUtil
-                            .append(htmlCode,
-                                    "<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
-                                    String
-                                            .valueOf(page - 1),
-                                    "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+                    StringUtil.append(htmlCode,
+                            "<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
+                            String.valueOf(page - 1),
+                            "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
                 }
 
-                StringUtil
-                        .append(htmlCode, "<td FIXWIDTH=10></td><td align=center valign=top width=200>Displaying ",
-                                String
-                                        .valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + 1), " - ", String
-                                        .valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD +
-                                                getOnlinePlayers(page)
-                                                        .size()), " player(s)</td><td FIXWIDTH=10></td>");
+                StringUtil.append(htmlCode, "<td FIXWIDTH=10></td><td align=center valign=top width=200>Displaying ",
+                        String.valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + 1), " - ", String.valueOf(
+                                (page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + getOnlinePlayers(page).size()),
+                        " player(s)</td><td FIXWIDTH=10></td>");
                 if (getOnlineCount("gm") <= page * Config.NAME_PAGE_SIZE_COMMUNITYBOARD)
                 {
                     htmlCode.append(
@@ -514,11 +487,9 @@ public class RegionBBSManager extends BaseBBSManager
                 }
                 else
                 {
-                    StringUtil
-                            .append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
-                                    String
-                                            .valueOf(page + 1),
-                                    "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+                    StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
+                            String.valueOf(page + 1),
+                            "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
                 }
                 htmlCode.append("</tr></table>");
             }
@@ -528,32 +499,22 @@ public class RegionBBSManager extends BaseBBSManager
             communityPage.put("gm", htmlCode.toString());
 
             htmlCode.setLength(0);
-            StringUtil
-                    .append(htmlCode,
-                            "<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ", String
-                                    .valueOf(Server.dateTimeServerStarted
-                                            .getTime()),
-                            tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: ", String
-                                    .valueOf(Config.RATE_XP), tdClose + colSpacer + tdOpen + "Party XP Rate: ", String
-                                    .valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ",
-                            String
-                                    .valueOf(Config.ALT_GAME_EXPONENT_XP),
-                            tdClose + trClose + trOpen + tdOpen + "SP Rate: ", String
-                                    .valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP Rate: ", String
-                                    .valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ",
-                            String
-                                    .valueOf(Config.ALT_GAME_EXPONENT_SP),
-                            tdClose + trClose + trOpen + tdOpen + "Drop Rate: ", String
-                                    .valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen + "Spoil Rate: ",
-                            String
-                                    .valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ",
-                            String
-                                    .valueOf(Config.RATE_DROP_ITEMS_ID
-                                            .get(PcInventory.ADENA_ID)),
-                            tdClose + trClose + "</table><table>" + trOpen +
-                                    "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen +
-                                    tdOpen, String
-                                    .valueOf(getOnlineCount("pl")), " Player(s) Online</td>" + trClose + "</table>");
+            StringUtil.append(htmlCode,
+                    "<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ",
+                    String.valueOf(Server.dateTimeServerStarted.getTime()),
+                    tdClose + trClose + "</table><table>" + trOpen + tdOpen + "XP Rate: ",
+                    String.valueOf(Config.RATE_XP), tdClose + colSpacer + tdOpen + "Party XP Rate: ",
+                    String.valueOf(Config.RATE_PARTY_XP), tdClose + colSpacer + tdOpen + "XP Exponent: ",
+                    String.valueOf(Config.ALT_GAME_EXPONENT_XP), tdClose + trClose + trOpen + tdOpen + "SP Rate: ",
+                    String.valueOf(Config.RATE_SP), tdClose + colSpacer + tdOpen + "Party SP Rate: ",
+                    String.valueOf(Config.RATE_PARTY_SP), tdClose + colSpacer + tdOpen + "SP Exponent: ",
+                    String.valueOf(Config.ALT_GAME_EXPONENT_SP), tdClose + trClose + trOpen + tdOpen + "Drop Rate: ",
+                    String.valueOf(Config.RATE_DROP_ITEMS), tdClose + colSpacer + tdOpen + "Spoil Rate: ",
+                    String.valueOf(Config.RATE_DROP_SPOIL), tdClose + colSpacer + tdOpen + "Adena Rate: ",
+                    String.valueOf(Config.RATE_DROP_ITEMS_ID.get(PcInventory.ADENA_ID)),
+                    tdClose + trClose + "</table><table>" + trOpen +
+                            "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen + tdOpen,
+                    String.valueOf(getOnlineCount("pl")), " Player(s) Online</td>" + trClose + "</table>");
 
             if (Config.BBS_SHOW_PLAYERLIST)
             {
@@ -574,11 +535,9 @@ public class RegionBBSManager extends BaseBBSManager
                         htmlCode.append(trOpen);
                     }
 
-                    StringUtil
-                            .append(htmlCode,
-                                    "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
-                                    player
-                                            .getName(), "\">");
+                    StringUtil.append(htmlCode,
+                            "<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
+                            player.getName(), "\">");
 
                     if (player.isGM())
                     {
@@ -622,21 +581,16 @@ public class RegionBBSManager extends BaseBBSManager
                 }
                 else
                 {
-                    StringUtil
-                            .append(htmlCode,
-                                    "<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
-                                    String
-                                            .valueOf(page - 1),
-                                    "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+                    StringUtil.append(htmlCode,
+                            "<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
+                            String.valueOf(page - 1),
+                            "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
                 }
 
-                StringUtil
-                        .append(htmlCode, "<td FIXWIDTH=10></td><td align=center valign=top width=200>Displaying ",
-                                String
-                                        .valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + 1), " - ", String
-                                        .valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD +
-                                                getOnlinePlayers(page)
-                                                        .size()), " player(s)</td><td FIXWIDTH=10></td>");
+                StringUtil.append(htmlCode, "<td FIXWIDTH=10></td><td align=center valign=top width=200>Displaying ",
+                        String.valueOf((page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + 1), " - ", String.valueOf(
+                                (page - 1) * Config.NAME_PAGE_SIZE_COMMUNITYBOARD + getOnlinePlayers(page).size()),
+                        " player(s)</td><td FIXWIDTH=10></td>");
 
                 if (getOnlineCount("pl") <= page * Config.NAME_PAGE_SIZE_COMMUNITYBOARD)
                 {
@@ -645,11 +599,9 @@ public class RegionBBSManager extends BaseBBSManager
                 }
                 else
                 {
-                    StringUtil
-                            .append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
-                                    String
-                                            .valueOf(page + 1),
-                                    "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+                    StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
+                            String.valueOf(page + 1),
+                            "\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
                 }
 
                 htmlCode.append("</tr></table>");

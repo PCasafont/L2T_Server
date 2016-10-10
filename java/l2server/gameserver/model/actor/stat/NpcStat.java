@@ -37,7 +37,7 @@ public class NpcStat extends CharStat
     }
 
 	/*
-	@Override
+    @Override
 	public int getWalkSpeed(){ return (int) calcStat(Stats.WALK_SPEED, getActiveChar().getTemplate().baseWalkSpd, null, null);}
 
 	@Override

@@ -175,7 +175,7 @@ public class Q255_Tutorial_Old extends Quest
                     break;
                 case 23:
                     /*# table for Tutorial Close Link (23) 2nd class transfer [html]
-					TCLb = {
+                    TCLb = {
 						4 ) "tutorial_22aa.htm";,
 						7 ) "tutorial_22ba.htm";,
 						11) "tutorial_22ca.htm";,
@@ -321,8 +321,8 @@ public class Q255_Tutorial_Old extends Quest
                     switch (playerLevel)
                     {
                         case 5:
-                            if (player.getCurrentClass().getLevel() == 0 && st.getInt("lvl") < 5 && (!player
-                                    .getCurrentClass().isMage() || cl.getId() == 49))
+                            if (player.getCurrentClass().getLevel() == 0 && st.getInt("lvl") < 5 &&
+                                    (!player.getCurrentClass().isMage() || cl.getId() == 49))
                             {
                                 st.playTutorialVoice("tutorial_voice_014");
                                 st.showQuestionMark(9);
@@ -340,8 +340,8 @@ public class Q255_Tutorial_Old extends Quest
                             }
                             break;
                         case 7:
-                            if (player.getCurrentClass().isMage() && cl.getId() != 49 && st.getInt("lvl") < 7 && player
-                                    .getCurrentClass().getLevel() == 1)
+                            if (player.getCurrentClass().isMage() && cl.getId() != 49 && st.getInt("lvl") < 7 &&
+                                    player.getCurrentClass().getLevel() == 1)
                             {
                                 st.playTutorialVoice("tutorial_voice_019");
                                 st.playSound("ItemSound.quest_tutorial");

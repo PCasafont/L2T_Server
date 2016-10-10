@@ -68,9 +68,9 @@ public class AdminPathNode implements IAdminCommandHandler
             if (activeChar.getTarget() != null)
             {
                 List<AbstractNodeLoc> path = PathFinding.getInstance()
-                        .findPath(activeChar.getX(), activeChar.getY(), (short) activeChar.getZ(), activeChar
-                                .getTarget().getX(), activeChar.getTarget().getY(), (short) activeChar.getTarget()
-                                .getZ(), activeChar.getInstanceId(), true);
+                        .findPath(activeChar.getX(), activeChar.getY(), (short) activeChar.getZ(),
+                                activeChar.getTarget().getX(), activeChar.getTarget().getY(),
+                                (short) activeChar.getTarget().getZ(), activeChar.getInstanceId(), true);
                 if (path == null)
                 {
                     activeChar.sendMessage("No Route!");

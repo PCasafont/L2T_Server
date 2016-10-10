@@ -111,8 +111,8 @@ public final class Action extends L2GameClientPacket
 
         // Players can't interact with objects in the other instances
         // except from multiverse
-        if (obj.getInstanceId() != activeChar.getInstanceId() && obj.getInstanceId() != activeChar
-                .getObjectId() && activeChar.getInstanceId() != -1)
+        if (obj.getInstanceId() != activeChar.getInstanceId() && obj.getInstanceId() != activeChar.getObjectId() &&
+                activeChar.getInstanceId() != -1)
         {
             activeChar.sendSysMessage("ERR1");
             getClient().sendPacket(ActionFailed.STATIC_PACKET);
@@ -120,8 +120,8 @@ public final class Action extends L2GameClientPacket
         }
 
         // Only GMs can directly interact with invisible characters, but an invis char can target itself
-        if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar
-                .isGM() && obj != activeChar)
+        if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar.isGM() &&
+                obj != activeChar)
         {
             activeChar.sendSysMessage("ERR2");
             getClient().sendPacket(ActionFailed.STATIC_PACKET);
@@ -129,7 +129,7 @@ public final class Action extends L2GameClientPacket
         }
 
 		/*if (activeChar.isCastingNow())
-		{
+        {
 			activeChar.sendSysMessage("You can't change your target while casting");
 			getClient().sendPacket(ActionFailed.STATIC_PACKET);
 			return;

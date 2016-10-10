@@ -180,20 +180,17 @@ public class CustomOfflineBuffersManager
                 {
                     continue;
                 }
-                sb.append("<table width=750><tr><td FIXWIDTH=50>" + buffer
-                        .getName() + "</td><td FIXWIDTH=60>" + PlayerClassTable.getInstance()
-                        .getClassNameById(buffer.getClassId()) + "(" + buffer
-                        .getLevel() + ")</td><td FIXWIDTH=35 align=center>" + Math
-                        .round(buffer.getCurrentMp() * 100 / buffer
-                                .getMaxMp()) + "%</td><td FIXWIDTH=80 align=center>" + (buffTable
-                        .getDescription() == null ? "" : buffTable
-                        .getDescription()) + "</td><td FIXWIDTH=30 align=center><button value=\"" + buffTable.getBuffs()
-                        .size() + "\" width=50 height=16 action=\"bypass _bbscustom;action;worldBuff;bufferInfo;" +
-                        buffTable
-                                .getPlayerId() +
+                sb.append("<table width=750><tr><td FIXWIDTH=50>" + buffer.getName() + "</td><td FIXWIDTH=60>" +
+                        PlayerClassTable.getInstance().getClassNameById(buffer.getClassId()) + "(" + buffer.getLevel() +
+                        ")</td><td FIXWIDTH=35 align=center>" +
+                        Math.round(buffer.getCurrentMp() * 100 / buffer.getMaxMp()) +
+                        "%</td><td FIXWIDTH=80 align=center>" +
+                        (buffTable.getDescription() == null ? "" : buffTable.getDescription()) +
+                        "</td><td FIXWIDTH=30 align=center><button value=\"" + buffTable.getBuffs().size() +
+                        "\" width=50 height=16 action=\"bypass _bbscustom;action;worldBuff;bufferInfo;" +
+                        buffTable.getPlayerId() +
                         "\" back=\"L2UI_CT1.Button_DF_Calculator_Over\" fore=\"L2UI_CT1.Button_DF_Calculator\"></button></td><td FIXWIDTH=35 align=center>" +
-                        buffTable
-                                .getCoinName() + "</td></tr></table>");
+                        buffTable.getCoinName() + "</td></tr></table>");
                 sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
             }
         }
@@ -223,8 +220,8 @@ public class CustomOfflineBuffersManager
             }
 
             sb.append("<html><title>" + buffer.getName() + "</title><body>");
-            sb.append("<center>Remaining Mana: " + Math.round(buffer.getCurrentMp()) + "/" + Math
-                    .round(buffer.getMaxMp()) + "</center><br>");
+            sb.append("<center>Remaining Mana: " + Math.round(buffer.getCurrentMp()) + "/" +
+                    Math.round(buffer.getMaxMp()) + "</center><br>");
             sb.append(
                     "<table width=300 bgcolor=999999 border=0><tr><td FIXWIDTH=32></td><td FIXWIDTH=130>Buff Name</td><td FIXWIDTH=35>Level</td><td FIXWIDTH=80 align=center>Price</td></tr></table>");
 
@@ -241,14 +238,12 @@ public class CustomOfflineBuffersManager
                 if (buffInfo != null)
                 {
                     sb.append("<table width=300 " + (loc % 2 == 0 ? "bgcolor=131210" : "") +
-                            " border=0><tr><td FIXWIDTH=32><img src=\"" + getCorrectSkillIcon(buffInfo
-                            .getName(), buffInfo
-                            .getId()) +
+                            " border=0><tr><td FIXWIDTH=32><img src=\"" +
+                            getCorrectSkillIcon(buffInfo.getName(), buffInfo.getId()) +
                             "\" width=32 height=32></td><td FIXWIDTH=130><a action=\"bypass _bbscustom;action;worldBuff;getBuff;" +
-                            playerId + ";" + skillId + "\">" + buffInfo
-                            .getName() + "</a></td><td FIXWIDTH=35 align=center>" + buffInfo
-                            .getLevelHash() + "</td><td FIXWIDTH=80 align=center>" + i
-                            .getValue() + "</td></tr></table>");
+                            playerId + ";" + skillId + "\">" + buffInfo.getName() +
+                            "</a></td><td FIXWIDTH=35 align=center>" + buffInfo.getLevelHash() +
+                            "</td><td FIXWIDTH=80 align=center>" + i.getValue() + "</td></tr></table>");
                 }
                 loc++;
             }
@@ -271,8 +266,8 @@ public class CustomOfflineBuffersManager
 
         if (player.getPrivateStoreType() != 0 || player.isInCrystallize())
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 
@@ -314,11 +309,11 @@ public class CustomOfflineBuffersManager
                 {
                     if (skill.getItemConsume() > 0 && skill.getItemConsumeId() > 0)
                     {
-                        if (buffer.getInventory().getInventoryItemCount(skill.getItemConsumeId(), 0) < skill
-                                .getItemConsume())
+                        if (buffer.getInventory().getInventoryItemCount(skill.getItemConsumeId(), 0) <
+                                skill.getItemConsume())
                         {
-                            player.sendMessage("World Buffers: " + buffer
-                                    .getName() + " doesn't have the required items to cast: " + skill.getName());
+                            player.sendMessage("World Buffers: " + buffer.getName() +
+                                    " doesn't have the required items to cast: " + skill.getName());
                             return;
                         }
                     }
@@ -330,8 +325,8 @@ public class CustomOfflineBuffersManager
                     }
 
                     long price = buffTable.getBuffs().get(skill.getId());
-                    if (player.destroyItemByItemId("CustomOfflineBuffersManager", buffTable
-                            .getCointId(), price, buffer, true))
+                    if (player.destroyItemByItemId("CustomOfflineBuffersManager", buffTable.getCointId(), price, buffer,
+                            true))
                     {
                         buffer.addItem("CustomOfflineBuffersManager", buffTable.getCointId(), price, player, false);
 
@@ -346,8 +341,8 @@ public class CustomOfflineBuffersManager
                         }
                         buffer.doCast(skill);
 
-                        player.sendMessage("World Buffers: " + buffer.getName() + " is casting: " + skill
-                                .getName() + " on you!");
+                        player.sendMessage(
+                                "World Buffers: " + buffer.getName() + " is casting: " + skill.getName() + " on you!");
                         ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                         {
                             @Override
@@ -381,9 +376,9 @@ public class CustomOfflineBuffersManager
         {
             return false;
         }
-        if (player.isInCombat() || player.getPvpFlag() > 0 || player.getInstanceId() != 0 || player.isInDuel() || player
-                .isFakeDeath() || player.isOutOfControl() || player.isInOlympiadMode() || AttackStanceTaskManager
-                .getInstance().getAttackStanceTask(player))
+        if (player.isInCombat() || player.getPvpFlag() > 0 || player.getInstanceId() != 0 || player.isInDuel() ||
+                player.isFakeDeath() || player.isOutOfControl() || player.isInOlympiadMode() ||
+                AttackStanceTaskManager.getInstance().getAttackStanceTask(player))
         {
             player.sendMessage("World Buffers: You can't get buffs right now!");
             return false;
@@ -405,9 +400,9 @@ public class CustomOfflineBuffersManager
             {
                 continue;
             }
-            if (!sk.isPassive() && sk.getTransformId() == 0 && sk.getSkillType() == L2SkillType.BUFF && (sk
-                    .getTargetType() == L2SkillTargetType.TARGET_ONE || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_PARTY))
+            if (!sk.isPassive() && sk.getTransformId() == 0 && sk.getSkillType() == L2SkillType.BUFF &&
+                    (sk.getTargetType() == L2SkillTargetType.TARGET_ONE ||
+                            sk.getTargetType() == L2SkillTargetType.TARGET_PARTY))
             {
                 buffSkills.add(sk);
             }
@@ -484,24 +479,20 @@ public class CustomOfflineBuffersManager
             }
 
             sb.append("<table border=0 " + (loc % 2 == 0 ? "bgcolor=131210" : "") + ">");
-            sb.append("<tr><td><img src=\"" + getCorrectSkillIcon(sk.getName(), sk
-                    .getId()) + "\" width=32 height=32></td><td  FIXWIDTH=150>" + sk.getName() + "</td></tr>");
+            sb.append("<tr><td><img src=\"" + getCorrectSkillIcon(sk.getName(), sk.getId()) +
+                    "\" width=32 height=32></td><td  FIXWIDTH=150>" + sk.getName() + "</td></tr>");
 
             if (buffTable != null && buffTable.getBuffs().containsKey(sk.getId()))
             {
-                sb.append("<tr><td>Price:</td><td>" + buffTable.getBuffs()
-                        .get(sk.getId()) + "</td><td><button action=\"bypass _bbscustom;action;worldBuff;delBuff;" + sk
-                        .getId() +
+                sb.append("<tr><td>Price:</td><td>" + buffTable.getBuffs().get(sk.getId()) +
+                        "</td><td><button action=\"bypass _bbscustom;action;worldBuff;delBuff;" + sk.getId() +
                         "\" value=Remove! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
             }
             else
             {
-                sb.append("<tr><td>Price:</td><td><edit var=\"addBuff" + sk
-                        .getId() +
+                sb.append("<tr><td>Price:</td><td><edit var=\"addBuff" + sk.getId() +
                         "\" width=100 type=number length=14></td><td><button action=\"bypass _bbscustom;action;worldBuff;addBuff;" +
-                        sk
-                                .getId() + "; $addBuff" + sk
-                        .getId() +
+                        sk.getId() + "; $addBuff" + sk.getId() +
                         "\" value=Add! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
             }
 
@@ -540,8 +531,8 @@ public class CustomOfflineBuffersManager
             }
             else
             {
-                Log.severe("CustomOfflineBuffersManager: The player: " + player
-                        .getName() + " is trying to add an invalid skill!");
+                Log.severe("CustomOfflineBuffersManager: The player: " + player.getName() +
+                        " is trying to add an invalid skill!");
             }
         }
     }
@@ -659,9 +650,11 @@ public class CustomOfflineBuffersManager
                         player.standUp();
                     }
                     player.setIsOfflineBuffer(true);
-                    Util.logToFile("The player: " + player.getName() + " set one offline(" + buffTable
-                            .getDescription() + ") buffer with " + ItemTable.getInstance()
-                            .getTemplate(buffTable.getCointId()).getName() + " as a price!", "OfflineBuffers", true);
+                    Util.logToFile(
+                            "The player: " + player.getName() + " set one offline(" + buffTable.getDescription() +
+                                    ") buffer with " +
+                                    ItemTable.getInstance().getTemplate(buffTable.getCointId()).getName() +
+                                    " as a price!", "OfflineBuffers", true);
                     return true;
                 }
             }

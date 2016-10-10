@@ -126,7 +126,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         // maximize, doesn't seem really needed
         //getFrame().setExtendedState(JFrame.MAXIMIZED_BOTH);
         /*
-		// Work-around JVM maximize issue on linux
+        // Work-around JVM maximize issue on linux
 		String osName = System.getProperty("os.name");
 		if (osName.equals("Linux"))
 		{
@@ -226,8 +226,8 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
                     for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
                     {
                         String name = GameServerTable.getInstance().getServerNameById(id);
-                        JButton button = new JButton(getBundle().getString("btnRemove"), ImagesTable
-                                .getImage("cross.png"));
+                        JButton button =
+                                new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
                         button.addActionListener(new ActionListener()
                         {
                             @Override
@@ -236,10 +236,10 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
                                 String sid = String.valueOf(id);
                                 String sname = GameServerTable.getInstance().getServerNameById(id);
 
-                                int choice = JOptionPane
-                                        .showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveText")
-                                                .replace("%d", sid).replace("%s", sname), getBundle()
-                                                .getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
+                                int choice = JOptionPane.showConfirmDialog(getFrame(),
+                                        getBundle().getString("confirmRemoveText").replace("%d", sid)
+                                                .replace("%s", sname), getBundle().getString("confirmRemoveTitle"),
+                                        JOptionPane.YES_NO_OPTION);
                                 if (choice == JOptionPane.YES_OPTION)
                                 {
                                     try
@@ -280,18 +280,16 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         }
         else if (cmd.equals("about"))
         {
-            JOptionPane.showMessageDialog(getFrame(), getBundle()
-                    .getString("credits") + "\nhttp://www.l2jserver.com\n\n" + getBundle()
-                    .getString("icons") + "\n\n" + getBundle().getString("language") + '\n' + getBundle()
-                    .getString("translation"), getBundle()
-                    .getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable
-                    .getImage("l2jserverlogo.png"));
+            JOptionPane.showMessageDialog(getFrame(),
+                    getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
+                            getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
+                            getBundle().getString("translation"), getBundle().getString("aboutItem"),
+                    JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
         }
         else if (cmd.equals("removeAll"))
         {
-            int choice = JOptionPane
-                    .showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"), getBundle()
-                            .getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
+            int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
+                    getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
             if (choice == JOptionPane.YES_OPTION)
             {
                 try

@@ -99,8 +99,8 @@ public class L2NpcAction implements IActionHandler
                 ((L2Npc) target).getAI(); //wake up ai
                 // Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
                 // The activeChar.getLevel() - getLevel() permit to display the correct color in the select window
-                MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar
-                        .getLevel() - ((L2Character) target).getLevel());
+                MyTargetSelected my = new MyTargetSelected(target.getObjectId(),
+                        activeChar.getLevel() - ((L2Character) target).getLevel());
                 activeChar.sendPacket(my);
                 activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 
@@ -113,8 +113,8 @@ public class L2NpcAction implements IActionHandler
                 //TODO Temp fix for bugging paralysis bugs on monsters
                 for (L2Abnormal e : ((L2Npc) target).getAllEffects())
                 {
-                    if (e.getTime() > e.getDuration() && e
-                            .getDuration() != -1) //Not if duration is defined with -1 (perm effect)
+                    if (e.getTime() > e.getDuration() &&
+                            e.getDuration() != -1) //Not if duration is defined with -1 (perm effect)
                     {
                         e.exit();
                     }
@@ -138,8 +138,8 @@ public class L2NpcAction implements IActionHandler
             if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead())
             {
                 // Check the height difference
-                if (Math.abs(activeChar.getZ() - target
-                        .getZ()) < 400) // this max heigth difference might need some tweaking
+                if (Math.abs(activeChar.getZ() - target.getZ()) <
+                        400) // this max heigth difference might need some tweaking
                 {
                     // Set the L2PcInstance Intention to AI_INTENTION_ATTACK
                     activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);

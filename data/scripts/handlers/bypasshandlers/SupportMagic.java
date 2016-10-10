@@ -156,8 +156,8 @@ public class SupportMagic implements IBypassHandler
             {
                 if (helperBuffItem.isMagicClassBuff() == player.isMageClass())
                 {
-                    if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem
-                            .getUpperLevel())
+                    if (player_level >= helperBuffItem.getLowerLevel() &&
+                            player_level <= helperBuffItem.getUpperLevel())
                     {
                         skill = SkillTable.getInstance()
                                 .getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());

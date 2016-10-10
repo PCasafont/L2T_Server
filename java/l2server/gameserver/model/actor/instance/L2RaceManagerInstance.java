@@ -508,8 +508,8 @@ public class L2RaceManagerInstance extends L2Npc
         @Override
         public void run()
         {
-            _packet = new MonRaceInfo(_codes[2][0], _codes[2][1], MonsterRace.getInstance().getMonsters(), MonsterRace
-                    .getInstance().getSpeeds());
+            _packet = new MonRaceInfo(_codes[2][0], _codes[2][1], MonsterRace.getInstance().getMonsters(),
+                    MonsterRace.getInstance().getSpeeds());
             sendMonsterInfo();
             ThreadPoolManager.getInstance().scheduleGeneral(new RunEnd(), 30000);
         }

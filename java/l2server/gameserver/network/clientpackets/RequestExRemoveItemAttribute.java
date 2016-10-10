@@ -121,8 +121,8 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
         }
         else
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_ATTRIBUTE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_ATTRIBUTE));
             return;
         }
     }

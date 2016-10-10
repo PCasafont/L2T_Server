@@ -215,8 +215,8 @@ public class DoorTable
 
     public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)
     {
-        return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end
-                .getZ(), instanceId);
+        return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(),
+                instanceId);
     }
 
     public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId)
@@ -254,18 +254,18 @@ public class DoorTable
             {
                 int j = i + 1 < 4 ? i + 1 : 0;
                 // lower part of the multiplier fraction, if it is 0 we avoid an error and also know that the lines are parallel
-                int denominator = (ty - y) * (doorInst.getX(i) - doorInst.getX(j)) - (tx - x) * (doorInst
-                        .getY(i) - doorInst.getY(j));
+                int denominator = (ty - y) * (doorInst.getX(i) - doorInst.getX(j)) -
+                        (tx - x) * (doorInst.getY(i) - doorInst.getY(j));
                 if (denominator == 0)
                 {
                     continue;
                 }
 
                 // multipliers to the equations of the lines. If they are lower than 0 or bigger than 1, we know that segments don't intersect
-                float multiplier1 = (float) ((doorInst.getX(j) - doorInst.getX(i)) * (y - doorInst.getY(i)) - (doorInst
-                        .getY(j) - doorInst.getY(i)) * (x - doorInst.getX(i))) / denominator;
-                float multiplier2 = (float) ((tx - x) * (y - doorInst.getY(i)) - (ty - y) * (x - doorInst
-                        .getX(i))) / denominator;
+                float multiplier1 = (float) ((doorInst.getX(j) - doorInst.getX(i)) * (y - doorInst.getY(i)) -
+                        (doorInst.getY(j) - doorInst.getY(i)) * (x - doorInst.getX(i))) / denominator;
+                float multiplier2 =
+                        (float) ((tx - x) * (y - doorInst.getY(i)) - (ty - y) * (x - doorInst.getX(i))) / denominator;
                 if (multiplier1 >= 0 && multiplier1 <= 1 && multiplier2 >= 0 && multiplier2 <= 1)
                 {
                     int intersectZ = Math.round(z + multiplier1 * (tz - z));

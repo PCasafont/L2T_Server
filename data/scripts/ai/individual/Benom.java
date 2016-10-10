@@ -142,8 +142,8 @@ public class Benom extends L2AttackableAIScript
     private void data()
     {
         int ownerId = CastleManager.getInstance().getCastleById(runeCastleId).getOwnerId();
-        List<L2SiegeClan> attackerClans = CastleManager.getInstance().getCastleById(runeCastleId).getSiege()
-                .getAttackerClans();
+        List<L2SiegeClan> attackerClans =
+                CastleManager.getInstance().getCastleById(runeCastleId).getSiege().getAttackerClans();
         long siegeDate = CastleManager.getInstance().getCastleById(runeCastleId).getSiegeDate().getTimeInMillis();
         long benomRaidRoomSpawn = siegeDate - System.currentTimeMillis() - 86400000;
         long benomRaidSiegeSpawn = siegeDate - System.currentTimeMillis();
@@ -308,8 +308,8 @@ public class Benom extends L2AttackableAIScript
         {
             if (Rnd.get(100) < 40)
             {
-                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), benomSpeak[Rnd
-                        .get(benomSpeak.length)]));
+                npc.broadcastPacket(
+                        new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), benomSpeak[Rnd.get(benomSpeak.length)]));
             }
         }
         else if (event.equals("BenomBossDespawn"))
@@ -369,8 +369,8 @@ public class Benom extends L2AttackableAIScript
     @Override
     public String onSpawn(L2Npc npc)
     {
-        npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc
-                .getNpcId(), "Who dared to pretend on our castle? Go away or you will pay with your blood for it!"));
+        npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getNpcId(),
+                "Who dared to pretend on our castle? Go away or you will pay with your blood for it!"));
 
         return super.onSpawn(npc);
     }

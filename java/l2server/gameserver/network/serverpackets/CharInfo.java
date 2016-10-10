@@ -222,9 +222,8 @@ public class CharInfo extends L2GameServerPacket
             }
             else
             {
-                Log.warning("Character " + _activeChar.getName() + " (" + _activeChar
-                        .getObjectId() + ") morphed in a Npc (" + _activeChar.getPoly()
-                        .getPolyId() + ") w/o template.");
+                Log.warning("Character " + _activeChar.getName() + " (" + _activeChar.getObjectId() +
+                        ") morphed in a Npc (" + _activeChar.getPoly().getPolyId() + ") w/o template.");
             }
         }
         else
@@ -278,8 +277,8 @@ public class CharInfo extends L2GameServerPacket
                 case 34996: // Cloak of Radiant Light
                 case 34997: //Cloak of Cold Darkness
                 {
-                    if (!_activeChar.isClanLeader() || _activeChar.getClan().getLevel() < 11 || _activeChar.getClan()
-                            .getHasCastle() == 0)
+                    if (!_activeChar.isClanLeader() || _activeChar.getClan().getLevel() < 11 ||
+                            _activeChar.getClan().getHasCastle() == 0)
                     {
                         cloakId = _inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
                     }
@@ -325,7 +324,7 @@ public class CharInfo extends L2GameServerPacket
                 writeD(0);
             }
             /*if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
-			{
+            {
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
@@ -393,9 +392,10 @@ public class CharInfo extends L2GameServerPacket
                 writeS(_activeChar.getAppearance().getVisibleTitle());
             }
 
-            if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() && (_activeChar.getEvent()
-                    .getType() == EventType.DeathMatch || _activeChar.getEvent()
-                    .getType() == EventType.Survival || _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
+            if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() &&
+                    (_activeChar.getEvent().getType() == EventType.DeathMatch ||
+                            _activeChar.getEvent().getType() == EventType.Survival ||
+                            _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
             {
                 writeD(_activeChar.getClanId());
                 writeD(_activeChar.getClanCrestId());
@@ -433,8 +433,8 @@ public class CharInfo extends L2GameServerPacket
             }
 
             writeC(_activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-            writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? _activeChar
-                    .getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+            writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+                    _activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
             writeH(_activeChar.getCubics().size());
             for (int id : _activeChar.getCubics().keySet())

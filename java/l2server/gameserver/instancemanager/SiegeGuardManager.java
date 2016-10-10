@@ -99,9 +99,8 @@ public class SiegeGuardManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "Delete From castle_siege_guards Where npcId = ? And x = ? AND y = ? AND z = ? AND isHired = 1");
+            PreparedStatement statement = con.prepareStatement(
+                    "Delete From castle_siege_guards Where npcId = ? And x = ? AND y = ? AND z = ? AND isHired = 1");
             statement.setInt(1, npcId);
             statement.setInt(2, x);
             statement.setInt(3, y);
@@ -111,8 +110,8 @@ public class SiegeGuardManager
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e.getMessage(), e);
         }
         finally
         {
@@ -129,16 +128,16 @@ public class SiegeGuardManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("Delete From castle_siege_guards Where castleId = ? And isHired = 1");
+            PreparedStatement statement =
+                    con.prepareStatement("Delete From castle_siege_guards Where castleId = ? And isHired = 1");
             statement.setInt(1, getCastle().getCastleId());
             statement.execute();
             statement.close();
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
         }
         finally
         {
@@ -221,8 +220,8 @@ public class SiegeGuardManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT * FROM castle_siege_guards Where castleId = ? And isHired = 1");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT * FROM castle_siege_guards Where castleId = ? And isHired = 1");
             statement.setInt(1, getCastle().getCastleId());
             ResultSet rs = statement.executeQuery();
 
@@ -252,8 +251,8 @@ public class SiegeGuardManager
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Error loading siege guard for castle " + getCastle().getName() + ": " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "Error loading siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
         }
         finally
         {
@@ -270,9 +269,8 @@ public class SiegeGuardManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "Insert Into castle_siege_guards (castleId, npcId, x, y, z, heading, respawnDelay, isHired) Values (?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "Insert Into castle_siege_guards (castleId, npcId, x, y, z, heading, respawnDelay, isHired) Values (?, ?, ?, ?, ?, ?, ?, ?)");
             statement.setInt(1, getCastle().getCastleId());
             statement.setInt(2, npcId);
             statement.setInt(3, x);
@@ -293,8 +291,8 @@ public class SiegeGuardManager
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Error adding siege guard for castle " + getCastle().getName() + ": " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "Error adding siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
         }
         finally
         {

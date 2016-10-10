@@ -147,8 +147,8 @@ public final class L2WorldRegion
 
         for (L2ZoneType e : getZones())
         {
-            if (e instanceof L2TownZone && ((L2TownZone) e)
-                    .isPeaceZone() || e instanceof L2DerbyTrackZone || e instanceof L2PeaceZone)
+            if (e instanceof L2TownZone && ((L2TownZone) e).isPeaceZone() || e instanceof L2DerbyTrackZone ||
+                    e instanceof L2PeaceZone)
             {
                 if (e.isInsideZone(x, up, z))
                 {

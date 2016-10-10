@@ -70,8 +70,8 @@ public class TargetSummon implements ISkillTargetTypeHandler
             {
                 target = ((L2PcInstance) activeChar).getSummon(0);
             }
-            if (target != null && !target.isDead() && target instanceof L2Summon && ((L2PcInstance) activeChar)
-                    .getSummons().contains(target))
+            if (target != null && !target.isDead() && target instanceof L2Summon &&
+                    ((L2PcInstance) activeChar).getSummons().contains(target))
             {
                 return new L2Character[]{target};
             }

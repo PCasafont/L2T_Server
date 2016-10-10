@@ -355,7 +355,7 @@ public class L2NpcAIData
     {
         return _aiType;
     }
-	
+
 	/*
 
 	public int getBaseShldRate ()

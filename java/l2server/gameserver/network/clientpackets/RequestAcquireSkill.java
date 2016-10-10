@@ -85,7 +85,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
         final L2Npc trainer = player.getLastFolkNPC();
 
 		/* If current skill lvl + 1 is not equal to the skill lvl you wanna learn (eg: You have Aggression lvl 3 and the packet sends info that
-		 * you want to learn Aggression lvl 5, thus skipping lvl 4.) or the packet sends the same level or lower (eg: Aggression lvl 3 and the
+         * you want to learn Aggression lvl 5, thus skipping lvl 4.) or the packet sends the same level or lower (eg: Aggression lvl 3 and the
 		 * packet sends info that you want to learn Aggression level 3).
 		 */
         if (Math.max(player.getSkillLevel(_id), 0) + 1 != _level && !(_skillType == 3 || _skillType == 4))
@@ -145,8 +145,9 @@ public class RequestAcquireSkill extends L2GameClientPacket
                     if (counts == 0)
                     {
                         player.sendMessage("You are trying to learn skill that you can't..");
-                        Util.handleIllegalPlayerAction(player, "Player " + player
-                                .getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+                        Util.handleIllegalPlayerAction(player,
+                                "Player " + player.getName() + " tried to learn skill that he can't!!!",
+                                Config.DEFAULT_PUNISH);
                         return;
                     }
 
@@ -155,8 +156,8 @@ public class RequestAcquireSkill extends L2GameClientPacket
                         if (!player.destroyItemByItemId("Consume", costId, 1, trainer, false))
                         {
                             // Haven't spellbook
-                            player.sendPacket(SystemMessage
-                                    .getSystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
+                            player.sendPacket(
+                                    SystemMessage.getSystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
                             showSkillList(trainer, player);
                             return;
                         }
@@ -196,8 +197,9 @@ public class RequestAcquireSkill extends L2GameClientPacket
                 if (counts == 0 && !Config.ALT_GAME_SKILL_LEARN)
                 {
                     player.sendMessage("You are trying to learn skill which you can't..");
-                    Util.handleIllegalPlayerAction(player, "Player " + player
-                            .getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Player " + player.getName() + " tried to learn skill that he can't!!!",
+                            Config.DEFAULT_PUNISH);
                     return;
                 }
 
@@ -229,8 +231,8 @@ public class RequestAcquireSkill extends L2GameClientPacket
                         if (!player.destroyItemByItemId("Consume", spbId, 1, trainer, false))
                         {
                             // Haven't spellbook
-                            player.sendPacket(SystemMessage
-                                    .getSystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
+                            player.sendPacket(
+                                    SystemMessage.getSystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
                             if (trainer != null)
                             {
                                 showSkillList(trainer, player);
@@ -283,8 +285,9 @@ public class RequestAcquireSkill extends L2GameClientPacket
                 if (counts == 0)
                 {
                     //player.sendMessage("You are trying to learn skill that you can't..");
-                    Util.handleIllegalPlayerAction(player, "Player " + player
-                            .getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Player " + player.getName() + " tried to learn skill that he can't!!!",
+                            Config.DEFAULT_PUNISH);
                     return;
                 }
 
@@ -340,8 +343,8 @@ public class RequestAcquireSkill extends L2GameClientPacket
 
                 if (player.getClan().getReputationScore() < repCost)
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.ACQUIRE_SKILL_FAILED_BAD_CLAN_REP_SCORE));
+                    player.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.ACQUIRE_SKILL_FAILED_BAD_CLAN_REP_SCORE));
                     L2VillageMasterInstance.showPledgeSkillList(player);
                     return;
                 }
@@ -516,8 +519,9 @@ public class RequestAcquireSkill extends L2GameClientPacket
                 if (counts == 0)
                 {
                     player.sendMessage("You are trying to learn skill that you can't..");
-                    Util.handleIllegalPlayerAction(player, "Player " + player
-                            .getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Player " + player.getName() + " tried to learn skill that he can't!!!",
+                            Config.DEFAULT_PUNISH);
                     return;
                 }
 

@@ -79,8 +79,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT clan_id, karma, introduction, large_introduction FROM clan_recruit_data");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT clan_id, karma, introduction, large_introduction FROM clan_recruit_data");
             ResultSet rset = statement.executeQuery();
             while (rset.next())
             {
@@ -99,8 +99,8 @@ public class ClanRecruitManager
             rset.close();
             statement.close();
 
-            statement = con
-                    .prepareStatement("SELECT applicant_id, clan_id, karma, application FROM clan_recruit_applicants");
+            statement = con.prepareStatement(
+                    "SELECT applicant_id, clan_id, karma, application FROM clan_recruit_applicants");
             rset = statement.executeQuery();
             while (rset.next())
             {
@@ -111,9 +111,8 @@ public class ClanRecruitManager
                 try
                 {
                     con2 = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement2 = con2
-                            .prepareStatement(
-                                    "SELECT char_name, classid, level, clanid FROM characters WHERE charId = ?");
+                    PreparedStatement statement2 = con2.prepareStatement(
+                            "SELECT char_name, classid, level, clanid FROM characters WHERE charId = ?");
                     statement2.setInt(1, applicantId);
                     ResultSet rset2 = statement2.executeQuery();
                     if (rset2.next() && rset2.getInt("clanid") == 0)
@@ -181,9 +180,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO clan_recruit_data (clan_id, karma, introduction, large_introduction) VALUES (?, ?, ?, ?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO clan_recruit_data (clan_id, karma, introduction, large_introduction) VALUES (?, ?, ?, ?)");
             statement.setInt(1, clan.getClanId());
             statement.setInt(2, karma);
             statement.setString(3, introduction);
@@ -219,9 +217,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "UPDATE clan_recruit_data SET karma = ?, introduction = ?, large_introduction = ? WHERE clan_id = ?");
+            PreparedStatement statement = con.prepareStatement(
+                    "UPDATE clan_recruit_data SET karma = ?, introduction = ?, large_introduction = ? WHERE clan_id = ?");
             statement.setInt(1, karma);
             statement.setString(2, introduction);
             statement.setString(3, largeIntroduction);
@@ -300,8 +297,8 @@ public class ClanRecruitManager
 
             if (!name.isEmpty())
             {
-                if (!clanName && !data.clan.getLeaderName().toLowerCase().contains(name) || clanName && !data.clan
-                        .getName().toLowerCase().contains(name))
+                if (!clanName && !data.clan.getLeaderName().toLowerCase().contains(name) ||
+                        clanName && !data.clan.getName().toLowerCase().contains(name))
                 {
                     continue;
                 }
@@ -329,8 +326,8 @@ public class ClanRecruitManager
                                 result = d1.clan.getLeaderName().compareTo(d2.clan.getLeaderName());
                                 break;
                             case 3:
-                                result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 : d1.clan.getLevel() > d2.clan
-                                        .getLevel() ? -1 : 0;
+                                result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 :
+                                        d1.clan.getLevel() > d2.clan.getLevel() ? -1 : 0;
                                 break;
                             case 5:
                                 result = d1.karma < d2.karma ? 1 : d1.karma > d2.karma ? -1 : 0;
@@ -385,9 +382,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO clan_recruit_applicants (applicant_id, clan_id, application) VALUES (?, ?, ?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO clan_recruit_applicants (applicant_id, clan_id, application) VALUES (?, ?, ?)");
             statement.setInt(1, player.getObjectId());
             statement.setInt(2, clanId);
             statement.setString(3, application);
@@ -421,8 +417,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM clan_recruit_applicants WHERE applicant_id = ?");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM clan_recruit_applicants WHERE applicant_id = ?");
             statement.setInt(1, playerId);
             statement.execute();
             statement.close();
@@ -464,8 +460,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("INSERT INTO clan_recruit_applicants (applicant_id, karma) VALUES (?, ?)");
+            PreparedStatement statement =
+                    con.prepareStatement("INSERT INTO clan_recruit_applicants (applicant_id, karma) VALUES (?, ?)");
             statement.setInt(1, player.getObjectId());
             statement.setInt(2, karma);
             statement.execute();
@@ -496,8 +492,8 @@ public class ClanRecruitManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM clan_recruit_applicants WHERE applicant_id = ?");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM clan_recruit_applicants WHERE applicant_id = ?");
             statement.setInt(1, player.getObjectId());
             statement.execute();
             statement.close();

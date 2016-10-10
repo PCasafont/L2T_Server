@@ -80,7 +80,7 @@ public class L2DatabaseFactory
             config.setTransactionRecoveryEnabled(true);
 
 			/*
-			 *  This is bonecp's counterpart to what L2J does manually by scheduling a helper thread which after a while checks if a requested connection has been closed again.
+             *  This is bonecp's counterpart to what L2J does manually by scheduling a helper thread which after a while checks if a requested connection has been closed again.
 			 *  It's ONLY for debugging purpose, thus deactivated for Tenkai live servers. Quote from BoneCp documentation:
 			 *  "This is for debugging purposes only and will create a new thread for each call to getConnection().
 			 *  Enabling this option will have a big negative impact on pool performance."
@@ -169,8 +169,8 @@ public class L2DatabaseFactory
 
     public void shutdown()
     {
-        Log.info("During this session the connection pool initialized " + _gameDatabase
-                .getTotalCreatedConnections() + " connections.");
+        Log.info("During this session the connection pool initialized " + _gameDatabase.getTotalCreatedConnections() +
+                " connections.");
         if (_gameDatabase.getTotalLeased() > 0)
         {
             Log.info(_gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
@@ -259,8 +259,9 @@ public class L2DatabaseFactory
             }
             catch (SQLException e)
             {
-                Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(),
+                        e);
             }
         }
 
@@ -278,8 +279,8 @@ public class L2DatabaseFactory
             }
             catch (SQLException e)
             {
-                Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
             }
         }
 

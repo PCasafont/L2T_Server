@@ -45,15 +45,15 @@ public class ManaHeal implements ISkillHandler
     {
         for (L2Character target : (L2Character[]) targets)
         {
-            if (target.isInvul(activeChar) || target != activeChar && target.getFaceoffTarget() != null && target
-                    .getFaceoffTarget() != activeChar)
+            if (target.isInvul(activeChar) || target != activeChar && target.getFaceoffTarget() != null &&
+                    target.getFaceoffTarget() != activeChar)
             {
                 continue;
             }
 
             double mp = skill.getPower();
-            mp = skill.getSkillType() == L2SkillType.MANARECHARGE ? target
-                    .calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
+            mp = skill.getSkillType() == L2SkillType.MANARECHARGE ?
+                    target.calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
 
             //from CT2 u will receive exact MP, u can't go over it, if u have full MP and u get MP buff, u will receive 0MP restored message
             if (target.getCurrentMp() + mp >= target.getMaxMp())
@@ -61,8 +61,8 @@ public class ManaHeal implements ISkillHandler
                 mp = target.getMaxMp() - target.getCurrentMp();
             }
 
-            mp = Math.min(target.calcStat(Stats.GAIN_MP_LIMIT, target.getMaxMp(), null, null), target
-                    .getCurrentMp() + mp) - target.getCurrentMp();
+            mp = Math.min(target.calcStat(Stats.GAIN_MP_LIMIT, target.getMaxMp(), null, null),
+                    target.getCurrentMp() + mp) - target.getCurrentMp();
 
             target.setCurrentMp(mp + target.getCurrentMp());
             StatusUpdate sump = new StatusUpdate(target);

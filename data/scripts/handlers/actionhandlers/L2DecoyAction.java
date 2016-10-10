@@ -37,8 +37,8 @@ public class L2DecoyAction implements IActionHandler
         }
 
         activeChar.setTarget(target);
-        activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target)
-                .getLevel()));
+        activeChar.sendPacket(
+                new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel()));
         return true;
     }
 

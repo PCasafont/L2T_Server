@@ -25,7 +25,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
         _popupMenu = new JPopupMenu();
 
 		/*JMenuItem itemOpenGo = new JMenuItem("Do not show this");
-		itemOpenGo.setActionCommand("mark");
+        itemOpenGo.setActionCommand("mark");
 		itemOpenGo.addActionListener(this);
 		_popupMenu.add(itemOpenGo);
 

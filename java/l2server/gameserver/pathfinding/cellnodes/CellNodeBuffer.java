@@ -75,8 +75,8 @@ public class CellNodeBuffer
 
         for (int count = 0; count < MAX_ITERATIONS; count++)
         {
-            if (_current.getLoc().getNodeX() == _targetX && _current.getLoc().getNodeY() == _targetY && Math
-                    .abs(_current.getLoc().getZ() - _targetZ) < 64)
+            if (_current.getLoc().getNodeX() == _targetX && _current.getLoc().getNodeY() == _targetY &&
+                    Math.abs(_current.getLoc().getZ() - _targetZ) < 64)
             {
                 return _current; // found
             }
@@ -191,8 +191,8 @@ public class CellNodeBuffer
             // SouthEast
             if (nodeE != null && nodeS != null)
             {
-                if ((((NodeLoc) nodeE.getLoc()).getNSWE() & SOUTH) != 0 && (((NodeLoc) nodeS.getLoc())
-                        .getNSWE() & EAST) != 0)
+                if ((((NodeLoc) nodeE.getLoc()).getNSWE() & SOUTH) != 0 &&
+                        (((NodeLoc) nodeS.getLoc()).getNSWE() & EAST) != 0)
                 {
                     addNode(x + 1, y + 1, z, true);
                 }
@@ -201,8 +201,8 @@ public class CellNodeBuffer
             // SouthWest
             if (nodeS != null && nodeW != null)
             {
-                if ((((NodeLoc) nodeW.getLoc()).getNSWE() & SOUTH) != 0 && (((NodeLoc) nodeS.getLoc())
-                        .getNSWE() & WEST) != 0)
+                if ((((NodeLoc) nodeW.getLoc()).getNSWE() & SOUTH) != 0 &&
+                        (((NodeLoc) nodeS.getLoc()).getNSWE() & WEST) != 0)
                 {
                     addNode(x - 1, y + 1, z, true);
                 }
@@ -211,8 +211,8 @@ public class CellNodeBuffer
             // NorthEast
             if (nodeN != null && nodeE != null)
             {
-                if ((((NodeLoc) nodeE.getLoc()).getNSWE() & NORTH) != 0 && (((NodeLoc) nodeN.getLoc())
-                        .getNSWE() & EAST) != 0)
+                if ((((NodeLoc) nodeE.getLoc()).getNSWE() & NORTH) != 0 &&
+                        (((NodeLoc) nodeN.getLoc()).getNSWE() & EAST) != 0)
                 {
                     addNode(x + 1, y - 1, z, true);
                 }
@@ -221,8 +221,8 @@ public class CellNodeBuffer
             // NorthWest
             if (nodeN != null && nodeW != null)
             {
-                if ((((NodeLoc) nodeW.getLoc()).getNSWE() & NORTH) != 0 && (((NodeLoc) nodeN.getLoc())
-                        .getNSWE() & WEST) != 0)
+                if ((((NodeLoc) nodeW.getLoc()).getNSWE() & NORTH) != 0 &&
+                        (((NodeLoc) nodeN.getLoc()).getNSWE() & WEST) != 0)
                 {
                     addNode(x - 1, y - 1, z, true);
                 }

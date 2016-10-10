@@ -71,7 +71,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
                 }
             }
             /*else
-			{
+            {
 				if (getEffector() instanceof L2PcInstance)
 				{
 					for (L2SummonInstance summon : ((L2PcInstance)getEffector()).getSummons())
@@ -108,8 +108,8 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 
                     if (member.getObjectId() != getEffector().getObjectId())
                     {
-                        int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                                .getPartyChangeSkill();
+                        int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() :
+                                getSkill().getPartyChangeSkill();
                         L2Abnormal removingEffect = member.getFirstEffect(newSkillId);
 
                         if (removingEffect == null)

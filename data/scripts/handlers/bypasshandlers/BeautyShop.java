@@ -37,8 +37,8 @@ public class BeautyShop implements IBypassHandler
         if (command.equalsIgnoreCase("use_beauty"))
         {
             activeChar.sendPacket(new ExShowBeautyMenuPacket(false, activeChar));
-            activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory()
-                    .getInventoryItemCount(36308, 0), false));
+            activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(),
+                    activeChar.getInventory().getInventoryItemCount(36308, 0), false));
         }
         else if (command.equalsIgnoreCase("restore_beauty"))
         {

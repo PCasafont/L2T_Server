@@ -143,8 +143,8 @@ public class Shutdown extends Thread
      */
     public void abort(L2PcInstance activeChar)
     {
-        Log.warning("GM: " + activeChar.getName() + " (" + activeChar
-                .getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+        Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " +
+                MODE_TEXT[_shutdownMode] + " has been stopped!");
         if (_task != null)
         {
             _task.abort();
@@ -164,14 +164,13 @@ public class Shutdown extends Thread
         if (restart)
         {
             Broadcast.toAllOnlinePlayers(new ExShowScreenMessage("Restarting in " + seconds + " seconds", 5000));
-            Announcements.getInstance()
-                    .announceToAll(
-                            "The server is restarting in " + seconds + " seconds. Find a safe place to log out.");
+            Announcements.getInstance().announceToAll(
+                    "The server is restarting in " + seconds + " seconds. Find a safe place to log out.");
         }
         else
         {
-            SystemMessage sysm = SystemMessage
-                    .getSystemMessage(SystemMessageId.THE_SERVER_WILL_BE_COMING_DOWN_IN_S1_SECONDS);
+            SystemMessage sysm =
+                    SystemMessage.getSystemMessage(SystemMessageId.THE_SERVER_WILL_BE_COMING_DOWN_IN_S1_SECONDS);
             sysm.addNumber(seconds);
             Broadcast.toAllOnlinePlayers(sysm);
         }
@@ -310,7 +309,7 @@ public class Shutdown extends Thread
         }
 
 		/*if (Config.ACTIVATE_POSITION_RECORDER)
-			Universe.getInstance().implode(true);*/
+            Universe.getInstance().implode(true);*/
 
         SpawnDataManager.getInstance().saveDbSpawnData();
         Log.info("SpawnDataManager: All spawn dynamic data saved");

@@ -58,8 +58,8 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket
         {
             for (L2ItemInstance item : _items)
             {
-                Log.fine("item:" + item.getItem().getName() + " type1:" + item.getItem().getType1() + " type2:" + item
-                        .getItem().getType2());
+                Log.fine("item:" + item.getItem().getName() + " type1:" + item.getItem().getType1() + " type2:" +
+                        item.getItem().getType2());
             }
         }
     }
@@ -68,7 +68,7 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket
     protected final void writeImpl()
     {
         /* 0x01-Private Warehouse
-		 * 0x02-Clan Warehouse
+         * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
         writeH(_whType);

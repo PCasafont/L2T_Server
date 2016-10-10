@@ -92,7 +92,7 @@ public final class AuthLogin extends L2GameClientPacket
         int vitalityPoints = Config.STARTING_VITALITY_POINTS;
         int vitalityItemsUsed = 0;
         /*
-		 *
+         *
 			Connection con = null;
 			try
 			{
@@ -130,8 +130,8 @@ public final class AuthLogin extends L2GameClientPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
             statement.setString(1, client.getAccountName());
             statement.setString(2, "vitality");
             ResultSet rset = statement.executeQuery();

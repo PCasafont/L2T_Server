@@ -47,7 +47,7 @@ public class ExLoadStatHotLink extends L2GameServerPacket
         writeD(_pid1);
         writeD(_pid2);
         /*writeD(lastMap.size() < 5 ? lastMap.size() : 5);
-		int position = 1;
+        int position = 1;
 		for (Integer key : lastMap.keySet())
 		{
 			writeH(position);

@@ -50,8 +50,8 @@ public class GiantScouts extends L2AttackableAIScript
         {
             if (!npc.isInCombat() && npc.getTarget() == null)
             {
-                npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc
-                        .getName(), "Oh Giants, an intruder has been discovered."));
+                npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc.getName(),
+                        "Oh Giants, an intruder has been discovered."));
             }
 
             npc.setTarget(target);
@@ -68,8 +68,9 @@ public class GiantScouts extends L2AttackableAIScript
                     if (obj instanceof L2MonsterInstance)
                     {
                         L2MonsterInstance monster = (L2MonsterInstance) obj;
-                        if (npc.getClan() != null && monster.getClan() != null && monster.getClan()
-                                .equals(npc.getClan()) && GeoData.getInstance().canSeeTarget(npc, monster))
+                        if (npc.getClan() != null && monster.getClan() != null &&
+                                monster.getClan().equals(npc.getClan()) &&
+                                GeoData.getInstance().canSeeTarget(npc, monster))
                         {
                             monster.setTarget(target);
                             monster.setRunning();

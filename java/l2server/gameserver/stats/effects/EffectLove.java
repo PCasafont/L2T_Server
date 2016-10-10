@@ -119,8 +119,9 @@ public class EffectLove extends L2Effect
 
         if (Config.GEODATA > 0)
         {
-            Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                    .getZ(), posX, posY, posZ, getEffected().getInstanceId());
+            Location destiny = GeoData.getInstance()
+                    .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
+                            getEffected().getInstanceId());
             posX = destiny.getX();
             posY = destiny.getY();
         }

@@ -156,15 +156,16 @@ public class RecipeController
 
         if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
         {
-            Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player
-                    .getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                            " sent a false recipe id.", Config.DEFAULT_PUNISH);
             return;
         }
 
         RecipeItemMaker maker;
 
-        if (Config.ALT_GAME_CREATION && (maker = _activeMakers
-                .get(manufacturer.getObjectId())) != null) // check if busy
+        if (Config.ALT_GAME_CREATION &&
+                (maker = _activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
         {
             player.sendMessage("Manufacturer is busy, please try later.");
             return;
@@ -205,8 +206,9 @@ public class RecipeController
 
         if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
         {
-            Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player
-                    .getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                            " sent a false recipe id.", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -541,8 +543,8 @@ public class RecipeController
                 if (!_items.isEmpty())
                 {
                     // divided by RATE_CONSUMABLES_COST to remove craft time increase on higher consumables rates
-                    _delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player
-                            .getMReuseRate(_skill) * TimeController.TICKS_PER_SECOND / Config.RATE_CONSUMABLE_COST) *
+                    _delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) *
+                            TimeController.TICKS_PER_SECOND / Config.RATE_CONSUMABLE_COST) *
                             TimeController.MILLIS_IN_TICK;
 
                     // This packet won't show crafting (client-side change in the Create Item skill)
@@ -588,9 +590,9 @@ public class RecipeController
             if (_target != _player && _price > 0) // customer must pay for services
             {
                 // attempt to pay for item
-                L2ItemInstance adenatransfer = _target
-                        .transferItem("PayManufacture", _target.getInventory().getAdenaInstance()
-                                .getObjectId(), _price, _player.getInventory(), _player);
+                L2ItemInstance adenatransfer =
+                        _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(),
+                                _price, _player.getInventory(), _player);
 
                 if (adenatransfer == null)
                 {
@@ -615,8 +617,8 @@ public class RecipeController
             {
                 if (_target != _player)
                 {
-                    SystemMessage msg = SystemMessage
-                            .getSystemMessage(SystemMessageId.CREATION_OF_S2_FOR_C1_AT_S3_ADENA_FAILED);
+                    SystemMessage msg =
+                            SystemMessage.getSystemMessage(SystemMessageId.CREATION_OF_S2_FOR_C1_AT_S3_ADENA_FAILED);
                     msg.addString(_target.getName());
                     msg.addItemName(_recipeList.getItemId());
                     msg.addItemNumber(_price);
@@ -695,16 +697,16 @@ public class RecipeController
 
                 if (_target == _player)
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
                     sm.addItemNumber(count);
                     sm.addItemName(item.getItemId());
                     _player.sendPacket(sm);
                 }
                 else
                 {
-                    _target.sendMessage("Manufacturer " + _player.getName() + " used " + count + " " + item
-                            .getItemName());
+                    _target.sendMessage(
+                            "Manufacturer " + _player.getName() + " used " + count + " " + item.getItemName());
                 }
             }
         }
@@ -811,8 +813,8 @@ public class RecipeController
 
             for (L2RecipeInstance recipe : recipes)
             {
-                int quantity = _recipeList.isConsumable() ? (int) (recipe
-                        .getQuantity() * Config.RATE_CONSUMABLE_COST) : recipe.getQuantity();
+                int quantity = _recipeList.isConsumable() ? (int) (recipe.getQuantity() * Config.RATE_CONSUMABLE_COST) :
+                        recipe.getQuantity();
 
                 if (quantity > 0)
                 {
@@ -1046,13 +1048,10 @@ public class RecipeController
                 // you can use ALT_GAME_CREATION_XP_RATE/SP to
                 // modify XP/SP gained (default = 1)
 
-                _player.addExpAndSp((int) _player
-                                .calcStat(Stats.EXP_RATE,
-                                        _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null),
-                        (int) _player
-                                .calcStat(Stats.SP_RATE,
-                                        _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null,
-                                        null));
+                _player.addExpAndSp((int) _player.calcStat(Stats.EXP_RATE,
+                        _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null),
+                        (int) _player.calcStat(Stats.SP_RATE,
+                                _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
             }
             updateMakeInfo(true); // success
         }

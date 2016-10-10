@@ -339,7 +339,7 @@ public final class Formulas
             if (env.player instanceof L2PcInstance)
             {
                 /*L2PcInstance p = (L2PcInstance) env.player;
-				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
+                if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
 					env.value -= 5;
 				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RFINGER) != null)
 					env.value -= 5;
@@ -350,8 +350,8 @@ public final class Formulas
 				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_NECK) != null)
 					env.value -= 13;*/
 
-                env.value *= BaseStats.MEN.calcBonus(env.player) * BaseStats.CHA.calcBonus(env.player) * env.player
-                        .getLevelMod();
+                env.value *= BaseStats.MEN.calcBonus(env.player) * BaseStats.CHA.calcBonus(env.player) *
+                        env.player.getLevelMod();
             }
             else if (env.player instanceof L2PetInstance)
             {
@@ -543,8 +543,7 @@ public final class Formulas
                 env.value += level < 60 ? 4 : 5;
             }
 
-            if (Config
-                    .isServer(Config.TENKAI) && level > 95 &&
+            if (Config.isServer(Config.TENKAI) && level > 95 &&
                     (env.player instanceof L2Attackable || env.player instanceof L2Summon))
             {
                 env.value += level - 85;
@@ -595,8 +594,7 @@ public final class Formulas
                 env.value += level < 60 ? 4 : 5;
             }
 
-            if (Config
-                    .isServer(Config.TENKAI) && level > 95 &&
+            if (Config.isServer(Config.TENKAI) && level > 95 &&
                     (env.player instanceof L2Attackable || env.player instanceof L2Summon))
             {
                 env.value += level - 85;
@@ -1379,8 +1377,8 @@ public final class Formulas
                 hpRegenMultiplier *= siegeModifier;
             }
 
-            if (player.isInsideZone(L2Character.ZONE_CLANHALL) && player.getClan() != null && player.getClan()
-                    .getHasHideout() > 0)
+            if (player.isInsideZone(L2Character.ZONE_CLANHALL) && player.getClan() != null &&
+                    player.getClan().getHasHideout() > 0)
             {
                 L2ClanHallZone zone = ZoneManager.getInstance().getZone(player, L2ClanHallZone.class);
                 int posChIndex = zone == null ? -1 : zone.getClanHallId();
@@ -1392,15 +1390,15 @@ public final class Formulas
                     {
                         if (clansHall.getFunction(ClanHall.FUNC_RESTORE_HP) != null)
                         {
-                            hpRegenMultiplier *= 1 + (double) clansHall.getFunction(ClanHall.FUNC_RESTORE_HP)
-                                    .getLvl() / 100;
+                            hpRegenMultiplier *=
+                                    1 + (double) clansHall.getFunction(ClanHall.FUNC_RESTORE_HP).getLvl() / 100;
                         }
                     }
                 }
             }
 
-            if (player.isInsideZone(L2Character.ZONE_CASTLE) && player.getClan() != null && player.getClan()
-                    .getHasCastle() > 0)
+            if (player.isInsideZone(L2Character.ZONE_CASTLE) && player.getClan() != null &&
+                    player.getClan().getHasCastle() > 0)
             {
                 L2CastleZone zone = ZoneManager.getInstance().getZone(player, L2CastleZone.class);
                 int posCastleIndex = zone == null ? -1 : zone.getCastleId();
@@ -1418,8 +1416,8 @@ public final class Formulas
                 }
             }
 
-            if (player.isInsideZone(L2Character.ZONE_FORT) && player.getClan() != null && player.getClan()
-                    .getHasFort() > 0)
+            if (player.isInsideZone(L2Character.ZONE_FORT) && player.getClan() != null &&
+                    player.getClan().getHasFort() > 0)
             {
                 L2FortZone zone = ZoneManager.getInstance().getZone(player, L2FortZone.class);
                 int posFortIndex = zone == null ? -1 : zone.getFortId();
@@ -1499,8 +1497,8 @@ public final class Formulas
                 mpRegenBonus += mpBonus;
             }
 
-            if (player.isInsideZone(L2Character.ZONE_CLANHALL) && player.getClan() != null && player.getClan()
-                    .getHasHideout() > 0)
+            if (player.isInsideZone(L2Character.ZONE_CLANHALL) && player.getClan() != null &&
+                    player.getClan().getHasHideout() > 0)
             {
                 L2ClanHallZone zone = ZoneManager.getInstance().getZone(player, L2ClanHallZone.class);
                 int posChIndex = zone == null ? -1 : zone.getClanHallId();
@@ -1512,15 +1510,15 @@ public final class Formulas
                     {
                         if (clansHall.getFunction(ClanHall.FUNC_RESTORE_MP) != null)
                         {
-                            mpRegenMultiplier *= 1 + (double) clansHall.getFunction(ClanHall.FUNC_RESTORE_MP)
-                                    .getLvl() / 100;
+                            mpRegenMultiplier *=
+                                    1 + (double) clansHall.getFunction(ClanHall.FUNC_RESTORE_MP).getLvl() / 100;
                         }
                     }
                 }
             }
 
-            if (player.isInsideZone(L2Character.ZONE_CASTLE) && player.getClan() != null && player.getClan()
-                    .getHasCastle() > 0)
+            if (player.isInsideZone(L2Character.ZONE_CASTLE) && player.getClan() != null &&
+                    player.getClan().getHasCastle() > 0)
             {
                 L2CastleZone zone = ZoneManager.getInstance().getZone(player, L2CastleZone.class);
                 int posCastleIndex = zone == null ? -1 : zone.getCastleId();
@@ -1538,8 +1536,8 @@ public final class Formulas
                 }
             }
 
-            if (player.isInsideZone(L2Character.ZONE_FORT) && player.getClan() != null && player.getClan()
-                    .getHasFort() > 0)
+            if (player.isInsideZone(L2Character.ZONE_FORT) && player.getClan() != null &&
+                    player.getClan().getHasFort() > 0)
             {
                 L2FortZone zone = ZoneManager.getInstance().getZone(player, L2FortZone.class);
                 int posFortIndex = zone == null ? -1 : zone.getFortId();
@@ -1571,8 +1569,8 @@ public final class Formulas
                 mpRegenMultiplier *= 0.7; // Running
             }
 
-            if (Config.isServer(Config.TENKAI) && player.getPvpFlag() == 0 && !player.isInCombat() && !player
-                    .isMoving() && !player.isPlayingEvent() && !player.isInOlympiadMode())
+            if (Config.isServer(Config.TENKAI) && player.getPvpFlag() == 0 && !player.isInCombat() &&
+                    !player.isMoving() && !player.isPlayingEvent() && !player.isInOlympiadMode())
             {
                 init *= 100;
             }
@@ -1651,16 +1649,16 @@ public final class Formulas
         }
 
         Siege siege = SiegeManager.getInstance()
-                .getSiege(activeChar.getPosition().getX(), activeChar.getPosition().getY(), activeChar.getPosition()
-                        .getZ());
+                .getSiege(activeChar.getPosition().getX(), activeChar.getPosition().getY(),
+                        activeChar.getPosition().getZ());
         if (siege == null || !siege.getIsInProgress())
         {
             return 0;
         }
 
         L2SiegeClan siegeClan = siege.getAttackerClan(activeChar.getClan().getClanId());
-        if (siegeClan == null || siegeClan.getFlag().isEmpty() || !Util
-                .checkIfInRange(200, activeChar, siegeClan.getFlag().get(0), true))
+        if (siegeClan == null || siegeClan.getFlag().isEmpty() ||
+                !Util.checkIfInRange(200, activeChar, siegeClan.getFlag().get(0), true))
         {
             return 0;
         }
@@ -1903,9 +1901,9 @@ public final class Formulas
 
         if (target instanceof L2Attackable)
         {
-            if (!target.isRaid() && !target.isRaidMinion() && target
-                    .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null && target
-                    .getLevel() - attacker.getActingPlayer().getLevel() >= 2)
+            if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY &&
+                    attacker.getActingPlayer() != null &&
+                    target.getLevel() - attacker.getActingPlayer().getLevel() >= 2)
             {
                 int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
                 if (crit)
@@ -1981,9 +1979,8 @@ public final class Formulas
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("INSERT INTO log_damage" +
-                                "(attacker, target, attackerClass, targetClass, damageType, " +
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_damage" + "(attacker, target, attackerClass, targetClass, damageType, " +
                                 "attack, defense, levelMod, power, powerBonus, critBonus, " +
                                 "critStaticBonus, positionBonus, ssBonus, finalBonus, damage)" + "VALUES" +
                                 "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -2095,13 +2092,13 @@ public final class Formulas
             if (attackerWeapon != null)
             {
                 //Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear.
-                if (attackerWeapon.getItemType() == L2WeaponType.SWORD || attackerWeapon
-                        .getItemType() == L2WeaponType.BIGSWORD || attackerWeapon
-                        .getItemType() == L2WeaponType.DUAL || attackerWeapon
-                        .getItemType() == L2WeaponType.FIST || attackerWeapon
-                        .getItemType() == L2WeaponType.BLUNT || attackerWeapon
-                        .getItemType() == L2WeaponType.DUALBLUNT || attackerWeapon
-                        .getItemType() == L2WeaponType.BIGBLUNT)
+                if (attackerWeapon.getItemType() == L2WeaponType.SWORD ||
+                        attackerWeapon.getItemType() == L2WeaponType.BIGSWORD ||
+                        attackerWeapon.getItemType() == L2WeaponType.DUAL ||
+                        attackerWeapon.getItemType() == L2WeaponType.FIST ||
+                        attackerWeapon.getItemType() == L2WeaponType.BLUNT ||
+                        attackerWeapon.getItemType() == L2WeaponType.DUALBLUNT ||
+                        attackerWeapon.getItemType() == L2WeaponType.BIGBLUNT)
                 {
                     powerBonus *= 0.90;
                 }
@@ -2275,9 +2272,9 @@ public final class Formulas
 
         if (target instanceof L2Attackable)
         {
-            if (!target.isRaid() && !target.isRaidMinion() && target
-                    .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null && target
-                    .getLevel() - attacker.getActingPlayer().getLevel() >= 2)
+            if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY &&
+                    attacker.getActingPlayer() != null &&
+                    target.getLevel() - attacker.getActingPlayer().getLevel() >= 2)
             {
                 int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
                 if (lvlDiff > Config.NPC_SKILL_DMG_PENALTY.size())
@@ -2348,8 +2345,7 @@ public final class Formulas
             damage = 0;
         }
 
-        if (Config
-                .isServer(Config.TENKAI) && target instanceof L2PcInstance && attacker instanceof L2PcInstance &&
+        if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && attacker instanceof L2PcInstance &&
                 damage > 10000 && pDef > 5000)
         {
             Connection con = null;
@@ -2358,9 +2354,8 @@ public final class Formulas
                 //if (damage > 30000)
                 //	System.out.println(attacker + " " + damage);
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("INSERT INTO log_damage" +
-                                "(attacker, target, attackerClass, targetClass, damageType, " +
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_damage" + "(attacker, target, attackerClass, targetClass, damageType, " +
                                 "attack, defense, levelMod, power, powerBonus, critBonus, " +
                                 "critStaticBonus, positionBonus, ssBonus, finalBonus, damage)" + "VALUES" +
                                 "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -2472,9 +2467,9 @@ public final class Formulas
 
         finalBonus *= calcElemental(attacker, target, skill);
 
-        if (target instanceof L2Attackable && !target.isRaid() && !target.isRaidMinion() && target
-                .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null && target
-                .getLevel() - attacker.getActingPlayer().getLevel() >= 2)
+        if (target instanceof L2Attackable && !target.isRaid() && !target.isRaidMinion() &&
+                target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null &&
+                target.getLevel() - attacker.getActingPlayer().getLevel() >= 2)
         {
             int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
             if (lvlDiff > Config.NPC_SKILL_DMG_PENALTY.size())
@@ -2509,8 +2504,8 @@ public final class Formulas
 
         damage = calcCustomModifier(attacker, target, damage);
 
-        if (Config.isServer(Config.TENKAI) && damage > 20000 && attacker.getActingPlayer() != null && target
-                .getActingPlayer() != null)
+        if (Config.isServer(Config.TENKAI) && damage > 20000 && attacker.getActingPlayer() != null &&
+                target.getActingPlayer() != null)
         {
             damage = 20000 + Math.pow(damage - 20000, 0.93);
         }
@@ -2534,17 +2529,15 @@ public final class Formulas
             player.sendSysMessage(".......");
         }
 
-        if (Config
-                .isServer(Config.TENKAI) && target instanceof L2PcInstance && attacker instanceof L2PcInstance &&
+        if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && attacker instanceof L2PcInstance &&
                 damage > 10000 && pDef > 5000)
         {
             Connection con = null;
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("INSERT INTO log_damage" +
-                                "(attacker, target, attackerClass, targetClass, damageType, " +
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_damage" + "(attacker, target, attackerClass, targetClass, damageType, " +
                                 "attack, defense, levelMod, power, powerBonus, critBonus, " +
                                 "critStaticBonus, positionBonus, ssBonus, finalBonus, damage)" + "VALUES" +
                                 "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -2790,9 +2783,9 @@ public final class Formulas
 
         if (target instanceof L2Attackable)
         {
-            if (!target.isRaid() && !target.isRaidMinion() && target
-                    .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null && target
-                    .getLevel() - attacker.getActingPlayer().getLevel() >= 2)
+            if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY &&
+                    attacker.getActingPlayer() != null &&
+                    target.getLevel() - attacker.getActingPlayer().getLevel() >= 2)
             {
                 int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
                 if (lvlDiff > Config.NPC_SKILL_DMG_PENALTY.size())
@@ -2806,8 +2799,8 @@ public final class Formulas
             }
         }
 
-        if (skill.getDependOnTargetEffectId().length > 0 && skill.getDamageDepend().length > skill
-                .getDependOnTargetEffectId().length)
+        if (skill.getDependOnTargetEffectId().length > 0 &&
+                skill.getDamageDepend().length > skill.getDependOnTargetEffectId().length)
         {
             int debuffsFound = 0;
             for (int effectId : skill.getDependOnTargetEffectId())
@@ -2838,9 +2831,8 @@ public final class Formulas
             }
         }
 
-        double damage = 91.0 * Math.sqrt(mAtk) * skill
-                .getPower(attacker, target, isPvP, isPvE) / mDef * finalBonus * critBonus * weaponRandom +
-                staticCritBonus;
+        double damage = 91.0 * Math.sqrt(mAtk) * skill.getPower(attacker, target, isPvP, isPvE) / mDef * finalBonus *
+                critBonus * weaponRandom + staticCritBonus;
 
         damage = calcCustomModifier(attacker, target, damage);
 
@@ -2872,9 +2864,8 @@ public final class Formulas
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("INSERT INTO log_damage" +
-                                "(attacker, target, attackerClass, targetClass, damageType, " +
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_damage" + "(attacker, target, attackerClass, targetClass, damageType, " +
                                 "attack, defense, levelMod, power, powerBonus, critBonus, " +
                                 "critStaticBonus, positionBonus, ssBonus, finalBonus, damage)" + "VALUES" +
                                 "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -2983,9 +2974,8 @@ public final class Formulas
 
         if (target instanceof L2Attackable)
         {
-            if (!target.isRaid() && !target.isRaidMinion() && target
-                    .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getOwner() != null && target
-                    .getLevel() - attacker.getOwner().getLevel() >= 2)
+            if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY &&
+                    attacker.getOwner() != null && target.getLevel() - attacker.getOwner().getLevel() >= 2)
             {
                 int lvlDiff = target.getLevel() - attacker.getOwner().getLevel() - 1;
                 if (lvlDiff > Config.NPC_SKILL_DMG_PENALTY.size())
@@ -3060,10 +3050,8 @@ public final class Formulas
 
     public static final boolean calcLethalHit(L2Character activeChar, L2Character target, L2Skill skill)
     {
-        if (target
-                .isRaid() || target instanceof L2RaidBossInstance || target instanceof L2GrandBossInstance ||
-                target instanceof L2DoorInstance || target instanceof L2Npc && ((L2Npc) target)
-                .getNpcId() == 35062)
+        if (target.isRaid() || target instanceof L2RaidBossInstance || target instanceof L2GrandBossInstance ||
+                target instanceof L2DoorInstance || target instanceof L2Npc && ((L2Npc) target).getNpcId() == 35062)
         {
             return false;
         }
@@ -3074,16 +3062,16 @@ public final class Formulas
          */
         if (target instanceof L2MonsterInstance)
         {
-            if (((L2MonsterInstance) target).getTemplate().isLethalImmune || ((L2MonsterInstance) target)
-                    .getIsLethalInmune())
+            if (((L2MonsterInstance) target).getTemplate().isLethalImmune ||
+                    ((L2MonsterInstance) target).getIsLethalInmune())
             {
                 return false;
             }
         }
 
         // 2nd lethal effect activate (cp,hp to 1 or if target is npc then hp to 1)
-        if (skill.getLethalChance2() > 0 && Rnd.get(1000) < calcLethal(activeChar, target, skill
-                .getLethalChance2(), skill.getMagicLevel()))
+        if (skill.getLethalChance2() > 0 &&
+                Rnd.get(1000) < calcLethal(activeChar, target, skill.getLethalChance2(), skill.getMagicLevel()))
         {
             if (target instanceof L2Npc)
             {
@@ -3094,8 +3082,8 @@ public final class Formulas
                 L2PcInstance player = (L2PcInstance) target;
                 if (!player.isInvul(activeChar))
                 {
-                    if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar)
-                            .isGM() && !((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
+                    if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isGM() &&
+                            !((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
                     {
                         player.setCurrentHp(1);
                         player.setCurrentCp(1);
@@ -3105,16 +3093,16 @@ public final class Formulas
             }
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LETHAL_STRIKE));
         }
-        else if (skill.getLethalChance1() > 0 && Rnd.get(1000) < calcLethal(activeChar, target, skill
-                .getLethalChance1(), skill.getMagicLevel()))
+        else if (skill.getLethalChance1() > 0 &&
+                Rnd.get(1000) < calcLethal(activeChar, target, skill.getLethalChance1(), skill.getMagicLevel()))
         {
             if (target instanceof L2PcInstance)
             {
                 L2PcInstance player = (L2PcInstance) target;
                 if (!player.isInvul())
                 {
-                    if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar)
-                            .isGM() && !((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
+                    if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isGM() &&
+                            !((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
                     {
                         if (Rnd.get(150) < player.getLUC())
                         {
@@ -3122,9 +3110,10 @@ public final class Formulas
                             L2Skill luckSkill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
                             if (luckSkill != null)
                             {
-                                player.broadcastPacket(new MagicSkillUse(player, player, luckSkill.getId(), luckSkill
-                                        .getLevel(), luckSkill.getHitTime(), luckSkill.getReuseDelay(), luckSkill
-                                        .getReuseHashCode(), 0, 0));
+                                player.broadcastPacket(
+                                        new MagicSkillUse(player, player, luckSkill.getId(), luckSkill.getLevel(),
+                                                luckSkill.getHitTime(), luckSkill.getReuseDelay(),
+                                                luckSkill.getReuseHashCode(), 0, 0));
                             }
                         }
                         else
@@ -3844,8 +3833,8 @@ public final class Formulas
             return false;
         }
 
-        if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util
-                .checkIfInRange(130, attacker, target, false))
+        if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null &&
+                !Util.checkIfInRange(130, attacker, target, false))
         {
             attacker.sendMessage("Your attack has been blocked.");
             target.sendMessage("You blocked an attack.");
@@ -3994,38 +3983,37 @@ public final class Formulas
         //			+ " " + Math.floor(statMod*1000)/1000 + " " + Math.floor(profModifier*1000)/1000 + " " + Math.floor(resModifier*1000)/1000
         //			+ " " + Math.floor(resMod*1000)/1000);
 
-        if (attacker instanceof L2TrapInstance && ((L2TrapInstance) attacker)
-                .getOwner() != null && ((L2TrapInstance) attacker).getOwner().isLandRates())
+        if (attacker instanceof L2TrapInstance && ((L2TrapInstance) attacker).getOwner() != null &&
+                ((L2TrapInstance) attacker).getOwner().isLandRates())
         {
-            ((L2TrapInstance) attacker).getOwner().sendMessage("Your " + skill
-                    .getName() + "'s effect had a " + rate + "% chance to land, with a " + effect
-                    .getLandRate() + " base land rate.");
+            ((L2TrapInstance) attacker).getOwner().sendMessage(
+                    "Your " + skill.getName() + "'s effect had a " + rate + "% chance to land, with a " +
+                            effect.getLandRate() + " base land rate.");
         }
 
         // Feedback for .landrates
         if (attacker instanceof L2PcInstance && ((L2PcInstance) attacker).isLandRates())
         {
-            attacker.sendMessage("Your " + skill
-                    .getName() + "'s effect had a " + rate + "% chance to land, with a " + effect
-                    .getLandRate() + " base land rate.");
+            attacker.sendMessage("Your " + skill.getName() + "'s effect had a " + rate + "% chance to land, with a " +
+                    effect.getLandRate() + " base land rate.");
         }
         if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
         {
-            ((L2PcInstance) target).sendMessage("This " + skill
-                    .getName() + "'s effect had a " + rate + "% chance to land over you, with a " + effect
-                    .getLandRate() + " base land rate.");
+            ((L2PcInstance) target).sendMessage(
+                    "This " + skill.getName() + "'s effect had a " + rate + "% chance to land over you, with a " +
+                            effect.getLandRate() + " base land rate.");
         }
         if (attacker instanceof L2PcInstance && ((L2PcInstance) attacker).isGM())
         {
-            ((L2PcInstance) attacker).sendSysMessage("Your " + skill
-                    .getName() + "'s effect had a " + rate + "% chance to land, with a " + effect
-                    .getLandRate() + " base land rate.");
+            ((L2PcInstance) attacker).sendSysMessage(
+                    "Your " + skill.getName() + "'s effect had a " + rate + "% chance to land, with a " +
+                            effect.getLandRate() + " base land rate.");
         }
         if (target instanceof L2PcInstance && ((L2PcInstance) target).isGM())
         {
-            ((L2PcInstance) target).sendSysMessage("This " + skill
-                    .getName() + "'s effect had a " + rate + "% chance to land over you, with a " + effect
-                    .getLandRate() + " base land rate.");
+            ((L2PcInstance) target).sendSysMessage(
+                    "This " + skill.getName() + "'s effect had a " + rate + "% chance to land over you, with a " +
+                            effect.getLandRate() + " base land rate.");
         }
 
         // For land rate observation by GM
@@ -4033,11 +4021,12 @@ public final class Formulas
         {
             for (L2PcInstance obs : ((L2PcInstance) attacker).getLandrateObservers())
             {
-                obs.sendMessage("Player:" + attacker.getName() + " Target: " + target.getName() + " Skill:" + skill
-                        .getName() + " Effect:" + effect.getType() + " Rate:" + rate + "%" + " statMod:" + Math
-                        .floor(statMod * 1000) / 1000 + " eleMod:" + eleMod + " lvlMod:" + lvlMod + " resMod:" + Math
-                        .floor(resMod * 1000) /
-                        1000); // + (skill.isMagic() ? " mAtkMod: " + Math.floor(mAtkMod*1000)/1000 : ""));
+                obs.sendMessage(
+                        "Player:" + attacker.getName() + " Target: " + target.getName() + " Skill:" + skill.getName() +
+                                " Effect:" + effect.getType() + " Rate:" + rate + "%" + " statMod:" +
+                                Math.floor(statMod * 1000) / 1000 + " eleMod:" + eleMod + " lvlMod:" + lvlMod +
+                                " resMod:" + Math.floor(resMod * 1000) /
+                                1000); // + (skill.isMagic() ? " mAtkMod: " + Math.floor(mAtkMod*1000)/1000 : ""));
             }
         }
 
@@ -4169,24 +4158,25 @@ public final class Formulas
         // Feedback for .landrates
         if (rate < 100)
         {
-            if (attacker instanceof L2TrapInstance && ((L2TrapInstance) attacker)
-                    .getOwner() != null && ((L2TrapInstance) attacker).getOwner().isLandRates())
+            if (attacker instanceof L2TrapInstance && ((L2TrapInstance) attacker).getOwner() != null &&
+                    ((L2TrapInstance) attacker).getOwner().isLandRates())
             {
-                ((L2TrapInstance) attacker).getOwner()
-                        .sendMessage("Your " + skill.getName() + " had a " + rate + "% chance to land, with a " + skill
-                                .getPower() + " base land rate.");
+                ((L2TrapInstance) attacker).getOwner().sendMessage(
+                        "Your " + skill.getName() + " had a " + rate + "% chance to land, with a " + skill.getPower() +
+                                " base land rate.");
             }
 
             if (attacker instanceof L2PcInstance && ((L2PcInstance) attacker).isLandRates())
             {
-                attacker.sendMessage("Your " + skill.getName() + " had a " + rate + "% chance to land, with a " + skill
-                        .getPower() + " base land rate.");
+                attacker.sendMessage(
+                        "Your " + skill.getName() + " had a " + rate + "% chance to land, with a " + skill.getPower() +
+                                " base land rate.");
             }
             if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
             {
-                ((L2PcInstance) target).sendMessage("This " + skill
-                        .getName() + " had a " + rate + "% chance to land over you, with a " + skill
-                        .getPower() + " base land rate.");
+                ((L2PcInstance) target).sendMessage(
+                        "This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
+                                skill.getPower() + " base land rate.");
             }
         }
 
@@ -4195,11 +4185,11 @@ public final class Formulas
         {
             for (L2PcInstance obs : ((L2PcInstance) attacker).getLandrateObservers())
             {
-                obs.sendMessage("Player:" + attacker.getName() + " Target: " + target.getName() + " Skill:" + skill
-                        .getName() + " Rate:" + rate + "%" + " statMod:" + Math
-                        .floor(statMod * 1000) / 1000 + " eleMod:" + eleMod + " lvlMod:" + lvlMod + " resMod:" + Math
-                        .floor(resMod * 1000) /
-                        1000); // + (skill.isMagic() ? " mAtkMod: " + Math.floor(mAtkMod*1000)/1000 : ""));
+                obs.sendMessage(
+                        "Player:" + attacker.getName() + " Target: " + target.getName() + " Skill:" + skill.getName() +
+                                " Rate:" + rate + "%" + " statMod:" + Math.floor(statMod * 1000) / 1000 + " eleMod:" +
+                                eleMod + " lvlMod:" + lvlMod + " resMod:" + Math.floor(resMod * 1000) /
+                                1000); // + (skill.isMagic() ? " mAtkMod: " + Math.floor(mAtkMod*1000)/1000 : ""));
             }
         }
 
@@ -4279,11 +4269,11 @@ public final class Formulas
         if (attacker.getOwner().isDebug() || Config.DEVELOPER)
         {
             final StringBuilder stat = new StringBuilder(100);
-            StringUtil.append(stat, skill.getName(), " type:", skill.getSkillType().toString(), " power:", String
-                    .valueOf(value), " stat:", String.format("%1.2f", statModifier), " res:", String
-                    .format("%1.2f", resMod), "(", String.format("%1.2f", profModifier), "/", String
-                    .format("%1.2f", resModifier), ") elem:", String.valueOf(elementModifier), " lvl:", String
-                    .valueOf(deltamod), " total:", String.valueOf(rate));
+            StringUtil.append(stat, skill.getName(), " type:", skill.getSkillType().toString(), " power:",
+                    String.valueOf(value), " stat:", String.format("%1.2f", statModifier), " res:",
+                    String.format("%1.2f", resMod), "(", String.format("%1.2f", profModifier), "/",
+                    String.format("%1.2f", resModifier), ") elem:", String.valueOf(elementModifier), " lvl:",
+                    String.valueOf(deltamod), " total:", String.valueOf(rate));
             final String result = stat.toString();
             if (attacker.getOwner().isDebug())
             {
@@ -4309,13 +4299,13 @@ public final class Formulas
             attacker = ((L2GuardInstance) attacker).getOwner();
         }
 
-        int lvlDifference = target.getLevel() - (skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker
-                .getLevel());
+        int lvlDifference =
+                target.getLevel() - (skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel());
         double lvlModifier = Math.pow(1.3, lvlDifference);
         float targetModifier = 1;
-        if (target instanceof L2Attackable && !target.isRaid() && !target.isRaidMinion() && target
-                .getLevel() >= Config.MIN_NPC_LVL_MAGIC_PENALTY && attacker.getActingPlayer() != null && target
-                .getLevel() - attacker.getActingPlayer().getLevel() >= 3)
+        if (target instanceof L2Attackable && !target.isRaid() && !target.isRaidMinion() &&
+                target.getLevel() >= Config.MIN_NPC_LVL_MAGIC_PENALTY && attacker.getActingPlayer() != null &&
+                target.getLevel() - attacker.getActingPlayer().getLevel() >= 3)
         {
             int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 2;
             if (lvlDiff > Config.NPC_SKILL_CHANCE_PENALTY.size())
@@ -4344,10 +4334,10 @@ public final class Formulas
         if (attacker.isDebug() || Config.DEVELOPER)
         {
             final StringBuilder stat = new StringBuilder(100);
-            StringUtil.append(stat, skill.getName(), " lvlDiff:", String.valueOf(lvlDifference), " lvlMod:", String
-                    .format("%1.2f", lvlModifier), " res:", String.format("%1.2f", resModifier), " fail:", String
-                    .format("%1.2f", failureModifier), " tgt:", String.valueOf(targetModifier), " total:", String
-                    .valueOf(rate));
+            StringUtil.append(stat, skill.getName(), " lvlDiff:", String.valueOf(lvlDifference), " lvlMod:",
+                    String.format("%1.2f", lvlModifier), " res:", String.format("%1.2f", resModifier), " fail:",
+                    String.format("%1.2f", failureModifier), " tgt:", String.valueOf(targetModifier), " total:",
+                    String.valueOf(rate));
             final String result = stat.toString();
             if (attacker.isDebug())
             {
@@ -4388,9 +4378,9 @@ public final class Formulas
         damage *= 1.0 - calcSkillResistance(attacker, target, skill) / 100;
         if (target instanceof L2Attackable)
         {
-            if (!target.isRaid() && !target.isRaidMinion() && target
-                    .getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY && attacker.getActingPlayer() != null && target
-                    .getLevel() - attacker.getActingPlayer().getLevel() >= 2)
+            if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY &&
+                    attacker.getActingPlayer() != null &&
+                    target.getLevel() - attacker.getActingPlayer().getLevel() >= 2)
             {
                 int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
                 if (lvlDiff > Config.NPC_SKILL_DMG_PENALTY.size())
@@ -4581,8 +4571,8 @@ public final class Formulas
             case MANADAM:
             case CPDAMPERCENT:
             case MAXHPDAMPERCENT:
-                final Stats stat = skill
-                        .isMagic() ? Stats.VENGEANCE_SKILL_MAGIC_DAMAGE : Stats.VENGEANCE_SKILL_PHYSICAL_DAMAGE;
+                final Stats stat =
+                        skill.isMagic() ? Stats.VENGEANCE_SKILL_MAGIC_DAMAGE : Stats.VENGEANCE_SKILL_PHYSICAL_DAMAGE;
                 final double venganceChance = target.getStat().calcStat(stat, 0, target, skill);
                 if (venganceChance > Rnd.get(100))
                 {
@@ -4635,8 +4625,8 @@ public final class Formulas
         // Skill is blow and it has 0% to make dmg... thats just wrong
         if (blowChance == 0)
         {
-            Log.log(Level.WARNING, "Skill " + skill.getId() + " - " + skill
-                    .getName() + " has 0 blow land chance, yet its a blow skill!");
+            Log.log(Level.WARNING, "Skill " + skill.getId() + " - " + skill.getName() +
+                    " has 0 blow land chance, yet its a blow skill!");
             return false;
         }
 
@@ -4676,8 +4666,8 @@ public final class Formulas
             blowChance *= 1.5; //50% better chance from side
         }
 
-        double blowRate = activeChar
-                .calcStat(Stats.BLOW_RATE, blowChance * (1.0 + activeChar.getDEX() / 100.0), target, null);
+        double blowRate =
+                activeChar.calcStat(Stats.BLOW_RATE, blowChance * (1.0 + activeChar.getDEX() / 100.0), target, null);
         return blowRate > Rnd.get(100);
     }
 
@@ -4771,8 +4761,7 @@ public final class Formulas
                 int targetClanId = target.getActingPlayer().getClanId();
                 L2Party targetParty = attacker.getActingPlayer().getParty();
                 if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null &&
-                        targetParty != null && !attacker
-                        .isInsideZone(L2Character.ZONE_PVP))
+                        targetParty != null && !attacker.isInsideZone(L2Character.ZONE_PVP))
                 {
                     int attackerClannies = 0;
                     int targetClannies = 0;
@@ -4813,8 +4802,8 @@ public final class Formulas
                     {
                         case 139: // Sigel Knight
                             multiplier *= 1.2;
-                            if (weapon != null && (weapon.getItemType() == L2WeaponType.BOW || weapon
-                                    .getItemType() == L2WeaponType.CROSSBOW))
+                            if (weapon != null && (weapon.getItemType() == L2WeaponType.BOW ||
+                                    weapon.getItemType() == L2WeaponType.CROSSBOW))
                             {
                                 multiplier *= 0.3;
                             }
@@ -4823,8 +4812,8 @@ public final class Formulas
                             multiplier *= 0.95;
                             break;
                         case 141: // Othell Rogue
-                            if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon
-                                    .getItemType() == L2WeaponType.DUALDAGGER))
+                            if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER ||
+                                    weapon.getItemType() == L2WeaponType.DUALDAGGER))
                             {
                                 multiplier *= 1.2;
                             }
@@ -4924,8 +4913,8 @@ public final class Formulas
             else
             // PvE Damage
             {
-                if (Config.isServer(Config.TENKAI) && target.getInstanceId() == 0 && !Config
-                        .isServer(Config.TENKAI_ESTHUS))
+                if (Config.isServer(Config.TENKAI) && target.getInstanceId() == 0 &&
+                        !Config.isServer(Config.TENKAI_ESTHUS))
                 {
                     multiplier *= 3.0f;
                 }

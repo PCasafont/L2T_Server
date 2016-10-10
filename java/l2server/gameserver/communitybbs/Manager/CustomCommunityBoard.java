@@ -122,26 +122,25 @@ public class CustomCommunityBoard
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement st = con
-                    .prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME +
-                            ".forums_topics WHERE forum_id = 4 AND pinned = 0 AND approved = 1 ORDER BY start_date DESC LIMIT 0, 70");
+            PreparedStatement st = con.prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME +
+                    ".forums_topics WHERE forum_id = 4 AND pinned = 0 AND approved = 1 ORDER BY start_date DESC LIMIT 0, 70");
             ResultSet rs = st.executeQuery();
             while (rs.next())
             {
                 String tid = String.valueOf(rs.getInt("tid"));
                 String titleSeo = rs.getString("title_seo");
 
-                PreparedStatement st2 = con
-                        .prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME + ".forums_posts WHERE pid = ?");
+                PreparedStatement st2 =
+                        con.prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME + ".forums_posts WHERE pid = ?");
                 st2.setInt(1, rs.getInt("topic_firstpost"));
 
                 ResultSet rs2 = st2.executeQuery();
                 rs2.next();
 
-                String postUrl = "url http://www." + Config.FORUM_DB_NAME
-                        .replace("_board", "") + ".com/board/index.php?/topic/" + tid + "-" + titleSeo + "/";
-                cmboard_info.add(new cmboard(rs2.getString("post_date"), rs.getString("title")
-                        .replace("&#39;", "'"), postUrl));
+                String postUrl = "url http://www." + Config.FORUM_DB_NAME.replace("_board", "") +
+                        ".com/board/index.php?/topic/" + tid + "-" + titleSeo + "/";
+                cmboard_info.add(new cmboard(rs2.getString("post_date"), rs.getString("title").replace("&#39;", "'"),
+                        postUrl));
 
                 rs2.close();
                 st2.close();
@@ -183,8 +182,8 @@ public class CustomCommunityBoard
                 htmltext += "<tr>";
             }
 
-            htmltext += "<td><table width=375><tr><td><font color=\"LEVEL\"><a action=\"" + info.getUrl() + "\">" + info
-                    .getTitle() + "</a></font> (" + info.getDate() + ")</td></tr></table></td>";
+            htmltext += "<td><table width=375><tr><td><font color=\"LEVEL\"><a action=\"" + info.getUrl() + "\">" +
+                    info.getTitle() + "</a></font> (" + info.getDate() + ")</td></tr></table></td>";
             if (cmboard_info.size() > newsDone)
             {
                 count++;
@@ -223,17 +222,16 @@ public class CustomCommunityBoard
             String tax = Integer.toString(castle.getTaxPercent());
             String siegeDate = castle.getSiegeDate().getTime().toString().replace("2015", "");
 
-            sb.append("<table width=710 border=0 bgcolor=999999><tr><td align=center FIXWIDTH=710>" + castle
-                    .getName() + "</td></tr></table>");
+            sb.append("<table width=710 border=0 bgcolor=999999><tr><td align=center FIXWIDTH=710>" + castle.getName() +
+                    "</td></tr></table>");
             sb.append("<table width=710 height=160 border=0><tr><td><table><tr><td><img src=\"Crest.pledge_crest_" +
-                    Config.SERVER_ID + "_" + castle
-                    .getCastleId() + "\" width=256 height=128></td></tr></table></td>");
+                    Config.SERVER_ID + "_" + castle.getCastleId() + "\" width=256 height=128></td></tr></table></td>");
             sb.append("<td FIXWIDTH=450><table width=450 border=0>");
             if (clan != null)
             {
                 sb.append("<tr><td FIXWIDTH=110>Owner Clan:</td><td FIXWIDTH=360> " + clan.getName() + "</td></tr>");
-                sb.append("<tr><td FIXWIDTH=110>Clan Leader:</td><td FIXWIDTH=360> " + clan
-                        .getLeaderName() + "</td></tr>");
+                sb.append("<tr><td FIXWIDTH=110>Clan Leader:</td><td FIXWIDTH=360> " + clan.getLeaderName() +
+                        "</td></tr>");
             }
             else
             {
@@ -254,8 +252,8 @@ public class CustomCommunityBoard
                         continue;
                     }
 
-                    defenderClans += ClanTable.getInstance().getClan(siegeClan.getClanId())
-                            .getName() + (defenderListSize > 1 ? ", " : "");
+                    defenderClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() +
+                            (defenderListSize > 1 ? ", " : "");
                     defenderListSize--;
                 }
                 sb.append("<tr><td>Defenders:</td><td> " + defenderClans + "</td></tr>");
@@ -277,8 +275,8 @@ public class CustomCommunityBoard
                         continue;
                     }
 
-                    attackerClans += ClanTable.getInstance().getClan(siegeClan.getClanId())
-                            .getName() + (attackerListSize > 1 ? ", " : "");
+                    attackerClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() +
+                            (attackerListSize > 1 ? ", " : "");
                     attackerListSize--;
                 }
                 sb.append("<tr><td>Attackers:</td><td>" + attackerClans + "</td></tr>");
@@ -288,9 +286,8 @@ public class CustomCommunityBoard
                 sb.append("<tr><td>Attackers:</td><td>No Attackers</td></tr>");
             }
 
-            sb.append("<tr><td>Tendency:</td><td>" + (castle
-                    .getTendency() == Castle.TENDENCY_DARKNESS ? "Darkness" : castle
-                    .getTendency() == Castle.TENDENCY_LIGHT ? "Light" : "None") + "</td></tr>");
+            sb.append("<tr><td>Tendency:</td><td>" + (castle.getTendency() == Castle.TENDENCY_DARKNESS ? "Darkness" :
+                    castle.getTendency() == Castle.TENDENCY_LIGHT ? "Light" : "None") + "</td></tr>");
 
             if (castle.getSiege() != null && castle.getSiege().getIsInProgress())
             {
@@ -319,14 +316,14 @@ public class CustomCommunityBoard
             int pagenr = x + 1;
             if (pageToShow == x)
             {
-                sb.append("<td><button value=" + String
-                        .valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url + x + extraUrl +
+                sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url +
+                        x + extraUrl +
                         "\" fore=\"L2UI_CT1.Tab_DF_Tab_Selected\" back=\"L2UI_CT1.Tab_DF_Tab_Selected\"></td>");
             }
             else
             {
-                sb.append("<td><button value=" + String
-                        .valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url + x + extraUrl +
+                sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url +
+                        x + extraUrl +
                         "\" fore=\"L2UI_CT1.Tab_DF_Tab_Unselected\" back=\"L2UI_CT1.Tab_DF_Tab_Selected\"></td>");
             }
         }
@@ -363,8 +360,8 @@ public class CustomCommunityBoard
                 L2NpcTemplate boss = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
                 if (boss != null)
                 {
-                    bossIds.put(rset.getInt("boss_id"), (long) NpcTable.getInstance()
-                            .getTemplate(rset.getInt("boss_id")).Level);
+                    bossIds.put(rset.getInt("boss_id"),
+                            (long) NpcTable.getInstance().getTemplate(rset.getInt("boss_id")).Level);
                 }
             }
 
@@ -466,8 +463,8 @@ public class CustomCommunityBoard
                         remainingTime = "less than 20 minutes";
                     }
                 }
-                String color = String
-                        .format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
+                String color =
+                        String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
                                 (int) (gradient * 0x80));
                 bossStatus = "<font color=" + color + ">Respawns in " + remainingTime + "</font>";
             }
@@ -508,9 +505,8 @@ public class CustomCommunityBoard
 
             sb.append(
                     "<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (pos + 1) +
-                            "</td><td FIXWIDTH=50>" + boss
-                            .getName() + "</td><td FIXWIDTH=30>" + boss.Level + "</td><td FIXWIDTH=150>" + bossRespawn +
-                            "</td><td FIXWIDTH=120>" + bossStatus +
+                            "</td><td FIXWIDTH=50>" + boss.getName() + "</td><td FIXWIDTH=30>" + boss.Level +
+                            "</td><td FIXWIDTH=150>" + bossRespawn + "</td><td FIXWIDTH=120>" + bossStatus +
                             "</td><td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
                             boss.NpcId +
                             ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td></tr></table>");
@@ -605,24 +601,22 @@ public class CustomCommunityBoard
                 {
                     remainingTime = "less than 20 minutes";
                 }
-                String color = String
-                        .format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
+                String color =
+                        String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
                                 (int) (gradient * 0x80));
                 status = "<font color=" + color + ">Respawns in " + remainingTime + "</font>";
             }
             String bossIsAggro = isAggro ? "<font color=FF0000>*</font>" : "";
             String nameString =
                     "<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" +
-                            boss
-                                    .getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
-                            "\">" + npc
-                            .getName() + "</a>";
+                            boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
+                            "\">" + npc.getName() + "</a>";
 
             sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) +
                     "</td>" + "<td FIXWIDTH=140>" + nameString + bossIsAggro + "</td>" + "<td FIXWIDTH=40>" +
-                    npc.Level + "</td>" + "<td FIXWIDTH=50>" + boss
-                    .getSpawn().getRespawnDelay() / 3600000 + "-" + (boss.getSpawn().getRespawnDelay() + boss.getSpawn()
-                    .getRandomRespawnDelay()) / 3600000 + " Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" +
+                    npc.Level + "</td>" + "<td FIXWIDTH=50>" + boss.getSpawn().getRespawnDelay() / 3600000 + "-" +
+                    (boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000 +
+                    " Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" +
                     "<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
                     npc.NpcId + ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
             sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
@@ -652,8 +646,8 @@ public class CustomCommunityBoard
                     }
 
                     case "showRadar":
-                        activeChar.getRadar().addMarker(Integer.valueOf(command.split(" ")[1]), Integer
-                                .valueOf(command.split(" ")[2]), Integer.valueOf(command.split(" ")[3]));
+                        activeChar.getRadar().addMarker(Integer.valueOf(command.split(" ")[1]),
+                                Integer.valueOf(command.split(" ")[2]), Integer.valueOf(command.split(" ")[3]));
                         break;
 
                     case "trade":
@@ -689,14 +683,15 @@ public class CustomCommunityBoard
                             {
                                 page = Integer.valueOf(st.nextToken());
                             }
-                            sendCommunityBoardPage(getCommunityPage("searchDrop")
-                                    .replace("%result%", SearchDropManager.getInstance().getDrops(activeChar, Integer
-                                            .valueOf(itemName), isSpoil, page)), activeChar);
+                            sendCommunityBoardPage(getCommunityPage("searchDrop").replace("%result%",
+                                    SearchDropManager.getInstance()
+                                            .getDrops(activeChar, Integer.valueOf(itemName), isSpoil, page)),
+                                    activeChar);
                         }
                         else
                         {
-                            sendCommunityBoardPage(getCommunityPage("searchDrop")
-                                    .replace("%result%", SearchDropManager.getInstance()
+                            sendCommunityBoardPage(getCommunityPage("searchDrop").replace("%result%",
+                                    SearchDropManager.getInstance()
                                             .searchPossiblesResults(activeChar, itemName, isSpoil)), activeChar);
                         }
                         break;
@@ -813,8 +808,8 @@ public class CustomCommunityBoard
                     case "voice":
                         String voicedCommand = st.nextToken();
 
-                        IVoicedCommandHandler handler = VoicedCommandHandler.getInstance()
-                                .getVoicedCommandHandler(voicedCommand);
+                        IVoicedCommandHandler handler =
+                                VoicedCommandHandler.getInstance().getVoicedCommandHandler(voicedCommand);
                         if (handler == null)
                         {
                             return;
@@ -873,8 +868,8 @@ public class CustomCommunityBoard
 
             case "worldAltars":
                 sendCommunityBoardPage(getCommunityPage("WorldAltars")
-                        .replace("%altars%", CustomWorldAltars.getInstance()
-                                .getAltarsInfo(activeChar.isGM())), activeChar);
+                                .replace("%altars%", CustomWorldAltars.getInstance().getAltarsInfo(activeChar.isGM())),
+                        activeChar);
                 break;
 
             case "gainak":
@@ -883,13 +878,14 @@ public class CustomCommunityBoard
                 break;
 
             case "gmEvent":
-                sendCommunityBoardPage(getCommunityPage("GMEvent").replace("%info%", GMEventManager.getInstance()
-                        .getCustomEventPanel(activeChar, Integer.valueOf(st.nextToken()))), activeChar);
+                sendCommunityBoardPage(getCommunityPage("GMEvent").replace("%info%",
+                        GMEventManager.getInstance().getCustomEventPanel(activeChar, Integer.valueOf(st.nextToken()))),
+                        activeChar);
                 break;
 
             case "worldBuffers":
-                sendCommunityBoardPage(getCommunityPage("WorldBuffers")
-                        .replace("%buffers%", CustomOfflineBuffersManager.getInstance()
+                sendCommunityBoardPage(getCommunityPage("WorldBuffers").replace("%buffers%",
+                        CustomOfflineBuffersManager.getInstance()
                                 .getOfflineBuffersPage(Integer.valueOf(st.nextToken()))), activeChar);
                 break;
 
@@ -902,10 +898,10 @@ public class CustomCommunityBoard
                 break;
 
             case "itemAuction":
-                sendCommunityBoardPage(getCommunityPage("itemAuction")
-                        .replace("%auctionInfo%", TenkaiAuctionManager.getInstance()
-                                .getAuctionInfo(activeChar.getObjectId(), Integer
-                                        .valueOf(st.nextToken()))), activeChar);
+                sendCommunityBoardPage(getCommunityPage("itemAuction").replace("%auctionInfo%",
+                        TenkaiAuctionManager.getInstance()
+                                .getAuctionInfo(activeChar.getObjectId(), Integer.valueOf(st.nextToken()))),
+                        activeChar);
                 break;
 
             case "searchDrop":
@@ -917,8 +913,8 @@ public class CustomCommunityBoard
                 switch (toSend)
                 {
                     case "drop": // player, npcId, page
-                        sendDropPage(activeChar, Integer.valueOf(st.nextToken()), Integer
-                                .valueOf(st.nextToken()), null);
+                        sendDropPage(activeChar, Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()),
+                                null);
                         break;
 
                     default:
@@ -938,8 +934,9 @@ public class CustomCommunityBoard
             case "rankings":
                 String rankingType = st.nextToken();
 
-                sendCommunityBoardPage(getCommunityPage("rankings")
-                        .replaceFirst("%ranking%", getRankingInfo(rankingType, activeChar)), activeChar);
+                sendCommunityBoardPage(
+                        getCommunityPage("rankings").replaceFirst("%ranking%", getRankingInfo(rankingType, activeChar)),
+                        activeChar);
                 break;
 
             case "lottery":
@@ -947,8 +944,8 @@ public class CustomCommunityBoard
                 break;
 
             case "buyPanel":
-                sendCommunityBoardPage(getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer
-                        .valueOf(st.nextToken())), activeChar);
+                sendCommunityBoardPage(
+                        getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken())), activeChar);
                 break;
 
             default:
@@ -966,8 +963,8 @@ public class CustomCommunityBoard
         L2PeaceZone gainakSafeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, L2PeaceZone.class);
         if (gainakSiegeZone != null)
         {
-            sb.append("<table><tr><td><img src=\"Crest.pledge_crest_%serverId%_" + (gainakSiegeZone
-                    .isActive() ? 51 : 50) + "\"  width=512 height=128></td></tr></table>");
+            sb.append("<table><tr><td><img src=\"Crest.pledge_crest_%serverId%_" +
+                    (gainakSiegeZone.isActive() ? 51 : 50) + "\"  width=512 height=128></td></tr></table>");
             sb.append("<br><br>");
 
             if (gainakSiegeZone.isActive())
@@ -1035,10 +1032,9 @@ public class CustomCommunityBoard
                             allyName = player.getClan().getAllyName();
                         }
                     }
-                    sb.append("" + color + "<table width=600><tr><td FIXWIDTH=100 align=center> " + player
-                            .getName() + " </td><td FIXWIDTH=100 align=center>" + clanName +
-                            "</td><td FIXWIDTH=100 align=center>" + allyName + "</td></tr></table>" + (color
-                            .length() > 0 ? "</font>" : color) + "");
+                    sb.append("" + color + "<table width=600><tr><td FIXWIDTH=100 align=center> " + player.getName() +
+                            " </td><td FIXWIDTH=100 align=center>" + clanName + "</td><td FIXWIDTH=100 align=center>" +
+                            allyName + "</td></tr></table>" + (color.length() > 0 ? "</font>" : color) + "");
                     sb.append(
                             "<table width=600><tr><td><img src=\"L2UI.Squaregray\" width=600 height=1></td></tr></table>");
                 }
@@ -1093,8 +1089,9 @@ public class CustomCommunityBoard
 
         DecimalFormat chanceFormat = new DecimalFormat("#.###");
 
-        String replyMSG = "<html>" + (template.getName().length() > 0 ? "<title>" + template
-                .getName() + "</title>" : "") + "<body>";
+        String replyMSG =
+                "<html>" + (template.getName().length() > 0 ? "<title>" + template.getName() + "</title>" : "") +
+                        "<body>";
 
         int myPage = 1;
         int i = 0;
@@ -1345,9 +1342,8 @@ public class CustomCommunityBoard
         for (int i = pageStart; i < pageEnd; i++)
         {
             L2PcInstance shop = _shops.get(i);
-            if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop
-                    .getPrivateStoreType() != 10 || type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop
-                    .getPrivateStoreType() != 5)
+            if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop.getPrivateStoreType() != 10 ||
+                    type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5)
             {
                 continue;
             }
@@ -1359,9 +1355,9 @@ public class CustomCommunityBoard
             }
 
             sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=25>" + i +
-                    "</td><td FIXWIDTH=150><a action=\"bypass _bbscustom;action;trade;" + shop
-                    .getName() + "\">" + shop.getName() + "</a></td><td FIXWIDTH=90>" + shop
-                    .getShopNameType() + "</td><td FIXWIDTH=110>" + title + "</td></tr></table>");
+                    "</td><td FIXWIDTH=150><a action=\"bypass _bbscustom;action;trade;" + shop.getName() + "\">" +
+                    shop.getName() + "</a></td><td FIXWIDTH=90>" + shop.getShopNameType() + "</td><td FIXWIDTH=110>" +
+                    title + "</td></tr></table>");
             sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
         }
 
@@ -1390,8 +1386,8 @@ public class CustomCommunityBoard
         if (path.contains("Lottery"))
         {
             htmlPage.replace("%ticketPrice%", String.valueOf(Config.CUSTOM_LOTTERY_PRICE_AMOUNT));
-            htmlPage.replace("%lotteryMultiplier%", Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER > 1 ? "x" + String
-                    .valueOf(Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) : "");
+            htmlPage.replace("%lotteryMultiplier%", Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER > 1 ?
+                    "x" + String.valueOf(Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) : "");
             htmlPage.replace("%totalCoins%", String.valueOf(LotterySystem.getInstance().getTotalCoins()));
             htmlPage.replace("%totalPrize%", String.valueOf(LotterySystem.getInstance().getTotalPrize()));
             htmlPage.replace("%numbers%", LotterySystem.getInstance().getAvailableNumbers(pl));
@@ -1462,8 +1458,7 @@ public class CustomCommunityBoard
         {
             Log.warning(
                     "CustomCommunityBoard: sendCommunityBoardPage this html exceeds the max html size supported by the client, requestor: " +
-                            player
-                                    .getName() + " html size: " + html.length());
+                            player.getName() + " html size: " + html.length());
         }
     }
 
@@ -1472,7 +1467,7 @@ public class CustomCommunityBoard
     {
         double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
         /*if (multiplier > 2.5f)
-			multiplier = 2.5f - (multiplier - 2.5f);
+            multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 
@@ -1497,8 +1492,9 @@ public class CustomCommunityBoard
         boolean isReputation = rankingType.equalsIgnoreCase("reputation");
         boolean isFameRanking = rankingType.equalsIgnoreCase("fame");
         boolean isPvPRanking = rankingType.equalsIgnoreCase("pvp");
-        String whatCheckInTop = isClanReputation || isClanWarPoints ? player.getClan() != null ? player.getClan()
-                .getName() : "" : player.getName();
+        String whatCheckInTop =
+                isClanReputation || isClanWarPoints ? player.getClan() != null ? player.getClan().getName() : "" :
+                        player.getName();
         boolean playerIsInTop = false;
 
         Map<Object, Long> allPlayers = new HashMap<Object, Long>();
@@ -1509,14 +1505,14 @@ public class CustomCommunityBoard
                 continue;
             }
 
-            if (isClanReputation && (pl.getClan() == null || pl.getClan() != null && allPlayers
-                    .containsKey(pl.getClan().getName())))
+            if (isClanReputation &&
+                    (pl.getClan() == null || pl.getClan() != null && allPlayers.containsKey(pl.getClan().getName())))
             {
                 continue;
             }
 
-            if (isClanWarPoints && (pl.getClan() == null || pl.getClan() != null && (pl.getClan().getWars()
-                    .isEmpty() || allPlayers.containsKey(pl.getClan().getName()))))
+            if (isClanWarPoints && (pl.getClan() == null || pl.getClan() != null &&
+                    (pl.getClan().getWars().isEmpty() || allPlayers.containsKey(pl.getClan().getName()))))
             {
                 continue;
             }
@@ -1526,12 +1522,13 @@ public class CustomCommunityBoard
                 continue;
             }
 
-            allPlayers.put(isClanReputation || isClanWarPoints ? pl.getClan().getName() : pl
-                    .getName(), (long) (isOlympiadPoints ? Olympiad.getInstance().getNobleInfo(pl.getObjectId())
-                    .getPoints() : isClanWarPoints ? getWarPoints(pl.getClan()) : isRaidPoints ? RaidBossPointsManager
-                    .getInstance().getPointsByOwnerId(pl.getObjectId()) : isClanReputation ? pl.getClan()
-                    .getReputationScore() : isReputation ? pl.getReputation() : isFameRanking ? pl
-                    .getFame() : isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
+            allPlayers.put(isClanReputation || isClanWarPoints ? pl.getClan().getName() : pl.getName(),
+                    (long) (isOlympiadPoints ? Olympiad.getInstance().getNobleInfo(pl.getObjectId()).getPoints() :
+                            isClanWarPoints ? getWarPoints(pl.getClan()) : isRaidPoints ?
+                                    RaidBossPointsManager.getInstance().getPointsByOwnerId(pl.getObjectId()) :
+                                    isClanReputation ? pl.getClan().getReputationScore() :
+                                            isReputation ? pl.getReputation() : isFameRanking ? pl.getFame() :
+                                                    isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
         }
 
         allPlayers = sortByValue(allPlayers, false);
@@ -1553,14 +1550,13 @@ public class CustomCommunityBoard
                     playerIsInTop = true;
                     sb.append("<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter +
                             "</font></td><td FIXWIDTH=100><font color=LEVEL>" + name +
-                            "</font></td><td FIXWIDTH=70><font color=LEVEL>" + info
-                            .getValue() + "</font></td></tr></table>");
+                            "</font></td><td FIXWIDTH=70><font color=LEVEL>" + info.getValue() +
+                            "</font></td></tr></table>");
                 }
                 else
                 {
                     sb.append("<table width=750><tr><td FIXWIDTH=40>" + counter + "</td><td FIXWIDTH=100>" + name +
-                            "</td><td FIXWIDTH=70>" + info
-                            .getValue() + "</td></tr></table>");
+                            "</td><td FIXWIDTH=70>" + info.getValue() + "</td></tr></table>");
                 }
 
                 sb.append(
@@ -1588,8 +1584,8 @@ public class CustomCommunityBoard
             {
                 sb.append("<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter +
                         "</font></td><td FIXWIDTH=100><font color=LEVEL>" + name +
-                        "</font></td><td FIXWIDTH=70><font color=LEVEL>" + allPlayers
-                        .get(name) + "</font></td></tr></table>");
+                        "</font></td><td FIXWIDTH=70><font color=LEVEL>" + allPlayers.get(name) +
+                        "</font></td></tr></table>");
             }
             else
             {

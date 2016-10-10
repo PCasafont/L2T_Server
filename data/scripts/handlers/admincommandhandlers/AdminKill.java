@@ -158,8 +158,8 @@ public class AdminKill implements IAdminCommandHandler
         }
         if (Config.DEBUG)
         {
-            _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                    .getObjectId() + ")" + " killed character " + target.getObjectId());
+            _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " +
+                    target.getObjectId());
         }
     }
 

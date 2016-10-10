@@ -296,18 +296,18 @@ public class MonsterInvasion
                 }
                 else if (heading == 16384)
                 {
-                    mob.move(x - columns * interX / 2 + i % columns * interX, fDespY - (int) Math
-                            .floor(i / columns) * interY, fDespZ);
+                    mob.move(x - columns * interX / 2 + i % columns * interX,
+                            fDespY - (int) Math.floor(i / columns) * interY, fDespZ);
                 }
                 else if (heading == 32768)
                 {
-                    mob.move(fDespY + (int) Math
-                            .floor(i / columns) * interY, x + columns * interX / 2 - i % columns * interX, fDespZ);
+                    mob.move(fDespY + (int) Math.floor(i / columns) * interY,
+                            x + columns * interX / 2 - i % columns * interX, fDespZ);
                 }
                 else
                 {
-                    mob.move(x + columns * interX / 2 - i % columns * interX, fDespY + (int) Math
-                            .floor(i / columns) * interY, fDespZ);
+                    mob.move(x + columns * interX / 2 - i % columns * interX,
+                            fDespY + (int) Math.floor(i / columns) * interY, fDespZ);
                 }
             }
             mob.setIsTheLastMob(true);

@@ -212,9 +212,8 @@ public abstract class IdFactory
             // stmt.executeUpdate("DELETE FROM characters WHERE characters.account_name NOT IN (SELECT login FROM accounts);");
 
             // If the clan does not exist...
-            cleanCount += stmt
-                    .executeUpdate(
-                            "DELETE FROM clanhall_functions WHERE clanhall_functions.hall_id NOT IN (SELECT id FROM clanhall WHERE ownerId <> 0);");
+            cleanCount += stmt.executeUpdate(
+                    "DELETE FROM clanhall_functions WHERE clanhall_functions.hall_id NOT IN (SELECT id FROM clanhall WHERE ownerId <> 0);");
             // Untested, leaving commented out until confirmation that it's safe/works properly. Was
             // initially removed because of a bug. Search for idfactory.java changes in the trac for
             // further info.
@@ -224,17 +223,14 @@ public abstract class IdFactory
             // stmt.executeUpdate("DELETE FROM clanhall_auction_bid WHERE auctionId NOT IN (SELECT id FROM auction)");
 
             // Forum Related
-            cleanCount += stmt
-                    .executeUpdate(
-                            "DELETE FROM forums WHERE forums.forum_owner_id NOT IN (SELECT clan_id FROM clan_data) AND forums.forum_parent=2;");
-            cleanCount += stmt
-                    .executeUpdate(
-                            "DELETE FROM forums WHERE forums.forum_owner_id NOT IN (SELECT charId FROM characters) AND forums.forum_parent=3;");
-            cleanCount += stmt
-                    .executeUpdate("DELETE FROM posts WHERE posts.post_forum_id NOT IN (SELECT forum_id FROM forums);");
-            cleanCount += stmt
-                    .executeUpdate(
-                            "DELETE FROM topic WHERE topic.topic_forum_id NOT IN (SELECT forum_id FROM forums);");
+            cleanCount += stmt.executeUpdate(
+                    "DELETE FROM forums WHERE forums.forum_owner_id NOT IN (SELECT clan_id FROM clan_data) AND forums.forum_parent=2;");
+            cleanCount += stmt.executeUpdate(
+                    "DELETE FROM forums WHERE forums.forum_owner_id NOT IN (SELECT charId FROM characters) AND forums.forum_parent=3;");
+            cleanCount += stmt.executeUpdate(
+                    "DELETE FROM posts WHERE posts.post_forum_id NOT IN (SELECT forum_id FROM forums);");
+            cleanCount += stmt.executeUpdate(
+                    "DELETE FROM topic WHERE topic.topic_forum_id NOT IN (SELECT forum_id FROM forums);");
 
             // Update needed items after cleaning has taken place.
             stmt.executeUpdate(
@@ -261,8 +257,8 @@ public abstract class IdFactory
             cleanCount += stmt.executeUpdate("DELETE FROM log_olys WHERE time <= " + time);
             //cleanCount += stmt.executeUpdate("DELETE FROM log_damage WHERE time <= " + time);
             cleanCount += stmt.executeUpdate("DELETE FROM gm_audit WHERE time <= " + time / 1000);
-            Log.info("Cleaned " + cleanCount + " elements from database in " + (System
-                    .currentTimeMillis() - cleanupStart) / 1000 + " s");
+            Log.info("Cleaned " + cleanCount + " elements from database in " +
+                    (System.currentTimeMillis() - cleanupStart) / 1000 + " s");
             stmt.close();
         }
         catch (SQLException e)

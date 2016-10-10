@@ -48,9 +48,8 @@ public class PetNameTable
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)");
             statement.setString(1, name);
 
             String cond = "";

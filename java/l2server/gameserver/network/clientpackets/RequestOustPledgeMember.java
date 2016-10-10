@@ -76,8 +76,8 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
         }
         if (member.isOnline() && member.getPlayerInstance().isInCombat())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CLAN_MEMBER_CANNOT_BE_DISMISSED_DURING_COMBAT));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_CANNOT_BE_DISMISSED_DURING_COMBAT));
             return;
         }
 
@@ -90,10 +90,10 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
         sm.addString(member.getName());
         clan.broadcastToOnlineMembers(sm);
         sm = null;
-        activeChar.sendPacket(SystemMessage
-                .getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_CLAN_MEMBER));
-        activeChar.sendPacket(SystemMessage
-                .getSystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
+        activeChar.sendPacket(
+                SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_CLAN_MEMBER));
+        activeChar.sendPacket(
+                SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
 
         // Remove the Player From the Member list
         clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(_target));

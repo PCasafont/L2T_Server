@@ -75,7 +75,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 
         //NOT FOR ERTHEIA SERVER
         /*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
-			return;*/
+            return;*/
 
         if (_isJoining == 1)
         {
@@ -153,13 +153,13 @@ public final class RequestJoinSiege extends L2GameClientPacket
 
             if (ips.contains(member.getExternalIP()))
             {
-                player.sendMessage("Clan Member: " + member
-                        .getName() + " detected as dual box, doesn't count as online member!");
+                player.sendMessage(
+                        "Clan Member: " + member.getName() + " detected as dual box, doesn't count as online member!");
                 continue;
             }
 
-            if ((Calendar.getInstance().getTimeInMillis() - member
-                    .getCreateTime()) / 86400000L > shouldBeCreatedDaysAgo)
+            if ((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L >
+                    shouldBeCreatedDaysAgo)
             {
                 varBeCreatedDaysAgo++;
             }

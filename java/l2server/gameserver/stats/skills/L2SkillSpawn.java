@@ -144,8 +144,8 @@ public class L2SkillSpawn extends L2Skill
         catch (Exception e)
         {
             Log.log(Level.WARNING,
-                    "Exception while spawning NPC ID: " + _npcId + ", skill ID: " + getId() + ", exception: " + e
-                            .getMessage(), e);
+                    "Exception while spawning NPC ID: " + _npcId + ", skill ID: " + getId() + ", exception: " +
+                            e.getMessage(), e);
         }
 
         // self Effect

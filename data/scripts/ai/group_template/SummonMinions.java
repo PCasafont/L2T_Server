@@ -62,21 +62,7 @@ public class SummonMinions extends L2AttackableAIScript
     {
         super(questId, name, descr);
         int[] temp = {
-                20767,
-                21524,
-                21531,
-                21539,
-                22257,
-                22258,
-                22259,
-                22260,
-                22261,
-                22262,
-                22263,
-                22264,
-                22265,
-                22266,
-                22774
+                20767, 21524, 21531, 21539, 22257, 22258, 22259, 22260, 22261, 22262, 22263, 22264, 22265, 22266, 22774
         };
         this.registerMobs(temp, QuestEventType.ON_ATTACK, QuestEventType.ON_KILL);
     }
@@ -114,8 +100,8 @@ public class SummonMinions extends L2AttackableAIScript
                                 for (int val : minions)
                                 {
                                     L2Attackable newNpc = (L2Attackable) this
-                                            .addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd
-                                                    .get(-150, 150), npc.getZ(), 0, false, 0);
+                                            .addSpawn(val, npc.getX() + Rnd.get(-150, 150),
+                                                    npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0);
                                     newNpc.setRunning();
                                     newNpc.addDamageHate(attacker, 0, 999);
                                     newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
@@ -168,15 +154,15 @@ public class SummonMinions extends L2AttackableAIScript
                                 _attackersList.get(npcObjId).add(attacker);
                             }
                         }
-                        if (attacker.getParty() != null && attacker.getParty().getMemberCount() > 2 || _attackersList
-                                .get(npcObjId).size() > 2) //Just to make sure..
+                        if (attacker.getParty() != null && attacker.getParty().getMemberCount() > 2 ||
+                                _attackersList.get(npcObjId).size() > 2) //Just to make sure..
                         {
                             HasSpawned = 0;
                             for (int val : MINIONS.get(npcId))
                             {
                                 L2Attackable newNpc = (L2Attackable) this
-                                        .addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd
-                                                .get(-150, 150), npc.getZ(), 0, false, 0);
+                                        .addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd.get(-150, 150),
+                                                npc.getZ(), 0, false, 0);
                                 newNpc.setRunning();
                                 newNpc.addDamageHate(attacker, 0, 999);
                                 newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
@@ -192,8 +178,8 @@ public class SummonMinions extends L2AttackableAIScript
                             for (int val : MINIONS.get(npcId))
                             {
                                 L2Attackable newNpc = (L2Attackable) this
-                                        .addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd
-                                                .get(-150, 150), npc.getZ(), 0, false, 0);
+                                        .addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd.get(-150, 150),
+                                                npc.getZ(), 0, false, 0);
                                 newNpc.setRunning();
                                 newNpc.addDamageHate(attacker, 0, 999);
                                 newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
@@ -203,8 +189,8 @@ public class SummonMinions extends L2AttackableAIScript
                         {
                             for (int val : MINIONS.get(npcId))
                             {
-                                this.addSpawn(val, npc.getX() + Rnd.get(-100, 100), npc.getY() + Rnd.get(-100, 100), npc
-                                        .getZ(), 0, false, 0);
+                                this.addSpawn(val, npc.getX() + Rnd.get(-100, 100), npc.getY() + Rnd.get(-100, 100),
+                                        npc.getZ(), 0, false, 0);
                             }
                         }
                         if (npcId == 20767)

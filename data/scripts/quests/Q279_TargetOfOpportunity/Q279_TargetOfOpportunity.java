@@ -71,9 +71,9 @@ public final class Q279_TargetOfOpportunity extends Quest
             st.set("progress", "1");
             st.playSound("ItemSound.quest_accept");
         }
-        else if (event.equalsIgnoreCase("32302-08.htm") && st.getInt("progress") == 1 && st
-                .hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st
-                .hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
+        else if (event.equalsIgnoreCase("32302-08.htm") && st.getInt("progress") == 1 &&
+                st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) &&
+                st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
         {
             st.takeItems(SEAL_COMPONENTS[0], -1);
             st.takeItems(SEAL_COMPONENTS[1], -1);
@@ -109,8 +109,8 @@ public final class Q279_TargetOfOpportunity extends Quest
             {
                 if (st.getInt("progress") == 1)
                 {
-                    if (st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st
-                            .hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
+                    if (st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) &&
+                            st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
                     {
                         htmltext = "32302-07.htm";
                     }

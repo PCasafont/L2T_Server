@@ -55,8 +55,8 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 
         if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_APPRENTICE) != L2Clan.CP_CL_APPRENTICE)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_DISMISS_AN_APPRENTICE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_DISMISS_AN_APPRENTICE));
             return;
         }
 
@@ -113,8 +113,8 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
         }
         else
         {
-            if (apprenticeMember.getSponsor() != 0 || sponsorMember.getApprentice() != 0 || apprenticeMember
-                    .getApprentice() != 0 || sponsorMember.getSponsor() != 0)
+            if (apprenticeMember.getSponsor() != 0 || sponsorMember.getApprentice() != 0 ||
+                    apprenticeMember.getApprentice() != 0 || sponsorMember.getSponsor() != 0)
             {
                 activeChar.sendMessage("Remove previous connections first.");
                 return;

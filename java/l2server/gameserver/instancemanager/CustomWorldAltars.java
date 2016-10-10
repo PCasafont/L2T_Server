@@ -220,10 +220,9 @@ public class CustomWorldAltars
         private void spawnBoss()
         {
             int rndBoss = _bosssIds.get(Rnd.get(_bosssIds.size()));
-            _bossNpc = NpcUtil
-                    .addSpawn(rndBoss, _currentSpawn.getSpawn().getX() + Rnd.get(300), _currentSpawn.getSpawn()
-                            .getY() + Rnd.get(300), _currentSpawn.getSpawn().getZ() + 50, _currentSpawn.getSpawn()
-                            .getHeading(), false, 0, true, 0);
+            _bossNpc = NpcUtil.addSpawn(rndBoss, _currentSpawn.getSpawn().getX() + Rnd.get(300),
+                    _currentSpawn.getSpawn().getY() + Rnd.get(300), _currentSpawn.getSpawn().getZ() + 50,
+                    _currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
             if (_isCursed)
             {
                 ((L2Attackable) _bossNpc).setChampion(true);
@@ -231,9 +230,9 @@ public class CustomWorldAltars
 
             _altarNpc.broadcastPacket(new Earthquake(_altarNpc.getX(), _altarNpc.getY(), _altarNpc.getZ(), 8, 10));
             _altarNpc.broadcastPacket(new MagicSkillUse(_altarNpc, _altarNpc, 14497, 1, 1, 1, 0));
-            _altarNpc.broadcastPacket(new ExShowScreenMessage(_altarNpc
-                    .getTemplate().Name + "'s seal has been broken and " + _bossNpc
-                    .getTemplate().Name + " has been liberated!", 5000));
+            _altarNpc.broadcastPacket(new ExShowScreenMessage(
+                    _altarNpc.getTemplate().Name + "'s seal has been broken and " + _bossNpc.getTemplate().Name +
+                            " has been liberated!", 5000));
         }
 
         private class AltarRespawn implements Runnable
@@ -265,12 +264,13 @@ public class CustomWorldAltars
                     {
                         _currentSpawn = randomSpawn;
                         _currentSpawn.setInUse(true, pvpZones < 2 ? true : false);
-                        _altarNpc = NpcUtil.addSpawn(_altarId, _currentSpawn.getSpawn().getX(), _currentSpawn.getSpawn()
-                                .getY(), _currentSpawn.getSpawn().getZ(), _currentSpawn.getSpawn()
-                                .getHeading(), false, 0, true, 0);
+                        _altarNpc = NpcUtil.addSpawn(_altarId, _currentSpawn.getSpawn().getX(),
+                                _currentSpawn.getSpawn().getY(), _currentSpawn.getSpawn().getZ(),
+                                _currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
 
-                        Announcements.getInstance().announceToAll("World Altars: The altar " + _altarNpc
-                                .getName() + " has respawned in " + _currentSpawn.getSpawnName() + "!");
+                        Announcements.getInstance().announceToAll(
+                                "World Altars: The altar " + _altarNpc.getName() + " has respawned in " +
+                                        _currentSpawn.getSpawnName() + "!");
                     }
                 }
             }
@@ -322,24 +322,22 @@ public class CustomWorldAltars
         StringBuilder sb = new StringBuilder();
         for (WorldAltarsInfo i : _altarsList)
         {
-            sb.append("<table width=710 border=0 bgcolor=" + (i
-                    .isCursed() ? "FF6F79" : "999999") + "><tr><td align=center FIXWIDTH=710>" + i
-                    .getAltarName() + "</td></tr></table>");
+            sb.append("<table width=710 border=0 bgcolor=" + (i.isCursed() ? "FF6F79" : "999999") +
+                    "><tr><td align=center FIXWIDTH=710>" + i.getAltarName() + "</td></tr></table>");
             sb.append("<table width=710 height=150 border=0><tr><td><table><tr><td><img src=\"Crest.pledge_crest_" +
-                    Config.SERVER_ID + "_" + i
-                    .getAltarImageId() + "\" width=256 height=128></td></tr></table></td>");
+                    Config.SERVER_ID + "_" + i.getAltarImageId() + "\" width=256 height=128></td></tr></table></td>");
 
             sb.append("<td FIXWIDTH=450><table width=450 border=0>");
             if (i.getCurrentSpawn() != null)
             {
                 sb.append("<tr><td>Spawn Location:</td><td><a action=\"" +
-                        (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" + i
-                        .getCurrentSpawn().getSpawn().getX() + " " + i.getCurrentSpawn().getSpawn().getY() + " " + i
-                        .getCurrentSpawn().getSpawn().getZ() + "\"> " + i.getCurrentSpawn()
-                        .getSpawnName() + "</a></td></tr>");
+                        (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" +
+                        i.getCurrentSpawn().getSpawn().getX() + " " + i.getCurrentSpawn().getSpawn().getY() + " " +
+                        i.getCurrentSpawn().getSpawn().getZ() + "\"> " + i.getCurrentSpawn().getSpawnName() +
+                        "</a></td></tr>");
                 sb.append("<tr><td>Is Cursed:</td><td>" + (i.isCursed() ? "Yes" : "No") + "</td></tr>");
-                sb.append("<tr><td>Is pvp area:</td><td>" + (i.getCurrentSpawn()
-                        .isZoneActive() ? "Yes" : "No") + "</td></tr>");
+                sb.append("<tr><td>Is pvp area:</td><td>" + (i.getCurrentSpawn().isZoneActive() ? "Yes" : "No") +
+                        "</td></tr>");
             }
             else
             {
@@ -432,8 +430,8 @@ public class CustomWorldAltars
             }
         }
 
-        Log.info("WorldAltars: Loaded: " + _spawnInfo.size() + " altar spawns, " + _altarsList
-                .size() + " altars and " + _bosssIds.size() + " bosses!");
+        Log.info("WorldAltars: Loaded: " + _spawnInfo.size() + " altar spawns, " + _altarsList.size() + " altars and " +
+                _bosssIds.size() + " bosses!");
     }
 
     private CustomWorldAltars()

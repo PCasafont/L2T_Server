@@ -127,8 +127,8 @@ public final class Say2 extends L2GameClientPacket
 
         if (_type < 0 || _type >= CHAT_NAMES.length)
         {
-            Log.warning("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " + String
-                    .valueOf(_text));
+            Log.warning("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " +
+                    String.valueOf(_text));
             activeChar.sendPacket(ActionFailed.STATIC_PACKET);
             activeChar.logout();
             return;
@@ -150,29 +150,31 @@ public final class Say2 extends L2GameClientPacket
         // Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
         // April 27, 2009 - Verified on Gracia P2 & Final official client as 105
         // Allow higher limit if player shift some item (text is longer then)
-        if (!activeChar.isGM() && (_text.indexOf(8) >= 0 && _text.length() > 500 || _text.indexOf(8) < 0 && _text
-                .length() > 105))
+        if (!activeChar.isGM() &&
+                (_text.indexOf(8) >= 0 && _text.length() > 500 || _text.indexOf(8) < 0 && _text.length() > 105))
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
             return;
         }
 
-        if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") || activeChar.getHWID()
-                .equals("BFEBFBFF0001067A527AC38E") || activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
+        if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") ||
+                activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") ||
+                activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
         {
             activeChar.sendMessage("Your right to use the chat has been revoked.");
             return;
         }
         /*
-		if (activeChar.isPlayingMiniGame())
+        if (activeChar.isPlayingMiniGame())
 		{
 			activeChar.sendMessage("You may not chat at this time.");
 			return;
 		}*/
 
-        if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() && (activeChar.getEvent()
-                .isType(EventType.DeathMatch) || activeChar.getEvent().isType(EventType.Survival) || activeChar
-                .getEvent().isType(EventType.KingOfTheHill)))
+        if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
+                (activeChar.getEvent().isType(EventType.DeathMatch) ||
+                        activeChar.getEvent().isType(EventType.Survival) ||
+                        activeChar.getEvent().isType(EventType.KingOfTheHill)))
         {
             activeChar.sendMessage("You cannot talk during an All vs All PvP Event");
             return;
@@ -180,9 +182,8 @@ public final class Say2 extends L2GameClientPacket
 
         if (activeChar.isCursedWeaponEquipped() && (_type == TRADE || _type == SHOUT || _type == GLOBAL))
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
+            activeChar.sendPacket(SystemMessage.getSystemMessage(
+                    SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
             return;
         }
 
@@ -225,9 +226,8 @@ public final class Say2 extends L2GameClientPacket
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "REPLACE INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
+                PreparedStatement statement = con.prepareStatement(
+                        "REPLACE INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
 
                 statement.setLong(1, System.currentTimeMillis());
                 statement.setString(2, CHAT_NAMES[_type]);

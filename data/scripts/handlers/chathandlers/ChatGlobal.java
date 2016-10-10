@@ -68,8 +68,8 @@ public class ChatGlobal implements IChatHandler
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)
     {
-        if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar
-                .getFloodProtectors().getTradeChat().tryPerformAction("global chat")))
+        if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() ||
+                !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("global chat")))
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
             return;

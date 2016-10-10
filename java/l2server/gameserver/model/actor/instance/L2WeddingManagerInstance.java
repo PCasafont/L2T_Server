@@ -105,8 +105,8 @@ public class L2WeddingManagerInstance extends L2Npc
                     }
 
                     // Check and reduce wedding price
-                    if (player.getAdena() < Config.L2JMOD_WEDDING_PRICE || ptarget
-                            .getAdena() < Config.L2JMOD_WEDDING_PRICE)
+                    if (player.getAdena() < Config.L2JMOD_WEDDING_PRICE ||
+                            ptarget.getAdena() < Config.L2JMOD_WEDDING_PRICE)
                     {
                         filename = "mods/Wedding_adena.htm";
                         replace = String.valueOf(Config.L2JMOD_WEDDING_PRICE);
@@ -151,9 +151,9 @@ public class L2WeddingManagerInstance extends L2Npc
                         ptarget.useMagic(skill, false, false);
                     }
 
-                    Announcements.getInstance()
-                            .announceToAll("Congratulations to " + player.getName() + " and " + ptarget
-                                    .getName() + "! They have been married.");
+                    Announcements.getInstance().announceToAll(
+                            "Congratulations to " + player.getName() + " and " + ptarget.getName() +
+                                    "! They have been married.");
 
                     filename = "mods/Wedding_accepted.htm";
                     sendHtmlMessage(ptarget, filename, replace);

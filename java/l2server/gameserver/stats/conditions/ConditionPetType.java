@@ -45,7 +45,7 @@ public class ConditionPetType extends Condition
         }
 
 		/*if ((petType & L2Item.ANY_PET) == L2Item.ANY_PET)
-			return true;*/
+            return true;*/
 
         int npcid = ((L2Summon) env.player).getNpcId();
 

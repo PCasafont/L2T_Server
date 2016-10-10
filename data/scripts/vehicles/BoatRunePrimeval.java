@@ -92,10 +92,10 @@ public class BoatRunePrimeval implements Runnable
         LEAVING_PRIMEVAL = new CreatureSay(0, Say2.BOAT, 801, 1990);
         BUSY_RUNE = new CreatureSay(0, Say2.BOAT, 801, 1993);
 
-        RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat
-                .getObjectId(), RUNE_DOCK[0].x, RUNE_DOCK[0].y, RUNE_DOCK[0].z);
-        PRIMEVAL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat
-                .getObjectId(), PRIMEVAL_DOCK.x, PRIMEVAL_DOCK.y, PRIMEVAL_DOCK.z);
+        RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), RUNE_DOCK[0].x,
+                RUNE_DOCK[0].y, RUNE_DOCK[0].z);
+        PRIMEVAL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), PRIMEVAL_DOCK.x,
+                PRIMEVAL_DOCK.y, PRIMEVAL_DOCK.z);
     }
 
     @Override

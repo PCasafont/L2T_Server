@@ -49,8 +49,9 @@ public class Mandragora extends L2AttackableAIScript
     {
         npc.deleteMe();
 
-        L2Npc mandragora = addSpawn(_sumonedMandragoras[Rnd.get(_sumonedMandragoras.length)], npc.getX(), npc
-                .getY(), npc.getZ(), npc.getHeading(), false, 60000);
+        L2Npc mandragora =
+                addSpawn(_sumonedMandragoras[Rnd.get(_sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(),
+                        npc.getHeading(), false, 60000);
 
         mandragora.setTarget(attacker);
 

@@ -56,8 +56,8 @@ public class RequestItemEnsoul extends L2GameClientPacket
         L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItem);
         if (targetItem == null || targetItem.isEquipped())
         {
-            activeChar.sendPacket(new ExShowScreenMessage("Please, unequip your " + targetItem
-                    .getName() + " before giving it any soul enhancement.", 5000));
+            activeChar.sendPacket(new ExShowScreenMessage(
+                    "Please, unequip your " + targetItem.getName() + " before giving it any soul enhancement.", 5000));
             activeChar.sendPacket(new ExEnsoulResult(false));
             return;
         }

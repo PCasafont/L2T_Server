@@ -145,8 +145,8 @@ public class CursedWeapon
                     con = L2DatabaseFactory.getInstance().getConnection();
 
                     // Delete the item
-                    PreparedStatement statement = con
-                            .prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
+                    PreparedStatement statement =
+                            con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
                     statement.setInt(1, _playerId);
                     statement.setInt(2, _itemId);
                     if (statement.executeUpdate() != 1)
@@ -155,7 +155,7 @@ public class CursedWeapon
                     }
                     statement.close();
                     /* Yesod: Skill is not stored into database any more.
-					// Delete the skill
+                    // Delete the skill
 					statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=?");
 					statement.setInt(1, _playerId);
 					statement.setInt(2, _skillId);
@@ -538,9 +538,8 @@ public class CursedWeapon
 
             if (_isActivated)
             {
-                statement = con
-                        .prepareStatement(
-                                "INSERT INTO cursed_weapons (itemId, charId, playerKarma, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)");
+                statement = con.prepareStatement(
+                        "INSERT INTO cursed_weapons (itemId, charId, playerKarma, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)");
                 statement.setInt(1, _itemId);
                 statement.setInt(2, _playerId);
                 statement.setInt(3, _playerKarma);

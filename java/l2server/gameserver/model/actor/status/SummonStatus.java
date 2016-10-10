@@ -45,8 +45,8 @@ public class SummonStatus extends PlayableStatus
         }
 
         final L2PcInstance attackerPlayer = attacker.getActingPlayer();
-        if (attackerPlayer != null && (getActiveChar().getOwner() == null || getActiveChar().getOwner()
-                .getDuelId() != attackerPlayer.getDuelId()))
+        if (attackerPlayer != null && (getActiveChar().getOwner() == null ||
+                getActiveChar().getOwner().getDuelId() != attackerPlayer.getDuelId()))
         {
             attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);
         }
@@ -54,14 +54,15 @@ public class SummonStatus extends PlayableStatus
         if (getActiveChar().getOwner().getParty() != null)
         {
             final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
-            if (caster != null && getActiveChar().getParty() != null && Util
-                    .checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && getActiveChar()
-                    .getOwner() != caster && getActiveChar().getParty().getPartyMembers().contains(caster))
+            if (caster != null && getActiveChar().getParty() != null &&
+                    Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() &&
+                    getActiveChar().getOwner() != caster &&
+                    getActiveChar().getParty().getPartyMembers().contains(caster))
             {
                 int transferDmg = 0;
 
-                transferDmg = (int) value * (int) getActiveChar().getStat()
-                        .calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
+                transferDmg = (int) value *
+                        (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
                 transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
                 if (transferDmg > 0 && attacker instanceof L2Playable)
                 {

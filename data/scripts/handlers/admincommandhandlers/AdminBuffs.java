@@ -215,12 +215,10 @@ public class AdminBuffs implements IAdminCommandHandler
             max++;
         }
 
-        final StringBuilder html = StringUtil
-                .startAppend(500 + effects.length * 200,
-                        "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ",
-                        target
-                                .getName(),
-                        "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
+        final StringBuilder html = StringUtil.startAppend(500 + effects.length * 200,
+                "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ",
+                target.getName(),
+                "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
 
         int start = (page - 1) * PAGE_LIMIT;
         int end = Math.min((page - 1) * PAGE_LIMIT + PAGE_LIMIT, effects.length);
@@ -230,12 +228,10 @@ public class AdminBuffs implements IAdminCommandHandler
             L2Abnormal e = effects[i];
             if (e != null)
             {
-                StringUtil.append(html, "<tr><td>", e.getSkill().getName(), "</td><td>", e.getSkill()
-                                .isToggle() ? "toggle" : e.getDuration() - e
-                                .getTime() + "s", "</td><td><button value=\"Remove\" action=\"bypass -h admin_stopbuff ",
-                        Integer
-                                .toString(target.getObjectId()), " ", String.valueOf(e.getSkill()
-                                .getId()),
+                StringUtil.append(html, "<tr><td>", e.getSkill().getName(), "</td><td>",
+                        e.getSkill().isToggle() ? "toggle" : e.getDuration() - e.getTime() + "s",
+                        "</td><td><button value=\"Remove\" action=\"bypass -h admin_stopbuff ",
+                        Integer.toString(target.getObjectId()), " ", String.valueOf(e.getSkill().getId()),
                         "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
             }
         }
@@ -264,11 +260,9 @@ public class AdminBuffs implements IAdminCommandHandler
 
         html.append("</tr></table>");
 
-        StringUtil
-                .append(html, "<br><center><button value=\"Remove All\" action=\"bypass -h admin_stopallbuffs ", Integer
-                                .toString(target
-                                        .getObjectId()),
-                        "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></html>");
+        StringUtil.append(html, "<br><center><button value=\"Remove All\" action=\"bypass -h admin_stopallbuffs ",
+                Integer.toString(target.getObjectId()),
+                "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></html>");
 
         NpcHtmlMessage ms = new NpcHtmlMessage(1);
         ms.setHtml(html.toString());
@@ -276,8 +270,8 @@ public class AdminBuffs implements IAdminCommandHandler
 
         if (Config.GMAUDIT)
         {
-            GMAudit.auditGMAction(activeChar.getName(), "getbuffs", target.getName() + " (" + Integer
-                    .toString(target.getObjectId()) + ")", "");
+            GMAudit.auditGMAction(activeChar.getName(), "getbuffs",
+                    target.getName() + " (" + Integer.toString(target.getObjectId()) + ")", "");
         }
     }
 
@@ -301,15 +295,16 @@ public class AdminBuffs implements IAdminCommandHandler
                 if (e != null && e.getSkill().getId() == skillId)
                 {
                     e.exit();
-                    activeChar.sendMessage("Removed " + e.getSkill().getName() + " level " + e.getSkill()
-                            .getLevel() + " from " + target.getName() + " (" + objId + ")");
+                    activeChar.sendMessage(
+                            "Removed " + e.getSkill().getName() + " level " + e.getSkill().getLevel() + " from " +
+                                    target.getName() + " (" + objId + ")");
                 }
             }
             showBuffs(activeChar, target, 1);
             if (Config.GMAUDIT)
             {
-                GMAudit.auditGMAction(activeChar.getName(), "stopbuff", target.getName() + " (" + objId + ")", Integer
-                        .toString(skillId));
+                GMAudit.auditGMAction(activeChar.getName(), "stopbuff", target.getName() + " (" + objId + ")",
+                        Integer.toString(skillId));
             }
         }
     }

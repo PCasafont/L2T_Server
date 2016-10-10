@@ -78,7 +78,7 @@ public class SendMacroList extends L2GameServerPacket
         }
 
 		/*
-		writeD(1); //unknown change of Macro edit,add,delete
+        writeD(1); //unknown change of Macro edit,add,delete
 		writeC(0); //unknown
 		writeC(1); //count of Macros
 		writeC(1); //unknown

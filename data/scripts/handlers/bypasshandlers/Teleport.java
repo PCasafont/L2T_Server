@@ -76,8 +76,8 @@ public class Teleport implements IBypassHandler
             }
             catch (Exception e)
             {
-                _log.warning("L2Teleporter - " + target.getName() + "(" + target
-                        .getNpcId() + ") - failed to parse raw teleport coordinates from html");
+                _log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
+                        ") - failed to parse raw teleport coordinates from html");
                 e.printStackTrace();
             }
 
@@ -101,8 +101,8 @@ public class Teleport implements IBypassHandler
 
             if (!parties && activeChar.isInParty() && !activeChar.isGM())
             {
-                activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target
-                        .getName(), "You can't go there being in a party."));
+                activeChar.sendPacket(
+                        new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
                 return true;
             }
 
@@ -152,15 +152,14 @@ public class Teleport implements IBypassHandler
 
                     if (biggestAllyId == allyId)
                     {
-                        activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target
-                                .getName(),
+                        activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(),
                                 "Sorry, your clan/ally is outnumbering the place already so you can't move there."));
                         return true;
                     }
                 }
 
-                activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd
-                        .get(300) - 150, mostPvP.getZ());
+                activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150,
+                        mostPvP.getZ());
                 activeChar.setInstanceId(0);
                 activeChar.setProtection(true);
                 if (!activeChar.isGM())
@@ -171,8 +170,8 @@ public class Teleport implements IBypassHandler
             }
             else
             {
-                activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target
-                        .getName(), "Sorry, I can't find anyone in flag status right now."));
+                activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(),
+                        "Sorry, I can't find anyone in flag status right now."));
             }
 
             return true;

@@ -123,17 +123,16 @@ public class AdminBan implements IAdminCommandHandler
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("SELECT account_name FROM characters WHERE char_name LIKE ?");
+                    PreparedStatement statement =
+                            con.prepareStatement("SELECT account_name FROM characters WHERE char_name LIKE ?");
                     statement.setString(1, player);
                     ResultSet rset = statement.executeQuery();
                     if (rset.next())
                     {
                         account = rset.getString("account_name");
 
-                        PreparedStatement statement2 = con
-                                .prepareStatement(
-                                        "SELECT value FROM account_gsdata WHERE account_name LIKE ? AND var = ?");
+                        PreparedStatement statement2 = con.prepareStatement(
+                                "SELECT value FROM account_gsdata WHERE account_name LIKE ? AND var = ?");
                         statement2.setString(1, account);
                         statement2.setString(2, "lastHWId");
                         ResultSet rset2 = statement2.executeQuery();
@@ -185,9 +184,8 @@ public class AdminBan implements IAdminCommandHandler
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
+                PreparedStatement statement = con.prepareStatement(
+                        "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 
                 statement.setString(1, account);
                 statement.setLong(2, duration > 0 ? System.currentTimeMillis() / 1000 + duration * 3600 : -1);
@@ -198,9 +196,8 @@ public class AdminBan implements IAdminCommandHandler
 
                 if (hwId != null && hwId.length() > 0 && !Config.isServer(Config.TENKAI))
                 {
-                    statement = con
-                            .prepareStatement(
-                                    "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
+                    statement = con.prepareStatement(
+                            "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 
                     statement.setString(1, hwId);
                     statement.setLong(2, duration > 0 ? System.currentTimeMillis() / 1000 + duration * 3600 : -1);
@@ -226,7 +223,7 @@ public class AdminBan implements IAdminCommandHandler
             }
         }
         /*else if (command.startsWith("admin_ban_acc"))
-		{
+        {
 			// May need to check usage in admin_ban_menu as well.
 
 			if (targetPlayer == null && player.equals(""))
@@ -366,9 +363,8 @@ public class AdminBan implements IAdminCommandHandler
         {
             if (targetPlayer == null && player.equals(""))
             {
-                activeChar
-                        .sendMessage(
-                                "Usage: //jail <charname> [penalty_minutes] (if no name is given, selected target is jailed indefinitely)");
+                activeChar.sendMessage(
+                        "Usage: //jail <charname> [penalty_minutes] (if no name is given, selected target is jailed indefinitely)");
                 return false;
             }
             if (targetPlayer != null)
@@ -378,8 +374,8 @@ public class AdminBan implements IAdminCommandHandler
                     targetPlayer.unTransform(true);
                 }
                 targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.JAIL, duration);
-                activeChar.sendMessage("Character " + targetPlayer
-                        .getName() + " jailed for " + (duration > 0 ? duration + " minutes." : "ever!"));
+                activeChar.sendMessage("Character " + targetPlayer.getName() + " jailed for " +
+                        (duration > 0 ? duration + " minutes." : "ever!"));
                 auditAction(command, activeChar, targetPlayer.getName());
             }
             else
@@ -419,8 +415,8 @@ public class AdminBan implements IAdminCommandHandler
 
         String[] command = fullCommand.split(" ");
 
-        GMAudit.auditGMAction(activeChar.getName(), command[0], target
-                .equals("") ? "no-target" : target, command.length > 2 ? command[2] : "");
+        GMAudit.auditGMAction(activeChar.getName(), command[0], target.equals("") ? "no-target" : target,
+                command.length > 2 ? command[2] : "");
     }
 
     private void banChatOfflinePlayer(L2PcInstance activeChar, String name, int delay, boolean ban)
@@ -443,8 +439,8 @@ public class AdminBan implements IAdminCommandHandler
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("UPDATE characters SET punish_level=?, punish_timer=? WHERE char_name=?");
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE characters SET punish_level=?, punish_timer=? WHERE char_name=?");
             statement.setInt(1, level);
             statement.setLong(2, value);
             statement.setString(3, name);
@@ -459,9 +455,8 @@ public class AdminBan implements IAdminCommandHandler
             }
             else if (ban)
             {
-                activeChar
-                        .sendMessage("Character " + name + " chat-banned for " +
-                                (delay > 0 ? delay + " minutes." : "ever!"));
+                activeChar.sendMessage(
+                        "Character " + name + " chat-banned for " + (delay > 0 ? delay + " minutes." : "ever!"));
             }
             else
             {
@@ -489,9 +484,8 @@ public class AdminBan implements IAdminCommandHandler
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
             statement.setInt(1, -114356);
             statement.setInt(2, -249645);
             statement.setInt(3, -2984);
@@ -509,9 +503,8 @@ public class AdminBan implements IAdminCommandHandler
             }
             else
             {
-                activeChar
-                        .sendMessage(
-                                "Character " + name + " jailed for " + (delay > 0 ? delay + " minutes." : "ever!"));
+                activeChar.sendMessage(
+                        "Character " + name + " jailed for " + (delay > 0 ? delay + " minutes." : "ever!"));
             }
         }
         catch (SQLException se)
@@ -534,9 +527,8 @@ public class AdminBan implements IAdminCommandHandler
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
             statement.setInt(1, 17836);
             statement.setInt(2, 170178);
             statement.setInt(3, -3507);
@@ -584,8 +576,8 @@ public class AdminBan implements IAdminCommandHandler
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
+                PreparedStatement statement =
+                        con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
                 statement.setInt(1, lvl);
                 statement.setString(2, player);
                 statement.execute();

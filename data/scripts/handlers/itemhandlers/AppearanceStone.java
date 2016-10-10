@@ -42,15 +42,14 @@ public class AppearanceStone implements IItemHandler
 
         if (item.getName().contains("Restor"))
         {
-            activeChar
-                    .sendPacket(new ExShowScreenMessage(
-                            "Double click on the item from which you want to remove the custom appearance", 3000));
+            activeChar.sendPacket(new ExShowScreenMessage(
+                    "Double click on the item from which you want to remove the custom appearance", 3000));
         }
         else if (item.getItem().getStandardItem() > 0)
         {
-            activeChar
-                    .sendPacket(new ExShowScreenMessage(
-                            "Double click on the item on which you want to add the custom appearance", 3000));
+            activeChar.sendPacket(
+                    new ExShowScreenMessage("Double click on the item on which you want to add the custom appearance",
+                            3000));
         }
         else
         {

@@ -30,9 +30,9 @@ public class L2AWarriorAI extends L2APlayerAI
 {
     private static final int BEAR_CRY = 10291; // + P. Atk. and P.Critical Damage by 30%.
     private static final int OGRE_CRY = 10292;
-            // + P. Atk., P. Def. And M. Def. by 35% and P. Critical Damage and Max HP by 10%.
+    // + P. Atk., P. Def. And M. Def. by 35% and P. Critical Damage and Max HP by 10%.
     private static final int PUMA_CRY = 10293;
-            // + P. Accuracy by 10 and Atk. Spd. by 20%, and decreases Critical Damage received by 40%.
+    // + P. Accuracy by 10 and Atk. Spd. by 20%, and decreases Critical Damage received by 40%.
     private static final int RABBIT_CRY = 10294; // + Atk. Spd. by 30%, Speed by 35% and P. Evasion by 15.
     private static final int HAWK_CRY = 10295; // + P. Accuracy by 8, Critical Rate by 120 and Critical Damage by 30%.
 
@@ -75,7 +75,7 @@ public class L2AWarriorAI extends L2APlayerAI
         }
 
 		/*
-		 * Decide what totem is better according to situation.
+         * Decide what totem is better according to situation.
 		 * Basic reasoning:
 		 *
 		 * IDLE or without totem buff: BEAR
@@ -119,8 +119,8 @@ public class L2AWarriorAI extends L2APlayerAI
         }
 
         // Now, time to use skillz
-        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player
-                .getMaxHp() * 0.5 || _player.getTarget() instanceof L2Playable)
+        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
+                _player.getTarget() instanceof L2Playable)
         {
             // First, let's try to Rush
             if (target != null && 600 - _player.getDistanceSq(target) > 100)

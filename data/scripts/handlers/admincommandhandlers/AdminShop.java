@@ -86,8 +86,8 @@ public class AdminShop implements IAdminCommandHandler
             activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
             if (Config.DEBUG)
             {
-                _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                        .getObjectId() + ") opened GM shop id " + val);
+                _log.fine(
+                        "GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
             }
         }
         else

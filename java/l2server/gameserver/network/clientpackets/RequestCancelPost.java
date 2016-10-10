@@ -68,8 +68,8 @@ public final class RequestCancelPost extends L2GameClientPacket
         }
         if (msg.getSenderId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -134,22 +134,25 @@ public final class RequestCancelPost extends L2GameClientPacket
 
             if (item.getOwnerId() != activeChar.getObjectId())
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to get not own item from cancelled attachment!", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to get not own item from cancelled attachment!",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
 
             if (!item.getLocation().equals(ItemLocation.MAIL))
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to get items not from mail !", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to get items not from mail !",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
 
             if (item.getLocationSlot() != msg.getId())
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to get items from different attachment!", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to get items from different attachment!",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
 
@@ -187,8 +190,8 @@ public final class RequestCancelPost extends L2GameClientPacket
 
             long count = item.getCount();
             final L2ItemInstance newItem = attachments
-                    .transferItem(attachments.getName() + " from " + msg.getSenderName(), item
-                            .getObjectId(), count, activeChar.getInventory(), activeChar, null);
+                    .transferItem(attachments.getName() + " from " + msg.getSenderName(), item.getObjectId(), count,
+                            activeChar.getInventory(), activeChar, null);
             if (newItem == null)
             {
                 return;

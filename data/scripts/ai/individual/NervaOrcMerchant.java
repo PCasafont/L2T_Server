@@ -72,8 +72,9 @@ public class NervaOrcMerchant extends L2AttackableAIScript
     {
         if (!npc.isMoving())
         {
-            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX() + 1000, npc
-                    .getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(), 0));
+            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                    new L2CharPosition(npc.getX() + 1000, npc.getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(),
+                            0));
         }
 
         return super.onAttack(npc, attacker, damage, isPet, skill);

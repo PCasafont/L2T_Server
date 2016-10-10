@@ -84,8 +84,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
         if (ChessEvent.isState(ChessState.STARTED))
         {
-            if (playerInstance.isGM() || getSide().getPlayer().getObjectId() == playerInstance
-                    .getObjectId() && ChessEvent.turn == getSide().getId())
+            if (playerInstance.isGM() || getSide().getPlayer().getObjectId() == playerInstance.getObjectId() &&
+                    ChessEvent.turn == getSide().getId())
             {
                 String htmFile = "ChessEventMovements.htm";
                 String htmContent = HtmCache.getInstance().getHtm(playerInstance.getHtmlPrefix(), htmFile);
@@ -107,23 +107,20 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                             if (moveType(i, j, true) == 4)
                             {
                                 square = "<font color=\"00FF00\"><a action=\"bypass -h npc_%objectId%_enrocar_" +
-                                        getSide()
-                                                .getPiece(7, 0).getObjectId() + "_" + i + "_" + j +
+                                        getSide().getPiece(7, 0).getObjectId() + "_" + i + "_" + j +
                                         "_dreta\">[]</a></font>";
                             }
                             else if (moveType(i, j, true) == 3)
                             {
                                 square = "<font color=\"00FF00\"><a action=\"bypass -h npc_%objectId%_enrocar_" +
-                                        getSide()
-                                                .getPiece(0, 0).getObjectId() + "_" + i + "_" + j +
+                                        getSide().getPiece(0, 0).getObjectId() + "_" + i + "_" + j +
                                         "_esquerra\">[]</a></font>";
                             }
                             else if (moveType(i, j, true) == 2)
                             {
                                 square = "<font color=\"FF0000\"><a action=\"bypass -h npc_%objectId%_attack_" +
-                                        ChessEvent
-                                                .getBoard(getSide().getId())[i][j]
-                                                .getObjectId() + "_" + i + "_" + j + "\">[]</a></font>";
+                                        ChessEvent.getBoard(getSide().getId())[i][j].getObjectId() + "_" + i + "_" + j +
+                                        "\">[]</a></font>";
                             }
                             else if (moveType(i, j, true) == 1)
                             {
@@ -144,8 +141,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                     playerInstance.sendPacket(npcHtmlMessage);
                 }
             }
-            else if (getSide().getPlayer().getObjectId() == playerInstance.getObjectId() && ChessEvent.turn != getSide()
-                    .getId())
+            else if (getSide().getPlayer().getObjectId() == playerInstance.getObjectId() &&
+                    ChessEvent.turn != getSide().getId())
             {
                 say(playerInstance, "You must wait for your turn");
             }
@@ -165,8 +162,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
     public void onBypassFeedback(L2PcInstance playerInstance, String command)
     {
         int side = 1;
-        if ((command.startsWith("moveto") || command.startsWith("attack") || command
-                .startsWith("enrocar")) && ChessEvent.isState(ChessState.STARTED) && !ChessEvent.pieceMoving)
+        if ((command.startsWith("moveto") || command.startsWith("attack") || command.startsWith("enrocar")) &&
+                ChessEvent.isState(ChessState.STARTED) && !ChessEvent.pieceMoving)
         {
             StringTokenizer st = new StringTokenizer(command, "_");
             st.nextToken();
@@ -183,8 +180,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                 {
                     for (int j = 0; j < 8; j++)
                     {
-                        if (ChessEvent.getBoard(side)[i][j] != null && ChessEvent.getBoard(side)[i][j]
-                                .getObjectId() == enemyId)
+                        if (ChessEvent.getBoard(side)[i][j] != null &&
+                                ChessEvent.getBoard(side)[i][j].getObjectId() == enemyId)
                         {
                             enemy = ChessEvent.getBoard(side)[i][j];
                         }
@@ -202,8 +199,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                 {
                     for (int j = 0; j < 8; j++)
                     {
-                        if (ChessEvent.getBoard(side)[i][j] != null && ChessEvent.getBoard(side)[i][j]
-                                .getObjectId() == rookId)
+                        if (ChessEvent.getBoard(side)[i][j] != null &&
+                                ChessEvent.getBoard(side)[i][j].getObjectId() == rookId)
                         {
                             rook = ChessEvent.getBoard(side)[i][j];
                         }
@@ -268,15 +265,15 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
         if (enemy != null)
         {
-            while (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO && (Math
-                    .abs(getX() - (rPosY * 45 - 60165 + moveY)) > 30 || Math
-                    .abs(getY() - (rPosX * 45 - 59752 + moveX)) > 30))
+            while (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO &&
+                    (Math.abs(getX() - (rPosY * 45 - 60165 + moveY)) > 30 ||
+                            Math.abs(getY() - (rPosX * 45 - 59752 + moveX)) > 30))
             {
                 getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
                         new L2CharPosition(rPosY * 45 - 60165 + moveY, rPosX * 45 - 59752 + moveX, -1932, 0));
-                while (getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO && (Math
-                        .abs(getX() - (rPosY * 45 - 60165 + moveY)) > 30 || Math
-                        .abs(getY() - (rPosX * 45 - 59752 + moveX)) > 30))
+                while (getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO &&
+                        (Math.abs(getX() - (rPosY * 45 - 60165 + moveY)) > 30 ||
+                                Math.abs(getY() - (rPosX * 45 - 59752 + moveX)) > 30))
                 {
                     sleep();
                 }
@@ -304,8 +301,9 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
             }
         }
 
-        while (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO && (Math
-                .abs(getX() - (rPosY * 45 - 60165 + moveY)) > 5 || Math.abs(getY() - (rPosX * 45 - 59752 + moveX)) > 5))
+        while (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO &&
+                (Math.abs(getX() - (rPosY * 45 - 60165 + moveY)) > 5 ||
+                        Math.abs(getY() - (rPosX * 45 - 59752 + moveX)) > 5))
         {
             getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
                     new L2CharPosition(rPosY * 45 - 60165 + moveY, rPosX * 45 - 59752 + moveX, -1932, 0));
@@ -402,8 +400,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                 }
                 break;
             case 3:
-                if (Math.abs(i - _posX) == 1 && Math.abs(j - _posY) == 2 || Math.abs(i - _posX) == 2 && Math
-                        .abs(j - _posY) == 1)
+                if (Math.abs(i - _posX) == 1 && Math.abs(j - _posY) == 2 ||
+                        Math.abs(i - _posX) == 2 && Math.abs(j - _posY) == 1)
                 {
                     canMove = true;
                 }
@@ -415,26 +413,26 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                 }
                 break;
             case 5:
-                if ((i == _posX || j == _posY || Math.abs(i - _posX) == Math
-                        .abs(j - _posY)) && !anyBetween(_posX, _posY, i, j))
+                if ((i == _posX || j == _posY || Math.abs(i - _posX) == Math.abs(j - _posY)) &&
+                        !anyBetween(_posX, _posY, i, j))
                 {
                     canMove = true;
                 }
                 break;
             case 6:
-                if ((Math.abs(i - _posX) == 1 || Math.abs(j - _posY) == 1) && Math.abs(i - _posX) + Math
-                        .abs(j - _posY) <= 2)
+                if ((Math.abs(i - _posX) == 1 || Math.abs(j - _posY) == 1) &&
+                        Math.abs(i - _posX) + Math.abs(j - _posY) <= 2)
                 {
                     canMove = true;
                 }
-                if (_firstMove && j == _posY && i == _posX - 2 && getSide().getPiece(0, 0) != null && !getSide()
-                        .getPiece(0, 0).hasMoved() && !anyBetween(_posX, _posY, 0, 0))
+                if (_firstMove && j == _posY && i == _posX - 2 && getSide().getPiece(0, 0) != null &&
+                        !getSide().getPiece(0, 0).hasMoved() && !anyBetween(_posX, _posY, 0, 0))
                 {
                     canMove = true;
                     toReturn = 3;
                 }
-                if (_firstMove && j == _posY && i == _posX + 2 && getSide().getPiece(7, 0) != null && !getSide()
-                        .getPiece(7, 0).hasMoved() && !anyBetween(_posX, _posY, 7, 0))
+                if (_firstMove && j == _posY && i == _posX + 2 && getSide().getPiece(7, 0) != null &&
+                        !getSide().getPiece(7, 0).hasMoved() && !anyBetween(_posX, _posY, 7, 0))
                 {
                     canMove = true;
                     toReturn = 4;
@@ -443,8 +441,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         }
         if (canMove)
         {
-            if (hiHaAmic(i, j) || getSide().hasWon() && (!hiHaEnemic(i, j) || getSide().getPiece(i, j)
-                    .getObjectId() != getSide().getEnemy().getKing().getObjectId()))
+            if (hiHaAmic(i, j) || getSide().hasWon() && (!hiHaEnemic(i, j) ||
+                    getSide().getPiece(i, j).getObjectId() != getSide().getEnemy().getKing().getObjectId()))
             {
                 return 0;
             }
@@ -640,11 +638,12 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
                 message = "I kill your " + victim.getPieceName() + "s with a " + getPieceName() + ".";
             }
         }
-        CreatureSay cs1 = new CreatureSay(getSide().getPlayer().getObjectId(), Say2.TELL, "->" + getSide().getEnemy()
-                .getPlayer().getName(), message);
+        CreatureSay cs1 = new CreatureSay(getSide().getPlayer().getObjectId(), Say2.TELL,
+                "->" + getSide().getEnemy().getPlayer().getName(), message);
         getSide().getPlayer().sendPacket(cs1);
-        CreatureSay cs2 = new CreatureSay(getSide().getPlayer().getObjectId(), Say2.TELL, getSide().getPlayer()
-                .getName(), message);
+        CreatureSay cs2 =
+                new CreatureSay(getSide().getPlayer().getObjectId(), Say2.TELL, getSide().getPlayer().getName(),
+                        message);
         getSide().getEnemy().getPlayer().sendPacket(cs2);
     }
 

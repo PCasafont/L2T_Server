@@ -422,8 +422,8 @@ public final class L2Weapon extends L2Item
         }
 
         byte shld = Formulas.calcShldUse(caster, target, _skillsOnCast.getSkill());
-        if (_skillsOnCast.getSkill().isOffensive() && !Formulas
-                .calcSkillSuccess(caster, target, _skillsOnCast.getSkill(), shld, L2ItemInstance.CHARGED_NONE))
+        if (_skillsOnCast.getSkill().isOffensive() &&
+                !Formulas.calcSkillSuccess(caster, target, _skillsOnCast.getSkill(), shld, L2ItemInstance.CHARGED_NONE))
         {
             return _emptyEffectSet;
         }
@@ -461,8 +461,8 @@ public final class L2Weapon extends L2Item
                         {
                             for (Quest quest : npcMob.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_SEE))
                             {
-                                quest.notifySkillSee(npcMob, (L2PcInstance) caster, _skillsOnCast
-                                        .getSkill(), targets, false);
+                                quest.notifySkillSee(npcMob, (L2PcInstance) caster, _skillsOnCast.getSkill(), targets,
+                                        false);
                             }
                         }
                     }

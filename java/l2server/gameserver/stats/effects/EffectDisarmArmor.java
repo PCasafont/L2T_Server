@@ -75,8 +75,8 @@ public class EffectDisarmArmor extends L2Effect
         L2ItemInstance armor = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);
         if (armor != null)
         {
-            L2ItemInstance[] unequiped = player.getInventory()
-                    .unEquipItemInBodySlotAndRecord(armor.getItem().getBodyPart());
+            L2ItemInstance[] unequiped =
+                    player.getInventory().unEquipItemInBodySlotAndRecord(armor.getItem().getBodyPart());
             InventoryUpdate iu = new InventoryUpdate();
             for (L2ItemInstance itm : unequiped)
             {

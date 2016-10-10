@@ -88,8 +88,8 @@ public class Manadam implements ISkillHandler
             }
 
             boolean acted = Formulas.calcMagicSuccess(activeChar, target, skill);
-            if (target.isInvul(activeChar) || !acted || target.getFaceoffTarget() != null && target
-                    .getFaceoffTarget() != activeChar)
+            if (target.isInvul(activeChar) || !acted ||
+                    target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MISSED_TARGET));
             }
@@ -142,8 +142,8 @@ public class Manadam implements ISkillHandler
 
                 if (activeChar instanceof L2PcInstance)
                 {
-                    SystemMessage sm2 = SystemMessage
-                            .getSystemMessage(SystemMessageId.YOUR_OPPONENTS_MP_WAS_REDUCED_BY_S1);
+                    SystemMessage sm2 =
+                            SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENTS_MP_WAS_REDUCED_BY_S1);
                     sm2.addNumber((int) mp);
                     activeChar.sendPacket(sm2);
                 }

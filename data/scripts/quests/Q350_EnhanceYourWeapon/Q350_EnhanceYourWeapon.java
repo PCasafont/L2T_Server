@@ -206,14 +206,14 @@ public class Q350_EnhanceYourWeapon extends Quest
                                     {
                                         if (cd.hasAttribute("absorbType"))
                                         {
-                                            absorbType = Enum
-                                                    .valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
+                                            absorbType =
+                                                    Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
                                         }
 
                                         if (cd.hasAttribute("chance"))
                                         {
-                                            chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 : cd
-                                                    .getInt("chance") * CHANCE_MULTIPLIER;
+                                            chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 :
+                                                    cd.getInt("chance") * CHANCE_MULTIPLIER;
                                         }
                                         //chance = cd.getInt("chance");
 
@@ -388,8 +388,8 @@ public class Q350_EnhanceYourWeapon extends Quest
         {
             htmltext = npc.getNpcId() + "-03.htm";
         }
-        else if (st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0 && st
-                .getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0)
+        else if (st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0 &&
+                st.getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0)
         {
             htmltext = npc.getNpcId() + "-21.htm";
         }
@@ -506,8 +506,8 @@ public class Q350_EnhanceYourWeapon extends Quest
                     int loops = 0;
                     while (!found && loops < 30)
                     {
-                        L2PcInstance lucky = killer.getParty().getPartyMembers()
-                                .get(Rnd.get(killer.getParty().getMemberCount()));
+                        L2PcInstance lucky =
+                                killer.getParty().getPartyMembers().get(Rnd.get(killer.getParty().getMemberCount()));
                         found = tryToLevelCrystal(lucky, players.get(lucky), mob);
                         loops++;
                     }

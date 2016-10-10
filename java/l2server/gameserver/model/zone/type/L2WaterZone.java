@@ -69,7 +69,7 @@ public class L2WaterZone extends L2ZoneType
         }
 
 		/*
-		 * if (character instanceof L2PcInstance) {
+         * if (character instanceof L2PcInstance) {
 		 * ((L2PcInstance)character).sendMessage("You entered water!"); }
 		 */
     }

@@ -172,9 +172,8 @@ public class L2UIKeysSettings
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement stmt = con
-                    .prepareStatement(
-                            "SELECT * FROM character_ui_categories WHERE `charId` = ? ORDER BY `catId`, `order`");
+            PreparedStatement stmt = con.prepareStatement(
+                    "SELECT * FROM character_ui_categories WHERE `charId` = ? ORDER BY `catId`, `order`");
             stmt.setInt(1, _player.getObjectId());
             ResultSet rs = stmt.executeQuery();
 
@@ -215,8 +214,8 @@ public class L2UIKeysSettings
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement stmt = con
-                    .prepareStatement("SELECT * FROM character_ui_actions WHERE `charId` = ? ORDER BY `cat`, `order`");
+            PreparedStatement stmt = con.prepareStatement(
+                    "SELECT * FROM character_ui_actions WHERE `charId` = ? ORDER BY `cat`, `order`");
             stmt.setInt(1, _player.getObjectId());
             ResultSet rs = stmt.executeQuery();
 

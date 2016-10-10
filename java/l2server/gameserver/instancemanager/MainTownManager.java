@@ -111,8 +111,8 @@ public class MainTownManager
             for (L2PcInstance player : players)
             {
                 int[] coords = zone.getZone().getRandomPoint();
-                player.teleToLocation(coords[0], coords[1], GeoData.getInstance()
-                        .getHeight(coords[0], coords[1], coords[2]));
+                player.teleToLocation(coords[0], coords[1],
+                        GeoData.getInstance().getHeight(coords[0], coords[1], coords[2]));
             }
         }
 
@@ -174,8 +174,8 @@ public class MainTownManager
         _rotationIndex = 0;
         if (GlobalVariablesManager.getInstance().isVariableStored("MTRotationIndex"))
         {
-            _rotationIndex = Integer
-                    .parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
+            _rotationIndex =
+                    Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
         }
         else
         {
@@ -198,8 +198,8 @@ public class MainTownManager
 
         if (GlobalVariablesManager.getInstance().isVariableStored("MTLastRotation"))
         {
-            _nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance()
-                    .getStoredVariable("MTLastRotation")) + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
+            _nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("MTLastRotation")) +
+                    ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
         }
 
         if (_nextTownTimer - System.currentTimeMillis() < 0)
@@ -290,8 +290,7 @@ public class MainTownManager
                 String to = new SimpleDateFormat("E MMM d").format(date);
 
                 info += "- From <font color=LEVEL>" + from + "</font> to <font color=LEVEL>" + to + "</font> " +
-                        "the main town will be <font color=LEVEL>" + prevTown
-                        .getName() + "</font>.<br1>";
+                        "the main town will be <font color=LEVEL>" + prevTown.getName() + "</font>.<br1>";
 
                 if (i >= 4)
                 {

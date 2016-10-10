@@ -75,9 +75,9 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
         L2Abnormal activeEffect = getEffected().getFirstEffect(_triggeredId);
         if (activeEffect != null)
         {
-            if (activeEffect.getLevel() == _triggeredLevel && activeEffect
-                    .getEnchantRouteId() == _triggeredEnchantRoute && activeEffect
-                    .getEnchantLevel() == _triggeredEnchantLevel)
+            if (activeEffect.getLevel() == _triggeredLevel &&
+                    activeEffect.getEnchantRouteId() == _triggeredEnchantRoute &&
+                    activeEffect.getEnchantLevel() == _triggeredEnchantLevel)
             {
                 return true;
             }

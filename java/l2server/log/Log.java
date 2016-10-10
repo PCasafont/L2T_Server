@@ -57,7 +57,7 @@ public class Log
     {
         _log.info(msg);
         /*long t = System.currentTimeMillis();
-		if (_t > 0 && t - _t > 10)
+        if (_t > 0 && t - _t > 10)
 			System.out.println("Time spent before last log: " + (t - _t) + "ms");
 		_t = t;*/
 

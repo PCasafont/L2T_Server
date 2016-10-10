@@ -95,7 +95,7 @@ public final class RequestConfirmGemStone extends L2GameClientPacket
             return;
         }
 
-        activeChar.sendPacket(new ExPutCommissionResultForVariationMake(_gemstoneItemObjId, _gemStoneCount, gemStoneItem
-                .getItemId()));
+        activeChar.sendPacket(new ExPutCommissionResultForVariationMake(_gemstoneItemObjId, _gemStoneCount,
+                gemStoneItem.getItemId()));
     }
 }

@@ -96,8 +96,8 @@ public class Message
         _receiverId = receiverId;
         _subject = subject;
         _content = text;
-        _expiration = isCod ? System.currentTimeMillis() + COD_EXPIRATION * 3600000 : System
-                .currentTimeMillis() + EXPIRATION * 3600000;
+        _expiration = isCod ? System.currentTimeMillis() + COD_EXPIRATION * 3600000 :
+                System.currentTimeMillis() + EXPIRATION * 3600000;
         _hasAttachments = false;
         _unread = true;
         _deletedBySender = false;
@@ -168,16 +168,14 @@ public class Message
         _attachments = msg.getAttachments();
         msg.removeAttachments();
         _attachments.setNewMessageId(_messageId);
-        _unloadTask = ThreadPoolManager.getInstance()
-                .scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd
-                        .get(UNLOAD_ATTACHMENTS_INTERVAL));
+        _unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+                UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
     }
 
     public static final PreparedStatement getStatement(Message msg, Connection con) throws SQLException
     {
-        PreparedStatement stmt = con
-                .prepareStatement(
-                        "INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, systemMessage1, systemMessage2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement stmt = con.prepareStatement(
+                "INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, systemMessage1, systemMessage2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         stmt.setInt(1, msg._messageId);
         stmt.setInt(2, msg._senderId);
@@ -371,9 +369,8 @@ public class Message
             }
             _attachments = new Mail(objId, _messageId);
             _attachments.restore();
-            _unloadTask = ThreadPoolManager.getInstance()
-                    .scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd
-                            .get(UNLOAD_ATTACHMENTS_INTERVAL));
+            _unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+                    UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
         }
         return _attachments;
     }
@@ -411,9 +408,8 @@ public class Message
         }
         _attachments = new Mail(objId, _messageId);
         _hasAttachments = true;
-        _unloadTask = ThreadPoolManager.getInstance()
-                .scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd
-                        .get(UNLOAD_ATTACHMENTS_INTERVAL));
+        _unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+                UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
         return _attachments;
     }
 

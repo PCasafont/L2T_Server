@@ -109,8 +109,8 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
         if (player.getActiveEnchantItem() != null)
         {
-            Util.handleIllegalPlayerAction(player, "Player " + player
-                    .getName() + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use enchant Exploit!",
+                    Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -157,8 +157,8 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
         }
 
         // Check if enough adena and charge the fee
-        if (currentAdena < fee || !player
-                .reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
+        if (currentAdena < fee ||
+                !player.reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
         {
             sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
             return;

@@ -336,8 +336,8 @@ public class Sell implements IVoicedCommandHandler
 
                     if (!player.getAccessLevel().allowTransaction())
                     {
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
                         return false;
                     }
 
@@ -356,11 +356,11 @@ public class Sell implements IVoicedCommandHandler
 
                     for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
                     {
-                        if (!(c instanceof L2PcInstance && ((L2PcInstance) c)
-                                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+                        if (!(c instanceof L2PcInstance &&
+                                ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
                         {
-                            player.sendMessage("Sell: Try to put your store a little further from " + c
-                                    .getName() + ", please.");
+                            player.sendMessage(
+                                    "Sell: Try to put your store a little further from " + c.getName() + ", please.");
                             return false;
                         }
                     }
@@ -466,16 +466,12 @@ public class Sell implements IVoicedCommandHandler
                 sb.append(
                         "<center><table width=300 bgcolor=666666><tr><td FIXWIDTH=300 align=center>Sell</td></tr></table></center>");
                 sb.append("<table width=300 bgcolor=E35757><tr><td FIXWIDTH=150>" + itemName +
-                        "</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deleteItem " + item
-                        .getObjectId() +
+                        "</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deleteItem " + item.getObjectId() +
                         "\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></td></tr></table>");
-                sb.append("<table width=270><tr><td><table width=220><tr><td width=100>Max amount: " + item
-                        .getCount() + " </td><td width=55><edit var=\"count" + item
-                        .getObjectId() +
+                sb.append("<table width=270><tr><td><table width=220><tr><td width=100>Max amount: " + item.getCount() +
+                        " </td><td width=55><edit var=\"count" + item.getObjectId() +
                         "\" width=50 type=number length=14></td><td width=30><button action=\"bypass -h voice .sell setSellItemCount " +
-                        item
-                                .getObjectId() + " $count" + item
-                        .getObjectId() +
+                        item.getObjectId() + " $count" + item.getObjectId() +
                         "\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></td></tr></table></td></tr></table>");
 
                 if (!item.getPriceItems().isEmpty())
@@ -495,25 +491,21 @@ public class Sell implements IVoicedCommandHandler
 
                         sb.append("<center>");
                         sb.append("<table width=250 bgcolor=8FBDC5><tr><td FIXWIDTH=230>" + priceName +
-                                "</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deletePriceItem " + item
-                                .getObjectId() + " " + b.getKey()
-                                .getItemId() +
+                                "</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deletePriceItem " +
+                                item.getObjectId() + " " + b.getKey().getItemId() +
                                 "\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></td></tr></table>");
-                        sb.append("<table width=250><tr><td><table width=220><tr><td width=100>Count: " + b
-                                .getValue() + " </td><td width=55><edit var=\"count" + item
-                                .getObjectId() + "-" + index +
+                        sb.append("<table width=250><tr><td><table width=220><tr><td width=100>Count: " + b.getValue() +
+                                " </td><td width=55><edit var=\"count" + item.getObjectId() + "-" + index +
                                 "\" width=50 type=number length=14></td><td width=30><button action=\"bypass -h voice .sell setSellPriceCount " +
-                                item
-                                        .getObjectId() + " " + b.getKey().getItemId() + " " + " $count" + item
-                                .getObjectId() + "-" + index +
+                                item.getObjectId() + " " + b.getKey().getItemId() + " " + " $count" +
+                                item.getObjectId() + "-" + index +
                                 "\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></td></tr></table></td></tr></table><br>");
                         sb.append("</center>");
                         index++;
                     }
                 }
                 sb.append("<br><center><table><tr><td align=center><button action=\"bypass -h voice .sell addPrice " +
-                        item
-                                .getObjectId() +
+                        item.getObjectId() +
                         "\" value=\"Add price!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr></table></center><br><br><br>");
                 sb.append("</td>");
                 sb.append("</tr>");

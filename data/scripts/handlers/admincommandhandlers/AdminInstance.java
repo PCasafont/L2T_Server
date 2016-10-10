@@ -53,9 +53,8 @@ public class AdminInstance implements IAdminCommandHandler
             String[] parts = command.split(" ");
             if (parts.length < 2)
             {
-                activeChar
-                        .sendMessage(
-                                "Example: //createinstance <id> <templatefile> - ids => 300000 are reserved for dynamic instances");
+                activeChar.sendMessage(
+                        "Example: //createinstance <id> <templatefile> - ids => 300000 are reserved for dynamic instances");
             }
             else
             {
@@ -87,8 +86,8 @@ public class AdminInstance implements IAdminCommandHandler
             {
                 if (temp.getName() != null && temp.getId() > 1)
                 {
-                    page += "<tr><td><a action=\"bypass -h admin_move_to " + getStringCords(temp
-                            .getId()) + "\">Name: " + temp.getName() + " id: " + temp.getId() + "</a></td></tr>";
+                    page += "<tr><td><a action=\"bypass -h admin_move_to " + getStringCords(temp.getId()) +
+                            "\">Name: " + temp.getName() + " id: " + temp.getId() + "</a></td></tr>";
                 }
                 else
                 {

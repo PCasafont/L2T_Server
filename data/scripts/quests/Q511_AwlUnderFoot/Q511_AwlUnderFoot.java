@@ -139,8 +139,8 @@ public final class Q511_AwlUnderFoot extends Quest
         {
             if (!(world instanceof FAUWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return "";
             }
             teleportPlayer(player, coords, world.instanceId);
@@ -169,8 +169,7 @@ public final class Q511_AwlUnderFoot extends Quest
             dungeon.setReEnterTime(System.currentTimeMillis() + REENTERTIME);
             InstanceManager.getInstance().addWorld(world);
             Log.info("Fortress AwlUnderFoot started " + template + " Instance: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             ThreadPoolManager.getInstance().scheduleGeneral(new spawnRaid((FAUWorld) world), RAID_SPAWN_DELAY);
 
             // teleport players
@@ -284,8 +283,8 @@ public final class Q511_AwlUnderFoot extends Quest
             tele[0] = 53322;
             tele[1] = 246380;
             tele[2] = -6580;
-            return enterInstance(player, "fortdungeon.xml", tele, _fortDungeons
-                    .get(npc.getNpcId()), checkFortCondition(player, npc, true));
+            return enterInstance(player, "fortdungeon.xml", tele, _fortDungeons.get(npc.getNpcId()),
+                    checkFortCondition(player, npc, true));
         }
         QuestState st = player.getQuestState(qn);
         if (st == null)

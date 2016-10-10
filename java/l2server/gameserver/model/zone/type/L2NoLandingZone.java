@@ -43,8 +43,8 @@ public class L2NoLandingZone extends L2ZoneType
             character.setInsideZone(L2Character.ZONE_NOLANDING, true);
             if (((L2PcInstance) character).getMountType() == 2)
             {
-                character.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_WYVERN));
+                character.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_WYVERN));
                 ((L2PcInstance) character).enteredNoLanding(dismountDelay);
             }
         }

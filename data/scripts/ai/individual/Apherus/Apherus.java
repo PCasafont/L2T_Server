@@ -148,13 +148,13 @@ public class Apherus extends L2AttackableAIScript
             }
             else
             {
-                npc.broadcastPacket(new ExShowScreenMessage("$s1. The key does not match, so we're in trouble"
-                        .replace("$s1", player.getName()), 3000));
+                npc.broadcastPacket(new ExShowScreenMessage(
+                        "$s1. The key does not match, so we're in trouble".replace("$s1", player.getName()), 3000));
                 for (int a = 0; a < 4; a++)
                 {
-                    L2MonsterInstance protector = (L2MonsterInstance) addSpawn(_apreusDoorGuyards[Rnd
-                            .get(_apreusDoorGuyards.length)], player.getX(), player.getY(), player
-                            .getZ(), 0, false, 600000, false);
+                    L2MonsterInstance protector =
+                            (L2MonsterInstance) addSpawn(_apreusDoorGuyards[Rnd.get(_apreusDoorGuyards.length)],
+                                    player.getX(), player.getY(), player.getZ(), 0, false, 600000, false);
                     protector.setIsRunning(true);
                     protector.setTarget(player);
                     protector.addDamageHate(player, 500, 99999);

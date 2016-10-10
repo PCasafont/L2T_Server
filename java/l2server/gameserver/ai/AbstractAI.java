@@ -246,7 +246,7 @@ abstract class AbstractAI implements Ctrl
     synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
     {
         /*
-		 if (Config.DEBUG)
+         if (Config.DEBUG)
 		 Logozo.warning("AbstractAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
 		 */
 
@@ -655,13 +655,13 @@ abstract class AbstractAI implements Ctrl
                 }
                 // Make the NPCs move around their target, not silly-following
                 int tries = 10;
-                Point3D position = new Point3D(pawn.getX() + Rnd.get(offset * 2) - offset, pawn.getY() + Rnd
-                        .get(offset * 2) - offset, pawn.getZ());
+                Point3D position = new Point3D(pawn.getX() + Rnd.get(offset * 2) - offset,
+                        pawn.getY() + Rnd.get(offset * 2) - offset, pawn.getZ());
 
                 while (!GeoData.getInstance().canSeeTarget(_actor, position) && tries-- > 0)
                 {
-                    position.setXYZ(pawn.getX() + Rnd.get(offset * 2) - offset, pawn.getY() + Rnd
-                            .get(offset * 2) - offset, pawn.getZ());
+                    position.setXYZ(pawn.getX() + Rnd.get(offset * 2) - offset,
+                            pawn.getY() + Rnd.get(offset * 2) - offset, pawn.getZ());
                 }
 
                 if (tries > 0)
@@ -952,8 +952,8 @@ abstract class AbstractAI implements Ctrl
         }
 
         _followTarget = target;
-        _followTask = ThreadPoolManager.getInstance()
-                .scheduleAiAtFixedRate(new FollowTask(range), 5, ATTACK_FOLLOW_INTERVAL);
+        _followTask =
+                ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(range), 5, ATTACK_FOLLOW_INTERVAL);
     }
 
     /**

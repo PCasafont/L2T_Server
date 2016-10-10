@@ -53,8 +53,8 @@ public class L2FortCommanderInstance extends L2DefenderInstance
             return false;
         }
 
-        boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege()
-                .getIsInProgress() && !getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan());
+        boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress() &&
+                !getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan());
 
         // Attackable during siege by all except defenders
         return isFort;
@@ -107,8 +107,8 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 
             if (hasAI())
             {
-                getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(getSpawn()
-                        .getX(), getSpawn().getY(), getSpawn().getZ(), 0));
+                getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), 0));
             }
         }
     }
@@ -135,8 +135,8 @@ public class L2FortCommanderInstance extends L2DefenderInstance
                         {
                             attacker = ((L2Summon) attacker).getOwner();
                         }
-                        text = "Everyone, concentrate your attacks on " + attacker
-                                .getName() + "! Show the enemy your resolve!";
+                        text = "Everyone, concentrate your attacks on " + attacker.getName() +
+                                "! Show the enemy your resolve!";
                     }
                     else if (getTemplate().Title.equalsIgnoreCase("Support Unit"))
                     {

@@ -151,8 +151,8 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
                     return false;
                 }
 
-                if (pTarget.getEvent().getParticipantTeamId(pTarget.getObjectId()) != pTarget.getEvent()
-                        .getParticipantTeamId(activeChar.getObjectId()))
+                if (pTarget.getEvent().getParticipantTeamId(pTarget.getObjectId()) !=
+                        pTarget.getEvent().getParticipantTeamId(activeChar.getObjectId()))
                 {
                     return false;
                 }
@@ -169,14 +169,14 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
                     }
                 }
 
-                if (((L2PcInstance) activeChar).isInSameClanWar(pTarget) || ((L2PcInstance) activeChar)
-                        .isInOlympiadMode())
+                if (((L2PcInstance) activeChar).isInSameClanWar(pTarget) ||
+                        ((L2PcInstance) activeChar).isInOlympiadMode())
                 {
                     return false;
                 }
 
-                if (player.isInSameParty(pTarget) || player.isInSameChannel(pTarget) || player
-                        .isInSameClan(pTarget) || player.isInSameAlly(pTarget))
+                if (player.isInSameParty(pTarget) || player.isInSameChannel(pTarget) || player.isInSameClan(pTarget) ||
+                        player.isInSameAlly(pTarget))
                 {
                     return true;
                 }

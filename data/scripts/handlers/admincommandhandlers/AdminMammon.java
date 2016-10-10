@@ -36,10 +36,10 @@ public class AdminMammon implements IAdminCommandHandler
     public boolean useAdminCommand(String command, L2PcInstance activeChar)
     {
         int teleportIndex = -1;
-        AutoSpawnInstance blackSpawnInst = AutoSpawnHandler.getInstance()
-                .getAutoSpawnInstance(31126, false); // Blacksmith
-        AutoSpawnInstance merchSpawnInst = AutoSpawnHandler.getInstance()
-                .getAutoSpawnInstance(31113, false); // Merchant
+        AutoSpawnInstance blackSpawnInst =
+                AutoSpawnHandler.getInstance().getAutoSpawnInstance(31126, false); // Blacksmith
+        AutoSpawnInstance merchSpawnInst =
+                AutoSpawnHandler.getInstance().getAutoSpawnInstance(31113, false); // Merchant
 
         if (command.startsWith("admin_mammon_find"))
         {
@@ -107,9 +107,8 @@ public class AdminMammon implements IAdminCommandHandler
             if (blackSpawnInst != null)
             {
                 long blackRespawn = AutoSpawnHandler.getInstance().getTimeToNextSpawn(blackSpawnInst);
-                activeChar
-                        .sendMessage(
-                                "The Blacksmith of Mammon will respawn in " + blackRespawn / 60000 + " minute(s).");
+                activeChar.sendMessage(
+                        "The Blacksmith of Mammon will respawn in " + blackRespawn / 60000 + " minute(s).");
             }
             else
             {

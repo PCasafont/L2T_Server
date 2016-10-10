@@ -84,8 +84,9 @@ public class ShuttleTable
                         npcDat.set("pDef", 100);
                         npcDat.set("mDef", 100);
 
-                        L2ShuttleInstance shuttle = new L2ShuttleInstance(IdFactory.getInstance()
-                                .getNextId(), new L2CharTemplate(npcDat), id);
+                        L2ShuttleInstance shuttle =
+                                new L2ShuttleInstance(IdFactory.getInstance().getNextId(), new L2CharTemplate(npcDat),
+                                        id);
                         L2World.getInstance().storeObject(shuttle);
 
                         for (XmlNode stopNode : shuttleNode.getChildren())

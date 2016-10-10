@@ -65,8 +65,8 @@ public class L2TeleporterInstance extends L2Npc
         StringTokenizer st = new StringTokenizer(command, " ");
         String actualCommand = st.nextToken(); // Get actual command
 
-        if (player.getFirstEffect(6201) != null || player.getFirstEffect(6202) != null || player
-                .getFirstEffect(6203) != null)
+        if (player.getFirstEffect(6201) != null || player.getFirstEffect(6202) != null ||
+                player.getFirstEffect(6203) != null)
         {
             NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 
@@ -137,9 +137,9 @@ public class L2TeleporterInstance extends L2Npc
                     showNewbieHtml(player);
                     return;
                 }
-                else if (val.equalsIgnoreCase("1") && cal.get(Calendar.HOUR_OF_DAY) >= 20 && cal
-                        .get(Calendar.HOUR_OF_DAY) <= 23 && (cal.get(Calendar.DAY_OF_WEEK) == 1 || cal
-                        .get(Calendar.DAY_OF_WEEK) == 7))
+                else if (val.equalsIgnoreCase("1") && cal.get(Calendar.HOUR_OF_DAY) >= 20 &&
+                        cal.get(Calendar.HOUR_OF_DAY) <= 23 &&
+                        (cal.get(Calendar.DAY_OF_WEEK) == 1 || cal.get(Calendar.DAY_OF_WEEK) == 7))
                 {
                     showHalfPriceHtml(player);
                     return;
@@ -263,14 +263,13 @@ public class L2TeleporterInstance extends L2Npc
         if (list != null)
         {
             //you cannot teleport to village that is in siege
-            if (SiegeManager.getInstance()
-                    .getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null)
+            if (SiegeManager.getInstance().getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null)
             {
                 player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
                 return;
             }
-            else if (TownManager.townHasCastleInSiege(list.getLocX(), list
-                    .getLocY()) && (isInsideZone(L2Character.ZONE_TOWN) || getNpcId() > 40000))
+            else if (TownManager.townHasCastleInSiege(list.getLocX(), list.getLocY()) &&
+                    (isInsideZone(L2Character.ZONE_TOWN) || getNpcId() > 40000))
             {
                 player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
                 return;
@@ -280,8 +279,8 @@ public class L2TeleporterInstance extends L2Npc
                 player.sendMessage("Go away, you're not welcome here.");
                 return;
             }
-            else if (Config.isServer(Config.TENKAI) && getNpcId() == 40001 && player.getPvpFlag() > 0 && player
-                    .getCurrentHp() * 100 / player.getMaxHp() < 60) //pvping?
+            else if (Config.isServer(Config.TENKAI) && getNpcId() == 40001 && player.getPvpFlag() > 0 &&
+                    player.getCurrentHp() * 100 / player.getMaxHp() < 60) //pvping?
             {
                 player.sendPacket(new NpcHtmlMessage(getObjectId(),
                         "<html><body>I don't stand there for cowards to escape from battle!</body></html>"));
@@ -322,21 +321,21 @@ public class L2TeleporterInstance extends L2Npc
             }
             else if (!list.getIsForNoble())
             {
-                if (cal.get(Calendar.HOUR_OF_DAY) >= 20 && cal.get(Calendar.HOUR_OF_DAY) <= 23 && (cal
-                        .get(Calendar.DAY_OF_WEEK) == 1 || cal.get(Calendar.DAY_OF_WEEK) == 7))
+                if (cal.get(Calendar.HOUR_OF_DAY) >= 20 && cal.get(Calendar.HOUR_OF_DAY) <= 23 &&
+                        (cal.get(Calendar.DAY_OF_WEEK) == 1 || cal.get(Calendar.DAY_OF_WEEK) == 7))
                 {
                     price /= 2;
                 }
             }
 
-            if (Config.ALT_GAME_FREE_TELEPORT || player
-                    .destroyItemByItemId("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list
-                            .getItemId(), price, this, true))
+            if (Config.ALT_GAME_FREE_TELEPORT ||
+                    player.destroyItemByItemId("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list.getItemId(),
+                            price, this, true))
             {
                 if (Config.DEBUG)
                 {
-                    Log.fine("Teleporting player " + player.getName() + " to new location: " + list
-                            .getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+                    Log.fine("Teleporting player " + player.getName() + " to new location: " + list.getLocX() + ":" +
+                            list.getLocY() + ":" + list.getLocZ());
                 }
 
                 player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ(), true);
@@ -352,8 +351,8 @@ public class L2TeleporterInstance extends L2Npc
 
     private int validateCondition(L2PcInstance player)
     {
-        if (getNpcId() > 40000 || CastleManager.getInstance()
-                .getCastleIndex(this) < 0) // Teleporter isn't on castle ground
+        if (getNpcId() > 40000 ||
+                CastleManager.getInstance().getCastleIndex(this) < 0) // Teleporter isn't on castle ground
         {
             return COND_REGULAR; // Regular access
         }

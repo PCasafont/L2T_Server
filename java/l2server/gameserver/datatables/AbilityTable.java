@@ -193,8 +193,8 @@ public class AbilityTable
                         {
                             if (isAdd)
                             {
-                                player.addSkill(SkillTable.getInstance()
-                                        .getInfo(id, player.getSkillLevelHash(id) + 1), true);
+                                player.addSkill(SkillTable.getInstance().getInfo(id, player.getSkillLevelHash(id) + 1),
+                                        true);
                             }
                             else
                             {
@@ -271,11 +271,9 @@ public class AbilityTable
 
                         if (hiddenSkillId == 0)
                         {
-                            Log.warning(
-                                    "AbilityTable: Can't locate the hidden skill id for the class " + PlayerClassTable
-                                            .getInstance().getClassNameById(classId) + "(" + classId + ") player " +
-                                            player
-                                                    .getName());
+                            Log.warning("AbilityTable: Can't locate the hidden skill id for the class " +
+                                    PlayerClassTable.getInstance().getClassNameById(classId) + "(" + classId +
+                                    ") player " + player.getName());
                         }
                         else
                         {

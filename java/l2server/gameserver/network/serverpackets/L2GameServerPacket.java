@@ -70,8 +70,9 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
         }
         catch (Exception e)
         {
-            Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e
-                    .getMessage(), e);
+            Log.log(Level.SEVERE,
+                    "Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e.getMessage(),
+                    e);
         }
     }
 
@@ -103,9 +104,8 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
             }
             if (opcode.length > 6)
             {
-                type += ":" + Integer
-                        .toHexString(opcode[3] & 0xff | opcode[4] & 0xff << 8 | opcode[5] & 0xff << 16 |
-                                opcode[6] & 0xff << 24);
+                type += ":" + Integer.toHexString(
+                        opcode[3] & 0xff | opcode[4] & 0xff << 8 | opcode[5] & 0xff << 16 | opcode[6] & 0xff << 24);
             }
         }
 

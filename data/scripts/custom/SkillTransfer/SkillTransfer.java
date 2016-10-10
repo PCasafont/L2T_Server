@@ -252,8 +252,8 @@ public class SkillTransfer extends Quest
                 }
             }
         }
-        Util.handleIllegalPlayerAction(player, "Player " + player
-                .getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+        Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to learn skill that he can't!!!",
+                Config.DEFAULT_PUNISH);
 
         return "false";
     }
@@ -401,8 +401,8 @@ public class SkillTransfer extends Quest
 
             if (Config.SKILL_CHECK_ENABLE && (!player.isGM() || Config.SKILL_CHECK_GM))
             {
-                int count = PORMANDERS[index][1] - (int) player.getInventory()
-                        .getInventoryItemCount(PORMANDERS[index][0], -1, false);
+                int count = PORMANDERS[index][1] -
+                        (int) player.getInventory().getInventoryItemCount(PORMANDERS[index][0], -1, false);
                 for (L2Skill s : player.getAllSkills())
                 {
                     for (int i = SKILL_TRANSFER_TREE[index].length; --i >= 0; )
@@ -418,10 +418,10 @@ public class SkillTransfer extends Quest
                             count--;
                             if (count < 0)
                             {
-                                Util.handleIllegalPlayerAction(player, "Player " + player
-                                        .getName() + " has too many transfered skills or items, skill:" + s
-                                        .getName() + " (" + s.getId() + "/" + s.getLevel() + "), class:" + player
-                                        .getCurrentClass().getName(), 1);
+                                Util.handleIllegalPlayerAction(player, "Player " + player.getName() +
+                                        " has too many transfered skills or items, skill:" + s.getName() + " (" +
+                                        s.getId() + "/" + s.getLevel() + "), class:" +
+                                        player.getCurrentClass().getName(), 1);
                                 if (Config.SKILL_CHECK_REMOVE)
                                 {
                                     player.removeSkill(s);

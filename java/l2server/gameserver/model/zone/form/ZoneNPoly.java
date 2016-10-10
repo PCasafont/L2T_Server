@@ -133,12 +133,12 @@ public class ZoneNPoly extends L2ZoneForm
     {
         double test, shortestDist;
         double u = ((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1]) +
-                (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) / (Math
-                .pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
+                (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) /
+                (Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
         if (u > 0 && u < 1)
         {
-            shortestDist = Math.pow(_x[0] + u * (_x[_x.length - 1] - _x[0]) - x, 2) + Math
-                    .pow(_y[0] + u * (_y[_y.length - 1] - _y[0]) - y, 2);
+            shortestDist = Math.pow(_x[0] + u * (_x[_x.length - 1] - _x[0]) - x, 2) +
+                    Math.pow(_y[0] + u * (_y[_y.length - 1] - _y[0]) - y, 2);
         }
         else
         {
@@ -148,12 +148,12 @@ public class ZoneNPoly extends L2ZoneForm
         for (int i = 1; i < _y.length; i++)
         {
             u = ((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1]) +
-                    (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) / (Math
-                    .pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
+                    (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) /
+                    (Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
             if (u > 0 && u < 1)
             {
-                test = Math.pow(_x[i] + u * (_x[i - 1] - _x[i]) - x, 2) + Math
-                        .pow(_y[i] + u * (_y[i - 1] - _y[i]) - y, 2);
+                test = Math.pow(_x[i] + u * (_x[i - 1] - _x[i]) - x, 2) +
+                        Math.pow(_y[i] + u * (_y[i - 1] - _y[i]) - y, 2);
             }
             else
             {

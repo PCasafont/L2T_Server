@@ -132,8 +132,8 @@ public class L2SkillContinuousCasts extends L2Skill
                 }
             }
 
-            L2Skill skillToCast = SkillTable.getInstance()
-                    .getInfo(_skillId, level, _skillEnchantRoute, _skillEnchantLvl);
+            L2Skill skillToCast =
+                    SkillTable.getInstance().getInfo(_skillId, level, _skillEnchantRoute, _skillEnchantLvl);
             //System.out.println(targetObj + " " + level);
             if (!skillToCast.checkCondition(activeChar, target, false))
             {
@@ -155,9 +155,9 @@ public class L2SkillContinuousCasts extends L2Skill
 
             L2Character firstTarget = (L2Character) subTargets[0];
             ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(skillToCast.getSkillType());
-            activeChar
-                    .broadcastPacket(new MagicSkillUse(activeChar, firstTarget, skillToCast.getDisplayId(), skillToCast
-                            .getLevelHash(), 0, 0, 0));
+            activeChar.broadcastPacket(
+                    new MagicSkillUse(activeChar, firstTarget, skillToCast.getDisplayId(), skillToCast.getLevelHash(),
+                            0, 0, 0));
 
             // Launch the magic skill and calculate its effects
             // TODO: once core will support all possible effects, use effects (not handler)
@@ -171,9 +171,8 @@ public class L2SkillContinuousCasts extends L2Skill
             }
         }
 
-        activeChar
-                .broadcastPacket(new MagicSkillLaunched(activeChar, getDisplayId(), getLevelHash(),
-                        new L2Character[]{activeChar}));
+        activeChar.broadcastPacket(
+                new MagicSkillLaunched(activeChar, getDisplayId(), getLevelHash(), new L2Character[]{activeChar}));
 
         if (activeChar instanceof L2PcInstance)
         {

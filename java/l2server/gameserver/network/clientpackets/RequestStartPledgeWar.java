@@ -56,11 +56,11 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
             return;
         }
 
-        if (_clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL || !player.isGM() && _clan
-                .getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
+        if (_clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL ||
+                !player.isGM() && _clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
         {
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
             player.sendPacket(sm);
             player.sendPacket(ActionFailed.STATIC_PACKET);
             return;
@@ -88,11 +88,11 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
             player.sendPacket(ActionFailed.STATIC_PACKET);
             return;
         }
-        if (clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL || !player.isGM() && clan
-                .getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
+        if (clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL ||
+                !player.isGM() && clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
         {
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
             player.sendPacket(sm);
             player.sendPacket(ActionFailed.STATIC_PACKET);
             return;
@@ -100,8 +100,8 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
         if (_clan.isAtWarWith(clan.getClanId()))
         {
             // TODO: Update msg id
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.ALREADY_AT_WAR_WITH_S1_WAIT_5_DAYS); //msg id 628
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.ALREADY_AT_WAR_WITH_S1_WAIT_5_DAYS); //msg id 628
             sm.addString(clan.getName());
             player.sendPacket(sm);
             player.sendPacket(ActionFailed.STATIC_PACKET);

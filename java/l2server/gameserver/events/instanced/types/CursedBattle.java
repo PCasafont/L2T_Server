@@ -65,8 +65,8 @@ public class CursedBattle extends EventInstance
         if (_cursedPlayer != null)
         {
             rewardPlayers(_winners);
-            Announcements.getInstance().announceToAll("The event has ended. The player " + _cursedPlayer
-                    .getName() + " won being the cursed player at the last moment!");
+            Announcements.getInstance().announceToAll("The event has ended. The player " + _cursedPlayer.getName() +
+                    " won being the cursed player at the last moment!");
             return;
         }
         else
@@ -179,13 +179,12 @@ public class CursedBattle extends EventInstance
                 _cursedPlayer.startVisualEffect(VisualEffect.S_AIR_STUN);
                 _cursedPlayer.broadcastUserInfo();
                 _winners.add(0, _cursedPlayer);
-                sendToAllParticipants("The participant " + _cursedPlayer
-                        .getName() + " killed the cursed player " + killedPlayer
-                        .getName() + ". Now he is the cursed player!");
+                sendToAllParticipants("The participant " + _cursedPlayer.getName() + " killed the cursed player " +
+                        killedPlayer.getName() + ". Now he is the cursed player!");
 
                 killerPlayer.addEventPoints(3);
-                List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                        .getAssistants(killerPlayer, killedPlayer, true);
+                List<L2PcInstance> assistants =
+                        PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
                 for (L2PcInstance assistant : assistants)
                 {
                     assistant.addEventPoints(1);

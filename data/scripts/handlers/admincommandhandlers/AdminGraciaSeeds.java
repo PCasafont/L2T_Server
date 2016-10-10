@@ -74,8 +74,8 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
         if (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() > 0)
         {
             Calendar nextChangeDate = Calendar.getInstance();
-            nextChangeDate.setTimeInMillis(System.currentTimeMillis() + GraciaSeedsManager.getInstance()
-                    .getSoDTimeForNextStateChange());
+            nextChangeDate.setTimeInMillis(
+                    System.currentTimeMillis() + GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange());
             html.replace("%sodtime%", nextChangeDate.getTime().toString());
         }
         else

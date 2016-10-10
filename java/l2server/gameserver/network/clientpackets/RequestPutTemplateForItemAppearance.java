@@ -89,7 +89,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
         }
 
 		/*boolean isCostume = false;
-		switch (template.getItemId())
+        switch (template.getItemId())
 		{
 			case 23448: // Metal Suit Top
 			case 23449: // Metal Suit Pants
@@ -161,8 +161,8 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
         }
 
         boolean isCorrectType = type == -1 || itemType == itemTypeTemp;
-        boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() || target
-                .getItem().getBodyPart() == L2Item.SLOT_BACK;
+        boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() ||
+                target.getItem().getBodyPart() == L2Item.SLOT_BACK;
 
         boolean valid = true;
         if (!isCorrectGrade || !isCorrectType || target.getItem().getItemGrade() < template.getItem().getItemGrade())
@@ -237,8 +237,8 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
         sendPacket(new ExPutTemplateResultForItemAppearance(2));
 
         int templateId = template.getItemId();
-        if (!player.destroyItem("Appearance", stone.getObjectId(), 1, player, true) || !player
-                .destroyItem("Appearance", template, player, true))
+        if (!player.destroyItem("Appearance", stone.getObjectId(), 1, player, true) ||
+                !player.destroyItem("Appearance", template, player, true))
         {
             sendPacket(new ExPutTemplateResultForItemAppearance(0));
             return;
@@ -252,7 +252,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
         player.sendPacket(iu);
         player.broadcastUserInfo();
 
-        Util.logToFile(player.getName() + " is applying " + template.getName() + " on his " + target
-                .getName() + ".", "Appearances", "txt", true, true);
+        Util.logToFile(player.getName() + " is applying " + template.getName() + " on his " + target.getName() + ".",
+                "Appearances", "txt", true, true);
     }
 }

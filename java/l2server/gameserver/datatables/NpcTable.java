@@ -84,8 +84,8 @@ public class NpcTable
                 for (L2DropData dd : npc.getDropData())
                 {
                     L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-                    if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item
-                            .getItemType() == L2EtcItemType.RECIPE || item.getItemType() == L2EtcItemType.MATERIAL)
+                    if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW ||
+                            item.getItemType() == L2EtcItemType.RECIPE || item.getItemType() == L2EtcItemType.MATERIAL)
                     {
                         dropsToRemove.add(dd);
                     }
@@ -102,8 +102,9 @@ public class NpcTable
                     for (L2DropData dd : dc.getAllDrops())
                     {
                         L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-                        if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item
-                                .getItemType() == L2EtcItemType.RECIPE || item.getItemType() == L2EtcItemType.MATERIAL)
+                        if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW ||
+                                item.getItemType() == L2EtcItemType.RECIPE ||
+                                item.getItemType() == L2EtcItemType.MATERIAL)
                         {
                             dropsToRemove.add(dd);
                         }
@@ -184,8 +185,7 @@ public class NpcTable
                                 break;
                             default:
                                 Log.severe("NPCElementals: Elementals Error with id : " + npcId +
-                                        "; unknown elementType: " + set
-                                        .getByte("elemAtkType"));
+                                        "; unknown elementType: " + set.getByte("elemAtkType"));
                                 continue;
                         }
 
@@ -272,8 +272,8 @@ public class NpcTable
                                 npc.addSkill(npcSkill);
                             }
 
-                            if (propertyNode.getName().equalsIgnoreCase("spoilDrop") || propertyNode.getName()
-                                    .equalsIgnoreCase("itemDrop"))
+                            if (propertyNode.getName().equalsIgnoreCase("spoilDrop") ||
+                                    propertyNode.getName().equalsIgnoreCase("itemDrop"))
                             {
                                 int itemId = propertyNode.getInt("itemId");
                                 int min = propertyNode.getInt("min");
@@ -287,8 +287,7 @@ public class NpcTable
                                 {
                                     Log.warning(
                                             "Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " +
-                                                    dd
-                                                            .getItemId());
+                                                    dd.getItemId());
                                     continue;
                                 }
 
@@ -321,8 +320,7 @@ public class NpcTable
                                         if (item == null)
                                         {
                                             Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId +
-                                                    " itemId: " + dd
-                                                    .getItemId());
+                                                    " itemId: " + dd.getItemId());
                                             continue;
                                         }
 
@@ -330,7 +328,7 @@ public class NpcTable
                                     }
                                 }
                                 /*if (dc.getAllDrops().size() == 1)
-								{
+                                {
 									L2DropData dd = dc.getAllDrops().getFirst();
 									npc.addDropData(new L2DropData(dd.getItemId(), dd.getMinDrop(), dd.getMaxDrop(), dc.getChance()));
 								}
@@ -411,9 +409,9 @@ public class NpcTable
                     continue;
                 }
 
-                String fileName = ("00000" + i * 1000)
-                        .substring(String.valueOf(i * 1000).length()) + "-" + ("00000" + ((i + 1) * 1000 - 1))
-                        .substring(String.valueOf((i + 1) * 1000 - 1).length()) + ".xml";
+                String fileName = ("00000" + i * 1000).substring(String.valueOf(i * 1000).length()) + "-" +
+                        ("00000" + ((i + 1) * 1000 - 1)).substring(String.valueOf((i + 1) * 1000 - 1).length()) +
+                        ".xml";
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs/" + fileName),
                         "UTF-8"));
@@ -434,26 +432,26 @@ public class NpcTable
                         t = t.getBaseTemplate();
                     }
 
-                    String baseNode = "\t<npc" + t.getXmlNpcId() + t.getXmlTemplateId() + t.getXmlName() + t
-                            .getXmlServerSideName() + t.getXmlTitle() + t.getXmlServerSideTitle() + t.getXmlLevel() + t
-                            .getXmlType() + t.getXmlInteractionDistance() + t.getXmlAttackRange() + t.getXmlMaxHp() + t
-                            .getXmlHpReg() + t.getXmlMaxMp() + t.getXmlMpReg() + t.getXmlSTR() + t.getXmlCON() + t
-                            .getXmlDEX() + t.getXmlINT() + t.getXmlWIT() + t.getXmlMEN() + t.getXmlExp() + t
-                            .getXmlSp() + t.getXmlPAtk() + t.getXmlMAtk() + t.getXmlPDef() + t.getXmlMDef() + t
-                            .getXmlPAtkSpd() + t.getXmlMAtkSpd() + t.getXmlCritical() + t.getXmlMCritical() + t
-                            .getXmlWalkSpd() + t.getXmlRunSpd() + t.getXmlRandomWalk() + t.getXmlAggessive() + t
-                            .getXmlAggroRange() + t.getXmlCanSeeThroughSilentMove() + t.getXmlRHand() + t
-                            .getXmlLHand() + t.getXmlExtraDropGroup() + t.getXmlCollisionRadius() + t
-                            .getXmlCollisionHeight() + t.getXmlTargetable() + t.getXmlShowName() + t
-                            .getXmlIsLethalImmune() + t.getXmlIsDebuffImmune() + t.getXmlCanBeChampion() + t
-                            .getXmlIsNonTalking() + t.getXmlElemAtk() + t.getXmlElemRes() + t.getXmlAIType() + t
-                            .getXmlSkillChance() + t.getXmlPrimaryAttack() + t.getXmlCanMove() + t
-                            .getXmlMinRangeSkill() + t.getXmlMinRangeChance() + t.getXmlMaxRangeSkill() + t
-                            .getXmlMaxRangeChance() + t.getXmlSoulshots() + t.getXmlSpiritshots() + t
-                            .getXmlSSChance() + t.getXmlSpSChance() + t.getXmlIsChaos() + t.getXmlClan() + t
-                            .getXmlClanRange() + t.getXmlEnemy() + t.getXmlEnemyRange() + t.getXmlDodge() + t
-                            .getXmlMinSocial1() + t.getXmlMaxSocial1() + t.getXmlMinSocial2() + t
-                            .getXmlMaxSocial2() + ">\r\n";
+                    String baseNode = "\t<npc" + t.getXmlNpcId() + t.getXmlTemplateId() + t.getXmlName() +
+                            t.getXmlServerSideName() + t.getXmlTitle() + t.getXmlServerSideTitle() + t.getXmlLevel() +
+                            t.getXmlType() + t.getXmlInteractionDistance() + t.getXmlAttackRange() + t.getXmlMaxHp() +
+                            t.getXmlHpReg() + t.getXmlMaxMp() + t.getXmlMpReg() + t.getXmlSTR() + t.getXmlCON() +
+                            t.getXmlDEX() + t.getXmlINT() + t.getXmlWIT() + t.getXmlMEN() + t.getXmlExp() +
+                            t.getXmlSp() + t.getXmlPAtk() + t.getXmlMAtk() + t.getXmlPDef() + t.getXmlMDef() +
+                            t.getXmlPAtkSpd() + t.getXmlMAtkSpd() + t.getXmlCritical() + t.getXmlMCritical() +
+                            t.getXmlWalkSpd() + t.getXmlRunSpd() + t.getXmlRandomWalk() + t.getXmlAggessive() +
+                            t.getXmlAggroRange() + t.getXmlCanSeeThroughSilentMove() + t.getXmlRHand() +
+                            t.getXmlLHand() + t.getXmlExtraDropGroup() + t.getXmlCollisionRadius() +
+                            t.getXmlCollisionHeight() + t.getXmlTargetable() + t.getXmlShowName() +
+                            t.getXmlIsLethalImmune() + t.getXmlIsDebuffImmune() + t.getXmlCanBeChampion() +
+                            t.getXmlIsNonTalking() + t.getXmlElemAtk() + t.getXmlElemRes() + t.getXmlAIType() +
+                            t.getXmlSkillChance() + t.getXmlPrimaryAttack() + t.getXmlCanMove() +
+                            t.getXmlMinRangeSkill() + t.getXmlMinRangeChance() + t.getXmlMaxRangeSkill() +
+                            t.getXmlMaxRangeChance() + t.getXmlSoulshots() + t.getXmlSpiritshots() +
+                            t.getXmlSSChance() + t.getXmlSpSChance() + t.getXmlIsChaos() + t.getXmlClan() +
+                            t.getXmlClanRange() + t.getXmlEnemy() + t.getXmlEnemyRange() + t.getXmlDodge() +
+                            t.getXmlMinSocial1() + t.getXmlMaxSocial1() + t.getXmlMinSocial2() + t.getXmlMaxSocial2() +
+                            ">\r\n";
 
                     int index = baseNode.indexOf(" ", 120);
                     while (index >= 120)
@@ -476,8 +474,8 @@ public class NpcTable
 
                             count--;
                         }
-                        out.write("\t\t<randomMinion npcId=\"" + mins + "\" count=\"" + t.getRandomMinionData()
-                                .getAmount() + "\" />\r\n");
+                        out.write("\t\t<randomMinion npcId=\"" + mins + "\" count=\"" +
+                                t.getRandomMinionData().getAmount() + "\" />\r\n");
                     }
 
                     if (t.getMinionData() != null)
@@ -490,8 +488,8 @@ public class NpcTable
                             {
                                 comment = " <!-- " + mt.getName() + " -->";
                             }
-                            out.write("\t\t<minion npcId=\"" + md.getMinionId() + "\" min=\"" + md
-                                    .getAmountMin() + "\" max=\"" + md.getAmountMax() + "\" />" + comment + "\r\n");
+                            out.write("\t\t<minion npcId=\"" + md.getMinionId() + "\" min=\"" + md.getAmountMin() +
+                                    "\" max=\"" + md.getAmountMax() + "\" />" + comment + "\r\n");
                         }
                     }
 
@@ -504,8 +502,8 @@ public class NpcTable
                             {
                                 comment = " <!-- " + skill.getName() + " -->";
                             }
-                            out.write("\t\t<skill id=\"" + skill.getId() + "\" level=\"" + skill
-                                    .getLevel() + "\" />" + comment + "\r\n");
+                            out.write("\t\t<skill id=\"" + skill.getId() + "\" level=\"" + skill.getLevel() + "\" />" +
+                                    comment + "\r\n");
                         }
                     }
 
@@ -522,9 +520,9 @@ public class NpcTable
                         {
                             comment = " <!-- " + it.getName() + " -->";
                         }
-                        out.write("\t\t<spoilDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd
-                                .getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util
-                                .getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+                        out.write("\t\t<spoilDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() +
+                                "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) +
+                                "\" />" + comment + "\r\n");
                     }
 
                     for (L2DropData dd : t.getDropData())
@@ -540,9 +538,9 @@ public class NpcTable
                         {
                             comment = " <!-- " + it.getName() + " -->";
                         }
-                        out.write("\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd
-                                .getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util
-                                .getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+                        out.write("\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() +
+                                "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) +
+                                "\" />" + comment + "\r\n");
                     }
 
                     for (L2DropCategory dc : t.getMultiDropData())
@@ -561,9 +559,9 @@ public class NpcTable
                             {
                                 comment = " <!-- " + it.getName() + " -->";
                             }
-                            out.write("\t\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd
-                                    .getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util
-                                    .getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+                            out.write("\t\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() +
+                                    "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" +
+                                    Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
                         }
                         out.write("\t\t</dropCategory>\r\n");
                     }

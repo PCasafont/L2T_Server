@@ -247,8 +247,8 @@ public class CharNameTable
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT COUNT(char_name) FROM characters WHERE account_name=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT COUNT(char_name) FROM characters WHERE account_name=?");
             statement.setString(1, account);
             ResultSet rset = statement.executeQuery();
             while (rset.next())
@@ -312,14 +312,14 @@ public class CharNameTable
             {
                 if (name.toLowerCase().contains(st.toLowerCase()))
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.INCORRECT_CHARACTER_NAME_TRY_AGAIN));
+                    player.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_CHARACTER_NAME_TRY_AGAIN));
                     return false;
                 }
             }
         }
-        if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || name.length() < 1 || name
-                .length() > 16 || getIdByName(name) > 0)
+        if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || name.length() < 1 ||
+                name.length() > 16 || getIdByName(name) > 0)
         {
             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHARACTER_NAME_INVALID_RENAME_CHARACTER));
             return false;

@@ -25692,8 +25692,8 @@ public final class NpcStringId
         for (final Field field : fields)
         {
             mod = field.getModifiers();
-            if (Modifier.isStatic(mod) && Modifier.isPublic(mod) && Modifier.isFinal(mod) && field.getType()
-                    .equals(NpcStringId.class))
+            if (Modifier.isStatic(mod) && Modifier.isPublic(mod) && Modifier.isFinal(mod) &&
+                    field.getType().equals(NpcStringId.class))
             {
                 try
                 {
@@ -25988,8 +25988,8 @@ public final class NpcStringId
                 {
                     builder = _builders[i];
                     paramIndex = builder.getIndex();
-                    build = paramIndex != -1 && paramIndex < paramsLength ? builder
-                            .toString(params[paramIndex]) : builder.toString();
+                    build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) :
+                            builder.toString();
                     buildTextLen += build.length();
                     builds[i] = build;
                 }

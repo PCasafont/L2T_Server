@@ -129,8 +129,8 @@ public class ClanGuardian extends L2AttackableAIScript
             return false;
         }
 
-        if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() && target
-                .getCurrentMp() == target.getMaxMp())
+        if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() &&
+                target.getCurrentMp() == target.getMaxMp())
         {
             return false;
         }

@@ -74,8 +74,8 @@ public class MentorManager
         coinsRewardForLevel.put(84, 987);
         coinsRewardForLevel.put(85, 1149);
         coinsRewardForLevel.put(86, 2015);
-        Log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel
-                .size() + " reward to mentor for mentee level.");
+        Log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel.size() +
+                " reward to mentor for mentee level.");
     }
 
     public int getItemsCount(int level)

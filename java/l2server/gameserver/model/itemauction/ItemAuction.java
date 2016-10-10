@@ -189,9 +189,8 @@ public final class ItemAuction
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO item_auction (auctionId,instanceId,auctionItemId,startingTime,endingTime,auctionStateId) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE auctionStateId=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO item_auction (auctionId,instanceId,auctionItemId,startingTime,endingTime,auctionStateId) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE auctionStateId=?");
             statement.setInt(1, _auctionId);
             statement.setInt(2, _instanceId);
             statement.setInt(3, _auctionItem.getAuctionItemId());
@@ -240,9 +239,8 @@ public final class ItemAuction
             }
             else
             {
-                statement = con
-                        .prepareStatement(
-                                "INSERT INTO item_auction_bid (auctionId,playerObjId,playerBid) VALUES (?,?,?) ON DUPLICATE KEY UPDATE playerBid=?");
+                statement = con.prepareStatement(
+                        "INSERT INTO item_auction_bid (auctionId,playerObjId,playerBid) VALUES (?,?,?) ON DUPLICATE KEY UPDATE playerBid=?");
                 statement.setInt(1, _auctionId);
                 statement.setInt(2, bid.getPlayerObjId());
                 statement.setLong(3, bid.getLastBid());
@@ -314,15 +312,15 @@ public final class ItemAuction
                 {
                     if (newBid < bid.getLastBid()) // just another check
                     {
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.BID_MUST_BE_HIGHER_THAN_CURRENT_BID));
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.BID_MUST_BE_HIGHER_THAN_CURRENT_BID));
                         return;
                     }
 
                     if (!reduceItemCount(player, newBid - bid.getLastBid()))
                     {
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.NOT_ENOUGH_ADENA_FOR_THIS_BID));
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ADENA_FOR_THIS_BID));
                         return;
                     }
                 }
@@ -338,8 +336,8 @@ public final class ItemAuction
             onPlayerBid(player, bid);
             updatePlayerBid(bid, false);
 
-            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUBMITTED_A_BID_OF_S1)
-                    .addItemNumber(newBid));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.SUBMITTED_A_BID_OF_S1).addItemNumber(newBid));
             return;
         }
     }
@@ -462,8 +460,8 @@ public final class ItemAuction
                 return false;
 
             case FINISHED:
-                if (_startingTime < System.currentTimeMillis() - TimeUnit.MILLISECONDS
-                        .convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
+                if (_startingTime < System.currentTimeMillis() -
+                        TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
                 {
                     return false;
                 }

@@ -42,7 +42,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class HandysBlockCheckerManager
 {
     /*
-	 * This class manage the player add/remove, team change and
+     * This class manage the player add/remove, team change and
 	 * event arena status, as the clearance of the participants
 	 * list or liberate the arena
 	 */
@@ -178,8 +178,8 @@ public final class HandysBlockCheckerManager
 
             if (player.isCursedWeaponEquipped())
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.CANNOT_REGISTER_PROCESSING_CURSED_WEAPON));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.CANNOT_REGISTER_PROCESSING_CURSED_WEAPON));
                 return false;
             }
 
@@ -210,8 +210,8 @@ public final class HandysBlockCheckerManager
 
             if (_registrationPenalty.contains(player.getObjectId()))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.CANNOT_REQUEST_REGISTRATION_10_SECS_AFTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.CANNOT_REQUEST_REGISTRATION_10_SECS_AFTER));
                 return false;
             }
 
@@ -515,8 +515,8 @@ public final class HandysBlockCheckerManager
             int blueSize = _bluePlayers.size();
             if (redSize > blueSize + 1)
             {
-                broadCastPacketToTeam(SystemMessage
-                        .getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
+                broadCastPacketToTeam(
+                        SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
                 int needed = redSize - (blueSize + 1);
                 for (int i = 0; i < needed + 1; i++)
                 {
@@ -530,8 +530,8 @@ public final class HandysBlockCheckerManager
             }
             else if (blueSize > redSize + 1)
             {
-                broadCastPacketToTeam(SystemMessage
-                        .getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
+                broadCastPacketToTeam(
+                        SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
                 int needed = blueSize - (redSize + 1);
                 for (int i = 0; i < needed + 1; i++)
                 {

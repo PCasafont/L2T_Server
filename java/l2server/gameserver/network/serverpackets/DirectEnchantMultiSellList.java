@@ -92,13 +92,14 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
                 continue;
             }
 
-            int currencyId = item.isWeapon() ? _config.weaponMaterialId : item.getItem()
-                    .getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem()
-                    .getBodyPart() <= L2Item.SLOT_LR_FINGER ? _config.jewelMaterialId : _config.armorMaterialId;
+            int currencyId = item.isWeapon() ? _config.weaponMaterialId :
+                    item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR &&
+                            item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? _config.jewelMaterialId :
+                            _config.armorMaterialId;
 
             System.out.println("Currency " + currencyId + " for " + item.getName());
-            if (currencyId != -1 && !item.isEquipped() && EnchantItemTable.isEnchantable(item) && item
-                    .getEnchantLevel() < _config.enchantLevel)
+            if (currencyId != -1 && !item.isEquipped() && EnchantItemTable.isEnchantable(item) &&
+                    item.getEnchantLevel() < _config.enchantLevel)
             {
                 _mainIngredients.add(item);
             }
@@ -211,9 +212,10 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
                 }
 
                 // Currency
-                int currencyId = item.isWeapon() ? _config.weaponMaterialId : item.getItem()
-                        .getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem()
-                        .getBodyPart() <= L2Item.SLOT_LR_FINGER ? _config.jewelMaterialId : _config.armorMaterialId;
+                int currencyId = item.isWeapon() ? _config.weaponMaterialId :
+                        item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR &&
+                                item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? _config.jewelMaterialId :
+                                _config.armorMaterialId;
                 writeD(currencyId);
                 writeH(ItemTable.getInstance().getTemplate(currencyId).getType2());
                 writeQ(item.isWeapon() ? _config.costCount : (int) (_config.costCount / _config.priceDividerForArmor));

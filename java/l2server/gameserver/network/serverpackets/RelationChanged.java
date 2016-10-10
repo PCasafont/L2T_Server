@@ -54,8 +54,8 @@ public final class RelationChanged extends L2GameServerPacket
         _relation._autoAttackable = autoattackable ? 1 : 0;
         _relation._reputation = activeChar.getReputation();
         _relation._pvpFlag = activeChar.getPvpFlag();
-        _invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ? activeChar.getActingPlayer()
-                .getObjectId() : 0;
+        _invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ?
+                activeChar.getActingPlayer().getObjectId() : 0;
     }
 
     /**

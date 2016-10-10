@@ -224,8 +224,8 @@ public abstract class L2Vehicle extends L2Character
 
     public Location getOustLoc()
     {
-        return _oustLoc != null ? _oustLoc : MapRegionTable.getInstance()
-                .getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
+        return _oustLoc != null ? _oustLoc :
+                MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
     }
 
     public void oustPlayers()
@@ -328,8 +328,8 @@ public abstract class L2Vehicle extends L2Character
                     if (itemId > 0)
                     {
                         ticket = player.getInventory().getItemByItemId(itemId);
-                        if (ticket == null || player.getInventory()
-                                .destroyItem("Boat", ticket, count, player, this) == null)
+                        if (ticket == null ||
+                                player.getInventory().destroyItem("Boat", ticket, count, player, this) == null)
                         {
                             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_CORRECT_BOAT_TICKET));
                             player.teleToLocation(oustX, oustY, oustZ, true);

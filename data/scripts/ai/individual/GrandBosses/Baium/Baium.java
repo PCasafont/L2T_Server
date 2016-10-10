@@ -158,10 +158,11 @@ public class Baium extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.BAIUM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getCommandChannel() != null ? player.getParty().getCommandChannel().getMembers() : player
-                        .getParty().getPartyMembers());
+                allPlayers.addAll(Config.BAIUM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -262,8 +263,8 @@ public class Baium extends L2AttackableAIScript
 
                 _baiumBoss.doCast(_baiumGift);
 
-                _baiumBoss.broadcastPacket(new CreatureSay(_baiumBoss.getObjectId(), 0, _baiumBoss
-                        .getName(), _firstAttacker.getName() + ", How dare you wake me! Now you shall die!"));
+                _baiumBoss.broadcastPacket(new CreatureSay(_baiumBoss.getObjectId(), 0, _baiumBoss.getName(),
+                        _firstAttacker.getName() + ", How dare you wake me! Now you shall die!"));
             }
 
             for (L2PcInstance players : _bossZone.getPlayersInside())
@@ -273,10 +274,9 @@ public class Baium extends L2AttackableAIScript
                     continue;
                 }
 
-                _bossZone
-                        .broadcastPacket(new ExShowScreenMessage(
-                                "Not even the gods themselves could touch me. But you, $s1, you dare challenge me?! Ignorant mortal!"
-                                        .replace("$1", players.getName()), 4000));//1000521
+                _bossZone.broadcastPacket(new ExShowScreenMessage(
+                        "Not even the gods themselves could touch me. But you, $s1, you dare challenge me?! Ignorant mortal!"
+                                .replace("$1", players.getName()), 4000));//1000521
             }
 
             SpawnTable.getInstance().spawnSpecificTable("baium_minions");
@@ -389,8 +389,8 @@ public class Baium extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " out of the boss zone!");
             }
         }
 
@@ -405,8 +405,8 @@ public class Baium extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " wich is out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " wich is out of the boss zone!");
             }
         }
 

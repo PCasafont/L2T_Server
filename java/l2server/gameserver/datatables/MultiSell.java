@@ -105,8 +105,8 @@ public class MultiSell implements Reloadable
         ListContainer template = _entries.get(listName);
         if (template == null)
         {
-            Log.warning("[MultiSell] can't find list: " + listName + " requested by player: " + player
-                    .getName() + ", npcId:" + (npc != null ? npc.getNpcId() : 0));
+            Log.warning("[MultiSell] can't find list: " + listName + " requested by player: " + player.getName() +
+                    ", npcId:" + (npc != null ? npc.getNpcId() : 0));
             return;
         }
 
@@ -140,8 +140,8 @@ public class MultiSell implements Reloadable
                 }
                 if (player.getClan().getReputationScore() < amount)
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.THE_CLAN_REPUTATION_SCORE_IS_TOO_LOW));
+                    player.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.THE_CLAN_REPUTATION_SCORE_IS_TOO_LOW));
                     break;
                 }
                 return true;
@@ -262,10 +262,9 @@ public class MultiSell implements Reloadable
 
                         int hatId = entry.getProducts().get(0).getItemId();
                         long price = entry.getIngredients().get(0).getItemCount();
-                        System.out
-                                .println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" +
-                                        10000 * price / total / 100.0 + "\" /> <!-- " + ItemTable
-                                        .getInstance().getTemplate(hatId).getName() + " -->");
+                        System.out.println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" +
+                                10000 * price / total / 100.0 + "\" /> <!-- " +
+                                ItemTable.getInstance().getTemplate(hatId).getName() + " -->");
                     }
                 }
             }
@@ -373,16 +372,16 @@ public class MultiSell implements Reloadable
                 {
                     if (!verifyIngredient(ing))
                     {
-                        Log.warning("[MultiSell] can't find ingredient with itemId: " + ing
-                                .getItemId() + " in list: " + list.getListId());
+                        Log.warning("[MultiSell] can't find ingredient with itemId: " + ing.getItemId() + " in list: " +
+                                list.getListId());
                     }
                 }
                 for (Ingredient ing : ent.getProducts())
                 {
                     if (!verifyIngredient(ing))
                     {
-                        Log.warning("[MultiSell] can't find product with itemId: " + ing
-                                .getItemId() + " in list: " + list.getListId());
+                        Log.warning("[MultiSell] can't find product with itemId: " + ing.getItemId() + " in list: " +
+                                list.getListId());
                     }
                 }
             }

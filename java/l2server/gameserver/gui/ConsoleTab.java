@@ -138,8 +138,8 @@ public class ConsoleTab extends JPanel
 
         JPanel checkBoxes = new JPanel();
         checkBoxes.setLayout(new GridBagLayout());
-        checkBoxes.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Show:"), BorderFactory
-                .createEmptyBorder(5, 5, 5, 5)));
+        checkBoxes.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Show:"),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
         GridBagConstraints cons = new GridBagConstraints();
         cons.anchor = GridBagConstraints.FIRST_LINE_START;

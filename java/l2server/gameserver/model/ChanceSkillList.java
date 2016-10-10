@@ -172,14 +172,14 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
                 else if (e.getKey() instanceof EffectChanceSkillTrigger)
                 {
                     if ((event & (ChanceCondition.EVT_ON_START | ChanceCondition.EVT_ON_ACTION_TIME |
-                            ChanceCondition.EVT_ON_EXIT)) != 0 && ((EffectChanceSkillTrigger) e
-                            .getKey()).getSkill() != skill)
+                            ChanceCondition.EVT_ON_EXIT)) != 0 &&
+                            ((EffectChanceSkillTrigger) e.getKey()).getSkill() != skill)
                     {
                         continue;
                     }
 
-                    makeCast((EffectChanceSkillTrigger) e.getKey(), target, SkillTable.getInstance()
-                            .getInfo(e.getKey().getTriggeredChanceId(), 1).getTargetType());
+                    makeCast((EffectChanceSkillTrigger) e.getKey(), target,
+                            SkillTable.getInstance().getInfo(e.getKey().getTriggeredChanceId(), 1).getTargetType());
                 }
             }
         }
@@ -191,8 +191,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
         {
             if (skill.getWeaponDependancy(_owner, true) && skill.checkCondition(_owner, target, false))
             {
-                if (skill.triggersChanceSkill() && skill
-                        .getTriggeredChanceLevel() >
+                if (skill.triggersChanceSkill() && skill.getTriggeredChanceLevel() >
                         -1) //skill will trigger another skill, but only if its not chance skill
                 {
                     //Auto increase trigger skills
@@ -253,10 +252,10 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
                 ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(skill.getSkillType());
 
-                _owner.broadcastPacket(new MagicSkillLaunched(_owner, skill.getDisplayId(), skill
-                        .getLevelHash(), targets));
-                _owner.broadcastPacket(new MagicSkillUse(_owner, firstTarget, skill.getDisplayId(), skill
-                        .getLevelHash(), 0, 0, 0));
+                _owner.broadcastPacket(
+                        new MagicSkillLaunched(_owner, skill.getDisplayId(), skill.getLevelHash(), targets));
+                _owner.broadcastPacket(
+                        new MagicSkillUse(_owner, firstTarget, skill.getDisplayId(), skill.getLevelHash(), 0, 0, 0));
 
                 // Launch the magic skill and calculate its effects
                 // TODO: once core will support all possible effects, use effects (not handler)
@@ -328,8 +327,8 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
                     }
                 }
 
-                triggered = SkillTable.getInstance()
-                        .getInfo(effect.getTriggeredChanceId(), level, enchRoute, enchLevel);
+                triggered =
+                        SkillTable.getInstance().getInfo(effect.getTriggeredChanceId(), level, enchRoute, enchLevel);
                 if (triggered == null)
                 {
                     return;
@@ -337,8 +336,8 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
             }
 
             triggered.setIsTriggered();
-            L2Character caster = triggered.getTargetType() == L2SkillTargetType.TARGET_SELF ? _owner : effect
-                    .getEffector();
+            L2Character caster =
+                    triggered.getTargetType() == L2SkillTargetType.TARGET_SELF ? _owner : effect.getEffector();
 
             if (caster == null || triggered.getSkillType() == L2SkillType.NOTDONE || caster.isSkillDisabled(triggered))
             {
@@ -362,7 +361,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
                 return;
             }
             /*
-			for (L2Object obj : targets)
+            for (L2Object obj : targets)
 			{
 				if (!(obj instanceof L2Character))
 					continue;
@@ -386,10 +385,11 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
             if (effect.getTriggeredChanceCondition().getTriggerType() != TriggerType.ON_ACTION_TIME)
             {
-                _owner.broadcastPacket(new MagicSkillLaunched(_owner, triggered.getDisplayId(), triggered
-                        .getLevelHash(), targets));
-                _owner.broadcastPacket(new MagicSkillUse(_owner, firstTarget, triggered.getDisplayId(), triggered
-                        .getLevelHash(), 0, 0, 0));
+                _owner.broadcastPacket(
+                        new MagicSkillLaunched(_owner, triggered.getDisplayId(), triggered.getLevelHash(), targets));
+                _owner.broadcastPacket(
+                        new MagicSkillUse(_owner, firstTarget, triggered.getDisplayId(), triggered.getLevelHash(), 0, 0,
+                                0));
             }
 
             // Launch the magic skill and calculate its effects

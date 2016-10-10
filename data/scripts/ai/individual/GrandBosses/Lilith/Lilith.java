@@ -145,8 +145,7 @@ public class Lilith extends L2AttackableAIScript
                     {
                         return null;
                     }
-                    else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager
-                            .getInstance()
+                    else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance()
                             .checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
                     {
                         return null;
@@ -196,9 +195,9 @@ public class Lilith extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.LILITH_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.LILITH_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             Location enterLoc = npcId == _enterCubic ? _enterLoc : _enterLilithLoc;
@@ -261,8 +260,8 @@ public class Lilith extends L2AttackableAIScript
                     randomSpawn = spawns.get(Rnd.get(spawns.size()));
                     if (randomSpawn != null)
                     {
-                        L2Npc remnant = addSpawn(_remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn
-                                .getZ(), randomSpawn.getHeading(), true, 0, false, 0);
+                        L2Npc remnant = addSpawn(_remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(),
+                                randomSpawn.getHeading(), true, 0, false, 0);
                         _remnants.add(remnant);
                     }
                 }
@@ -343,8 +342,8 @@ public class Lilith extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " out of the boss zone!");
                 }
             }
 
@@ -359,8 +358,8 @@ public class Lilith extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " wich is out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " wich is out of the boss zone!");
                 }
             }
         }
@@ -442,8 +441,8 @@ public class Lilith extends L2AttackableAIScript
         {
             if (skill.getSkillType().toString().contains("HEAL"))
             {
-                if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster && npc
-                        .getTarget() != _lilithBoss) //Don't call minions if are healing Lilith
+                if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster &&
+                        npc.getTarget() != _lilithBoss) //Don't call minions if are healing Lilith
                 {
                     ((L2Attackable) npc).clearAggroList();
                     npc.setTarget(caster);
@@ -461,8 +460,8 @@ public class Lilith extends L2AttackableAIScript
     {
         if (_debug)
         {
-            Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " + npc
-                    .getZ());
+            Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " +
+                    npc.getZ());
         }
 
         return super.onSpawn(npc);

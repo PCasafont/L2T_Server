@@ -85,8 +85,8 @@ public final class L2ClanTraderInstance extends L2Npc
                 player.getClan().addReputationScore(reputation, true);
                 player.getClan().broadcastToOnlineMembers(new PledgeShowInfoUpdate(player.getClan()));
 
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.CLAN_ADDED_S1S_POINTS_TO_REPUTATION_SCORE);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.CLAN_ADDED_S1S_POINTS_TO_REPUTATION_SCORE);
                 sm.addItemNumber(reputation);
                 player.sendPacket(sm);
 

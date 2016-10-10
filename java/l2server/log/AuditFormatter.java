@@ -36,8 +36,8 @@ public class AuditFormatter extends Formatter
     {
         final Object[] params = record.getParameters();
         final StringBuilder output = StringUtil
-                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt
-                        .format(new Date(record.getMillis())), "] ", record.getMessage());
+                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[",
+                        dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
         for (Object p : params)
         {
             if (p == null)

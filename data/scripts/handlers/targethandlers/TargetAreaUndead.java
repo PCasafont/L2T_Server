@@ -47,8 +47,8 @@ public class TargetAreaUndead implements ISkillTargetTypeHandler
 
         int radius = skill.getSkillRadius();
 
-        if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) && target
-                .isUndead() && !target.isAlikeDead())
+        if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) &&
+                target.isUndead() && !target.isAlikeDead())
         {
             cha = target;
 

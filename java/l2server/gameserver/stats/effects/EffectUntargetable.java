@@ -65,15 +65,15 @@ public class EffectUntargetable extends L2Effect
         {
             if (target != null && target != getEffected())
             {
-                if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null && target
-                        .getActingPlayer().getParty() != null && target.getActingPlayer().getParty() == getEffected()
-                        .getActingPlayer().getParty())
+                if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null &&
+                        target.getActingPlayer().getParty() != null &&
+                        target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty())
                 {
                     continue;
                 }
 
-                if (target.getTarget() == getEffected() || target.getAI() != null && target.getAI()
-                        .getAttackTarget() == getEffected())
+                if (target.getTarget() == getEffected() ||
+                        target.getAI() != null && target.getAI().getAttackTarget() == getEffected())
                 {
                     target.setTarget(null);
                     target.abortAttack();

@@ -133,15 +133,15 @@ public class L2MobSummonInstance extends L2SummonInstance
                     html += "<td><center>";
                     if (skill.getId() < 1000)
                     {
-                        html += "<button action=\"bypass -h MobSummon UseSkill " + skill.getId() + " " + skill
-                                .getLevelHash() + "\" back=icon.skill0" + skill.getId() + " fore=icon.skill0" + skill
-                                .getId() + " width=32 height=32>";
+                        html += "<button action=\"bypass -h MobSummon UseSkill " + skill.getId() + " " +
+                                skill.getLevelHash() + "\" back=icon.skill0" + skill.getId() + " fore=icon.skill0" +
+                                skill.getId() + " width=32 height=32>";
                     }
                     else
                     {
-                        html += "<button action=\"bypass -h MobSummon UseSkill " + skill.getId() + " " + skill
-                                .getLevelHash() + "\" back=icon.skill" + skill.getId() + " fore=icon.skill" + skill
-                                .getId() + " width=32 height=32>";
+                        html += "<button action=\"bypass -h MobSummon UseSkill " + skill.getId() + " " +
+                                skill.getLevelHash() + "\" back=icon.skill" + skill.getId() + " fore=icon.skill" +
+                                skill.getId() + " width=32 height=32>";
                     }
                     html += "</center></td>";
                     skills[i % 2] = skill;
@@ -151,9 +151,8 @@ public class L2MobSummonInstance extends L2SummonInstance
                         html += "</tr><tr>";
                         for (int j = 0; j < 2; j++)
                         {
-                            html += "<td><center><a action=\"bypass -h MobSummon UseSkill " + skill
-                                    .getId() + " " + skill.getLevelHash() + "\">" + skills[j]
-                                    .getName() + "</a></center></td>";
+                            html += "<td><center><a action=\"bypass -h MobSummon UseSkill " + skill.getId() + " " +
+                                    skill.getLevelHash() + "\">" + skills[j].getName() + "</a></center></td>";
                         }
                         html += "</tr>";
                     }
@@ -164,9 +163,8 @@ public class L2MobSummonInstance extends L2SummonInstance
                 html += "</tr><tr>";
                 for (int j = 0; j < i % 2; j++)
                 {
-                    html += "<td><center><a action=\"bypass -h MobSummon UseSkill " + skills[j]
-                            .getId() + " " + skills[j].getLevelHash() + "\">" + skills[j]
-                            .getName() + "</a></center></td>";
+                    html += "<td><center><a action=\"bypass -h MobSummon UseSkill " + skills[j].getId() + " " +
+                            skills[j].getLevelHash() + "\">" + skills[j].getName() + "</a></center></td>";
                 }
                 html += "</tr>";
             }
@@ -263,7 +261,7 @@ public class L2MobSummonInstance extends L2SummonInstance
                     if (isInsideRadius(target, 1500, true, false))
                     {
                         /*
-						L2PcInstance receptor = ((L2MobSummonInstance)target).getOwner();
+                        L2PcInstance receptor = ((L2MobSummonInstance)target).getOwner();
 						receptor.setMobSummonExchangeRequest(true, this);
 						String confirmText = getOwner().getName() + " wants to exchange your " + receptor.getPet().getName() + " for his " + getName() + ". Do you accept?";
 						ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1.getId()).addString(confirmText);
@@ -310,8 +308,8 @@ public class L2MobSummonInstance extends L2SummonInstance
             CreatureSay cs1 = new CreatureSay(getObjectId(), Say2.TELL, getName(), "Bye!");
             CreatureSay cs2 = new CreatureSay(mob.getObjectId(), Say2.TELL, mob.getName(), "Bye!");
             CreatureSay cs3 = new CreatureSay(getObjectId(), Say2.TELL, getName(), "You are my new boss, true?");
-            CreatureSay cs4 = new CreatureSay(mob.getObjectId(), Say2.TELL, mob
-                    .getName(), "You are my new boss, true?");
+            CreatureSay cs4 =
+                    new CreatureSay(mob.getObjectId(), Say2.TELL, mob.getName(), "You are my new boss, true?");
             mob.getOwner().sendPacket(cs1);
             getOwner().sendPacket(cs2);
             getOwner().sendPacket(cs3);
@@ -467,8 +465,8 @@ public class L2MobSummonInstance extends L2SummonInstance
         // Check if this is offensive magic skill
         if (skill.isOffensive())
         {
-            if (isInsidePeaceZone(this, target) && getOwner() != null && !getOwner().getAccessLevel()
-                    .allowPeaceAttack())
+            if (isInsidePeaceZone(this, target) && getOwner() != null &&
+                    !getOwner().getAccessLevel().allowPeaceAttack())
             {
                 // If summon or target is in a peace zone, send a system message TARGET_IN_PEACEZONE
                 sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
@@ -492,22 +490,21 @@ public class L2MobSummonInstance extends L2SummonInstance
             }
             else
             {
-                if (!target
-                        .isAttackable() && getOwner() != null && !(target instanceof L2MobSummonInstance) && !getOwner()
-                        .getAccessLevel().allowPeaceAttack())
+                if (!target.isAttackable() && getOwner() != null && !(target instanceof L2MobSummonInstance) &&
+                        !getOwner().getAccessLevel().allowPeaceAttack())
                 {
                     return false;
                 }
 
                 // Check if a Forced ATTACK is in progress on non-attackable target
-                if (!target.isAutoAttackable(this) && !forceUse && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_CLAN && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_ALLY && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_PARTY && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_SELF)
+                if (!target.isAutoAttackable(this) && !forceUse &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_CLAN &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_ALLY &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_SELF)
                 {
                     return false;
                 }

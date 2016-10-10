@@ -46,9 +46,9 @@ public class MonsterKnownList extends AttackableKnownList
             L2PcInstance player = (L2PcInstance) object;
             if (!player.isGM())
             {
-                if (player.getPvpFlag() > 0 && getActiveChar() instanceof L2RaidBossInstance && player
-                        .getLevel() > getActiveChar().getLevel() + 8 && getActiveChar()
-                        .isInsideRadius(object, 500, true, true))
+                if (player.getPvpFlag() > 0 && getActiveChar() instanceof L2RaidBossInstance &&
+                        player.getLevel() > getActiveChar().getLevel() + 8 &&
+                        getActiveChar().isInsideRadius(object, 500, true, true))
                 {
                     L2Skill tempSkill = SkillTable.getInstance().getInfo(4515, 1);
                     if (tempSkill != null)

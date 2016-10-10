@@ -533,8 +533,8 @@ public final class StatsSet
         Object val = _set.get(name);
         if (val == null)
         {
-            throw new IllegalArgumentException("Enum value of type " + enumClass
-                    .getName() + " required for \"" + name + "\", but not specified");
+            throw new IllegalArgumentException(
+                    "Enum value of type " + enumClass.getName() + " required for \"" + name + "\", but not specified");
         }
         if (enumClass.isInstance(val))
         {
@@ -546,8 +546,8 @@ public final class StatsSet
         }
         catch (Exception e)
         {
-            throw new IllegalArgumentException("Enum value of type " + enumClass
-                    .getName() + " required for \"" + name + "\", but found: " + val);
+            throw new IllegalArgumentException(
+                    "Enum value of type " + enumClass.getName() + " required for \"" + name + "\", but found: " + val);
         }
     }
 
@@ -578,8 +578,8 @@ public final class StatsSet
         }
         catch (Exception e)
         {
-            throw new IllegalArgumentException("Enum value of type " + enumClass
-                    .getName() + "required for \"" + name + "\", but found: " + val);
+            throw new IllegalArgumentException(
+                    "Enum value of type " + enumClass.getName() + "required for \"" + name + "\", but found: " + val);
         }
     }
 

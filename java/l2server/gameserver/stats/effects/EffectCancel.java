@@ -99,8 +99,9 @@ public class EffectCancel extends L2Effect
             // More detailed .landrates feedback considering enchanted buffs
             if (caster instanceof L2PcInstance && i > minNegate && caster.getActingPlayer().isLandRates())
             {
-                caster.sendMessage("Attempted to remove " + removableBuffs.get(candidate).getSkill()
-                        .getName() + " with " + rate + "% chance.");
+                caster.sendMessage(
+                        "Attempted to remove " + removableBuffs.get(candidate).getSkill().getName() + " with " + rate +
+                                "% chance.");
             }
 
             // Give it a try with rate% chance
@@ -116,8 +117,8 @@ public class EffectCancel extends L2Effect
                 buff.exit();
 
                 // Tenkai custom: recover buffs 1 minute after they're cancelled!
-                if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS) && buff
-                        .getEffected() instanceof L2PcInstance)
+                if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS) &&
+                        buff.getEffected() instanceof L2PcInstance)
                 {
                     target.scheduleEffectRecovery(buff, 60, target.isInOlympiadMode());
                 }

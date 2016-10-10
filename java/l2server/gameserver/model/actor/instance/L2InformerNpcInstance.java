@@ -65,18 +65,17 @@ public class L2InformerNpcInstance extends L2NpcInstance
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT name, html, parent_id FROM l2tenkai_web.features WHERE id = ?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT name, html, parent_id FROM l2tenkai_web.features WHERE id = ?");
 
             statement.setInt(1, val);
             ResultSet rset = statement.executeQuery();
 
             if (rset.next())
             {
-                content += "<br><center>" + rset.getString("name") + "</center><br>" + rset
-                        .getString("html") + "<br>" + "<center>%subLinks%<br>" +
-                        "<button value=\"Back\" action=\"bypass -h npc_%objectId%_Chat " + rset
-                        .getInt("parent_id") +
+                content += "<br><center>" + rset.getString("name") + "</center><br>" + rset.getString("html") + "<br>" +
+                        "<center>%subLinks%<br>" + "<button value=\"Back\" action=\"bypass -h npc_%objectId%_Chat " +
+                        rset.getInt("parent_id") +
                         "\" width=60 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center><br>";
             }
 
@@ -101,10 +100,9 @@ public class L2InformerNpcInstance extends L2NpcInstance
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT id, name FROM l2tenkai_web.features WHERE parent_id = ? AND exclude_" +
-                            LoginServerThread
-                                    .getInstance().getServerName() + " = 0");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT id, name FROM l2tenkai_web.features WHERE parent_id = ? AND exclude_" +
+                            LoginServerThread.getInstance().getServerName() + " = 0");
 
             statement.setInt(1, val);
             ResultSet rset = statement.executeQuery();
@@ -117,10 +115,10 @@ public class L2InformerNpcInstance extends L2NpcInstance
                 {
                     content += "<tr>";
                 }
-                content += "<td><button value=\"" + rset
-                        .getString("name") + "\" action=\"bypass -h npc_%objectId%_Chat " + rset
-                        .getInt("id") +
-                        "\" width=135 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
+                content +=
+                        "<td><button value=\"" + rset.getString("name") + "\" action=\"bypass -h npc_%objectId%_Chat " +
+                                rset.getInt("id") +
+                                "\" width=135 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
                 if (!first)
                 {
                     content += "</tr>";

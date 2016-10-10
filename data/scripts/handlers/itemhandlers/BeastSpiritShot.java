@@ -161,7 +161,6 @@ public class BeastSpiritShot implements IItemHandler
                 skillId = 22038;
                 break;
         }
-        Broadcast
-                .toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, 1, 0, 0, 0), 360000/*600*/);
+        Broadcast.toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, 1, 0, 0, 0), 360000/*600*/);
     }
 }

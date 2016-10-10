@@ -122,8 +122,8 @@ public final class NpcInfo extends L2GameServerPacket
         buffer.putInt(0x00); // Weapon enchant level
 
         buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-        buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner()
-                .getObjectId() : 0x01 : 0x00); // Cloned player
+        buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ?
+                npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
         buffer.putInt(0x01); // ???
         buffer.putInt(npc.getDisplayEffect());
         buffer.putInt(0x00); // Transform id
@@ -157,7 +157,7 @@ public final class NpcInfo extends L2GameServerPacket
         buffer.put((byte) 0); // PvP Flag
         buffer.putInt(0); // Reputation
         /*if (npc.getOwner() != null)
-		{
+        {
 			buffer.putInt(npc.getOwner().getClanId());
 			buffer.putInt(npc.getOwner().getClanCrestId());
 			buffer.putInt(npc.getOwner().getClanCrestLargeId());
@@ -258,8 +258,8 @@ public final class NpcInfo extends L2GameServerPacket
         buffer.putInt(0x00); // Weapon enchant level
 
         buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-        buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner()
-                .getObjectId() : 0x01 : 0x00); // Cloned player
+        buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ?
+                npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
         buffer.putInt(0x00); // ???
         buffer.putInt(0x00);
         buffer.putInt(0x00); // Transform id

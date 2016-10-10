@@ -77,9 +77,8 @@ public class Topic
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
             statement.setInt(1, _id);
             statement.setInt(2, _forumId);
             statement.setString(3, _topicName);
@@ -143,8 +142,8 @@ public class Topic
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM topic WHERE topic_id=? AND topic_forum_id=?");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM topic WHERE topic_id=? AND topic_forum_id=?");
             statement.setInt(1, getID());
             statement.setInt(2, f.getID());
             statement.execute();

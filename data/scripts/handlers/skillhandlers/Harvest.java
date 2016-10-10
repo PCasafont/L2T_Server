@@ -106,8 +106,8 @@ public class Harvest implements ISkillHandler
                             else
                             {
                                 L2ItemInstance item = activeChar.getInventory()
-                                        .addItem("Manor", ritem.getItemId(), ritem
-                                                .getCount(), (L2PcInstance) activeChar, target);
+                                        .addItem("Manor", ritem.getItemId(), ritem.getCount(),
+                                                (L2PcInstance) activeChar, target);
                                 if (iu != null)
                                 {
                                     iu.addItem(item);

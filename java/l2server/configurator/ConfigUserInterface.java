@@ -95,8 +95,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
             // couldn't care less
         }
 
-        final ResourceBundle bundle = ResourceBundle
-                .getBundle("configurator.Configurator", Locale.getDefault(), LanguageControl.INSTANCE);
+        final ResourceBundle bundle =
+                ResourceBundle.getBundle("configurator.Configurator", Locale.getDefault(), LanguageControl.INSTANCE);
 
         SwingUtilities.invokeLater(new Runnable()
         {
@@ -246,8 +246,9 @@ public class ConfigUserInterface extends JFrame implements ActionListener
                 }
                 catch (IOException e)
                 {
-                    JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("errorReading") + file
-                            .getName(), getBundle().getString("error"), JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(ConfigUserInterface.this,
+                            getBundle().getString("errorReading") + file.getName(), getBundle().getString("error"),
+                            JOptionPane.ERROR_MESSAGE);
                     System.exit(3);
                     // e.printStackTrace();
                 }
@@ -327,7 +328,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
         }
 
 		/*try
-		{
+        {
 			double parseDouble = Double.parseDouble(value);
 			return parseDouble;
 		}
@@ -702,19 +703,19 @@ public class ConfigUserInterface extends JFrame implements ActionListener
                 catch (Exception e1)
                 {
                     e1.printStackTrace();
-                    errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " + getBundle()
-                            .getString("reason") + e1.getLocalizedMessage() + "\r\n");
+                    errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " +
+                            getBundle().getString("reason") + e1.getLocalizedMessage() + "\r\n");
                 }
             }
             if (errors.length() == 0)
             {
-                JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle()
-                        .getString("success"), "OK", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("success"), "OK",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
             else
             {
-                JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle()
-                        .getString("error"), JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle().getString("error"),
+                        JOptionPane.ERROR_MESSAGE);
                 System.exit(2);
             }
         }
@@ -724,12 +725,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
         }
         else if (cmd.equals("about"))
         {
-            JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle()
-                    .getString("credits") + "\nhttp://www.l2jserver.com\n\n" + getBundle()
-                    .getString("icons") + "\n\n" + getBundle().getString("language") + '\n' + getBundle()
-                    .getString("translation"), getBundle()
-                    .getString("aboutItem"), JOptionPane.INFORMATION_MESSAGE, ImagesTable
-                    .getImage("l2jserverlogo.png"));
+            JOptionPane.showMessageDialog(ConfigUserInterface.this,
+                    getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
+                            getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
+                            getBundle().getString("translation"), getBundle().getString("aboutItem"),
+                    JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
         }
     }
 

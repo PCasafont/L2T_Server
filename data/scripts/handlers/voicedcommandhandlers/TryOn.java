@@ -164,9 +164,9 @@ public class TryOn implements IVoicedCommandHandler
 
             String itemName = item.getName();
             sb.append("<table width=300 bgcolor=" + colors[index % 2] + "><tr>");
-            sb.append("<td FIXWIDTH=30><button action=\"" + bypass + " item=" + item
-                    .getItemId() + "\" value=\" \" width=32 height=32 back=\"" + item.getIcon() + "\" fore=\"" + item
-                    .getIcon() + "\"></td>");
+            sb.append("<td FIXWIDTH=30><button action=\"" + bypass + " item=" + item.getItemId() +
+                    "\" value=\" \" width=32 height=32 back=\"" + item.getIcon() + "\" fore=\"" + item.getIcon() +
+                    "\"></td>");
             sb.append("<td FIXWIDTH=180>" + itemName + "</td><td FIXWIDTH=20></td>");
             sb.append("</tr></table>");
 
@@ -364,8 +364,8 @@ public class TryOn implements IVoicedCommandHandler
                 }
 
                 L2EtcItem stone = (L2EtcItem) it;
-                if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") || stone
-                        .getStandardItem() <= 0)
+                if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") ||
+                        stone.getStandardItem() <= 0)
                 {
                     continue;
                 }

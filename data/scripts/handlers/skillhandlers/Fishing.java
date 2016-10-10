@@ -55,7 +55,7 @@ public class Fishing implements ISkillHandler
         L2PcInstance player = (L2PcInstance) activeChar;
 
 		/*
-		 * If fishing is disabled, there isn't much point in doing anything
+         * If fishing is disabled, there isn't much point in doing anything
 		 * else, unless you are GM. so this got moved up here, before anything
 		 * else.
 		 */
@@ -217,8 +217,9 @@ public class Fishing implements ISkillHandler
         }
         // Has enough bait, consume 1 and update inventory. Start fishing
         // follows.
-        lure2 = player.getInventory().destroyItem("Consume", player.getInventory()
-                .getPaperdollObjectId(Inventory.PAPERDOLL_LHAND), 1, player, null);
+        lure2 = player.getInventory()
+                .destroyItem("Consume", player.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LHAND), 1,
+                        player, null);
         InventoryUpdate iu = new InventoryUpdate();
         iu.addModifiedItem(lure2);
         player.sendPacket(iu);

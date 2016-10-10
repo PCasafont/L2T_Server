@@ -83,7 +83,7 @@ public class TargetClan implements ISkillTargetTypeHandler
             }
 
 			/* FIXME
-			if (activeChar.getPet() != null)
+            if (activeChar.getPet() != null)
 			{
 				if (!(activeChar.getPet().isDead()))
 					targetList.add(activeChar.getPet());
@@ -102,8 +102,8 @@ public class TargetClan implements ISkillTargetTypeHandler
                         continue;
                     }
 
-                    if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() || player
-                            .getParty() != null && !player.getParty().isInParty(newTarget)))
+                    if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() ||
+                            player.getParty() != null && !player.getParty().isInParty(newTarget)))
                     {
                         continue;
                     }

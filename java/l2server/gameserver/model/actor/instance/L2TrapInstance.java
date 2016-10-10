@@ -138,8 +138,8 @@ public class L2TrapInstance extends L2Trap
             return;
         }
 
-        if (_owner.isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target)
-                .isInOlympiadMode() && ((L2PcInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId())
+        if (_owner.isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode() &&
+                ((L2PcInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId())
         {
             OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
         }
@@ -187,8 +187,8 @@ public class L2TrapInstance extends L2Trap
             }
 
             // olympiad competitors can't see trap
-            if (_owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() && ((L2PcInstance) cha)
-                    .getOlympiadSide() != _owner.getOlympiadSide())
+            if (_owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() &&
+                    ((L2PcInstance) cha).getOlympiadSide() != _owner.getOlympiadSide())
             {
                 return false;
             }
@@ -199,8 +199,8 @@ public class L2TrapInstance extends L2Trap
             return true;
         }
 
-        if (_owner.isInParty() && cha.isInParty() && _owner.getParty().getPartyLeaderOID() == cha.getParty()
-                .getPartyLeaderOID())
+        if (_owner.isInParty() && cha.isInParty() &&
+                _owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID())
         {
             return true;
         }

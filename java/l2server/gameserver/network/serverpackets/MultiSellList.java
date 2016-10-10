@@ -94,7 +94,7 @@ public final class MultiSellList extends L2GameServerPacket
             }
 
 			/*
-			toLog += "\t<!-- " + productTemplate.getName() + " -->\n";
+            toLog += "\t<!-- " + productTemplate.getName() + " -->\n";
 			toLog += "\t<item>\n";
 
 			toLog += "\t\t<ingredient id=\"57\" count=\"" + productTemplate.getReferencePrice() * 1000 + "\" /><!-- Adena -->\n";
@@ -203,8 +203,9 @@ public final class MultiSellList extends L2GameServerPacket
                 {
                     L2Item productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
                     L2Item ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
-                    getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL, "Store", "WARNING: The " + productItem
-                            .getName() + "'s necessary " + ingItem.getName() + " quantity is " + ing.getItemCount()));
+                    getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL, "Store",
+                            "WARNING: The " + productItem.getName() + "'s necessary " + ingItem.getName() +
+                                    " quantity is " + ing.getItemCount()));
                 }
 
                 if (ing.getItemInfo() != null)

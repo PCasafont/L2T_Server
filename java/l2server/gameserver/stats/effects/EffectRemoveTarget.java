@@ -58,8 +58,8 @@ public class EffectRemoveTarget extends L2Effect
             return false;
         }
 
-        if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance) getEffected())
-                .getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
+        if (getEffected() instanceof L2MonsterInstance &&
+                ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
         {
             return false;
         }
@@ -92,8 +92,8 @@ public class EffectRemoveTarget extends L2Effect
         //getEffected().abortCast();
         getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 
-        if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 && getSkill()
-                .getId() != 10265)
+        if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 &&
+                getSkill().getId() != 10265)
         {
             ((L2Playable) getEffected()).setLockedTarget(getEffected());
         }

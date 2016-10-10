@@ -201,13 +201,12 @@ public final class CharacterCreate extends L2GameClientPacket
         L2PcTemplate template = null;
 
 		/*
-		 * DrHouse: Since checks for duplicate names are done using SQL, lock must be held until data is written to DB as well.
+         * DrHouse: Since checks for duplicate names are done using SQL, lock must be held until data is written to DB as well.
 		 */
         synchronized (CharNameTable.getInstance())
         {
-            if (CharNameTable.getInstance().accountCharNumber(getClient()
-                    .getAccountName()) >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT &&
-                    Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0)
+            if (CharNameTable.getInstance().accountCharNumber(getClient().getAccountName()) >=
+                    Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT && Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0)
             {
                 if (Config.DEBUG)
                 {
@@ -244,8 +243,9 @@ public final class CharacterCreate extends L2GameClientPacket
             }
 
             int objectId = IdFactory.getInstance().getNextId();
-            newChar = L2PcInstance.create(objectId, template, getClient()
-                    .getAccountName(), _name, _hairStyle, _hairColor, _face, _sex != 0, _classId);
+            newChar = L2PcInstance
+                    .create(objectId, template, getClient().getAccountName(), _name, _hairStyle, _hairColor, _face,
+                            _sex != 0, _classId);
         }
 
         newChar.setCurrentHp(newChar.getMaxHp());
@@ -308,9 +308,8 @@ public final class CharacterCreate extends L2GameClientPacket
         }
         else
         {
-            newChar.setXYZInvisible(template.startX + Rnd
-                    .get(-template.startRandom, template.startRandom), template.startY + Rnd
-                    .get(-template.startRandom, template.startRandom), template.startZ);
+            newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
+                    template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
         }
 
         newChar.setTitle("");
@@ -341,8 +340,8 @@ public final class CharacterCreate extends L2GameClientPacket
 
             if (item == null)
             {
-                Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " + ia
-                        .getAmount() + ".");
+                Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " +
+                        ia.getAmount() + ".");
                 continue;
             }
 

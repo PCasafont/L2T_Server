@@ -41,8 +41,8 @@ public class ExReplyReceivedPost extends L2ItemListPacket
             }
             else
             {
-                Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg
-                        .getSenderName() + " > " + msg.getReceiverName() + ").");
+                Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" +
+                        msg.getSenderName() + " > " + msg.getReceiverName() + ").");
             }
         }
     }

@@ -102,8 +102,8 @@ public class StaticObjects
                 npcDat.set("mDef", 1);
 
                 L2CharTemplate template = new L2CharTemplate(npcDat);
-                L2StaticObjectInstance obj = new L2StaticObjectInstance(IdFactory.getInstance()
-                        .getNextId(), template, id);
+                L2StaticObjectInstance obj =
+                        new L2StaticObjectInstance(IdFactory.getInstance().getNextId(), template, id);
                 obj.setType(type);
                 obj.setXYZ(x, y, z);
                 obj.setMap(texture, map_x, map_y);

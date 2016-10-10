@@ -53,9 +53,8 @@ public class ItemsOnGroundManager
         }
         if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
         {
-            ThreadPoolManager.getInstance()
-                    .scheduleGeneralAtFixedRate(_task, Config.SAVE_DROPPED_ITEM_INTERVAL,
-                            Config.SAVE_DROPPED_ITEM_INTERVAL);
+            ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(_task, Config.SAVE_DROPPED_ITEM_INTERVAL,
+                    Config.SAVE_DROPPED_ITEM_INTERVAL);
         }
         load();
     }
@@ -118,9 +117,8 @@ public class ItemsOnGroundManager
             Statement s = con.createStatement();
             ResultSet result;
             int count = 0;
-            result = s
-                    .executeQuery(
-                            "select object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable from itemsonground");
+            result = s.executeQuery(
+                    "select object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable from itemsonground");
             while (result.next())
             {
                 item = new L2ItemInstance(result.getInt(1), result.getInt(2));
@@ -148,9 +146,8 @@ public class ItemsOnGroundManager
                 {
                     if (result.getLong(8) > -1)
                     {
-                        if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item
-                                .getItemType() != L2EtcItemType.HERB || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item
-                                .getItemType() == L2EtcItemType.HERB)
+                        if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item.getItemType() != L2EtcItemType.HERB ||
+                                Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item.getItemType() == L2EtcItemType.HERB)
                         {
                             ItemsAutoDestroy.getInstance().addItem(item);
                         }
@@ -256,9 +253,8 @@ public class ItemsOnGroundManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                statement = con
-                        .prepareStatement(
-                                "INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
+                statement = con.prepareStatement(
+                        "INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
 
                 for (L2ItemInstance item : _items)
                 {

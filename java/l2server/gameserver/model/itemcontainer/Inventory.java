@@ -181,8 +181,9 @@ public abstract class Inventory extends ItemContainer
             if (inventory instanceof PcInventory)
             {
                 ((PcInventory) inventory).getOwner().checkAutoShots();
-                if (Config.isServer(Config.TENKAI) && (item.getName().contains("Antharas") || item.getName()
-                        .contains("Valakas") || item.getName().contains("Lindvior")))
+                if (Config.isServer(Config.TENKAI) &&
+                        (item.getName().contains("Antharas") || item.getName().contains("Valakas") ||
+                                item.getName().contains("Lindvior")))
                 {
                     ((PcInventory) inventory).getOwner().onDWUnequip();
                 }
@@ -228,8 +229,9 @@ public abstract class Inventory extends ItemContainer
             if (inventory instanceof PcInventory)
             {
                 ((PcInventory) inventory).getOwner().checkAutoShots();
-                if (Config.isServer(Config.TENKAI) && (item.getName().contains("Antharas") || item.getName()
-                        .contains("Valakas") || item.getName().contains("Lindvior")))
+                if (Config.isServer(Config.TENKAI) &&
+                        (item.getName().contains("Antharas") || item.getName().contains("Valakas") ||
+                                item.getName().contains("Lindvior")))
                 {
                     ((PcInventory) inventory).getOwner().onDWEquip();
                 }
@@ -269,7 +271,7 @@ public abstract class Inventory extends ItemContainer
         public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
         {
             /*if (slot == PAPERDOLL_RHAND)
-				return;*/
+                return;*/
             inventory.getOwner().removeStatsOwner(item);
         }
 
@@ -490,8 +492,8 @@ public abstract class Inventory extends ItemContainer
 
                         if (itemSkill.isActive())
                         {
-                            if (player.getReuseTimeStamp().isEmpty() || !player.getReuseTimeStamp()
-                                    .containsKey(itemSkill.getReuseHashCode()))
+                            if (player.getReuseTimeStamp().isEmpty() ||
+                                    !player.getReuseTimeStamp().containsKey(itemSkill.getReuseHashCode()))
                             {
                                 int equipDelay = itemSkill.getEquipDelay();
 
@@ -575,8 +577,8 @@ public abstract class Inventory extends ItemContainer
 
                             if (itemSkill.isActive())
                             {
-                                if (player.getReuseTimeStamp().isEmpty() || !player.getReuseTimeStamp()
-                                        .containsKey(itemSkill.getReuseHashCode()))
+                                if (player.getReuseTimeStamp().isEmpty() ||
+                                        !player.getReuseTimeStamp().containsKey(itemSkill.getReuseHashCode()))
                                 {
                                     int equipDelay = itemSkill.getEquipDelay();
 
@@ -611,8 +613,8 @@ public abstract class Inventory extends ItemContainer
                         }
                         else
                         {
-                            Log.warning("Inventory.ArmorSetListener: Incorrect skill: " + armorSet
-                                    .getShieldSkillId() + ".");
+                            Log.warning("Inventory.ArmorSetListener: Incorrect skill: " + armorSet.getShieldSkillId() +
+                                    ".");
                         }
                     }
 
@@ -634,8 +636,8 @@ public abstract class Inventory extends ItemContainer
                             }
                             else
                             {
-                                Log.warning("Inventory.ArmorSetListener: Incorrect skill: " + armorSet
-                                        .getEnchant6skillId() + ".");
+                                Log.warning("Inventory.ArmorSetListener: Incorrect skill: " +
+                                        armorSet.getEnchant6skillId() + ".");
                             }
                         }
                     }
@@ -650,8 +652,8 @@ public abstract class Inventory extends ItemContainer
                         }
                         else
                         {
-                            Log.warning("Inventory.ArmorSetListener: Incorrect skill: " + armorSet
-                                    .getShieldSkillId() + ".");
+                            Log.warning("Inventory.ArmorSetListener: Incorrect skill: " + armorSet.getShieldSkillId() +
+                                    ".");
                         }
                     }
                 }
@@ -710,8 +712,8 @@ public abstract class Inventory extends ItemContainer
 
                             if (itemSkill.isActive())
                             {
-                                if (player.getReuseTimeStamp().isEmpty() || !player.getReuseTimeStamp()
-                                        .containsKey(itemSkill.getReuseHashCode()))
+                                if (player.getReuseTimeStamp().isEmpty() ||
+                                        !player.getReuseTimeStamp().containsKey(itemSkill.getReuseHashCode()))
                                 {
                                     int equipDelay = itemSkill.getEquipDelay();
 
@@ -1566,12 +1568,14 @@ public abstract class Inventory extends ItemContainer
             case L2Item.SLOT_L_HAND:
             {
                 L2ItemInstance rh = getPaperdollItem(PAPERDOLL_RHAND);
-                if (rh != null && rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND && (!(rh
-                        .getItemType() == L2WeaponType.BOW && item.getItemType() == L2EtcItemType.ARROW || (rh
-                        .getItemType() == L2WeaponType.CROSSBOW || rh.getItemType() == L2WeaponType.CROSSBOWK) && item
-                        .getItemType() == L2EtcItemType.BOLT || rh.getItemType() == L2WeaponType.FISHINGROD && item
-                        .getItemType() == L2EtcItemType.LURE) || item.getItem().getItemGradePlain() != rh.getItem()
-                        .getItemGradePlain()))
+                if (rh != null && rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND &&
+                        (!(rh.getItemType() == L2WeaponType.BOW && item.getItemType() == L2EtcItemType.ARROW ||
+                                (rh.getItemType() == L2WeaponType.CROSSBOW ||
+                                        rh.getItemType() == L2WeaponType.CROSSBOWK) &&
+                                        item.getItemType() == L2EtcItemType.BOLT ||
+                                rh.getItemType() == L2WeaponType.FISHINGROD &&
+                                        item.getItemType() == L2EtcItemType.LURE) ||
+                                item.getItem().getItemGradePlain() != rh.getItem().getItemGradePlain()))
                 {
                     setPaperdollItem(PAPERDOLL_RHAND, null, updateDb);
                 }
@@ -1773,8 +1777,8 @@ public abstract class Inventory extends ItemContainer
                 continue;
             }
 
-            if (item.getItemType() == L2EtcItemType.ARROW && item.getItem().getItemGradePlain() == bow
-                    .getItemGradePlain())
+            if (item.getItemType() == L2EtcItemType.ARROW &&
+                    item.getItem().getItemGradePlain() == bow.getItemGradePlain())
             {
                 arrow = item;
                 break;
@@ -1802,8 +1806,8 @@ public abstract class Inventory extends ItemContainer
                 continue;
             }
 
-            if (item.getItemType() == L2EtcItemType.BOLT && item.getItem().getItemGradePlain() == crossbow
-                    .getItemGradePlain())
+            if (item.getItemType() == L2EtcItemType.BOLT &&
+                    item.getItem().getItemGradePlain() == crossbow.getItemGradePlain())
             {
                 bolt = item;
                 break;
@@ -1825,9 +1829,8 @@ public abstract class Inventory extends ItemContainer
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND (loc=? OR loc=?) ORDER BY loc_data");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND (loc=? OR loc=?) ORDER BY loc_data");
             statement.setInt(1, getOwnerId());
             statement.setString(2, getBaseLocation().name());
             statement.setString(3, getEquipLocation().name());
@@ -1936,8 +1939,8 @@ public abstract class Inventory extends ItemContainer
         {
             if (_paperdoll[i] != null)
             {
-                if (getPaperdollItemId(i) == item.getItemId() || item.getName()
-                        .startsWith(_paperdoll[i].getName().substring(0, 4)))
+                if (getPaperdollItemId(i) == item.getItemId() ||
+                        item.getName().startsWith(_paperdoll[i].getName().substring(0, 4)))
                 {
                     // overwrite
                     setPaperdollItem(i, item, updateDb);
@@ -1962,8 +1965,8 @@ public abstract class Inventory extends ItemContainer
 
     public int getCloakStatus()
     {
-        if (getOwner() instanceof L2PcInstance && ((L2PcInstance) getOwner())
-                .getCurrentClass() != null && ((L2PcInstance) getOwner()).getCurrentClass().getLevel() == 85)
+        if (getOwner() instanceof L2PcInstance && ((L2PcInstance) getOwner()).getCurrentClass() != null &&
+                ((L2PcInstance) getOwner()).getCurrentClass().getLevel() == 85)
         {
             return 1;
         }

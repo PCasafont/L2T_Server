@@ -128,10 +128,11 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
                 return;
             }
 
-            if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL && (activeChar.isTransformed() || activeChar
-                    .isInStance()) && (!activeChar.containsAllowedTransformSkill(skill.getId()) || activeChar
-                    .getLastSkillCast() != null && activeChar.getLastSkillCast()
-                    .getSkillType() == L2SkillType.TRANSFORMDISPEL))
+            if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL &&
+                    (activeChar.isTransformed() || activeChar.isInStance()) &&
+                    (!activeChar.containsAllowedTransformSkill(skill.getId()) ||
+                            activeChar.getLastSkillCast() != null &&
+                                    activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL))
             {
                 activeChar.sendPacket(ActionFailed.STATIC_PACKET);
                 return;
@@ -142,8 +143,8 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
             // Log.fine("	currentState:"+activeChar.getCurrentState());	//for debug
 
             // If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-            if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar
-                    .getReputation() < 0)
+            if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT &&
+                    activeChar.getReputation() < 0)
             {
                 return;
             }
@@ -156,8 +157,8 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 
             if (activeChar.isGM())
             {
-                GMAudit.auditGMAction(activeChar.getName(), "Use skill: " + skill.getName(), activeChar
-                        .getTarget() != null ? activeChar.getTarget().getName() : "No Target");
+                GMAudit.auditGMAction(activeChar.getName(), "Use skill: " + skill.getName(),
+                        activeChar.getTarget() != null ? activeChar.getTarget().getName() : "No Target");
             }
 
             if (skill.isStanceSwitch())
@@ -178,8 +179,8 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
                 return;
             }
 
-            if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001 && skill
-                    .getId() != activeChar.getQueuedSkill().getSkillId())
+            if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001 &&
+                    skill.getId() != activeChar.getQueuedSkill().getSkillId())
             {
                 activeChar.setQueuedSkill(null, _ctrlPressed, _shiftPressed);
             }

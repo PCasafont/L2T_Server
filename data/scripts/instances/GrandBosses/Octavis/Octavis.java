@@ -339,7 +339,7 @@ public class Octavis extends L2AttackableAIScript
 
                 //kick buggers
                 /*for (int objId : world.allowed)
-				{
+                {
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
 					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
 					{
@@ -353,8 +353,8 @@ public class Octavis extends L2AttackableAIScript
 
                 InstanceManager.getInstance().showVidToInstance(35, world.instanceId);
 
-                startQuestTimer("stage_1_spawnboss", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(35) + 2000, null, player);
+                startQuestTimer("stage_1_spawnboss", ScenePlayerDataTable.getInstance().getVideoDuration(35) + 2000,
+                        null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_spawnboss"))
             {
@@ -503,9 +503,8 @@ public class Octavis extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_last_lydia_spawn"))
             {
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 5,
-                                new ExShowScreenMessage(1802377, 0, true, 5000));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 5,
+                        new ExShowScreenMessage(1802377, 0, true, 5000));
 
                 addSpawn(_lydiaInner, 207194, 120574, -10010, 60699, false, 0, false, world.instanceId);
             }
@@ -526,8 +525,8 @@ public class Octavis extends L2AttackableAIScript
                 }
             }
         }
-        if (npc != null && npc.getNpcId() == _lydia && Util.isDigit(event) && Util
-                .contains(_templates, Integer.valueOf(event)))
+        if (npc != null && npc.getNpcId() == _lydia && Util.isDigit(event) &&
+                Util.contains(_templates, Integer.valueOf(event)))
         {
             try
             {
@@ -600,8 +599,8 @@ public class Octavis extends L2AttackableAIScript
 
                         InstanceManager.getInstance().showVidToInstance(36, world.instanceId);
 
-                        startQuestTimer("stage_2_spawnboss", ScenePlayerDataTable.getInstance()
-                                .getVideoDuration(36) + 2000, npc, null);
+                        startQuestTimer("stage_2_spawnboss",
+                                ScenePlayerDataTable.getInstance().getVideoDuration(36) + 2000, npc, null);
                     }
 
                     if (world.octavisLions.getCurrentHp() < world.octavisLions.getMaxHp() * 0.50)
@@ -627,16 +626,16 @@ public class Octavis extends L2AttackableAIScript
                         startQuestTimer("stage_2_spawnHeros", 40000, npc, null);
                     }
                 }
-                else if (world.status == 4 && npc.getNpcId() == world.secondOctavisId && npc.getCurrentHp() < npc
-                        .getMaxHp() * 0.15)
+                else if (world.status == 4 && npc.getNpcId() == world.secondOctavisId &&
+                        npc.getCurrentHp() < npc.getMaxHp() * 0.15)
                 {
                     world.status = 5;
 
                     InstanceManager.getInstance().despawnAll(world.instanceId);
                     InstanceManager.getInstance().showVidToInstance(37, world.instanceId);
 
-                    startQuestTimer("stage_last_spawnboss", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(37) + 2000, npc, null);
+                    startQuestTimer("stage_last_spawnboss",
+                            ScenePlayerDataTable.getInstance().getVideoDuration(37) + 2000, npc, null);
                 }
             }
             else if (npc.getNpcId() == world.lastOctavisId)
@@ -668,15 +667,14 @@ public class Octavis extends L2AttackableAIScript
             {
                 InstanceManager.getInstance().despawnAll(world.instanceId);
                 InstanceManager.getInstance().showVidToInstance(38, world.instanceId);
-                InstanceManager.getInstance()
-                        .setInstanceReuse(world.instanceId, world.templateId,
-                                world.templateId == _templates[0] ? false : true);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
+                        world.templateId == _templates[0] ? false : true);
                 InstanceManager.getInstance().finishInstance(world.instanceId, false);
 
                 if (world.isHardMode)
                 {
-                    startQuestTimer("stage_last_lydia_spawn", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(38), npc, null);
+                    startQuestTimer("stage_last_lydia_spawn", ScenePlayerDataTable.getInstance().getVideoDuration(38),
+                            npc, null);
                 }
             }
         }
@@ -733,8 +731,8 @@ public class Octavis extends L2AttackableAIScript
         {
             if (!(world instanceof OctavisWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -776,9 +774,11 @@ public class Octavis extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel()
-                        .getMembers() : player.getParty().getCommandChannel() != null ? player.getParty()
-                        .getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ?
+                        player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -798,8 +798,7 @@ public class Octavis extends L2AttackableAIScript
             startQuestTimer("stage_1_open_doors", 3000, null, player);
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

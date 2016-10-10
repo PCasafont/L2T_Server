@@ -206,32 +206,31 @@ public class Antharas extends L2AttackableAIScript
                 switch (skill.getId())
                 {
                     case 14385: //Front Foot Strike"
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new ExShowScreenMessage(17178303, 0, true,
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new ExShowScreenMessage(17178303, 0, true,
                                         5000)); //Behemoth and Tarrasque, Rise with the powers of the ground and help me.
                         if (Rnd.get(5) > 3)
                         {
                             //Spawn Behemoth and Tarrasque?
-                            L2Npc behemoth = addSpawn(_behemothId, world.antharas.getX(), world.antharas
-                                    .getY(), world.antharas.getZ(), world.antharas
-                                    .getHeading(), true, 0, false, world.instanceId);
+                            L2Npc behemoth = addSpawn(_behemothId, world.antharas.getX(), world.antharas.getY(),
+                                    world.antharas.getZ(), world.antharas.getHeading(), true, 0, false,
+                                    world.instanceId);
                             behemoth.setIsRunning(true);
 
-                            L2Npc tarrasque = addSpawn(_tarrasqueId, world.antharas.getX(), world.antharas
-                                    .getY(), world.antharas.getZ(), world.antharas
-                                    .getHeading(), true, 0, false, world.instanceId);
+                            L2Npc tarrasque = addSpawn(_tarrasqueId, world.antharas.getX(), world.antharas.getY(),
+                                    world.antharas.getZ(), world.antharas.getHeading(), true, 0, false,
+                                    world.instanceId);
                             tarrasque.setIsRunning(true);
                         }
                         break;
 
                     case 14526: //Roar of Death
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId,
-                                        new ExShowScreenMessage(17178300, 0, true, 5000)); //Shoot fire at the imbecile!
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new ExShowScreenMessage(17178300, 0, true, 5000)); //Shoot fire at the imbecile!
                         if (!world.minions.isEmpty() && !world.army.isEmpty())
                         {
-                            L2Skill _suicideSKill = SkillTable.getInstance()
-                                    .getInfo(14390, 1); //Dragon Bomber Explosion
+                            L2Skill _suicideSKill =
+                                    SkillTable.getInstance().getInfo(14390, 1); //Dragon Bomber Explosion
                             for (L2Npc _npc : world.army)
                             {
                                 if (_npc == null || _npc.isDead())
@@ -273,12 +272,10 @@ public class Antharas extends L2AttackableAIScript
                         L2Object antharasTarget = world.antharas.getTarget();
                         if (antharasTarget != null)
                         {
-                            InstanceManager.getInstance()
-                                    .sendPacket(world.instanceId,
-                                            new ExShowScreenMessage("Wrath of the ground will fall from the sky on $s1!"
-                                                    .replace("$s1", antharasTarget
-                                                            .getName()),
-                                                    5000)); //Wrath of the ground will fall from the sky on $s1!
+                            InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(
+                                    "Wrath of the ground will fall from the sky on $s1!"
+                                            .replace("$s1", antharasTarget.getName()),
+                                    5000)); //Wrath of the ground will fall from the sky on $s1!
                         }
                         break;
 
@@ -432,9 +429,8 @@ public class Antharas extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_antharas_move_to_cave"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(17178306, 0, true,
-                                5000)); //It's stronger than expected! I didn't think I'd be hurt this much...
+                InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(17178306, 0, true,
+                        5000)); //It's stronger than expected! I didn't think I'd be hurt this much...
 
                 world.antharas.disableCoreAI(true);
 
@@ -472,9 +468,8 @@ public class Antharas extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_antharas_minions"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(17178305, 0, true,
-                                5000)); //Children. With noble your sacrifice, give them pain!
+                InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(17178305, 0, true,
+                        5000)); //Children. With noble your sacrifice, give them pain!
 
                 //Army back..
                 for (L2Npc _npc : world.army)
@@ -507,9 +502,8 @@ public class Antharas extends L2AttackableAIScript
             {
                 world.status = 3;
 
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(17178304, 0, true,
-                                5000)); //Not enough... I will have to go myself.
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new ExShowScreenMessage(17178304, 0, true, 5000)); //Not enough... I will have to go myself.
 
                 //Move out to out of the cave
                 startQuestTimer("stage_all_move_antharas", 1000, world.antharas, null);
@@ -532,22 +526,18 @@ public class Antharas extends L2AttackableAIScript
                     switch (world.status)
                     {
                         case 0:
-                            world.antharas.getAI()
-                                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                            new L2CharPosition(180242, 114877, -7710, 130)); //Move to entrance
+                            world.antharas.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                    new L2CharPosition(180242, 114877, -7710, 130)); //Move to entrance
                             break;
 
                         case 2:
-                            world.antharas.getAI()
-                                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                            new L2CharPosition(185009, 114777, -8222, 65457)); //Move to inner cave
+                            world.antharas.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                    new L2CharPosition(185009, 114777, -8222, 65457)); //Move to inner cave
                             break;
 
                         case 3:
-                            world.antharas.getAI()
-                                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                            new L2CharPosition(179595, 114762, -7710,
-                                                    32854)); //Move out to out of the cave
+                            world.antharas.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                    new L2CharPosition(179595, 114762, -7710, 32854)); //Move out to out of the cave
                             break;
                     }
                     startQuestTimer("stage_all_move_antharas", 3000, world.antharas, null);
@@ -564,9 +554,9 @@ public class Antharas extends L2AttackableAIScript
                         player.addItem(_qn, _expeditionVolunteerRewardBox, 1, npc, true);
                         player.addItem(_qn, _expeditionVolunteerCrystalPouch, 1, npc, true);
 
-                        player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                .get(10 * DimensionalDoor.getDimensionalDoorRewardRate(), 18 * DimensionalDoor
-                                        .getDimensionalDoorRewardRate()), player, true);
+                        player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                Rnd.get(10 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                        18 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                     }
                     else
                     {
@@ -613,16 +603,15 @@ public class Antharas extends L2AttackableAIScript
                 {
                     world.status = 6;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(17178307, 0, true,
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(17178307, 0, true,
                                     5000)); //Children. Heal me with your noble sacrifice.
 
                     //Spawn treater's
                     for (int a = 0; a < 7; a++)
                     {
-                        L2Npc _treater = addSpawn(_treaterId, world.antharas.getX(), world.antharas
-                                .getY(), world.antharas.getZ(), world.antharas
-                                .getHeading(), true, 0, false, world.instanceId);
+                        L2Npc _treater = addSpawn(_treaterId, world.antharas.getX(), world.antharas.getY(),
+                                world.antharas.getZ(), world.antharas.getHeading(), true, 0, false, world.instanceId);
                         _treater.setIsRunning(true);
                         _treater.setTarget(world.antharas);
                         _treater.doCast(_sacrifice);
@@ -635,16 +624,14 @@ public class Antharas extends L2AttackableAIScript
                 {
                     world.status = 7;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(17178309, 0, true,
-                                    5000)); //Children. Give everything you've got!
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(17178309, 0, true, 5000)); //Children. Give everything you've got!
 
                     //Spawn treater's
                     for (int a = 0; a < 7; a++)
                     {
-                        L2Npc _treater = addSpawn(_treaterId, world.antharas.getX(), world.antharas
-                                .getY(), world.antharas.getZ(), world.antharas
-                                .getHeading(), true, 0, false, world.instanceId);
+                        L2Npc _treater = addSpawn(_treaterId, world.antharas.getX(), world.antharas.getY(),
+                                world.antharas.getZ(), world.antharas.getHeading(), true, 0, false, world.instanceId);
                         _treater.setIsRunning(true);
                         _treater.setTarget(world.antharas);
                         _treater.doCast(_sacrifice);
@@ -658,17 +645,16 @@ public class Antharas extends L2AttackableAIScript
                 {
                     world.status = 8;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(17178331, 0, true,
-                                    5000)); //Be happy that I'm backing off today.
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(17178331, 0, true, 5000)); //Be happy that I'm backing off today.
                 }
 
                 if (world.status == 8 && npc.getCurrentHp() < npc.getMaxHp() * 0.03) //3%
                 {
                     world.status = 9;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(17178332, 0, true,
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(17178332, 0, true,
                                     5000)); //Imbeciles...you'll disappear on the day of destruction...
 
                     world.antharas.deleteMe();
@@ -764,8 +750,8 @@ public class Antharas extends L2AttackableAIScript
         {
             if (!(world instanceof AntharasWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

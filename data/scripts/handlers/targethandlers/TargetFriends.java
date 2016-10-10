@@ -254,8 +254,8 @@ public class TargetFriends implements ISkillTargetTypeHandler
         }
         else
         {
-            if (target != null && (GeoEngine.getInstance().canSeeTarget(activeChar, target) || skill
-                    .getSkillType() == L2SkillType.SUMMON_FRIEND))
+            if (target != null && (GeoEngine.getInstance().canSeeTarget(activeChar, target) ||
+                    skill.getSkillType() == L2SkillType.SUMMON_FRIEND))
             {
                 if (activeChar instanceof L2MonsterInstance)
                 {
@@ -265,8 +265,8 @@ public class TargetFriends implements ISkillTargetTypeHandler
                     {
                         final L2MonsterInstance mTarget = (L2MonsterInstance) target;
 
-                        if (aMonster.getFactionId() != null && mTarget.getFactionId() != null && aMonster.getFactionId()
-                                .equals(mTarget.getFactionId()))
+                        if (aMonster.getFactionId() != null && mTarget.getFactionId() != null &&
+                                aMonster.getFactionId().equals(mTarget.getFactionId()))
                         {
                             return new L2Character[]{mTarget};
                         }

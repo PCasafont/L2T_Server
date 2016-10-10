@@ -66,16 +66,16 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("INSERT INTO character_friends (charId, friendId) VALUES (?, ?), (?, ?)");
+                    PreparedStatement statement = con.prepareStatement(
+                            "INSERT INTO character_friends (charId, friendId) VALUES (?, ?), (?, ?)");
                     statement.setInt(1, requestor.getObjectId());
                     statement.setInt(2, player.getObjectId());
                     statement.setInt(3, player.getObjectId());
                     statement.setInt(4, requestor.getObjectId());
                     statement.execute();
                     statement.close();
-                    SystemMessage msg = SystemMessage
-                            .getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_INVITING_FRIEND);
+                    SystemMessage msg =
+                            SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_INVITING_FRIEND);
                     requestor.sendPacket(msg);
 
                     //Player added to your friendlist

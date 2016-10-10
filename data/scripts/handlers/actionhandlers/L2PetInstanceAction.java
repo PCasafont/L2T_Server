@@ -61,8 +61,8 @@ public class L2PetInstanceAction implements IActionHandler
             // Set the target of the L2PcInstance activeChar
             activeChar.setTarget(target);
 
-            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar
-                    .getLevel() - ((L2Character) target).getLevel()));
+            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(),
+                    activeChar.getLevel() - ((L2Character) target).getLevel()));
 
             // Send a Server->Client packet StatusUpdate of the L2PetInstance to the L2PcInstance to update its HP bar
             StatusUpdate su = new StatusUpdate(target);

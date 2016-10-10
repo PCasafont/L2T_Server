@@ -71,9 +71,8 @@ public class L2JailZone extends L2ZoneType
             {
                 // when a player wants to exit jail even if he is still jailed, teleport him back to jail
                 ThreadPoolManager.getInstance().scheduleGeneral(new BackToJail(character), 2000);
-                character
-                        .sendMessage(
-                                "You cannot cheat your way out of here. You must wait until your jail time is over.");
+                character.sendMessage(
+                        "You cannot cheat your way out of here. You must wait until your jail time is over.");
             }
             if (Config.JAIL_DISABLE_TRANSACTION)
             {

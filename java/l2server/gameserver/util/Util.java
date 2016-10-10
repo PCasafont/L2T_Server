@@ -204,8 +204,8 @@ public final class Util
             return 1000000;
         }
 
-        return calculateDistance(obj1.getX(), obj1.getY(), obj1.getZ(), obj2.getX(), obj2.getY(), obj2
-                .getZ(), includeZAxis);
+        return calculateDistance(obj1.getX(), obj1.getY(), obj1.getZ(), obj2.getX(), obj2.getY(), obj2.getZ(),
+                includeZAxis);
     }
 
     /**

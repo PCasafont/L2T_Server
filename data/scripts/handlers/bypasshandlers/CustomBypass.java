@@ -69,18 +69,17 @@ public class CustomBypass implements IBypassHandler
             int priceId = isTitleColor ? 57 : Config.DONATION_COIN_ID;
             int priceAmount = isTitleColor ? 1000000 : Config.CHANGE_NAME_COLOR_PRICE;
             String whatChange = isTitleColor ? "Title" : "Name";
-            String coinName = isTitleColor ? "Adena" : ItemTable.getInstance().getTemplate(Config.DONATION_COIN_ID)
-                    .getName();
+            String coinName =
+                    isTitleColor ? "Adena" : ItemTable.getInstance().getTemplate(Config.DONATION_COIN_ID).getName();
 
             String val = command.split(" ")[1];
             PcInventory inv = player.getInventory();
 
-            if ((isTitleColor && !val.equalsIgnoreCase("FFFF77") || !isTitleColor && !val
-                    .equalsIgnoreCase("FFFFFF")) && (inv.getItemByItemId(priceId) == null || inv
-                    .getItemByItemId(priceId).getCount() < priceAmount))
+            if ((isTitleColor && !val.equalsIgnoreCase("FFFF77") || !isTitleColor && !val.equalsIgnoreCase("FFFFFF")) &&
+                    (inv.getItemByItemId(priceId) == null || inv.getItemByItemId(priceId).getCount() < priceAmount))
             {
-                player.sendPacket(new CreatureSay(target.getObjectId(), Say2.TELL, target
-                        .getName(), "You don't have enough " + coinName));
+                player.sendPacket(new CreatureSay(target.getObjectId(), Say2.TELL, target.getName(),
+                        "You don't have enough " + coinName));
                 return false;
             }
 
@@ -127,9 +126,8 @@ public class CustomBypass implements IBypassHandler
                 return false;
             }
 
-            if (!player
-                    .destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID,
-                            Config.REMOVE_CLAN_PENALTY_FROM_CLAN_PRICE, player, true))
+            if (!player.destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID,
+                    Config.REMOVE_CLAN_PENALTY_FROM_CLAN_PRICE, player, true))
             {
                 return false;
             }
@@ -146,9 +144,8 @@ public class CustomBypass implements IBypassHandler
                 return false;
             }
 
-            if (!player
-                    .destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID,
-                            Config.REMOVE_CLAN_PENALTY_FROM_PLAYER_PRICE, player, true))
+            if (!player.destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID,
+                    Config.REMOVE_CLAN_PENALTY_FROM_PLAYER_PRICE, player, true))
             {
                 return false;
             }
@@ -158,16 +155,15 @@ public class CustomBypass implements IBypassHandler
         }
         else if (command.equalsIgnoreCase("changesex"))
         {
-            if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 || player
-                    .getRace() == Race.Ertheia)
+            if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 ||
+                    player.getRace() == Race.Ertheia)
             {
                 player.sendMessage("Special Services: Sorry, but I can't change your sex!");
                 return false;
             }
 
-            if (!player
-                    .destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID, Config.CHANGE_SEX_PRICE, player,
-                            true))
+            if (!player.destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID, Config.CHANGE_SEX_PRICE, player,
+                    true))
             {
                 player.sendMessage("Special Services: You don't have enough coins!");
                 return false;
@@ -201,16 +197,16 @@ public class CustomBypass implements IBypassHandler
                 return false;
             }
 
-            if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 || player
-                    .getRace() == Race.Ertheia)
+            if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 ||
+                    player.getRace() == Race.Ertheia)
             {
                 player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
                 return false;
             }
 
             L2PcTemplate temp = CharTemplateTable.getInstance().getTemplate(templateId);
-            if (temp == null || temp.race == Race.Dwarf && temp.isMage || temp.race == Race.Ertheia && !player
-                    .getAppearance().getSex())
+            if (temp == null || temp.race == Race.Dwarf && temp.isMage ||
+                    temp.race == Race.Ertheia && !player.getAppearance().getSex())
             {
                 player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
                 return false;
@@ -243,16 +239,13 @@ public class CustomBypass implements IBypassHandler
                         "? Keep in mind that this is a very big privilege, the name change has always been denied by the administrators!<br>");
                 sb.append(
                         "But I can help you. This is not a recommended option, I would suggest you to create another " +
-                                changeWhat
-                                        .split(" ")[0] + ", but if you insist that much... it will be " + price + " " +
-                                ItemTable
-                                        .getInstance().getTemplate(Config.DONATION_COIN_ID).getName() + ".<br>");
+                                changeWhat.split(" ")[0] + ", but if you insist that much... it will be " + price +
+                                " " + ItemTable.getInstance().getTemplate(Config.DONATION_COIN_ID).getName() + ".<br>");
                 sb.append("<center><tr><td><edit var=text width=130 height=11 length=26><br>");
-                sb.append("<button value=\"Done\" action=\"bypass -h npc_" + target
-                        .getObjectId() + "_" + command +
+                sb.append("<button value=\"Done\" action=\"bypass -h npc_" + target.getObjectId() + "_" + command +
                         " $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></button></td></tr><br>");
-                sb.append("</center><br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_" + target
-                        .getObjectId() + "_Chat title_color\">Back</Button></body></html>");
+                sb.append("</center><br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h npc_" +
+                        target.getObjectId() + "_Chat title_color\">Back</Button></body></html>");
                 player.sendPacket(new NpcHtmlMessage(0, sb.toString()));
             }
             else
@@ -328,8 +321,8 @@ public class CustomBypass implements IBypassHandler
                 player.sendMessage("Special Services: Your " + changeWhat + " has been changed.");
 
                 //Log
-                String log = (isCharName ? oldName : player
-                        .getName()) + " changed his " + changeWhat + ": " + oldName + " > " + newName;
+                String log = (isCharName ? oldName : player.getName()) + " changed his " + changeWhat + ": " + oldName +
+                        " > " + newName;
                 Util.logToFile(log, "changeNamesLog", true);
             }
         }

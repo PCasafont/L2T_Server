@@ -132,8 +132,8 @@ public class CharacterBirthday extends Quest
         if (st != null && player.checkBirthDay() == 0)
         {
             player.sendPacket(new PlaySound(1, "HB01", 0, 0, 0, 0, 0));
-            L2Npc spawned = st
-                    .addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
+            L2Npc spawned =
+                    st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
             st.setState(State.STARTED);
             st.startQuestTimer("despawn_npc", 60000, spawned);
             is_spawned = true;

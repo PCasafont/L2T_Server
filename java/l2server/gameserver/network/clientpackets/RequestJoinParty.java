@@ -83,16 +83,16 @@ public final class RequestJoinParty extends L2GameClientPacket
             return;
         }
 
-        if (requestor.getIsInsideGMEvent() && !target.getIsInsideGMEvent() || !requestor.getIsInsideGMEvent() && target
-                .getIsInsideGMEvent())
+        if (requestor.getIsInsideGMEvent() && !target.getIsInsideGMEvent() ||
+                !requestor.getIsInsideGMEvent() && target.getIsInsideGMEvent())
         {
             return;
         }
 
         if (!requestor.isGM())
         {
-            if (requestor.isPlayingEvent() && requestor.getEvent() == target.getEvent() && requestor.getEvent()
-                    .getConfig().isAllVsAll())
+            if (requestor.isPlayingEvent() && requestor.getEvent() == target.getEvent() &&
+                    requestor.getEvent().getConfig().isAllVsAll())
             {
                 requestor.sendMessage("You cannot make parties on this event!");
                 return;
@@ -133,7 +133,7 @@ public final class RequestJoinParty extends L2GameClientPacket
             return;
         }
         /*
-		if (target.getClient() == null || target.getClient().isDetached())
+        if (target.getClient() == null || target.getClient().isDetached())
 		{
 			requestor.sendMessage("Player is in offline mode.");
 			return;
@@ -147,8 +147,9 @@ public final class RequestJoinParty extends L2GameClientPacket
 
         if (target.isInOlympiadMode() || requestor.isInOlympiadMode())
         {
-            if (target.isInOlympiadMode() != requestor.isInOlympiadMode() || target.getOlympiadGameId() != requestor
-                    .getOlympiadGameId() || target.getOlympiadSide() != requestor.getOlympiadSide())
+            if (target.isInOlympiadMode() != requestor.isInOlympiadMode() ||
+                    target.getOlympiadGameId() != requestor.getOlympiadGameId() ||
+                    target.getOlympiadSide() != requestor.getOlympiadSide())
             {
                 return;
             }

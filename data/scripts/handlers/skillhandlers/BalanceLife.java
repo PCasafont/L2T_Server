@@ -64,8 +64,8 @@ public class BalanceLife implements ISkillHandler
         for (L2Character target : (L2Character[]) targets)
         {
             // We should not heal if char is dead/
-            if (target == null || target
-                    .isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
+            if (target == null || target.isDead() ||
+                    target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
             {
                 continue;
             }
@@ -91,8 +91,8 @@ public class BalanceLife implements ISkillHandler
 
         for (L2Character target : (L2Character[]) targets)
         {
-            if (target == null || target
-                    .isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
+            if (target == null || target.isDead() ||
+                    target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
             {
                 continue;
             }

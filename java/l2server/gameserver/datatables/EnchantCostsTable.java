@@ -149,7 +149,7 @@ public class EnchantCostsTable
     }
 
     private TIntObjectHashMap<L2EnchantSkillLearn> _enchantSkillTrees = new TIntObjectHashMap<L2EnchantSkillLearn>();
-            //enchant skill list
+    //enchant skill list
     private Map<Integer, EnchantSkillRange> _enchantRanges = new HashMap<Integer, EnchantSkillRange>();
     private List<EnchantSkillDetail> _enchantDetails = new ArrayList<EnchantSkillDetail>();
 
@@ -284,8 +284,8 @@ public class EnchantCostsTable
         L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
         if (enchantSkillLearn != null)
         {
-            EnchantSkillDetail esd = enchantSkillLearn
-                    .getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+            EnchantSkillDetail esd =
+                    enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
             if (esd != null)
             {
                 return esd.getSpCost();
@@ -300,8 +300,8 @@ public class EnchantCostsTable
         L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
         if (enchantSkillLearn != null)
         {
-            EnchantSkillDetail esd = enchantSkillLearn
-                    .getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+            EnchantSkillDetail esd =
+                    enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
             if (esd != null)
             {
                 return esd.getAdenaCost();
@@ -316,8 +316,8 @@ public class EnchantCostsTable
         L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
         if (enchantSkillLearn != null)
         {
-            EnchantSkillDetail esd = enchantSkillLearn
-                    .getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+            EnchantSkillDetail esd =
+                    enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
             if (esd != null)
             {
                 return esd.getRate(player);

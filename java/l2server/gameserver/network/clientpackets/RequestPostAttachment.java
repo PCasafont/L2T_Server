@@ -118,8 +118,8 @@ public final class RequestPostAttachment extends L2GameClientPacket
 
         if (msg.getReceiverId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to get not own attachment!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to get not own attachment!", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -147,24 +147,23 @@ public final class RequestPostAttachment extends L2GameClientPacket
             // Calculate needed slots
             if (msg.getSenderId() > -1 && item.getOwnerId() != msg.getSenderId())
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                                .getName() + " tried to get wrong item (ownerId != senderId) from attachment!",
-                        Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() +
+                        " tried to get wrong item (ownerId != senderId) from attachment!", Config.DEFAULT_PUNISH);
                 return;
             }
 
             if (!item.getLocation().equals(ItemLocation.MAIL))
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                                .getName() + " tried to get wrong item (Location != MAIL) from attachment!",
-                        Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() +
+                        " tried to get wrong item (Location != MAIL) from attachment!", Config.DEFAULT_PUNISH);
                 return;
             }
 
             if (item.getLocationSlot() != msg.getId())
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to get items from different attachment!", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to get items from different attachment!",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
 
@@ -200,8 +199,8 @@ public final class RequestPostAttachment extends L2GameClientPacket
             return;
         }
 
-        Util.logToFile(activeChar.getName() + " is retrieving items from Mail[" + msg
-                .getId() + "].", "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, true);
+        Util.logToFile(activeChar.getName() + " is retrieving items from Mail[" + msg.getId() + "].",
+                "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, true);
 
         // Proceed to the transfer
         InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
@@ -214,25 +213,28 @@ public final class RequestPostAttachment extends L2GameClientPacket
 
             if (msg.getSenderId() > -1 && item.getOwnerId() != msg.getSenderId())
             {
-                Util.logToFile("- " + activeChar.getName() + " could not retrieve " + item.getName() + " [" + item
-                        .getCount() + "] - MailSenderId[" + msg.getSenderId() + "] differs from ItemOwnerId[" + item
-                        .getOwnerId() + "].", "Logs/Mails/" + activeChar
-                        .getName() + "_Retrieve_Mails", "txt", true, false);
+                Util.logToFile(
+                        "- " + activeChar.getName() + " could not retrieve " + item.getName() + " [" + item.getCount() +
+                                "] - MailSenderId[" + msg.getSenderId() + "] differs from ItemOwnerId[" +
+                                item.getOwnerId() + "].", "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails",
+                        "txt", true, false);
 
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to get items with owner != sender !", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to get items with owner != sender !",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
 
             long count = item.getCount();
             final L2ItemInstance newItem = attachments
-                    .transferItem(attachments.getName() + " from " + msg.getSenderName(), item.getObjectId(), item
-                            .getCount(), activeChar.getInventory(), activeChar, null);
+                    .transferItem(attachments.getName() + " from " + msg.getSenderName(), item.getObjectId(),
+                            item.getCount(), activeChar.getInventory(), activeChar, null);
             if (newItem == null)
             {
-                Util.logToFile("- " + activeChar.getName() + " could not retrieve " + item.getName() + " [" + item
-                        .getCount() + "] - Item was NULL after transfer.", "Logs/Mails/" + activeChar
-                        .getName() + "_Retrieve_Mails", "txt", true, false);
+                Util.logToFile(
+                        "- " + activeChar.getName() + " could not retrieve " + item.getName() + " [" + item.getCount() +
+                                "] - Item was NULL after transfer.",
+                        "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, false);
                 return;
             }
 
@@ -252,8 +254,9 @@ public final class RequestPostAttachment extends L2GameClientPacket
             sm.addItemNumber(count);
             activeChar.sendPacket(sm);
 
-            Util.logToFile("- " + activeChar.getName() + " retrieved " + item.getName() + "[" + newItem
-                    .getCount() + "].", "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, false);
+            Util.logToFile(
+                    "- " + activeChar.getName() + " retrieved " + item.getName() + "[" + newItem.getCount() + "].",
+                    "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, false);
         }
 
         // Send updated item list to the player
@@ -287,8 +290,8 @@ public final class RequestPostAttachment extends L2GameClientPacket
             }
             else
             {
-                L2ItemInstance paidAdena = ItemTable.getInstance()
-                        .createItem("PayMail", ADENA_ID, adena, activeChar, null);
+                L2ItemInstance paidAdena =
+                        ItemTable.getInstance().createItem("PayMail", ADENA_ID, adena, activeChar, null);
                 paidAdena.setOwnerId(msg.getSenderId());
                 paidAdena.setLocation(ItemLocation.INVENTORY);
                 paidAdena.updateDatabase(true);

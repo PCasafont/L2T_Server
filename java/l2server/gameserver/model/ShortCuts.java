@@ -60,15 +60,15 @@ public class ShortCuts
                     .put(_owner.getGearGradeForCurrentLevel(), new HashMap<Integer, L2ShortCut>());
         }
 
-        Map<Integer, L2ShortCut> allShortcuts = _shortCuts.get(_owner.getClassIndex())
-                .get(_owner.getGearGradeForCurrentLevel());
+        Map<Integer, L2ShortCut> allShortcuts =
+                _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel());
         return allShortcuts.values().toArray(new L2ShortCut[allShortcuts.size()]);
     }
 
     public L2ShortCut getShortCut(int slot, int page)
     {
-        L2ShortCut sc = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel())
-                .get(slot + page * 12);
+        L2ShortCut sc =
+                _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).get(slot + page * 12);
 
         // verify shortcut
         if (sc != null && sc.getType() == L2ShortCut.TYPE_ITEM)
@@ -144,9 +144,8 @@ public class ShortCuts
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
                 statement.setInt(1, _owner.getObjectId());
                 statement.setInt(2, _owner.getClassIndex());
                 statement.setInt(3, _owner.getGearGradeForCurrentLevel());
@@ -163,8 +162,8 @@ public class ShortCuts
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Could not check if the character had preset for current level " + e.getMessage(), e);
             }
             finally
             {
@@ -180,8 +179,9 @@ public class ShortCuts
                         continue;
                     }
 
-                    L2ShortCut shortcutCopy = new L2ShortCut(sh.getSlot(), sh.getPage(), sh.getType(), sh.getId(), sh
-                            .getLevel(), sh.getCharacterType());
+                    L2ShortCut shortcutCopy =
+                            new L2ShortCut(sh.getSlot(), sh.getPage(), sh.getType(), sh.getId(), sh.getLevel(),
+                                    sh.getCharacterType());
 
                     registerShortCutInDb(shortcutCopy, null, _owner.getGearGradeForCurrentLevel());
                 }
@@ -192,9 +192,8 @@ public class ShortCuts
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,class_index,levelRange) values(?,?,?,?,?,?,?,?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,class_index,levelRange) values(?,?,?,?,?,?,?,?)");
             statement.setInt(1, _owner.getObjectId());
             statement.setInt(2, shortcut.getSlot());
             statement.setInt(3, shortcut.getPage());
@@ -239,8 +238,8 @@ public class ShortCuts
      */
     public synchronized void deleteShortCut(int slot, int page)
     {
-        if (_shortCuts.get(_owner.getClassIndex()) == null || _shortCuts.get(_owner.getClassIndex())
-                .get(_owner.getGearGradeForCurrentLevel()) == null)
+        if (_shortCuts.get(_owner.getClassIndex()) == null ||
+                _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null)
         {
             return;
         }
@@ -260,8 +259,8 @@ public class ShortCuts
 
     public synchronized void deleteShortCutByObjectId(int objectId)
     {
-        if (_shortCuts.get(_owner.getClassIndex()) == null || _shortCuts.get(_owner.getClassIndex())
-                .get(_owner.getGearGradeForCurrentLevel()) == null)
+        if (_shortCuts.get(_owner.getClassIndex()) == null ||
+                _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null)
         {
             return;
         }
@@ -306,9 +305,8 @@ public class ShortCuts
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=? AND levelRange=? ");
+            PreparedStatement statement = con.prepareStatement(
+                    "DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=? AND levelRange=? ");
             statement.setInt(1, _owner.getObjectId());
             statement.setInt(2, shortcut.getSlot());
             statement.setInt(3, shortcut.getPage());
@@ -335,8 +333,9 @@ public class ShortCuts
 
     public void restore(final int classIndex, final int levelRange, boolean loadDefault)
     {
-        _hasPresetForCurrentLevel = _shortCuts.containsKey(classIndex) && _shortCuts.get(classIndex)
-                .containsKey(levelRange) && _shortCuts.get(classIndex).get(levelRange).values().size() != 0;
+        _hasPresetForCurrentLevel =
+                _shortCuts.containsKey(classIndex) && _shortCuts.get(classIndex).containsKey(levelRange) &&
+                        _shortCuts.get(classIndex).get(levelRange).values().size() != 0;
 
         //if (_hasPresetForCurrentLevel)
         //	_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).clear();
@@ -351,9 +350,8 @@ public class ShortCuts
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
                 statement.setInt(1, _owner.getObjectId());
                 statement.setInt(2, classIndex);
                 statement.setInt(3, levelRange);
@@ -380,8 +378,8 @@ public class ShortCuts
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Could not check if the character had preset for current level " + e.getMessage(), e);
             }
             finally
             {

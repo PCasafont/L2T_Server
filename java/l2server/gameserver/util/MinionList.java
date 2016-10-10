@@ -190,8 +190,9 @@ public class MinionList
         deleteSpawnedMinions();
 
         // if master has spawn and can respawn - try to reuse minions
-        if (_reusedMinionReferences == null && (_master.getTemplate().getMinionData() != null || _master.getTemplate()
-                .getRandomMinionData() != null) && _master.getSpawn() != null && _master.getSpawn().isRespawnEnabled())
+        if (_reusedMinionReferences == null && (_master.getTemplate().getMinionData() != null ||
+                _master.getTemplate().getRandomMinionData() != null) && _master.getSpawn() != null &&
+                _master.getSpawn().isRespawnEnabled())
         {
             _reusedMinionReferences = new ArrayList<L2MonsterInstance>();
         }
@@ -466,9 +467,9 @@ public class MinionList
 
         if (Config.DEBUG)
         {
-            Log.fine("Spawned minion template " + minion.getNpcId() + " with objid: " + minion
-                    .getObjectId() + " to boss " + master.getObjectId() + " ,at: " + minion.getX() + " x, " + minion
-                    .getY() + " y, " + minion.getZ() + " z");
+            Log.fine("Spawned minion template " + minion.getNpcId() + " with objid: " + minion.getObjectId() +
+                    " to boss " + master.getObjectId() + " ,at: " + minion.getX() + " x, " + minion.getY() + " y, " +
+                    minion.getZ() + " z");
         }
 
         return minion;

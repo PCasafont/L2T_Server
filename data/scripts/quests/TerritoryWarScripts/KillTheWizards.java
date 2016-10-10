@@ -58,8 +58,7 @@ public class KillTheWizards extends TerritoryWarSuperClass
         RANDOM_MIN = 10;
         RANDOM_MAX = 15;
         Text = new String[]{
-                "Out of MAX Wizards and Summoners you have defeated KILL.",
-                "You weakened the enemy's attack!"
+                "Out of MAX Wizards and Summoners you have defeated KILL.", "You weakened the enemy's attack!"
         };
     }
 }

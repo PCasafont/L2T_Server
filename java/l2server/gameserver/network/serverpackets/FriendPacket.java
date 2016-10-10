@@ -94,8 +94,8 @@ public class FriendPacket extends L2GameServerPacket
             // Retrieve the L2PcInstance from the characters table of the database
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
             statement.setInt(1, objId);
             ResultSet rset = statement.executeQuery();
             while (rset.next())
@@ -123,8 +123,8 @@ public class FriendPacket extends L2GameServerPacket
                 // Retrieve the L2PcInstance from the characters table of the database
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
                 statement.setInt(1, objId);
                 statement.setInt(2, _classId);
                 ResultSet rset = statement.executeQuery();

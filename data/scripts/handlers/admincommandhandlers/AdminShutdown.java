@@ -106,8 +106,8 @@ public class AdminShutdown implements IAdminCommandHandler
         }
 
         adminReply.replace("%count%", totalPlayers + " (" + actualPlayers + ")");
-        adminReply.replace("%used%", String
-                .valueOf(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
+        adminReply.replace("%used%",
+                String.valueOf(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
         adminReply.replace("%xp%", String.valueOf(Config.RATE_XP));
         adminReply.replace("%sp%", String.valueOf(Config.RATE_SP));
         adminReply.replace("%adena%", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)));

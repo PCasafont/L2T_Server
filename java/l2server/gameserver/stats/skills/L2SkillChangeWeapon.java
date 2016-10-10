@@ -100,8 +100,8 @@ public class L2SkillChangeWeapon extends L2Skill
                     return;
                 }
 
-                L2ItemInstance[] unequiped = player.getInventory()
-                        .unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
+                L2ItemInstance[] unequiped =
+                        player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
                 InventoryUpdate iu = new InventoryUpdate();
                 for (L2ItemInstance item : unequiped)
                 {
@@ -156,8 +156,8 @@ public class L2SkillChangeWeapon extends L2Skill
                     return;
                 }
 
-                L2ItemInstance newItem = player.getInventory()
-                        .addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
+                L2ItemInstance newItem =
+                        player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
 
                 if (newItem == null)
                 {

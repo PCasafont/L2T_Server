@@ -295,9 +295,8 @@ public class AdminSiege implements IAdminCommandHandler
             if (castle != null)
             {
                 String name = castle.getName();
-                StringUtil
-                        .append(cList, "<td fixwidth=90><a action=\"bypass -h admin_siege ", name, "\">", name,
-                                "</a></td>");
+                StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_siege ", name, "\">", name,
+                        "</a></td>");
                 i++;
             }
             if (i > 2)
@@ -313,8 +312,8 @@ public class AdminSiege implements IAdminCommandHandler
         {
             if (clanhall != null)
             {
-                StringUtil.append(cList, "<td fixwidth=134><a action=\"bypass -h admin_clanhall ", String
-                        .valueOf(clanhall.getId()), "\">", clanhall.getName(), "</a></td>");
+                StringUtil.append(cList, "<td fixwidth=134><a action=\"bypass -h admin_clanhall ",
+                        String.valueOf(clanhall.getId()), "\">", clanhall.getName(), "</a></td>");
                 i++;
             }
             if (i > 1)
@@ -330,8 +329,8 @@ public class AdminSiege implements IAdminCommandHandler
         {
             if (clanhall != null)
             {
-                StringUtil.append(cList, "<td fixwidth=134><a action=\"bypass -h admin_clanhall ", String
-                        .valueOf(clanhall.getId()), "\">", clanhall.getName(), "</a></td>");
+                StringUtil.append(cList, "<td fixwidth=134><a action=\"bypass -h admin_clanhall ",
+                        String.valueOf(clanhall.getId()), "\">", clanhall.getName(), "</a></td>");
                 i++;
             }
             if (i > 1)
@@ -374,22 +373,22 @@ public class AdminSiege implements IAdminCommandHandler
         if (isSunday)
         {
             adminReply.replace("%sundaylink%", String.valueOf(newDay.get(Calendar.DAY_OF_YEAR)));
-            adminReply.replace("%sunday%", String
-                    .valueOf(newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
+            adminReply.replace("%sunday%", String.valueOf(
+                    newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
             newDay.add(Calendar.DAY_OF_MONTH, 13);
             adminReply.replace("%saturdaylink%", String.valueOf(newDay.get(Calendar.DAY_OF_YEAR)));
-            adminReply.replace("%saturday%", String
-                    .valueOf(newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
+            adminReply.replace("%saturday%", String.valueOf(
+                    newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
         }
         else
         {
             adminReply.replace("%saturdaylink%", String.valueOf(newDay.get(Calendar.DAY_OF_YEAR)));
-            adminReply.replace("%saturday%", String
-                    .valueOf(newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
+            adminReply.replace("%saturday%", String.valueOf(
+                    newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
             newDay.add(Calendar.DAY_OF_MONTH, 1);
             adminReply.replace("%sundaylink%", String.valueOf(newDay.get(Calendar.DAY_OF_YEAR)));
-            adminReply.replace("%sunday%", String
-                    .valueOf(newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
+            adminReply.replace("%sunday%", String.valueOf(
+                    newDay.get(Calendar.MONTH) + "/" + String.valueOf(newDay.get(Calendar.DAY_OF_MONTH))));
         }
         activeChar.sendPacket(adminReply);
     }

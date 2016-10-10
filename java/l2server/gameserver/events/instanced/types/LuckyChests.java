@@ -93,26 +93,26 @@ public class LuckyChests extends EventInstance
         {
             // Set state REWARDING so nobody can point anymore
             setState(EventState.REWARDING);
-            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2]
-                    .getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
+            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
+                    _teams[0].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(0);
                 team = _teams[0];
             }
-            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2]
-                    .getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
+            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
+                    _teams[1].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(1);
                 team = _teams[1];
             }
-            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1]
-                    .getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
+            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
+                    _teams[2].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(2);
                 team = _teams[2];
             }
-            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1]
-                    .getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
+            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
+                    _teams[3].getPoints() > _teams[2].getPoints())
             {
                 rewardTeams(3);
                 team = _teams[3];
@@ -124,8 +124,8 @@ public class LuckyChests extends EventInstance
             }
         }
 
-        Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team
-                .getPoints() + " points.");
+        Announcements.getInstance().announceToAll(
+                "The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
         return;
     }
 
@@ -167,8 +167,8 @@ public class LuckyChests extends EventInstance
         {
             playerInstance.addEventPoints(1);
             team.increasePoints();
-            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance
-                    .getName(), "I have opened a chest that contained 1 point.");
+            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance.getName(),
+                    "I have opened a chest that contained 1 point.");
         }
         else if (points == 5)
         {
@@ -177,8 +177,8 @@ public class LuckyChests extends EventInstance
             {
                 team.increasePoints();
             }
-            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance
-                    .getName(), "I have opened a chest that contained 5 points!");
+            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance.getName(),
+                    "I have opened a chest that contained 5 points!");
         }
         else if (points == 20)
         {
@@ -187,8 +187,8 @@ public class LuckyChests extends EventInstance
             {
                 team.increasePoints();
             }
-            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance
-                    .getName(), "I have opened a chest that contained 20 points!!!");
+            cs = new CreatureSay(playerInstance.getObjectId(), Say2.TELL, playerInstance.getName(),
+                    "I have opened a chest that contained 20 points!!!");
         }
         for (L2PcInstance character : team.getParticipatedPlayers().values())
         {

@@ -259,8 +259,8 @@ public class Loto implements IBypassHandler
                 }
                 if (item.getItemId() == 4442 && item.getCustomType1() < lotonumber)
                 {
-                    message = message + "<a action=\"bypass -h npc_%objectId%_Loto " + item.getObjectId() + "\">" + item
-                            .getCustomType1() + " Event Number ";
+                    message = message + "<a action=\"bypass -h npc_%objectId%_Loto " + item.getObjectId() + "\">" +
+                            item.getCustomType1() + " Event Number ";
                     int[] numbers = Lottery.getInstance().decodeNumbers(item.getEnchantLevel(), item.getCustomType2());
                     for (int i = 0; i < 5; i++)
                     {

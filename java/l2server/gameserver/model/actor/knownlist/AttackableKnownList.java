@@ -77,8 +77,9 @@ public class AttackableKnownList extends NpcKnownList
     @Override
     public int getDistanceToWatchObject(L2Object object)
     {
-        if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null || !((L2NpcInstance) object)
-                .getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) || !(object instanceof L2Character))
+        if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null ||
+                !((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) ||
+                !(object instanceof L2Character))
         {
             return 0;
         }
@@ -88,8 +89,8 @@ public class AttackableKnownList extends NpcKnownList
             return object.getKnownList().getDistanceToWatchObject(getActiveObject());
         }
 
-        int max = Math.max(300, Math.max(getActiveChar().getAggroRange(), Math
-                .max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
+        int max = Math.max(300, Math.max(getActiveChar().getAggroRange(),
+                Math.max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
 
         return max;
     }

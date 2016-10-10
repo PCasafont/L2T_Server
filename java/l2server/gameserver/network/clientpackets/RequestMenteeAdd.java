@@ -52,9 +52,8 @@ public class RequestMenteeAdd extends L2GameClientPacket
         if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
         {
             //Target is not found in the game.
-            activeChar
-                    .sendPacket(
-                            SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME); // TODO: Find other message not friends.
+            activeChar.sendPacket(
+                    SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME); // TODO: Find other message not friends.
             return;
         }
         else if (mentee == activeChar)

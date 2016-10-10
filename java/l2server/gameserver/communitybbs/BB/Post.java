@@ -71,9 +71,8 @@ public class Post
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO posts (post_id,post_owner_name,post_ownerid,post_date,post_topic_id,post_forum_id,post_txt) values (?,?,?,?,?,?,?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO posts (post_id,post_owner_name,post_ownerid,post_date,post_topic_id,post_forum_id,post_txt) values (?,?,?,?,?,?,?)");
             statement.setInt(1, cp.postId);
             statement.setString(2, cp.postOwner);
             statement.setInt(3, cp.postOwnerId);
@@ -120,8 +119,8 @@ public class Post
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM posts WHERE post_forum_id=? AND post_topic_id=?");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM posts WHERE post_forum_id=? AND post_topic_id=?");
             statement.setInt(1, t.getForumID());
             statement.setInt(2, t.getID());
             statement.execute();
@@ -146,9 +145,8 @@ public class Post
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT * FROM posts WHERE post_forum_id=? AND post_topic_id=? ORDER BY post_id ASC");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT * FROM posts WHERE post_forum_id=? AND post_topic_id=? ORDER BY post_id ASC");
             statement.setInt(1, t.getForumID());
             statement.setInt(2, t.getID());
             ResultSet result = statement.executeQuery();
@@ -169,8 +167,8 @@ public class Post
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(),
+                    e);
         }
         finally
         {
@@ -188,9 +186,8 @@ public class Post
         {
             CPost cp = getCPost(i);
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "UPDATE posts SET post_txt=? WHERE post_id=? AND post_topic_id=? AND post_forum_id=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "UPDATE posts SET post_txt=? WHERE post_id=? AND post_topic_id=? AND post_forum_id=?");
             statement.setString(1, cp.postTxt);
             statement.setInt(2, cp.postId);
             statement.setInt(3, cp.postTopicId);

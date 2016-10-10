@@ -84,8 +84,9 @@ public class PrisonGuards extends L2AttackableAIScript
     {
         if (event.equalsIgnoreCase("Respawn"))
         {
-            L2Npc newGuard = addSpawn(npc.getNpcId(), npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn()
-                    .getZ(), npc.getSpawn().getHeading(), false, 0);
+            L2Npc newGuard =
+                    addSpawn(npc.getNpcId(), npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(),
+                            npc.getSpawn().getHeading(), false, 0);
             newGuard.setIsImmobilized(true);
             if (npc.getNpcId() == GUARD1)
             {
@@ -103,8 +104,8 @@ public class PrisonGuards extends L2AttackableAIScript
             {
                 if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
                 {
-                    npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc
-                            .getSpawn().getHeading(), false);
+                    npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(),
+                            npc.getSpawn().getHeading(), false);
                     npc.setIsImmobilized(true);
                 }
                 ((L2Attackable) npc).getAggroList().clear();
@@ -164,8 +165,8 @@ public class PrisonGuards extends L2AttackableAIScript
             {
                 if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
                 {
-                    npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc
-                            .getSpawn().getHeading(), false);
+                    npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(),
+                            npc.getSpawn().getHeading(), false);
                     npc.setIsImmobilized(true);
                 }
                 ((L2Attackable) npc).getAggroList().remove(target);
@@ -242,7 +243,7 @@ public class PrisonGuards extends L2AttackableAIScript
         if (fromAttack)
         {
             /*
-			 * 1800107 It's not easy to obtain.
+             * 1800107 It's not easy to obtain.
 			 * 1800108 You're out of your mind coming here...
 			 */
             int msg = npc.getNpcId() == GUARD1 ? 1800107 : 1800108;

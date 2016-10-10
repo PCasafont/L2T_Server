@@ -128,8 +128,8 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
         if (Config.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH)
         {
-            if (warehouse instanceof ClanWarehouse && (player
-                    .getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE)
+            if (warehouse instanceof ClanWarehouse &&
+                    (player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE)
             {
                 return;
             }
@@ -154,10 +154,9 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
             L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
             if (item == null || item.getCount() < i.getCount())
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                                .getName() + " of account " + player
-                                .getAccountName() + " tried to withdraw non-existent item from warehouse.",
-                        Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                " tried to withdraw non-existent item from warehouse.", Config.DEFAULT_PUNISH);
                 return;
             }
 
@@ -197,8 +196,8 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
                 return;
             }
             final L2ItemInstance newItem = warehouse
-                    .transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(), i.getObjectId(), i
-                            .getCount(), player.getInventory(), player, manager);
+                    .transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(), i.getObjectId(), i.getCount(),
+                            player.getInventory(), player, manager);
             if (newItem == null)
             {
                 Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (newitem == null)");

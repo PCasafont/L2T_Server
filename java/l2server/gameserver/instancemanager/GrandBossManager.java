@@ -138,8 +138,8 @@ public class GrandBossManager
                 Log.fine("GrandBossManager: " + boss.getName() + " (" + bossId + ") status is " + status + ".");
                 if (status > 0)
                 {
-                    Log.fine("GrandBossManager: Next spawn date of " + boss.getName() + " is " + new Date(info
-                            .getLong("respawn_time")) + ".");
+                    Log.fine("GrandBossManager: Next spawn date of " + boss.getName() + " is " +
+                            new Date(info.getLong("respawn_time")) + ".");
                 }
 
                 info = null;
@@ -308,8 +308,9 @@ public class GrandBossManager
     public void setBossStatus(int bossId, int status)
     {
         _bossStatus.put(bossId, status);
-        Log.info(getClass().getSimpleName() + ": Updated " + NpcTable.getInstance().getTemplate(bossId)
-                .getName() + "(" + bossId + ") status to " + status);
+        Log.info(
+                getClass().getSimpleName() + ": Updated " + NpcTable.getInstance().getTemplate(bossId).getName() + "(" +
+                        bossId + ") status to " + status);
         updateDb(bossId, true);
     }
 

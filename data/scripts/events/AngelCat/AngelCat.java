@@ -75,8 +75,8 @@ public class AngelCat extends Quest
             if (_curr_time > _reuse_time)
             {
                 st.giveItems(angelCatBlessing, 1);
-                q.saveGlobalQuestVar(player.getAccountName(), Long
-                        .toString(System.currentTimeMillis() + 86400000)); //24h
+                q.saveGlobalQuestVar(player.getAccountName(),
+                        Long.toString(System.currentTimeMillis() + 86400000)); //24h
             }
             else
             {

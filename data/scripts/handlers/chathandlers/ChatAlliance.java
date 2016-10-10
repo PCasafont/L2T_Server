@@ -34,7 +34,7 @@ public class ChatAlliance implements IChatHandler
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)
     {
         /*if (activeChar.isGM())
-		{
+        {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			GmListTable.broadcastToGMs(cs);
 		}
@@ -58,8 +58,8 @@ public class ChatAlliance implements IChatHandler
             }
 
             String allyName = activeChar.getClan().getAllyName();
-            ConsoleTab.appendMessage(ConsoleFilter.AllyChat, "[" + allyName + "] " + activeChar
-                    .getName() + ": " + text, allyName, activeChar.getName());
+            ConsoleTab.appendMessage(ConsoleFilter.AllyChat, "[" + allyName + "] " + activeChar.getName() + ": " + text,
+                    allyName, activeChar.getName());
         }
     }
 

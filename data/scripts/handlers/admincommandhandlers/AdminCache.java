@@ -51,8 +51,8 @@ public class AdminCache implements IAdminCommandHandler
         if (command.startsWith("admin_cache_htm_rebuild") || command.equals("admin_cache_htm_reload"))
         {
             HtmCache.getInstance().reload(Config.DATAPACK_ROOT);
-            activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB on " + HtmCache
-                    .getInstance().getLoadedFiles() + " file(s) loaded.");
+            activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB on " +
+                    HtmCache.getInstance().getLoadedFiles() + " file(s) loaded.");
         }
         else if (command.startsWith("admin_cache_reload_path "))
         {
@@ -60,8 +60,8 @@ public class AdminCache implements IAdminCommandHandler
             {
                 String path = command.split(" ")[1];
                 HtmCache.getInstance().reloadPath(new File(Config.DATAPACK_ROOT, path));
-                activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB in " + HtmCache
-                        .getInstance().getLoadedFiles() + " file(s) loaded.");
+                activeChar.sendMessage("Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " MB in " +
+                        HtmCache.getInstance().getLoadedFiles() + " file(s) loaded.");
             }
             catch (Exception e)
             {
@@ -90,9 +90,8 @@ public class AdminCache implements IAdminCommandHandler
         else if (command.startsWith("admin_cache_crest_rebuild") || command.startsWith("admin_cache_crest_reload"))
         {
             CrestCache.getInstance().reload();
-            activeChar.sendMessage("Cache[Crest]: " + String
-                    .format("%.3f", CrestCache.getInstance().getMemoryUsage()) + " megabytes on " + CrestCache
-                    .getInstance().getLoadedFiles() + " files loaded");
+            activeChar.sendMessage("Cache[Crest]: " + String.format("%.3f", CrestCache.getInstance().getMemoryUsage()) +
+                    " megabytes on " + CrestCache.getInstance().getLoadedFiles() + " files loaded");
         }
         else if (command.startsWith("admin_cache_crest_fix"))
         {

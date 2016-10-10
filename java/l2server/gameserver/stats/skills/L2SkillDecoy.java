@@ -73,8 +73,8 @@ public class L2SkillDecoy extends L2Skill
             float angle = Rnd.get(1000);
             for (int i = 0; i < 3; i++)
             {
-                final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance()
-                        .getNextId(), decoyTemplate, activeChar, this);
+                final L2DecoyInstance decoy =
+                        new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
                 decoy.setCurrentHp(decoy.getMaxHp());
                 decoy.setCurrentMp(decoy.getMaxMp());
                 decoy.setHeading(activeChar.getHeading());
@@ -92,8 +92,8 @@ public class L2SkillDecoy extends L2Skill
         }
         else
         {
-            final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance()
-                    .getNextId(), decoyTemplate, activeChar, this);
+            final L2DecoyInstance decoy =
+                    new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
             decoy.setCurrentHp(decoy.getMaxHp());
             decoy.setCurrentMp(decoy.getMaxMp());
             decoy.setHeading(activeChar.getHeading());

@@ -121,7 +121,7 @@ public abstract class L2Item
 
     private static final int[] crystalItemId = {0, 1458, 1459, 1460, 1461, 1462, 1462, 1462, 17371, 17371, 17371};
     /*private static final int[] crystalEnchantBonusArmor =
-	{
+    {
 		0, 11, 6, 11, 19, 25, 25, 25, 35, 35, 35
 	};
 	private static final int[] crystalEnchantBonusWeapon =
@@ -256,10 +256,10 @@ public abstract class L2Item
                 cond.add(new ConditionPetType(ALL_PET));
             }
 
-            if (equip_condition.contains("all_wolf_group") || equip_condition
-                    .contains("hatchling_group") || equip_condition.contains("strider") || equip_condition
-                    .contains("baby_pet_group") || equip_condition.contains("upgrade_baby_pet_group") || equip_condition
-                    .contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group"))
+            if (equip_condition.contains("all_wolf_group") || equip_condition.contains("hatchling_group") ||
+                    equip_condition.contains("strider") || equip_condition.contains("baby_pet_group") ||
+                    equip_condition.contains("upgrade_baby_pet_group") ||
+                    equip_condition.contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group"))
             {
                 _isForPet = true;
             }

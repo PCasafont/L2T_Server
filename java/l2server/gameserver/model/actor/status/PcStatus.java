@@ -129,8 +129,8 @@ public class PcStatus extends PlayableStatus
             //	return;
         }
 
-        if (getActiveChar().getFaceoffTarget() != null && attacker != getActiveChar()
-                .getFaceoffTarget() && attacker != getActiveChar())
+        if (getActiveChar().getFaceoffTarget() != null && attacker != getActiveChar().getFaceoffTarget() &&
+                attacker != getActiveChar())
         {
             return;
         }
@@ -178,11 +178,11 @@ public class PcStatus extends PlayableStatus
 
             // Check and calculate transfered damage
             L2SummonInstance summon = getActiveChar().getSummon(0);
-            if (summon != null && !(summon instanceof L2MobSummonInstance) && Util
-                    .checkIfInRange(1000, getActiveChar(), summon, true))
+            if (summon != null && !(summon instanceof L2MobSummonInstance) &&
+                    Util.checkIfInRange(1000, getActiveChar(), summon, true))
             {
-                tDmg = (int) value * (int) getActiveChar().getStat()
-                        .calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null) / 100;
+                tDmg = (int) value *
+                        (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null) / 100;
 
                 // Only transfer dmg up to current HP, it should not be killed
                 tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
@@ -208,8 +208,8 @@ public class PcStatus extends PlayableStatus
             {
                 if (mpDam > getActiveChar().getCurrentMp())
                 {
-                    getActiveChar().sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING));
+                    getActiveChar().sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING));
                     L2Abnormal effect = getActiveChar().getFirstEffect(1556);
                     if (effect != null)
                     {
@@ -242,15 +242,14 @@ public class PcStatus extends PlayableStatus
             }
 
             final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
-            if (caster != null && getActiveChar().getParty() != null && Util
-                    .checkIfInRange(1000, getActiveChar(), caster, true) && !caster
-                    .isDead() && getActiveChar() != caster && getActiveChar().getParty().getPartyMembers()
-                    .contains(caster))
+            if (caster != null && getActiveChar().getParty() != null &&
+                    Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() &&
+                    getActiveChar() != caster && getActiveChar().getParty().getPartyMembers().contains(caster))
             {
                 int transferDmg = 0;
 
-                transferDmg = (int) value * (int) getActiveChar().getStat()
-                        .calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
+                transferDmg = (int) value *
+                        (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
                 transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
                 if (transferDmg > 0)
                 {
@@ -310,9 +309,8 @@ public class PcStatus extends PlayableStatus
 
                     if (attackerPlayer != null)
                     {
-                        smsg = SystemMessage
-                                .getSystemMessage(
-                                        SystemMessageId.GIVEN_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_SERVITOR);
+                        smsg = SystemMessage.getSystemMessage(
+                                SystemMessageId.GIVEN_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_SERVITOR);
                         smsg.addNumber(fullValue);
                         smsg.addNumber(tDmg);
                         smsg.addHpChange(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);

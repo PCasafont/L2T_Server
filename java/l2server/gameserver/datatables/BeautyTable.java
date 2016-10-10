@@ -164,9 +164,9 @@ public class BeautyTable implements Reloadable
 
                 _beautyTable.put(0, template);
 
-                Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template
-                        .getFaceStyles().size() + " face styles and " + template.getHairColors()
-                        .size() + " hair colors!");
+                Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
+                        template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
+                        " hair colors!");
             }
         }
 

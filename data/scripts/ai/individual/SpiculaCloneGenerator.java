@@ -109,8 +109,9 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 
     private void spawnSpiculas(L2Npc npc, L2PcInstance killer)
     {
-        npc.broadcastPacket(new ExShowScreenMessage("$s1 has summoned Elite Soldiers through the Clone Generator."
-                .replace("$s1", killer.getName()), 3000)); //id: 1802277
+        npc.broadcastPacket(new ExShowScreenMessage(
+                "$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
+                3000)); //id: 1802277
 
         for (int a = 0; a <= (npc.getNpcId() == _yinFragment ? 2 : 4); a++)
         {

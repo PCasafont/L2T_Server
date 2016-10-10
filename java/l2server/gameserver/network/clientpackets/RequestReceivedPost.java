@@ -64,8 +64,8 @@ public final class RequestReceivedPost extends L2GameClientPacket
 
         if (msg.getReceiverId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
             return;
         }
 

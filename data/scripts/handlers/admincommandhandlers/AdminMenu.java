@@ -70,8 +70,8 @@ public class AdminMenu implements IAdminCommandHandler
                 L2PcInstance player = L2World.getInstance().getPlayer(playerName);
                 if (player != null)
                 {
-                    teleportCharacter(player, Integer.parseInt(data[2]), Integer.parseInt(data[3]), Integer
-                            .parseInt(data[4]), activeChar, "Admin is teleporting you.");
+                    teleportCharacter(player, Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+                            Integer.parseInt(data[4]), activeChar, "Admin is teleporting you.");
                 }
             }
             showMainPage(activeChar);
@@ -82,8 +82,8 @@ public class AdminMenu implements IAdminCommandHandler
             {
                 String targetName = command.substring(23);
                 L2PcInstance player = L2World.getInstance().getPlayer(targetName);
-                teleportCharacter(player, activeChar.getX(), activeChar.getY(), activeChar
-                        .getZ(), activeChar, "Admin is teleporting you.");
+                teleportCharacter(player, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar,
+                        "Admin is teleporting you.");
             }
             catch (StringIndexOutOfBoundsException e)
             {
@@ -195,8 +195,8 @@ public class AdminMenu implements IAdminCommandHandler
                 if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
                 {
                     activeChar.sendMessage("You don't have the access right to use this command!");
-                    _log.warning("Character " + activeChar
-                            .getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
+                    _log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+                            ", but have no access to it!");
                     return false;
                 }
                 IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);
@@ -213,8 +213,8 @@ public class AdminMenu implements IAdminCommandHandler
                 if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
                 {
                     activeChar.sendMessage("You don't have the access right to use this command!");
-                    _log.warning("Character " + activeChar
-                            .getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
+                    _log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+                            ", but have no access to it!");
                     return false;
                 }
                 IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);

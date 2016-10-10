@@ -103,13 +103,13 @@ public class CrestCache
                     }
                     else if (file.getName().startsWith("Crest_"))
                     {
-                        _mapPledge.put(Integer
-                                .valueOf(file.getName().substring(6, file.getName().length() - 4)), content);
+                        _mapPledge.put(Integer.valueOf(file.getName().substring(6, file.getName().length() - 4)),
+                                content);
                     }
                     else if (file.getName().startsWith("AllyCrest_"))
                     {
-                        _mapAlly.put(Integer
-                                .valueOf(file.getName().substring(10, file.getName().length() - 4)), content);
+                        _mapAlly.put(Integer.valueOf(file.getName().substring(10, file.getName().length() - 4)),
+                                content);
                     }
                     _loadedFiles++;
                     _bytesBuffLen += content.length;
@@ -131,8 +131,8 @@ public class CrestCache
             }
         }
 
-        Log.info("Cache[Crest]: " + String
-                .format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() + " files loaded.");
+        Log.info("Cache[Crest]: " + String.format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() +
+                " files loaded.");
     }
 
     public void convertOldPedgeFiles()
@@ -163,8 +163,8 @@ public class CrestCache
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("UPDATE clan_data SET crest_id = ? WHERE clan_id = ?");
+                    PreparedStatement statement =
+                            con.prepareStatement("UPDATE clan_data SET crest_id = ? WHERE clan_id = ?");
                     statement.setInt(1, newId);
                     statement.setInt(2, clan.getClanId());
                     statement.executeUpdate();

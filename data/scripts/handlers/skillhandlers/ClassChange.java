@@ -100,8 +100,8 @@ public class ClassChange implements ISkillHandler
             return;
         }
 
-        player.sendPacket(SystemMessage
-                .getSystemMessage(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED)); // Transfer completed.
+        player.sendPacket(
+                SystemMessage.getSystemMessage(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED)); // Transfer completed.
         player.sendPacket(new ExSubjobInfo(player));
     }
 

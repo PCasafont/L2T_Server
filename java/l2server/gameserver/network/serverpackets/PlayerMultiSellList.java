@@ -67,9 +67,8 @@ public final class PlayerMultiSellList extends L2GameServerPacket
             if (item.getAppearance() > 0)
             {
                 L2Item app = ItemTable.getInstance().getTemplate(item.getAppearance());
-                getClient().sendPacket(new CreatureSay(_player.getObjectId(), Say2.TELL, _player
-                        .getName(), "WARNING: The " + item.getItem().getName() + " has appearance of " + app
-                        .getName() + "!"));
+                getClient().sendPacket(new CreatureSay(_player.getObjectId(), Say2.TELL, _player.getName(),
+                        "WARNING: The " + item.getItem().getName() + " has appearance of " + app.getName() + "!"));
             }
 
             writeD(i);
@@ -144,8 +143,8 @@ public final class PlayerMultiSellList extends L2GameServerPacket
             i++;
         }
 
-        if (_player.getClient() != null && _player.getClient().isDetached() && _player
-                .getCustomSellList() != null && _player.getCustomSellList().getItemCount() == 0)
+        if (_player.getClient() != null && _player.getClient().isDetached() && _player.getCustomSellList() != null &&
+                _player.getCustomSellList().getItemCount() == 0)
         {
             _player.logout();
         }

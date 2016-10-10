@@ -67,8 +67,8 @@ public class EffectParalyze extends L2Effect
     {
         if (getAbnormal() != null)
         {
-            if (getAbnormal().getTemplate().visualEffect != null && getAbnormal()
-                    .getTemplate().visualEffect.length == 0)
+            if (getAbnormal().getTemplate().visualEffect != null &&
+                    getAbnormal().getTemplate().visualEffect.length == 0)
             {
                 getEffected().startVisualEffect(VisualEffect.HOLD_1);
             }
@@ -86,8 +86,8 @@ public class EffectParalyze extends L2Effect
     {
         if (getAbnormal() != null)
         {
-            if (getAbnormal().getTemplate().visualEffect != null && getAbnormal()
-                    .getTemplate().visualEffect.length == 0)
+            if (getAbnormal().getTemplate().visualEffect != null &&
+                    getAbnormal().getTemplate().visualEffect.length == 0)
             {
                 getEffected().stopVisualEffect(VisualEffect.HOLD_1);
             }

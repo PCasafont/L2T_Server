@@ -81,9 +81,9 @@ public class SpecializeClass implements IBypassHandler
                         {
                             classes.add(cl);
                         }
-                        else if (activeChar.getCurrentClass().getParent() != null && cl.getParent()
-                                .getAwakeningClassId() == activeChar.getCurrentClass().getParent()
-                                .getAwakeningClassId())
+                        else if (activeChar.getCurrentClass().getParent() != null &&
+                                cl.getParent().getAwakeningClassId() ==
+                                        activeChar.getCurrentClass().getParent().getAwakeningClassId())
                         {
                             classes.add(cl);
                         }
@@ -94,7 +94,7 @@ public class SpecializeClass implements IBypassHandler
             if (activeChar.getClassId() == activeChar.getBaseClass())
             {
                 /*if (activeChar.isHero())
-				{
+                {
 					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're a hero!", 6000));
 					return false;
 				}
@@ -102,18 +102,16 @@ public class SpecializeClass implements IBypassHandler
 					activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad and hero records will be reset!", 6000));*/
                 if (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
                 {
-                    activeChar
-                            .sendPacket(new ExShowScreenMessage(
-                                    "You cannot use this option while you're involved in the Grand Olympiads!", 6000));
+                    activeChar.sendPacket(new ExShowScreenMessage(
+                            "You cannot use this option while you're involved in the Grand Olympiads!", 6000));
                     return false;
                 }
             }
 
             for (PlayerClass cl : classes)
             {
-                buttons += "<button value=\"" + cl
-                        .getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " + cl
-                        .getId() +
+                buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " +
+                        cl.getId() +
                         "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
             }
 
@@ -153,8 +151,8 @@ public class SpecializeClass implements IBypassHandler
                     }
                 }
 
-                if (activeChar.getClassId() == activeChar.getBaseClass() && (activeChar.isHero() || Olympiad
-                        .getInstance().getNobleInfo(activeChar.getObjectId()) != null))
+                if (activeChar.getClassId() == activeChar.getBaseClass() &&
+                        (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
                 {
                     Olympiad.getInstance().removeNoble(activeChar.getObjectId());
                     HeroesManager.getInstance().removeHero(activeChar.getObjectId());

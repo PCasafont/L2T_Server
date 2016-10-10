@@ -92,15 +92,15 @@ public class TenkaiAuctionManager implements Reloadable
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
                 statement.setInt(1, _id);
                 ResultSet rs = statement.executeQuery();
                 if (rs.next())
                 {
                     long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-                    nextAuction = lastAuctionCreation + _repeatTime * 1000L + Rnd
-                            .get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
+                    nextAuction = lastAuctionCreation + _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L -
+                            System.currentTimeMillis();
                     if (nextAuction < 0)
                     {
                         nextAuction = 0;
@@ -130,9 +130,8 @@ public class TenkaiAuctionManager implements Reloadable
                     try
                     {
                         con = L2DatabaseFactory.getInstance().getConnection();
-                        PreparedStatement statement = con
-                                .prepareStatement(
-                                        "REPLACE INTO `custom_auction_templates` (id, lastAuctionCreation) VALUES (?, ?)");
+                        PreparedStatement statement = con.prepareStatement(
+                                "REPLACE INTO `custom_auction_templates` (id, lastAuctionCreation) VALUES (?, ?)");
                         statement.setInt(1, _id);
                         statement.setLong(2, System.currentTimeMillis());
                         statement.execute();
@@ -147,9 +146,9 @@ public class TenkaiAuctionManager implements Reloadable
                         L2DatabaseFactory.close(con);
                     }
 
-                    Announcements.getInstance()
-                            .announceToAll("Item Auction: " + ItemTable.getInstance().getTemplate(itemId)
-                                    .getName() + " has been added to the Item Auction (Alt + B)!");
+                    Announcements.getInstance().announceToAll(
+                            "Item Auction: " + ItemTable.getInstance().getTemplate(itemId).getName() +
+                                    " has been added to the Item Auction (Alt + B)!");
 
                     ThreadPoolManager.getInstance()
                             .scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
@@ -233,9 +232,8 @@ public class TenkaiAuctionManager implements Reloadable
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 statement.setInt(1, _id);
                 statement.setInt(2, _itemId);
                 statement.setInt(3, _template.getId());
@@ -344,17 +342,16 @@ public class TenkaiAuctionManager implements Reloadable
             if (getRemainingTime() < ADDED_DURATION)
             {
                 _endAuctionTask.cancel(true);
-                _endAuctionTask = ThreadPoolManager.getInstance()
-                        .scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
+                _endAuctionTask =
+                        ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
             }
 
             Connection con = null;
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
+                PreparedStatement statement = con.prepareStatement(
+                        "UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
                 statement.setInt(1, _currentCurrencyId);
                 statement.setLong(2, _currentPrice);
                 statement.setInt(3, _currentAuctionOwner);
@@ -383,16 +380,16 @@ public class TenkaiAuctionManager implements Reloadable
                 String playerName = CharNameTable.getInstance().getNameById(getCurrentOwnerId());
                 if (playerName != null)
                 {
-                    giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate()
-                            .getCount(), "Congrats! You've won this bid!");
-                    Util.logToFile("The player: " + CharNameTable.getInstance()
-                            .getNameById(getCurrentOwnerId()) + " wins the " + ItemTable.getInstance()
-                            .getTemplate(getItemId()).getName() + " bid", "Auctions", true);
+                    giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate().getCount(),
+                            "Congrats! You've won this bid!");
+                    Util.logToFile("The player: " + CharNameTable.getInstance().getNameById(getCurrentOwnerId()) +
+                                    " wins the " + ItemTable.getInstance().getTemplate(getItemId()).getName() + " bid",
+                            "Auctions", true);
                 }
                 else
                 {
-                    Util.logToFile("The " + ItemTable.getInstance().getTemplate(getItemId())
-                            .getName() + " auction has ended without winner!", "Auctions", true);
+                    Util.logToFile("The " + ItemTable.getInstance().getTemplate(getItemId()).getName() +
+                            " auction has ended without winner!", "Auctions", true);
                 }
 
                 Connection con = null;
@@ -451,7 +448,7 @@ public class TenkaiAuctionManager implements Reloadable
     private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<Integer, CurrencyInfo>(); //Currency info
     private static Map<Integer, Auction> _auctions = new LinkedHashMap<Integer, Auction>(); //Current auctions
     private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
-            //All the auction info
+    //All the auction info
 
     /**
      * This is the community page, where we display all the auction item information
@@ -521,18 +518,18 @@ public class TenkaiAuctionManager implements Reloadable
             sb.append("<table height=200 background=L2UI_CH3.refinewnd_back_Pattern>");
             sb.append("<tr><td FIXWIDTH=160></td>");
             sb.append("<td><br><br><table border=0 cellpadding=0><tr><td FIXWIDTH=375 align=center><font color=LEVEL>" +
-                    ItemTable
-                            .getInstance().getTemplate(currentAuctionInfo.getItemId()).getName() + " (" +
-                    currentAuctionInfo
-                            .getTemplate().getCount() + ")</font></td></tr></table>");
+                    ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId()).getName() + " (" +
+                    currentAuctionInfo.getTemplate().getCount() + ")</font></td></tr></table>");
             sb.append("<table cellpadding=0><tr><td FIXWIDTH=375>");
-            sb.append("<tr><td>Remaining Time: </td><td FIXWIDTH=375>" + currentAuctionInfo
-                    .getRemainingTimeString() + "</td></tr><tr><td>Current Owner:</td><td>" + currentAuctionInfo
-                    .getCurrentOwnerName() + "</td></tr>");
-            sb.append("<tr><td>Currency:</td><td>" + ItemTable.getInstance()
-                    .getTemplate(currentAuctionInfo.getCurrentCurrency()).getName() + "</td></tr>");
-            sb.append("<tr><td>Current Bid:</td><td>" + NumberFormat.getNumberInstance(Locale.US)
-                    .format(currentAuctionInfo.getCurrentPrice()) + "</td></tr>");
+            sb.append("<tr><td>Remaining Time: </td><td FIXWIDTH=375>" + currentAuctionInfo.getRemainingTimeString() +
+                    "</td></tr><tr><td>Current Owner:</td><td>" + currentAuctionInfo.getCurrentOwnerName() +
+                    "</td></tr>");
+            sb.append("<tr><td>Currency:</td><td>" +
+                    ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName() +
+                    "</td></tr>");
+            sb.append("<tr><td>Current Bid:</td><td>" +
+                    NumberFormat.getNumberInstance(Locale.US).format(currentAuctionInfo.getCurrentPrice()) +
+                    "</td></tr>");
 
             String options = "";
             if (!currentAuctionInfo.getTemplate().getAcceptAllCoins())
@@ -555,17 +552,17 @@ public class TenkaiAuctionManager implements Reloadable
                 if (!options.isEmpty() && currentPos < _currencies.size())
                 {
                     options = options.substring(0, options.length() - 1);
-                    sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuctionInfo
-                            .getId() + "\" list=" + options + "></td></tr>");
+                    sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" +
+                            currentAuctionInfo.getId() + "\" list=" + options + "></td></tr>");
                 }
             }
 
-            sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuctionInfo
-                    .getId() + "\" width=100 type=number length=14></td></tr>");
-            sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuctionInfo
-                    .getId() + "; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" + currentAuctionInfo
-                    .getId() +
-                    "\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
+            sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuctionInfo.getId() +
+                    "\" width=100 type=number length=14></td></tr>");
+            sb.append(
+                    "<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuctionInfo.getId() +
+                            "; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" + currentAuctionInfo.getId() +
+                            "\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
             sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
             sb.append("</table><br>");
 
@@ -604,9 +601,8 @@ public class TenkaiAuctionManager implements Reloadable
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
             ResultSet rs = statement.executeQuery();
 
             while (rs.next())
@@ -624,8 +620,8 @@ public class TenkaiAuctionManager implements Reloadable
                     Log.warning("TenkaiAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
                     continue;
                 }
-                Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"), rs
-                        .getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
+                Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"),
+                        rs.getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
                 addAuction(auction);
             }
 
@@ -684,16 +680,14 @@ public class TenkaiAuctionManager implements Reloadable
                         AuctionTemplate itemAuction = _auctionTemplates.get(auctionId);
                         if (itemAuction != null)
                         {
-                            itemAuction
-                                    .overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId,
-                                            initialPrice, initialDuration, acceptAllCoins);
+                            itemAuction.overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId,
+                                    initialPrice, initialDuration, acceptAllCoins);
                         }
                         else
                         {
-                            _auctionTemplates
-                                    .put(auctionId,
-                                            new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime,
-                                                    initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
+                            _auctionTemplates.put(auctionId,
+                                    new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime,
+                                            initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
                         }
                     }
                 }
@@ -742,8 +736,8 @@ public class TenkaiAuctionManager implements Reloadable
         }
         if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 
@@ -796,10 +790,8 @@ public class TenkaiAuctionManager implements Reloadable
 
         if (playerBid < minBid)
         {
-            activeChar
-                    .sendMessage(
-                            "Item Auction: The minimum bid for this item should be for: " + minBid + " " + ItemTable
-                                    .getInstance().getTemplate(bid.getCurrentCurrency()).getName());
+            activeChar.sendMessage("Item Auction: The minimum bid for this item should be for: " + minBid + " " +
+                    ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName());
             return;
         }
 
@@ -808,21 +800,20 @@ public class TenkaiAuctionManager implements Reloadable
             return;
         }
 
-        Util.logToFile("The player: " + activeChar.getName() + " did a bid(" + playerBid + " " + ItemTable.getInstance()
-                .getTemplate(currentCurrencyId).getName() + ") on " + ItemTable.getInstance()
-                .getTemplate(bid.getItemId()).getName(), "Auctions", true);
+        Util.logToFile("The player: " + activeChar.getName() + " did a bid(" + playerBid + " " +
+                ItemTable.getInstance().getTemplate(currentCurrencyId).getName() + ") on " +
+                ItemTable.getInstance().getTemplate(bid.getItemId()).getName(), "Auctions", true);
         if (bid.getCurrentOwnerId() != 0)
         {
-            Util.logToFile("The bid from: " + CharNameTable.getInstance()
-                    .getNameById(bid.getCurrentOwnerId()) + "(" + bid.getCurrentPrice() + " " + ItemTable.getInstance()
-                    .getTemplate(bid.getCurrentCurrency()).getName() + ") has been overcome by " + activeChar
-                    .getName() + "(" + String.valueOf(playerBid) + " " + ItemTable.getInstance()
-                    .getTemplate(currentCurrencyId).getName() + ")", "Auctions", true);
+            Util.logToFile("The bid from: " + CharNameTable.getInstance().getNameById(bid.getCurrentOwnerId()) + "(" +
+                    bid.getCurrentPrice() + " " +
+                    ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName() +
+                    ") has been overcome by " + activeChar.getName() + "(" + String.valueOf(playerBid) + " " +
+                    ItemTable.getInstance().getTemplate(currentCurrencyId).getName() + ")", "Auctions", true);
         }
 
-        restoreLoserBid(bid.getCurrentOwnerId(), bid.getCurrentCurrency(), bid.getCurrentPrice(), activeChar
-                .getName(), String.valueOf(playerBid) + " " + ItemTable.getInstance().getTemplate(currentCurrencyId)
-                .getName());
+        restoreLoserBid(bid.getCurrentOwnerId(), bid.getCurrentCurrency(), bid.getCurrentPrice(), activeChar.getName(),
+                String.valueOf(playerBid) + " " + ItemTable.getInstance().getTemplate(currentCurrencyId).getName());
 
         bid.setCurrentCurrency(currentCurrencyId);
         bid.setOwner(activeChar.getObjectId(), playerBid);

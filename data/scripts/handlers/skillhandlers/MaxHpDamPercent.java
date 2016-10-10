@@ -40,8 +40,8 @@ public class MaxHpDamPercent implements ISkillHandler
 
         for (L2Character target : (L2Character[]) targets)
         {
-            if (target.isRaid() || target.isDead() || target.isAlikeDead() || target
-                    .getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
+            if (target.isRaid() || target.isDead() || target.isAlikeDead() ||
+                    target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
             {
                 continue;
             }

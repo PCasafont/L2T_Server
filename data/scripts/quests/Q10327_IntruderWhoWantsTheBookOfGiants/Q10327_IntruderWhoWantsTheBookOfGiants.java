@@ -83,17 +83,17 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
                 InstanceManager.getInstance().createInstance(player.getObjectId());
 
                 int[] bookIds = new int[4];
-                st.set("guardId", String
-                        .valueOf(addSpawn(_guard, -114710, 245457, -7968, 49152, false, 0, false, player.getObjectId())
+                st.set("guardId", String.valueOf(
+                        addSpawn(_guard, -114710, 245457, -7968, 49152, false, 0, false, player.getObjectId())
                                 .getObjectId()));
-                bookIds[0] = addSpawn(_book, -113757, 244686, -7952, 0, false, 0, false, player.getObjectId())
-                        .getObjectId();
-                bookIds[1] = addSpawn(_book, -115672, 244683, -7952, 0, false, 0, false, player.getObjectId())
-                        .getObjectId();
-                bookIds[2] = addSpawn(_book, -114714, 245750, -7952, 0, false, 0, false, player.getObjectId())
-                        .getObjectId();
-                bookIds[3] = addSpawn(_book, -114706, 243605, -7952, 0, false, 0, false, player.getObjectId())
-                        .getObjectId();
+                bookIds[0] =
+                        addSpawn(_book, -113757, 244686, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+                bookIds[1] =
+                        addSpawn(_book, -115672, 244683, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+                bookIds[2] =
+                        addSpawn(_book, -114714, 245750, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+                bookIds[3] =
+                        addSpawn(_book, -114706, 243605, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
 
                 st.set("giantsBookId", String.valueOf(bookIds[Rnd.get(4)]));
 
@@ -146,10 +146,10 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
                 st.giveItems(_bookItem, 1);
                 st.playSound("ItemSound.quest_middle");
                 player.sendPacket(new ExShowScreenMessage(1032322, 0, true, 7000));
-                final L2Npc intruder1 = addSpawn(_intruder, -114835, 244966, -7976, 16072, false, 0, false, player
-                        .getObjectId());
-                final L2Npc intruder2 = addSpawn(_intruder, -114564, 244954, -7976, 16072, false, 0, false, player
-                        .getObjectId());
+                final L2Npc intruder1 =
+                        addSpawn(_intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
+                final L2Npc intruder2 =
+                        addSpawn(_intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
                 final L2GuardInstance guard = (L2GuardInstance) L2World.getInstance().findObject(st.getInt("guardId"));
                 guard.setRunning();
 
@@ -192,8 +192,9 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
                             st.set("cond", "3");
                             st.playSound("ItemSound.quest_middle");
                             guard.setWalking();
-                            guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(guard
-                                    .getSpawn().getX(), guard.getSpawn().getY(), guard.getSpawn().getZ(), 0));
+                            guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                    new L2CharPosition(guard.getSpawn().getX(), guard.getSpawn().getY(),
+                                            guard.getSpawn().getZ(), 0));
                         }
                         else
                         {

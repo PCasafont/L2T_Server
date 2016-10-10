@@ -115,8 +115,8 @@ public class L2BossZone extends L2ZoneType
         }
         else if (name.equals("oustLoc"))
         {
-            _exitLocation = new Location(Integer.parseInt(value.split(",")[0]), Integer
-                    .parseInt(value.split(",")[1]), Integer.parseInt(value.split(",")[2]));
+            _exitLocation = new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
+                    Integer.parseInt(value.split(",")[2]));
         }
         else
         {
@@ -329,8 +329,8 @@ public class L2BossZone extends L2ZoneType
         PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
         if (playerEntry == null)
         {
-            _playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System
-                    .currentTimeMillis() + durationInSec * 1000));
+            _playerEntries.put(player.getObjectId(),
+                    new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + durationInSec * 1000));
         }
         else
         {

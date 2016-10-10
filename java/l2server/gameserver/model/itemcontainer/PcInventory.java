@@ -269,8 +269,8 @@ public class PcInventory extends Inventory
                 continue;
             }
 
-            if (item.getItemId() == itemId && item.getEnchantLevel() == enchantment && (includeEquipped || !item
-                    .isEquipped()))
+            if (item.getItemId() == itemId && item.getEnchantLevel() == enchantment &&
+                    (includeEquipped || !item.isEquipped()))
             {
                 list.add(item);
             }
@@ -291,9 +291,8 @@ public class PcInventory extends Inventory
         ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
         for (L2ItemInstance item : _items.values())
         {
-            if (item != null && item
-                    .isAvailable(getOwner(), allowAdena, allowNonTradeable) && canManipulateWithItemId(item
-                    .getItemId()))
+            if (item != null && item.isAvailable(getOwner(), allowAdena, allowNonTradeable) &&
+                    canManipulateWithItemId(item.getItemId()))
             {
                 list.add(item);
             }
@@ -651,8 +650,8 @@ public class PcInventory extends Inventory
         }
 
         //Runes Skills
-        if (item != null && item.getItem() != null && item.getItemType() == L2EtcItemType.RUNE && item.getItem()
-                .getSkills() != null)
+        if (item != null && item.getItem() != null && item.getItemType() == L2EtcItemType.RUNE &&
+                item.getItem().getSkills() != null)
         {
             SkillHolder[] runeSkills = item.getItem().getSkills();
             if (runeSkills != null)
@@ -839,9 +838,8 @@ public class PcInventory extends Inventory
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement2 = con
-                    .prepareStatement(
-                            "SELECT object_id,item_id,loc_data,enchant_level,appearance FROM items WHERE owner_id=? AND loc='PAPERDOLL'");
+            PreparedStatement statement2 = con.prepareStatement(
+                    "SELECT object_id,item_id,loc_data,enchant_level,appearance FROM items WHERE owner_id=? AND loc='PAPERDOLL'");
             statement2.setInt(1, objectId);
             ResultSet invdata = statement2.executeQuery();
 
@@ -852,7 +850,7 @@ public class PcInventory extends Inventory
                 paperdoll[slot][1] = invdata.getInt("item_id");
                 paperdoll[slot][2] = invdata.getInt("enchant_level");
                 /*if (slot == Inventory.PAPERDOLL_RHAND)
-				{
+                {
 					paperdoll[Inventory.PAPERDOLL_RHAND][0] = invdata.getInt("object_id");
 					paperdoll[Inventory.PAPERDOLL_RHAND][1] = invdata.getInt("item_id");
 					paperdoll[Inventory.PAPERDOLL_RHAND][2] = invdata.getInt("enchant_level");
@@ -883,8 +881,8 @@ public class PcInventory extends Inventory
     {
         int slots = 0;
 
-        if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item
-                .getItemType() != L2EtcItemType.HERB)
+        if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) &&
+                item.getItemType() != L2EtcItemType.HERB)
         {
             slots++;
         }
@@ -1022,8 +1020,8 @@ public class PcInventory extends Inventory
      */
     public boolean canManipulateWithItemId(int itemId)
     {
-        if (_blockMode == 0 && Util.contains(_blockItems, itemId) || _blockMode == 1 && !Util
-                .contains(_blockItems, itemId))
+        if (_blockMode == 0 && Util.contains(_blockItems, itemId) ||
+                _blockMode == 1 && !Util.contains(_blockItems, itemId))
         {
             return false;
         }

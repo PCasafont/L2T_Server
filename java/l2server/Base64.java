@@ -67,7 +67,7 @@ public class Base64
      * Don't break lines when encoding (violates strict Base64 specification)
      */
     public final static int DONT_BREAK_LINES = 8;
-	
+
 	/*  P R I V A T E F I E L D S */
 
     /**
@@ -763,12 +763,12 @@ public class Base64
             {
                 System.out.println(StringUtil
                         .concat(String.valueOf(source[srcOffset]), ": ", String.valueOf(DECODABET[source[srcOffset]])));
-                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 1]), ": ", String
-                        .valueOf(DECODABET[source[srcOffset + 1]])));
-                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 2]), ": ", String
-                        .valueOf(DECODABET[source[srcOffset + 2]])));
-                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 3]), ": ", String
-                        .valueOf(DECODABET[source[srcOffset + 3]])));
+                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 1]), ": ",
+                        String.valueOf(DECODABET[source[srcOffset + 1]])));
+                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 2]), ": ",
+                        String.valueOf(DECODABET[source[srcOffset + 2]])));
+                System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 3]), ": ",
+                        String.valueOf(DECODABET[source[srcOffset + 3]])));
                 return -1;
             } // end catch
         }
@@ -822,8 +822,9 @@ public class Base64
             } // end if: white space, equals sign or better
             else
             {
-                System.err.println(StringUtil.concat("Bad Base64 input character at ", String.valueOf(i), ": ", String
-                        .valueOf(source[i]), "(decimal)"));
+                System.err.println(StringUtil
+                        .concat("Bad Base64 input character at ", String.valueOf(i), ": ", String.valueOf(source[i]),
+                                "(decimal)"));
                 return null;
             } // end else:
         } // each input character

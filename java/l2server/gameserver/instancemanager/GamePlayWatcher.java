@@ -48,8 +48,8 @@ public class GamePlayWatcher
     public void makeWatcher(L2PcInstance watcher)
     {
         WatchTask watchTask = new WatchTask(watcher);
-        ScheduledFuture<?> schedule = ThreadPoolManager.getInstance()
-                .scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
+        ScheduledFuture<?> schedule =
+                ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
         watchTask.setSchedule(schedule);
     }
 
@@ -79,8 +79,9 @@ public class GamePlayWatcher
                 return;
             }
 
-            if (_checkForAnotherPivotTimer < System.currentTimeMillis() || _pivot == null || !AttackStanceTaskManager
-                    .getInstance().getAttackStanceTask(_pivot) || _pivot.isInsidePeaceZone(_pivot) || _pivot.isDead())
+            if (_checkForAnotherPivotTimer < System.currentTimeMillis() || _pivot == null ||
+                    !AttackStanceTaskManager.getInstance().getAttackStanceTask(_pivot) ||
+                    _pivot.isInsidePeaceZone(_pivot) || _pivot.isDead())
             {
                 _pivot = null;
                 _checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
@@ -92,9 +93,9 @@ public class GamePlayWatcher
                 int bestCombatPvECount = 0;
                 for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
                 {
-                    if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player
-                            .isInsidePeaceZone(player) || player.isDead() || player
-                            .inObserverMode() || player == _watcher)
+                    if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) ||
+                            player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() ||
+                            player == _watcher)
                     {
                         continue;
                     }
@@ -197,9 +198,8 @@ public class GamePlayWatcher
             }
             else
             {
-                double yaw = Math.toDegrees(Math
-                        .atan2(_pivot.getX() - _pivot.getTarget().getX(), _pivot.getY() - _pivot.getTarget()
-                                .getY())) + 90;
+                double yaw = Math.toDegrees(Math.atan2(_pivot.getX() - _pivot.getTarget().getX(),
+                        _pivot.getY() - _pivot.getTarget().getY())) + 90;
                 double angle = 180 - yaw;
                 double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(_pivot, _pivot.getTarget(), false));
                 if (pitch < 15)
@@ -207,11 +207,11 @@ public class GamePlayWatcher
                     pitch = 15;
                 }
                 double distance = 250;
-                Point3D cameraPos = new Point3D((int) Math
-                        .round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)), (int) Math
-                        .round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math
-                                .cos(pitch * Math.PI / 180.0)), (int) Math
-                        .round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+                Point3D cameraPos =
+                        new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+                                (int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+                                        Math.cos(pitch * Math.PI / 180.0)),
+                                (int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
                 while (!GeoEngine.getInstance().canSeeTarget(_pivot, cameraPos))
                 {
                     distance -= 100;
@@ -222,11 +222,11 @@ public class GamePlayWatcher
                         return;
                     }
 
-                    cameraPos = new Point3D((int) Math
-                            .round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)), (int) Math
-                            .round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math
-                                    .cos(pitch * Math.PI / 180.0)), (int) Math
-                            .round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+                    cameraPos =
+                            new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+                                    (int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+                                            Math.cos(pitch * Math.PI / 180.0)),
+                                    (int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
                 }
 
                 // 3rd person cam

@@ -37,8 +37,8 @@ public class ItemSkills extends ItemSkillsTemplate
         final L2PcInstance activeChar = playable.getActingPlayer();
         if (activeChar != null && activeChar.isInOlympiadMode() && item.getItemId() != 5589) // Momentum Stone
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
             return;
         }
 
@@ -49,8 +49,8 @@ public class ItemSkills extends ItemSkillsTemplate
         }
 
         //Don't allow the use of blessed scroll of escape
-        if (Config.isServer(Config.TENKAI) && item.getName().contains("Blessed Scroll of Escape") && activeChar
-                .getPvpFlag() > 0)
+        if (Config.isServer(Config.TENKAI) && item.getName().contains("Blessed Scroll of Escape") &&
+                activeChar.getPvpFlag() > 0)
         {
             activeChar.sendPacket(ActionFailed.STATIC_PACKET);
             return;

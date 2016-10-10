@@ -127,8 +127,9 @@ public class SoulShots implements IItemHandler
 
         int rubyLvl = 0;
         PcInventory playerInventory = activeChar.getInventory();
-        for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory
-                .getMaxJewelryCount(); i++)
+        for (int i = Inventory.PAPERDOLL_JEWELRY1;
+             i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
+             i++)
         {
             L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
             if (jewel != null)
@@ -258,8 +259,7 @@ public class SoulShots implements IItemHandler
 
         // Send message to client
         activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SOULSHOT));
-        Broadcast
-                .toSelfAndKnownPlayersInRadius(activeChar,
-                        new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
+        Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
+                new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
     }
 }

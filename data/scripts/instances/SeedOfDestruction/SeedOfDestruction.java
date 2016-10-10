@@ -868,8 +868,8 @@ public class SeedOfDestruction extends Quest
         {
             if (!(world instanceof SODWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return 0;
             }
             teleto.instanceId = world.instanceId;
@@ -897,8 +897,7 @@ public class SeedOfDestruction extends Quest
                 }
             }
             Log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             // teleport players
             teleto.instanceId = instanceId;
             if (player.getParty() == null || player.getParty().getCommandChannel() == null)
@@ -1184,12 +1183,13 @@ public class SeedOfDestruction extends Quest
             else if (event.equalsIgnoreCase("Spawn"))
             {
                 L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
-                if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null && target
-                        .getInstanceId() == npc.getInstanceId() && !target.isDead())
+                if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null &&
+                        target.getInstanceId() == npc.getInstanceId() && !target.isDead())
                 {
-                    L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc
-                            .getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn()
-                            .getHeading(), false, 0, false, world.instanceId);
+                    L2Attackable mob =
+                            (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc.getSpawn().getX(),
+                                    npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false, 0,
+                                    false, world.instanceId);
                     world.deviceSpawnedMobCount++;
                     mob.setCanSeeThroughSilentMove(true);
                     mob.setRunning();
@@ -1205,8 +1205,8 @@ public class SeedOfDestruction extends Quest
             }
             else if (event.equalsIgnoreCase("DoorCheck"))
             {
-                L2DoorInstance tmp = InstanceManager.getInstance().getInstance(npc.getInstanceId())
-                        .getDoor(FORTRESS_DOOR);
+                L2DoorInstance tmp =
+                        InstanceManager.getInstance().getInstance(npc.getInstanceId()).getDoor(FORTRESS_DOOR);
                 if (tmp.getCurrentHp() < tmp.getMaxHp())
                 {
                     world.deviceSpawnedMobCount = 0;
@@ -1295,9 +1295,10 @@ public class SeedOfDestruction extends Quest
                 }
                 else if (npc.getNpcId() == 29162)
                 {
-                    L2Attackable mob = (L2Attackable) addSpawn(npc.getNpcId(), npc.getSpawn().getX(), npc.getSpawn()
-                            .getY(), npc.getSpawn().getZ(), npc.getSpawn()
-                            .getHeading(), false, 0, false, world.instanceId);
+                    L2Attackable mob =
+                            (L2Attackable) addSpawn(npc.getNpcId(), npc.getSpawn().getX(), npc.getSpawn().getY(),
+                                    npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false, 0, false,
+                                    world.instanceId);
                     mob.setCanSeeThroughSilentMove(true);
                     mob.setIsRaidMinion(true);
                 }

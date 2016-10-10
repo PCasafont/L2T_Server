@@ -215,9 +215,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
                     }
                     else
                     {
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(
-                                        SystemMessageId.SKILL_ENCHANT_CHANGE_SUCCESSFUL_S1_LEVEL_WAS_DECREASED_BY_S2);
+                        SystemMessage sm = SystemMessage.getSystemMessage(
+                                SystemMessageId.SKILL_ENCHANT_CHANGE_SUCCESSFUL_S1_LEVEL_WAS_DECREASED_BY_S2);
                         sm.addSkillName(_skillId);
                         sm.addNumber(levelPenalty);
                         player.sendPacket(sm);
@@ -246,9 +245,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
                 if (enchantRoute > 0)
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.UNTRAIN_SUCCESSFUL_SKILL_S1_ENCHANT_LEVEL_DECREASED_BY_ONE);
+                    SystemMessage sm = SystemMessage.getSystemMessage(
+                            SystemMessageId.UNTRAIN_SUCCESSFUL_SKILL_S1_ENCHANT_LEVEL_DECREASED_BY_ONE);
                     sm.addSkillName(_skillId);
                     player.sendPacket(sm);
                 }
@@ -274,26 +272,26 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
                 player.sendPacket(ExEnchantSkillResult.valueOf(true));
 
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_ENCHANTING_THE_SKILL_S1);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_ENCHANTING_THE_SKILL_S1);
                 sm.addSkillName(_skillId);
                 player.sendPacket(sm);
             }
             else if (_type == 0)
             {
                 skill = SkillTable.getInstance()
-                        .getInfo(_skillId, _skillLvl, esd.getRange().getStartLevel() > 0 ? enchantRoute : 0, esd
-                                .getRange().getStartLevel());
+                        .getInfo(_skillId, _skillLvl, esd.getRange().getStartLevel() > 0 ? enchantRoute : 0,
+                                esd.getRange().getStartLevel());
                 player.addSkill(skill, true);
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_ENCHANT_THE_SKILL_S1));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_ENCHANT_THE_SKILL_S1));
 
                 player.sendPacket(ExEnchantSkillResult.valueOf(false));
             }
             else
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.SKILL_ENCHANT_FAILED_S1_LEVEL_WILL_REMAIN);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.SKILL_ENCHANT_FAILED_S1_LEVEL_WILL_REMAIN);
                 sm.addSkillName(_skillId);
                 player.sendPacket(sm);
                 player.sendPacket(ExEnchantSkillResult.valueOf(false));
@@ -302,17 +300,18 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
             currentSkill = player.getKnownSkill(_skillId);
             player.sendPacket(new UserInfo(player));
             player.sendSkillList();
-            player.sendPacket(new ExEnchantSkillInfo(_skillId, currentSkill.getLevel(), currentSkill
-                    .getEnchantRouteId(), currentSkill.getEnchantLevel()));
-            player.sendPacket(new ExEnchantSkillInfoDetail(_type, _skillId, currentSkill.getLevel(), currentSkill
-                    .getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
+            player.sendPacket(
+                    new ExEnchantSkillInfo(_skillId, currentSkill.getLevel(), currentSkill.getEnchantRouteId(),
+                            currentSkill.getEnchantLevel()));
+            player.sendPacket(new ExEnchantSkillInfoDetail(_type, _skillId, currentSkill.getLevel(),
+                    currentSkill.getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
 
             updateSkillShortcuts(player);
         }
         else
         {
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ENOUGH_SP_TO_ENCHANT_THAT_SKILL);
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ENOUGH_SP_TO_ENCHANT_THAT_SKILL);
             player.sendPacket(sm);
         }
     }
@@ -326,8 +325,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
         {
             if (sc != null && sc.getId() == _skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
             {
-                L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), player
-                        .getSkillLevelHash(_skillId), 1);
+                L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(),
+                        player.getSkillLevelHash(_skillId), 1);
                 player.sendPacket(new ShortCutRegister(newsc));
                 player.registerShortCut(newsc);
             }
@@ -342,9 +341,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "INSERT INTO log_enchant_skills(player_id, skill_id, skill_level, spb_id, rate, time) VALUES(?,?,?,?,?,?)");
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_enchant_skills(player_id, skill_id, skill_level, spb_id, rate, time) VALUES(?,?,?,?,?,?)");
                 statement.setInt(1, player.getObjectId());
                 statement.setInt(2, skill.getId());
                 statement.setInt(3, skill.getLevelHash());

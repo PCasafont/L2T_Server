@@ -74,8 +74,8 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 
         if (msg.getReceiverId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
             return;
         }
 

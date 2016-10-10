@@ -76,8 +76,8 @@ public class Mark implements ISkillHandler
 
             L2Character target = (L2Character) obj;
 
-            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target)
-                    .isFakeDeath())
+            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+                    ((L2PcInstance) target).isFakeDeath())
             {
                 target.stopFakeDeath(true);
             }
@@ -115,9 +115,8 @@ public class Mark implements ISkillHandler
 
             if (skill.hasEffects())
             {
-                skill.getEffects(activeChar, target, new Env(shld, activeChar
-                        .getActiveWeaponInstance() != null ? activeChar.getActiveWeaponInstance()
-                        .getChargedSoulShot() : L2ItemInstance.CHARGED_NONE));
+                skill.getEffects(activeChar, target, new Env(shld, activeChar.getActiveWeaponInstance() != null ?
+                        activeChar.getActiveWeaponInstance().getChargedSoulShot() : L2ItemInstance.CHARGED_NONE));
             }
         }
 

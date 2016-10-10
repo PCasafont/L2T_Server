@@ -107,8 +107,8 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
         if (_isWaiting)
         {
-            if (getActor().isInsideRadius(_guided, _waitRadius, false, false) && getActor().getTemplate()
-                    .getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
+            if (getActor().isInsideRadius(_guided, _waitRadius, false, false) &&
+                    getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
             {
                 _waitingForQuestResponse = true;
                 for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
@@ -185,9 +185,9 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
     @Override
     protected void onEvtArrivedBlocked(L2CharPosition blocked_at_pos)
     {
-        Log.warning("Npc Walker ID: " + getActor()
-                .getNpcId() + ": Blocked at route position [" + _currentPos + "], coords: " + blocked_at_pos.x + ", " +
-                blocked_at_pos.y + ", " + blocked_at_pos.z + ". Teleporting to next point");
+        Log.warning("Npc Walker ID: " + getActor().getNpcId() + ": Blocked at route position [" + _currentPos +
+                "], coords: " + blocked_at_pos.x + ", " + blocked_at_pos.y + ", " + blocked_at_pos.z +
+                ". Teleporting to next point");
 
         int destinationX = _route.get(_currentPos).getMoveX();
         int destinationY = _route.get(_currentPos).getMoveY();

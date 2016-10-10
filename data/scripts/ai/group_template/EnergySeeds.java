@@ -125,9 +125,8 @@ public class EnergySeeds extends L2AttackableAIScript
                     {
                         //get a random NPC that should spawn at this location
                         Integer spawnId = _spawnId; // the map uses "Integer", not "int"
-                        _spawnedNpcs.put(addSpawn(_npcIds[Rnd
-                                        .get(_npcIds.length)], _spawnCoords[0], _spawnCoords[1], _spawnCoords[2], 0, false, 0),
-                                spawnId);
+                        _spawnedNpcs.put(addSpawn(_npcIds[Rnd.get(_npcIds.length)], _spawnCoords[0], _spawnCoords[1],
+                                _spawnCoords[2], 0, false, 0), spawnId);
                     }
                 }
             }, waitTime);
@@ -379,8 +378,8 @@ public class EnergySeeds extends L2AttackableAIScript
                 }
                 if (Rnd.get(100) < 50)
                 {
-                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[0][Rnd
-                            .get(ANNIHILATION_SUPRISE_MOB_IDS[0].length)]);
+                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy,
+                            ANNIHILATION_SUPRISE_MOB_IDS[0][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[0].length)]);
                     mob.setRunning();
                     mob.addDamageHate(player, 0, 999);
                     mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
@@ -393,8 +392,8 @@ public class EnergySeeds extends L2AttackableAIScript
                 }
                 if (Rnd.get(100) < 50)
                 {
-                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[1][Rnd
-                            .get(ANNIHILATION_SUPRISE_MOB_IDS[1].length)]);
+                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy,
+                            ANNIHILATION_SUPRISE_MOB_IDS[1][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[1].length)]);
                     mob.setRunning();
                     mob.addDamageHate(player, 0, 999);
                     mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
@@ -407,8 +406,8 @@ public class EnergySeeds extends L2AttackableAIScript
                 }
                 if (Rnd.get(100) < 50)
                 {
-                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[2][Rnd
-                            .get(ANNIHILATION_SUPRISE_MOB_IDS[2].length)]);
+                    L2MonsterInstance mob = spawnSupriseMob(seedEnergy,
+                            ANNIHILATION_SUPRISE_MOB_IDS[2][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[2].length)]);
                     mob.setRunning();
                     mob.addDamageHate(player, 0, 999);
                     mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

@@ -51,14 +51,13 @@ public class ClanWarManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement(
-                            "SELECT clan1, clan2, start_time, end_time, delete_time, clan1_score, clan2_score, clan1_war_declarator, clan2_war_declarator, clan1_deaths_for_war, clan1_shown_score, clan2_shown_score, loserId, winnerId FROM clan_wars");
+            statement = con.prepareStatement(
+                    "SELECT clan1, clan2, start_time, end_time, delete_time, clan1_score, clan2_score, clan1_war_declarator, clan2_war_declarator, clan1_deaths_for_war, clan1_shown_score, clan2_shown_score, loserId, winnerId FROM clan_wars");
             ResultSet rset = statement.executeQuery();
             while (rset.next())
             {
-                if (ClanTable.getInstance().getClan(rset.getInt("clan1")) == null || ClanTable.getInstance()
-                        .getClan(rset.getInt("clan2")) == null)
+                if (ClanTable.getInstance().getClan(rset.getInt("clan1")) == null ||
+                        ClanTable.getInstance().getClan(rset.getInt("clan2")) == null)
                 {
                     continue;
                 }
@@ -98,20 +97,19 @@ public class ClanWarManager
                 {
                     for (ClanWar war : wars)
                     {
-                        if (war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1")) && war
-                                .getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2")))
+                        if (war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1")) &&
+                                war.getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2")))
                         {
                             ClanTable.getInstance().getClan(rset.getInt("clan1")).removeWar(war);
                             ClanTable.getInstance().getClan(rset.getInt("clan2")).removeWar(war);
                         }
                     }
-                    ClanWar war = new ClanWar(rset.getInt("clan1"), rset.getInt("clan2"), rset
-                            .getInt("clan1_score"), rset.getInt("clan2_score"), rset
-                            .getInt("clan1_war_declarator"), rset.getInt("clan2_war_declarator"), rset
-                            .getInt("clan1_deaths_for_war"), rset.getInt("clan1_shown_score"), rset
-                            .getInt("clan2_shown_score"), warstate, rset.getInt("loserId"), rset
-                            .getInt("winnerId"), rset.getLong("start_time"), rset.getLong("end_time"), rset
-                            .getLong("delete_time"));
+                    ClanWar war = new ClanWar(rset.getInt("clan1"), rset.getInt("clan2"), rset.getInt("clan1_score"),
+                            rset.getInt("clan2_score"), rset.getInt("clan1_war_declarator"),
+                            rset.getInt("clan2_war_declarator"), rset.getInt("clan1_deaths_for_war"),
+                            rset.getInt("clan1_shown_score"), rset.getInt("clan2_shown_score"), warstate,
+                            rset.getInt("loserId"), rset.getInt("winnerId"), rset.getLong("start_time"),
+                            rset.getLong("end_time"), rset.getLong("delete_time"));
                     _wars.add(war);
                     ClanTable.getInstance().getClan(rset.getInt("clan1")).addWar(war);
                     ClanTable.getInstance().getClan(rset.getInt("clan2")).addWar(war);
@@ -160,8 +158,8 @@ public class ClanWarManager
 
         for (ClanWar war : _wars)
         {
-            if (war.getClan1() == clan1 && war.getClan2() == clan2 || war.getClan2() == clan1 && war
-                    .getClan1() == clan2)
+            if (war.getClan1() == clan1 && war.getClan2() == clan2 ||
+                    war.getClan2() == clan1 && war.getClan1() == clan2)
             {
                 if (war.getState() != WarState.DECLARED)
                 {
@@ -193,9 +191,8 @@ public class ClanWarManager
             startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement(
-                            "REPLACE INTO clan_wars (clan1, clan2, start_time, end_time, delete_time, clan1_score, clan2_score, clan1_war_declarator, clan2_war_declarator, clan1_deaths_for_war, clan1_shown_score, clan2_shown_score) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+            statement = con.prepareStatement(
+                    "REPLACE INTO clan_wars (clan1, clan2, start_time, end_time, delete_time, clan1_score, clan2_score, clan1_war_declarator, clan2_war_declarator, clan1_deaths_for_war, clan1_shown_score, clan2_shown_score) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setInt(1, clanId1);
             statement.setInt(2, clanId2);
             statement.setLong(3, startTime);
@@ -228,8 +225,8 @@ public class ClanWarManager
             L2DatabaseFactory.close(con);
         }
 
-        SystemMessage msg = SystemMessage
-                .getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_AGAINST_S1_IF_KILLED_LOSE_LOW_EXP);
+        SystemMessage msg =
+                SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_AGAINST_S1_IF_KILLED_LOSE_LOW_EXP);
         msg.addString(clan2.getName());
         clan1.broadcastToOnlineMembers(msg);
 
@@ -242,7 +239,7 @@ public class ClanWarManager
     {
         //TODO: To review
         /*int count = 0;
-		for (L2ClanMember player : clan1.getMembers())
+        for (L2ClanMember player : clan1.getMembers())
 		{
 			if (player != null && player.getPlayerInstance().getWantsPeace() == 1)
 				count++;
@@ -259,8 +256,8 @@ public class ClanWarManager
     {
         for (ClanWar war : _wars)
         {
-            if (war.getClan1() == clan1 && war.getClan2() == clan2 || war.getClan1() == clan2 && war
-                    .getClan2() == clan1)
+            if (war.getClan1() == clan1 && war.getClan2() == clan2 ||
+                    war.getClan1() == clan2 && war.getClan2() == clan1)
             {
                 return war;
             }
@@ -371,8 +368,8 @@ public class ClanWarManager
                     if (_warState == WarState.DECLARED)
                     {
                         delete();
-                        _clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2
-                                .getName() + " has been stopped. Didn't accept declaration!"); // TODO: System message.
+                        _clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() +
+                                " has been stopped. Didn't accept declaration!"); // TODO: System message.
                     }
                 }
             }, _startTime - System.currentTimeMillis());
@@ -447,9 +444,8 @@ public class ClanWarManager
                 _deleteTime = 0;
                 con = L2DatabaseFactory.getInstance().getConnection();
                 PreparedStatement statement;
-                statement = con
-                        .prepareStatement(
-                                "UPDATE clan_wars SET start_time=?, end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
+                statement = con.prepareStatement(
+                        "UPDATE clan_wars SET start_time=?, end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
                 statement.setLong(1, _startTime);
                 statement.setLong(2, _endTime);
                 statement.setLong(3, _deleteTime);
@@ -488,8 +484,8 @@ public class ClanWarManager
                 long endTime = _startTime + Config.BATTLE_WAR_PERIOD * 3600000L;
                 con = L2DatabaseFactory.getInstance().getConnection();
                 PreparedStatement statement;
-                statement = con
-                        .prepareStatement("UPDATE clan_wars SET start_time=?, end_time=? WHERE clan1=? AND clan2=?");
+                statement =
+                        con.prepareStatement("UPDATE clan_wars SET start_time=?, end_time=? WHERE clan1=? AND clan2=?");
                 statement.setLong(1, _startTime);
                 statement.setLong(2, endTime);
                 statement.setInt(3, _clan1.getClanId());
@@ -532,8 +528,8 @@ public class ClanWarManager
                 long deleteTime = _endTime + Config.EXPIRE_NORMAL_WAR_PERIOD * 3600000L;
                 con = L2DatabaseFactory.getInstance().getConnection();
                 PreparedStatement statement;
-                statement = con
-                        .prepareStatement("UPDATE clan_wars SET end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
+                statement = con.prepareStatement(
+                        "UPDATE clan_wars SET end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
                 statement.setLong(1, _endTime);
                 statement.setLong(2, deleteTime);
                 statement.setInt(3, _clan1.getClanId());
@@ -598,9 +594,8 @@ public class ClanWarManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "UPDATE clan_wars SET clan1_score=?, clan2_score=?, clan1_deaths_for_war=?, clan1_shown_score=?, clan2_shown_score=? WHERE clan1=? AND clan2=?");
+                PreparedStatement statement = con.prepareStatement(
+                        "UPDATE clan_wars SET clan1_score=?, clan2_score=?, clan1_deaths_for_war=?, clan1_shown_score=?, clan2_shown_score=? WHERE clan1=? AND clan2=?");
                 statement.setInt(1, _score1);
                 statement.setInt(2, _score2);
                 statement.setInt(3, _clan1DeathsForWar);
@@ -628,8 +623,8 @@ public class ClanWarManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("UPDATE clan_wars set clan2_war_declarator=? WHERE clan1=? AND clan2=?");
+                PreparedStatement statement =
+                        con.prepareStatement("UPDATE clan_wars set clan2_war_declarator=? WHERE clan1=? AND clan2=?");
                 statement.setInt(1, charId);
                 statement.setInt(2, _clan1.getClanId());
                 statement.setInt(3, _clan2.getClanId());
@@ -672,8 +667,8 @@ public class ClanWarManager
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("UPDATE clan_wars set loserId=?, winnerId=? WHERE clan1=? AND clan2=?");
+                    PreparedStatement statement = con.prepareStatement(
+                            "UPDATE clan_wars set loserId=?, winnerId=? WHERE clan1=? AND clan2=?");
                     statement.setInt(1, getLoser().getClanId());
                     statement.setInt(2, getWinner().getClanId());
                     statement.setInt(3, _clan1.getClanId());
@@ -802,8 +797,8 @@ public class ClanWarManager
             switch (_warState)
             {
                 case DECLARED:
-                    return Config.PREPARE_MUTUAL_WAR_PERIOD * 3600 - (int) ((_startTime - System
-                            .currentTimeMillis()) / 1000);
+                    return Config.PREPARE_MUTUAL_WAR_PERIOD * 3600 -
+                            (int) ((_startTime - System.currentTimeMillis()) / 1000);
                 case STARTED:
                     return Config.BATTLE_WAR_PERIOD * 3600 - (int) ((_endTime - System.currentTimeMillis()) / 1000);
             }

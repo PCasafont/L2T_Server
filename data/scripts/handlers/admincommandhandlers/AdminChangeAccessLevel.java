@@ -98,8 +98,8 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
+                    PreparedStatement statement =
+                            con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
                     statement.setInt(1, lvl);
                     statement.setString(2, name);
                     statement.execute();
@@ -147,8 +147,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
             player.sendMessage("Your character has been banned. Bye.");
             player.logout();
         }
-        activeChar
-                .sendMessage("Character's access level is now set to " + lvl +
-                        ". Effects won't be noticeable until next session.");
+        activeChar.sendMessage(
+                "Character's access level is now set to " + lvl + ". Effects won't be noticeable until next session.");
     }
 }

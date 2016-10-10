@@ -70,7 +70,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
     protected final void writeImpl()
     {
         /*if (_mode == 0)
-		{
+        {
 			writeD(0);
 			writeD(0);
 			return;

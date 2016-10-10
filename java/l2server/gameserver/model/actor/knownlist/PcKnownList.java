@@ -113,8 +113,8 @@ public class PcKnownList extends PlayableKnownList
 
         if (object instanceof L2AirShipInstance)
         {
-            if (((L2AirShipInstance) object).getCaptainId() != 0 && ((L2AirShipInstance) object)
-                    .getCaptainId() != getActiveChar().getObjectId())
+            if (((L2AirShipInstance) object).getCaptainId() != 0 &&
+                    ((L2AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId())
             {
                 getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getCaptainId()));
             }

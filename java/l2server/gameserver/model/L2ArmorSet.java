@@ -148,8 +148,8 @@ public final class L2ArmorSet
         {
             enchant = legsItem.getEnchantLevel();
         }
-        if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id) && glovesItem
-                .getEnchantLevel() < enchant)
+        if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id) &&
+                glovesItem.getEnchantLevel() < enchant)
         {
             enchant = glovesItem.getEnchantLevel();
         }

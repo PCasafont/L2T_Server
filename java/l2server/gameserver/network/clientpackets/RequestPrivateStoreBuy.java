@@ -110,8 +110,8 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
             return;
         }
 
-        if (!(storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL || storePlayer
-                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL))
+        if (!(storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL ||
+                storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL))
         {
             player.sendMessage("ERR3.");
             return;
@@ -149,8 +149,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
         {
             if (storeList.getItemCount() > _items.size())
             {
-                String msgErr = "[RequestPrivateStoreBuy] player " + getClient().getActiveChar()
-                        .getName() +
+                String msgErr = "[RequestPrivateStoreBuy] player " + getClient().getActiveChar().getName() +
                         " tried to buy less items than sold by package-sell, ban this player for bot usage!";
                 Util.handleIllegalPlayerAction(getClient().getActiveChar(), msgErr, Config.DEFAULT_PUNISH);
                 return;
@@ -164,8 +163,8 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
             sendPacket(ActionFailed.STATIC_PACKET);
             if (result > 1)
             {
-                Log.warning("PrivateStore buy has failed due to invalid list or request. Player: " + player
-                        .getName() + ", Private store of: " + storePlayer.getName());
+                Log.warning("PrivateStore buy has failed due to invalid list or request. Player: " + player.getName() +
+                        ", Private store of: " + storePlayer.getName());
             }
             return;
         }
@@ -177,7 +176,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
         }
 
 		/*   Lease holders are currently not implemented
-				else if (_seller != null)
+                else if (_seller != null)
 				{
 					// lease shop sell
 					L2MerchantInstance seller = (L2MerchantInstance)_seller;

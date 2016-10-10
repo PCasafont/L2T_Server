@@ -70,9 +70,9 @@ public class RequestDispel extends L2GameClientPacket
         {
             return;
         }
-        if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && skill
-                .getTargetType() != L2SkillTargetType.TARGET_PARTY && skill
-                .getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
+        if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
+                skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
+                skill.getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
         {
             return;
         }

@@ -102,8 +102,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
                                 }
                             }
                             activeChar.addAutoSoulShot(item);
-                            activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem()
-                                    .getShotTypeIndex()));
+                            activeChar.sendPacket(
+                                    new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 
                             // start the auto soulshot use
                             SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -139,8 +139,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
                                 }
                             }
                             activeChar.addAutoSoulShot(item);
-                            activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem()
-                                    .getShotTypeIndex()));
+                            activeChar.sendPacket(
+                                    new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 
                             // start the auto soulshot use
                             SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -154,36 +154,36 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 
                         if (!hasSummon)
                         {
-                            activeChar.sendPacket(SystemMessage
-                                    .getSystemMessage(SystemMessageId.NO_SERVITOR_CANNOT_AUTOMATE_USE));
+                            activeChar.sendPacket(
+                                    SystemMessage.getSystemMessage(SystemMessageId.NO_SERVITOR_CANNOT_AUTOMATE_USE));
                         }
                     }
                     else
                     {
-                        if (activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem() && item.getItem()
-                                .getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain())
+                        if (activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem() &&
+                                item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain())
                         {
                             activeChar.addAutoSoulShot(item);
-                            activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem()
-                                    .getShotTypeIndex()));
+                            activeChar.sendPacket(
+                                    new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
                         }
                         else
                         {
                             if (_itemId >= 2509 && _itemId <= 2514 || _itemId >= 3947 && _itemId <= 3952 ||
                                     _itemId == 5790 || _itemId >= 22072 && _itemId <= 22081)
                             {
-                                activeChar.sendPacket(SystemMessage
-                                        .getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
+                                activeChar.sendPacket(
+                                        SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
                             }
                             else
                             {
-                                activeChar.sendPacket(SystemMessage
-                                        .getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
+                                activeChar.sendPacket(
+                                        SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
                             }
 
                             activeChar.addAutoSoulShot(item);
-                            activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem()
-                                    .getShotTypeIndex()));
+                            activeChar.sendPacket(
+                                    new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
                         }
 
                         // start the auto soulshot use

@@ -185,9 +185,8 @@ public class CursedWeaponsManager
             // Retrieve the L2PcInstance from the characters table of the database
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT itemId, charId, playerKarma, playerPkKills, nbKills, endTime FROM cursed_weapons");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT itemId, charId, playerKarma, playerPkKills, nbKills, endTime FROM cursed_weapons");
             ResultSet rset = statement.executeQuery();
 
             while (rset.next())
@@ -283,7 +282,7 @@ public class CursedWeaponsManager
 
                         // Delete the skill
                         /*
-						statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=");
+                        statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=");
 						statement.setInt(1, playerId);
 						statement.setInt(2, cw.getSkillId());
 						if (statement.executeUpdate() != 1)
@@ -424,8 +423,8 @@ public class CursedWeaponsManager
                 cw.giveSkill();
                 player.setCursedWeaponEquippedId(cw.getItemId());
 
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.S2_MINUTE_OF_USAGE_TIME_ARE_LEFT_FOR_S1);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.S2_MINUTE_OF_USAGE_TIME_ARE_LEFT_FOR_S1);
                 sm.addString(cw.getName());
                 //sm.addItemName(cw.getItemId());
                 sm.addNumber((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000));

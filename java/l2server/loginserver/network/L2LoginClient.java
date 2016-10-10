@@ -277,7 +277,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
             LoginController.getInstance().removeAuthedLoginClient(getAccount());
         }
         /*ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-		{
+        {
 			public void run()
 			{
 				LoginController.getInstance().removeAuthedLoginClient(getAccount());

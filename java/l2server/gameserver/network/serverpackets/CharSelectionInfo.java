@@ -239,8 +239,8 @@ public class CharSelectionInfo extends L2GameServerPacket
             // High Five by Vistall:
             writeD(charInfoPackage.getVitalityPoints());
 
-            writeD(charInfoPackage
-                    .getVitalityLevel() > 0 ? (int) Config.VITALITY_MULTIPLIER * 100 : 0); // Vitality Exp bonus
+            writeD(charInfoPackage.getVitalityLevel() > 0 ? (int) Config.VITALITY_MULTIPLIER * 100 :
+                    0); // Vitality Exp bonus
             writeD(0x00); // Vitality Items count
 
             writeD(0x01); // Is activated
@@ -260,9 +260,8 @@ public class CharSelectionInfo extends L2GameServerPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT account_name, charId, char_name, level, maxHp, curHp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, sp, reputation, pvpkills, pkkills, clanid, templateId, classid, deletetime, cancraft, title, accesslevel, online, char_slot, lastAccess, base_class, transform_id, show_hat FROM characters WHERE account_name=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT account_name, charId, char_name, level, maxHp, curHp, maxMp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, sp, reputation, pvpkills, pkkills, clanid, templateId, classid, deletetime, cancraft, title, accesslevel, online, char_slot, lastAccess, base_class, transform_id, show_hat FROM characters WHERE account_name=?");
             statement.setString(1, loginName);
             ResultSet charList = statement.executeQuery();
 
@@ -299,9 +298,8 @@ public class CharSelectionInfo extends L2GameServerPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT exp, sp, level FROM character_subclasses WHERE charId=? && class_id=? ORDER BY charId");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT exp, sp, level FROM character_subclasses WHERE charId=? && class_id=? ORDER BY charId");
             statement.setInt(1, ObjectId);
             statement.setInt(2, activeClassId);
             ResultSet charList = statement.executeQuery();
@@ -431,8 +429,8 @@ public class CharSelectionInfo extends L2GameServerPacket
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT augAttributes FROM item_attributes WHERE itemId=?");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT augAttributes FROM item_attributes WHERE itemId=?");
                 statement.setInt(1, weaponObjId);
                 ResultSet result = statement.executeQuery();
                 if (result.next())
@@ -455,7 +453,7 @@ public class CharSelectionInfo extends L2GameServerPacket
         }
 
 		/*
-		 * Check if the base class is set to zero and alse doesn't match
+         * Check if the base class is set to zero and alse doesn't match
 		 * with the current active class, otherwise send the base class ID.
 		 *
 		 * This prevents chars created before base class was introduced
@@ -468,8 +466,8 @@ public class CharSelectionInfo extends L2GameServerPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
             statement.setString(1, chardata.getString("account_name"));
             statement.setString(2, "vitality");
             ResultSet rs = statement.executeQuery();

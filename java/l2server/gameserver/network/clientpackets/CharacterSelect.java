@@ -67,8 +67,8 @@ public class CharacterSelect extends L2GameClientPacket
     @Override
     protected void runImpl()
     {
-        if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") || Shutdown
-                .getInstance().isShuttingDown())
+        if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") ||
+                Shutdown.getInstance().isShuttingDown())
         {
             return;
         }

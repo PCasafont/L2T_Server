@@ -71,14 +71,14 @@ public class EffectTransformation extends L2Effect
 
         if (getEffector() == trg && trg.getTransformation() != null)
         {
-            trg.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
+            trg.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
             return false;
         }
 
         //LasTravel: Avoiding use mounts for enter to castles
-        if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) && trg
-                .isInsideZone(L2Character.ZONE_CASTLE))
+        if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) &&
+                trg.isInsideZone(L2Character.ZONE_CASTLE))
         {
             trg.getFirstEffect(getSkill().getId()).exit();
             return false;

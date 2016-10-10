@@ -63,8 +63,8 @@ public final class RequestSentPost extends L2GameClientPacket
 
         if (msg.getSenderId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
             return;
         }
 

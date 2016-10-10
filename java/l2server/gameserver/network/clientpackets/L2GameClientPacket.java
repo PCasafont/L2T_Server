@@ -46,8 +46,9 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
         }
         catch (Exception e)
         {
-            Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed reading: " + getType() + " ; " + e
-                    .getMessage(), e);
+            Log.log(Level.SEVERE,
+                    "Client: " + getClient().toString() + " - Failed reading: " + getType() + " ; " + e.getMessage(),
+                    e);
 
             if (e instanceof BufferUnderflowException) // only one allowed per client per minute
             {
@@ -65,7 +66,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
         try
         {
             /* Removes onspawn protection - player has faster computer than average
-			 * Since GE: True for all packets
+             * Since GE: True for all packets
 			 * except RequestItemList and UseItem (in case the item is a Scroll of Escape (736)
 			 */
             if (triggersOnActionRequest())
@@ -78,8 +79,8 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
                         actor.onActionRequest();
                         if (Config.DEBUG)
                         {
-                            Log.info("Spawn protection for player " + actor
-                                    .getName() + " removed by packet: " + getType());
+                            Log.info("Spawn protection for player " + actor.getName() + " removed by packet: " +
+                                    getType());
                         }
                     }
 
@@ -92,8 +93,9 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
         }
         catch (Throwable t)
         {
-            Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed running: " + getType() + " ; " + t
-                    .getMessage(), t);
+            Log.log(Level.SEVERE,
+                    "Client: " + getClient().toString() + " - Failed running: " + getType() + " ; " + t.getMessage(),
+                    t);
             // in case of EnterWorld error kick player from game
             if (this instanceof EnterWorld)
             {
@@ -125,8 +127,8 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
             }
             if (opcode.length > 6)
             {
-                type += ":" + Integer
-                        .toHexString(opcode[3] & 0xff | (opcode[4] & 0xff) << 8 | (opcode[5] & 0xff) << 16 |
+                type += ":" + Integer.toHexString(
+                        opcode[3] & 0xff | (opcode[4] & 0xff) << 8 | (opcode[5] & 0xff) << 16 |
                                 (opcode[6] & 0xff) << 24);
             }
         }

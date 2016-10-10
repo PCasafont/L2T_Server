@@ -97,8 +97,8 @@ public final class ServerList extends L2LoginServerPacket
             _ageLimit = 0;
             _brackets = gsi.isShowingBrackets();
             // If server GM-only - show status only to GMs
-            _status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() : client
-                    .getAccessLevel() >= 10 ? gsi.getStatus() : ServerStatus.STATUS_DOWN;
+            _status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() :
+                    client.getAccessLevel() >= 10 ? gsi.getStatus() : ServerStatus.STATUS_DOWN;
             _serverId = gsi.getId();
         }
     }
@@ -163,7 +163,7 @@ public final class ServerList extends L2LoginServerPacket
                 writeC(servId);
                 writeC(_charsOnServers.get(servId));
                 /*if (_charsToDelete == null || !_charsToDelete.containsKey(servId))
-					writeC(0x00);
+                    writeC(0x00);
 				else
 				{
 					writeC(_charsToDelete.get(servId).length);

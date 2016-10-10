@@ -139,13 +139,11 @@ public class L2SkillContinuousDrain extends L2Skill
             //int _cp = (int)target.getCurrentCp();
             int _hp = (int) target.getCurrentHp();
 
-            if (!(Config
-                    .isServer(Config.TENKAI) && activeChar instanceof L2PcInstance &&
-                    target instanceof L2MonsterInstance && ((L2PcInstance) activeChar)
-                    .getPvpFlag() > 0))
+            if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance &&
+                    target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
             {
                 /*if (_cp > 0)
-				{
+                {
 					if (damage < _cp)
 						_drain = 0;
 					else
@@ -163,8 +161,8 @@ public class L2SkillContinuousDrain extends L2Skill
             }
 
             double hpAdd = _absorbPart * _drain;
-            double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar
-                    .getCurrentHp() + hpAdd;
+            double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
+                    activeChar.getCurrentHp() + hpAdd;
 
             activeChar.setCurrentHp(hp);
 

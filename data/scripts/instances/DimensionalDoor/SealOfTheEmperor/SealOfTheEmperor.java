@@ -122,8 +122,8 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                         {
                             world.doneDevices.add(npc);
 
-                            attacker.sendPacket(SystemMessage
-                                    .getSystemMessage(SystemMessageId.SEALING_DEVICE_GLITTERS_AND_MOVES));
+                            attacker.sendPacket(
+                                    SystemMessage.getSystemMessage(SystemMessageId.SEALING_DEVICE_GLITTERS_AND_MOVES));
 
                             //attacker.addItem(_qn, _sealOfBinding, 1, npc, true);
 
@@ -132,9 +132,9 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                             {
                                 world.status++;
 
-                                attacker.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                        .get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 8 * DimensionalDoor
-                                                .getDimensionalDoorRewardRate()), attacker, true);
+                                attacker.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                        Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                                8 * DimensionalDoor.getDimensionalDoorRewardRate()), attacker, true);
 
                                 InstanceManager.getInstance().showVidToInstance(13, world.instanceId);
 
@@ -294,11 +294,11 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                     InstanceManager.getInstance().getInstance(world.instanceId).getDoor(17240111).openMe();
 
                     world.owner.showQuestMovie(12);
-                    world.owner.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.IN_ORDER_HELP_ANAKIM_ACTIVATE_DEVICES));
+                    world.owner.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.IN_ORDER_HELP_ANAKIM_ACTIVATE_DEVICES));
 
-                    startQuestTimer("stage_last_spawns", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(12), npc, null);
+                    startQuestTimer("stage_last_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(12), npc,
+                            null);
                 }
             }
             else if (event.equalsIgnoreCase("stage_last_spawns"))
@@ -356,14 +356,15 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                 if (world.status == 6)
                 {
                     //Lilith
-                    world.bossLilith.broadcastPacket(new NpcSay(world.bossLilith.getObjectId(), 1, world.bossLilith
-                            .getTemplate().TemplateId, _lilitChats[Rnd.get(_lilitChats.length)]));
+                    world.bossLilith.broadcastPacket(
+                            new NpcSay(world.bossLilith.getObjectId(), 1, world.bossLilith.getTemplate().TemplateId,
+                                    _lilitChats[Rnd.get(_lilitChats.length)]));
 
                     int chatAnakim = _anakimChats[Rnd.get(_anakimChats.length)];
                     //The are some chats of anakim that should have the char name inside, bah
-                    world.bossAnakim.broadcastPacket(new NpcSay(world.bossAnakim
-                            .getObjectId(), chatAnakim > 19612 ? 2 : 1, world.bossAnakim
-                            .getTemplate().TemplateId, chatAnakim));
+                    world.bossAnakim.broadcastPacket(
+                            new NpcSay(world.bossAnakim.getObjectId(), chatAnakim > 19612 ? 2 : 1,
+                                    world.bossAnakim.getTemplate().TemplateId, chatAnakim));
 
                     //Chats
                     startQuestTimer("stage_last_bosses_talks", 15000, npc, null);
@@ -450,14 +451,13 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                     switch (npc.getNpcId())
                     {
                         case _lilimMagnus:
-                            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc
-                                    .getTemplate().TemplateId,
+                            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId,
                                     1000247)); //Lord Shilen... some day... you will accomplish... this mission...
                             break;
 
                         case _lilimKnight:
-                            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc
-                                    .getTemplate().TemplateId, 1000270)); //Why are you getting in our way?
+                            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId,
+                                    1000270)); //Why are you getting in our way?
                             break;
                     }
                     break;
@@ -473,8 +473,8 @@ public class SealOfTheEmperor extends L2AttackableAIScript
         {
             if (!(world instanceof SealOfTheEmperorWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

@@ -261,9 +261,9 @@ public class SagasSuperClass extends QuestJython
         String htmltext = "";
         if (st != null)
         {
-            if (event.equalsIgnoreCase("0-011.htm") || event.equalsIgnoreCase("0-012.htm") || event
-                    .equalsIgnoreCase("0-013.htm") || event.equalsIgnoreCase("0-014.htm") || event
-                    .equalsIgnoreCase("0-015.htm"))
+            if (event.equalsIgnoreCase("0-011.htm") || event.equalsIgnoreCase("0-012.htm") ||
+                    event.equalsIgnoreCase("0-013.htm") || event.equalsIgnoreCase("0-014.htm") ||
+                    event.equalsIgnoreCase("0-015.htm"))
             {
                 htmltext = event;
             }

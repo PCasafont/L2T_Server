@@ -67,7 +67,7 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket
         player.sendPacket(new RecipeShopManageList(player, true));
 
 		/*
-		int privatetype=player.getPrivateStoreType();
+        int privatetype=player.getPrivateStoreType();
 		if (privatetype == 0)
 		{
 			if (player.getWaitType() !=1)

@@ -54,8 +54,9 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 
         if (Config.DEBUG)
         {
-            Log.fine("client: x:" + _x + " y:" + _y + " z:" + _z + " server x:" + player.getX() + " y:" + player
-                    .getY() + " z:" + player.getZ());
+            Log.fine(
+                    "client: x:" + _x + " y:" + _y + " z:" + _z + " server x:" + player.getX() + " y:" + player.getY() +
+                            " z:" + player.getZ());
         }
 
         if (player.getAI() != null)
@@ -63,7 +64,7 @@ public final class CannotMoveAnymore extends L2GameClientPacket
             player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(_x, _y, _z, _heading));
         }
         /*if (player.getParty() != null)
-		{
+        {
 			player.getParty().broadcastToPartyMembers(player, new PartyMemberPosition(player));
 		}*/
 

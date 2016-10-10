@@ -112,20 +112,20 @@ public class RankingKillInfo
             return false;
         }
 
-        if (killerPlayer.getExternalIP().equalsIgnoreCase(killedPlayer.getExternalIP()) && killerPlayer.getInternalIP()
-                .equalsIgnoreCase(killedPlayer.getInternalIP()))
+        if (killerPlayer.getExternalIP().equalsIgnoreCase(killedPlayer.getExternalIP()) &&
+                killerPlayer.getInternalIP().equalsIgnoreCase(killedPlayer.getInternalIP()))
         {
             return false;
         }
 
-        if (killerPlayer.getParty() != null && killedPlayer.getParty() != null && killerPlayer.getParty()
-                .getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID())
+        if (killerPlayer.getParty() != null && killedPlayer.getParty() != null &&
+                killerPlayer.getParty().getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID())
         {
             return false;
         }
 
-        if (killedPlayer.getPDef(killedPlayer) < 800 || killedPlayer.getMDef(killedPlayer, null) < 800 || killedPlayer
-                .getPAtkSpd() < 500 || killedPlayer.getMAtkSpd() < 500 || killedPlayer.getPvpKills() < 10)
+        if (killedPlayer.getPDef(killedPlayer) < 800 || killedPlayer.getMDef(killedPlayer, null) < 800 ||
+                killedPlayer.getPAtkSpd() < 500 || killedPlayer.getMAtkSpd() < 500 || killedPlayer.getPvpKills() < 10)
         {
             return false;
         }
@@ -135,8 +135,8 @@ public class RankingKillInfo
             return false;
         }
 
-        if (!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) || !killedPlayer.getClan()
-                .isAtWarWith(killerPlayer.getClan()))
+        if (!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) ||
+                !killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()))
         {
             return false;
         }
@@ -147,7 +147,7 @@ public class RankingKillInfo
     private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)
     {
         /*if (killer == null || killed == null)
-			return;
+            return;
 
 		List<String> rewardedPlayers = new ArrayList<String>();
 		List<L2PcInstance> allPlayersToBuff = new ArrayList<L2PcInstance>();
@@ -327,9 +327,8 @@ public class RankingKillInfo
         Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
         for (L2PcInstance worldPlayer : pls)
         {
-            if (region == MapRegionTable.getInstance()
-                    .getMapRegion(worldPlayer.getX(), worldPlayer.getY()) && worldPlayer
-                    .getEvent() == null && worldPlayer.getInstanceId() == 0)
+            if (region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY()) &&
+                    worldPlayer.getEvent() == null && worldPlayer.getInstanceId() == 0)
             {
                 worldPlayer.sendPacket(cs);
             }
@@ -402,8 +401,9 @@ public class RankingKillInfo
         tb.append("<html><head><title>" + killer.getName() + " Basic Information</title></head><body>");
         if (killed.getClassId() >= 148)
         {
-            tb.append("<center><table width=256 height=180 background=\"L2UI_CT1.HtmlWnd.HtmlWnd_ClassMark_" + killed
-                    .getClassId() + "\"><tr><td FIXWIDTH=300><br><br><br><br><br><br><br></td></tr></table></center>");
+            tb.append("<center><table width=256 height=180 background=\"L2UI_CT1.HtmlWnd.HtmlWnd_ClassMark_" +
+                    killed.getClassId() +
+                    "\"><tr><td FIXWIDTH=300><br><br><br><br><br><br><br></td></tr></table></center>");
         }
         else
         {
@@ -413,14 +413,13 @@ public class RankingKillInfo
         tb.append("<br><table width=300>");
         tb.append(
                 "<tr><td FIXWIDTH=100><font color=886531>Ranking Position:</font></td><td>" + rankName + "</td></tr>");
-        tb.append("<tr><td FIXWIDTH=100><font color=886531>Name [lvl]:</font></td><td><font color=FF6600>" + killer
-                .getName() + " [" + killer.getLevel() + "]</font></td></tr>");
+        tb.append("<tr><td FIXWIDTH=100><font color=886531>Name [lvl]:</font></td><td><font color=FF6600>" +
+                killer.getName() + " [" + killer.getLevel() + "]</font></td></tr>");
         tb.append(
                 "<tr><td><font color=772F2F><font color=886531>Current Class:</font></font></td><td><font color=FF6600>" +
-                        PlayerClassTable
-                                .getInstance().getClassNameById(killer.getClassId()) + "</font></td></tr>");
-        tb.append("<tr><td><font color=886531>Hero:</font></td><td><font color=999999>" + (killer
-                .isHero() ? "Yes" : "No") + "</font></td></tr>");
+                        PlayerClassTable.getInstance().getClassNameById(killer.getClassId()) + "</font></td></tr>");
+        tb.append("<tr><td><font color=886531>Hero:</font></td><td><font color=999999>" +
+                (killer.isHero() ? "Yes" : "No") + "</font></td></tr>");
 
         String clanName = killer.getClan() != null ? killer.getClan().getName() : "No";
         tb.append(
@@ -433,25 +432,23 @@ public class RankingKillInfo
         tb.append("<img src=\"L2UI.Squaregray\" width=300 height=1>");
         tb.append("<table width=300>");
         tb.append("<tr><td ><font color=886531>Current CP / Max Cp:</font></td><td FIXWIDTH=100><font color=LEVEL>" +
-                (int) killer
-                        .getCurrentCp() + " / " + killer.getMaxCp() + "</font></td></tr>");
-        tb.append("<tr><td><font color=886531>Current HP / Max HP:</font></td><td><font color=FF0000>" + (int) killer
-                .getCurrentHp() + " / " + killer.getMaxHp() + "</font></td></tr>");
-        tb.append("<tr><td><font color=886531>Current MP / Max MP:</font></td><td><font color=3366FF>" + (int) killer
-                .getCurrentMp() + " / " + killer.getMaxMp() + "</font></td></tr>");
+                (int) killer.getCurrentCp() + " / " + killer.getMaxCp() + "</font></td></tr>");
+        tb.append("<tr><td><font color=886531>Current HP / Max HP:</font></td><td><font color=FF0000>" +
+                (int) killer.getCurrentHp() + " / " + killer.getMaxHp() + "</font></td></tr>");
+        tb.append("<tr><td><font color=886531>Current MP / Max MP:</font></td><td><font color=3366FF>" +
+                (int) killer.getCurrentMp() + " / " + killer.getMaxMp() + "</font></td></tr>");
         tb.append("</table>");
         tb.append("<img src=\"L2UI.Squaregray\" width=300 height=1>");
         tb.append("<table width=300>");
-        tb.append("<tr><td><font color=886531>Legal PvP Points:</font></td><td FIXWIDTH=70><font color=LEVEL>" + killer
-                .getPvpKills() + "</font></td></tr>");
-        tb.append("<tr><td><font color=886531>Legal PK Points:</font></td><td><font color=LEVEL>" + killer
-                .getPkKills() + "</font></td></tr>");
+        tb.append("<tr><td><font color=886531>Legal PvP Points:</font></td><td FIXWIDTH=70><font color=LEVEL>" +
+                killer.getPvpKills() + "</font></td></tr>");
+        tb.append(
+                "<tr><td><font color=886531>Legal PK Points:</font></td><td><font color=LEVEL>" + killer.getPkKills() +
+                        "</font></td></tr>");
         tb.append("<tr><td><font color=886531>Times killed me:</font></td><td><font color=LEVEL>" +
-                getSpecificKillsInfo(killer
-                        .getName(), killed.getName()) + "</font></td></tr>");
+                getSpecificKillsInfo(killer.getName(), killed.getName()) + "</font></td></tr>");
         tb.append("<tr><td><font color=886531>Times I killed:</font></td><td><font color=LEVEL>" +
-                getSpecificKillsInfo(killed
-                        .getName(), killer.getName()) + "</font></td></tr>");
+                getSpecificKillsInfo(killed.getName(), killer.getName()) + "</font></td></tr>");
         tb.append("</table>");
         tb.append("<img src=\"L2UI.Squaregray\" width=300 height=1>");
         tb.append("</body></html>");

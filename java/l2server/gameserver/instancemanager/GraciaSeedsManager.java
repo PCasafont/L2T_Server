@@ -74,8 +74,8 @@ public class GraciaSeedsManager
         {
             _SoDState = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDState"));
             _SoDTiatKilled = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDTiatKilled"));
-            _SoDLastStateChangeDate.setTimeInMillis(Long
-                    .parseLong(GlobalVariablesManager.getInstance().getStoredVariable("SoDLSCDate")));
+            _SoDLastStateChangeDate.setTimeInMillis(
+                    Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("SoDLSCDate")));
         }
         else
         {
@@ -182,8 +182,8 @@ public class GraciaSeedsManager
             case 1:
                 return -1;
             case 2:
-                return _SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH - System
-                        .currentTimeMillis();
+                return _SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH -
+                        System.currentTimeMillis();
             case 3:
                 // not implemented yet
                 return -1;

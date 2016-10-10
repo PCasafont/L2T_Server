@@ -117,8 +117,8 @@ public class AdminRes implements IAdminCommandHandler
 
         if (Config.DEBUG)
         {
-            _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " + obj
-                    .getObjectId());
+            _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
+                    obj.getObjectId());
         }
     }
 

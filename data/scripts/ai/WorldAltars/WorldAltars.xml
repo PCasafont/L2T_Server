@@ -1,98 +1,98 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <respawnInfo baseRespawnMinutes="60" randomRespawnMinutes="20" cursedChance="5" />
+    <respawnInfo baseRespawnMinutes="60" randomRespawnMinutes="20" cursedChance="5"/>
     <possibleSpawns>
-        <spawn name="Prison of Darkness" zoneId="60061" x="177084" y="143152" z="-11823" heading="59852" />
-        <spawn name="Raider's Crossroads" zoneId="60062" x="11744" y="-138583" z="-1003" heading="5146" />
-        <spawn name="Seed of Hellfire" zoneId="60063" x="-147360" y="145894" z="-13892" heading="14692" />
-        <spawn name="Land of Chaos" zoneId="60064" x="-20006" y="-119060" z="-4091" heading="53917" />
-        <spawn name="Guillotine Fortress" zoneId="60065" x="48250" y="145242" z="-3591" heading="20213" />
-        <spawn name="Orbis Temple" zoneId="60066" x="214304" y="115579" z="-12748" heading="15969" />
-        <spawn name="Garden of Genesis" zoneId="60067" x="210274" y="111589" z="-2097" heading="22681" />
-        <spawn name="Seal of Shilen" zoneId="60068" x="191972" y="18448" z="-3675" heading="6193" />
-        <spawn name="Faeron" zoneId="60069" x="-84339" y="246090" z="-3472" heading="24575" />
-        <spawn name="Fairy Settlement" zoneId="60070" x="214451" y="70878" z="1344" heading="58289" />
-        <spawn name="Wall of Argos" zoneId="60080" x="177292" y="-49839" z="-3400" heading="7554" />
-        <spawn name="Cruma Tower" zoneId="60081" x="14551" y="117279" z="-12096" heading="64658" />
-        <spawn name="Crypts of Disgrace" zoneId="60082" x="44490" y="-120206" z="-3479" heading="53805" />
-        <spawn name="Border Outpost" zoneId="60083" x="112247" y="-18415" z="-1707" heading="1308" />
-        <spawn name="Monastery of Silence" zoneId="60084" x="115434" y="-88861" z="-3537" heading="57865" />
-        <spawn name="Imperial Tomb" zoneId="60085" x="186563" y="-80958" z="-5971" heading="17035" />
-        <spawn name="Beast Farm" zoneId="60086" x="52959" y="-85964" z="-2704" heading="17358" />
-        <spawn name="Isle of Prayer" zoneId="60087" x="156745" y="181375" z="-3621" heading="57476" />
-        <spawn name="Forest of Mirrors" zoneId="60088" x="158752" y="93583" z="-3472" heading="23796" />
-        <spawn name="Cursed Village" zoneId="60089" x="60021" y="-42438" z="-3009" heading="52311" />
-        <spawn name="Ketra Orc Outpost" zoneId="60090" x="144246" y="-76246" z="-4723" heading="2938" />
-        <spawn name="Plunderous Plains" zoneId="60091" x="127280" y="-147752" z="-3752" heading="23722" />
-        <spawn name="Tower of Insolence" zoneId="60092" x="118385" y="11874" z="-5140" heading="14059" />
-        <spawn name="Hot Springs" zoneId="60094" x="153798" y="-114916" z="-1560" heading="32676" />
-        <spawn name="Garden of Eva" zoneId="60095" x="83810" y="254677" z="-10872" heading="30593" />
-        <spawn name="Fellmere Lake" zoneId="60096" x="-53356" y="128688" z="-3090" heading="20869" />
-        <spawn name="Giant's Cave" zoneId="60097" x="189157" y="61660" z="-6113" heading="32767" />
-        <spawn name="Archaic Laboratory" zoneId="60098" x="93857" y="-106828" z="-3334" heading="48535" />
-        <spawn name="Varka Silenos Barracks" zoneId="60099" x="114994" y="-40706" z="-2565" heading="49439" />
-        <spawn name="Devil's Isle" zoneId="60100" x="49551" y="210727" z="-3736" heading="34978" />
-        <spawn name="Eastern Mining Zone" zoneId="60101" x="157201" y="-219986" z="-3642" heading="11665" />
-        <spawn name="Windimill Hill" zoneId="60102" x="-68739" y="167400" z="-3413" heading="61567" />
-        <spawn name="Freya's Garden" zoneId="60103" x="102724" y="-125679" z="-2840" heading="51309" />
-        <spawn name="Brigand Stronghold" zoneId="60104" x="124746" y="-159305" z="-1301" heading="6814" />
-        <spawn name="Lost Nest" zoneId="60105" x="21008" y="-11855" z="-2768" heading="1909" />
-        <spawn name="Lost Nest" zoneId="60106" x="23411" y="-7561" z="-1207" heading="4742" />
-        <spawn name="Innadril Territory" zoneId="60107" x="128419" y="158096" z="-3504" heading="27669" />
-        <spawn name="Immportal Plateau, Southern" zoneId="60108" x="23619" y="-109643" z="-3336" heading="2365" />
-        <spawn name="Seed of Annihilation" zoneId="60110" x="-184972" y="186316" z="-15822" heading="52698" />
-        <spawn name="Valley of Saints" zoneId="60111" x="91478" y="-86166" z="-2716" heading="31013" />
-        <spawn name="Nornil's Cave" zoneId="60112" x="-88128" y="51203" z="-4478" heading="48867" />
-        <spawn name="Mithiril Mines" zoneId="60113" x="181011" y="-175080" z="-3568" heading="36206" />
-        <spawn name="Field of Silence" zoneId="60114" x="88009" y="183395" z="-3765" heading="57769" />
-        <spawn name="Swamp of Screams" zoneId="60115" x="92088" y="-52865" z="-2627" heading="8953" />
-        <spawn name="Ant Nest" zoneId="60116" x="-25283" y="180524" z="-5412" heading="55285" />
-        <spawn name="Hellbound" zoneId="60117" x="25499" y="256241" z="-2002" heading="44103" />
-        <spawn name="Enchanted Valley" zoneId="60118" x="126345" y="52085" z="-4571" heading="38660" />
-        <spawn name="Harnak Underground Ruins" zoneId="60119" x="-114714" y="180117" z="-13813" heading="15815" />
-        <spawn name="Elven Fortress" zoneId="60120" x="21226" y="76970" z="-4290" heading="47671" />
-        <spawn name="Sea of Spores" zoneId="60121" x="41433" y="22006" z="-3879" heading="31134" />
-        <spawn name="Chromatic Highlands" zoneId="60122" x="159660" y="155105" z="-3763" heading="29633" />
+        <spawn name="Prison of Darkness" zoneId="60061" x="177084" y="143152" z="-11823" heading="59852"/>
+        <spawn name="Raider's Crossroads" zoneId="60062" x="11744" y="-138583" z="-1003" heading="5146"/>
+        <spawn name="Seed of Hellfire" zoneId="60063" x="-147360" y="145894" z="-13892" heading="14692"/>
+        <spawn name="Land of Chaos" zoneId="60064" x="-20006" y="-119060" z="-4091" heading="53917"/>
+        <spawn name="Guillotine Fortress" zoneId="60065" x="48250" y="145242" z="-3591" heading="20213"/>
+        <spawn name="Orbis Temple" zoneId="60066" x="214304" y="115579" z="-12748" heading="15969"/>
+        <spawn name="Garden of Genesis" zoneId="60067" x="210274" y="111589" z="-2097" heading="22681"/>
+        <spawn name="Seal of Shilen" zoneId="60068" x="191972" y="18448" z="-3675" heading="6193"/>
+        <spawn name="Faeron" zoneId="60069" x="-84339" y="246090" z="-3472" heading="24575"/>
+        <spawn name="Fairy Settlement" zoneId="60070" x="214451" y="70878" z="1344" heading="58289"/>
+        <spawn name="Wall of Argos" zoneId="60080" x="177292" y="-49839" z="-3400" heading="7554"/>
+        <spawn name="Cruma Tower" zoneId="60081" x="14551" y="117279" z="-12096" heading="64658"/>
+        <spawn name="Crypts of Disgrace" zoneId="60082" x="44490" y="-120206" z="-3479" heading="53805"/>
+        <spawn name="Border Outpost" zoneId="60083" x="112247" y="-18415" z="-1707" heading="1308"/>
+        <spawn name="Monastery of Silence" zoneId="60084" x="115434" y="-88861" z="-3537" heading="57865"/>
+        <spawn name="Imperial Tomb" zoneId="60085" x="186563" y="-80958" z="-5971" heading="17035"/>
+        <spawn name="Beast Farm" zoneId="60086" x="52959" y="-85964" z="-2704" heading="17358"/>
+        <spawn name="Isle of Prayer" zoneId="60087" x="156745" y="181375" z="-3621" heading="57476"/>
+        <spawn name="Forest of Mirrors" zoneId="60088" x="158752" y="93583" z="-3472" heading="23796"/>
+        <spawn name="Cursed Village" zoneId="60089" x="60021" y="-42438" z="-3009" heading="52311"/>
+        <spawn name="Ketra Orc Outpost" zoneId="60090" x="144246" y="-76246" z="-4723" heading="2938"/>
+        <spawn name="Plunderous Plains" zoneId="60091" x="127280" y="-147752" z="-3752" heading="23722"/>
+        <spawn name="Tower of Insolence" zoneId="60092" x="118385" y="11874" z="-5140" heading="14059"/>
+        <spawn name="Hot Springs" zoneId="60094" x="153798" y="-114916" z="-1560" heading="32676"/>
+        <spawn name="Garden of Eva" zoneId="60095" x="83810" y="254677" z="-10872" heading="30593"/>
+        <spawn name="Fellmere Lake" zoneId="60096" x="-53356" y="128688" z="-3090" heading="20869"/>
+        <spawn name="Giant's Cave" zoneId="60097" x="189157" y="61660" z="-6113" heading="32767"/>
+        <spawn name="Archaic Laboratory" zoneId="60098" x="93857" y="-106828" z="-3334" heading="48535"/>
+        <spawn name="Varka Silenos Barracks" zoneId="60099" x="114994" y="-40706" z="-2565" heading="49439"/>
+        <spawn name="Devil's Isle" zoneId="60100" x="49551" y="210727" z="-3736" heading="34978"/>
+        <spawn name="Eastern Mining Zone" zoneId="60101" x="157201" y="-219986" z="-3642" heading="11665"/>
+        <spawn name="Windimill Hill" zoneId="60102" x="-68739" y="167400" z="-3413" heading="61567"/>
+        <spawn name="Freya's Garden" zoneId="60103" x="102724" y="-125679" z="-2840" heading="51309"/>
+        <spawn name="Brigand Stronghold" zoneId="60104" x="124746" y="-159305" z="-1301" heading="6814"/>
+        <spawn name="Lost Nest" zoneId="60105" x="21008" y="-11855" z="-2768" heading="1909"/>
+        <spawn name="Lost Nest" zoneId="60106" x="23411" y="-7561" z="-1207" heading="4742"/>
+        <spawn name="Innadril Territory" zoneId="60107" x="128419" y="158096" z="-3504" heading="27669"/>
+        <spawn name="Immportal Plateau, Southern" zoneId="60108" x="23619" y="-109643" z="-3336" heading="2365"/>
+        <spawn name="Seed of Annihilation" zoneId="60110" x="-184972" y="186316" z="-15822" heading="52698"/>
+        <spawn name="Valley of Saints" zoneId="60111" x="91478" y="-86166" z="-2716" heading="31013"/>
+        <spawn name="Nornil's Cave" zoneId="60112" x="-88128" y="51203" z="-4478" heading="48867"/>
+        <spawn name="Mithiril Mines" zoneId="60113" x="181011" y="-175080" z="-3568" heading="36206"/>
+        <spawn name="Field of Silence" zoneId="60114" x="88009" y="183395" z="-3765" heading="57769"/>
+        <spawn name="Swamp of Screams" zoneId="60115" x="92088" y="-52865" z="-2627" heading="8953"/>
+        <spawn name="Ant Nest" zoneId="60116" x="-25283" y="180524" z="-5412" heading="55285"/>
+        <spawn name="Hellbound" zoneId="60117" x="25499" y="256241" z="-2002" heading="44103"/>
+        <spawn name="Enchanted Valley" zoneId="60118" x="126345" y="52085" z="-4571" heading="38660"/>
+        <spawn name="Harnak Underground Ruins" zoneId="60119" x="-114714" y="180117" z="-13813" heading="15815"/>
+        <spawn name="Elven Fortress" zoneId="60120" x="21226" y="76970" z="-4290" heading="47671"/>
+        <spawn name="Sea of Spores" zoneId="60121" x="41433" y="22006" z="-3879" heading="31134"/>
+        <spawn name="Chromatic Highlands" zoneId="60122" x="159660" y="155105" z="-3763" heading="29633"/>
         <!-- Player spawns -->
-        <spawn name="Partisan's Hideaway" zoneId="60123" x="52722" y="113754" z="-2040" heading="20103" />
-        <spawn name="Forge of the Gods, Lower Level" zoneId="60124" x="185760" y="-106103" z="-6304" heading="57139" />
-        <spawn name="Outlaw Forest" zoneId="60125" x="95767" y="2769" z="-3720" heading="36372" />
-        <spawn name="Antharas' Lair" zoneId="60126" x="148948" y="115020" z="-5472" heading="304" />
-        <spawn name="Bee Hive" zoneId="60127" x="20903" y="184694" z="-3365" heading="25103" />
-        <spawn name="Beleth's Magic Circle" zoneId="60128" x="-23639" y="245518" z="-3136" heading="2320" />
-        <spawn name="Wasteland" zoneId="60129" x="-28327" y="177602" z="-3155" heading="39721" />
-        <spawn name="Gludio Territory" zoneId="60130" x="-75919" y="135984" z="-3375" heading="42502" />
-        <spawn name="Blazing Swamp" zoneId="60131" x="144238" y="-24296" z="-2040" heading="29190" />
-        <spawn name="Cruma Marshlands" zoneId="60132" x="8330" y="103139" z="-3688" heading="33196" />
-        <spawn name="Aden Territory" zoneId="60133" x="130742" y="59210" z="3560" heading="37271" />
-        <spawn name="Forgotten Temple" zoneId="60134" x="-57426" y="188300" z="-4505" heading="24278" />
-        <spawn name="Grave Robber hideout" zoneId="60135" x="48444" y="-104365" z="-1704" heading="61637" />
-        <spawn name="Stakato Nest" zoneId="60136" x="87358" y="-43429" z="-4140" heading="17009" />
-        <spawn name="Misty Mountains" zoneId="60137" x="-1343" y="53723" z="-3494" heading="55961" />
-        <spawn name="Alligator Island" zoneId="60138" x="107035" y="168274" z="-3448" heading="31859" />
-        <spawn name="Windy Hill" zoneId="60139" x="-81247" y="75598" z="-3376" heading="45470" />
-        <spawn name="Ol Mahum Checkpoint" zoneId="60140" x="-6565" y="201759" z="-3640" heading="1667" />
-        <spawn name="Den of Evil" zoneId="60141" x="74345" y="-101924" z="-974" heading="32646" />
-        <spawn name="Bloody Swampland" zoneId="60142" x="-14682" y="43544" z="-3576" heading="25905" />
-        <spawn name="Talking Island" zoneId="60143" x="-113172" y="246111" z="-3697" heading="25240" />
-        <spawn name="Forest of Evil" zoneId="60144" x="95379" y="22834" z="-3000" heading="18822" />
-        <spawn name="The Pagan Temple" zoneId="60145" x="-16221" y="-36148" z="-10732" heading="7695" />
-        <spawn name="Whispering Woods" zoneId="60146" x="-87450" y="236191" z="-2943" heading="29767" />
-        <spawn name="Fields of Massacre" zoneId="60147" x="178419" y="-13643" z="-2271" heading="64277" />
-        <spawn name="Elven Forest" zoneId="60148" x="43115" y="69480" z="-3256" heading="20696" />
-        <spawn name="Field od Whispers" zoneId="60149" x="89112" y="218651" z="-3760" heading="11547" />
-        <spawn name="Ruins of Despair" zoneId="60150" x="-17536" y="142928" z="-3906" heading="61619" />
+        <spawn name="Partisan's Hideaway" zoneId="60123" x="52722" y="113754" z="-2040" heading="20103"/>
+        <spawn name="Forge of the Gods, Lower Level" zoneId="60124" x="185760" y="-106103" z="-6304" heading="57139"/>
+        <spawn name="Outlaw Forest" zoneId="60125" x="95767" y="2769" z="-3720" heading="36372"/>
+        <spawn name="Antharas' Lair" zoneId="60126" x="148948" y="115020" z="-5472" heading="304"/>
+        <spawn name="Bee Hive" zoneId="60127" x="20903" y="184694" z="-3365" heading="25103"/>
+        <spawn name="Beleth's Magic Circle" zoneId="60128" x="-23639" y="245518" z="-3136" heading="2320"/>
+        <spawn name="Wasteland" zoneId="60129" x="-28327" y="177602" z="-3155" heading="39721"/>
+        <spawn name="Gludio Territory" zoneId="60130" x="-75919" y="135984" z="-3375" heading="42502"/>
+        <spawn name="Blazing Swamp" zoneId="60131" x="144238" y="-24296" z="-2040" heading="29190"/>
+        <spawn name="Cruma Marshlands" zoneId="60132" x="8330" y="103139" z="-3688" heading="33196"/>
+        <spawn name="Aden Territory" zoneId="60133" x="130742" y="59210" z="3560" heading="37271"/>
+        <spawn name="Forgotten Temple" zoneId="60134" x="-57426" y="188300" z="-4505" heading="24278"/>
+        <spawn name="Grave Robber hideout" zoneId="60135" x="48444" y="-104365" z="-1704" heading="61637"/>
+        <spawn name="Stakato Nest" zoneId="60136" x="87358" y="-43429" z="-4140" heading="17009"/>
+        <spawn name="Misty Mountains" zoneId="60137" x="-1343" y="53723" z="-3494" heading="55961"/>
+        <spawn name="Alligator Island" zoneId="60138" x="107035" y="168274" z="-3448" heading="31859"/>
+        <spawn name="Windy Hill" zoneId="60139" x="-81247" y="75598" z="-3376" heading="45470"/>
+        <spawn name="Ol Mahum Checkpoint" zoneId="60140" x="-6565" y="201759" z="-3640" heading="1667"/>
+        <spawn name="Den of Evil" zoneId="60141" x="74345" y="-101924" z="-974" heading="32646"/>
+        <spawn name="Bloody Swampland" zoneId="60142" x="-14682" y="43544" z="-3576" heading="25905"/>
+        <spawn name="Talking Island" zoneId="60143" x="-113172" y="246111" z="-3697" heading="25240"/>
+        <spawn name="Forest of Evil" zoneId="60144" x="95379" y="22834" z="-3000" heading="18822"/>
+        <spawn name="The Pagan Temple" zoneId="60145" x="-16221" y="-36148" z="-10732" heading="7695"/>
+        <spawn name="Whispering Woods" zoneId="60146" x="-87450" y="236191" z="-2943" heading="29767"/>
+        <spawn name="Fields of Massacre" zoneId="60147" x="178419" y="-13643" z="-2271" heading="64277"/>
+        <spawn name="Elven Forest" zoneId="60148" x="43115" y="69480" z="-3256" heading="20696"/>
+        <spawn name="Field od Whispers" zoneId="60149" x="89112" y="218651" z="-3760" heading="11547"/>
+        <spawn name="Ruins of Despair" zoneId="60150" x="-17536" y="142928" z="-3906" heading="61619"/>
     </possibleSpawns>
     <altars>
-        <altar imageId="40" name="Totem of Body" altarId="143" />
-        <altar imageId="41" name="Totem of Spirit" altarId="144" />
-        <altar imageId="42" name="Totem of Courage" altarId="145" />
-        <altar imageId="43" name="Totem of Fortitude" altarId="146" />
+        <altar imageId="40" name="Totem of Body" altarId="143"/>
+        <altar imageId="41" name="Totem of Spirit" altarId="144"/>
+        <altar imageId="42" name="Totem of Courage" altarId="145"/>
+        <altar imageId="43" name="Totem of Fortitude" altarId="146"/>
     </altars>
     <bosses>
-        <boss id="80351" />
-        <boss id="80352" />
-        <boss id="80353" />
-        <boss id="80354" />
+        <boss id="80351"/>
+        <boss id="80352"/>
+        <boss id="80353"/>
+        <boss id="80354"/>
     </bosses>
 </list>

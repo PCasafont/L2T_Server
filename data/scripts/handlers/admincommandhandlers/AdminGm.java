@@ -62,8 +62,8 @@ public class AdminGm implements IAdminCommandHandler
 
             if (Config.DEBUG)
             {
-                _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                        .getObjectId() + ") turned his GM status off");
+                _log.fine(
+                        "GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") turned his GM status off");
             }
         }
     }

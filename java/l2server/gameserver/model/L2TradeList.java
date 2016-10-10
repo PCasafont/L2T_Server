@@ -313,9 +313,8 @@ public class L2TradeList
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "REPLACE INTO shop_item_counts (shop_id, item_id, count, time) VALUES (?, ?, ?, ?)");
+                PreparedStatement statement = con.prepareStatement(
+                        "REPLACE INTO shop_item_counts (shop_id, item_id, count, time) VALUES (?, ?, ?, ?)");
                 statement.setInt(1, _listId);
                 statement.setInt(2, _itemId);
                 statement.setInt(3, _maxCount);

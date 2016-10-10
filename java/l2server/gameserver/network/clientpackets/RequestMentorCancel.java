@@ -90,9 +90,8 @@ public class RequestMentorCancel extends L2GameClientPacket
                 {
                     L2PcInstance player = L2World.getInstance().getPlayer(id);
                     player.sendPacket(new ExMentorList(player));
-                    sm = SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
+                    sm = SystemMessage.getSystemMessage(
+                            SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
                     sm.addString("0"); // TODO: Days
                     sm.addString("0"); // TODO: Hours
                     sm.addString("0"); // TODO: Minutes

@@ -47,7 +47,7 @@ public class ChangeHairAccessory implements ISkillHandler
         player.setShowHat(!player.isShowingHat());
 
 		/*
-		if (player.isShowingHat())
+        if (player.isShowingHat())
 			player.sendMessage(4168); // Hair accessories will be displayed from now on.
 		else
 			player.sendMessage(4167); // Hair accessories will no longer be displayed.

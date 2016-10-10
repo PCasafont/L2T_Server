@@ -46,8 +46,8 @@ public class L2SkillTeleport extends L2Skill
         if (coords != null)
         {
             String[] valuesSplit = coords.split(",");
-            _loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]), Integer
-                    .parseInt(valuesSplit[2]));
+            _loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
+                    Integer.parseInt(valuesSplit[2]));
         }
         else
         {
@@ -61,8 +61,8 @@ public class L2SkillTeleport extends L2Skill
         if (activeChar instanceof L2PcInstance)
         {
             // Thanks nbd
-            if (((L2PcInstance) activeChar).getEvent() != null && !((L2PcInstance) activeChar).getEvent()
-                    .onEscapeUse(((L2PcInstance) activeChar).getObjectId()))
+            if (((L2PcInstance) activeChar).getEvent() != null &&
+                    !((L2PcInstance) activeChar).getEvent().onEscapeUse(((L2PcInstance) activeChar).getObjectId()))
             {
                 activeChar.sendPacket(ActionFailed.STATIC_PACKET);
                 return;
@@ -117,8 +117,8 @@ public class L2SkillTeleport extends L2Skill
 
                     if (targetChar != activeChar)
                     {
-                        if (targetChar.getEvent() != null && !targetChar.getEvent()
-                                .onEscapeUse(targetChar.getObjectId()))
+                        if (targetChar.getEvent() != null &&
+                                !targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
                         {
                             continue;
                         }
@@ -146,8 +146,8 @@ public class L2SkillTeleport extends L2Skill
                     {
                         // target is not player OR player is not flying or flymounted
                         // TODO: add check for gracia continent coords
-                        if (!(target instanceof L2PcInstance) || !(target.isFlying() || ((L2PcInstance) target)
-                                .isFlyingMounted()))
+                        if (!(target instanceof L2PcInstance) ||
+                                !(target.isFlying() || ((L2PcInstance) target).isFlyingMounted()))
                         {
                             loc = _loc;
                         }

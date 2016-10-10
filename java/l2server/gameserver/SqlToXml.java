@@ -65,32 +65,27 @@ public class SqlToXml
             {
                 content += "\t<race id=\"" + rset.getInt("raceId") + "\">\r\n";
 
-                PreparedStatement st2 = con
-                        .prepareStatement(
-                                "SELECT * FROM char_templates WHERE raceId = ? GROUP BY P_ATK ORDER BY classId");
+                PreparedStatement st2 = con.prepareStatement(
+                        "SELECT * FROM char_templates WHERE raceId = ? GROUP BY P_ATK ORDER BY classId");
                 st2.setInt(1, rset.getInt("raceId"));
                 ResultSet rset2 = st2.executeQuery();
 
                 boolean fighter = true;
                 while (rset2.next())
                 {
-                    content += "\t\t<template type=\"" + (fighter ? "fighter" : "mage") + "\"" + " STR=\"" + rset2
-                            .getInt("STR") + "\"" + " CON=\"" + rset2.getInt("CON") + "\"" + " DEX=\"" + rset2
-                            .getInt("DEX") + "\"" + " INT=\"" + rset2.getInt("_INT") + "\"" + " WIT=\"" + rset2
-                            .getInt("WIT") + "\"" + " MEN=\"" + rset2.getInt("MEN") + "\"" + " basePAtk=\"" + rset2
-                            .getInt("P_ATK") + "\"" + " baseMAtk=\"" + rset2
-                            .getInt("M_ATK") + "\"" + " basePDef=\"" + rset2
-                            .getInt("P_DEF") + "\"" + " baseMDef=\"" + rset2
-                            .getInt("M_DEF") + "\"" + " basePAtkSpd=\"" + rset2
-                            .getInt("P_SPD") + "\"" + " baseMAtkSpd=\"" + rset2
-                            .getInt("M_SPD") + "\"" + " baseAccuracy=\"" + rset2
-                            .getInt("ACC") + "\"" + " baseCritical=\"" + rset2
-                            .getInt("CRITICAL") + "\"" + " baseEvasion=\"" + rset2
-                            .getInt("EVASION") + "\"" + " baseMoveSpd=\"" + rset2
-                            .getInt("MOVE_SPD") + "\"" + " mColRadius=\"" + rset2
-                            .getFloat("M_COL_R") + "\"" + " mColHeight=\"" + rset2
-                            .getFloat("M_COL_H") + "\"" + " fColRadius=\"" + rset2
-                            .getFloat("F_COL_R") + "\"" + " fColHeight=\"" + rset2.getFloat("F_COL_H") + "\">\r\n";
+                    content += "\t\t<template type=\"" + (fighter ? "fighter" : "mage") + "\"" + " STR=\"" +
+                            rset2.getInt("STR") + "\"" + " CON=\"" + rset2.getInt("CON") + "\"" + " DEX=\"" +
+                            rset2.getInt("DEX") + "\"" + " INT=\"" + rset2.getInt("_INT") + "\"" + " WIT=\"" +
+                            rset2.getInt("WIT") + "\"" + " MEN=\"" + rset2.getInt("MEN") + "\"" + " basePAtk=\"" +
+                            rset2.getInt("P_ATK") + "\"" + " baseMAtk=\"" + rset2.getInt("M_ATK") + "\"" +
+                            " basePDef=\"" + rset2.getInt("P_DEF") + "\"" + " baseMDef=\"" + rset2.getInt("M_DEF") +
+                            "\"" + " basePAtkSpd=\"" + rset2.getInt("P_SPD") + "\"" + " baseMAtkSpd=\"" +
+                            rset2.getInt("M_SPD") + "\"" + " baseAccuracy=\"" + rset2.getInt("ACC") + "\"" +
+                            " baseCritical=\"" + rset2.getInt("CRITICAL") + "\"" + " baseEvasion=\"" +
+                            rset2.getInt("EVASION") + "\"" + " baseMoveSpd=\"" + rset2.getInt("MOVE_SPD") + "\"" +
+                            " mColRadius=\"" + rset2.getFloat("M_COL_R") + "\"" + " mColHeight=\"" +
+                            rset2.getFloat("M_COL_H") + "\"" + " fColRadius=\"" + rset2.getFloat("F_COL_R") + "\"" +
+                            " fColHeight=\"" + rset2.getFloat("F_COL_H") + "\">\r\n";
 
                     PreparedStatement st3 = con.prepareStatement("SELECT * FROM char_creation_items WHERE classId = ?");
                     st3.setInt(1, rset2.getInt("classId"));
@@ -98,10 +93,10 @@ public class SqlToXml
 
                     while (rset3.next())
                     {
-                        content += "\t\t\t<creationItem id=\"" + rset3.getInt("itemId") + "\"" + " count=\"" + rset3
-                                .getInt("amount") + "\"" + " equipped=\"" + rset3
-                                .getString("equipped") + "\" /> <!-- " + ItemTable.getInstance()
-                                .createDummyItem(rset3.getInt("itemId")).getName() + " -->\r\n";
+                        content += "\t\t\t<creationItem id=\"" + rset3.getInt("itemId") + "\"" + " count=\"" +
+                                rset3.getInt("amount") + "\"" + " equipped=\"" + rset3.getString("equipped") +
+                                "\" /> <!-- " +
+                                ItemTable.getInstance().createDummyItem(rset3.getInt("itemId")).getName() + " -->\r\n";
                     }
 
                     content += "\t\t</template>\r\n";
@@ -125,10 +120,10 @@ public class SqlToXml
 
             while (rset.next())
             {
-                content += "\t<creationItem id=\"" + rset.getInt("itemId") + "\"" + " count=\"" + rset
-                        .getInt("amount") + "\"" + " equipped=\"" + rset
-                        .getString("equipped") + "\" /> <!-- " + ItemTable.getInstance()
-                        .createDummyItem(rset.getInt("itemId")).getName() + " -->\r\n";
+                content +=
+                        "\t<creationItem id=\"" + rset.getInt("itemId") + "\"" + " count=\"" + rset.getInt("amount") +
+                                "\"" + " equipped=\"" + rset.getString("equipped") + "\" /> <!-- " +
+                                ItemTable.getInstance().createDummyItem(rset.getInt("itemId")).getName() + " -->\r\n";
             }
 
             content += "</list>\r\n";
@@ -154,27 +149,24 @@ public class SqlToXml
             String content = "<list>\r\n";
 
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT * FROM char_templates c, lvlupgain l WHERE c.classId = l.classid");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT * FROM char_templates c, lvlupgain l WHERE c.classId = l.classid");
             ResultSet rset = statement.executeQuery();
 
             while (rset.next())
             {
-                content += "\t<class id=\"" + rset.getInt("c.classId") + "\"" + " name=\"" + rset
-                        .getString("className") + "\"" + " level=\"" + rset
-                        .getInt("class_lvl") + "\"" + " baseHp=\"" + rset
-                        .getInt("defaulthpbase") + "\"" + " hpAdd=\"" + rset
-                        .getInt("defaulthpadd") + "\"" + " hpMod=\"" + rset
-                        .getInt("defaulthpmod") + "\"" + " baseMp=\"" + rset
-                        .getInt("defaultmpbase") + "\"" + " mpAdd=\"" + rset
-                        .getInt("defaultmpadd") + "\"" + " mpMod=\"" + rset
-                        .getInt("defaultmpmod") + "\"" + " baseCp=\"" + rset
-                        .getInt("defaultcpbase") + "\"" + " cpAdd=\"" + rset
-                        .getInt("defaultcpadd") + "\"" + " cpMod=\"" + rset.getInt("defaultcpmod") + "\">\r\n";
+                content +=
+                        "\t<class id=\"" + rset.getInt("c.classId") + "\"" + " name=\"" + rset.getString("className") +
+                                "\"" + " level=\"" + rset.getInt("class_lvl") + "\"" + " baseHp=\"" +
+                                rset.getInt("defaulthpbase") + "\"" + " hpAdd=\"" + rset.getInt("defaulthpadd") + "\"" +
+                                " hpMod=\"" + rset.getInt("defaulthpmod") + "\"" + " baseMp=\"" +
+                                rset.getInt("defaultmpbase") + "\"" + " mpAdd=\"" + rset.getInt("defaultmpadd") + "\"" +
+                                " mpMod=\"" + rset.getInt("defaultmpmod") + "\"" + " baseCp=\"" +
+                                rset.getInt("defaultcpbase") + "\"" + " cpAdd=\"" + rset.getInt("defaultcpadd") + "\"" +
+                                " cpMod=\"" + rset.getInt("defaultcpmod") + "\">\r\n";
 
-                PreparedStatement st2 = con
-                        .prepareStatement(
-                                "SELECT min(level), max(level), skill_trees.* FROM skill_trees WHERE class_id = ? GROUP BY min_level, sp, skill_id ORDER BY min_level, sp, skill_id, level");
+                PreparedStatement st2 = con.prepareStatement(
+                        "SELECT min(level), max(level), skill_trees.* FROM skill_trees WHERE class_id = ? GROUP BY min_level, sp, skill_id ORDER BY min_level, sp, skill_id, level");
                 st2.setInt(1, rset.getInt("c.classId"));
                 ResultSet rset2 = st2.executeQuery();
 
@@ -186,13 +178,14 @@ public class SqlToXml
                         content += level + ",";
                     }
                     content = content.substring(0, content.length() - 1);
-                    content += "\" reqSp=\"" + rset2.getInt("sp") + "\"" + " minLevel=\"" + rset2
-                            .getInt("min_level") + "\"" + (rset2.getString("learned_by_npc")
-                            .equals("false") ? " learnFromPanel=\"false\"" : "") + (rset2.getString("learned_by_fs")
-                            .equals("true") ? " learnFromFS=\"true\"" : "") + (rset2.getString("is_transfer")
-                            .equals("true") ? " isTransfer=\"true\"" : "") + (rset2.getString("is_autoget")
-                            .equals("true") ? " autoGet=\"true\"" : "") + " /> <!-- " + SkillTable.getInstance()
-                            .getInfo(rset2.getInt("skill_id"), rset2.getInt("level")).getName() + " -->\r\n";
+                    content += "\" reqSp=\"" + rset2.getInt("sp") + "\"" + " minLevel=\"" + rset2.getInt("min_level") +
+                            "\"" +
+                            (rset2.getString("learned_by_npc").equals("false") ? " learnFromPanel=\"false\"" : "") +
+                            (rset2.getString("learned_by_fs").equals("true") ? " learnFromFS=\"true\"" : "") +
+                            (rset2.getString("is_transfer").equals("true") ? " isTransfer=\"true\"" : "") +
+                            (rset2.getString("is_autoget").equals("true") ? " autoGet=\"true\"" : "") + " /> <!-- " +
+                            SkillTable.getInstance().getInfo(rset2.getInt("skill_id"), rset2.getInt("level"))
+                                    .getName() + " -->\r\n";
                 }
 
                 content += "\t</class>\r\n";
@@ -229,24 +222,23 @@ public class SqlToXml
 
             while (rset.next())
             {
-                content += "\t<shop id=\"" + rset.getString("shop_id") + "\"" + " npcId=\"" + (rset.getString("npc_id")
-                        .equalsIgnoreCase("gm") ? -1 : rset.getInt("npc_id")) + "\">" + " <!-- " + (rset
-                        .getString("npc_id").equalsIgnoreCase("gm") ? "GM Shop" : NpcTable.getInstance()
-                        .getTemplate(rset.getInt("npc_id")).getName()) + " -->\r\n";
+                content += "\t<shop id=\"" + rset.getString("shop_id") + "\"" + " npcId=\"" +
+                        (rset.getString("npc_id").equalsIgnoreCase("gm") ? -1 : rset.getInt("npc_id")) + "\">" +
+                        " <!-- " + (rset.getString("npc_id").equalsIgnoreCase("gm") ? "GM Shop" :
+                        NpcTable.getInstance().getTemplate(rset.getInt("npc_id")).getName()) + " -->\r\n";
 
-                PreparedStatement st2 = con
-                        .prepareStatement("SELECT * FROM merchant_buylists WHERE shop_id = ? ORDER BY `order` ASC");
+                PreparedStatement st2 =
+                        con.prepareStatement("SELECT * FROM merchant_buylists WHERE shop_id = ? ORDER BY `order` ASC");
                 st2.setInt(1, rset.getInt("shop_id"));
                 ResultSet rset2 = st2.executeQuery();
 
                 while (rset2.next())
                 {
-                    content += "\t\t<item id=\"" + rset2.getInt("item_id") + "\"" + (rset2
-                            .getInt("price") > -1 ? " price=\"" + rset2.getInt("price") + "\"" : "") + (rset2
-                            .getInt("count") > -1 ? " count=\"" + rset2.getInt("count") + "\"" : "") + (rset2
-                            .getInt("time") > 0 ? " time=\"" + rset2
-                            .getInt("time") + "\"" : "") + " /> <!-- " + ItemTable.getInstance()
-                            .getTemplate(rset2.getInt("item_id")).getName() + " -->\r\n";
+                    content += "\t\t<item id=\"" + rset2.getInt("item_id") + "\"" +
+                            (rset2.getInt("price") > -1 ? " price=\"" + rset2.getInt("price") + "\"" : "") +
+                            (rset2.getInt("count") > -1 ? " count=\"" + rset2.getInt("count") + "\"" : "") +
+                            (rset2.getInt("time") > 0 ? " time=\"" + rset2.getInt("time") + "\"" : "") + " /> <!-- " +
+                            ItemTable.getInstance().getTemplate(rset2.getInt("item_id")).getName() + " -->\r\n";
                 }
 
                 content += "\t</shop>\r\n";
@@ -282,15 +274,14 @@ public class SqlToXml
             }
 
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT * FROM custom_merchant_shopids ORDER BY npc_id ASC");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT * FROM custom_merchant_shopids ORDER BY npc_id ASC");
             ResultSet rset = statement.executeQuery();
 
             while (rset.next())
             {
-                PreparedStatement st2 = con
-                        .prepareStatement(
-                                "SELECT * FROM custom_merchant_buylists WHERE shop_id = ? ORDER BY `order` ASC");
+                PreparedStatement st2 = con.prepareStatement(
+                        "SELECT * FROM custom_merchant_buylists WHERE shop_id = ? ORDER BY `order` ASC");
                 st2.setInt(1, rset.getInt("shop_id"));
                 ResultSet rset2 = st2.executeQuery();
 
@@ -310,8 +301,8 @@ public class SqlToXml
                     {
                         shopId += 14;
                     }
-                    else if (item.getType2() == L2Item.TYPE2_OTHER || item.getBodyPart() == L2Item.SLOT_HAIR || item
-                            .getBodyPart() == L2Item.SLOT_HAIR2 || item.getBodyPart() == L2Item.SLOT_HAIRALL)
+                    else if (item.getType2() == L2Item.TYPE2_OTHER || item.getBodyPart() == L2Item.SLOT_HAIR ||
+                            item.getBodyPart() == L2Item.SLOT_HAIR2 || item.getBodyPart() == L2Item.SLOT_HAIRALL)
                     {
                         shopId = 21;
                     }
@@ -368,17 +359,16 @@ public class SqlToXml
             String content = "<list>\r\n";
 
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT * FROM enchant_skill_groups GROUP BY group_id ORDER BY group_id ASC");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT * FROM enchant_skill_groups GROUP BY group_id ORDER BY group_id ASC");
             ResultSet rset = statement.executeQuery();
 
             while (rset.next())
             {
                 content += "\t<enchantGroup id=\"" + rset.getString("group_id") + "\">\r\n";
 
-                PreparedStatement st2 = con
-                        .prepareStatement(
-                                "SELECT *, min(level), max(level) FROM enchant_skill_groups WHERE group_id = ? GROUP BY adena ORDER BY level ASC");
+                PreparedStatement st2 = con.prepareStatement(
+                        "SELECT *, min(level), max(level) FROM enchant_skill_groups WHERE group_id = ? GROUP BY adena ORDER BY level ASC");
                 st2.setInt(1, rset.getInt("group_id"));
                 ResultSet rset2 = st2.executeQuery();
 
@@ -391,8 +381,8 @@ public class SqlToXml
                     }
                     content = content.substring(0, content.length() - 1) + "\"";
 
-                    content += (rset2.getInt("adena") > -1 ? " adena=\"" + rset2.getInt("adena") + "\"" : "") + (rset2
-                            .getInt("sp") > -1 ? " sp=\"" + rset2.getInt("sp") + "\"" : "") + ">\r\n";
+                    content += (rset2.getInt("adena") > -1 ? " adena=\"" + rset2.getInt("adena") + "\"" : "") +
+                            (rset2.getInt("sp") > -1 ? " sp=\"" + rset2.getInt("sp") + "\"" : "") + ">\r\n";
 
                     int minLvl = 76;
                     int current = rset2.getInt("success_rate76");
@@ -405,8 +395,8 @@ public class SqlToXml
                             {
                                 content += level + ",";
                             }
-                            content = content
-                                    .substring(0, content.length() - 1) + "\" chance=\"" + current + "\" />\r\n";
+                            content =
+                                    content.substring(0, content.length() - 1) + "\" chance=\"" + current + "\" />\r\n";
                             minLvl = lvl;
                             if (lvl < 86)
                             {
@@ -494,9 +484,8 @@ public class SqlToXml
                         continue;
                     }
 
-                    double distance = Math
-                            .sqrt((l2.Point.X - l1.Point.X) * (l2.Point.X - l1.Point.X) +
-                                    (l2.Point.Y - l1.Point.Y) * (l2.Point.Y - l1.Point.Y));
+                    double distance = Math.sqrt((l2.Point.X - l1.Point.X) * (l2.Point.X - l1.Point.X) +
+                            (l2.Point.Y - l1.Point.Y) * (l2.Point.Y - l1.Point.Y));
 
                     if (distance < 50)
                     {
@@ -559,8 +548,8 @@ public class SqlToXml
 
             while (rset.next())
             {
-                content += "\t<!-- " + ItemTable.getInstance().createDummyItem(rset.getInt("chest"))
-                        .getName() + " -->\r\n";
+                content += "\t<!-- " + ItemTable.getInstance().createDummyItem(rset.getInt("chest")).getName() +
+                        " -->\r\n";
                 int parts = 1;
                 if (rset.getInt("legs") > 0)
                 {
@@ -582,20 +571,19 @@ public class SqlToXml
                 String[] skills = rset.getString("skill").split("[;-]");
                 for (int i = 0; i < skills.length; i += 2)
                 {
-                    content +=
-                            "\t\t<skill id=\"" + skills[i] + "\" levels=\"" + skills[i + 1] + "\" /> <!-- " + SkillTable
-                                    .getInstance().getInfo(Integer.valueOf(skills[i]), Integer.valueOf(skills[i + 1]))
+                    content += "\t\t<skill id=\"" + skills[i] + "\" levels=\"" + skills[i + 1] + "\" /> <!-- " +
+                            SkillTable.getInstance().getInfo(Integer.valueOf(skills[i]), Integer.valueOf(skills[i + 1]))
                                     .getName() + " -->\r\n";
                 }
                 if (rset.getInt("enchant6skill") > 0)
                 {
-                    content += "\t\t<enchant6Skill id=\"" + rset.getInt("enchant6skill") + "\" /> <!-- " + SkillTable
-                            .getInstance().getInfo(rset.getInt("enchant6skill"), 1).getName() + " -->\r\n";
+                    content += "\t\t<enchant6Skill id=\"" + rset.getInt("enchant6skill") + "\" /> <!-- " +
+                            SkillTable.getInstance().getInfo(rset.getInt("enchant6skill"), 1).getName() + " -->\r\n";
                 }
                 if (rset.getInt("shield_skill_id") > 0)
                 {
-                    content += "\t\t<shieldSkill id=\"" + rset.getInt("shield_skill_id") + "\" /> <!-- " + SkillTable
-                            .getInstance().getInfo(rset.getInt("shield_skill_id"), 1).getName() + " -->\r\n";
+                    content += "\t\t<shieldSkill id=\"" + rset.getInt("shield_skill_id") + "\" /> <!-- " +
+                            SkillTable.getInstance().getInfo(rset.getInt("shield_skill_id"), 1).getName() + " -->\r\n";
                 }
                 content += "\t</armorSet>\r\n";
             }
@@ -631,28 +619,26 @@ public class SqlToXml
 
             while (rset.next())
             {
-                content += "\t<henna symbolId=\"" + rset.getString("symbol_id") + "\"" + " dyeId=\"" + rset
-                        .getString("dye_id") + "\"" + " name=\"" + ItemTable.getInstance()
-                        .getTemplate(rset.getInt("dye_id")).getName().replace('<', '(')
-                        .replace('>', ')') + "\"" + " price=\"" + rset.getString("price") + "\"" + (rset
-                        .getInt("stat_STR") != 0 ? " STR=\"" + rset.getString("stat_STR") + "\"" : "") + (rset
-                        .getInt("stat_CON") != 0 ? " CON=\"" + rset.getString("stat_CON") + "\"" : "") + (rset
-                        .getInt("stat_DEX") != 0 ? " DEX=\"" + rset.getString("stat_DEX") + "\"" : "") + (rset
-                        .getInt("stat_INT") != 0 ? " INT=\"" + rset.getString("stat_INT") + "\"" : "") + (rset
-                        .getInt("stat_WIT") != 0 ? " WIT=\"" + rset.getString("stat_WIT") + "\"" : "") + (rset
-                        .getInt("stat_MEM") != 0 ? " MEN=\"" + rset.getString("stat_MEM") + "\"" : "") + ">\r\n";
+                content += "\t<henna symbolId=\"" + rset.getString("symbol_id") + "\"" + " dyeId=\"" +
+                        rset.getString("dye_id") + "\"" + " name=\"" +
+                        ItemTable.getInstance().getTemplate(rset.getInt("dye_id")).getName().replace('<', '(')
+                                .replace('>', ')') + "\"" + " price=\"" + rset.getString("price") + "\"" +
+                        (rset.getInt("stat_STR") != 0 ? " STR=\"" + rset.getString("stat_STR") + "\"" : "") +
+                        (rset.getInt("stat_CON") != 0 ? " CON=\"" + rset.getString("stat_CON") + "\"" : "") +
+                        (rset.getInt("stat_DEX") != 0 ? " DEX=\"" + rset.getString("stat_DEX") + "\"" : "") +
+                        (rset.getInt("stat_INT") != 0 ? " INT=\"" + rset.getString("stat_INT") + "\"" : "") +
+                        (rset.getInt("stat_WIT") != 0 ? " WIT=\"" + rset.getString("stat_WIT") + "\"" : "") +
+                        (rset.getInt("stat_MEM") != 0 ? " MEN=\"" + rset.getString("stat_MEM") + "\"" : "") + ">\r\n";
 
-                PreparedStatement st2 = con
-                        .prepareStatement(
-                                "SELECT class_id FROM henna_trees WHERE symbol_id = ? ORDER BY `class_id` ASC");
+                PreparedStatement st2 = con.prepareStatement(
+                        "SELECT class_id FROM henna_trees WHERE symbol_id = ? ORDER BY `class_id` ASC");
                 st2.setInt(1, rset.getInt("symbol_id"));
                 ResultSet rset2 = st2.executeQuery();
 
                 while (rset2.next())
                 {
-                    content += "\t\t<allowedClass id=\"" + rset2
-                            .getInt("class_id") + "\" />" + " <!-- " + PlayerClassTable.getInstance()
-                            .getClassNameById(rset2.getInt("class_id")) + " -->\r\n";
+                    content += "\t\t<allowedClass id=\"" + rset2.getInt("class_id") + "\" />" + " <!-- " +
+                            PlayerClassTable.getInstance().getClassNameById(rset2.getInt("class_id")) + " -->\r\n";
                 }
 
                 content += "\t</henna>\r\n";
@@ -703,8 +689,8 @@ public class SqlToXml
                 }
                 else
                 {
-                    Log.warning("RaidBossSpawnManager: Could not load raidboss #" + rset
-                            .getInt("boss_id") + " from DB");
+                    Log.warning(
+                            "RaidBossSpawnManager: Could not load raidboss #" + rset.getInt("boss_id") + " from DB");
                 }
             }
 
@@ -741,15 +727,15 @@ public class SqlToXml
             for (Fort fort : FortManager.getInstance().getForts())
             {
                 content += "<!-- " + fort.getName() + " -->\r\n";
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT * FROM fort_spawnlist WHERE fortId = ? AND spawnType = 0");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT * FROM fort_spawnlist WHERE fortId = ? AND spawnType = 0");
                 statement.setInt(1, fort.getFortId());
                 ResultSet rset = statement.executeQuery();
                 while (rset.next())
                 {
-                    content += "\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset
-                            .getInt("x") + "\" y=\"" + rset.getInt("y") + "\" z=\"" + rset
-                            .getInt("z") + "\" heading=\"" + rset.getInt("heading") + "\" respawn=\"60\" />\r\n";
+                    content += "\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset.getInt("x") + "\" y=\"" +
+                            rset.getInt("y") + "\" z=\"" + rset.getInt("z") + "\" heading=\"" + rset.getInt("heading") +
+                            "\" respawn=\"60\" />\r\n";
                 }
 
                 rset.close();
@@ -761,9 +747,9 @@ public class SqlToXml
                 rset = statement.executeQuery();
                 while (rset.next())
                 {
-                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset
-                            .getInt("x") + "\" y=\"" + rset.getInt("y") + "\" z=\"" + rset
-                            .getInt("z") + "\" heading=\"" + rset.getInt("heading") + "\" respawn=\"60\" />\r\n";
+                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset.getInt("x") + "\" y=\"" +
+                            rset.getInt("y") + "\" z=\"" + rset.getInt("z") + "\" heading=\"" + rset.getInt("heading") +
+                            "\" respawn=\"60\" />\r\n";
                 }
 
                 rset.close();
@@ -776,9 +762,9 @@ public class SqlToXml
                 rset = statement.executeQuery();
                 while (rset.next())
                 {
-                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset
-                            .getInt("x") + "\" y=\"" + rset.getInt("y") + "\" z=\"" + rset
-                            .getInt("z") + "\" heading=\"" + rset.getInt("heading") + "\" respawn=\"60\" />\r\n";
+                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset.getInt("x") + "\" y=\"" +
+                            rset.getInt("y") + "\" z=\"" + rset.getInt("z") + "\" heading=\"" + rset.getInt("heading") +
+                            "\" respawn=\"60\" />\r\n";
                 }
 
                 rset.close();
@@ -788,8 +774,8 @@ public class SqlToXml
                 content += "\t<specificSpawnList name=\"" + fort.getName() + "_defending_commanders\">\r\n";
                 for (int i = 1; i < 5; i++)
                 {
-                    String _spawnParams = siegeSettings
-                            .getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");
+                    String _spawnParams =
+                            siegeSettings.getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");
                     if (_spawnParams.length() == 0)
                     {
                         break;
@@ -813,10 +799,9 @@ public class SqlToXml
                 rset = statement.executeQuery();
                 while (rset.next())
                 {
-                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset
-                            .getInt("x") + "\" y=\"" + rset.getInt("y") + "\" z=\"" + rset
-                            .getInt("z") + "\" heading=\"" + rset.getInt("heading") + "\" respawn=\"" + rset
-                            .getInt("respawnDelay") + "\" />\r\n";
+                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset.getInt("x") + "\" y=\"" +
+                            rset.getInt("y") + "\" z=\"" + rset.getInt("z") + "\" heading=\"" + rset.getInt("heading") +
+                            "\" respawn=\"" + rset.getInt("respawnDelay") + "\" />\r\n";
                 }
 
                 rset.close();
@@ -829,9 +814,9 @@ public class SqlToXml
                 rset = statement.executeQuery();
                 while (rset.next())
                 {
-                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset
-                            .getInt("x") + "\" y=\"" + rset.getInt("y") + "\" z=\"" + rset
-                            .getInt("z") + "\" heading=\"" + rset.getInt("heading") + "\" respawn=\"60\" />\r\n";
+                    content += "\t\t<spawn npcId=\"" + rset.getInt("npcId") + "\" x=\"" + rset.getInt("x") + "\" y=\"" +
+                            rset.getInt("y") + "\" z=\"" + rset.getInt("z") + "\" heading=\"" + rset.getInt("heading") +
+                            "\" respawn=\"60\" />\r\n";
                 }
 
                 rset.close();

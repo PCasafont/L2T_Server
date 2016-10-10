@@ -118,8 +118,8 @@ public class MoveBackwardToLocation extends L2GameClientPacket
             return;
         }
 
-        if (_moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() || activeChar
-                .isInOlympiadMode())) // keys movement without geodata is disabled
+        if (_moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() ||
+                activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
         {
             activeChar.sendPacket(ActionFailed.STATIC_PACKET);
         }
@@ -134,14 +134,13 @@ public class MoveBackwardToLocation extends L2GameClientPacket
                 return;
             }
 
-            activeChar.getAI()
-                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                            new L2CharPosition(_targetX, _targetY, _targetZ, 0));
+            activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                    new L2CharPosition(_targetX, _targetY, _targetZ, 0));
 
             //if (activeChar.isInOlympiadMode())
             //	activeChar.broadcastPacket(new ValidateLocation(activeChar));
             /*if (activeChar.getParty() != null)
-				activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar));*/
+                activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar));*/
 
             if (activeChar.getInstanceId() != activeChar.getObjectId())
             {

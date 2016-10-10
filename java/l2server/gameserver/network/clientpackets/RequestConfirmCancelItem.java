@@ -62,9 +62,10 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 
         if (item.getOwnerId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(getClient().getActiveChar(), "Warning!! Character " + getClient()
-                    .getActiveChar().getName() + " of account " + getClient().getActiveChar()
-                    .getAccountName() + " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(getClient().getActiveChar(),
+                    "Warning!! Character " + getClient().getActiveChar().getName() + " of account " +
+                            getClient().getActiveChar().getAccountName() +
+                            " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -76,7 +77,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
         }
 
 		/*if (item.isPvp())
-		{
+        {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
 		}*/

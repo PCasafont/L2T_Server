@@ -144,8 +144,8 @@ public class NpcKnownList extends CharKnownList
                     {
                         for (L2PcInstance pl : players)
                         {
-                            if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() && !pl
-                                    .isInvul(monster))
+                            if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() &&
+                                    !pl.isInvul(monster))
                             {
                                 monster.addDamageHate(pl, 0, 100);
                                 monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pl, null);

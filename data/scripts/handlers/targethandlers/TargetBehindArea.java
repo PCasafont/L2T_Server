@@ -50,8 +50,8 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 
         if (!(target instanceof L2Attackable || target instanceof L2Playable) ||
                 // Target is not L2Attackable or L2PlayableInstance
-                skill.getCastRange() >= 0 && (target == null || target == activeChar || target
-                        .isAlikeDead())) // target is null or self or dead/faking
+                skill.getCastRange() >= 0 && (target == null || target == activeChar ||
+                        target.isAlikeDead())) // target is null or self or dead/faking
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
             return null;
@@ -83,8 +83,8 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 
         int radius = skill.getSkillRadius();
 
-        boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar
-                .isInsideZone(L2Character.ZONE_SIEGE);
+        boolean srcInArena =
+                activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 
         Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
         //synchronized (activeChar.getKnownList().getKnownObjects())
@@ -131,8 +131,8 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && trg.getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && trg.getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
@@ -142,8 +142,8 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg
-                                    .isInsideZone(L2Character.ZONE_SIEGE)))
+                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) &&
+                                    !trg.isInsideZone(L2Character.ZONE_SIEGE)))
                             {
                                 if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
                                 {
@@ -173,14 +173,14 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && trg.getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && trg.getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
 
-                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg
-                                    .isInsideZone(L2Character.ZONE_SIEGE)))
+                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) &&
+                                    !trg.isInsideZone(L2Character.ZONE_SIEGE)))
                             {
                                 if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
                                 {

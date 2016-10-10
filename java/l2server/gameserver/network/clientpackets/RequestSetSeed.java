@@ -132,9 +132,9 @@ public class RequestSetSeed extends L2GameClientPacket
             SeedProduction s = i.getSeed();
             if (s == null)
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                        .getName() + " of account " + player
-                        .getAccountName() + " tried to overflow while setting manor.", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                " tried to overflow while setting manor.", Config.DEFAULT_PUNISH);
                 return;
             }
             seeds.add(s);

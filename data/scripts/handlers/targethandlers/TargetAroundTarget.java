@@ -50,9 +50,9 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
         final L2PcInstance src = activeChar.getActingPlayer();
         boolean isAttackingPlayer = false;
 
-        if (activeChar == target || target == null ||
-                src != null && (!isReachableTarget(activeChar, target, skill, false) || !src
-                        .isAbleToCastOnTarget(target, skill, false)))
+        if (activeChar == target || target == null || src != null &&
+                (!isReachableTarget(activeChar, target, skill, false) ||
+                        !src.isAbleToCastOnTarget(target, skill, false)))
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
             return null;
@@ -71,8 +71,8 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
         {
             for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
             {
-                if (!isReachableTarget(activeChar, obj, skill, true) || !activeChar
-                        .isAbleToCastOnTarget(obj, skill, true))
+                if (!isReachableTarget(activeChar, obj, skill, true) ||
+                        !activeChar.isAbleToCastOnTarget(obj, skill, true))
                 {
                     continue;
                 }
@@ -100,8 +100,8 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
                     continue;
                 }
 
-                if (!isReachableTarget(target, (L2Character) obj, skill, true) || !activeChar
-                        .isAbleToCastOnTarget(obj, skill, true))
+                if (!isReachableTarget(target, (L2Character) obj, skill, true) ||
+                        !activeChar.isAbleToCastOnTarget(obj, skill, true))
                 {
                     continue;
                 }

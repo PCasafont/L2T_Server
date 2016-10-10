@@ -196,27 +196,26 @@ public class Zaken extends L2AttackableAIScript
                 //Zaken is already spawned on the Night Time Instance
                 if (world.templateId == _nightTimeEpic)
                 {
-                    world.zakenBoss = addSpawn(world.zakenId, world.zakenLocation.getX(), world.zakenLocation
-                            .getY(), world.zakenLocation.getZ(), 0, false, 0, false, world.instanceId);
+                    world.zakenBoss = addSpawn(world.zakenId, world.zakenLocation.getX(), world.zakenLocation.getY(),
+                            world.zakenLocation.getZ(), 0, false, 0, false, world.instanceId);
                 }
                 else
                 {
                     //Barrels
                     for (Entry<Location, Integer> barrelInfo : _barrelSpawnsInfo.entrySet())
                     {
-                        L2Npc barrel = addSpawn(_barrelId, barrelInfo.getKey().getX(), barrelInfo.getKey()
-                                .getY(), barrelInfo.getKey().getZ(), 0, false, 0, false, world.instanceId);
+                        L2Npc barrel = addSpawn(_barrelId, barrelInfo.getKey().getX(), barrelInfo.getKey().getY(),
+                                barrelInfo.getKey().getZ(), 0, false, 0, false, world.instanceId);
                         world.barrelInfo.put(barrel, barrelInfo.getValue());
                     }
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(1800866,
-                                    10000)); //The candles can lead you to Zaken. Destroy him
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(1800866, 10000)); //The candles can lead you to Zaken. Destroy him
                 }
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Zaken will be spawned on cords: " + world.zakenLocation
-                            .getX() + ", " + world.zakenLocation.getY() + ", " + world.zakenLocation.getZ());
+                    Log.warning(getName() + ": Zaken will be spawned on cords: " + world.zakenLocation.getX() + ", " +
+                            world.zakenLocation.getY() + ", " + world.zakenLocation.getZ());
                 }
             }
             else if (event.equalsIgnoreCase("stage_all_check_barrel"))
@@ -226,8 +225,8 @@ public class Zaken extends L2AttackableAIScript
                     return "";
                 }
 
-                if (npc.isInsideRadius(world.zakenLocation.getX(), world.zakenLocation.getY(), world.zakenLocation
-                        .getZ(), 1500, true, false))
+                if (npc.isInsideRadius(world.zakenLocation.getX(), world.zakenLocation.getY(),
+                        world.zakenLocation.getZ(), 1500, true, false))
                 {
                     npc.setDisplayEffect(3); //Blue
 
@@ -235,12 +234,12 @@ public class Zaken extends L2AttackableAIScript
 
                     if (world.blueCandlesCount == 4)
                     {
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId,
-                                        new ExShowScreenMessage(1800867, 5000)); //Who dares awaken the mighty Zaken?
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new ExShowScreenMessage(1800867, 5000)); //Who dares awaken the mighty Zaken?
 
-                        world.zakenBoss = addSpawn(world.zakenId, world.zakenLocation.getX(), world.zakenLocation
-                                .getY(), world.zakenLocation.getZ(), 0, false, 0, false, world.instanceId);
+                        world.zakenBoss =
+                                addSpawn(world.zakenId, world.zakenLocation.getX(), world.zakenLocation.getY(),
+                                        world.zakenLocation.getZ(), 0, false, 0, false, world.instanceId);
                         world.zakenBoss.setTarget(player);
                         world.zakenBoss.setIsRunning(true);
 
@@ -268,29 +267,29 @@ public class Zaken extends L2AttackableAIScript
                             for (int i = 1; i <= 6; i++)
                             {
                                 randomSpawn = zakenRoom.getZone().getRandomPoint();
-                                addSpawn(world.zombieId, randomSpawn[0], randomSpawn[1], randomSpawn[2], Rnd
-                                        .get(65000), false, 0, false, world.instanceId);
+                                addSpawn(world.zombieId, randomSpawn[0], randomSpawn[1], randomSpawn[2], Rnd.get(65000),
+                                        false, 0, false, world.instanceId);
                             }
 
                             for (int i = 1; i <= 4; i++)
                             {
                                 randomSpawn = zakenRoom.getZone().getRandomPoint();
-                                addSpawn(world.dollBladerId, randomSpawn[0], randomSpawn[1], randomSpawn[2], Rnd
-                                        .get(65000), false, 0, false, world.instanceId);
+                                addSpawn(world.dollBladerId, randomSpawn[0], randomSpawn[1], randomSpawn[2],
+                                        Rnd.get(65000), false, 0, false, world.instanceId);
                             }
 
                             for (int i = 1; i <= 3; i++)
                             {
                                 randomSpawn = zakenRoom.getZone().getRandomPoint();
-                                addSpawn(world.valeMasterId, randomSpawn[0], randomSpawn[1], randomSpawn[2], Rnd
-                                        .get(65000), false, 0, false, world.instanceId);
+                                addSpawn(world.valeMasterId, randomSpawn[0], randomSpawn[1], randomSpawn[2],
+                                        Rnd.get(65000), false, 0, false, world.instanceId);
                             }
 
                             for (int i = 1; i <= 3; i++)
                             {
                                 randomSpawn = zakenRoom.getZone().getRandomPoint();
-                                addSpawn(world.zombieCaptainId, randomSpawn[0], randomSpawn[1], randomSpawn[2], Rnd
-                                        .get(65000), false, 0, false, world.instanceId);
+                                addSpawn(world.zombieCaptainId, randomSpawn[0], randomSpawn[1], randomSpawn[2],
+                                        Rnd.get(65000), false, 0, false, world.instanceId);
                             }
                             break;
                         }
@@ -336,9 +335,8 @@ public class Zaken extends L2AttackableAIScript
             if (npc.getNpcId() == world.zakenId)
             {
                 InstanceManager.getInstance().sendPacket(world.instanceId, new ExSendUIEventRemove());
-                InstanceManager.getInstance()
-                        .setInstanceReuse(world.instanceId, world.templateId, world.templateId == _dayTimeEasy ? false :
-                                world.templateId == _dayTimeHard ? false : true);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
+                        world.templateId == _dayTimeEasy ? false : world.templateId == _dayTimeHard ? false : true);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -403,8 +401,8 @@ public class Zaken extends L2AttackableAIScript
         {
             if (!(world instanceof ZakenWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -485,8 +483,7 @@ public class Zaken extends L2AttackableAIScript
             startQuestTimer("stage_0_start", 5000, null, player);
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

@@ -134,8 +134,7 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
     {
         // Check if the target isn't another guard, folk or a door
         if (target == null || target instanceof L2DefenderInstance || target instanceof L2NpcInstance ||
-                target instanceof L2DoorInstance || target
-                .isAlikeDead() || target instanceof L2FortBallistaInstance ||
+                target instanceof L2DoorInstance || target.isAlikeDead() || target instanceof L2FortBallistaInstance ||
                 target instanceof L2FortCommanderInstance || target instanceof L2Playable)
         {
             L2PcInstance player = null;
@@ -147,8 +146,8 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
             {
                 player = ((L2Summon) target).getOwner();
             }
-            if (player == null || player.getClan() != null && player.getClan().getHasFort() == ((L2Npc) _actor)
-                    .getFort().getFortId())
+            if (player == null ||
+                    player.getClan() != null && player.getClan().getHasFort() == ((L2Npc) _actor).getFort().getFortId())
             {
                 return false;
             }
@@ -451,13 +450,13 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
 
             if (!(cha instanceof L2Npc))
             {
-                if (_selfAnalysis.hasHealOrResurrect && cha instanceof L2PcInstance && ((L2Npc) _actor).getFort()
-                        .getSiege().checkIsDefender(((L2PcInstance) cha).getClan()))
+                if (_selfAnalysis.hasHealOrResurrect && cha instanceof L2PcInstance &&
+                        ((L2Npc) _actor).getFort().getSiege().checkIsDefender(((L2PcInstance) cha).getClan()))
                 {
                     // heal friends
-                    if (!_actor.isAttackingDisabled() && cha.getCurrentHp() < cha.getMaxHp() * 0.6 && _actor
-                            .getCurrentHp() > _actor.getMaxHp() / 2 && _actor.getCurrentMp() > _actor
-                            .getMaxMp() / 2 && cha.isInCombat())
+                    if (!_actor.isAttackingDisabled() && cha.getCurrentHp() < cha.getMaxHp() * 0.6 &&
+                            _actor.getCurrentHp() > _actor.getMaxHp() / 2 &&
+                            _actor.getCurrentMp() > _actor.getMaxMp() / 2 && cha.isInCombat())
                     {
                         for (L2Skill sk : _selfAnalysis.healSkills)
                         {
@@ -507,20 +506,20 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
             {
                 if (!npc.isDead() && Math.abs(target.getZ() - npc.getZ()) < 600
                         //&& _actor.getAttackByList().contains(getAttackTarget())
-                        && (npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE || npc
-                        .getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)
+                        && (npc.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE ||
+                        npc.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)
                         //limiting aggro for siege guards
-                        && target.isInsideRadius(npc, 1500, true, false) && GeoData.getInstance()
-                        .canSeeTarget(npc, target))
+                        && target.isInsideRadius(npc, 1500, true, false) &&
+                        GeoData.getInstance().canSeeTarget(npc, target))
                 {
                     // Notify the L2Object AI with EVT_AGGRESSION
                     npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getAttackTarget(), 1);
                     return;
                 }
                 // heal friends
-                if (_selfAnalysis.hasHealOrResurrect && !_actor.isAttackingDisabled() && npc.getCurrentHp() < npc
-                        .getMaxHp() * 0.6 && _actor.getCurrentHp() > _actor.getMaxHp() / 2 && _actor
-                        .getCurrentMp() > _actor.getMaxMp() / 2 && npc.isInCombat())
+                if (_selfAnalysis.hasHealOrResurrect && !_actor.isAttackingDisabled() &&
+                        npc.getCurrentHp() < npc.getMaxHp() * 0.6 && _actor.getCurrentHp() > _actor.getMaxHp() / 2 &&
+                        _actor.getCurrentMp() > _actor.getMaxMp() / 2 && npc.isInCombat())
                 {
                     for (L2Skill sk : _selfAnalysis.healSkills)
                     {
@@ -581,8 +580,8 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
             _actor.setTarget(attackTarget);
             skills = _actor.getAllSkills();
             dist_2 = _actor.getPlanDistanceSq(attackTarget.getX(), attackTarget.getY());
-            range = _actor.getPhysicalAttackRange() + _actor.getTemplate().collisionRadius + attackTarget
-                    .getTemplate().collisionRadius;
+            range = _actor.getPhysicalAttackRange() + _actor.getTemplate().collisionRadius +
+                    attackTarget.getTemplate().collisionRadius;
             if (attackTarget.isMoving())
             {
                 range += 50;
@@ -597,8 +596,8 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
         }
 
         // never attack defenders
-        if (attackTarget instanceof L2PcInstance && sGuard.getFort().getSiege()
-                .checkIsDefender(((L2PcInstance) attackTarget).getClan()))
+        if (attackTarget instanceof L2PcInstance &&
+                sGuard.getFort().getSiege().checkIsDefender(((L2PcInstance) attackTarget).getClan()))
         {
             // Cancel the target
             sGuard.stopHating(attackTarget);
@@ -625,16 +624,16 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
             {
                 int castRange = sk.getCastRange();
 
-                if (dist_2 <= castRange * castRange && castRange > 70 && !_actor.isSkillDisabled(sk) && _actor
-                        .getCurrentMp() >= _actor.getStat().getMpConsume(sk) && !sk.isPassive())
+                if (dist_2 <= castRange * castRange && castRange > 70 && !_actor.isSkillDisabled(sk) &&
+                        _actor.getCurrentMp() >= _actor.getStat().getMpConsume(sk) && !sk.isPassive())
                 {
 
                     L2Object OldTarget = _actor.getTarget();
                     if (sk.getSkillType() == L2SkillType.BUFF || sk.getSkillType() == L2SkillType.HEAL)
                     {
                         boolean useSkillSelf = true;
-                        if (sk.getSkillType() == L2SkillType.HEAL && _actor.getCurrentHp() > (int) (_actor
-                                .getMaxHp() / 1.5))
+                        if (sk.getSkillType() == L2SkillType.HEAL &&
+                                _actor.getCurrentHp() > (int) (_actor.getMaxHp() / 1.5))
                         {
                             useSkillSelf = false;
                             break;
@@ -666,8 +665,8 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
             }
 
             // Check if the L2SiegeGuardInstance is attacking, knows the target and can't run
-            if (!_actor.isAttackingNow() && _actor.getRunSpeed() == 0 && _actor.getKnownList()
-                    .knowsObject(attackTarget))
+            if (!_actor.isAttackingNow() && _actor.getRunSpeed() == 0 &&
+                    _actor.getKnownList().knowsObject(attackTarget))
             {
                 // Cancel the target
                 _actor.getKnownList().removeKnownObject(attackTarget);
@@ -780,15 +779,15 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
                 {
                     int castRange = sk.getCastRange();
 
-                    if (castRange * castRange >= dist_2 && !sk.isPassive() && _actor.getCurrentMp() >= _actor.getStat()
-                            .getMpConsume(sk) && !_actor.isSkillDisabled(sk))
+                    if (castRange * castRange >= dist_2 && !sk.isPassive() &&
+                            _actor.getCurrentMp() >= _actor.getStat().getMpConsume(sk) && !_actor.isSkillDisabled(sk))
                     {
                         L2Object OldTarget = _actor.getTarget();
                         if (sk.getSkillType() == L2SkillType.BUFF || sk.getSkillType() == L2SkillType.HEAL)
                         {
                             boolean useSkillSelf = true;
-                            if (sk.getSkillType() == L2SkillType.HEAL && _actor.getCurrentHp() > (int) (_actor
-                                    .getMaxHp() / 1.5))
+                            if (sk.getSkillType() == L2SkillType.HEAL &&
+                                    _actor.getCurrentHp() > (int) (_actor.getMaxHp() / 1.5))
                             {
                                 useSkillSelf = false;
                                 break;

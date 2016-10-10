@@ -206,38 +206,39 @@ public class Beleth extends L2AttackableAIScript
                 world._camera3 = addSpawn(_camera_3_id, 16323, 213170, -9357, 0, false, 0, false, world.instanceId);
                 world._camera4 = addSpawn(_camera_4_id, 16323, 214917, -9356, 0, false, 0, false, world.instanceId);
 
-                InstanceManager.getInstance().sendPacket(world.instanceId, new PlaySound(1, "BS07_A", 1, world._camera1
-                        .getObjectId(), world._camera1.getX(), world._camera1.getY(), world._camera1.getZ()));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 400, 75, 5, 0, 2500, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new PlaySound(1, "BS07_A", 1, world._camera1.getObjectId(), world._camera1.getX(),
+                                world._camera1.getY(), world._camera1.getZ()));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 400, 75, 5, 0, 2500, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_2", 2300, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_2"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 1800, -45, 10, 5000, 5000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 1800, -45, 10, 5000, 5000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_3", 4900, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_3"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 1900, -45, 10, 5000, 5000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 1900, -45, 10, 5000, 5000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_4", 4900, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_4"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera2
-                        .getObjectId(), 2200, 130, 0, 0, 1500, -20, 15, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera2.getObjectId(), 2200, 130, 0, 0, 1500, -20, 15, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_5", 1400, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_5"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera2
-                        .getObjectId(), 2300, 100, 0, 2000, 4500, 0, 10, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera2.getObjectId(), 2300, 100, 0, 2000, 4500, 0, 10, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_6", 2500, null, player);
             }
@@ -249,10 +250,10 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_7"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera4
-                        .getObjectId(), 1500, 210, 0, 0, 1500, 0, 0, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera4
-                        .getObjectId(), 900, 255, 0, 5000, 6500, 0, 10, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera4.getObjectId(), 1500, 210, 0, 0, 1500, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera4.getObjectId(), 900, 255, 0, 5000, 6500, 0, 10, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_8", 6000, null, player);
             }
@@ -260,15 +261,15 @@ public class Beleth extends L2AttackableAIScript
             {
                 addSpawn(_camera_6_id, 16323, 214917, -9356, 0, false, 0, false, world.instanceId); //Camera 6
 
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera4
-                        .getObjectId(), 900, 255, 0, 0, 1500, 0, 10, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera4.getObjectId(), 900, 255, 0, 0, 1500, 0, 10, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_9", 1000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_9"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera4
-                        .getObjectId(), 1000, 255, 0, 7000, 17000, 0, 25, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera4.getObjectId(), 1000, 255, 0, 7000, 17000, 0, 25, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_10", 3000, null, player);
             }
@@ -297,8 +298,8 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_12"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._belethBoss
-                        .getObjectId(), 0, 270, -5, 0, 4000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._belethBoss.getObjectId(), 0, 270, -5, 0, 4000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_13", 3500, null, player);
             }
@@ -306,27 +307,26 @@ public class Beleth extends L2AttackableAIScript
             {
                 InstanceManager.getInstance()
                         .sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 4));
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId,
-                                new MagicSkillUse(world._belethBoss, world._belethBoss, 5531, 1, 2000, 0, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._belethBoss
-                        .getObjectId(), 800, 270, 10, 3000, 6000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new MagicSkillUse(world._belethBoss, world._belethBoss, 5531, 1, 2000, 0, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._belethBoss.getObjectId(), 800, 270, 10, 3000, 6000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_14", 5000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_14"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 100, 270, 15, 0, 5000, 0, 0, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 100, 270, 15, 0, 5000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 100, 270, 15, 0, 5000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 100, 270, 15, 0, 5000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_15", 100, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_15"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 100, 270, 15, 3000, 6000, 0, 5, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 100, 270, 15, 3000, 6000, 0, 5, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_16", 1400, null, player);
             }
@@ -341,23 +341,22 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_17"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId,
-                                new MagicSkillUse(world._belethBoss, world._belethBoss, 5532, 1, 2000, 0, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new MagicSkillUse(world._belethBoss, world._belethBoss, 5532, 1, 2000, 0, 0));
 
                 startQuestTimer("stage_1_intro_1_18", 2000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_18"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 700, 270, 20, 1500, 4000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 700, 270, 20, 1500, 4000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_19", 4000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_19"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 40, 260, 0, 0, 4000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 40, 260, 0, 0, 4000, 0, 0, 1, 0));
                 for (L2Npc blth : world._minions)
                 {
                     blth.spawnMe();
@@ -367,8 +366,8 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_20"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 40, 280, 0, 0, 4000, 5, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 40, 280, 0, 0, 4000, 5, 0, 1, 0));
 
                 L2Npc minion = addSpawn(_fakeBelethId, 16253, 213144, -9357, 49152, false, 0, false, world.instanceId);
                 minion.setShowSummonAnimation(true);
@@ -381,8 +380,8 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_21"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 5, 250, 5, 0, 13000, 20, 15, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 5, 250, 5, 0, 13000, 20, 15, 1, 0));
 
                 startQuestTimer("stage_1_intro_1_22", 1000, null, player);
             }
@@ -395,9 +394,8 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_23"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId,
-                                new MagicSkillUse(world._belethBoss, world._belethBoss, 5533, 1, 2000, 0, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new MagicSkillUse(world._belethBoss, world._belethBoss, 5533, 1, 2000, 0, 0));
 
                 startQuestTimer("stage_1_intro_1_24", 2000, null, player);
             }
@@ -439,14 +437,15 @@ public class Beleth extends L2AttackableAIScript
 
                 world._camera3 = addSpawn(_camera_3_id, 16323, 213170, -9357, 0, false, 0, false, world.instanceId);
 
-                InstanceManager.getInstance().sendPacket(world.instanceId, new PlaySound(1, "BS07_D", 1, world._camera3
-                        .getObjectId(), world._camera3.getX(), world._camera3.getY(), world._camera3.getZ()));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 400, 290, 25, 0, 10000, 0, 0, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 400, 290, 25, 0, 10000, 0, 0, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3
-                        .getObjectId(), 400, 110, 25, 4000, 10000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new PlaySound(1, "BS07_D", 1, world._camera3.getObjectId(), world._camera3.getX(),
+                                world._camera3.getY(), world._camera3.getZ()));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 400, 290, 25, 0, 10000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 400, 290, 25, 0, 10000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera3.getObjectId(), 400, 110, 25, 4000, 10000, 0, 0, 1, 0));
                 InstanceManager.getInstance()
                         .sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 5));
 
@@ -454,24 +453,24 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_final_2"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 400, 295, 25, 4000, 5000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 400, 295, 25, 4000, 5000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_final_3", 4500, null, player);
             }
             else if (event.equalsIgnoreCase("stage_final_3"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 400, 295, 10, 4000, 11000, 0, 25, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 400, 295, 10, 4000, 11000, 0, 25, 1, 0));
 
                 startQuestTimer("stage_final_4", 9000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_final_4"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 250, 90, 25, 0, 1000, 0, 0, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera1
-                        .getObjectId(), 250, 90, 25, 0, 10000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 250, 90, 25, 0, 1000, 0, 0, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera1.getObjectId(), 250, 90, 25, 0, 10000, 0, 0, 1, 0));
 
                 startQuestTimer("stage_final_5", 2000, null, player);
             }
@@ -487,10 +486,10 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_final_6"))
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera2
-                        .getObjectId(), 800, 180, 0, 0, 4000, 0, 10, 1, 0));
-                InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera2
-                        .getObjectId(), 800, 180, 0, 0, 4000, 0, 10, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera2.getObjectId(), 800, 180, 0, 0, 4000, 0, 10, 1, 0));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new SpecialCamera(world._camera2.getObjectId(), 800, 180, 0, 0, 4000, 0, 10, 1, 0));
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(_door_2).openMe();
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(_door_3).openMe();
 
@@ -561,9 +560,9 @@ public class Beleth extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
                         {
                             world._rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                    .get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor
-                                            .getDimensionalDoorRewardRate()), player, true);
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                    Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                            13 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
                         else
                         {
@@ -641,8 +640,8 @@ public class Beleth extends L2AttackableAIScript
         {
             if (!(world instanceof belethWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -701,8 +700,7 @@ public class Beleth extends L2AttackableAIScript
             startQuestTimer("stage_1_open_door", 3000, null, player);
 
             Log.fine(getName() + ": [" + _instanceTemplateId + "] instance started: " + instanceId +
-                    " created by player: " + player
-                    .getName());
+                    " created by player: " + player.getName());
             return;
         }
     }

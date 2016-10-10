@@ -150,15 +150,14 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
                 }
                 else if (player.isCursedWeaponEquipped())
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_A_CURSED_WEAPON_IS_EQUIPPED));
+                    player.sendPacket(SystemMessage.getSystemMessage(
+                            SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_A_CURSED_WEAPON_IS_EQUIPPED));
                     return false;
                 }
                 else if (player.isFishing())
                 {
-                    player.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_FISHING));
+                    player.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_FISHING));
                     return false;
                 }
                 else if (player.isDead() || player.isFakeDeath())
@@ -272,8 +271,8 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
     {
         super.onSpawn();
         _checkTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckTask(), 60000, 10000);
-        _consumeFuelTask = ThreadPoolManager.getInstance()
-                .scheduleGeneralAtFixedRate(new ConsumeFuelTask(), 60000, 60000);
+        _consumeFuelTask =
+                ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new ConsumeFuelTask(), 60000, 60000);
     }
 
     @Override

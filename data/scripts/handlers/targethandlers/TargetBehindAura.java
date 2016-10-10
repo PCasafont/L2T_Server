@@ -47,8 +47,8 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
 
         int radius = skill.getSkillRadius();
 
-        boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar
-                .isInsideZone(L2Character.ZONE_SIEGE);
+        boolean srcInArena =
+                activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 
         L2PcInstance src = activeChar.getActingPlayer();
 
@@ -90,15 +90,15 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && ((L2PcInstance) obj).getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == ((L2PcInstance) obj).getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && ((L2PcInstance) obj).getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() ==
+                                            ((L2PcInstance) obj).getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
 
-                            if (!srcInArena && !(((L2Character) obj)
-                                    .isInsideZone(L2Character.ZONE_PVP) && !((L2Character) obj)
-                                    .isInsideZone(L2Character.ZONE_SIEGE)))
+                            if (!srcInArena && !(((L2Character) obj).isInsideZone(L2Character.ZONE_PVP) &&
+                                    !((L2Character) obj).isInsideZone(L2Character.ZONE_SIEGE)))
                             {
                                 if (src.getAllyId() == ((L2PcInstance) obj).getAllyId() && src.getAllyId() != 0)
                                 {
@@ -125,15 +125,14 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && trg.getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && trg.getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
 
-                            if (!srcInArena && !(((L2Character) obj)
-                                    .isInsideZone(L2Character.ZONE_PVP) && !((L2Character) obj)
-                                    .isInsideZone(L2Character.ZONE_SIEGE)))
+                            if (!srcInArena && !(((L2Character) obj).isInsideZone(L2Character.ZONE_PVP) &&
+                                    !((L2Character) obj).isInsideZone(L2Character.ZONE_SIEGE)))
                             {
                                 if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
                                 {

@@ -106,9 +106,8 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
             {
                 if (!activeChar.isGM() && clan.getHasCastle() == 0 && clan.getHasHideout() == 0)
                 {
-                    activeChar
-                            .sendMessage(
-                                    "Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
+                    activeChar.sendMessage(
+                            "Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
                     return;
                 }
 
@@ -124,19 +123,18 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 
                 if (!CrestCache.getInstance().savePledgeCrestLarge(largeCrestId, _partId, _data))
                 {
-                    Log.log(Level.INFO, "Error saving large crest for clan " + clan.getName() + " [" + clan
-                            .getClanId() + "]");
+                    Log.log(Level.INFO,
+                            "Error saving large crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");
                     return;
                 }
 
                 if (_partId == 4)
                 {
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
-                    activeChar
-                            .sendPacket(new ExShowScreenMessage(
-                                    "Please be aware that if your emblem is inappropiate, your\n clan might be deleted and your accounts permanently banned.",
-                                    20000));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
+                    activeChar.sendPacket(new ExShowScreenMessage(
+                            "Please be aware that if your emblem is inappropiate, your\n clan might be deleted and your accounts permanently banned.",
+                            20000));
                     updated = true;
                 }
                 else

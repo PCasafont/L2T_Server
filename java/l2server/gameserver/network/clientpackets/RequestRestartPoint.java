@@ -74,16 +74,16 @@ public final class RequestRestartPoint extends L2GameClientPacket
                 case 1: // to clanhall
                     if (activeChar.getClan() == null || activeChar.getClan().getHasHideout() == 0)
                     {
-                        Log.warning("Player [" + activeChar
-                                .getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
+                        Log.warning("Player [" + activeChar.getName() +
+                                "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
                         return;
                     }
                     loc = MapRegionTable.getInstance()
                             .getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.ClanHall);
 
-                    if (ClanHallManager.getInstance()
-                            .getClanHallByOwner(activeChar.getClan()) != null && ClanHallManager.getInstance()
-                            .getClanHallByOwner(activeChar.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null)
+                    if (ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan()) != null &&
+                            ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan())
+                                    .getFunction(ClanHall.FUNC_RESTORE_EXP) != null)
                     {
                         activeChar.restoreExp(ClanHallManager.getInstance().getClanHallByOwner(activeChar.getClan())
                                 .getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl());
@@ -109,8 +109,8 @@ public final class RequestRestartPoint extends L2GameClientPacket
                         }
                         else
                         {
-                            Log.warning("Player [" + activeChar
-                                    .getName() + "] called RestartPointPacket - To Castle and he doesn't have Castle!");
+                            Log.warning("Player [" + activeChar.getName() +
+                                    "] called RestartPointPacket - To Castle and he doesn't have Castle!");
                             return;
                         }
                     }
@@ -126,9 +126,9 @@ public final class RequestRestartPoint extends L2GameClientPacket
                                     .getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Castle);
                         }
                     }
-                    if (CastleManager.getInstance().getCastleByOwner(activeChar.getClan()) != null && CastleManager
-                            .getInstance().getCastleByOwner(activeChar.getClan())
-                            .getFunction(Castle.FUNC_RESTORE_EXP) != null)
+                    if (CastleManager.getInstance().getCastleByOwner(activeChar.getClan()) != null &&
+                            CastleManager.getInstance().getCastleByOwner(activeChar.getClan())
+                                    .getFunction(Castle.FUNC_RESTORE_EXP) != null)
                     {
                         activeChar.restoreExp(CastleManager.getInstance().getCastleByOwner(activeChar.getClan())
                                 .getFunction(Castle.FUNC_RESTORE_EXP).getLvl());
@@ -140,15 +140,15 @@ public final class RequestRestartPoint extends L2GameClientPacket
 
                     if ((activeChar.getClan() == null || activeChar.getClan().getHasFort() == 0) && !isInDefense)
                     {
-                        Log.warning("Player [" + activeChar
-                                .getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
+                        Log.warning("Player [" + activeChar.getName() +
+                                "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
                         return;
                     }
                     loc = MapRegionTable.getInstance()
                             .getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Fortress);
-                    if (FortManager.getInstance().getFortByOwner(activeChar.getClan()) != null && FortManager
-                            .getInstance().getFortByOwner(activeChar.getClan())
-                            .getFunction(Fort.FUNC_RESTORE_EXP) != null)
+                    if (FortManager.getInstance().getFortByOwner(activeChar.getClan()) != null &&
+                            FortManager.getInstance().getFortByOwner(activeChar.getClan())
+                                    .getFunction(Fort.FUNC_RESTORE_EXP) != null)
                     {
                         activeChar.restoreExp(FortManager.getInstance().getFortByOwner(activeChar.getClan())
                                 .getFunction(Fort.FUNC_RESTORE_EXP).getLvl());
@@ -171,8 +171,8 @@ public final class RequestRestartPoint extends L2GameClientPacket
 
                     if (siegeClan == null || siegeClan.getFlag().isEmpty())
                     {
-                        Log.warning("Player [" + activeChar
-                                .getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
+                        Log.warning("Player [" + activeChar.getName() +
+                                "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
                         return;
                     }
                     loc = MapRegionTable.getInstance()
@@ -182,13 +182,13 @@ public final class RequestRestartPoint extends L2GameClientPacket
                 case 5: // Fixed
                     if (!activeChar.isGM())
                     {
-                        Log.warning("Player [" + activeChar
-                                .getName() + "] called RestartPointPacket - Fixed and he isn't GM!");
+                        Log.warning("Player [" + activeChar.getName() +
+                                "] called RestartPointPacket - Fixed and he isn't GM!");
                         return;
                     }
                     instanceId = activeChar.getInstanceId();
-                    loc = new Location(activeChar.getX(), activeChar.getY(), activeChar
-                            .getZ()); // spawn them where they died
+                    loc = new Location(activeChar.getX(), activeChar.getY(),
+                            activeChar.getZ()); // spawn them where they died
                     break;
                 case 6: // TODO: agathion ress
                     break;
@@ -253,8 +253,9 @@ public final class RequestRestartPoint extends L2GameClientPacket
                         .scheduleGeneral(new DeathTask(activeChar), castle.getSiege().getAttackerRespawnDelay());
                 if (castle.getSiege().getAttackerRespawnDelay() > 0)
                 {
-                    activeChar.sendMessage("You will be re-spawned in " + castle.getSiege()
-                            .getAttackerRespawnDelay() / 1000 + " seconds");
+                    activeChar.sendMessage(
+                            "You will be re-spawned in " + castle.getSiege().getAttackerRespawnDelay() / 1000 +
+                                    " seconds");
                 }
                 return;
             }

@@ -108,16 +108,16 @@ public class FreyaCelebration extends Quest
                     st.setState(State.STARTED);
                     st.takeItems(57, 1);
                     st.giveItems(_freya_potion, 1);
-                    q.saveGlobalQuestVar(player.getAccountName(), Long
-                            .toString(System.currentTimeMillis() + _hours * 3600000));
+                    q.saveGlobalQuestVar(player.getAccountName(),
+                            Long.toString(System.currentTimeMillis() + _hours * 3600000));
                 }
                 else
                 {
                     long remainingTime = (_reuse_time - System.currentTimeMillis()) / 1000;
                     int hours = (int) (remainingTime / 3600);
                     int minutes = (int) (remainingTime % 3600 / 60);
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.AVAILABLE_AFTER_S1_S2_HOURS_S3_MINUTES);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.AVAILABLE_AFTER_S1_S2_HOURS_S3_MINUTES);
                     sm.addItemName(_freya_potion);
                     sm.addNumber(hours);
                     sm.addNumber(minutes);
@@ -147,17 +147,17 @@ public class FreyaCelebration extends Quest
         {
             if (Rnd.get(100) < 5)
             {
-                npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), "Dear " + caster
-                        .getName() +
-                        "... I want to express my appreciation for the gift. Take this with you. Why are you shocked? I'm a very generous person."));
+                npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(),
+                        "Dear " + caster.getName() +
+                                "... I want to express my appreciation for the gift. Take this with you. Why are you shocked? I'm a very generous person."));
                 caster.addItem("FreyaCelebration", _freya_gift, 1, npc, true);
             }
             else
             {
                 if (Rnd.get(10) < 2)
                 {
-                    npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(), _freya_texts[Rnd
-                            .get(_freya_texts.length - 1)]));
+                    npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL, npc.getName(),
+                            _freya_texts[Rnd.get(_freya_texts.length - 1)]));
                 }
             }
         }

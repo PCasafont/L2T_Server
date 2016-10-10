@@ -47,9 +47,9 @@ public class AdminGeodata implements IAdminCommandHandler
 
         if (command.equals("admin_geo_z"))
         {
-            activeChar.sendMessage("GeoEngine: Geo_Z = " + GeoData.getInstance()
-                    .getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ()) + " Loc_Z = " + activeChar
-                    .getZ());
+            activeChar.sendMessage("GeoEngine: Geo_Z = " +
+                    GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ()) +
+                    " Loc_Z = " + activeChar.getZ());
         }
         else if (command.equals("admin_geo_type"))
         {
@@ -101,10 +101,10 @@ public class AdminGeodata implements IAdminCommandHandler
         else if (command.equals("admin_geo_position"))
         {
             activeChar.sendMessage("GeoEngine: Your current position: ");
-            activeChar.sendMessage(".... world coords: x: " + activeChar.getX() + " y: " + activeChar
-                    .getY() + " z: " + activeChar.getZ());
-            activeChar.sendMessage(".... geo position: " + GeoData.getInstance()
-                    .geoPosition(activeChar.getX(), activeChar.getY()));
+            activeChar.sendMessage(".... world coords: x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " +
+                    activeChar.getZ());
+            activeChar.sendMessage(
+                    ".... geo position: " + GeoData.getInstance().geoPosition(activeChar.getX(), activeChar.getY()));
         }
         else if (command.startsWith("admin_geo_load"))
         {

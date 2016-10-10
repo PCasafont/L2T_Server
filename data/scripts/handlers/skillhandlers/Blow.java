@@ -146,8 +146,8 @@ public class Blow implements ISkillHandler
                 }
                 L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
                 double soul = L2ItemInstance.CHARGED_NONE;
-                if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon
-                        .getItemType() == L2WeaponType.DUALDAGGER || weapon.getItemType() == L2WeaponType.RAPIER))
+                if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER ||
+                        weapon.getItemType() == L2WeaponType.DUALDAGGER || weapon.getItemType() == L2WeaponType.RAPIER))
                 {
                     soul = weapon.getChargedSoulShot();
                 }
@@ -255,20 +255,20 @@ public class Blow implements ISkillHandler
 
                             // Half the reflected damage for bows
                             /*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-							if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+                            if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 									 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 								reflectedDamage *= 0.5f;*/
 
-                            if (reflectedDamage > target
-                                    .getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
+                            if (reflectedDamage >
+                                    target.getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
                             {
                                 reflectedDamage = target.getMaxHp();
                             }
 
                             boolean defLimitReflects = true;
 
-                            if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null || target
-                                    .getSkillLevelHash(13524) != 0)
+                            if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null ||
+                                    target.getSkillLevelHash(13524) != 0)
                             {
                                 defLimitReflects = false;
                             }
@@ -333,8 +333,8 @@ public class Blow implements ISkillHandler
 
                         if (absorbDamage > 0)
                         {
-                            activeChar.getStatus().setCurrentHp(activeChar
-                                    .getCurrentHp() + absorbDamage, true, null, StatusUpdateDisplay.NORMAL);
+                            activeChar.getStatus().setCurrentHp(activeChar.getCurrentHp() + absorbDamage, true, null,
+                                    StatusUpdateDisplay.NORMAL);
                             activeChar
                                     .sendMessage("You absorbed " + absorbDamage + " HP from " + target.getName() + ".");
                         }

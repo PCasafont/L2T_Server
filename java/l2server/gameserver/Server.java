@@ -443,8 +443,8 @@ public class Server
         // maxMemory is the upper limit the jvm can use, totalMemory the size of
         // the current allocation pool, freeMemory the unused memory in the
         // allocation pool
-        long freeMem = (Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime()
-                .freeMemory()) / 1048576;
+        long freeMem = (Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() +
+                Runtime.getRuntime().freeMemory()) / 1048576;
         long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
         Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
         Toolkit.getDefaultToolkit().beep();
@@ -472,8 +472,8 @@ public class Server
             catch (UnknownHostException e1)
             {
                 Log.log(Level.SEVERE,
-                        "WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " + e1
-                                .getMessage(), e1);
+                        "WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " +
+                                e1.getMessage(), e1);
             }
         }
 

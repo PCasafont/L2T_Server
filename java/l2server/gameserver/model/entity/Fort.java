@@ -231,9 +231,8 @@ public class Fort
                 PreparedStatement statement;
 
                 con = L2DatabaseFactory.getInstance().getConnection();
-                statement = con
-                        .prepareStatement(
-                                "REPLACE INTO fort_functions (fort_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
+                statement = con.prepareStatement(
+                        "REPLACE INTO fort_functions (fort_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
                 statement.setInt(1, _fortId);
                 statement.setInt(2, getType());
                 statement.setInt(3, getLvl());
@@ -247,8 +246,7 @@ public class Fort
             {
                 Log.log(Level.SEVERE,
                         "Exception: Fort.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " +
-                                e
-                                        .getMessage(), e);
+                                e.getMessage(), e);
             }
             finally
             {
@@ -285,9 +283,8 @@ public class Fort
                 if (getOwnerClan() != null && getFortState() == 0)
                 {
                     spawnSpecialEnvoys();
-                    ThreadPoolManager.getInstance()
-                            .scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this),
-                                    1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+                    ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this),
+                            1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
                 }
             }
         }, 10000L);
@@ -348,8 +345,9 @@ public class Fort
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, "Exception: ScheduleSpecialEnvoysSpawn() for Fort " + _fortInst
-                        .getName() + ": " + e.getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Exception: ScheduleSpecialEnvoysSpawn() for Fort " + _fortInst.getName() + ": " +
+                                e.getMessage(), e);
             }
         }
     }
@@ -506,9 +504,8 @@ public class Fort
             }
 
             spawnSpecialEnvoys();
-            ThreadPoolManager.getInstance()
-                    .scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(this),
-                            1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+            ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(this),
+                    1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
             // if clan have already fortress, remove it
             if (clan.getHasFort() > 0)
             {
@@ -663,9 +660,8 @@ public class Fort
 
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con
-                    .prepareStatement(
-                            "SELECT siegeDate, lastOwnedTime, owner, state, castleId, blood, supplyLvl FROM fort WHERE id = ?");
+            statement = con.prepareStatement(
+                    "SELECT siegeDate, lastOwnedTime, owner, state, castleId, blood, supplyLvl FROM fort WHERE id = ?");
             statement.setInt(1, _fortId);
             rs = statement.executeQuery();
             int ownerId = 0;
@@ -700,16 +696,14 @@ public class Fort
                 initial = Config.FS_UPDATE_FRQ * 60000l - initial;
                 if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < Config.FS_MAX_OWN_TIME * 3600)
                 {
-                    _fortUpdater[0] = ThreadPoolManager.getInstance()
-                            .scheduleGeneralAtFixedRate(
-                                    new FortUpdater(this, clan, runCount, UpdaterType.PERIODIC_UPDATE), initial,
-                                    Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
+                    _fortUpdater[0] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
+                            new FortUpdater(this, clan, runCount, UpdaterType.PERIODIC_UPDATE), initial,
+                            Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
                     if (Config.FS_MAX_OWN_TIME > 0)
                     {
-                        _fortUpdater[1] = ThreadPoolManager.getInstance()
-                                .scheduleGeneralAtFixedRate(
-                                        new FortUpdater(this, clan, runCount, UpdaterType.MAX_OWN_TIME), 3600000,
-                                        3600000); // Schedule owner tasks to remove owener
+                        _fortUpdater[1] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
+                                new FortUpdater(this, clan, runCount, UpdaterType.MAX_OWN_TIME), 3600000,
+                                3600000); // Schedule owner tasks to remove owener
                     }
                 }
                 else
@@ -750,8 +744,9 @@ public class Fort
             rs = statement.executeQuery();
             while (rs.next())
             {
-                _function.put(rs.getInt("type"), new FortFunction(rs.getInt("type"), rs.getInt("lvl"), rs
-                        .getInt("lease"), 0, rs.getLong("rate"), rs.getLong("endTime"), true));
+                _function.put(rs.getInt("type"),
+                        new FortFunction(rs.getInt("type"), rs.getInt("lvl"), rs.getInt("lease"), 0, rs.getLong("rate"),
+                                rs.getLong("endTime"), true));
             }
             statement.close();
         }
@@ -893,9 +888,8 @@ public class Fort
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
 
-            statement = con
-                    .prepareStatement(
-                            "UPDATE fort SET owner=?,lastOwnedTime=?,state=?,castleId=?,blood=? WHERE id = ?");
+            statement = con.prepareStatement(
+                    "UPDATE fort SET owner=?,lastOwnedTime=?,state=?,castleId=?,blood=? WHERE id = ?");
             statement.setInt(1, clanId);
             statement.setLong(2, _lastOwnedTime.getTimeInMillis());
             statement.setInt(3, 0);
@@ -1043,8 +1037,9 @@ public class Fort
             return 0;
         }
 
-        return (int) ((_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000l - System
-                .currentTimeMillis()) / 1000l);
+        return (int) (
+                (_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000l - System.currentTimeMillis()) /
+                        1000l);
     }
 
     public final long getTimeTillNextFortUpdate()

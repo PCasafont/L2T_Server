@@ -52,8 +52,8 @@ public class L2FlyMoveZone extends L2ZoneType
 
         L2PcInstance player = (L2PcInstance) character;
 
-        if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 || player
-                .getReputation() < 0 || player.isMounted() || player.isTransformed())
+        if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 ||
+                player.getReputation() < 0 || player.isMounted() || player.isTransformed())
         {
             return;
         }

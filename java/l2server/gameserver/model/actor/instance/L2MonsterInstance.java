@@ -180,8 +180,8 @@ public class L2MonsterInstance extends L2Attackable
 
         if (killer instanceof L2PcInstance)
         {
-            if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && _knownPlayers
-                    .size() > 0 && !(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) &&
+            if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && _knownPlayers.size() > 0 &&
+                    !(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) &&
                     !(this instanceof L2ChessPieceInstance))
             {
                 CoreMessage cm = new CoreMessage(47001 + Rnd.get(90));
@@ -257,7 +257,7 @@ public class L2MonsterInstance extends L2Attackable
     public int getMaxMp()
     {
         /*
-		if (getTemplate().isMiniRaid())
+        if (getTemplate().isMiniRaid())
 			return getStat().getMaxMp() * 10;
 		 */
 

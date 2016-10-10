@@ -145,8 +145,8 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
                 {
                     if (helperBuff.isMagicClassBuff() == player.isMageClass() && helperBuff.getLowerLevel() < 10)
                     {
-                        L2Skill skill = SkillTable.getInstance()
-                                .getInfo(helperBuff.getSkillID(), helperBuff.getSkillLevel());
+                        L2Skill skill =
+                                SkillTable.getInstance().getInfo(helperBuff.getSkillID(), helperBuff.getSkillLevel());
                         if (skill.getSkillType() == L2SkillType.SUMMON)
                         {
                             player.doSimultaneousCast(skill);
@@ -287,9 +287,8 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
     @Override
     public String onArrived(final L2NpcWalkerAI guideAI)
     {
-        if (!guideAI.getActor()
-                .isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI
-                .getCurrentPos() == _guideRoute.size() - 2)
+        if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
+                guideAI.getCurrentPos() == _guideRoute.size() - 2)
         {
             if (guideAI.getCurrentPos() == 1)
             {
@@ -303,8 +302,9 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
                 chatId = _guideWaitChatId;
             }
 
-            NpcSay ns = new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor()
-                    .getNpcId(), chatId);
+            NpcSay ns =
+                    new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
+                            chatId);
             ns.addStringParameter(guideAI.getGuided().getName());
             guideAI.getActor().broadcastPacket(ns);
             guideAI.setWaiting(true);

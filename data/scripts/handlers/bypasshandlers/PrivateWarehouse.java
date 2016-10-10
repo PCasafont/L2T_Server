@@ -68,13 +68,13 @@ public class PrivateWarehouse implements IBypassHandler
 
                 if (param.length > 2)
                 {
-                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]), SortedWareHouseWithdrawalList
-                            .getOrder(param[2]));
+                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]),
+                            SortedWareHouseWithdrawalList.getOrder(param[2]));
                 }
                 else if (param.length > 1)
                 {
-                    showWithdrawWindow(activeChar, WarehouseListType
-                            .valueOf(param[1]), SortedWareHouseWithdrawalList.A2Z);
+                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]),
+                            SortedWareHouseWithdrawalList.A2Z);
                 }
                 else
                 {
@@ -90,8 +90,8 @@ public class PrivateWarehouse implements IBypassHandler
 
                 if (Config.DEBUG)
                 {
-                    _log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar
-                            .getName() + "; Command: showDepositWindow; Message: Showing items to deposit.");
+                    _log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+                            "; Command: showDepositWindow; Message: Showing items to deposit.");
                 }
 
                 activeChar.sendPacket(new WareHouseDepositList(activeChar, WareHouseDepositList.PRIVATE));
@@ -130,8 +130,8 @@ public class PrivateWarehouse implements IBypassHandler
 
         if (Config.DEBUG)
         {
-            _log.fine("Source: L2WarehouseInstance.java; Player: " + player
-                    .getName() + "; Command: showRetrieveWindow; Message: Showing stored items.");
+            _log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+                    "; Command: showRetrieveWindow; Message: Showing stored items.");
         }
     }
 

@@ -320,8 +320,8 @@ public class AdminTest implements IAdminCommandHandler
                         @SuppressWarnings("unused") String lastIP = "";
                         @SuppressWarnings("unused") String lastHWID = "";
                         int charId = 0;
-                        @SuppressWarnings("unused") String className = PlayerClassTable.getInstance()
-                                .getClassNameById(classId);
+                        @SuppressWarnings("unused") String className =
+                                PlayerClassTable.getInstance().getClassNameById(classId);
 
                         statement.setInt(1, classId);
                         ResultSet rset = statement.executeQuery();
@@ -332,8 +332,9 @@ public class AdminTest implements IAdminCommandHandler
                             charId = rset.getInt("charId");
                             OlympiadNobleInfo hero = Olympiad.getInstance().getNobleInfo(charId);
 
-                            activeChar.sendMessage("Hero for " + PlayerClassTable.getInstance()
-                                    .getClassNameById(classId) + " = " + hero.getName() + ".");
+                            activeChar.sendMessage(
+                                    "Hero for " + PlayerClassTable.getInstance().getClassNameById(classId) + " = " +
+                                            hero.getName() + ".");
 
                             characterName = hero.getName();
 
@@ -341,8 +342,8 @@ public class AdminTest implements IAdminCommandHandler
                             try
                             {
                                 con2 = L2DatabaseFactory.getInstance().getConnection();
-                                PreparedStatement statement2 = con
-                                        .prepareStatement("SELECT * FROM characters WHERE char_name = ?");
+                                PreparedStatement statement2 =
+                                        con.prepareStatement("SELECT * FROM characters WHERE char_name = ?");
 
                                 statement2.setString(1, characterName);
                                 ResultSet rset2 = statement2.executeQuery();
@@ -368,8 +369,8 @@ public class AdminTest implements IAdminCommandHandler
                             try
                             {
                                 con2 = L2DatabaseFactory.getInstance().getConnection();
-                                PreparedStatement statement2 = con2
-                                        .prepareStatement("SELECT * FROM accounts WHERE login = ?");
+                                PreparedStatement statement2 =
+                                        con2.prepareStatement("SELECT * FROM accounts WHERE login = ?");
 
                                 statement2.setString(1, accountName);
                                 ResultSet rset2 = statement2.executeQuery();
@@ -433,8 +434,7 @@ public class AdminTest implements IAdminCommandHandler
                     final L2MonsterInstance monster = (L2MonsterInstance) target;
                     //(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
                     activeChar.sendPacket(new MagicSkillLaunched(monster, 5082, 1, new L2Object[]{
-                            activeChar, activeChar
-                            .getSummons().get(0)
+                            activeChar, activeChar.getSummons().get(0)
                     }));
                 }
             }
@@ -463,9 +463,8 @@ public class AdminTest implements IAdminCommandHandler
                 {
                     L2Character targetedCharacter = (L2Character) target;
 
-                    targetedCharacter.getAI()
-                            .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(activeChar
-                                    .getX(), activeChar.getY(), activeChar.getZ(), 0));
+                    targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
                 }
             }
             else if (secondaryCommand.equals("GetMovin"))
@@ -477,9 +476,8 @@ public class AdminTest implements IAdminCommandHandler
                     L2Character targetedCharacter = (L2Character) target;
 
                     // Giran Weapon Shop
-                    targetedCharacter.getAI()
-                            .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(79778 + Rnd
-                                    .get(-100, 100), 146671 + Rnd.get(-100, 100), -3515, 0));
+                    targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(79778 + Rnd.get(-100, 100), 146671 + Rnd.get(-100, 100), -3515, 0));
 
                     // Giran Grocery
                     //targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(80434, 147896, -3504, 0));
@@ -494,9 +492,8 @@ public class AdminTest implements IAdminCommandHandler
                     L2Character targetedCharacter = (L2Character) target;
 
                     // Giran Grocery
-                    targetedCharacter.getAI()
-                            .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(79671 + Rnd
-                                    .get(-250, 250), 147530 + Rnd.get(-250, 250), -3504, 0));
+                    targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(79671 + Rnd.get(-250, 250), 147530 + Rnd.get(-250, 250), -3504, 0));
                 }
             }
             else if (secondaryCommand.equals("DropHerb"))
@@ -508,12 +505,14 @@ public class AdminTest implements IAdminCommandHandler
 
                 // Hunter Deathmatch - PP/EE/SE Buff Herbs...
                 droppedItem = ItemTable.getInstance().createItem("EventReward", buffHerbs, 1, activeChar, activeChar);
-                droppedItem.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd
-                        .get(-50, 50), activeChar.getZ());
+                droppedItem
+                        .dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
+                                activeChar.getZ());
 
                 droppedItem = ItemTable.getInstance().createItem("EventReward", 8156, 1, activeChar, activeChar);
-                droppedItem.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd
-                        .get(-50, 50), activeChar.getZ());
+                droppedItem
+                        .dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
+                                activeChar.getZ());
             }
             else if (secondaryCommand.equals("SetAgathion"))
             {
@@ -781,15 +780,12 @@ public class AdminTest implements IAdminCommandHandler
                 {
                     System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
                     System.out.println("\t\t<droplist>");
-                    System.out
-                            .println(
-                                    "\t\t\t<item category='1' categoryChance='100' id='5572' minCount='2' maxCount='3' dropChance='100'/> <!--  Wind Mantra -->");
-                    System.out
-                            .println(
-                                    "\t\t\t<item category='2' categoryChance='100' id='5570' minCount='1' maxCount='2' dropChance='100'/> <!--  Water Mantra -->");
-                    System.out
-                            .println(
-                                    "\t\t\t<item category='3' categoryChance='100' id='5574' minCount='1' maxCount='1' dropChance='100'/> <!--  Fire Mantra -->");
+                    System.out.println(
+                            "\t\t\t<item category='1' categoryChance='100' id='5572' minCount='2' maxCount='3' dropChance='100'/> <!--  Wind Mantra -->");
+                    System.out.println(
+                            "\t\t\t<item category='2' categoryChance='100' id='5570' minCount='1' maxCount='2' dropChance='100'/> <!--  Water Mantra -->");
+                    System.out.println(
+                            "\t\t\t<item category='3' categoryChance='100' id='5574' minCount='1' maxCount='1' dropChance='100'/> <!--  Fire Mantra -->");
                     System.out.println("\t\t</droplist>");
                     System.out.println("\t</npc>");
                 }
@@ -815,8 +811,8 @@ public class AdminTest implements IAdminCommandHandler
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("EEEE d MMMMMMM");
                 // new SimpleDateFormat("EEEE d MMMMMMM k:m:s:");
 
-                long baiumRespawnTime = System.currentTimeMillis() + GrandBossManager.getInstance()
-                        .getUnlockTime(29020);
+                long baiumRespawnTime =
+                        System.currentTimeMillis() + GrandBossManager.getInstance().getUnlockTime(29020);
 
                 activeChar.sendMessage("Baium Respawn: " + dateFormatter.format(baiumRespawnTime));
 
@@ -858,20 +854,15 @@ public class AdminTest implements IAdminCommandHandler
 
                 if (!earliestSpawnTimeDay.equals(latestSpawnTimeDay))
                 {
-                    activeChar
-                            .sendMessage(
-                                    "Baium will be spawning between " + earliestSpawnTimeDay + " at " + dateFormatter
-                                            .format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " +
-                                            dateFormatter
-                                                    .format(latestSpawnTime) + ".");
+                    activeChar.sendMessage("Baium will be spawning between " + earliestSpawnTimeDay + " at " +
+                            dateFormatter.format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " +
+                            dateFormatter.format(latestSpawnTime) + ".");
                 }
                 else
                 {
-                    activeChar
-                            .sendMessage(
-                                    "Baium will be spawning on " + earliestSpawnTimeDay + " between " + dateFormatter
-                                            .format(earliestSpawnTime) + " and " +
-                                            dateFormatter.format(latestSpawnTime) + ".");
+                    activeChar.sendMessage("Baium will be spawning on " + earliestSpawnTimeDay + " between " +
+                            dateFormatter.format(earliestSpawnTime) + " and " + dateFormatter.format(latestSpawnTime) +
+                            ".");
                 }
             }
             else if (secondaryCommand.equals("SpawnMonsters"))
@@ -881,8 +872,8 @@ public class AdminTest implements IAdminCommandHandler
 
                 //int x = activeChar.getX(), y = activeChar.getY(), z = activeChar.getZ();
 
-                float headingAngle = (float) ((activeChar.getHeading() + Rnd
-                        .get(-15000, 15000)) * Math.PI) / Short.MAX_VALUE;
+                float headingAngle =
+                        (float) ((activeChar.getHeading() + Rnd.get(-15000, 15000)) * Math.PI) / Short.MAX_VALUE;
 
                 int range = 50;
 
@@ -983,7 +974,7 @@ public class AdminTest implements IAdminCommandHandler
 
                     String toLog = "";
                     /*
-					toLog += "\t<item>\n";
+                    toLog += "\t<item>\n";
 					toLog += "\t\t<ingredient id=\"50009\" count=\"250\" /> <!-- Raid Heart -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"75\" /> <!-- " + baseItemName + " -->\n";
@@ -1078,8 +1069,8 @@ public class AdminTest implements IAdminCommandHandler
 
                 for (L2Spawn spawn : SpawnTable.getInstance().getAllSpawns(npcId))
                 {
-                    String out = "<spawn x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn
-                            .getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"10000\" />";
+                    String out = "<spawn x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() +
+                            "\" heading=\"" + spawn.getHeading() + "\" respawn=\"10000\" />";
                     System.out.println(out);
                 }
             }
@@ -1088,8 +1079,8 @@ public class AdminTest implements IAdminCommandHandler
                 int killedMonsters = 0;
                 int playerLevel = activeChar.getLevel();
 
-                L2NpcTemplate[] monsters = NpcTable.getInstance()
-                        .getAllMonstersBetweenLevels(playerLevel - 5, playerLevel + 5);
+                L2NpcTemplate[] monsters =
+                        NpcTable.getInstance().getAllMonstersBetweenLevels(playerLevel - 5, playerLevel + 5);
 
                 for (L2NpcTemplate monster : monsters)
                 {
@@ -1195,8 +1186,8 @@ public class AdminTest implements IAdminCommandHandler
                 gameClient.sendPacket(RestartResponse.STATIC_PACKET_TRUE);
 
                 // send char list
-                CharSelectionInfo cl = new CharSelectionInfo(gameClient.getAccountName(), gameClient
-                        .getSessionId().playOkID1);
+                CharSelectionInfo cl =
+                        new CharSelectionInfo(gameClient.getAccountName(), gameClient.getSessionId().playOkID1);
                 gameClient.sendPacket(cl);
                 gameClient.setCharSelection(cl.getCharInfo());
 
@@ -1329,8 +1320,9 @@ public class AdminTest implements IAdminCommandHandler
             caster.setTarget(activeChar);
             if (msu)
             {
-                caster.broadcastPacket(new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill
-                        .getReuseDelay(), _skill.getReuseHashCode(), 0, 0));
+                caster.broadcastPacket(
+                        new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill.getReuseDelay(),
+                                _skill.getReuseHashCode(), 0, 0));
             }
             else
             {

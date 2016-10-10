@@ -147,8 +147,8 @@ public class Halloween extends Quest
                         continue;
                     }
 
-                    if (players.getPrivateStoreType() != 0 || players.getClient().isDetached() || players
-                            .getFirstEffect(blessingOfHalloween) != null)
+                    if (players.getPrivateStoreType() != 0 || players.getClient().isDetached() ||
+                            players.getFirstEffect(blessingOfHalloween) != null)
                     {
                         continue;
                     }
@@ -200,9 +200,8 @@ public class Halloween extends Quest
 
             dummy = addSpawn(80346, 153570, 142072, -12741, 39237, false, 0, false, instanceId);
 
-            Announcements.getInstance()
-                    .announceToAll(
-                            "The global Halloween Instance now is available through Pumkin Ghost located in Giran!");
+            Announcements.getInstance().announceToAll(
+                    "The global Halloween Instance now is available through Pumkin Ghost located in Giran!");
             Announcements.getInstance().announceToAll("The instance will start on 10 minutes!");
             Announcements.getInstance().announceToAll("When started, none will be able to enter!");
 
@@ -215,14 +214,13 @@ public class Halloween extends Quest
         {
             eventState = 2;
 
-            InstanceManager.getInstance()
-                    .sendPacket(instanceId, new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+            InstanceManager.getInstance().sendPacket(instanceId,
+                    new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
                             "You won't leave this place alive!"));
             InstanceManager.getInstance()
                     .sendPacket(instanceId, new CreatureSay(0, 10, "", "The event process will start in one minute!"));
-            InstanceManager.getInstance()
-                    .sendPacket(instanceId, new CreatureSay(0, 10, "",
-                            "If you die and you press to village you wont be able to come back!"));
+            InstanceManager.getInstance().sendPacket(instanceId,
+                    new CreatureSay(0, 10, "", "If you die and you press to village you wont be able to come back!"));
             InstanceManager.getInstance().sendPacket(instanceId, new CreatureSay(0, 10, "", "Prepare to the hell!"));
 
             startQuestTimer("stage_all_spawn_round", 60000, null, null);
@@ -232,9 +230,8 @@ public class Halloween extends Quest
             round++;
 
             InstanceManager.getInstance().sendPacket(instanceId, new Earthquake(153581, 142081, -12741, 8, 10));
-            InstanceManager.getInstance()
-                    .sendPacket(instanceId,
-                            new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0, "Round: " + round));
+            InstanceManager.getInstance().sendPacket(instanceId,
+                    new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0, "Round: " + round));
 
             int minionId = minionIds[Rnd.get(minionIds.length)];
 
@@ -259,8 +256,8 @@ public class Halloween extends Quest
                 //BossTime
                 boss = addSpawn(mountedRaidId, 153572, 142074, -12741, 52867, false, 0, false, instanceId);
 
-                InstanceManager.getInstance().sendPacket(instanceId, new CreatureSay(boss.getObjectId(), 1, boss
-                        .getName(), "It's the time to end that shit!"));
+                InstanceManager.getInstance().sendPacket(instanceId,
+                        new CreatureSay(boss.getObjectId(), 1, boss.getName(), "It's the time to end that shit!"));
             }
         }
         //Help process
@@ -297,9 +294,8 @@ public class Halloween extends Quest
             //Door Effect 1
             dummy.broadcastPacket(new MagicSkillUse(dummy, dummy, 6798, 1, 500, 500, 500, instanceId, 0));//6783
 
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 3, new CreatureSay(boss.getObjectId(), 1, boss
-                            .getName(), "What the hell is that sh1t!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 3,
+                    new CreatureSay(boss.getObjectId(), 1, boss.getName(), "What the hell is that sh1t!"));
 
             startQuestTimer("stage_all_help_process_gm_appear", 8000, null, null);
         }
@@ -325,24 +321,22 @@ public class Halloween extends Quest
 
             jinia.broadcastPacket(new MagicSkillUse(jinia, jinia, 6463, 1, 500, 500, 500, 0, 0));
 
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 5, new CreatureSay(kegor.getObjectId(), 1, kegor
-                            .getName(), "Hi b1tches!"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 9, new CreatureSay(jinia.getObjectId(), 1, jinia
-                            .getName(), "Seems that these noobs need some help, don't you think?"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 13, new CreatureSay(boss.getObjectId(), 1, boss
-                            .getName(), "Fuck it!! I'll crush your fucking heads with my sword!"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 17, new CreatureSay(jinia.getObjectId(), 1, jinia
-                            .getName(), "Mad Bambi! We will put your sword on your ass!"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 21, new CreatureSay(kegor.getObjectId(), 1, kegor
-                            .getName(), "There are a lot of dead players around!"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 25, new CreatureSay(jinia.getObjectId(), 1, jinia
-                            .getName(), "Leet me do the work!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 5,
+                    new CreatureSay(kegor.getObjectId(), 1, kegor.getName(), "Hi b1tches!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 9,
+                    new CreatureSay(jinia.getObjectId(), 1, jinia.getName(),
+                            "Seems that these noobs need some help, don't you think?"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 13,
+                    new CreatureSay(boss.getObjectId(), 1, boss.getName(),
+                            "Fuck it!! I'll crush your fucking heads with my sword!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 17,
+                    new CreatureSay(jinia.getObjectId(), 1, jinia.getName(),
+                            "Mad Bambi! We will put your sword on your ass!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 21,
+                    new CreatureSay(kegor.getObjectId(), 1, kegor.getName(),
+                            "There are a lot of dead players around!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 25,
+                    new CreatureSay(jinia.getObjectId(), 1, jinia.getName(), "Leet me do the work!"));
 
             startQuestTimer("stage_all_help_process_players_back", 27000, null, null);
         }
@@ -365,11 +359,10 @@ public class Halloween extends Quest
                 players.setIsImmobilized(false);
             }
 
-            InstanceManager.getInstance().sendPacket(instanceId, new CreatureSay(kegor.getObjectId(), 1, kegor
-                    .getName(), "Let's own this chicken guys!"));
-            InstanceManager.getInstance()
-                    .sendDelayedPacketToInstance(instanceId, 2, new CreatureSay(jinia.getObjectId(), 1, jinia
-                            .getName(), "You lead!"));
+            InstanceManager.getInstance().sendPacket(instanceId,
+                    new CreatureSay(kegor.getObjectId(), 1, kegor.getName(), "Let's own this chicken guys!"));
+            InstanceManager.getInstance().sendDelayedPacketToInstance(instanceId, 2,
+                    new CreatureSay(jinia.getObjectId(), 1, jinia.getName(), "You lead!"));
 
             startQuestTimer("stage_all_help_process_attack_boss", 2000, null, null);
         }
@@ -468,8 +461,8 @@ public class Halloween extends Quest
             allMinions.remove(npc);
             if (allMinions.isEmpty())
             {
-                InstanceManager.getInstance()
-                        .sendPacket(instanceId, new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                InstanceManager.getInstance().sendPacket(instanceId,
+                        new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
                                 "Next round will start in 15 seconds!"));
 
                 startQuestTimer("stage_all_spawn_round", 15000, null, null);
@@ -521,8 +514,8 @@ public class Halloween extends Quest
             return false;
         }
 
-        if (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player
-                .isCursedWeaponEquipped() || player.getEvent() != null)
+        if (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() ||
+                player.isCursedWeaponEquipped() || player.getEvent() != null)
         {
             player.sendMessage("You can't enter while in other event!");
             return false;

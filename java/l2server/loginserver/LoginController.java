@@ -443,8 +443,8 @@ public class LoginController
         int access = client.getAccessLevel();
         if (gsi != null && gsi.isAuthed())
         {
-            boolean loginOk = gsi.getCurrentPlayerCount() < gsi.getMaxPlayers() && gsi
-                    .getStatus() != ServerStatus.STATUS_GM_ONLY || access >= 10;
+            boolean loginOk = gsi.getCurrentPlayerCount() < gsi.getMaxPlayers() &&
+                    gsi.getStatus() != ServerStatus.STATUS_GM_ONLY || access >= 10;
 
             if (loginOk && client.getLastServer() != serverId)
             {
@@ -645,8 +645,8 @@ public class LoginController
             String userIP = null;
 
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT password, accessLevel, lastServer, userIP FROM accounts WHERE login=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT password, accessLevel, lastServer, userIP FROM accounts WHERE login=?");
             statement.setString(1, user);
             ResultSet rset = statement.executeQuery();
             if (rset.next())
@@ -674,9 +674,8 @@ public class LoginController
                 {
                     if (user.length() >= 2 && user.length() <= 14)
                     {
-                        statement = con
-                                .prepareStatement(
-                                        "INSERT INTO accounts (login,password,lastactive,accessLevel,lastIP) values(?,?,?,?,?)");
+                        statement = con.prepareStatement(
+                                "INSERT INTO accounts (login,password,lastactive,accessLevel,lastIP) values(?,?,?,?,?)");
                         statement.setString(1, user);
                         statement.setString(2, Base64.encodeBytes(hash));
                         statement.setLong(3, System.currentTimeMillis());
@@ -687,8 +686,8 @@ public class LoginController
 
                         if (Config.LOG_LOGIN_CONTROLLER)
                         {
-                            LoginLog.add("'" + user + "' " + address
-                                    .getHostAddress() + " - OK : AccountCreate", "loginlog");
+                            LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : AccountCreate",
+                                    "loginlog");
                         }
 
                         Log.info("Created new account for " + user);
@@ -696,8 +695,8 @@ public class LoginController
                     }
                     if (Config.LOG_LOGIN_CONTROLLER)
                     {
-                        LoginLog.add("'" + user + "' " + address
-                                .getHostAddress() + " - ERR : ErrCreatingACC", "loginlog");
+                        LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : ErrCreatingACC",
+                                "loginlog");
                     }
 
                     Log.warning("Invalid username creation/use attempt: " + user);
@@ -707,8 +706,8 @@ public class LoginController
                 {
                     if (Config.LOG_LOGIN_CONTROLLER)
                     {
-                        LoginLog.add("'" + user + "' " + address
-                                .getHostAddress() + " - ERR : AccountMissing", "loginlog");
+                        LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountMissing",
+                                "loginlog");
                     }
 
                     Log.warning("Account missing for user " + user);
@@ -727,9 +726,8 @@ public class LoginController
 
                     if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN)
                     {
-                        Log.info("Banning '" + address
-                                .getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " +
-                                failedCount + " invalid user name(" + user + ") attempts");
+                        Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
+                                " seconds due to " + failedCount + " invalid user name(" + user + ") attempts");
                         this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
                     }
                     return false;
@@ -742,8 +740,8 @@ public class LoginController
                 {
                     if (Config.LOG_LOGIN_CONTROLLER)
                     {
-                        LoginLog.add("'" + user + "' " + address
-                                .getHostAddress() + " - ERR : AccountBanned", "loginlog");
+                        LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountBanned",
+                                "loginlog");
                     }
 
                     client.setAccessLevel(access);
@@ -769,8 +767,8 @@ public class LoginController
                     {
                         if (Config.LOG_LOGIN_CONTROLLER)
                         {
-                            LoginLog.add("'" + user + "' " + address
-                                    .getHostAddress() + "/" + userIP + " - ERR : INCORRECT IP", "loginlog");
+                            LoginLog.add("'" + user + "' " + address.getHostAddress() + "/" + userIP +
+                                    " - ERR : INCORRECT IP", "loginlog");
                         }
 
                         return false;
@@ -792,8 +790,8 @@ public class LoginController
             {
                 client.setAccessLevel(access);
                 client.setLastServer(lastServer);
-                PreparedStatement statement2 = con
-                        .prepareStatement("SELECT lastIP, lastIP2 FROM accounts WHERE login=?");
+                PreparedStatement statement2 =
+                        con.prepareStatement("SELECT lastIP, lastIP2 FROM accounts WHERE login=?");
                 statement2.setString(1, user);
                 rset = statement2.executeQuery();
                 String lastIP = null;
@@ -807,9 +805,8 @@ public class LoginController
                 statement2.close();
                 if (lastIP == null || !lastIP.equals(address.getHostAddress()))
                 {
-                    PreparedStatement statement3 = con
-                            .prepareStatement(
-                                    "UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
+                    PreparedStatement statement3 = con.prepareStatement(
+                            "UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
                     statement3.setLong(1, System.currentTimeMillis());
                     statement3.setString(2, address.getHostAddress());
                     statement3.setString(3, lastIP);
@@ -820,8 +817,8 @@ public class LoginController
                 }
                 else
                 {
-                    PreparedStatement statement3 = con
-                            .prepareStatement("UPDATE accounts SET lastactive=? WHERE login=?");
+                    PreparedStatement statement3 =
+                            con.prepareStatement("UPDATE accounts SET lastactive=? WHERE login=?");
                     statement3.setLong(1, System.currentTimeMillis());
                     statement3.setString(2, user);
                     statement3.execute();
@@ -861,9 +858,8 @@ public class LoginController
 
             if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN)
             {
-                Log.info("Banning '" + address
-                        .getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
-                        " invalid user/pass attempts");
+                Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
+                        " seconds due to " + failedCount + " invalid user/pass attempts");
                 this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
             }
         }
@@ -903,8 +899,8 @@ public class LoginController
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT login, expiryTime FROM auth_sessions WHERE `key`=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT login, expiryTime FROM auth_sessions WHERE `key`=?");
             statement.setString(1, sessionKey);
             ResultSet rset = statement.executeQuery();
             if (rset.next())
@@ -940,8 +936,8 @@ public class LoginController
 
                 client.setAccessLevel(access);
                 client.setLastServer(lastServer);
-                PreparedStatement statement2 = con
-                        .prepareStatement("SELECT lastIP, lastIP2 FROM accounts WHERE login=?");
+                PreparedStatement statement2 =
+                        con.prepareStatement("SELECT lastIP, lastIP2 FROM accounts WHERE login=?");
                 statement2.setString(1, login);
                 rset = statement2.executeQuery();
                 String lastIP = null;
@@ -955,9 +951,8 @@ public class LoginController
                 statement2.close();
                 if (lastIP == null || !lastIP.equals(address.getHostAddress()))
                 {
-                    PreparedStatement statement3 = con
-                            .prepareStatement(
-                                    "UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
+                    PreparedStatement statement3 = con.prepareStatement(
+                            "UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
                     statement3.setLong(1, System.currentTimeMillis());
                     statement3.setString(2, address.getHostAddress());
                     statement3.setString(3, lastIP);
@@ -968,8 +963,8 @@ public class LoginController
                 }
                 else
                 {
-                    PreparedStatement statement3 = con
-                            .prepareStatement("UPDATE accounts SET lastactive=? WHERE login=?");
+                    PreparedStatement statement3 =
+                            con.prepareStatement("UPDATE accounts SET lastactive=? WHERE login=?");
                     statement3.setLong(1, System.currentTimeMillis());
                     statement3.setString(2, login);
                     statement3.execute();
@@ -1010,9 +1005,8 @@ public class LoginController
 
             if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN)
             {
-                Log.info("Banning '" + address
-                        .getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
-                        " invalid user/pass attempts");
+                Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
+                        " seconds due to " + failedCount + " invalid user/pass attempts");
                 this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
             }
         }

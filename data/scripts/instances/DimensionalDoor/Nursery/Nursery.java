@@ -133,10 +133,9 @@ public class Nursery extends L2AttackableAIScript
                             }
 
                             world.points += pointsToGive;
-                            world.instancePlayer
-                                    .sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
-                                            "Soldier Tie received " + pointsToGive +
-                                                    " pieces of bio-energy residue.")); //1811146
+                            world.instancePlayer.sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
+                                    "Soldier Tie received " + pointsToGive +
+                                            " pieces of bio-energy residue.")); //1811146
                         }
                     }
                 }
@@ -209,8 +208,8 @@ public class Nursery extends L2AttackableAIScript
                         continue;
                     }
 
-                    L2Npc iNpc = addSpawn(iSpawn.getNpcId(), iSpawn.getX(), iSpawn.getY(), iSpawn.getZ(), iSpawn
-                            .getHeading(), false, 0, true, world.instanceId);
+                    L2Npc iNpc = addSpawn(iSpawn.getNpcId(), iSpawn.getX(), iSpawn.getY(), iSpawn.getZ(),
+                            iSpawn.getHeading(), false, 0, true, world.instanceId);
 
                     L2Spawn spawn = iNpc.getSpawn();
                     spawn.setRespawnDelay(20);
@@ -221,8 +220,9 @@ public class Nursery extends L2AttackableAIScript
             {
                 if (world.instancePlayer != null && world.instancePlayer.getInstanceId() == world.instanceId)
                 {
-                    world.instancePlayer.sendPacket(new ExSendUIEvent(3, (int) (System
-                            .currentTimeMillis() - world.enterTime) / 1000, world.points * 60, 1, 2409));
+                    world.instancePlayer.sendPacket(
+                            new ExSendUIEvent(3, (int) (System.currentTimeMillis() - world.enterTime) / 1000,
+                                    world.points * 60, 1, 2409));
                     startQuestTimer("stage_all_screen_message", 1000, null, world.instancePlayer); //1sec
                 }
             }
@@ -264,54 +264,54 @@ public class Nursery extends L2AttackableAIScript
                     int shinyCoins = 1 * DimensionalDoor.getDimensionalDoorRewardRate();
                     if (world.points >= 1 && world.points <= 800)
                     {
-                        shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(), 4 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 801 && world.points <= 1600)
                     {
-                        shinyCoins += Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(), 5 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                5 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 1601 && world.points <= 2000)
                     {
-                        shinyCoins += Rnd.get(5 * DimensionalDoor.getDimensionalDoorRewardRate(), 7 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(5 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                7 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2001 && world.points <= 2400)
                     {
-                        shinyCoins += Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 9 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                9 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2401 && world.points <= 2800)
                     {
-                        shinyCoins += Rnd.get(9 * DimensionalDoor.getDimensionalDoorRewardRate(), 11 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(9 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                11 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2801 && world.points <= 3200)
                     {
-                        shinyCoins += Rnd.get(11 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(11 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                13 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 3201 && world.points <= 3600)
                     {
-                        shinyCoins += Rnd.get(13 * DimensionalDoor.getDimensionalDoorRewardRate(), 15 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(13 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                15 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 3601 && world.points <= 4000)
                     {
-                        shinyCoins += Rnd.get(15 * DimensionalDoor.getDimensionalDoorRewardRate(), 17 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(15 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                17 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 4001)
                     {
-                        shinyCoins += Rnd.get(17 * DimensionalDoor.getDimensionalDoorRewardRate(), 19 * DimensionalDoor
-                                .getDimensionalDoorRewardRate());
+                        shinyCoins += Rnd.get(17 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                19 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
 
                     if (world.points > 600)
                     {
-                        world.instancePlayer.addItem(_qn, DimensionalDoor
-                                .getDimensionalDoorRewardId(), shinyCoins, world.instancePlayer, true);
+                        world.instancePlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), shinyCoins,
+                                world.instancePlayer, true);
                     }
 
                     InstanceManager.getInstance()
@@ -365,9 +365,9 @@ public class Nursery extends L2AttackableAIScript
                     world.instancePlayer
                             .sendPacket(new ExShowScreenMessage(1801149, 0, true, 2000)); //Maguen appearance!!!
 
-                    L2MonsterInstance maguen = (L2MonsterInstance) addSpawn(_maguenId, world.instancePlayer
-                            .getX(), world.instancePlayer.getY(), world.instancePlayer
-                            .getZ(), 0, true, 3000, true, world.instanceId); //5seg
+                    L2MonsterInstance maguen = (L2MonsterInstance) addSpawn(_maguenId, world.instancePlayer.getX(),
+                            world.instancePlayer.getY(), world.instancePlayer.getZ(), 0, true, 3000, true,
+                            world.instanceId); //5seg
                     maguen.setTarget(world.instancePlayer);
                     maguen.addDamageHate(world.instancePlayer, 500, 99999);
                     maguen.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.instancePlayer);
@@ -380,9 +380,8 @@ public class Nursery extends L2AttackableAIScript
                     }
 
                     world.points -= world.leakedPoints;
-                    world.instancePlayer
-                            .sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
-                                    "Maguen stole " + world.leakedPoints + " pieces of bio-energy residue.")); //1811145
+                    world.instancePlayer.sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
+                            "Maguen stole " + world.leakedPoints + " pieces of bio-energy residue.")); //1811145
 
                     startQuestTimer("stage_all_maguen_check", 3000, maguen, null); //1sec
                 }
@@ -392,9 +391,8 @@ public class Nursery extends L2AttackableAIScript
                     {
                         world.energyBuffId = _energyRegenerationIds[Rnd.get(_energyRegenerationIds.length)];
 
-                        world.instancePlayer
-                                .sendPacket(new ExShowScreenMessage(1811179, 0, true,
-                                        2000)); //Received Regeneration Energy!!
+                        world.instancePlayer.sendPacket(
+                                new ExShowScreenMessage(1811179, 0, true, 2000)); //Received Regeneration Energy!!
 
                         SkillTable.getInstance().getInfo(world.energyBuffId, 1)
                                 .getEffects(world.instancePlayer, world.instancePlayer);
@@ -407,10 +405,9 @@ public class Nursery extends L2AttackableAIScript
                 {
                     world.isMaguenSpawned = false;
                     world.points += world.leakedPoints;
-                    world.instancePlayer
-                            .sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
-                                    "Maguen gets surprised and gives " + world.leakedPoints +
-                                            " pieces of bio-energy residue.")); //1811147
+                    world.instancePlayer.sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 2000, 0,
+                            "Maguen gets surprised and gives " + world.leakedPoints +
+                                    " pieces of bio-energy residue.")); //1811147
                 }
             }
         }
@@ -424,8 +421,8 @@ public class Nursery extends L2AttackableAIScript
         {
             if (!(world instanceof NurseryWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

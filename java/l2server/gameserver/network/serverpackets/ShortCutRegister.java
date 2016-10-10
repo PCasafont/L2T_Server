@@ -77,7 +77,7 @@ public final class ShortCutRegister extends L2GameServerPacket
             /** these are same as default case, no need to duplicate, enable if packet get changed
              */
             /*	case L2ShortCut.TYPE_ACTION: //3
-			 *		writeD(_shortcut.getId());
+             *		writeD(_shortcut.getId());
 			 *		writeD(_shortcut.getUserCommand());
 			 *		break;
 			 *	case L2ShortCut.TYPE_MACRO: //4

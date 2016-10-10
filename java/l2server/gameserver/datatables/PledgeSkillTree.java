@@ -106,8 +106,7 @@ public class PledgeSkillTree
                                 continue;
                             }
 
-                            _skillTree.put(SkillTable
-                                            .getSkillHashCode(skill),
+                            _skillTree.put(SkillTable.getSkillHashCode(skill),
                                     new L2PledgeSkillLearn(skillId, skillLvl, clanLvl, reputation));
                         }
                     }

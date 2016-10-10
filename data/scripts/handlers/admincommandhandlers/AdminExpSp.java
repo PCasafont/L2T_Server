@@ -149,9 +149,8 @@ public class AdminExpSp implements IAdminCommandHandler
                 activeChar.sendMessage("Added " + expval + " xp and " + spval + " sp to " + player.getName() + ".");
                 if (Config.DEBUG)
                 {
-                    _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                            .getObjectId() + ") added " + expval + " xp and " + spval + " sp to " + player
-                            .getObjectId() + ".");
+                    _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") added " + expval +
+                            " xp and " + spval + " sp to " + player.getObjectId() + ".");
                 }
             }
         }
@@ -200,9 +199,8 @@ public class AdminExpSp implements IAdminCommandHandler
                 activeChar.sendMessage("Removed " + expval + " xp and " + spval + " sp from " + player.getName() + ".");
                 if (Config.DEBUG)
                 {
-                    _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                            .getObjectId() + ") removed " + expval + " xp and " + spval + " sp from " + player
-                            .getObjectId() + ".");
+                    _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") removed " + expval +
+                            " xp and " + spval + " sp from " + player.getObjectId() + ".");
                 }
             }
         }

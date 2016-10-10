@@ -60,8 +60,8 @@ public final class ItemAuctionManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT auctionId FROM item_auction ORDER BY auctionId DESC LIMIT 0, 1");
             ResultSet rset = statement.executeQuery();
             if (rset.next())
             {
@@ -118,8 +118,8 @@ public final class ItemAuctionManager
 
     public final void shutdown()
     {
-        final ItemAuctionInstance[] instances = _managerInstances
-                .getValues(new ItemAuctionInstance[_managerInstances.size()]);
+        final ItemAuctionInstance[] instances =
+                _managerInstances.getValues(new ItemAuctionInstance[_managerInstances.size()]);
         for (final ItemAuctionInstance instance : instances)
         {
             instance.shutdown();

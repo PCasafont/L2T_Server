@@ -106,8 +106,8 @@ public class Pdam implements ISkillHandler
 
             L2Character target = (L2Character) obj;
 
-            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target)
-                    .isFakeDeath())
+            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+                    ((L2PcInstance) target).isFakeDeath())
             {
                 target.stopFakeDeath(true);
             }
@@ -145,8 +145,8 @@ public class Pdam implements ISkillHandler
                 }
 
                 // Guessed formula
-                critRate += activeChar.calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) * (BaseStats.DEX
-                        .calcBonus(activeChar) - 1) * critRate;
+                critRate += activeChar.calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) *
+                        (BaseStats.DEX.calcBonus(activeChar) - 1) * critRate;
 
                 crit = Formulas.calcCrit(critRate, target);
             }
@@ -260,32 +260,32 @@ public class Pdam implements ISkillHandler
                         if (!target.isRaid() || activeChar.getLevel() <= target.getLevel() + 8)
                         {
                             // Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-                            double reflectPercent = target.getStat()
-                                    .calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
-                            reflectPercent = activeChar.getStat()
-                                    .calcStat(Stats.REFLECT_VULN, reflectPercent, null, null);
+                            double reflectPercent =
+                                    target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+                            reflectPercent =
+                                    activeChar.getStat().calcStat(Stats.REFLECT_VULN, reflectPercent, null, null);
 
                             if (reflectPercent > 0)
                             {
-                                reflectedDamage = (int) (reflectPercent / 100. * Math
-                                        .min(target.getCurrentHp(), damage));
+                                reflectedDamage =
+                                        (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 
                                 // Half the reflected damage for bows
                                 /*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-								if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+                                if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 										 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 									reflectedDamage *= 0.5f;*/
 
-                                if (reflectedDamage > target
-                                        .getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
+                                if (reflectedDamage >
+                                        target.getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
                                 {
                                     reflectedDamage = target.getMaxHp();
                                 }
 
                                 boolean defLimitReflects = true;
 
-                                if (target.getFirstEffect(10021) != null || target
-                                        .getFirstEffect(10017) != null || target.getSkillLevelHash(13524) != 0)
+                                if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null ||
+                                        target.getSkillLevelHash(13524) != 0)
                                 {
                                     defLimitReflects = false;
                                 }
@@ -307,8 +307,8 @@ public class Pdam implements ISkillHandler
                         }
                     }
 
-                    if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util
-                            .checkIfInRange(130, activeChar, target, false))
+                    if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null &&
+                            !Util.checkIfInRange(130, activeChar, target, false))
                     {
                         activeChar.sendMessage("Your attack has been blocked.");
 
@@ -362,8 +362,8 @@ public class Pdam implements ISkillHandler
                     if (Rnd.get(100) < 20) // Absorb now acts as "trigger". Let's hardcode a 20% chance
                     {
                         // Absorb HP from the damage inflicted
-                        double absorbPercent = activeChar.getStat()
-                                .calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
+                        double absorbPercent =
+                                activeChar.getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
 
                         if (absorbPercent > 0 && !activeChar.isInvul(target))
                         {
@@ -377,10 +377,11 @@ public class Pdam implements ISkillHandler
 
                             if (absorbDamage > 0)
                             {
-                                activeChar.getStatus().setCurrentHp(activeChar
-                                        .getCurrentHp() + absorbDamage, true, null, StatusUpdateDisplay.NORMAL);
-                                activeChar.sendMessage("You absorbed " + absorbDamage + " HP from " + target
-                                        .getName() + ".");
+                                activeChar.getStatus()
+                                        .setCurrentHp(activeChar.getCurrentHp() + absorbDamage, true, null,
+                                                StatusUpdateDisplay.NORMAL);
+                                activeChar.sendMessage(
+                                        "You absorbed " + absorbDamage + " HP from " + target.getName() + ".");
                             }
                         }
                     }
@@ -396,8 +397,8 @@ public class Pdam implements ISkillHandler
                         }
                         if (activeChar instanceof L2PcInstance)
                         {
-                            SystemMessage sm = SystemMessage
-                                    .getSystemMessage(SystemMessageId.C1_PERFORMING_COUNTERATTACK);
+                            SystemMessage sm =
+                                    SystemMessage.getSystemMessage(SystemMessageId.C1_PERFORMING_COUNTERATTACK);
                             sm.addCharName(target);
                             activeChar.sendPacket(sm);
                         }
@@ -451,8 +452,8 @@ public class Pdam implements ISkillHandler
                         {
                             int count = 0;
 
-                            if (((L2PcInstance) activeChar).getSouls() + skill.getNumSouls() <= soulmastery
-                                    .getNumSouls())
+                            if (((L2PcInstance) activeChar).getSouls() + skill.getNumSouls() <=
+                                    soulmastery.getNumSouls())
                             {
                                 count = skill.getNumSouls();
                             }
@@ -464,8 +465,8 @@ public class Pdam implements ISkillHandler
                         }
                         else
                         {
-                            SystemMessage sm = SystemMessage
-                                    .getSystemMessage(SystemMessageId.SOUL_CANNOT_BE_INCREASED_ANYMORE);
+                            SystemMessage sm =
+                                    SystemMessage.getSystemMessage(SystemMessageId.SOUL_CANNOT_BE_INCREASED_ANYMORE);
                             ((L2PcInstance) activeChar).sendPacket(sm);
                         }
                     }

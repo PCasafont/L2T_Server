@@ -233,8 +233,8 @@ public final class OlympiadGameTask implements Runnable
                 {
                     if (_countDown > 0)
                     {
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(SystemMessageId.THE_GAME_WILL_START_IN_S1_SECOND_S);
+                        SystemMessage sm =
+                                SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_WILL_START_IN_S1_SECOND_S);
                         sm.addNumber(_countDown);
                         _game.broadcastPacket(sm, _zone);
                     }
@@ -256,8 +256,8 @@ public final class OlympiadGameTask implements Runnable
                 {
                     if (_countDown > 0)
                     {
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(SystemMessageId.THE_GAME_WILL_START_IN_S1_SECOND_S);
+                        SystemMessage sm =
+                                SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_WILL_START_IN_S1_SECOND_S);
                         sm.addNumber(_countDown);
                         _game.broadcastPacket(sm, _zone);
                     }
@@ -307,8 +307,8 @@ public final class OlympiadGameTask implements Runnable
                 {
                     if (_countDown > 0)
                     {
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_TOWN_IN_S1_SECONDS);
+                        SystemMessage sm =
+                                SystemMessage.getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_TOWN_IN_S1_SECONDS);
                         sm.addNumber(_countDown);
                         _game.broadcastPacketToParticipants(sm);
                     }

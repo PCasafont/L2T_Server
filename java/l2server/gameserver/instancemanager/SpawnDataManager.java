@@ -107,8 +107,9 @@ public class SpawnDataManager
     public void updateDbSpawnData(L2Spawn spawn)
     {
         L2Npc npc = spawn.getNpc();
-        if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() && npc.getCurrentMp() == npc
-                .getMaxMp() || spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0)
+        if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() &&
+                npc.getCurrentMp() == npc.getMaxMp() ||
+                spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0)
         {
             return;
         }
@@ -118,9 +119,8 @@ public class SpawnDataManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            statement = con
-                    .prepareStatement(
-                            "REPLACE INTO spawn_data (name, respawn_time, current_hp, current_mp) VALUES (?, ?, ?, ?)");
+            statement = con.prepareStatement(
+                    "REPLACE INTO spawn_data (name, respawn_time, current_hp, current_mp) VALUES (?, ?, ?, ?)");
             statement.setString(1, spawn.getDbName());
             statement.setLong(2, spawn.getNextRespawn());
             statement.setDouble(3, npc.getCurrentHp());

@@ -59,8 +59,8 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("INSERT INTO character_mentees (charId, menteeId) VALUES (?, ?)");
+                    PreparedStatement statement =
+                            con.prepareStatement("INSERT INTO character_mentees (charId, menteeId) VALUES (?, ?)");
                     statement.setInt(1, requestor.getObjectId());
                     statement.setInt(2, player.getObjectId());
                     statement.execute();
@@ -98,12 +98,12 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
             }
             else
             {
-                SystemMessage msg = SystemMessage
-                        .getSystemMessage(SystemMessageId.S1_HAS_DECLINED_BECOMING_YOUR_MENTEE);
+                SystemMessage msg =
+                        SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_DECLINED_BECOMING_YOUR_MENTEE);
                 msg.addCharName(player);
                 requestor.sendPacket(msg);
-                SystemMessage msg1 = SystemMessage
-                        .getSystemMessage(SystemMessageId.YOU_HAVE_DECLINED_S1_MENTORING_OFFER);
+                SystemMessage msg1 =
+                        SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DECLINED_S1_MENTORING_OFFER);
                 msg1.addCharName(requestor);
                 player.sendPacket(msg1);
             }

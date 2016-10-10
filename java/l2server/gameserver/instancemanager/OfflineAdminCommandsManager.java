@@ -46,8 +46,8 @@ public class OfflineAdminCommandsManager
             // Retrieve the L2PcInstance from the characters table of the database
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT charId, char_name FROM characters WHERE char_name LIKE 'OffDummy'");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT charId, char_name FROM characters WHERE char_name LIKE 'OffDummy'");
             ResultSet rset = statement.executeQuery();
 
             if (rset.next())
@@ -117,8 +117,8 @@ public class OfflineAdminCommandsManager
             // Retrieve the L2PcInstance from the characters table of the database
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("UPDATE offline_admin_commands SET executed = 1 WHERE date = ?");
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE offline_admin_commands SET executed = 1 WHERE date = ?");
             statement.setInt(1, date);
             statement.execute();
             statement.close();
@@ -145,16 +145,15 @@ public class OfflineAdminCommandsManager
                 // Retrieve the L2PcInstance from the characters table of the database
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "SELECT author, accessLevel, command, date FROM offline_admin_commands WHERE executed = 0 ORDER BY date ASC");
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT author, accessLevel, command, date FROM offline_admin_commands WHERE executed = 0 ORDER BY date ASC");
                 ResultSet rset = statement.executeQuery();
 
                 boolean someExecuted = false;
                 while (rset.next())
                 {
-                    executeCommand(rset.getString("author"), rset.getInt("accessLevel"), rset.getString("command"), rset
-                            .getInt("date"));
+                    executeCommand(rset.getString("author"), rset.getInt("accessLevel"), rset.getString("command"),
+                            rset.getInt("date"));
                     someExecuted = true;
                 }
 

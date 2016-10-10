@@ -155,15 +155,15 @@ public class Q463_IMustBeaGenius extends Quest
             {
                 st.giveItems(_corpse_log, _number);
                 st.playSound("ItemSound.quest_itemget");
-                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), "Att... attack... " + player
-                        .getName() + "... Ro... rogue... " + _number + ".."));
+                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
+                        "Att... attack... " + player.getName() + "... Ro... rogue... " + _number + ".."));
             }
             else if (_number < 0 && st.getQuestItemsCount(_corpse_log) + _number > 0)
             {
                 st.takeItems(_corpse_log, Math.abs(_number));
                 st.playSound("ItemSound.quest_itemget");
-                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), "Att... attack... " + player
-                        .getName() + "... Ro... rogue... " + _number + ".."));
+                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
+                        "Att... attack... " + player.getName() + "... Ro... rogue... " + _number + ".."));
             }
 
             if (st.getQuestItemsCount(_corpse_log) == _day_number)

@@ -83,14 +83,15 @@ public class TargetAlly implements ISkillTargetTypeHandler
                         {
                             continue;
                         }
-                        if ((((L2PcInstance) newTarget).getAllyId() == 0 || ((L2PcInstance) newTarget)
-                                .getAllyId() != player.getAllyId()) && (((L2PcInstance) newTarget)
-                                .getClan() == null || ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
+                        if ((((L2PcInstance) newTarget).getAllyId() == 0 ||
+                                ((L2PcInstance) newTarget).getAllyId() != player.getAllyId()) &&
+                                (((L2PcInstance) newTarget).getClan() == null ||
+                                        ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
                         {
                             continue;
                         }
-                        if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || player
-                                .getParty() != null && !player.getParty().isInParty(newTarget)))
+                        if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() ||
+                                player.getParty() != null && !player.getParty().isInParty(newTarget)))
                         {
                             continue;
                         }
@@ -99,8 +100,8 @@ public class TargetAlly implements ISkillTargetTypeHandler
                         {
                             if (Util.checkIfInRange(radius, activeChar, ((L2PcInstance) newTarget).getPet(), true))
                             {
-                                if (!((L2PcInstance) newTarget).getPet().isDead() && player
-                                        .checkPvpSkill(newTarget, skill) && onlyFirst == false)
+                                if (!((L2PcInstance) newTarget).getPet().isDead() &&
+                                        player.checkPvpSkill(newTarget, skill) && onlyFirst == false)
                                 {
                                     targetList.add(((L2PcInstance) newTarget).getPet());
                                 }

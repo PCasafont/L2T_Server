@@ -375,8 +375,8 @@ public class ChessEventSide
         {
             for (L2ChessPieceInstance piece : ChessEvent.getBoard(getId())[i])
             {
-                if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() && piece
-                        .canKillTheKing())
+                if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() &&
+                        piece.canKillTheKing())
                 {
                     _canTheKingBeKilled = true;
                 }

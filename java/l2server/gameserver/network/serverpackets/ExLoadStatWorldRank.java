@@ -47,7 +47,7 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
         writeD(_pid1);
         writeD(_pid2);
         /*writeD(lastMap.size() < 100 ? lastMap.size() : 100);
-		int position = 1;
+        int position = 1;
 		boolean isClanStatistic = MuseumStatistic.get(_pid1, _pid2).toString().toLowerCase().contains("clan");
 		for (Integer key : lastMap.keySet())
 		{

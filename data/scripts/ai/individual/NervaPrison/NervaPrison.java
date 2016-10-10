@@ -137,8 +137,9 @@ public class NervaPrison extends L2AttackableAIScript
 
             npc.deleteMe();
 
-            L2MonsterInstance kaiser = (L2MonsterInstance) addSpawn(_kaiser, npc.getX(), npc.getY(), npc
-                    .getZ(), 0, false, 180000, false); //3min
+            L2MonsterInstance kaiser =
+                    (L2MonsterInstance) addSpawn(_kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000,
+                            false); //3min
             kaiser.setTarget(player);
             kaiser.addDamageHate(player, 500, 99999);
             kaiser.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

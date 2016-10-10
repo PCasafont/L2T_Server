@@ -134,8 +134,8 @@ public class AntiFeedManager
         }
 
         //Clan check
-        if (attackerPlayer.getClan() != null && targetPlayer.getClan() != null && attackerPlayer
-                .getClanId() == targetPlayer.getClanId())
+        if (attackerPlayer.getClan() != null && targetPlayer.getClan() != null &&
+                attackerPlayer.getClanId() == targetPlayer.getClanId())
         {
             return false;
         }
@@ -196,7 +196,7 @@ public class AntiFeedManager
     {
         return true;
         /*
-		if (client == null)
+        if (client == null)
 			return false; // unable to determine IP address
 
 		final Map<Integer, Connections> event = _eventIPs.get(eventId);

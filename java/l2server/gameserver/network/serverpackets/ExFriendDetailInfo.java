@@ -54,8 +54,8 @@ public class ExFriendDetailInfo extends L2GameServerPacket
         _player = activeChar;
         _friendObjId = CharNameTable.getInstance().getIdByName(charName);
         _name = charName;
-        _isOnline = L2World.getInstance().getPlayer(_friendObjId) != null && L2World.getInstance()
-                .getPlayer(_friendObjId).isOnline() ? 1 : 0;
+        _isOnline = L2World.getInstance().getPlayer(_friendObjId) != null &&
+                L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
         _memo = activeChar.getFriendMemo(_friendObjId);
         if (_isOnline == 1)
         {
@@ -124,8 +124,8 @@ public class ExFriendDetailInfo extends L2GameServerPacket
                 // Retrieve the L2PcInstance from the characters table of the database
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
                 statement.setInt(1, objId);
                 statement.setInt(2, _classId);
                 ResultSet rset = statement.executeQuery();

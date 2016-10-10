@@ -144,8 +144,9 @@ public class AutoSpawnHandler
             {
                 // Register random spawn group, set various options on the
                 // created spawn instance.
-                AutoSpawnInstance spawnInst = registerSpawn(rs.getInt("npcId"), rs.getInt("initialDelay"), rs
-                        .getInt("respawnDelay"), rs.getInt("despawnDelay"));
+                AutoSpawnInstance spawnInst =
+                        registerSpawn(rs.getInt("npcId"), rs.getInt("initialDelay"), rs.getInt("respawnDelay"),
+                                rs.getInt("despawnDelay"));
 
                 spawnInst.setBroadcast(rs.getBoolean("broadcastSpawn"));
                 spawnInst.setRandomSpawn(rs.getBoolean("randomSpawn"));
@@ -287,8 +288,7 @@ public class AutoSpawnHandler
         {
             Log.log(Level.WARNING,
                     "AutoSpawnHandler: Could not auto spawn for NPC ID " + spawnInst._npcId + " (Object ID = " +
-                            spawnInst._objectId + "): " + e
-                            .getMessage(), e);
+                            spawnInst._objectId + "): " + e.getMessage(), e);
             return false;
         }
 
@@ -514,7 +514,7 @@ public class AutoSpawnHandler
                 int locationIndex = Rnd.nextInt(locationCount);
 
 				/*
-				 * If random spawning is disabled, the spawn at the next set of
+                 * If random spawning is disabled, the spawn at the next set of
 				 * co-ordinates after the last. If the index is greater than the
 				 * number of possible spawns, reset the counter to zero.
 				 */
@@ -569,10 +569,9 @@ public class AutoSpawnHandler
 
                 if (Config.DEBUG)
                 {
-                    Log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst
-                            .getNpcId() + " at " + x + ", " + y + ", " + z + " (Near " + nearestTown + ") for " +
-                            spawnInst
-                                    .getRespawnDelay() / 60000 + " minute(s).");
+                    Log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst.getNpcId() + " at " + x + ", " + y + ", " +
+                            z + " (Near " + nearestTown + ") for " + spawnInst.getRespawnDelay() / 60000 +
+                            " minute(s).");
                 }
 
                 // If there is no despawn time, do not create a despawn task.
@@ -586,8 +585,7 @@ public class AutoSpawnHandler
             {
                 Log.log(Level.WARNING,
                         "AutoSpawnHandler: An error occurred while initializing spawn instance (Object ID = " +
-                                _objectId + "): " + e
-                                .getMessage(), e);
+                                _objectId + "): " + e.getMessage(), e);
             }
         }
     }
@@ -643,8 +641,7 @@ public class AutoSpawnHandler
             {
                 Log.log(Level.WARNING,
                         "AutoSpawnHandler: An error occurred while despawning spawn (Object ID = " + _objectId + "): " +
-                                e
-                                        .getMessage(), e);
+                                e.getMessage(), e);
             }
         }
     }

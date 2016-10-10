@@ -87,9 +87,8 @@ public class InstantJump implements ISkillHandler
 
         if (Config.GEODATA > 0)
         {
-            loc = GeoData.getInstance()
-                    .moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar
-                            .getInstanceId());
+            loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z,
+                    activeChar.getInstanceId());
         }
 
         activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

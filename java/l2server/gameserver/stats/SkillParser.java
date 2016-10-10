@@ -119,11 +119,11 @@ public final class SkillParser extends StatsParser
                                     case SUB:
                                         return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) - value);
                                     case ADD_PERCENT:
-                                        return String.valueOf(Float
-                                                .parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
+                                        return String.valueOf(
+                                                Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
                                     case SUB_PERCENT:
-                                        return String.valueOf(Float
-                                                .parseFloat(mainTable[mainLevel - 1]) * (1.0f - value / 100.0f));
+                                        return String.valueOf(
+                                                Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - value / 100.0f));
                                 }
                             }
                         }
@@ -430,8 +430,8 @@ public final class SkillParser extends StatsParser
                 }
                 if (Config.DEBUG)
                 {
-                    Log.info("*** Skill " + template.getName() + " (" + template
-                            .getLevelHash() + ") changed duration to " + duration + " seconds.");
+                    Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() +
+                            ") changed duration to " + duration + " seconds.");
                 }
             }
         }

@@ -72,7 +72,7 @@ public final class ExPetInfo extends L2GameServerPacket
         buffer.putFloat(pet.getAttackSpeedMultiplier());
 
 		/*buffer.putInt(summon.getWeapon());
-		buffer.putInt(summon.getArmor());
+        buffer.putInt(summon.getArmor());
 		buffer.putInt(0);*/
 
         buffer.put((byte) 1);

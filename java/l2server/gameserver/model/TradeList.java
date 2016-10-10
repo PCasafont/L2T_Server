@@ -600,8 +600,8 @@ public class TradeList
                     TradeList partnerList = _partner.getActiveTradeList();
                     if (partnerList == null)
                     {
-                        Log.warning(_partner.getName() + ": Trading partner (" + _partner
-                                .getName() + ") is invalid in this trade!");
+                        Log.warning(_partner.getName() + ": Trading partner (" + _partner.getName() +
+                                ") is invalid in this trade!");
                         return null;
                     }
                     partnerList.invalidateConfirmation();
@@ -677,8 +677,8 @@ public class TradeList
             TradeList partnerList = _partner.getActiveTradeList();
             if (partnerList == null)
             {
-                Log.warning(_partner.getName() + ": Trading partner (" + _partner
-                        .getName() + ") is invalid in this trade!");
+                Log.warning(_partner.getName() + ": Trading partner (" + _partner.getName() +
+                        ") is invalid in this trade!");
                 return false;
             }
 
@@ -777,8 +777,8 @@ public class TradeList
                 return false;
             }
             L2ItemInstance newItem = _owner.getInventory()
-                    .transferItem("Trade", titem.getObjectId(), titem.getCount(), partner
-                            .getInventory(), _owner, _partner);
+                    .transferItem("Trade", titem.getObjectId(), titem.getCount(), partner.getInventory(), _owner,
+                            _partner);
             if (newItem == null)
             {
                 return false;
@@ -875,14 +875,14 @@ public class TradeList
         boolean success = false;
 
         // check weight and slots
-        if (!getOwner().getInventory().validateWeight(partnerList.calcItemsWeight()) || !partnerList.getOwner()
-                .getInventory().validateWeight(calcItemsWeight()))
+        if (!getOwner().getInventory().validateWeight(partnerList.calcItemsWeight()) ||
+                !partnerList.getOwner().getInventory().validateWeight(calcItemsWeight()))
         {
             partnerList.getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
             getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
         }
-        else if (!getOwner().getInventory().validateCapacity(partnerList.countItemsSlots(getOwner())) || !partnerList
-                .getOwner().getInventory().validateCapacity(countItemsSlots(partnerList.getOwner())))
+        else if (!getOwner().getInventory().validateCapacity(partnerList.countItemsSlots(getOwner())) ||
+                !partnerList.getOwner().getInventory().validateCapacity(countItemsSlots(partnerList.getOwner())))
         {
             partnerList.getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
             getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
@@ -986,8 +986,7 @@ public class TradeList
             {
                 if (isPackaged())
                 {
-                    Util.handleIllegalPlayerAction(player, "[TradeList.privateStoreBuy()] Player " + player
-                                    .getName() +
+                    Util.handleIllegalPlayerAction(player, "[TradeList.privateStoreBuy()] Player " + player.getName() +
                                     " tried to cheat the package sell and buy only a part of the package! Ban this player for bot usage!",
                             Config.DEFAULT_PUNISH);
                     return 2;

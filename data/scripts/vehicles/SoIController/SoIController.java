@@ -40,8 +40,7 @@ public class SoIController extends AirShipController
                     new VehiclePathPoint(-214422, 211396, 5000, 280, 2000),
                     new VehiclePathPoint(-215877, 209709, 5000, 280, 2000),
                     new VehiclePathPoint(-206692, 220997, 3000, 0, 0)
-            },
-            {
+            }, {
                     new VehiclePathPoint(-214422, 211396, 5000, 280, 2000),
                     new VehiclePathPoint(-215877, 209709, 5000, 280, 2000),
                     new VehiclePathPoint(-195357, 233430, 2500, 0, 0)

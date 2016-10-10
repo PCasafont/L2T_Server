@@ -185,8 +185,8 @@ public class Q10363_RequestOfTheSeeker extends Quest
     @Override
     public boolean canStart(L2PcInstance player)
     {
-        return player.getLevel() >= 12 && player.getLevel() <= 20 && player
-                .getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
+        return player.getLevel() >= 12 && player.getLevel() <= 20 &&
+                player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
     }
 
     public static void main(String[] args)

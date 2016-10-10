@@ -71,8 +71,8 @@ public class AdminSummon implements IAdminCommandHandler
             if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
             {
                 activeChar.sendMessage("You don't have the access right to use this command!");
-                _log.warning("Character " + activeChar
-                        .getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
+                _log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+                        ", but have no access to it!");
                 return false;
             }
             IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);
@@ -84,8 +84,8 @@ public class AdminSummon implements IAdminCommandHandler
             if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
             {
                 activeChar.sendMessage("You don't have the access right to use this command!");
-                _log.warning("Character " + activeChar
-                        .getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
+                _log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+                        ", but have no access to it!");
                 return false;
             }
             IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);

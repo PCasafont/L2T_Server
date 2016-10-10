@@ -114,7 +114,7 @@ public class FarmZoneManager
                                 farmZone.addMob(temp);
 
 								/*try
-								{
+                                {
 									L2Spawn spawn = new L2Spawn(temp);
 									spawn.doSpawn();
 									L2Npc mobInstance = spawn.getNpc();
@@ -245,8 +245,8 @@ public class FarmZoneManager
                                     L2Spawn spawn = new L2Spawn(baseMobTemplate);
                                     spawn.doSpawn();
                                     L2Npc baseMob = spawn.getNpc();
-                                    baseMobFarmCost = baseMob.getMaxHp() * (float) (baseMob.getPDef(null) + baseMob
-                                            .getMDef(null, null));
+                                    baseMobFarmCost = baseMob.getMaxHp() *
+                                            (float) (baseMob.getPDef(null) + baseMob.getMDef(null, null));
                                     baseMob.deleteMe();
                                     if (baseMob.getSpawn() != null)
                                     {
@@ -265,8 +265,8 @@ public class FarmZoneManager
                         List<L2DropCategory> dropCategories = new ArrayList<L2DropCategory>();
                         for (XmlNode dropNode : farmNode.getChildren())
                         {
-                            if (dropNode.getName().equalsIgnoreCase("itemDrop") || dropNode.getName()
-                                    .equalsIgnoreCase("spoilDrop"))
+                            if (dropNode.getName().equalsIgnoreCase("itemDrop") ||
+                                    dropNode.getName().equalsIgnoreCase("spoilDrop"))
                             {
                                 int itemId = dropNode.getInt("itemId");
                                 int min = dropNode.getInt("min");
@@ -332,8 +332,8 @@ public class FarmZoneManager
                                     L2Spawn spawn = new L2Spawn(mob);
                                     spawn.doSpawn();
                                     L2Npc mobInstance = spawn.getNpc();
-                                    float mobFarmCost = mobInstance.getMaxHp() * (float) (mobInstance
-                                            .getPDef(null) + mobInstance.getMDef(null, null));
+                                    float mobFarmCost = mobInstance.getMaxHp() *
+                                            (float) (mobInstance.getPDef(null) + mobInstance.getMDef(null, null));
                                     dropMultiplier = mobFarmCost / baseMobFarmCost;
                                     mobInstance.deleteMe();
                                     if (mobInstance.getSpawn() != null)
@@ -439,8 +439,8 @@ public class FarmZoneManager
                                 L2DropCategory dc = new L2DropCategory(chance);
                                 for (L2DropData drop : dropCategory.getAllDrops())
                                 {
-                                    dc.addDropData(new L2DropData(drop.getItemId(), drop.getMinDrop() * multiplier, drop
-                                            .getMaxDrop() * multiplier, drop.getChance()));
+                                    dc.addDropData(new L2DropData(drop.getItemId(), drop.getMinDrop() * multiplier,
+                                            drop.getMaxDrop() * multiplier, drop.getChance()));
                                 }
                                 mob.addMultiDrop(dc);
                             }

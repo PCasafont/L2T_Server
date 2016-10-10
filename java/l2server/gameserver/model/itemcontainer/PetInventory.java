@@ -67,8 +67,8 @@ public class PetInventory extends Inventory
     {
         int slots = 0;
 
-        if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item
-                .getItemType() != L2EtcItemType.HERB)
+        if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) &&
+                item.getItemType() != L2EtcItemType.HERB)
         {
             slots++;
         }
@@ -133,8 +133,8 @@ public class PetInventory extends Inventory
     {
         for (L2ItemInstance item : _items.values())
         {
-            getOwner().transferItem("return", item.getObjectId(), item.getCount(), getOwner().getOwner()
-                    .getInventory(), getOwner().getOwner(), getOwner());
+            getOwner().transferItem("return", item.getObjectId(), item.getCount(), getOwner().getOwner().getInventory(),
+                    getOwner().getOwner(), getOwner());
         }
     }
 }

@@ -37,8 +37,9 @@ public class NecromancerOfTheValley extends L2AttackableAIScript
 
             for (int a = 22818; a < 22820; a++)
             {
-                L2Attackable minion = (L2Attackable) addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc
-                        .getHeading(), false, 0, true);
+                L2Attackable minion =
+                        (L2Attackable) addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0,
+                                true);
 
                 minion.setIsRunning(true);
 

@@ -88,9 +88,9 @@ public class StalkedStalkers extends EventInstance
         }
 
         rewardPlayers(sorted);
-        Announcements.getInstance()
-                .announceToAll("The event has ended. The player " + sorted.get(0).getName() + " won with " + sorted
-                        .get(0).getEventPoints() + " points");
+        Announcements.getInstance().announceToAll(
+                "The event has ended. The player " + sorted.get(0).getName() + " won with " +
+                        sorted.get(0).getEventPoints() + " points");
         return;
     }
 
@@ -112,8 +112,8 @@ public class StalkedStalkers extends EventInstance
             {
                 if (participant != null)
                 {
-                    html += EventsManager.getInstance().getPlayerString(participant, player) + ": " + participant
-                            .getEventPoints() + "<br>";
+                    html += EventsManager.getInstance().getPlayerString(participant, player) + ": " +
+                            participant.getEventPoints() + "<br>";
                 }
             }
             if (html.length() > 4)
@@ -176,9 +176,8 @@ public class StalkedStalkers extends EventInstance
             killerPlayerInstance.addEventPoints(-1);
             if (killerPlayerInstance.getEventPoints() < 0)
             {
-                killerPlayerInstance
-                        .sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
-                                "Your stupidity has tired me. Get out from here!"));
+                killerPlayerInstance.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
+                        "Your stupidity has tired me. Get out from here!"));
                 removeParticipant(killerPlayerInstance.getObjectId());
                 new EventTeleporter(killerPlayerInstance, new Point3D(0, 0, 0), false, true);
             }
@@ -242,15 +241,15 @@ public class StalkedStalkers extends EventInstance
             case 3:
                 if (player.getActiveClass() != player.getBaseClass())
                 {
-                    hint = "Hint 3: Tour target's current class is " + PlayerClassTable.getInstance()
-                            .getClassNameById(player
-                                    .getActiveClass()) + ", " + "and its base class is " + PlayerClassTable
-                            .getInstance().getClassNameById(player.getBaseClass()) + ".";
+                    hint = "Hint 3: Tour target's current class is " +
+                            PlayerClassTable.getInstance().getClassNameById(player.getActiveClass()) + ", " +
+                            "and its base class is " +
+                            PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()) + ".";
                 }
                 else
                 {
-                    hint = "Hint 3: Tour target's class is " + PlayerClassTable.getInstance()
-                            .getClassNameById(player.getBaseClass()) + ".";
+                    hint = "Hint 3: Tour target's class is " +
+                            PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()) + ".";
                 }
                 break;
             case 4:

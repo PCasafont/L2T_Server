@@ -37,9 +37,9 @@ public final class RequestFlyMoveStart extends L2GameClientPacket
     protected void runImpl()
     {
         L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null || PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass())
-                .getLevel() < 85 || activeChar.getReputation() < 0 || activeChar.isMounted() || activeChar
-                .isTransformed())
+        if (activeChar == null ||
+                PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass()).getLevel() < 85 ||
+                activeChar.getReputation() < 0 || activeChar.isMounted() || activeChar.isTransformed())
         {
             return;
         }

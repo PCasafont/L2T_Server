@@ -233,8 +233,8 @@ public class MC_Show extends Quest
         if (Config.DEBUG)
         {
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            Log.info("Fantasy Isle: MC show script starting at " + format
-                    .format(System.currentTimeMillis() + diff) + " and is scheduled each next 4 hours.");
+            Log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) +
+                    " and is scheduled each next 4 hours.");
         }
         ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
     }
@@ -256,9 +256,8 @@ public class MC_Show extends Quest
                     startQuestTimer("1", 30000, npc, null);
                     break;
                 case 32431:
-                    npc.getAI()
-                            .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                    new L2CharPosition(-56657, -56338, -2008, 33102));
+                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(-56657, -56338, -2008, 33102));
                     startQuestTimer("social1", 6000, npc, null, true);
                     startQuestTimer("7", 215000, npc, null);
                     break;
@@ -300,9 +299,8 @@ public class MC_Show extends Quest
             if (event.equalsIgnoreCase("6"))
             {
                 autoChat(npc, messages[6], 1);
-                npc.getAI()
-                        .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                new L2CharPosition(-56511, -56647, -2008, 36863));
+                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(-56511, -56647, -2008, 36863));
                 npc.broadcastPacket(new PlaySound(1, "NS22_F", 0, 0, 0, 0, 0));
                 addSpawn(singers[0], -56344, -56328, -2008, 32768, false, 224000);
                 addSpawn(singers[1], -56552, -56245, -2008, 36863, false, 224000);
@@ -319,24 +317,21 @@ public class MC_Show extends Quest
                 {
                     case 32433:
                         autoChat(npc, messages[7], 1);
-                        npc.getAI()
-                                .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                        new L2CharPosition(-56698, -56430, -2008, 32768));
+                        npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                new L2CharPosition(-56698, -56430, -2008, 32768));
                         startQuestTimer("8", 12000, npc, null);
                         break;
                     default:
                         cancelQuestTimer("social1", npc, null);
-                        npc.getAI()
-                                .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                        new L2CharPosition(-56594, -56064, -2008, 32768));
+                        npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                new L2CharPosition(-56594, -56064, -2008, 32768));
                         break;
                 }
             }
             else if (event.equalsIgnoreCase("10"))
             {
-                npc.getAI()
-                        .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                new L2CharPosition(-56483, -56665, -2034, 32768));
+                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(-56483, -56665, -2034, 32768));
                 npc.broadcastPacket(new PlaySound(1, "TP05_F", 0, 0, 0, 0, 0));
                 startQuestTimer("npc1_1", 3000, addSpawn(circus[0], -56495, -56375, -2008, 32768, false, 101000), null);
                 startQuestTimer("npc2_1", 3000, addSpawn(circus[0], -56491, -56289, -2008, 32768, false, 101000), null);
@@ -355,15 +350,13 @@ public class MC_Show extends Quest
                 {
                     case 32433:
                         autoChat(npc, messages[10], 1);
-                        npc.getAI()
-                                .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                        new L2CharPosition(-56698, -56430, -2008, 32768));
+                        npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                new L2CharPosition(-56698, -56430, -2008, 32768));
                         startQuestTimer("12", 5000, npc, null);
                         break;
                     default:
-                        npc.getAI()
-                                .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                        new L2CharPosition(-56343, -56330, -2008, 32768));
+                        npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                new L2CharPosition(-56343, -56330, -2008, 32768));
                         break;
                 }
             }
@@ -388,9 +381,8 @@ public class MC_Show extends Quest
             }
             else if (event.equalsIgnoreCase("23"))
             {
-                npc.getAI()
-                        .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                new L2CharPosition(-56702, -56340, -2008, 32768));
+                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(-56702, -56340, -2008, 32768));
                 startQuestTimer("24", 2800, npc, null);
                 addSpawn(showstuff[0], -56672, -56406, -2000, 32768, false, 20900);
                 addSpawn(showstuff[1], -56648, -56368, -2000, 32768, false, 20900);
@@ -405,9 +397,8 @@ public class MC_Show extends Quest
             }
             else if (event.equalsIgnoreCase("29"))
             {
-                npc.getAI()
-                        .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                new L2CharPosition(-56730, -56340, -2008, 32768));
+                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(-56730, -56340, -2008, 32768));
                 startQuestTimer("clean_npc", 4100, npc, null);
                 startQuestTimer("timer_check", 60000, null, null, true);
             }

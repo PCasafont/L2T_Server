@@ -98,8 +98,8 @@ public class L2SiegeZone extends L2ZoneType
 
             if (character instanceof L2PcInstance)
             {
-                if (((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId) || ((L2PcInstance) character)
-                        .isGM())
+                if (((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId) ||
+                        ((L2PcInstance) character).isGM())
                 {
                     ((L2PcInstance) character).setIsInSiege(true); // in siege
                     if (_siege != null && _siege.giveFame())
@@ -164,8 +164,8 @@ public class L2SiegeZone extends L2ZoneType
                 }
                 else
                 {
-                    int slot = activeChar.getInventory()
-                            .getSlotFromItem(activeChar.getInventory().getItemByItemId(9819));
+                    int slot =
+                            activeChar.getInventory().getSlotFromItem(activeChar.getInventory().getItemByItemId(9819));
                     activeChar.getInventory().unEquipItemInBodySlot(slot);
                     activeChar.destroyItem("CombatFlag", activeChar.getInventory().getItemByItemId(9819), null, true);
                 }
@@ -186,8 +186,8 @@ public class L2SiegeZone extends L2ZoneType
         if (_isActiveSiege)
         {
             // debuff participants only if they die inside siege zone
-            if (character instanceof L2PcInstance && ((L2PcInstance) character)
-                    .isRegisteredOnThisSiegeField(_siegableId))
+            if (character instanceof L2PcInstance &&
+                    ((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId))
             {
                 int lvl = 1;
                 final L2Abnormal e = character.getFirstEffect(5660);

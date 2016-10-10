@@ -87,16 +87,16 @@ public final class FloodProtectorAction
         {
             if (_config.LOG_FLOODING && !_logged && Log.isLoggable(Level.WARNING))
             {
-                log(" called command ", command, " ~", String
-                        .valueOf((_config.FLOOD_PROTECTION_INTERVAL - (_nextGameTick - curTick)) *
+                log(" called command ", command, " ~", String.valueOf(
+                        (_config.FLOOD_PROTECTION_INTERVAL - (_nextGameTick - curTick)) *
                                 TimeController.MILLIS_IN_TICK), " ms after previous command");
                 _logged = true;
             }
 
             _count.incrementAndGet();
 
-            if (!_punishmentInProgress && _config.PUNISHMENT_LIMIT > 0 && _count
-                    .get() >= _config.PUNISHMENT_LIMIT && _config.PUNISHMENT_TYPE != null)
+            if (!_punishmentInProgress && _config.PUNISHMENT_LIMIT > 0 && _count.get() >= _config.PUNISHMENT_LIMIT &&
+                    _config.PUNISHMENT_TYPE != null)
             {
                 _punishmentInProgress = true;
 
@@ -123,8 +123,8 @@ public final class FloodProtectorAction
         {
             if (_config.LOG_FLOODING && Log.isLoggable(Level.WARNING))
             {
-                log(" issued ", String.valueOf(_count), " extra requests within ~", String
-                        .valueOf(_config.FLOOD_PROTECTION_INTERVAL * TimeController.MILLIS_IN_TICK), " ms");
+                log(" issued ", String.valueOf(_count), " extra requests within ~",
+                        String.valueOf(_config.FLOOD_PROTECTION_INTERVAL * TimeController.MILLIS_IN_TICK), " ms");
             }
         }
 

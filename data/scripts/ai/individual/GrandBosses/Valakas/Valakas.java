@@ -214,9 +214,9 @@ public class Valakas extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.VALAKAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.VALAKAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -311,24 +311,24 @@ public class Valakas extends L2AttackableAIScript
             }
 
             //Cameras
-            _bossZone.sendDelayedPacketToZone(1700, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1800, 180, -1, 1500, 10000, 0, 0, 1, 0));
-            _bossZone.sendDelayedPacketToZone(3200, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1300, 180, -5, 3000, 10000, 0, -5, 1, 0));
-            _bossZone.sendDelayedPacketToZone(6500, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 500, 180, -8, 600, 10000, 0, 60, 1, 0));
-            _bossZone.sendDelayedPacketToZone(9400, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 800, 180, -8, 2700, 10000, 0, 30, 1, 0));
-            _bossZone.sendDelayedPacketToZone(12100, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 200, 250, 70, 0, 10000, 30, 80, 1, 0));
-            _bossZone.sendDelayedPacketToZone(12430, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1100, 250, 70, 2500, 10000, 30, 80, 1, 0));
-            _bossZone.sendDelayedPacketToZone(15430, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 700, 150, 30, 0, 10000, -10, 60, 1, 0));
-            _bossZone.sendDelayedPacketToZone(16830, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1200, 150, 20, 2900, 10000, -10, 30, 1, 0));
-            _bossZone.sendDelayedPacketToZone(23530, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
+            _bossZone.sendDelayedPacketToZone(1700,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1800, 180, -1, 1500, 10000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(3200,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1300, 180, -5, 3000, 10000, 0, -5, 1, 0));
+            _bossZone.sendDelayedPacketToZone(6500,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 500, 180, -8, 600, 10000, 0, 60, 1, 0));
+            _bossZone.sendDelayedPacketToZone(9400,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 800, 180, -8, 2700, 10000, 0, 30, 1, 0));
+            _bossZone.sendDelayedPacketToZone(12100,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 200, 250, 70, 0, 10000, 30, 80, 1, 0));
+            _bossZone.sendDelayedPacketToZone(12430,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1100, 250, 70, 2500, 10000, 30, 80, 1, 0));
+            _bossZone.sendDelayedPacketToZone(15430,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 700, 150, 30, 0, 10000, -10, 60, 1, 0));
+            _bossZone.sendDelayedPacketToZone(16830,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1200, 150, 20, 2900, 10000, -10, 30, 1, 0));
+            _bossZone.sendDelayedPacketToZone(23530,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
 
             startQuestTimer("valakas_last_spawn_task", 26000, null, null);
         }
@@ -353,8 +353,8 @@ public class Valakas extends L2AttackableAIScript
         {
             for (int i = 0; i < 20; i++)
             {
-                addSpawn(_lavasaurusAlpha, _valakasBoss.getX() + Rnd.get(500), _valakasBoss.getY() + Rnd
-                        .get(500), _valakasBoss.getZ(), 0, false, 0, true, 0);
+                addSpawn(_lavasaurusAlpha, _valakasBoss.getX() + Rnd.get(500), _valakasBoss.getY() + Rnd.get(500),
+                        _valakasBoss.getZ(), 0, false, 0, true, 0);
             }
         }
         else if (event.equalsIgnoreCase("valakas_skill_task"))
@@ -362,16 +362,16 @@ public class Valakas extends L2AttackableAIScript
             if (!_valakasBoss.isInvul() && !_valakasBoss.isCastingNow())
             {
                 // Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
-                if (_actualVictim == null || _actualVictim.isDead() || !_valakasBoss.getKnownList()
-                        .knowsObject(_actualVictim) || Rnd.get(10) == 0)
+                if (_actualVictim == null || _actualVictim.isDead() ||
+                        !_valakasBoss.getKnownList().knowsObject(_actualVictim) || Rnd.get(10) == 0)
                 {
                     _actualVictim = getRandomTarget();
                 }
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": " + (_actualVictim != null ? _actualVictim
-                            .getName() : " victim is null!"));
+                    Log.warning(
+                            getName() + ": " + (_actualVictim != null ? _actualVictim.getName() : " victim is null!"));
                 }
 
                 // If result is still null, Valakas will roam. Don't go deeper in skill AI.
@@ -389,9 +389,8 @@ public class Valakas extends L2AttackableAIScript
                         if (GeoData.getInstance()
                                 .canMoveFromToTarget(x, y, z, posX, posY, z, _valakasBoss.getInstanceId()))
                         {
-                            _valakasBoss.getAI()
-                                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                            new L2CharPosition(posX, posY, z, 0));
+                            _valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                    new L2CharPosition(posX, posY, z, 0));
                         }
                     }
                 }
@@ -400,8 +399,8 @@ public class Valakas extends L2AttackableAIScript
                     final L2Skill skill = getRandomSkill().getSkill();
 
                     // Cast the skill or follow the target.
-                    if (Util.checkIfInRange(skill.getCastRange() < 600 ? 600 : skill
-                            .getCastRange(), _valakasBoss, _actualVictim, true))
+                    if (Util.checkIfInRange(skill.getCastRange() < 600 ? 600 : skill.getCastRange(), _valakasBoss,
+                            _actualVictim, true))
                     {
                         _valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
                         _valakasBoss.setIsCastingNow(true);
@@ -529,8 +528,8 @@ public class Valakas extends L2AttackableAIScript
                 attacker.doDie(null);
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " out of the boss zone!");
                 }
             }
 
@@ -541,8 +540,8 @@ public class Valakas extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " wich is out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " wich is out of the boss zone!");
                 }
             }
         }
@@ -567,26 +566,25 @@ public class Valakas extends L2AttackableAIScript
             _bossZone.broadcastPacket(new PlaySound(1, "B03_D", 0, 0, 0, 0, 0));
 
             //Cameras
-            _bossZone.sendDelayedPacketToZone(300, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 2000, 130, -1, 0, 10000, 0, 0, 1, 1));
-            _bossZone.sendDelayedPacketToZone(600, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1100, 210, -5, 3000, 10000, -13, 0, 1, 1));
-            _bossZone.sendDelayedPacketToZone(3800, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1300, 200, -8, 3000, 10000, 0, 15, 1, 1));
-            _bossZone.sendDelayedPacketToZone(8200, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1000, 190, 0, 500, 10000, 0, 10, 1, 1));
-            _bossZone.sendDelayedPacketToZone(8700, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1700, 120, 0, 2500, 10000, 12, 40, 1, 1));
-            _bossZone.sendDelayedPacketToZone(13300, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1700, 20, 0, 700, 10000, 10, 10, 1, 1));
-            _bossZone.sendDelayedPacketToZone(14000, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1700, 10, 0, 1000, 10000, 20, 70, 1, 1));
-            _bossZone.sendDelayedPacketToZone(16500, new SpecialCamera(_valakasBoss
-                    .getObjectId(), 1700, 10, 0, 300, 250, 20, -20, 1, 1));
+            _bossZone.sendDelayedPacketToZone(300,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 2000, 130, -1, 0, 10000, 0, 0, 1, 1));
+            _bossZone.sendDelayedPacketToZone(600,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1100, 210, -5, 3000, 10000, -13, 0, 1, 1));
+            _bossZone.sendDelayedPacketToZone(3800,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1300, 200, -8, 3000, 10000, 0, 15, 1, 1));
+            _bossZone.sendDelayedPacketToZone(8200,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1000, 190, 0, 500, 10000, 0, 10, 1, 1));
+            _bossZone.sendDelayedPacketToZone(8700,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1700, 120, 0, 2500, 10000, 12, 40, 1, 1));
+            _bossZone.sendDelayedPacketToZone(13300,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1700, 20, 0, 700, 10000, 10, 10, 1, 1));
+            _bossZone.sendDelayedPacketToZone(14000,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1700, 10, 0, 1000, 10000, 20, 70, 1, 1));
+            _bossZone.sendDelayedPacketToZone(16500,
+                    new SpecialCamera(_valakasBoss.getObjectId(), 1700, 10, 0, 300, 250, 20, -20, 1, 1));
 
-            _bossZone
-                    .broadcastPacket(new ExShowScreenMessage(901900151, 0,
-                            3000));//The evil Fire Dragon Valakas has been defeated!
+            _bossZone.broadcastPacket(
+                    new ExShowScreenMessage(901900151, 0, 3000));//The evil Fire Dragon Valakas has been defeated!
 
             for (Location loc : _teleportCubicLocs)
             {
@@ -638,8 +636,8 @@ public class Valakas extends L2AttackableAIScript
         List<L2Playable> result = new ArrayList<L2Playable>();
         for (L2Character obj : _valakasBoss.getKnownList().getKnownCharacters())
         {
-            if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance || obj
-                    .getZ() > _valakasBoss.getZ() + 200)
+            if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance ||
+                    obj.getZ() > _valakasBoss.getZ() + 200)
             {
                 continue;
             }
@@ -660,8 +658,8 @@ public class Valakas extends L2AttackableAIScript
             if (GrandBossManager.getInstance().getBossStatus(_valakasId) == GrandBossManager.getInstance().WAITING)
             {
                 character.sendPacket(new ExSendUIEvent(0, 0, (int) TimeUnit.MILLISECONDS
-                        .toSeconds(_LastAction + Config.VALAKAS_WAIT_TIME * 60000 - System
-                                .currentTimeMillis()), 0, "Valakas is coming..."));
+                        .toSeconds(_LastAction + Config.VALAKAS_WAIT_TIME * 60000 - System.currentTimeMillis()), 0,
+                        "Valakas is coming..."));
             }
         }
         return null;

@@ -58,8 +58,8 @@ public class SQLAccountManager
             System.out.println("4 - List accounts & access levels.");
             System.out.println("5 - Exit.");
             LineNumberReader _in = new LineNumberReader(new InputStreamReader(System.in));
-            while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4") || _mode
-                    .equals("5")))
+            while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4") ||
+                    _mode.equals("5")))
             {
                 System.out.print("Your choice: ");
                 _mode = _in.readLine();
@@ -202,8 +202,8 @@ public class SQLAccountManager
         // Add to Base
         Connection con = null;
         con = L2DatabaseFactory.getInstance().getConnection();
-        PreparedStatement statement = con
-                .prepareStatement("REPLACE accounts (login, password, accessLevel) VALUES (?,?,?)");
+        PreparedStatement statement =
+                con.prepareStatement("REPLACE accounts (login, password, accessLevel) VALUES (?,?,?)");
         statement.setString(1, account);
         statement.setString(2, Base64.encodeBytes(newpass));
         statement.setString(3, level);
@@ -327,8 +327,8 @@ public class SQLAccountManager
                     statement.executeUpdate();
                     // Free Clan Halls
                     statement.close();
-                    statement = con
-                            .prepareStatement("UPDATE clanhall SET ownerId=0, paidUntil=0, paid=0 WHERE ownerId=?;");
+                    statement =
+                            con.prepareStatement("UPDATE clanhall SET ownerId=0, paidUntil=0, paid=0 WHERE ownerId=?;");
                     statement.setString(1, clanIds.get(index));
                     statement.executeUpdate();
                     // Delete Clan

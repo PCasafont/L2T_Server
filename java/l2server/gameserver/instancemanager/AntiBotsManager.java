@@ -398,8 +398,7 @@ public class AntiBotsManager
             {
                 _failedWebHitTimes++;
                 Log.info("AntiBotsManager: Couldn't hit on our website (" + _failedWebHitTimes +
-                        " times in a row). Aborting any check on this execution. (" + Util
-                        .getCurrentDate() + ")");
+                        " times in a row). Aborting any check on this execution. (" + Util.getCurrentDate() + ")");
                 return;
             }
 
@@ -429,14 +428,14 @@ public class AntiBotsManager
                 if (foundHardware.size() == 0)
                 {
                     GmListTable.broadcastMessageToGMs("===============================");
-                    GmListTable.broadcastMessageToGMs(player
-                            .getName() + " [" + ipAddress + "] did not send any antibots data yet...");
+                    GmListTable.broadcastMessageToGMs(
+                            player.getName() + " [" + ipAddress + "] did not send any antibots data yet...");
 
                     long minutes = TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - player.getLastAccess());
                     if (minutes <= 5)
                     {
-                        GmListTable.broadcastMessageToGMs("But " + player
-                                .getName() + " just logged " + minutes + " minutes ago, let's see on the next check!");
+                        GmListTable.broadcastMessageToGMs("But " + player.getName() + " just logged " + minutes +
+                                " minutes ago, let's see on the next check!");
                         continue;
                     }
 
@@ -480,8 +479,8 @@ public class AntiBotsManager
                                 @Override
                                 public void run()
                                 {
-                                    GmListTable.broadcastMessageToGMs(player
-                                            .getName() + " has been kicked. His system was outdated.");
+                                    GmListTable.broadcastMessageToGMs(
+                                            player.getName() + " has been kicked. His system was outdated.");
                                     if (!player.isGM())
                                     {
                                         player.logout();
@@ -517,8 +516,9 @@ public class AntiBotsManager
 
                     if (clientInfo.getVersion() != null && !clientInfo.getVersion().equals(_latestVersion))
                     {
-                        GmListTable.broadcastMessageToGMs(player.getName() + " is running on Client[" + clientInfo
-                                .getVersion() + "], latest is " + _latestVersion + ".");
+                        GmListTable.broadcastMessageToGMs(
+                                player.getName() + " is running on Client[" + clientInfo.getVersion() +
+                                        "], latest is " + _latestVersion + ".");
                     }
 
                     if (clientInfo.getLastUpdateTime() + 600000 < System.currentTimeMillis())
@@ -535,8 +535,8 @@ public class AntiBotsManager
 
                     // Certain processes are illegal, but, may not have been used on the current character...
                     // Depending on the configurations, we remove them so that no sanction happens.
-                    for (Iterator<ClientProcess> processesIterator = illegalProcesses.iterator(); processesIterator
-                            .hasNext(); )
+                    for (Iterator<ClientProcess> processesIterator = illegalProcesses.iterator();
+                         processesIterator.hasNext(); )
                     {
                         ClientProcess process = processesIterator.next();
                         if (Config.ANTI_BOTS_SANCTION_ONLY_IF_TOOL_STILL_RUNNING && !process.isRunning())
@@ -546,7 +546,7 @@ public class AntiBotsManager
                     }
 
 					/*if (illegalProcesses.size() != 0)
-					{
+                    {
 						final String accountName = player.getClient().getAccountName();
 
 						if (isHardwareInPendingBanList(clientInfo.getHardwareId()) && isAccountInPendingBanList(accountName))
@@ -598,8 +598,8 @@ public class AntiBotsManager
 
                         if (Config.ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED)
                         {
-                            GmListTable.broadcastMessageToGMs(player
-                                    .getName() + " did not provide any client info for over 10 minutes.");
+                            GmListTable.broadcastMessageToGMs(
+                                    player.getName() + " did not provide any client info for over 10 minutes.");
 
                             if (!player.isGM())
                             {
@@ -727,9 +727,9 @@ public class AntiBotsManager
     @SuppressWarnings("unused")
     private final void addToPendingBanLists(final int delay, final int characterBanDuration, final int hardwareBanDuration, final String reason, final String accountName, final String hardwareId)
     {
-        _pendingBans.add(new PlayerBanTrace(System
-                .currentTimeMillis() + delay, characterBanDuration, hardwareBanDuration, reason, accountName,
-                hardwareId));
+        _pendingBans
+                .add(new PlayerBanTrace(System.currentTimeMillis() + delay, characterBanDuration, hardwareBanDuration,
+                        reason, accountName, hardwareId));
     }
 
     @SuppressWarnings("unused")
@@ -742,12 +742,12 @@ public class AntiBotsManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
+            PreparedStatement statement = con.prepareStatement(
+                    "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 
             statement.setString(1, playerBanTrace.getAccountName());
-            statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ? System
-                    .currentTimeMillis() / 1000 + playerBanTrace.getCharacterBanDuration() * 3600 : -1);
+            statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ?
+                    System.currentTimeMillis() / 1000 + playerBanTrace.getCharacterBanDuration() * 3600 : -1);
             statement.setString(3, "Anti Bots");
             statement.setString(4, playerBanTrace.getReason());
             statement.execute();
@@ -755,13 +755,12 @@ public class AntiBotsManager
 
             if (hardwareId != null && hardwareId.length() > 0)
             {
-                statement = con
-                        .prepareStatement(
-                                "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
+                statement = con.prepareStatement(
+                        "REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 
                 statement.setString(1, hardwareId);
-                statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ? System
-                        .currentTimeMillis() / 1000 + playerBanTrace.getHardwareBanDuration() * 3600 : -1);
+                statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ?
+                        System.currentTimeMillis() / 1000 + playerBanTrace.getHardwareBanDuration() * 3600 : -1);
                 statement.setString(3, "Anti Bots");
                 statement.setString(4, playerBanTrace.getReason());
                 statement.execute();

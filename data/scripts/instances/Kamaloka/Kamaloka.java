@@ -163,9 +163,17 @@ public class Kamaloka extends Quest
      * x, y, z
      */
     private static final int[][][] FIRST_ROOM_SPAWNS = {
-            null,
-            null,
-            {
+            null, null, {
+            {-12381, -174973, -10955},
+            {-12413, -174905, -10955},
+            {-12377, -174838, -10953},
+            {-12316, -174903, -10953},
+            {-12326, -174786, -10953},
+            {-12330, -175024, -10953},
+            {-12211, -174900, -10955},
+            {-12238, -174849, -10953},
+            {-12233, -174954, -10953}
+    }, null, null, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -175,10 +183,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -188,10 +193,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -201,10 +203,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -214,10 +213,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            null,
-            null,
-            {
+            }, null, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -227,9 +223,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            null,
-            {
+            }, {
                     {-12381, -174973, -10955},
                     {-12413, -174905, -10955},
                     {-12377, -174838, -10953},
@@ -239,19 +233,7 @@ public class Kamaloka extends Quest
                     {-12211, -174900, -10955},
                     {-12238, -174849, -10953},
                     {-12233, -174954, -10953}
-            },
-            {
-                    {-12381, -174973, -10955},
-                    {-12413, -174905, -10955},
-                    {-12377, -174838, -10953},
-                    {-12316, -174903, -10953},
-                    {-12326, -174786, -10953},
-                    {-12330, -175024, -10953},
-                    {-12211, -174900, -10955},
-                    {-12238, -174849, -10953},
-                    {-12233, -174954, -10953}
-            },
-            {
+            }, {
                     {20409, -174827, -10912},
                     {20409, -174947, -10912},
                     {20494, -174887, -10912},
@@ -299,67 +281,49 @@ public class Kamaloka extends Quest
      * x, y, z
      */
     private static final int[][][] SECOND_ROOM_SPAWNS = {
-            null,
-            null,
-            {
+            null, null, {
+            {-14547, -174901, -10690},
+            {-14543, -175030, -10690},
+            {-14668, -174900, -10690},
+            {-14538, -174774, -10690},
+            {-14410, -174904, -10690}
+    }, null, null, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            null,
-            null,
-            {
+            }, null, null, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            null,
-            null,
-            {
+            }, null, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            null,
-            {
+            }, {
                     {-14547, -174901, -10690},
                     {-14543, -175030, -10690},
                     {-14668, -174900, -10690},
                     {-14538, -174774, -10690},
                     {-14410, -174904, -10690}
-            },
-            {
-                    {-14547, -174901, -10690},
-                    {-14543, -175030, -10690},
-                    {-14668, -174900, -10690},
-                    {-14538, -174774, -10690},
-                    {-14410, -174904, -10690}
-            },
-            {
+            }, {
                     {18175, -174991, -10653},
                     {18070, -174890, -10655},
                     {18157, -174886, -10655},
@@ -372,7 +336,7 @@ public class Kamaloka extends Quest
     // skill is casted on the boss when miniboss is defeated
     // npcId, x, y, z, skill id, skill level
     /*
-	 * Miniboss information, null if miniboss not spawned
+     * Miniboss information, null if miniboss not spawned
 	 * Skill is casted on the boss when miniboss is defeated
 	 * Default: 5701 (decrease patk)
 	 *
@@ -529,8 +493,8 @@ public class Kamaloka extends Quest
             // player must be near party leader
             if (!partyMember.isInsideRadius(player, 1000, true, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(partyMember);
                 player.sendPacket(sm);
                 return false;
@@ -670,8 +634,8 @@ public class Kamaloka extends Quest
             // but not in kamaloka
             if (!(world instanceof KamaWorld) || world.templateId != templateId)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
             // check for level difference again on reenter

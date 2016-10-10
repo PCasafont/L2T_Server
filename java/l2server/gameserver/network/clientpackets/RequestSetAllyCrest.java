@@ -92,8 +92,9 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 
             if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, _data))
             {
-                Log.log(Level.INFO, "Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan
-                        .getAllyId() + "]");
+                Log.log(Level.INFO,
+                        "Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() +
+                                "]");
                 return;
             }
 

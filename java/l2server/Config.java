@@ -1070,8 +1070,8 @@ public final class Config
                     DATA_FOLDER = "data_classic/";
                 }
 
-                MAX_ITEM_IN_PACKET = Math
-                        .max(INVENTORY_MAXIMUM_NO_DWARF, Math.max(INVENTORY_MAXIMUM_DWARF, INVENTORY_MAXIMUM_GM));
+                MAX_ITEM_IN_PACKET =
+                        Math.max(INVENTORY_MAXIMUM_NO_DWARF, Math.max(INVENTORY_MAXIMUM_DWARF, INVENTORY_MAXIMUM_GM));
 
                 if (SERVER_NAME.startsWith("tenkai"))
                 {
@@ -1460,16 +1460,16 @@ public final class Config
      */
     private static void loadFloodProtectorConfig(final L2Properties properties, final FloodProtectorConfig config, final String configString, final String defaultInterval)
     {
-        config.FLOOD_PROTECTION_INTERVAL = Integer.parseInt(properties
-                .getProperty(StringUtil.concat("FloodProtector", configString, "Interval"), defaultInterval));
-        config.LOG_FLOODING = Boolean.parseBoolean(properties
-                .getProperty(StringUtil.concat("FloodProtector", configString, "LogFlooding"), "False"));
-        config.PUNISHMENT_LIMIT = Integer.parseInt(properties
-                .getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentLimit"), "0"));
-        config.PUNISHMENT_TYPE = properties
-                .getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentType"), "none");
-        config.PUNISHMENT_TIME = Integer.parseInt(properties
-                .getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
+        config.FLOOD_PROTECTION_INTERVAL = Integer.parseInt(
+                properties.getProperty(StringUtil.concat("FloodProtector", configString, "Interval"), defaultInterval));
+        config.LOG_FLOODING = Boolean.parseBoolean(
+                properties.getProperty(StringUtil.concat("FloodProtector", configString, "LogFlooding"), "False"));
+        config.PUNISHMENT_LIMIT = Integer.parseInt(
+                properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentLimit"), "0"));
+        config.PUNISHMENT_TYPE =
+                properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentType"), "none");
+        config.PUNISHMENT_TIME = Integer.parseInt(
+                properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
     }
 
     public static int getServerTypeId(String[] serverTypes)
@@ -1716,9 +1716,8 @@ public final class Config
             valueSplit = value.split(",");
             if (valueSplit.length != 2)
             {
-                Log.warning(StringUtil
-                        .concat("parseItemsList[Config.load()]: invalid entry -> \"", valueSplit[0],
-                                "\", should be itemId,itemNumber"));
+                Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"", valueSplit[0],
+                        "\", should be itemId,itemNumber"));
                 return null;
             }
 
@@ -1729,8 +1728,8 @@ public final class Config
             }
             catch (NumberFormatException e)
             {
-                Log.warning(StringUtil
-                        .concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
+                Log.warning(
+                        StringUtil.concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
                 return null;
             }
             try

@@ -78,8 +78,8 @@ public class Wisps extends L2AttackableAIScript
     @Override
     public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player
-                .isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
+        if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) ||
+                player.isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
         {
             return super.onAggroRangeEnter(npc, player, isPet);
         }

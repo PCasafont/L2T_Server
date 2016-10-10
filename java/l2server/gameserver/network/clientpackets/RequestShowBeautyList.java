@@ -37,7 +37,8 @@ public final class RequestShowBeautyList extends L2GameClientPacket
             return;
         }
 
-        activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory()
-                .getInventoryItemCount(36308, 0), _isFace));
+        activeChar.sendPacket(
+                new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0),
+                        _isFace));
     }
 }

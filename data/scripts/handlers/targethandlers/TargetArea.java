@@ -52,8 +52,8 @@ public class TargetArea implements ISkillTargetTypeHandler
 
         if (targetPoint == null && (!(target instanceof L2Attackable || target instanceof L2Playable) ||
                 // Target is not L2Attackable or L2PlayableInstance
-                skill.getCastRange() >= 0 && (target == null || target == activeChar || target
-                        .isAlikeDead()))) // target is null or self or dead/faking
+                skill.getCastRange() >= 0 && (target == null || target == activeChar ||
+                        target.isAlikeDead()))) // target is null or self or dead/faking
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
             return null;
@@ -85,8 +85,8 @@ public class TargetArea implements ISkillTargetTypeHandler
 
         int radius = skill.getSkillRadius();
 
-        boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar
-                .isInsideZone(L2Character.ZONE_SIEGE);
+        boolean srcInArena =
+                activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 
         Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
         //synchronized (activeChar.getKnownList().getKnownObjects())
@@ -113,7 +113,7 @@ public class TargetArea implements ISkillTargetTypeHandler
                 if (!target.isDead() && target != activeChar)
                 {
                     /* FIXME
-					if(skill.isRepeating() && targetPoint != null)
+                    if(skill.isRepeating() && targetPoint != null)
 					{
 						if(radius < Util.calculateDistance(targetPoint.getX(), targetPoint.getY(), targetPoint.getZ(), target.getX(), target.getY(), target.getZ(), true))
 							continue;
@@ -135,20 +135,20 @@ public class TargetArea implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && trg.getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && trg.getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
 
-                            if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 && trg
-                                    .getPvpFlag() == 0)
+                            if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 &&
+                                    trg.getPvpFlag() == 0)
                             {
                                 continue;
                             }
 
-                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg
-                                    .isInsideZone(L2Character.ZONE_SIEGE)))
+                            if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) &&
+                                    !trg.isInsideZone(L2Character.ZONE_SIEGE)))
                             {
                                 if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
                                 {
@@ -178,18 +178,18 @@ public class TargetArea implements ISkillTargetTypeHandler
                                 continue;
                             }
 
-                            if (src.getParty() != null && trg.getParty() != null && src.getParty()
-                                    .getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
+                            if (src.getParty() != null && trg.getParty() != null &&
+                                    src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
                             {
                                 continue;
                             }
 
-                            if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 && trg
-                                    .getPvpFlag() == 0)
+                            if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 &&
+                                    trg.getPvpFlag() == 0)
 
                             {
-                                if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg
-                                        .isInsideZone(L2Character.ZONE_SIEGE)))
+                                if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) &&
+                                        !trg.isInsideZone(L2Character.ZONE_SIEGE)))
                                 {
                                     if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
                                     {

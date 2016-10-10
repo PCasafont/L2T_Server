@@ -81,15 +81,14 @@ public class Escape implements IUserCommandHandler
             return false;
         }
 
-        if (GrandBossManager.getInstance().getZone(activeChar) != null && !activeChar
-                .isGM())
+        if (GrandBossManager.getInstance().getZone(activeChar) != null && !activeChar.isGM())
         {
             activeChar.sendMessage("You may not use an escape command in a Boss Zone.");
             return false;
         }
 
-        if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar
-                .isAlikeDead() || activeChar.isInOlympiadMode() || activeChar.inObserverMode())
+        if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() ||
+                activeChar.isAlikeDead() || activeChar.isInOlympiadMode() || activeChar.inObserverMode())
         {
             return false;
         }

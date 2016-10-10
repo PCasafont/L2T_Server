@@ -91,8 +91,8 @@ public class StrSiegeAssault implements ISkillHandler
             for (L2Character target : (L2Character[]) targets)
             {
                 L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-                if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target)
-                        .isFakeDeath())
+                if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+                        ((L2PcInstance) target).isFakeDeath())
                 {
                     target.stopFakeDeath(true);
                 }

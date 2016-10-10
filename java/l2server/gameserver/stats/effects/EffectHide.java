@@ -55,18 +55,17 @@ public class EffectHide extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected())
-                .isCombatFlagEquipped() && !(((L2PcInstance) getEffected())
-                .isPlayingEvent() && (((L2PcInstance) getEffected()).getEvent()
-                .isType(EventType.Survival) || ((L2PcInstance) getEffected()).getEvent()
-                .isType(EventType.TeamSurvival))))
+        if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped() &&
+                !(((L2PcInstance) getEffected()).isPlayingEvent() &&
+                        (((L2PcInstance) getEffected()).getEvent().isType(EventType.Survival) ||
+                                ((L2PcInstance) getEffected()).getEvent().isType(EventType.TeamSurvival))))
         {
             L2PcInstance activeChar = (L2PcInstance) getEffected();
             activeChar.getAppearance().setInvisible();
             activeChar.startVisualEffect(VisualEffect.STEALTH);
 
-            if (activeChar.getAI().getNextIntention() != null && activeChar.getAI().getNextIntention()
-                    .getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK)
+            if (activeChar.getAI().getNextIntention() != null &&
+                    activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK)
             {
                 activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
             }
@@ -74,8 +73,8 @@ public class EffectHide extends L2Effect
             L2GameServerPacket del = new DeleteObject(activeChar);
             for (L2Character target : activeChar.getKnownList().getKnownCharacters())
             {
-                if (target != null && (target.getTarget() == activeChar || target.getAI() != null && target.getAI()
-                        .getAttackTarget() == activeChar))
+                if (target != null && (target.getTarget() == activeChar ||
+                        target.getAI() != null && target.getAI().getAttackTarget() == activeChar))
                 {
                     target.setTarget(null);
                     target.abortAttack();
@@ -97,8 +96,8 @@ public class EffectHide extends L2Effect
 
             for (L2Character target : activeChar.getStatus().getStatusListener())
             {
-                if (target != null && (target.getTarget() == activeChar || target.getAI() != null && target.getAI()
-                        .getAttackTarget() == activeChar))
+                if (target != null && (target.getTarget() == activeChar ||
+                        target.getAI() != null && target.getAI().getAttackTarget() == activeChar))
                 {
                     target.setTarget(null);
                     target.abortAttack();

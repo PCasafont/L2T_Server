@@ -38,9 +38,8 @@ public class CloneInvasion
 
     public void start()
     {
-        Announcements.getInstance()
-                .announceToAll(
-                        "A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
+        Announcements.getInstance().announceToAll(
+                "A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
         Announcements.getInstance().announceToAll("Prove that there isn't anyone as the original one!");
 
         spawnNpcPlayers();
@@ -105,8 +104,9 @@ public class CloneInvasion
                 L2NpcTemplate tmpl = new L2NpcTemplate(set);
 
                 L2NpcAIData npcAIDat = new L2NpcAIData();
-                npcAIDat.setAi(player.getActiveWeaponItem() != null ? player.isMageClass() ? "mage" : player
-                        .getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter" : "balanced");
+                npcAIDat.setAi(player.getActiveWeaponItem() != null ? player.isMageClass() ? "mage" :
+                        player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter" :
+                        "balanced");
                 npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
                 npcAIDat.setCanMove(true);
                 npcAIDat.setSoulShot(10000);

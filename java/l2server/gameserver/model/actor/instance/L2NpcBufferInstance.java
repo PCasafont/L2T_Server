@@ -74,9 +74,8 @@ public class L2NpcBufferInstance extends L2NpcInstance
 
         if (command.startsWith("BuffMe"))
         {
-            if (player.isInCombat() || player.isDead() || player.isInOlympiadMode() || player
-                    .getPvpFlag() > 0 || OlympiadManager.getInstance().isRegisteredInComp(player) || player
-                    .isPlayingEvent())
+            if (player.isInCombat() || player.isDead() || player.isInOlympiadMode() || player.getPvpFlag() > 0 ||
+                    OlympiadManager.getInstance().isRegisteredInComp(player) || player.isPlayingEvent())
             {
                 player.sendMessage("You can't use this option now!");
                 return;

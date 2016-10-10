@@ -110,8 +110,8 @@ public final class UseItem extends L2GameClientPacket
 
         if (activeChar.getPrivateStoreType() != 0 && item.getItemId() != 1373)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             activeChar.sendPacket(ActionFailed.STATIC_PACKET);
             return;
         }
@@ -173,7 +173,7 @@ public final class UseItem extends L2GameClientPacket
         }
 
 		/*if (activeChar.getActiveEnchantAttrItem() != null)
-		{
+        {
 			RequestExEnchantItemAttribute.enchantItemAttribute(activeChar, item.getObjectId());
 			return;
 		}*/
@@ -257,8 +257,8 @@ public final class UseItem extends L2GameClientPacket
 
         if (activeChar.getCurrentBlessingScroll() != null)
         {
-            if (!item.isEquipable() || item.getName().contains("Bound") || item.getName().contains("Blessed") || item
-                    .getItem().getBlessedItem() == -1)
+            if (!item.isEquipable() || item.getName().contains("Bound") || item.getName().contains("Blessed") ||
+                    item.getItem().getBlessedItem() == -1)
             {
                 activeChar.sendMessage("This item cannot be blessed!");
                 activeChar.setCurrentBlessingScroll(null);
@@ -340,9 +340,9 @@ public final class UseItem extends L2GameClientPacket
 
             if (stone.getName().contains("Restor"))
             {
-                boolean isCorrectStone = stone.getName().contains("Weapon") && item
-                        .getItem() instanceof L2Weapon || stone.getName().contains("Armor") && item
-                        .getItem() instanceof L2Armor || stone.getName().contains("Equipment");
+                boolean isCorrectStone = stone.getName().contains("Weapon") && item.getItem() instanceof L2Weapon ||
+                        stone.getName().contains("Armor") && item.getItem() instanceof L2Armor ||
+                        stone.getName().contains("Equipment");
 
                 @SuppressWarnings("unused") int type = stone.getStoneType();
 
@@ -350,8 +350,8 @@ public final class UseItem extends L2GameClientPacket
                 //activeChar.sendMessage("Item Type = " + item.getItem().getType2());
                 if (item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() && isCorrectStone)
                 {
-                    Util.logToFile(activeChar.getName() + " is removing appearance on his " + item
-                            .getName() + ".", "Appearances", "txt", true, true);
+                    Util.logToFile(activeChar.getName() + " is removing appearance on his " + item.getName() + ".",
+                            "Appearances", "txt", true, true);
 
                     if (!activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true))
                     {
@@ -371,20 +371,22 @@ public final class UseItem extends L2GameClientPacket
                     activeChar.sendMessage("This is an incorrect item.");
                 }
             }
-            else if (stone.getItem()
-                    .getStandardItem() > 0) // The stones hold their appearance item template id in their standard item
+            else if (stone.getItem().getStandardItem() >
+                    0) // The stones hold their appearance item template id in their standard item
             {
                 L2Item template = ItemTable.getInstance().getTemplate(stone.getItem().getStandardItem());
 
-                if (item.getItem().canBeUsedAsApp() && (item.getItem().getBodyPart() == template.getBodyPart() || item
-                        .getItem().getBodyPart() == L2Item.SLOT_CHEST && template
-                        .getBodyPart() == L2Item.SLOT_FULL_ARMOR) && (item.isWeapon() && item.getItem()
-                        .getItemType() == template.getItemType() || item.isArmor()) || (item.getItem()
-                        .getBodyPart() == L2Item.SLOT_CHEST || item.getItem()
-                        .getBodyPart() == L2Item.SLOT_FULL_ARMOR) && template.getBodyPart() == L2Item.SLOT_ALLDRESS)
+                if (item.getItem().canBeUsedAsApp() && (item.getItem().getBodyPart() == template.getBodyPart() ||
+                        item.getItem().getBodyPart() == L2Item.SLOT_CHEST &&
+                                template.getBodyPart() == L2Item.SLOT_FULL_ARMOR) &&
+                        (item.isWeapon() && item.getItem().getItemType() == template.getItemType() || item.isArmor()) ||
+                        (item.getItem().getBodyPart() == L2Item.SLOT_CHEST ||
+                                item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR) &&
+                                template.getBodyPart() == L2Item.SLOT_ALLDRESS)
                 {
-                    Util.logToFile(activeChar.getName() + " is applying " + stone.getName() + " on his " + item
-                            .getName() + ".", "Appearances", "txt", true, true);
+                    Util.logToFile(
+                            activeChar.getName() + " is applying " + stone.getName() + " on his " + item.getName() +
+                                    ".", "Appearances", "txt", true, true);
                     if (!activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true))
                     {
                         activeChar.setActiveAppearanceStone(null);
@@ -425,8 +427,8 @@ public final class UseItem extends L2GameClientPacket
             IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
             if (vch != null)
             {
-                vch.useVoicedCommand("sell", activeChar, "addPrice " + activeChar.getAddSellPrice() + " " + item
-                        .getItemId());
+                vch.useVoicedCommand("sell", activeChar,
+                        "addPrice " + activeChar.getAddSellPrice() + " " + item.getItemId());
             }
 
             activeChar.setAddSellPrice(-1);
@@ -535,9 +537,8 @@ public final class UseItem extends L2GameClientPacket
         }
 
         // No UseItem is allowed while the player is in special conditions
-        if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar
-                .isAlikeDead() || activeChar.isAfraid() || activeChar.isCastingNow() && !(item.isPotion() || item
-                .isElixir()))
+        if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead() ||
+                activeChar.isAfraid() || activeChar.isCastingNow() && !(item.isPotion() || item.isElixir()))
         {
             return;
         }
@@ -586,30 +587,30 @@ public final class UseItem extends L2GameClientPacket
                 case L2Item.SLOT_R_HAND:
                 {
                     // prevent players to equip weapon while wearing combat flag
-                    if (activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem()
-                            .getItemId() == 9819)
+                    if (activeChar.getActiveWeaponItem() != null &&
+                            activeChar.getActiveWeaponItem().getItemId() == 9819)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     // Prevent player to remove the weapon on special conditions
                     if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_USE_ITEM_WHILE_USING_MAGIC));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_ITEM_WHILE_USING_MAGIC));
                         return;
                     }
                     if (activeChar.isMounted())
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     if (activeChar.isDisarmed())
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
 
@@ -650,9 +651,8 @@ public final class UseItem extends L2GameClientPacket
                                             case RAPIER:
                                             case CROSSBOWK:
                                             case ANCIENTSWORD:
-                                                activeChar.sendPacket(SystemMessage
-                                                        .getSystemMessage(
-                                                                SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                                                activeChar.sendPacket(SystemMessage.getSystemMessage(
+                                                        SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                                                 return;
                                         }
                                         break;
@@ -669,8 +669,8 @@ public final class UseItem extends L2GameClientPacket
                         else if (item.getItem() instanceof L2Armor)
                         {
                             L2Armor armor = (L2Armor) item.getItem();
-                            if (isErtheiaMage && (armor.getItemType() == L2ArmorType.SHIELD || armor
-                                    .getItemType() == L2ArmorType.SIGIL))
+                            if (isErtheiaMage && (armor.getItemType() == L2ArmorType.SHIELD ||
+                                    armor.getItemType() == L2ArmorType.SIGIL))
                             {
                                 activeChar.sendPacket(SystemMessage
                                         .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
@@ -683,8 +683,8 @@ public final class UseItem extends L2GameClientPacket
                 case L2Item.SLOT_CHEST:
                     if (activeChar.isArmorDisarmed())
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                 case L2Item.SLOT_BACK:
@@ -694,11 +694,11 @@ public final class UseItem extends L2GameClientPacket
                 case L2Item.SLOT_FULL_ARMOR:
                 case L2Item.SLOT_LEGS:
                 {
-                    if (activeChar.getRace() == Race.Kamael && item.getItem()
-                            .getCrystalType() < L2Item.CRYSTAL_S && item.getItem().getItemType() == L2ArmorType.HEAVY)
+                    if (activeChar.getRace() == Race.Kamael && item.getItem().getCrystalType() < L2Item.CRYSTAL_S &&
+                            item.getItem().getItemType() == L2ArmorType.HEAVY)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     break;
@@ -707,8 +707,8 @@ public final class UseItem extends L2GameClientPacket
                 {
                     if (!item.isEquipped() && activeChar.getInventory().getMaxTalismanCount() == 0)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     break;
@@ -717,8 +717,8 @@ public final class UseItem extends L2GameClientPacket
                 {
                     if (activeChar.getLevel() <= 85)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     break;
@@ -727,15 +727,15 @@ public final class UseItem extends L2GameClientPacket
                 {
                     if (activeChar.getLevel() <= 85)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
 
                     if (!item.isEquipped() && activeChar.getInventory().getMaxJewelryCount() == 0)
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
                         return;
                     }
                     break;
@@ -749,8 +749,9 @@ public final class UseItem extends L2GameClientPacket
 
             if (activeChar.isAttackingNow())
             {
-                ThreadPoolManager.getInstance().scheduleGeneral(new WeaponEquipTask(item, activeChar), (activeChar
-                        .getAttackEndTime() - TimeController.getGameTicks()) * TimeController.MILLIS_IN_TICK);
+                ThreadPoolManager.getInstance().scheduleGeneral(new WeaponEquipTask(item, activeChar),
+                        (activeChar.getAttackEndTime() - TimeController.getGameTicks()) *
+                                TimeController.MILLIS_IN_TICK);
                 return;
             }
             // Equip or unEquip
@@ -778,8 +779,7 @@ public final class UseItem extends L2GameClientPacket
             {
                 activeChar.sendPacket(new ShowCalculator(4393));
             }
-            else if (weaponItem != null && weaponItem
-                    .getItemType() == L2WeaponType.FISHINGROD &&
+            else if (weaponItem != null && weaponItem.getItemType() == L2WeaponType.FISHINGROD &&
                     (itemid >= 6519 && itemid <= 6527 || itemid >= 7610 && itemid <= 7613 ||
                             itemid >= 7807 && itemid <= 7809 || itemid >= 8484 && itemid <= 8486 ||
                             itemid >= 8505 && itemid <= 8513))

@@ -149,8 +149,8 @@ public class AdminEffects implements IAdminCommandHandler
                 int intensity = Integer.parseInt(val1);
                 String val2 = st.nextToken();
                 int duration = Integer.parseInt(val2);
-                Earthquake eq = new Earthquake(activeChar.getX(), activeChar.getY(), activeChar
-                        .getZ(), intensity, duration);
+                Earthquake eq =
+                        new Earthquake(activeChar.getX(), activeChar.getY(), activeChar.getZ(), intensity, duration);
                 //activeChar.broadcastPacket(eq);
                 for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
                 {
@@ -357,8 +357,8 @@ public class AdminEffects implements IAdminCommandHandler
                 activeChar.stopSkillEffects(7029);
                 if (val == 0 && sendMessage)
                 {
-                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED)
-                            .addSkillName(7029));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(7029));
                 }
                 else if (val >= 1 && val <= 10)
                 {
@@ -574,8 +574,8 @@ public class AdminEffects implements IAdminCommandHandler
                         {
                             if (performAbnormal(abnormal, player))
                             {
-                                activeChar.sendMessage(player
-                                        .getName() + "'s abnormal status was affected by your request.");
+                                activeChar.sendMessage(
+                                        player.getName() + "'s abnormal status was affected by your request.");
                             }
                             else
                             {

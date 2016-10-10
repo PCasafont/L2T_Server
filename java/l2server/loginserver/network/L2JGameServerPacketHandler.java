@@ -58,9 +58,8 @@ public class L2JGameServerPacketHandler
                         msg = new BlowFishKey(data, server);
                         break;
                     default:
-                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode)
-                                .toUpperCase() + ") in state " + state
-                                .name() + " from GameServer, closing connection.");
+                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " +
+                                state.name() + " from GameServer, closing connection.");
                         server.forceClose(LoginServerFail.NOT_AUTHED);
                         break;
                 }
@@ -72,9 +71,8 @@ public class L2JGameServerPacketHandler
                         msg = new GameServerAuth(data, server);
                         break;
                     default:
-                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode)
-                                .toUpperCase() + ") in state " + state
-                                .name() + " from GameServer, closing connection.");
+                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " +
+                                state.name() + " from GameServer, closing connection.");
                         server.forceClose(LoginServerFail.NOT_AUTHED);
                         break;
                 }
@@ -107,9 +105,8 @@ public class L2JGameServerPacketHandler
                         msg = new RequestTempBan(data);
                         break;
                     default:
-                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode)
-                                .toUpperCase() + ") in state " + state
-                                .name() + " from GameServer, closing connection.");
+                        Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " +
+                                state.name() + " from GameServer, closing connection.");
                         server.forceClose(LoginServerFail.NOT_AUTHED);
                         break;
                 }

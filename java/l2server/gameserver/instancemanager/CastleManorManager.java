@@ -199,8 +199,8 @@ public class CastleManorManager
         }
         else
         {
-            isApproved = _periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() && _manorRefresh
-                    .getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
+            isApproved = _periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() &&
+                    _manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
         }
 
         for (Castle c : CastleManager.getInstance().getCastles())
@@ -499,8 +499,8 @@ public class CastleManorManager
             clanLeader = L2World.getInstance().getPlayer(clan.getLeaderName());
             if (clanLeader != null)
             {
-                clanLeader.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED));
+                clanLeader.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED));
             }
 
             c.setNextPeriodApproved(false);
@@ -521,8 +521,8 @@ public class CastleManorManager
             else if (c.getTreasury() < c.getManorCost(PERIOD_NEXT))
             {
                 notFunc = true;
-                Log.info("Manor for castle " + c.getName() + " disabled, not enough adena in treasury: " + c
-                        .getTreasury() + ", " + c.getManorCost(PERIOD_NEXT) + " required.");
+                Log.info("Manor for castle " + c.getName() + " disabled, not enough adena in treasury: " +
+                        c.getTreasury() + ", " + c.getManorCost(PERIOD_NEXT) + " required.");
                 c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
                 c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
             }
@@ -548,10 +548,9 @@ public class CastleManorManager
                 if (!cwh.validateCapacity(slots))
                 {
                     notFunc = true;
-                    Log.info("Manor for castle " + c
-                            .getName() + " disabled, not enough free slots in clan warehouse: " +
-                            (Config.WAREHOUSE_SLOTS_CLAN - cwh
-                                    .getSize()) + ", but " + slots + " required.");
+                    Log.info(
+                            "Manor for castle " + c.getName() + " disabled, not enough free slots in clan warehouse: " +
+                                    (Config.WAREHOUSE_SLOTS_CLAN - cwh.getSize()) + ", but " + slots + " required.");
                     c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
                     c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
                 }
@@ -569,9 +568,8 @@ public class CastleManorManager
                 }
                 if (clanLeader != null)
                 {
-                    clanLeader.sendPacket(SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.THE_AMOUNT_IS_NOT_SUFFICIENT_AND_SO_THE_MANOR_IS_NOT_IN_OPERATION));
+                    clanLeader.sendPacket(SystemMessage.getSystemMessage(
+                            SystemMessageId.THE_AMOUNT_IS_NOT_SUFFICIENT_AND_SO_THE_MANOR_IS_NOT_IN_OPERATION));
                 }
             }
         }

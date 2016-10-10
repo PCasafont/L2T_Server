@@ -69,8 +69,8 @@ public class L2AEnchanterAI extends L2APlayerAI
             return true;
         }
 
-        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player
-                .getMaxHp() * 0.5 || _player.getTarget() instanceof L2Playable)
+        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
+                _player.getTarget() instanceof L2Playable)
         {
             // First, let's try to Rush
             if (target != null && 600 - _player.getDistanceSq(target) > 100)
@@ -178,14 +178,15 @@ public class L2AEnchanterAI extends L2APlayerAI
 
             for (L2Skill skill : _player.getAllSkills())
             {
-                if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC && skill
-                        .getSkillType() != L2SkillType.HEAL_PERCENT && skill
-                        .getSkillType() != L2SkillType.CHAIN_HEAL && skill
-                        .getSkillType() != L2SkillType.OVERHEAL || skill
-                        .getTargetType() != L2SkillTargetType.TARGET_ONE && (skill
-                        .getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) && (skill
-                        .getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER || mostHarmed == _player) && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
+                if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
+                        skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
+                        skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
+                        skill.getSkillType() != L2SkillType.OVERHEAL ||
+                        skill.getTargetType() != L2SkillTargetType.TARGET_ONE &&
+                                (skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) &&
+                                (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER ||
+                                        mostHarmed == _player) &&
+                                skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
                 {
                     continue;
                 }

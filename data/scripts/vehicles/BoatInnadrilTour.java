@@ -104,8 +104,8 @@ public class BoatInnadrilTour implements Runnable
         ARRIVAL5 = new CreatureSay(0, Say2.BOAT, 801, 1174);
         ARRIVAL1 = new CreatureSay(0, Say2.BOAT, 801, 1175);
 
-        INNADRIL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat
-                .getObjectId(), DOCK.x, DOCK.y, DOCK.z);
+        INNADRIL_SOUND =
+                new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), DOCK.x, DOCK.y, DOCK.z);
     }
 
     @Override

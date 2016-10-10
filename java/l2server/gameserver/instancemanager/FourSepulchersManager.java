@@ -85,20 +85,17 @@ public class FourSepulchersManager
                     {25349, 189534, -88969, -7216, 32768},
                     {25346, 173195, -76560, -7215, 49277},
                     {25342, 175591, -72744, -7215, 49317}
-            },
-            {
+            }, {
                     {25342, 191231, -85574, -7216, 33380},
                     {25339, 189534, -88969, -7216, 32768},
                     {25349, 173195, -76560, -7215, 49277},
                     {25346, 175591, -72744, -7215, 49317}
-            },
-            {
+            }, {
                     {25346, 191231, -85574, -7216, 33380},
                     {25342, 189534, -88969, -7216, 32768},
                     {25339, 173195, -76560, -7215, 49277},
                     {25349, 175591, -72744, -7215, 49317}
-            },
-            {
+            }, {
                     {25349, 191231, -85574, -7216, 33380},
                     {25346, 189534, -88969, -7216, 32768},
                     {25342, 173195, -76560, -7215, 49277},
@@ -433,9 +430,8 @@ public class FourSepulchersManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY id");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY id");
             statement.setInt(1, 0);
             ResultSet rset = statement.executeQuery();
 
@@ -459,8 +455,8 @@ public class FourSepulchersManager
                 }
                 else
                 {
-                    Log.warning("FourSepulchersManager.LoadMysteriousBox: Data missing in NPC table for ID: " + rset
-                            .getInt("npc_templateid") + ".");
+                    Log.warning("FourSepulchersManager.LoadMysteriousBox: Data missing in NPC table for ID: " +
+                            rset.getInt("npc_templateid") + ".");
                 }
             }
 
@@ -471,8 +467,8 @@ public class FourSepulchersManager
         catch (Exception e)
         {
             // problem with initializing spawn, go to next one
-            Log.log(Level.WARNING, "FourSepulchersManager.LoadMysteriousBox: Spawn could not be initialized: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "FourSepulchersManager.LoadMysteriousBox: Spawn could not be initialized: " + e.getMessage(), e);
         }
         finally
         {
@@ -503,15 +499,14 @@ public class FourSepulchersManager
                 }
                 else
                 {
-                    Log.warning(
-                            "FourSepulchersManager.InitKeyBoxSpawns: Data missing in NPC table for ID: " + _keyBoxNpc
-                                    .get(keyNpcId) + ".");
+                    Log.warning("FourSepulchersManager.InitKeyBoxSpawns: Data missing in NPC table for ID: " +
+                            _keyBoxNpc.get(keyNpcId) + ".");
                 }
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, "FourSepulchersManager.InitKeyBoxSpawns: Spawn could not be initialized: " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "FourSepulchersManager.InitKeyBoxSpawns: Spawn could not be initialized: " + e.getMessage(), e);
             }
         }
     }
@@ -527,15 +522,13 @@ public class FourSepulchersManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement1 = con
-                    .prepareStatement(
-                            "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
+            PreparedStatement statement1 = con.prepareStatement(
+                    "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
             statement1.setInt(1, 1);
             ResultSet rset1 = statement1.executeQuery();
 
-            PreparedStatement statement2 = con
-                    .prepareStatement(
-                            "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist Where key_npc_id = ? and spawntype = ? ORDER BY id");
+            PreparedStatement statement2 = con.prepareStatement(
+                    "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist Where key_npc_id = ? and spawntype = ? ORDER BY id");
             while (rset1.next())
             {
                 int keyNpcId = rset1.getInt("key_npc_id");
@@ -567,9 +560,8 @@ public class FourSepulchersManager
                     }
                     else
                     {
-                        Log.warning(
-                                "FourSepulchersManager.LoadPhysicalMonsters: Data missing in NPC table for ID: " + rset2
-                                        .getInt("npc_templateid") + ".");
+                        Log.warning("FourSepulchersManager.LoadPhysicalMonsters: Data missing in NPC table for ID: " +
+                                rset2.getInt("npc_templateid") + ".");
                     }
                 }
 
@@ -586,8 +578,8 @@ public class FourSepulchersManager
         catch (Exception e)
         {
             // problem with initializing spawn, go to next one
-            Log.log(Level.WARNING, "FourSepulchersManager.LoadPhysicalMonsters: Spawn could not be initialized: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "FourSepulchersManager.LoadPhysicalMonsters: Spawn could not be initialized: " + e.getMessage(), e);
         }
         finally
         {
@@ -607,15 +599,13 @@ public class FourSepulchersManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement1 = con
-                    .prepareStatement(
-                            "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
+            PreparedStatement statement1 = con.prepareStatement(
+                    "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
             statement1.setInt(1, 2);
             ResultSet rset1 = statement1.executeQuery();
 
-            PreparedStatement statement2 = con
-                    .prepareStatement(
-                            "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? AND spawntype = ? ORDER BY id");
+            PreparedStatement statement2 = con.prepareStatement(
+                    "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? AND spawntype = ? ORDER BY id");
             while (rset1.next())
             {
                 int keyNpcId = rset1.getInt("key_npc_id");
@@ -647,9 +637,8 @@ public class FourSepulchersManager
                     }
                     else
                     {
-                        Log.warning(
-                                "FourSepulchersManager.LoadMagicalMonsters: Data missing in NPC table for ID: " + rset2
-                                        .getInt("npc_templateid") + ".");
+                        Log.warning("FourSepulchersManager.LoadMagicalMonsters: Data missing in NPC table for ID: " +
+                                rset2.getInt("npc_templateid") + ".");
                     }
                 }
 
@@ -666,8 +655,8 @@ public class FourSepulchersManager
         catch (Exception e)
         {
             // problem with initializing spawn, go to next one
-            Log.log(Level.WARNING, "FourSepulchersManager.LoadMagicalMonsters: Spawn could not be initialized: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "FourSepulchersManager.LoadMagicalMonsters: Spawn could not be initialized: " + e.getMessage(), e);
         }
         finally
         {
@@ -687,15 +676,13 @@ public class FourSepulchersManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement1 = con
-                    .prepareStatement(
-                            "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
+            PreparedStatement statement1 = con.prepareStatement(
+                    "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
             statement1.setInt(1, 5);
             ResultSet rset1 = statement1.executeQuery();
 
-            PreparedStatement statement2 = con
-                    .prepareStatement(
-                            "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? AND spawntype = ? ORDER BY id");
+            PreparedStatement statement2 = con.prepareStatement(
+                    "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? AND spawntype = ? ORDER BY id");
             while (rset1.next())
             {
                 int keyNpcId = rset1.getInt("key_npc_id");
@@ -727,8 +714,8 @@ public class FourSepulchersManager
                     }
                     else
                     {
-                        Log.warning("FourSepulchersManager.LoadDukeMonsters: Data missing in NPC table for ID: " + rset2
-                                .getInt("npc_templateid") + ".");
+                        Log.warning("FourSepulchersManager.LoadDukeMonsters: Data missing in NPC table for ID: " +
+                                rset2.getInt("npc_templateid") + ".");
                     }
                 }
 
@@ -746,8 +733,8 @@ public class FourSepulchersManager
         catch (Exception e)
         {
             // problem with initializing spawn, go to next one
-            Log.log(Level.WARNING, "FourSepulchersManager.LoadDukeMonsters: Spawn could not be initialized: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "FourSepulchersManager.LoadDukeMonsters: Spawn could not be initialized: " + e.getMessage(), e);
         }
         finally
         {
@@ -767,15 +754,13 @@ public class FourSepulchersManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement1 = con
-                    .prepareStatement(
-                            "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
+            PreparedStatement statement1 = con.prepareStatement(
+                    "SELECT Distinct key_npc_id FROM four_sepulchers_spawnlist Where spawntype = ? ORDER BY key_npc_id");
             statement1.setInt(1, 6);
             ResultSet rset1 = statement1.executeQuery();
 
-            PreparedStatement statement2 = con
-                    .prepareStatement(
-                            "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? and spawntype = ? ORDER BY id");
+            PreparedStatement statement2 = con.prepareStatement(
+                    "SELECT id, npc_templateid, locx, locy, locz, heading, respawn_delay, key_npc_id FROM four_sepulchers_spawnlist WHERE key_npc_id = ? and spawntype = ? ORDER BY id");
             while (rset1.next())
             {
                 int keyNpcId = rset1.getInt("key_npc_id");
@@ -809,8 +794,7 @@ public class FourSepulchersManager
                     {
                         Log.warning(
                                 "FourSepulchersManager.LoadEmperorsGraveMonsters: Data missing in NPC table for ID: " +
-                                        rset2
-                                                .getInt("npc_templateid") + ".");
+                                        rset2.getInt("npc_templateid") + ".");
                     }
                 }
 
@@ -827,9 +811,8 @@ public class FourSepulchersManager
         catch (Exception e)
         {
             // problem with initializing spawn, go to next one
-            Log.log(Level.WARNING,
-                    "FourSepulchersManager.LoadEmperorsGraveMonsters: Spawn could not be initialized: " + e
-                            .getMessage(), e);
+            Log.log(Level.WARNING, "FourSepulchersManager.LoadEmperorsGraveMonsters: Spawn could not be initialized: " +
+                    e.getMessage(), e);
         }
         finally
         {
@@ -899,16 +882,14 @@ public class FourSepulchersManager
                 }
                 else
                 {
-                    Log.warning(
-                            "FourSepulchersManager.InitExecutionerSpawns: Data missing in NPC table for ID: " + _victim
-                                    .get(keyNpcId) + ".");
+                    Log.warning("FourSepulchersManager.InitExecutionerSpawns: Data missing in NPC table for ID: " +
+                            _victim.get(keyNpcId) + ".");
                 }
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING,
-                        "FourSepulchersManager.InitExecutionerSpawns: Spawn could not be initialized: " + e
-                                .getMessage(), e);
+                Log.log(Level.WARNING, "FourSepulchersManager.InitExecutionerSpawns: Spawn could not be initialized: " +
+                        e.getMessage(), e);
             }
         }
     }
@@ -938,10 +919,10 @@ public class FourSepulchersManager
             default:
                 if (!player.isGM())
                 {
-                    Log.warning("Player " + player.getName() + " (" + player
-                            .getObjectId() + ") tried to cheat in four sepulchers.");
-                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                            .getName() + " tried to enter four sepulchers with invalid npc id.", Config.DEFAULT_PUNISH);
+                    Log.warning("Player " + player.getName() + " (" + player.getObjectId() +
+                            ") tried to cheat in four sepulchers.");
+                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() +
+                            " tried to enter four sepulchers with invalid npc id.", Config.DEFAULT_PUNISH);
                 }
                 return;
         }
@@ -1247,8 +1228,8 @@ public class FourSepulchersManager
                     catch (Exception e)
                     {
                         Log.log(Level.WARNING,
-                                "FourSepulchersManager.SpawnMonster: Spawn could not be initialized: " + e
-                                        .getMessage(), e);
+                                "FourSepulchersManager.SpawnMonster: Spawn could not be initialized: " + e.getMessage(),
+                                e);
                     }
 
                     spawnedKeyBoxMob = true;
@@ -1805,13 +1786,12 @@ public class FourSepulchersManager
                     // looking for next shout time....
                     if (min % 5 == 0)// check if min can be divided by 5
                     {
-                        Log.info(Calendar.getInstance()
-                                .getTime() + " Atk announce scheduled to " + min + " minute of this hour.");
+                        Log.info(Calendar.getInstance().getTime() + " Atk announce scheduled to " + min +
+                                " minute of this hour.");
                         Calendar inter = Calendar.getInstance();
                         inter.set(Calendar.MINUTE, (int) min);
-                        ThreadPoolManager.getInstance()
-                                .scheduleGeneral(new ManagerSay(), inter.getTimeInMillis() - Calendar.getInstance()
-                                        .getTimeInMillis());
+                        ThreadPoolManager.getInstance().scheduleGeneral(new ManagerSay(),
+                                inter.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
                         break;
                     }
                 }
@@ -1832,8 +1812,8 @@ public class FourSepulchersManager
             {
                 interval = Config.FS_TIME_ATTACK * 60000l;
             }
-            _changeCoolDownTimeTask = ThreadPoolManager.getInstance()
-                    .scheduleGeneral(new ChangeCoolDownTime(), interval);
+            _changeCoolDownTimeTask =
+                    ThreadPoolManager.getInstance().scheduleGeneral(new ChangeCoolDownTime(), interval);
 
             if (_changeAttackTimeTask != null)
             {

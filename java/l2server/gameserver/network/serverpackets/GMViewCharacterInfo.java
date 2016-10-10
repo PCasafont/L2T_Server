@@ -232,8 +232,8 @@ public class GMViewCharacterInfo extends L2GameServerPacket
         writeD(_activeChar.getClanCrestId()); // pledge crest id
         writeD(_activeChar.getAllyId()); // ally id
         writeC(_activeChar.getMountType()); // mount type
-        writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? _activeChar
-                .getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+        writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+                _activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
         writeC(_activeChar.hasDwarvenCraft() ? 1 : 0);
         writeD(_activeChar.getPkKills());
         writeD(_activeChar.getPvpKills());

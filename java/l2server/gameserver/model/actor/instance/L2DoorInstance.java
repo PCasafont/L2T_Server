@@ -379,8 +379,8 @@ public class L2DoorInstance extends L2Character
         // Attackable  only during siege by everyone (not owner)
         boolean isCastle = getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getZone().isActive();
         boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive();
-        int activeSiegeId = getFort() != null ? getFort().getFortId() : getCastle() != null ? getCastle()
-                .getCastleId() : 0;
+        int activeSiegeId =
+                getFort() != null ? getFort().getFortId() : getCastle() != null ? getCastle().getCastleId() : 0;
         L2PcInstance actingPlayer = attacker.getActingPlayer();
 
         if (isFort)
@@ -655,8 +655,8 @@ public class L2DoorInstance extends L2Character
         }
 
         boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress();
-        boolean isCastle = getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege()
-                .getIsInProgress();
+        boolean isCastle =
+                getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress();
 
         if (isFort || isCastle)
         {

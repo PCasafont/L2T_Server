@@ -44,8 +44,8 @@ public class ChatHeroVoice implements IChatHandler
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)
     {
-        if (activeChar.isHero() && !EventsManager.getInstance()
-                .isPlayerParticipant(activeChar.getObjectId()) && activeChar.getEvent() == null || activeChar.isGM())
+        if (activeChar.isHero() && !EventsManager.getInstance().isPlayerParticipant(activeChar.getObjectId()) &&
+                activeChar.getEvent() == null || activeChar.isGM())
         {
             if (!activeChar.isGM())
             {
@@ -56,9 +56,8 @@ public class ChatHeroVoice implements IChatHandler
                 }
                 else if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
                 {
-                    activeChar
-                            .sendMessage(
-                                    "Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
+                    activeChar.sendMessage(
+                            "Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
                     return;
                 }
             }

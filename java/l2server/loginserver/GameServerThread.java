@@ -136,8 +136,9 @@ public class GameServerThread extends Thread
         }
         catch (IOException e)
         {
-            String serverName = getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance()
-                    .getServerNameById(getServerId()) : "(" + _connectionIPAddress + ")";
+            String serverName = getServerId() != -1 ?
+                    "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) :
+                    "(" + _connectionIPAddress + ")";
             String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
             Log.info(msg);
         }
@@ -146,8 +147,8 @@ public class GameServerThread extends Thread
             if (isAuthed())
             {
                 _gsi.setDown();
-                Log.info("Server [" + getServerId() + "] " + GameServerTable.getInstance()
-                        .getServerNameById(getServerId()) + " is now set as disconnected");
+                Log.info("Server [" + getServerId() + "] " +
+                        GameServerTable.getInstance().getServerNameById(getServerId()) + " is now set as disconnected");
             }
             L2LoginServer.getInstance().getGameServerListener().removeGameServer(this);
             L2LoginServer.getInstance().getGameServerListener().removeFloodProtection(_connectionIp);
@@ -163,7 +164,7 @@ public class GameServerThread extends Thread
     {
         double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
         /*if (multiplier > 2.5f)
-			multiplier = 2.5f - (multiplier - 2.5f);
+            multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 
@@ -286,8 +287,8 @@ public class GameServerThread extends Thread
      */
     public void setGameHosts(String[] hosts)
     {
-        Log.info("Updated Gameserver [" + getServerId() + "] " + GameServerTable.getInstance()
-                .getServerNameById(getServerId()) + " IP's:");
+        Log.info("Updated Gameserver [" + getServerId() + "] " +
+                GameServerTable.getInstance().getServerNameById(getServerId()) + " IP's:");
 
         _gsi.clearServerAddresses();
         for (int i = 0; i < hosts.length; i += 2)

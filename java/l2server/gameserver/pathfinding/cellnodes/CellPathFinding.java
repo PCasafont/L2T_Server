@@ -213,8 +213,8 @@ public class CellPathFinding extends PathFinding
                 locMiddle = middlePoint.next();
                 locEnd = path.get(middlePoint.nextIndex());
                 if (GeoData.getInstance()
-                        .canMoveFromToTarget(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd
-                                .getZ(), instanceId))
+                        .canMoveFromToTarget(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd.getZ(),
+                                instanceId))
                 {
                     middlePoint.remove();
                     remove = true;
@@ -379,13 +379,13 @@ public class CellPathFinding extends PathFinding
         public String toString()
         {
             final StringBuilder stat = new StringBuilder(100);
-            StringUtil.append(stat, String.valueOf(mapSize), "x", String.valueOf(mapSize), " num:", String
-                    .valueOf(bufs.size()), "/", String.valueOf(count), " uses:", String.valueOf(uses), "/", String
-                    .valueOf(playableUses));
+            StringUtil.append(stat, String.valueOf(mapSize), "x", String.valueOf(mapSize), " num:",
+                    String.valueOf(bufs.size()), "/", String.valueOf(count), " uses:", String.valueOf(uses), "/",
+                    String.valueOf(playableUses));
             if (uses > 0)
             {
-                StringUtil.append(stat, " total/avg(ms):", String.valueOf(elapsed), "/", String
-                        .format("%1.2f", (double) elapsed / uses));
+                StringUtil.append(stat, " total/avg(ms):", String.valueOf(elapsed), "/",
+                        String.format("%1.2f", (double) elapsed / uses));
             }
 
             StringUtil.append(stat, " ovf:", String.valueOf(overflows), "/", String.valueOf(playableOverflows));
@@ -404,14 +404,14 @@ public class CellPathFinding extends PathFinding
         }
 
         final StringBuilder stat = new StringBuilder(100);
-        StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(_postFilterUses), "/", String
-                .valueOf(_postFilterPlayableUses));
+        StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(_postFilterUses), "/",
+                String.valueOf(_postFilterPlayableUses));
         if (_postFilterUses > 0)
         {
-            StringUtil.append(stat, " total/avg(ms):", String.valueOf(_postFilterElapsed), "/", String
-                    .format("%1.2f", (double) _postFilterElapsed / _postFilterUses), " passes total/avg:", String
-                    .valueOf(_postFilterPasses), "/", String
-                    .format("%1.1f", (double) _postFilterPasses / _postFilterUses), "\r\n");
+            StringUtil.append(stat, " total/avg(ms):", String.valueOf(_postFilterElapsed), "/",
+                    String.format("%1.2f", (double) _postFilterElapsed / _postFilterUses), " passes total/avg:",
+                    String.valueOf(_postFilterPasses), "/",
+                    String.format("%1.1f", (double) _postFilterPasses / _postFilterUses), "\r\n");
         }
         StringUtil
                 .append(stat, "Pathfind success/fail:", String.valueOf(_findSuccess), "/", String.valueOf(_findFails));

@@ -62,8 +62,8 @@ public class Potions extends ItemSkills
 
         if (activeChar.isInOlympiadMode())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
             return;
         }
 

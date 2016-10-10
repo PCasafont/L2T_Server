@@ -73,9 +73,8 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 
         if (player.getPrivateStoreType() != 0)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.CANNOT_ADD_ELEMENTAL_POWER_WHILE_OPERATING_PRIVATE_STORE_OR_WORKSHOP));
+            player.sendPacket(SystemMessage.getSystemMessage(
+                    SystemMessageId.CANNOT_ADD_ELEMENTAL_POWER_WHILE_OPERATING_PRIVATE_STORE_OR_WORKSHOP));
             player.setActiveEnchantAttrItem(null);
             return;
         }
@@ -97,29 +96,31 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
             player.setActiveEnchantAttrItem(null);
             return;
         }
-        if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item
-                .getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
+        if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY &&
+                item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
         {
             player.setActiveEnchantAttrItem(null);
             return;
         }
 
         //can't enchant rods, shadow items, adventurers', Common Items, PvP items, hero items, cloaks, bracelets, underwear (e.g. shirt), belt, necklace, earring, ring
-        if (!item.getItem().isAttributable() || item.getItem().getItemType() == L2WeaponType.FISHINGROD || item
-                .isShadowItem() || item.isCommonItem() || item.isPvp() || !item.getItem().isAttributable() && item
-                .isHeroItem() || item.isTimeLimitedItem() || item.getItem().getItemType() == L2WeaponType.NONE || item
-                .getItem().getItemGradePlain() != L2Item.CRYSTAL_S && item.getItem()
-                .getItemGradePlain() != L2Item.CRYSTAL_R || item.getItem().getBodyPart() == L2Item.SLOT_BACK || item
-                .getItem().getBodyPart() == L2Item.SLOT_R_BRACELET || item.getItem()
-                .getBodyPart() == L2Item.SLOT_UNDERWEAR || item.getItem().getBodyPart() == L2Item.SLOT_BELT || item
-                .getItem().getBodyPart() == L2Item.SLOT_NECK || (item.getItem()
-                .getBodyPart() & L2Item.SLOT_R_EAR) != 0 || (item.getItem()
-                .getBodyPart() & L2Item.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null || item
-                .getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL || item.getItem()
-                .getBodyPart() == L2Item.SLOT_BROOCH)
+        if (!item.getItem().isAttributable() || item.getItem().getItemType() == L2WeaponType.FISHINGROD ||
+                item.isShadowItem() || item.isCommonItem() || item.isPvp() ||
+                !item.getItem().isAttributable() && item.isHeroItem() || item.isTimeLimitedItem() ||
+                item.getItem().getItemType() == L2WeaponType.NONE ||
+                item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S &&
+                        item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R ||
+                item.getItem().getBodyPart() == L2Item.SLOT_BACK ||
+                item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET ||
+                item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR ||
+                item.getItem().getBodyPart() == L2Item.SLOT_BELT || item.getItem().getBodyPart() == L2Item.SLOT_NECK ||
+                (item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 ||
+                (item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null ||
+                item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL ||
+                item.getItem().getBodyPart() == L2Item.SLOT_BROOCH)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.ELEMENTAL_ENHANCE_REQUIREMENT_NOT_SUFFICIENT));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.ELEMENTAL_ENHANCE_REQUIREMENT_NOT_SUFFICIENT));
             player.setActiveEnchantAttrItem(null);
             return;
         }
@@ -139,8 +140,8 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
             default:
             {
                 player.setActiveEnchantAttrItem(null);
-                Util.handleIllegalPlayerAction(player, "Player " + player
-                        .getName() + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use enchant Exploit!",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
         }
@@ -159,9 +160,9 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
         int limit = getLimit(item, stoneId);
         int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
 
-        if (item.isWeapon() && item.getAttackElementType() != elementToAdd && item.getAttackElementType() != -2 || item
-                .isArmor() && item.getElemental(elementToAdd) == null && item.getElementals() != null && item
-                .getElementals().length >= 3)
+        if (item.isWeapon() && item.getAttackElementType() != elementToAdd && item.getAttackElementType() != -2 ||
+                item.isArmor() && item.getElemental(elementToAdd) == null && item.getElementals() != null &&
+                        item.getElementals().length >= 3)
         {
             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_ELEMENTAL_POWER_ALREADY_ADDED));
             player.setActiveEnchantAttrItem(null);
@@ -237,8 +238,9 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
         if (!player.destroyItem("AttrEnchant", stone, succeeded + failed, player, true))
         {
             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
-            Util.handleIllegalPlayerAction(player, "Player " + player
-                    .getName() + " tried to attribute enchant with a stone he doesn't have", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Player " + player.getName() + " tried to attribute enchant with a stone he doesn't have",
+                    Config.DEFAULT_PUNISH);
             player.setActiveEnchantAttrItem(null);
             return;
         }
@@ -257,9 +259,8 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
             {
                 if (item.isArmor())
                 {
-                    sm = SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.THE_S2_ATTRIBUTE_WAS_SUCCESSFULLY_BESTOWED_ON_S1_RES_TO_S3_INCREASED);
+                    sm = SystemMessage.getSystemMessage(
+                            SystemMessageId.THE_S2_ATTRIBUTE_WAS_SUCCESSFULLY_BESTOWED_ON_S1_RES_TO_S3_INCREASED);
                 }
                 else
                 {
@@ -276,9 +277,8 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
             {
                 if (item.isArmor())
                 {
-                    sm = SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.THE_S3_ATTRIBUTE_BESTOWED_ON_S1_S2_RESISTANCE_TO_S4_INCREASED);
+                    sm = SystemMessage.getSystemMessage(
+                            SystemMessageId.THE_S3_ATTRIBUTE_BESTOWED_ON_S1_S2_RESISTANCE_TO_S4_INCREASED);
                 }
                 else
                 {

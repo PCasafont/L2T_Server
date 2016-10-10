@@ -27,7 +27,7 @@ public class L2WalkRoute
     private final boolean _repeatWalk; // Does repeat walk, after arriving into last point in list, or not
     private boolean _stopAfterCycle; // Make only one cycle or endlessly
     private final byte _repeatType;
-            // Repeat style: 0 - go back, 1 - go to first point (circle style), 2 - teleport to first point (conveyor style), 3 - random walking between points
+    // Repeat style: 0 - go back, 1 - go to first point (circle style), 2 - teleport to first point (conveyor style), 3 - random walking between points
     private boolean _debug;
 
     public L2WalkRoute(int id, List<L2NpcWalkerNode> route, boolean repeat, boolean once, byte repeatType)

@@ -417,7 +417,7 @@ public final class L2NpcTemplate extends L2CharTemplate
                     addRangeSkill(skill);
                     break;
                 /*case ROOT:
-				addRootSkill(skill);
+                addRootSkill(skill);
 				addImmobiliseSkill(skill);
 				addRangeSkill(skill);
 				break;
@@ -574,8 +574,7 @@ public final class L2NpcTemplate extends L2CharTemplate
                 else
                 {
                     Log.warning("Quest event not allowed in multiple quests.  Skipped addition of Event Type \"" +
-                            EventType + "\" for NPC \"" + Name + "\" and quest \"" + q
-                            .getName() + "\".");
+                            EventType + "\" for NPC \"" + Name + "\" and quest \"" + q.getName() + "\".");
                 }
             }
             else
@@ -590,8 +589,8 @@ public final class L2NpcTemplate extends L2CharTemplate
                 // Add the new quest in the end of the list otherwise.
                 for (int i = 0; i < len; i++)
                 {
-                    if (_quests[i].getName().equals(q.getName()) || L2NpcTemplate
-                            .isAssignableTo(q, _quests[i].getClass()))
+                    if (_quests[i].getName().equals(q.getName()) ||
+                            L2NpcTemplate.isAssignableTo(q, _quests[i].getClass()))
                     {
                         _quests[i] = q;
                         return;
@@ -1469,10 +1468,9 @@ public final class L2NpcTemplate extends L2CharTemplate
 
     public String getXmlElemRes()
     {
-        return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math
-                .round(baseWaterRes) + "\" windRes=\"" + Math.round(baseWindRes) + "\"" + " earthRes=\"" + Math
-                .round(baseEarthRes) + "\" holyRes=\"" + Math.round(baseHolyRes) + "\" darkRes=\"" + Math
-                .round(baseDarkRes) + "\"";
+        return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math.round(baseWaterRes) + "\" windRes=\"" +
+                Math.round(baseWindRes) + "\"" + " earthRes=\"" + Math.round(baseEarthRes) + "\" holyRes=\"" +
+                Math.round(baseHolyRes) + "\" darkRes=\"" + Math.round(baseDarkRes) + "\"";
     }
 
     public String getXmlAIType()
@@ -1590,8 +1588,8 @@ public final class L2NpcTemplate extends L2CharTemplate
 
     public String getXmlClan()
     {
-        if (getAIData().getClan() == null || getAIData().getClan().length() == 0 || getAIData().getClan()
-                .equalsIgnoreCase("null"))
+        if (getAIData().getClan() == null || getAIData().getClan().length() == 0 ||
+                getAIData().getClan().equalsIgnoreCase("null"))
         {
             return "";
         }
@@ -1609,8 +1607,8 @@ public final class L2NpcTemplate extends L2CharTemplate
 
     public String getXmlEnemy()
     {
-        if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0 || getAIData().getEnemyClan()
-                .equalsIgnoreCase("null"))
+        if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0 ||
+                getAIData().getEnemyClan().equalsIgnoreCase("null"))
         {
             return "";
         }

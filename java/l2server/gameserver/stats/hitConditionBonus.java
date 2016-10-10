@@ -104,8 +104,8 @@ public class hitConditionBonus
                         }
                         catch (Exception e)
                         {
-                            Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e
-                                    .getMessage(), e);
+                            Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(),
+                                    e);
                         }
                         finally
                         {

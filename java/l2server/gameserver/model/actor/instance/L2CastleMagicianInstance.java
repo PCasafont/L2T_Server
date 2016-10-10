@@ -365,8 +365,8 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
                     }
                     for (SubUnitSkill sus : array)
                     {
-                        skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill()
-                                .getLevel(), sus.getReputation(), 0);
+                        skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(),
+                                sus.getReputation(), 0);
                     }
                     player.sendPacket(skilllist);
                 }
@@ -484,8 +484,8 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 
         if (clanLeader.getInstanceId() > 0)
         {
-            if (!Config.ALLOW_SUMMON_TO_INSTANCE || InstanceManager.getInstance().getInstance(player.getInstanceId())
-                    .isSummonAllowed())
+            if (!Config.ALLOW_SUMMON_TO_INSTANCE ||
+                    InstanceManager.getInstance().getInstance(player.getInstanceId()).isSummonAllowed())
             {
                 // Need retail message if there's one.
                 player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");

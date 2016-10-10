@@ -93,8 +93,7 @@ public class KillTheWarriors extends TerritoryWarSuperClass
         RANDOM_MIN = 15;
         RANDOM_MAX = 20;
         Text = new String[]{
-                "Out of MAX Warriors and Rogues you have defeated KILL.",
-                "You weakened the enemy's attack!"
+                "Out of MAX Warriors and Rogues you have defeated KILL.", "You weakened the enemy's attack!"
         };
     }
 }

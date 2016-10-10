@@ -348,9 +348,9 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
         if (Config.LOG_ITEMS && !process.contains("Consume"))
         {
-            if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (getItem().isEquipable() || getItem()
-                    .getItemId() == ADENA_ID || _item.getItemId() == 4037 || _item.getItemId() == 4355 || _item
-                    .getItemId() == 4356))
+            if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG &&
+                    (getItem().isEquipable() || getItem().getItemId() == ADENA_ID || _item.getItemId() == 4037 ||
+                            _item.getItemId() == 4355 || _item.getItemId() == 4356))
             {
                 logItem(getItemId(), getObjectId(), getCount(), owner_id, process);
             }
@@ -370,8 +370,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
             String targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
             if (Config.GMAUDIT)
             {
-                GMAudit.auditGMAction(creator
-                                .getName(),
+                GMAudit.auditGMAction(creator.getName(),
                         process + " (obj id: " + getObjectId() + " receipt id: " + owner_id + " id: " + getItemId() +
                                 " count: " + getCount() + " name: " + getName() + ")", targetName,
                         "L2Object referencing this action is: " + referenceName);
@@ -469,9 +468,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT IGNORE INTO log_items(owner_id, item_id, item_object_id, count, process, time) VALUES(?,?,?,?,?,?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT IGNORE INTO log_items(owner_id, item_id, item_object_id, count, process, time) VALUES(?,?,?,?,?,?)");
             statement.setInt(1, ownerId);
             statement.setInt(2, itemId);
             statement.setInt(3, objectId);
@@ -528,12 +526,12 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
         if (Config.LOG_ITEMS && process != null && !process.contains("Consume"))
         {
-            if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (_item.isEquipable() || _item
-                    .getItemId() == ADENA_ID || _item.getItemId() == 4037 || _item.getItemId() == 4355 || _item
-                    .getItemId() == 4356))
+            if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG &&
+                    (_item.isEquipable() || _item.getItemId() == ADENA_ID || _item.getItemId() == 4037 ||
+                            _item.getItemId() == 4355 || _item.getItemId() == 4356))
             {
-                logItem(getItemId(), getObjectId(), count, creator != null ? creator
-                        .getObjectId() : 0, process + " (" + old + "->" + getCount() + ")");
+                logItem(getItemId(), getObjectId(), count, creator != null ? creator.getObjectId() : 0,
+                        process + " (" + old + "->" + getCount() + ")");
             }
         }
 
@@ -549,8 +547,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
                 String referenceName = "no-reference";
                 if (reference instanceof L2Object)
                 {
-                    referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference)
-                            .getName() : "no-name";
+                    referenceName =
+                            ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
                 }
                 else if (reference instanceof String)
                 {
@@ -559,8 +557,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
                 String targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
                 if (Config.GMAUDIT)
                 {
-                    GMAudit.auditGMAction(creator
-                                    .getName(),
+                    GMAudit.auditGMAction(creator.getName(),
                             process + " (id: " + getItemId() + " objId: " + getObjectId() + " name: " + getName() +
                                     " count: " + count + ")", targetName,
                             "L2Object referencing this action is: " + referenceName);
@@ -935,17 +932,18 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
     {
         return !isEquipped() // Not equipped
                 && getItem().getType2() != L2Item.TYPE2_QUEST // Not Quest Item
-                && (getItem().getType2() != L2Item.TYPE2_MONEY || getItem()
-                .getType1() != L2Item.TYPE1_SHIELD_ARMOR) // not money, not shield
-                && (player.getPet() == null || getObjectId() != player.getPet()
-                .getControlObjectId()) // Not Control item of currently summoned pet
+                && (getItem().getType2() != L2Item.TYPE2_MONEY || getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)
+                // not money, not shield
+                && (player.getPet() == null || getObjectId() != player.getPet().getControlObjectId())
+                // Not Control item of currently summoned pet
                 && player.getActiveEnchantItem() != this // Not momentarily used enchant scroll
                 && (allowAdena || getItemId() != 57) // Not adena
-                && (player.getCurrentSkill() == null || player.getCurrentSkill().getSkill()
-                .getItemConsumeId() != getItemId()) && (!player.isCastingSimultaneouslyNow() || player
-                .getLastSimultaneousSkillCast() == null || player.getLastSimultaneousSkillCast()
-                .getItemConsumeId() != getItemId()) && (allowNonTradeable || isTradeable() && !(getItem()
-                .getItemType() == L2EtcItemType.PET_COLLAR && player.havePetInvItems()));
+                && (player.getCurrentSkill() == null ||
+                player.getCurrentSkill().getSkill().getItemConsumeId() != getItemId()) &&
+                (!player.isCastingSimultaneouslyNow() || player.getLastSimultaneousSkillCast() == null ||
+                        player.getLastSimultaneousSkillCast().getItemConsumeId() != getItemId()) &&
+                (allowNonTradeable || isTradeable() &&
+                        !(getItem().getItemType() == L2EtcItemType.PET_COLLAR && player.havePetInvItems()));
     }
 
     /**
@@ -1193,8 +1191,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT effectIndex, effectId FROM item_ensoul_effects WHERE itemId=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT effectIndex, effectId FROM item_ensoul_effects WHERE itemId=?");
             statement.setInt(1, getObjectId());
             ResultSet rs = statement.executeQuery();
             while (rs.next())
@@ -1240,9 +1238,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         }
         catch (Exception e)
         {
-            Log.log(Level.SEVERE,
-                    "Could not restore augmentation and elemental data for item " + this + " from DB: " + e
-                            .getMessage(), e);
+            Log.log(Level.SEVERE, "Could not restore augmentation and elemental data for item " + this + " from DB: " +
+                    e.getMessage(), e);
         }
         finally
         {
@@ -1863,7 +1860,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
                     removeFromDb();
 
 					/*
-					if (getCount() != 0)
+                    if (getCount() != 0)
 					{
 						Broadcast.toGameMasters("(1) Deleted " + getCount() + " " + getName() + " from DB because... ");
 
@@ -2022,8 +2019,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
             if (Config.GEODATA > 0 && _dropper != null)
             {
                 Location dropDest = GeoData.getInstance()
-                        .moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, _dropper
-                                .getInstanceId());
+                        .moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z,
+                                _dropper.getInstanceId());
                 _x = dropDest.getX();
                 _y = dropDest.getY();
                 _z = dropDest.getZ();
@@ -2052,8 +2049,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
             // synchronized, to avoid deadlocks
             _itm.getPosition().getWorldRegion().addVisibleObject(_itm);
             _itm.setDropTime(System.currentTimeMillis());
-            _itm.setDropperObjectId(_dropper != null ? _dropper
-                    .getObjectId() : 0); //Set the dropper Id for the knownlist packets in sendInfo
+            _itm.setDropperObjectId(_dropper != null ? _dropper.getObjectId() :
+                    0); //Set the dropper Id for the knownlist packets in sendInfo
 
             // Add the L2ItemInstance dropped in the world as a visible object
             L2World.getInstance().addVisibleObject(_itm, _itm.getPosition().getWorldRegion());
@@ -2093,10 +2090,9 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con
-                    .prepareStatement(
-                            "UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=?,appearance=?,mob_id=? " +
-                                    "WHERE object_id = ?");
+            statement = con.prepareStatement(
+                    "UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=?,appearance=?,mob_id=? " +
+                            "WHERE object_id = ?");
             statement.setInt(1, _ownerId);
             statement.setLong(2, getCount());
             statement.setString(3, _loc.name());
@@ -2116,8 +2112,9 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         }
         catch (Exception e)
         {
-            Log.log(Level.SEVERE, "Could not update item " + this + " (owner id " + _ownerId + ") in DB: Reason: " + e
-                    .getMessage(), e);
+            Log.log(Level.SEVERE,
+                    "Could not update item " + this + " (owner id " + _ownerId + ") in DB: Reason: " + e.getMessage(),
+                    e);
         }
         finally
         {
@@ -2143,10 +2140,9 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con
-                    .prepareStatement(
-                            "INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,object_id,custom_type1,custom_type2,mana_left,time,appearance,mob_id) " +
-                                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            statement = con.prepareStatement(
+                    "INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,object_id,custom_type1,custom_type2,mana_left,time,appearance,mob_id) " +
+                            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setInt(1, _ownerId);
             statement.setInt(2, _itemId);
             statement.setLong(3, getCount());
@@ -2542,8 +2538,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
     public int getStoneType()
     {
-        if (getName().contains("Weapon") || getItem().getStandardItem() > -1 && ItemTable.getInstance()
-                .getTemplate(getItem().getStandardItem()) instanceof L2Weapon)
+        if (getName().contains("Weapon") || getItem().getStandardItem() > -1 &&
+                ItemTable.getInstance().getTemplate(getItem().getStandardItem()) instanceof L2Weapon)
         {
             return L2Item.TYPE2_WEAPON;
         }

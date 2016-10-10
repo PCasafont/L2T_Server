@@ -76,8 +76,8 @@ public final class RequestDeleteSentPost extends L2GameClientPacket
             }
             if (msg.getSenderId() != activeChar.getObjectId())
             {
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to delete not own post!", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to delete not own post!", Config.DEFAULT_PUNISH);
                 return;
             }
 

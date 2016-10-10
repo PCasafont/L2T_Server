@@ -49,8 +49,8 @@ public class JTableButtonMouseListener implements MouseListener
                 b.doClick(100);
             }
         }
-        c.dispatchEvent(new MouseEvent(c, e.getID(), e.getWhen(), e.getModifiers(), 0, 0, 1, e.isPopupTrigger(), e
-                .getButton()));
+        c.dispatchEvent(new MouseEvent(c, e.getID(), e.getWhen(), e.getModifiers(), 0, 0, 1, e.isPopupTrigger(),
+                e.getButton()));
     }
 
     public JTableButtonMouseListener(JTable table)

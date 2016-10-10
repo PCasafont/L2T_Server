@@ -79,8 +79,8 @@ public final class CharacterDelete extends L2GameClientPacket
             Log.log(Level.SEVERE, "Error:", e);
         }
 
-        CharSelectionInfo cl = new CharSelectionInfo(getClient().getAccountName(), getClient()
-                .getSessionId().playOkID1, 0);
+        CharSelectionInfo cl =
+                new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);
         sendPacket(cl);
         getClient().setCharSelection(cl.getCharInfo());
     }

@@ -149,8 +149,7 @@ public class Anakim extends L2AttackableAIScript
                     {
                         return null;
                     }
-                    else if (_anakimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager
-                            .getInstance()
+                    else if (_anakimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance()
                             .checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
                     {
                         return null;
@@ -199,9 +198,9 @@ public class Anakim extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.ANAKIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.ANAKIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             Location enterLoc = npcId == _enterCubic ? _enterLoc : _enterAnakimLoc;
@@ -264,8 +263,8 @@ public class Anakim extends L2AttackableAIScript
                     randomSpawn = spawns.get(Rnd.get(spawns.size()));
                     if (randomSpawn != null)
                     {
-                        L2Npc remnant = addSpawn(_remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn
-                                .getZ(), randomSpawn.getHeading(), true, 0, false, 0);
+                        L2Npc remnant = addSpawn(_remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(),
+                                randomSpawn.getHeading(), true, 0, false, 0);
                         _remnants.add(remnant);
                     }
                 }
@@ -346,8 +345,8 @@ public class Anakim extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " out of the boss zone!");
                 }
             }
 
@@ -362,8 +361,8 @@ public class Anakim extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                            .getName() + " wich is out of the boss zone!");
+                    Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                            " wich is out of the boss zone!");
                 }
             }
         }
@@ -445,8 +444,8 @@ public class Anakim extends L2AttackableAIScript
         {
             if (skill.getSkillType().toString().contains("HEAL"))
             {
-                if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster && npc
-                        .getTarget() != _anakimBoss) //Don't call minions if are healing Anakim
+                if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster &&
+                        npc.getTarget() != _anakimBoss) //Don't call minions if are healing Anakim
                 {
                     ((L2Attackable) npc).clearAggroList();
                     npc.setTarget(caster);
@@ -464,8 +463,8 @@ public class Anakim extends L2AttackableAIScript
     {
         if (_debug)
         {
-            Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " + npc
-                    .getZ());
+            Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " +
+                    npc.getZ());
         }
 
         return super.onSpawn(npc);

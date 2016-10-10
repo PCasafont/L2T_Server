@@ -48,8 +48,8 @@ public class EffectAuraForces extends L2Effect
                         continue;
                     }
 
-                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                            .getPartyChangeSkill();
+                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() :
+                            getSkill().getPartyChangeSkill();
 
                     SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), member);
 
@@ -73,8 +73,8 @@ public class EffectAuraForces extends L2Effect
             }
             else
             {
-                int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                        .getPartyChangeSkill();
+                int newSkillId =
+                        getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
                 SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), getEffector());
 
                 if (getEffector().getActingPlayer().getActiveForcesCount() + 1 <= 7)
@@ -116,8 +116,8 @@ public class EffectAuraForces extends L2Effect
                         continue;
                     }
 
-                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                            .getPartyChangeSkill();
+                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() :
+                            getSkill().getPartyChangeSkill();
 
                     L2Abnormal abn = member.getFirstEffect(1955);
 
@@ -162,8 +162,8 @@ public class EffectAuraForces extends L2Effect
             }
             else
             {
-                int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                        .getPartyChangeSkill();
+                int newSkillId =
+                        getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 
                 L2Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
                 L2Abnormal ab = getEffector().getFirstEffect(newSkillId);
@@ -292,8 +292,8 @@ public class EffectAuraForces extends L2Effect
                     {
                         continue;
                     }
-                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill()
-                            .getPartyChangeSkill();
+                    int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() :
+                            getSkill().getPartyChangeSkill();
                     if (member.getFirstEffect(newSkillId) == null)
                     {
                         SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), member);

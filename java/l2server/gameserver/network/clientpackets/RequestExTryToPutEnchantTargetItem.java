@@ -94,10 +94,8 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
                 {
                     chanceText += "." + chance % 10;
                 }
-                activeChar
-                        .sendPacket(
-                                new ExShowScreenMessage("This enchantment has a " + chanceText + "% chance to succeed",
-                                        3000));
+                activeChar.sendPacket(
+                        new ExShowScreenMessage("This enchantment has a " + chanceText + "% chance to succeed", 3000));
             }
         }
 

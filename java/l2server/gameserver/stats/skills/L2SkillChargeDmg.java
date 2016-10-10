@@ -102,8 +102,8 @@ public class L2SkillChargeDmg extends L2Skill
             boolean crit = false;
             if (getBaseCritRate() > 0)
             {
-                double rate = getBaseCritRate() * 10 * BaseStats.STR.calcBonus(caster) * caster
-                        .calcStat(Stats.PCRITICAL_RATE, 1.0, target, this);
+                double rate = getBaseCritRate() * 10 * BaseStats.STR.calcBonus(caster) *
+                        caster.calcStat(Stats.PCRITICAL_RATE, 1.0, target, this);
                 crit = Formulas.calcCrit(rate, target);
             }
 

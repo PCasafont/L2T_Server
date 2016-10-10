@@ -46,10 +46,10 @@ public class Gainak extends Quest
     private static boolean _isInSiege = false;
     private static final int _gainakPeaceZoneId = 60018;
     private static final int _gainakSiegeZoneId = 60019;
-    private static final L2PeaceZone _gainakPeaceZone = ZoneManager.getInstance()
-            .getZoneById(_gainakPeaceZoneId, L2PeaceZone.class);
-    private static final L2SiegeZone _gainakSiegeZone = ZoneManager.getInstance()
-            .getZoneById(_gainakSiegeZoneId, L2SiegeZone.class);
+    private static final L2PeaceZone _gainakPeaceZone =
+            ZoneManager.getInstance().getZoneById(_gainakPeaceZoneId, L2PeaceZone.class);
+    private static final L2SiegeZone _gainakSiegeZone =
+            ZoneManager.getInstance().getZoneById(_gainakSiegeZoneId, L2SiegeZone.class);
 
     public Gainak(int questId, String name, String descr)
     {

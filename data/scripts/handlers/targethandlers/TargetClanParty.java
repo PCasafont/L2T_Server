@@ -86,7 +86,7 @@ public class TargetClanParty implements ISkillTargetTypeHandler
             }
 
 			/* FIXME
-			if (activeChar.getPet() != null)
+            if (activeChar.getPet() != null)
 			{
 				if (!(activeChar.getPet().isDead()))
 					targetList.add(activeChar.getPet());
@@ -99,8 +99,8 @@ public class TargetClanParty implements ISkillTargetTypeHandler
                     continue;
                 }
 
-                if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar
-                        .getClan() || player.isInParty() && player.getParty().isInParty(tempChar))
+                if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
+                        player.isInParty() && player.getParty().isInParty(tempChar))
                 {
 
                     if (tempChar.getPet() != null)

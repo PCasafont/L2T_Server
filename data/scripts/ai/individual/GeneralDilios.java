@@ -91,15 +91,15 @@ public class GeneralDilios extends L2AttackableAIScript
             int value = Integer.parseInt(event.substring(8));
             if (value < 6)
             {
-                _general.broadcastPacket(new NpcSay(_general
-                        .getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
+                _general.broadcastPacket(
+                        new NpcSay(_general.getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
                 startQuestTimer("guard_animation_0", 3400, null, null);
             }
             else
             {
                 value = -1;
-                _general.broadcastPacket(new NpcSay(_general.getObjectId(), 1, generalId, diliosText[Rnd
-                        .get(diliosText.length)]));
+                _general.broadcastPacket(
+                        new NpcSay(_general.getObjectId(), 1, generalId, diliosText[Rnd.get(diliosText.length)]));
             }
             startQuestTimer("command_" + (value + 1), 60000, null, null);
         }

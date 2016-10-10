@@ -93,8 +93,8 @@ public class SummonItems implements IItemHandler
 
         if (activeChar.isInOlympiadMode())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
             return;
         }
         if (activeChar.isAllSkillsDisabled() || activeChar.isCastingNow())
@@ -253,8 +253,8 @@ public class SummonItems implements IItemHandler
                 _activeChar.setIsCastingNow(false);
 
                 // check for summon item validity
-                if (_item == null || _item.getOwnerId() != _activeChar.getObjectId() || _item
-                        .getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
+                if (_item == null || _item.getOwnerId() != _activeChar.getObjectId() ||
+                        _item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
                 {
                     return;
                 }

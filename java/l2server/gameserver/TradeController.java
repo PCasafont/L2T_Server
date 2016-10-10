@@ -150,16 +150,14 @@ public class TradeController implements Reloadable
                                     if (Config.DEBUG)
                                     {
                                         // debug
-                                        double diff = (double) price / ItemTable.getInstance().getTemplate(itemId)
-                                                .getReferencePrice();
+                                        double diff = (double) price /
+                                                ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
                                         if (diff < 0.8 || diff > 1.2)
                                         {
                                             Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId +
-                                                    " (" + ItemTable
-                                                    .getInstance().getTemplate(itemId)
-                                                    .getName() + ") diff: " + diff + " - Price: " + price +
-                                                    " - Reference: " + ItemTable
-                                                    .getInstance().getTemplate(itemId).getReferencePrice());
+                                                    " (" + ItemTable.getInstance().getTemplate(itemId).getName() +
+                                                    ") diff: " + diff + " - Price: " + price + " - Reference: " +
+                                                    ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
                                         }
                                     }
 
@@ -217,8 +215,8 @@ public class TradeController implements Reloadable
                 else
                 {
                     item.setCurrentCount(item.getMaxCount());
-                    PreparedStatement st = con
-                            .prepareStatement("DELETE FROM shop_item_counts WHERE shop_id = ? AND item_id = ?");
+                    PreparedStatement st =
+                            con.prepareStatement("DELETE FROM shop_item_counts WHERE shop_id = ? AND item_id = ?");
                     st.setInt(1, shopId);
                     st.setInt(2, itemId);
                     st.executeUpdate();
@@ -278,8 +276,8 @@ public class TradeController implements Reloadable
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("UPDATE shop_item_counts SET count = ? WHERE shop_id = ? AND item_id = ?");
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE shop_item_counts SET count = ? WHERE shop_id = ? AND item_id = ?");
             for (L2TradeList list : _lists.values())
             {
                 if (list.hasLimitedStockItem())

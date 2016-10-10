@@ -115,8 +115,8 @@ public class ClanTable
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT clan_id FROM clan_data ORDER BY clan_level DESC");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT clan_id FROM clan_data ORDER BY clan_level DESC");
             ResultSet result = statement.executeQuery();
 
             // Count the clans
@@ -220,8 +220,8 @@ public class ClanTable
 
         if (10 > player.getLevel())
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_MEET_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_MEET_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN));
             return null;
         }
         if (0 != player.getClanId())
@@ -231,8 +231,8 @@ public class ClanTable
         }
         if (System.currentTimeMillis() < player.getClanCreateExpiryTime())
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_MUST_WAIT_XX_DAYS_BEFORE_CREATING_A_NEW_CLAN));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_WAIT_XX_DAYS_BEFORE_CREATING_A_NEW_CLAN));
             return null;
         }
 
@@ -242,9 +242,10 @@ public class ClanTable
         }
 
         L2Clan clan = new L2Clan(IdFactory.getInstance().getNextId(), clanName);
-        L2ClanMember leader = new L2ClanMember(clan, player.getName(), player.getLevel(), player.getCurrentClass()
-                .getId(), player.getObjectId(), player.getPledgeType(), player.getPowerGrade(), player
-                .getTitle(), player.getAppearance().getSex(), player.getRace().ordinal());
+        L2ClanMember leader =
+                new L2ClanMember(clan, player.getName(), player.getLevel(), player.getCurrentClass().getId(),
+                        player.getObjectId(), player.getPledgeType(), player.getPowerGrade(), player.getTitle(),
+                        player.getAppearance().getSex(), player.getRace().ordinal());
         clan.setLeader(leader);
         leader.setPlayerInstance(player);
         clan.store();

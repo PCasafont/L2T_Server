@@ -91,8 +91,8 @@ public class PlayerClassTable implements Reloadable
                         int raceId = classNode.getInt("raceId", -1);
                         int level = classNode.getInt("level");
 
-                        PlayerClass cl = new PlayerClass(id, name, _classes
-                                .get(parentId), awakensTo, isMage, raceId, level);
+                        PlayerClass cl =
+                                new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level);
 
                         if (cl.getParent() != null)
                         {
@@ -152,11 +152,10 @@ public class PlayerClassTable implements Reloadable
                                     if (sl.getId() == skillId)
                                     {
                                         cl.getSkills().remove(hash);
-                                        cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl
-                                                .getLevel()), new L2SkillLearn(replacedBy, sl.getLevel(), sl
-                                                .getSpCost(), sl.getMinLevel(), sl.getMinDualLevel(), sl
-                                                .isLearnedFromPanel(), sl.isLearnedByFS(), sl.isTransferSkill(), sl
-                                                .isAutoGetSkill()));
+                                        cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl.getLevel()),
+                                                new L2SkillLearn(replacedBy, sl.getLevel(), sl.getSpCost(),
+                                                        sl.getMinLevel(), sl.getMinDualLevel(), sl.isLearnedFromPanel(),
+                                                        sl.isLearnedByFS(), sl.isTransferSkill(), sl.isAutoGetSkill()));
                                     }
                                 }
                             }
@@ -223,11 +222,12 @@ public class PlayerClassTable implements Reloadable
                                             rsl = new L2SkillLearn(reqSkillId, 1, 1, 85, 0, true, false, false, false);
                                             rsl.setIsRemember(true);
                                             cl.addSkill(reqHash, rsl);
-                                            for (int lv = 2; cl.getParent().getSkills()
-                                                    .containsKey(SkillTable.getSkillHashCode(reqSkillId, lv)); lv++)
+                                            for (int lv = 2;
+                                                 cl.getParent().getSkills()
+                                                         .containsKey(SkillTable.getSkillHashCode(reqSkillId, lv));
+                                                 lv++)
                                             {
-                                                cl.addSkill(SkillTable
-                                                                .getSkillHashCode(reqSkillId, lv),
+                                                cl.addSkill(SkillTable.getSkillHashCode(reqSkillId, lv),
                                                         new L2SkillLearn(reqSkillId, lv, 1, 85, 0, true, false, false,
                                                                 false));
                                             }
@@ -264,10 +264,9 @@ public class PlayerClassTable implements Reloadable
                             long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
                             for (int PlayerClass : _classes.keySet())
                             {
-                                _classes.get(PlayerClass)
-                                        .addSkill(hash,
-                                                new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
-                                                        learnFromPanel, learnFromFS, isTransfer, autoGet));
+                                _classes.get(PlayerClass).addSkill(hash,
+                                        new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
+                                                learnFromPanel, learnFromFS, isTransfer, autoGet));
                             }
                             _minSkillLevels.put(hash, minLevel);
                         }
@@ -386,7 +385,7 @@ public class PlayerClassTable implements Reloadable
             }
 
 			/*switch (player.getRace())
-			{
+            {
 				case Elf:
 					subclasses.removeAll(getList(Race.DarkElf, 40));
 					break;
@@ -440,8 +439,8 @@ public class PlayerClassTable implements Reloadable
             {
                 for (PlayerClass cl : _classes.values())
                 {
-                    if (cl.getLevel() == 85 && cl.getParent() != null && cl.getParent().getParent() != null && cl
-                            .getParent().getParent().getId() == subId)
+                    if (cl.getLevel() == 85 && cl.getParent() != null && cl.getParent().getParent() != null &&
+                            cl.getParent().getParent().getId() == subId)
                     {
                         awakened.add(cl.getId());
                         break;
@@ -509,8 +508,8 @@ public class PlayerClassTable implements Reloadable
             }
             if (sec >= 150)
             {
-                Log.warning("There was a problem getting the awakening class for the class id " + classId + " (" + pc
-                        .getName() + ")");
+                Log.warning("There was a problem getting the awakening class for the class id " + classId + " (" +
+                        pc.getName() + ")");
             }
         }
 

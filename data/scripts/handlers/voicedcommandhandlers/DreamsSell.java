@@ -74,8 +74,8 @@ public class DreamsSell implements IVoicedCommandHandler
 
                     if (!player.getAccessLevel().allowTransaction())
                     {
-                        player.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+                        player.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
                         canStart = false;
                     }
 
@@ -94,11 +94,11 @@ public class DreamsSell implements IVoicedCommandHandler
 
                     for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
                     {
-                        if (!(c instanceof L2PcInstance && ((L2PcInstance) c)
-                                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+                        if (!(c instanceof L2PcInstance &&
+                                ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
                         {
-                            player.sendMessage("Try to put your store a little further from " + c
-                                    .getName() + ", please.");
+                            player.sendMessage(
+                                    "Try to put your store a little further from " + c.getName() + ", please.");
                             canStart = false;
                         }
                     }
@@ -259,8 +259,8 @@ public class DreamsSell implements IVoicedCommandHandler
                             packet.replace("%addPrice%", "Choose the ingredient to add from your inventory.");
                             player.setAddSellPrice(index);
 
-                            final SystemMessage s = SystemMessage
-                                    .getSystemMessage(SystemMessageId.LIGHT_BLUE_UPSTAIRS_S1);
+                            final SystemMessage s =
+                                    SystemMessage.getSystemMessage(SystemMessageId.LIGHT_BLUE_UPSTAIRS_S1);
                             s.addString("Choose the ingredient to add from your inventory.");
 
                             player.sendPacket(s);
@@ -277,28 +277,21 @@ public class DreamsSell implements IVoicedCommandHandler
                     {
                         String itemHtm =
                                 "<table><tr><td width=40><table bgcolor=000000 width=24><tr><td><button action=\"\" value=\" \" width=32 height=32 back=\"" +
-                                        priceItem
-                                                .getIcon() + "\" fore=\"" + priceItem
-                                        .getIcon() +
+                                        priceItem.getIcon() + "\" fore=\"" + priceItem.getIcon() +
                                         "\"></td></tr></table></td><td width=220><table bgcolor=131210 width=220><tr><td>[<font color=FFFFFF><a action=\"bypass -h voice .sell item " +
-                                        index + " deletePrice " + priceItem
-                                        .getItemId() +
+                                        index + " deletePrice " + priceItem.getItemId() +
                                         "\" value=\" \" width=32 height=32\">X</a></font>] <font color=FFFFFF><a action=\"\" value=\" \" width=32 height=32\">" +
-                                        priceItem
-                                                .getName() + "</a></font></td></tr><tr><td>" + item.getPriceItems()
-                                        .get(priceItem) + " " + priceItem
-                                        .getName() + " will be required.</td></tr></table></td></tr></table><br>" +
+                                        priceItem.getName() + "</a></font></td></tr><tr><td>" +
+                                        item.getPriceItems().get(priceItem) + " " + priceItem.getName() +
+                                        " will be required.</td></tr></table></td></tr></table><br>" +
                                         "<br><center><font color=\"6ab3dd\">Amount:</font></center><br1>" +
-                                        "<edit var=amt" + priceItem
-                                        .getItemId() + " type=number width=100 height=11 length=26><br> " +
+                                        "<edit var=amt" + priceItem.getItemId() +
+                                        " type=number width=100 height=11 length=26><br> " +
                                         "<button value=\"Apply\" action=\"bypass -h voice .sell item " + index +
-                                        " setPriceAmount " + priceItem
-                                        .getItemId() + " $amt" + priceItem
-                                        .getItemId() +
+                                        " setPriceAmount " + priceItem.getItemId() + " $amt" + priceItem.getItemId() +
                                         "\" back=\"l2ui_ct1.button_df\" width=85 height=20 fore=\"l2ui_ct1.button_df\">" +
                                         "<button value=\"Delete\" action=\"bypass -h voice .sell item " + index +
-                                        " deletePrice " + priceItem
-                                        .getItemId() +
+                                        " deletePrice " + priceItem.getItemId() +
                                         "\" back=\"l2ui_ct1.button_df\" width=85 height=20 fore=\"l2ui_ct1.button_df\"><br><br>";
 
                         pricesHtm += itemHtm;
@@ -370,19 +363,18 @@ public class DreamsSell implements IVoicedCommandHandler
                         "<table><tr><td width=40><table bgcolor=000000 width=24><tr><td><button action=\"bypass -h voice .sell item " +
                                 i + "\" value=\" \" width=32 height=32 back=\"" + itemIcon + "\" fore=\"" + itemIcon +
                                 "\"></td></tr></table></td><td width=220><table bgcolor=131210 width=220><tr><td>[<font color=FFFFFF><a action=\"bypass -h voice .sell deleteItem " +
-                                item
-                                        .getObjectId() +
+                                item.getObjectId() +
                                 "\" value=\" \" width=32 height=32\">X</a></font>] <font color=FFFFFF><a action=\"bypass -h voice .sell item " +
-                                i + "\" value=\" \" width=32 height=32\">" + itemTemplate
-                                .getName() +
+                                i + "\" value=\" \" width=32 height=32\">" + itemTemplate.getName() +
                                 "</a></font></td></tr><tr><td>Click me to set-up ingredients.</td></tr></table></td></tr></table><br>";
-                @SuppressWarnings("unused") String itemHtm = item.getItem()
-                        .getName() + "<br>" + "<tr>" + "<td>Price items: " + item.getPriceItems()
-                        .size() + "</td>" + "<td><button value=\"Edit\" action=\"bypass -h voice .sell item " + i +
-                        "\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></td>" +
-                        "<td><button value=\"Delete\" action=\"bypass -h voice .sell deleteItem " + item
-                        .getObjectId() +
-                        "\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></td>" + "</tr>";
+                @SuppressWarnings("unused") String itemHtm =
+                        item.getItem().getName() + "<br>" + "<tr>" + "<td>Price items: " + item.getPriceItems().size() +
+                                "</td>" + "<td><button value=\"Edit\" action=\"bypass -h voice .sell item " + i +
+                                "\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></td>" +
+                                "<td><button value=\"Delete\" action=\"bypass -h voice .sell deleteItem " +
+                                item.getObjectId() +
+                                "\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></td>" +
+                                "</tr>";
 
                 itemsHtm += newItemHtm;
             }

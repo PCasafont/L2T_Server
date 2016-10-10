@@ -111,8 +111,8 @@ public class EffectSignetAntiSummon extends L2Effect
                     {
                         if (mpConsume > getEffector().getCurrentMp())
                         {
-                            getEffector().sendPacket(SystemMessage
-                                    .getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+                            getEffector().sendPacket(
+                                    SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
                             return false;
                         }
                         else

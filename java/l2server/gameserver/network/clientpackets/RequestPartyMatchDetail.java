@@ -44,7 +44,7 @@ public final class RequestPartyMatchDetail extends L2GameClientPacket
     {
         _roomid = readD();
         /*
-		 * IF player click on Room all unk are 0
+         * IF player click on Room all unk are 0
 		 * IF player click AutoJoin values are -1 1 1
 		 */
         _unk1 = readD();

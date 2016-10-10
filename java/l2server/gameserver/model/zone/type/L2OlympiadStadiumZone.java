@@ -62,8 +62,8 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
         {
             if (character instanceof L2PcInstance && character.getInstanceId() == player.getInstanceId())
             {
-                if (((L2PcInstance) character).inObserverMode() || ((L2PcInstance) character)
-                        .getOlympiadSide() != player.getOlympiadSide())
+                if (((L2PcInstance) character).inObserverMode() ||
+                        ((L2PcInstance) character).getOlympiadSide() != player.getOlympiadSide())
                 {
                     character.sendPacket(packet);
                 }
@@ -75,8 +75,8 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
     {
         for (L2Character character : _characterList.values())
         {
-            if (character instanceof L2PcInstance && ((L2PcInstance) character).inObserverMode() && character
-                    .getInstanceId() - Olympiad.BASE_INSTANCE_ID == gameId)
+            if (character instanceof L2PcInstance && ((L2PcInstance) character).inObserverMode() &&
+                    character.getInstanceId() - Olympiad.BASE_INSTANCE_ID == gameId)
             {
                 character.sendPacket(packet);
             }

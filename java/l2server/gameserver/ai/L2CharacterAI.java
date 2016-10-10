@@ -424,8 +424,8 @@ public class L2CharacterAI extends AbstractAI
             return;
         }
 
-        if (_actor instanceof L2PcInstance && !((L2PcInstance) _actor).getFloodProtectors().getPickUpItem()
-                .tryPerformAction("PickUpItem"))
+        if (_actor instanceof L2PcInstance &&
+                !((L2PcInstance) _actor).getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
         {
             if (((L2PcInstance) _actor).getClient() != null)
             {
@@ -435,8 +435,8 @@ public class L2CharacterAI extends AbstractAI
         }
 
         //All kind of summons, pets
-        if (_actor instanceof L2Summon && !((L2Summon) _actor).getOwner().getFloodProtectors().getPickUpItem()
-                .tryPerformAction("PickUpItem"))
+        if (_actor instanceof L2Summon &&
+                !((L2Summon) _actor).getOwner().getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
         {
             return;
         }
@@ -760,7 +760,7 @@ public class L2CharacterAI extends AbstractAI
         clientStopMoving(blocked_at_pos);
 
 		/*if (Config.ACTIVATE_POSITION_RECORDER && Universe.getInstance().shouldLog(_accessor.getActor().getObjectId()))
-		{
+        {
 			if (!_accessor.getActor().isFlying())
 				Universe.getInstance().registerObstacle(blocked_at_pos.x, blocked_at_pos.y, blocked_at_pos.z);
 			if (_accessor.getActor() instanceof L2PcInstance)
@@ -941,8 +941,8 @@ public class L2CharacterAI extends AbstractAI
             return false; // skill radius -1
         }
 
-        if (!_actor.isInsideRadius(worldPosition.getX(), worldPosition.getY(), offset + _actor
-                .getTemplate().collisionRadius, false))
+        if (!_actor.isInsideRadius(worldPosition.getX(), worldPosition.getY(),
+                offset + _actor.getTemplate().collisionRadius, false))
         {
             if (_actor.isMovementDisabled())
             {
@@ -1046,10 +1046,8 @@ public class L2CharacterAI extends AbstractAI
             }
 
             // while flying there is no move to cast
-            if (_actor.getAI()
-                    .getIntention() == CtrlIntention.AI_INTENTION_CAST && _actor instanceof L2PcInstance &&
-                    ((L2PcInstance) _actor)
-                            .isTransformed())
+            if (_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST && _actor instanceof L2PcInstance &&
+                    ((L2PcInstance) _actor).isTransformed())
             {
                 if (!((L2PcInstance) _actor).getTransformation().canStartFollowToCast())
                 {
@@ -1164,8 +1162,8 @@ public class L2CharacterAI extends AbstractAI
             setIntention(AI_INTENTION_ACTIVE);
             return true;
         }
-        if (_actor != null && _skill != null && _skill.isOffensive() && _skill
-                .getSkillRadius() > 0 && Config.GEODATA > 0 && !GeoData.getInstance().canSeeTarget(_actor, target))
+        if (_actor != null && _skill != null && _skill.isOffensive() && _skill.getSkillRadius() > 0 &&
+                Config.GEODATA > 0 && !GeoData.getInstance().canSeeTarget(_actor, target))
         {
             setIntention(AI_INTENTION_ACTIVE);
             return true;
@@ -1386,16 +1384,17 @@ public class L2CharacterAI extends AbstractAI
             {
                 isMage = true;
             }
-            else if (target.getPAtk(null) * 0.8 < target.getMAtk(null, null) || target
-                    .getMAtk(null, null) * 0.8 > target.getPAtk(null))
+            else if (target.getPAtk(null) * 0.8 < target.getMAtk(null, null) ||
+                    target.getMAtk(null, null) * 0.8 > target.getPAtk(null))
             {
                 isBalanced = true;
             }
             else
             {
                 L2Weapon weapon = target.getActiveWeaponItem();
-                if (weapon != null && (weapon.getItemType() == L2WeaponType.BOW || weapon
-                        .getItemType() == L2WeaponType.CROSSBOW || weapon.getItemType() == L2WeaponType.CROSSBOWK))
+                if (weapon != null &&
+                        (weapon.getItemType() == L2WeaponType.BOW || weapon.getItemType() == L2WeaponType.CROSSBOW ||
+                                weapon.getItemType() == L2WeaponType.CROSSBOWK))
                 {
                     isArcher = true;
                 }
@@ -1429,9 +1428,9 @@ public class L2CharacterAI extends AbstractAI
 
     public boolean canAura(L2Skill sk)
     {
-        if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk
-                .getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk
-                .getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
+        if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA ||
+                sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA ||
+                sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
         {
             for (L2Object target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
             {
@@ -1448,9 +1447,9 @@ public class L2CharacterAI extends AbstractAI
     {
         if (sk.getSkillType() != L2SkillType.NEGATE || sk.getSkillType() != L2SkillType.CANCEL)
         {
-            if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
+            if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
             {
                 boolean cancast = true;
                 for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
@@ -1464,8 +1463,9 @@ public class L2CharacterAI extends AbstractAI
                         L2Npc targets = (L2Npc) target;
                         L2Npc actors = (L2Npc) _actor;
 
-                        if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan()
-                                .equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
+                        if (targets.getEnemyClan() == null || actors.getClan() == null ||
+                                !targets.getEnemyClan().equals(actors.getClan()) ||
+                                actors.getClan() == null && actors.getIsChaos() == 0)
                         {
                             continue;
                         }
@@ -1486,9 +1486,9 @@ public class L2CharacterAI extends AbstractAI
                     return true;
                 }
             }
-            else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
+            else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
             {
                 boolean cancast = true;
                 for (L2Character target : getAttackTarget().getKnownList()
@@ -1502,8 +1502,9 @@ public class L2CharacterAI extends AbstractAI
                     {
                         L2Npc targets = (L2Npc) target;
                         L2Npc actors = (L2Npc) _actor;
-                        if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan()
-                                .equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
+                        if (targets.getEnemyClan() == null || actors.getClan() == null ||
+                                !targets.getEnemyClan().equals(actors.getClan()) ||
+                                actors.getClan() == null && actors.getIsChaos() == 0)
                         {
                             continue;
                         }
@@ -1522,9 +1523,9 @@ public class L2CharacterAI extends AbstractAI
         }
         else
         {
-            if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
+            if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
             {
                 boolean cancast = false;
                 for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
@@ -1537,8 +1538,9 @@ public class L2CharacterAI extends AbstractAI
                     {
                         L2Npc targets = (L2Npc) target;
                         L2Npc actors = (L2Npc) _actor;
-                        if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan()
-                                .equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
+                        if (targets.getEnemyClan() == null || actors.getClan() == null ||
+                                !targets.getEnemyClan().equals(actors.getClan()) ||
+                                actors.getClan() == null && actors.getIsChaos() == 0)
                         {
                             continue;
                         }
@@ -1554,9 +1556,9 @@ public class L2CharacterAI extends AbstractAI
                     return true;
                 }
             }
-            else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA || sk
-                    .getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
+            else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA ||
+                    sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
             {
                 boolean cancast = true;
                 for (L2Character target : getAttackTarget().getKnownList()
@@ -1570,8 +1572,9 @@ public class L2CharacterAI extends AbstractAI
                     {
                         L2Npc targets = (L2Npc) target;
                         L2Npc actors = (L2Npc) _actor;
-                        if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan()
-                                .equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
+                        if (targets.getEnemyClan() == null || actors.getClan() == null ||
+                                !targets.getEnemyClan().equals(actors.getClan()) ||
+                                actors.getClan() == null && actors.getIsChaos() == 0)
                         {
                             continue;
                         }

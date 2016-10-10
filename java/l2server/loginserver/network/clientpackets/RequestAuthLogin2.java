@@ -156,8 +156,8 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
         {
             InetAddress address = getClient().getConnection().getInetAddress();
             lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
-            Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " + e
-                    .getConnects() + " incorrect login attempts.");
+            Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " +
+                    e.getConnects() + " incorrect login attempts.");
         }
     }
 }

@@ -80,7 +80,7 @@ public class EffectFear extends L2Effect
         }
 
 		/* Tenkai custom - Kilian: I don't see the sense of PvE-only fears and never heard of it either, so commented out
-		// Fear skills cannot be used l2pcinstance to l2pcinstance. Heroic
+        // Fear skills cannot be used l2pcinstance to l2pcinstance. Heroic
 		// Dread, Curse: Fear, Fear, Horror, Sword Symphony, Word of Fear, Hell Scream and
 		// Mass Curse Fear are the exceptions.
 		if (getEffected() instanceof L2PcInstance
@@ -169,8 +169,9 @@ public class EffectFear extends L2Effect
 
         if (Config.GEODATA > 0)
         {
-            Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                    .getZ(), posX, posY, posZ, getEffected().getInstanceId());
+            Location destiny = GeoData.getInstance()
+                    .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
+                            getEffected().getInstanceId());
             posX = destiny.getX();
             posY = destiny.getY();
         }

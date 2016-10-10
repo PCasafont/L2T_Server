@@ -131,10 +131,10 @@ public final class RequestSellItem extends L2GameClientPacket
         L2Character merchant = null;
         if (!player.isGM())
         {
-            if (target == null || !player
-                    .isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false) // Distance is too far)
-                    || target.getInstanceId() != player.getObjectId() && player.getInstanceId() != target
-                    .getInstanceId())
+            if (target == null || !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false)
+                    // Distance is too far)
+                    ||
+                    target.getInstanceId() != player.getObjectId() && player.getInstanceId() != target.getInstanceId())
             {
                 sendPacket(ActionFailed.STATIC_PACKET);
                 return;
@@ -172,9 +172,9 @@ public final class RequestSellItem extends L2GameClientPacket
             {
                 if (lists == null)
                 {
-                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                            .getName() + " of account " + player
-                            .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                    " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
                     return;
                 }
                 for (L2TradeList tradeList : lists)
@@ -197,8 +197,9 @@ public final class RequestSellItem extends L2GameClientPacket
 
         if (list == null)
         {
-            Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player
-                    .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                            " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -216,9 +217,9 @@ public final class RequestSellItem extends L2GameClientPacket
             totalPrice += price * i.getCount();
             if (MAX_ADENA / i.getCount() < price || totalPrice > MAX_ADENA)
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                                .getName() + " of account " + player
-                                .getAccountName() + " tried to purchase over " + MAX_ADENA + " adena worth of goods.",
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                " tried to purchase over " + MAX_ADENA + " adena worth of goods.",
                         Config.DEFAULT_PUNISH);
                 return;
             }

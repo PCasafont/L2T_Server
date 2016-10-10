@@ -159,8 +159,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     }
                     else
                     {
-                        html.setFile(player.getHtmlPrefix(), "clanHallManager/tele" + getClanHall()
-                                .getLocation() + getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLvl() + ".htm");
+                        html.setFile(player.getHtmlPrefix(), "clanHallManager/tele" + getClanHall().getLocation() +
+                                getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLvl() + ".htm");
                     }
                     sendHtmlMessage(player, html);
                 }
@@ -177,8 +177,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     {
                         return;
                     }
-                    int valbuy = Integer.parseInt(st.nextToken()) + getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE)
-                            .getLvl() * 100000;
+                    int valbuy = Integer.parseInt(st.nextToken()) +
+                            getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl() * 100000;
                     showBuyWindow(player, valbuy);
                 }
                 else if (val.equalsIgnoreCase("support"))
@@ -191,8 +191,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     }
                     else
                     {
-                        html.setFile(player.getHtmlPrefix(), "clanHallManager/support" + getClanHall()
-                                .getFunction(ClanHall.FUNC_SUPPORT).getLvl() + ".htm");
+                        html.setFile(player.getHtmlPrefix(),
+                                "clanHallManager/support" + getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLvl() +
+                                        ".htm");
                         html.replace("%mp%", String.valueOf((int) getCurrentMp()));
                     }
                     sendHtmlMessage(player, html);
@@ -207,8 +208,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     html.setFile(player.getHtmlPrefix(), "clanHallManager/functions.htm");
                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) != null)
                     {
-                        html.replace("%xp_regen%", String
-                                .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl()));
+                        html.replace("%xp_regen%",
+                                String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl()));
                     }
                     else
                     {
@@ -216,8 +217,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     }
                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) != null)
                     {
-                        html.replace("%hp_regen%", String
-                                .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLvl()));
+                        html.replace("%hp_regen%",
+                                String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLvl()));
                     }
                     else
                     {
@@ -225,8 +226,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                     }
                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) != null)
                     {
-                        html.replace("%mp_regen%", String
-                                .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLvl()));
+                        html.replace("%mp_regen%",
+                                String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLvl()));
                     }
                     else
                     {
@@ -325,12 +326,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         break;
                                 }
 
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Provides additional HP recovery for clan members in the clan hall.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery hp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -361,12 +362,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_MPREG5_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Provides additional MP recovery for clan members in the clan hall.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery mp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -403,12 +404,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_EXPREG7_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Restores the Exp of any clan member who is resurrected in the clan hall.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery exp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -424,12 +425,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -442,8 +443,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 20:
                                             fee = Config.CH_HPREG1_FEE;
@@ -485,10 +486,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_HPREG13_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_RESTORE_HP, percent, fee,
-                                                    Config.CH_HPREG_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_RESTORE_HP) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_HP, percent, fee,
+                                            Config.CH_HPREG_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -512,12 +512,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -530,8 +530,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 5:
                                             fee = Config.CH_MPREG1_FEE;
@@ -549,10 +549,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_MPREG5_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_RESTORE_MP, percent, fee,
-                                                    Config.CH_MPREG_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_RESTORE_MP) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_MP, percent, fee,
+                                            Config.CH_MPREG_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -576,12 +575,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -594,8 +593,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 5:
                                             fee = Config.CH_EXPREG1_FEE;
@@ -619,10 +618,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_EXPREG7_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_RESTORE_EXP, percent, fee,
-                                                    Config.CH_EXPREG_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_RESTORE_EXP) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_EXP, percent, fee,
+                                            Config.CH_EXPREG_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -664,14 +662,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                 "[<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 5\">5%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 15\">15%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 30\">30%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 40\">40%</a>]";
                         if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) != null)
                         {
-                            html.replace("%hp_recovery%", String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP)
-                                            .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%hp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getEndTime()));
+                            html.replace("%hp_recovery%",
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" + String.valueOf(
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CH_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%hp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP).getEndTime()));
                             int grade = getClanHall().getGrade();
                             switch (grade)
                             {
@@ -720,14 +718,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                         }
                         if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) != null)
                         {
-                            html.replace("%exp_recovery%", String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP)
-                                            .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%exp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getEndTime()));
+                            html.replace("%exp_recovery%",
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" + String.valueOf(
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CH_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%exp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP).getEndTime()));
                             int grade = getClanHall().getGrade();
                             switch (grade)
                             {
@@ -776,14 +774,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                         }
                         if (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) != null)
                         {
-                            html.replace("%mp_recovery%", String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP)
-                                            .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%mp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getEndTime()));
+                            html.replace("%mp_recovery%",
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" + String.valueOf(
+                                            getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CH_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%mp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP).getEndTime()));
                             int grade = getClanHall().getGrade();
                             switch (grade)
                             {
@@ -886,8 +884,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_ITEM3_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_ITEM_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_ITEM_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%", "Allow the purchase of special items at fixed intervals.");
                                 html.replace("%apply%", "other item " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
@@ -928,8 +927,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_SUPPORT8_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%", "Enables the use of supplementary magic.");
                                 html.replace("%apply%", "other support " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
@@ -952,12 +952,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_TELE2_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Teleports clan members in a clan hall to the target <font color=\"00FFFF\">Stage " +
-                                                String
-                                                        .valueOf(stage) + "</font> staging area");
+                                                String.valueOf(stage) + "</font> staging area");
                                 html.replace("%apply%", "other tele " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -978,12 +978,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -997,8 +997,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CH_ITEM1_FEE;
@@ -1010,10 +1010,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_ITEM3_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_ITEM_CREATE, lvl, fee,
-                                                    Config.CH_ITEM_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_ITEM_CREATE) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_ITEM_CREATE, lvl, fee,
+                                            Config.CH_ITEM_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1037,12 +1036,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_TELEPORT) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -1055,8 +1054,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CH_TELE1_FEE;
@@ -1065,10 +1064,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_TELE2_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_TELEPORT, lvl, fee,
-                                                    Config.CH_TELE_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_TELEPORT) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_TELEPORT, lvl, fee,
+                                            Config.CH_TELE_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_TELEPORT) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1092,12 +1090,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_SUPPORT) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -1110,8 +1108,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CH_SUPPORT1_FEE;
@@ -1138,10 +1136,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_SUPPORT8_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_SUPPORT, lvl, fee,
-                                                    Config.CH_SUPPORT_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_SUPPORT) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_SUPPORT, lvl, fee,
+                                            Config.CH_SUPPORT_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_SUPPORT) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1171,14 +1168,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                 "[<a action=\"bypass -h npc_%objectId%_manage other edit_item 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_item 2\">Level 2</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_item 3\">Level 3</a>]";
                         if (getClanHall().getFunction(ClanHall.FUNC_TELEPORT) != null)
                         {
-                            html.replace("%tele%", "Stage " + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_TELEPORT)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_TELEPORT)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%tele_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getEndTime()));
+                            html.replace("%tele%", "Stage " +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLvl()) +
+                                    "</font> (<font color=\"FFAABB\">" +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getLease()) +
+                                    "</font>Adena /" + String.valueOf(Config.CH_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                    " Day)");
+                            html.replace("%tele_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_TELEPORT).getEndTime()));
                             html.replace("%change_tele%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other tele_cancel\">Deactivate</a>]" +
                                             tele);
@@ -1191,14 +1188,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                         }
                         if (getClanHall().getFunction(ClanHall.FUNC_SUPPORT) != null)
                         {
-                            html.replace("%support%", "Stage " + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_SUPPORT)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_SUPPORT)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%support_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getEndTime()));
+                            html.replace("%support%", "Stage " +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLvl()) +
+                                    "</font> (<font color=\"FFAABB\">" +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLease()) +
+                                    "</font>Adena /" +
+                                    String.valueOf(Config.CH_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%support_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getEndTime()));
                             int grade = getClanHall().getGrade();
                             switch (grade)
                             {
@@ -1247,14 +1244,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                         }
                         if (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE) != null)
                         {
-                            html.replace("%item%", "Stage " + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_ITEM_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%item_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getEndTime()));
+                            html.replace("%item%", "Stage " +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl()) +
+                                    "</font> (<font color=\"FFAABB\">" +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLease()) +
+                                    "</font>Adena /" + String.valueOf(Config.CH_ITEM_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                    " Day)");
+                            html.replace("%item_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getEndTime()));
                             html.replace("%change_item%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other item_cancel\">Deactivate</a>]" +
                                             item);
@@ -1310,8 +1307,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_CURTAIN2_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_CURTAIN_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_CURTAIN_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%", "These curtains can be used to decorate the clan hall.");
                                 html.replace("%apply%", "deco curtains " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
@@ -1334,8 +1332,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                         cost = Config.CH_FRONT2_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CH_FRONT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CH_FRONT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%", "Used to decorate the clan hall.");
                                 html.replace("%apply%", "deco fixtures " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
@@ -1352,12 +1351,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -1370,8 +1369,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CH_CURTAIN1_FEE;
@@ -1380,10 +1379,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                             fee = Config.CH_CURTAIN2_FEE;
                                             break;
                                     }
-                                    if (!getClanHall()
-                                            .updateFunctions(player, ClanHall.FUNC_DECO_CURTAINS, lvl, fee,
-                                                    Config.CH_CURTAIN_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_DECO_CURTAINS) == null))
+                                    if (!getClanHall().updateFunctions(player, ClanHall.FUNC_DECO_CURTAINS, lvl, fee,
+                                            Config.CH_CURTAIN_FEE_RATIO,
+                                            getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1407,12 +1405,12 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     val = st.nextToken();
                                     NpcHtmlMessage html = new NpcHtmlMessage(1);
-                                    html.setFile(player
-                                            .getHtmlPrefix(), "clanHallManager/functions-apply_confirmed.htm");
+                                    html.setFile(player.getHtmlPrefix(),
+                                            "clanHallManager/functions-apply_confirmed.htm");
                                     if (getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) != null)
                                     {
-                                        if (getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM)
-                                                .getLvl() == Integer.parseInt(val))
+                                        if (getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "clanHallManager/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -1425,8 +1423,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "clanHallManager/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "clanHallManager/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CH_FRONT1_FEE;
@@ -1437,8 +1435,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                     }
                                     if (!getClanHall()
                                             .updateFunctions(player, ClanHall.FUNC_DECO_FRONTPLATEFORM, lvl, fee,
-                                                    Config.CH_FRONT_FEE_RATIO, getClanHall()
-                                                            .getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) == null))
+                                                    Config.CH_FRONT_FEE_RATIO,
+                                                    getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) ==
+                                                            null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1460,14 +1459,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                                 "[<a action=\"bypass -h npc_%objectId%_manage deco edit_fixtures 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage deco edit_fixtures 2\">Level 2</a>]";
                         if (getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS) != null)
                         {
-                            html.replace("%curtain%", "Stage " + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_CURTAIN_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%curtain_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getEndTime()));
+                            html.replace("%curtain%", "Stage " +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getLvl()) +
+                                    "</font> (<font color=\"FFAABB\">" +
+                                    String.valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getLease()) +
+                                    "</font>Adena /" +
+                                    String.valueOf(Config.CH_CURTAIN_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%curtain_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS).getEndTime()));
                             html.replace("%change_curtain%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage deco curtains_cancel\">Deactivate</a>]" +
                                             curtains);
@@ -1480,14 +1479,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                         }
                         if (getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) != null)
                         {
-                            html.replace("%fixture%", "Stage " + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CH_FRONT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%fixture_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM).getEndTime()));
+                            html.replace("%fixture%", "Stage " + String.valueOf(
+                                    getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM).getLvl()) +
+                                    "</font> (<font color=\"FFAABB\">" + String.valueOf(
+                                    getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM).getLease()) +
+                                    "</font>Adena /" + String.valueOf(Config.CH_FRONT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                    " Day)");
+                            html.replace("%fixture_period%", "Withdraw the fee for the next time at " + format.format(
+                                    getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM).getEndTime()));
                             html.replace("%change_fixture%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage deco fixtures_cancel\">Deactivate</a>]" +
                                             fixtures);
@@ -1606,8 +1605,8 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
                 {
                     return;
                 }
-                html.setFile(player.getHtmlPrefix(), "clanHallManager/support" + getClanHall()
-                        .getFunction(ClanHall.FUNC_SUPPORT).getLvl() + ".htm");
+                html.setFile(player.getHtmlPrefix(),
+                        "clanHallManager/support" + getClanHall().getFunction(ClanHall.FUNC_SUPPORT).getLvl() + ".htm");
                 html.replace("%mp%", String.valueOf((int) getStatus().getCurrentMp()));
                 sendHtmlMessage(player, html);
                 return;
@@ -1716,8 +1715,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
             {
                 if (Config.DEBUG)
                 {
-                    Log.warning("Teleporting player " + player.getName() + " for CH to new location: " + list
-                            .getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+                    Log.warning(
+                            "Teleporting player " + player.getName() + " for CH to new location: " + list.getLocX() +
+                                    ":" + list.getLocY() + ":" + list.getLocZ());
                 }
                 player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
             }

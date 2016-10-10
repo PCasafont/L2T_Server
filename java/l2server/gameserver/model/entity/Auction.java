@@ -238,9 +238,8 @@ public class Auction
 
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con
-                    .prepareStatement(
-                            "SELECT bidderId, bidderName, maxBid, clan_name, time_bid FROM clanhall_auction_bid WHERE auctionId = ? ORDER BY maxBid DESC");
+            statement = con.prepareStatement(
+                    "SELECT bidderId, bidderName, maxBid, clan_name, time_bid FROM clanhall_auction_bid WHERE auctionId = ? ORDER BY maxBid DESC");
             statement.setInt(1, getId());
             rs = statement.executeQuery();
 
@@ -252,8 +251,9 @@ public class Auction
                     _highestBidderName = rs.getString("bidderName");
                     _highestBidderMaxBid = rs.getLong("maxBid");
                 }
-                _bidders.put(rs.getInt("bidderId"), new Bidder(rs.getString("bidderName"), rs.getString("clan_name"), rs
-                        .getLong("maxBid"), rs.getLong("time_bid")));
+                _bidders.put(rs.getInt("bidderId"),
+                        new Bidder(rs.getString("bidderName"), rs.getString("clan_name"), rs.getLong("maxBid"),
+                                rs.getLong("time_bid")));
             }
 
             statement.close();
@@ -361,8 +361,8 @@ public class Auction
             return;
         }
 
-        final long limit = MAX_ADENA - (clan.getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null ? clan
-                .getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() : 0);
+        final long limit = MAX_ADENA - (clan.getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null ?
+                clan.getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() : 0);
         quantity = Math.min(quantity, limit);
 
         clan.getWarehouse().addItem("Outbidded", Config.CH_BID_ITEMID, quantity, null, null);
@@ -373,9 +373,8 @@ public class Auction
      */
     private boolean takeItem(L2PcInstance bidder, long quantity)
     {
-        if (bidder.getClan() != null && bidder.getClan().getWarehouse()
-                .getItemByItemId(Config.CH_BID_ITEMID) != null && bidder.getClan().getWarehouse()
-                .getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity)
+        if (bidder.getClan() != null && bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null &&
+                bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity)
         {
             bidder.getClan().getWarehouse().destroyItemByItemId("Buy", Config.CH_BID_ITEMID, quantity, bidder, bidder);
             return true;
@@ -386,8 +385,9 @@ public class Auction
         }
         else
         {
-            bidder.sendMessage("There are not enough " + ItemTable.getInstance().getTemplate(Config.CH_BID_ITEMID)
-                    .getName() + "s in the clan hall warehouse.");
+            bidder.sendMessage(
+                    "There are not enough " + ItemTable.getInstance().getTemplate(Config.CH_BID_ITEMID).getName() +
+                            "s in the clan hall warehouse.");
         }
         return false;
     }
@@ -405,9 +405,8 @@ public class Auction
 
             if (getBidders().get(bidder.getClanId()) != null)
             {
-                statement = con
-                        .prepareStatement(
-                                "UPDATE clanhall_auction_bid SET bidderId=?, bidderName=?, maxBid=?, time_bid=? WHERE auctionId=? AND bidderId=?");
+                statement = con.prepareStatement(
+                        "UPDATE clanhall_auction_bid SET bidderId=?, bidderName=?, maxBid=?, time_bid=? WHERE auctionId=? AND bidderId=?");
                 statement.setInt(1, bidder.getClanId());
                 statement.setString(2, bidder.getClan().getLeaderName());
                 statement.setLong(3, bid);
@@ -419,9 +418,8 @@ public class Auction
             }
             else
             {
-                statement = con
-                        .prepareStatement(
-                                "INSERT INTO clanhall_auction_bid (id, auctionId, bidderId, bidderName, maxBid, clan_name, time_bid) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                statement = con.prepareStatement(
+                        "INSERT INTO clanhall_auction_bid (id, auctionId, bidderId, bidderName, maxBid, clan_name, time_bid) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 statement.setInt(1, IdFactory.getInstance().getNextId());
                 statement.setInt(2, getId());
                 statement.setInt(3, bidder.getClanId());
@@ -441,8 +439,8 @@ public class Auction
             _highestBidderName = bidder.getClan().getLeaderName();
             if (_bidders.get(_highestBidderId) == null)
             {
-                _bidders.put(_highestBidderId, new Bidder(_highestBidderName, bidder.getClan().getName(), bid, Calendar
-                        .getInstance().getTimeInMillis()));
+                _bidders.put(_highestBidderId, new Bidder(_highestBidderName, bidder.getClan().getName(), bid,
+                        Calendar.getInstance().getTimeInMillis()));
             }
             else
             {
@@ -625,9 +623,8 @@ public class Auction
             PreparedStatement statement;
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con
-                    .prepareStatement(
-                            "INSERT INTO clanhall_auction (id, sellerId, sellerName, sellerClanName, itemType, itemId, itemObjectId, itemName, itemQuantity, startingBid, currentBid, endDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+            statement = con.prepareStatement(
+                    "INSERT INTO clanhall_auction (id, sellerId, sellerName, sellerClanName, itemType, itemId, itemObjectId, itemName, itemQuantity, startingBid, currentBid, endDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setInt(1, getId());
             statement.setInt(2, _sellerId);
             statement.setString(3, _sellerName);

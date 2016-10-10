@@ -361,8 +361,8 @@ public class L2SepulcherNpcInstance extends L2Npc
                             {
                                 if (mem != null && mem.getInventory().getItemByItemId(HALLS_KEY) != null)
                                 {
-                                    mem.destroyItemByItemId("Quest", HALLS_KEY, mem.getInventory()
-                                            .getItemByItemId(HALLS_KEY).getCount(), mem, true);
+                                    mem.destroyItemByItemId("Quest", HALLS_KEY,
+                                            mem.getInventory().getItemByItemId(HALLS_KEY).getCount(), mem, true);
                                 }
                             }
                         }
@@ -395,8 +395,8 @@ public class L2SepulcherNpcInstance extends L2Npc
         {
             _spawnNextMysteriousBoxTask.cancel(true);
         }
-        _spawnNextMysteriousBoxTask = ThreadPoolManager.getInstance()
-                .scheduleEffect(new SpawnNextMysteriousBox(npcId), 0);
+        _spawnNextMysteriousBoxTask =
+                ThreadPoolManager.getInstance().scheduleEffect(new SpawnNextMysteriousBox(npcId), 0);
     }
 
     private static class CloseNextDoor implements Runnable

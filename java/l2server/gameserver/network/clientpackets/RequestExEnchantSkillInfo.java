@@ -69,7 +69,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
         }
 
 		/* L2Npc trainer = activeChar.getLastFolkNPC();
-		if (!(trainer instanceof L2NpcInstance))
+        if (!(trainer instanceof L2NpcInstance))
 			return;
 
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())

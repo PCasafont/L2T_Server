@@ -153,8 +153,8 @@ public class PlainsOfLizardman extends L2AttackableAIScript
                 if (target != null && target instanceof L2Attackable && target.getAI() != null)
                 {
                     target.setIsRunning(true);
-                    target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX(), npc
-                            .getY(), npc.getZ(), 0));
+                    target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(npc.getX(), npc.getY(), npc.getZ(), 0));
                 }
             }
             if (isPet)
@@ -176,8 +176,8 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 
         L2Skill trigger = SkillTable.getInstance().getInfo(skill_id, skill_level);
 
-        if (trigger != null && playable.isInsideRadius(caster, trigger.getCastRange(), true, false) && playable
-                .getInstanceId() == caster.getInstanceId())
+        if (trigger != null && playable.isInsideRadius(caster, trigger.getCastRange(), true, false) &&
+                playable.getInstanceId() == caster.getInstanceId())
         {
             playable.broadcastPacket(new MagicSkillUse(playable, playable, skill_id, skill_level, 0, 0, 0));
 

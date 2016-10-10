@@ -127,7 +127,7 @@ public class L2SkillSummon extends L2Skill
 
                 //Since GoD can resummon a cubic instantly
                 /*if (player.isGM())
-				{
+                {
 					for (L2CubicInstance cubic : player.getCubics().values())
 					{
 						if (cubic == null)
@@ -183,8 +183,8 @@ public class L2SkillSummon extends L2Skill
                 else if (player.getSpentSummonPoints() == 0 && !player.getSummons().isEmpty())
                 {
                     String currentSummonName = player.getSummon(0).getTemplate().getName();
-                    if (!currentSummonName.equalsIgnoreCase("Tree of life") && !currentSummonName
-                            .equalsIgnoreCase("Unison of Lights"))
+                    if (!currentSummonName.equalsIgnoreCase("Tree of life") &&
+                            !currentSummonName.equalsIgnoreCase("Unison of Lights"))
                     {
                         activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
                         return false;
@@ -296,9 +296,8 @@ public class L2SkillSummon extends L2Skill
                     activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CUBIC_SUMMONING_FAILED));
                     return;
                 }
-                activeChar
-                        .addCubic(_npcId, cubicSkillLevel, getPower(), _activationtime, _activationchance, _maxcount,
-                                _summonTotalLifeTime, false);
+                activeChar.addCubic(_npcId, cubicSkillLevel, getPower(), _activationtime, _activationchance, _maxcount,
+                        _summonTotalLifeTime, false);
 
                 if (hasEffects())
                 {
@@ -354,9 +353,8 @@ public class L2SkillSummon extends L2Skill
 
             if (Config.GEODATA > 0)
             {
-                loc = GeoData.getInstance()
-                        .moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar
-                                .getInstanceId());
+                loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z,
+                        activeChar.getInstanceId());
             }
 
             activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -390,13 +388,13 @@ public class L2SkillSummon extends L2Skill
             }
             if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon"))
             {
-                summon = new L2SiegeSummonInstance(IdFactory.getInstance()
-                        .getNextId(), summonTemplate, activeChar, this);
+                summon = new L2SiegeSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar,
+                        this);
             }
             else if (summonTemplate.Type.equalsIgnoreCase("L2MerchantSummon"))
             {
-                summon = new L2MerchantSummonInstance(IdFactory.getInstance()
-                        .getNextId(), summonTemplate, activeChar, this);
+                summon = new L2MerchantSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar,
+                        this);
             }
             else if (summonTemplate.Name.equalsIgnoreCase("Incarnation"))
             {
@@ -413,8 +411,8 @@ public class L2SkillSummon extends L2Skill
             if (summon.getLevel() > Config.MAX_LEVEL)
             {
                 summon.getStat().setExp(Experience.getAbsoluteExp(Config.MAX_LEVEL));
-                Log.warning("Summon (" + summon.getName() + ") NpcID: " + summon
-                        .getNpcId() + " has a level above " + Config.MAX_LEVEL + ". Please rectify.");
+                Log.warning("Summon (" + summon.getName() + ") NpcID: " + summon.getNpcId() + " has a level above " +
+                        Config.MAX_LEVEL + ". Please rectify.");
             }
             else
             {
@@ -427,13 +425,13 @@ public class L2SkillSummon extends L2Skill
             }
 
             double angle = Rnd.get() * Math.PI * 2;
-            summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60), activeChar.getY() + (int) (Math
-                    .sin(angle) * 60), activeChar.getZ());
+            summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60),
+                    activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
             while (!GeoData.getInstance().canSeeTarget(activeChar, summon))
             {
                 angle = Rnd.get() * Math.PI * 2;
-                summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60), activeChar.getY() + (int) (Math
-                        .sin(angle) * 60), activeChar.getZ());
+                summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60),
+                        activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
             }
             summon.setHeading(activeChar.getHeading());
             summon.setCurrentHp(summon.getMaxHp());

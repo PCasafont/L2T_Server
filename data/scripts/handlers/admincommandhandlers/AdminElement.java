@@ -92,9 +92,8 @@ public class AdminElement implements IAdminCommandHandler
             }
             catch (Exception e)
             {
-                activeChar
-                        .sendMessage(
-                                "Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element>[0-5] <value>[0-450]");
+                activeChar.sendMessage(
+                        "Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element>[0-5] <value>[0-450]");
                 return false;
             }
         }
@@ -176,12 +175,13 @@ public class AdminElement implements IAdminCommandHandler
             player.sendPacket(iu);
 
             // informations
-            activeChar.sendMessage("Changed elemental power of " + player.getName() + "'s " + itemInstance.getItem()
-                    .getName() + " from " + old + " to " + current + ".");
+            activeChar.sendMessage(
+                    "Changed elemental power of " + player.getName() + "'s " + itemInstance.getItem().getName() +
+                            " from " + old + " to " + current + ".");
             if (player != activeChar)
             {
-                player.sendMessage(activeChar.getName() + " has changed the elemental power of your " + itemInstance
-                        .getItem().getName() + " from " + old + " to " + current + ".");
+                player.sendMessage(activeChar.getName() + " has changed the elemental power of your " +
+                        itemInstance.getItem().getName() + " from " + old + " to " + current + ".");
             }
         }
     }

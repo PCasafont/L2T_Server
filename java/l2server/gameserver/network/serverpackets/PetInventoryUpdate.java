@@ -84,8 +84,8 @@ public class PetInventoryUpdate extends L2ItemListPacket
     {
         for (ItemInfo item : _items)
         {
-            Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem()
-                    .getName() + " last change:" + item.getChange());
+            Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
+                    " last change:" + item.getChange());
         }
     }
 

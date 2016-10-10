@@ -132,8 +132,8 @@ public class AdminHeal implements IAdminCommandHandler
             }
             if (Config.DEBUG)
             {
-                _log.fine("GM: " + activeChar.getName() + "(" + activeChar
-                        .getObjectId() + ") healed character " + target.getName());
+                _log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
+                        target.getName());
             }
         }
         else

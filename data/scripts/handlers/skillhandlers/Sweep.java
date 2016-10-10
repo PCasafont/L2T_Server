@@ -122,8 +122,8 @@ public class Sweep implements ISkillHandler
                 if (sweep.isAbsorbHp())
                 {
                     int hpAdd = sweep.getAbsorbAbs();
-                    double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar
-                            .getMaxHp() : activeChar.getCurrentHp() + hpAdd;
+                    double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
+                            activeChar.getCurrentHp() + hpAdd;
                     int restored = (int) (hp - activeChar.getCurrentHp());
                     activeChar.setCurrentHp(hp);
 
@@ -139,8 +139,8 @@ public class Sweep implements ISkillHandler
                 else
                 {
                     int mpAdd = sweep.getAbsorbAbs();
-                    double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar
-                            .getMaxMp() : activeChar.getCurrentMp() + mpAdd;
+                    double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar.getMaxMp() :
+                            activeChar.getCurrentMp() + mpAdd;
                     int restored = (int) (mp - activeChar.getCurrentMp());
                     activeChar.setCurrentMp(mp);
 

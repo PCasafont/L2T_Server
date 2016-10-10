@@ -180,12 +180,13 @@ public class StakatoNest extends L2AttackableAIScript
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (Util.contains(_cocoons, npc.getNpcId()) && Util.contains(targets, npc) && skill
-                .getId() == _growth_accelerator)
+        if (Util.contains(_cocoons, npc.getNpcId()) && Util.contains(targets, npc) &&
+                skill.getId() == _growth_accelerator)
         {
             npc.doDie(caster);
-            L2Npc _spawned = addSpawn(_stakato_chief, npc.getX(), npc.getY(), npc.getZ(), Util
-                    .calculateHeadingFrom(npc, caster), false, 0, true);
+            L2Npc _spawned =
+                    addSpawn(_stakato_chief, npc.getX(), npc.getY(), npc.getZ(), Util.calculateHeadingFrom(npc, caster),
+                            false, 0, true);
             attackPlayer(caster, _spawned);
         }
         return super.onSkillSee(npc, caster, skill, targets, isPet);
@@ -206,15 +207,15 @@ public class StakatoNest extends L2AttackableAIScript
         if (event.equalsIgnoreCase("nurse_change"))
         {
             npc.deleteMe();
-            L2Npc _spawned = addSpawn(_stakato_nurse_2, npc.getX(), npc.getY(), npc.getZ(), npc
-                    .getHeading(), false, 0, true);
+            L2Npc _spawned =
+                    addSpawn(_stakato_nurse_2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, true);
             attackPlayer(player, _spawned);
         }
         else if (event.equalsIgnoreCase("male_change"))
         {
             npc.deleteMe();
-            L2Npc _spawned = addSpawn(_stakato_male_2, npc.getX(), npc.getY(), npc.getZ(), npc
-                    .getHeading(), false, 0, true);
+            L2Npc _spawned =
+                    addSpawn(_stakato_male_2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, true);
             attackPlayer(player, _spawned);
         }
         return null;

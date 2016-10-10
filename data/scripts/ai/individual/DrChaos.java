@@ -68,8 +68,8 @@ public class DrChaos extends Quest
             if (machine_instance != null)
             {
                 npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, machine_instance);
-                machine_instance.broadcastPacket(new SpecialCamera(machine_instance
-                        .getObjectId(), 1, -200, 15, 10000, 20000, 0, 0, 1, 0));
+                machine_instance.broadcastPacket(
+                        new SpecialCamera(machine_instance.getObjectId(), 1, -200, 15, 10000, 20000, 0, 0, 1, 0));
             }
             else
             //print "Dr Chaos AI: problem finding Strange Machine (npcid = "+STRANGE_MACHINE+"). Error: not spawned!"

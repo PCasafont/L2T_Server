@@ -44,7 +44,7 @@ public class RaceManagerKnownList extends NpcKnownList
         }
 
 		/* DONT KNOW WHY WE NEED THIS WHEN RACE MANAGER HAS A METHOD THAT BROADCAST TO ITS KNOW PLAYERS
-		if (object instanceof L2PcInstance) {
+        if (object instanceof L2PcInstance) {
 			if (packet != null)
 				((L2PcInstance) object).sendPacket(packet);
 		}

@@ -118,8 +118,8 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
         }
         if (!pet.getInventory().validateWeight(item, _amount))
         {
-            pet.getOwner().sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
+            pet.getOwner().sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
             return;
         }
 

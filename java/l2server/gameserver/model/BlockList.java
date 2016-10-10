@@ -95,8 +95,8 @@ public class BlockList
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT friendId, memo FROM character_friends WHERE charId=? AND relation=1");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT friendId, memo FROM character_friends WHERE charId=? AND relation=1");
             statement.setInt(1, ObjId);
             ResultSet rset = statement.executeQuery();
 
@@ -116,8 +116,8 @@ public class BlockList
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Error found in " + ObjId + " FriendList while loading BlockList: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING, "Error found in " + ObjId + " FriendList while loading BlockList: " + e.getMessage(),
+                    e);
         }
         finally
         {
@@ -135,17 +135,16 @@ public class BlockList
             PreparedStatement statement;
             if (state) //add
             {
-                statement = con
-                        .prepareStatement(
-                                "INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
+                statement = con.prepareStatement(
+                        "INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
                 statement.setInt(1, _owner.getObjectId());
                 statement.setInt(2, targetId);
             }
             else
             //remove
             {
-                statement = con
-                        .prepareStatement("DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
+                statement = con.prepareStatement(
+                        "DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
                 statement.setInt(1, _owner.getObjectId());
                 statement.setInt(2, targetId);
             }

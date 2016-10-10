@@ -51,13 +51,12 @@ public class MagicGem implements IItemHandler
 
         if (Config.isServer(Config.TENKAI))
         {
-            if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 && !player
-                    .isInsideZone(L2Character.ZONE_PVP) && (!player
-                    .isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player
-                    .isInsideZone(L2Character.ZONE_TOWN)) && player.getEvent() == null && !player
-                    .isInOlympiadMode() && !AttackStanceTaskManager.getInstance()
-                    .getAttackStanceTask(player) && InstanceManager.getInstance()
-                    .getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0)
+            if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 &&
+                    !player.isInsideZone(L2Character.ZONE_PVP) &&
+                    (!player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) ||
+                            player.isInsideZone(L2Character.ZONE_TOWN)) && player.getEvent() == null &&
+                    !player.isInOlympiadMode() && !AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
+                    InstanceManager.getInstance().getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0)
             {
                 player.spawnServitors();
                 player.sendMessage("You use a Magic Gem.");

@@ -152,9 +152,9 @@ public class AntharasOpenWorld extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.ANTHARAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.ANTHARAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -208,16 +208,16 @@ public class AntharasOpenWorld extends L2AttackableAIScript
             _LastAction = System.currentTimeMillis();
 
             //Cameras
-            _bossZone.sendDelayedPacketToZone(16, new SpecialCamera(_antharasBoss
-                    .getObjectId(), 700, 13, -19, 0, 20000, 0, 0, 1, 0));
-            _bossZone.sendDelayedPacketToZone(3016, new SpecialCamera(_antharasBoss
-                    .getObjectId(), 700, 13, 0, 6000, 20000, 0, 0, 1, 0));
-            _bossZone.sendDelayedPacketToZone(13016, new SpecialCamera(_antharasBoss
-                    .getObjectId(), 3700, 0, -3, 0, 10000, 0, 0, 1, 0));
-            _bossZone.sendDelayedPacketToZone(13216, new SpecialCamera(_antharasBoss
-                    .getObjectId(), 1100, 0, -3, 22000, 30000, 0, 0, 1, 0));
-            _bossZone.sendDelayedPacketToZone(24016, new SpecialCamera(_antharasBoss
-                    .getObjectId(), 1100, 0, -3, 300, 7000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(16,
+                    new SpecialCamera(_antharasBoss.getObjectId(), 700, 13, -19, 0, 20000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(3016,
+                    new SpecialCamera(_antharasBoss.getObjectId(), 700, 13, 0, 6000, 20000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(13016,
+                    new SpecialCamera(_antharasBoss.getObjectId(), 3700, 0, -3, 0, 10000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(13216,
+                    new SpecialCamera(_antharasBoss.getObjectId(), 1100, 0, -3, 22000, 30000, 0, 0, 1, 0));
+            _bossZone.sendDelayedPacketToZone(24016,
+                    new SpecialCamera(_antharasBoss.getObjectId(), 1100, 0, -3, 300, 7000, 0, 0, 1, 0));
 
             startQuestTimer("antharas_spawn_task_7", 25916, null, null);
             startQuestTimer("antharas_last_spawn_task", 25916, null, null);
@@ -312,15 +312,15 @@ public class AntharasOpenWorld extends L2AttackableAIScript
                     boolean notFound = true;
                     int x = 175000;
                     int y = 112400;
-                    int dt = (_antharasBoss.getX() - x) * (_antharasBoss.getX() - x) + (_antharasBoss
-                            .getY() - y) * (_antharasBoss.getY() - y);
+                    int dt = (_antharasBoss.getX() - x) * (_antharasBoss.getX() - x) +
+                            (_antharasBoss.getY() - y) * (_antharasBoss.getY() - y);
 
                     while (tried++ < 25 && notFound)
                     {
                         int rx = Rnd.get(175000, 179900);
                         int ry = Rnd.get(112400, 116000);
-                        int rdt = (_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx) + (_antharasBoss
-                                .getY() - ry) * (_antharasBoss.getY() - ry);
+                        int rdt = (_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx) +
+                                (_antharasBoss.getY() - ry) * (_antharasBoss.getY() - ry);
 
                         if (GeoData.getInstance()
                                 .canSeeTarget(_antharasBoss.getX(), _antharasBoss.getY(), -7704, rx, ry, -7704))
@@ -382,8 +382,8 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 
             notifyEvent("cancel_timers", null, null);
 
-            _bossZone.broadcastPacket(new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc
-                    .getZ()));
+            _bossZone.broadcastPacket(
+                    new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 
             addSpawn(_teleportCubic, 177615, 114941, -7709, 0, false, 600000); //10min
 
@@ -423,8 +423,8 @@ public class AntharasOpenWorld extends L2AttackableAIScript
             if (GrandBossManager.getInstance().getBossStatus(_antharasId) == GrandBossManager.getInstance().WAITING)
             {
                 character.sendPacket(new ExSendUIEvent(0, 0, (int) TimeUnit.MILLISECONDS
-                        .toSeconds(_LastAction + Config.ANTHARAS_WAIT_TIME * 60000 - System
-                                .currentTimeMillis()), 0, "Antharas is coming..."));
+                        .toSeconds(_LastAction + Config.ANTHARAS_WAIT_TIME * 60000 - System.currentTimeMillis()), 0,
+                        "Antharas is coming..."));
             }
         }
         return null;

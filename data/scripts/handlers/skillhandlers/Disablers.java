@@ -125,9 +125,9 @@ public class Disablers implements ISkillHandler
                 continue;
             }
             L2Character target = (L2Character) obj;
-            if (target.isDead() || target.isInvul(activeChar) && !skill
-                    .ignoreImmunity() && type != L2SkillType.NEGATE && !target
-                    .isParalyzed()) // bypass if target is null, dead or invul (excluding invul from Petrification)
+            if (target.isDead() ||
+                    target.isInvul(activeChar) && !skill.ignoreImmunity() && type != L2SkillType.NEGATE &&
+                            !target.isParalyzed()) // bypass if target is null, dead or invul (excluding invul from Petrification)
             {
                 continue;
             }
@@ -187,9 +187,9 @@ public class Disablers implements ISkillHandler
                     {
                         skill.getEffects(activeChar, target, new Env(shld, ssMul));
 
-                        double aggdiff = ((L2Attackable) target).getHating(activeChar) - target
-                                .calcStat(Stats.AGGRESSION, ((L2Attackable) target)
-                                        .getHating(activeChar), target, skill);
+                        double aggdiff = ((L2Attackable) target).getHating(activeChar) -
+                                target.calcStat(Stats.AGGRESSION, ((L2Attackable) target).getHating(activeChar), target,
+                                        skill);
 
                         if (skill.getPower() > 0)
                         {
@@ -246,14 +246,14 @@ public class Disablers implements ISkillHandler
                             {
                                 if (target.isUndead())
                                 {
-                                    ((L2Attackable) target).reduceHate(null, ((L2Attackable) target)
-                                            .getHating(((L2Attackable) target).getMostHated()));
+                                    ((L2Attackable) target).reduceHate(null,
+                                            ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
                                 }
                             }
                             else
                             {
-                                ((L2Attackable) target).reduceHate(null, ((L2Attackable) target)
-                                        .getHating(((L2Attackable) target).getMostHated()));
+                                ((L2Attackable) target).reduceHate(null,
+                                        ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
                             }
                         }
                         else
@@ -328,9 +328,9 @@ public class Disablers implements ISkillHandler
                                 continue;
                             }
 
-                            if (!(a.contains("PARAL") || a.contains("HOLD") || a.contains("SILENCE") || a
-                                    .contains("SLEEP") || a.contains("FEAR") || a.contains("STUN") || a
-                                    .contains("PETRI") || a.contains("DISARM")))
+                            if (!(a.contains("PARAL") || a.contains("HOLD") || a.contains("SILENCE") ||
+                                    a.contains("SLEEP") || a.contains("FEAR") || a.contains("STUN") ||
+                                    a.contains("PETRI") || a.contains("DISARM")))
                             {
                                 continue;
                             }
@@ -522,8 +522,8 @@ public class Disablers implements ISkillHandler
                             {
                                 for (String stackType : effect.getStackType())
                                 {
-                                    if (negateAbnormalType.equalsIgnoreCase(stackType) && skill.getNegateAbnormals()
-                                            .get(negateAbnormalType) >= effect.getStackLvl())
+                                    if (negateAbnormalType.equalsIgnoreCase(stackType) &&
+                                            skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
                                     {
                                         effect.exit();
                                     }
@@ -560,8 +560,8 @@ public class Disablers implements ISkillHandler
 
                                     if (Rnd.get(100) < landrate)
                                     {
-                                        removedBuffs += negateEffect(target, L2AbnormalType.BUFF, skill
-                                                .getMaxNegatedEffects());
+                                        removedBuffs +=
+                                                negateEffect(target, L2AbnormalType.BUFF, skill.getMaxNegatedEffects());
                                     }
                                     break;
                                 default:

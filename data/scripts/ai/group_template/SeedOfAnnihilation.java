@@ -225,8 +225,8 @@ public class SeedOfAnnihilation extends Quest
                     af.setDisplayEffect(_regionsData[i].activeBuff);
                 }
 
-                L2EffectZone zone = ZoneManager.getInstance()
-                        .getZoneById(_regionsData[i].buff_zone, L2EffectZone.class);
+                L2EffectZone zone =
+                        ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class);
                 zone.clearSkills();
                 zone.addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
             }

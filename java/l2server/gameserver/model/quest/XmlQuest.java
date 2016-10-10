@@ -33,7 +33,7 @@ public class XmlQuest extends Quest
         super(questId, name, descr);
 
 		/*addStartNpc(_rafforty);
-		addTalkId(_rafforty);
+        addTalkId(_rafforty);
 		addTalkId(_kier);
 		addFirstTalkId(_jinia);
 		addTalkId(_jinia);*/

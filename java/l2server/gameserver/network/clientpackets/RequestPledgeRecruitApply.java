@@ -58,8 +58,7 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
                 //activeChar.sendMessage(4039);
                 L2Clan clan = ClanTable.getInstance().getClan(_clanId);
 
-                Message msg = new Message(clan
-                        .getLeaderId(), "Clan Application",
+                Message msg = new Message(clan.getLeaderId(), "Clan Application",
                         "There's a new applicant for your clan! Check out the clan entry for further information.",
                         SendBySystem.SYSTEM);
                 MailManager.getInstance().sendMessage(msg);

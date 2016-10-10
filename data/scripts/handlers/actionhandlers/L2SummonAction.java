@@ -87,8 +87,8 @@ public class L2SummonAction implements IActionHandler
             {
                 activeChar.setTarget(target);
                 activeChar.sendPacket(new ValidateLocation((L2Character) target));
-                MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar
-                        .getLevel() - ((L2Character) target).getLevel());
+                MyTargetSelected my = new MyTargetSelected(target.getObjectId(),
+                        activeChar.getLevel() - ((L2Character) target).getLevel());
                 activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
                 activeChar.sendPacket(my);
 

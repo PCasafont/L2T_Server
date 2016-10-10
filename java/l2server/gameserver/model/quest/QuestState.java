@@ -299,10 +299,8 @@ public final class QuestState
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, getPlayer()
-                        .getName() + ", " + getQuestName() + " cond [" + val +
-                        "] is not an integer.  Value stored, but no packet was sent: " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING, getPlayer().getName() + ", " + getQuestName() + " cond [" + val +
+                        "] is not an integer.  Value stored, but no packet was sent: " + e.getMessage(), e);
             }
         }
 
@@ -463,8 +461,8 @@ public final class QuestState
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement("REPLACE INTO character_quest_global_data (charId,var,value) VALUES (?,?,?)");
+            statement =
+                    con.prepareStatement("REPLACE INTO character_quest_global_data (charId,var,value) VALUES (?,?,?)");
             statement.setInt(1, _player.getObjectId());
             statement.setString(2, var);
             statement.setString(3, value);
@@ -499,8 +497,8 @@ public final class QuestState
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement("SELECT value FROM character_quest_global_data WHERE charId = ? AND var = ?");
+            statement =
+                    con.prepareStatement("SELECT value FROM character_quest_global_data WHERE charId = ? AND var = ?");
             statement.setInt(1, _player.getObjectId());
             statement.setString(2, var);
             ResultSet rs = statement.executeQuery();
@@ -592,8 +590,8 @@ public final class QuestState
         }
         catch (Exception e)
         {
-            Log.log(Level.FINER, getPlayer()
-                    .getName() + ": variable " + var + " isn't an integer: " + varint + " ! " + e.getMessage(), e);
+            Log.log(Level.FINER, getPlayer().getName() + ": variable " + var + " isn't an integer: " + varint + " ! " +
+                    e.getMessage(), e);
             //		if (Config.AUTODELETE_INVALID_QUEST_DATA)
             //		exitQuest(true);
         }
@@ -730,8 +728,8 @@ public final class QuestState
         }
 
         // Add items to player's inventory
-        L2ItemInstance item = getPlayer().getInventory()
-                .addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+        L2ItemInstance item =
+                getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
         if (item == null)
         {
@@ -793,8 +791,8 @@ public final class QuestState
         }
 
         // Add items to player's inventory
-        L2ItemInstance item = getPlayer().getInventory()
-                .addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+        L2ItemInstance item =
+                getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
         if (item == null)
         {
@@ -845,8 +843,8 @@ public final class QuestState
         }
 
         // Add items to player's inventory
-        L2ItemInstance item = getPlayer().getInventory()
-                .addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+        L2ItemInstance item =
+                getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
         if (item == null)
         {
@@ -914,8 +912,8 @@ public final class QuestState
 
     public boolean dropQuestItems(int itemId, int minCount, int maxCount, long neededCount, int dropChance, boolean sound)
     {
-        dropChance *= Config.RATE_QUEST_DROP / (getPlayer().getParty() != null ? getPlayer().getParty()
-                .getMemberCount() : 1);
+        dropChance *=
+                Config.RATE_QUEST_DROP / (getPlayer().getParty() != null ? getPlayer().getParty().getMemberCount() : 1);
         long currentCount = getQuestItemsCount(itemId);
 
         if (neededCount > 0 && currentCount >= neededCount)
@@ -1024,8 +1022,8 @@ public final class QuestState
         // Destroy the quantity of items wanted
         if (item.isEquipped())
         {
-            L2ItemInstance[] unequiped = getPlayer().getInventory()
-                    .unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
+            L2ItemInstance[] unequiped =
+                    getPlayer().getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
             InventoryUpdate iu = new InventoryUpdate();
             for (L2ItemInstance itm : unequiped)
             {
@@ -1055,9 +1053,9 @@ public final class QuestState
      */
     public void addExpAndSp(int exp, int sp)
     {
-        getPlayer().addExpAndSp((int) getPlayer()
-                .calcStat(Stats.EXP_RATE, exp * Config.RATE_QUEST_REWARD_XP, null, null), (int) getPlayer()
-                .calcStat(Stats.SP_RATE, sp * Config.RATE_QUEST_REWARD_SP, null, null), false);
+        getPlayer()
+                .addExpAndSp((int) getPlayer().calcStat(Stats.EXP_RATE, exp * Config.RATE_QUEST_REWARD_XP, null, null),
+                        (int) getPlayer().calcStat(Stats.SP_RATE, sp * Config.RATE_QUEST_REWARD_SP, null, null), false);
     }
 
     /**

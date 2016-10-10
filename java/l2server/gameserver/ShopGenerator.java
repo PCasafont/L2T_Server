@@ -32,8 +32,8 @@ public class ShopGenerator
             {
                 result += "\t<item>\r\n";
                 result += "\t\t<ingredient id=\"57\" count=\"1\"> <!-- Adena -->\r\n";
-                result += "\t\t<production id=\"" + item.getItemId() + "\" count=\"1\"> <!-- " + item
-                        .getName() + " -->\r\n";
+                result += "\t\t<production id=\"" + item.getItemId() + "\" count=\"1\"> <!-- " + item.getName() +
+                        " -->\r\n";
                 result += "\t</item>\r\n";
             }
         }

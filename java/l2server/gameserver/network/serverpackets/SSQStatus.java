@@ -70,7 +70,7 @@ public class SSQStatus extends L2GameServerPacket
                 writeQ(0); // Total Score
 
                 writeC(0); // Dusk %
-				
+
 				/* DAWN */
                 writeQ(0); // Seal Stone Score
                 writeQ(0); // Festival Score

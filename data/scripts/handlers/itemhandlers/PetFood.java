@@ -84,11 +84,12 @@ public class PetFood implements IItemHandler
                 if (((L2PetInstance) activeChar).destroyItem("Consume", item.getObjectId(), 1, null, false))
                 {
                     activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, magicId, 1, 0, 0, 0));
-                    ((L2PetInstance) activeChar).setCurrentFed(((L2PetInstance) activeChar).getCurrentFed() + skill
-                            .getFeed() * Config.PET_FOOD_RATE);
+                    ((L2PetInstance) activeChar).setCurrentFed(
+                            ((L2PetInstance) activeChar).getCurrentFed() + skill.getFeed() * Config.PET_FOOD_RATE);
                     ((L2PetInstance) activeChar).broadcastStatusUpdate();
-                    if (((L2PetInstance) activeChar).getCurrentFed() < ((L2PetInstance) activeChar).getPetData()
-                            .getHungry_limit() / 100f * ((L2PetInstance) activeChar).getPetLevelData().getPetMaxFeed())
+                    if (((L2PetInstance) activeChar).getCurrentFed() <
+                            ((L2PetInstance) activeChar).getPetData().getHungry_limit() / 100f *
+                                    ((L2PetInstance) activeChar).getPetLevelData().getPetMaxFeed())
                     {
                         ((L2PetInstance) activeChar).getOwner().sendPacket(SystemMessage
                                 .getSystemMessage(SystemMessageId.YOUR_PET_ATE_A_LITTLE_BUT_IS_STILL_HUNGRY));

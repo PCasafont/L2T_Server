@@ -54,8 +54,8 @@ public class EffectKnockDown extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() || getEffected()
-                .isRaid())
+        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() ||
+                getEffected().isRaid())
         {
             return false;
         }
@@ -78,10 +78,9 @@ public class EffectKnockDown extends L2Effect
         double distance = Math.sqrt(dx * dx + dy * dy);
         if (distance > 2000)
         {
-            Log.info("EffectKnockDown (skill id: " + getSkill()
-                    .getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," +
-                    curY + " and getEffector: " + getEffector()
-                    .getX() + "," + getEffector().getY());
+            Log.info("EffectKnockDown (skill id: " + getSkill().getId() +
+                    ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
+                    " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
             return false;
         }
         int offset = Math.min((int) distance + 50, 1400);
@@ -114,8 +113,9 @@ public class EffectKnockDown extends L2Effect
 
         if (Config.GEODATA > 0)
         {
-            Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                    .getZ(), _x, _y, _z, getEffected().getInstanceId());
+            Location destiny = GeoData.getInstance()
+                    .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+                            getEffected().getInstanceId());
             if (destiny.getX() != _x || destiny.getY() != _y)
             {
                 _x = destiny.getX() + (int) (cos * 10);

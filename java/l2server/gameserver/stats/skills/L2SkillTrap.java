@@ -98,8 +98,8 @@ public class L2SkillTrap extends L2SkillSummon
         }
 
         L2NpcTemplate TrapTemplate = NpcTable.getInstance().getTemplate(_trapNpcId);
-        trap = new L2TrapInstance(IdFactory.getInstance()
-                .getNextId(), TrapTemplate, activeChar, getTotalLifeTime(), skill);
+        trap = new L2TrapInstance(IdFactory.getInstance().getNextId(), TrapTemplate, activeChar, getTotalLifeTime(),
+                skill);
         trap.setCurrentHp(trap.getMaxHp());
         trap.setCurrentMp(trap.getMaxMp());
         trap.setIsInvul(true);

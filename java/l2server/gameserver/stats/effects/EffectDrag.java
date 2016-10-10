@@ -53,8 +53,8 @@ public class EffectDrag extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() || getEffected()
-                .isRaid())
+        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() ||
+                getEffected().isRaid())
         {
             return false;
         }
@@ -77,10 +77,9 @@ public class EffectDrag extends L2Effect
         double distance = Math.sqrt(dx * dx + dy * dy);
         if (distance > 2000)
         {
-            Log.info("EffectDrag (skill id: " + getSkill()
-                    .getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," +
-                    curY + " and getEffector: " + getEffector()
-                    .getX() + "," + getEffector().getY());
+            Log.info("EffectDrag (skill id: " + getSkill().getId() +
+                    ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
+                    " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
             return false;
         }
 
@@ -114,8 +113,9 @@ public class EffectDrag extends L2Effect
 
         if (Config.GEODATA > 0)
         {
-            Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                    .getZ(), _x, _y, _z, getEffected().getInstanceId());
+            Location destiny = GeoData.getInstance()
+                    .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+                            getEffected().getInstanceId());
             if (destiny.getX() != _x || destiny.getY() != _y)
             {
                 _x = destiny.getX() - (int) (cos * 10);

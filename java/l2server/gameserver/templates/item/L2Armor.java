@@ -38,7 +38,7 @@ public final class L2Armor extends L2Item
     public static final int MAX_ENCHANT_SKILL = 10;
 
     private TIntObjectHashMap<SkillHolder> _enchantSkills = new TIntObjectHashMap<SkillHolder>();
-            // skill that activates when armor is enchanted +X
+    // skill that activates when armor is enchanted +X
     // private final String[] _skill;
     private L2ArmorType _type;
     private int[] _armorSet;
@@ -96,8 +96,8 @@ public final class L2Armor extends L2Item
                 }
                 catch (Exception e)
                 {
-                    Log.warning(StringUtil
-                            .concat("Failed to parse armorSet(", element, ") for item ", toString(), "!"));
+                    Log.warning(
+                            StringUtil.concat("Failed to parse armorSet(", element, ") for item ", toString(), "!"));
                 }
             }
         }

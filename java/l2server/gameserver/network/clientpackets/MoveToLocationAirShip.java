@@ -83,9 +83,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
                 }
                 if (_param1 < L2World.GRACIA_MAX_X)
                 {
-                    ship.getAI()
-                            .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                    new L2CharPosition(_param1, _param2, z, 0));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(_param1, _param2, z, 0));
                 }
                 break;
             case 1:
@@ -103,8 +102,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
                 if (z < L2World.GRACIA_MAX_Z)
                 {
                     z = Math.min(z + STEP, L2World.GRACIA_MAX_Z);
-                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship
-                            .getY(), z, 0));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(ship.getX(), ship.getY(), z, 0));
                 }
                 break;
             case 3:
@@ -115,8 +114,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
                 if (z > L2World.GRACIA_MIN_Z)
                 {
                     z = Math.max(z - STEP, L2World.GRACIA_MIN_Z);
-                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship
-                            .getY(), z, 0));
+                    ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(ship.getX(), ship.getY(), z, 0));
                 }
                 break;
             case 4:
@@ -125,8 +124,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
                     return;
                 }
 
-                final VehiclePathPoint[] dst = AirShipManager.getInstance()
-                        .getTeleportDestination(ship.getDockId(), _param1);
+                final VehiclePathPoint[] dst =
+                        AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), _param1);
                 if (dst == null)
                 {
                     return;
@@ -138,8 +137,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
                 {
                     if (fuelConsumption > ship.getFuel())
                     {
-                        activeChar.sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.THE_AIRSHIP_CANNOT_TELEPORT));
+                        activeChar.sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_CANNOT_TELEPORT));
                         return;
                     }
                     ship.setFuel(ship.getFuel() - fuelConsumption);

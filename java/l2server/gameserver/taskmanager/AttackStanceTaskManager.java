@@ -140,9 +140,8 @@ public class AttackStanceTaskManager
                                 {
                                     if (((L2PcInstance) actor).getPet() != null)
                                     {
-                                        ((L2PcInstance) actor).getPet()
-                                                .broadcastPacket(new AutoAttackStop(((L2PcInstance) actor).getPet()
-                                                        .getObjectId()));
+                                        ((L2PcInstance) actor).getPet().broadcastPacket(
+                                                new AutoAttackStop(((L2PcInstance) actor).getPet().getObjectId()));
                                     }
 
                                     if (((L2PcInstance) actor).getSummons() != null)

@@ -188,8 +188,8 @@ public class ZoneManager
                                 }
                                 else
                                 {
-                                    Log.warning("ZoneData: Missing minZ for zone: " + zoneId + " in file: " + f
-                                            .getName());
+                                    Log.warning(
+                                            "ZoneData: Missing minZ for zone: " + zoneId + " in file: " + f.getName());
                                     continue;
                                 }
 
@@ -199,8 +199,8 @@ public class ZoneManager
                                 }
                                 else
                                 {
-                                    Log.warning("ZoneData: Missing maxZ for zone: " + zoneId + " in file: " + f
-                                            .getName());
+                                    Log.warning(
+                                            "ZoneData: Missing maxZ for zone: " + zoneId + " in file: " + f.getName());
                                     continue;
                                 }
 
@@ -210,8 +210,8 @@ public class ZoneManager
                                 }
                                 else
                                 {
-                                    Log.warning("ZoneData: Missing type for zone: " + zoneId + " in file: " + f
-                                            .getName());
+                                    Log.warning(
+                                            "ZoneData: Missing type for zone: " + zoneId + " in file: " + f.getName());
                                     continue;
                                 }
 
@@ -221,8 +221,8 @@ public class ZoneManager
                                 }
                                 else
                                 {
-                                    Log.warning("ZoneData: Missing shape for zone: " + zoneId + " in file: " + f
-                                            .getName());
+                                    Log.warning(
+                                            "ZoneData: Missing shape for zone: " + zoneId + " in file: " + f.getName());
                                     continue;
                                 }
 
@@ -234,8 +234,8 @@ public class ZoneManager
                                 }
                                 catch (ClassNotFoundException e)
                                 {
-                                    Log.warning("ZoneData: No such zone type: " + zoneType + " in file: " + f
-                                            .getName());
+                                    Log.warning(
+                                            "ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
                                     continue;
                                 }
 
@@ -289,8 +289,7 @@ public class ZoneManager
                                     if (coords == null || coords.length == 0)
                                     {
                                         Log.warning("ZoneData: missing data for zone: " + zoneId +
-                                                " in both XML and SQL, file: " + f
-                                                .getName());
+                                                " in both XML and SQL, file: " + f.getName());
                                         continue;
                                     }
 
@@ -310,8 +309,7 @@ public class ZoneManager
                                         {
                                             Log.warning(
                                                     "ZoneData: Missing cuboid vertex in sql data for zone: " + zoneId +
-                                                            " in file: " + f
-                                                            .getName());
+                                                            " in file: " + f.getName());
                                             continue;
                                         }
                                     }
@@ -356,8 +354,8 @@ public class ZoneManager
                                         }
                                         else
                                         {
-                                            Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " + f
-                                                    .getName());
+                                            Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
+                                                    f.getName());
                                             continue;
                                         }
                                     }
@@ -373,23 +371,23 @@ public class ZoneManager
                                         }
                                         else
                                         {
-                                            Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " + f
-                                                    .getName());
+                                            Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
+                                                    f.getName());
                                             continue;
                                         }
                                     }
                                     else
                                     {
-                                        Log.warning("ZoneData: Unknown shape: " + zoneShape + " in file: " + f
-                                                .getName());
+                                        Log.warning(
+                                                "ZoneData: Unknown shape: " + zoneShape + " in file: " + f.getName());
                                         continue;
                                     }
                                 }
                                 catch (Exception e)
                                 {
                                     Log.log(Level.WARNING,
-                                            "ZoneData: Failed to load zone " + zoneId + " coordinates: " + e
-                                                    .getMessage(), e);
+                                            "ZoneData: Failed to load zone " + zoneId + " coordinates: " +
+                                                    e.getMessage(), e);
                                 }
 
                                 // Check for additional parameters
@@ -420,8 +418,8 @@ public class ZoneManager
                                 }
                                 if (checkId(zoneId))
                                 {
-                                    Log.config("Caution: Zone (" + zoneId + ") from file: " + f
-                                            .getName() + " overrides previous definition.");
+                                    Log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() +
+                                            " overrides previous definition.");
                                 }
 
                                 if (zoneName != null && !zoneName.isEmpty())

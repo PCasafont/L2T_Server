@@ -54,15 +54,15 @@ public final class RequestCompoundStart extends L2GameClientPacket
             return;
         }
 
-        if (compoundItem1.getLocation() != ItemLocation.INVENTORY || compoundItem2
-                .getLocation() != ItemLocation.INVENTORY)
+        if (compoundItem1.getLocation() != ItemLocation.INVENTORY ||
+                compoundItem2.getLocation() != ItemLocation.INVENTORY)
         {
             Log.info(activeChar.getName() + " is trying to cheat with the compound system!");
             return;
         }
 
-        Combination combination = CompoundTable.getInstance()
-                .getCombination(compoundItem1.getItemId(), compoundItem2.getItemId());
+        Combination combination =
+                CompoundTable.getInstance().getCombination(compoundItem1.getItemId(), compoundItem2.getItemId());
         if (combination == null)
         {
             return;

@@ -35,8 +35,7 @@ public class L2StaticObjectInstanceAction implements IActionHandler
         if (((L2StaticObjectInstance) target).getType() < 0)
         {
             _log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
-                    ((L2StaticObjectInstance) target)
-                            .getStaticObjectId());
+                    ((L2StaticObjectInstance) target).getStaticObjectId());
         }
 
         // Check if the L2PcInstance already target the L2NpcInstance

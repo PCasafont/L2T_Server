@@ -44,8 +44,8 @@ public class EffectThrowUp extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() || getEffected()
-                .isRaid())
+        if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() ||
+                getEffected().isRaid())
         {
             return false;
         }
@@ -68,10 +68,9 @@ public class EffectThrowUp extends L2Effect
         double distance = Math.sqrt(dx * dx + dy * dy);
         if (distance > 2000)
         {
-            Log.info("EffectThrowUp (skill id: " + getSkill()
-                    .getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," +
-                    curY + " and getEffector: " + getEffector()
-                    .getX() + "," + getEffector().getY());
+            Log.info("EffectThrowUp (skill id: " + getSkill().getId() +
+                    ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
+                    " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
             return false;
         }
         int offset = Math.min((int) distance + getSkill().getFlyRadius(), 1400);
@@ -105,8 +104,8 @@ public class EffectThrowUp extends L2Effect
             if (Config.GEODATA > 0)
             {
                 Location destiny = GeoData.getInstance()
-                        .moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                                .getZ(), _x, _y, _z, getEffected().getInstanceId());
+                        .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+                                getEffected().getInstanceId());
                 _x = destiny.getX();
                 _y = destiny.getY();
             }
@@ -121,8 +120,8 @@ public class EffectThrowUp extends L2Effect
             if (Config.GEODATA > 0)
             {
                 Location destiny = GeoData.getInstance()
-                        .moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
-                                .getZ(), _x, _y, _z, getEffected().getInstanceId());
+                        .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+                                getEffected().getInstanceId());
                 if (destiny.getX() != _x || destiny.getY() != _y)
                 {
                     _x = destiny.getX() + (int) (cos * 10);

@@ -103,9 +103,8 @@ public class Couple
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
             _Id = IdFactory.getInstance().getNextId();
-            statement = con
-                    .prepareStatement(
-                            "INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?, ?, ?, ?, ?, ?)");
+            statement = con.prepareStatement(
+                    "INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?, ?, ?, ?, ?, ?)");
             statement.setInt(1, _Id);
             statement.setInt(2, _player1Id);
             statement.setInt(3, _player2Id);

@@ -109,7 +109,7 @@ public class HealPercent implements ISkillHandler
             targets = sortedListToReturn.toArray(new L2Character[sortedListToReturn.size()]);
 
 			/*
-			int i = 0;
+            int i = 0;
 			for (L2Character target: (L2Character[]) targets)
 			{
 				activeChar.sendMessage(++i + " - " + target.getName());
@@ -149,16 +149,16 @@ public class HealPercent implements ISkillHandler
         double amount = 0;
         double percent = skill.getPower();
         // Healing critical, since CT2.3 Gracia Final
-        if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && !skill
-                .isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill)))
+        if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
+                !skill.isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill)))
         {
             activeChar.sendMessage("Healing critical!");
             percent *= 2;
         }
 
-        if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() && (skill
-                .getTargetType() == L2SkillTargetType.TARGET_FRIENDS || skill
-                .getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME))
+        if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() &&
+                (skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS ||
+                        skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME))
         {
             int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
             int members = 0;
@@ -188,8 +188,8 @@ public class HealPercent implements ISkillHandler
         {
             //1505  - sublime self sacrifice
             //11560 - celestial aegis
-            if ((target == null || target.isDead() || target.isInvul(activeChar)) && skill.getId() != 1505 && skill
-                    .getId() != 11560)
+            if ((target == null || target.isDead() || target.isInvul(activeChar)) && skill.getId() != 1505 &&
+                    skill.getId() != 11560)
             {
                 continue;
             }
@@ -219,9 +219,9 @@ public class HealPercent implements ISkillHandler
                 }
 
                 // Nor all vs all event player
-                if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar)
-                        .isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig()
-                        .isAllVsAll() && !(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar))
+                if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
+                        ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() &&
+                        !(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar))
                 {
                     continue;
                 }
@@ -293,8 +293,8 @@ public class HealPercent implements ISkillHandler
 				if (amount < 0)
 					continue;*/
 
-                amount = Math.min(target.calcStat(Stats.GAIN_HP_LIMIT, target.getMaxHp(), null, null), target
-                        .getCurrentHp() + amount) - target.getCurrentHp();
+                amount = Math.min(target.calcStat(Stats.GAIN_HP_LIMIT, target.getMaxHp(), null, null),
+                        target.getCurrentHp() + amount) - target.getCurrentHp();
                 if (amount < 0)
                 {
                     amount = 0;

@@ -84,8 +84,8 @@ public class HandysBlockCheckerEvent extends Quest
             {
                 ArenaParticipantsHolder holder = HandysBlockCheckerManager.getInstance().getHolder(arena);
 
-                final ExCubeGameTeamList tl = new ExCubeGameTeamList(holder.getRedPlayers(), holder
-                        .getBluePlayers(), arena);
+                final ExCubeGameTeamList tl =
+                        new ExCubeGameTeamList(holder.getRedPlayers(), holder.getBluePlayers(), arena);
 
                 player.sendPacket(tl);
 

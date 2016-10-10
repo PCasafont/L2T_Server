@@ -209,8 +209,8 @@ public class FearonSiege extends Quest
 
         if (event.equalsIgnoreCase("random_text"))
         {
-            _dummyKain.broadcastPacket(new CreatureSay(_dummyKain.getObjectId(), 1, _dummyKain
-                    .getName(), _dummyKainTexts[Rnd.get(_dummyKainTexts.length)]));
+            _dummyKain.broadcastPacket(new CreatureSay(_dummyKain.getObjectId(), 1, _dummyKain.getName(),
+                    _dummyKainTexts[Rnd.get(_dummyKainTexts.length)]));
         }
         else if (event.equalsIgnoreCase("launch_event"))
         {
@@ -234,8 +234,8 @@ public class FearonSiege extends Quest
             if (_isEventOn && _eventStatus == 1 && _eventRound < 15 && _instanceId != 0)
             {
                 String playerHwid = player.getHWID();
-                if (playerHwid != null && !playerHwid.isEmpty() && !_hwids.contains(playerHwid) || _playerIds
-                        .contains(player.getObjectId()) && _hwids.contains(playerHwid))
+                if (playerHwid != null && !playerHwid.isEmpty() && !_hwids.contains(playerHwid) ||
+                        _playerIds.contains(player.getObjectId()) && _hwids.contains(playerHwid))
                 {
                     _hwids.add(playerHwid);
                     _playerIds.add(player.getObjectId());
@@ -348,8 +348,8 @@ public class FearonSiege extends Quest
              *
              * This NPC will cast non-stop one buff to all the players that are inside his activity radius.
              */
-            Collection<L2Character> chars = _protectionStone.getKnownList()
-                    .getKnownCharactersInRadius(_protectionSkill.getSkillRadius());
+            Collection<L2Character> chars =
+                    _protectionStone.getKnownList().getKnownCharactersInRadius(_protectionSkill.getSkillRadius());
 
             if (chars != null && !chars.isEmpty())
             {
@@ -386,15 +386,16 @@ public class FearonSiege extends Quest
              */
             if (_summonTreeHelper != null && !_summonTreeHelper.isDecayed())
             {
-                Collection<L2Character> chars = _summonTreeHelper.getKnownList()
-                        .getKnownCharactersInRadius(_blessingOfTree.getSkillRadius());
+                Collection<L2Character> chars =
+                        _summonTreeHelper.getKnownList().getKnownCharactersInRadius(_blessingOfTree.getSkillRadius());
 
                 if (chars != null && !chars.isEmpty())
                 {
                     for (L2Character chara : chars)
                     {
-                        if (chara == null || !chara.isInsideRadius(_summonTreeHelper, _blessingOfTree
-                                .getSkillRadius(), false, false) || !(chara instanceof L2Playable))
+                        if (chara == null ||
+                                !chara.isInsideRadius(_summonTreeHelper, _blessingOfTree.getSkillRadius(), false,
+                                        false) || !(chara instanceof L2Playable))
                         {
                             continue;
                         }
@@ -413,15 +414,16 @@ public class FearonSiege extends Quest
              */
             if (_summonGravityCore != null && !_summonGravityCore.isDecayed())
             {
-                Collection<L2Character> chars = _summonGravityCore.getKnownList()
-                        .getKnownCharactersInRadius(_ultimateDef.getSkillRadius());
+                Collection<L2Character> chars =
+                        _summonGravityCore.getKnownList().getKnownCharactersInRadius(_ultimateDef.getSkillRadius());
 
                 if (chars != null && !chars.isEmpty())
                 {
                     for (L2Character chara : chars)
                     {
-                        if (chara == null || !chara.isInsideRadius(_summonGravityCore, _ultimateDef
-                                .getSkillRadius(), false, false) || !(chara instanceof L2Playable))
+                        if (chara == null ||
+                                !chara.isInsideRadius(_summonGravityCore, _ultimateDef.getSkillRadius(), false,
+                                        false) || !(chara instanceof L2Playable))
                         {
                             continue;
                         }
@@ -471,8 +473,9 @@ public class FearonSiege extends Quest
             {
                 if (_warriorMageSup.getCurrentMp() < 800)
                 {
-                    _warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                            .getName(), "My mana power are decreasing so fast...!"));
+                    _warriorMageSup.broadcastPacket(
+                            new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
+                                    "My mana power are decreasing so fast...!"));
                 }
 
                 List<L2PcInstance> fuckedPlayers = new ArrayList<L2PcInstance>();
@@ -499,12 +502,12 @@ public class FearonSiege extends Quest
                 if (deadPlayers.size() > 0)
                 {
                     final L2PcInstance target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
-                    if (target != null && target.isDead() && _warriorMageSup
-                            .isInsideRadius(target, _resSkill.getCastRange(), false, false))
+                    if (target != null && target.isDead() &&
+                            _warriorMageSup.isInsideRadius(target, _resSkill.getCastRange(), false, false))
                     {
-                        _warriorMageSup
-                                .broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                                        .getName(), target.getName() + " I'll resurrect you!"));
+                        _warriorMageSup.broadcastPacket(
+                                new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
+                                        target.getName() + " I'll resurrect you!"));
 
                         _warriorMageSup.setTarget(target);
                         _warriorMageSup.doCast(_resSkill);
@@ -518,9 +521,9 @@ public class FearonSiege extends Quest
 
                     if (target != null && _warriorMageSup.getCurrentMp() >= _healSkill.getMpConsume())
                     {
-                        _warriorMageSup
-                                .broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                                        .getName(), target.getName() + " let me give you a hand!"));
+                        _warriorMageSup.broadcastPacket(
+                                new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
+                                        target.getName() + " let me give you a hand!"));
 
                         _warriorMageSup.setTarget(target);
                         _warriorMageSup.doCast(_healSkill);
@@ -530,12 +533,12 @@ public class FearonSiege extends Quest
                 }
                 else if (fuckedCount > 5 && fuckedCount <= 10) //Summon Tree of Life
                 {
-                    if (_summonTreeHelper == null || _summonTreeHelper.isDecayed() && _warriorMageSup
-                            .getCurrentMp() >= _summonTree.getMpConsume()) //Be sure we don't spawn more than one
+                    if (_summonTreeHelper == null || _summonTreeHelper.isDecayed() && _warriorMageSup.getCurrentMp() >=
+                            _summonTree.getMpConsume()) //Be sure we don't spawn more than one
                     {
-                        _warriorMageSup
-                                .broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                                        .getName(), "Ahhgrr! This will help us!"));
+                        _warriorMageSup.broadcastPacket(
+                                new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
+                                        "Ahhgrr! This will help us!"));
 
                         _warriorMageSup.setTarget(_warriorMageSup);
                         _warriorMageSup.doCast(_summonTree);
@@ -545,8 +548,9 @@ public class FearonSiege extends Quest
                             @Override
                             public void run()
                             {
-                                _summonTreeHelper = addSpawn(_summonTreeId, _warriorMageSup.getX(), _warriorMageSup
-                                        .getY(), _warriorMageSup.getZ() + 20, 0, true, 30000, true, _instanceId);
+                                _summonTreeHelper =
+                                        addSpawn(_summonTreeId, _warriorMageSup.getX(), _warriorMageSup.getY(),
+                                                _warriorMageSup.getZ() + 20, 0, true, 30000, true, _instanceId);
 
                                 //We will start that task only one time, then will be running all time while a tree is spawned
                                 QuestTimer treeAi = getQuestTimer("tree_ai", null, null);
@@ -562,12 +566,12 @@ public class FearonSiege extends Quest
                 }
                 else if (fuckedCount > 10) //Protective Gravity Core
                 {
-                    if (_summonGravityCore == null || _summonGravityCore.isDecayed() && _warriorMageSup
-                            .getCurrentMp() >= _summonTree.getMpConsume()) //Be sure we don't spawn more than one
+                    if (_summonGravityCore == null || _summonGravityCore.isDecayed() &&
+                            _warriorMageSup.getCurrentMp() >=
+                                    _summonTree.getMpConsume()) //Be sure we don't spawn more than one
                     {
-                        _warriorMageSup
-                                .broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                                        .getName(),
+                        _warriorMageSup.broadcastPacket(
+                                new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
                                         "Desperate situations need desperate measures! Come all! Enter enter into that shield!"));
 
                         _warriorMageSup.setTarget(_warriorMageSup);
@@ -578,8 +582,9 @@ public class FearonSiege extends Quest
                             @Override
                             public void run()
                             {
-                                _summonGravityCore = addSpawn(_gravityCoreId, _warriorMageSup.getX(), _warriorMageSup
-                                        .getY(), _warriorMageSup.getZ() + 20, 0, false, 20000, true, _instanceId);
+                                _summonGravityCore =
+                                        addSpawn(_gravityCoreId, _warriorMageSup.getX(), _warriorMageSup.getY(),
+                                                _warriorMageSup.getZ() + 20, 0, false, 20000, true, _instanceId);
 
                                 //We will start that task only one time, then will be running all time while a tree is spawned
                                 QuestTimer treeAi = getQuestTimer("gravity_core_ai", null, null);
@@ -616,9 +621,8 @@ public class FearonSiege extends Quest
                     {
                         String skillType = buffSkill.getName().split(" ")[2];
 
-                        _warriorMageSup
-                                .broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup
-                                        .getName(),
+                        _warriorMageSup.broadcastPacket(
+                                new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(),
                                         skillType + "s! Come close to me to receive the power of " + skillType +
                                                 "s God!"));
 
@@ -667,9 +671,8 @@ public class FearonSiege extends Quest
 
             InstanceManager.getInstance().getInstance(_instanceId).setPeaceInstance(true);
 
-            Announcements.getInstance()
-                    .announceToAll(
-                            "The global Fearon Siege Instance now is available through Kain Van Halter located in Giran!");
+            Announcements.getInstance().announceToAll(
+                    "The global Fearon Siege Instance now is available through Kain Van Halter located in Giran!");
 
             Announcements.getInstance().announceToAll("The instance will start on 10 minutes!");
 
@@ -704,28 +707,25 @@ public class FearonSiege extends Quest
             InstanceManager.getInstance()
                     .sendPacket(_instanceId, new Earthquake(153581, 142081, -12741, _eventRound, 10));
 
-            InstanceManager.getInstance()
-                    .sendPacket(_instanceId,
-                            new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0, "Round: " + _eventRound));
+            InstanceManager.getInstance().sendPacket(_instanceId,
+                    new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0, "Round: " + _eventRound));
 
             if (_eventRound == 17)
             {
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(_instanceId, 6,
-                                new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                        "The Protection Stone now can debuff the enemies!"));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(_instanceId, 6,
+                        new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                "The Protection Stone now can debuff the enemies!"));
             }
 
             if (_eventRound == 15)
             {
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(_instanceId, 6,
-                                new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                        "The entrance to the instance is now closed!"));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(_instanceId, 6,
+                        new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                "The entrance to the instance is now closed!"));
             }
 
-            L2Skill passiveSkill = SkillTable.getInstance()
-                    .getInfo(_passiveSkillId, _eventRound < 20 ? _eventRound : 10);
+            L2Skill passiveSkill =
+                    SkillTable.getInstance().getInfo(_passiveSkillId, _eventRound < 20 ? _eventRound : 10);
 
             if (_eventRound < 20)
             {
@@ -734,9 +734,9 @@ public class FearonSiege extends Quest
                     int x = (int) (1200 * Math.cos(i * 0.618));
                     int y = (int) (1200 * Math.sin(i * 0.618));
 
-                    L2Npc minion = addSpawn(_invadeMobs[Rnd
-                                    .get(_invadeMobs.length)], -79660 + x, 244954 + y, -3651 + 20, -1, false, 0, true,
-                            _instanceId);
+                    L2Npc minion =
+                            addSpawn(_invadeMobs[Rnd.get(_invadeMobs.length)], -79660 + x, 244954 + y, -3651 + 20, -1,
+                                    false, 0, true, _instanceId);
                     minion.setIsRunning(true);
                     minion.addSkill(passiveSkill);
                     minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
@@ -755,9 +755,9 @@ public class FearonSiege extends Quest
                 _bossMakkum.addSkill(passiveSkill);
                 _bossMakkum.setCurrentHpMp(_bossMakkum.getMaxHp(), _bossMakkum.getMaxMp());
 
-                InstanceManager.getInstance()
-                        .sendPacket(_instanceId, new CreatureSay(_bossMakkum.getObjectId(), 1, _bossMakkum
-                                .getName(), "It's the time to end with your lives!"));
+                InstanceManager.getInstance().sendPacket(_instanceId,
+                        new CreatureSay(_bossMakkum.getObjectId(), 1, _bossMakkum.getName(),
+                                "It's the time to end with your lives!"));
             }
         }
 
@@ -776,8 +776,9 @@ public class FearonSiege extends Quest
         L2Party party = player.getParty();
         if (party != null)
         {
-            if (skill.getTargetType() != L2SkillTargetType.TARGET_SELF && (skill.getSkillType().toString()
-                    .contains("HEAL") || skill.getSkillType().toString().contains("BUFF")))
+            if (skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
+                    (skill.getSkillType().toString().contains("HEAL") ||
+                            skill.getSkillType().toString().contains("BUFF")))
             {
                 synchronized (_attackerParty)
                 {
@@ -831,7 +832,7 @@ public class FearonSiege extends Quest
         }
 
 		/*if (npc.getNpcId() == _makkumBossId)
-		{
+        {
 			for (int a = 0; a < 3; a++)
 			{
 				for (Entry<Integer, Integer> i : _possibleRewards.entrySet())
@@ -935,8 +936,8 @@ public class FearonSiege extends Quest
 
                     if (_allMinions.isEmpty())
                     {
-                        InstanceManager.getInstance()
-                                .sendPacket(_instanceId, new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                        InstanceManager.getInstance().sendPacket(_instanceId,
+                                new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
                                         "Next round will start in 15 seconds!"));
 
                         startQuestTimer("stage_all_spawn_round", 15000, null, null);
@@ -964,8 +965,9 @@ public class FearonSiege extends Quest
                         continue;
                     }
 
-                    Log.warning(_qn + ": Rewarded in total :" + ItemTable.getInstance().getTemplate(i.getKey())
-                            .getName() + "(" + i.getValue() + ")");
+                    Log.warning(
+                            _qn + ": Rewarded in total :" + ItemTable.getInstance().getTemplate(i.getKey()).getName() +
+                                    "(" + i.getValue() + ")");
                 }
             }
         }
@@ -1019,30 +1021,30 @@ public class FearonSiege extends Quest
                 InstanceManager.getInstance()
                         .sendPacket(_instanceId, new Earthquake(153581, 142081, -12741, _eventRound, 10));
 
-                InstanceManager.getInstance().sendPacket(_instanceId, new SpecialCamera(_protectionStone
-                        .getObjectId(), 1000, 0, 150, 0, 16000));
+                InstanceManager.getInstance().sendPacket(_instanceId,
+                        new SpecialCamera(_protectionStone.getObjectId(), 1000, 0, 150, 0, 16000));
 
-                InstanceManager.getInstance().sendPacket(_instanceId, new MagicSkillUse(_protectionStone, _portalEffect1
-                        .getId(), 1, _portalEffect1.getHitTime(), _portalEffect1.getReuseDelay()));
+                InstanceManager.getInstance().sendPacket(_instanceId,
+                        new MagicSkillUse(_protectionStone, _portalEffect1.getId(), 1, _portalEffect1.getHitTime(),
+                                _portalEffect1.getReuseDelay()));
 
                 ThreadPoolManager.getInstance().scheduleAi(new Runnable()
                 {
                     @Override
                     public void run()
                     {
-                        InstanceManager.getInstance()
-                                .sendPacket(_instanceId, new MagicSkillUse(_protectionStone, _portalEffect2
-                                        .getId(), 1, _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
+                        InstanceManager.getInstance().sendPacket(_instanceId,
+                                new MagicSkillUse(_protectionStone, _portalEffect2.getId(), 1,
+                                        _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
 
                         for (int i = 0; i < 15; i++)
                         {
-                            L2Npc guard = addSpawn(_warriorGuard, _protectionStone.getX(), _protectionStone
-                                    .getY(), _protectionStone.getZ(), 0, true, 0, true, _instanceId);
+                            L2Npc guard = addSpawn(_warriorGuard, _protectionStone.getX(), _protectionStone.getY(),
+                                    _protectionStone.getZ(), 0, true, 0, true, _instanceId);
                             _guardArmy.add(guard);
 
-                            guard.broadcastPacket(new MagicSkillUse(guard, _warriorsSpawnEffect
-                                    .getId(), 1, _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect
-                                    .getReuseDelay()));
+                            guard.broadcastPacket(new MagicSkillUse(guard, _warriorsSpawnEffect.getId(), 1,
+                                    _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
                         }
 
                         ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -1052,10 +1054,9 @@ public class FearonSiege extends Quest
                             {
                                 InstanceManager.getInstance().startWholeInstance(_instanceId);
 
-                                InstanceManager.getInstance()
-                                        .sendDelayedPacketToInstance(_instanceId, 8,
-                                                new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                                        "The Royal Army Guards from the Aden realm has been arrived!"));
+                                InstanceManager.getInstance().sendDelayedPacketToInstance(_instanceId, 8,
+                                        new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                                "The Royal Army Guards from the Aden realm has been arrived!"));
 
                                 notifyEvent("guard_army_ai", null, null);
                             }
@@ -1078,35 +1079,37 @@ public class FearonSiege extends Quest
                         .sendPacket(_instanceId, new Earthquake(153581, 142081, -12741, _eventRound, 10));
 
                 //SpecialCamera
-                InstanceManager.getInstance().sendPacket(_instanceId, new SpecialCamera(_protectionStone
-                        .getObjectId(), 1000, 0, 150, 0, 16000));
+                InstanceManager.getInstance().sendPacket(_instanceId,
+                        new SpecialCamera(_protectionStone.getObjectId(), 1000, 0, 150, 0, 16000));
 
                 //Portal Effects
-                InstanceManager.getInstance().sendPacket(_instanceId, new MagicSkillUse(_protectionStone, _portalEffect1
-                        .getId(), 1, _portalEffect1.getHitTime(), _portalEffect1.getReuseDelay()));
+                InstanceManager.getInstance().sendPacket(_instanceId,
+                        new MagicSkillUse(_protectionStone, _portalEffect1.getId(), 1, _portalEffect1.getHitTime(),
+                                _portalEffect1.getReuseDelay()));
 
                 ThreadPoolManager.getInstance().scheduleAi(new Runnable()
                 {
                     @Override
                     public void run()
                     {
-                        InstanceManager.getInstance()
-                                .sendPacket(_instanceId, new MagicSkillUse(_protectionStone, _portalEffect2
-                                        .getId(), 1, _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
+                        InstanceManager.getInstance().sendPacket(_instanceId,
+                                new MagicSkillUse(_protectionStone, _portalEffect2.getId(), 1,
+                                        _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
 
-                        _warriorLeona = addSpawn(_warriorLeonaId, _protectionStone.getX(), _protectionStone
-                                .getY(), _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
-                        _warriorKain = addSpawn(_warriorKainId, _protectionStone.getX(), _protectionStone
-                                .getY(), _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
-                        _warriorMageSup = addSpawn(_warriorMageSUpId, _protectionStone.getX(), _protectionStone
-                                .getY(), _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
+                        _warriorLeona = addSpawn(_warriorLeonaId, _protectionStone.getX(), _protectionStone.getY(),
+                                _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
+                        _warriorKain = addSpawn(_warriorKainId, _protectionStone.getX(), _protectionStone.getY(),
+                                _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
+                        _warriorMageSup = addSpawn(_warriorMageSUpId, _protectionStone.getX(), _protectionStone.getY(),
+                                _protectionStone.getZ() + 20, 0, true, 0, true, _instanceId);
 
-                        _warriorLeona.broadcastPacket(new MagicSkillUse(_warriorLeona, _warriorsSpawnEffect
-                                .getId(), 1, _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
-                        _warriorKain.broadcastPacket(new MagicSkillUse(_warriorKain, _warriorsSpawnEffect
-                                .getId(), 1, _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
-                        _warriorMageSup.broadcastPacket(new MagicSkillUse(_warriorMageSup, _warriorsSpawnEffect
-                                .getId(), 1, _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        _warriorLeona.broadcastPacket(new MagicSkillUse(_warriorLeona, _warriorsSpawnEffect.getId(), 1,
+                                _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        _warriorKain.broadcastPacket(new MagicSkillUse(_warriorKain, _warriorsSpawnEffect.getId(), 1,
+                                _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        _warriorMageSup.broadcastPacket(
+                                new MagicSkillUse(_warriorMageSup, _warriorsSpawnEffect.getId(), 1,
+                                        _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
 
                         //Start It back
                         ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -1122,10 +1125,9 @@ public class FearonSiege extends Quest
 
                                 notifyEvent("guard_army_ai", null, null);
 
-                                InstanceManager.getInstance()
-                                        .sendDelayedPacketToInstance(_instanceId, 3,
-                                                new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                                        "The Royal Army Captains from the Aden realm has been arrived!"));
+                                InstanceManager.getInstance().sendDelayedPacketToInstance(_instanceId, 3,
+                                        new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                                "The Royal Army Captains from the Aden realm has been arrived!"));
                             }
                         }, 4000);
                     }

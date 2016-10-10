@@ -78,9 +78,8 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
 
                 statement.setLong(1, System.currentTimeMillis());
                 statement.setString(2, "TELL");
@@ -99,7 +98,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
                 L2DatabaseFactory.close(con);
             }
             /*LogRecord record = new LogRecord(Level.INFO, _message);
-			record.setLoggerName("chat");
+            record.setLoggerName("chat");
 			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ _reciever +"]"});
 
 			_logChat.log(record);*/

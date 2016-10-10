@@ -190,12 +190,12 @@ public class AdminCreateItem implements IAdminCommandHandler
             {
                 for (L2PcInstance onlinePlayer : pls)
                 {
-                    if (onlinePlayer != null && activeChar != onlinePlayer && onlinePlayer.isOnline() && onlinePlayer
-                            .getClient() != null && !onlinePlayer.getClient().isDetached())
+                    if (onlinePlayer != null && activeChar != onlinePlayer && onlinePlayer.isOnline() &&
+                            onlinePlayer.getClient() != null && !onlinePlayer.getClient().isDetached())
                     {
                         onlinePlayer.getInventory().addItem("Admin", idval, numval, onlinePlayer, activeChar);
-                        onlinePlayer.sendMessage("Admin spawned " + numval + " " + template
-                                .getName() + " in your inventory.");
+                        onlinePlayer.sendMessage(
+                                "Admin spawned " + numval + " " + template.getName() + " in your inventory.");
                         counter++;
                     }
                 }
@@ -231,8 +231,9 @@ public class AdminCreateItem implements IAdminCommandHandler
         {
             target.sendMessage("Admin spawned " + num + " " + template.getName() + " in your inventory.");
         }
-        activeChar.sendMessage("You have spawned " + num + " " + template.getName() + "(" + id + ") in " + target
-                .getName() + " inventory.");
+        activeChar.sendMessage(
+                "You have spawned " + num + " " + template.getName() + "(" + id + ") in " + target.getName() +
+                        " inventory.");
     }
 
     private int getCoinId(String name)

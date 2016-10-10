@@ -92,9 +92,9 @@ public class L2PcInstanceAction implements IActionHandler
             return false;
         }
 
-        if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target)
-                .getParty()) && ((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar
-                .isGM())
+        if (activeChar != target &&
+                (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target).getParty()) &&
+                ((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
         {
             activeChar.sendPacket(ActionFailed.STATIC_PACKET);
             return false;
@@ -141,8 +141,8 @@ public class L2PcInstanceAction implements IActionHandler
                 {
                     // activeChar with lvl < 21 can't attack a cursed weapon holder
                     // And a cursed weapon holder  can't attack activeChars with lvl < 21
-                    if (((L2PcInstance) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 || activeChar
-                            .isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21)
+                    if (((L2PcInstance) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 ||
+                            activeChar.isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21)
                     {
                         activeChar.sendPacket(ActionFailed.STATIC_PACKET);
                     }
@@ -179,9 +179,10 @@ public class L2PcInstanceAction implements IActionHandler
                         activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
                     }
 
-                    if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance && ((L2PcInstance) target)
-                            .getClient() != null && ((L2PcInstance) target).getClient()
-                            .isDetached() && ((L2PcInstance) target).getIsOfflineBuffer())
+                    if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance &&
+                            ((L2PcInstance) target).getClient() != null &&
+                            ((L2PcInstance) target).getClient().isDetached() &&
+                            ((L2PcInstance) target).getIsOfflineBuffer())
                     {
                         CustomOfflineBuffersManager.getInstance()
                                 .getSpecificBufferInfo(activeChar, target.getObjectId());

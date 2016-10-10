@@ -154,8 +154,8 @@ public class PailakaSongOfIceAndFire extends Quest
         {
             if (world.templateId != INSTANCE_ID)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
             Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
@@ -438,8 +438,8 @@ public class PailakaSongOfIceAndFire extends Quest
     @Override
     public String onExitZone(L2Character character, L2ZoneType zone)
     {
-        if (character instanceof L2PcInstance && !character.isDead() && !character
-                .isTeleporting() && ((L2PcInstance) character).isOnline())
+        if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() &&
+                ((L2PcInstance) character).isOnline())
         {
             InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
             if (world != null && world.templateId == INSTANCE_ID)

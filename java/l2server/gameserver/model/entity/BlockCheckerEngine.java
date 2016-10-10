@@ -572,7 +572,7 @@ public final class BlockCheckerEngine
     }
 
 	/*
-	private class CountDown implements Runnable
+    private class CountDown implements Runnable
 	{
 		@Override
 		public void run()

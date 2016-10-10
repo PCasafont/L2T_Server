@@ -34,7 +34,7 @@ public final class RequestOlympiadObserverEnd extends L2GameClientPacket
     }
 
 	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
+     * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
 
     @Override

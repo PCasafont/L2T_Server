@@ -59,7 +59,7 @@ public class ItemSkillsTemplate implements IItemHandler
             return;
         }
         /*
-		 * FIXME: check this, maybe useful
+         * FIXME: check this, maybe useful
 		if (!InstancedEvent.onScrollUse(playable.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
@@ -115,8 +115,8 @@ public class ItemSkillsTemplate implements IItemHandler
                         return;
                     }
 
-                    if (itemSkill.getItemConsumeId() == 0 && itemSkill.getItemConsume() > 0 && (itemSkill
-                            .isPotion() || itemSkill.isSimultaneousCast()))
+                    if (itemSkill.getItemConsumeId() == 0 && itemSkill.getItemConsume() > 0 &&
+                            (itemSkill.isPotion() || itemSkill.isSimultaneousCast()))
                     {
                         if (!playable
                                 .destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsume(), null, false))
@@ -149,22 +149,22 @@ public class ItemSkillsTemplate implements IItemHandler
                                 // greater healing potions
                                 if (skillId == 2037 || skillId == 26025)
                                 {
-                                    activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill
-                                            .getBuffDuration() / 1000);
+                                    activeChar.shortBuffStatusUpdate(skillId, skillLvl,
+                                            itemSkill.getBuffDuration() / 1000);
                                 }
                                 // healing potions
                                 else if ((skillId == 2032 || skillId == 26026) && buffId != 2037 && buffId != 26025)
                                 {
-                                    activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill
-                                            .getBuffDuration() / 1000);
+                                    activeChar.shortBuffStatusUpdate(skillId, skillLvl,
+                                            itemSkill.getBuffDuration() / 1000);
                                 }
                                 // lesser healing potions
                                 else
                                 {
                                     if (buffId != 2037 && buffId != 26025 && buffId != 2032 && buffId != 26026)
                                     {
-                                        activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill
-                                                .getBuffDuration() / 1000);
+                                        activeChar.shortBuffStatusUpdate(skillId, skillLvl,
+                                                itemSkill.getBuffDuration() / 1000);
                                     }
                                 }
                                 break;
@@ -198,8 +198,8 @@ public class ItemSkillsTemplate implements IItemHandler
                         //consume
                         if (itemSkill.getItemConsumeId() == 0 && itemSkill.getItemConsume() > 0)
                         {
-                            if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill
-                                    .getItemConsume(), null, false))
+                            if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsume(), null,
+                                    false))
                             {
                                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
                                 return;
@@ -216,8 +216,9 @@ public class ItemSkillsTemplate implements IItemHandler
                             final int group = item.getEtcItem().getSharedReuseGroup();
                             if (group >= 0)
                             {
-                                activeChar.sendPacket(new ExUseSharedGroupItem(item.getItemId(), group, itemSkill
-                                        .getReuseDelay(), itemSkill.getReuseDelay()));
+                                activeChar.sendPacket(
+                                        new ExUseSharedGroupItem(item.getItemId(), group, itemSkill.getReuseDelay(),
+                                                itemSkill.getReuseDelay()));
                             }
                         }
                     }
@@ -288,8 +289,8 @@ public class ItemSkillsTemplate implements IItemHandler
                 final int group = item.getEtcItem().getSharedReuseGroup();
                 if (group >= 0)
                 {
-                    player.sendPacket(new ExUseSharedGroupItem(item.getItemId(), group, (int) remainingTime, skill
-                            .getReuseDelay()));
+                    player.sendPacket(new ExUseSharedGroupItem(item.getItemId(), group, (int) remainingTime,
+                            skill.getReuseDelay()));
                 }
             }
         }

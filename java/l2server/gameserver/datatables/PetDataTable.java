@@ -332,7 +332,7 @@ public class PetDataTable
         return false;
 
 		/*switch (itemId)
-		{
+        {
 			case 2375: // Wolf
 			case 3500: // hatchling of wind
 			case 3501: // hatchling of star

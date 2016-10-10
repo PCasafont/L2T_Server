@@ -52,8 +52,8 @@ public class PledgeReceiveWarList extends L2GameServerPacket
             L2Clan other = war.getClan1() != _clan ? war.getClan1() : war.getClan2();
 
             _state = 0;
-            if (war.getElapsedTime() >= Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600 && war
-                    .getState() == WarState.DECLARED)
+            if (war.getElapsedTime() >= Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600 &&
+                    war.getState() == WarState.DECLARED)
             {
                 _state = 1;
             }

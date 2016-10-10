@@ -93,11 +93,10 @@ public final class RequestRefundItem extends L2GameClientPacket
         }
 
         L2Object target = player.getTarget();
-        if (!player
-                .isGM() && (target == null ||
-                !(target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) || player
-                .getInstanceId() != target.getInstanceId() || !player
-                .isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false))) // Distance is too far
+        if (!player.isGM() && (target == null ||
+                !(target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) ||
+                player.getInstanceId() != target.getInstanceId() ||
+                !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false))) // Distance is too far
         {
             sendPacket(ActionFailed.STATIC_PACKET);
             return;
@@ -136,9 +135,9 @@ public final class RequestRefundItem extends L2GameClientPacket
             {
                 if (lists == null)
                 {
-                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                            .getName() + " of account " + player
-                            .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                    " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
                     return;
                 }
                 for (L2TradeList tradeList : lists)
@@ -161,8 +160,9 @@ public final class RequestRefundItem extends L2GameClientPacket
 
         if (list == null)
         {
-            Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player
-                    .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                            " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -178,9 +178,9 @@ public final class RequestRefundItem extends L2GameClientPacket
             int idx = _items[i];
             if (idx < 0 || idx >= refund.length)
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                        .getName() + " of account " + player
-                        .getAccountName() + " sent invalid refund index", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                " sent invalid refund index", Config.DEFAULT_PUNISH);
                 return;
             }
 
@@ -189,9 +189,9 @@ public final class RequestRefundItem extends L2GameClientPacket
             {
                 if (idx == _items[j])
                 {
-                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                            .getName() + " of account " + player
-                            .getAccountName() + " sent duplicate refund index", Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                    " sent duplicate refund index", Config.DEFAULT_PUNISH);
                     return;
                 }
             }
@@ -205,9 +205,9 @@ public final class RequestRefundItem extends L2GameClientPacket
             {
                 if (objectIds[i] == objectIds[j])
                 {
-                    Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                            .getName() + " of account " + player
-                            .getAccountName() + " has duplicate items in refund list", Config.DEFAULT_PUNISH);
+                    Util.handleIllegalPlayerAction(player,
+                            "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                    " has duplicate items in refund list", Config.DEFAULT_PUNISH);
                     return;
                 }
             }
@@ -249,8 +249,8 @@ public final class RequestRefundItem extends L2GameClientPacket
         for (int i = 0; i < _items.length; i++)
         {
             L2ItemInstance item = player.getRefund()
-                    .transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player, player
-                            .getLastFolkNPC());
+                    .transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player,
+                            player.getLastFolkNPC());
             if (item == null)
             {
                 Log.warning("Error refunding object for char " + player.getName() + " (newitem == null)");

@@ -34,11 +34,11 @@ public class L2TenkaiEventZone extends L2ZoneType
         {
             L2PcInstance player = (L2PcInstance) character;
             EventInstance event = player.getEvent();
-            if (event != null && event.getConfig().needsClosedArena() && player.getEvent()
-                    .isState(EventState.STARTED) && event.getConfig().getLocation()
-                    .getId() == getId() - BASE_ID && (!event.isType(EventType.VIP) || event
-                    .getParticipantTeam(player.getObjectId()).getVIP().getObjectId() == player.getObjectId()) && (!event
-                    .isType(EventType.CaptureTheFlag) || player.getCtfFlag() != null))
+            if (event != null && event.getConfig().needsClosedArena() &&
+                    player.getEvent().isState(EventState.STARTED) &&
+                    event.getConfig().getLocation().getId() == getId() - BASE_ID && (!event.isType(EventType.VIP) ||
+                    event.getParticipantTeam(player.getObjectId()).getVIP().getObjectId() == player.getObjectId()) &&
+                    (!event.isType(EventType.CaptureTheFlag) || player.getCtfFlag() != null))
             {
                 ThreadPoolManager.getInstance().executeTask(new OutOfEventZoneTask(player));
             }
@@ -77,8 +77,8 @@ public class L2TenkaiEventZone extends L2ZoneType
         {
             if (!isInsideZone(_player) && _player.isPlayingEvent())
             {
-                if (getDistanceToZone(_player) > 500 || getZone().getHighZ() < _player.getZ() || getZone()
-                        .getLowZ() > _player.getZ())
+                if (getDistanceToZone(_player) > 500 || getZone().getHighZ() < _player.getZ() ||
+                        getZone().getLowZ() > _player.getZ())
                 {
                     if (_delay > 0)
                     {

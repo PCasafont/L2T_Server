@@ -98,8 +98,8 @@ public class DecayTaskManager
                     {
                         delay = RAID_BOSS_DECAY_TIME;
                     }
-                    else if (actor instanceof L2Attackable && (((L2Attackable) actor)
-                            .isSpoil() || ((L2Attackable) actor).isSeeded()))
+                    else if (actor instanceof L2Attackable &&
+                            (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded()))
                     {
                         delay = ATTACKABLE_DECAY_TIME * 2;
                     }
@@ -131,8 +131,8 @@ public class DecayTaskManager
         Long current = System.currentTimeMillis();
         for (L2Character actor : _decayTasks.keySet())
         {
-            ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor
-                    .getName() + " decay timer: " + (current - _decayTasks.get(actor)) + "\r\n";
+            ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " +
+                    (current - _decayTasks.get(actor)) + "\r\n";
         }
 
         return ret;

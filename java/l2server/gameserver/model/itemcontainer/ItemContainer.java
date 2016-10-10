@@ -191,8 +191,8 @@ public abstract class ItemContainer
 
         for (L2ItemInstance item : _items.values())
         {
-            if (item.getItemId() == itemId && (item
-                    .getEnchantLevel() == enchantLevel || enchantLevel < 0) && (includeEquipped || !item.isEquipped()))
+            if (item.getItemId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) &&
+                    (includeEquipped || !item.isEquipped()))
             {
                 //if (item.isAvailable((L2PcInstance)getOwner(), true) || item.getItem().getType2() == 3)//available or quest item
                 if (item.isStackable())
@@ -307,8 +307,8 @@ public abstract class ItemContainer
                 L2Item template = ItemTable.getInstance().getTemplate(itemId);
                 if (template == null)
                 {
-                    Log.log(Level.WARNING, (actor != null ? "[" + actor
-                            .getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
+                    Log.log(Level.WARNING,
+                            (actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
                     return null;
                 }
 
@@ -640,8 +640,8 @@ public abstract class ItemContainer
                     if (item.getOwnerId() != getOwner().getObjectId())
                     {
                         item.setOwnerId(getOwner().getObjectId());
-                        Log.severe(item.getName() + " had incorrect ownerId, corrected. ( " + getOwner()
-                                .getName() + ")");
+                        Log.severe(
+                                item.getName() + " had incorrect ownerId, corrected. ( " + getOwner().getName() + ")");
                     }
 
                     item.updateDatabase(true);
@@ -659,9 +659,8 @@ public abstract class ItemContainer
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND (loc=?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND (loc=?)");
             statement.setInt(1, getOwnerId());
             statement.setString(2, getBaseLocation().name());
             ResultSet inv = statement.executeQuery();

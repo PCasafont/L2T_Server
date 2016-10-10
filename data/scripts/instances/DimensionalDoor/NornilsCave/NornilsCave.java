@@ -154,9 +154,9 @@ public class NornilsCave extends L2AttackableAIScript
                     {
                         for (int i = 0; i < Rnd.get(5, 8); i++)
                         {
-                            L2Npc roomMob = addSpawn(_caveMobs[Rnd.get(_caveMobs.length)], npc.getX() + Rnd.get(50), npc
-                                    .getY() + Rnd.get(50), npc.getZ(), npc
-                                    .getHeading(), false, 0, true, world.instanceId);
+                            L2Npc roomMob = addSpawn(_caveMobs[Rnd.get(_caveMobs.length)], npc.getX() + Rnd.get(50),
+                                    npc.getY() + Rnd.get(50), npc.getZ(), npc.getHeading(), false, 0, true,
+                                    world.instanceId);
                             world._roomMobs.add(roomMob);
                         }
                     }
@@ -351,9 +351,9 @@ public class NornilsCave extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
                         {
                             world.rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                    .get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 10 * DimensionalDoor
-                                            .getDimensionalDoorRewardRate()), player, true);
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                    Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                            10 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
                         else
                         {
@@ -375,8 +375,8 @@ public class NornilsCave extends L2AttackableAIScript
         {
             if (!(world instanceof NornilsCaveWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

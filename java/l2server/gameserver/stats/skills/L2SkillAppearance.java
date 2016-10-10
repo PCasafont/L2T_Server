@@ -47,8 +47,8 @@ public class L2SkillAppearance extends L2Skill
                 L2PcInstance targetPlayer = (L2PcInstance) target;
 
                 int maxHairStyle = targetPlayer.getAppearance().getSex() ? 5 : 7;
-                int maxHairColor = targetPlayer.getRace() == Race.Kamael || targetPlayer
-                        .getRace() == Race.Ertheia ? 2 : 3;
+                int maxHairColor =
+                        targetPlayer.getRace() == Race.Kamael || targetPlayer.getRace() == Race.Ertheia ? 2 : 3;
                 int maxFace = 3;
 
                 int faceId = _faceId;

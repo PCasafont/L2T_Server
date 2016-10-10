@@ -170,9 +170,9 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
                         }
                         if (validateClassId(currentClass, cl) && cl.level() == level)
                         {
-                            StringUtil.append(menu, "<a action=\"bypass -h npc_%objectId%_change_class ", String
-                                    .valueOf(cl.getId()), "\">", PlayerClassTable.getInstance()
-                                    .getClassNameById(cl.getId()), "</a><br>");
+                            StringUtil.append(menu, "<a action=\"bypass -h npc_%objectId%_change_class ",
+                                    String.valueOf(cl.getId()), "\">",
+                                    PlayerClassTable.getInstance().getClassNameById(cl.getId()), "</a><br>");
                         }
                     }
 

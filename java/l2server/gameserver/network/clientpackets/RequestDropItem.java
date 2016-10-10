@@ -69,11 +69,11 @@ public final class RequestDropItem extends L2GameClientPacket
 
         L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
 
-        if (item == null || _count == 0 || !activeChar
-                .validateItemManipulation(_objectId, "drop") || !Config.ALLOW_DISCARDITEM && !activeChar.isGM() || !item
-                .isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) || item
-                .getItemType() == L2EtcItemType.PET_COLLAR && activeChar.havePetInvItems() || activeChar
-                .isInsideZone(L2Character.ZONE_NOITEMDROP))
+        if (item == null || _count == 0 || !activeChar.validateItemManipulation(_objectId, "drop") ||
+                !Config.ALLOW_DISCARDITEM && !activeChar.isGM() ||
+                !item.isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) ||
+                item.getItemType() == L2EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
+                activeChar.isInsideZone(L2Character.ZONE_NOITEMDROP))
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
             return;
@@ -98,19 +98,19 @@ public final class RequestDropItem extends L2GameClientPacket
 
         if (_count < 0)
         {
-            Util.handleIllegalPlayerAction(activeChar, "[RequestDropItem] Character " + activeChar
-                            .getName() + " of account " + activeChar
-                            .getAccountName() + " tried to drop item with oid " + _objectId + " but has count < 0!",
-                    Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "[RequestDropItem] Character " + activeChar.getName() + " of account " +
+                            activeChar.getAccountName() + " tried to drop item with oid " + _objectId +
+                            " but has count < 0!", Config.DEFAULT_PUNISH);
             return;
         }
 
         if (!item.isStackable() && _count > 1)
         {
-            Util.handleIllegalPlayerAction(activeChar, "[RequestDropItem] Character " + activeChar
-                    .getName() + " of account " + activeChar
-                    .getAccountName() + " tried to drop non-stackable item with oid " + _objectId +
-                    " but has count > 1!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "[RequestDropItem] Character " + activeChar.getName() + " of account " +
+                            activeChar.getAccountName() + " tried to drop non-stackable item with oid " + _objectId +
+                            " but has count > 1!", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -129,8 +129,8 @@ public final class RequestDropItem extends L2GameClientPacket
 
         if (activeChar.isProcessingTransaction() || activeChar.getPrivateStoreType() != 0)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
         if (activeChar.isFishing())
@@ -147,8 +147,8 @@ public final class RequestDropItem extends L2GameClientPacket
         // Cannot discard item that the skill is consuming
         if (activeChar.isCastingNow())
         {
-            if (activeChar.getCurrentSkill() != null && activeChar.getCurrentSkill().getSkill()
-                    .getItemConsumeId() == item.getItemId())
+            if (activeChar.getCurrentSkill() != null &&
+                    activeChar.getCurrentSkill().getSkill().getItemConsumeId() == item.getItemId())
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
                 return;
@@ -158,8 +158,8 @@ public final class RequestDropItem extends L2GameClientPacket
         // Cannot discard item that the skill is consuming
         if (activeChar.isCastingSimultaneouslyNow())
         {
-            if (activeChar.getLastSimultaneousSkillCast() != null && activeChar.getLastSimultaneousSkillCast()
-                    .getItemConsumeId() == item.getItemId())
+            if (activeChar.getLastSimultaneousSkillCast() != null &&
+                    activeChar.getLastSimultaneousSkillCast().getItemConsumeId() == item.getItemId())
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
                 return;
@@ -226,14 +226,14 @@ public final class RequestDropItem extends L2GameClientPacket
         if (activeChar.isGM())
         {
             String target = activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target";
-            GMAudit.auditGMAction(activeChar.getName(), "Drop", target, "(id: " + dropedItem
-                    .getItemId() + " name: " + dropedItem.getItemName() + " objId: " + dropedItem
-                    .getObjectId() + " x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " + activeChar
-                    .getZ() + ")");
+            GMAudit.auditGMAction(activeChar.getName(), "Drop", target,
+                    "(id: " + dropedItem.getItemId() + " name: " + dropedItem.getItemName() + " objId: " +
+                            dropedItem.getObjectId() + " x: " + activeChar.getX() + " y: " + activeChar.getY() +
+                            " z: " + activeChar.getZ() + ")");
         }
 
 		/*if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
-		{
+        {
 			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + _x + "," + _y + "," + _z + ")";
 			Log.warning(msg);
 			GmListTable.broadcastMessageToGMs(msg);

@@ -73,15 +73,15 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
         if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
         {
             activeChar.sendMessage("You don't have the access right to use this command!");
-            Log.warning("Character " + activeChar
-                    .getName() + " tryed to use admin command " + command + ", but have no access to it!");
+            Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + command +
+                    ", but have no access to it!");
             return;
         }
 
         if (Config.GMAUDIT)
         {
-            GMAudit.auditGMAction(activeChar.getName(), _command, activeChar.getTarget() != null ? activeChar
-                    .getTarget().getName() : "no-target");
+            GMAudit.auditGMAction(activeChar.getName(), _command,
+                    activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
         }
 
         ach.useAdminCommand("admin_" + _command, activeChar);

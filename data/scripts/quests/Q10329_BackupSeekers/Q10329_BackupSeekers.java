@@ -131,8 +131,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId1));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId1));
                 }
             }, 7500);
 
@@ -147,8 +147,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId2));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId2));
                 }
             }, 15000);
 
@@ -213,8 +213,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId3));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId3));
                 }
             }, 7500);
 
@@ -229,8 +229,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId4));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId4));
                 }
             }, 15000);
 
@@ -245,8 +245,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId5));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId5));
                 }
             }, 23500);
 
@@ -261,8 +261,8 @@ public class Q10329_BackupSeekers extends Quest
                         return;
                     }
 
-                    guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide
-                            .getNpcId(), _guideTalkId6));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId6));
                 }
             }, 30000);
 
@@ -341,9 +341,8 @@ public class Q10329_BackupSeekers extends Quest
             guideLastChatId = _guideLastChatId2;
         }
 
-        if (!guideAI.getActor()
-                .isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI
-                .getCurrentPos() == guideRoute.size() - 1)
+        if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
+                guideAI.getCurrentPos() == guideRoute.size() - 1)
         {
             if (guideAI.getCurrentPos() == 1)
             {
@@ -356,8 +355,9 @@ public class Q10329_BackupSeekers extends Quest
                 guideAI.walkToGuided(40);
                 chatId = _guideWaitChatId;
             }
-            NpcSay ns = new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor()
-                    .getNpcId(), chatId);
+            NpcSay ns =
+                    new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
+                            chatId);
             ns.addStringParameter(guideAI.getGuided().getName());
             guideAI.getActor().broadcastPacket(ns);
             guideAI.setWaiting(true);

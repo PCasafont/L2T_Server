@@ -66,16 +66,16 @@ public final class RequestBlock extends L2GameClientPacket
                 if (targetId <= 0)
                 {
                     // Incorrect player name.
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
                     return;
                 }
 
                 if (targetAL > 0)
                 {
                     // Cannot block a GM character.
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_GM));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_GM));
                     return;
                 }
 
@@ -97,13 +97,13 @@ public final class RequestBlock extends L2GameClientPacket
                 activeChar.sendPacket(new BlockListPacket(activeChar));
                 break;
             case ALLBLOCK:
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.MESSAGE_REFUSAL_MODE));//Update by rocknow
+                activeChar.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_REFUSAL_MODE));//Update by rocknow
                 BlockList.setBlockAll(activeChar, true);
                 break;
             case ALLUNBLOCK:
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.MESSAGE_ACCEPTANCE_MODE));//Update by rocknow
+                activeChar.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_ACCEPTANCE_MODE));//Update by rocknow
                 BlockList.setBlockAll(activeChar, false);
                 break;
             default:

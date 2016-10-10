@@ -100,7 +100,7 @@ public class RequestServerLogin extends L2LoginClientPacket
                 logIntoDimensionId = 1;
 
 				/*
-				if (getClient().getAccessLevel() <= 0)
+                if (getClient().getAccessLevel() <= 0)
 				{
 					getClient().close(LoginFailReason.REASON_ACCESS_FAILED);
 					return;

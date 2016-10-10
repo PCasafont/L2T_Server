@@ -134,7 +134,7 @@ public class DarkCloudMansion extends Quest
     private static int D6 = 24230006; //Fifth Room
     private static int W1 = 24230007; //Wall 1
     /*private static int W2 = 24230008; //Wall 2
-	private static int W3 = 24230009; //Wall 3
+    private static int W3 = 24230009; //Wall 3
 	private static int W4 = 24230010; //Wall 4
 	private static int W5 = 24230011; //Wall 5
 	private static int W6 = 24230012; //Wall 6
@@ -252,16 +252,16 @@ public class DarkCloudMansion extends Quest
             {
                 if (partyMember.getLevel() < 78)
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
                     sm.addPcName(partyMember);
                     player.sendPacket(sm);
                     return false;
                 }
                 if (!partyMember.isInsideRadius(player, 1000, true, true))
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                     sm.addPcName(partyMember);
                     player.sendPacket(sm);
                     return false;
@@ -290,8 +290,8 @@ public class DarkCloudMansion extends Quest
         {
             if (!(world instanceof DMCWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return 0;
             }
             teleto.instanceId = world.instanceId;
@@ -312,8 +312,7 @@ public class DarkCloudMansion extends Quest
             world.templateId = INSTANCEID;
             InstanceManager.getInstance().addWorld(world);
             Log.info("DarkCloudMansion: started " + template + " Instance: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             runStartRoom((DMCWorld) world);
             // teleport players
             teleto.instanceId = instanceId;
@@ -652,15 +651,13 @@ public class DarkCloudMansion extends Quest
             FifthRoom.npcList.add(thisnpc);
             if (temp[idx] == 1 && Rnd.get(100) < 95)
             {
-                thisnpc.npc
-                        .broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), _spawnChat[Rnd
-                                .get(_spawnChat.length)]));
+                thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
+                        _spawnChat[Rnd.get(_spawnChat.length)]));
             }
             else if (temp[idx] != 1 && Rnd.get(100) < 67)
             {
-                thisnpc.npc
-                        .broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), _spawnChat[Rnd
-                                .get(_spawnChat.length)]));
+                thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
+                        _spawnChat[Rnd.get(_spawnChat.length)]));
             }
             idx++;
         }
@@ -746,16 +743,16 @@ public class DarkCloudMansion extends Quest
                     mob.count = 1;
                     if (mob.status == 1)
                     {
-                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc
-                                .getNpcId(), _successChat[Rnd.get(_successChat.length)]));
+                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+                                _successChat[Rnd.get(_successChat.length)]));
                         FifthRoom.founded += 1;
                         startQuestTimer("decayMe", 1500, npc, player);
                     }
                     else
                     {
                         FifthRoom.reset = 1;
-                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), _faildChat[Rnd
-                                .get(_faildChat.length)]));
+                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+                                _faildChat[Rnd.get(_faildChat.length)]));
                         startQuestTimer("decayChatBelethSamples", 4000, npc, player);
                         startQuestTimer("decayBelethSamples", 4500, npc, player);
                     }
@@ -925,8 +922,8 @@ public class DarkCloudMansion extends Quest
                 {
                     if (mob.status == 1)
                     {
-                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), _decayChat[Rnd
-                                .get(_decayChat.length)]));
+                        mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+                                _decayChat[Rnd.get(_decayChat.length)]));
                     }
                 }
             }
@@ -1041,8 +1038,8 @@ public class DarkCloudMansion extends Quest
                             {
                                 Log.info("DarkCloudMansion: spawn room 4 guard");
                             }
-                            addSpawn(BM[Rnd.get(BM.length)], player.getX(), player.getY(), player
-                                    .getZ(), 0, false, 0, false, world.instanceId);
+                            addSpawn(BM[Rnd.get(BM.length)], player.getX(), player.getY(), player.getZ(), 0, false, 0,
+                                    false, world.instanceId);
                         }
                     }
                 }
@@ -1136,8 +1133,8 @@ public class DarkCloudMansion extends Quest
                 {
                     if (debug)
                     {
-                        Log.info("DarkCloudMansion - id " + player
-                                .getObjectId() + " removed from allowed player in this Instances.");
+                        Log.info("DarkCloudMansion - id " + player.getObjectId() +
+                                " removed from allowed player in this Instances.");
                     }
                     world.allowed.remove(world.allowed.indexOf(player.getObjectId()));
                 }

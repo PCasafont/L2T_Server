@@ -52,8 +52,9 @@ public class SetPrivateStoreWholeMsg extends L2GameClientPacket
 
         if (_msg != null && _msg.length() > MAX_MSG_LENGTH)
         {
-            Util.handleIllegalPlayerAction(player, "Player " + player
-                    .getName() + " tried to overflow private store whole message", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player,
+                    "Player " + player.getName() + " tried to overflow private store whole message",
+                    Config.DEFAULT_PUNISH);
             return;
         }
 

@@ -107,8 +107,8 @@ public class L2DefenderInstance extends L2Attackable
             int activeSiegeId = _fort != null ? _fort.getFortId() : _castle != null ? _castle.getCastleId() : 0;
 
             // Check if player is an enemy of this defender npc
-            if (player != null && (player.getSiegeState() == 2 && !player
-                    .isRegisteredOnThisSiegeField(activeSiegeId) || player.getSiegeState() == 0))
+            if (player != null && (player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(activeSiegeId) ||
+                    player.getSiegeState() == 0))
             {
                 return true;
             }
@@ -147,8 +147,8 @@ public class L2DefenderInstance extends L2Attackable
 
             if (hasAI())
             {
-                getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(getSpawn()
-                        .getX(), getSpawn().getY(), getSpawn().getZ(), 0));
+                getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), 0));
             }
         }
     }
@@ -243,8 +243,8 @@ public class L2DefenderInstance extends L2Attackable
                 if (_fort != null && _fort.getZone().isActive() || _castle != null && _castle.getZone().isActive())
                 {
                     int activeSiegeId = _fort != null ? _fort.getFortId() : _castle != null ? _castle.getCastleId() : 0;
-                    if (player != null && (player.getSiegeState() == 2 && player
-                            .isRegisteredOnThisSiegeField(activeSiegeId)))
+                    if (player != null &&
+                            (player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId)))
                     {
                         return;
                     }

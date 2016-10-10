@@ -217,7 +217,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         _activeChar = pActiveChar;
         //JIV remove - done on spawn
         /*if (_activeChar != null)
-		{
+        {
 			L2World.getInstance().storeObject(getActiveChar());
 		}*/
     }
@@ -363,8 +363,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
                 else
                 {
                     statement = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?");
-                    statement.setLong(1, System
-                            .currentTimeMillis() + Config.DELETE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
+                    statement.setLong(1,
+                            System.currentTimeMillis() + Config.DELETE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
                     statement.setInt(2, objid);
                     statement.execute();
                     statement.close();
@@ -625,23 +625,20 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
             statement.execute();
             statement.close();
 
-            statement = con
-                    .prepareStatement(
-                            "DELETE FROM pets WHERE item_obj_id IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+            statement = con.prepareStatement(
+                    "DELETE FROM pets WHERE item_obj_id IN (SELECT object_id FROM items WHERE items.owner_id=?)");
             statement.setInt(1, objid);
             statement.execute();
             statement.close();
 
-            statement = con
-                    .prepareStatement(
-                            "DELETE FROM item_attributes WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+            statement = con.prepareStatement(
+                    "DELETE FROM item_attributes WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
             statement.setInt(1, objid);
             statement.execute();
             statement.close();
 
-            statement = con
-                    .prepareStatement(
-                            "DELETE FROM item_elementals WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+            statement = con.prepareStatement(
+                    "DELETE FROM item_elementals WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
             statement.setInt(1, objid);
             statement.execute();
             statement.close();
@@ -860,14 +857,13 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
                 case CONNECTED:
                     return "[IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
                 case AUTHED:
-                    return "[Account: " + getAccountName() + " - IP: " + (address == null ? "disconnected" : address
-                            .getHostAddress()) + "]";
+                    return "[Account: " + getAccountName() + " - IP: " +
+                            (address == null ? "disconnected" : address.getHostAddress()) + "]";
                 case IN_GAME:
-                    return "[Character: " + (getActiveChar() == null ? "disconnected" : getActiveChar()
-                            .getName() + "[" + getActiveChar()
-                            .getObjectId() + "]") + " - Account: " + getAccountName() + " - IP: " +
-                            (address == null ? "disconnected" : address
-                                    .getHostAddress()) + "]";
+                    return "[Character: " + (getActiveChar() == null ? "disconnected" :
+                            getActiveChar().getName() + "[" + getActiveChar().getObjectId() + "]") + " - Account: " +
+                            getAccountName() + " - IP: " +
+                            (address == null ? "disconnected" : address.getHostAddress()) + "]";
                 default:
                     throw new IllegalStateException("Missing state on switch");
             }
@@ -982,21 +978,21 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
     private boolean offlineModeConditions(L2PcInstance player)
     {
         boolean canSetShop = false;
-        if (player.isInOlympiadMode() || player.getInstanceId() != 0 || player.isInJail() || player
-                .getVehicle() != null || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player
-                .getEvent() != null)
+        if (player.isInOlympiadMode() || player.getInstanceId() != 0 || player.isInJail() ||
+                player.getVehicle() != null || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) ||
+                player.getEvent() != null)
         {
             return false;
         }
 
-        if (Config.OFFLINE_TRADE_ENABLE && (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL || player
-                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY || player
-                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL))
+        if (Config.OFFLINE_TRADE_ENABLE && (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL ||
+                player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY ||
+                player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL))
         {
             canSetShop = true;
         }
-        else if (Config.OFFLINE_CRAFT_ENABLE && (player.isInCraftMode() || player
-                .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE))
+        else if (Config.OFFLINE_CRAFT_ENABLE &&
+                (player.isInCraftMode() || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE))
         {
             canSetShop = true;
         }
@@ -1006,9 +1002,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
             canSetShop = false;
         }
 
-        if (Config.OFFLINE_BUFFERS_ENABLE && !player.isInStoreMode() && player
-                .isInsideZone(L2Character.ZONE_PEACE) && CustomOfflineBuffersManager.getInstance()
-                .setUpOfflineBuffer(player))
+        if (Config.OFFLINE_BUFFERS_ENABLE && !player.isInStoreMode() && player.isInsideZone(L2Character.ZONE_PEACE) &&
+                CustomOfflineBuffersManager.getInstance().setUpOfflineBuffer(player))
         {
             canSetShop = true;
         }
@@ -1024,8 +1019,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
             {
                 if (_cleanupTask == null)
                 {
-                    _cleanupTask = ThreadPoolManager.getInstance()
-                            .scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
+                    _cleanupTask =
+                            ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
                 }
             }
         }
@@ -1057,8 +1052,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
                 {
                     if (player.isLocked())
                     {
-                        Log.log(Level.WARNING, "Player " + player
-                                .getName() + " still performing subclass actions during disconnect.");
+                        Log.log(Level.WARNING,
+                                "Player " + player.getName() + " still performing subclass actions during disconnect.");
                     }
 
                     // prevent closing again
@@ -1096,8 +1091,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
             try
             {
                 L2PcInstance player = getActiveChar();
-                if (player != null && player.isOnline() && L2World.getInstance()
-                        .getPlayer(player.getObjectId()) == player) // safety precaution
+                if (player != null && player.isOnline() &&
+                        L2World.getInstance().getPlayer(player.getObjectId()) == player) // safety precaution
                 {
                     saveCharToDisk();
                     if (player.getPet() != null)
@@ -1305,8 +1300,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
                 }
                 catch (Exception e)
                 {
-                    Log.severe("Exception during execution " + packet.getClass()
-                            .getSimpleName() + ", client: " + toString() + "," + e.getMessage());
+                    Log.severe("Exception during execution " + packet.getClass().getSimpleName() + ", client: " +
+                            toString() + "," + e.getMessage());
                 }
 
                 count++;

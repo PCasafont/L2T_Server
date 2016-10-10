@@ -87,7 +87,7 @@ public class EventTeam
         synchronized (_participatedPlayers)
         {
             /*if (!EventsManager.getInstance().isType(EventType.DM)
-					&& !EventsManager.getInstance().isType(EventType.SS)
+                    && !EventsManager.getInstance().isType(EventType.SS)
 					&& !EventsManager.getInstance().isType(EventType.SS2))
 				_participatedPlayers.get(playerObjectId).setEvent(null);*/
             _participatedPlayers.remove(playerObjectId);

@@ -548,8 +548,8 @@ public class AutoChatHandler implements SpawnListener
             if (isActive())
             {
                 AutoChatRunner acr = new AutoChatRunner(_npcId, -1);
-                _chatTask = ThreadPoolManager.getInstance()
-                        .scheduleGeneralAtFixedRate(acr, _defaultDelay, _defaultDelay);
+                _chatTask =
+                        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(acr, _defaultDelay, _defaultDelay);
             }
             else
             {
@@ -591,8 +591,8 @@ public class AutoChatHandler implements SpawnListener
 
                 if (Config.DEBUG)
                 {
-                    Log.info("AutoChatHandler: Chat definition added for NPC ID " + _npcInstance
-                            .getNpcId() + " (Object ID = " + _npcInstance.getObjectId() + ").");
+                    Log.info("AutoChatHandler: Chat definition added for NPC ID " + _npcInstance.getNpcId() +
+                            " (Object ID = " + _npcInstance.getObjectId() + ").");
                 }
 
                 // If global chat isn't enabled for the parent instance,
@@ -727,8 +727,7 @@ public class AutoChatHandler implements SpawnListener
                 if (Config.DEBUG)
                 {
                     Log.info("AutoChatHandler: Running auto chat for " + chatDefinitions.length +
-                            " instances of NPC ID " + _npcId + "." + " (Global Chat = " + chatInst
-                            .isGlobal() + ")");
+                            " instances of NPC ID " + _npcId + "." + " (Global Chat = " + chatInst.isGlobal() + ")");
                 }
 
                 for (AutoChatDefinition chatDef : chatDefinitions)
@@ -800,8 +799,8 @@ public class AutoChatHandler implements SpawnListener
 
                         if (!text.contains("%player_"))
                         {
-                            CreatureSay cs = new CreatureSay(chatNpc
-                                    .getObjectId(), Say2.ALL_NOT_RECORDED, creatureName, text);
+                            CreatureSay cs =
+                                    new CreatureSay(chatNpc.getObjectId(), Say2.ALL_NOT_RECORDED, creatureName, text);
 
                             for (L2PcInstance nearbyPlayer : nearbyPlayers)
                             {
@@ -815,10 +814,9 @@ public class AutoChatHandler implements SpawnListener
 
                         if (Config.DEBUG)
                         {
-                            Log.fine("AutoChatHandler: Chat propogation for object ID " + chatNpc
-                                    .getObjectId() + " (" + creatureName + ") with text '" + text + "' sent to " +
-                                    nearbyPlayers
-                                            .size() + " nearby players.");
+                            Log.fine("AutoChatHandler: Chat propogation for object ID " + chatNpc.getObjectId() + " (" +
+                                    creatureName + ") with text '" + text + "' sent to " + nearbyPlayers.size() +
+                                    " nearby players.");
                         }
                     }
                     catch (Exception e)

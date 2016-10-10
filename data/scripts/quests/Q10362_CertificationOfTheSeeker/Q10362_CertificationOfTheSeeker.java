@@ -166,8 +166,8 @@ public class Q10362_CertificationOfTheSeeker extends Quest
     @Override
     public boolean canStart(L2PcInstance player)
     {
-        return player.getLevel() >= 10 && player.getLevel() <= 20 && player
-                .getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
+        return player.getLevel() >= 10 && player.getLevel() <= 20 &&
+                player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
     }
 
     public static void main(String[] args)

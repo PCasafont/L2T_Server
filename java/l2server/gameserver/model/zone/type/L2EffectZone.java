@@ -97,8 +97,9 @@ public class L2EffectZone extends L2ZoneType
                 String[] skillSplit = skill.split("-");
                 if (skillSplit.length != 2)
                 {
-                    Log.warning(StringUtil.concat(getClass()
-                            .getSimpleName() + ": invalid config property -> skillsIdLvl \"", skill, "\""));
+                    Log.warning(StringUtil
+                            .concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skill,
+                                    "\""));
                 }
                 else
                 {
@@ -110,9 +111,9 @@ public class L2EffectZone extends L2ZoneType
                     {
                         if (!skill.isEmpty())
                         {
-                            Log.warning(StringUtil.concat(getClass()
-                                            .getSimpleName() + ": invalid config property -> skillsIdLvl \"", skillSplit[0],
-                                    "\"", skillSplit[1]));
+                            Log.warning(StringUtil
+                                    .concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"",
+                                            skillSplit[0], "\"", skillSplit[1]));
                         }
                     }
                 }
@@ -269,8 +270,8 @@ public class L2EffectZone extends L2ZoneType
             {
                 for (L2Character temp : getCharacterList())
                 {
-                    if (temp != null && !temp.isDead() && (!temp.isGM() || !temp
-                            .isInvul())) // Tenkai custom - ignore invul GMs
+                    if (temp != null && !temp.isDead() &&
+                            (!temp.isGM() || !temp.isInvul())) // Tenkai custom - ignore invul GMs
                     {
                         if (Rnd.get(100) < getChance())
                         {

@@ -245,16 +245,15 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
                 }
 
                 currentInfo.setCurrentPoint(calcPoints);
-                currentZone.getKey()
-                        .broadcastPacket(
-                                new ExSendUIEvent(5, calcPoints, 300, 1802322)); //Danger Increasing. Danger Increasing.
+                currentZone.getKey().broadcastPacket(
+                        new ExSendUIEvent(5, calcPoints, 300, 1802322)); //Danger Increasing. Danger Increasing.
             }
         }
 
         if (npc.getDisplayEffect() > 0)
         {
-            L2MonsterInstance copy = (L2MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc
-                    .getZ(), 0, true, 0, false);
+            L2MonsterInstance copy =
+                    (L2MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);
             copy.setTarget(killer);
             copy.addDamageHate(killer, 500, 99999);
             copy.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);

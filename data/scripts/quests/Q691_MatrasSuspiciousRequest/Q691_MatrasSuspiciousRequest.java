@@ -103,8 +103,8 @@ public final class Q691_MatrasSuspiciousRequest extends Quest
             }
             else
             {
-                htmltext = getHtm(player.getHtmlPrefix(), "32245-06.htm")
-                        .replace("%itemcount%", st.get("submitted_gems"));
+                htmltext =
+                        getHtm(player.getHtmlPrefix(), "32245-06.htm").replace("%itemcount%", st.get("submitted_gems"));
             }
         }
         else if (event.equalsIgnoreCase("32245-08.htm"))
@@ -159,8 +159,8 @@ public final class Q691_MatrasSuspiciousRequest extends Quest
             }
             else if (st.getInt("submitted_gems") > 0)
             {
-                htmltext = getHtm(player.getHtmlPrefix(), "32245-06.htm")
-                        .replace("%itemcount%", st.get("submitted_gems"));
+                htmltext =
+                        getHtm(player.getHtmlPrefix(), "32245-06.htm").replace("%itemcount%", st.get("submitted_gems"));
             }
         }
         return htmltext;

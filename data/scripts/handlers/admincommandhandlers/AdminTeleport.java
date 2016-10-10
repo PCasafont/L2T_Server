@@ -264,8 +264,8 @@ public class AdminTeleport implements IAdminCommandHandler
                 {
                     for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
                     {
-                        if (pl != null && pl.getEvent() == null && pl.isInOlympiadMode() && pl
-                                .getPrivateStoreType() == 0)
+                        if (pl != null && pl.getEvent() == null && pl.isInOlympiadMode() &&
+                                pl.getPrivateStoreType() == 0)
                         {
                             teleportCharacter(pl, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar);
                             break;
@@ -313,8 +313,8 @@ public class AdminTeleport implements IAdminCommandHandler
             {
                 player = L2World.getInstance().getPlayer(command.substring(15));
             }
-            else if (activeChar.getTarget() != null && activeChar
-                    .getTarget() instanceof L2PcInstance) // Take targeted player
+            else if (activeChar.getTarget() != null &&
+                    activeChar.getTarget() instanceof L2PcInstance) // Take targeted player
             {
                 player = (L2PcInstance) activeChar.getTarget();
             }
@@ -327,8 +327,8 @@ public class AdminTeleport implements IAdminCommandHandler
             }
 
             // Determine closest town
-            Location loc = MapRegionTable.getInstance()
-                    .getTeleToLocation(player, MapRegionTable.TeleportWhereType.Town);
+            Location loc =
+                    MapRegionTable.getInstance().getTeleToLocation(player, MapRegionTable.TeleportWhereType.Town);
 
             // Send chosen player to town
             player.teleToLocation(loc, true);
@@ -457,17 +457,14 @@ public class AdminTeleport implements IAdminCommandHandler
 
         final String replyMSG = StringUtil
                 .concat("<html><title>Teleport Character</title>" + "<body>" + "The character you will teleport is ",
-                        player
-                                .getName(),
+                        player.getName(),
                         "." + "<br>" + "Co-ordinate x" + "<edit var=\"char_cord_x\" width=110>" + "Co-ordinate y" +
                                 "<edit var=\"char_cord_y\" width=110>" + "Co-ordinate z" +
                                 "<edit var=\"char_cord_z\" width=110>" +
                                 "<button value=\"Teleport\" action=\"bypass -h admin_teleport_character $char_cord_x $char_cord_y $char_cord_z\" width=60 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +
                                 "<button value=\"Teleport near you\" action=\"bypass -h admin_teleport_character ",
-                        String
-                                .valueOf(activeChar.getX()), " ", String.valueOf(activeChar.getY()), " ", String
-                                .valueOf(activeChar
-                                        .getZ()),
+                        String.valueOf(activeChar.getX()), " ", String.valueOf(activeChar.getY()), " ",
+                        String.valueOf(activeChar.getZ()),
                         "\" width=115 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" +
                                 "<center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" +
                                 "</body></html>");
@@ -628,8 +625,8 @@ public class AdminTeleport implements IAdminCommandHandler
     private void recallNPC(L2PcInstance activeChar)
     {
         L2Object obj = activeChar.getTarget();
-        if (obj instanceof L2Npc && !((L2Npc) obj)
-                .isMinion() && !(obj instanceof L2RaidBossInstance) && !(obj instanceof L2GrandBossInstance))
+        if (obj instanceof L2Npc && !((L2Npc) obj).isMinion() && !(obj instanceof L2RaidBossInstance) &&
+                !(obj instanceof L2GrandBossInstance))
         {
             L2Npc target = (L2Npc) obj;
 
@@ -683,8 +680,8 @@ public class AdminTeleport implements IAdminCommandHandler
                 if (Config.DEBUG)
                 {
                     _log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-                    _log.warning("GM: " + activeChar.getName() + "(" + activeChar
-                            .getObjectId() + ") moved NPC " + target.getObjectId());
+                    _log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
+                            target.getObjectId());
                 }
             }
             catch (Exception e)

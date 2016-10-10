@@ -95,8 +95,7 @@ public final class L2AwakeNpcInstance extends L2Npc
                 "<html><body scroll=\"no\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" height=\"358\" background=\"L2UI_CH3.refinewnd_back_Pattern\"><tr><td>";
         htmlText +=
                 "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" background=\"L2UI_CT1.HtmlWnd_DF_Texture" +
-                        className[classId - 139]
-                                .split(" ")[1] + "\"><tr><td align=\"center\">";
+                        className[classId - 139].split(" ")[1] + "\"><tr><td align=\"center\">";
         htmlText +=
                 "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"272\" height=\"338\"><tr><td height=\"90\"></td></tr>";
         if (canAwake)
@@ -127,8 +126,8 @@ public final class L2AwakeNpcInstance extends L2Npc
         {
             if (player.getWeightPenalty() >= 3)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_DUE_TO_WEIGHT_LIMITS));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_DUE_TO_WEIGHT_LIMITS));
                 return;
             }
 

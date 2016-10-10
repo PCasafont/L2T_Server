@@ -431,8 +431,8 @@ public class L2Attackable extends L2Npc
             return false;
         }
 
-        if (target.isAlikeDead() || !isInsideRadius(target, getAggroRange(), false, false) || Math
-                .abs(getZ() - target.getZ()) > 100)
+        if (target.isAlikeDead() || !isInsideRadius(target, getAggroRange(), false, false) ||
+                Math.abs(getZ() - target.getZ()) > 100)
         {
             return false;
         }
@@ -518,8 +518,9 @@ public class L2Attackable extends L2Npc
     @Override
     public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
     {
-        if (isRaid() && !isMinion() && attacker != null && attacker.getParty() != null && attacker.getParty()
-                .isInCommandChannel() && attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
+        if (isRaid() && !isMinion() && attacker != null && attacker.getParty() != null &&
+                attacker.getParty().isInCommandChannel() &&
+                attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
         {
             if (_firstCommandChannelAttacked == null) //looting right isn't set
             {
@@ -534,8 +535,8 @@ public class L2Attackable extends L2Npc
                             _commandChannelLastAttack = System.currentTimeMillis();
                             ThreadPoolManager.getInstance()
                                     .scheduleGeneral(_commandChannelTimer, 10000); // check for last attack
-                            _firstCommandChannelAttacked
-                                    .broadcastToChannelMembers(new CreatureSay(0, Say2.PARTYROOM_ALL, "",
+                            _firstCommandChannelAttacked.broadcastToChannelMembers(
+                                    new CreatureSay(0, Say2.PARTYROOM_ALL, "",
                                             "You have looting rights!")); //TODO: retail msg
                         }
                     }
@@ -636,8 +637,7 @@ public class L2Attackable extends L2Npc
                     {
                         ThreadPoolManager.getInstance()
                                 .scheduleEffect(new OnKillNotifyTask(this, quest, player, killer instanceof L2Summon),
-                                        Math
-                                                .min(_onKillDelay, quest.getOnKillDelay(getNpcId())));
+                                        Math.min(_onKillDelay, quest.getOnKillDelay(getNpcId())));
                     }
                 }
             }
@@ -728,9 +728,8 @@ public class L2Attackable extends L2Npc
                         continue;
                     }
 
-                    if (attacker instanceof L2SummonInstance ||
-                            attacker instanceof L2PetInstance && ((L2PetInstance) attacker)
-                                    .getPetLevelData().getOwnerExpTaken() > 0)
+                    if (attacker instanceof L2SummonInstance || attacker instanceof L2PetInstance &&
+                            ((L2PetInstance) attacker).getPetLevelData().getOwnerExpTaken() > 0)
                     {
                         ddealer = ((L2Summon) attacker).getOwner();
                     }
@@ -758,8 +757,8 @@ public class L2Attackable extends L2Npc
                         reward.addDamage(damage);
                     }
 
-                    if (ddealer.isInParty() && Util
-                            .checkIfInRange(Config.ALT_PARTY_RANGE, ddealer, ddealer.getParty().getLeader(), true))
+                    if (ddealer.isInParty() &&
+                            Util.checkIfInRange(Config.ALT_PARTY_RANGE, ddealer, ddealer.getParty().getLeader(), true))
                     {
                         damage = 0;
                         for (L2PcInstance member : ddealer.getParty().getPartyMembers())
@@ -903,9 +902,10 @@ public class L2Attackable extends L2Npc
                                             pcAttacker.absorbSoul(skill, this);
                                         }
                                     }
-                                    if (pcAttacker.getLevel() >= getLevel() && pcAttacker
-                                            .getLevel() - getLevel() < 11 || pcAttacker
-                                            .getLevel() < getLevel() && getLevel() - pcAttacker.getLevel() < 11)
+                                    if (pcAttacker.getLevel() >= getLevel() &&
+                                            pcAttacker.getLevel() - getLevel() < 11 ||
+                                            pcAttacker.getLevel() < getLevel() &&
+                                                    getLevel() - pcAttacker.getLevel() < 11)
                                     {
                                         if (pcAttacker.getReputation() < 0)
                                         {
@@ -1172,9 +1172,8 @@ public class L2Attackable extends L2Npc
             maxDist = 3000;
         }
         if (!(this instanceof L2GrandBossInstance) && !isCastingNow() && getInstanceId() == 0 && getSpawn() != null &&
-                getSpawn()
-                        .getGroup() == null && !isInsideRadius(getSpawn().getX(), getSpawn().getY(), getSpawn()
-                .getZ(), maxDist, true, false))
+                getSpawn().getGroup() == null &&
+                !isInsideRadius(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), maxDist, true, false))
         {
             escape("I have gone too far from my home... Sorry, but I must return.");
             return;
@@ -1571,8 +1570,8 @@ public class L2Attackable extends L2Npc
             dropChance -= L2DropData.MAX_CHANCE;
         }
 
-        if (Config.L2JMOD_CHAMPION_ENABLE && (drop.getItemId() == 57 || drop.getItemId() >= 6360 && drop
-                .getItemId() <= 6362) && isChampion())
+        if (Config.L2JMOD_CHAMPION_ENABLE &&
+                (drop.getItemId() == 57 || drop.getItemId() >= 6360 && drop.getItemId() <= 6362) && isChampion())
         {
             itemCount *= Config.L2JMOD_CHAMPION_ADENAS_REWARDS;
         }
@@ -1691,8 +1690,8 @@ public class L2Attackable extends L2Npc
                 itemCount *= Config.L2JMOD_CHAMPION_ADENAS_REWARDS;
             }
 
-            if (!Config.MULTIPLE_ITEM_DROP && !ItemTable.getInstance().getTemplate(itemId)
-                    .isStackable() && itemCount > 1)
+            if (!Config.MULTIPLE_ITEM_DROP && !ItemTable.getInstance().getTemplate(itemId).isStackable() &&
+                    itemCount > 1)
             {
                 itemCount = 1;
             }
@@ -1719,7 +1718,7 @@ public class L2Attackable extends L2Npc
 
             // Check to prevent very high level player to nearly kill mob and let low level player do the last hit.
             /*if (!getAttackByList().isEmpty())
-			{
+            {
 				for (L2Character atkChar: getAttackByList())
 					if (atkChar != null && atkChar.getLevel() > highestLevel)
 						highestLevel = atkChar.getLevel();
@@ -1764,8 +1763,8 @@ public class L2Attackable extends L2Npc
 
             int itemCount = Rnd.get(drop.getMinDrop(), drop.getMaxDrop());
 
-            if (!Config.MULTIPLE_ITEM_DROP && !ItemTable.getInstance().getTemplate(drop.getItemId())
-                    .isStackable() && itemCount > 1)
+            if (!Config.MULTIPLE_ITEM_DROP && !ItemTable.getInstance().getTemplate(drop.getItemId()).isStackable() &&
+                    itemCount > 1)
             {
                 itemCount = 1;
             }
@@ -1872,8 +1871,7 @@ public class L2Attackable extends L2Npc
 
             // Check if the autoLoot mode is active
             if ((isFlying() || !isRaid() && Config.AUTO_LOOT || isRaid() && Config.AUTO_LOOT_RAIDS) &&
-                    !(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this)
-                            .isAggressive()))
+                    !(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this).isAggressive()))
             {
                 player.doAutoLoot(this, item); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
             }
@@ -1942,8 +1940,7 @@ public class L2Attackable extends L2Npc
 
                 // Check if the autoLoot mode is active
                 if ((isFlying() || !isRaid() && Config.AUTO_LOOT || isRaid() && Config.AUTO_LOOT_RAIDS) &&
-                        !(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this)
-                                .isAggressive()))
+                        !(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this).isAggressive()))
                 {
                     player.doAutoLoot(this,
                             item); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
@@ -2007,8 +2004,7 @@ public class L2Attackable extends L2Npc
             {
                 if (Config.AUTO_LOOT || isFlying())
                 {
-                    player.addItem("ChampionLoot", item.getItemId(), item
-                                    .getCount(), this,
+                    player.addItem("ChampionLoot", item.getItemId(), item.getCount(), this,
                             true); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
                 }
                 else
@@ -2016,13 +2012,12 @@ public class L2Attackable extends L2Npc
                     dropItem(player, item);
                 }
             }
-            else if (player.getLevel() >= getLevel() && Rnd
-                    .get(100) < Config.L2JMOD_CHAMPION_REWARD_HIGHER_LVL_ITEM_CHANCE)
+            else if (player.getLevel() >= getLevel() &&
+                    Rnd.get(100) < Config.L2JMOD_CHAMPION_REWARD_HIGHER_LVL_ITEM_CHANCE)
             {
                 if (Config.AUTO_LOOT || isFlying())
                 {
-                    player.addItem("ChampionLoot", item.getItemId(), item
-                                    .getCount(), this,
+                    player.addItem("ChampionLoot", item.getItemId(), item.getCount(), this,
                             true); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
                 }
                 else
@@ -2091,12 +2086,13 @@ public class L2Attackable extends L2Npc
 			if (this instanceof L2GrandBossInstance)
 				random /= 10;*/
 
-            if (random < drop.getChance() && drop.canLootNow(player) && (drop.getMobId() == 0 || getNpcId() == drop
-                    .getMobId()) && getLevel() >= drop.getMinLevel() && getLevel() <= drop.getMaxLevel())
+            if (random < drop.getChance() && drop.canLootNow(player) &&
+                    (drop.getMobId() == 0 || getNpcId() == drop.getMobId()) && getLevel() >= drop.getMinLevel() &&
+                    getLevel() <= drop.getMaxLevel())
             {
                 drop.increaseCountForPlayer(player);
-                item = new RewardItem(drop.getRandomReward(), drop.getMinAmount() + Rnd
-                        .get(drop.getMaxAmount() - drop.getMinAmount()));
+                item = new RewardItem(drop.getRandomReward(),
+                        drop.getMinAmount() + Rnd.get(drop.getMaxAmount() - drop.getMinAmount()));
                 player.doAutoLoot(this, item);
 				/*if (isFlying())
 					player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
@@ -2176,8 +2172,8 @@ public class L2Attackable extends L2Npc
             // Randomize drop position
             int newX = getX() + Rnd.get(randDropLim * 2 + 1) - randDropLim;
             int newY = getY() + Rnd.get(randDropLim * 2 + 1) - randDropLim;
-            int newZ = Math
-                    .max(getZ(), lastAttacker.getZ()) + 20; // TODO: temp hack, do somethign nicer when we have geodatas
+            int newZ = Math.max(getZ(), lastAttacker.getZ()) +
+                    20; // TODO: temp hack, do somethign nicer when we have geodatas
 
             if (ItemTable.getInstance().getTemplate(item.getItemId()) != null)
             {
@@ -2190,9 +2186,8 @@ public class L2Attackable extends L2Npc
                 // Add drop to auto destroy item task
                 if (!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
                 {
-                    if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && ditem
-                            .getItemType() != L2EtcItemType.HERB || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && ditem
-                            .getItemType() == L2EtcItemType.HERB)
+                    if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && ditem.getItemType() != L2EtcItemType.HERB ||
+                            Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && ditem.getItemType() == L2EtcItemType.HERB)
                     {
                         ItemsAutoDestroy.getInstance().addItem(ditem);
                     }
@@ -2757,8 +2752,8 @@ public class L2Attackable extends L2Npc
         @Override
         public void run()
         {
-            if (System.currentTimeMillis() - _monster
-                    .getCommandChannelLastAttack() > Config.LOOT_RAIDS_PRIVILEGE_INTERVAL * 1000)
+            if (System.currentTimeMillis() - _monster.getCommandChannelLastAttack() >
+                    Config.LOOT_RAIDS_PRIVILEGE_INTERVAL * 1000)
             {
                 _monster.setCommandChannelTimer(null);
                 _monster.setFirstCommandChannelAttacked(null);
@@ -2782,8 +2777,8 @@ public class L2Attackable extends L2Npc
 
         if (hasAI() && getSpawn() != null)
         {
-            getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(getSpawn().getX(), getSpawn()
-                    .getY(), getSpawn().getZ(), 0));
+            getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                    new L2CharPosition(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), 0));
         }
     }
 

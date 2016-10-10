@@ -33,8 +33,8 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
     public ExPledgeRecruitBoardSearch(int level, int karma, boolean clanName, String name, int sortBy, boolean desc, int page)
     {
         _page = page;
-        List<ClanRecruitData> list = ClanRecruitManager.getInstance()
-                .getRecruitData(level, karma, clanName, name, sortBy, desc);
+        List<ClanRecruitData> list =
+                ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
         _pageCount = (list.size() - 1) / 12 + 1;
 
         _data = new ArrayList<ClanRecruitData>();

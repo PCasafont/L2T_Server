@@ -104,8 +104,8 @@ public class StealBuffs implements ISkillHandler
 
             // Consider caster skill and target level
             chance -= (target.getLevel() - skill.getMagicLevel()) * PER_LVL_PENALTY;
-            chance *= Formulas.calcEffectTypeProficiency(activeChar, target, L2AbnormalType.CANCEL) / Formulas
-                    .calcEffectTypeResistance(target, L2AbnormalType.CANCEL);
+            chance *= Formulas.calcEffectTypeProficiency(activeChar, target, L2AbnormalType.CANCEL) /
+                    Formulas.calcEffectTypeResistance(target, L2AbnormalType.CANCEL);
             if (chance < 0.0)
             {
                 chance = 0.0;

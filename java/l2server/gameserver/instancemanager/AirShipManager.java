@@ -178,8 +178,8 @@ public class AirShipManager
             }
             catch (SQLException e)
             {
-                Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not add new airship license: " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
             }
             catch (Exception e)
             {
@@ -292,8 +292,8 @@ public class AirShipManager
         }
         catch (SQLException e)
         {
-            Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(),
+                    e);
         }
         catch (Exception e)
         {
@@ -328,8 +328,8 @@ public class AirShipManager
         }
         catch (SQLException e)
         {
-            Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(),
+                    e);
         }
         catch (Exception e)
         {

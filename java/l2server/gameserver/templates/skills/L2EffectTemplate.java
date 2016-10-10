@@ -100,8 +100,8 @@ public class L2EffectTemplate
         }
         catch (InvocationTargetException e)
         {
-            Log.log(Level.WARNING, "Error creating new instance of Class " + _func + " Exception was: " + e
-                    .getTargetException().getMessage(), e.getTargetException());
+            Log.log(Level.WARNING, "Error creating new instance of Class " + _func + " Exception was: " +
+                    e.getTargetException().getMessage(), e.getTargetException());
             return null;
         }
     }
@@ -152,8 +152,8 @@ public class L2EffectTemplate
         }
         catch (InvocationTargetException e)
         {
-            Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " + e
-                    .getTargetException().getMessage(), e.getTargetException());
+            Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " +
+                    e.getTargetException().getMessage(), e.getTargetException());
             return null;
         }
     }

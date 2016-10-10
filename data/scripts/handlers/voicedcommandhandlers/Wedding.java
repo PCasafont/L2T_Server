@@ -195,8 +195,8 @@ public class Wedding implements IVoicedCommandHandler
             activeChar.sendMessage("Player already engaged with someone else.");
             return false;
         }
-        else if (ptarget.getAppearance().getSex() == activeChar.getAppearance()
-                .getSex() && !Config.L2JMOD_WEDDING_SAMESEX)
+        else if (ptarget.getAppearance().getSex() == activeChar.getAppearance().getSex() &&
+                !Config.L2JMOD_WEDDING_SAMESEX)
         {
             activeChar.sendMessage("Gay marriage is not allowed on this server!");
             return false;
@@ -235,9 +235,8 @@ public class Wedding implements IVoicedCommandHandler
 
         if (!FoundOnFriendList)
         {
-            activeChar
-                    .sendMessage(
-                            "The player you want to ask is not on your friends list, you must first be on each others friends list before you choose to engage.");
+            activeChar.sendMessage(
+                    "The player you want to ask is not on your friends list, you must first be on each others friends list before you choose to engage.");
             return false;
         }
 
@@ -317,8 +316,8 @@ public class Wedding implements IVoicedCommandHandler
             activeChar.sendMessage("You are in the observation.");
             return false;
         }
-        else if (SiegeManager.getInstance().getSiege(activeChar) != null && SiegeManager.getInstance()
-                .getSiege(activeChar).getIsInProgress())
+        else if (SiegeManager.getInstance().getSiege(activeChar) != null &&
+                SiegeManager.getInstance().getSiege(activeChar).getIsInProgress())
         {
             activeChar.sendMessage("You are in a siege, you cannot go to your partner.");
             return false;
@@ -380,8 +379,8 @@ public class Wedding implements IVoicedCommandHandler
             activeChar.sendMessage("Your partner is in the observation.");
             return false;
         }
-        else if (SiegeManager.getInstance().getSiege(partner) != null && SiegeManager.getInstance().getSiege(partner)
-                .getIsInProgress())
+        else if (SiegeManager.getInstance().getSiege(partner) != null &&
+                SiegeManager.getInstance().getSiege(partner).getIsInProgress())
         {
             activeChar.sendMessage("Your partner is in a siege, you cannot go to your partner.");
             return false;
@@ -439,8 +438,8 @@ public class Wedding implements IVoicedCommandHandler
                 return;
             }
 
-            if (SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz) != null && SiegeManager
-                    .getInstance().getSiege(_partnerx, _partnery, _partnerz).getIsInProgress())
+            if (SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz) != null &&
+                    SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz).getIsInProgress())
             {
                 _activeChar.sendMessage("Your partner is in siege, you can't go to your partner.");
                 return;

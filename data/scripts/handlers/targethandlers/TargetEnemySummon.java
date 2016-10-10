@@ -38,14 +38,13 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler
         if (target instanceof L2Summon)
         {
             L2Summon targetSummon = (L2Summon) target;
-            if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar)
-                    .getPet() != targetSummon && !targetSummon.isDead() && !((L2PcInstance) activeChar).getSummons()
-                    .contains(targetSummon) && (targetSummon.getOwner().getPvpFlag() != 0 || targetSummon.getOwner()
-                    .getReputation() < 0) || targetSummon.getOwner()
-                    .isInsideZone(L2Character.ZONE_PVP) && ((L2PcInstance) activeChar)
-                    .isInsideZone(L2Character.ZONE_PVP) || targetSummon.getOwner()
-                    .isInDuel() && ((L2PcInstance) activeChar).isInDuel() && targetSummon.getOwner()
-                    .getDuelId() == ((L2PcInstance) activeChar).getDuelId())
+            if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).getPet() != targetSummon &&
+                    !targetSummon.isDead() && !((L2PcInstance) activeChar).getSummons().contains(targetSummon) &&
+                    (targetSummon.getOwner().getPvpFlag() != 0 || targetSummon.getOwner().getReputation() < 0) ||
+                    targetSummon.getOwner().isInsideZone(L2Character.ZONE_PVP) &&
+                            ((L2PcInstance) activeChar).isInsideZone(L2Character.ZONE_PVP) ||
+                    targetSummon.getOwner().isInDuel() && ((L2PcInstance) activeChar).isInDuel() &&
+                            targetSummon.getOwner().getDuelId() == ((L2PcInstance) activeChar).getDuelId())
             {
                 return new L2Character[]{targetSummon};
             }

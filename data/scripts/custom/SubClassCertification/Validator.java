@@ -67,38 +67,35 @@ public class Validator extends Quest
     };
     @SuppressWarnings("unused")
     private static final int[][] _certSkillsByLevel = {
-            {631, 632, 633, 634},
-            {631, 632, 633, 634},
-            {
-                    637,
-                    638,
-                    639,
-                    640,
-                    641,
-                    642,
-                    643,
-                    644,
-                    645,
-                    646,
-                    647,
-                    648,
-                    650,
-                    651,
-                    652,
-                    653,
-                    654,
-                    655,
-                    799,
-                    800,
-                    801,
-                    802,
-                    803,
-                    804,
-                    1489,
-                    1490,
-                    1491
-            },
-            {656, 657, 658, 659, 660, 661, 662}
+            {631, 632, 633, 634}, {631, 632, 633, 634}, {
+            637,
+            638,
+            639,
+            640,
+            641,
+            642,
+            643,
+            644,
+            645,
+            646,
+            647,
+            648,
+            650,
+            651,
+            652,
+            653,
+            654,
+            655,
+            799,
+            800,
+            801,
+            802,
+            803,
+            804,
+            1489,
+            1490,
+            1491
+    }, {656, 657, 658, 659, 660, 661, 662}
     };
 
     @SuppressWarnings("unused")
@@ -143,7 +140,7 @@ public class Validator extends Quest
     {
         return null;
         /*if (!Config.SKILL_CHECK_ENABLE)
-			return null;
+            return null;
 
 		if (player.isGM() && !Config.SKILL_CHECK_GM)
 			return null;

@@ -141,7 +141,7 @@ public class CompactionIDFactory extends IdFactory
     {
         /*if (_freeSize == 0)*/
         return _curOID++;
-		/* else
+        /* else
 		 	return _freeOIDs[--_freeSize];*/
     }
 

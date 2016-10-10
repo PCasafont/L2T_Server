@@ -343,14 +343,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                         getCastle().setTaxPercent(player, Integer.parseInt(val));
                     }
 
-                    final String msg = StringUtil
-                            .concat("<html><body>", getName(), ":<br>" + "Current tax rate: ", String
-                                            .valueOf(getCastle()
-                                                    .getTaxPercent()),
-                                    "%<br>" + "<table>" + "<tr>" + "<td>Change tax rate to:</td>" +
-                                            "<td><edit var=\"value\" width=40><br>" +
-                                            "<button value=\"Adjust\" action=\"bypass -h npc_%objectId%_tax_set $value\" width=80 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
-                                            "</tr>" + "</table>" + "</center>" + "</body></html>");
+                    final String msg = StringUtil.concat("<html><body>", getName(), ":<br>" + "Current tax rate: ",
+                            String.valueOf(getCastle().getTaxPercent()),
+                            "%<br>" + "<table>" + "<tr>" + "<td>Change tax rate to:</td>" +
+                                    "<td><edit var=\"value\" width=40><br>" +
+                                    "<button value=\"Adjust\" action=\"bypass -h npc_%objectId%_tax_set $value\" width=80 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
+                                    "</tr>" + "</table>" + "</center>" + "</body></html>");
                     sendHtmlMessage(player, msg);
                     return;
                 }
@@ -392,8 +390,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     }
                     else
                     {
-                        html.setFile(player.getHtmlPrefix(), "chamberlain/" + getCastle().getName() + "-t" + getCastle()
-                                .getFunction(Castle.FUNC_TELEPORT).getLvl() + ".htm");
+                        html.setFile(player.getHtmlPrefix(), "chamberlain/" + getCastle().getName() + "-t" +
+                                getCastle().getFunction(Castle.FUNC_TELEPORT).getLvl() + ".htm");
                     }
                     sendHtmlMessage(player, html);
                 }
@@ -406,8 +404,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     }
                     else
                     {
-                        html.setFile(player.getHtmlPrefix(), "chamberlain/support" + getCastle()
-                                .getFunction(Castle.FUNC_SUPPORT).getLvl() + ".htm");
+                        html.setFile(player.getHtmlPrefix(),
+                                "chamberlain/support" + getCastle().getFunction(Castle.FUNC_SUPPORT).getLvl() + ".htm");
                         html.replace("%mp%", String.valueOf((int) getCurrentMp()));
                     }
                     sendHtmlMessage(player, html);
@@ -422,8 +420,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     html.setFile(player.getHtmlPrefix(), "chamberlain/chamberlain-functions.htm");
                     if (getCastle().getFunction(Castle.FUNC_RESTORE_EXP) != null)
                     {
-                        html.replace("%xp_regen%", String
-                                .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLvl()));
+                        html.replace("%xp_regen%",
+                                String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLvl()));
                     }
                     else
                     {
@@ -431,8 +429,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     }
                     if (getCastle().getFunction(Castle.FUNC_RESTORE_HP) != null)
                     {
-                        html.replace("%hp_regen%", String
-                                .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLvl()));
+                        html.replace("%hp_regen%",
+                                String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLvl()));
                     }
                     else
                     {
@@ -440,8 +438,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     }
                     if (getCastle().getFunction(Castle.FUNC_RESTORE_MP) != null)
                     {
-                        html.replace("%mp_regen%", String
-                                .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLvl()));
+                        html.replace("%mp_regen%",
+                                String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLvl()));
                     }
                     else
                     {
@@ -516,12 +514,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                         break;
                                 }
 
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Provides additional HP recovery for clan members in the castle.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery hp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -549,12 +547,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                         cost = Config.CS_MPREG4_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Provides additional MP recovery for clan members in the castle.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery mp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -582,12 +580,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                         cost = Config.CS_EXPREG4_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Restores the Exp of any clan member who is resurrected in the castle.<font color=\"00FFFF\">" +
-                                                String
-                                                        .valueOf(percent) + "%</font>");
+                                                String.valueOf(percent) + "%</font>");
                                 html.replace("%apply%", "recovery exp " + String.valueOf(percent));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -606,8 +604,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     html.setFile(player.getHtmlPrefix(), "chamberlain/functions-apply_confirmed.htm");
                                     if (getCastle().getFunction(Castle.FUNC_RESTORE_HP) != null)
                                     {
-                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "chamberlain/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -620,8 +618,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "chamberlain/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "chamberlain/functions-cancel_confirmed.htm");
                                             break;
                                         case 80:
                                             fee = Config.CS_HPREG1_FEE;
@@ -639,10 +637,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                             fee = Config.CS_HPREG5_FEE;
                                             break;
                                     }
-                                    if (!getCastle()
-                                            .updateFunctions(player, Castle.FUNC_RESTORE_HP, percent, fee,
-                                                    Config.CS_HPREG_FEE_RATIO, getCastle()
-                                                            .getFunction(Castle.FUNC_RESTORE_HP) == null))
+                                    if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_HP, percent, fee,
+                                            Config.CS_HPREG_FEE_RATIO,
+                                            getCastle().getFunction(Castle.FUNC_RESTORE_HP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -665,8 +662,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     html.setFile(player.getHtmlPrefix(), "chamberlain/functions-apply_confirmed.htm");
                                     if (getCastle().getFunction(Castle.FUNC_RESTORE_MP) != null)
                                     {
-                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "chamberlain/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -679,8 +676,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "chamberlain/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "chamberlain/functions-cancel_confirmed.htm");
                                             break;
                                         case 5:
                                             fee = Config.CS_MPREG1_FEE;
@@ -695,10 +692,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                             fee = Config.CS_MPREG4_FEE;
                                             break;
                                     }
-                                    if (!getCastle()
-                                            .updateFunctions(player, Castle.FUNC_RESTORE_MP, percent, fee,
-                                                    Config.CS_MPREG_FEE_RATIO, getCastle()
-                                                            .getFunction(Castle.FUNC_RESTORE_MP) == null))
+                                    if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_MP, percent, fee,
+                                            Config.CS_MPREG_FEE_RATIO,
+                                            getCastle().getFunction(Castle.FUNC_RESTORE_MP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -721,8 +717,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     html.setFile(player.getHtmlPrefix(), "chamberlain/functions-apply_confirmed.htm");
                                     if (getCastle().getFunction(Castle.FUNC_RESTORE_EXP) != null)
                                     {
-                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "chamberlain/functions-used.htm");
                                             html.replace("%val%", String.valueOf(val) + "%");
@@ -735,8 +731,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "chamberlain/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "chamberlain/functions-cancel_confirmed.htm");
                                             break;
                                         case 15:
                                             fee = Config.CS_EXPREG1_FEE;
@@ -751,10 +747,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                             fee = Config.CS_EXPREG4_FEE;
                                             break;
                                     }
-                                    if (!getCastle()
-                                            .updateFunctions(player, Castle.FUNC_RESTORE_EXP, percent, fee,
-                                                    Config.CS_EXPREG_FEE_RATIO, getCastle()
-                                                            .getFunction(Castle.FUNC_RESTORE_EXP) == null))
+                                    if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_EXP, percent, fee,
+                                            Config.CS_EXPREG_FEE_RATIO,
+                                            getCastle().getFunction(Castle.FUNC_RESTORE_EXP) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -774,13 +769,14 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                 "[<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 5\">5%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 15\">15%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 30\">30%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 40\">40%</a>]";
                         if (getCastle().getFunction(Castle.FUNC_RESTORE_HP) != null)
                         {
-                            html.replace("%hp_recovery%", String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP)
-                                    .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%hp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getEndTime()));
+                            html.replace("%hp_recovery%",
+                                    String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" +
+                                            String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%hp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getCastle().getFunction(Castle.FUNC_RESTORE_HP).getEndTime()));
                             html.replace("%change_hp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery hp_cancel\">Deactivate</a>]" +
                                             hp);
@@ -793,14 +789,14 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                         }
                         if (getCastle().getFunction(Castle.FUNC_RESTORE_EXP) != null)
                         {
-                            html.replace("%exp_recovery%", String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_EXP)
-                                            .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_EXP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%exp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getEndTime()));
+                            html.replace("%exp_recovery%",
+                                    String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" + String.valueOf(
+                                            getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%exp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getCastle().getFunction(Castle.FUNC_RESTORE_EXP).getEndTime()));
                             html.replace("%change_exp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery exp_cancel\">Deactivate</a>]" +
                                             exp);
@@ -813,13 +809,14 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                         }
                         if (getCastle().getFunction(Castle.FUNC_RESTORE_MP) != null)
                         {
-                            html.replace("%mp_recovery%", String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP)
-                                    .getLvl()) + "%</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%mp_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getEndTime()));
+                            html.replace("%mp_recovery%",
+                                    String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLvl()) +
+                                            "%</font> (<font color=\"FFAABB\">" +
+                                            String.valueOf(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%mp_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getCastle().getFunction(Castle.FUNC_RESTORE_MP).getEndTime()));
                             html.replace("%change_mp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery mp_cancel\">Deactivate</a>]" +
                                             mp);
@@ -881,8 +878,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                         cost = Config.CS_SUPPORT4_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%", "Enables the use of supplementary magic.");
                                 html.replace("%apply%", "other support " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
@@ -905,12 +903,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                         cost = Config.CS_TELE2_FEE;
                                         break;
                                 }
-                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" + String
-                                        .valueOf(Config.CS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day</font>)");
+                                html.replace("%cost%", String.valueOf(cost) + "</font>Adena /" +
+                                        String.valueOf(Config.CS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                        " Day</font>)");
                                 html.replace("%use%",
                                         "Teleports clan members in a castle to the target <font color=\"00FFFF\">Stage " +
-                                                String
-                                                        .valueOf(stage) + "</font> staging area");
+                                                String.valueOf(stage) + "</font> staging area");
                                 html.replace("%apply%", "other tele " + String.valueOf(stage));
                                 sendHtmlMessage(player, html);
                                 return;
@@ -929,8 +927,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     html.setFile(player.getHtmlPrefix(), "chamberlain/functions-apply_confirmed.htm");
                                     if (getCastle().getFunction(Castle.FUNC_TELEPORT) != null)
                                     {
-                                        if (getCastle().getFunction(Castle.FUNC_TELEPORT).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getCastle().getFunction(Castle.FUNC_TELEPORT).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "chamberlain/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -943,8 +941,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "chamberlain/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "chamberlain/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CS_TELE1_FEE;
@@ -953,10 +951,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                             fee = Config.CS_TELE2_FEE;
                                             break;
                                     }
-                                    if (!getCastle()
-                                            .updateFunctions(player, Castle.FUNC_TELEPORT, lvl, fee,
-                                                    Config.CS_TELE_FEE_RATIO, getCastle()
-                                                            .getFunction(Castle.FUNC_TELEPORT) == null))
+                                    if (!getCastle().updateFunctions(player, Castle.FUNC_TELEPORT, lvl, fee,
+                                            Config.CS_TELE_FEE_RATIO,
+                                            getCastle().getFunction(Castle.FUNC_TELEPORT) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -979,8 +976,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     html.setFile(player.getHtmlPrefix(), "chamberlain/functions-apply_confirmed.htm");
                                     if (getCastle().getFunction(Castle.FUNC_SUPPORT) != null)
                                     {
-                                        if (getCastle().getFunction(Castle.FUNC_SUPPORT).getLvl() == Integer
-                                                .parseInt(val))
+                                        if (getCastle().getFunction(Castle.FUNC_SUPPORT).getLvl() ==
+                                                Integer.parseInt(val))
                                         {
                                             html.setFile(player.getHtmlPrefix(), "chamberlain/functions-used.htm");
                                             html.replace("%val%", "Stage " + String.valueOf(val));
@@ -993,8 +990,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                     {
                                         case 0:
                                             fee = 0;
-                                            html.setFile(player
-                                                    .getHtmlPrefix(), "chamberlain/functions-cancel_confirmed.htm");
+                                            html.setFile(player.getHtmlPrefix(),
+                                                    "chamberlain/functions-cancel_confirmed.htm");
                                             break;
                                         case 1:
                                             fee = Config.CS_SUPPORT1_FEE;
@@ -1009,10 +1006,9 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                             fee = Config.CS_SUPPORT4_FEE;
                                             break;
                                     }
-                                    if (!getCastle()
-                                            .updateFunctions(player, Castle.FUNC_SUPPORT, lvl, fee,
-                                                    Config.CS_SUPPORT_FEE_RATIO, getCastle()
-                                                            .getFunction(Castle.FUNC_SUPPORT) == null))
+                                    if (!getCastle().updateFunctions(player, Castle.FUNC_SUPPORT, lvl, fee,
+                                            Config.CS_SUPPORT_FEE_RATIO,
+                                            getCastle().getFunction(Castle.FUNC_SUPPORT) == null))
                                     {
                                         html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
                                         sendHtmlMessage(player, html);
@@ -1033,14 +1029,14 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                                 "[<a action=\"bypass -h npc_%objectId%_manage other edit_support 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_support 2\">Level 2</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_support 3\">Level 3</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_support 4\">Level 4</a>]";
                         if (getCastle().getFunction(Castle.FUNC_TELEPORT) != null)
                         {
-                            html.replace("%tele%", "Stage " + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_TELEPORT)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_TELEPORT)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%tele_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getCastle().getFunction(Castle.FUNC_TELEPORT).getEndTime()));
+                            html.replace("%tele%",
+                                    "Stage " + String.valueOf(getCastle().getFunction(Castle.FUNC_TELEPORT).getLvl()) +
+                                            "</font> (<font color=\"FFAABB\">" +
+                                            String.valueOf(getCastle().getFunction(Castle.FUNC_TELEPORT).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
+                            html.replace("%tele_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getCastle().getFunction(Castle.FUNC_TELEPORT).getEndTime()));
                             html.replace("%change_tele%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other tele_cancel\">Deactivate</a>]" +
                                             tele);
@@ -1053,14 +1049,15 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                         }
                         if (getCastle().getFunction(Castle.FUNC_SUPPORT) != null)
                         {
-                            html.replace("%support%", "Stage " + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_SUPPORT)
-                                            .getLvl()) + "</font> (<font color=\"FFAABB\">" + String
-                                    .valueOf(getCastle().getFunction(Castle.FUNC_SUPPORT)
-                                            .getLease()) + "</font>Adena /" + String
-                                    .valueOf(Config.CS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) + " Day)");
-                            html.replace("%support_period%", "Withdraw the fee for the next time at " + format
-                                    .format(getCastle().getFunction(Castle.FUNC_SUPPORT).getEndTime()));
+                            html.replace("%support%",
+                                    "Stage " + String.valueOf(getCastle().getFunction(Castle.FUNC_SUPPORT).getLvl()) +
+                                            "</font> (<font color=\"FFAABB\">" +
+                                            String.valueOf(getCastle().getFunction(Castle.FUNC_SUPPORT).getLease()) +
+                                            "</font>Adena /" +
+                                            String.valueOf(Config.CS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24) +
+                                            " Day)");
+                            html.replace("%support_period%", "Withdraw the fee for the next time at " +
+                                    format.format(getCastle().getFunction(Castle.FUNC_SUPPORT).getEndTime()));
                             html.replace("%change_support%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other support_cancel\">Deactivate</a>]" +
                                             support);
@@ -1161,8 +1158,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                 {
                     return;
                 }
-                html.setFile(player.getHtmlPrefix(), "chamberlain/support" + getCastle()
-                        .getFunction(Castle.FUNC_SUPPORT).getLvl() + ".htm");
+                html.setFile(player.getHtmlPrefix(),
+                        "chamberlain/support" + getCastle().getFunction(Castle.FUNC_SUPPORT).getLvl() + ".htm");
                 html.replace("%mp%", String.valueOf((int) getStatus().getCurrentMp()));
                 sendHtmlMessage(player, html);
                 return;
@@ -1183,8 +1180,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                 }
                 else if (player.isClanLeader())
                 {
-                    if (getCastle().getSiege().getTimeRegistrationOverDate().getTimeInMillis() < Calendar.getInstance()
-                            .getTimeInMillis())
+                    if (getCastle().getSiege().getTimeRegistrationOverDate().getTimeInMillis() <
+                            Calendar.getInstance().getTimeInMillis())
                     {
                         NpcHtmlMessage html = new NpcHtmlMessage(1);
                         html.setFile(player.getHtmlPrefix(), "chamberlain/siegetime1.htm");
@@ -1390,13 +1387,14 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
                     {
                         if (hour == 0)
                         {
-                            StringUtil.append(tList, "<a action=\"bypass -h npc_%objectId%_siege_time_set 3 ", String
-                                    .valueOf(hour + inc), "\">", String.valueOf(hour + 12), ":00 ", ampm, "</a><br>");
+                            StringUtil.append(tList, "<a action=\"bypass -h npc_%objectId%_siege_time_set 3 ",
+                                    String.valueOf(hour + inc), "\">", String.valueOf(hour + 12), ":00 ", ampm,
+                                    "</a><br>");
                         }
                         else
                         {
-                            StringUtil.append(tList, "<a action=\"bypass -h npc_%objectId%_siege_time_set 3 ", String
-                                    .valueOf(hour + inc), "\">", String.valueOf(hour), ":00 ", ampm, "</a><br>");
+                            StringUtil.append(tList, "<a action=\"bypass -h npc_%objectId%_siege_time_set 3 ",
+                                    String.valueOf(hour + inc), "\">", String.valueOf(hour), ":00 ", ampm, "</a><br>");
                         }
                     }
                     ret.replace("%links%", tList.toString());
@@ -1460,8 +1458,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
             {
                 if (Config.DEBUG)
                 {
-                    Log.warning("Teleporting player " + player.getName() + " for Castle to new location: " + list
-                            .getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+                    Log.warning("Teleporting player " + player.getName() + " for Castle to new location: " +
+                            list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
                 }
                 player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
             }

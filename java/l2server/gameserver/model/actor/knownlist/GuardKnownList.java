@@ -57,16 +57,16 @@ public class GuardKnownList extends AttackableKnownList
                 }
             }
         }
-        else if (Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar()
-                .isInActiveRegion() && object instanceof L2MonsterInstance)
+        else if (Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion() &&
+                object instanceof L2MonsterInstance)
         {
             // Check if the object added is an aggressive L2MonsterInstance
             if (((L2MonsterInstance) object).isAggressive())
             {
                 if (Config.DEBUG)
                 {
-                    Log.fine(getActiveChar().getObjectId() + ": Aggressive mob " + object
-                            .getObjectId() + " entered scan range");
+                    Log.fine(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() +
+                            " entered scan range");
                 }
 
                 // Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
@@ -76,8 +76,8 @@ public class GuardKnownList extends AttackableKnownList
                 }
             }
         }
-        else if (object instanceof L2Npc && ((L2Npc) object).getClan() != null && ((L2Npc) object).getClan()
-                .equalsIgnoreCase(getActiveChar().getEnemyClan()))
+        else if (object instanceof L2Npc && ((L2Npc) object).getClan() != null &&
+                ((L2Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))
         {
             if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
             {

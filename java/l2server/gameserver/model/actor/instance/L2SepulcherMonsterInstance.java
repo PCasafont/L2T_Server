@@ -71,8 +71,8 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
                 {
                     _victimSpawnKeyBoxTask.cancel(true);
                 }
-                _victimSpawnKeyBoxTask = ThreadPoolManager.getInstance()
-                        .scheduleEffect(new VictimSpawnKeyBox(this), 300000);
+                _victimSpawnKeyBoxTask =
+                        ThreadPoolManager.getInstance().scheduleEffect(new VictimSpawnKeyBox(this), 300000);
                 if (_victimShout != null)
                 {
                     _victimShout.cancel(true);
@@ -317,8 +317,8 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
             for (L2PcInstance mem : player.getParty().getPartyMembers())
             {
                 QuestState qs = mem.getQuestState(questId);
-                if (qs != null && (qs.isStarted() || qs.isCompleted()) && mem.getInventory()
-                        .getItemByItemId(oldBrooch) == null)
+                if (qs != null && (qs.isStarted() || qs.isCompleted()) &&
+                        mem.getInventory().getItemByItemId(oldBrooch) == null)
                 {
                     mem.addItem("Quest", cupId, 1, mem, true);
                 }
@@ -327,8 +327,8 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
         else
         {
             QuestState qs = player.getQuestState(questId);
-            if (qs != null && (qs.isStarted() || qs.isCompleted()) && player.getInventory()
-                    .getItemByItemId(oldBrooch) == null)
+            if (qs != null && (qs.isStarted() || qs.isCompleted()) &&
+                    player.getInventory().getItemByItemId(oldBrooch) == null)
             {
                 player.addItem("Quest", cupId, 1, player, true);
             }

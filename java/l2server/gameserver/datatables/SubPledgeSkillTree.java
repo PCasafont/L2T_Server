@@ -165,8 +165,7 @@ public class SubPledgeSkillTree
                                 continue;
                             }
 
-                            _skilltree.put(SkillTable
-                                            .getSkillHashCode(skill),
+                            _skilltree.put(SkillTable.getSkillHashCode(skill),
                                     new SubUnitSkill(skill, clanLvl, reputation, itemId, count));
                         }
                     }

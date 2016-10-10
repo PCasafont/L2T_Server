@@ -108,8 +108,8 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 
             activeChar.getAppearance().setHairColor(_hairColor);
 
-            activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(), activeChar.getInventory()
-                    .getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
+            activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
+                    activeChar.getInventory().getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
 
             //activeChar.sendPacket(new ExResponseBeautyListPacket());
 

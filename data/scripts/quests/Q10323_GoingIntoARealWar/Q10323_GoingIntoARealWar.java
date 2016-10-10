@@ -340,9 +340,8 @@ public class Q10323_GoingIntoARealWar extends Quest
     @Override
     public String onArrived(final L2NpcWalkerAI guideAI)
     {
-        if (!guideAI.getActor()
-                .isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI
-                .getCurrentPos() == _guideRoute.size() - 1)
+        if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
+                guideAI.getCurrentPos() == _guideRoute.size() - 1)
         {
             if (guideAI.getCurrentPos() == 1)
             {
@@ -355,8 +354,9 @@ public class Q10323_GoingIntoARealWar extends Quest
                 guideAI.walkToGuided(40);
                 chatId = _guideWaitChatId;
             }
-            NpcSay ns = new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor()
-                    .getNpcId(), chatId);
+            NpcSay ns =
+                    new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
+                            chatId);
             ns.addStringParameter(guideAI.getGuided().getName());
             guideAI.getActor().broadcastPacket(ns);
             guideAI.setWaiting(true);

@@ -70,8 +70,8 @@ public class HtmCache implements Reloadable
     @Override
     public String getReloadMessage(boolean success)
     {
-        return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance()
-                .getLoadedFiles() + " files loaded";
+        return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " +
+                HtmCache.getInstance().getLoadedFiles() + " files loaded";
     }
 
     public void reload(File f)
@@ -80,8 +80,8 @@ public class HtmCache implements Reloadable
         {
             Log.info("Html cache start...");
             parseDir(f);
-            Log.info("Cache[HTML]: " + String
-                    .format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() + " files loaded");
+            Log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() +
+                    " files loaded");
         }
         else
         {

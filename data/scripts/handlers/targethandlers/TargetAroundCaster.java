@@ -55,8 +55,8 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
             if (skill.getSkillSafeRadius() != 0)
             {
                 int safeRadius = skill.getSkillSafeRadius();
-                int distance = (int) Util
-                        .calculateDistance(activeChar.getX(), activeChar.getY(), obj.getX(), obj.getY());
+                int distance =
+                        (int) Util.calculateDistance(activeChar.getX(), activeChar.getY(), obj.getX(), obj.getY());
                 if (distance < safeRadius)
                 {
                     continue;
@@ -67,8 +67,8 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
             {
                 continue;
             }
-            else if (!isReachableTarget(activeChar, obj, skill.getTargetDirection()) || !actualCaster
-                    .isAbleToCastOnTarget(obj, skill, true))
+            else if (!isReachableTarget(activeChar, obj, skill.getTargetDirection()) ||
+                    !actualCaster.isAbleToCastOnTarget(obj, skill, true))
             {
                 continue;
             }

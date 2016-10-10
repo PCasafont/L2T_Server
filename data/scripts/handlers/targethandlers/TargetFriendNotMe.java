@@ -67,7 +67,7 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
             targetList.add(player);
         }
         /* FIXME
-		else if (activeChar instanceof L2PcInstance)
+        else if (activeChar instanceof L2PcInstance)
 		{
 			player = (L2PcInstance) activeChar;
 			if (activeChar.getPet() != null)
@@ -84,10 +84,11 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
                 continue;
             }
 
-            if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar
-                    .getClan() || playerPt != null && (playerPt.isInParty(tempChar) || cmdChannel != null && tempChar
-                    .getParty() != null && cmdChannel.isInChannel(tempChar.getParty())) || tempChar
-                    .getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
+            if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
+                    playerPt != null && (playerPt.isInParty(tempChar) ||
+                            cmdChannel != null && tempChar.getParty() != null &&
+                                    cmdChannel.isInChannel(tempChar.getParty())) ||
+                    tempChar.getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
             {
 
                 if (tempChar.getPet() != null)

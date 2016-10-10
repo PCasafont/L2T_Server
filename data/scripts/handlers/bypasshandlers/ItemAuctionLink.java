@@ -87,8 +87,8 @@ public class ItemAuctionLink implements IBypassHandler
 
                     if (nextAuction != null) // used only once when database is empty
                     {
-                        activeChar.sendMessage("The next auction will begin on the " + fmt
-                                .format(new Date(nextAuction.getStartingTime())) + ".");
+                        activeChar.sendMessage("The next auction will begin on the " +
+                                fmt.format(new Date(nextAuction.getStartingTime())) + ".");
                     }
                     return true;
                 }
@@ -108,8 +108,8 @@ public class ItemAuctionLink implements IBypassHandler
                 }
                 if (!returned)
                 {
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.NO_OFFERINGS_OWN_OR_MADE_BID_FOR));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.NO_OFFERINGS_OWN_OR_MADE_BID_FOR));
                 }
             }
             else

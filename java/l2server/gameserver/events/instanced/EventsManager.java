@@ -183,7 +183,7 @@ public class EventsManager implements Reloadable
             {
                 // Auto join!
                 /*if (_minutesToStart == 1)
-				{
+                {
 					for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 					{
 						if (player == null || player.isGM())
@@ -193,17 +193,16 @@ public class EventsManager implements Reloadable
 					}
 				}*/
 
-                Broadcast.toAllOnlinePlayers(new ExShowScreenMessage("The " + _currentConfig
-                        .getEventName() + " will start in " + _minutesToStart + " minute" +
-                        (_minutesToStart > 1 ? "s" : "") + ".", 5000));
+                Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
+                        "The " + _currentConfig.getEventName() + " will start in " + _minutesToStart + " minute" +
+                                (_minutesToStart > 1 ? "s" : "") + ".", 5000));
                 ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                 {
                     @Override
                     public void run()
                     {
-                        Broadcast
-                                .toAllOnlinePlayers(new ExShowScreenMessage(
-                                        "Use the Community Board's (ALT+B) \"Join Events\" menu to join.", 5000));
+                        Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
+                                "Use the Community Board's (ALT+B) \"Join Events\" menu to join.", 5000));
                     }
                 }, 5000L);
             }
@@ -237,9 +236,9 @@ public class EventsManager implements Reloadable
         int i = 0;
         for (L2PcInstance player : _registeredPlayers.values())
         {
-            if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player
-                    .isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player
-                    .inObserverMode())
+            if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
+                    player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
+                    player.inObserverMode())
             {
                 continue;
             }
@@ -307,9 +306,8 @@ public class EventsManager implements Reloadable
             if (ei != null)
             {
                 _instances.put(ei.getId(), ei);
-                Announcements.getInstance()
-                        .announceToAll(
-                                "Event registrations closed.");// The next event will be a " + _currentConfig.getEventString() + ". Type .event to join.");
+                Announcements.getInstance().announceToAll(
+                        "Event registrations closed.");// The next event will be a " + _currentConfig.getEventString() + ". Type .event to join.");
 
                 for (EventTeam team : ei.getTeams())
                 {
@@ -380,51 +378,43 @@ public class EventsManager implements Reloadable
 
         if (playerInstance.isCursedWeaponEquipped())
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>Cursed weapon owners are not allowed to participate.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>Cursed weapon owners are not allowed to participate.</body></html>");
         }
         else if (OlympiadManager.getInstance().isRegisteredInComp(playerInstance))
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You can not participate when registered for Olympiad.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You can not participate when registered for Olympiad.</body></html>");
         }
         else if (playerInstance.getReputation() < 0)
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>Chaotic players are not allowed to participate.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>Chaotic players are not allowed to participate.</body></html>");
         }
         else if (playerInstance.isInJail())
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You cannot participate, you must wait your jail time.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You cannot participate, you must wait your jail time.</body></html>");
         }
         else if (playerInstance.isCastingNow())
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You can't register while casting a skill.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You can't register while casting a skill.</body></html>");
         }
         else if (checkDualBox(playerInstance))
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You have another character already registered for this event!</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You have another character already registered for this event!</body></html>");
         }
         else if (playerInstance.getInstanceId() != 0)
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You can't join one event while in other instance!</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You can't join one event while in other instance!</body></html>");
         }
         else if (playerInstance.isInDuel() || playerInstance.isDead() || playerInstance.getIsInsideGMEvent())
         {
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You can't join one event at this moment!</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You can't join one event at this moment!</body></html>");
         }
         else
         {
@@ -514,8 +504,8 @@ public class EventsManager implements Reloadable
         //PvP Event
         result = result.replace("%pvpEventName%", _currentConfig.getEventName());
         result = result.replace("%pvpEventLocation%", _currentConfig.getEventLocationName());
-        result = result.replace("%pvpEventTime%", _task.getMinutesToStart() + " minute" + (_task
-                .getMinutesToStart() > 1 ? "s" : ""));
+        result = result.replace("%pvpEventTime%",
+                _task.getMinutesToStart() + " minute" + (_task.getMinutesToStart() > 1 ? "s" : ""));
         result = result.replace("%pvpEventId%", String.valueOf(_currentConfig.getEventImageId()));
         result = result.replace("%pvpInfoLink%", String.valueOf(_currentConfig.getType()));
 
@@ -532,16 +522,14 @@ public class EventsManager implements Reloadable
         //Both events
         if (isPlayerParticipant(player.getObjectId()))
         {
-            result = result
-                    .replace("%leaveButton%",
-                            "<button value=\"Leave Match making\" action=\"bypass -h InstancedEventLeave\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+            result = result.replace("%leaveButton%",
+                    "<button value=\"Leave Match making\" action=\"bypass -h InstancedEventLeave\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
             result = result.replace("%pvpEventJoinButton%", "");
         }
         else
         {
-            result = result
-                    .replace("%pvpEventJoinButton%",
-                            "<button value=\"Join Match making\" action=\"bypass -h InstancedEventJoin true\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+            result = result.replace("%pvpEventJoinButton%",
+                    "<button value=\"Join Match making\" action=\"bypass -h InstancedEventJoin true\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
             result = result.replace("%leaveButton%", "");
         }
 
@@ -577,9 +565,8 @@ public class EventsManager implements Reloadable
                     eventString += "<tr>";
                 }
 
-                eventString += "<td align=center><button value=\"" + event.getConfig()
-                        .getEventName() + " #" + total + "\" action=\"bypass -h InstancedEventObserve " + event
-                        .getId() +
+                eventString += "<td align=center><button value=\"" + event.getConfig().getEventName() + " #" + total +
+                        "\" action=\"bypass -h InstancedEventObserve " + event.getId() +
                         "\" width=110 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
 
                 // temp fix
@@ -803,8 +790,8 @@ public class EventsManager implements Reloadable
                 continue;
             }
 
-            if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP()) && player.getInternalIP()
-                    .equalsIgnoreCase(registered.getInternalIP()))
+            if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP()) &&
+                    player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
             {
                 return true;
             }

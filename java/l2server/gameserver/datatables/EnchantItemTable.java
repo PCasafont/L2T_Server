@@ -53,35 +53,33 @@ public class EnchantItemTable implements Reloadable
             {
                 // weapon scrolls can enchant only weapons
                 case L2Item.TYPE2_WEAPON:
-                    if (_targetType != EnchantTargetType.WEAPON || Config.ENCHANT_MAX_WEAPON > 0 && enchantItem
-                            .getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON)
+                    if (_targetType != EnchantTargetType.WEAPON ||
+                            Config.ENCHANT_MAX_WEAPON > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON)
                     {
                         return false;
                     }
                     break;
                 // armor scrolls can enchant only accessory and armors
                 case L2Item.TYPE2_SHIELD_ARMOR:
-                    if (_targetType != EnchantTargetType.ELEMENTAL_SHIRT &&
-                            (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_ARMOR > 0 && enchantItem
-                                    .getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR))
+                    if (_targetType != EnchantTargetType.ELEMENTAL_SHIRT && (_targetType != EnchantTargetType.ARMOR ||
+                            Config.ENCHANT_MAX_ARMOR > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR))
                     {
                         return false;
                     }
                     break;
                 case L2Item.TYPE2_ACCESSORY:
-                    if ((enchantItem.getItem()
-                            .getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
+                    if ((enchantItem.getItem().getBodyPart() &
+                            (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
                     {
-                        if (_targetType != EnchantTargetType.HAIR_ACCESSORY ||
-                                Config.ENCHANT_MAX_JEWELRY > 0 && enchantItem
-                                        .getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
+                        if (_targetType != EnchantTargetType.HAIR_ACCESSORY || Config.ENCHANT_MAX_JEWELRY > 0 &&
+                                enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
                         {
                             return false;
                         }
                         break;
                     }
-                    if (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_JEWELRY > 0 && enchantItem
-                            .getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
+                    if (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_JEWELRY > 0 &&
+                            enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
                     {
                         return false;
                     }
@@ -182,8 +180,8 @@ public class EnchantItemTable implements Reloadable
             }
 
             boolean fullBody = enchantItem.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR;
-            if (enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX || fullBody && enchantItem
-                    .getEnchantLevel() < Config.ENCHANT_SAFE_MAX_FULL)
+            if (enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX ||
+                    fullBody && enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX_FULL)
             {
                 return 100;
             }
@@ -400,8 +398,8 @@ public class EnchantItemTable implements Reloadable
             return false;
         }
         // only items in inventory and equipped can be enchanted
-        if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item
-                .getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
+        if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY &&
+                item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
         {
             return false;
         }

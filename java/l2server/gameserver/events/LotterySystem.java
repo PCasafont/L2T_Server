@@ -85,8 +85,8 @@ public class LotterySystem
 
         if (pl.getPrivateStoreType() != 0 || pl.isInCrystallize())
         {
-            pl.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            pl.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 
@@ -107,8 +107,8 @@ public class LotterySystem
         long totalReward = _collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
         if (totalReward % 100000000 == 0)
         {
-            Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " + NumberFormat
-                    .getNumberInstance(Locale.US).format(totalReward) + " Adena!");
+            Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " +
+                    NumberFormat.getNumberInstance(Locale.US).format(totalReward) + " Adena!");
         }
     }
 
@@ -136,9 +136,9 @@ public class LotterySystem
 
         if (winnerNames.isEmpty())
         {
-            Announcements.getInstance().announceToAll("Lottery System: The Lottery ends with: " + _allNumbers
-                    .size() + " participants! " + luckyNumber +
-                    " was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
+            Announcements.getInstance().announceToAll(
+                    "Lottery System: The Lottery ends with: " + _allNumbers.size() + " participants! " + luckyNumber +
+                            " was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
         }
         else
         {
@@ -153,28 +153,26 @@ public class LotterySystem
             {
                 int charid = CharNameTable.getInstance().getIdByName(name);
                 Message msg = new Message(-1, charid, false, "Lottery System",
-                        "Congrats! You win the lottery with the number " + String
-                                .valueOf(luckyNumber) + "!", 0);
+                        "Congrats! You win the lottery with the number " + String.valueOf(luckyNumber) + "!", 0);
 
                 Mail attachments = msg.createAttachments();
                 attachments.addItem("Lottery System", Config.CUSTOM_LOTTERY_PRICE_ITEM_ID, eachReward, null, null);
                 MailManager.getInstance().sendMessage(msg);
 
-                Log.info("LotterySystem: Player: " + name + ", rewarded with: " + NumberFormat
-                        .getNumberInstance(Locale.US).format(eachReward) + " Adena!");
+                Log.info("LotterySystem: Player: " + name + ", rewarded with: " +
+                        NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
             }
 
             // Announce
-            Announcements.getInstance().announceToAll("Lottery System: The Lotery ends with: " + _allNumbers
-                    .size() + " participants (" + totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT +
-                    " numbers bought)! " + luckyNumber + " is the winner number! " + winnerNames
-                    .size() + " winners has been rewarded with: " + NumberFormat.getNumberInstance(Locale.US)
-                    .format(eachReward) + " Adena!");
+            Announcements.getInstance().announceToAll(
+                    "Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants (" +
+                            totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT + " numbers bought)! " + luckyNumber +
+                            " is the winner number! " + winnerNames.size() + " winners has been rewarded with: " +
+                            NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 
             Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " +
-                    totalCoins + " and " + winnerNames
-                    .size() + " winners (" + _allNumbers
-                    .size() + " participants), with: " + eachReward + " coins for each player!");
+                    totalCoins + " and " + winnerNames.size() + " winners (" + _allNumbers.size() +
+                    " participants), with: " + eachReward + " coins for each player!");
         }
 
         Log.warning("Lottery System: Cleaning info...!");

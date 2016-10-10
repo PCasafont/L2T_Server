@@ -128,8 +128,8 @@ public class L2PetInstance extends L2Summon
         {
             try
             {
-                if (getOwner() == null || getOwner().getPet() == null || getOwner().getPet()
-                        .getObjectId() != getObjectId())
+                if (getOwner() == null || getOwner().getPet() == null ||
+                        getOwner().getPet().getObjectId() != getObjectId())
                 {
                     stopFeed();
                     return;
@@ -188,8 +188,8 @@ public class L2PetInstance extends L2Summon
                     IItemHandler handler = ItemHandler.getInstance().getItemHandler(food.getEtcItem());
                     if (handler != null)
                     {
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(SystemMessageId.PET_TOOK_S1_BECAUSE_HE_WAS_HUNGRY);
+                        SystemMessage sm =
+                                SystemMessage.getSystemMessage(SystemMessageId.PET_TOOK_S1_BECAUSE_HE_WAS_HUNGRY);
                         sm.addItemName(food.getItemId());
                         getOwner().sendPacket(sm);
                         handler.useItem(L2PetInstance.this, food, false);
@@ -207,9 +207,9 @@ public class L2PetInstance extends L2Summon
                             sm = SystemMessage
                                     .getSystemMessage(SystemMessageId.STARVING_GRUMPY_AND_FED_UP_YOUR_PET_HAS_LEFT);
                             getOwner().sendPacket(sm);
-                            Log.info("Hungry pet [" + getTemplate()
-                                    .getName() + "][" + getLevel() + "] deleted for player: " + getOwner() +
-                                    " Control Item Id :" + getControlObjectId());
+                            Log.info("Hungry pet [" + getTemplate().getName() + "][" + getLevel() +
+                                    "] deleted for player: " + getOwner() + " Control Item Id :" +
+                                    getControlObjectId());
                             deleteMe(getOwner());
                         }
                     }
@@ -224,9 +224,9 @@ public class L2PetInstance extends L2Summon
                             sm = SystemMessage
                                     .getSystemMessage(SystemMessageId.STARVING_GRUMPY_AND_FED_UP_YOUR_PET_HAS_LEFT);
                             getOwner().sendPacket(sm);
-                            Log.info("Hungry pet [" + getTemplate()
-                                    .getName() + "][" + getLevel() + "] deleted for player: " + getOwner() +
-                                    " Control Item Id :" + getControlObjectId());
+                            Log.info("Hungry pet [" + getTemplate().getName() + "][" + getLevel() +
+                                    "] deleted for player: " + getOwner() + " Control Item Id :" +
+                                    getControlObjectId());
                             deleteMe(getOwner());
                         }
                     }
@@ -283,8 +283,8 @@ public class L2PetInstance extends L2Summon
      */
     public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
     {
-        this(objectId, template, owner, control, (byte) (template.TemplateId == 12564 ? owner
-                .getLevel() : template.Level));
+        this(objectId, template, owner, control,
+                (byte) (template.TemplateId == 12564 ? owner.getLevel() : template.Level));
     }
 
     /**
@@ -366,8 +366,8 @@ public class L2PetInstance extends L2Summon
     {
         for (L2ItemInstance item : getInventory().getItems())
         {
-            if (item.getLocation() == L2ItemInstance.ItemLocation.PET_EQUIP && item.getItem()
-                    .getBodyPart() == L2Item.SLOT_R_HAND)
+            if (item.getLocation() == L2ItemInstance.ItemLocation.PET_EQUIP &&
+                    item.getItem().getBodyPart() == L2Item.SLOT_R_HAND)
             {
                 return item;
             }
@@ -557,8 +557,8 @@ public class L2PetInstance extends L2Summon
 
             if (!_inventory.validateCapacity(target))
             {
-                getOwner().sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
+                getOwner().sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
                 return;
             }
 
@@ -569,8 +569,8 @@ public class L2PetInstance extends L2Summon
                 return;
             }
 
-            if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().getObjectId() && !getOwner()
-                    .isInLooterParty(target.getOwnerId()))
+            if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().getObjectId() &&
+                    !getOwner().isInLooterParty(target.getOwnerId()))
             {
                 getOwner().sendPacket(ActionFailed.STATIC_PACKET);
 
@@ -596,8 +596,8 @@ public class L2PetInstance extends L2Summon
 
                 return;
             }
-            if (target.getItemLootShedule() != null && (target.getOwnerId() == getOwner().getObjectId() || getOwner()
-                    .isInLooterParty(target.getOwnerId())))
+            if (target.getItemLootShedule() != null && (target.getOwnerId() == getOwner().getObjectId() ||
+                    getOwner().isInLooterParty(target.getOwnerId())))
             {
                 target.resetOwnerTimer();
             }
@@ -685,8 +685,8 @@ public class L2PetInstance extends L2Summon
             return false;
         }
         stopFeed();
-        getOwner().sendPacket(SystemMessage
-                .getSystemMessage(SystemMessageId.MAKE_SURE_YOU_RESSURECT_YOUR_PET_WITHIN_24_HOURS));
+        getOwner().sendPacket(
+                SystemMessage.getSystemMessage(SystemMessageId.MAKE_SURE_YOU_RESSURECT_YOUR_PET_WITHIN_24_HOURS));
         DecayTaskManager.getInstance().addDecayTask(this, PET_DECAY_DELAY);
         // do not decrease exp if is in duel, arena
         L2PcInstance owner = getOwner();
@@ -801,8 +801,8 @@ public class L2PetInstance extends L2Summon
                 removedItem = owner.getInventory().destroyItem("PetDestroy", getControlObjectId(), 1, getOwner(), this);
                 if (removedItem != null)
                 {
-                    owner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED)
-                            .addItemName(removedItem));
+                    owner.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED).addItemName(removedItem));
                 }
             }
 
@@ -893,9 +893,8 @@ public class L2PetInstance extends L2Summon
         {
             L2PetInstance pet;
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?");
             statement.setInt(1, control.getObjectId());
             ResultSet rset = statement.executeQuery();
             if (!rset.next())
@@ -916,13 +915,13 @@ public class L2PetInstance extends L2Summon
 
             if (template.Type.compareToIgnoreCase("L2BabyPet") == 0)
             {
-                pet = new L2BabyPetInstance(IdFactory.getInstance().getNextId(), template, owner, control, rset
-                        .getByte("level"));
+                pet = new L2BabyPetInstance(IdFactory.getInstance().getNextId(), template, owner, control,
+                        rset.getByte("level"));
             }
             else
             {
-                pet = new L2PetInstance(IdFactory.getInstance().getNextId(), template, owner, control, rset
-                        .getByte("level"));
+                pet = new L2PetInstance(IdFactory.getInstance().getNextId(), template, owner, control,
+                        rset.getByte("level"));
             }
 
             pet._respawned = true;

@@ -69,10 +69,10 @@ public final class RequestDestroyItem extends L2GameClientPacket
         {
             if (_count < 0)
             {
-                Util.handleIllegalPlayerAction(activeChar, "[RequestDestroyItem] Character " + activeChar
-                                .getName() + " of account " + activeChar
-                                .getAccountName() + " tried to destroy item with oid " + _objectId + " but has count < 0!",
-                        Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "[RequestDestroyItem] Character " + activeChar.getName() + " of account " +
+                                activeChar.getAccountName() + " tried to destroy item with oid " + _objectId +
+                                " but has count < 0!", Config.DEFAULT_PUNISH);
             }
             return;
         }
@@ -92,8 +92,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
 
         if (activeChar.isProcessingTransaction() || activeChar.getPrivateStoreType() != 0)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 
@@ -108,8 +108,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
         // Cannot discard item that the skill is consuming
         if (activeChar.isCastingNow())
         {
-            if (activeChar.getCurrentSkill() != null && activeChar.getCurrentSkill().getSkill()
-                    .getItemConsumeId() == itemToRemove.getItemId())
+            if (activeChar.getCurrentSkill() != null &&
+                    activeChar.getCurrentSkill().getSkill().getItemConsumeId() == itemToRemove.getItemId())
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
                 return;
@@ -118,8 +118,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
         // Cannot discard item that the skill is consuming
         if (activeChar.isCastingSimultaneouslyNow())
         {
-            if (activeChar.getLastSimultaneousSkillCast() != null && activeChar.getLastSimultaneousSkillCast()
-                    .getItemConsumeId() == itemToRemove.getItemId())
+            if (activeChar.getLastSimultaneousSkillCast() != null &&
+                    activeChar.getLastSimultaneousSkillCast().getItemConsumeId() == itemToRemove.getItemId())
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
                 return;
@@ -143,10 +143,10 @@ public final class RequestDestroyItem extends L2GameClientPacket
 
         if (!itemToRemove.isStackable() && count > 1)
         {
-            Util.handleIllegalPlayerAction(activeChar, "[RequestDestroyItem] Character " + activeChar
-                    .getName() + " of account " + activeChar
-                    .getAccountName() + " tried to destroy a non-stackable item with oid " + _objectId +
-                    " but has count > 1!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "[RequestDestroyItem] Character " + activeChar.getName() + " of account " +
+                            activeChar.getAccountName() + " tried to destroy a non-stackable item with oid " +
+                            _objectId + " but has count > 1!", Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -163,8 +163,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
 
         if (itemToRemove.isEquipped())
         {
-            L2ItemInstance[] unequiped = activeChar.getInventory()
-                    .unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
+            L2ItemInstance[] unequiped =
+                    activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
             InventoryUpdate iu = new InventoryUpdate();
             for (L2ItemInstance item : unequiped)
             {
@@ -210,9 +210,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
         // Crystallize the item instead of destroying it, if possible
         int skillLevel = activeChar.getSkillLevelHash(L2Skill.SKILL_CRYSTALLIZE);
         boolean hasBeenCrystallized = false;
-        if (skillLevel > 0 && itemToRemove.getItem().isCrystallizable() && itemToRemove
-                .getCrystalCount() > 0 && !(itemToRemove.getItem()
-                .getCrystalType() == L2Item.CRYSTAL_NONE) && !itemToRemove.isEquipped())
+        if (skillLevel > 0 && itemToRemove.getItem().isCrystallizable() && itemToRemove.getCrystalCount() > 0 &&
+                !(itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) && !itemToRemove.isEquipped())
         {
             // Check if the char can crystallize items and return if false;
             boolean canCrystallize = true;
@@ -256,8 +255,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
             if (canCrystallize)
             {
                 // remove from inventory
-                L2ItemInstance removedItem = activeChar.getInventory()
-                        .destroyItem("Crystalize", _objectId, _count, activeChar, null);
+                L2ItemInstance removedItem =
+                        activeChar.getInventory().destroyItem("Crystalize", _objectId, _count, activeChar, null);
                 if (removedItem == null)
                 {
                     return;
@@ -312,8 +311,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
             return;
         }
 
-        L2ItemInstance removedItem = activeChar.getInventory()
-                .destroyItem("Destroy", _objectId, count, activeChar, null);
+        L2ItemInstance removedItem =
+                activeChar.getInventory().destroyItem("Destroy", _objectId, count, activeChar, null);
 
         if (removedItem == null)
         {

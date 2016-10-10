@@ -230,8 +230,8 @@ public class L2AttackableAIScript extends QuestJython
 
                 if (minionList != null)
                 {
-                    final int respawnTime = Config.MINIONS_RESPAWN_TIME
-                            .get(mob.getNpcId()) > 0 ? Config.MINIONS_RESPAWN_TIME.get(mob.getNpcId()) * 1000 : -1;
+                    final int respawnTime = Config.MINIONS_RESPAWN_TIME.get(mob.getNpcId()) > 0 ?
+                            Config.MINIONS_RESPAWN_TIME.get(mob.getNpcId()) * 1000 : -1;
                     minionList.onMinionDie(mob, respawnTime);
                 }
             }
@@ -257,8 +257,8 @@ public class L2AttackableAIScript extends QuestJython
                 {
                     try
                     {
-                        if (L2Attackable.class.isAssignableFrom(Class
-                                .forName("l2server.gameserver.model.actor.instance." + t.Type + "Instance")))
+                        if (L2Attackable.class.isAssignableFrom(
+                                Class.forName("l2server.gameserver.model.actor.instance." + t.Type + "Instance")))
                         {
                             ai.addEventId(t.NpcId, Quest.QuestEventType.ON_ATTACK);
                             ai.addEventId(t.NpcId, Quest.QuestEventType.ON_KILL);

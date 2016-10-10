@@ -173,9 +173,8 @@ public class Lottery
                             if (_enddate > System.currentTimeMillis() + 12 * MINUTE)
                             {
                                 _isSellingTickets = true;
-                                ThreadPoolManager.getInstance()
-                                        .scheduleGeneral(new stopSellingTickets(), _enddate - System
-                                                .currentTimeMillis() - 10 * MINUTE);
+                                ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(),
+                                        _enddate - System.currentTimeMillis() - 10 * MINUTE);
                             }
                             rset.close();
                             statement.close();

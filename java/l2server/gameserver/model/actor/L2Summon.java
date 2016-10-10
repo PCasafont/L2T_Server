@@ -787,8 +787,8 @@ public abstract class L2Summon extends L2Playable
         {
             if (getOwner() != null)
             {
-                getOwner().sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.PET_SKILL_CANNOT_BE_USED_RECHARCHING));
+                getOwner().sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.PET_SKILL_CANNOT_BE_USED_RECHARCHING));
             }
             return false;
         }
@@ -822,8 +822,8 @@ public abstract class L2Summon extends L2Playable
         // Check if this is offensive magic skill
         if (skill.isOffensive())
         {
-            if (isInsidePeaceZone(this, target) && getOwner() != null && !getOwner().getAccessLevel()
-                    .allowPeaceAttack())
+            if (isInsidePeaceZone(this, target) && getOwner() != null &&
+                    !getOwner().getAccessLevel().allowPeaceAttack())
             {
                 // If summon or target is in a peace zone, send a system message TARGET_IN_PEACEZONE
                 sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
@@ -837,14 +837,14 @@ public abstract class L2Summon extends L2Playable
                 return false;
             }
 
-            if (target.getActingPlayer() != null && getOwner().getSiegeState() > 0 && getOwner()
-                    .isInsideZone(L2Character.ZONE_SIEGE) && target.getActingPlayer().getSiegeState() == getOwner()
-                    .getSiegeState() && target.getActingPlayer() != getOwner() && target.getActingPlayer()
-                    .getSiegeSide() == getOwner().getSiegeSide())
+            if (target.getActingPlayer() != null && getOwner().getSiegeState() > 0 &&
+                    getOwner().isInsideZone(L2Character.ZONE_SIEGE) &&
+                    target.getActingPlayer().getSiegeState() == getOwner().getSiegeState() &&
+                    target.getActingPlayer() != getOwner() &&
+                    target.getActingPlayer().getSiegeSide() == getOwner().getSiegeSide())
             {
-                sendPacket(SystemMessage
-                        .getSystemMessage(
-                                SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));
+                sendPacket(SystemMessage.getSystemMessage(
+                        SystemMessageId.FORCED_ATTACK_IS_IMPOSSIBLE_AGAINST_SIEGE_SIDE_TEMPORARY_ALLIED_MEMBERS));
                 sendPacket(ActionFailed.STATIC_PACKET);
                 return false;
             }
@@ -865,15 +865,15 @@ public abstract class L2Summon extends L2Playable
                 }
 
                 // Check if a Forced ATTACK is in progress on non-attackable target
-                if (!target.isAutoAttackable(this) && !forceUse && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_CLAN && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_ALLY && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_PARTY && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_SELF && skill
-                        .getTargetType() != L2SkillTargetType.TARGET_AROUND_CASTER)
+                if (!target.isAutoAttackable(this) && !forceUse &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_CLAN &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_ALLY &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
+                        skill.getTargetType() != L2SkillTargetType.TARGET_AROUND_CASTER)
                 {
                     return false;
                 }
@@ -935,9 +935,9 @@ public abstract class L2Summon extends L2Playable
                 }
             }
 
-            if (getOwner().isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target)
-                    .isInOlympiadMode() && ((L2PcInstance) target).getOlympiadGameId() == getOwner()
-                    .getOlympiadGameId())
+            if (getOwner().isInOlympiadMode() && target instanceof L2PcInstance &&
+                    ((L2PcInstance) target).isInOlympiadMode() &&
+                    ((L2PcInstance) target).getOlympiadGameId() == getOwner().getOlympiadGameId())
             {
                 OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
             }
@@ -1110,8 +1110,8 @@ public abstract class L2Summon extends L2Playable
             con = L2DatabaseFactory.getInstance().getConnection();
 
             // Delete all current stored effects for char to avoid dupe
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM character_skills_save WHERE charId=? AND class_index=-1");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM character_skills_save WHERE charId=? AND class_index=-1");
 
             statement.setInt(1, getOwner().getObjectId());
             statement.execute();
@@ -1123,9 +1123,8 @@ public abstract class L2Summon extends L2Playable
 
             // Store all effect data along with calulated remaining
             // reuse delays for matching skills. 'restore_type'= 0.
-            statement = con
-                    .prepareStatement(
-                            "INSERT INTO character_skills_save (charId,skill_id,skill_level,effect_count,effect_cur_time,reuse_delay,systime,restore_type,class_index,buff_index) VALUES (?,?,?,?,?,?,?,?,?,?)");
+            statement = con.prepareStatement(
+                    "INSERT INTO character_skills_save (charId,skill_id,skill_level,effect_count,effect_cur_time,reuse_delay,systime,restore_type,class_index,buff_index) VALUES (?,?,?,?,?,?,?,?,?,?)");
 
             for (L2Abnormal effect : getAllEffects())
             {
@@ -1186,9 +1185,8 @@ public abstract class L2Summon extends L2Playable
             PreparedStatement statement;
             ResultSet rset;
 
-            statement = con
-                    .prepareStatement(
-                            "SELECT skill_id,skill_level,effect_count,effect_cur_time FROM character_skills_save WHERE charId=? AND class_index=-1 ORDER BY buff_index ASC");
+            statement = con.prepareStatement(
+                    "SELECT skill_id,skill_level,effect_count,effect_cur_time FROM character_skills_save WHERE charId=? AND class_index=-1 ORDER BY buff_index ASC");
             statement.setInt(1, getOwner().getObjectId());
 
             rset = statement.executeQuery();
@@ -1198,8 +1196,8 @@ public abstract class L2Summon extends L2Playable
                 int effectCount = rset.getInt("effect_count");
                 int effectCurTime = rset.getInt("effect_cur_time");
 
-                final L2Skill skill = SkillTable.getInstance()
-                        .getInfo(rset.getInt("skill_id"), rset.getInt("skill_level"));
+                final L2Skill skill =
+                        SkillTable.getInstance().getInfo(rset.getInt("skill_id"), rset.getInt("skill_level"));
                 if (skill == null)
                 {
                     continue;
@@ -1292,8 +1290,9 @@ public abstract class L2Summon extends L2Playable
     public void onTeleported()
     {
         super.onTeleported();
-        getOwner().sendPacket(new TeleportToLocation(this, getPosition().getX(), getPosition().getY(), getPosition()
-                .getZ(), getPosition().getHeading()));
+        getOwner().sendPacket(
+                new TeleportToLocation(this, getPosition().getX(), getPosition().getY(), getPosition().getZ(),
+                        getPosition().getHeading()));
     }
 
     @Override

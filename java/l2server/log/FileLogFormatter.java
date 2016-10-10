@@ -43,8 +43,7 @@ public class FileLogFormatter extends Formatter
     @Override
     public String format(LogRecord record)
     {
-        return StringUtil
-                .concat(dateFmt.format(new Date(record.getMillis())), TAB, record.getLevel().getName(), TAB, String
-                        .valueOf(record.getThreadID()), TAB, record.getLoggerName(), TAB, record.getMessage(), CRLF);
+        return StringUtil.concat(dateFmt.format(new Date(record.getMillis())), TAB, record.getLevel().getName(), TAB,
+                String.valueOf(record.getThreadID()), TAB, record.getLoggerName(), TAB, record.getMessage(), CRLF);
     }
 }

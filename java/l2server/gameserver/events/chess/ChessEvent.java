@@ -114,9 +114,8 @@ public class ChessEvent
         NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
 
         statusUpdate.addAttribute(StatusUpdate.CUR_LOAD, player.getCurrentLoad());
-        npcHtmlMessage
-                .setHtml(
-                        "<html><head><title>Chess Event</title></head><body>You won the game, congratulations!</body></html>");
+        npcHtmlMessage.setHtml(
+                "<html><head><title>Chess Event</title></head><body>You won the game, congratulations!</body></html>");
         player.sendPacket(statusUpdate);
         player.sendPacket(npcHtmlMessage);
     }
@@ -191,9 +190,9 @@ public class ChessEvent
 
         while (i < 8 && !trobat)
         {
-            if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance
-                    .getObjectId() || _waitingPlayers[i][1] != null && _waitingPlayers[i][1]
-                    .getObjectId() == playerInstance.getObjectId())
+            if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId() ||
+                    _waitingPlayers[i][1] != null &&
+                            _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
             {
                 _waitingPlayers[i][0] = null;
                 _waitingPlayers[i][1] = null;
@@ -246,8 +245,8 @@ public class ChessEvent
             {
                 target = _waitingPlayers[i][1];
             }
-            else if (_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerInstance
-                    .getObjectId())
+            else if (_waitingPlayers[i][1] != null &&
+                    _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
             {
                 target = _waitingPlayers[i][0];
                 side = 1;
@@ -285,8 +284,8 @@ public class ChessEvent
                 target = _waitingPlayers[i][1];
                 _waitingPlayers[i][1] = null;
             }
-            else if (_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerInstance
-                    .getObjectId())
+            else if (_waitingPlayers[i][1] != null &&
+                    _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
             {
                 target = _waitingPlayers[i][0];
                 _waitingPlayers[i][0] = null;
@@ -353,15 +352,13 @@ public class ChessEvent
 
             if (playerInstance.isCursedWeaponEquipped())
             {
-                npcHtmlMessage
-                        .setHtml(
-                                "<html><head><title>Instanced Events</title></head><body>Cursed weapon owners are not allowed to participate.</body></html>");
+                npcHtmlMessage.setHtml(
+                        "<html><head><title>Instanced Events</title></head><body>Cursed weapon owners are not allowed to participate.</body></html>");
             }
             else if (playerInstance.getReputation() < 0)
             {
-                npcHtmlMessage
-                        .setHtml(
-                                "<html><head><title>Instanced Events</title></head><body>Chaotic players are not allowed to participate.</body></html>");
+                npcHtmlMessage.setHtml(
+                        "<html><head><title>Instanced Events</title></head><body>Chaotic players are not allowed to participate.</body></html>");
             }
             else if (addWaitingParticipant(playerInstance, sideId))
             {
@@ -383,9 +380,8 @@ public class ChessEvent
 
             NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
 
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>You have been deleted from the waiting list.</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You have been deleted from the waiting list.</body></html>");
             playerInstance.sendPacket(npcHtmlMessage);
         }
         else if (command.startsWith("challenge"))
@@ -397,17 +393,17 @@ public class ChessEvent
 
             NpcHtmlMessage npcHtmlMessage1 = new NpcHtmlMessage(0);
 
-            npcHtmlMessage1
-                    .setHtml("<html><head><title>Instanced Events</title></head><body>You have challenged the player " +
-                            target
-                                    .getName() + ".</body></html>");
+            npcHtmlMessage1.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You have challenged the player " +
+                            target.getName() + ".</body></html>");
             playerInstance.sendPacket(npcHtmlMessage1);
 
             NpcHtmlMessage npcHtmlMessage2 = new NpcHtmlMessage(0);
 
-            npcHtmlMessage2.setHtml("<html><head><title>Instanced Events</title></head><body>" + playerInstance
-                    .getName() + " has challenged you for a game. Do you accept?<br>" +
-                    "To accept talk with the Chess Manager.</body></html>");
+            npcHtmlMessage2.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>" + playerInstance.getName() +
+                            " has challenged you for a game. Do you accept?<br>" +
+                            "To accept talk with the Chess Manager.</body></html>");
             target.sendPacket(npcHtmlMessage2);
         }
         else if (command.equals("accept"))
@@ -417,9 +413,8 @@ public class ChessEvent
 
             NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
 
-            npcHtmlMessage
-                    .setHtml(
-                            "<html><head><title>Instanced Events</title></head><body>Your game is about to start. Get ready!</body></html>");
+            npcHtmlMessage.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>Your game is about to start. Get ready!</body></html>");
             playerInstance.sendPacket(npcHtmlMessage);
             target.sendPacket(npcHtmlMessage);
         }
@@ -430,15 +425,16 @@ public class ChessEvent
 
             NpcHtmlMessage npcHtmlMessage1 = new NpcHtmlMessage(0);
 
-            npcHtmlMessage1
-                    .setHtml("<html><head><title>Instanced Events</title></head><body>You have rejected " + target
-                            .getName() + "'s challenge.</body></html>");
+            npcHtmlMessage1.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>You have rejected " + target.getName() +
+                            "'s challenge.</body></html>");
             playerInstance.sendPacket(npcHtmlMessage1);
 
             NpcHtmlMessage npcHtmlMessage2 = new NpcHtmlMessage(0);
 
-            npcHtmlMessage2.setHtml("<html><head><title>Instanced Events</title></head><body>" + playerInstance
-                    .getName() + " has rejected your challenge.</body></html>");
+            npcHtmlMessage2.setHtml(
+                    "<html><head><title>Instanced Events</title></head><body>" + playerInstance.getName() +
+                            " has rejected your challenge.</body></html>");
             target.sendPacket(npcHtmlMessage2);
         }
     }
@@ -469,8 +465,8 @@ public class ChessEvent
 
     public static byte getParticipantSideId(int playerObjectId)
     {
-        return (byte) (_sides[0].containsPlayer(playerObjectId) ? 0 : _sides[1]
-                .containsPlayer(playerObjectId) ? 1 : -1);
+        return (byte) (_sides[0].containsPlayer(playerObjectId) ? 0 :
+                _sides[1].containsPlayer(playerObjectId) ? 1 : -1);
     }
 
     public static boolean isPlayerParticipant(int playerObjectId)
@@ -486,9 +482,8 @@ public class ChessEvent
     {
         for (int i = 0; i < 8; i++)
         {
-            if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0]
-                    .getObjectId() == playerObjectId || _waitingPlayers[i][1] != null && _waitingPlayers[i][1]
-                    .getObjectId() == playerObjectId)
+            if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerObjectId ||
+                    _waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerObjectId)
             {
                 return true;
             }
@@ -501,8 +496,7 @@ public class ChessEvent
         for (int i = 0; i < 8; i++)
         {
             if (_waitingPlayerSideIds[i] != -1 && _waitingPlayers[i][_waitingPlayerSideIds[i]] != null &&
-                    _waitingPlayers[i][_waitingPlayerSideIds[i]]
-                            .getObjectId() == playerObjectId)
+                    _waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
             {
                 return true;
             }
@@ -515,8 +509,7 @@ public class ChessEvent
         for (int i = 0; i < 8; i++)
         {
             if (_waitingPlayers[i][0] != null && _waitingPlayers[i][1] != null && _waitingPlayerSideIds[i] != -1 &&
-                    _waitingPlayers[i][_waitingPlayerSideIds[i]]
-                            .getObjectId() == playerObjectId)
+                    _waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
             {
                 return true;
             }

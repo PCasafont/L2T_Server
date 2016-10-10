@@ -119,49 +119,39 @@ public class ClanBBSManager extends BaseBBSManager
             }
             else
             {
-                final StringBuilder html = StringUtil
-                        .startAppend(2000,
-                                "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;",
-                                String
-                                        .valueOf(clanId), "\"> &amp;$802; </a></td></tr></table>");
+                final StringBuilder html = StringUtil.startAppend(2000,
+                        "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;",
+                        String.valueOf(clanId), "\"> &amp;$802; </a></td></tr></table>");
                 if (activeChar.isClanLeader())
                 {
-                    StringUtil
-                            .append(html,
-                                    "<br><br><center><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td fixwidth=610><font color=\"AAAAAA\">The Clan Notice function allows the clan leader to send messages through a pop-up window to clan members at login.</font> </td></tr><tr><td height=20></td></tr>");
+                    StringUtil.append(html,
+                            "<br><br><center><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td fixwidth=610><font color=\"AAAAAA\">The Clan Notice function allows the clan leader to send messages through a pop-up window to clan members at login.</font> </td></tr><tr><td height=20></td></tr>");
 
                     if (activeChar.getClan().isNoticeEnabled())
                     {
-                        StringUtil
-                                .append(html,
-                                        "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;on&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">off</a>");
+                        StringUtil.append(html,
+                                "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;on&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">off</a>");
                     }
                     else
                     {
-                        StringUtil
-                                .append(html,
-                                        "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">on</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;off");
+                        StringUtil.append(html,
+                                "<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">on</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;off");
                     }
 
-                    StringUtil
-                            .append(html,
-                                    "</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\"><br> <br><table width=610 border=0 cellspacing=2 cellpadding=0><tr><td>Edit Notice: </td></tr><tr><td height=5></td></tr><tr><td><MultiEdit var =\"Content\" width=610 height=100></td></tr></table><br><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td height=5></td></tr><tr><td align=center FIXWIDTH=65><button value=\"&$140;\" action=\"Write Notice Set _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=45></td><td align=center FIXWIDTH=500></td></tr></table></center></body></html>");
+                    StringUtil.append(html,
+                            "</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\"><br> <br><table width=610 border=0 cellspacing=2 cellpadding=0><tr><td>Edit Notice: </td></tr><tr><td height=5></td></tr><tr><td><MultiEdit var =\"Content\" width=610 height=100></td></tr></table><br><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td height=5></td></tr><tr><td align=center FIXWIDTH=65><button value=\"&$140;\" action=\"Write Notice Set _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=45></td><td align=center FIXWIDTH=500></td></tr></table></center></body></html>");
                     send1001(html.toString(), activeChar);
                     send1002(activeChar, activeChar.getClan().getNotice(), " ", "0");
                 }
                 else
                 {
-                    StringUtil
-                            .append(html,
-                                    "<img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td>You are not your clan's leader, and therefore cannot change the clan notice</td></tr></table>");
+                    StringUtil.append(html,
+                            "<img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td>You are not your clan's leader, and therefore cannot change the clan notice</td></tr></table>");
                     if (activeChar.getClan().isNoticeEnabled())
                     {
-                        StringUtil
-                                .append(html,
-                                        "<table border=0 cellspacing=0 cellpadding=0><tr><td>The current clan notice:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>" +
-                                                activeChar
-                                                        .getClan().getNotice() +
-                                                "</td><td fixqqwidth=5></td></tr></table>");
+                        StringUtil.append(html,
+                                "<table border=0 cellspacing=0 cellpadding=0><tr><td>The current clan notice:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>" +
+                                        activeChar.getClan().getNotice() + "</td><td fixqqwidth=5></td></tr></table>");
                     }
                     StringUtil.append(html, "</center></body></html>");
                     separateAndSend(html.toString(), activeChar);
@@ -182,13 +172,10 @@ public class ClanBBSManager extends BaseBBSManager
         }
 
         // header
-        final StringBuilder html = StringUtil
-                .startAppend(2000,
-                        "<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;",
-                        String
-                                .valueOf(activeChar.getClan() != null ? activeChar.getClan()
-                                        .getClanId() : 0),
-                        "\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
+        final StringBuilder html = StringUtil.startAppend(2000,
+                "<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;",
+                String.valueOf(activeChar.getClan() != null ? activeChar.getClan().getClanId() : 0),
+                "\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
 
         int i = 0;
         for (L2Clan cl : ClanTable.getInstance().getClans())
@@ -200,17 +187,12 @@ public class ClanBBSManager extends BaseBBSManager
 
             if (i++ >= (index - 1) * 7)
             {
-                StringUtil
-                        .append(html,
-                                "<img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><table border=0 cellspacing=0 cellpadding=0 width=610><tr> <td FIXWIDTH=5></td><td FIXWIDTH=200 align=center><a action=\"bypass _bbsclan_clanhome;",
-                                String
-                                        .valueOf(cl.getClanId()), "\">", cl
-                                        .getName(), "</a></td><td FIXWIDTH=200 align=center>", cl
-                                        .getLeaderName(), "</td><td FIXWIDTH=100 align=center>", String
-                                        .valueOf(cl.getLevel()), "</td><td FIXWIDTH=100 align=center>",
-                                String.valueOf(cl
-                                        .getMembersCount()),
-                                "</td><td FIXWIDTH=5></td></tr><tr><td height=5></td></tr></table><img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><img src=\"L2UI.SquareGray\" width=\"610\" height=\"1\">");
+                StringUtil.append(html,
+                        "<img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><table border=0 cellspacing=0 cellpadding=0 width=610><tr> <td FIXWIDTH=5></td><td FIXWIDTH=200 align=center><a action=\"bypass _bbsclan_clanhome;",
+                        String.valueOf(cl.getClanId()), "\">", cl.getName(), "</a></td><td FIXWIDTH=200 align=center>",
+                        cl.getLeaderName(), "</td><td FIXWIDTH=100 align=center>", String.valueOf(cl.getLevel()),
+                        "</td><td FIXWIDTH=100 align=center>", String.valueOf(cl.getMembersCount()),
+                        "</td><td FIXWIDTH=5></td></tr><tr><td height=5></td></tr></table><img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><img src=\"L2UI.SquareGray\" width=\"610\" height=\"1\">");
             }
         }
 
@@ -224,8 +206,7 @@ public class ClanBBSManager extends BaseBBSManager
         }
         else
         {
-            StringUtil.append(html, "<td><button action=\"_bbsclan_clanlist;", String
-                            .valueOf(index - 1),
+            StringUtil.append(html, "<td><button action=\"_bbsclan_clanlist;", String.valueOf(index - 1),
                     "\" back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
         }
 
@@ -244,8 +225,8 @@ public class ClanBBSManager extends BaseBBSManager
             }
             else
             {
-                StringUtil.append(html, "<td><a action=\"bypass _bbsclan_clanlist;", String.valueOf(i), "\"> ", String
-                        .valueOf(i), " </a></td>");
+                StringUtil.append(html, "<td><a action=\"bypass _bbsclan_clanlist;", String.valueOf(i), "\"> ",
+                        String.valueOf(i), " </a></td>");
             }
         }
         if (index == nbp)
@@ -255,8 +236,7 @@ public class ClanBBSManager extends BaseBBSManager
         }
         else
         {
-            StringUtil.append(html, "<td><button action=\"bypass _bbsclan_clanlist;", String
-                            .valueOf(index + 1),
+            StringUtil.append(html, "<td><button action=\"bypass _bbsclan_clanlist;", String.valueOf(index + 1),
                     "\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
         }
         html.append(
@@ -297,40 +277,29 @@ public class ClanBBSManager extends BaseBBSManager
             {
                 final String html = StringUtil
                         .concat("<html><body><center><br><br><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbshome\">HOME</a> &gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>  &gt; <a action=\"bypass _bbsclan_clanhome;",
-                                String
-                                        .valueOf(clanId),
+                                String.valueOf(clanId),
                                 "\"> &amp;$802; </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixwidth=600><a action=\"bypass _bbsclan_clanhome;",
-                                String
-                                        .valueOf(clanId),
-                                ";announce\">[CLAN ANNOUNCEMENT]</a> <a action=\"bypass _bbsclan_clanhome;", String
-                                        .valueOf(clanId),
-                                ";cbb\">[CLAN BULLETIN BOARD]</a><a action=\"bypass _bbsclan_clanhome;", String
-                                        .valueOf(clanId),
+                                String.valueOf(clanId),
+                                ";announce\">[CLAN ANNOUNCEMENT]</a> <a action=\"bypass _bbsclan_clanhome;",
+                                String.valueOf(clanId),
+                                ";cbb\">[CLAN BULLETIN BOARD]</a><a action=\"bypass _bbsclan_clanhome;",
+                                String.valueOf(clanId),
                                 ";cmail\">[CLAN MAIL]</a>&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_edit;",
-                                String
-                                        .valueOf(clanId),
+                                String.valueOf(clanId),
                                 ";cnotice\">[CLAN NOTICE]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixwidth=290 valign=top></td><td fixWIDTH=5></td><td fixWIDTH=5 align=center valign=top><img src=\"l2ui.squaregray\" width=2  height=128></td><td fixWIDTH=5></td><td fixwidth=295><table border=0 cellspacing=0 cellpadding=0 width=295><tr><td fixWIDTH=100 align=left>CLAN NAME</td><td fixWIDTH=195 align=left>",
-                                cl
-                                        .getName(),
+                                cl.getName(),
                                 "</td></tr><tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>CLAN LEVEL</td><td fixWIDTH=195 align=left height=16>",
-                                String
-                                        .valueOf(cl
-                                                .getLevel()),
+                                String.valueOf(cl.getLevel()),
                                 "</td></tr><tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>CLAN MEMBERS</td><td fixWIDTH=195 align=left height=16>",
-                                String
-                                        .valueOf(cl
-                                                .getMembersCount()),
+                                String.valueOf(cl.getMembersCount()),
                                 "</td></tr><tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>CLAN LEADER</td><td fixWIDTH=195 align=left height=16>",
-                                cl
-                                        .getLeaderName(), "</td></tr><tr><td height=7></td></tr>" +
+                                cl.getLeaderName(), "</td></tr><tr><td height=7></td></tr>" +
                                         // ADMINISTRATOR ??
                 /*
-				 * html.append("<tr>"); html.append("<td fixWIDTH=100 align=left>ADMINISTRATOR</td>"); html.append("<td fixWIDTH=195 align=left height=16>"+cl.getLeaderName()+"</td>"); html.append("</tr>");
+                 * html.append("<tr>"); html.append("<td fixWIDTH=100 align=left>ADMINISTRATOR</td>"); html.append("<td fixWIDTH=195 align=left height=16>"+cl.getLeaderName()+"</td>"); html.append("</tr>");
 				 */
                                         "<tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>ALLIANCE</td><td fixWIDTH=195 align=left height=16>",
-                                cl
-                                        .getAllyName() != null ? cl
-                                        .getAllyName() : "",
+                                cl.getAllyName() != null ? cl.getAllyName() : "",
                                 "</td></tr></table></td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table>" +
                                         // TODO: the BB for clan :)
                                         // html.append("<table border=0 cellspacing=0 cellpadding=0 width=610  bgcolor=333333>");

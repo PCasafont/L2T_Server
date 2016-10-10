@@ -101,8 +101,8 @@ public class ExMentorList extends L2GameServerPacket
             // Retrieve the L2PcInstance from the characters table of the database
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
             statement.setInt(1, partnerInfo.objId);
             ResultSet rset = statement.executeQuery();
             while (rset.next())
@@ -126,8 +126,8 @@ public class ExMentorList extends L2GameServerPacket
     @Override
     protected final void writeImpl()
     {
-        writeD(_player.isMentor() ? 0x01 : _player
-                .isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+        writeD(_player.isMentor() ? 0x01 :
+                _player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
         writeD(0x00); // ???
         writeD(_partners.size());
         for (PartnerInfo menteeInfo : _partners)

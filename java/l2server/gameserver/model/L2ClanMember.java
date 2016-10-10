@@ -704,8 +704,8 @@ public class L2ClanMember
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("UPDATE characters SET apprentice=?,sponsor=? WHERE charId=?");
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE characters SET apprentice=?,sponsor=? WHERE charId=?");
             statement.setInt(1, apprentice);
             statement.setInt(2, sponsor);
             statement.setInt(3, getObjectId());

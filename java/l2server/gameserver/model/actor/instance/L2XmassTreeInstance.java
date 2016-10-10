@@ -74,8 +74,8 @@ public class L2XmassTreeInstance extends L2Npc
         if (template.NpcId == SPECIAL_TREE_ID)
         {
             _aiTask = ThreadPoolManager.getInstance()
-                    .scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance()
-                            .getInfo(2139, 1)), 3000, 3000);
+                    .scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance().getInfo(2139, 1)), 3000,
+                            3000);
         }
     }
 

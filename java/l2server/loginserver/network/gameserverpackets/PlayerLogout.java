@@ -41,8 +41,8 @@ public class PlayerLogout extends BaseRecievePacket
         server.removeAccountOnGameServer(account);
         if (Config.DEBUG)
         {
-            Log.info("Player " + account + " logged out from gameserver [" + server
-                    .getServerId() + "] " + GameServerTable.getInstance().getServerNameById(server.getServerId()));
+            Log.info("Player " + account + " logged out from gameserver [" + server.getServerId() + "] " +
+                    GameServerTable.getInstance().getServerNameById(server.getServerId()));
         }
     }
 }

@@ -237,8 +237,8 @@ public class DuelManager
             {
                 duel.broadcastToTeam2(packet);
             }
-            else if (duel.getPlayerB().getParty() != null && duel.getPlayerB().getParty().getPartyMembers()
-                    .contains(player))
+            else if (duel.getPlayerB().getParty() != null &&
+                    duel.getPlayerB().getParty().getPartyMembers().contains(player))
             {
                 duel.broadcastToTeam1(packet);
             }

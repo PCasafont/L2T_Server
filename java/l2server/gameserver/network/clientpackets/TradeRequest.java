@@ -113,8 +113,8 @@ public final class TradeRequest extends L2GameClientPacket
 
         if (player.getPrivateStoreType() != 0 || partner.getPrivateStoreType() != 0)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 

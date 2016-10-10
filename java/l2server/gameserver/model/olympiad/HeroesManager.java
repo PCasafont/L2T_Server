@@ -125,8 +125,8 @@ public class HeroesManager
             while (rset.next())
             {
                 int charId = rset.getInt(Olympiad.CHAR_ID);
-                HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset
-                        .getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
+                HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset.getInt(Olympiad.CLASS_ID),
+                        rset.getInt(COUNT), rset.getBoolean(PLAYED));
 
                 loadFights(hero);
                 loadDiary(hero);
@@ -179,8 +179,8 @@ public class HeroesManager
             while (rset.next())
             {
                 int charId = rset.getInt(Olympiad.CHAR_ID);
-                HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset
-                        .getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
+                HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset.getInt(Olympiad.CLASS_ID),
+                        rset.getInt(COUNT), rset.getBoolean(PLAYED));
 
                 statement2 = con.prepareStatement(GET_CLAN_ALLY);
                 statement2.setInt(1, charId);
@@ -363,9 +363,8 @@ public class HeroesManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            statement = con
-                    .prepareStatement(
-                            "SELECT * FROM olympiad_fights WHERE (charOneId=? OR charTwoId=?) AND start<? ORDER BY start ASC");
+            statement = con.prepareStatement(
+                    "SELECT * FROM olympiad_fights WHERE (charOneId=? OR charTwoId=?) AND start<? ORDER BY start ASC");
             statement.setInt(1, hero.getId());
             statement.setInt(2, hero.getId());
             statement.setLong(3, from);
@@ -502,8 +501,8 @@ public class HeroesManager
         {
             HeroInfo hero = _heroes.get(charId);
             NpcHtmlMessage diaryReply = new NpcHtmlMessage(5);
-            final String htmContent = HtmCache.getInstance()
-                    .getHtm(activeChar.getHtmlPrefix(), "olympiad/herodiary.htm");
+            final String htmContent =
+                    HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "olympiad/herodiary.htm");
             if (htmContent != null)
             {
                 diaryReply.setHtml(htmContent);
@@ -534,10 +533,9 @@ public class HeroesManager
                         {
                             StringUtil.append(fList, "<table width=270>");
                         }
-                        StringUtil
-                                .append(fList, "<tr><td width=270><font color=\"LEVEL\">" +
-                                        new SimpleDateFormat("yyyy-MM-dd HH:mm")
-                                                .format(new Date(diaryEntry.time)) + "</font></td></tr>");
+                        StringUtil.append(fList, "<tr><td width=270><font color=\"LEVEL\">" +
+                                new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(diaryEntry.time)) +
+                                "</font></td></tr>");
                         StringUtil.append(fList, "<tr><td width=270>" + diaryEntry.action + "</td></tr>");
                         StringUtil.append(fList, "<tr><td>&nbsp;</td></tr></table>");
                         StringUtil.append(fList, "</td></tr>");
@@ -551,11 +549,10 @@ public class HeroesManager
 
                     if (breakat < list.size() - 1)
                     {
-                        diaryReply
-                                .replace("%buttprev%",
-                                        "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" +
-                                                (page + 1) +
-                                                "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+                        diaryReply.replace("%buttprev%",
+                                "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" +
+                                        (page + 1) +
+                                        "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
                     }
                     else
                     {
@@ -564,11 +561,10 @@ public class HeroesManager
 
                     if (page > 1)
                     {
-                        diaryReply
-                                .replace("%buttnext%",
-                                        "<button value=\"Next\" action=\"bypass _diary?class=" + heroclass + "&page=" +
-                                                (page - 1) +
-                                                "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+                        diaryReply.replace("%buttnext%",
+                                "<button value=\"Next\" action=\"bypass _diary?class=" + heroclass + "&page=" +
+                                        (page - 1) +
+                                        "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
                     }
                     else
                     {
@@ -598,8 +594,8 @@ public class HeroesManager
             List<FightInfo> list = hero.getFights();
 
             NpcHtmlMessage FightReply = new NpcHtmlMessage(5);
-            final String htmContent = HtmCache.getInstance()
-                    .getHtm(activeChar.getHtmlPrefix(), "olympiad/herohistory.htm");
+            final String htmContent =
+                    HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "olympiad/herohistory.htm");
             if (htmContent != null)
             {
                 FightReply.setHtml(htmContent);
@@ -625,14 +621,13 @@ public class HeroesManager
                         {
                             StringUtil.append(fList, "<table width=270>");
                         }
-                        StringUtil
-                                .append(fList, "<tr><td width=220><font color=\"LEVEL\">" + fight.startTime +
-                                        "</font>&nbsp;&nbsp;" + fight.result + "</td><td width=50 align=right>" +
+                        StringUtil.append(fList,
+                                "<tr><td width=220><font color=\"LEVEL\">" + fight.startTime + "</font>&nbsp;&nbsp;" +
+                                        fight.result + "</td><td width=50 align=right>" +
                                         (fight.classed ? "<font color=\"FFFF99\">cls</font>" :
                                                 "<font color=\"999999\">non-cls<font>") + "</td></tr>");
-                        StringUtil
-                                .append(fList, "<tr><td width=220>vs " + fight.opponent + " (" + fight.opponentClass +
-                                        ")</td><td width=50 align=right>(" + fight.duration + ")</td></tr>");
+                        StringUtil.append(fList, "<tr><td width=220>vs " + fight.opponent + " (" + fight.opponentClass +
+                                ")</td><td width=50 align=right>(" + fight.duration + ")</td></tr>");
                         StringUtil.append(fList, "<tr><td colspan=2>&nbsp;</td></tr></table>");
                         StringUtil.append(fList, "</td></tr>");
                         color = !color;
@@ -645,11 +640,10 @@ public class HeroesManager
 
                     if (breakat < list.size() - 1)
                     {
-                        FightReply
-                                .replace("%buttprev%",
-                                        "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" +
-                                                (page + 1) +
-                                                "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+                        FightReply.replace("%buttprev%",
+                                "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" +
+                                        (page + 1) +
+                                        "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
                     }
                     else
                     {
@@ -658,11 +652,10 @@ public class HeroesManager
 
                     if (page > 1)
                     {
-                        FightReply
-                                .replace("%buttnext%",
-                                        "<button value=\"Next\" action=\"bypass _match?class=" + heroclass + "&page=" +
-                                                (page - 1) +
-                                                "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+                        FightReply.replace("%buttnext%",
+                                "<button value=\"Next\" action=\"bypass _match?class=" + heroclass + "&page=" +
+                                        (page - 1) +
+                                        "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
                     }
                     else
                     {
@@ -790,9 +783,8 @@ public class HeroesManager
                 if (clan != null)
                 {
                     clan.addReputationScore(Config.HERO_POINTS, true);
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.CLAN_MEMBER_C1_BECAME_HERO_AND_GAINED_S2_REPUTATION_POINTS);
+                    SystemMessage sm = SystemMessage.getSystemMessage(
+                            SystemMessageId.CLAN_MEMBER_C1_BECAME_HERO_AND_GAINED_S2_REPUTATION_POINTS);
                     sm.addString(CharNameTable.getInstance().getNameById(hero.getId()));
                     sm.addNumber(Config.HERO_POINTS);
                     clan.broadcastToOnlineMembers(sm);
@@ -819,9 +811,8 @@ public class HeroesManager
                             if (clan != null)
                             {
                                 clan.addReputationScore(Config.HERO_POINTS, true);
-                                SystemMessage sm = SystemMessage
-                                        .getSystemMessage(
-                                                SystemMessageId.CLAN_MEMBER_C1_BECAME_HERO_AND_GAINED_S2_REPUTATION_POINTS);
+                                SystemMessage sm = SystemMessage.getSystemMessage(
+                                        SystemMessageId.CLAN_MEMBER_C1_BECAME_HERO_AND_GAINED_S2_REPUTATION_POINTS);
                                 sm.addString(CharNameTable.getInstance().getNameById(hero.getId()));
                                 sm.addNumber(Config.HERO_POINTS);
                                 clan.broadcastToOnlineMembers(sm);
@@ -987,8 +978,8 @@ public class HeroesManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("INSERT INTO heroes_diary (charId, time, action, param) values(?,?,?,?)");
+            PreparedStatement statement =
+                    con.prepareStatement("INSERT INTO heroes_diary (charId, time, action, param) values(?,?,?,?)");
             statement.setInt(1, charId);
             statement.setLong(2, System.currentTimeMillis());
             statement.setInt(3, action);

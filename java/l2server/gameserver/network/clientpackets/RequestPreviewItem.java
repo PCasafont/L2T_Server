@@ -131,8 +131,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 
         // Check current target of the player and the INTERACTION_DISTANCE
         L2Object target = _activeChar.getTarget();
-        if (!_activeChar
-                .isGM() &&
+        if (!_activeChar.isGM() &&
                 (target == null || !(target instanceof L2MerchantInstance || target instanceof L2MercManagerInstance)
                         // Target not a merchant and not mercmanager
                         || !_activeChar
@@ -157,9 +156,9 @@ public final class RequestPreviewItem extends L2GameClientPacket
 
         if (lists == null)
         {
-            Util.handleIllegalPlayerAction(_activeChar, "Warning!! Character " + _activeChar
-                    .getName() + " of account " + _activeChar
-                    .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(_activeChar,
+                    "Warning!! Character " + _activeChar.getName() + " of account " + _activeChar.getAccountName() +
+                            " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -173,9 +172,9 @@ public final class RequestPreviewItem extends L2GameClientPacket
 
         if (list == null)
         {
-            Util.handleIllegalPlayerAction(_activeChar, "Warning!! Character " + _activeChar
-                    .getName() + " of account " + _activeChar
-                    .getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(_activeChar,
+                    "Warning!! Character " + _activeChar.getName() + " of account " + _activeChar.getAccountName() +
+                            " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
             return;
         }
 
@@ -189,9 +188,9 @@ public final class RequestPreviewItem extends L2GameClientPacket
 
             if (!list.containsItemId(itemId))
             {
-                Util.handleIllegalPlayerAction(_activeChar, "Warning!! Character " + _activeChar
-                                .getName() + " of account " + _activeChar
-                                .getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + itemId,
+                Util.handleIllegalPlayerAction(_activeChar,
+                        "Warning!! Character " + _activeChar.getName() + " of account " + _activeChar.getAccountName() +
+                                " sent a false BuyList list_id " + _listId + " and item_id " + itemId,
                         Config.DEFAULT_PUNISH);
                 return;
             }
@@ -216,9 +215,9 @@ public final class RequestPreviewItem extends L2GameClientPacket
                     {
                         continue;
                     }
-                    else if (template.getItemType() == L2WeaponType.RAPIER || template
-                            .getItemType() == L2WeaponType.CROSSBOWK || template
-                            .getItemType() == L2WeaponType.ANCIENTSWORD)
+                    else if (template.getItemType() == L2WeaponType.RAPIER ||
+                            template.getItemType() == L2WeaponType.CROSSBOWK ||
+                            template.getItemType() == L2WeaponType.ANCIENTSWORD)
                     {
                         continue;
                     }
@@ -249,10 +248,10 @@ public final class RequestPreviewItem extends L2GameClientPacket
             totalPrice += Config.WEAR_PRICE;
             if (totalPrice > PcInventory.MAX_ADENA)
             {
-                Util.handleIllegalPlayerAction(_activeChar, "Warning!! Character " + _activeChar
-                        .getName() + " of account " + _activeChar
-                        .getAccountName() + " tried to purchase over " + PcInventory.MAX_ADENA +
-                        " adena worth of goods.", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(_activeChar,
+                        "Warning!! Character " + _activeChar.getName() + " of account " + _activeChar.getAccountName() +
+                                " tried to purchase over " + PcInventory.MAX_ADENA + " adena worth of goods.",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
         }

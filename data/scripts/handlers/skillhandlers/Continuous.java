@@ -210,9 +210,9 @@ public class Continuous implements ISkillHandler
                 // so the debuff can be removed after the duel
                 // (player & target must be in the same duel)
                 L2Abnormal[] effects = skill.getEffects(attacker, target, new Env(shld, ssMul));
-                if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill
-                        .getSkillType() == L2SkillType.BUFF) && player != null && player
-                        .getDuelId() == ((L2PcInstance) target).getDuelId())
+                if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() &&
+                        (skill.isDebuff() || skill.getSkillType() == L2SkillType.BUFF) && player != null &&
+                        player.getDuelId() == ((L2PcInstance) target).getDuelId())
                 {
                     DuelManager dm = DuelManager.getInstance();
                     for (L2Abnormal buff : effects)
@@ -225,9 +225,9 @@ public class Continuous implements ISkillHandler
                 }
 
                 // Give the buff to our pets if possible
-                if (target instanceof L2PcInstance && effects.length > 0 && (effects[0].canBeShared() || skill
-                        .getTargetType() == L2SkillTargetType.TARGET_SELF) && !skill.isToggle() && skill
-                        .canBeSharedWithSummon())
+                if (target instanceof L2PcInstance && effects.length > 0 &&
+                        (effects[0].canBeShared() || skill.getTargetType() == L2SkillTargetType.TARGET_SELF) &&
+                        !skill.isToggle() && skill.canBeSharedWithSummon())
                 {
                     for (L2SummonInstance summon : ((L2PcInstance) target).getSummons())
                     {

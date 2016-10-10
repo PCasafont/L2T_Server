@@ -159,8 +159,8 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
     @Override
     public boolean canStart(L2PcInstance player)
     {
-        return player.getLevel() >= 14 && player.getLevel() <= 25 && player
-                .getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
+        return player.getLevel() >= 14 && player.getLevel() <= 25 &&
+                player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
     }
 
     public static void main(String[] args)

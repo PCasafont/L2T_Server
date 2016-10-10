@@ -189,8 +189,8 @@ public class HallOfSuffering extends Quest
             }
             if (!Util.checkIfInRange(1000, player, partyMember, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(partyMember);
                 party.broadcastToPartyMembers(sm);
                 return false;
@@ -223,8 +223,8 @@ public class HallOfSuffering extends Quest
         {
             if (!(world instanceof HSWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return 0;
             }
             teleportPlayer(player, coords, world.instanceId);
@@ -247,8 +247,7 @@ public class HallOfSuffering extends Quest
             ((HSWorld) world).ptLeaderName = player.getName();
             InstanceManager.getInstance().addWorld(world);
             Log.info("Hall Of Suffering started " + template + " Instance: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             runTumors((HSWorld) world);
 
             // teleport players
@@ -440,8 +439,8 @@ public class HallOfSuffering extends Quest
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (skill.getSkillType() == L2SkillType.BALANCE_LIFE || skill.getSkillType() == L2SkillType.HEAL || skill
-                .getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.HEAL_STATIC)
+        if (skill.getSkillType() == L2SkillType.BALANCE_LIFE || skill.getSkillType() == L2SkillType.HEAL ||
+                skill.getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.HEAL_STATIC)
         {
             int hate = 2 * skill.getAggroPoints();
             if (hate < 2)
@@ -467,17 +466,13 @@ public class HallOfSuffering extends Quest
                     world.isBossesAttacked = false;
                     return "";
                 }
-                L2Npc mob = addSpawn(TWIN_MOBIDS[Rnd
-                                .get(TWIN_MOBIDS.length)], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0,
-                        false, npc
-                                .getInstanceId());
+                L2Npc mob = addSpawn(TWIN_MOBIDS[Rnd.get(TWIN_MOBIDS.length)], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2],
+                        TWIN_SPAWNS[0][3], 0, false, 0, false, npc.getInstanceId());
                 ((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
                 if (Rnd.get(100) < 33)
                 {
-                    mob = addSpawn(TWIN_MOBIDS[Rnd
-                                    .get(TWIN_MOBIDS.length)], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2], TWIN_SPAWNS[1][3], 0,
-                            false, 0, false, npc
-                                    .getInstanceId());
+                    mob = addSpawn(TWIN_MOBIDS[Rnd.get(TWIN_MOBIDS.length)], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2],
+                            TWIN_SPAWNS[1][3], 0, false, 0, false, npc.getInstanceId());
                     ((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
                 }
                 startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
@@ -585,8 +580,8 @@ public class HallOfSuffering extends Quest
 
             if (npc.getNpcId() == TUMOR_ALIVE)
             {
-                addSpawn(TUMOR_DEAD, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false, npc
-                        .getInstanceId());
+                addSpawn(TUMOR_DEAD, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false,
+                        npc.getInstanceId());
             }
             if (world.status < 5)
             {
@@ -630,8 +625,8 @@ public class HallOfSuffering extends Quest
             InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
             if (((HSWorld) world).rewardItemId == -1)
             {
-                Log.warning("Hall of Suffering: " + player.getName() + "(" + player
-                        .getObjectId() + ") is try to cheat!");
+                Log.warning(
+                        "Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
                 return getPtLeaderText(player, (HSWorld) world);
             }
             else if (((HSWorld) world).isRewarded)
@@ -667,8 +662,8 @@ public class HallOfSuffering extends Quest
             InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
             if (((HSWorld) world).rewardItemId == -1)
             {
-                Log.warning("Hall of Suffering: " + player.getName() + "(" + player
-                        .getObjectId() + ") is try to cheat!");
+                Log.warning(
+                        "Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
                 return getPtLeaderText(player, (HSWorld) world);
             }
             else if (((HSWorld) world).isRewarded)

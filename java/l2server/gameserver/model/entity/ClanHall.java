@@ -81,7 +81,7 @@ public class ClanHall
         private long _endDate;
         protected boolean _inDebt;
         public boolean _cwh;
-                // first activating clanhall function is payed from player inventory, any others from clan warehouse
+        // first activating clanhall function is payed from player inventory, any others from clan warehouse
 
         public ClanHallFunction(int type, int lvl, int lease, int tempLease, long rate, long time, boolean cwh)
         {
@@ -209,9 +209,8 @@ public class ClanHall
                 PreparedStatement statement;
 
                 con = L2DatabaseFactory.getInstance().getConnection();
-                statement = con
-                        .prepareStatement(
-                                "REPLACE INTO clanhall_functions (hall_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
+                statement = con.prepareStatement(
+                        "REPLACE INTO clanhall_functions (hall_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
                 statement.setInt(1, getId());
                 statement.setInt(2, getType());
                 statement.setInt(3, getLvl());
@@ -225,8 +224,7 @@ public class ClanHall
             {
                 Log.log(Level.SEVERE,
                         "Exception: ClanHall.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " +
-                                e
-                                        .getMessage(), e);
+                                e.getMessage(), e);
             }
             finally
             {
@@ -511,8 +509,9 @@ public class ClanHall
             rs = statement.executeQuery();
             while (rs.next())
             {
-                _functions.put(rs.getInt("type"), new ClanHallFunction(rs.getInt("type"), rs.getInt("lvl"), rs
-                        .getInt("lease"), 0, rs.getLong("rate"), rs.getLong("endTime"), true));
+                _functions.put(rs.getInt("type"),
+                        new ClanHallFunction(rs.getInt("type"), rs.getInt("lvl"), rs.getInt("lease"), 0,
+                                rs.getLong("rate"), rs.getLong("endTime"), true));
             }
             statement.close();
         }
@@ -692,8 +691,9 @@ public class ClanHall
 
                 L2Clan Clan = ClanTable.getInstance().getClan(getOwnerId());
                 if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse()
-                        .getItemByItemId(Config.CH_BID_ITEMID) != null && ClanTable.getInstance().getClan(getOwnerId())
-                        .getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease())
+                        .getItemByItemId(Config.CH_BID_ITEMID) != null &&
+                        ClanTable.getInstance().getClan(getOwnerId()).getWarehouse()
+                                .getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease())
                 {
                     if (_paidUntil != 0)
                     {
@@ -726,9 +726,8 @@ public class ClanHall
                         {
                             ClanHallAuctionManager.getInstance().initNPC(getId());
                             ClanHallManager.getInstance().setFree(getId());
-                            Clan.broadcastToOnlineMembers(SystemMessage
-                                    .getSystemMessage(
-                                            SystemMessageId.THE_CLAN_HALL_FEE_IS_ONE_WEEK_OVERDUE_THEREFORE_THE_CLAN_HALL_OWNERSHIP_HAS_BEEN_REVOKED));
+                            Clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(
+                                    SystemMessageId.THE_CLAN_HALL_FEE_IS_ONE_WEEK_OVERDUE_THEREFORE_THE_CLAN_HALL_OWNERSHIP_HAS_BEEN_REVOKED));
                         }
                         else
                         {
@@ -738,9 +737,8 @@ public class ClanHall
                     else
                     {
                         updateDb();
-                        SystemMessage sm = SystemMessage
-                                .getSystemMessage(
-                                        SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
+                        SystemMessage sm = SystemMessage.getSystemMessage(
+                                SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
                         sm.addItemNumber(getLease());
                         Clan.broadcastToOnlineMembers(sm);
                         if (_time + 1000 * 60 * 60 * 24 <= _paidUntil + _chRate)

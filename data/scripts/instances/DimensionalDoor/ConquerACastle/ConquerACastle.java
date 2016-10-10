@@ -146,11 +146,13 @@ public class ConquerACastle extends L2AttackableAIScript
             {
                 if (skill.getId() == 299)
                 {
-                    world.golem = addSpawn(_helperGolem, npc.getX(), npc.getY(), npc.getZ(), npc
-                            .getHeading(), true, 0, false, npc.getInstanceId());
+                    world.golem =
+                            addSpawn(_helperGolem, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0, false,
+                                    npc.getInstanceId());
 
-                    InstanceManager.getInstance().sendPacket(world.instanceId, new CreatureSay(npc
-                            .getObjectId(), Say2.SHOUT, "Dwarf Soldier", "C'mon golem! Destroy these doors!"));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new CreatureSay(npc.getObjectId(), Say2.SHOUT, "Dwarf Soldier",
+                                    "C'mon golem! Destroy these doors!"));
 
                     attackDoor(world);
                 }
@@ -175,9 +177,9 @@ public class ConquerACastle extends L2AttackableAIScript
             world.isGolemAttacking = false;
             world.golem.deleteMe();
 
-            InstanceManager.getInstance().sendPacket(world.instanceId, new CreatureSay(world.dwarf
-                    .getObjectId(), Say2.SHOUT, "Dwarf Soldier",
-                    "My golem can't see more doors, please guide me to the next position!"));
+            InstanceManager.getInstance().sendPacket(world.instanceId,
+                    new CreatureSay(world.dwarf.getObjectId(), Say2.SHOUT, "Dwarf Soldier",
+                            "My golem can't see more doors, please guide me to the next position!"));
 
             return;
         }
@@ -215,8 +217,8 @@ public class ConquerACastle extends L2AttackableAIScript
         }
         else if (npc.getNpcId() == _dummyFlagId)
         {
-            addSpawn(_helperDwarf, npc.getX(), npc.getY(), npc.getZ() + 50, npc.getHeading(), true, 0, false, npc
-                    .getInstanceId());
+            addSpawn(_helperDwarf, npc.getX(), npc.getY(), npc.getZ() + 50, npc.getHeading(), true, 0, false,
+                    npc.getInstanceId());
         }
 
         return super.onSpawn(npc);
@@ -263,11 +265,12 @@ public class ConquerACastle extends L2AttackableAIScript
                         minion.setIsParalyzed(false);
                     }
 
-                    InstanceManager.getInstance().sendPacket(world.instanceId, new CreatureSay(world.finalBoss
-                            .getObjectId(), 1, "Shilen's Protector", "It's the time to die fucking warriors!"));
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(
-                                    "All the seals has been destroyed, the boss is now available!", 6000));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new CreatureSay(world.finalBoss.getObjectId(), 1, "Shilen's Protector",
+                                    "It's the time to die fucking warriors!"));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage("All the seals has been destroyed, the boss is now available!",
+                                    6000));
                 }
                 else
                 {
@@ -297,9 +300,8 @@ public class ConquerACastle extends L2AttackableAIScript
                             break;
                     }
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId,
-                                    new ExShowScreenMessage("The " + value + " seal has been destroyed!", 6000));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage("The " + value + " seal has been destroyed!", 6000));
                 }
             }
             else if (npc.getNpcId() == _shilensProtector)
@@ -316,9 +318,9 @@ public class ConquerACastle extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
                         {
                             world.rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                    .get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 15 * DimensionalDoor
-                                            .getDimensionalDoorRewardRate()), player, true);
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                    Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                            15 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
                         else
                         {
@@ -338,8 +340,8 @@ public class ConquerACastle extends L2AttackableAIScript
             }
             else if (npc.getNpcId() == _helperGolem)
             {
-                InstanceManager.getInstance().sendPacket(world.instanceId, new CreatureSay(npc
-                        .getObjectId(), 1, "Dwarf Soldier", "Please, protect my golem!"));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier", "Please, protect my golem!"));
 
                 world.isGolemAttacking = false;
             }
@@ -385,13 +387,12 @@ public class ConquerACastle extends L2AttackableAIScript
                 world.finalBoss.setIsInvul(true);
                 world.finalBoss.startVisualEffect(VisualEffect.HOLD_2);
 
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 15,
-                                new ExShowScreenMessage("Welcome to the castle of " + CastleManager
-                                        .getInstance().getCastleById(world.castleId).getName() + "!", 6000));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 31, new ExShowScreenMessage(
-                                "Infiltrate to the Castle and destroy the Crystals as fast you can!", 6000));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 15, new ExShowScreenMessage(
+                        "Welcome to the castle of " +
+                                CastleManager.getInstance().getCastleById(world.castleId).getName() + "!", 6000));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 31,
+                        new ExShowScreenMessage("Infiltrate to the Castle and destroy the Crystals as fast you can!",
+                                6000));
                 InstanceManager.getInstance().sendPacket(world.instanceId, new ExCastleTendency(world.castleId, 0));
             }
             else if (event.startsWith("stage_all_dwarf_help"))
@@ -402,8 +403,8 @@ public class ConquerACastle extends L2AttackableAIScript
                     return "";
                 }
 
-                if (world.golem != null && world.golem
-                        .isDead() || world.isGolemAttacking && world.golem == null && !world.dwarf.isCastingNow())
+                if (world.golem != null && world.golem.isDead() ||
+                        world.isGolemAttacking && world.golem == null && !world.dwarf.isCastingNow())
                 {
                     world.isGolemAttacking = false;
                 }
@@ -422,10 +423,10 @@ public class ConquerACastle extends L2AttackableAIScript
 
                 if (event.endsWith("follow"))
                 {
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier", (player
-                                    .getAppearance().getSex() ? "Mrs. " : "Mr. ") + player
-                                    .getName() + "! I'll follow you!"));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier",
+                                    (player.getAppearance().getSex() ? "Mrs. " : "Mr. ") + player.getName() +
+                                            "! I'll follow you!"));
 
                     world.dwarf.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 
@@ -436,21 +437,20 @@ public class ConquerACastle extends L2AttackableAIScript
                     L2Object door = getClosestDoor(world);
                     if (door == null)
                     {
-                        InstanceManager.getInstance().sendPacket(world.instanceId, new CreatureSay(npc
-                                .getObjectId(), 1, "Dwarf Soldier", (player.getAppearance()
-                                .getSex() ? "Mrs. " : "Mr. ") + player
-                                .getName() +
-                                "! I don't see any door in my range, please guide me to the correct position!"));
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier",
+                                        (player.getAppearance().getSex() ? "Mrs. " : "Mr. ") + player.getName() +
+                                                "! I don't see any door in my range, please guide me to the correct position!"));
                         return "";
                     }
 
                     world.dwarf.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
                     world.isGolemAttacking = true;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier", (player
-                                    .getAppearance().getSex() ? "Mrs. " : "Mr. ") + player
-                                    .getName() + "! I'll make my best golem, give me few minutes!"));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new CreatureSay(npc.getObjectId(), 1, "Dwarf Soldier",
+                                    (player.getAppearance().getSex() ? "Mrs. " : "Mr. ") + player.getName() +
+                                            "! I'll make my best golem, give me few minutes!"));
 
                     npc.setIsCastingNow(true);
                     npc.doCast(_dummyCast);
@@ -483,14 +483,14 @@ public class ConquerACastle extends L2AttackableAIScript
         double distSq = 1000000000;
         for (L2DoorInstance instanceDoor : InstanceManager.getInstance().getInstance(world.instanceId).getDoors())
         {
-            if (instanceDoor == null || instanceDoor.isDead() || instanceDoor.isWall() || instanceDoor.getCastle()
-                    .getCastleId() != world.castleId)
+            if (instanceDoor == null || instanceDoor.isDead() || instanceDoor.isWall() ||
+                    instanceDoor.getCastle().getCastleId() != world.castleId)
             {
                 continue;
             }
 
-            if (!world.golem.isInsideRadius(instanceDoor, _wildCannon.getCastRange() - 100, true, true) || !GeoData
-                    .getInstance().canSeeTarget(world.golem, instanceDoor))
+            if (!world.golem.isInsideRadius(instanceDoor, _wildCannon.getCastRange() - 100, true, true) ||
+                    !GeoData.getInstance().canSeeTarget(world.golem, instanceDoor))
             {
                 continue;
             }
@@ -553,8 +553,8 @@ public class ConquerACastle extends L2AttackableAIScript
         {
             if (!(world instanceof ConquerACastleWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -581,9 +581,8 @@ public class ConquerACastle extends L2AttackableAIScript
 
             int castleId = Rnd.get(1, 9);
 
-            final int instanceId = InstanceManager.getInstance()
-                    .createDynamicInstance(_qn + "/" + CastleManager.getInstance().getCastleById(castleId)
-                            .getName() + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(
+                    _qn + "/" + CastleManager.getInstance().getCastleById(castleId).getName() + ".xml");
 
             world = new ConquerACastleWorld();
             world.instanceId = instanceId;

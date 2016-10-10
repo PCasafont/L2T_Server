@@ -252,8 +252,8 @@ public class L2AccessLevel
             setChildAccess(_childs);
             for (L2AccessLevel childAccess : _childsAccessLevel)
             {
-                if (childAccess != null && (childAccess.getLevel() == accessLevel.getLevel() || childAccess
-                        .hasChildAccess(accessLevel)))
+                if (childAccess != null &&
+                        (childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
                 {
                     return true;
                 }
@@ -263,8 +263,8 @@ public class L2AccessLevel
         {
             for (L2AccessLevel childAccess : _childsAccessLevel)
             {
-                if (childAccess != null && (childAccess.getLevel() == accessLevel.getLevel() || childAccess
-                        .hasChildAccess(accessLevel)))
+                if (childAccess != null &&
+                        (childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
                 {
                     return true;
                 }
@@ -291,8 +291,8 @@ public class L2AccessLevel
 
             if (accessLevelInst.hasChildAccess(this))
             {
-                Log.warning("AccessLevel: Child access tree overlapping for " + _name + " and " + accessLevelInst
-                        .getName());
+                Log.warning("AccessLevel: Child access tree overlapping for " + _name + " and " +
+                        accessLevelInst.getName());
                 continue;
             }
 

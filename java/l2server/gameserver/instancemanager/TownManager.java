@@ -31,8 +31,9 @@ public class TownManager
         {
             L2PcInstance player = (L2PcInstance) activeObject;
             Castle castle = CastleManager.getInstance().findNearestCastle(player);
-            if (!(castle != null && castle.getSiege().getIsInProgress() && (castle.getSiege()
-                    .checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
+            if (!(castle != null && castle.getSiege().getIsInProgress() &&
+                    (castle.getSiege().checkIsDefender(player.getClan()) ||
+                            castle.getSiege().checkIsAttacker(player.getClan()))))
             {
                 return getTown(Curfew.getInstance().getOnlyPeaceTown());
             }
@@ -42,8 +43,9 @@ public class TownManager
         {
             L2PcInstance player = (L2PcInstance) activeObject;
             Castle castle = CastleManager.getInstance().findNearestCastle(player);
-            if (!(castle != null && castle.getSiege().getIsInProgress() && (castle.getSiege()
-                    .checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
+            if (!(castle != null && castle.getSiege().getIsInProgress() &&
+                    (castle.getSiege().checkIsDefender(player.getClan()) ||
+                            castle.getSiege().checkIsAttacker(player.getClan()))))
             {
                 return getTown(MainTownManager.getInstance().getCurrentMainTown().getTownId());
             }
@@ -176,7 +178,7 @@ public class TownManager
             case 16:
                 return 9; // Schuttgart
                 /*
-				case 17:
+                case 17:
 				return getTown(16); // Floran
 				case 18:
 				return getTown(19); //Primeval Isle

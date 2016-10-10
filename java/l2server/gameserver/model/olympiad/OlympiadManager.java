@@ -103,9 +103,8 @@ public class OlympiadManager
         {
             if (showMessage)
             {
-                final SystemMessage sm = SystemMessage
-                        .getSystemMessage(
-                                SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_NON_CLASS_LIMITED_MATCH_WAITING_LIST);
+                final SystemMessage sm = SystemMessage.getSystemMessage(
+                        SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_NON_CLASS_LIMITED_MATCH_WAITING_LIST);
                 sm.addPcName(player);
                 player.sendPacket(sm);
             }
@@ -117,8 +116,8 @@ public class OlympiadManager
             return false;
         }
 
-        final List<Integer> classed = _classBasedRegisters
-                .get(player.getCurrentClass().getParent().getAwakeningClassId());
+        final List<Integer> classed =
+                _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
         if (classed != null && classed.contains(objId))
         {
             if (showMessage)
@@ -166,18 +165,16 @@ public class OlympiadManager
                 {
                     case CLASSED:
                     {
-                        final SystemMessage sm = SystemMessage
-                                .getSystemMessage(
-                                        SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
+                        final SystemMessage sm = SystemMessage.getSystemMessage(
+                                SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
                         sm.addPcName(player);
                         player.sendPacket(sm);
                         break;
                     }
                     case NON_CLASSED:
                     {
-                        final SystemMessage sm = SystemMessage
-                                .getSystemMessage(
-                                        SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_NON_CLASS_LIMITED_MATCH_WAITING_LIST);
+                        final SystemMessage sm = SystemMessage.getSystemMessage(
+                                SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_NON_CLASS_LIMITED_MATCH_WAITING_LIST);
                         sm.addPcName(player);
                         player.sendPacket(sm);
                         break;
@@ -260,9 +257,8 @@ public class OlympiadManager
                     _classBasedRegisters.put(classId, classed);
                 }
 
-                sm = SystemMessage
-                        .getSystemMessage(
-                                SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_CLASSIFIED_GAMES);
+                sm = SystemMessage.getSystemMessage(
+                        SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_CLASSIFIED_GAMES);
                 player.sendPacket(sm);
                 break;
             }
@@ -291,9 +287,8 @@ public class OlympiadManager
 
         if (!player.isNoble())
         {
-            sm = SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.C1_DOES_NOT_MEET_REQUIREMENTS_ONLY_NOBLESS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
+            sm = SystemMessage.getSystemMessage(
+                    SystemMessageId.C1_DOES_NOT_MEET_REQUIREMENTS_ONLY_NOBLESS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
             sm.addString(player.getName());
             player.sendPacket(sm);
             return false;
@@ -362,8 +357,8 @@ public class OlympiadManager
             return;
         }
 
-        final List<Integer> classed = _classBasedRegisters
-                .get(player.getCurrentClass().getParent().getAwakeningClassId());
+        final List<Integer> classed =
+                _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
         if (classed != null && classed.remove(objId))
         {
             return;
@@ -381,16 +376,14 @@ public class OlympiadManager
         SystemMessage sm;
         if (!player.isNoble())
         {
-            sm = SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.C1_DOES_NOT_MEET_REQUIREMENTS_ONLY_NOBLESS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
+            sm = SystemMessage.getSystemMessage(
+                    SystemMessageId.C1_DOES_NOT_MEET_REQUIREMENTS_ONLY_NOBLESS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
             sm.addPcName(player);
             player.sendPacket(sm);
             return null;
         }
 
-        if (player.getCurrentClass().getLevel() < 85 || player.getCurrentClass()
-                .getParent() == null)
+        if (player.getCurrentClass().getLevel() < 85 || player.getCurrentClass().getParent() == null)
         {
             //TODO correct system message
             //sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANT_JOIN_THE_OLYMPIAD_WITH_A_SUB_CLASS_CHARACTER);
@@ -436,7 +429,7 @@ public class OlympiadManager
 
         //If we have access to the player HWID we will use it to check dualbox otherwise we will use the external ip and the internal ip
         /*for (L2PcInstance pl : L2World.getInstance().getAllOlympiadPlayers())
-		{
+        {
 			if (pl == null)
 				continue;
 			if ((player.getHWID() != null) && (pl.getHWID() != null))

@@ -119,8 +119,8 @@ public class SkillTable implements Reloadable
                                 skill.parse();
                                 for (L2Skill s : skill.getSkills().values())
                                 {
-                                    _skills.put(getSkillHashCode(s.getId(), s.getLevel(), s.getEnchantRouteId(), s
-                                            .getEnchantLevel()), s);
+                                    _skills.put(getSkillHashCode(s.getId(), s.getLevel(), s.getEnchantRouteId(),
+                                            s.getEnchantLevel()), s);
                                     if (s.getEnchantRouteId() > 0)
                                     {
                                         _enchantable.add(s.getId());
@@ -162,8 +162,8 @@ public class SkillTable implements Reloadable
      */
     public static long getSkillHashCode(L2Skill skill)
     {
-        return getSkillHashCode(skill.getId(), skill.getLevelHash(), skill.getEnchantRouteId(), skill
-                .getEnchantLevel());
+        return getSkillHashCode(skill.getId(), skill.getLevelHash(), skill.getEnchantRouteId(),
+                skill.getEnchantLevel());
     }
 
     /**

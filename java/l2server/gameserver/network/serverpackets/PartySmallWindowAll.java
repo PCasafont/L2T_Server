@@ -70,8 +70,8 @@ public final class PartySmallWindowAll extends L2GameServerPacket
                 writeH(member.getCurrentClass().getId());
                 writeC(0x01); // ???
                 writeC(member.getRace().ordinal());
-                writeC(PartySearchManager.getInstance()
-                        .getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
+                writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 :
+                        0x00); // GoD unknown
                 writeD(member.getSummons().size() + (member.getPet() != null ? 1 : 0));
                 for (L2SummonInstance summon : member.getSummons())
                 {

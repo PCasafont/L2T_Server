@@ -66,8 +66,9 @@ public class ChristmasTree implements IItemHandler
 
             activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
 
-            activeChar.sendMessage("Created " + template1.Name + " at x: " + spawn.getX() + " y: " + spawn
-                    .getY() + " z: " + spawn.getZ());
+            activeChar.sendMessage(
+                    "Created " + template1.Name + " at x: " + spawn.getX() + " y: " + spawn.getY() + " z: " +
+                            spawn.getZ());
         }
         catch (Exception e)
         {

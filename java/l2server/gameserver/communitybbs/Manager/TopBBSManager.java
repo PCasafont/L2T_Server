@@ -49,8 +49,8 @@ public class TopBBSManager extends BaseBBSManager
             StringTokenizer st = new StringTokenizer(command, ";");
             st.nextToken();
             int idp = Integer.parseInt(st.nextToken());
-            String content = HtmCache.getInstance()
-                    .getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/" + idp + ".htm");
+            String content =
+                    HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/" + idp + ".htm");
             if (content == null)
             {
                 content = "<html><body><br><br><center>404 :File not found: 'data/html/CommunityBoard/" + idp +

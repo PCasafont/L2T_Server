@@ -38,8 +38,8 @@ public class PetItemList extends L2ItemListPacket
             L2ItemInstance[] items = _activeChar.getInventory().getItems();
             for (L2ItemInstance temp : items)
             {
-                Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp
-                        .getItem().getType2());
+                Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" +
+                        temp.getItem().getType2());
             }
         }
     }

@@ -291,8 +291,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
             {
                 return order == A2Z ? A2Z : Z2A;
             }
-            if (o1.isEtcItem() && o1.getItemType() == L2EtcItemType.RECIPE && o2.isEtcItem() && o2
-                    .getItemType() == L2EtcItemType.RECIPE)
+            if (o1.isEtcItem() && o1.getItemType() == L2EtcItemType.RECIPE && o2.isEtcItem() &&
+                    o2.getItemType() == L2EtcItemType.RECIPE)
             {
                 try
                 {
@@ -401,8 +401,9 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isWeapon() || item.getItem().getType2() == L2Item.TYPE2_WEAPON || item.isEtcItem() && item
-                    .getItemType() == L2EtcItemType.ARROW || item.getItem().getType2() == L2Item.TYPE2_MONEY)
+            if (item.isWeapon() || item.getItem().getType2() == L2Item.TYPE2_WEAPON ||
+                    item.isEtcItem() && item.getItemType() == L2EtcItemType.ARROW ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -486,8 +487,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.RECIPE || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.RECIPE ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -515,8 +516,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getItemName().toUpperCase().startsWith("AMULET") || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getItemName().toUpperCase().startsWith("AMULET") ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -544,8 +545,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && !item.getItemName().toUpperCase().startsWith("AMULET") || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && !item.getItemName().toUpperCase().startsWith("AMULET") ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -573,8 +574,9 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && (item.getEtcItem().getItemType() == L2EtcItemType.SCROLL || item.getEtcItem()
-                    .getItemType() == L2EtcItemType.SHOT) || item.getItem().getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && (item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
+                    item.getEtcItem().getItemType() == L2EtcItemType.SHOT) ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -602,8 +604,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SHOT || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SHOT ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -631,8 +633,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SCROLL || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -660,8 +662,8 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SEED || item.getItem()
-                    .getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SEED ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -689,10 +691,11 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
         List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
         for (L2ItemInstance item : _items)
         {
-            if (item.isEtcItem() && item.getEtcItem().getItemType() != L2EtcItemType.MATERIAL && item.getEtcItem()
-                    .getItemType() != L2EtcItemType.RECIPE && item.getEtcItem()
-                    .getItemType() != L2EtcItemType.SCROLL && item.getEtcItem()
-                    .getItemType() != L2EtcItemType.SHOT || item.getItem().getType2() == L2Item.TYPE2_MONEY)
+            if (item.isEtcItem() && item.getEtcItem().getItemType() != L2EtcItemType.MATERIAL &&
+                    item.getEtcItem().getItemType() != L2EtcItemType.RECIPE &&
+                    item.getEtcItem().getItemType() != L2EtcItemType.SCROLL &&
+                    item.getEtcItem().getItemType() != L2EtcItemType.SHOT ||
+                    item.getItem().getType2() == L2Item.TYPE2_MONEY)
             {
                 if (_list.size() < MAX_SORT_LIST_ITEMS)
                 {
@@ -736,7 +739,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
     protected final void writeImpl()
     {
         /* 0x01-Private Warehouse
-		 * 0x02-Clan Warehouse
+         * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
         writeH(_whType);

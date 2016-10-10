@@ -29,8 +29,8 @@ public class GMAudit
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("INSERT INTO gm_audit(time, gm, action, target, params) VALUES (?,?,?,?,?);");
+            PreparedStatement statement =
+                    con.prepareStatement("INSERT INTO gm_audit(time, gm, action, target, params) VALUES (?,?,?,?,?);");
 
             statement.setInt(1, (int) (System.currentTimeMillis() / 1000));
             statement.setString(2, gmName);

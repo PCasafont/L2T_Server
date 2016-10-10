@@ -33,7 +33,7 @@ public class ServerGui
         //Menu Bar Items
         //File Menu
         /*JMenuItem itemExit = new JMenuItem("Exit");
-		itemExit.setActionCommand("Exit");
+        itemExit.setActionCommand("Exit");
 		itemExit.addActionListener(_menuListener);
 
 		_fileMenu.add(itemExit);

@@ -124,8 +124,8 @@ public final class L2Augmentation
                     player.addTimeStamp(skill, skill.getReuseDelay());
                     updateTimeStamp = true;
                 }
-                else if (!player.getReuseTimeStamp().isEmpty() && player.getReuseTimeStamp()
-                        .containsKey(skill.getReuseHashCode()))
+                else if (!player.getReuseTimeStamp().isEmpty() &&
+                        player.getReuseTimeStamp().containsKey(skill.getReuseHashCode()))
                 {
                     final long delay = player.getReuseTimeStamp().get(skill.getReuseHashCode()).getRemaining();
                     if (delay > 0)

@@ -34,8 +34,8 @@ public class EffectKillMonster extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected() == null || !(getEffected() instanceof L2MonsterInstance) || getEffected()
-                .isRaid() || getEffected().isChampion())
+        if (getEffected() == null || !(getEffected() instanceof L2MonsterInstance) || getEffected().isRaid() ||
+                getEffected().isChampion())
         {
             return false;
         }

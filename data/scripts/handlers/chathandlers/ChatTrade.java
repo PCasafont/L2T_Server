@@ -47,15 +47,15 @@ public class ChatTrade implements IChatHandler
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)
     {
-        if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar
-                .getFloodProtectors().getTradeChat().tryPerformAction("trade chat")))
+        if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() ||
+                !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("trade chat")))
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
             return;
         }
 
 		/*if (activeChar.getLevel() < 95)
-		{
+        {
 			activeChar.sendMessage("You're not allowed to use this chat until level 95.");
 			return;
 		}*/
@@ -69,20 +69,20 @@ public class ChatTrade implements IChatHandler
         }
 
         CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-        CreatureSay csReg = new CreatureSay(activeChar, type, activeChar.getName(), "[" + MapRegionTable.getInstance()
-                .getClosestTownSimpleName(activeChar) + "]" + text);
+        CreatureSay csReg = new CreatureSay(activeChar, type, activeChar.getName(),
+                "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text);
 
         Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 
-        if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || Config.DEFAULT_TRADE_CHAT
-                .equalsIgnoreCase("gm") && activeChar.isGM())
+        if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") ||
+                Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("gm") && activeChar.isGM())
         {
             int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
             for (L2PcInstance player : pls)
             {
-                if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) && !BlockList
-                        .isBlocked(player, activeChar) && player.getInstanceId() == activeChar
-                        .getInstanceId() && activeChar.getEvent() == null)
+                if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) &&
+                        !BlockList.isBlocked(player, activeChar) &&
+                        player.getInstanceId() == activeChar.getInstanceId() && activeChar.getEvent() == null)
                 {
                     player.sendPacket(cs);
                 }

@@ -37,8 +37,8 @@ public class L2TrapAction implements IActionHandler
         }
 
         activeChar.setTarget(target);
-        MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target)
-                .getLevel());
+        MyTargetSelected my =
+                new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel());
         activeChar.sendPacket(my);
         return true;
     }

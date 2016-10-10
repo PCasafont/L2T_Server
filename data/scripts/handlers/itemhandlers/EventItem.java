@@ -87,8 +87,8 @@ public class EventItem implements IItemHandler
         }
         else
         {
-            _log.warning("Char: " + castor.getName() + "[" + castor
-                    .getObjectId() + "] has unknown block checker arena");
+            _log.warning(
+                    "Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
         }
     }
 }

@@ -103,8 +103,8 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 
         for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
         {
-            if (!(c instanceof L2PcInstance && ((L2PcInstance) c)
-                    .getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+            if (!(c instanceof L2PcInstance &&
+                    ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
             {
                 player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
                 player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -123,17 +123,18 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 
             if (!dwarfRecipes.contains(list) && !commonRecipes.contains(list))
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Player " + player.getName() + " of account " + player
-                        .getAccountName() + " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Player " + player.getName() + " of account " + player.getAccountName() +
+                                " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);
                 return;
             }
 
             if (!i.addToList(createList))
             {
-                Util.handleIllegalPlayerAction(player, "Warning!! Character " + player
-                        .getName() + " of account " + player
-                        .getAccountName() + " tried to set price more than " + MAX_ADENA +
-                        " adena in Private Manufacture.", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(player,
+                        "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                                " tried to set price more than " + MAX_ADENA + " adena in Private Manufacture.",
+                        Config.DEFAULT_PUNISH);
                 return;
             }
         }

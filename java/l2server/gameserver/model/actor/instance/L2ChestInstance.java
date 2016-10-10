@@ -216,8 +216,8 @@ public class L2ChestInstance extends L2MonsterInstance
             skillLevel = 6;
         }
 
-        if (player.isDead() || !player.isVisible() || !player
-                .isInsideRadius(this, getDistanceToWatchObject(player), false, false))
+        if (player.isDead() || !player.isVisible() ||
+                !player.isInsideRadius(this, getDistanceToWatchObject(player), false, false))
         {
             return false;
         }
@@ -256,8 +256,8 @@ public class L2ChestInstance extends L2MonsterInstance
     @Override
     public boolean doDie(L2Character killer)
     {
-        if (getNpcId() == 44000 && killer instanceof L2PcInstance && ((L2PcInstance) killer)
-                .getEvent() instanceof LuckyChests)
+        if (getNpcId() == 44000 && killer instanceof L2PcInstance &&
+                ((L2PcInstance) killer).getEvent() instanceof LuckyChests)
         {
             int prize = Rnd.get(100);
             L2PcInstance player = (L2PcInstance) killer;

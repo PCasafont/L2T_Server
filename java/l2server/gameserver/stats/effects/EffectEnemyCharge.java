@@ -58,8 +58,7 @@ public class EffectEnemyCharge extends L2Effect
         if (distance > 2000)
         {
             Log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX +
-                    "," + curY + " and getEffected: " + getEffected()
-                    .getX() + "," + getEffected().getY());
+                    "," + curY + " and getEffected: " + getEffected().getX() + "," + getEffected().getY());
             return false;
         }
         int offset = Math.max((int) distance - getSkill().getFlyRadius(), 30);
@@ -92,8 +91,9 @@ public class EffectEnemyCharge extends L2Effect
 
         if (Config.GEODATA > 0)
         {
-            Location destiny = GeoData.getInstance().moveCheck(getEffector().getX(), getEffector().getY(), getEffector()
-                    .getZ(), _x, _y, _z, getEffector().getInstanceId());
+            Location destiny = GeoData.getInstance()
+                    .moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z,
+                            getEffector().getInstanceId());
             if (destiny.getX() != _x || destiny.getY() != _y)
             {
                 _x = destiny.getX() - (int) (cos * 10);

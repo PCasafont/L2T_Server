@@ -50,8 +50,7 @@ public class DamageManager
 
             sb.append(
                     "<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_" +
-                            info
-                                    .getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className +
+                            info.getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className +
                             "</td><td FIXWIDTH=250>" + actualrecord + "</td><td FIXWIDTH=250>" + actualowner +
                             "</td></tr></table>");
             sb.append("<table><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
@@ -136,7 +135,7 @@ public class DamageManager
         }
 
 		/*String hwId = pl.getHWID();
-		if (hwId == null || hwId.equalsIgnoreCase(""))
+        if (hwId == null || hwId.equalsIgnoreCase(""))
 			return;*/
 
         if (dmg > info.getCurrentDamage())
@@ -178,9 +177,8 @@ public class DamageManager
                 {
                     continue;
                 }
-                statement = con
-                        .prepareStatement(
-                                "UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=?, `hwId`=? WHERE `classid`=?");
+                statement = con.prepareStatement(
+                        "UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=?, `hwId`=? WHERE `classid`=?");
                 statement.setInt(1, info.getValue().getCurrentDamage());
                 statement.setString(2, info.getValue().getNewName());
                 statement.setInt(3, info.getValue().getPlayerId());
@@ -240,9 +238,8 @@ public class DamageManager
                     "Congratulations, you was classified on Damage Ranking, here is your reward!", 0);
 
             Mail attachments = msg.createAttachments();
-            attachments
-                    .addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID,
-                            Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
+            attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID,
+                    Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
 
             MailManager.getInstance().sendMessage(msg);
             //Log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
@@ -261,9 +258,8 @@ public class DamageManager
         }
 
         // Announce to all online
-        Announcements.getInstance()
-                .announceToAll(
-                        "All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
+        Announcements.getInstance().announceToAll(
+                "All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
     }
 
     private static void truncateTable()
@@ -274,8 +270,8 @@ public class DamageManager
             con = L2DatabaseFactory.getInstance().getConnection();
 
             PreparedStatement statement = null;
-            statement = con
-                    .prepareStatement("UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, hwId=0 WHERE newdmg > 0");
+            statement = con.prepareStatement(
+                    "UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, hwId=0 WHERE newdmg > 0");
             statement.executeUpdate();
             statement.close();
         }
@@ -297,13 +293,13 @@ public class DamageManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, `hwId` FROM `dmg_data`");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, `hwId` FROM `dmg_data`");
             ResultSet rs = statement.executeQuery();
             while (rs.next())
             {
-                DamageInfo info = new DamageInfo(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"), rs
-                        .getInt("playerid"), rs.getString("hwId"));
+                DamageInfo info = new DamageInfo(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"),
+                        rs.getInt("playerid"), rs.getString("hwId"));
                 dmgIinfo.put(info.getClassId(), info);
             }
             statement.close();

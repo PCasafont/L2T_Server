@@ -75,8 +75,8 @@ public class L2SkillMount extends L2Skill
 
         if (activePlayer.isInOlympiadMode())
         {
-            activePlayer.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            activePlayer.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
             return;
         }
 

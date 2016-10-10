@@ -77,8 +77,8 @@ public class ArtificialPlayersManager implements Reloadable
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT charId FROM characters WHERE account_name LIKE '!'");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT charId FROM characters WHERE account_name LIKE '!'");
             ResultSet rset = statement.executeQuery();
 
             while (rset.next())
@@ -148,9 +148,9 @@ public class ArtificialPlayersManager implements Reloadable
                 Map<Integer, Integer> allies = new HashMap<Integer, Integer>();
                 for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
                 {
-                    if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) || player
-                            .isInsideZone(L2Character.ZONE_SIEGE) || player
-                            .isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0)
+                    if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) ||
+                            player.isInsideZone(L2Character.ZONE_SIEGE) ||
+                            player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0)
                     {
                         continue;
                     }
@@ -266,8 +266,8 @@ public class ArtificialPlayersManager implements Reloadable
 
         int objectId = IdFactory.getInstance().getNextId();
         L2PcInstance newChar = L2PcInstance
-                .create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3), Rnd
-                        .get(2) == 0, classId);
+                .create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3),
+                        Rnd.get(2) == 0, classId);
 
         newChar.setCurrentHp(newChar.getMaxHp());
         newChar.setCurrentCp(newChar.getMaxCp());
@@ -288,8 +288,8 @@ public class ArtificialPlayersManager implements Reloadable
 
             if (item == null)
             {
-                Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " + ia
-                        .getAmount() + ".");
+                Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " +
+                        ia.getAmount() + ".");
                 continue;
             }
 

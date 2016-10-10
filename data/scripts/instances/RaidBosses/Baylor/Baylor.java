@@ -140,8 +140,8 @@ public class Baylor extends L2AttackableAIScript
                 world._baylorTwo.setIsParalyzed(true);
 
                 world._camera = addSpawn(_cameraId, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
-                world._camera.broadcastPacket(new SpecialCamera(world._camera
-                        .getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
+                world._camera.broadcastPacket(
+                        new SpecialCamera(world._camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
 
                 startQuestTimer("stage_1_spawn_camera_minions", 2000, world._camera, null);
             }
@@ -173,13 +173,13 @@ public class Baylor extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_camera_2"))
             {
-                world._baylorOne.broadcastPacket(new SpecialCamera(world._baylorOne
-                        .getObjectId(), 500, -45, 170, 5000, 9000, 0, 0, 1, 0));
+                world._baylorOne.broadcastPacket(
+                        new SpecialCamera(world._baylorOne.getObjectId(), 500, -45, 170, 5000, 9000, 0, 0, 1, 0));
             }
             else if (event.equalsIgnoreCase("stage_1_camera_3"))
             {
-                world._baylorOne.broadcastPacket(new SpecialCamera(world._baylorOne
-                        .getObjectId(), 300, 0, 120, 2000, 5000, 0, 0, 1, 0));
+                world._baylorOne.broadcastPacket(
+                        new SpecialCamera(world._baylorOne.getObjectId(), 300, 0, 120, 2000, 5000, 0, 0, 1, 0));
 
                 world._baylorOne.broadcastPacket(new SocialAction(world._baylorOne.getObjectId(), 3));
                 world._baylorTwo.broadcastPacket(new SocialAction(world._baylorTwo.getObjectId(), 3));
@@ -188,8 +188,8 @@ public class Baylor extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_camera_4"))
             {
-                world._baylorOne.broadcastPacket(new SpecialCamera(world._baylorOne
-                        .getObjectId(), 747, 0, 160, 2000, 3000, 0, 0, 1, 0));
+                world._baylorOne.broadcastPacket(
+                        new SpecialCamera(world._baylorOne.getObjectId(), 747, 0, 160, 2000, 3000, 0, 0, 1, 0));
 
                 world._baylorOne
                         .broadcastPacket(new MagicSkillUse(world._baylorOne, world._baylorOne, 5402, 1, 2000, 0, 0));
@@ -355,8 +355,8 @@ public class Baylor extends L2AttackableAIScript
         {
             if (!(world instanceof BaylorWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

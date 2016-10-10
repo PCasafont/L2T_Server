@@ -87,8 +87,8 @@ public class TargetCorpseClan implements ISkillTargetTypeHandler
                         continue;
                     }
 
-                    if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() || player
-                            .getParty() != null && !player.getParty().isInParty(newTarget)))
+                    if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() ||
+                            player.getParty() != null && !player.getParty().isInParty(newTarget)))
                     {
                         continue;
                     }

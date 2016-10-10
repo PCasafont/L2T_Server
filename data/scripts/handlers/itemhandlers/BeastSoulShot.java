@@ -96,8 +96,9 @@ public class BeastSoulShot implements IItemHandler
 
         int rubyLvl = 0;
         PcInventory playerInventory = summoner.getInventory();
-        for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory
-                .getMaxJewelryCount(); i++)
+        for (int i = Inventory.PAPERDOLL_JEWELRY1;
+             i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
+             i++)
         {
             L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
             if (jewel != null)
@@ -201,8 +202,7 @@ public class BeastSoulShot implements IItemHandler
         // Pet uses the power of spirit.
         summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_USE_SPIRITSHOT));
 
-        Broadcast
-                .toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, skillLvl, 0, 0, 0),
-                        360000/*600*/);
+        Broadcast.toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, skillLvl, 0, 0, 0),
+                360000/*600*/);
     }
 }

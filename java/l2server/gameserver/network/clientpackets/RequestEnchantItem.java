@@ -114,11 +114,11 @@ public final class RequestEnchantItem extends L2GameClientPacket
         }
 
         // fast auto-enchant cheat check
-        if (activeChar.getActiveEnchantTimestamp() == 0 || System.currentTimeMillis() - activeChar
-                .getActiveEnchantTimestamp() < 1000)
+        if (activeChar.getActiveEnchantTimestamp() == 0 ||
+                System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp() < 1000)
         {
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ",
+                    Config.DEFAULT_PUNISH);
             activeChar.setActiveEnchantItem(null);
             activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
             return;
@@ -129,8 +129,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
         if (scroll == null)
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
-            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                    .getName() + " tried to enchant with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(activeChar,
+                    "Player " + activeChar.getName() + " tried to enchant with a scroll he doesn't have",
+                    Config.DEFAULT_PUNISH);
             activeChar.setActiveEnchantItem(null);
             activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
             return;
@@ -143,8 +144,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
             if (support == null)
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
-                Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
-                        .getName() + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Player " + activeChar.getName() + " tried to enchant with a support item he doesn't have",
+                        Config.DEFAULT_PUNISH);
                 activeChar.setActiveEnchantItem(null);
                 activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
                 return;
@@ -170,8 +172,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 
             // Lastravel, LUC second chance
             rnd = Rnd.get(10000);
-            if (!success && (item.getEnchantLevel() < 10 && rnd < activeChar.getLUC() || item
-                    .getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2))
+            if (!success && (item.getEnchantLevel() < 10 && rnd < activeChar.getLUC() ||
+                    item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2))
             {
                 //System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
                 success = true;
@@ -181,8 +183,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
                 if (skill != null)
                 {
                     activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LADY_LUCK_SMILES_UPON_YOU));
-                    activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill
-                            .getLevel(), skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
+                    activeChar.broadcastPacket(
+                            new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevel(),
+                                    skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
                 }
             }
 
@@ -205,9 +208,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                     try
                     {
                         con = L2DatabaseFactory.getInstance().getConnection();
-                        PreparedStatement statement = con
-                                .prepareStatement(
-                                        "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
+                        PreparedStatement statement = con.prepareStatement(
+                                "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
                         statement.setInt(1, activeChar.getObjectId());
                         statement.setInt(2, item.getItemId());
                         statement.setInt(3, item.getObjectId());
@@ -231,8 +233,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                 // announce the success
                 int minEnchantAnnounce = item.isArmor() ? 6 : 7;
                 int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
-                if (!Config.isServer(Config.TENKAI_ESTHUS) && (item.getEnchantLevel() == minEnchantAnnounce || item
-                        .getEnchantLevel() == maxEnchantAnnounce))
+                if (!Config.isServer(Config.TENKAI_ESTHUS) &&
+                        (item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce))
                 {
                     SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);
                     sm.addCharName(activeChar);
@@ -243,14 +245,14 @@ public final class RequestEnchantItem extends L2GameClientPacket
                     L2Skill skill = SkillTable.FrequentSkill.FIREWORK.getSkill();
                     if (skill != null)
                     {
-                        activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill
-                                .getLevelHash(), skill.getHitTime(), skill.getReuseDelay(), skill
-                                .getReuseHashCode(), 0, 0));
+                        activeChar.broadcastPacket(
+                                new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevelHash(),
+                                        skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
                     }
                 }
 
-                if (it instanceof L2Armor && activeChar.getInventory().getItemByObjectId(item.getObjectId())
-                        .isEquipped())
+                if (it instanceof L2Armor &&
+                        activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
                 {
                     for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++)
                     {
@@ -278,9 +280,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                         try
                         {
                             con = L2DatabaseFactory.getInstance().getConnection();
-                            PreparedStatement statement = con
-                                    .prepareStatement(
-                                            "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
+                            PreparedStatement statement = con.prepareStatement(
+                                    "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
                             statement.setInt(1, activeChar.getObjectId());
                             statement.setInt(2, item.getItemId());
                             statement.setInt(3, item.getObjectId());
@@ -320,8 +321,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                             activeChar.sendPacket(sm);
                         }
 
-                        L2ItemInstance[] unequiped = activeChar.getInventory()
-                                .unEquipItemInSlotAndRecord(item.getLocationSlot());
+                        L2ItemInstance[] unequiped =
+                                activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
                         InventoryUpdate iu = new InventoryUpdate();
                         for (L2ItemInstance itm : unequiped)
                         {
@@ -347,9 +348,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                             try
                             {
                                 con = L2DatabaseFactory.getInstance().getConnection();
-                                PreparedStatement statement = con
-                                        .prepareStatement(
-                                                "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
+                                PreparedStatement statement = con.prepareStatement(
+                                        "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
                                 statement.setInt(1, activeChar.getObjectId());
                                 statement.setInt(2, item.getItemId());
                                 statement.setInt(3, item.getObjectId());
@@ -380,14 +380,14 @@ public final class RequestEnchantItem extends L2GameClientPacket
                             count = 1;
                         }
 
-                        L2ItemInstance destroyItem = activeChar.getInventory()
-                                .destroyItem("Enchant", item, activeChar, null);
+                        L2ItemInstance destroyItem =
+                                activeChar.getInventory().destroyItem("Enchant", item, activeChar, null);
                         if (destroyItem == null)
                         {
                             // unable to destroy item, cheater ?
                             Util.handleIllegalPlayerAction(activeChar,
-                                    "Unable to delete item on enchant failure from player " + activeChar
-                                            .getName() + ", possible cheater !", Config.DEFAULT_PUNISH);
+                                    "Unable to delete item on enchant failure from player " + activeChar.getName() +
+                                            ", possible cheater !", Config.DEFAULT_PUNISH);
                             activeChar.setActiveEnchantItem(null);
                             activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
 
@@ -397,9 +397,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                                 try
                                 {
                                     con = L2DatabaseFactory.getInstance().getConnection();
-                                    PreparedStatement statement = con
-                                            .prepareStatement(
-                                                    "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
+                                    PreparedStatement statement = con.prepareStatement(
+                                            "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
                                     statement.setInt(1, activeChar.getObjectId());
                                     statement.setInt(2, item.getItemId());
                                     statement.setInt(3, item.getObjectId());
@@ -475,9 +474,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
                             try
                             {
                                 con = L2DatabaseFactory.getInstance().getConnection();
-                                PreparedStatement statement = con
-                                        .prepareStatement(
-                                                "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
+                                PreparedStatement statement = con.prepareStatement(
+                                        "INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
                                 statement.setInt(1, activeChar.getObjectId());
                                 statement.setInt(2, item.getItemId());
                                 statement.setInt(3, item.getObjectId());

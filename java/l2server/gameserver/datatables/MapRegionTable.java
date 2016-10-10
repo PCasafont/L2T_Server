@@ -510,8 +510,8 @@ public class MapRegionTable
             Fort fort = null;
             ClanHall clanhall = null;
 
-            if (player.getClan() != null && !player.isFlyingMounted() && !player
-                    .isFlying()) // flying players in gracia cant use teleports to aden continent
+            if (player.getClan() != null && !player.isFlyingMounted() &&
+                    !player.isFlying()) // flying players in gracia cant use teleports to aden continent
             {
                 // If teleport to clan hall
                 if (teleportWhere == TeleportWhereType.ClanHall)
@@ -537,8 +537,8 @@ public class MapRegionTable
                     if (castle == null)
                     {
                         castle = CastleManager.getInstance().getCastle(player);
-                        if (!(castle != null && castle.getSiege().getIsInProgress() && castle.getSiege()
-                                .getDefenderClan(player.getClan()) != null))
+                        if (!(castle != null && castle.getSiege().getIsInProgress() &&
+                                castle.getSiege().getDefenderClan(player.getClan()) != null))
                         {
                             castle = null;
                         }
@@ -559,8 +559,8 @@ public class MapRegionTable
                     if (fort == null)
                     {
                         fort = FortManager.getInstance().getFort(player);
-                        if (!(fort != null && fort.getSiege().getIsInProgress() && fort.getOwnerClan() == player
-                                .getClan()))
+                        if (!(fort != null && fort.getSiege().getIsInProgress() &&
+                                fort.getOwnerClan() == player.getClan()))
                         {
                             fort = null;
                         }
@@ -649,8 +649,9 @@ public class MapRegionTable
                     }
                 }
             }
-            if (MonsterInvasion.getInstance().getAttackedTown() != -1 && TownManager.getClosestTown(activeChar)
-                    .getTownId() == MonsterInvasion.getInstance().getAttackedTown())
+            if (MonsterInvasion.getInstance().getAttackedTown() != -1 &&
+                    TownManager.getClosestTown(activeChar).getTownId() ==
+                            MonsterInvasion.getInstance().getAttackedTown())
             {
                 return TownManager.getClosestTown(activeChar).getChaoticSpawnLoc();
             }

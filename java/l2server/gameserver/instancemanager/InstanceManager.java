@@ -385,8 +385,9 @@ public class InstanceManager
             }
             catch (FileNotFoundException e)
             {
-                Log.log(Level.WARNING, "InstanceManager: Failed creating instance from template " + template + ", " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(),
+                        e);
             }
         }
         return _dynamic;
@@ -729,8 +730,8 @@ public class InstanceManager
                 return false;
             }
 
-            if (players.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && players.getInternalIP()
-                    .equalsIgnoreCase(player.getInternalIP()))
+            if (players.getExternalIP().equalsIgnoreCase(player.getExternalIP()) &&
+                    players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
             {
                 return false;
             }
@@ -865,8 +866,8 @@ public class InstanceManager
 
             if (!Util.checkIfInRange(1000, player, enterPlayer, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(enterPlayer);
 
                 if (party != null)

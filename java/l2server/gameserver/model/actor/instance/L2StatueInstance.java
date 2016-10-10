@@ -52,7 +52,7 @@ public class L2StatueInstance extends L2Npc
     private int _hair2 = 0;
 
 	/*
-	 * To create 1 instance:
+     * To create 1 instance:
 	 *
 		StatsSet ss = new StatsSet();
 		ss.set("id", 0);
@@ -78,9 +78,8 @@ public class L2StatueInstance extends L2Npc
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement st = con
-                    .prepareStatement(
-                            "SELECT char_name, templateId, sex, hairStyle, hairColor, face FROM characters WHERE charId = ?");
+            PreparedStatement st = con.prepareStatement(
+                    "SELECT char_name, templateId, sex, hairStyle, hairColor, face FROM characters WHERE charId = ?");
             st.setInt(1, playerObjId);
             ResultSet rs = st.executeQuery();
             if (rs.next())

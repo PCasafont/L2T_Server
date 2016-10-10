@@ -168,8 +168,7 @@ public class L2Abnormal
         if (_skill.getId() > 2277 && _skill.getId() < 2286 || _skill.getId() >= 2512 && _skill.getId() <= 2514)
         {
             if (_effected instanceof L2SummonInstance ||
-                    _effected instanceof L2PcInstance && !((L2PcInstance) _effected)
-                            .getSummons().isEmpty())
+                    _effected instanceof L2PcInstance && !((L2PcInstance) _effected).getSummons().isEmpty())
             {
                 temp /= 2;
             }
@@ -228,7 +227,7 @@ public class L2Abnormal
         _comboId = effect._comboId;
 
 		/*
-		 * Commented out by DrHouse:
+         * Commented out by DrHouse:
 		 * scheduleEffect can call onStart before effect is completly
 		 * initialized on constructor (child classes constructor)
 		 */
@@ -614,14 +613,14 @@ public class L2Abnormal
 
                 if (_skill.getAfterEffectId() > 0)
                 {
-                    L2Skill skill = SkillTable.getInstance()
-                            .getInfo(_skill.getAfterEffectId(), _skill.getAfterEffectLvl());
+                    L2Skill skill =
+                            SkillTable.getInstance().getInfo(_skill.getAfterEffectId(), _skill.getAfterEffectLvl());
                     if (skill != null)
                     {
-                        getEffected().broadcastPacket(new MagicSkillUse(_effected, skill.getId(), skill
-                                .getLevelHash(), 0, 0));
-                        getEffected().broadcastPacket(new MagicSkillLaunched(_effected, skill.getId(), skill
-                                .getLevelHash()));
+                        getEffected().broadcastPacket(
+                                new MagicSkillUse(_effected, skill.getId(), skill.getLevelHash(), 0, 0));
+                        getEffected().broadcastPacket(
+                                new MagicSkillLaunched(_effected, skill.getId(), skill.getLevelHash()));
                         skill.getEffects(getEffected(), getEffected());
                     }
                 }
@@ -630,8 +629,8 @@ public class L2Abnormal
                 {
                     ((L2PcInstance) getEffected()).decreaseBreathOfShilenDebuffLevel();
                 }
-                if (_skill.getId() == 1570 && getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected())
-                        .hasIdentityCrisis())
+                if (_skill.getId() == 1570 && getEffected() instanceof L2PcInstance &&
+                        ((L2PcInstance) getEffected()).hasIdentityCrisis())
                 {
                     ((L2PcInstance) getEffected()).setHasIdentityCrisis(false);
                 }
@@ -686,8 +685,8 @@ public class L2Abnormal
         }
         if (_totalCount > 1)
         {
-            mi.addEffect(sk.getId(), levelHash, _comboId, (_count - 1) * _duration * 1000 + (int) future
-                    .getDelay(TimeUnit.MILLISECONDS));
+            mi.addEffect(sk.getId(), levelHash, _comboId,
+                    (_count - 1) * _duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS));
         }
         else if (future != null)
         {
@@ -720,13 +719,14 @@ public class L2Abnormal
         }
         if (_totalCount > 1)
         {
-            mi.addEffect(sk.getId(), levelHash, _comboId, (_count - 1) * _duration * 1000 + (int) future
-                    .getDelay(TimeUnit.MILLISECONDS), _effector.getObjectId());
+            mi.addEffect(sk.getId(), levelHash, _comboId,
+                    (_count - 1) * _duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS),
+                    _effector.getObjectId());
         }
         else if (_effector != null)
         {
-            mi.addEffect(sk.getId(), levelHash, _comboId, (int) future.getDelay(TimeUnit.MILLISECONDS), _effector
-                    .getObjectId());
+            mi.addEffect(sk.getId(), levelHash, _comboId, (int) future.getDelay(TimeUnit.MILLISECONDS),
+                    _effector.getObjectId());
         }
         else if (_duration == -1)
         {
@@ -819,12 +819,12 @@ public class L2Abnormal
 
     public boolean canBeStolen()
     {
-        if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() || getSkill()
-                .getTargetType() == L2SkillTargetType.TARGET_SELF || getSkill().isToggle() || getSkill()
-                .isDebuff() || getSkill().isHeroSkill() || getSkill().getTransformId() > 0
+        if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
+                getSkill().getTargetType() == L2SkillTargetType.TARGET_SELF || getSkill().isToggle() ||
+                getSkill().isDebuff() || getSkill().isHeroSkill() || getSkill().getTransformId() > 0
                 //|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
-                || getSkill().isPotion() && getSkill().getId() != 2274 && getSkill()
-                .getId() != 2341 // Hardcode for now :<
+                || getSkill().isPotion() && getSkill().getId() != 2274 && getSkill().getId() != 2341
+                // Hardcode for now :<
                 || isHerbEffect() || !getSkill().canBeDispeled())
         {
             return false;
@@ -834,8 +834,8 @@ public class L2Abnormal
 
     public boolean canBeShared()
     {
-        if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() || getSkill()
-                .isToggle() || getSkill().isDebuff()
+        if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
+                getSkill().isToggle() || getSkill().isDebuff()
                 //|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
                 || !getSkill().canBeDispeled())
         {
@@ -889,10 +889,10 @@ public class L2Abnormal
             _blockedDamage += damage;
         }
 
-        return getSkill().isRemovedOnDamage() || (getEffectMask() & L2EffectType.SLEEP
-                .getMask()) != 0 || (getEffectMask() & L2EffectType.FEAR.getMask()) != 0 || getSkill()
-                .getStrikesToRemove() > 0 && (damage == 0 || _strikes >= getSkill().getStrikesToRemove()) || getSkill()
-                .getDamageToRemove() > 0 && (damage == 0 || _blockedDamage >= getSkill().getDamageToRemove());
+        return getSkill().isRemovedOnDamage() || (getEffectMask() & L2EffectType.SLEEP.getMask()) != 0 ||
+                (getEffectMask() & L2EffectType.FEAR.getMask()) != 0 ||
+                getSkill().getStrikesToRemove() > 0 && (damage == 0 || _strikes >= getSkill().getStrikesToRemove()) ||
+                getSkill().getDamageToRemove() > 0 && (damage == 0 || _blockedDamage >= getSkill().getDamageToRemove());
     }
 
     public boolean isRemovedOnDebuffBlock(boolean onDebuffBlock)

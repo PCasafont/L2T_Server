@@ -42,8 +42,8 @@ public class EffectAggroReduce extends L2Effect
 
         if (getSkill().getTargetType() != L2SkillTargetType.TARGET_UNDEAD || getEffected().isUndead())
         {
-            ((L2Attackable) getEffected()).reduceHate(null, ((L2Attackable) getEffected())
-                    .getHating(((L2Attackable) getEffected()).getMostHated()));
+            ((L2Attackable) getEffected()).reduceHate(null,
+                    ((L2Attackable) getEffected()).getHating(((L2Attackable) getEffected()).getMostHated()));
         }
 
         return true;

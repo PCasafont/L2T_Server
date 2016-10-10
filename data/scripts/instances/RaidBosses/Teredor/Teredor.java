@@ -156,8 +156,8 @@ public class Teredor extends L2AttackableAIScript
                 {
                     if (players != null && players.getInstanceId() == world.instanceId)
                     {
-                        addSpawn(_teredorTransparent1, players.getX(), players.getY(), players
-                                .getZ(), 0, false, 0, true, world.instanceId);
+                        addSpawn(_teredorTransparent1, players.getX(), players.getY(), players.getZ(), 0, false, 0,
+                                true, world.instanceId);
                     }
                 }
             }
@@ -205,8 +205,8 @@ public class Teredor extends L2AttackableAIScript
             {
                 if (npc != null && !npc.isDead() && npc.getTarget() != null)
                 {
-                    spawnMinions(world, npc, npc.getTarget().getActingPlayer(), _eggMinions[Rnd
-                            .get(_eggMinions.length)], 1);
+                    spawnMinions(world, npc, npc.getTarget().getActingPlayer(),
+                            _eggMinions[Rnd.get(_eggMinions.length)], 1);
                 }
             }
         }
@@ -247,8 +247,9 @@ public class Teredor extends L2AttackableAIScript
 
                     spawnMinions(world, npc, attacker, _eliteMillipede, 3);
                 }
-                else if (!world.bossIsInPause && world.bossIsReady && (world.status == 0 && npc.getCurrentHp() < npc
-                        .getMaxHp() * 0.85 || world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.50))
+                else if (!world.bossIsInPause && world.bossIsReady &&
+                        (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.85 ||
+                                world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.50))
                 {
                     world.status++;
 
@@ -328,8 +329,8 @@ public class Teredor extends L2AttackableAIScript
                 {
                     L2PcInstance target = L2World.getInstance().getPlayer(objId);
 
-                    if (target != null && target.isOnline() && target.getInstanceId() == world.instanceId && target
-                            .isMoving())
+                    if (target != null && target.isOnline() && target.getInstanceId() == world.instanceId &&
+                            target.isMoving())
                     {
                         spawnMinions(world, npc, target, _eliteMillipede, Rnd.get(6));
                         break;
@@ -395,8 +396,9 @@ public class Teredor extends L2AttackableAIScript
 
         for (int id = 0; id < count; id++)
         {
-            L2Attackable minion = (L2Attackable) addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc
-                    .getHeading(), false, 0, false, world.instanceId);
+            L2Attackable minion =
+                    (L2Attackable) addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0,
+                            false, world.instanceId);
             minion.setIsRunning(true);
 
             if (target != null)
@@ -414,8 +416,8 @@ public class Teredor extends L2AttackableAIScript
         {
             if (!(world instanceof TeredorWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -473,8 +475,7 @@ public class Teredor extends L2AttackableAIScript
             startQuestTimer("stage_1_spawn_boss", 5000, null, player);
 
             Log.fine(getName() + ": [" + _templateID + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

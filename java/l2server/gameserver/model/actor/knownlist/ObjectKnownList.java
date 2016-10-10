@@ -44,8 +44,8 @@ public class ObjectKnownList
         }
 
         // Instance -1 is for GMs that can see everything on all instances
-        if (getActiveObject().getInstanceId() != -1 && object.getInstanceId() != getActiveObject()
-                .getInstanceId() && object.getInstanceId() != getActiveObject().getObjectId())
+        if (getActiveObject().getInstanceId() != -1 && object.getInstanceId() != getActiveObject().getInstanceId() &&
+                object.getInstanceId() != getActiveObject().getObjectId())
         {
             return false;
         }
@@ -188,8 +188,9 @@ public class ObjectKnownList
                     }
 
                     // Remove all objects invisible or too far
-                    if (!object.isVisible() || !Util
-                            .checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
+                    if (!object.isVisible() ||
+                            !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object,
+                                    true))
                     {
                         oIter.remove();
                         removeKnownObject(object, true);

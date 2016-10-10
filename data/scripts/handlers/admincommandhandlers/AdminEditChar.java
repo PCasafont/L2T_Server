@@ -95,9 +95,7 @@ public class AdminEditChar implements IAdminCommandHandler
     private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
 
     private static final String[] ADMIN_COMMANDS = {
-            "admin_edit_character",
-            "admin_current_player",
-            "admin_nokarma",
+            "admin_edit_character", "admin_current_player", "admin_nokarma",
             // this is to remove karma from selected char...
             "admin_setkarma",
             // sets karma of target char to any amount. //setkarma <karma>
@@ -107,8 +105,7 @@ public class AdminEditChar implements IAdminCommandHandler
             //same as character_info, kept for compatibility purposes
             "admin_character_info",
             //given a player name, displays an information window
-            "admin_lookup_hw",
-            "admin_show_characters",
+            "admin_lookup_hw", "admin_show_characters",
             //list of characters
             "admin_find_character",
             //find a player by his name or a part of it (case-insensitive)
@@ -118,9 +115,7 @@ public class AdminEditChar implements IAdminCommandHandler
             //list all the characters from an account (useful for GMs w/o DB access)
             "admin_find_dualbox",
             //list all the IPs with more than 1 char logged in (dualbox)
-            "admin_strict_find_dualbox",
-            "admin_tracert",
-            "admin_save_modifications",
+            "admin_strict_find_dualbox", "admin_tracert", "admin_save_modifications",
             //consider it deprecated...
             "admin_rec",
             // gives recommendation points
@@ -146,10 +141,7 @@ public class AdminEditChar implements IAdminCommandHandler
             // removes clan penalties
             "admin_summon_info",
             //displays an information window about target summon
-            "admin_unsummon",
-            "admin_summon_setlvl",
-            "admin_show_pet_inv",
-            "admin_partyinfo"
+            "admin_unsummon", "admin_summon_setlvl", "admin_show_pet_inv", "admin_partyinfo"
     };
 
     @Override
@@ -648,10 +640,9 @@ public class AdminEditChar implements IAdminCommandHandler
                 if (player == null)
                 {
                     Connection con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement ps = con
-                            .prepareStatement("UPDATE characters SET " +
-                                    (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") +
-                                    " WHERE char_name=? LIMIT 1");
+                    PreparedStatement ps = con.prepareStatement("UPDATE characters SET " +
+                            (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") +
+                            " WHERE char_name=? LIMIT 1");
 
                     ps.setString(1, playerName);
                     ps.execute();
@@ -925,8 +916,8 @@ public class AdminEditChar implements IAdminCommandHandler
         for (int x = 0; x < maxPages; x++)
         {
             int pagenr = x + 1;
-            StringUtil.append(replyMSG, "<center><a action=\"bypass -h admin_show_characters ", String
-                    .valueOf(x), "\">Page ", String.valueOf(pagenr), "</a></center>");
+            StringUtil.append(replyMSG, "<center><a action=\"bypass -h admin_show_characters ", String.valueOf(x),
+                    "\">Page ", String.valueOf(pagenr), "</a></center>");
         }
 
         adminReply.replace("%pages%", replyMSG.toString());
@@ -935,9 +926,10 @@ public class AdminEditChar implements IAdminCommandHandler
         for (int i = charactersStart; i < charactersEnd; i++)
         {
             //Add player info into new Table row
-            StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", players[i]
-                    .getName(), "\">", players[i].getName(), "</a></td><td width=110>", players[i].getCurrentClass()
-                    .getName(), "</td><td width=40>", String.valueOf(players[i].getLevel()), "</td></tr>");
+            StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ",
+                    players[i].getName(), "\">", players[i].getName(), "</a></td><td width=110>",
+                    players[i].getCurrentClass().getName(), "</td><td width=40>", String.valueOf(players[i].getLevel()),
+                    "</td></tr>");
         }
 
         adminReply.replace("%players%", replyMSG.toString());
@@ -975,8 +967,8 @@ public class AdminEditChar implements IAdminCommandHandler
                 return;
             }
 
-            final AntiBotsManager.ClientInfo hardwareInfo = AntiBotsManager.getInstance()
-                    .getClientInfoByHardwareId(hardwareId);
+            final AntiBotsManager.ClientInfo hardwareInfo =
+                    AntiBotsManager.getInstance().getClientInfoByHardwareId(hardwareId);
             if (hardwareInfo == null)
             {
                 activeChar.sendMessage("Hardware info couldn't be found");
@@ -1002,8 +994,8 @@ public class AdminEditChar implements IAdminCommandHandler
 
             adminReply.replace("%lastUpdate%", dateFormatter.format(hardwareInfo.getLastUpdateTime()));
             adminReply.replace("%currentTime%", dateFormatter.format(System.currentTimeMillis()));
-            adminReply.replace("%refresh%", "<a action=\"bypass -h admin_lookup_hw " + hardwareInfo
-                    .getHardwareId() + "\">Refresh</a>");
+            adminReply.replace("%refresh%",
+                    "<a action=\"bypass -h admin_lookup_hw " + hardwareInfo.getHardwareId() + "\">Refresh</a>");
 
             String processes = "";
 
@@ -1028,8 +1020,8 @@ public class AdminEditChar implements IAdminCommandHandler
             sb.append("</table>");
             sb.append("<br>");
 
-            ClientProcess[] clientInfo = hardwareInfo.getProcesses()
-                    .toArray(new ClientProcess[hardwareInfo.getProcesses().size()]);
+            ClientProcess[] clientInfo =
+                    hardwareInfo.getProcesses().toArray(new ClientProcess[hardwareInfo.getProcesses().size()]);
             Arrays.sort(clientInfo, new Comparator<ClientProcess>()
             {
                 @Override
@@ -1059,8 +1051,8 @@ public class AdminEditChar implements IAdminCommandHandler
             String lastDuplicateName = "";
             for (ClientProcess process : clientInfo)
             {
-                String displayName = (process._productName.equals("") ? process._fileName : process._productName)
-                        .replace("?", "");
+                String displayName =
+                        (process._productName.equals("") ? process._fileName : process._productName).replace("?", "");
 
                 if (displayName.equals(""))
                 {
@@ -1083,20 +1075,20 @@ public class AdminEditChar implements IAdminCommandHandler
                     continue;
                 }
 
-                if (displayName.toLowerCase().contains("microsoft") || displayName.toLowerCase()
-                        .contains("windows") || displayName.toLowerCase().contains("nvidia") || displayName
-                        .toLowerCase().contains("intel(r)"))
+                if (displayName.toLowerCase().contains("microsoft") || displayName.toLowerCase().contains("windows") ||
+                        displayName.toLowerCase().contains("nvidia") || displayName.toLowerCase().contains("intel(r)"))
                 {
                     continue;
                 }
 
-                processes += String.format(sb.toString(), AntiBotsManager.getInstance()
-                                .isIllegalProcess(process) ? "cc7416" : "FFFFFF", // Red if illegal, otherwise white.
+                processes += String.format(sb.toString(),
+                        AntiBotsManager.getInstance().isIllegalProcess(process) ? "cc7416" : "FFFFFF",
+                        // Red if illegal, otherwise white.
                         displayName, // Friendly name of the application
-                        new SimpleDateFormat("d, k:m:s")
-                                .format(process._firstSeenAt), // Time at which we've first seen the process.
-                        new SimpleDateFormat("d, k:m:s")
-                                .format(process._lastSeenAt), // Time at which we've last seen it running.
+                        new SimpleDateFormat("d, k:m:s").format(process._firstSeenAt),
+                        // Time at which we've first seen the process.
+                        new SimpleDateFormat("d, k:m:s").format(process._lastSeenAt),
+                        // Time at which we've last seen it running.
                         process._isRunning ? "<font color=\"31bf00\">ON</font>" : "<font color=\"bf0000\">OFF</font>");
 
                 lastProcessName = process._productName;
@@ -1154,9 +1146,9 @@ public class AdminEditChar implements IAdminCommandHandler
         adminReply.setFile(activeChar.getHtmlPrefix(), "admin/" + filename);
         adminReply.replace("%name%", player.getName());
         adminReply.replace("%level%", String.valueOf(player.getLevel()));
-        adminReply.replace("%clan%", String
-                .valueOf(player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player
-                        .getObjectId() + "\">" + player.getClan().getName() + "</a>" : null));
+        adminReply.replace("%clan%", String.valueOf(player.getClan() != null ?
+                "<a action=\"bypass -h admin_clan_info " + player.getObjectId() + "\">" + player.getClan().getName() +
+                        "</a>" : null));
         adminReply.replace("%xp%", String.valueOf(player.getExp()));
         adminReply.replace("%sp%", String.valueOf(player.getSp()));
         adminReply.replace("%class%", player.getCurrentClass().getName());
@@ -1179,8 +1171,8 @@ public class AdminEditChar implements IAdminCommandHandler
         adminReply.replace("%pkkills%", String.valueOf(player.getPkKills()));
         adminReply.replace("%currentload%", String.valueOf(player.getCurrentLoad()));
         adminReply.replace("%maxload%", String.valueOf(player.getMaxLoad()));
-        adminReply.replace("%percent%", String
-                .valueOf(Util.roundTo((float) player.getCurrentLoad() / (float) player.getMaxLoad() * 100, 2)));
+        adminReply.replace("%percent%",
+                String.valueOf(Util.roundTo((float) player.getCurrentLoad() / (float) player.getMaxLoad() * 100, 2)));
         adminReply.replace("%patk%", String.valueOf(player.getPAtk(null)));
         adminReply.replace("%matk%", String.valueOf(player.getMAtk(null, null)));
         adminReply.replace("%pdef%", String.valueOf(player.getPDef(null)));
@@ -1198,11 +1190,10 @@ public class AdminEditChar implements IAdminCommandHandler
         adminReply.replace("%ip%", ip);
         adminReply.replace("%ai%", String.valueOf(player.getAI().getIntention().name()));
         adminReply.replace("%casting%", activeChar.isCastingNow() + ", " + activeChar.isCastingNow1());
-        adminReply.replace("%inst%", player
-                .getInstanceId() > 0 ?
-                "<tr><td>InstanceId:</td><td><a action=\"bypass -h admin_instance_spawns " + String
-                        .valueOf(player.getInstanceId()) + "\">" + String
-                        .valueOf(player.getInstanceId()) + "</a></td></tr>" : "");
+        adminReply.replace("%inst%", player.getInstanceId() > 0 ?
+                "<tr><td>InstanceId:</td><td><a action=\"bypass -h admin_instance_spawns " +
+                        String.valueOf(player.getInstanceId()) + "\">" + String.valueOf(player.getInstanceId()) +
+                        "</a></td></tr>" : "");
 
         String pcsHtm = "";
 
@@ -1211,7 +1202,7 @@ public class AdminEditChar implements IAdminCommandHandler
             if (Config.isServer(Config.TENKAI))
             {
                 /*
-				String properIp = AntiBotsManager.getInstance().getProperPlayerIP(ip);
+                String properIp = AntiBotsManager.getInstance().getProperPlayerIP(ip);
 				List<AntiBotsManager.ClientInfo> pcsWithSameIp = AntiBotsManager.getInstance().getClientsInfoByIp(properIp);
 				for (AntiBotsManager.ClientInfo ci : pcsWithSameIp)
 					pcsHtm += "- <a action=\"bypass -h admin_lookup_hw "+ci.getHardwareId()+"\">" + ci.getWindowsUser() + "</a> (..." + ci.getHardwareId().substring(ci.getHardwareId().length() - 1, ci.getHardwareId().length()) + ")<br1>";
@@ -1250,12 +1241,13 @@ public class AdminEditChar implements IAdminCommandHandler
         player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_KARMA_HAS_BEEN_CHANGED_TO_S1)
                 .addString(String.valueOf(newKarma)));
         //Admin information
-        activeChar.sendMessage("Successfully Changed karma for " + player
-                .getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
+        activeChar.sendMessage(
+                "Successfully Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma +
+                        ").");
         if (Config.DEBUG)
         {
-            _log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player
-                    .getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
+            _log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
+                    oldKarma + ") to (" + newKarma + ").");
         }
     }
 
@@ -1314,15 +1306,14 @@ public class AdminEditChar implements IAdminCommandHandler
         player.sendPacket(su);
 
         //Admin information
-        activeChar.sendMessage("Changed stats of " + player
-                .getName() + "." + "  HP: " + hpval + "  MP: " + mpval + "  CP: " + cpval + "  PvP: " + pvpflagval +
-                " / " + pvpkillsval);
+        activeChar.sendMessage(
+                "Changed stats of " + player.getName() + "." + "  HP: " + hpval + "  MP: " + mpval + "  CP: " + cpval +
+                        "  PvP: " + pvpflagval + " / " + pvpkillsval);
 
         if (Config.DEBUG)
         {
-            _log.fine("[GM]" + activeChar.getName() + " changed stats of " + player
-                    .getName() + ". " + " HP: " + hpval + " MP: " + mpval + " CP: " + cpval + " PvP: " + pvpflagval +
-                    " / " + pvpkillsval);
+            _log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
+                    " MP: " + mpval + " CP: " + cpval + " PvP: " + pvpflagval + " / " + pvpkillsval);
         }
 
         showCharacterInfo(activeChar, null); //Back to start
@@ -1378,11 +1369,9 @@ public class AdminEditChar implements IAdminCommandHandler
             if (name.toLowerCase().contains(CharacterToFind.toLowerCase()))
             {
                 CharactersFound = CharactersFound + 1;
-                StringUtil
-                        .append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">",
-                                name, "</a></td><td width=110>", player
-                                        .getCurrentClass().getName(), "</td><td width=40>", String
-                                        .valueOf(player.getLevel()), "</td></tr>");
+                StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">",
+                        name, "</a></td><td width=110>", player.getCurrentClass().getName(), "</td><td width=40>",
+                        String.valueOf(player.getLevel()), "</td></tr>");
             }
             if (CharactersFound > 20)
             {
@@ -1431,9 +1420,8 @@ public class AdminEditChar implements IAdminCommandHandler
         }
         else
         {
-            if (!IpAdress
-                    .matches(
-                            "^(?:(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))$"))
+            if (!IpAdress.matches(
+                    "^(?:(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2(?:[0-4][0-9]|5[0-5]))$"))
             {
                 throw new IllegalArgumentException("Malformed IPv4 number");
             }
@@ -1485,9 +1473,8 @@ public class AdminEditChar implements IAdminCommandHandler
             CharactersFound = CharactersFound + 1;
             StringUtil
                     .append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">", name,
-                            "</a></td><td width=110>", player
-                                    .getCurrentClass().getName(), "</td><td width=40>", String
-                                    .valueOf(player.getLevel()), "</td></tr>");
+                            "</a></td><td width=110>", player.getCurrentClass().getName(), "</td><td width=40>",
+                            String.valueOf(player.getLevel()), "</td></tr>");
 
             if (CharactersFound > 20)
             {
@@ -1619,10 +1606,8 @@ public class AdminEditChar implements IAdminCommandHandler
         final StringBuilder results = new StringBuilder();
         for (String dualboxIP : keys)
         {
-            StringUtil
-                    .append(results,
-                            "<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs
-                                    .get(dualboxIP) + ")</a><br1>");
+            StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" +
+                    dualboxIPs.get(dualboxIP) + ")</a><br1>");
         }
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -1689,11 +1674,9 @@ public class AdminEditChar implements IAdminCommandHandler
         final StringBuilder results = new StringBuilder();
         for (IpPack dualboxIP : keys)
         {
-            StringUtil
-                    .append(results,
-                            "<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" +
-                                    dualboxIPs
-                                            .get(dualboxIP) + ")</a><br1>");
+            StringUtil.append(results,
+                    "<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" +
+                            dualboxIPs.get(dualboxIP) + ")</a><br1>");
         }
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -1817,10 +1800,10 @@ public class AdminEditChar implements IAdminCommandHandler
         }
         if (target instanceof L2PetInstance)
         {
-            html.replace("%food%", ((L2PetInstance) target).getCurrentFed() + "/" + ((L2PetInstance) target)
-                    .getPetLevelData().getPetMaxFeed());
-            html.replace("%load%", ((L2PetInstance) target).getInventory()
-                    .getTotalWeight() + "/" + ((L2PetInstance) target).getMaxLoad());
+            html.replace("%food%", ((L2PetInstance) target).getCurrentFed() + "/" +
+                    ((L2PetInstance) target).getPetLevelData().getPetMaxFeed());
+            html.replace("%load%", ((L2PetInstance) target).getInventory().getTotalWeight() + "/" +
+                    ((L2PetInstance) target).getMaxLoad());
         }
         else
         {
@@ -1847,10 +1830,10 @@ public class AdminEditChar implements IAdminCommandHandler
             {
                 text.append("<tr><td><table width=270 border=0 cellpadding=2><tr><td width=30 align=right>");
             }
-            text.append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " + member
-                    .getName() + "\">" + member.getName() + "</a>");
-            text.append("</td><td width=110 align=right>" + member.getCurrentClass()
-                    .toString() + "</td></tr></table></td></tr>");
+            text.append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " +
+                    member.getName() + "\">" + member.getName() + "</a>");
+            text.append("</td><td width=110 align=right>" + member.getCurrentClass().toString() +
+                    "</td></tr></table></td></tr>");
             color = !color;
         }
         html.replace("%player%", target.getName());

@@ -72,8 +72,9 @@ public class GenesisStatues extends L2AttackableAIScript
         {
             _spawns.put(npc.getNpcId(), currentTime);
 
-            L2MonsterInstance angelStatue = (L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player
-                    .getY(), player.getZ(), 0, false, 0, false);
+            L2MonsterInstance angelStatue =
+                    (L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player.getY(), player.getZ(), 0,
+                            false, 0, false);
             angelStatue.setTarget(player);
             angelStatue.addDamageHate(player, 500, 99999);
             angelStatue.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

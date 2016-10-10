@@ -122,7 +122,7 @@ public class FaenorScriptEngine extends ScriptEngine
             }
         }
         /*for (ScriptDocument script : scripts)
-		 {
+         {
 		 Logozo.sss("Script: "+script);
 		 }
 		 Logozo.sss("Sorting");

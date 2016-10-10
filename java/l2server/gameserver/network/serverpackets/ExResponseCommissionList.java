@@ -67,7 +67,7 @@ public class ExResponseCommissionList extends L2GameServerPacket
     protected void writeImpl()
     {
         /*writeC(0xFE);
-		writeH(0xF7);
+        writeH(0xF7);
 		if (_yourAuction)
 		{
 			writeD(_yourAuctionsSize <= 0 ? -2 : 0x02);

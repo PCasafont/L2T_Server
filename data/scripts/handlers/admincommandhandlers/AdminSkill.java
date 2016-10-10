@@ -246,26 +246,24 @@ public class AdminSkill implements IAdminCommandHandler
         }
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-        final StringBuilder replyMSG = StringUtil
-                .startAppend(500 + maxPages * 50 + (skillsEnd - skillsStart + 1) * 50,
-                        "<html><body>" + "<table width=260><tr>" +
-                                "<td width=40><button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
-                                "<td width=180><center>Character Selection Menu</center></td>" +
-                                "<td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
-                                "</tr></table>" + "<br><br>" + "<center>Editing <font color=\"LEVEL\">", player
-                                .getName(), "</font></center>" + "<br><table width=270><tr><td>Lv: ", String
-                                .valueOf(player.getLevel()), " ", player.getCurrentClass()
-                                .getName(), "</td></tr></table>" +
-                                "<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>" +
-                                "<tr><td>ruin the game...</td></tr></table>" +
-                                "<br><center>Click on the skill you wish to remove:</center>" + "<br>" +
-                                "<center><table width=270><tr>");
+        final StringBuilder replyMSG = StringUtil.startAppend(500 + maxPages * 50 + (skillsEnd - skillsStart + 1) * 50,
+                "<html><body>" + "<table width=260><tr>" +
+                        "<td width=40><button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
+                        "<td width=180><center>Character Selection Menu</center></td>" +
+                        "<td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
+                        "</tr></table>" + "<br><br>" + "<center>Editing <font color=\"LEVEL\">", player.getName(),
+                "</font></center>" + "<br><table width=270><tr><td>Lv: ", String.valueOf(player.getLevel()), " ",
+                player.getCurrentClass().getName(), "</td></tr></table>" +
+                        "<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>" +
+                        "<tr><td>ruin the game...</td></tr></table>" +
+                        "<br><center>Click on the skill you wish to remove:</center>" + "<br>" +
+                        "<center><table width=270><tr>");
 
         for (int x = 0; x < maxPages; x++)
         {
             int pagenr = x + 1;
-            StringUtil.append(replyMSG, "<td><a action=\"bypass -h admin_remove_skills ", String
-                    .valueOf(x), "\">Page ", String.valueOf(pagenr), "</a></td>");
+            StringUtil.append(replyMSG, "<td><a action=\"bypass -h admin_remove_skills ", String.valueOf(x), "\">Page ",
+                    String.valueOf(pagenr), "</a></td>");
         }
 
         replyMSG.append("</tr></table></center>" + "<br><table width=270>" +
@@ -273,10 +271,10 @@ public class AdminSkill implements IAdminCommandHandler
 
         for (int i = skillsStart; i < skillsEnd; i++)
         {
-            StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_remove_skill ", String
-                    .valueOf(skills[i].getId()), "\">", skills[i].getName(), "</a></td><td width=60>", String
-                    .valueOf(skills[i].getLevel()), "</td><td width=40>", String
-                    .valueOf(skills[i].getId()), "</td></tr>");
+            StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_remove_skill ",
+                    String.valueOf(skills[i].getId()), "\">", skills[i].getName(), "</a></td><td width=60>",
+                    String.valueOf(skills[i].getLevel()), "</td><td width=40>", String.valueOf(skills[i].getId()),
+                    "</td></tr>");
         }
 
         replyMSG.append("</table>" + "<br><center><table>" + "Remove skill by ID :" + "<tr><td>Id: </td>" +
@@ -469,8 +467,8 @@ public class AdminSkill implements IAdminCommandHandler
             activeChar.sendMessage("You removed the skill " + skillname + " from " + player.getName() + ".");
             if (Config.DEBUG)
             {
-                _log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player
-                        .getName() + ".");
+                _log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() +
+                        ".");
             }
             activeChar.sendSkillList();
         }

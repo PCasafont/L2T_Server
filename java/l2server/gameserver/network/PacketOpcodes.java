@@ -106,13 +106,13 @@ public class PacketOpcodes
             }
         }
 
-        Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets
-                .size() + " Server Packets.");
+        Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets.size() +
+                " Server Packets.");
 
         _lastModified = file.lastModified();
 
 		/*File dir = new File(Config.DATAPACK_ROOT, "java/l2server/gameserver/network/clientpackets");
-		File[] files = dir.listFiles();
+        File[] files = dir.listFiles();
 		for (File f : files)
 		{
 			if (!f.isDirectory() && f.getName().endsWith("java"))
@@ -319,8 +319,8 @@ public class PacketOpcodes
 
                         if (partType.contains("?"))
                         {
-                            content += "\t\tread" + partType.substring(0, 1)
-                                    .toUpperCase() + "(); // " + partName + "\n";
+                            content +=
+                                    "\t\tread" + partType.substring(0, 1).toUpperCase() + "(); // " + partName + "\n";
                         }
                         else if (partType.equals("b"))
                         {
@@ -451,8 +451,8 @@ public class PacketOpcodes
 
                         if (partType.contains("?"))
                         {
-                            content += "\t\twrite" + partType.substring(0, 1)
-                                    .toUpperCase() + "(" + neutral + "); // " + partName + "\n";
+                            content += "\t\twrite" + partType.substring(0, 1).toUpperCase() + "(" + neutral + "); // " +
+                                    partName + "\n";
                         }
                         else if (partType.equals("b"))
                         {

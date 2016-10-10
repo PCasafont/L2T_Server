@@ -214,9 +214,8 @@ public class MailManager
             receiver.sendPacket(ExNoticePostArrived.valueOf(true));
         }
 
-        ThreadPoolManager.getInstance()
-                .scheduleGeneral(new MessageDeletionTask(msg.getId()), msg.getExpiration() - System
-                        .currentTimeMillis());
+        ThreadPoolManager.getInstance().scheduleGeneral(new MessageDeletionTask(msg.getId()),
+                msg.getExpiration() - System.currentTimeMillis());
     }
 
     class MessageDeletionTask implements Runnable

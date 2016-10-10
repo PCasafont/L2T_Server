@@ -64,9 +64,9 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
         }
         if (_amount < 0)
         {
-            Util.handleIllegalPlayerAction(player, "[RequestGetItemFromPet] Character " + player
-                            .getName() + " of account " + player
-                            .getAccountName() + " tried to get item with oid " + _objectId + " from pet but has count < 0!",
+            Util.handleIllegalPlayerAction(player,
+                    "[RequestGetItemFromPet] Character " + player.getName() + " of account " + player.getAccountName() +
+                            " tried to get item with oid " + _objectId + " from pet but has count < 0!",
                     Config.DEFAULT_PUNISH);
             return;
         }

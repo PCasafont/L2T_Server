@@ -139,8 +139,8 @@ public class Cocoons extends L2AttackableAIScript
         {
             for (int a = 0; a <= 3; a++)
             {
-                L2Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc
-                        .getZ(), 0, false, 180000, true); //3 min self-despawn
+                L2Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000,
+                        true); //3 min self-despawn
                 mob.setIsRunning(true);
                 mob.setTarget(player);
                 ((L2MonsterInstance) mob).addDamageHate(player, 500, 99999);

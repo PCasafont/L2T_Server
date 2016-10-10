@@ -239,15 +239,14 @@ public class SecondaryPasswordAuth
             }
             else
             {
-                LoginServerThread.getInstance()
-                        .sendTempBan(_activeClient.getAccountName(), _activeClient.getConnectionAddress()
-                                .getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
-                Log.warning(_activeClient.getAccountName() + " - (" + _activeClient.getConnectionAddress()
-                        .getHostAddress() + ") has inputted the wrong password " + _wrongAttempts + " times in row.");
+                LoginServerThread.getInstance().sendTempBan(_activeClient.getAccountName(),
+                        _activeClient.getConnectionAddress().getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
+                Log.warning(_activeClient.getAccountName() + " - (" +
+                        _activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " +
+                        _wrongAttempts + " times in row.");
                 insertWrongAttempt(0);
-                _activeClient
-                        .close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN,
-                                Config.SECOND_AUTH_MAX_ATTEMPTS));
+                _activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN,
+                        Config.SECOND_AUTH_MAX_ATTEMPTS));
                 return false;
             }
         }
@@ -315,7 +314,7 @@ public class SecondaryPasswordAuth
         }
 
 		/*for (int i = 0; i < password.length()-1; i++)
-		{
+        {
 			char curCh = password.charAt(i);
 			char nxtCh = password.charAt(i+1);
 

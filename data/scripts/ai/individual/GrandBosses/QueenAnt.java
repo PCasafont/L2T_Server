@@ -161,8 +161,9 @@ public class QueenAnt extends L2AttackableAIScript
 
             GrandBossManager.getInstance().setBossStatus(_queenAntId, GrandBossManager.getInstance().ALIVE);
 
-            _queenAnt.broadcastPacket(new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt
-                    .getY(), _queenAnt.getZ()));
+            _queenAnt.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt.getY(),
+                            _queenAnt.getZ()));
 
             _larvaAnt = addSpawn(_larvaId, -21600, 179482, -5846, Rnd.get(360), false, 0);
 
@@ -281,8 +282,8 @@ public class QueenAnt extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " out of the boss zone!");
             }
         }
 
@@ -297,8 +298,8 @@ public class QueenAnt extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " wich is out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " wich is out of the boss zone!");
             }
         }
         return super.onAttack(npc, attacker, damage, isPet);
@@ -318,8 +319,9 @@ public class QueenAnt extends L2AttackableAIScript
 
             notifyEvent("end_queenAnt", null, null);
 
-            _queenAnt.broadcastPacket(new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt
-                    .getY(), _queenAnt.getZ()));
+            _queenAnt.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt.getY(),
+                            _queenAnt.getZ()));
 
             startQuestTimer("unlock_queen_ant", GrandBossManager.getInstance().getUnlockTime(_queenAntId), null, null);
 

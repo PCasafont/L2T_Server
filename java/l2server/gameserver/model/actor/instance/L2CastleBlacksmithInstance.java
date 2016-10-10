@@ -140,8 +140,9 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
                 {
                     return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
                 }
-                else if (getCastle().getOwnerId() == player.getClanId() && (player
-                        .getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == L2Clan.CP_CS_MANOR_ADMIN) // Leader of clan
+                else if (getCastle().getOwnerId() == player.getClanId() &&
+                        (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) ==
+                                L2Clan.CP_CS_MANOR_ADMIN) // Leader of clan
                 {
                     return COND_OWNER; // Owner
                 }

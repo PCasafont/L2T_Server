@@ -78,8 +78,9 @@ public class QuestLink implements IBypassHandler
         final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
         for (Quest q : quests)
         {
-            StringUtil.append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q
-                    .getName(), "\">");
+            StringUtil
+                    .append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q.getName(),
+                            "\">");
             if (q.getQuestIntId() < 10000)
             {
                 StringUtil.append(sb, "[", q.getDescr());
@@ -106,34 +107,34 @@ public class QuestLink implements IBypassHandler
                 {
                     if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
                     {
-                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                                .getQuestIntId() % 10000 + "02</fstring>]</font>");
+                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                                q.getQuestIntId() % 10000 + "02</fstring>]</font>");
                     }
                     else if (qs.getState() == State.COMPLETED)
                     {
-                        sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                                .getQuestIntId() % 10000 + "03</fstring>]</font>");
+                        sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                                q.getQuestIntId() % 10000 + "03</fstring>]</font>");
                     }
                     else if (q.canStart(player))
                     {
-                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                                .getQuestIntId() % 10000 + "01</fstring>]</font>");
+                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                                q.getQuestIntId() % 10000 + "01</fstring>]</font>");
                     }
                     else
                     {
-                        sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                                .getQuestIntId() % 10000 + "04</fstring>]</font>");
+                        sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                                q.getQuestIntId() % 10000 + "04</fstring>]</font>");
                     }
                 }
                 else if (q.canStart(player))
                 {
-                    sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                            .getQuestIntId() % 10000 + "01</fstring>]</font>");
+                    sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                            q.getQuestIntId() % 10000 + "01</fstring>]</font>");
                 }
                 else
                 {
-                    sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q
-                            .getQuestIntId() % 10000 + "04</fstring>]</font>");
+                    sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+                            q.getQuestIntId() % 10000 + "04</fstring>]</font>");
                 }
             }
             sb.append("</a><br>");
@@ -167,8 +168,8 @@ public class QuestLink implements IBypassHandler
 
         if (q != null)
         {
-            if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000 && (player.getWeightPenalty() >= 3 || !player
-                    .isInventoryUnder90(true)))
+            if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000 &&
+                    (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
             {
                 player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT));
                 return;
@@ -178,8 +179,7 @@ public class QuestLink implements IBypassHandler
             {
                 if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000)
                 {
-                    if (player
-                            .getAllActiveQuests().length >
+                    if (player.getAllActiveQuests().length >
                             40) // if too many ongoing quests, don't show window and send message
                     {
                         player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TOO_MANY_QUESTS));
@@ -262,8 +262,8 @@ public class QuestLink implements IBypassHandler
         {
             for (QuestState x : awaits)
             {
-                if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 && x.getQuest()
-                        .getQuestIntId() < 20000 && x.getState() != State.COMPLETED)
+                if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 &&
+                        x.getQuest().getQuestIntId() < 20000 && x.getState() != State.COMPLETED)
                 {
                     options.add(x.getQuest());
                 }
@@ -274,18 +274,19 @@ public class QuestLink implements IBypassHandler
         {
             for (Quest x : starts)
             {
-                if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 && (player
-                        .getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName())
-                        .getState() != State.COMPLETED) && x.canStart(player))
+                if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 &&
+                        (player.getQuestState(x.getScriptName()) == null ||
+                                player.getQuestState(x.getScriptName()).getState() != State.COMPLETED) &&
+                        x.canStart(player))
                 {
                     options.add(x);
                 }
             }
             for (Quest x : starts)
             {
-                if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 && (player
-                        .getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName())
-                        .getState() != State.COMPLETED))
+                if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 &&
+                        (player.getQuestState(x.getScriptName()) == null ||
+                                player.getQuestState(x.getScriptName()).getState() != State.COMPLETED))
                 {
                     options.add(x);
                 }
@@ -302,8 +303,8 @@ public class QuestLink implements IBypassHandler
         {
             for (QuestState x : awaits)
             {
-                if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 && x.getQuest()
-                        .getQuestIntId() < 20000)
+                if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 &&
+                        x.getQuest().getQuestIntId() < 20000)
                 {
                     options.add(x.getQuest());
                 }

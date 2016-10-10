@@ -39,12 +39,12 @@ public class PavelArchaic extends L2AttackableAIScript
 
             if (Rnd.get(100) < 40)
             {
-                L2Attackable _golem1 = (L2Attackable) addSpawn(22801, npc.getX(), npc.getY(), npc.getZ(), npc
-                        .getHeading(), false, 0);
+                L2Attackable _golem1 =
+                        (L2Attackable) addSpawn(22801, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
                 attackPlayer(_golem1, attacker);
 
-                L2Attackable _golem2 = (L2Attackable) addSpawn(22804, npc.getX(), npc.getY(), npc.getZ(), npc
-                        .getHeading(), false, 0);
+                L2Attackable _golem2 =
+                        (L2Attackable) addSpawn(22804, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
                 attackPlayer(_golem2, attacker);
             }
         }
@@ -56,8 +56,9 @@ public class PavelArchaic extends L2AttackableAIScript
     {
         if (Util.contains(_mobs1, npc.getNpcId()))
         {
-            L2Attackable _golem = (L2Attackable) addSpawn(npc.getNpcId() + 1, npc.getX(), npc.getY(), npc.getZ(), npc
-                    .getHeading(), false, 0);
+            L2Attackable _golem =
+                    (L2Attackable) addSpawn(npc.getNpcId() + 1, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(),
+                            false, 0);
             attackPlayer(_golem, killer);
         }
         return super.onKill(npc, killer, isPet);

@@ -69,8 +69,7 @@ public class FuncEnchant extends Func
         if (env.player != null && env.player instanceof L2PcInstance)
         {
             L2PcInstance player = (L2PcInstance) env.player;
-            if (player
-                    .isInOlympiadMode() && Config.ALT_OLY_ENCHANT_LIMIT >= 0 &&
+            if (player.isInOlympiadMode() && Config.ALT_OLY_ENCHANT_LIMIT >= 0 &&
                     enchant + overenchant > Config.ALT_OLY_ENCHANT_LIMIT)
             {
                 if (Config.ALT_OLY_ENCHANT_LIMIT > 3)
@@ -99,8 +98,8 @@ public class FuncEnchant extends Func
 
         if (stat == Stats.MAGIC_DEFENSE || stat == Stats.PHYS_DEFENSE)
         {
-            if (item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R || (item.getItem()
-                    .getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
+            if (item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R ||
+                    (item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
             {
                 int base = isBlessed ? 3 : 2;
                 int add = overenchant > 3 ? (overenchant - 3) * base : 0;

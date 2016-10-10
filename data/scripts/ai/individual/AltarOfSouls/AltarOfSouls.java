@@ -78,8 +78,9 @@ public class AltarOfSouls extends Quest
 
                     _spawnInfo.put(bossId, true); //Boss is spawned
 
-                    L2Attackable boss = (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc
-                            .getZ(), 0, false, 0, true);
+                    L2Attackable boss =
+                            (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0,
+                                    true);
                     boss.setIsRunning(true);
                     boss.setTarget(player);
                     boss.addDamageHate(player, 9999, 9999);

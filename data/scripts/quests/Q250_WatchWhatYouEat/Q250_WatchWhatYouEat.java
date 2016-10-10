@@ -102,8 +102,8 @@ public class Q250_WatchWhatYouEat extends Quest
                     }
                     else if (st.getInt("cond") == 2)
                     {
-                        if (st.hasQuestItems(_mobs[0][1]) && st.hasQuestItems(_mobs[1][1]) && st
-                                .hasQuestItems(_mobs[2][1]))
+                        if (st.hasQuestItems(_mobs[0][1]) && st.hasQuestItems(_mobs[1][1]) &&
+                                st.hasQuestItems(_mobs[2][1]))
                         {
                             htmltext = "32743-05.htm";
                             for (int items[] : _mobs)

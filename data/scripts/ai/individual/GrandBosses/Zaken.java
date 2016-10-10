@@ -258,9 +258,10 @@ public class Zaken extends L2AttackableAIScript
                     int i1 = 1;
                     if (((L2Attackable) npc).getMostHated() != null)
                     {
-                        if ((((L2Attackable) npc).getMostHated().getX() - _ai1) * (((L2Attackable) npc).getMostHated()
-                                .getX() - _ai1) + (((L2Attackable) npc).getMostHated()
-                                .getY() - _ai2) * (((L2Attackable) npc).getMostHated().getY() - _ai2) > 1500 * 1500)
+                        if ((((L2Attackable) npc).getMostHated().getX() - _ai1) *
+                                (((L2Attackable) npc).getMostHated().getX() - _ai1) +
+                                (((L2Attackable) npc).getMostHated().getY() - _ai2) *
+                                        (((L2Attackable) npc).getMostHated().getY() - _ai2) > 1500 * 1500)
                         {
                             i0 = 1;
                         }
@@ -278,8 +279,8 @@ public class Zaken extends L2AttackableAIScript
                             {
                                 i0 = 0;
                             }
-                            else if ((c_quest0.getX() - _ai1) * (c_quest0.getX() - _ai1) + (c_quest0
-                                    .getY() - _ai2) * (c_quest0.getY() - _ai2) > 1500 * 1500)
+                            else if ((c_quest0.getX() - _ai1) * (c_quest0.getX() - _ai1) +
+                                    (c_quest0.getY() - _ai2) * (c_quest0.getY() - _ai2) > 1500 * 1500)
                             {
                                 i0 = 1;
                             }
@@ -298,8 +299,8 @@ public class Zaken extends L2AttackableAIScript
                             {
                                 i0 = 0;
                             }
-                            else if ((c_quest1.getX() - _ai1) * (c_quest1.getX() - _ai1) + (c_quest1
-                                    .getY() - _ai2) * (c_quest1.getY() - _ai2) > 1500 * 1500)
+                            else if ((c_quest1.getX() - _ai1) * (c_quest1.getX() - _ai1) +
+                                    (c_quest1.getY() - _ai2) * (c_quest1.getY() - _ai2) > 1500 * 1500)
                             {
                                 i0 = 1;
                             }
@@ -318,8 +319,8 @@ public class Zaken extends L2AttackableAIScript
                             {
                                 i0 = 0;
                             }
-                            else if ((c_quest2.getX() - _ai1) * (c_quest2.getX() - _ai1) + (c_quest2
-                                    .getY() - _ai2) * (c_quest2.getY() - _ai2) > 1500 * 1500)
+                            else if ((c_quest2.getX() - _ai1) * (c_quest2.getX() - _ai1) +
+                                    (c_quest2.getY() - _ai2) * (c_quest2.getY() - _ai2) > 1500 * 1500)
                             {
                                 i0 = 1;
                             }
@@ -338,8 +339,8 @@ public class Zaken extends L2AttackableAIScript
                             {
                                 i0 = 0;
                             }
-                            else if ((c_quest3.getX() - _ai1) * (c_quest3.getX() - _ai1) + (c_quest3
-                                    .getY() - _ai2) * (c_quest3.getY() - _ai2) > 1500 * 1500)
+                            else if ((c_quest3.getX() - _ai1) * (c_quest3.getX() - _ai1) +
+                                    (c_quest3.getY() - _ai2) * (c_quest3.getY() - _ai2) > 1500 * 1500)
                             {
                                 i0 = 1;
                             }
@@ -358,8 +359,8 @@ public class Zaken extends L2AttackableAIScript
                             {
                                 i0 = 0;
                             }
-                            else if ((c_quest4.getX() - _ai1) * (c_quest4.getX() - _ai1) + (c_quest4
-                                    .getY() - _ai2) * (c_quest4.getY() - _ai2) > 1500 * 1500)
+                            else if ((c_quest4.getX() - _ai1) * (c_quest4.getX() - _ai1) +
+                                    (c_quest4.getY() - _ai2) * (c_quest4.getY() - _ai2) > 1500 * 1500)
                             {
                                 i0 = 1;
                             }
@@ -465,8 +466,8 @@ public class Zaken extends L2AttackableAIScript
             {
                 for (int i = 0; i < Xcoords.length; i++)
                 {
-                    addSpawn(pirates_zombie_captain_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd
-                            .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                    addSpawn(pirates_zombie_captain_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650),
+                            Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 }
 
                 _ai4 = 2;
@@ -475,8 +476,8 @@ public class Zaken extends L2AttackableAIScript
             {
                 for (int i = 0; i < Xcoords.length; i++)
                 {
-                    addSpawn(doll_blader_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd
-                            .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                    addSpawn(doll_blader_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd.get(65536), false,
+                            0)/* .setIsRaidMinion(true) */;
                 }
 
                 _ai4 = 3;
@@ -487,8 +488,8 @@ public class Zaken extends L2AttackableAIScript
                 {
                     for (int c = 0; c < 2; c++)
                     {
-                        addSpawn(vale_master_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd
-                                .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                        addSpawn(vale_master_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd.get(65536),
+                                false, 0)/* .setIsRaidMinion(true) */;
                     }
                 }
 
@@ -500,8 +501,8 @@ public class Zaken extends L2AttackableAIScript
                 {
                     for (int c = 0; c < 5; c++)
                     {
-                        addSpawn(pirates_zombie_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd
-                                .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                        addSpawn(pirates_zombie_b, nextSpawn(Xcoords[i], Ycoords[i], Zcoords[i], 650), Rnd.get(65536),
+                                false, 0)/* .setIsRaidMinion(true) */;
                     }
                 }
 
@@ -513,32 +514,32 @@ public class Zaken extends L2AttackableAIScript
                 addSpawn(doll_blader_b, 52687, 219596, -3368, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 52672, 219740, -3418, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 52857, 219992, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 52959, 219997, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 52959, 219997, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 53381, 220151, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54236, 220948, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54236, 220948, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54885, 220144, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55264, 219860, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55399, 220263, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55399, 220263, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55679, 220129, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 56276, 220783, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 57173, 220234, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 56267, 218826, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56294, 219482, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 56094, 219113, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 56094, 219113, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56364, 218967, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 57113, 218079, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56186, 217153, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55440, 218081, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55202, 217940, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55202, 217940, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55225, 218236, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54973, 218075, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 53412, 218077, -3488, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 53412, 218077, -3488, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54226, 218797, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54394, 219067, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54139, 219253, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
@@ -552,34 +553,34 @@ public class Zaken extends L2AttackableAIScript
                 addSpawn(doll_blader_b, 54841, 217132, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 55372, 217128, -3343, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 55893, 217122, -3488, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 56282, 217237, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 56282, 217237, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 56963, 218080, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 56267, 218826, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56294, 219482, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 56094, 219113, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 56094, 219113, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56364, 218967, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 56276, 220783, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 57173, 220234, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54885, 220144, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55264, 219860, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55399, 220263, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55399, 220263, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55679, 220129, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54236, 220948, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54464, 219095, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54236, 220948, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54464, 219095, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54226, 218797, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54394, 219067, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54139, 219253, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 54262, 219480, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 53412, 218077, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 53412, 218077, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55440, 218081, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55202, 217940, -3216, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55202, 217940, -3216, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55225, 218236, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54973, 218075, -3216, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 _ai4 = 7;
@@ -591,36 +592,36 @@ public class Zaken extends L2AttackableAIScript
                 addSpawn(doll_blader_b, 54714, 217123, -3168, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 55298, 217127, -3073, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 55787, 217130, -2993, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 56284, 217216, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 56284, 217216, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 56963, 218080, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 56267, 218826, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56294, 219482, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 56094, 219113, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 56094, 219113, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 56364, 218967, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 56276, 220783, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 57173, 220234, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54885, 220144, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55264, 219860, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55399, 220263, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55399, 220263, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55679, 220129, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54236, 220948, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54464, 219095, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54236, 220948, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54464, 219095, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54226, 218797, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(vale_master_b, 54394, 219067, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54139, 219253, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(doll_blader_b, 54262, 219480, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 53412, 218077, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 54280, 217200, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 53412, 218077, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 54280, 217200, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55440, 218081, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
-                addSpawn(pirates_zombie_captain_b, 55202, 217940, -2944, Rnd
-                        .get(65536), false, 0)/* .setIsRaidMinion(true) */;
+                addSpawn(pirates_zombie_captain_b, 55202, 217940, -2944, Rnd.get(65536), false,
+                        0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 55225, 218236, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 addSpawn(pirates_zombie_b, 54973, 218075, -2944, Rnd.get(65536), false, 0)/* .setIsRaidMinion(true) */;
                 _ai4 = 8;
@@ -654,8 +655,8 @@ public class Zaken extends L2AttackableAIScript
         if (TimeController.getInstance().getGameTime() < 5 && callerId != ZAKEN && npcId == ZAKEN)
         {
             int damage = 0; // well damage required :x
-            if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE && _ai0 == 0 && damage < 10 && Rnd
-                    .get(30 * 15) < 1)//todo - damage missing
+            if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE && _ai0 == 0 && damage < 10 &&
+                    Rnd.get(30 * 15) < 1)//todo - damage missing
             {
                 _ai0 = 1;
                 _ai1 = caller.getX();
@@ -698,11 +699,11 @@ public class Zaken extends L2AttackableAIScript
                 player.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
                 ((L2Attackable) npc).stopHating(player);
 
-                if (c_quest0 != null && _quest0 > 0 && c_quest0 != player && c_quest0.getZ() > player
-                        .getZ() - 100 && c_quest0.getZ() < player.getZ() + 100)
+                if (c_quest0 != null && _quest0 > 0 && c_quest0 != player && c_quest0.getZ() > player.getZ() - 100 &&
+                        c_quest0.getZ() < player.getZ() + 100)
                 {
-                    if ((c_quest0.getX() - player.getX()) * (c_quest0.getX() - player.getX()) + (c_quest0
-                            .getY() - player.getY()) * (c_quest0.getY() - player.getY()) > 250 * 250)
+                    if ((c_quest0.getX() - player.getX()) * (c_quest0.getX() - player.getX()) +
+                            (c_quest0.getY() - player.getY()) * (c_quest0.getY() - player.getY()) > 250 * 250)
                     {
                         i0 = 1;
                     }
@@ -718,11 +719,11 @@ public class Zaken extends L2AttackableAIScript
                         ((L2Attackable) npc).stopHating(c_quest0);
                     }
                 }
-                if (c_quest1 != null && _quest0 > 1 && c_quest1 != player && c_quest1.getZ() > player
-                        .getZ() - 100 && c_quest1.getZ() < player.getZ() + 100)
+                if (c_quest1 != null && _quest0 > 1 && c_quest1 != player && c_quest1.getZ() > player.getZ() - 100 &&
+                        c_quest1.getZ() < player.getZ() + 100)
                 {
-                    if ((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX()) + (c_quest1
-                            .getY() - player.getY()) * (c_quest1.getY() - player.getY()) > 250 * 250)
+                    if ((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX()) +
+                            (c_quest1.getY() - player.getY()) * (c_quest1.getY() - player.getY()) > 250 * 250)
                     {
                         i0 = 1;
                     }
@@ -738,11 +739,11 @@ public class Zaken extends L2AttackableAIScript
                         ((L2Attackable) npc).stopHating(c_quest1);
                     }
                 }
-                if (c_quest2 != null && _quest0 > 2 && c_quest2 != player && c_quest2.getZ() > player
-                        .getZ() - 100 && c_quest2.getZ() < player.getZ() + 100)
+                if (c_quest2 != null && _quest0 > 2 && c_quest2 != player && c_quest2.getZ() > player.getZ() - 100 &&
+                        c_quest2.getZ() < player.getZ() + 100)
                 {
-                    if ((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX()) + (c_quest2
-                            .getY() - player.getY()) * (c_quest2.getY() - player.getY()) > 250 * 250)
+                    if ((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX()) +
+                            (c_quest2.getY() - player.getY()) * (c_quest2.getY() - player.getY()) > 250 * 250)
                     {
                         i0 = 1;
                     }
@@ -758,11 +759,11 @@ public class Zaken extends L2AttackableAIScript
                         ((L2Attackable) npc).stopHating(c_quest2);
                     }
                 }
-                if (c_quest3 != null && _quest0 > 3 && c_quest3 != player && c_quest3.getZ() > player
-                        .getZ() - 100 && c_quest3.getZ() < player.getZ() + 100)
+                if (c_quest3 != null && _quest0 > 3 && c_quest3 != player && c_quest3.getZ() > player.getZ() - 100 &&
+                        c_quest3.getZ() < player.getZ() + 100)
                 {
-                    if ((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX()) + (c_quest3
-                            .getY() - player.getY()) * (c_quest3.getY() - player.getY()) > 250 * 250)
+                    if ((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX()) +
+                            (c_quest3.getY() - player.getY()) * (c_quest3.getY() - player.getY()) > 250 * 250)
                     {
                         i0 = 1;
                     }
@@ -778,11 +779,11 @@ public class Zaken extends L2AttackableAIScript
                         ((L2Attackable) npc).stopHating(c_quest3);
                     }
                 }
-                if (c_quest4 != null && _quest0 > 4 && c_quest4 != player && c_quest4.getZ() > player
-                        .getZ() - 100 && c_quest4.getZ() < player.getZ() + 100)
+                if (c_quest4 != null && _quest0 > 4 && c_quest4 != player && c_quest4.getZ() > player.getZ() - 100 &&
+                        c_quest4.getZ() < player.getZ() + 100)
                 {
-                    if ((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX()) + (c_quest4
-                            .getY() - player.getY()) * (c_quest4.getY() - player.getY()) > 250 * 250)
+                    if ((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX()) +
+                            (c_quest4.getY() - player.getY()) * (c_quest4.getY() - player.getY()) > 250 * 250)
                     {
                         i0 = 1;
                     }
@@ -886,7 +887,7 @@ public class Zaken extends L2AttackableAIScript
             }
 
 			/*
-			if (TimeController.getInstance().getGameTime() < 5)
+            if (TimeController.getInstance().getGameTime() < 5)
 			{
 			}
 			else if (npc.getCurrentHp() < ((npc.getMaxHp() * _quest2) / 4))

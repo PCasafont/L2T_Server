@@ -288,16 +288,15 @@ public class SearchDropManager
                 L2Spawn spawn = temp.getAllSpawns().get(0);
                 if (spawn != null)
                 {
-                    radar = "<a action=\"bypass " + (player
-                            .isGM() ? " -h admin_move_to " : "_bbscustom;action;showRadar; ") + spawn
-                            .getX() + " " + spawn.getY() + " " + spawn.getZ() + "\">";
+                    radar = "<a action=\"bypass " +
+                            (player.isGM() ? " -h admin_move_to " : "_bbscustom;action;showRadar; ") + spawn.getX() +
+                            " " + spawn.getY() + " " + spawn.getZ() + "\">";
                 }
             }
 
-            sb.append("<tr><td> " + radar + " " + lineColor + "" + temp.getName() + (radar
-                    .length() > 0 ? "</a>" : "") + "</td><td>" + temp.Level + "</td><td>" + Util
-                    .roundTo(drop.chance, 3) + "%</td><td>" + count + "" + (lineColor
-                    .length() > 0 ? "</font>" : "") + "</td></tr>");
+            sb.append("<tr><td> " + radar + " " + lineColor + "" + temp.getName() + (radar.length() > 0 ? "</a>" : "") +
+                    "</td><td>" + temp.Level + "</td><td>" + Util.roundTo(drop.chance, 3) + "%</td><td>" + count + "" +
+                    (lineColor.length() > 0 ? "</font>" : "") + "</td></tr>");
         }
 
         sb.append("</table>");
@@ -321,10 +320,9 @@ public class SearchDropManager
         sb.append("<table width=600>");
         for (Drops d : drops)
         {
-            sb.append("<tr><td><img src=" + d
-                    .getIcon() +
-                    " width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;" + d
-                    .getItemId() + ";" + spoil + ";0\">" + d.getName() + "</a></td></tr>");
+            sb.append("<tr><td><img src=" + d.getIcon() +
+                    " width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;" +
+                    d.getItemId() + ";" + spoil + ";0\">" + d.getName() + "</a></td></tr>");
         }
         sb.append("</table>");
         return sb.toString();

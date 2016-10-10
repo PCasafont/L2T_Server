@@ -46,7 +46,7 @@ public abstract class PathFinding
     public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable);
 
 	/*
-	public List<AbstractNodeLoc> search(AbstractNode start, AbstractNode end, int instanceId)
+    public List<AbstractNodeLoc> search(AbstractNode start, AbstractNode end, int instanceId)
 	{
 		// The simplest grid-based pathfinding.
 		// Drawback is not having higher cost for diagonal movement (means funny routes)

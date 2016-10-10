@@ -44,17 +44,15 @@ public class ClanPenalty implements IUserCommandHandler
 
         boolean penalty = false;
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        final StringBuilder htmlContent = StringUtil
-                .startAppend(500, "<html><body>" + "<center><table width=270 border=0 bgcolor=111111>" +
+        final StringBuilder htmlContent = StringUtil.startAppend(500,
+                "<html><body>" + "<center><table width=270 border=0 bgcolor=111111>" +
                         "<tr><td width=170>Penalty</td>" + "<td width=100 align=center>Expiration Date</td></tr>" +
                         "</table><table width=270 border=0><tr>");
 
         if (activeChar.getClanJoinExpiryTime() > System.currentTimeMillis())
         {
-            StringUtil
-                    .append(htmlContent, "<td width=170>Unable to join a clan.</td>" + "<td width=100 align=center>",
-                            format
-                                    .format(activeChar.getClanJoinExpiryTime()), "</td>");
+            StringUtil.append(htmlContent, "<td width=170>Unable to join a clan.</td>" + "<td width=100 align=center>",
+                    format.format(activeChar.getClanJoinExpiryTime()), "</td>");
             penalty = true;
         }
 
@@ -62,18 +60,16 @@ public class ClanPenalty implements IUserCommandHandler
         {
             StringUtil
                     .append(htmlContent, "<td width=170>Unable to create a clan.</td>" + "<td width=100 align=center>",
-                            format
-                                    .format(activeChar.getClanCreateExpiryTime()), "</td>");
+                            format.format(activeChar.getClanCreateExpiryTime()), "</td>");
             penalty = true;
         }
 
-        if (activeChar.getClan() != null && activeChar.getClan().getCharPenaltyExpiryTime() > System
-                .currentTimeMillis())
+        if (activeChar.getClan() != null &&
+                activeChar.getClan().getCharPenaltyExpiryTime() > System.currentTimeMillis())
         {
-            StringUtil
-                    .append(htmlContent,
-                            "<td width=170>Unable to invite a clan member.</td>" + "<td width=100 align=center>", format
-                                    .format(activeChar.getClan().getCharPenaltyExpiryTime()), "</td>");
+            StringUtil.append(htmlContent,
+                    "<td width=170>Unable to invite a clan member.</td>" + "<td width=100 align=center>",
+                    format.format(activeChar.getClan().getCharPenaltyExpiryTime()), "</td>");
             penalty = true;
         }
 

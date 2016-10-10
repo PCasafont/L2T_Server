@@ -55,9 +55,8 @@ public class OlympiadStat implements IUserCommandHandler
         }
 
         // TODO Retail system message says YOU even on other targets' info
-        SystemMessage sm = SystemMessage
-                .getSystemMessage(
-                        SystemMessageId.THE_CURRENT_RECORD_FOR_THIS_OLYMPIAD_SESSION_IS_S1_MATCHES_S2_WINS_S3_DEFEATS_YOU_HAVE_EARNED_S4_OLYMPIAD_POINTS);
+        SystemMessage sm = SystemMessage.getSystemMessage(
+                SystemMessageId.THE_CURRENT_RECORD_FOR_THIS_OLYMPIAD_SESSION_IS_S1_MATCHES_S2_WINS_S3_DEFEATS_YOU_HAVE_EARNED_S4_OLYMPIAD_POINTS);
         sm.addNumber(nobleInfo.getMatches());
         sm.addNumber(nobleInfo.getVictories());
         sm.addNumber(nobleInfo.getDefeats());

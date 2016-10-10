@@ -34,7 +34,7 @@ public class TargetPartyMember implements ISkillTargetTypeHandler
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
         /*
-		if ((target != null && target == activeChar)
+        if ((target != null && target == activeChar)
 			|| (target != null && activeChar.getParty() != null && target.getParty() != null
 					&& activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
 			|| (target != null && activeChar instanceof L2PcInstance

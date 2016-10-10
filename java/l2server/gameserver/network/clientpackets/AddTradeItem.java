@@ -60,14 +60,14 @@ public final class AddTradeItem extends L2GameClientPacket
         final TradeList trade = player.getActiveTradeList();
         if (trade == null)
         {
-            Log.warning("Character: " + player
-                    .getName() + " requested item:" + _objectId + " add without active tradelist:" + _tradeId);
+            Log.warning("Character: " + player.getName() + " requested item:" + _objectId +
+                    " add without active tradelist:" + _tradeId);
             return;
         }
 
         final L2PcInstance partner = trade.getPartner();
-        if (partner == null || L2World.getInstance().getPlayer(partner.getObjectId()) == null || partner
-                .getActiveTradeList() == null)
+        if (partner == null || L2World.getInstance().getPlayer(partner.getObjectId()) == null ||
+                partner.getActiveTradeList() == null)
         {
             // Trade partner not found, cancel trade
             if (partner != null)
@@ -82,8 +82,8 @@ public final class AddTradeItem extends L2GameClientPacket
 
         if (trade.isConfirmed() || partner.getActiveTradeList().isConfirmed())
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_ADJUST_ITEMS_AFTER_TRADE_CONFIRMED));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_ADJUST_ITEMS_AFTER_TRADE_CONFIRMED));
             return;
         }
 

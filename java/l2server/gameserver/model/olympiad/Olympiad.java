@@ -63,8 +63,8 @@ public class Olympiad
             "competitions_classed = ?, competitions_nonclassed = ?, settled = ? WHERE charId = ?";
     private static final String OLYMPIAD_DELETE_NOBLE = "DELETE FROM olympiad_nobles WHERE charId = ? LIMIT 1";
     private static final String OLYMPIAD_GET_HEROES =
-            "SELECT charId FROM olympiad_nobles " + "WHERE class_id = ? AND competitions_done >= " + (Config
-                    .isServer(Config.TENKAI_ESTHUS) ? 5 : 10) + " AND competitions_won > 0 " +
+            "SELECT charId FROM olympiad_nobles " + "WHERE class_id = ? AND competitions_done >= " +
+                    (Config.isServer(Config.TENKAI_ESTHUS) ? 5 : 10) + " AND competitions_won > 0 " +
                     "ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
     private static final String GET_ALL_CLASSIFIED_NOBLES = "SELECT charId from olympiad_nobles_eom " +
             "WHERE competitions_done >= 10 AND competitions_won > 0 ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
@@ -261,10 +261,10 @@ public class Olympiad
             while (rset.next())
             {
                 int charId = rset.getInt(CHAR_ID);
-                OlympiadNobleInfo oni = new OlympiadNobleInfo(charId, rset.getString(CHAR_NAME), rset
-                        .getInt(CLASS_ID), rset.getInt(POINTS), rset.getInt(COMP_DONE), rset.getInt(COMP_WON), rset
-                        .getInt(COMP_LOST), rset.getInt(COMP_DRAWN), rset.getInt(COMP_CLASSED), rset
-                        .getInt(COMP_NONCLASSED), rset.getBoolean(SETTLED));
+                OlympiadNobleInfo oni = new OlympiadNobleInfo(charId, rset.getString(CHAR_NAME), rset.getInt(CLASS_ID),
+                        rset.getInt(POINTS), rset.getInt(COMP_DONE), rset.getInt(COMP_WON), rset.getInt(COMP_LOST),
+                        rset.getInt(COMP_DRAWN), rset.getInt(COMP_CLASSED), rset.getInt(COMP_NONCLASSED),
+                        rset.getBoolean(SETTLED));
 
                 _nobles.put(charId, oni);
             }
@@ -383,8 +383,8 @@ public class Olympiad
             _scheduledOlympiadEnd.cancel(true);
         }
 
-        _scheduledOlympiadEnd = ThreadPoolManager.getInstance()
-                .scheduleGeneral(new OlympiadEndTask(), getMillisToOlympiadEnd());
+        _scheduledOlympiadEnd =
+                ThreadPoolManager.getInstance().scheduleGeneral(new OlympiadEndTask(), getMillisToOlympiadEnd());
 
         updateCompStatus();
 
@@ -438,12 +438,12 @@ public class Olympiad
                 .scheduleGeneralAtFixedRate(OlympiadGameManager.getInstance(), 30000, 30000);
         if (Config.ALT_OLY_ANNOUNCE_GAMES)
         {
-            _gameAnnouncer = ThreadPoolManager.getInstance()
-                    .scheduleGeneralAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
+            _gameAnnouncer =
+                    ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
         }
 
 		/*
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_ENDED);
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_ENDED);
 		sm.addNumber(_currentCycle);
 		Announcements.getInstance().announceToAll(sm);
 
@@ -526,8 +526,8 @@ public class Olympiad
 
         Log.info("Olympiad System: Event starts/started : " + _compStart.getTime());
 
-        _scheduledCompStart = ThreadPoolManager.getInstance()
-                .scheduleGeneral(new CompStartTask(), getMillisToCompBegin());
+        _scheduledCompStart =
+                ThreadPoolManager.getInstance().scheduleGeneral(new CompStartTask(), getMillisToCompBegin());
     }
 
     private long getMillisToOlympiadEnd()
@@ -592,8 +592,8 @@ public class Olympiad
 
     private long getMillisToCompBegin()
     {
-        if (_compStart.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() && _compEnd > Calendar.getInstance()
-                .getTimeInMillis())
+        if (_compStart.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() &&
+                _compEnd > Calendar.getInstance().getTimeInMillis())
         {
             return 10L;
         }
@@ -805,10 +805,7 @@ public class Olympiad
 
                 record = new LogRecord(Level.INFO, nobleInfo.getName());
                 record.setParameters(new Object[]{
-                        nobleInfo.getId(),
-                        nobleInfo.getClassId(),
-                        nobleInfo.getMatches(),
-                        nobleInfo.getPoints()
+                        nobleInfo.getId(), nobleInfo.getClassId(), nobleInfo.getMatches(), nobleInfo.getPoints()
                 });
                 _logResults.log(record);
             }
@@ -1008,9 +1005,8 @@ public class Olympiad
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement(
-                            "SELECT olympiad_points FROM olympiad_nobles_eom WHERE charId = ? AND gotTokens = 0");
+            statement = con.prepareStatement(
+                    "SELECT olympiad_points FROM olympiad_nobles_eom WHERE charId = ? AND gotTokens = 0");
             statement.setInt(1, objId);
             ResultSet rs = statement.executeQuery();
             if (rs.first())
@@ -1090,8 +1086,8 @@ public class Olympiad
                     .scheduleGeneralAtFixedRate(OlympiadGameManager.getInstance(), 30000, 30000);
             if (Config.ALT_OLY_ANNOUNCE_GAMES)
             {
-                _gameAnnouncer = ThreadPoolManager.getInstance()
-                        .scheduleGeneralAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
+                _gameAnnouncer =
+                        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
             }
 
             long compEndEnd = getMillisToCompEnd();
@@ -1102,8 +1098,8 @@ public class Olympiad
                     @Override
                     public void run()
                     {
-                        Announcements.getInstance().announceToAll(SystemMessage
-                                .getSystemMessage(SystemMessageId.OLYMPIAD_REGISTRATION_PERIOD_ENDED));
+                        Announcements.getInstance().announceToAll(
+                                SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_REGISTRATION_PERIOD_ENDED));
                     }
                 }, compEndEnd - 600000);
             }

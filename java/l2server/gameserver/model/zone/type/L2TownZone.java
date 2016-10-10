@@ -80,7 +80,7 @@ public class L2TownZone extends L2SpawnZone
             //((L2PcInstance)character).sendMessage("You entered "+_townName);
 
 			/*if (Config.isServer(Config.TENKAI) && Curfew.getInstance().getOnlyPeaceTown() == -1 && isInHostileTown((L2PcInstance)character))
-			{
+            {
 				((L2PcInstance)character).setHostileZone(true);
 				((L2PcInstance)character).broadcastReputation();
 				((L2PcInstance)character).sendMessage(40063);
@@ -89,8 +89,8 @@ public class L2TownZone extends L2SpawnZone
             //ThreadPoolManager.getInstance().scheduleGeneral(new MusicTask((L2PcInstance)character), 2000);
         }
 
-        if (_isPeaceZone && Config.ZONE_TOWN != 2 && (Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew
-                .getInstance().getOnlyPeaceTown() == _townId))
+        if (_isPeaceZone && Config.ZONE_TOWN != 2 &&
+                (Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == _townId))
         {
             character.setInsideZone(L2Character.ZONE_PEACE, true);
         }

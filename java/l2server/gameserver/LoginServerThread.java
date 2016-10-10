@@ -332,8 +332,8 @@ public class LoginServerThread extends Thread
                             {
                                 for (WaitingClient wc : _waitingClients)
                                 {
-                                    if (playKey1 == null && wc.account
-                                            .equals(account) || wc.session.playOkID1 == Integer.parseInt(playKey1))
+                                    if (playKey1 == null && wc.account.equals(account) ||
+                                            wc.session.playOkID1 == Integer.parseInt(playKey1))
                                     {
                                         wcToRemove = wc;
                                     }
@@ -346,8 +346,7 @@ public class LoginServerThread extends Thread
                                     if (Config.DEBUG)
                                     {
                                         Log.info("Login accepted player " + wcToRemove.account + " waited(" +
-                                                (TimeController
-                                                        .getGameTicks() - wcToRemove.timestamp) + "ms)");
+                                                (TimeController.getGameTicks() - wcToRemove.timestamp) + "ms)");
                                     }
                                     PlayerInGame pig = new PlayerInGame(par.getAccount());
                                     sendPacket(pig);
@@ -355,8 +354,8 @@ public class LoginServerThread extends Thread
                                     wcToRemove.gameClient.setState(GameClientState.AUTHED);
                                     wcToRemove.gameClient.setSessionId(wcToRemove.session);
                                     wcToRemove.gameClient.sendPacket(new LoginFail(LoginFail.SUCCESS));
-                                    CharSelectionInfo cl = new CharSelectionInfo(account, wcToRemove.gameClient
-                                            .getSessionId().playOkID1);
+                                    CharSelectionInfo cl = new CharSelectionInfo(account,
+                                            wcToRemove.gameClient.getSessionId().playOkID1);
                                     wcToRemove.gameClient.getConnection().sendPacket(cl);
                                     wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
                                     _accountsInGameServer.put(account, wcToRemove.gameClient);
@@ -576,8 +575,8 @@ public class LoginServerThread extends Thread
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT deletetime FROM characters WHERE account_name=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT deletetime FROM characters WHERE account_name=?");
             statement.setString(1, account);
             ResultSet rset = statement.executeQuery();
             while (rset.next())

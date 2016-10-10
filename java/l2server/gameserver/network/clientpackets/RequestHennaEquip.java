@@ -102,16 +102,16 @@ public final class RequestHennaEquip extends L2GameClientPacket
 
         if (!henna.isFourthSlot())
         {
-            if (activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1 || activeChar
-                    .getHenna(4) == null && activeChar.getHennaEmptySlots() < 2)
+            if (activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1 ||
+                    activeChar.getHenna(4) == null && activeChar.getHennaEmptySlots() < 2)
             {
                 activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
                 return;
             }
         }
 
-        if (!cheater && _count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() && activeChar
-                .addHenna(henna))
+        if (!cheater && _count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() &&
+                activeChar.addHenna(henna))
         {
             activeChar.destroyItemByItemId("Henna", henna.getDyeId(), henna.getAmountDyeRequire(), activeChar, true);
             activeChar.reduceAdena("Henna", henna.getPrice(), activeChar.getLastFolkNPC(), true);
@@ -127,9 +127,10 @@ public final class RequestHennaEquip extends L2GameClientPacket
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
             if (!activeChar.isGM() && cheater)
             {
-                Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar
-                        .getName() + " of account " + activeChar
-                        .getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
+                Util.handleIllegalPlayerAction(activeChar,
+                        "Exploit attempt: Character " + activeChar.getName() + " of account " +
+                                activeChar.getAccountName() + " tryed to add a forbidden henna.",
+                        Config.DEFAULT_PUNISH);
             }
         }
     }

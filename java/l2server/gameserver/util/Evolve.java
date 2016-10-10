@@ -57,8 +57,8 @@ public final class Evolve
 
         if (pet.isAlikeDead())
         {
-            Util.handleIllegalPlayerAction(player, "Player " + player
-                    .getName() + " tried to use death pet exploit!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use death pet exploit!",
+                    Config.DEFAULT_PUNISH);
             return false;
         }
 

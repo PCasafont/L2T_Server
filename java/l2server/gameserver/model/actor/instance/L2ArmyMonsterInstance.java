@@ -86,8 +86,8 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
         @Override
         public void run()
         {
-            if (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO && (Math.abs(getX() - _x) > 5 || Math
-                    .abs(getY() - _y) > 5))
+            if (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO &&
+                    (Math.abs(getX() - _x) > 5 || Math.abs(getY() - _y) > 5))
             {
                 getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(_x, _y, _z, 0));
             }

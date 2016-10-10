@@ -187,8 +187,8 @@ public class PailakaDevilsLegacy extends Quest
         {
             if (world.templateId != INSTANCE_ID)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
             Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
@@ -328,8 +328,8 @@ public class PailakaDevilsLegacy extends Quest
             _followerslist = new ArrayList<L2Npc>();
             for (int[] SPAWN : FOLLOWERS_SPAWNS)
             {
-                L2Npc _follower = addSpawn(FOLLOWERS, SPAWN[0], SPAWN[1], SPAWN[2], SPAWN[3], false, 0, true, player
-                        .getInstanceId());
+                L2Npc _follower = addSpawn(FOLLOWERS, SPAWN[0], SPAWN[1], SPAWN[2], SPAWN[3], false, 0, true,
+                        player.getInstanceId());
                 if (_follower != null)
                 {
                     _followerslist.add(_follower);
@@ -590,8 +590,8 @@ public class PailakaDevilsLegacy extends Quest
     @Override
     public String onEnterZone(L2Character character, L2ZoneType zone)
     {
-        if (character instanceof L2PcInstance && !character.isDead() && !character
-                .isTeleporting() && ((L2PcInstance) character).isOnline())
+        if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() &&
+                ((L2PcInstance) character).isOnline())
         {
             InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
             if (world != null && world.templateId == INSTANCE_ID)

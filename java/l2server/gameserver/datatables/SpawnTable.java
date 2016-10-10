@@ -175,8 +175,8 @@ public class SpawnTable
 
         if (Config.DEBUG)
         {
-            Log.fine("SpawnTable: Spawning completed, total number of NPCs in the world: " + (_spawnTable
-                    .size() + _customSpawnCount + count));
+            Log.fine("SpawnTable: Spawning completed, total number of NPCs in the world: " +
+                    (_spawnTable.size() + _customSpawnCount + count));
         }
 
         File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "spawns");
@@ -349,8 +349,9 @@ public class SpawnTable
 
         if (storeInDb)
         {
-            SpawnData sp = new SpawnData(spawn.getX(), spawn.getY(), spawn.getZ(), spawn.getHeading(), spawn
-                    .getRespawnDelay(), spawn.getRandomRespawnDelay());
+            SpawnData sp =
+                    new SpawnData(spawn.getX(), spawn.getY(), spawn.getZ(), spawn.getHeading(), spawn.getRespawnDelay(),
+                            spawn.getRandomRespawnDelay());
             sp.DbName = spawn.getDbName();
             spawn.getTemplate().getSpawns().add(sp);
         }
@@ -415,13 +416,15 @@ public class SpawnTable
                 {
                     if (showposition && _npc != null)
                     {
-                        activeChar.sendMessage(index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + _npc
-                                .getX() + " " + _npc.getY() + " " + _npc.getZ());
+                        activeChar.sendMessage(
+                                index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + _npc.getX() + " " +
+                                        _npc.getY() + " " + _npc.getZ());
                     }
                     else
                     {
-                        activeChar.sendMessage(index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + spawn
-                                .getX() + " " + spawn.getY() + " " + spawn.getZ());
+                        activeChar.sendMessage(
+                                index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + spawn.getX() + " " +
+                                        spawn.getY() + " " + spawn.getZ());
                     }
                 }
             }
@@ -554,7 +557,7 @@ public class SpawnTable
             }
 
 			/*int radiusToCheck = 3000;
-			int knownChars = 1;
+            int knownChars = 1;
 			for (L2Spawn toCheck : _spawnTable)
 			{
 				if (toCheck == null)

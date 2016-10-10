@@ -36,16 +36,15 @@ public class Banking implements IVoicedCommandHandler
     {
         if (command.equalsIgnoreCase("bank"))
         {
-            activeChar
-                    .sendMessage(
-                            ".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS +
-                                    " Goldbar) / .withdraw (" + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " +
-                                    Config.BANKING_SYSTEM_ADENA + " Adena)");
+            activeChar.sendMessage(
+                    ".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS +
+                            " Goldbar) / .withdraw (" + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " +
+                            Config.BANKING_SYSTEM_ADENA + " Adena)");
         }
         else if (command.equalsIgnoreCase("deposit"))
         {
             /*if (activeChar.getInventoryItemCount(57, 0) >= Config.BANKING_SYSTEM_ADENA)
-			{
+            {
 				if (!activeChar.reduceAdena("Goldbar", Config.BANKING_SYSTEM_ADENA, activeChar, false))
 					return false;
 				activeChar.getInventory().addItem("Goldbar", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, null);
@@ -68,15 +67,13 @@ public class Banking implements IVoicedCommandHandler
                 }
                 activeChar.getInventory().addAdena("Adena", Config.BANKING_SYSTEM_ADENA, activeChar, null);
                 activeChar.getInventory().updateDatabase();
-                activeChar
-                        .sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " +
-                                Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
+                activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " +
+                        Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
             }
             else
             {
-                activeChar
-                        .sendMessage(
-                                "You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+                activeChar.sendMessage(
+                        "You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
             }
         }
         return true;

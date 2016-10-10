@@ -39,11 +39,11 @@ import l2server.util.xml.XmlNode;
 public class SkillTreeTable
 {
     private List<L2SkillLearn> _fishingSkillTrees = new ArrayList<L2SkillLearn>();
-            //all common skills (taught by Fisherman)
+    //all common skills (taught by Fisherman)
     private List<L2SkillLearn> _expandDwarfCraftSkillTrees = new ArrayList<L2SkillLearn>();
-            //list of special skill for dwarf (expand dwarf craft) learned by class teacher
+    //list of special skill for dwarf (expand dwarf craft) learned by class teacher
     private List<L2TransformSkillLearn> _transformSkillTrees = new ArrayList<L2TransformSkillLearn>();
-            // Transform Skills (Test)
+    // Transform Skills (Test)
     private ArrayList<L2SkillLearn> _specialSkillTrees = new ArrayList<L2SkillLearn>();
 
     // checker, sorted arrays of hash codes
@@ -285,9 +285,10 @@ public class SkillTreeTable
         {
             L2SkillLearn temp = cha.getCurrentClass().getSkills().get(skillId);
             //Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-            if ((temp.isAutoGetSkill() && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha
-                    .getDualLevel() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && (!temp
-                    .isRemember() || cha.isRememberSkills()))
+            if ((temp.isAutoGetSkill() && temp.getMinLevel() <= cha.getLevel() &&
+                    temp.getMinDualLevel() <= cha.getDualLevel() ||
+                    temp.isLearnedFromPanel() && !temp.isTransferSkill()) &&
+                    (!temp.isRemember() || cha.isRememberSkills()))
             {
                 boolean knownSkill = false;
 
@@ -335,8 +336,8 @@ public class SkillTreeTable
         for (L2SkillLearn temp : skills)
         {
             //Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-            if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && temp
-                    .getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel())
+            if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) &&
+                    temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel())
             {
                 boolean knownSkill = false;
 
@@ -365,8 +366,8 @@ public class SkillTreeTable
         for (L2SkillLearn temp : skills)
         {
             //Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-            if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && temp
-                    .getMinLevel() <= cha.getLevel() - 1 && temp.getMinDualLevel() <= cha.getDualLevel() - 1)
+            if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) &&
+                    temp.getMinLevel() <= cha.getLevel() - 1 && temp.getMinDualLevel() <= cha.getDualLevel() - 1)
             {
                 boolean knownSkill = false;
 
@@ -418,8 +419,8 @@ public class SkillTreeTable
 
         for (L2SkillLearn temp : skills)
         {
-            if (temp.isLearnedFromPanel() && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha
-                    .getDualLevel())
+            if (temp.isLearnedFromPanel() && temp.getMinLevel() <= cha.getLevel() &&
+                    temp.getMinDualLevel() <= cha.getDualLevel())
             {
                 boolean knownSkill = false;
 
@@ -509,8 +510,8 @@ public class SkillTreeTable
 
         for (L2TransformSkillLearn temp : skills)
         {
-            if (temp.getMinLevel() <= cha.getLevel() && (temp.getRace() == cha.getRace().ordinal() || temp
-                    .getRace() == -1))
+            if (temp.getMinLevel() <= cha.getLevel() &&
+                    (temp.getRace() == cha.getRace().ordinal() || temp.getRace() == -1))
             {
                 boolean knownSkill = false;
 

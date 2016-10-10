@@ -65,8 +65,8 @@ public final class EnchantMultiSellList extends L2GameServerPacket
             List<L2ItemInstance> mainIngredients = new ArrayList<L2ItemInstance>();
             for (L2ItemInstance item : player.getInventory().getItems())
             {
-                if (!item.isEquipped() && EnchantItemTable.isEnchantable(item) && category.Entries
-                        .containsKey(item.getEnchantLevel() + 1))
+                if (!item.isEquipped() && EnchantItemTable.isEnchantable(item) &&
+                        category.Entries.containsKey(item.getEnchantLevel() + 1))
                 {
                     mainIngredients.add(item);
                 }

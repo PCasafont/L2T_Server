@@ -70,8 +70,8 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
             if (activeParty.getLeader().equals(activeChar))
             {
                 // if activeChars Party is in CC, is activeChar CCLeader?
-                if (activeParty.isInCommandChannel() && activeParty.getCommandChannel().getChannelLeader()
-                        .equals(activeChar))
+                if (activeParty.isInCommandChannel() &&
+                        activeParty.getCommandChannel().getChannelLeader().equals(activeChar))
                 {
                     //in CC and the CCLeader
                     //target in a party?
@@ -96,8 +96,8 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
                         activeChar.sendMessage("Your target has no Party.");
                     }
                 }
-                else if (activeParty.isInCommandChannel() && !activeParty.getCommandChannel().getChannelLeader()
-                        .equals(activeChar))
+                else if (activeParty.isInCommandChannel() &&
+                        !activeParty.getCommandChannel().getChannelLeader().equals(activeChar))
                 {
                     //in CC, but not the CCLeader
                     sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_INVITE_TO_COMMAND_CHANNEL);
@@ -139,13 +139,13 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
     private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
     {
         boolean hasRight = false;
-        if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId() && requestor
-                .getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
+        if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId() &&
+                requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
         {
             hasRight = true;
         }
-        else if (requestor.getInventory()
-                .getItemByItemId(8871) != null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
+        else if (requestor.getInventory().getItemByItemId(8871) !=
+                null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
         {
             hasRight = true;
         }

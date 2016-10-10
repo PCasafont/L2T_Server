@@ -111,8 +111,8 @@ public class PetStat extends SummonStat
         {
             if (getActiveChar() != null)
             {
-                Log.warning("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar()
-                        .getNpcId() + ", level:" + level + " is missing data from pets_stats table!");
+                Log.warning("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getNpcId() +
+                        ", level:" + level + " is missing data from pets_stats table!");
             }
             throw e;
         }
@@ -141,8 +141,8 @@ public class PetStat extends SummonStat
                 .setPetData(PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().NpcId, value));
         if (getActiveChar().getPetLevelData() == null)
         {
-            throw new IllegalArgumentException("No pet data for npc: " + getActiveChar()
-                    .getTemplate().NpcId + " level: " + value);
+            throw new IllegalArgumentException(
+                    "No pet data for npc: " + getActiveChar().getTemplate().NpcId + " level: " + value);
         }
         getActiveChar().stopFeed();
         super.setLevel(value);

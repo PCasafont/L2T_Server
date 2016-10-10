@@ -41,8 +41,8 @@ public class EffectFixedPcDmg extends L2Effect
     @Override
     public boolean onStart()
     {
-        if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected()
-                .getLevel() < 85 || getEffected().isInvul())
+        if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85 ||
+                getEffected().isInvul())
         {
             return false;
         }

@@ -249,7 +249,7 @@ public abstract class L2Playable extends L2Character
 
         return true;
         /*  Even at war, there should be PvP flag
-		if (
+        if (
 				player.getClan() == null ||
 				targetPlayer.getClan() == null ||
 				(

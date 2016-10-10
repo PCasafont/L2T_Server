@@ -93,9 +93,8 @@ public class Duel
             // increase countdown so that start task can teleport players
             _countdown++;
             // inform players that they will be portet shortly
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
+            SystemMessage sm = SystemMessage.getSystemMessage(
+                    SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
             broadcastToTeam1(sm);
             broadcastToTeam2(sm);
         }
@@ -912,10 +911,9 @@ public class Duel
             }
 
             // is one of the players in a Siege, Peace or PvP zone?
-            if (_playerA.isInsideZone(L2Character.ZONE_PEACE) || _playerB
-                    .isInsideZone(L2Character.ZONE_PEACE) || _playerA.isInsideZone(L2Character.ZONE_SIEGE) || _playerB
-                    .isInsideZone(L2Character.ZONE_SIEGE) || _playerA.isInsideZone(L2Character.ZONE_PVP) || _playerB
-                    .isInsideZone(L2Character.ZONE_PVP))
+            if (_playerA.isInsideZone(L2Character.ZONE_PEACE) || _playerB.isInsideZone(L2Character.ZONE_PEACE) ||
+                    _playerA.isInsideZone(L2Character.ZONE_SIEGE) || _playerB.isInsideZone(L2Character.ZONE_SIEGE) ||
+                    _playerA.isInsideZone(L2Character.ZONE_PVP) || _playerB.isInsideZone(L2Character.ZONE_PVP))
             {
                 return DuelResultEnum.Canceled;
             }

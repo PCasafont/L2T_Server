@@ -141,8 +141,8 @@ public class L2LoginServer
             catch (UnknownHostException e)
             {
                 Log.log(Level.WARNING,
-                        "WARNING: The LoginServer bind address is invalid, using all avaliable IPs. Reason: " + e
-                                .getMessage(), e);
+                        "WARNING: The LoginServer bind address is invalid, using all avaliable IPs. Reason: " +
+                                e.getMessage(), e);
             }
         }
 
@@ -188,8 +188,8 @@ public class L2LoginServer
         }
         _selectorThread.start();
 
-        Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress
-                .getHostAddress()) + ":" + Config.PORT_LOGIN);
+        Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" +
+                Config.PORT_LOGIN);
     }
 
     public GameServerListener getGameServerListener()
@@ -209,8 +209,9 @@ public class L2LoginServer
             }
             catch (FileNotFoundException e)
             {
-                Log.log(Level.WARNING, "Failed to load banned IPs file (" + bannedFile
-                        .getName() + ") for reading. Reason: " + e.getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Failed to load banned IPs file (" + bannedFile.getName() + ") for reading. Reason: " +
+                                e.getMessage(), e);
                 return;
             }
 
@@ -247,8 +248,8 @@ public class L2LoginServer
                             }
                             catch (NumberFormatException e)
                             {
-                                Log.warning("Skipped: Incorrect ban duration (" + parts[1] + ") on (" + bannedFile
-                                        .getName() + "). Line: " + reader.getLineNumber());
+                                Log.warning("Skipped: Incorrect ban duration (" + parts[1] + ") on (" +
+                                        bannedFile.getName() + "). Line: " + reader.getLineNumber());
                                 continue;
                             }
                         }
@@ -259,16 +260,17 @@ public class L2LoginServer
                         }
                         catch (UnknownHostException e)
                         {
-                            Log.warning("Skipped: Invalid address (" + parts[0] + ") on (" + bannedFile
-                                    .getName() + "). Line: " + reader.getLineNumber());
+                            Log.warning("Skipped: Invalid address (" + parts[0] + ") on (" + bannedFile.getName() +
+                                    "). Line: " + reader.getLineNumber());
                         }
                     }
                 }
             }
             catch (IOException e)
             {
-                Log.log(Level.WARNING, "Error while reading the bans file (" + bannedFile.getName() + "). Details: " + e
-                        .getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Error while reading the bans file (" + bannedFile.getName() + "). Details: " + e.getMessage(),
+                        e);
             }
             finally
             {

@@ -78,8 +78,9 @@ public class RevelationSkills extends Quest
                     skillInfo = SkillTable.getInstance().getInfo(id, 1);
                     if (skillInfo != null && skillInfo.getSkillType() != L2SkillType.NOTDONE)
                     {
-                        skillList += "<tr><td><a action=\"bypass -h Quest RevelationSkills " + skillInfo
-                                .getId() + "\">" + skillInfo.getName() + "</a></td></tr>";
+                        skillList +=
+                                "<tr><td><a action=\"bypass -h Quest RevelationSkills " + skillInfo.getId() + "\">" +
+                                        skillInfo.getName() + "</a></td></tr>";
                     }
                 }
                 skillList += "</table>";
@@ -98,8 +99,8 @@ public class RevelationSkills extends Quest
             if (player.getSkillLevelHash(skillId) > -1)
             {
                 player.sendMessage(
-                        "ERROR: Please contact with the server administrator and inform about this message: " + player
-                                .getObjectId() + 500);
+                        "ERROR: Please contact with the server administrator and inform about this message: " +
+                                player.getObjectId() + 500);
                 return "";
             }
 

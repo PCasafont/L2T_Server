@@ -231,8 +231,8 @@ public class PailakaInjuredDragon extends Quest
         {
             if (world.templateId != INSTANCE_ID)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -526,7 +526,7 @@ public class PailakaInjuredDragon extends Quest
         }
 
 		/* There are lots of mobs walls, and item get is random, it could happen that you dont get the item
-		 * until the last wall, and there's 4 different silenos groups. 1 enchant comes only from group 2
+         * until the last wall, and there's 4 different silenos groups. 1 enchant comes only from group 2
 		 * and the 2nd comes from group 4. Chances, lets say 20% of getting the enchant when killing
 		 * the right mob
 		 * When you kill a mob wall, another mage type appears behind. If all mobs from the front are killed
@@ -664,8 +664,8 @@ public class PailakaInjuredDragon extends Quest
                 st.playSound("ItemSound.quest_middle");
 
                 // Spawns Ketra Orc Supporter
-                addSpawn(KETRA_ORC_SUPPORTER2, npc.getX(), npc.getY(), npc.getZ(), npc
-                        .getHeading(), false, 0, false, npc.getInstanceId());
+                addSpawn(KETRA_ORC_SUPPORTER2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false,
+                        npc.getInstanceId());
                 break;
             case ANTYLOPE_1:
             case ANTYLOPE_2:
@@ -688,8 +688,8 @@ public class PailakaInjuredDragon extends Quest
         final double rads = Math.toRadians(Util.convertHeadingToDegree(npc.getSpawn().getHeading()) + 180);
         final int mageX = (int) (npc.getX() + 150 * Math.cos(rads));
         final int mageY = (int) (npc.getY() + 150 * Math.sin(rads));
-        final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn()
-                .getHeading(), false, 0, true, npc.getInstanceId());
+        final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true,
+                npc.getInstanceId());
         mageBack.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, player, 1000);
     }
 
@@ -925,8 +925,8 @@ public class PailakaInjuredDragon extends Quest
          ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
          }
          */
-        if (character instanceof L2Playable && !character.isDead() && !character.isTeleporting() && character
-                .getActingPlayer().isOnline())
+        if (character instanceof L2Playable && !character.isDead() && !character.isTeleporting() &&
+                character.getActingPlayer().isOnline())
         {
             InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
             if (world != null && world.templateId == INSTANCE_ID)

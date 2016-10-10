@@ -96,8 +96,8 @@ public class Certificate implements IBypassHandler
                 return false;
             }
 
-            L2ItemInstance certsItem = player.getInventory()
-                    .getItemByItemId(CertificateSkillTable.SUBCLASS_CERTIFICATE);
+            L2ItemInstance certsItem =
+                    player.getInventory().getItemByItemId(CertificateSkillTable.SUBCLASS_CERTIFICATE);
             if (certsItem == null)
             {
                 // TODO: Proper message/HTML
@@ -203,8 +203,8 @@ public class Certificate implements IBypassHandler
                 return false;
             }
 
-            L2ItemInstance certsItem = player.getInventory()
-                    .getItemByItemId(CertificateSkillTable.DUALCLASS_CERTIFICATE);
+            L2ItemInstance certsItem =
+                    player.getInventory().getItemByItemId(CertificateSkillTable.DUALCLASS_CERTIFICATE);
             if (certsItem == null)
             {
                 // TODO: Proper message/HTML

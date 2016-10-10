@@ -68,7 +68,7 @@ public class L2PlayerAI extends L2PlayableAI
     synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
     {
         /*
-		 if (Config.DEBUG)
+         if (Config.DEBUG)
 		 Logozo.warning("L2PlayerAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
 		 */
 
@@ -260,8 +260,8 @@ public class L2PlayerAI extends L2PlayableAI
             Log.warning("L2PlayerAI: thinkCast -> Start");
         }
 
-        if ((_skill.getTargetType() == L2SkillTargetType.TARGET_GROUND || _skill
-                .getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA) && _actor instanceof L2PcInstance)
+        if ((_skill.getTargetType() == L2SkillTargetType.TARGET_GROUND ||
+                _skill.getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA) && _actor instanceof L2PcInstance)
         {
             if (maybeMoveToPosition(_actor.getSkillCastPosition(), _actor.getMagicalAttackRange(_skill)))
             {

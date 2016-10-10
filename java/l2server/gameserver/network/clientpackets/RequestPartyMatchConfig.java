@@ -55,8 +55,8 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
             return;
         }
 
-        if (!_activeChar.isInPartyMatchRoom() && _activeChar.getParty() != null && _activeChar.getParty()
-                .getLeader() != _activeChar)
+        if (!_activeChar.isInPartyMatchRoom() && _activeChar.getParty() != null &&
+                _activeChar.getParty().getLeader() != _activeChar)
         {
             _activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_VIEW_PARTY_ROOMS));
             _activeChar.sendPacket(ActionFailed.STATIC_PACKET);

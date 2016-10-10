@@ -63,9 +63,8 @@ public class AdminQuest implements IAdminCommandHandler
             String[] parts = command.split(" ");
             if (parts.length < 2)
             {
-                activeChar
-                        .sendMessage(
-                                "Syntax: //quest_reload <questFolder>.<questSubFolders...>.questName> or //quest_reload <id>");
+                activeChar.sendMessage(
+                        "Syntax: //quest_reload <questFolder>.<questSubFolders...>.questName> or //quest_reload <id>");
             }
             else
             {

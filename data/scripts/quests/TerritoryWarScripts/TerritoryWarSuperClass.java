@@ -135,8 +135,8 @@ public class TerritoryWarSuperClass extends Quest
                 {
                     ward.unSpawnMe();
                     ward.setNpc(TerritoryWarManager.getInstance()
-                            .addTerritoryWard(ward.getTerritoryId(), caster.getSiegeSide() - 80, ward
-                                    .getOwnerCastleId(), true));
+                            .addTerritoryWard(ward.getTerritoryId(), caster.getSiegeSide() - 80,
+                                    ward.getOwnerCastleId(), true));
                     ward.setOwnerCastleId(caster.getSiegeSide() - 80);
                     TerritoryWarManager.getInstance().getTerritory(caster.getSiegeSide() - 80).getQuestDone()[1]++;
                 }
@@ -195,8 +195,8 @@ public class TerritoryWarSuperClass extends Quest
             TerritoryWarManager.getInstance().giveTWPoint(killer, TERRITORY_ID, 3);
         }
 
-        if (killer.getSiegeSide() != TERRITORY_ID && TerritoryWarManager.getInstance()
-                .getTerritory(killer.getSiegeSide() - 80) != null)
+        if (killer.getSiegeSide() != TERRITORY_ID &&
+                TerritoryWarManager.getInstance().getTerritory(killer.getSiegeSide() - 80) != null)
         {
             TerritoryWarManager.getInstance().getTerritory(killer.getSiegeSide() - 80).getQuestDone()[0]++;
         }
@@ -276,8 +276,8 @@ public class TerritoryWarSuperClass extends Quest
             else
             {
                 st.set("kill", String.valueOf(kill));
-                player.sendPacket(new ExShowScreenMessage(Text[0].replace("MAX", String.valueOf(max))
-                        .replace("KILL", String.valueOf(kill)), 10000));
+                player.sendPacket(new ExShowScreenMessage(
+                        Text[0].replace("MAX", String.valueOf(max)).replace("KILL", String.valueOf(kill)), 10000));
             }
         }
         else if (st.getInt("doneDate") != Calendar.getInstance().get(Calendar.DAY_OF_YEAR))
@@ -287,8 +287,8 @@ public class TerritoryWarSuperClass extends Quest
             st.set("kill", "1");
             max = Rnd.get(RANDOM_MIN, RANDOM_MAX);
             st.set("max", String.valueOf(max));
-            player.sendPacket(new ExShowScreenMessage(Text[0].replace("MAX", String.valueOf(max))
-                    .replace("KILL", String.valueOf(kill)), 10000));
+            player.sendPacket(new ExShowScreenMessage(
+                    Text[0].replace("MAX", String.valueOf(max)).replace("KILL", String.valueOf(kill)), 10000));
         }
         else if (player.isGM())
         {
@@ -299,8 +299,8 @@ public class TerritoryWarSuperClass extends Quest
             st.set("kill", "1");
             max = Rnd.get(RANDOM_MIN, RANDOM_MAX);
             st.set("max", String.valueOf(max));
-            player.sendPacket(new ExShowScreenMessage(Text[0].replace("MAX", String.valueOf(max))
-                    .replace("KILL", String.valueOf(kill)), 10000));
+            player.sendPacket(new ExShowScreenMessage(
+                    Text[0].replace("MAX", String.valueOf(max)).replace("KILL", String.valueOf(kill)), 10000));
         }
     }
 
@@ -404,8 +404,8 @@ public class TerritoryWarSuperClass extends Quest
             {
                 for (L2PcInstance pl : actingPlayer.getParty().getPartyMembers())
                 {
-                    if (pl.getSiegeSide() == qs.getPlayer().getSiegeSide() || pl.getSiegeSide() == 0 || !Util
-                            .checkIfInRange(2000, killer, pl, false))
+                    if (pl.getSiegeSide() == qs.getPlayer().getSiegeSide() || pl.getSiegeSide() == 0 ||
+                            !Util.checkIfInRange(2000, killer, pl, false))
                     {
                         continue;
                     }
@@ -459,8 +459,8 @@ public class TerritoryWarSuperClass extends Quest
                 }
                 else
                 {
-                    Log.warning("TerritoryWar: Missing Kill the quest for player " + player
-                            .getName() + " whose class id: " + player.getCurrentClass().getId());
+                    Log.warning("TerritoryWar: Missing Kill the quest for player " + player.getName() +
+                            " whose class id: " + player.getCurrentClass().getId());
                 }
             }
         }
@@ -505,8 +505,8 @@ public class TerritoryWarSuperClass extends Quest
                         }
                         else
                         {
-                            Log.warning("TerritoryWar: Missing Kill the quest for player " + player
-                                    .getName() + " whose class id: " + player.getCurrentClass().getId());
+                            Log.warning("TerritoryWar: Missing Kill the quest for player " + player.getName() +
+                                    " whose class id: " + player.getCurrentClass().getId());
                         }
                     }
                 }
@@ -577,7 +577,7 @@ public class TerritoryWarSuperClass extends Quest
                         startTWDate.add(Calendar.DAY_OF_MONTH, 7);
                     }
                     /*if (!SevenSigns.getInstance().isDateInSealValidPeriod(startTWDate)
-							&& !Config.isServer(Config.PVP))
+                            && !Config.isServer(Config.PVP))
 						startTWDate.add(Calendar.DAY_OF_MONTH, 7);*/
                     saveGlobalQuestVar("nextTWStartDate", String.valueOf(startTWDate.getTimeInMillis()));
                 }

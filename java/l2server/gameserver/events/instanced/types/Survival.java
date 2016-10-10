@@ -54,8 +54,8 @@ public class Survival extends EventInstance
                 extraPoints /= 2;
             }
             rewardPlayers(_winners);
-            Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0)
-                    .getName() + " has won being the last one standing!");
+            Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0).getName() +
+                    " has won being the last one standing!");
             return;
         }
         else
@@ -113,8 +113,8 @@ public class Survival extends EventInstance
         new EventTeleporter(killedPlayerInstance, new Point3D(0, 0, 0), false, true);
 
         killerPlayer.addEventPoints(3);
-        List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                .getAssistants(killerPlayer, killedPlayerInstance, true);
+        List<L2PcInstance> assistants =
+                PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
         for (L2PcInstance assistant : assistants)
         {
             assistant.addEventPoints(1);

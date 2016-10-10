@@ -45,8 +45,8 @@ public class EffectAbortCast extends L2Effect
             return false;
         }
 
-        if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected()
-                .getLastSkillCast() != null && getEffected().getLastSkillCast().isMagic())
+        if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected().getLastSkillCast() != null &&
+                getEffected().getLastSkillCast().isMagic())
         {
             getEffected().abortCast();
             if (getEffected() instanceof L2PcInstance)

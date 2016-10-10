@@ -57,8 +57,8 @@ public final class DlgAnswer extends L2GameClientPacket
             Log.fine(getType() + ": Answer accepted. Message ID " + _messageId + ", answer " + _answer +
                     ", Requester ID " + _requesterId);
         }
-        if (_messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP
-                .getId() || _messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
+        if (_messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId() ||
+                _messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
         {
             activeChar.reviveAnswer(_answer);
         }
@@ -98,8 +98,8 @@ public final class DlgAnswer extends L2GameClientPacket
                 {
                     if (Config.GMAUDIT)
                     {
-                        GMAudit.auditGMAction(activeChar.getName(), _command, activeChar
-                                .getTarget() != null ? activeChar.getTarget().getName() : "no-target");
+                        GMAudit.auditGMAction(activeChar.getName(), _command,
+                                activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
                     }
                     ach.useAdminCommand(_command, activeChar);
                 }

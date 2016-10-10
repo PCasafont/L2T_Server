@@ -163,8 +163,8 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
             if (trainer instanceof L2SquadTrainer)
             {
                 SubUnitSkill sus = SubPledgeSkillTree.getInstance().getSkill(SkillTable.getSkillHashCode(skill));
-                AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), sus
-                        .getReputation(), 3);
+                AcquireSkillInfo asi =
+                        new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), sus.getReputation(), 3);
                 asi.addRequirement(0, sus.getItemId(), sus.getCount(), 0);
                 sendPacket(asi);
             }

@@ -111,8 +111,8 @@ public class L2AWizardAI extends L2APlayerAI
         {
             for (L2Skill skill : _player.getAllSkills())
             {
-                if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE || skill
-                        .getHitTime() > 5000)
+                if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE ||
+                        skill.getHitTime() > 5000)
                 {
                     continue;
                 }
@@ -139,8 +139,8 @@ public class L2AWizardAI extends L2APlayerAI
                 }
 
                 L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + stance, skill.getLevelHash());
-                if (magic.getPower() > 150 && magic.getTargetType() == L2SkillTargetType.TARGET_ONE && _player
-                        .useMagic(magic, true, false))
+                if (magic.getPower() > 150 && magic.getTargetType() == L2SkillTargetType.TARGET_ONE &&
+                        _player.useMagic(magic, true, false))
                 {
                     break;
                 }

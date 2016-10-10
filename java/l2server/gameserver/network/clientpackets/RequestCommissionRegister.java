@@ -53,7 +53,7 @@ public final class RequestCommissionRegister extends L2GameClientPacket
         }
 
 		/*long destroyPrice = _price;
-		AuctionManager am = AuctionManager.getInstance();
+        AuctionManager am = AuctionManager.getInstance();
 		am.checkForAuctionsDeletion();
 		long timeToAdd = 0;
 		switch (_duration)

@@ -108,14 +108,15 @@ public class Orfen extends L2AttackableAIScript
 
             GrandBossManager.getInstance().setBossStatus(_orfenId, GrandBossManager.getInstance().ALIVE);
 
-            _orfenBoss.broadcastPacket(new PlaySound(1, "BS01_A", 1, _orfenBoss.getObjectId(), _orfenBoss
-                    .getX(), _orfenBoss.getY(), _orfenBoss.getZ()));
+            _orfenBoss.broadcastPacket(
+                    new PlaySound(1, "BS01_A", 1, _orfenBoss.getObjectId(), _orfenBoss.getX(), _orfenBoss.getY(),
+                            _orfenBoss.getZ()));
         }
         else if (event.equalsIgnoreCase("check_orfen_location"))
         {
             //Check the boss location and minion loc
-            if (_isTeleported && _orfenBoss.getCurrentHp() > _orfenBoss.getMaxHp() * 0.95 || !_bossZone
-                    .isInsideZone(_orfenBoss) && !_isTeleported)
+            if (_isTeleported && _orfenBoss.getCurrentHp() > _orfenBoss.getMaxHp() * 0.95 ||
+                    !_bossZone.isInsideZone(_orfenBoss) && !_isTeleported)
             {
                 setSpawnPoint(Rnd.get(3) + 1);
                 _isTeleported = false;
@@ -196,8 +197,8 @@ public class Orfen extends L2AttackableAIScript
                 _isTeleported = true;
                 setSpawnPoint(0);
             }
-            else if (npc.isInsideRadius(attacker, 1000, false, false) && !npc
-                    .isInsideRadius(attacker, 300, false, false) && Rnd.get(10) == 0)
+            else if (npc.isInsideRadius(attacker, 1000, false, false) &&
+                    !npc.isInsideRadius(attacker, 300, false, false) && Rnd.get(10) == 0)
             {
                 attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 
@@ -222,8 +223,9 @@ public class Orfen extends L2AttackableAIScript
 
         if (npc.getNpcId() == _orfenId)
         {
-            _orfenBoss.broadcastPacket(new PlaySound(1, "BS02_D", 1, _orfenBoss.getObjectId(), _orfenBoss
-                    .getX(), _orfenBoss.getY(), _orfenBoss.getZ()));
+            _orfenBoss.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, _orfenBoss.getObjectId(), _orfenBoss.getX(), _orfenBoss.getY(),
+                            _orfenBoss.getZ()));
 
             GrandBossManager.getInstance().notifyBossKilled(_orfenId);
 

@@ -46,8 +46,8 @@ public class L2FameManagerInstance extends L2Npc
         if (actualCommand.equalsIgnoreCase("PK_Count"))
         {
             NpcHtmlMessage html = new NpcHtmlMessage(1);
-            if (player.getFame() >= 500000 && player.getCurrentClass().level() >= 2 && player
-                    .getClan() != null && player.getClan().getLevel() >= 5)
+            if (player.getFame() >= 500000 && player.getCurrentClass().level() >= 2 && player.getClan() != null &&
+                    player.getClan().getLevel() >= 5)
             {
                 if (player.getPkKills() > 0)
                 {

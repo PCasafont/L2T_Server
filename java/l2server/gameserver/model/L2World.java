@@ -863,10 +863,10 @@ public final class L2World
         int max = -1;
         for (L2PcInstance flagged : getAllPlayers().values())
         {
-            if (flagged.getPvpFlag() == 0 || flagged.isGM() || flagged.isInsideZone(L2Character.ZONE_PEACE) || flagged
-                    .isInsideZone(L2Character.ZONE_SIEGE) || flagged
-                    .isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || flagged.getInstanceId() != 0 || GrandBossManager
-                    .getInstance().getZone(flagged) != null)
+            if (flagged.getPvpFlag() == 0 || flagged.isGM() || flagged.isInsideZone(L2Character.ZONE_PEACE) ||
+                    flagged.isInsideZone(L2Character.ZONE_SIEGE) ||
+                    flagged.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || flagged.getInstanceId() != 0 ||
+                    GrandBossManager.getInstance().getZone(flagged) != null)
             {
                 continue;
             }

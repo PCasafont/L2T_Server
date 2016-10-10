@@ -81,12 +81,12 @@ public class ChatTell implements IChatHandler
             }
             if (receiver.isChatBanned())
             {
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
+                activeChar.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
                 return;
             }
             /*
-			if (receiver.getClient() == null || receiver.getClient().isDetached())
+            if (receiver.getClient() == null || receiver.getClient().isDetached())
 			{
 				activeChar.sendMessage("Player is in offline mode.");
 				return;
@@ -103,13 +103,14 @@ public class ChatTell implements IChatHandler
                     text = text.substring(0, index1) + text.substring(index2);
                 }
 
-                ConsoleTab.appendMessage(ConsoleFilter.WhisperChat, activeChar.getName() + "->" + receiver
-                        .getName() + ": " + text, activeChar.getName(), receiver.getName());
+                ConsoleTab.appendMessage(ConsoleFilter.WhisperChat,
+                        activeChar.getName() + "->" + receiver.getName() + ": " + text, activeChar.getName(),
+                        receiver.getName());
             }
             else
             {
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
+                activeChar.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
             }
         }
     }

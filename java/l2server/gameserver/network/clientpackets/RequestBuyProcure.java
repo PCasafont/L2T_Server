@@ -156,8 +156,8 @@ public class RequestBuyProcure extends L2GameClientPacket
                 continue;
             }
 
-            L2ItemInstance iteme = player.getInventory()
-                    .destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
+            L2ItemInstance iteme =
+                    player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
             if (iteme == null)
             {
                 continue;

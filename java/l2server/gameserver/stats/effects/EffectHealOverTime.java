@@ -48,8 +48,8 @@ public class EffectHealOverTime extends L2Effect
     @Override
     public boolean onStart()
     {
-        getEffected().sendPacket(new ExRegMax(calc(), getAbnormal().getTotalCount() * getAbnormal()
-                .getDuration(), getAbnormal().getDuration()));
+        getEffected().sendPacket(new ExRegMax(calc(), getAbnormal().getTotalCount() * getAbnormal().getDuration(),
+                getAbnormal().getDuration()));
         return true;
     }
 

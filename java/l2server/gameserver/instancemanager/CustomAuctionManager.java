@@ -98,15 +98,15 @@ public class CustomAuctionManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
+                PreparedStatement statement =
+                        con.prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
                 statement.setInt(1, _id);
                 ResultSet rs = statement.executeQuery();
                 if (rs.next())
                 {
                     long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-                    nextAuction = lastAuctionCreation + (_initialDuration + _repeatTime) * 1000L + Rnd
-                            .get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
+                    nextAuction = lastAuctionCreation + (_initialDuration + _repeatTime) * 1000L +
+                            Rnd.get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
                     if (nextAuction < 0)
                     {
                         nextAuction = 0;
@@ -134,9 +134,8 @@ public class CustomAuctionManager
                     try
                     {
                         con = L2DatabaseFactory.getInstance().getConnection();
-                        PreparedStatement statement = con
-                                .prepareStatement(
-                                        "REPLACE INTO `custom_auction_templates` (id, lastAuctionCreation) VALUES (?, ?)");
+                        PreparedStatement statement = con.prepareStatement(
+                                "REPLACE INTO `custom_auction_templates` (id, lastAuctionCreation) VALUES (?, ?)");
                         statement.setInt(1, _id);
                         statement.setLong(2, System.currentTimeMillis());
                         statement.execute();
@@ -229,9 +228,8 @@ public class CustomAuctionManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                PreparedStatement statement = con.prepareStatement(
+                        "INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 statement.setInt(1, _id);
                 statement.setInt(2, _itemId);
                 statement.setInt(3, _template.getId());
@@ -343,17 +341,16 @@ public class CustomAuctionManager
             if (getRemainingTime() < ADDED_DURATION)
             {
                 _endAuctionTask.cancel(true);
-                _endAuctionTask = ThreadPoolManager.getInstance()
-                        .scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
+                _endAuctionTask =
+                        ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
             }
 
             Connection con = null;
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
+                PreparedStatement statement = con.prepareStatement(
+                        "UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
                 statement.setInt(1, _currentCurrencyId);
                 statement.setLong(2, _currentPrice);
                 statement.setInt(3, _currentAuctionOwner);
@@ -376,8 +373,8 @@ public class CustomAuctionManager
         {
             _auctions.remove(_id);
 
-            giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate()
-                    .getCount(), "Congrats! You've won this bid!");
+            giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate().getCount(),
+                    "Congrats! You've won this bid!");
 
             Connection con = null;
             try
@@ -417,7 +414,7 @@ public class CustomAuctionManager
 
     private static Map<Integer, Auction> _auctions = new HashMap<Integer, Auction>(); //Current auctions
     private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
-            //All the auction info
+    //All the auction info
 
     public final void startAuction(final int templateId)
     {
@@ -437,12 +434,12 @@ public class CustomAuctionManager
                 auctionManager = Util.getNpcCloseTo(33782, player);
             }
 
-            player.sendPacket(new CreatureSay(auctionManager == null ? 0x00 : auctionManager
-                    .getObjectId(), 1, "Jolie", "I've got a new item (" + (auctionTemplate
-                    .getCount() != 0 ? auctionTemplate.getCount() + "x " : "") + ItemTable.getInstance()
-                    .getTemplate(itemId).getName() + ") up for auctions!" + (auctionTemplate
-                    .getHighestCurrencyId() == 57 ? " Adenas only!" : auctionTemplate
-                    .getHighestCurrencyId() == 50009 ? " Raid Hearts only!" : "")));
+            player.sendPacket(new CreatureSay(auctionManager == null ? 0x00 : auctionManager.getObjectId(), 1, "Jolie",
+                    "I've got a new item (" +
+                            (auctionTemplate.getCount() != 0 ? auctionTemplate.getCount() + "x " : "") +
+                            ItemTable.getInstance().getTemplate(itemId).getName() + ") up for auctions!" +
+                            (auctionTemplate.getHighestCurrencyId() == 57 ? " Adenas only!" :
+                                    auctionTemplate.getHighestCurrencyId() == 50009 ? " Raid Hearts only!" : "")));
         }
     }
 
@@ -498,15 +495,15 @@ public class CustomAuctionManager
 
             sb.append(
                     "<table height=180 background=L2UI_CH3.refinewnd_back_Pattern><tr><td FIXWIDTH=80></td>"); //<img src=\""+currentAuctionInfio.getItemTemplate().getIcon()+"\" width=32 height=32>
-            sb.append("<td><br><table cellpadding=0><tr><td FIXWIDTH=375><font color=LEVEL>" + ItemTable.getInstance()
-                    .getTemplate(currentAuctionInfo.getItemId()).getName() + " (" + currentAuctionInfo.getTemplate()
-                    .getCount() + ")</font>");
-            sb.append("</td></tr><tr><td>Remaining Time: </td><td FIXWIDTH=375>" + currentAuctionInfo
-                    .getRemainingTimeString() + "</td></tr><tr><td>Current Owner:</td><td>" + currentAuctionInfo
-                    .getCurrentOwnerName() + "</td></tr>");
+            sb.append("<td><br><table cellpadding=0><tr><td FIXWIDTH=375><font color=LEVEL>" +
+                    ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId()).getName() + " (" +
+                    currentAuctionInfo.getTemplate().getCount() + ")</font>");
+            sb.append("</td></tr><tr><td>Remaining Time: </td><td FIXWIDTH=375>" +
+                    currentAuctionInfo.getRemainingTimeString() + "</td></tr><tr><td>Current Owner:</td><td>" +
+                    currentAuctionInfo.getCurrentOwnerName() + "</td></tr>");
 
-            String currencyName = ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency())
-                    .getName();
+            String currencyName =
+                    ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName();
 
             long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
             if (currentAuctionInfo.getCurrentCurrency() == 57 && currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)
@@ -537,15 +534,15 @@ public class CustomAuctionManager
             if (!options.isEmpty() && curId < Currency.values().length)
             {
                 options = options.substring(0, options.length() - 1);
-                sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuction
-                        .getKey() + "\" list=" + options + "></td></tr>");
+                sb.append(
+                        "<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuction.getKey() +
+                                "\" list=" + options + "></td></tr>");
             }
 
-            sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuction
-                    .getKey() + "\" width=100 type=number length=14></td></tr>");
-            sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuction
-                    .getKey() + "; $plbid" + currentAuction.getKey() + " ; $plcoin" + currentAuction
-                    .getKey() +
+            sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuction.getKey() +
+                    "\" width=100 type=number length=14></td></tr>");
+            sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuction.getKey() +
+                    "; $plbid" + currentAuction.getKey() + " ; $plcoin" + currentAuction.getKey() +
                     "\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
             sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
             sb.append("</table><br>");
@@ -603,26 +600,27 @@ public class CustomAuctionManager
                         int auctionId = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
 
                         int count = Integer.parseInt(d.getAttributes().getNamedItem("count").getNodeValue());
-                        int repeatTime = d.getAttributes().getNamedItem("repeatTime") == null ? 0 : Integer
-                                .parseInt(d.getAttributes().getNamedItem("repeatTime")
-                                        .getNodeValue()) * 3600; // It's in hours
-                        int randomRepeatTime = d.getAttributes().getNamedItem("randomRepeatTime") == null ? 0 : Integer
-                                .parseInt(d.getAttributes().getNamedItem("randomRepeatTime")
-                                        .getNodeValue()) * 3600; // It's in hours
-                        int initialCurrencyId = Integer
-                                .parseInt(d.getAttributes().getNamedItem("initialCurrencyId").getNodeValue());
+                        int repeatTime = d.getAttributes().getNamedItem("repeatTime") == null ? 0 :
+                                Integer.parseInt(d.getAttributes().getNamedItem("repeatTime").getNodeValue()) *
+                                        3600; // It's in hours
+                        int randomRepeatTime = d.getAttributes().getNamedItem("randomRepeatTime") == null ? 0 :
+                                Integer.parseInt(d.getAttributes().getNamedItem("randomRepeatTime").getNodeValue()) *
+                                        3600; // It's in hours
+                        int initialCurrencyId =
+                                Integer.parseInt(d.getAttributes().getNamedItem("initialCurrencyId").getNodeValue());
                         int highestCurrencyId = 0;
 
                         if (d.getAttributes().getNamedItem("highestCurrencyId") != null)
                         {
-                            highestCurrencyId = Integer
-                                    .parseInt(d.getAttributes().getNamedItem("highestCurrencyId").getNodeValue());
+                            highestCurrencyId = Integer.parseInt(
+                                    d.getAttributes().getNamedItem("highestCurrencyId").getNodeValue());
                         }
 
-                        int initialPrice = Integer
-                                .parseInt(d.getAttributes().getNamedItem("initialPrice").getNodeValue());
-                        int initialDuration = Integer.parseInt(d.getAttributes().getNamedItem("initialDuration")
-                                .getNodeValue()) * 3600; // It's in hours
+                        int initialPrice =
+                                Integer.parseInt(d.getAttributes().getNamedItem("initialPrice").getNodeValue());
+                        int initialDuration =
+                                Integer.parseInt(d.getAttributes().getNamedItem("initialDuration").getNodeValue()) *
+                                        3600; // It's in hours
 
                         int[] auctionItems = null;
                         if (d.getAttributes().getNamedItem("itemId") == null)
@@ -674,9 +672,8 @@ public class CustomAuctionManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement(
-                                "SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
                 ResultSet rs = statement.executeQuery();
 
                 while (rs.next())
@@ -694,8 +691,8 @@ public class CustomAuctionManager
                         Log.warning("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
                         continue;
                     }
-                    Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"), rs
-                            .getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
+                    Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"),
+                            rs.getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
                     _auctions.put(auctionId, auction);
                 }
                 statement.close();
@@ -750,8 +747,8 @@ public class CustomAuctionManager
         }
         if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
             return;
         }
 
@@ -812,8 +809,8 @@ public class CustomAuctionManager
                 {
                     case 57:
                     {
-                        if (currencyId != 57 && currencyId != 50002 || currencyId == 50002 && bid
-                                .getCurrentPrice() < maxAdenaPrice)
+                        if (currencyId != 57 && currencyId != 50002 ||
+                                currencyId == 50002 && bid.getCurrentPrice() < maxAdenaPrice)
                         {
                             activeChar.sendMessage("You can only bid Adena for this auction.");
                             return;
@@ -825,9 +822,8 @@ public class CustomAuctionManager
                 {
                     if (playerBid < 10000)
                     {
-                        activeChar
-                                .sendMessage(
-                                        "Item Auction: The minimum bid for this item should be for: 10.000 Dreams Coin.");
+                        activeChar.sendMessage(
+                                "Item Auction: The minimum bid for this item should be for: 10.000 Dreams Coin.");
                         return;
                     }
                 }
@@ -858,10 +854,8 @@ public class CustomAuctionManager
 
         if (playerBid < minBid && !activeChar.isGM())
         {
-            activeChar
-                    .sendMessage(
-                            "Item Auction: The minimum bid for this item should be for: " + minBid + " " + ItemTable
-                                    .getInstance().getTemplate(bid.getCurrentCurrency()).getName());
+            activeChar.sendMessage("Item Auction: The minimum bid for this item should be for: " + minBid + " " +
+                    ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName());
             return;
         }
 
@@ -909,14 +903,13 @@ public class CustomAuctionManager
         {
             if (oldBidderName.equals("None"))
             {
-                message = activeChar
-                        .getName() + " placed a bid on " + itemName + " - " + priceString + " " + currencyName + ".";
+                message = activeChar.getName() + " placed a bid on " + itemName + " - " + priceString + " " +
+                        currencyName + ".";
             }
             else
             {
-                message = activeChar
-                        .getName() + " outbided " + oldBidderName + " with a " + priceString + " " + currencyName +
-                        " bid for " + itemName + ".";
+                message = activeChar.getName() + " outbided " + oldBidderName + " with a " + priceString + " " +
+                        currencyName + " bid for " + itemName + ".";
             }
 
             L2NpcInstance auctionManager = null;
@@ -927,8 +920,9 @@ public class CustomAuctionManager
                     auctionManager = Util.getNpcCloseTo(33782, player);
                 }
 
-                player.sendPacket(new CreatureSay(auctionManager == null ? 0x00 : auctionManager
-                        .getObjectId(), Say2.TRADE, "Jolie", message));
+                player.sendPacket(
+                        new CreatureSay(auctionManager == null ? 0x00 : auctionManager.getObjectId(), Say2.TRADE,
+                                "Jolie", message));
             }
         }
     }
@@ -947,8 +941,7 @@ public class CustomAuctionManager
      */
     private void giveItemToPlayer(int playerId, int itemId, long count, String text)
     {
-        if (CharNameTable.getInstance()
-                .getNameById(playerId) ==
+        if (CharNameTable.getInstance().getNameById(playerId) ==
                 null) //Filter if the player exists, needed because we call this when an auction is ended without check if there is a winner
         {
             return;

@@ -43,8 +43,8 @@ public class FairyTrees extends L2AttackableAIScript
         {
             for (int i = 0; i < 20; i++)
             {
-                L2Attackable newNpc = (L2Attackable) addSpawn(27189, npc.getX(), npc.getY(), npc
-                        .getZ(), 0, false, 30000);
+                L2Attackable newNpc =
+                        (L2Attackable) addSpawn(27189, npc.getX(), npc.getY(), npc.getZ(), 0, false, 30000);
                 L2Character originalKiller = isPet ? killer.getPet() : killer;
                 newNpc.setRunning();
                 newNpc.addDamageHate(originalKiller, 0, 999);

@@ -114,7 +114,7 @@ public class AdminAPlayer implements IAdminCommandHandler
         {
             // TODO: list the parties
             /*
-			 * Aplayer party #XX
+             * Aplayer party #XX
 			 * Members: [Party[n]]+
 			 *
 			 * Possible output:

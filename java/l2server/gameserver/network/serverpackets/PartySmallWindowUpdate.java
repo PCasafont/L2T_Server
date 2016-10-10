@@ -48,8 +48,8 @@ public final class PartySmallWindowUpdate extends L2GameServerPacket
         writeD(_member.getMaxMp());
         writeC(_member.getLevel());
         writeH(_member.getCurrentClass().getId());
-        writeC(PartySearchManager.getInstance()
-                .getWannaToChangeThisPlayer(_member.getObjectId()) ? 0x01 : 0x00); // Party Searching
+        writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(_member.getObjectId()) ? 0x01 :
+                0x00); // Party Searching
         writeD(_member.getVitalityPoints());
     }
 }

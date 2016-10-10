@@ -300,8 +300,8 @@ public class LifeStoneTable
             case L2Item.SLOT_NECK:
                 return generateRandomAugmentation(lifeStone, "necklace");
             default:
-                return generateRandomAugmentation(lifeStone, targetItem.getWeaponItem()
-                        .isMagicWeapon() ? "mage" : "warrior");
+                return generateRandomAugmentation(lifeStone,
+                        targetItem.getWeaponItem().isMagicWeapon() ? "mage" : "warrior");
         }
     }
 
@@ -512,9 +512,8 @@ public class LifeStoneTable
     {
         if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(
-                            SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP_IS_IN_OPERATION));
+            player.sendPacket(SystemMessage.getSystemMessage(
+                    SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP_IS_IN_OPERATION));
             return false;
         }
         if (player.getActiveTradeList() != null)
@@ -539,8 +538,8 @@ public class LifeStoneTable
         }
         if (player.isSitting())
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_SITTING_DOWN));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_SITTING_DOWN));
             return false;
         }
         if (player.isCursedWeaponEquipped())

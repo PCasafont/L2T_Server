@@ -38,8 +38,8 @@ public class ChatPartyRoomCommander implements IChatHandler
     {
         if (activeChar.isInParty())
         {
-            if (activeChar.getParty().isInCommandChannel() && activeChar.getParty().getCommandChannel()
-                    .getChannelLeader().equals(activeChar))
+            if (activeChar.getParty().isInCommandChannel() &&
+                    activeChar.getParty().getCommandChannel().getChannelLeader().equals(activeChar))
             {
                 CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
                 activeChar.getParty().getCommandChannel().broadcastCSToChannelMembers(cs, activeChar);

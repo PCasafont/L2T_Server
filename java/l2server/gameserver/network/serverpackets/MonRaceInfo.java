@@ -37,7 +37,7 @@ public class MonRaceInfo extends L2GameServerPacket
     public MonRaceInfo(int unknown1, int unknown2, L2Npc[] monsters, int[][] speeds)
     {
         /*
-		 * -1 0 to initial the race
+         * -1 0 to initial the race
 		 * 0 15322 to start race
 		 * 13765 -1 in middle of race
 		 * -1 0 to end the race

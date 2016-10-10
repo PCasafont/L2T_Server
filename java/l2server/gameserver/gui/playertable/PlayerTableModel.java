@@ -80,9 +80,9 @@ class PlayerTableModel extends AbstractTableModel
             }
         }
 
-        ServerGui.Frame
-                .setTitle("L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount +
-                        " | Offline shops: " + shopCount + " | Total: " + (playerCount + shopCount));
+        ServerGui.Frame.setTitle(
+                "L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " +
+                        shopCount + " | Total: " + (playerCount + shopCount));
         if (players.length == _players.length && !(players.length > 0 && players[0] == _players[0]))
         {
             return false;

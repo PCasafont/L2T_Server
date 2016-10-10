@@ -60,9 +60,10 @@ public final class RequestRefineCancel extends L2GameClientPacket
         }
         if (targetItem.getOwnerId() != activeChar.getObjectId())
         {
-            Util.handleIllegalPlayerAction(getClient().getActiveChar(), "Warning!! Character " + getClient()
-                    .getActiveChar().getName() + " of account " + getClient().getActiveChar()
-                    .getAccountName() + " tryied to augment item that doesn't own.", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(getClient().getActiveChar(),
+                    "Warning!! Character " + getClient().getActiveChar().getName() + " of account " +
+                            getClient().getActiveChar().getAccountName() + " tryied to augment item that doesn't own.",
+                    Config.DEFAULT_PUNISH);
             return;
         }
         // cannot remove augmentation from a not augmented item
@@ -150,8 +151,8 @@ public final class RequestRefineCancel extends L2GameClientPacket
         // unequip item
         if (targetItem.isEquipped())
         {
-            L2ItemInstance[] unequiped = activeChar.getInventory()
-                    .unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+            L2ItemInstance[] unequiped =
+                    activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
             InventoryUpdate iu = new InventoryUpdate();
             for (L2ItemInstance itm : unequiped)
             {

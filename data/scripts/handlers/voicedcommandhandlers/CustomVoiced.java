@@ -335,118 +335,118 @@ public class CustomVoiced implements IVoicedCommandHandler
 
         html += getStatHtm("Skill Mastery", player.getSkillMastery(), 0, false, "%");
         html += getStatHtm("Shield Def", player.getShldDef(), 0, false, "");
-        html += getStatHtm("Shield Def Angle", player
-                .calcStat(Stats.SHIELD_DEFENCE_ANGLE, 120, null, null), 120, false, "");
+        html += getStatHtm("Shield Def Angle", player.calcStat(Stats.SHIELD_DEFENCE_ANGLE, 120, null, null), 120, false,
+                "");
         html += getStatHtm("Dmg Absorbed", player.calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null), 0, false, "%");
-        html += getStatHtm("Heals received", player
-                .calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Heals received", player.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Heals given", player.calcStat(Stats.HEAL_PROFICIENCY, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Momentum Power", player
-                .calcStat(Stats.MOMENTUM_POWER, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Momentum Critical Rate", player
-                .calcStat(Stats.MOMENTUM_CRIT_RATE, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Momentum Power", player.calcStat(Stats.MOMENTUM_POWER, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Momentum Critical Rate", player.calcStat(Stats.MOMENTUM_CRIT_RATE, 100, null, null) - 100,
+                0, true, "%");
         html += getStatHtm("Max Targets", player.calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null) - 1, 0, true, "");
-        html += getStatHtm("P. Skill Power", player
-                .calcStat(Stats.PHYSICAL_SKILL_POWER, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("P. Skill Power", player.calcStat(Stats.PHYSICAL_SKILL_POWER, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("P. Crit Dmg", player.calcStat(Stats.CRITICAL_DAMAGE, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("P. Crit Dmg Recvd", player.calcStat(Stats.CRIT_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("P. Skill Crit Rate", player
-                .calcStat(Stats.PCRITICAL_RATE, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("P. Skill Crit Dmg", player
-                .calcStat(Stats.PSKILL_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Additional DEX P. Skill Rate", player
-                .calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) * (BaseStats.DEX
-                .calcBonus(player) - 1) * 100, 0, true, "%");
-        html += getStatHtm("M. Skill Power", player
-                .calcStat(Stats.MAGIC_SKILL_POWER, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("P. Skill Crit Rate", player.calcStat(Stats.PCRITICAL_RATE, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("P. Skill Crit Dmg", player.calcStat(Stats.PSKILL_CRIT_DMG, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Additional DEX P. Skill Rate",
+                player.calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) * (BaseStats.DEX.calcBonus(player) - 1) * 100,
+                0, true, "%");
+        html += getStatHtm("M. Skill Power", player.calcStat(Stats.MAGIC_SKILL_POWER, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("M. Crit Dmg", player.calcStat(Stats.MAGIC_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("M. Crit Dmg Recvd", player
-                .calcStat(Stats.MAGIC_CRIT_VULN, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("M. Crit Dmg Recvd", player.calcStat(Stats.MAGIC_CRIT_VULN, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Fixed P. Crit Dmg", player.calcStat(Stats.CRITICAL_DAMAGE_ADD, 0, null, null), 0, true, "");
         html += getStatHtm("Fixed P. Crit Dmg Res", -player.calcStat(Stats.CRIT_ADD_VULN, 0, null, null), 0, true, "");
         html += getStatHtm("Fixed M. Crit Dmg", player.calcStat(Stats.MAGIC_CRIT_DMG_ADD, 0, null, null), 0, true, "");
-        html += getStatHtm("Front Critical Rate", player
-                .calcStat(Stats.CRITICAL_RATE_FRONT, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Front Critical Dmg", player
-                .calcStat(Stats.CRITICAL_DMG_FRONT, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Behind Critical Rate", player
-                .calcStat(Stats.CRITICAL_RATE_BEHIND, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Behind Critical Dmg", player
-                .calcStat(Stats.CRITICAL_DMG_BEHIND, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Side Critical Rate", player
-                .calcStat(Stats.CRITICAL_RATE_SIDE, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Side Critical Dmg", player
-                .calcStat(Stats.CRITICAL_DMG_SIDE, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Front Critical Rate", player.calcStat(Stats.CRITICAL_RATE_FRONT, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Front Critical Dmg", player.calcStat(Stats.CRITICAL_DMG_FRONT, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Behind Critical Rate", player.calcStat(Stats.CRITICAL_RATE_BEHIND, 100, null, null) - 100,
+                0, true, "%");
+        html += getStatHtm("Behind Critical Dmg", player.calcStat(Stats.CRITICAL_DMG_BEHIND, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Side Critical Rate", player.calcStat(Stats.CRITICAL_RATE_SIDE, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Side Critical Dmg", player.calcStat(Stats.CRITICAL_DMG_SIDE, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("Reflected Debuff", player.calcStat(Stats.REFLECT_DEBUFFS, 0, null, null), 0, true, "%");
         html += getStatHtm("Reflected Dmg", player.calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null), 0, true, "%");
         html += getStatHtm("Reflected Res", 100 - player.calcStat(Stats.REFLECT_VULN, 100, null, null), 0, true, "%");
-        html += getStatHtm("M. MP Consume Rate", player
-                .calcStat(Stats.MAGICAL_MP_CONSUME_RATE, 100, null, null), 0, false, "%");
-        html += getStatHtm("P. MP Consume Rate", player
-                .calcStat(Stats.PHYSICAL_MP_CONSUME_RATE, 100, null, null), 0, false, "%");
-        html += getStatHtm("P. Skill Evasion Rate", player
-                .calcStat(Stats.P_SKILL_EVASION, 100, null, null) - 100, 0, false, "%");
-        html += getStatHtm("M. Skill Evasion Rate", player
-                .calcStat(Stats.M_SKILL_EVASION, 0, null, null), 0, false, "%");
+        html += getStatHtm("M. MP Consume Rate", player.calcStat(Stats.MAGICAL_MP_CONSUME_RATE, 100, null, null), 0,
+                false, "%");
+        html += getStatHtm("P. MP Consume Rate", player.calcStat(Stats.PHYSICAL_MP_CONSUME_RATE, 100, null, null), 0,
+                false, "%");
+        html += getStatHtm("P. Skill Evasion Rate", player.calcStat(Stats.P_SKILL_EVASION, 100, null, null) - 100, 0,
+                false, "%");
+        html += getStatHtm("M. Skill Evasion Rate", player.calcStat(Stats.M_SKILL_EVASION, 0, null, null), 0, false,
+                "%");
         html += getStatHtm("PvP P. Dmg", player.calcStat(Stats.PVP_PHYSICAL_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvP P. Skill Dmg", player
-                .calcStat(Stats.PVP_PHYS_SKILL_DMG, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("PvP P. Skill Dmg", player.calcStat(Stats.PVP_PHYS_SKILL_DMG, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("PvP M. Dmg", player.calcStat(Stats.PVP_MAGICAL_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvP P. Dmg Res", player
-                .calcStat(Stats.PVP_PHYSICAL_DEF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvP P. Skill Dmg Res", player
-                .calcStat(Stats.PVP_PHYS_SKILL_DEF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvP M. Dmg Res", player
-                .calcStat(Stats.PVP_MAGICAL_DEF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("PvP P. Dmg Res", player.calcStat(Stats.PVP_PHYSICAL_DEF, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("PvP P. Skill Dmg Res", player.calcStat(Stats.PVP_PHYS_SKILL_DEF, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("PvP M. Dmg Res", player.calcStat(Stats.PVP_MAGICAL_DEF, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("PvE P. Dmg", player.calcStat(Stats.PVE_PHYSICAL_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvE P. Skill Dmg", player
-                .calcStat(Stats.PVE_PHYS_SKILL_DMG, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("PvE P. Skill Dmg", player.calcStat(Stats.PVE_PHYS_SKILL_DMG, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("PvE M. Dmg", player.calcStat(Stats.PVE_MAGICAL_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvE P. Dmg Res", player
-                .calcStat(Stats.PVE_PHYSICAL_DEF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvE P. Skill Dmg Res", player
-                .calcStat(Stats.PVE_PHYS_SKILL_DEF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("PvE M. Dmg Res", player
-                .calcStat(Stats.PVE_MAGICAL_DEF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("PvE P. Dmg Res", player.calcStat(Stats.PVE_PHYSICAL_DEF, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("PvE P. Skill Dmg Res", player.calcStat(Stats.PVE_PHYS_SKILL_DEF, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("PvE M. Dmg Res", player.calcStat(Stats.PVE_MAGICAL_DEF, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Debuff Res", player.calcStat(Stats.DEBUFF_RES, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Physical Debuff Res", player
-                .calcStat(Stats.PHYS_DEBUFF_RES, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Magical Debuff Res", player
-                .calcStat(Stats.MENTAL_DEBUFF_RES, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Physical Debuff Res", player.calcStat(Stats.PHYS_DEBUFF_RES, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Magical Debuff Res", player.calcStat(Stats.MENTAL_DEBUFF_RES, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("Stun Res", player.calcStat(Stats.STUN_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Paralysis Res", player.calcStat(Stats.PARALYSIS_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Petrify Res", player.calcStat(Stats.PETRIFY_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Hold Res", player.calcStat(Stats.HOLD_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Sleep Res", player.calcStat(Stats.SLEEP_RES, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Knock Down Res", player
-                .calcStat(Stats.KNOCK_DOWN_RES, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Knock Back Res", player
-                .calcStat(Stats.KNOCK_BACK_RES, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Knock Down Res", player.calcStat(Stats.KNOCK_DOWN_RES, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Knock Back Res", player.calcStat(Stats.KNOCK_BACK_RES, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Pull Res", player.calcStat(Stats.PULL_RES, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Aerial Yoke Res", player
-                .calcStat(Stats.AERIAL_YOKE_RES, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Aerial Yoke Res", player.calcStat(Stats.AERIAL_YOKE_RES, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Mental Res", player.calcStat(Stats.DERANGEMENT_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Poison Res", player.calcStat(Stats.POISON_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Bleed Res", player.calcStat(Stats.BLEED_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Cancel Res", player.calcStat(Stats.CANCEL_RES, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Debuff Prof", player.calcStat(Stats.DEBUFF_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Physical Debuff Prof", player
-                .calcStat(Stats.PHYS_DEBUFF_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Magical Debuff Prof", player
-                .calcStat(Stats.MENTAL_DEBUFF_PROF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Physical Debuff Prof", player.calcStat(Stats.PHYS_DEBUFF_PROF, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Magical Debuff Prof", player.calcStat(Stats.MENTAL_DEBUFF_PROF, 100, null, null) - 100, 0,
+                true, "%");
         html += getStatHtm("Stun Prof", player.calcStat(Stats.STUN_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Paralysis Prof", player
-                .calcStat(Stats.PARALYSIS_PROF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Paralysis Prof", player.calcStat(Stats.PARALYSIS_PROF, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Petrify Prof", player.calcStat(Stats.PETRIFY_PROF, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Hold Prof", player.calcStat(Stats.HOLD_PROF, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Sleep Prof", player.calcStat(Stats.SLEEP_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Knock Down Prof", player
-                .calcStat(Stats.KNOCK_DOWN_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Knock Back Prof", player
-                .calcStat(Stats.KNOCK_BACK_PROF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Knock Down Prof", player.calcStat(Stats.KNOCK_DOWN_PROF, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Knock Back Prof", player.calcStat(Stats.KNOCK_BACK_PROF, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Pull Prof", player.calcStat(Stats.PULL_PROF, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Aerial Yoke Prof", player
-                .calcStat(Stats.AERIAL_YOKE_PROF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Aerial Yoke Prof", player.calcStat(Stats.AERIAL_YOKE_PROF, 100, null, null) - 100, 0, true,
+                "%");
         html += getStatHtm("Mental Prof", player.calcStat(Stats.DERANGEMENT_PROF, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Poison Prof", player.calcStat(Stats.POISON_PROF, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Bleed Prof", player.calcStat(Stats.BLEED_PROF, 100, null, null) - 100, 0, true, "%");
@@ -462,10 +462,10 @@ public class CustomVoiced implements IVoicedCommandHandler
         html += getStatHtm("Sharing HP", player.calcStat(Stats.OWNER_MAXHP, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Sharing MP", player.calcStat(Stats.OWNER_MAXMP, 100, null, null) - 100, 0, true, "%");
         html += getStatHtm("Sharing Crit", player.calcStat(Stats.OWNER_CRIT, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Sharing Crit Dmg", player
-                .calcStat(Stats.OWNER_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Sharing PvP & PvE", player
-                .calcStat(Stats.OWNER_PVP_PVE, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Sharing Crit Dmg", player.calcStat(Stats.OWNER_CRIT_DMG, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Sharing PvP & PvE", player.calcStat(Stats.OWNER_PVP_PVE, 100, null, null) - 100, 0, true,
+                "%");
 
         //Rates
         html += getStatHtm("XP Gain", player.calcStat(Stats.EXP_RATE, 100, null, null) - 100, 0, true, "%");
@@ -473,28 +473,28 @@ public class CustomVoiced implements IVoicedCommandHandler
         html += getStatHtm("Drop Gain", player.calcStat(Stats.DROP_RATE, 100, null, null) - 100, 0, true, "%");
 
         //Weapon stuff
-        html += getStatHtm("Sword Vulnerability", player
-                .calcStat(Stats.SWORD_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Big Sword Vulnerability", player
-                .calcStat(Stats.BIGSWORD_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Blunt Vulnerability", player
-                .calcStat(Stats.BLUNT_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Big Blunt Vulnerability", player
-                .calcStat(Stats.BIGBLUNT_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Dagger Vulnerability", player
-                .calcStat(Stats.DAGGER_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Dual Dagger Vulnerability", player
-                .calcStat(Stats.DUALDAGGER_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Bow Vulnerability", player
-                .calcStat(Stats.BOW_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Crossbow Vulnerability", player
-                .calcStat(Stats.CROSSBOW_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Pole Vulnerability", player
-                .calcStat(Stats.POLE_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Dual Vulnerability", player
-                .calcStat(Stats.DUAL_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-        html += getStatHtm("Fists Vulnerability", player
-                .calcStat(Stats.DUALFIST_WPN_VULN, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Sword Vulnerability", player.calcStat(Stats.SWORD_WPN_VULN, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Big Sword Vulnerability", player.calcStat(Stats.BIGSWORD_WPN_VULN, 100, null, null) - 100,
+                0, true, "%");
+        html += getStatHtm("Blunt Vulnerability", player.calcStat(Stats.BLUNT_WPN_VULN, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Big Blunt Vulnerability", player.calcStat(Stats.BIGBLUNT_WPN_VULN, 100, null, null) - 100,
+                0, true, "%");
+        html += getStatHtm("Dagger Vulnerability", player.calcStat(Stats.DAGGER_WPN_VULN, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Dual Dagger Vulnerability",
+                player.calcStat(Stats.DUALDAGGER_WPN_VULN, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Bow Vulnerability", player.calcStat(Stats.BOW_WPN_VULN, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Crossbow Vulnerability", player.calcStat(Stats.CROSSBOW_WPN_VULN, 100, null, null) - 100, 0,
+                true, "%");
+        html += getStatHtm("Pole Vulnerability", player.calcStat(Stats.POLE_WPN_VULN, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Dual Vulnerability", player.calcStat(Stats.DUAL_WPN_VULN, 100, null, null) - 100, 0, true,
+                "%");
+        html += getStatHtm("Fists Vulnerability", player.calcStat(Stats.DUALFIST_WPN_VULN, 100, null, null) - 100, 0,
+                true, "%");
 
         html += "</table><br>" + "</body></html>";
         player.sendPacket(new NpcHtmlMessage(0, html));
@@ -508,8 +508,8 @@ public class CustomVoiced implements IVoicedCommandHandler
         }
 
         return "<table width=300 border=0><tr><td FIXWIDTH=150>" + statName + ":</td><td FIXWIDTH=150>" +
-                (plusIfPositive && statVal >= 0 ? "+" : "") + new DecimalFormat("#0.##")
-                .format(statVal) + suffix + "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
+                (plusIfPositive && statVal >= 0 ? "+" : "") + new DecimalFormat("#0.##").format(statVal) + suffix +
+                "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
     }
 
     /**

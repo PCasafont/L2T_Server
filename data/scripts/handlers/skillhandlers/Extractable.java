@@ -56,8 +56,8 @@ public class Extractable implements ISkillHandler
 
         if (exItem.getProductItemsArray().isEmpty())
         {
-            _log.warning("Extractable Item Skill with no data, probably wrong/empty table with Skill Id: " + skill
-                    .getId());
+            _log.warning(
+                    "Extractable Item Skill with no data, probably wrong/empty table with Skill Id: " + skill.getId());
             return;
         }
 
@@ -103,7 +103,7 @@ public class Extractable implements ISkillHandler
 
         //FIXME: remove this once skill reuse will be global for main/subclass.
         /*
-		if (!skill.getName().equals("Check Item") && player.isSubClassActive() && (skill.getReuseDelay() > 0) && !Util.contains(protectedSkillIds, skill.getId()))
+        if (!skill.getName().equals("Check Item") && player.isSubClassActive() && (skill.getReuseDelay() > 0) && !Util.contains(protectedSkillIds, skill.getId()))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIN_CLASS_SKILL_ONLY));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addSkillName(skill));
@@ -126,8 +126,8 @@ public class Extractable implements ISkillHandler
 
                 if (ItemTable.getInstance().createDummyItem(createItemID[i]) == null)
                 {
-                    _log.warning("Extractable Item Skill Id:" + skill
-                            .getId() + " createItemID " + createItemID[i] + " doesn't have a template!");
+                    _log.warning("Extractable Item Skill Id:" + skill.getId() + " createItemID " + createItemID[i] +
+                            " doesn't have a template!");
                     player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_INSIDE_THAT));
                     return;
                 }

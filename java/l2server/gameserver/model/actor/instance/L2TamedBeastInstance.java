@@ -392,15 +392,15 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
             for (L2Skill skill : skills.values())
             {
                 // if the skill is a buff, check if the owner has it already [  owner.getEffect(L2Skill skill) ]
-                if (Rnd.get(5) < chance && (skill.getSkillType() == L2SkillType.HEAL || skill
-                        .getSkillType() == L2SkillType.BALANCE_LIFE || skill
-                        .getSkillType() == L2SkillType.HEAL_PERCENT || skill
-                        .getSkillType() == L2SkillType.HEAL_STATIC || skill
-                        .getSkillType() == L2SkillType.COMBATPOINTHEAL || skill
-                        .getSkillType() == L2SkillType.MANAHEAL || skill
-                        .getSkillType() == L2SkillType.MANA_BY_LEVEL || skill
-                        .getSkillType() == L2SkillType.MANAHEAL_PERCENT || skill
-                        .getSkillType() == L2SkillType.MANARECHARGE))
+                if (Rnd.get(5) < chance &&
+                        (skill.getSkillType() == L2SkillType.HEAL || skill.getSkillType() == L2SkillType.BALANCE_LIFE ||
+                                skill.getSkillType() == L2SkillType.HEAL_PERCENT ||
+                                skill.getSkillType() == L2SkillType.HEAL_STATIC ||
+                                skill.getSkillType() == L2SkillType.COMBATPOINTHEAL ||
+                                skill.getSkillType() == L2SkillType.MANAHEAL ||
+                                skill.getSkillType() == L2SkillType.MANA_BY_LEVEL ||
+                                skill.getSkillType() == L2SkillType.MANAHEAL_PERCENT ||
+                                skill.getSkillType() == L2SkillType.MANARECHARGE))
                 {
                     sitCastAndFollow(skill, _owner);
                     return;
@@ -494,7 +494,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
                     }
                 }
                 /* There are too many conflicting reports about whether distance from home should
-				 * be taken into consideration.  Disabled for now.
+                 * be taken into consideration.  Disabled for now.
 				 *
 				if (_tamedBeast.isTooFarFromHome())
 					_tamedBeast.setRemainingTime(-1);

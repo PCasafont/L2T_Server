@@ -202,15 +202,16 @@ public class CreatureInvasion extends Quest
             {
                 for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
                 {
-                    if (player == null || player.getInstanceId() != 0 || player.isInStoreMode() || !player
-                            .isInsideRadius(_boss, 3000, false, false) || _registredDamages
-                            .get(player.getObjectId()) == null || _registredDamages.get(player.getObjectId()) < 1000)
+                    if (player == null || player.getInstanceId() != 0 || player.isInStoreMode() ||
+                            !player.isInsideRadius(_boss, 3000, false, false) ||
+                            _registredDamages.get(player.getObjectId()) == null ||
+                            _registredDamages.get(player.getObjectId()) < 1000)
                     {
                         continue;
                     }
 
-                    if (_rewardedIps.containsKey(player.getExternalIP()) && _rewardedIps.get(player.getExternalIP())
-                            .equalsIgnoreCase(player.getInternalIP()))
+                    if (_rewardedIps.containsKey(player.getExternalIP()) &&
+                            _rewardedIps.get(player.getExternalIP()).equalsIgnoreCase(player.getInternalIP()))
                     {
                         continue;
                     }
@@ -223,8 +224,8 @@ public class CreatureInvasion extends Quest
                         {
                             long amount = Rnd.get(i.getMinAmount(), i.getMaxAmount());
                             player.addItem(getName(), i.getItemId(), amount, player, true);
-                            _boss.broadcastChat(player.getName() + " received " + amount + " " + ItemTable.getInstance()
-                                    .getTemplate(i.getItemId()).getName() + "!", 0);
+                            _boss.broadcastChat(player.getName() + " received " + amount + " " +
+                                    ItemTable.getInstance().getTemplate(i.getItemId()).getName() + "!", 0);
                         }
                     }
                 }
@@ -299,9 +300,9 @@ public class CreatureInvasion extends Quest
                 Announcements.getInstance().announceToAll("The Creature Invasion has started!");
                 for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
                 {
-                    if (pl == null || pl.getInstanceId() != 0 || pl.getEvent() != null || pl.getIsInsideGMEvent() || pl
-                            .inObserverMode() || pl.isInOlympiadMode() || pl.isInStoreMode() || GrandBossManager
-                            .getInstance().getZone(pl) != null)
+                    if (pl == null || pl.getInstanceId() != 0 || pl.getEvent() != null || pl.getIsInsideGMEvent() ||
+                            pl.inObserverMode() || pl.isInOlympiadMode() || pl.isInStoreMode() ||
+                            GrandBossManager.getInstance().getZone(pl) != null)
                     {
                         continue;
                     }
@@ -431,8 +432,8 @@ public class CreatureInvasion extends Quest
                             underAttack++;
                         }
 
-                        if (i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP()
-                                .equalsIgnoreCase(player.getInternalIP()))
+                        if (i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) &&
+                                i.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
                         {
                             sameIPs++;
                         }
@@ -443,14 +444,14 @@ public class CreatureInvasion extends Quest
 
                             if (underAttack > 1)
                             {
-                                player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player
-                                        .getName() + " you cant attack more than one mob at same time!"));
+                                player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
+                                        player.getName() + " you cant attack more than one mob at same time!"));
                             }
 
                             if (sameIPs > 1)
                             {
-                                player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player
-                                        .getName() + " dualbox is not allowed here!"));
+                                player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
+                                        player.getName() + " dualbox is not allowed here!"));
                             }
                             return "";
                         }
@@ -473,8 +474,8 @@ public class CreatureInvasion extends Quest
                         if (attackInfo.getAttackedTime() + 7000 > System.currentTimeMillis())
                         {
                             player.doDie(null);
-                            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player
-                                    .getName() + " don't attack mobs from other players!"));
+                            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
+                                    player.getName() + " don't attack mobs from other players!"));
                             return "";
                         }
                         else
@@ -551,8 +552,8 @@ public class CreatureInvasion extends Quest
                             {
                                 break;
                             }
-                            killer.addItem(getName(), i.getItemId(), Rnd
-                                    .get(i.getMinAmount(), maxAmount), killer, true);
+                            killer.addItem(getName(), i.getItemId(), Rnd.get(i.getMinAmount(), maxAmount), killer,
+                                    true);
                         }
                     }
                 }
@@ -597,8 +598,8 @@ public class CreatureInvasion extends Quest
         L2Weapon playerWeapon = player.getActiveWeaponItem();
         if (playerWeapon == null || playerWeapon.getItemId() != _bowId)
         {
-            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player
-                    .getName() + " You should use the Redemption Bow!"));
+            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
+                    player.getName() + " You should use the Redemption Bow!"));
             return false;
         }
 
@@ -613,8 +614,8 @@ public class CreatureInvasion extends Quest
                 }
             }
 
-            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player
-                    .getName() + " You should use the Redemption Bow Skills!"));
+            player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
+                    player.getName() + " You should use the Redemption Bow Skills!"));
             return false;
         }
         return true;

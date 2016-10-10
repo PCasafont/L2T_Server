@@ -184,8 +184,9 @@ public class Freya extends L2AttackableAIScript
                             int x = (int) (radius * Math.cos(i * 0.618));
                             int y = (int) (radius * Math.sin(i * 0.618));
 
-                            L2Npc minion = addSpawn(world.ArchBreathId, npc.getX() + x, npc.getY() + y, npc
-                                    .getZ() + 20, -1, false, 0, true, world.instanceId);
+                            L2Npc minion =
+                                    addSpawn(world.ArchBreathId, npc.getX() + x, npc.getY() + y, npc.getZ() + 20, -1,
+                                            false, 0, true, world.instanceId);
                             minion.setIsRunning(true);
                             minion.getSpawn().stopRespawn();
                             world.AllMobs.add(minion);
@@ -206,9 +207,8 @@ public class Freya extends L2AttackableAIScript
                     if (Rnd.get(100) < 10)
                     {
                         int sound = Rnd.get(1, 14);
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new PlaySound(sound >= 10 ? "SystemMsg_e.freya_voice_" :
-                                        "SystemMsg_e.freya_voice_0" + sound));
+                        InstanceManager.getInstance().sendPacket(world.instanceId, new PlaySound(
+                                sound >= 10 ? "SystemMsg_e.freya_voice_" : "SystemMsg_e.freya_voice_0" + sound));
                     }
                 }
             }
@@ -276,8 +276,8 @@ public class Freya extends L2AttackableAIScript
 
                 InstanceManager.getInstance().showVidToInstance(15, world.instanceId);
 
-                startQuestTimer("stage_1_begin", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(15) + 1000, npc, null);
+                startQuestTimer("stage_1_begin", ScenePlayerDataTable.getInstance().getVideoDuration(15) + 1000, npc,
+                        null);
             }
             else if (event.equalsIgnoreCase("stage_1_begin"))
             {
@@ -305,9 +305,8 @@ public class Freya extends L2AttackableAIScript
                 world.dummy.setDisplayEffect(1);
 
                 world.Freya.setIsRunning(true);
-                world.Freya.getAI()
-                        .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                new L2CharPosition(114717, -114973, -11200, 0));
+                world.Freya.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(114717, -114973, -11200, 0));
                 world.Freya.getSpawn().setX(114717);
                 world.Freya.getSpawn().setY(-114973);
                 world.Freya.getSpawn().setZ(-11200);
@@ -322,8 +321,8 @@ public class Freya extends L2AttackableAIScript
 
                 InstanceManager.getInstance().showVidToInstance(16, world.instanceId);
 
-                startQuestTimer("stage_1_pause", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(16) + 1000, npc, null);
+                startQuestTimer("stage_1_pause", ScenePlayerDataTable.getInstance().getVideoDuration(16) + 1000, npc,
+                        null);
             }
             else if (event.equalsIgnoreCase("stage_1_pause"))
             {
@@ -393,8 +392,8 @@ public class Freya extends L2AttackableAIScript
 
                 InstanceManager.getInstance().showVidToInstance(17, world.instanceId);
 
-                startQuestTimer("stage_3_begin", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(17) + 1000, npc, null);
+                startQuestTimer("stage_3_begin", ScenePlayerDataTable.getInstance().getVideoDuration(17) + 1000, npc,
+                        null);
             }
             else if (event.equalsIgnoreCase("stage_3_begin"))
             {
@@ -452,8 +451,8 @@ public class Freya extends L2AttackableAIScript
 
                     int playerId = world.allowed.get(world.allowed.size() - 1);
                     L2PcInstance victim = L2World.getInstance().getPlayer(playerId);
-                    if (victim != null && victim.isOnline() && victim.getInstanceId() == world.instanceId && !npc
-                            .isImmobilized())
+                    if (victim != null && victim.isOnline() && victim.getInstanceId() == world.instanceId &&
+                            !npc.isImmobilized())
                     {
                         ((L2Attackable) npc).addDamageHate(victim, 0, 99999);
 
@@ -570,8 +569,8 @@ public class Freya extends L2AttackableAIScript
 
                     InstanceManager.getInstance().showVidToInstance(18, world.instanceId);
 
-                    startQuestTimer("stage_4_spawns", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(18), npc, null);
+                    startQuestTimer("stage_4_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(18), npc,
+                            null);
                 }
             }
             else if (npc.getNpcId() == world.IceKnightId && npc.getDisplayEffect() == 1)
@@ -610,8 +609,8 @@ public class Freya extends L2AttackableAIScript
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
                 InstanceManager.getInstance().showVidToInstance(19, world.instanceId);
 
-                startQuestTimer("stage_4_finalscene", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(19) + 5000, npc, null);
+                startQuestTimer("stage_4_finalscene", ScenePlayerDataTable.getInstance().getVideoDuration(19) + 5000,
+                        npc, null);
 
                 //Stop room tempest effects
                 for (int id : _roomEffects)
@@ -687,8 +686,8 @@ public class Freya extends L2AttackableAIScript
         {
             if (!(world instanceof FreyaWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -735,9 +734,11 @@ public class Freya extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel()
-                        .getMembers() : player.getParty().getCommandChannel() != null ? player.getParty()
-                        .getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ?
+                        player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -760,8 +761,7 @@ public class Freya extends L2AttackableAIScript
             }
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

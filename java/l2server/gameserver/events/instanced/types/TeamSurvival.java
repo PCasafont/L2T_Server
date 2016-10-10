@@ -46,8 +46,8 @@ public class TeamSurvival extends EventInstance
         EventTeam team = _teams[teamId];
         rewardTeams(teamId);
 
-        Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team
-                .getPoints() + " kill points.");
+        Announcements.getInstance().announceToAll(
+                "The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " kill points.");
         return;
     }
 
@@ -126,8 +126,8 @@ public class TeamSurvival extends EventInstance
             {
                 killerTeam.increasePoints();
                 killerPlayer.addEventPoints(3);
-                List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                        .getAssistants(killerPlayer, killedPlayerInstance, true);
+                List<L2PcInstance> assistants =
+                        PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
                 for (L2PcInstance assistant : assistants)
                 {
                     assistant.addEventPoints(1);
@@ -135,9 +135,8 @@ public class TeamSurvival extends EventInstance
             }
             else
             {
-                killerCharacter
-                        .sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
-                                "You have been disqualified for killing a member of your own team!"));
+                killerCharacter.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
+                        "You have been disqualified for killing a member of your own team!"));
                 removeParticipant(killerPlayer.getObjectId());
                 new EventTeleporter(killerPlayer, new Point3D(0, 0, 0), false, true);
             }
@@ -152,11 +151,12 @@ public class TeamSurvival extends EventInstance
                 new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
             }
             team.cleanMe();
-            if (_config.getLocation().getTeamCount() != 4 && (!_teams[0].isAlive() || !_teams[1].isAlive()) || _config
-                    .getLocation().getTeamCount() == 4 && (!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[2]
-                    .isAlive() || !_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[3].isAlive() || !_teams[0]
-                    .isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive() || !_teams[1].isAlive() && !_teams[2]
-                    .isAlive() && !_teams[3].isAlive()))
+            if (_config.getLocation().getTeamCount() != 4 && (!_teams[0].isAlive() || !_teams[1].isAlive()) ||
+                    _config.getLocation().getTeamCount() == 4 &&
+                            (!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[2].isAlive() ||
+                                    !_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[3].isAlive() ||
+                                    !_teams[0].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive() ||
+                                    !_teams[1].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive()))
             {
                 stopFight();
             }

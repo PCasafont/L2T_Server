@@ -139,8 +139,8 @@ public class SiegeManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT clan_id FROM siege_clans where clan_id=? and castle_id=?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT clan_id FROM siege_clans where clan_id=? and castle_id=?");
             statement.setInt(1, clan.getClanId());
             statement.setInt(2, castleid);
             ResultSet rs = statement.executeQuery();
@@ -197,8 +197,9 @@ public class SiegeManager
             for (Castle castle : CastleManager.getInstance().getCastles())
             {
                 MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId() - 1] = Integer.parseInt(siegeSettings
-                        .getProperty(castle.getName() + "MaxMercenaries", Integer
-                                .toString(MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId() - 1])).trim());
+                        .getProperty(castle.getName() + "MaxMercenaries",
+                                Integer.toString(MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId() - 1]))
+                        .trim());
             }
         }
         catch (Exception e)

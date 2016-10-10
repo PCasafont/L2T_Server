@@ -45,8 +45,8 @@ public class L2SkillAgathion extends L2Skill
 
         if (activeChar.isInOlympiadMode())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
             return;
         }
 

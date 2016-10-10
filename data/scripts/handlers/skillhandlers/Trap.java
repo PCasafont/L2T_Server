@@ -109,8 +109,8 @@ public class Trap implements ISkillHandler
                     trap.unSummon();
                     if (activeChar instanceof L2PcInstance)
                     {
-                        ((L2PcInstance) activeChar).sendPacket(SystemMessage
-                                .getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
+                        ((L2PcInstance) activeChar).sendPacket(
+                                SystemMessage.getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
                     }
                 }
             }

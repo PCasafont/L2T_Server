@@ -96,7 +96,7 @@ public class L2SkillDrain extends L2Skill
             int curHp = (int) target.getCurrentHp();
 
 			/*if (!((Config.isServer(Config.PVP))
-					&& activeChar instanceof L2PcInstance
+                    && activeChar instanceof L2PcInstance
 					&& target instanceof L2MonsterInstance
 					&& ((L2PcInstance)activeChar).getPvpFlag() > 0))*/
             {
@@ -122,16 +122,16 @@ public class L2SkillDrain extends L2Skill
             }
 
             double hpAdd = _absorbAbs + _absorbPart * drain;
-            double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar
-                    .getCurrentHp() + hpAdd;
+            double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
+                    activeChar.getCurrentHp() + hpAdd;
 
             activeChar.setCurrentHp(hp);
 
             if (getId() == 1245)
             {
                 int mpAdd = (int) (damage * 0.05);
-                double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar
-                        .getMaxMp() : activeChar.getCurrentMp() + mpAdd;
+                double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar.getMaxMp() :
+                        activeChar.getCurrentMp() + mpAdd;
 
                 activeChar.setCurrentMp(mp);
 
@@ -239,8 +239,8 @@ public class L2SkillDrain extends L2Skill
 
             double hpAdd = _absorbAbs + _absorbPart * damage;
             L2PcInstance owner = activeCubic.getOwner();
-            double hp = owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner
-                    .getCurrentHp() + hpAdd;
+            double hp =
+                    owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;
 
             owner.setCurrentHp(hp);
 

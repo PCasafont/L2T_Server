@@ -91,8 +91,8 @@ public class AdminEditNpc implements IAdminCommandHandler
             if (target instanceof L2Npc)
             {
                 L2Npc npc = (L2Npc) target;
-                _log.info("('',1," + npc.getNpcId() + "," + npc.getX() + "," + npc.getY() + "," + npc
-                        .getZ() + ",0,0," + npc.getHeading() + ",60,0,0),");
+                _log.info("('',1," + npc.getNpcId() + "," + npc.getX() + "," + npc.getY() + "," + npc.getZ() + ",0,0," +
+                        npc.getHeading() + ",60,0,0),");
             }
         }
         else if (command.startsWith("admin_showShopList "))
@@ -100,8 +100,8 @@ public class AdminEditNpc implements IAdminCommandHandler
             String[] args = command.split(" ");
             if (args.length > 2)
             {
-                showShopList(activeChar, Integer.parseInt(command.split(" ")[1]), Integer
-                        .parseInt(command.split(" ")[2]));
+                showShopList(activeChar, Integer.parseInt(command.split(" ")[1]),
+                        Integer.parseInt(command.split(" ")[2]));
             }
         }
         else if (command.startsWith("admin_edit_npc "))
@@ -266,20 +266,16 @@ public class AdminEditNpc implements IAdminCommandHandler
         }
 
         final String replyMSG = StringUtil
-                .concat("<html><title>Merchant Shop Item Edit</title><body><center><font color=\"LEVEL\">", NpcTable
-                                .getInstance().getTemplate(tradeList.getNpcId()).getName(), " (", String
-                                .valueOf(tradeList.getNpcId()), ") -> ", Integer
-                                .toString(tradeListID), "</font></center><table width=\"100%\"><tr><td>Item</td><td>", item
-                                .getName(), " (", Integer.toString(item.getItemId()), ")", "</td></tr><tr><td>Price (", String
-                                .valueOf(tradeList
-                                        .getPriceForItemId(itemID)),
+                .concat("<html><title>Merchant Shop Item Edit</title><body><center><font color=\"LEVEL\">",
+                        NpcTable.getInstance().getTemplate(tradeList.getNpcId()).getName(), " (",
+                        String.valueOf(tradeList.getNpcId()), ") -> ", Integer.toString(tradeListID),
+                        "</font></center><table width=\"100%\"><tr><td>Item</td><td>", item.getName(), " (",
+                        Integer.toString(item.getItemId()), ")", "</td></tr><tr><td>Price (",
+                        String.valueOf(tradeList.getPriceForItemId(itemID)),
                         ")</td><td><edit var=\"price\" width=80></td></tr></table><center><br><button value=\"Save\" action=\"bypass -h admin_editShopItem ",
-                        String
-                                .valueOf(tradeListID), " ", String
-                                .valueOf(itemID),
+                        String.valueOf(tradeListID), " ", String.valueOf(itemID),
                         " $price\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back to Shop List\" action=\"bypass -h admin_showShopList ",
-                        String
-                                .valueOf(tradeListID),
+                        String.valueOf(tradeListID),
                         " 1\"  width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -305,25 +301,22 @@ public class AdminEditNpc implements IAdminCommandHandler
             tradeList.removeItem(itemID);
             deleteTradeList(tradeListID, order);
 
-            activeChar.sendMessage("Deleted " + ItemTable.getInstance().getTemplate(itemID)
-                    .getName() + " from Trade List " + tradeListID);
+            activeChar.sendMessage(
+                    "Deleted " + ItemTable.getInstance().getTemplate(itemID).getName() + " from Trade List " +
+                            tradeListID);
             showShopList(activeChar, tradeListID, 1);
             return;
         }
 
         final String replyMSG = StringUtil
-                .concat("<html><title>Merchant Shop Item Delete</title><body><br>Delete entry in trade list ", String
-                                .valueOf(tradeListID), "<table width=\"100%\"><tr><td>Item</td><td>", ItemTable.getInstance()
-                                .getTemplate(itemID).getName(), " (", Integer
-                                .toString(itemID), ")</td></tr><tr><td>Price</td><td>", String.valueOf(tradeList
-                                .getPriceForItemId(itemID)),
+                .concat("<html><title>Merchant Shop Item Delete</title><body><br>Delete entry in trade list ",
+                        String.valueOf(tradeListID), "<table width=\"100%\"><tr><td>Item</td><td>",
+                        ItemTable.getInstance().getTemplate(itemID).getName(), " (", Integer.toString(itemID),
+                        ")</td></tr><tr><td>Price</td><td>", String.valueOf(tradeList.getPriceForItemId(itemID)),
                         "</td></tr></table><center><br><button value=\"Delete\" action=\"bypass -h admin_delShopItem ",
-                        String
-                                .valueOf(tradeListID), " ", String
-                                .valueOf(itemID),
+                        String.valueOf(tradeListID), " ", String.valueOf(itemID),
                         " 1\"  width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back to Shop List\" action=\"bypass -h admin_showShopList ",
-                        String
-                                .valueOf(tradeListID),
+                        String.valueOf(tradeListID),
                         " 1\"  width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -356,13 +349,15 @@ public class AdminEditNpc implements IAdminCommandHandler
 
             if (stored)
             {
-                activeChar.sendMessage("Added " + ItemTable.getInstance().getTemplate(itemID)
-                        .getName() + " to Trade List " + tradeList.getListId());
+                activeChar.sendMessage(
+                        "Added " + ItemTable.getInstance().getTemplate(itemID).getName() + " to Trade List " +
+                                tradeList.getListId());
             }
             else
             {
-                activeChar.sendMessage("Could not add " + ItemTable.getInstance().getTemplate(itemID)
-                        .getName() + " to Trade List " + tradeList.getListId() + "!");
+                activeChar.sendMessage(
+                        "Could not add " + ItemTable.getInstance().getTemplate(itemID).getName() + " to Trade List " +
+                                tradeList.getListId() + "!");
             }
 
             showShopList(activeChar, tradeListID, 1);
@@ -371,11 +366,9 @@ public class AdminEditNpc implements IAdminCommandHandler
 
         final String replyMSG = StringUtil
                 .concat("<html><title>Merchant Shop Item Add</title><body><br>Add a new entry in merchantList.<table width=\"100%\"><tr><td>ItemID</td><td><edit var=\"itemID\" width=80></td></tr><tr><td>Price</td><td><edit var=\"price\" width=80></td></tr></table><center><br><button value=\"Add\" action=\"bypass -h admin_addShopItem ",
-                        String
-                                .valueOf(tradeListID),
+                        String.valueOf(tradeListID),
                         " $itemID $price\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back to Shop List\" action=\"bypass -h admin_showShopList ",
-                        String
-                                .valueOf(tradeListID),
+                        String.valueOf(tradeListID),
                         " 1\"  width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -406,11 +399,11 @@ public class AdminEditNpc implements IAdminCommandHandler
             max++;
         }
 
-        StringUtil.append(replyMSG, "<html><title>Merchant Shop List Page: ", String.valueOf(page), " of ", Integer
-                .toString(max), "</title><body><br><center><font color=\"LEVEL\">", NpcTable.getInstance()
-                .getTemplate(tradeList.getNpcId()).getName(), " (", String
-                .valueOf(tradeList.getNpcId()), ") Shop ID: ", Integer
-                .toString(tradeList.getListId()), "</font></center><table width=300 bgcolor=666666><tr>");
+        StringUtil.append(replyMSG, "<html><title>Merchant Shop List Page: ", String.valueOf(page), " of ",
+                Integer.toString(max), "</title><body><br><center><font color=\"LEVEL\">",
+                NpcTable.getInstance().getTemplate(tradeList.getNpcId()).getName(), " (",
+                String.valueOf(tradeList.getNpcId()), ") Shop ID: ", Integer.toString(tradeList.getListId()),
+                "</font></center><table width=300 bgcolor=666666><tr>");
 
         for (int x = 0; x < max; x++)
         {
@@ -441,21 +434,19 @@ public class AdminEditNpc implements IAdminCommandHandler
         //Log.info("page: " + page + "; tradeList.getItems().size(): " + tradeList.getItems().size() + "; start: " + start + "; end: " + end + "; max: " + max);
         for (L2TradeItem item : tradeList.getItems(start, end))
         {
-            StringUtil.append(replyMSG, "<tr><td><a action=\"bypass -h admin_editShopItem ", String
-                    .valueOf(tradeList.getListId()), " ", String.valueOf(item.getItemId()), "\">", ItemTable
-                    .getInstance().getTemplate(item.getItemId()).getName(), "</a></td><td>", String
-                    .valueOf(item.getPrice()), "</td><td><a action=\"bypass -h admin_delShopItem ", String
-                    .valueOf(tradeList.getListId()), " ", String.valueOf(item.getItemId()), "\">Delete</a></td></tr>");
+            StringUtil.append(replyMSG, "<tr><td><a action=\"bypass -h admin_editShopItem ",
+                    String.valueOf(tradeList.getListId()), " ", String.valueOf(item.getItemId()), "\">",
+                    ItemTable.getInstance().getTemplate(item.getItemId()).getName(), "</a></td><td>",
+                    String.valueOf(item.getPrice()), "</td><td><a action=\"bypass -h admin_delShopItem ",
+                    String.valueOf(tradeList.getListId()), " ", String.valueOf(item.getItemId()),
+                    "\">Delete</a></td></tr>");
         }
         StringUtil.append(replyMSG, "<tr><td><br><br></td><td> </td><td> </td></tr><tr>");
 
-        StringUtil
-                .append(replyMSG,
-                        "</tr></table><center><br><button value=\"Add Shop Item\" action=\"bypass -h admin_addShopItem ",
-                        String
-                                .valueOf(tradeList
-                                        .getListId()),
-                        "\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
+        StringUtil.append(replyMSG,
+                "</tr></table><center><br><button value=\"Add Shop Item\" action=\"bypass -h admin_addShopItem ",
+                String.valueOf(tradeList.getListId()),
+                "\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
         return replyMSG.toString();
     }
@@ -475,9 +466,10 @@ public class AdminEditNpc implements IAdminCommandHandler
         if (activeChar.getTarget() instanceof L2MerchantInstance)
         {
             MerchantPriceConfig mpc = ((L2MerchantInstance) activeChar.getTarget()).getMpc();
-            StringUtil.append(replyMSG, "<br>NPC: ", activeChar.getTarget().getName(), " (", Integer
-                    .toString(merchantID), ") <br>Price Config: ", mpc.getName(), ", ", Integer
-                    .toString(mpc.getBaseTax()), "% / ", Integer.toString(mpc.getTotalTax()), "%");
+            StringUtil
+                    .append(replyMSG, "<br>NPC: ", activeChar.getTarget().getName(), " (", Integer.toString(merchantID),
+                            ") <br>Price Config: ", mpc.getName(), ", ", Integer.toString(mpc.getBaseTax()), "% / ",
+                            Integer.toString(mpc.getTotalTax()), "%");
         }
 
         StringUtil.append(replyMSG, "<table width=\"100%\">");
@@ -486,15 +478,14 @@ public class AdminEditNpc implements IAdminCommandHandler
         {
             if (tradeList != null)
             {
-                StringUtil.append(replyMSG, "<tr><td><a action=\"bypass -h admin_showShopList ", String
-                        .valueOf(tradeList.getListId()), " 1\">Merchant List ID ", String
-                        .valueOf(tradeList.getListId()), "</a></td></tr>");
+                StringUtil.append(replyMSG, "<tr><td><a action=\"bypass -h admin_showShopList ",
+                        String.valueOf(tradeList.getListId()), " 1\">Merchant List ID ",
+                        String.valueOf(tradeList.getListId()), "</a></td></tr>");
             }
         }
 
-        StringUtil
-                .append(replyMSG,
-                        "</table><center><br><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
+        StringUtil.append(replyMSG,
+                "</table><center><br><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 
         NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
         adminReply.setHtml(replyMSG.toString());
@@ -510,9 +501,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 
             String table = "merchant_buylists";
 
-            PreparedStatement stmt = con
-                    .prepareStatement(
-                            "INSERT INTO `" + table + "`(`item_id`,`price`,`shop_id`,`order`) VALUES (?,?,?,?)");
+            PreparedStatement stmt = con.prepareStatement(
+                    "INSERT INTO `" + table + "`(`item_id`,`price`,`shop_id`,`order`) VALUES (?,?,?,?)");
             stmt.setInt(1, itemID);
             stmt.setLong(2, price);
             stmt.setInt(3, tradeListID);
@@ -541,8 +531,8 @@ public class AdminEditNpc implements IAdminCommandHandler
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement stmt = con
-                    .prepareStatement("UPDATE `merchant_buylists` SET `price` = ? WHERE `shop_id` = ? AND `order` = ?");
+            PreparedStatement stmt = con.prepareStatement(
+                    "UPDATE `merchant_buylists` SET `price` = ? WHERE `shop_id` = ? AND `order` = ?");
             stmt.setLong(1, price);
             stmt.setInt(2, tradeListID);
             stmt.setInt(3, order);
@@ -566,8 +556,8 @@ public class AdminEditNpc implements IAdminCommandHandler
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement stmt = con
-                    .prepareStatement("DELETE FROM `merchant_buylists` WHERE `shop_id` = ? AND `order` = ?");
+            PreparedStatement stmt =
+                    con.prepareStatement("DELETE FROM `merchant_buylists` WHERE `shop_id` = ? AND `order` = ?");
             stmt.setInt(1, tradeListID);
             stmt.setInt(2, order);
             stmt.close();
@@ -589,9 +579,8 @@ public class AdminEditNpc implements IAdminCommandHandler
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement stmt = con
-                    .prepareStatement(
-                            "SELECT `order` FROM `merchant_buylists` WHERE `shop_id` = ? AND `item_id` = ? AND `price` = ?");
+            PreparedStatement stmt = con.prepareStatement(
+                    "SELECT `order` FROM `merchant_buylists` WHERE `shop_id` = ? AND `item_id` = ? AND `price` = ?");
             stmt.setInt(1, tradeListID);
             stmt.setInt(2, itemID);
             stmt.setLong(3, price);

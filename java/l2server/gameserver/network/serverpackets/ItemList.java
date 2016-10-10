@@ -116,8 +116,8 @@ public final class ItemList extends L2ItemListPacket
     {
         for (L2ItemInstance temp : _items)
         {
-            Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp
-                    .getItem().getType2());
+            Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" +
+                    temp.getItem().getType2());
         }
     }
 
@@ -157,7 +157,7 @@ public final class ItemList extends L2ItemListPacket
     public void runImpl()
     {
         getClient().sendPacket(new ExQuestItemList(_questItems, getClient().getActiveChar().getInventory()));
-        getClient().sendPacket(new ExAdenaInvenCount(getClient().getActiveChar().getAdena(), getClient().getActiveChar()
-                .getInventory().getSize(false)));
+        getClient().sendPacket(new ExAdenaInvenCount(getClient().getActiveChar().getAdena(),
+                getClient().getActiveChar().getInventory().getSize(false)));
     }
 }

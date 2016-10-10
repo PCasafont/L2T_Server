@@ -286,8 +286,8 @@ public class CastleManager implements InstanceListManager
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("DELETE FROM items WHERE owner_id = ? and item_id = ?");
+                PreparedStatement statement =
+                        con.prepareStatement("DELETE FROM items WHERE owner_id = ? and item_id = ?");
                 statement.setInt(1, member.getObjectId());
                 statement.setInt(2, circletId);
                 statement.execute();
@@ -295,8 +295,9 @@ public class CastleManager implements InstanceListManager
             }
             catch (Exception e)
             {
-                Log.log(Level.WARNING, "Failed to remove castle circlets offline for player " + member
-                        .getName() + ": " + e.getMessage(), e);
+                Log.log(Level.WARNING,
+                        "Failed to remove castle circlets offline for player " + member.getName() + ": " +
+                                e.getMessage(), e);
             }
             finally
             {

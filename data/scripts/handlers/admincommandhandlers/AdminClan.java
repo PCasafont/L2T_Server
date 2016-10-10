@@ -66,18 +66,19 @@ public class AdminClan implements IAdminCommandHandler
                         try
                         {
                             NpcHtmlMessage msg = new NpcHtmlMessage(0);
-                            String htm = HtmCache.getInstance()
-                                    .getHtm(activeChar.getHtmlPrefix(), "admin/claninfo.htm");
+                            String htm =
+                                    HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "admin/claninfo.htm");
                             msg.setHtml(htm.toString());
                             msg.replace("%clan_name%", clan.getName());
                             msg.replace("%clan_leader%", clan.getLeaderName());
                             msg.replace("%clan_level%", String.valueOf(clan.getLevel()));
-                            msg.replace("%clan_has_castle%", clan.getHasCastle() > 0 ? CastleManager.getInstance()
-                                    .getCastleById(clan.getHasCastle()).getName() : "No");
-                            msg.replace("%clan_has_clanhall%", clan.getHasHideout() > 0 ? ClanHallManager.getInstance()
-                                    .getClanHallById(clan.getHasHideout()).getName() : "No");
-                            msg.replace("%clan_has_fortress%", clan.getHasFort() > 0 ? FortManager.getInstance()
-                                    .getFortById(clan.getHasFort()).getName() : "No");
+                            msg.replace("%clan_has_castle%", clan.getHasCastle() > 0 ?
+                                    CastleManager.getInstance().getCastleById(clan.getHasCastle()).getName() : "No");
+                            msg.replace("%clan_has_clanhall%", clan.getHasHideout() > 0 ?
+                                    ClanHallManager.getInstance().getClanHallById(clan.getHasHideout()).getName() :
+                                    "No");
+                            msg.replace("%clan_has_fortress%", clan.getHasFort() > 0 ?
+                                    FortManager.getInstance().getFortById(clan.getHasFort()).getName() : "No");
                             msg.replace("%clan_points%", String.valueOf(clan.getReputationScore()));
                             msg.replace("%clan_players_count%", String.valueOf(clan.getMembersCount()));
                             msg.replace("%clan_ally%", clan.getAllyId() > 0 ? clan.getAllyName() : "Not in ally");
@@ -165,9 +166,8 @@ public class AdminClan implements IAdminCommandHandler
 
                             clan.broadcastClanStatus();
 
-                            SystemMessage sm = SystemMessage
-                                    .getSystemMessage(
-                                            SystemMessageId.CLAN_LEADER_PRIVILEGES_HAVE_BEEN_TRANSFERRED_TO_C1);
+                            SystemMessage sm = SystemMessage.getSystemMessage(
+                                    SystemMessageId.CLAN_LEADER_PRIVILEGES_HAVE_BEEN_TRANSFERRED_TO_C1);
                             sm.addString(newLeader.getName());
                             clan.broadcastToOnlineMembers(sm);
                             activeChar.sendMessage("Clan leader has been changed!");

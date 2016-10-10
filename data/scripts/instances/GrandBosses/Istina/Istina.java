@@ -326,8 +326,9 @@ public class Istina extends L2AttackableAIScript
                                 Log.warning(getName() + ": Acid Target: " + target.getName());
                             }
 
-                            L2Npc dummyAcid = addSpawn(_acidDummyNpc, target.getX(), target.getY(), target
-                                    .getZ(), -1, true, 0, false, world.instanceId);
+                            L2Npc dummyAcid =
+                                    addSpawn(_acidDummyNpc, target.getX(), target.getY(), target.getZ(), -1, true, 0,
+                                            false, world.instanceId);
                             dummyAcid.setTarget(dummyAcid);
                             dummyAcid.doCast(_dummyAcidEruption);
                         }
@@ -470,16 +471,15 @@ public class Istina extends L2AttackableAIScript
                         //Cast a random Manifestation
                         world.Istina.broadcastPacket(new PlaySound(3, "Npcdialog1.istina_voice_01", 0, 0, 0, 0, 0));
 
-                        final L2Skill randomSkill = _manifestation_of_authority[Rnd
-                                .get(_manifestation_of_authority.length)];
+                        final L2Skill randomSkill =
+                                _manifestation_of_authority[Rnd.get(_manifestation_of_authority.length)];
                         switch (randomSkill.getId())
                         {
                             case 14212: //Manifestation of Authority (Red)
                                 if (!world.isHardMode)
                                 {
-                                    InstanceManager.getInstance()
-                                            .sendPacket(world.instanceId,
-                                                    new ExShowScreenMessage(1811138, 0, true, 5000));
+                                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                                            new ExShowScreenMessage(1811138, 0, true, 5000));
                                 }
 
                                 InstanceManager.getInstance()
@@ -493,9 +493,8 @@ public class Istina extends L2AttackableAIScript
                             case 14213: //Manifestation of Authority (Blue)
                                 if (!world.isHardMode)
                                 {
-                                    InstanceManager.getInstance()
-                                            .sendPacket(world.instanceId,
-                                                    new ExShowScreenMessage(1811139, 0, true, 5000));
+                                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                                            new ExShowScreenMessage(1811139, 0, true, 5000));
                                 }
 
                                 InstanceManager.getInstance()
@@ -509,9 +508,8 @@ public class Istina extends L2AttackableAIScript
                             case 14214: //Manifestation of Authority (Green)
                                 if (!world.isHardMode)
                                 {
-                                    InstanceManager.getInstance()
-                                            .sendPacket(world.instanceId,
-                                                    new ExShowScreenMessage(1811140, 0, true, 5000));
+                                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                                            new ExShowScreenMessage(1811140, 0, true, 5000));
                                 }
 
                                 InstanceManager.getInstance()
@@ -548,8 +546,8 @@ public class Istina extends L2AttackableAIScript
                             }
                         }, delay);
                     }
-                    startQuestTimer("stage_all_manifestation_of_authority", Rnd
-                            .get(68000 + delay, 68000 + delay * 2), world.Istina, null);
+                    startQuestTimer("stage_all_manifestation_of_authority", Rnd.get(68000 + delay, 68000 + delay * 2),
+                            world.Istina, null);
                 }
             }
             else if (event.equalsIgnoreCase("stage_all_epic_sealing_energy_task"))
@@ -562,8 +560,8 @@ public class Istina extends L2AttackableAIScript
                     {
                         for (int a = 0; a < Rnd.get(1, 3); a++)
                         {
-                            L2Npc sealingEnergy = addSpawn(_sealingEnergy, world.Istina.getX(), world.Istina
-                                    .getY(), world.Istina.getZ(), 0, true, 180000, true, world.instanceId);
+                            L2Npc sealingEnergy = addSpawn(_sealingEnergy, world.Istina.getX(), world.Istina.getY(),
+                                    world.Istina.getZ(), 0, true, 180000, true, world.instanceId);
                             sealingEnergy.setIsInvul(true);
                         }
                         world.Istina.broadcastPacket(new PlaySound(3, "Npcdialog1.istina_voice_04", 0, 0, 0, 0, 0));
@@ -581,8 +579,8 @@ public class Istina extends L2AttackableAIScript
                     {
                         if (world.Istina.getCurrentHp() < world.Istina.getMaxHp() * 0.75) //only if have less than 75%
                         {
-                            InstanceManager.getInstance()
-                                    .sendPacket(world.instanceId, new ExShowScreenMessage(1811144, 0, true,
+                            InstanceManager.getInstance().sendPacket(world.instanceId,
+                                    new ExShowScreenMessage(1811144, 0, true,
                                             2000)); //Istina calls her creatures with tremendous anger.
 
                             //Taklacan, Torumba, Dopagen
@@ -590,9 +588,8 @@ public class Istina extends L2AttackableAIScript
                             {
                                 for (int a = 0; a < Rnd.get(2, 3); a++)
                                 {
-                                    addSpawn(_minionIds[Rnd.get(_minionIds.length)], minionLoc.getX(), minionLoc
-                                            .getY(), minionLoc.getZ(), minionLoc
-                                            .getHeading(), false, 0, true, world.instanceId);
+                                    addSpawn(_minionIds[Rnd.get(_minionIds.length)], minionLoc.getX(), minionLoc.getY(),
+                                            minionLoc.getZ(), minionLoc.getHeading(), false, 0, true, world.instanceId);
                                 }
                             }
                             world.Istina.broadcastPacket(new PlaySound(3, "Npcdialog1.istina_voice_03", 0, 0, 0, 0, 0));
@@ -601,8 +598,8 @@ public class Istina extends L2AttackableAIScript
                         //Istina's Creation
                         for (int a = 0; a < Rnd.get(3, 5); a++)
                         {
-                            addSpawn(_istinasCreationId, world.Istina.getX(), world.Istina.getY(), world.Istina
-                                    .getZ(), 0, true, 0, true, world.instanceId);
+                            addSpawn(_istinasCreationId, world.Istina.getX(), world.Istina.getY(), world.Istina.getZ(),
+                                    0, true, 0, true, world.instanceId);
                         }
                     }
                     startQuestTimer("stage_all_epic_minions_task", Rnd.get(2, 3) * 60000, world.Istina, null);
@@ -621,26 +618,21 @@ public class Istina extends L2AttackableAIScript
                 addSpawn(_rumieseInnerId, -177028, 146879, -11384, 22754, false, 0, false, world.instanceId);
 
                 //Spam messages
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 3,
-                                new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
-                                        "After 5 seconds, the charging magic Ballistas starts."));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 4,
-                                new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
-                                        "After 4 seconds, the charging magic Ballistas starts."));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 5,
-                                new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
-                                        "After 3 seconds, the charging magic Ballistas starts."));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 6,
-                                new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
-                                        "After 2 seconds, the charging magic Ballistas starts."));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToInstance(world.instanceId, 7,
-                                new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
-                                        "After 1 seconds, the charging magic Ballistas starts."));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                        new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
+                                "After 5 seconds, the charging magic Ballistas starts."));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 4,
+                        new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
+                                "After 4 seconds, the charging magic Ballistas starts."));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 5,
+                        new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
+                                "After 3 seconds, the charging magic Ballistas starts."));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 6,
+                        new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
+                                "After 2 seconds, the charging magic Ballistas starts."));
+                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 7,
+                        new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, true, 1000, 0,
+                                "After 1 seconds, the charging magic Ballistas starts."));
 
                 startQuestTimer("stage_last_start_message", 8000, npc, null);
             }
@@ -659,9 +651,8 @@ public class Istina extends L2AttackableAIScript
                 {
                     double calculation = world.currBallistDamage / world.maxBallistDamage * 100;
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId,
-                                    new ExSendUIEvent(2, world.ballistaSeconds, (int) calculation, 1811347));
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExSendUIEvent(2, world.ballistaSeconds, (int) calculation, 1811347));
 
                     world.ballistaSeconds -= 1;
 
@@ -682,8 +673,7 @@ public class Istina extends L2AttackableAIScript
                         Log.warning(getName() + ": Chance to kill istina: " + chanceToKillIstina);
                     }
 
-                    if (chanceToKillIstina > 40 && Rnd
-                            .get(101) <=
+                    if (chanceToKillIstina > 40 && Rnd.get(101) <=
                             chanceToKillIstina)//We want at least 40% on the ballista in order to kill istina
                     {
                         //Success, kill istina
@@ -703,9 +693,8 @@ public class Istina extends L2AttackableAIScript
                         InstanceManager.getInstance().showVidToInstance(33, world.instanceId); //End fail
                     }
 
-                    InstanceManager.getInstance()
-                            .setInstanceReuse(world.instanceId, world.templateId,
-                                    world.templateId == _templates[0] ? false : true);
+                    InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
+                            world.templateId == _templates[0] ? false : true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
 
                     startQuestTimer("stage_last_boss_drop", time - 1200, npc, null);
@@ -757,8 +746,8 @@ public class Istina extends L2AttackableAIScript
                             {
                                 if (_debug)
                                 {
-                                    Log.warning(getName() + ": " + randomPlayer
-                                            .getName() + " will be used as a killer!");
+                                    Log.warning(
+                                            getName() + ": " + randomPlayer.getName() + " will be used as a killer!");
                                 }
 
                                 world.Istina = addSpawn(world.IstinaId, -177120, 148794, -11229, 49488, false, 0, false,
@@ -802,8 +791,8 @@ public class Istina extends L2AttackableAIScript
             }
         }
 
-        if (npc != null && npc.getNpcId() == _rumieseEnterId && Util.isDigit(event) && Util
-                .contains(_templates, Integer.valueOf(event)))
+        if (npc != null && npc.getNpcId() == _rumieseEnterId && Util.isDigit(event) &&
+                Util.contains(_templates, Integer.valueOf(event)))
         {
             try
             {
@@ -850,8 +839,8 @@ public class Istina extends L2AttackableAIScript
                     InstanceManager.getInstance().despawnAll(world.instanceId);
                     InstanceManager.getInstance().showVidToInstance(34, world.instanceId);
 
-                    startQuestTimer("stage_last_spawns", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(34) + 2000, npc, null);
+                    startQuestTimer("stage_last_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(34) + 2000,
+                            npc, null);
                 }
             }
             else if (npc.getNpcId() == _ballistaId)
@@ -970,8 +959,8 @@ public class Istina extends L2AttackableAIScript
         {
             if (!(world instanceof IstinaWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -1013,9 +1002,11 @@ public class Istina extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel()
-                        .getMembers() : player.getParty().getCommandChannel() != null ? player.getParty()
-                        .getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ?
+                        player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -1040,8 +1031,7 @@ public class Istina extends L2AttackableAIScript
             startQuestTimer("stage_0_open_doors", 5000, null, player);
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

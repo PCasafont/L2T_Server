@@ -135,8 +135,8 @@ public class Lindvior extends L2AttackableAIScript
         }
 
         //Unlock
-        startQuestTimer("unlock_lindvior", GrandBossManager.getInstance()
-                .getUnlockTime(_secondFloorLindvior), null, null);
+        startQuestTimer("unlock_lindvior", GrandBossManager.getInstance().getUnlockTime(_secondFloorLindvior), null,
+                null);
     }
 
     @Override
@@ -241,9 +241,9 @@ public class Lindvior extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.LINDVIOR_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.LINDVIOR_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -293,9 +293,8 @@ public class Lindvior extends L2AttackableAIScript
 
             _bossStage = 1;
 
-            _bossZone
-                    .sendDelayedPacketToZone(5000,
-                            new ExShowScreenMessage(14211701, 0, true, 5000)); //You must activate the 4 Generators.
+            _bossZone.sendDelayedPacketToZone(5000,
+                    new ExShowScreenMessage(14211701, 0, true, 5000)); //You must activate the 4 Generators.
 
             //Generator guards should broadcast npcStringId 1802366
 
@@ -335,9 +334,8 @@ public class Lindvior extends L2AttackableAIScript
                     {
                         if (_manageGenerators.size() < 3)
                         {
-                            _bossZone
-                                    .broadcastPacket(new ExShowScreenMessage(14211701, 0, true,
-                                            5000)); //You must activate the 4 Generators.
+                            _bossZone.broadcastPacket(new ExShowScreenMessage(14211701, 0, true,
+                                    5000)); //You must activate the 4 Generators.
                         }
 
                         if (!_manageGenerators.containsKey(npc))
@@ -394,8 +392,8 @@ public class Lindvior extends L2AttackableAIScript
         {
             _bossStage = 5;
 
-            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(), _lindviorBoss
-                    .getHeading());
+            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(),
+                    _lindviorBoss.getHeading());
 
             _lindviorBoss.deleteMe();
 
@@ -409,8 +407,8 @@ public class Lindvior extends L2AttackableAIScript
         {
             _bossStage = 7;
 
-            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(), _lindviorBoss
-                    .getHeading());
+            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(),
+                    _lindviorBoss.getHeading());
 
             _lindviorBoss.deleteMe();
 
@@ -422,8 +420,8 @@ public class Lindvior extends L2AttackableAIScript
         }
         else if (event.equalsIgnoreCase("stage_4_end"))
         {
-            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(), _lindviorBoss
-                    .getHeading());
+            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(),
+                    _lindviorBoss.getHeading());
 
             _lindviorBoss.deleteMe();
 
@@ -435,8 +433,8 @@ public class Lindvior extends L2AttackableAIScript
         }
         else if (event.equalsIgnoreCase("stage_5_end"))
         {
-            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(), _lindviorBoss
-                    .getHeading());
+            _bossLocation = new Location(_lindviorBoss.getX(), _lindviorBoss.getY(), _lindviorBoss.getZ(),
+                    _lindviorBoss.getHeading());
 
             _lindviorBoss.deleteMe();
 
@@ -520,8 +518,8 @@ public class Lindvior extends L2AttackableAIScript
                 mob.deleteMe();
             }
 
-            if (GrandBossManager.getInstance().getBossStatus(_secondFloorLindvior) != GrandBossManager
-                    .getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(_secondFloorLindvior) !=
+                    GrandBossManager.getInstance().DEAD)
             {
                 GrandBossManager.getInstance()
                         .setBossStatus(_secondFloorLindvior, GrandBossManager.getInstance().ALIVE);
@@ -542,9 +540,9 @@ public class Lindvior extends L2AttackableAIScript
                 int x = (int) (radius * Math.cos(i * 0.618));
                 int y = (int) (radius * Math.sin(i * 0.618));
 
-                L2MonsterInstance minion = (L2MonsterInstance) addSpawn(minionId == -1 ? _lynDracoIds[Rnd
-                        .get(_lynDracoIds.length)] : minionId, npc.getX() + x, npc.getY() + y, npc
-                        .getZ() + 20, -1, false, 0, true, npc.getInstanceId());
+                L2MonsterInstance minion = (L2MonsterInstance) addSpawn(
+                        minionId == -1 ? _lynDracoIds[Rnd.get(_lynDracoIds.length)] : minionId, npc.getX() + x,
+                        npc.getY() + y, npc.getZ() + 20, -1, false, 0, true, npc.getInstanceId());
                 minion.setIsRunning(true);
 
                 //To be sure
@@ -573,8 +571,8 @@ public class Lindvior extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " out of the boss zone!");
             }
         }
 
@@ -585,8 +583,8 @@ public class Lindvior extends L2AttackableAIScript
 
             if (_debug)
             {
-                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc
-                        .getName() + " wich is out of the boss zone!");
+                Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
+                        " wich is out of the boss zone!");
             }
         }
 
@@ -604,9 +602,8 @@ public class Lindvior extends L2AttackableAIScript
                             {
                                 _manageGenerators.put(npc, (double) damage);
 
-                                _bossZone
-                                        .broadcastPacket(new ExShowScreenMessage(14211702, 0, true,
-                                                5000)); //Protect the Generator!
+                                _bossZone.broadcastPacket(
+                                        new ExShowScreenMessage(14211702, 0, true, 5000)); //Protect the Generator!
 
                                 //Spawn Lyn Dracos
                                 spawnMinions(npc, -1, 600, 7);
@@ -614,8 +611,8 @@ public class Lindvior extends L2AttackableAIScript
                             else
                             {
                                 //This should be done with one special skill but we will do it with damage....
-                                double generatorDamage = _manageGenerators
-                                        .get(npc); //Get the current damage from this generator
+                                double generatorDamage =
+                                        _manageGenerators.get(npc); //Get the current damage from this generator
                                 double calcDamage = generatorDamage + damage;
 
                                 if (generatorDamage == maxGeneratorDamage)
@@ -631,9 +628,9 @@ public class Lindvior extends L2AttackableAIScript
                                         npc.broadcastPacket(new ExSendUIEvent(5, 120, 120, 16211701),
                                                 1200); //bar with the 100%
 
-                                        _bossZone.broadcastPacket(new ExShowScreenMessage("$s1 has charged the cannon!"
-                                                .replace("$s1", attacker
-                                                        .getName()), 5000)); //$s1 has charged the cannon!
+                                        _bossZone.broadcastPacket(new ExShowScreenMessage(
+                                                "$s1 has charged the cannon!".replace("$s1", attacker.getName()),
+                                                5000)); //$s1 has charged the cannon!
 
                                         int count = 0;
 
@@ -650,22 +647,20 @@ public class Lindvior extends L2AttackableAIScript
                                             //All generators are charged here
                                             _bossStage = 3;
 
-                                            GrandBossManager.getInstance()
-                                                    .setBossStatus(_secondFloorLindvior, GrandBossManager
-                                                            .getInstance().FIGHTING);
+                                            GrandBossManager.getInstance().setBossStatus(_secondFloorLindvior,
+                                                    GrandBossManager.getInstance().FIGHTING);
 
                                             _dummyLindvior.deleteMe(); //Delete the flying Lindvior
 
                                             //Lindvior fall to the scenario here
-                                            _bossZone.broadcastPacket(new Earthquake(npc.getX(), npc.getY(), npc
-                                                    .getZ(), 10, 10));
+                                            _bossZone.broadcastPacket(
+                                                    new Earthquake(npc.getX(), npc.getY(), npc.getZ(), 10, 10));
 
                                             landingLindvior();
 
-                                            _bossZone
-                                                    .sendDelayedPacketToZone(5000,
-                                                            new ExShowScreenMessage(14211708, 0, true,
-                                                                    5000)); //Lindvior has fallen from the sky!
+                                            _bossZone.sendDelayedPacketToZone(5000,
+                                                    new ExShowScreenMessage(14211708, 0, true,
+                                                            5000)); //Lindvior has fallen from the sky!
 
                                             //Start the minion task
                                             startQuestTimer("spawn_minion_task", 3 * 60000, null, null, true);
@@ -715,9 +710,8 @@ public class Lindvior extends L2AttackableAIScript
 
                     _bossZone.broadcastPacket(new EventTrigger(_redZoneEffect, true));
                     _bossZone.sendDelayedPacketToZone(15000, new EventTrigger(_redZoneEffect, false));
-                    _bossZone
-                            .broadcastPacket(new ExShowScreenMessage(14211705, 0, true,
-                                    5000)); //A fearsome power emanates from Lindvior!
+                    _bossZone.broadcastPacket(new ExShowScreenMessage(14211705, 0, true,
+                            5000)); //A fearsome power emanates from Lindvior!
 
                     startQuestTimer("stage_2_end", 4000, npc, null); //TODO
                 }
@@ -798,16 +792,17 @@ public class Lindvior extends L2AttackableAIScript
 
             case 5:
             case 8:
-                _lindviorBoss = addSpawn(_flyLindvior, _bossLocation.getX(), _bossLocation.getY(), _bossLocation
-                        .getZ(), _bossLocation.getHeading(), false, 0, true);
+                _lindviorBoss = addSpawn(_flyLindvior, _bossLocation.getX(), _bossLocation.getY(), _bossLocation.getZ(),
+                        _bossLocation.getHeading(), false, 0, true);
                 _lindviorBoss.setDisplayEffect(1);
                 _lindviorBoss.setCurrentHp(_lindviorBoss.getMaxHp() * (_bossStage == 5 ? 0.85 : 0.40));
                 break;
 
             case 7:
             case 9:
-                _lindviorBoss = addSpawn(_secondFloorLindvior, _bossLocation.getX(), _bossLocation.getY(), _bossLocation
-                        .getZ(), _bossLocation.getHeading(), false, 0, true);
+                _lindviorBoss =
+                        addSpawn(_secondFloorLindvior, _bossLocation.getX(), _bossLocation.getY(), _bossLocation.getZ(),
+                                _bossLocation.getHeading(), false, 0, true);
                 _lindviorBoss.setCurrentHp(_lindviorBoss.getMaxHp() * (_bossStage == 7 ? 0.70 : 0.20));
                 break;
         }
@@ -841,8 +836,8 @@ public class Lindvior extends L2AttackableAIScript
                 }
             }, 14000);
 
-            startQuestTimer("unlock_lindvior", GrandBossManager.getInstance()
-                    .getUnlockTime(_secondFloorLindvior), null, null);
+            startQuestTimer("unlock_lindvior", GrandBossManager.getInstance().getUnlockTime(_secondFloorLindvior), null,
+                    null);
             startQuestTimer("end_lindvior", 1800000, null, null);
         }
 

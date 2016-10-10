@@ -51,8 +51,9 @@ public class ChatParty implements IChatHandler
             }
 
             String leaderName = activeChar.getParty().getLeader().getName();
-            ConsoleTab.appendMessage(ConsoleFilter.PartyChat, "[" + leaderName + "'s party] " + activeChar
-                    .getName() + ": " + text, leaderName, activeChar.getName());
+            ConsoleTab.appendMessage(ConsoleFilter.PartyChat,
+                    "[" + leaderName + "'s party] " + activeChar.getName() + ": " + text, leaderName,
+                    activeChar.getName());
         }
     }
 

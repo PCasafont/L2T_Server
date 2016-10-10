@@ -395,8 +395,8 @@ public class FinalEmperialTomb extends Quest
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "[Final Emperial Tomb] Could not parse final_emperial_tomb.xml file: " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING,
+                    "[Final Emperial Tomb] Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
         }
 
         if (debug)
@@ -473,13 +473,13 @@ public class FinalEmperialTomb extends Quest
         world.status = 0;
         InstanceManager.getInstance().addWorld(world);
         controlStatus((FETWorld) world);
-        Log.info(
-                "Final Emperial Tomb started " + template + " Instance: " + instanceId + " created by player: " + player
-                        .getName());
+        Log.info("Final Emperial Tomb started " + template + " Instance: " + instanceId + " created by player: " +
+                player.getName());
         // teleport players
-        for (L2PcInstance channelMember : Config.FRINTEZZA_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ? player.getParty()
-                .getCommandChannel().getMembers() : player.getParty().getCommandChannel() != null ? player.getParty()
-                .getCommandChannel().getMembers() : player.getParty().getPartyMembers())
+        for (L2PcInstance channelMember : Config.FRINTEZZA_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ?
+                player.getParty().getCommandChannel().getMembers() :
+                player.getParty().getCommandChannel() != null ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers())
         {
             world.allowed.add(channelMember.getObjectId());
             teleportPlayer(channelMember, coords, instanceId);
@@ -512,8 +512,8 @@ public class FinalEmperialTomb extends Quest
                             {
                                 int[] point = _spawnZoneList.get(spw.zone).getRandomPoint();
                                 spawn(world, spw.npcId, point[0], point[1], GeoData.getInstance()
-                                        .getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd
-                                        .get(65535), spw.isNeededNextFlag);
+                                                .getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd.get(65535),
+                                        spw.isNeededNextFlag);
                             }
                             else
                             {
@@ -717,8 +717,8 @@ public class FinalEmperialTomb extends Quest
                 case 0: // new song play
                     if (_world.isVideo)
                     {
-                        _world.songTask = ThreadPoolManager.getInstance()
-                                .scheduleGeneral(new SongTask(_world, 0), 1000);
+                        _world.songTask =
+                                ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(_world, 0), 1000);
                     }
                     else if (_world.frintezza != null && !_world.frintezza.isDead())
                     {
@@ -729,16 +729,15 @@ public class FinalEmperialTomb extends Quest
                             {
                                 _world.OnSong = element;
                                 broadCastPacket(_world, new ExShowScreenMessage(element.songName.getId(), 3000));
-                                broadCastPacket(_world,
-                                        new MagicSkillUse(_world.frintezza, _world.frintezza, element.skill
-                                                .getSkillId(), element.skill.getSkillLvl(), element.skill.getSkill()
-                                                .getHitTime(), 0, 0));
+                                broadCastPacket(_world, new MagicSkillUse(_world.frintezza, _world.frintezza,
+                                        element.skill.getSkillId(), element.skill.getSkillLvl(),
+                                        element.skill.getSkill().getHitTime(), 0, 0));
                                 _world.songEffectTask = ThreadPoolManager.getInstance()
-                                        .scheduleGeneral(new SongTask(_world, 1), element.skill.getSkill()
-                                                .getHitTime() - 10000);
+                                        .scheduleGeneral(new SongTask(_world, 1),
+                                                element.skill.getSkill().getHitTime() - 10000);
                                 _world.songTask = ThreadPoolManager.getInstance()
-                                        .scheduleGeneral(new SongTask(_world, 0), element.skill.getSkill()
-                                                .getHitTime());
+                                        .scheduleGeneral(new SongTask(_world, 0),
+                                                element.skill.getSkill().getHitTime());
                                 break;
                             }
                         }
@@ -752,8 +751,8 @@ public class FinalEmperialTomb extends Quest
                         return;
                     }
 
-                    if (_world.frintezza != null && !_world.frintezza
-                            .isDead() && _world.activeScarlet != null && !_world.activeScarlet.isDead())
+                    if (_world.frintezza != null && !_world.frintezza.isDead() && _world.activeScarlet != null &&
+                            !_world.activeScarlet.isDead())
                     {
                         List<L2Character> targetList = new ArrayList<L2Character>();
                         if (skill.getSkillType() == L2SkillType.DEBUFF)
@@ -780,8 +779,8 @@ public class FinalEmperialTomb extends Quest
                         }
                         if (targetList.size() > 0)
                         {
-                            _world.frintezza.doCast(skill, targetList.get(0), targetList
-                                    .toArray(new L2Character[targetList.size()]));
+                            _world.frintezza.doCast(skill, targetList.get(0),
+                                    targetList.toArray(new L2Character[targetList.size()]));
                         }
                     }
                     break;
@@ -865,12 +864,13 @@ public class FinalEmperialTomb extends Quest
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 3), 1000);
                     break;
                 case 3:
-                    broadCastPacket(_world, new SpecialCamera(_world.overheadDummy
-                            .getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.overheadDummy
-                            .getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.overheadDummy
-                            .getObjectId(), 300, 90, -10, 6500, 7000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.overheadDummy.getObjectId(), 300, 90, -10, 6500, 7000, 0, 0, 1,
+                                    0));
 
                     _world.frintezza =
                             (L2GrandBossInstance) addSpawn(FRINTEZZA, -87784, -155083, -9087, 16048, false, 0, false,
@@ -893,20 +893,22 @@ public class FinalEmperialTomb extends Quest
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 4), 6500);
                     break;
                 case 4:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezzaDummy
-                            .getObjectId(), 1800, 90, 8, 6500, 7000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezzaDummy.getObjectId(), 1800, 90, 8, 6500, 7000, 0, 0, 1,
+                                    0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 5), 900);
                     break;
                 case 5:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezzaDummy
-                            .getObjectId(), 140, 90, 10, 2500, 4500, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezzaDummy.getObjectId(), 140, 90, 10, 2500, 4500, 0, 0, 1,
+                                    0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 6), 4000);
                     break;
                 case 6:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 40, 75, -10, 0, 1000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 40, 75, -10, 0, 12000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 40, 75, -10, 0, 1000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 40, 75, -10, 0, 12000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 7), 1350);
                     break;
                 case 7:
@@ -926,19 +928,21 @@ public class FinalEmperialTomb extends Quest
                 case 10:
                     broadCastPacket(_world, new SocialAction(_world.demons.get(0).getObjectId(), 1));
                     broadCastPacket(_world, new SocialAction(_world.demons.get(3).getObjectId(), 1));
-                    sendPacketX(new SpecialCamera(_world.portraitDummy1
-                            .getObjectId(), 1000, 118, 0, 0, 1000, 0, 0, 1, 0), new SpecialCamera(_world.portraitDummy3
-                            .getObjectId(), 1000, 62, 0, 0, 1000, 0, 0, 1, 0), -87784);
-                    sendPacketX(new SpecialCamera(_world.portraitDummy1
-                            .getObjectId(), 1000, 118, 0, 0, 10000, 0, 0, 1, 0), new SpecialCamera(_world.portraitDummy3
-                            .getObjectId(), 1000, 62, 0, 0, 10000, 0, 0, 1, 0), -87784);
+                    sendPacketX(
+                            new SpecialCamera(_world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 1000, 0, 0, 1, 0),
+                            new SpecialCamera(_world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 1000, 0, 0, 1, 0),
+                            -87784);
+                    sendPacketX(
+                            new SpecialCamera(_world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 10000, 0, 0, 1, 0),
+                            new SpecialCamera(_world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 10000, 0, 0, 1, 0),
+                            -87784);
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 11), 2000);
                     break;
                 case 11:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 240, 90, 0, 0, 1000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 240, 90, 25, 5500, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 240, 90, 0, 0, 1000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 240, 90, 25, 5500, 10000, 0, 0, 1, 0));
                     broadCastPacket(_world, new SocialAction(_world.frintezza.getObjectId(), 3));
                     _world.portraitDummy1.deleteMe();
                     _world.portraitDummy3.deleteMe();
@@ -947,39 +951,39 @@ public class FinalEmperialTomb extends Quest
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 12), 4500);
                     break;
                 case 12:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 13), 700);
                     break;
                 case 13:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 14), 1300);
                     break;
                 case 14:
-                    broadCastPacket(_world, new ExShowScreenMessage(NpcStringId.MOURNFUL_CHORALE_PRELUDE
-                            .getId(), 5000));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 120, 180, 45, 1500, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new ExShowScreenMessage(NpcStringId.MOURNFUL_CHORALE_PRELUDE.getId(), 5000));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 120, 180, 45, 1500, 10000, 0, 0, 1, 0));
                     broadCastPacket(_world,
                             new MagicSkillUse(_world.frintezza, _world.frintezza, 5006, 1, 34000, 0, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 15), 1500);
                     break;
                 case 15:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 520, 135, 45, 8000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 520, 135, 45, 8000, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 16), 7500);
                     break;
                 case 16:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 1500, 110, 25, 10000, 13000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 1500, 110, 25, 10000, 13000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 17), 9500);
                     break;
                 case 17:
-                    broadCastPacket(_world, new SpecialCamera(_world.overheadDummy
-                            .getObjectId(), 930, 160, -20, 0, 1000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.overheadDummy
-                            .getObjectId(), 600, 180, -25, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.overheadDummy.getObjectId(), 930, 160, -20, 0, 1000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.overheadDummy.getObjectId(), 600, 180, -25, 0, 10000, 0, 0, 1, 0));
                     broadCastPacket(_world,
                             new MagicSkillUse(_world.scarletDummy, _world.overheadDummy, 5004, 1, 5800, 0, 0));
 
@@ -995,18 +999,19 @@ public class FinalEmperialTomb extends Quest
                     _world.activeScarlet.disableAllSkills();
                     updateKnownList(_world, _world.activeScarlet);
                     broadCastPacket(_world, new SocialAction(_world.activeScarlet.getObjectId(), 3));
-                    broadCastPacket(_world, new SpecialCamera(_world.scarletDummy
-                            .getObjectId(), 800, 180, 10, 1000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.scarletDummy.getObjectId(), 800, 180, 10, 1000, 10000, 0, 0, 1,
+                                    0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 19), 2100);
                     break;
                 case 19:
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 300, 60, 8, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 300, 60, 8, 0, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 20), 2000);
                     break;
                 case 20:
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 500, 90, 10, 3000, 5000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 500, 90, 10, 3000, 5000, 0, 0, 1, 0));
                     _world.songTask = ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(_world, 0), 100);
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 21), 3000);
                     break;
@@ -1052,10 +1057,10 @@ public class FinalEmperialTomb extends Quest
                     break;
                 case 24:
                     stopPc();
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 250, 120, 15, 0, 1000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 250, 120, 15, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 250, 120, 15, 0, 1000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 250, 120, 15, 0, 10000, 0, 0, 1, 0));
                     _world.activeScarlet.abortAttack();
                     _world.activeScarlet.abortCast();
                     _world.activeScarlet.setIsInvul(true);
@@ -1066,13 +1071,13 @@ public class FinalEmperialTomb extends Quest
                 case 25:
                     broadCastPacket(_world,
                             new MagicSkillUse(_world.frintezza, _world.frintezza, 5006, 1, 34000, 0, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 500, 70, 15, 3000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 500, 70, 15, 3000, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 26), 3000);
                     break;
                 case 26:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 2500, 90, 12, 6000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 2500, 90, 12, 6000, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 27), 3000);
                     break;
                 case 27:
@@ -1088,16 +1093,19 @@ public class FinalEmperialTomb extends Quest
                     {
                         _world.scarlet_a = Math.abs(540 - (int) (_world.scarlet_h / 182.044444444));
                     }
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 250, _world.scarlet_a, 12, 0, 1000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 250, _world.scarlet_a, 12, 0, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 250, _world.scarlet_a, 12, 0, 1000, 0,
+                                    0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 250, _world.scarlet_a, 12, 0, 10000,
+                                    0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 28), 500);
                     break;
                 case 28:
                     _world.activeScarlet.doDie(_world.activeScarlet);
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 450, _world.scarlet_a, 14, 8000, 8000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 450, _world.scarlet_a, 14, 8000, 8000,
+                                    0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 29), 6250);
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 30), 7200);
                     break;
@@ -1113,8 +1121,9 @@ public class FinalEmperialTomb extends Quest
                     _world.activeScarlet.disableAllSkills();
                     updateKnownList(_world, _world.activeScarlet);
 
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 450, _world.scarlet_a, 12, 500, 14000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 450, _world.scarlet_a, 12, 500, 14000,
+                                    0, 0, 1, 0));
 
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 31), 8100);
                     break;
@@ -1130,10 +1139,12 @@ public class FinalEmperialTomb extends Quest
                     _world.isVideo = false;
                     break;
                 case 33:
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 300, _world.scarlet_a - 180, 5, 0, 7000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.activeScarlet
-                            .getObjectId(), 200, _world.scarlet_a, 85, 4000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 300, _world.scarlet_a - 180, 5, 0,
+                                    7000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.activeScarlet.getObjectId(), 200, _world.scarlet_a, 85, 4000,
+                                    10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 34), 7400);
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 35), 7500);
                     break;
@@ -1141,15 +1152,15 @@ public class FinalEmperialTomb extends Quest
                     _world.frintezza.doDie(_world.frintezza);
                     break;
                 case 35:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 100, 120, 5, 0, 7000, 0, 0, 1, 0));
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 100, 90, 5, 5000, 15000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 100, 120, 5, 0, 7000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 100, 90, 5, 5000, 15000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 36), 7000);
                     break;
                 case 36:
-                    broadCastPacket(_world, new SpecialCamera(_world.frintezza
-                            .getObjectId(), 900, 90, 25, 7000, 10000, 0, 0, 1, 0));
+                    broadCastPacket(_world,
+                            new SpecialCamera(_world.frintezza.getObjectId(), 900, 90, 25, 7000, 10000, 0, 0, 1, 0));
                     ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 37), 9000);
                     break;
                 case 37:
@@ -1260,14 +1271,14 @@ public class FinalEmperialTomb extends Quest
         private void addAggroToMobs()
         {
             L2PcInstance target = L2World.getInstance().getPlayer(_world.allowed.get(Rnd.get(_world.allowed.size())));
-            if (target == null || target.getInstanceId() != _world.instanceId || target.isDead() || target
-                    .isFakeDeath())
+            if (target == null || target.getInstanceId() != _world.instanceId || target.isDead() ||
+                    target.isFakeDeath())
             {
                 for (int objId : _world.allowed)
                 {
                     target = L2World.getInstance().getPlayer(objId);
-                    if (target != null && target.getInstanceId() == _world.instanceId && !target.isDead() && !target
-                            .isFakeDeath())
+                    if (target != null && target.getInstanceId() == _world.instanceId && !target.isDead() &&
+                            !target.isFakeDeath())
                     {
                         break;
                     }

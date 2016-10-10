@@ -54,8 +54,8 @@ public class Curfew
     {
         for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
         {
-            if (!(player.isInsideZone(L2Character.ZONE_PEACE) && TownManager.getClosestTown(player)
-                    .getTownId() == _eventTown))
+            if (!(player.isInsideZone(L2Character.ZONE_PEACE) &&
+                    TownManager.getClosestTown(player).getTownId() == _eventTown))
             {
                 player.setInsideZone(L2Character.ZONE_PVP, true);
             }
@@ -83,8 +83,9 @@ public class Curfew
         _eventTown = -1;
         for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
         {
-            if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) && !(player
-                    .isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING)))
+            if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) &&
+                    !(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) &&
+                            player.isInsideZone(L2Character.ZONE_NOLANDING)))
             {
                 player.teleToLocation(player.getX(), player.getY(), player.getZ());
             }

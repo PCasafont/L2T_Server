@@ -38,13 +38,11 @@ public class KeucereusSouthController extends AirShipController
                     new VehiclePathPoint(-185312, 246544, 1700, 280, 2000),
                     new VehiclePathPoint(-186900, 251699, 1700, 280, 2000),
                     new VehiclePathPoint(-186373, 234000, 2500, 0, 0)
-            },
-            {
+            }, {
                     new VehiclePathPoint(-185312, 246544, 1700, 280, 2000),
                     new VehiclePathPoint(-186900, 251699, 1700, 280, 2000),
                     new VehiclePathPoint(-206692, 220997, 3000, 0, 0)
-            },
-            {
+            }, {
                     new VehiclePathPoint(-185312, 246544, 1700, 280, 2000),
                     new VehiclePathPoint(-186900, 251699, 1700, 280, 2000),
                     new VehiclePathPoint(-235693, 248843, 5100, 0, 0)

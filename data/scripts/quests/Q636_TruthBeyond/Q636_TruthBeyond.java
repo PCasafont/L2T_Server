@@ -82,8 +82,8 @@ public final class Q636_TruthBeyond extends Quest
 
         if (npc.getNpcId() == ELIAH)
         {
-            if (st.getQuestItemsCount(VISITOR_MARK) > 0 || st.getQuestItemsCount(FADED_MARK) > 0 || st
-                    .getQuestItemsCount(MARK) > 0)
+            if (st.getQuestItemsCount(VISITOR_MARK) > 0 || st.getQuestItemsCount(FADED_MARK) > 0 ||
+                    st.getQuestItemsCount(MARK) > 0)
             {
                 st.exitQuest(true);
                 return "31329-mark.htm";

@@ -152,8 +152,8 @@ public class Tauti extends L2AttackableAIScript
                     case 15200: //Tauti Ultra Whirlwind
                         if (!world.isHardMode)
                         {
-                            InstanceManager.getInstance()
-                                    .sendPacket(world.instanceId, new ExShowScreenMessage(1801783, 0, true,
+                            InstanceManager.getInstance().sendPacket(world.instanceId,
+                                    new ExShowScreenMessage(1801783, 0, true,
                                             5000)); //You rat-like creatures! Taste my attack!
                         }
                         break;
@@ -161,8 +161,8 @@ public class Tauti extends L2AttackableAIScript
                     case 15202: //Tauti Ultra Typhoon
                         if (!world.isHardMode)
                         {
-                            InstanceManager.getInstance()
-                                    .sendPacket(world.instanceId, new ExShowScreenMessage(1801784, 0, true,
+                            InstanceManager.getInstance().sendPacket(world.instanceId,
+                                    new ExShowScreenMessage(1801784, 0, true,
                                             5000)); //Do you think you are safe outside? Feel my strength!
                         }
                         break;
@@ -237,8 +237,8 @@ public class Tauti extends L2AttackableAIScript
 
                 InstanceManager.getInstance().showVidToInstance(69, world.instanceId);
 
-                startQuestTimer("stage_1_spawn_boss", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(69) + 2000, null, player);
+                startQuestTimer("stage_1_spawn_boss", ScenePlayerDataTable.getInstance().getVideoDuration(69) + 2000,
+                        null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_spawn_boss"))
             {
@@ -280,8 +280,9 @@ public class Tauti extends L2AttackableAIScript
                                         continue;
                                     }
 
-                                    L2Npc dummyTauti = addSpawn(_fakeLeapTauti, target.getX(), target.getY(), target
-                                            .getZ(), -1, false, 0, false, world.instanceId);
+                                    L2Npc dummyTauti =
+                                            addSpawn(_fakeLeapTauti, target.getX(), target.getY(), target.getZ(), -1,
+                                                    false, 0, false, world.instanceId);
                                     world._fakeTautis.add(dummyTauti);
                                 }
                                 startQuestTimer("stage_all_leap_attack_down_clones", 3000, world.Tauti, null);
@@ -340,8 +341,8 @@ public class Tauti extends L2AttackableAIScript
             }
         }
 
-        if (npc != null && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) && Util
-                .contains(_templates, Integer.valueOf(event)))
+        if (npc != null && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) &&
+                Util.contains(_templates, Integer.valueOf(event)))
         {
             try
             {
@@ -371,8 +372,8 @@ public class Tauti extends L2AttackableAIScript
             final TautiWorld world = (TautiWorld) tmpWorld;
             if (npc.getNpcId() == world.TautiId)
             {
-                if (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.70 || world.status == 1 && npc
-                        .getCurrentHp() < npc.getMaxHp() * 0.20)
+                if (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.70 ||
+                        world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)
                 {
                     world.status++;
 
@@ -382,14 +383,12 @@ public class Tauti extends L2AttackableAIScript
                                 addSpawn(_zahakId, loc[0], loc[1], loc[2], loc[3], false, 0, false, world.instanceId);
                         minion.setIsInvul(true);
                         minion.setIsImmobilized(true);
-                        minion.broadcastPacket(new NpcSay(minion.getObjectId(), 0, minion
-                                .getNpcId(),
+                        minion.broadcastPacket(new NpcSay(minion.getObjectId(), 0, minion.getNpcId(),
                                 1801650)); //Lord Tauti, receive my Petra and be strengthened. Then, defeat these feeble wretches
                     }
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(1801649, 0, true,
-                                    5000)); //Jahak is infusing its Petra to Tauti.
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(1801649, 0, true, 5000)); //Jahak is infusing its Petra to Tauti.
 
                     startQuestTimer("stage_all_unspawn_zahaks", 20000, npc, null);
                 }
@@ -400,8 +399,8 @@ public class Tauti extends L2AttackableAIScript
                     InstanceManager.getInstance().despawnAll(world.instanceId);
                     InstanceManager.getInstance().showVidToInstance(71, world.instanceId);
 
-                    startQuestTimer("stage_2_spawn_axe", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(71) + 2000, npc, null);
+                    startQuestTimer("stage_2_spawn_axe", ScenePlayerDataTable.getInstance().getVideoDuration(71) + 2000,
+                            npc, null);
                 }
             }
         }
@@ -425,9 +424,8 @@ public class Tauti extends L2AttackableAIScript
                 world.Tauti.deleteMe();
 
                 InstanceManager.getInstance().showVidToInstance(72, world.instanceId);
-                InstanceManager.getInstance()
-                        .setInstanceReuse(world.instanceId, world.templateId,
-                                world.templateId == _templates[0] ? false : true);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
+                        world.templateId == _templates[0] ? false : true);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -478,8 +476,8 @@ public class Tauti extends L2AttackableAIScript
         {
             if (!(world instanceof TautiWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -520,9 +518,11 @@ public class Tauti extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel()
-                        .getMembers() : player.getParty().getCommandChannel() != null ? player.getParty()
-                        .getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+                allPlayers.addAll(minPlayers > Config.MAX_MEMBERS_IN_PARTY ?
+                        player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -542,8 +542,7 @@ public class Tauti extends L2AttackableAIScript
             startQuestTimer("stage_1_open_doors", 5000, null, player);
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

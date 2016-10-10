@@ -88,8 +88,8 @@ public class Mdam implements ISkillHandler
 
             L2Character target = (L2Character) obj;
 
-            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target)
-                    .isFakeDeath())
+            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+                    ((L2PcInstance) target).isFakeDeath())
             {
                 target.stopFakeDeath(true);
             }
@@ -146,8 +146,8 @@ public class Mdam implements ISkillHandler
                 }
             }
 
-            if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util
-                    .checkIfInRange(130, activeChar, target, false))
+            if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null &&
+                    !Util.checkIfInRange(130, activeChar, target, false))
             {
                 activeChar.sendMessage("Your attack has been blocked.");
 
@@ -185,23 +185,23 @@ public class Mdam implements ISkillHandler
                         if (!target.isRaid() || activeChar.getLevel() <= target.getLevel() + 8)
                         {
                             // Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-                            double reflectPercent = target.getStat()
-                                    .calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
-                            reflectPercent = activeChar.getStat()
-                                    .calcStat(Stats.REFLECT_VULN, reflectPercent, null, null);
+                            double reflectPercent =
+                                    target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+                            reflectPercent =
+                                    activeChar.getStat().calcStat(Stats.REFLECT_VULN, reflectPercent, null, null);
 
                             // Magics are ranged, let's half the reflect
                             //reflectPercent *= 0.5;
 
                             if (reflectPercent > 0)
                             {
-                                reflectedDamage = (int) (reflectPercent / 100. * Math
-                                        .min(target.getCurrentHp(), damage));
+                                reflectedDamage =
+                                        (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 
                                 boolean defLimitReflects = true;
 
-                                if (target.getFirstEffect(10021) != null || target
-                                        .getFirstEffect(10017) != null || target.getSkillLevelHash(13524) != 0)
+                                if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null ||
+                                        target.getSkillLevelHash(13524) != 0)
                                 {
                                     defLimitReflects = false;
                                 }
@@ -276,17 +276,18 @@ public class Mdam implements ISkillHandler
                         else
                         {
                             // activate attacked effects, if any
-                            skill.getEffects(activeChar, target, new Env(shld, activeChar
-                                    .getActiveWeaponInstance() != null ? activeChar.getActiveWeaponInstance()
-                                    .getChargedSoulShot() : L2ItemInstance.CHARGED_NONE));
+                            skill.getEffects(activeChar, target, new Env(shld,
+                                    activeChar.getActiveWeaponInstance() != null ?
+                                            activeChar.getActiveWeaponInstance().getChargedSoulShot() :
+                                            L2ItemInstance.CHARGED_NONE));
                         }
                     }
 
                     if (Rnd.get(100) < 20) // Absorb now acts as "trigger". Let's hardcode a 20% chance
                     {
                         // Absorb HP from the damage inflicted
-                        double absorbPercent = activeChar.getStat()
-                                .calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
+                        double absorbPercent =
+                                activeChar.getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
 
                         if (absorbPercent > 0 && !activeChar.isInvul(target))
                         {
@@ -300,10 +301,11 @@ public class Mdam implements ISkillHandler
 
                             if (absorbDamage > 0)
                             {
-                                activeChar.getStatus().setCurrentHp(activeChar
-                                        .getCurrentHp() + absorbDamage, true, null, StatusUpdateDisplay.NORMAL);
-                                activeChar.sendMessage("You absorbed " + absorbDamage + " HP from " + target
-                                        .getName() + ".");
+                                activeChar.getStatus()
+                                        .setCurrentHp(activeChar.getCurrentHp() + absorbDamage, true, null,
+                                                StatusUpdateDisplay.NORMAL);
+                                activeChar.sendMessage(
+                                        "You absorbed " + absorbDamage + " HP from " + target.getName() + ".");
                             }
                         }
                     }

@@ -45,7 +45,7 @@ public final class RequestCommissionDelete extends L2GameClientPacket
         }
 
 		/*AuctionManager am = AuctionManager.getInstance();
-		am.checkForAuctionsDeletion();
+        am.checkForAuctionsDeletion();
 		Auctions auction = am.getAuctionById(_auctionID);
 		if (auction != null)
 		{

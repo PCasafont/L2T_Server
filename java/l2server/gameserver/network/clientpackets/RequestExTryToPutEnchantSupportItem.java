@@ -67,8 +67,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
                 if (supportTemplate == null || !supportTemplate.isValid(item))
                 {
                     // message may be custom
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
+                    activeChar.sendPacket(
+                            SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
                     activeChar.setActiveEnchantSupportItem(null);
                     activeChar.sendPacket(new ExPutEnchantSupportItemResult(0));
                     return;

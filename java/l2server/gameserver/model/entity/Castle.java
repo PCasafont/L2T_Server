@@ -84,7 +84,7 @@ public class Castle
     private Siege _siege = null;
     private Calendar _siegeDate;
     private boolean _isTimeRegistrationOver = true;
-            // true if Castle Lords set the time, or 24h is elapsed after the siege
+    // true if Castle Lords set the time, or 24h is elapsed after the siege
     private Calendar _siegeTimeRegistrationEndDate; // last siege end date + 1 day
     private int _taxPercent = 0;
     private double _taxRate = 0;
@@ -252,9 +252,8 @@ public class Castle
                 PreparedStatement statement;
 
                 con = L2DatabaseFactory.getInstance().getConnection();
-                statement = con
-                        .prepareStatement(
-                                "REPLACE INTO castle_functions (castle_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
+                statement = con.prepareStatement(
+                        "REPLACE INTO castle_functions (castle_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)");
                 statement.setInt(1, getCastleId());
                 statement.setInt(2, getType());
                 statement.setInt(3, getLvl());
@@ -268,8 +267,7 @@ public class Castle
             {
                 Log.log(Level.SEVERE,
                         "Exception: Castle.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " +
-                                e
-                                        .getMessage(), e);
+                                e.getMessage(), e);
             }
             finally
             {
@@ -284,7 +282,7 @@ public class Castle
     {
         _castleId = castleId;
         /*if (_castleId == 7 || castleId == 9) // Goddard and Schuttgart
-			_nbArtifact = 2;*/
+            _nbArtifact = 2;*/
     }
 
     // =========================================================
@@ -352,15 +350,15 @@ public class Castle
                 amount -= runeTax;
             }
         }
-        if (!_name.equalsIgnoreCase("aden") && !_name.equalsIgnoreCase("Rune") && !_name
-                .equalsIgnoreCase("Schuttgart") && !_name
-                .equalsIgnoreCase("Goddard")) // If current castle instance is not Aden, Rune, Goddard or Schuttgart.
+        if (!_name.equalsIgnoreCase("aden") && !_name.equalsIgnoreCase("Rune") &&
+                !_name.equalsIgnoreCase("Schuttgart") && !_name.equalsIgnoreCase(
+                "Goddard")) // If current castle instance is not Aden, Rune, Goddard or Schuttgart.
         {
             Castle aden = CastleManager.getInstance().getCastle("aden");
             if (aden != null)
             {
-                long adenTax = (long) (amount * aden
-                        .getTaxRate()); // Find out what Aden gets from the current castle instance's income
+                long adenTax = (long) (amount *
+                        aden.getTaxRate()); // Find out what Aden gets from the current castle instance's income
                 if (aden.getOwnerId() > 0)
                 {
                     aden.addToTreasury(adenTax); // Only bother to really add the tax to the treasury if not npc owned
@@ -818,8 +816,9 @@ public class Castle
             rs = statement.executeQuery();
             while (rs.next())
             {
-                _function.put(rs.getInt("type"), new CastleFunction(rs.getInt("type"), rs.getInt("lvl"), rs
-                        .getInt("lease"), 0, rs.getLong("rate"), rs.getLong("endTime"), true));
+                _function.put(rs.getInt("type"),
+                        new CastleFunction(rs.getInt("type"), rs.getInt("lvl"), rs.getInt("lease"), 0,
+                                rs.getLong("rate"), rs.getLong("endTime"), true));
             }
             rs.close();
             statement.close();
@@ -1205,8 +1204,8 @@ public class Castle
                 String values[] = new String[_production.size()];
                 for (SeedProduction s : _production)
                 {
-                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s
-                            .getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_CURRENT + ")";
+                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," +
+                            s.getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_CURRENT + ")";
                 }
                 if (values.length > 0)
                 {
@@ -1228,8 +1227,8 @@ public class Castle
                 String values[] = new String[_productionNext.size()];
                 for (SeedProduction s : _productionNext)
                 {
-                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s
-                            .getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_NEXT + ")";
+                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," +
+                            s.getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_NEXT + ")";
                 }
                 if (values.length > 0)
                 {
@@ -1279,8 +1278,8 @@ public class Castle
                 String values[] = new String[prod.size()];
                 for (SeedProduction s : prod)
                 {
-                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s
-                            .getStartProduce() + "," + s.getPrice() + "," + period + ")";
+                    values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," +
+                            s.getStartProduce() + "," + s.getPrice() + "," + period + ")";
                 }
                 if (values.length > 0)
                 {
@@ -1325,9 +1324,10 @@ public class Castle
                 String values[] = new String[_procure.size()];
                 for (CropProcure cp : _procure)
                 {
-                    values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp
-                            .getStartAmount() + "," + cp.getPrice() + "," + cp
-                            .getReward() + "," + CastleManorManager.PERIOD_CURRENT + ")";
+                    values[count++] =
+                            "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() +
+                                    "," + cp.getPrice() + "," + cp.getReward() + "," +
+                                    CastleManorManager.PERIOD_CURRENT + ")";
                 }
                 if (values.length > 0)
                 {
@@ -1348,9 +1348,10 @@ public class Castle
                 String values[] = new String[_procureNext.size()];
                 for (CropProcure cp : _procureNext)
                 {
-                    values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp
-                            .getStartAmount() + "," + cp.getPrice() + "," + cp
-                            .getReward() + "," + CastleManorManager.PERIOD_NEXT + ")";
+                    values[count++] =
+                            "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() +
+                                    "," + cp.getPrice() + "," + cp.getReward() + "," + CastleManorManager.PERIOD_NEXT +
+                                    ")";
                 }
                 if (values.length > 0)
                 {
@@ -1401,8 +1402,9 @@ public class Castle
 
                 for (CropProcure cp : proc)
                 {
-                    values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp
-                            .getStartAmount() + "," + cp.getPrice() + "," + cp.getReward() + "," + period + ")";
+                    values[count++] =
+                            "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() +
+                                    "," + cp.getPrice() + "," + cp.getReward() + "," + period + ")";
                 }
                 if (values.length > 0)
                 {

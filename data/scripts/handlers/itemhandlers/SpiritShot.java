@@ -133,8 +133,9 @@ public class SpiritShot implements IItemHandler
 
         int sapphireLvl = 0;
         PcInventory playerInventory = activeChar.getInventory();
-        for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory
-                .getMaxJewelryCount(); i++)
+        for (int i = Inventory.PAPERDOLL_JEWELRY1;
+             i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
+             i++)
         {
             L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
             if (jewel != null)
@@ -244,8 +245,9 @@ public class SpiritShot implements IItemHandler
             }
 
             // Consume Spirit shot if player has enough of them
-            if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem
-                    .getSpiritShotCount(), null, false))
+            if (!activeChar
+                    .destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null,
+                            false))
             {
                 if (!activeChar.disableAutoShot(item))
                 {
@@ -264,8 +266,7 @@ public class SpiritShot implements IItemHandler
 
         // Send message to client
         activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));
-        Broadcast
-                .toSelfAndKnownPlayersInRadius(activeChar,
-                        new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
+        Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
+                new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
     }
 }

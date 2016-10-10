@@ -96,26 +96,26 @@ public class CaptureTheFlag extends EventInstance
         {
             // Set state REWARDING so nobody can point anymore
             setState(EventState.REWARDING);
-            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2]
-                    .getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
+            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
+                    _teams[0].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(0);
                 team = _teams[0];
             }
-            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2]
-                    .getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
+            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
+                    _teams[1].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(1);
                 team = _teams[1];
             }
-            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1]
-                    .getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
+            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
+                    _teams[2].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(2);
                 team = _teams[2];
             }
-            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1]
-                    .getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
+            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
+                    _teams[3].getPoints() > _teams[2].getPoints())
             {
                 rewardTeams(3);
                 team = _teams[3];
@@ -127,8 +127,8 @@ public class CaptureTheFlag extends EventInstance
             }
         }
 
-        Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team
-                .getPoints() + " points.");
+        Announcements.getInstance().announceToAll(
+                "The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
         return;
     }
 
@@ -181,11 +181,12 @@ public class CaptureTheFlag extends EventInstance
             unspawnFlag(team);
             player.setCtfFlag(team);
             setImportant(player, true);
-            sendToAllParticipants(playerTeam.getName() + " team's member " + player
-                    .getName() + " has caught the " + team.getName() + " team's flag!");
+            sendToAllParticipants(
+                    playerTeam.getName() + " team's member " + player.getName() + " has caught the " + team.getName() +
+                            " team's flag!");
 
-            CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(), "I have caught " + team
-                    .getName() + " team's flag!");
+            CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
+                    "I have caught " + team.getName() + " team's flag!");
             for (L2PcInstance character : playerTeam.getParticipatedPlayers().values())
             {
                 if (character != null)
@@ -220,8 +221,9 @@ public class CaptureTheFlag extends EventInstance
             killedPlayer.setCtfFlag(null);
             if (killerCharacter != null && getParticipantTeam(killerCharacter.getObjectId()) != null)
             {
-                sendToAllParticipants(killedPlayer.getName() + ", the " + getParticipantTeam(killerCharacter
-                        .getObjectId()).getName() + " team's flag possessor, has lost the flag.");
+                sendToAllParticipants(killedPlayer.getName() + ", the " +
+                        getParticipantTeam(killerCharacter.getObjectId()).getName() +
+                        " team's flag possessor, has lost the flag.");
             }
 
             killValue = 4;
@@ -234,8 +236,8 @@ public class CaptureTheFlag extends EventInstance
         }
 
         killerPlayer.addEventPoints(3 * killValue);
-        List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                .getAssistants(killerPlayer, killedPlayer, true);
+        List<L2PcInstance> assistants =
+                PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
         for (L2PcInstance assistant : assistants)
         {
             assistant.addEventPoints(1 * killValue);

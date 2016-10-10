@@ -57,8 +57,8 @@ public class EffectManaHealOverTime extends L2Effect
     @Override
     public boolean onActionTime()
     {
-        if (getEffected().isDead() || getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected())
-                .getCurrentClass().getId() == 146)
+        if (getEffected().isDead() || getEffected() instanceof L2PcInstance &&
+                ((L2PcInstance) getEffected()).getCurrentClass().getId() == 146)
         {
             return false;
         }

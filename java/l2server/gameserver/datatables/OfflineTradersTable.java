@@ -74,14 +74,15 @@ public class OfflineTradersTable
             PreparedStatement stm_prices = con.prepareStatement(SAVE_PRICES);
 
             //StringBuilder items = StringBuilder.newInstance();
-            boolean checkInactiveStores = Config.isServer(Config.TENKAI) && System
-                    .currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis() > 36000000;
+            boolean checkInactiveStores = Config.isServer(Config.TENKAI) &&
+                    System.currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis() > 36000000;
             for (L2PcInstance pc : L2World.getInstance().getAllPlayers().values())
             {
                 try
                 {
-                    if (pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE && (pc.getClient() == null || pc
-                            .getClient().isDetached()) && (!checkInactiveStores || pc.hadStoreActivity()))
+                    if (pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE &&
+                            (pc.getClient() == null || pc.getClient().isDetached()) &&
+                            (!checkInactiveStores || pc.hadStoreActivity()))
                     {
                         stm.setInt(1, pc.getObjectId()); //Char Id
                         stm.setLong(2, pc.getOfflineStartTime());
@@ -174,8 +175,8 @@ public class OfflineTradersTable
                 catch (Exception e)
                 {
                     Log.log(Level.WARNING,
-                            "OfflineTradersTable[storeTradeItems()]: Error while saving offline trader: " + pc
-                                    .getObjectId() + " " + e, e);
+                            "OfflineTradersTable[storeTradeItems()]: Error while saving offline trader: " +
+                                    pc.getObjectId() + " " + e, e);
                 }
             }
             stm.close();
@@ -257,8 +258,9 @@ public class OfflineTradersTable
                                 case L2PcInstance.STORE_PRIVATE_BUY:
                                     while (items.next())
                                     {
-                                        if (player.getBuyList().addItemByItemId(items.getInt(2), items.getLong(3), items
-                                                .getLong(4)) == null)
+                                        if (player.getBuyList()
+                                                .addItemByItemId(items.getInt(2), items.getLong(3), items.getLong(4)) ==
+                                                null)
                                         {
                                             throw new NullPointerException();
                                         }
@@ -290,8 +292,8 @@ public class OfflineTradersTable
                                 case L2PcInstance.STORE_PRIVATE_CUSTOM_SELL:
                                     while (items.next())
                                     {
-                                        TradeItem item = player.getCustomSellList()
-                                                .addItem(items.getInt(2), items.getLong(3));
+                                        TradeItem item =
+                                                player.getCustomSellList().addItem(items.getInt(2), items.getLong(3));
                                         if (item == null)
                                         {
                                             throw new NullPointerException();

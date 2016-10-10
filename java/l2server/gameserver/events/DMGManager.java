@@ -53,8 +53,7 @@ public class DMGManager
 
             sb.append(
                     "<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_" +
-                            info
-                                    .getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className +
+                            info.getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className +
                             "</td><td FIXWIDTH=250>" + actualrecord + "</td><td FIXWIDTH=250>" + actualowner +
                             "</td></tr></table>");
 
@@ -218,9 +217,8 @@ public class DMGManager
                     continue;
                 }
 
-                statement = con
-                        .prepareStatement(
-                                "UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=?, `externalIP`=?, `internalIP`=? WHERE `classid`=?");
+                statement = con.prepareStatement(
+                        "UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=?, `externalIP`=?, `internalIP`=? WHERE `classid`=?");
 
                 statement.setInt(1, info.getValue().getNewDmg());
 
@@ -291,9 +289,8 @@ public class DMGManager
         }
 
         // Announce to all online
-        Announcements.getInstance()
-                .announceToAll(
-                        "All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
+        Announcements.getInstance().announceToAll(
+                "All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
     }
 
     private static void truncateTable()
@@ -306,9 +303,8 @@ public class DMGManager
 
             PreparedStatement statement = null;
 
-            statement = con
-                    .prepareStatement(
-                            "UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, externalIP=0, internalIP=0 WHERE newdmg > 0");
+            statement = con.prepareStatement(
+                    "UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, externalIP=0, internalIP=0 WHERE newdmg > 0");
 
             statement.executeUpdate();
 
@@ -338,8 +334,8 @@ public class DMGManager
                 continue;
             }
 
-            if (info.getValue().getNewName().equalsIgnoreCase(pl.getName()) && !info.getValue().getExternalIP()
-                    .equalsIgnoreCase(pl.getExternalIP()))
+            if (info.getValue().getNewName().equalsIgnoreCase(pl.getName()) &&
+                    !info.getValue().getExternalIP().equalsIgnoreCase(pl.getExternalIP()))
             {
                 info.getValue().setExternalIP(pl.getExternalIP());
             }
@@ -356,9 +352,8 @@ public class DMGManager
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT `classid`, `newdmg`, `newname`, `playerid`, `externalIP`, `internalIP` FROM `dmg_data`");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT `classid`, `newdmg`, `newname`, `playerid`, `externalIP`, `internalIP` FROM `dmg_data`");
 
             ResultSet rs = statement.executeQuery();
 
@@ -366,8 +361,8 @@ public class DMGManager
             {
                 dmginfo info = new dmginfo();
 
-                info.setdmg(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"), rs
-                        .getInt("playerid"), rs.getString("externalIP"), rs.getString("internalIP"));
+                info.setdmg(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"), rs.getInt("playerid"),
+                        rs.getString("externalIP"), rs.getString("internalIP"));
 
                 dmgIinfo.put(info.getClassId(), info);
             }

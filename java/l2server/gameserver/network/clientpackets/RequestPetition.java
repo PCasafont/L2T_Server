@@ -62,8 +62,8 @@ public final class RequestPetition extends L2GameClientPacket
 
         if (!PetitionManager.getInstance().isPetitioningAllowed())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.GAME_CLIENT_UNABLE_TO_CONNECT_TO_PETITION_SERVER));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.GAME_CLIENT_UNABLE_TO_CONNECT_TO_PETITION_SERVER));
             return;
         }
 

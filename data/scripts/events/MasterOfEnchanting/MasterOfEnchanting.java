@@ -135,8 +135,8 @@ public class MasterOfEnchanting extends Quest
                 {
                     st.takeItems(_adena, _scroll_24_price);
                     st.giveItems(_master_yogi_scroll, 24);
-                    q.saveGlobalQuestVar(player.getAccountName(), Long
-                            .toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
+                    q.saveGlobalQuestVar(player.getAccountName(),
+                            Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
                     htmltext = "32599-scroll24.htm";
                 }
                 else
@@ -151,8 +151,8 @@ public class MasterOfEnchanting extends Quest
                 int minutes = (int) _remaining_time % 3600 / 60;
                 if (hours > 0)
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
                     sm.addNumber(hours);
                     sm.addNumber(minutes);
                     player.sendPacket(sm);
@@ -173,8 +173,8 @@ public class MasterOfEnchanting extends Quest
                     {
                         st.takeItems(_adena, _scroll_24_price);
                         st.giveItems(_master_yogi_scroll, 24);
-                        q.saveGlobalQuestVar(player.getAccountName(), Long
-                                .toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
+                        q.saveGlobalQuestVar(player.getAccountName(),
+                                Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
                         htmltext = "32599-scroll24.htm";
                     }
                     else
@@ -212,8 +212,8 @@ public class MasterOfEnchanting extends Quest
         }
         else if (event.equalsIgnoreCase("receive_reward"))
         {
-            if (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff && st
-                    .getEnchantLevel(_master_yogi_staff) > 3)
+            if (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff &&
+                    st.getEnchantLevel(_master_yogi_staff) > 3)
             {
                 switch (st.getEnchantLevel(_master_yogi_staff))
                 {

@@ -57,14 +57,15 @@ public class TargetSingle implements ISkillTargetTypeHandler
             }
         }
 
-        if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS && aPlayer
-                .getSummon(0) != null && !(target instanceof L2Summon))
+        if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS && aPlayer.getSummon(0) != null &&
+                !(target instanceof L2Summon))
         {
             target = aPlayer.getSummon(0);
         }
 
-        if (aPlayer != null && (!isReachableTarget(aPlayer, target, skill.getTargetDirection()) || !aPlayer
-                .isAbleToCastOnTarget(target, skill, false)) || activeChar == target && !skill.isUseableOnSelf())
+        if (aPlayer != null && (!isReachableTarget(aPlayer, target, skill.getTargetDirection()) ||
+                !aPlayer.isAbleToCastOnTarget(target, skill, false)) ||
+                activeChar == target && !skill.isUseableOnSelf())
         {
             activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
             return null;

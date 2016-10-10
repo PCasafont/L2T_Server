@@ -57,8 +57,8 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 
         for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
         {
-            if (activeChar == null || !(activeChar instanceof L2Playable) || _alreadyBuffed
-                    .contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
+            if (activeChar == null || !(activeChar instanceof L2Playable) ||
+                    _alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
             {
                 continue;
             }
@@ -124,8 +124,8 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
                 {
                     if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
                     {
-                        if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem
-                                .getUpperLevel())
+                        if (player_level >= helperBuffItem.getLowerLevel() &&
+                                player_level <= helperBuffItem.getUpperLevel())
                         {
                             skill = SkillTable.getInstance()
                                     .getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());

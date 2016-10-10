@@ -83,8 +83,8 @@ public final class AttackRequest extends L2GameClientPacket
         }
 
         // Only GMs can directly attack invisible characters
-        if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar
-                .isGM())
+        if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() &&
+                !activeChar.isGM())
         {
             return;
         }
@@ -95,8 +95,8 @@ public final class AttackRequest extends L2GameClientPacket
         }
         else
         {
-            if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 && activeChar
-                    .getActiveRequester() == null)
+            if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 &&
+                    activeChar.getActiveRequester() == null)
             {
                 //Logozo.debug("Starting ForcedAttack");
                 target.onForcedAttack(activeChar);

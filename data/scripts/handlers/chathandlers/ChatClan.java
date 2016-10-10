@@ -53,8 +53,8 @@ public class ChatClan implements IChatHandler
             }
 
             String clanName = activeChar.getClan().getName();
-            ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar
-                    .getName() + ": " + text, clanName, activeChar.getName());
+            ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text,
+                    clanName, activeChar.getName());
         }
     }
 

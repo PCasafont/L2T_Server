@@ -55,7 +55,7 @@ public class VoteNpc extends Quest
     }
 
 	/*private void load()
-	{
+    {
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/custom/VoteNpc/voteRewards.xml");
 		if (!file.exists())
 			return;
@@ -223,8 +223,8 @@ public class VoteNpc extends Quest
 
                 player.addItem(_qn, 4356, 70, npc, true);
 
-                Util.logToFile(player.getName() + "(" + player
-                        .getExternalIP() + ") received a vote reward", "VoteSystem", true);
+                Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward",
+                        "VoteSystem", true);
 
                 return "thanks.html";
             }
@@ -419,8 +419,7 @@ public class VoteNpc extends Quest
         {
             URL url =
                     new URL("http://l2topzone.com/api.php?API_KEY=e659e120d32c1780e566c98590737045&SERVER_ID=12059&IP=" +
-                            player
-                                    .getClient().getConnectionAddress().getHostAddress());
+                            player.getClient().getConnectionAddress().getHostAddress());
             connection = (HttpURLConnection) url.openConnection();
             connection.setInstanceFollowRedirects(false);
 

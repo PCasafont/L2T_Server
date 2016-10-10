@@ -64,8 +64,8 @@ public class CombatPointHeal implements ISkillHandler
                 cp = target.getMaxCp() - target.getCurrentCp();
             }
 
-            cp = Math.min(target.calcStat(Stats.GAIN_CP_LIMIT, target.getMaxCp(), null, null), target
-                    .getCurrentCp() + cp) - target.getCurrentCp();
+            cp = Math.min(target.calcStat(Stats.GAIN_CP_LIMIT, target.getMaxCp(), null, null),
+                    target.getCurrentCp() + cp) - target.getCurrentCp();
 
             SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
             sm.addNumber((int) cp);

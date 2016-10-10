@@ -169,8 +169,8 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 
                     InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16240102).closeMe();
 
-                    startQuestTimer("stage_3_spawns", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(46) + 2000, npc, null);
+                    startQuestTimer("stage_3_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(46) + 2000,
+                            npc, null);
                 }
             }
         }
@@ -209,12 +209,10 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
                 world.instancedPlayer = player;
 
                 //Screen msg
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 5, world.instanceId,
-                                new ExShowScreenMessage(10338012, 0, true, 4000));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 10, world.instanceId,
-                                new ExShowScreenMessage(10338013, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 5, world.instanceId,
+                        new ExShowScreenMessage(10338012, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 10, world.instanceId,
+                        new ExShowScreenMessage(10338013, 0, true, 4000));
 
                 world.mobToAttack = _mob1;
 
@@ -362,18 +360,14 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
                 flyNpc.setDisplayEffect(1);
 
                 //Delay here the flyNpc messages
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 5, world.instanceId,
-                                new ExShowScreenMessage(10338006, 0, true, 4000));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 15, world.instanceId,
-                                new ExShowScreenMessage(10338007, 0, true, 4000));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 20, world.instanceId,
-                                new ExShowScreenMessage(10338008, 0, true, 4000));
-                InstanceManager.getInstance()
-                        .sendDelayedPacketToPlayer(world.instancedPlayer, 25, world.instanceId,
-                                new ExShowScreenMessage(10338009, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 5, world.instanceId,
+                        new ExShowScreenMessage(10338006, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 15, world.instanceId,
+                        new ExShowScreenMessage(10338007, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 20, world.instanceId,
+                        new ExShowScreenMessage(10338008, 0, true, 4000));
+                InstanceManager.getInstance().sendDelayedPacketToPlayer(world.instancedPlayer, 25, world.instanceId,
+                        new ExShowScreenMessage(10338009, 0, true, 4000));
             }
             else if (event.equalsIgnoreCase("stage_last_last_power"))
             {
@@ -410,9 +404,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 
                     world.instancedPlayer.sendPacket(new ExSendUIEventRemove());
                     world.instancedPlayer.showQuestMovie(47);
-                    world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                            .get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 8 * DimensionalDoor
-                                    .getDimensionalDoorRewardRate()), player, true);
+                    world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                            Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                    8 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                 }
                 npc.setDisplayEffect(1);
             }
@@ -650,8 +644,8 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
             {
                 if (npc.getNpcId() == _bossId)
                 {
-                    world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), 1 * DimensionalDoor
-                            .getDimensionalDoorRewardRate(), player, true);
+                    world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                            1 * DimensionalDoor.getDimensionalDoorRewardRate(), player, true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
                     InstanceManager.getInstance().showVidToInstance(48, world.instanceId);
                 }
@@ -675,14 +669,14 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
             {
                 if (npcstring1 != 0)
                 {
-                    mob.broadcastPacket(new NpcSay(mob.getObjectId(), chatId, mob
-                            .getTemplate().TemplateId, npcstring1));
+                    mob.broadcastPacket(
+                            new NpcSay(mob.getObjectId(), chatId, mob.getTemplate().TemplateId, npcstring1));
                 }
 
                 if (npcstring2 != 0)
                 {
-                    mob.broadcastPacket(new NpcSay(mob.getObjectId(), chatId, mob
-                            .getTemplate().TemplateId, npcstring2));
+                    mob.broadcastPacket(
+                            new NpcSay(mob.getObjectId(), chatId, mob.getTemplate().TemplateId, npcstring2));
                 }
             }
         }
@@ -747,8 +741,8 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
         {
             if (!(world instanceof RescueOfTheLastGiantWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

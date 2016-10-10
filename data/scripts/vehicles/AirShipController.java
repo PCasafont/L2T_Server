@@ -76,24 +76,24 @@ public abstract class AirShipController extends Quest
     private static final int STARSTONE = 13277;
     private static final int SUMMON_COST = 5;
 
-    private static final SystemMessage SM_ALREADY_EXISTS = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_IS_ALREADY_EXISTS);
-    private static final SystemMessage SM_ALREADY_SUMMONED = SystemMessage
-            .getSystemMessage(SystemMessageId.ANOTHER_AIRSHIP_ALREADY_SUMMONED);
-    private static final SystemMessage SM_NEED_LICENSE = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_LICENSE_TO_SUMMON);
-    private static final SystemMessage SM_NEED_CLANLVL5 = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_CLANLVL_5_TO_SUMMON);
-    private static final SystemMessage SM_NO_PRIVS = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_NO_PRIVILEGES);
-    private static final SystemMessage SM_ALREADY_USED = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_ALREADY_USED);
-    private static final SystemMessage SM_LICENSE_ALREADY_ACQUIRED = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ALREADY_ACQUIRED);
-    private static final SystemMessage SM_LICENSE_ENTERED = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ENTERED);
-    private static final SystemMessage SM_NEED_MORE = SystemMessage
-            .getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE);
+    private static final SystemMessage SM_ALREADY_EXISTS =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_IS_ALREADY_EXISTS);
+    private static final SystemMessage SM_ALREADY_SUMMONED =
+            SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_AIRSHIP_ALREADY_SUMMONED);
+    private static final SystemMessage SM_NEED_LICENSE =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_LICENSE_TO_SUMMON);
+    private static final SystemMessage SM_NEED_CLANLVL5 =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_CLANLVL_5_TO_SUMMON);
+    private static final SystemMessage SM_NO_PRIVS =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NO_PRIVILEGES);
+    private static final SystemMessage SM_ALREADY_USED =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_ALREADY_USED);
+    private static final SystemMessage SM_LICENSE_ALREADY_ACQUIRED =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ALREADY_ACQUIRED);
+    private static final SystemMessage SM_LICENSE_ENTERED =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ENTERED);
+    private static final SystemMessage SM_NEED_MORE =
+            SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE);
 
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -147,8 +147,7 @@ public abstract class AirShipController extends Quest
 
                 if (_arrivalMessage == null)
                 {
-                    _arrivalMessage = new NpcSay(npc.getObjectId(), Say2.SHOUT, npc
-                            .getNpcId(),
+                    _arrivalMessage = new NpcSay(npc.getObjectId(), Say2.SHOUT, npc.getNpcId(),
                             1800219); // The airship has been summoned. It will automatically depart in 5 minutes.
                 }
 

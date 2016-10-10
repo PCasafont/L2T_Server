@@ -90,8 +90,7 @@ public class ExtraDropTable
                                         {
                                             Log.warning(
                                                     "Drop data for undefined item template! Extra drop category id: " +
-                                                            id + " itemId: " + dd
-                                                            .getItemId());
+                                                            id + " itemId: " + dd.getItemId());
                                             continue;
                                         }
 

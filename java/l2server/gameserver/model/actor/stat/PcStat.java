@@ -77,8 +77,8 @@ public class PcStat extends PlayableStat
         L2PcInstance activeChar = getActiveChar();
 
         // Allowed to gain exp?
-        if (!getActiveChar().getAccessLevel().canGainExp() && getActiveChar().isInParty() || getActiveChar()
-                .isNoExp() && value > 0)
+        if (!getActiveChar().getAccessLevel().canGainExp() && getActiveChar().isInParty() ||
+                getActiveChar().isNoExp() && value > 0)
         {
             return false;
         }
@@ -154,8 +154,8 @@ public class PcStat extends PlayableStat
         // Send a Server->Client System Message to the L2PcInstance
         if (bonusMultiplier > 1)
         {
-            SystemMessage sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4);
+            SystemMessage sm =
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4);
             int exp = (int) Math.round(addToExp / bonusMultiplier);
             int sp = (int) Math.round(addToSp / bonusMultiplier);
             sm.addNumber(exp);
@@ -276,19 +276,19 @@ public class PcStat extends PlayableStat
             getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
             getActiveChar().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_INCREASED_YOUR_LEVEL));
             MentorManager mm = MentorManager.getInstance();
-            if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && mm
-                    .getItemsCount(getLevel()) != 0 && getActiveChar().isMentee())
+            if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() &&
+                    mm.getItemsCount(getLevel()) != 0 && getActiveChar().isMentee())
             {
-                Message msg = new Message(getActiveChar().getMentorId(), mm.getTitle(), mm
-                        .getMessage(getActiveChar().getName(), String
-                                .valueOf(getLevel())), Message.SendBySystem.MENTORING);
+                Message msg = new Message(getActiveChar().getMentorId(), mm.getTitle(),
+                        mm.getMessage(getActiveChar().getName(), String.valueOf(getLevel())),
+                        Message.SendBySystem.MENTORING);
                 msg.createAttachments()
                         .addItem("Send Coins to Mentor", 33804, mm.getItemsCount(getLevel()), null, null);
                 MailManager.getInstance().sendMessage(msg);
             }
 
-            if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && getActiveChar()
-                    .isMentee() && getLevel() >= 86)
+            if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && getActiveChar().isMentee() &&
+                    getLevel() >= 86)
             {
                 int mentorId = getActiveChar().getMentorId();
                 getActiveChar().removeMentor();
@@ -499,8 +499,9 @@ public class PcStat extends PlayableStat
         }
 
         // Get the Max CP (base+modifier) of the L2PcInstance
-        int val = (int) calcStat(Stats.MAX_CP, PlayerStatDataTable.getInstance()
-                .getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
+        int val = (int) calcStat(Stats.MAX_CP,
+                PlayerStatDataTable.getInstance().getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()),
+                null, null);
 
         if (val != _oldMaxCp)
         {
@@ -519,15 +520,16 @@ public class PcStat extends PlayableStat
     @Override
     public final int getMaxHp()
     {
-        if (getActiveChar() == null || getActiveChar().getCurrentClass() == null || getActiveChar()
-                .isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers))
+        if (getActiveChar() == null || getActiveChar().getCurrentClass() == null ||
+                getActiveChar().isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers))
         {
             return 1;
         }
 
         // Get the Max HP (base+modifier) of the L2PcInstance
-        int maxHp = (int) calcStat(Stats.MAX_HP, PlayerStatDataTable.getInstance()
-                .getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
+        int maxHp = (int) calcStat(Stats.MAX_HP,
+                PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()),
+                null, null);
         int val = (int) calcStat(Stats.LIMIT_HP, maxHp, null, null);
 
         if (val != _oldMaxHp)
@@ -554,8 +556,9 @@ public class PcStat extends PlayableStat
             return 1;
         }
 
-        return (int) calcStat(Stats.MAX_HP, PlayerStatDataTable.getInstance()
-                .getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
+        return (int) calcStat(Stats.MAX_HP,
+                PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()),
+                null, null);
     }
 
     @Override
@@ -567,8 +570,9 @@ public class PcStat extends PlayableStat
         }
 
         // Get the Max MP (base+modifier) of the L2PcInstance
-        int val = (int) calcStat(Stats.MAX_MP, PlayerStatDataTable.getInstance()
-                .getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
+        int val = (int) calcStat(Stats.MAX_MP,
+                PlayerStatDataTable.getInstance().getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()),
+                null, null);
 
         if (val != _oldMaxMp)
         {

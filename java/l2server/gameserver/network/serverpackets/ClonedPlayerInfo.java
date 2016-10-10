@@ -173,9 +173,10 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 
         writeS(_activeChar.getAppearance().getVisibleTitle());
 
-        if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() && (_activeChar.getEvent()
-                .getType() == EventType.DeathMatch || _activeChar.getEvent()
-                .getType() == EventType.Survival || _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
+        if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() &&
+                (_activeChar.getEvent().getType() == EventType.DeathMatch ||
+                        _activeChar.getEvent().getType() == EventType.Survival ||
+                        _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
         {
             writeD(_activeChar.getClanId());
             writeD(_activeChar.getClanCrestId());
@@ -206,8 +207,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket
         writeC(0);
 
         writeC(_activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-        writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? _activeChar
-                .getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+        writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+                _activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
         writeH(_activeChar.getCubics().size());
         for (int id : _activeChar.getCubics().keySet())
@@ -296,8 +297,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket
         boolean showWings = true;
         if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
         {
-            showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled() && getWriteClient().getActiveChar()
-                    .isPlayingEvent();
+            showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled() &&
+                    getWriteClient().getActiveChar().isPlayingEvent();
         }
 
         writeC(showWings ? _activeChar.getSpentAbilityPoints() : 0x00);

@@ -47,16 +47,16 @@ public class SwitchPosition implements ISkillHandler
                 continue;
             }
 
-            if (Util.checkIfInRange(2000, activeChar, target, false) && GeoData.getInstance()
-                    .canSeeTarget(activeChar, target))
+            if (Util.checkIfInRange(2000, activeChar, target, false) &&
+                    GeoData.getInstance().canSeeTarget(activeChar, target))
             {
                 int x = activeChar.getX();
                 int y = activeChar.getY();
                 int z = activeChar.getZ();
                 activeChar.setXYZ(target.getX(), target.getY(), target.getZ());
 
-                activeChar.broadcastPacket(new FlyToLocation(activeChar, target.getX(), target.getY(), target
-                        .getZ(), FlyType.DUMMY));
+                activeChar.broadcastPacket(
+                        new FlyToLocation(activeChar, target.getX(), target.getY(), target.getZ(), FlyType.DUMMY));
 
                 target.setXYZ(x, y, z);
 

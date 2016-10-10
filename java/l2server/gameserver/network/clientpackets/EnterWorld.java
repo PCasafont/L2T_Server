@@ -108,8 +108,8 @@ public class EnterWorld extends L2GameClientPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("REPLACE INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+            PreparedStatement statement =
+                    con.prepareStatement("REPLACE INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
             statement.setString(1, activeChar.getAccountName());
             statement.setString(2, "lastHWId");
             statement.setString(3, getClient().getHWId());
@@ -145,8 +145,8 @@ public class EnterWorld extends L2GameClientPacket
         {
             if (Config.DEBUG)
             {
-                Log.warning("User already exists in Object ID map! User " + activeChar
-                        .getName() + " is a character clone.");
+                Log.warning("User already exists in Object ID map! User " + activeChar.getName() +
+                        " is a character clone.");
             }
         }
 
@@ -165,34 +165,34 @@ public class EnterWorld extends L2GameClientPacket
         // Apply special GM properties to the GM when entering
         if (activeChar.isGM())
         {
-            if (Config.GM_STARTUP_INVULNERABLE && AdminCommandAccessRights.getInstance()
-                    .hasAccess("admin_invul", activeChar.getAccessLevel()))
+            if (Config.GM_STARTUP_INVULNERABLE &&
+                    AdminCommandAccessRights.getInstance().hasAccess("admin_invul", activeChar.getAccessLevel()))
             {
                 activeChar.setIsInvul(true);
             }
 
-            if (Config.GM_STARTUP_INVISIBLE && AdminCommandAccessRights.getInstance()
-                    .hasAccess("admin_invisible", activeChar.getAccessLevel()))
+            if (Config.GM_STARTUP_INVISIBLE &&
+                    AdminCommandAccessRights.getInstance().hasAccess("admin_invisible", activeChar.getAccessLevel()))
             {
                 activeChar.getAppearance().setInvisible();
             }
 
-            if (Config.GM_STARTUP_SILENCE && AdminCommandAccessRights.getInstance()
-                    .hasAccess("admin_silence", activeChar.getAccessLevel()))
+            if (Config.GM_STARTUP_SILENCE &&
+                    AdminCommandAccessRights.getInstance().hasAccess("admin_silence", activeChar.getAccessLevel()))
             {
                 activeChar.setSilenceMode(true);
             }
 
-            if (Config.GM_STARTUP_DIET_MODE && AdminCommandAccessRights.getInstance()
-                    .hasAccess("admin_diet", activeChar.getAccessLevel()))
+            if (Config.GM_STARTUP_DIET_MODE &&
+                    AdminCommandAccessRights.getInstance().hasAccess("admin_diet", activeChar.getAccessLevel()))
             {
                 activeChar.setDietMode(true);
                 activeChar.refreshOverloaded();
             }
 
-            if (Config.GM_STARTUP_AUTO_LIST && AdminCommandAccessRights.getInstance()
-                    .hasAccess("admin_gmliston", activeChar.getAccessLevel()) && activeChar.getAccessLevel()
-                    .getLevel() != 127)
+            if (Config.GM_STARTUP_AUTO_LIST &&
+                    AdminCommandAccessRights.getInstance().hasAccess("admin_gmliston", activeChar.getAccessLevel()) &&
+                    activeChar.getAccessLevel().getLevel() != 127)
             {
                 GmListTable.getInstance().addGm(activeChar, false);
             }
@@ -230,9 +230,8 @@ public class EnterWorld extends L2GameClientPacket
             {
                 if (!clanHall.getPaid())
                 {
-                    activeChar.sendPacket(SystemMessage
-                            .getSystemMessage(
-                                    SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW));
+                    activeChar.sendPacket(SystemMessage.getSystemMessage(
+                            SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW));
                 }
             }
 
@@ -415,7 +414,7 @@ public class EnterWorld extends L2GameClientPacket
 
         sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WELCOME_TO_LINEAGE));
         /*
-		if (activeChar.getServerInstanceId() == 1)
+        if (activeChar.getServerInstanceId() == 1)
 		{
 			SystemMessage s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
 			s.addString("This new dimension is not yet open. You will now be disconnected.");
@@ -451,17 +450,16 @@ public class EnterWorld extends L2GameClientPacket
                     "<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" +
                     "</center></body></html>"));
         }
-        else if (SurveyManager.getInstance().isActive() && !SurveyManager.getInstance()
-                .playerAnswered(activeChar.getObjectId()))
+        else if (SurveyManager.getInstance().isActive() &&
+                !SurveyManager.getInstance().playerAnswered(activeChar.getObjectId()))
         {
-            String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance()
-                    .getQuestion() +
+            String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getQuestion() +
                     " <button value=\"More Info\" action=\"bypass -h SurveyInfo\" width=70 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
                     "<table width=260>";
             for (int answerId : SurveyManager.getInstance().getPossibleAnswerIds())
             {
-                html += "<tr><td><button value=\"" + SurveyManager.getInstance()
-                        .getPossibleAnswer(answerId) + "\" action=\"bypass -h SurveyAnswer " + answerId +
+                html += "<tr><td><button value=\"" + SurveyManager.getInstance().getPossibleAnswer(answerId) +
+                        "\" action=\"bypass -h SurveyAnswer " + answerId +
                         "\" width=250 height=25 fore=\"L2UI_ct1.button_df\"></td></tr>";
             }
             html += "</table></body></html>";
@@ -508,8 +506,8 @@ public class EnterWorld extends L2GameClientPacket
 
         activeChar.onPlayerEnter();
 
-        if (activeChar.getClan() == null || activeChar.isClanLeader() && ClanRecruitManager.getInstance()
-                .getRecruitData(activeChar.getClanId()) != null)
+        if (activeChar.getClan() == null || activeChar.isClanLeader() &&
+                ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
         {
             sendPacket(new ExPledgeWaitingListAlarm());
         }
@@ -588,9 +586,8 @@ public class EnterWorld extends L2GameClientPacket
 
         if (Config.WELCOME_MESSAGE_ENABLED)
         {
-            activeChar
-                    .sendPacket(
-                            new ExShowScreenMessage(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME * 1000));
+            activeChar.sendPacket(
+                    new ExShowScreenMessage(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME * 1000));
         }
 
         int birthday = activeChar.checkBirthDay();
@@ -729,12 +726,11 @@ public class EnterWorld extends L2GameClientPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT timer, author, reason FROM ban_timers " + "WHERE identity = ? OR identity = ?");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT timer, author, reason FROM ban_timers " + "WHERE identity = ? OR identity = ?");
 
-            String hardwareId = getClient().getHWId() == null || getClient().getHWId()
-                    .length() < 20 ? "none" : getClient().getHWId();
+            String hardwareId = getClient().getHWId() == null || getClient().getHWId().length() < 20 ? "none" :
+                    getClient().getHWId();
             statement.setString(1, activeChar.getAccountName());
             statement.setString(2, hardwareId);
 
@@ -761,9 +757,8 @@ public class EnterWorld extends L2GameClientPacket
                     if (Config.isServer(Config.TENKAI))
                     {
                         getClient().sendPacket(new ExShowScreenMessage("OH NO! YOU ARE BANNED!!", 1000000));
-                        getClient()
-                                .sendPacket(new CreatureSay(0, Say2.CRITICAL_ANNOUNCE, "",
-                                        "You have been banned by " + author + "."));
+                        getClient().sendPacket(new CreatureSay(0, Say2.CRITICAL_ANNOUNCE, "",
+                                "You have been banned by " + author + "."));
                         getClient()
                                 .sendPacket(new CreatureSay(0, Say2.CRITICAL_ANNOUNCE, "", "Reason: " + reason + "."));
                         getClient().sendPacket(new CreatureSay(0, Say2.CRITICAL_ANNOUNCE, "", expiration));
@@ -779,8 +774,8 @@ public class EnterWorld extends L2GameClientPacket
                 }
                 else
                 {
-                    PreparedStatement statement2 = con
-                            .prepareStatement("DELETE FROM ban_timers WHERE timer < ? AND timer > 0");
+                    PreparedStatement statement2 =
+                            con.prepareStatement("DELETE FROM ban_timers WHERE timer < ? AND timer > 0");
                     statement2.setInt(1, (int) (System.currentTimeMillis() / 1000));
                     statement2.execute();
                     statement2.close();
@@ -866,8 +861,8 @@ public class EnterWorld extends L2GameClientPacket
             }
             catch (ClassCastException cce)
             {
-                Log.warning("Wedding Error: ID " + objId + " is now owned by a(n) " + L2World.getInstance()
-                        .findObject(objId).getClass().getSimpleName());
+                Log.warning("Wedding Error: ID " + objId + " is now owned by a(n) " +
+                        L2World.getInstance().findObject(objId).getClass().getSimpleName());
             }
         }
     }
@@ -953,8 +948,8 @@ public class EnterWorld extends L2GameClientPacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("SELECT * FROM items_to_add WHERE online = 1 OR user_name LIKE ?");
+            PreparedStatement statement =
+                    con.prepareStatement("SELECT * FROM items_to_add WHERE online = 1 OR user_name LIKE ?");
             statement.setString(1, player.getName());
             ResultSet rset = statement.executeQuery();
 
@@ -977,14 +972,14 @@ public class EnterWorld extends L2GameClientPacket
                     {
                         itemName = temp.getName();
                     }
-                    Util.logToFile(player
-                                    .getName() + " has tried to get " + itemName + "(" + count + ") which is illegal!",
+                    Util.logToFile(
+                            player.getName() + " has tried to get " + itemName + "(" + count + ") which is illegal!",
                             "Donations", true);
                     continue;
                 }
 
-                PreparedStatement statement2 = con
-                        .prepareStatement("DELETE FROM items_to_add WHERE user_name LIKE ? AND item_id = ?");
+                PreparedStatement statement2 =
+                        con.prepareStatement("DELETE FROM items_to_add WHERE user_name LIKE ? AND item_id = ?");
                 statement2.setString(1, player.getName());
                 statement2.setInt(2, itemId);
                 statement2.execute();
@@ -1008,8 +1003,8 @@ public class EnterWorld extends L2GameClientPacket
                     player.sendPacket(cs1);
                 }
 
-                Util.logToFile(player.getName() + " received " + count + " " + ItemTable.getInstance()
-                        .getTemplate(itemId).getName(), "Donations", true);
+                Util.logToFile(player.getName() + " received " + count + " " +
+                        ItemTable.getInstance().getTemplate(itemId).getName(), "Donations", true);
             }
 
             rset.close();

@@ -95,26 +95,26 @@ public class DestroyTheGolem extends EventInstance
         {
             // Set state REWARDING so nobody can point anymore
             setState(EventState.REWARDING);
-            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2]
-                    .getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
+            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
+                    _teams[0].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(0);
                 team = _teams[0];
             }
-            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2]
-                    .getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
+            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
+                    _teams[1].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(1);
                 team = _teams[1];
             }
-            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1]
-                    .getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
+            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
+                    _teams[2].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(2);
                 team = _teams[2];
             }
-            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1]
-                    .getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
+            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
+                    _teams[3].getPoints() > _teams[2].getPoints())
             {
                 rewardTeams(3);
                 team = _teams[3];
@@ -126,8 +126,8 @@ public class DestroyTheGolem extends EventInstance
             }
         }
 
-        Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team
-                .getPoints() + " points.");
+        Announcements.getInstance().announceToAll(
+                "The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
         return;
     }
 
@@ -160,11 +160,12 @@ public class DestroyTheGolem extends EventInstance
     {
         getParticipantTeam(player.getObjectId()).increasePoints();
 
-        sendToAllParticipants(getParticipantTeam(player.getObjectId()).getName() + " team's member " + player
-                .getName() + " has destroyed the " + team.getName() + " team's golem!");
+        sendToAllParticipants(
+                getParticipantTeam(player.getObjectId()).getName() + " team's member " + player.getName() +
+                        " has destroyed the " + team.getName() + " team's golem!");
 
-        CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player
-                .getName(), "I have destroyed the " + team.getName() + " team's golem!");
+        CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
+                "I have destroyed the " + team.getName() + " team's golem!");
         for (L2PcInstance character : getParticipantTeam(player.getObjectId()).getParticipatedPlayers().values())
         {
             if (character != null)
@@ -197,8 +198,8 @@ public class DestroyTheGolem extends EventInstance
         }
 
         killerPlayer.addEventPoints(3);
-        List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                .getAssistants(killerPlayer, killedPlayer, true);
+        List<L2PcInstance> assistants =
+                PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
         for (L2PcInstance assistant : assistants)
         {
             assistant.addEventPoints(1);

@@ -101,26 +101,26 @@ public class FieldDomination extends EventInstance
         {
             // Set state REWARDING so nobody can point anymore
             setState(EventState.REWARDING);
-            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2]
-                    .getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
+            if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
+                    _teams[0].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(0);
                 team = _teams[0];
             }
-            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2]
-                    .getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
+            else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
+                    _teams[1].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(1);
                 team = _teams[1];
             }
-            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1]
-                    .getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
+            else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
+                    _teams[2].getPoints() > _teams[3].getPoints())
             {
                 rewardTeams(2);
                 team = _teams[2];
             }
-            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1]
-                    .getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
+            else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
+                    _teams[3].getPoints() > _teams[2].getPoints())
             {
                 rewardTeams(3);
                 team = _teams[3];
@@ -138,9 +138,8 @@ public class FieldDomination extends EventInstance
         }
         else
         {
-            Announcements.getInstance()
-                    .announceToAll("The event has ended. Team " + team.getName() + " won with " + team
-                            .getPoints() + " points");
+            Announcements.getInstance().announceToAll(
+                    "The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points");
         }
 
         return;
@@ -208,8 +207,8 @@ public class FieldDomination extends EventInstance
         }
 
         killerPlayer.addEventPoints(3);
-        List<L2PcInstance> assistants = PlayerAssistsManager.getInstance()
-                .getAssistants(killerPlayer, killedPlayer, true);
+        List<L2PcInstance> assistants =
+                PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
         for (L2PcInstance assistant : assistants)
         {
             assistant.addEventPoints(1);
@@ -365,9 +364,9 @@ public class FieldDomination extends EventInstance
             if (team == null)
             {
                 newFlag.setTitle("Neutral");
-                sendToAllParticipants(getParticipantTeam(player.getObjectId()).getName() + " team's member " + player
-                        .getName() + " has neutralized a flag that was taken by the " + flag.getTeam()
-                        .getName() + " team!");
+                sendToAllParticipants(
+                        getParticipantTeam(player.getObjectId()).getName() + " team's member " + player.getName() +
+                                " has neutralized a flag that was taken by the " + flag.getTeam().getName() + " team!");
             }
             else
             {
@@ -388,9 +387,8 @@ public class FieldDomination extends EventInstance
                     {
                         _FDFlagSpawns[i] = flagSpawn;
                     }
-                    if (((L2EventFlagInstance) _FDFlagSpawns[i].getNpc())
-                            .getTeam() == null || team == null || ((L2EventFlagInstance) _FDFlagSpawns[i].getNpc())
-                            .getTeam().getFlagId() != team.getFlagId())
+                    if (((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam() == null || team == null ||
+                            ((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam().getFlagId() != team.getFlagId())
                     {
                         allFlagsOwned = false;
                     }

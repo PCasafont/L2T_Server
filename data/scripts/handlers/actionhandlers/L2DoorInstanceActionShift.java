@@ -53,8 +53,8 @@ public class L2DoorInstanceActionShift implements IActionHandler
             html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
             html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
             html.replace("%maxz%", String.valueOf(((L2DoorInstance) target).getZMax()));
-            html.replace("%unlock%", ((L2DoorInstance) target)
-                    .isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
+            html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" :
+                    "<font color=FF0000>NO</font>");
             activeChar.sendPacket(html);
         }
         return true;

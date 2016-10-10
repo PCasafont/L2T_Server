@@ -78,7 +78,7 @@ public abstract class BaseGameServerRegister
             {
                 gui = false;
             }
-			/* --force
+            /* --force
 			 * Forces GameServer register operations to overwrite a server if necessary
 			 */
             else if (arg.equals("-f") || arg.equals("--force"))
@@ -208,16 +208,22 @@ public abstract class BaseGameServerRegister
     private static void printHelp(ResourceBundle bundle)
     {
         String[] help = {
-                bundle.getString("purpose"), "", bundle.getString("options"), "-b, --fallback\t\t\t\t" + bundle
-                .getString("fallbackOpt"), "-c, --cmd\t\t\t\t" + bundle
-                .getString("cmdOpt"), "-f, --force\t\t\t\t" + bundle
-                .getString("forceOpt"), "-h, --help\t\t\t\t" + bundle
-                .getString("helpOpt"), "-l, --language\t\t\t\t" + bundle
-                .getString("languageOpt"), "-r, --register <id> <hexid_dest_dir>\t" + bundle
-                .getString("registerOpt1"), "\t\t\t\t\t" + bundle.getString("registerOpt2"), "\t\t\t\t\t" + bundle
-                .getString("registerOpt3"), "", "-u, --unregister <id>|all\t\t" + bundle
-                .getString("unregisterOpt"), "", bundle.getString("credits"), bundle
-                        .getString("bugReports") + " http://www.l2jserver.com"
+                bundle.getString("purpose"),
+                "",
+                bundle.getString("options"),
+                "-b, --fallback\t\t\t\t" + bundle.getString("fallbackOpt"),
+                "-c, --cmd\t\t\t\t" + bundle.getString("cmdOpt"),
+                "-f, --force\t\t\t\t" + bundle.getString("forceOpt"),
+                "-h, --help\t\t\t\t" + bundle.getString("helpOpt"),
+                "-l, --language\t\t\t\t" + bundle.getString("languageOpt"),
+                "-r, --register <id> <hexid_dest_dir>\t" + bundle.getString("registerOpt1"),
+                "\t\t\t\t\t" + bundle.getString("registerOpt2"),
+                "\t\t\t\t\t" + bundle.getString("registerOpt3"),
+                "",
+                "-u, --unregister <id>|all\t\t" + bundle.getString("unregisterOpt"),
+                "",
+                bundle.getString("credits"),
+                bundle.getString("bugReports") + " http://www.l2jserver.com"
 		
 		/*
 		"-b, --fallback\t\t\t\tIf an register operation fails due to ID already being in use it will then try to register first available ID",

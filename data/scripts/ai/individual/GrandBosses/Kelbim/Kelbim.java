@@ -175,9 +175,9 @@ public class Kelbim extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.KELBIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty()
-                        .isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty()
-                        .getPartyMembers());
+                allPlayers.addAll(Config.KELBIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ||
+                        player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -227,8 +227,8 @@ public class Kelbim extends L2AttackableAIScript
 
             _bossZone.broadcastMovie(81);
 
-            startQuestTimer("stage_1_kelbim_spawn", ScenePlayerDataTable.getInstance()
-                    .getVideoDuration(81) + 2000, null, null);
+            startQuestTimer("stage_1_kelbim_spawn", ScenePlayerDataTable.getInstance().getVideoDuration(81) + 2000,
+                    null, null);
         }
         else if (event.equalsIgnoreCase("stage_1_kelbim_spawn"))
         {
@@ -245,8 +245,9 @@ public class Kelbim extends L2AttackableAIScript
         {
             for (int i = 0; i < Rnd.get(_bossStage * 5 / 2, _bossStage * 5); i++)
             {
-                L2Npc minion = addSpawn(_kelbimGuard, _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss
-                        .getZ(), 0, true, 0, true, 0);
+                L2Npc minion =
+                        addSpawn(_kelbimGuard, _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0,
+                                true, 0);
                 minion.setIsRunning(true);
                 ((L2Attackable) minion).setIsRaidMinion(true);
 
@@ -255,8 +256,8 @@ public class Kelbim extends L2AttackableAIScript
 
             for (int i = 0; i < Rnd.get(_bossStage * 2 / 2, _bossStage * 2); i++)
             {
-                L2Npc minion = addSpawn(_kelbimGuardians[Rnd.get(_kelbimGuardians.length)], _kelbimBoss
-                        .getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
+                L2Npc minion = addSpawn(_kelbimGuardians[Rnd.get(_kelbimGuardians.length)], _kelbimBoss.getX(),
+                        _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
                 minion.setIsRunning(true);
                 ((L2Attackable) minion).setIsRaidMinion(true);
 
@@ -280,8 +281,9 @@ public class Kelbim extends L2AttackableAIScript
 
                         if (Rnd.get(100) > 40)
                         {
-                            L2Npc skillMob = addSpawn(_kelbimShout, pl.getX(), pl.getY(), pl
-                                    .getZ() + 10, 0, true, 60000, false, 0);
+                            L2Npc skillMob =
+                                    addSpawn(_kelbimShout, pl.getX(), pl.getY(), pl.getZ() + 10, 0, true, 60000, false,
+                                            0);
                             _skillNpcs.add(skillMob);
 
                             _minions.add(skillMob);

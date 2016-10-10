@@ -93,8 +93,8 @@ public class AdminPledge implements IAdminCommandHandler
             }
             else if (!player.isClanLeader())
             {
-                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER)
-                        .addString(name));
+                activeChar.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER).addString(name));
                 showMainPage(activeChar);
                 return false;
             }
@@ -151,8 +151,9 @@ public class AdminPledge implements IAdminCommandHandler
                         player.sendPacket(sm);
                         player.getClan().broadcastToOnlineMembers(sm);
                         player.getClan().addNewSkill(skill);
-                        activeChar.sendMessage("You gave the Clan Skill: " + skillname + " to the clan " + player
-                                .getClan().getName() + ".");
+                        activeChar.sendMessage(
+                                "You gave the Clan Skill: " + skillname + " to the clan " + player.getClan().getName() +
+                                        ".");
 
                         activeChar.getClan().broadcastToOnlineMembers(new PledgeSkillList(activeChar.getClan()));
                         for (L2PcInstance member : activeChar.getClan().getOnlineMembers(0))
@@ -192,9 +193,9 @@ public class AdminPledge implements IAdminCommandHandler
                         return false;
                     }
                     clan.addReputationScore(points, true);
-                    activeChar.sendMessage("You " + (points > 0 ? "add " : "remove ") + Math
-                            .abs(points) + " points " + (points > 0 ? "to " : "from ") + clan
-                            .getName() + "'s reputation. Their current score is " + clan.getReputationScore());
+                    activeChar.sendMessage("You " + (points > 0 ? "add " : "remove ") + Math.abs(points) + " points " +
+                            (points > 0 ? "to " : "from ") + clan.getName() + "'s reputation. Their current score is " +
+                            clan.getReputationScore());
                 }
                 catch (Exception e)
                 {

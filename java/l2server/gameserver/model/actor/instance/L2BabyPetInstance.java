@@ -242,9 +242,9 @@ public final class L2BabyPetInstance extends L2PetInstance
 
             // if the owner is dead, merely wait for the owner to be resurrected
             // if the pet is still casting from the previous iteration, allow the cast to complete...
-            if (owner != null && !owner.isDead() && !owner.isInvul() && !_baby.isCastingNow() && !_baby
-                    .isBetrayed() && !_baby.isMuted() && !_baby.isOutOfControl() && _bufferMode && _baby.getAI()
-                    .getIntention() != CtrlIntention.AI_INTENTION_CAST)
+            if (owner != null && !owner.isDead() && !owner.isInvul() && !_baby.isCastingNow() && !_baby.isBetrayed() &&
+                    !_baby.isMuted() && !_baby.isOutOfControl() && _bufferMode &&
+                    _baby.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST)
             {
                 L2Skill skill = null;
 
@@ -269,8 +269,8 @@ public final class L2BabyPetInstance extends L2PetInstance
                             }
                         }
                     }
-                    else if (_majorHeal.getSkill() != _minorHeal
-                            .getSkill() && (isImprovedBaby && hpPercent < 0.7 || !isImprovedBaby && hpPercent < 0.8))
+                    else if (_majorHeal.getSkill() != _minorHeal.getSkill() &&
+                            (isImprovedBaby && hpPercent < 0.7 || !isImprovedBaby && hpPercent < 0.8))
                     {
                         //Cast _minorHeal only if it's different than _majorHeal, then pet has two heals available.
                         skill = _minorHeal.getSkill();
@@ -299,8 +299,8 @@ public final class L2BabyPetInstance extends L2PetInstance
 
                             skill = i.getSkill();
 
-                            if (skill.getTargetType() == L2SkillTargetType.TARGET_SELF && _baby
-                                    .getFirstEffect(skill) != null)
+                            if (skill.getTargetType() == L2SkillTargetType.TARGET_SELF &&
+                                    _baby.getFirstEffect(skill) != null)
                             {
                                 continue;
                             }
@@ -341,8 +341,8 @@ public final class L2BabyPetInstance extends L2PetInstance
                             while (iter.hasNext())
                             {
                                 skill = iter.next();
-                                if (currentSkill.getId() == skill.getId() && currentSkill.getLevel() >= skill
-                                        .getLevel())
+                                if (currentSkill.getId() == skill.getId() &&
+                                        currentSkill.getLevel() >= skill.getLevel())
                                 {
                                     iter.remove();
                                 }

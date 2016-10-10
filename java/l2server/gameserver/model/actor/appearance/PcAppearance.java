@@ -85,8 +85,9 @@ public class PcAppearance
      */
     public final String getVisibleName()
     {
-        if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch || _owner.getEvent()
-                .getType() == EventType.Survival || _owner.getEvent().getType() == EventType.KingOfTheHill))
+        if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch ||
+                _owner.getEvent().getType() == EventType.Survival ||
+                _owner.getEvent().getType() == EventType.KingOfTheHill))
         {
             return "Event Participant";
         }
@@ -111,8 +112,9 @@ public class PcAppearance
      */
     public final String getVisibleTitle()
     {
-        if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch || _owner.getEvent()
-                .getType() == EventType.Survival || _owner.getEvent().getType() == EventType.KingOfTheHill))
+        if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch ||
+                _owner.getEvent().getType() == EventType.Survival ||
+                _owner.getEvent().getType() == EventType.KingOfTheHill))
         {
             return "";
         }

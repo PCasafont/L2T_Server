@@ -299,10 +299,10 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
                 world.instancePlayer.sendPacket(new ExShowScreenMessage(1811197, 0, true, 3000));
 
-                world.officer.broadcastPacket(new NpcSay(world.officer.getObjectId(), 0, world.officer
-                        .getTemplate().TemplateId, 1811217));
-                world.officer.broadcastPacket(new NpcSay(world.officer.getObjectId(), 0, world.officer
-                        .getTemplate().TemplateId, 1600025));
+                world.officer.broadcastPacket(
+                        new NpcSay(world.officer.getObjectId(), 0, world.officer.getTemplate().TemplateId, 1811217));
+                world.officer.broadcastPacket(
+                        new NpcSay(world.officer.getObjectId(), 0, world.officer.getTemplate().TemplateId, 1600025));
                 world.officer.setIsInvul(false);
                 world.officer.setIsMortal(true);
 
@@ -328,12 +328,12 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
                 world.walkingGuard =
                         addSpawn(guardId, -116772, 213344, -8599, 24341, false, 0, false, world.instanceId);
-                world.walkingGuard.broadcastPacket(new NpcSay(world.walkingGuard.getObjectId(), 0, world.walkingGuard
-                        .getTemplate().TemplateId, guardId == _operativeId ? 1811196 : 1811195));
+                world.walkingGuard.broadcastPacket(
+                        new NpcSay(world.walkingGuard.getObjectId(), 0, world.walkingGuard.getTemplate().TemplateId,
+                                guardId == _operativeId ? 1811196 : 1811195));
 
-                world.instancePlayer
-                        .sendPacket(
-                                new ExShowScreenMessage(guardId == _operativeId ? 1811194 : 1811194, 0, true, 5000));
+                world.instancePlayer.sendPacket(
+                        new ExShowScreenMessage(guardId == _operativeId ? 1811194 : 1811194, 0, true, 5000));
 
                 startQuestTimer("stage_3_guard_attack", 1000, world.walkingGuard, null);
             }
@@ -343,8 +343,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                 {
                     if (world.status < 6 && !world.isGuardAttacked)
                     {
-                        moveTo(world.walkingGuard, world.generator.getX(), world.generator.getY(), world.generator
-                                .getZ(), world.generator.getHeading());
+                        moveTo(world.walkingGuard, world.generator.getX(), world.generator.getY(),
+                                world.generator.getZ(), world.generator.getHeading());
                     }
 
                     startQuestTimer("stage_3_guard_attack", 3000, world.walkingGuard, null);
@@ -368,8 +368,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
                 world.instancePlayer.showQuestMovie(43);
 
-                startQuestTimer("stage_last_spawn_boss", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(43), npc, null);
+                startQuestTimer("stage_last_spawn_boss", ScenePlayerDataTable.getInstance().getVideoDuration(43), npc,
+                        null);
             }
             else if (event.equalsIgnoreCase("stage_last_spawn_boss"))
             {
@@ -400,8 +400,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                             {
                                 L2Object target = world.instancePlayer.getTarget();
                                 if (target == null || !(target instanceof L2MonsterInstance) ||
-                                        target instanceof L2MonsterInstance && ((L2MonsterInstance) target)
-                                                .isDead())
+                                        target instanceof L2MonsterInstance && ((L2MonsterInstance) target).isDead())
                                 {
                                     if (world.officer.getAI().getIntention() != CtrlIntention.AI_INTENTION_FOLLOW)
                                     {
@@ -418,10 +417,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                                         if (!((L2MonsterInstance) target)
                                                 .isInsideRadius(world.officer, 300, false, false))
                                         {
-                                            world.officer.getAI()
-                                                    .setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                                                            new L2CharPosition(target
-                                                                    .getX(), target.getY(), target.getZ(), 0));
+                                            world.officer.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                                                    new L2CharPosition(target.getX(), target.getY(), target.getZ(), 0));
                                         }
                                         else
                                         {
@@ -447,8 +444,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                         case 5:
                             if (world.officer.getDistanceSq(world.generator) >= 100)
                             {
-                                moveTo(world.officer, world.generator.getX(), world.generator.getY(), world.generator
-                                        .getZ(), world.generator.getHeading());
+                                moveTo(world.officer, world.generator.getX(), world.generator.getY(),
+                                        world.generator.getZ(), world.generator.getHeading());
                             }
                             else
                             {
@@ -577,9 +574,9 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                             .setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
 
-                    player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                            .get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 6 * DimensionalDoor
-                                    .getDimensionalDoorRewardRate()), player, true);
+                    player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                            Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                    6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                     break;
             }
         }
@@ -593,8 +590,8 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
         {
             if (!(world instanceof LabyrinthOfBelisWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

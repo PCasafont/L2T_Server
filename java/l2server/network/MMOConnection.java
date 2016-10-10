@@ -220,7 +220,7 @@ public class MMOConnection<T extends MMOClient<?>>
     }
 
 	/*
-	 * final SendablePacket<T> getClosePacket() { return _closePacket; }
+     * final SendablePacket<T> getClosePacket() { return _closePacket; }
 	 */
 
     @SuppressWarnings("unchecked")

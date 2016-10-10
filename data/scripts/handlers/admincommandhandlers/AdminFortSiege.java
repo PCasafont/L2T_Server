@@ -154,9 +154,9 @@ public class AdminFortSiege implements IAdminCommandHandler
         {
             if (fort != null)
             {
-                StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_fortsiege ", String
-                        .valueOf(fort.getFortId()), "\">", fort.getName(), " id: ", String
-                        .valueOf(fort.getFortId()), "</a></td>");
+                StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_fortsiege ",
+                        String.valueOf(fort.getFortId()), "\">", fort.getName(), " id: ",
+                        String.valueOf(fort.getFortId()), "</a></td>");
                 i++;
             }
 

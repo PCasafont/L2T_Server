@@ -175,10 +175,11 @@ public class L2BlockInstance extends L2MonsterInstance
         int timeLeft = (int) ((eng.getStarterTime() - System.currentTimeMillis()) / 1000);
         boolean isRed = eng.getHolder().getRedPlayers().contains(player);
 
-        ExCubeGameChangePoints changePoints = new ExCubeGameChangePoints(timeLeft, eng.getBluePoints(), eng
-                .getRedPoints());
-        ExCubeGameExtendedChangePoints secretPoints = new ExCubeGameExtendedChangePoints(timeLeft, eng
-                .getBluePoints(), eng.getRedPoints(), isRed, player, eng.getPlayerPoints(player, isRed));
+        ExCubeGameChangePoints changePoints =
+                new ExCubeGameChangePoints(timeLeft, eng.getBluePoints(), eng.getRedPoints());
+        ExCubeGameExtendedChangePoints secretPoints =
+                new ExCubeGameExtendedChangePoints(timeLeft, eng.getBluePoints(), eng.getRedPoints(), isRed, player,
+                        eng.getPlayerPoints(player, isRed));
 
         eng.getHolder().broadCastPacketToTeam(changePoints);
         eng.getHolder().broadCastPacketToTeam(secretPoints);

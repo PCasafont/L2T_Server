@@ -66,8 +66,8 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 
         if (clan.getDissolvingExpiryTime() > System.currentTimeMillis())
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.CANNOT_SET_CREST_WHILE_DISSOLUTION_IN_PROGRESS));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.CANNOT_SET_CREST_WHILE_DISSOLUTION_IN_PROGRESS));
             return;
         }
 
@@ -108,8 +108,8 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
                 crestId = IdFactory.getInstance().getNextId();
                 if (!CrestCache.getInstance().savePledgeCrest(crestId, _data))
                 {
-                    Log.log(Level.INFO, "Error saving crest for clan " + clan.getName() + " [" + clan
-                            .getClanId() + "]");
+                    Log.log(Level.INFO,
+                            "Error saving crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");
                     return;
                 }
                 updated = true;

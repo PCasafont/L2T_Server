@@ -229,8 +229,8 @@ public class ClanHallAuctionManager
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
+            PreparedStatement statement =
+                    con.prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
             statement.execute();
             statement.close();
             _auctions.add(new Auction(id));

@@ -81,8 +81,8 @@ public class L2AdminCommandAccessRight
     {
         for (L2AccessLevel accessLevel : _accessLevels)
         {
-            if (accessLevel != null && (accessLevel.getLevel() == characterAccessLevel
-                    .getLevel() || characterAccessLevel.hasChildAccess(accessLevel)))
+            if (accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
+                    characterAccessLevel.hasChildAccess(accessLevel)))
             {
                 return true;
             }

@@ -58,8 +58,8 @@ public class L2CastleDoormenInstance extends L2DoormenInstance
         if (player.getClan() != null && getCastle() != null)
         {
             // player should have privileges to open doors
-            if (player.getClanId() == getCastle().getOwnerId() && (player
-                    .getClanPrivileges() & L2Clan.CP_CS_OPEN_DOOR) == L2Clan.CP_CS_OPEN_DOOR)
+            if (player.getClanId() == getCastle().getOwnerId() &&
+                    (player.getClanPrivileges() & L2Clan.CP_CS_OPEN_DOOR) == L2Clan.CP_CS_OPEN_DOOR)
             {
                 return true;
             }

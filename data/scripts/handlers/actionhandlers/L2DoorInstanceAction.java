@@ -54,14 +54,14 @@ public class L2DoorInstanceAction implements IActionHandler
             //            activeChar.sendPacket(my);
             if (target.isAutoAttackable(activeChar))
             {
-                if (Math.abs(activeChar.getZ() - target
-                        .getZ()) < 400) // this max heigth difference might need some tweaking
+                if (Math.abs(activeChar.getZ() - target.getZ()) <
+                        400) // this max heigth difference might need some tweaking
                 {
                     activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
                 }
             }
-            else if (activeChar.getClan() != null && ((L2DoorInstance) target).getClanHall() != null && activeChar
-                    .getClanId() == ((L2DoorInstance) target).getClanHall().getOwnerId())
+            else if (activeChar.getClan() != null && ((L2DoorInstance) target).getClanHall() != null &&
+                    activeChar.getClanId() == ((L2DoorInstance) target).getClanHall().getOwnerId())
             {
                 if (!((L2Character) target)
                         .isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
@@ -81,9 +81,10 @@ public class L2DoorInstanceAction implements IActionHandler
                     }
                 }
             }
-            else if (activeChar.getClan() != null && ((L2DoorInstance) target).getFort() != null && activeChar
-                    .getClan() == ((L2DoorInstance) target).getFort().getOwnerClan() && ((L2DoorInstance) target)
-                    .isOpenableBySkill() && !((L2DoorInstance) target).getFort().getSiege().getIsInProgress())
+            else if (activeChar.getClan() != null && ((L2DoorInstance) target).getFort() != null &&
+                    activeChar.getClan() == ((L2DoorInstance) target).getFort().getOwnerClan() &&
+                    ((L2DoorInstance) target).isOpenableBySkill() &&
+                    !((L2DoorInstance) target).getFort().getSiege().getIsInProgress())
             {
                 if (!((L2Character) target)
                         .isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))

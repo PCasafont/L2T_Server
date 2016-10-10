@@ -112,8 +112,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler
                     return null;
                 }
 
-                Collection<L2Character> knownCharacters = targetedCharacter.getKnownList()
-                        .getKnownCharactersInRadius(skill.getSkillRadius());
+                Collection<L2Character> knownCharacters =
+                        targetedCharacter.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
 
                 for (L2Character o : knownCharacters)
                 {
@@ -179,8 +179,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler
             {
                 for (final L2Object obj : region.getVisibleObjects().values())
                 {
-                    if (obj instanceof L2TrapInstance && activeChar
-                            .isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false))
+                    if (obj instanceof L2TrapInstance &&
+                            activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false))
                     {
                         final L2TrapInstance dTrap = (L2TrapInstance) obj;
 
@@ -223,8 +223,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler
             {
                 return false;
             }
-            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar
-                    .isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
+            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
+                    activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
             {
                 return true;
             }
@@ -291,8 +291,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler
                         return false;
                     }
 
-                    if (event.getParticipantTeam(activeChar.getObjectId()) != event
-                            .getParticipantTeam(target.getObjectId()))
+                    if (event.getParticipantTeam(activeChar.getObjectId()) !=
+                            event.getParticipantTeam(target.getObjectId()))
                     {
                         return false;
                     }
@@ -313,8 +313,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler
                 return false;
             }
 
-            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar
-                    .isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
+            if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
+                    activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
             {
                 return true;
             }

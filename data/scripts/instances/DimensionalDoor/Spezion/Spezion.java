@@ -131,9 +131,9 @@ public class Spezion extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
                         {
                             world.rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                    .get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), maxReward * DimensionalDoor
-                                            .getDimensionalDoorRewardRate()), player, true);
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                    Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                            maxReward * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
                         else
                         {
@@ -258,8 +258,8 @@ public class Spezion extends L2AttackableAIScript
             {
                 InstanceManager.getInstance().showVidToInstance(53, world.instanceId);
 
-                startQuestTimer("stage_1_spawns", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(53) + 2000, null, player);
+                startQuestTimer("stage_1_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(53) + 2000, null,
+                        player);
             }
             else if (event.equalsIgnoreCase("stage_1_spawns"))
             {
@@ -282,8 +282,8 @@ public class Spezion extends L2AttackableAIScript
                 //Fake Invul Spezions
                 for (int i = 0; i < 3; i++)
                 {
-                    L2Npc fakeSpezion = addSpawn(_fakeSpezion, world.spezionBoss.getX(), world.spezionBoss
-                            .getY(), world.spezionBoss.getZ(), 0, true, 0, false, world.instanceId);
+                    L2Npc fakeSpezion = addSpawn(_fakeSpezion, world.spezionBoss.getX(), world.spezionBoss.getY(),
+                            world.spezionBoss.getZ(), 0, true, 0, false, world.instanceId);
                     world.fakeMonsters.add(fakeSpezion);
                     fakeSpezion.setIsInvul(true);
                     fakeSpezion.startVisualEffect(VisualEffect.S_INVINCIBLE);
@@ -297,8 +297,8 @@ public class Spezion extends L2AttackableAIScript
                     {
                         for (int b : world.spezionGuards)
                         {
-                            L2Npc newGuard = addSpawn(b, fakeSpezion.getX(), fakeSpezion.getY(), fakeSpezion
-                                    .getZ(), fakeSpezion.getHeading(), true, 0, false, world.instanceId);
+                            L2Npc newGuard = addSpawn(b, fakeSpezion.getX(), fakeSpezion.getY(), fakeSpezion.getZ(),
+                                    fakeSpezion.getHeading(), true, 0, false, world.instanceId);
                             world.fakeMonsters.add(newGuard);
                             ((L2MonsterInstance) newGuard).setIsRaidMinion(true);
                             newGuard.setIsRunning(true);
@@ -321,9 +321,9 @@ public class Spezion extends L2AttackableAIScript
                                 {
                                     for (int b : world.spezionGuards)
                                     {
-                                        L2Npc newGuard = addSpawn(b, world.spezionBoss.getX(), world.spezionBoss
-                                                .getY(), world.spezionBoss.getZ(), world.spezionBoss
-                                                .getHeading(), true, 0, false, world.instanceId);
+                                        L2Npc newGuard = addSpawn(b, world.spezionBoss.getX(), world.spezionBoss.getY(),
+                                                world.spezionBoss.getZ(), world.spezionBoss.getHeading(), true, 0,
+                                                false, world.instanceId);
                                         world.minions.add(newGuard);
                                         ((L2MonsterInstance) newGuard).setIsRaidMinion(true);
                                         newGuard.setIsRunning(true);
@@ -352,8 +352,8 @@ public class Spezion extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_all_cannon"))
             {
-                if (world.spezionBoss == null || world.spezionBoss.isDead() || world.spezionBoss
-                        .getDisplayEffect() == 2)
+                if (world.spezionBoss == null || world.spezionBoss.isDead() ||
+                        world.spezionBoss.getDisplayEffect() == 2)
                 {
                     return "";
                 }
@@ -364,9 +364,9 @@ public class Spezion extends L2AttackableAIScript
                     return npc.getTemplate().TemplateId + "-1.html";
                 }
 
-                if (!Util.checkIfInRange(800, npc, world.spezionBoss, false) && Util
-                        .checkIfInRange(1300, npc, world.spezionBoss, false) && GeoData.getInstance()
-                        .canSeeTarget(npc, world.spezionBoss))
+                if (!Util.checkIfInRange(800, npc, world.spezionBoss, false) &&
+                        Util.checkIfInRange(1300, npc, world.spezionBoss, false) &&
+                        GeoData.getInstance().canSeeTarget(npc, world.spezionBoss))
                 {
                     player.destroyItemByItemId(_qn, _giantCannonball, 1, npc, true);
                     player.getInventory().destroyItem(_qn, _giantCannonball, 1, player, player);
@@ -379,9 +379,9 @@ public class Spezion extends L2AttackableAIScript
 
                 if (_debug)
                 {
-                    Log.warning(getName() + ": Range: " + Util
-                            .calculateDistance(npc.getX(), npc.getY(), world.spezionBoss.getX(), world.spezionBoss
-                                    .getY()));
+                    Log.warning(getName() + ": Range: " +
+                            Util.calculateDistance(npc.getX(), npc.getY(), world.spezionBoss.getX(),
+                                    world.spezionBoss.getY()));
                 }
             }
         }
@@ -407,8 +407,8 @@ public class Spezion extends L2AttackableAIScript
         {
             if (!(world instanceof PrisonOfDarknessWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

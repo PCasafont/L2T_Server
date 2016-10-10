@@ -139,9 +139,8 @@ public class MacroList
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
+            PreparedStatement statement = con.prepareStatement(
+                    "INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
             statement.setInt(1, _owner.getObjectId());
             statement.setInt(2, macro.id);
             statement.setInt(3, macro.icon);
@@ -191,8 +190,8 @@ public class MacroList
         {
             con = L2DatabaseFactory.getInstance().getConnection();
 
-            PreparedStatement statement = con
-                    .prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
+            PreparedStatement statement =
+                    con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
             statement.setInt(1, _owner.getObjectId());
             statement.setInt(2, macro.id);
             statement.execute();
@@ -215,9 +214,8 @@ public class MacroList
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement(
-                            "SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
+            PreparedStatement statement = con.prepareStatement(
+                    "SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
             statement.setInt(1, _owner.getObjectId());
             ResultSet rset = statement.executeQuery();
             while (rset.next())
@@ -248,8 +246,8 @@ public class MacroList
                     commands.add(mcmd);
                 }
 
-                L2Macro m = new L2Macro(id, icon, name, descr, acronym, commands
-                        .toArray(new L2MacroCmd[commands.size()]));
+                L2Macro m =
+                        new L2Macro(id, icon, name, descr, acronym, commands.toArray(new L2MacroCmd[commands.size()]));
                 _macroses.put(m.id, m);
             }
             rset.close();

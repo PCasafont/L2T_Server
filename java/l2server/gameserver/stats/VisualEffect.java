@@ -243,8 +243,7 @@ public enum VisualEffect
             }
         }
 
-        throw new NoSuchElementException(
-                "VisualEffect not found for name: '" + name + "'.\n Please check " + VisualEffect.class
-                        .getCanonicalName());
+        throw new NoSuchElementException("VisualEffect not found for name: '" + name + "'.\n Please check " +
+                VisualEffect.class.getCanonicalName());
     }
 }

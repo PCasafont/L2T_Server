@@ -173,8 +173,8 @@ public class Sailren extends L2AttackableAIScript
 
             else if (!Util.checkIfInRange(1000, player, partyMember, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(partyMember);
                 party.broadcastToPartyMembers(sm);
                 return false;

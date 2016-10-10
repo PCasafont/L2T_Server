@@ -99,8 +99,8 @@ public final class RequestRefine extends L2GameClientPacket
         // unequip item
         if (targetItem.isEquipped())
         {
-            L2ItemInstance[] unequiped = activeChar.getInventory()
-                    .unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+            L2ItemInstance[] unequiped =
+                    activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
             InventoryUpdate iu = new InventoryUpdate();
             for (L2ItemInstance itm : unequiped)
             {

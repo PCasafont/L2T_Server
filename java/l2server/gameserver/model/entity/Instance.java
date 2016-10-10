@@ -421,8 +421,8 @@ public class Instance
         }
         catch (Exception e)
         {
-            Log.log(Level.WARNING, "Instance: error while loading " + xml.getAbsolutePath() + " ! " + e
-                    .getMessage(), e);
+            Log.log(Level.WARNING, "Instance: error while loading " + xml.getAbsolutePath() + " ! " + e.getMessage(),
+                    e);
         }
     }
 
@@ -445,7 +445,7 @@ public class Instance
                 }
             }
             /*			else if (n.getName().equalsIgnoreCase("timeDelay"))
-						{
+                        {
 							a = n.getString("val");
 							if (a != null)
 								instance.setTimeDelay(Integer.parseInt(a);

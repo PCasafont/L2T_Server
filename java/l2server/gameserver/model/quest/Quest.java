@@ -1134,10 +1134,10 @@ public class Quest extends ManagedScript
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
 
-            PreparedStatement invalidQuestData = con
-                    .prepareStatement("DELETE FROM character_quests WHERE charId=? and name=?");
-            PreparedStatement invalidQuestDataVar = con
-                    .prepareStatement("delete FROM character_quests WHERE charId=? and name=? and var=?");
+            PreparedStatement invalidQuestData =
+                    con.prepareStatement("DELETE FROM character_quests WHERE charId=? and name=?");
+            PreparedStatement invalidQuestDataVar =
+                    con.prepareStatement("delete FROM character_quests WHERE charId=? and name=? and var=?");
 
             statement = con.prepareStatement("SELECT name,value FROM character_quests WHERE charId=? AND var=?");
             statement.setInt(1, player.getObjectId());
@@ -1358,9 +1358,8 @@ public class Quest extends ManagedScript
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement(
-                            "INSERT INTO character_quests (charId,name,var,value) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE value=?");
+            statement = con.prepareStatement(
+                    "INSERT INTO character_quests (charId,name,var,value) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE value=?");
             statement.setInt(1, qs.getPlayer().getObjectId());
             statement.setString(2, qs.getQuestName());
             statement.setString(3, var);
@@ -1401,8 +1400,8 @@ public class Quest extends ManagedScript
         {
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement;
-            statement = con
-                    .prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND name=? AND var = ?");
+            statement =
+                    con.prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND name=? AND var = ?");
             statement.setString(1, value);
             statement.setInt(2, qs.getPlayer().getObjectId());
             statement.setString(3, qs.getQuestName());
@@ -1845,8 +1844,8 @@ public class Quest extends ManagedScript
                 continue;
             }
             temp = partyMember.getQuestState(getName());
-            if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember
-                    .isInsideRadius(target, 1500, true, false))
+            if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) &&
+                    partyMember.isInsideRadius(target, 1500, true, false))
             {
                 candidates.add(partyMember);
             }
@@ -1937,8 +1936,8 @@ public class Quest extends ManagedScript
     public String showHtmlFile(L2PcInstance player, String fileName)
     {
         boolean questwindow = true;
-        if (fileName.endsWith(".html") || player.getQuestState(_name) != null && player.getQuestState(_name)
-                .getState() >= State.STARTED)
+        if (fileName.endsWith(".html") ||
+                player.getQuestState(_name) != null && player.getQuestState(_name).getState() >= State.STARTED)
         {
             questwindow = false;
         }
@@ -1983,8 +1982,8 @@ public class Quest extends ManagedScript
      */
     public String getHtm(String prefix, String fileName)
     {
-        String content = HtmCache.getInstance().getHtm(prefix, Config.DATA_FOLDER + "scripts/" + getDescr()
-                .toLowerCase() + "/" + getName() + "/" + fileName);
+        String content = HtmCache.getInstance().getHtm(prefix,
+                Config.DATA_FOLDER + "scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + fileName);
         if (content == null)
         {
             content = HtmCache.getInstance()

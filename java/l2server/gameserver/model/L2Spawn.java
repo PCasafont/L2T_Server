@@ -397,13 +397,11 @@ public class L2Spawn
         {
             // Set champion on next spawn
             if (_npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion &&
-                    !_npc
-                            .isRaid() && !((L2MonsterInstance) _npc)
-                    .isRaidMinion() && !(_npc instanceof L2ArmyMonsterInstance) &&
-                    !(_npc instanceof L2ChessPieceInstance) && !(_npc instanceof L2EventGolemInstance) &&
-                    getNpcId() != 44000 && Config.L2JMOD_CHAMPION_FREQUENCY > 0 && _npc
-                    .getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL && _npc
-                    .getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
+                    !_npc.isRaid() && !((L2MonsterInstance) _npc).isRaidMinion() &&
+                    !(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) &&
+                    !(_npc instanceof L2EventGolemInstance) && getNpcId() != 44000 &&
+                    Config.L2JMOD_CHAMPION_FREQUENCY > 0 && _npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL &&
+                    _npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
                     (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
             {
                 int random = Rnd.get(100);
@@ -422,8 +420,8 @@ public class L2Spawn
 
         if (Config.DEBUG)
         {
-            Log.finest("spawned Mob ID: " + _npc.getNpcId() + " ,at: " + _npc.getX() + " x, " + _npc
-                    .getY() + " y, " + _npc.getZ() + " z");
+            Log.finest("spawned Mob ID: " + _npc.getNpcId() + " ,at: " + _npc.getX() + " x, " + _npc.getY() + " y, " +
+                    _npc.getZ() + " z");
         }
     }
 
@@ -433,8 +431,8 @@ public class L2Spawn
 
         try
         {
-            instanceClass = Class
-                    .forName("l2server.gameserver.model.actor.instance." + (custom ? "custom." : "") + templateType +
+            instanceClass = Class.forName(
+                    "l2server.gameserver.model.actor.instance." + (custom ? "custom." : "") + templateType +
                             "Instance");
         }
         catch (ClassNotFoundException e)

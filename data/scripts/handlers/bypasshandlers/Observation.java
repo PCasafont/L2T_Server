@@ -47,8 +47,8 @@ public class Observation implements IBypassHandler
                 st.nextToken(); // Bypass cost
 
                 if (SiegeManager.getInstance()
-                        .getSiege(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer
-                                .parseInt(st.nextToken())) != null)
+                        .getSiege(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
+                                Integer.parseInt(st.nextToken())) != null)
                 {
                     doObserve(activeChar, target, val);
                 }

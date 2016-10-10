@@ -77,8 +77,8 @@ public final class RequestSendPost extends L2GameClientPacket
         _text = readS();
 
         int attachCount = readD();
-        if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET || attachCount * BATCH_LENGTH + 8 != _buf
-                .remaining())
+        if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET ||
+                attachCount * BATCH_LENGTH + 8 != _buf.remaining())
         {
             return;
         }
@@ -246,8 +246,8 @@ public final class RequestSendPost extends L2GameClientPacket
 
         if (BlockList.isInBlockList(receiverId, activeChar.getObjectId()))
         {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL)
-                    .addString(_receiver));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL).addString(_receiver));
             return;
         }
 
@@ -271,9 +271,8 @@ public final class RequestSendPost extends L2GameClientPacket
 
         Message msg = new Message(activeChar.getObjectId(), receiverId, _isCod, _subject, _text, _reqAdena);
 
-        Util.logToFile(activeChar.getName() + " is sending a Mail[" + msg
-                .getId() + "] to " + _receiver + ".", "Logs/Mails/" + activeChar
-                .getName() + "_Sent_Mails", "txt", true, true);
+        Util.logToFile(activeChar.getName() + " is sending a Mail[" + msg.getId() + "] to " + _receiver + ".",
+                "Logs/Mails/" + activeChar.getName() + "_Sent_Mails", "txt", true, true);
 
         if (removeItems(activeChar, msg))
         {
@@ -296,9 +295,9 @@ public final class RequestSendPost extends L2GameClientPacket
                 L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
                 if (item == null || !item.isTradeable() || item.isEquipped())
                 {
-                    Util.logToFile("- Could not Attach " + (item == null ? i.getObjectId() : item
-                            .getName()) + ". Aborting.", "Logs/Mails/" + player
-                            .getName() + "_Sent_Mails", "txt", true, false);
+                    Util.logToFile(
+                            "- Could not Attach " + (item == null ? i.getObjectId() : item.getName()) + ". Aborting.",
+                            "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
                     player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_BAD_ITEM));
                     return false;
                 }
@@ -315,8 +314,8 @@ public final class RequestSendPost extends L2GameClientPacket
         // Check if enough adena and charge the fee
         if (currentAdena < fee || !player.reduceAdena("MailFee", fee, null, false))
         {
-            Util.logToFile("- Couldn't take fees. Aborting.", "Logs/Mails/" + player
-                    .getName() + "_Sent_Mails", "txt", true, false);
+            Util.logToFile("- Couldn't take fees. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt",
+                    true, false);
 
             player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NO_ADENA));
             return false;
@@ -324,8 +323,8 @@ public final class RequestSendPost extends L2GameClientPacket
 
         if (_items == null)
         {
-            Util.logToFile("- Mail has no attachments. Sending.", "Logs/Mails/" + player
-                    .getName() + "_Sent_Mails", "txt", true, false);
+            Util.logToFile("- Mail has no attachments. Sending.", "Logs/Mails/" + player.getName() + "_Sent_Mails",
+                    "txt", true, false);
 
             return true;
         }
@@ -335,8 +334,8 @@ public final class RequestSendPost extends L2GameClientPacket
         // message already has attachments ? oO
         if (attachments == null)
         {
-            Util.logToFile("- Attachments were null. Aborting.", "Logs/Mails/" + player
-                    .getName() + "_Sent_Mails", "txt", true, false);
+            Util.logToFile("- Attachments were null. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails",
+                    "txt", true, false);
 
             return false;
         }
@@ -355,22 +354,22 @@ public final class RequestSendPost extends L2GameClientPacket
             {
                 Log.warning("Error adding attachment for char " + player.getName() + " (olditem == null)");
 
-                Util.logToFile("- Could not delete old item " + (oldItem == null ? i.getObjectId() : oldItem
-                        .getName()) + ". Aborting.", "Logs/Mails/" + player
-                        .getName() + "_Sent_Mails", "txt", true, false);
+                Util.logToFile(
+                        "- Could not delete old item " + (oldItem == null ? i.getObjectId() : oldItem.getName()) +
+                                ". Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
 
                 return false;
             }
 
             final L2ItemInstance newItem = player.getInventory()
-                    .transferItem("send mail to " + receiver, i.getObjectId(), i
-                            .getCount(), attachments, player, receiver);
+                    .transferItem("send mail to " + receiver, i.getObjectId(), i.getCount(), attachments, player,
+                            receiver);
             if (newItem == null)
             {
                 Log.warning("Error adding attachment for char " + player.getName() + " (newitem == null)");
 
-                Util.logToFile("- Could not transfer " + oldItem.getName() + ". Aborting.", "Logs/Mails/" + player
-                        .getName() + "_Sent_Mails", "txt", true, false);
+                Util.logToFile("- Could not transfer " + oldItem.getName() + ". Aborting.",
+                        "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
 
                 continue;
             }
@@ -389,8 +388,8 @@ public final class RequestSendPost extends L2GameClientPacket
                 }
             }
 
-            Util.logToFile("- Attached " + newItem.getName() + ", Count = " + newItem
-                    .getCount() + ".", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
+            Util.logToFile("- Attached " + newItem.getName() + ", Count = " + newItem.getCount() + ".",
+                    "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
         }
 
         // Send updated item list to the player

@@ -103,7 +103,7 @@ public class ValidatePosition extends L2GameClientPacket
         if (activeChar.isInAirShip())
         {
             /*if (Config.COORD_SYNCHRONIZE == 2)
-			{
+            {
 				dx = _x - activeChar.getInVehiclePosition().getX();
 				dy = _y - activeChar.getInVehiclePosition().getY();
 				dz = _z - activeChar.getInVehiclePosition().getZ();
@@ -149,8 +149,8 @@ public class ValidatePosition extends L2GameClientPacket
             }
             if (Config.COORD_SYNCHRONIZE == 1) // Trusting also client x,y coordinates (should not be used with geodata)
             {
-                if (!activeChar.isMoving() || !activeChar
-                        .validateMovementHeading(_heading)) // Heading changed on client = possible obstacle
+                if (!activeChar.isMoving() ||
+                        !activeChar.validateMovementHeading(_heading)) // Heading changed on client = possible obstacle
                 {
                     // character is not moving, take coordinates from client
                     if (diffSq < 2500) // 50*50 - attack won't work fluently if even small differences are corrected

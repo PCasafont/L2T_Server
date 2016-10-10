@@ -205,8 +205,8 @@ public class AdminPForge implements IAdminCommandHandler
 
         for (int i = 0; i < format.length(); i++)
         {
-            StringUtil.append(replyMSG, String.valueOf(format.charAt(i)), " : <edit var=\"v", String
-                    .valueOf(i), "\" width=100><br1>");
+            StringUtil.append(replyMSG, String.valueOf(format.charAt(i)), " : <edit var=\"v", String.valueOf(i),
+                    "\" width=100><br1>");
         }
         adminReply.replace("%valueditors%", replyMSG.toString());
         replyMSG.setLength(0);

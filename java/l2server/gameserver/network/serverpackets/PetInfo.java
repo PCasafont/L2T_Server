@@ -112,8 +112,8 @@ public class PetInfo extends L2GameServerPacket
         writeS(_summon.getName()); // summon name
         writeD(-1); // High Five NPCStringId
         writeS(_summon.getTitle()); // owner name
-        writeC(_summon.getOwner() != null ? _summon.getOwner()
-                .getPvpFlag() : 0); //0 = white,2= purpleblink, if its greater then karma = purple
+        writeC(_summon.getOwner() != null ? _summon.getOwner().getPvpFlag() :
+                0); //0 = white,2= purpleblink, if its greater then karma = purple
         writeD(_summon.getOwner() != null ? _summon.getOwner().getReputation() : 0); // karma
         writeD(_curFed); // how fed it is
         writeD(_maxFed); //max fed it can be

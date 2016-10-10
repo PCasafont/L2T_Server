@@ -536,8 +536,8 @@ public class CharEffectList
 
             for (L2Abnormal e : _buffs)
             {
-                if (e != null && e.getShowIcon() && !e.getSkill().isDance() && !e.getSkill().isToggle() && !e.getSkill()
-                        .isActivation() && !e.getSkill().is7Signs())
+                if (e != null && e.getShowIcon() && !e.getSkill().isDance() && !e.getSkill().isToggle() &&
+                        !e.getSkill().isActivation() && !e.getSkill().is7Signs())
                 {
                     switch (e.getSkill().getSkillType())
                     {
@@ -842,8 +842,8 @@ public class CharEffectList
      */
     public void stopEffectsOnAction(L2Skill skill)
     {
-        boolean friendlyAction = skill != null && (skill.getTargetType() == L2SkillTargetType.TARGET_SELF || skill
-                .getTargetType() == L2SkillTargetType.TARGET_FRIENDS);
+        boolean friendlyAction = skill != null && (skill.getTargetType() == L2SkillTargetType.TARGET_SELF ||
+                skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS);
         if (_hasBuffsRemovedOnAction && _buffs != null && !_buffs.isEmpty())
         {
             for (L2Abnormal e : _buffs)
@@ -1135,9 +1135,9 @@ public class CharEffectList
 
             for (L2Abnormal e : _debuffs)
             {
-                if (e != null && e.getSkill().getId() == newEffect.getSkill().getId() && e.getType() == newEffect
-                        .getType() && e.getStackLvl() == newEffect.getStackLvl() && e.getStackType()
-                        .equals(newEffect.getStackType()))
+                if (e != null && e.getSkill().getId() == newEffect.getSkill().getId() &&
+                        e.getType() == newEffect.getType() && e.getStackLvl() == newEffect.getStackLvl() &&
+                        e.getStackType().equals(newEffect.getStackType()))
                 {
                     // Started scheduled timer needs to be canceled.
                     if (newEffect.getDuration() - newEffect.getTime() < e.getDuration() - e.getTime())
@@ -1162,8 +1162,8 @@ public class CharEffectList
 
             for (L2Abnormal e : _buffs)
             {
-                if (e != null && e.getSkill().getId() == newEffect.getSkill().getId() && e.getType() == newEffect
-                        .getType() && e.getStackLvl() == newEffect.getStackLvl())
+                if (e != null && e.getSkill().getId() == newEffect.getSkill().getId() &&
+                        e.getType() == newEffect.getType() && e.getStackLvl() == newEffect.getStackLvl())
                 {
                     boolean sameStackType = e.getStackType().length == newEffect.getStackType().length;
                     if (sameStackType)
@@ -1324,8 +1324,8 @@ public class CharEffectList
                         {
                             continue;
                         }
-                        if (e.getSkill().isToggle() || e.getSkill().is7Signs() || e.getSkill().isDance() || e.getSkill()
-                                .isActivation())
+                        if (e.getSkill().isToggle() || e.getSkill().is7Signs() || e.getSkill().isDance() ||
+                                e.getSkill().isActivation())
                         {
                             break;
                         }
@@ -1701,8 +1701,8 @@ public class CharEffectList
 
         if (os != null)
         {
-            final OlympiadGameTask game = OlympiadGameManager.getInstance()
-                    .getOlympiadTask(((L2PcInstance) _owner).getOlympiadGameId());
+            final OlympiadGameTask game =
+                    OlympiadGameManager.getInstance().getOlympiadTask(((L2PcInstance) _owner).getOlympiadGameId());
             if (game != null && game.isBattleStarted())
             {
                 game.getZone().broadcastPacketToObservers(os, game.getGame().getGameId());

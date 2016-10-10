@@ -66,8 +66,8 @@ public class L2AHealerAI extends L2APlayerAI
             {
                 for (L2Skill skill : _player.getAllSkills())
                 {
-                    if (skill.getSkillType() != L2SkillType.RESURRECT || skill
-                            .getTargetType() != L2SkillTargetType.TARGET_ONE)
+                    if (skill.getSkillType() != L2SkillType.RESURRECT ||
+                            skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
                     {
                         continue;
                     }
@@ -86,7 +86,7 @@ public class L2AHealerAI extends L2APlayerAI
         }
 
 		/*if (getIntention() == CtrlIntention.AI_INTENTION_IDLE
-				&& (_player.getCurrentMp() > _player.getMaxMp() * 0.7
+                && (_player.getCurrentMp() > _player.getMaxMp() * 0.7
 				|| _player.getCurrentHp() < _player.getMaxHp() * 0.5))
 		{
 			for (L2Skill skill : _player.getAllSkills())
@@ -141,8 +141,8 @@ public class L2AHealerAI extends L2APlayerAI
                 mostHarmed = member;
             }
 
-            health = (int) ((member.getCurrentHp() + member.getCurrentCp()) * 100 / (member.getMaxHp() + member
-                    .getMaxCp()));
+            health = (int) ((member.getCurrentHp() + member.getCurrentCp()) * 100 /
+                    (member.getMaxHp() + member.getMaxCp()));
             if (health < leastHealth)
             {
                 leastHealth = health;
@@ -193,8 +193,8 @@ public class L2AHealerAI extends L2APlayerAI
             return;
         }
 
-        if (mostDebuffed != null && (maxDebuffs > 2 || mostDebuffed.isMovementDisabled() || mostDebuffed
-                .isOutOfControl()))
+        if (mostDebuffed != null &&
+                (maxDebuffs > 2 || mostDebuffed.isMovementDisabled() || mostDebuffed.isOutOfControl()))
         {
             _player.setTarget(mostDebuffed);
 
@@ -224,14 +224,13 @@ public class L2AHealerAI extends L2APlayerAI
             {
                 for (L2Skill skill : _player.getAllSkills())
                 {
-                    if (skill.getSkillType() != L2SkillType.HEAL && skill
-                            .getSkillType() != L2SkillType.HEAL_STATIC && skill
-                            .getSkillType() != L2SkillType.HEAL_PERCENT && skill
-                            .getSkillType() != L2SkillType.CHAIN_HEAL && skill
-                            .getSkillType() != L2SkillType.OVERHEAL || skill
-                            .getTargetType() != L2SkillTargetType.TARGET_PARTY && skill
-                            .getTargetType() != L2SkillTargetType.TARGET_PARTY_NOTME && skill
-                            .getTargetType() != L2SkillTargetType.TARGET_PARTY_CLAN)
+                    if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
+                            skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
+                            skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
+                            skill.getSkillType() != L2SkillType.OVERHEAL ||
+                            skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
+                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_NOTME &&
+                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_CLAN)
                     {
                         continue;
                     }
@@ -247,15 +246,15 @@ public class L2AHealerAI extends L2APlayerAI
             {
                 for (L2Skill skill : _player.getAllSkills())
                 {
-                    if (skill.getSkillType() != L2SkillType.HEAL && skill
-                            .getSkillType() != L2SkillType.HEAL_STATIC && skill
-                            .getSkillType() != L2SkillType.HEAL_PERCENT && skill
-                            .getSkillType() != L2SkillType.CHAIN_HEAL && skill
-                            .getSkillType() != L2SkillType.OVERHEAL || skill
-                            .getTargetType() != L2SkillTargetType.TARGET_ONE && (skill
-                            .getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) && (skill
-                            .getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER || mostHarmed == _player) && skill
-                            .getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
+                    if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
+                            skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
+                            skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
+                            skill.getSkillType() != L2SkillType.OVERHEAL ||
+                            skill.getTargetType() != L2SkillTargetType.TARGET_ONE &&
+                                    (skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) &&
+                                    (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER ||
+                                            mostHarmed == _player) &&
+                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
                     {
                         continue;
                     }

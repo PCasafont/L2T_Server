@@ -93,8 +93,8 @@ public class SuperMewCatZ extends L2AttackableAIScript
             try
             {
                 con = L2DatabaseFactory.getInstance().getConnection();
-                PreparedStatement statement = con
-                        .prepareStatement("SELECT * FROM newbiehelper_data WHERE account_name = ? OR hardwareId = ?");
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT * FROM newbiehelper_data WHERE account_name = ? OR hardwareId = ?");
                 statement.setString(1, player.getAccountName());
                 statement.setString(2, player.getHWID());
                 ResultSet rset = statement.executeQuery();

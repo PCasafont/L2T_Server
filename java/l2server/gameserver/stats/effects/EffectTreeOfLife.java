@@ -55,15 +55,15 @@ public class EffectTreeOfLife extends L2Effect
 
         L2Character activeChar = getEffector();
 
-        if (target == null || target.isDead() || target.isInvul(activeChar) || !Util
-                .checkIfInRange(600, activeChar, target, true))
+        if (target == null || target.isDead() || target.isInvul(activeChar) ||
+                !Util.checkIfInRange(600, activeChar, target, true))
         {
             return false;
         }
 
         // No healing from others for player in duels
-        if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && target.getActingPlayer()
-                .isInDuel() && target.getObjectId() != activeChar.getObjectId())
+        if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && target.getActingPlayer().isInDuel() &&
+                target.getObjectId() != activeChar.getObjectId())
         {
             return false;
         }
@@ -81,8 +81,8 @@ public class EffectTreeOfLife extends L2Effect
             }
 
             // Nor all vs all event player
-            if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar)
-                    .isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll())
+            if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
+                    ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll())
             {
                 return false;
             }
@@ -98,8 +98,8 @@ public class EffectTreeOfLife extends L2Effect
         }
 
         // Heal critic, since CT2.3 Gracia Final
-        if (getSkill().getSkillType() == L2SkillType.HEAL && !getSkill().isPotion() && Formulas
-                .calcMCrit(activeChar.getMCriticalHit(target, getSkill())))
+        if (getSkill().getSkillType() == L2SkillType.HEAL && !getSkill().isPotion() &&
+                Formulas.calcMCrit(activeChar.getMCriticalHit(target, getSkill())))
         {
             hp *= 3;
         }

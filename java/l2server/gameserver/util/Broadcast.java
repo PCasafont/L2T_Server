@@ -63,8 +63,8 @@ public final class Broadcast
     {
         if (Config.DEBUG)
         {
-            Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" + mov
-                    .getType());
+            Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" +
+                    mov.getType());
         }
 
         Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
@@ -104,8 +104,8 @@ public final class Broadcast
     {
         if (Config.DEBUG)
         {
-            Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" + mov
-                    .getType());
+            Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" +
+                    mov.getType());
         }
 
         Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
@@ -126,17 +126,17 @@ public final class Broadcast
                         Integer oldrelation = character.getKnownList().getKnownRelations().get(player.getObjectId());
                         if (oldrelation != null && oldrelation != relation)
                         {
-                            player.sendPacket(new RelationChanged((L2PcInstance) character, relation, character
-                                    .isAutoAttackable(player)));
+                            player.sendPacket(new RelationChanged((L2PcInstance) character, relation,
+                                    character.isAutoAttackable(player)));
                             if (((L2PcInstance) character).getPet() != null)
                             {
-                                player.sendPacket(new RelationChanged(((L2PcInstance) character)
-                                        .getPet(), relation, character.isAutoAttackable(player)));
+                                player.sendPacket(new RelationChanged(((L2PcInstance) character).getPet(), relation,
+                                        character.isAutoAttackable(player)));
                             }
                             for (L2SummonInstance summon : player.getSummons())
                             {
-                                player.sendPacket(new RelationChanged(summon, relation, character
-                                        .isAutoAttackable(player)));
+                                player.sendPacket(
+                                        new RelationChanged(summon, relation, character.isAutoAttackable(player)));
                             }
                         }
                     }
@@ -242,8 +242,8 @@ public final class Broadcast
     {
         if (Config.DEBUG)
         {
-            Log.fine("Players to notify: " + L2World.getInstance().getAllPlayersCount() + " (with packet " + mov
-                    .getType() + ")");
+            Log.fine("Players to notify: " + L2World.getInstance().getAllPlayersCount() + " (with packet " +
+                    mov.getType() + ")");
         }
 
         Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();

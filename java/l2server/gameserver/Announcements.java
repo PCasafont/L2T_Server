@@ -127,10 +127,9 @@ public class Announcements
         final StringBuilder replyMSG = StringUtil.startAppend(500, "<br>");
         for (int i = 0; i < _announcements.size(); i++)
         {
-            StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", _announcements
-                            .get(i),
-                    "</td><td width=40>" + "<button value=\"Delete\" action=\"bypass -h admin_del_announcement ", String
-                            .valueOf(i),
+            StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", _announcements.get(i),
+                    "</td><td width=40>" + "<button value=\"Delete\" action=\"bypass -h admin_del_announcement ",
+                    String.valueOf(i),
                     "\" width=60 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
         }
         adminReply.replace("%announces%", replyMSG.toString());

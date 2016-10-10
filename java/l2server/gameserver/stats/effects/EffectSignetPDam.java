@@ -76,8 +76,8 @@ public class EffectSignetPDam extends L2Effect
             return false;
         }
 
-        L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance()
-                .getNextId(), template, getEffector());
+        L2EffectPointInstance effectPoint =
+                new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, getEffector());
         effectPoint.setCurrentHp(effectPoint.getMaxHp());
         effectPoint.setCurrentMp(effectPoint.getMaxMp());
         //L2World.getInstance().storeObject(effectPoint);
@@ -177,8 +177,8 @@ public class EffectSignetPDam extends L2Effect
 
         if (!targets.isEmpty())
         {
-            caster.broadcastPacket(new MagicSkillLaunched(caster, getSkill().getId(), getSkill().getLevelHash(), targets
-                    .toArray(new L2Character[targets.size()])));
+            caster.broadcastPacket(new MagicSkillLaunched(caster, getSkill().getId(), getSkill().getLevelHash(),
+                    targets.toArray(new L2Character[targets.size()])));
             for (L2Character target : targets)
             {
                 boolean pcrit = Formulas.calcMCrit(caster.getCriticalHit(target, getSkill()));

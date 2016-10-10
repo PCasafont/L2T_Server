@@ -90,8 +90,8 @@ public class KingOfTheHill extends EventInstance
         }
 
         rewardPlayers(sorted);
-        Announcements.getInstance().announceToAll("The event has ended. The player " + sorted.get(0)
-                .getName() + " won being on the highest place during the most time!");
+        Announcements.getInstance().announceToAll("The event has ended. The player " + sorted.get(0).getName() +
+                " won being on the highest place during the most time!");
         return;
     }
 
@@ -106,8 +106,8 @@ public class KingOfTheHill extends EventInstance
             {
                 if (participant != null)
                 {
-                    html += EventsManager.getInstance().getPlayerString(participant, player) + ": " + (participant
-                            .getZ() - _config.getLocation().getGlobalZ()) + "<br>";
+                    html += EventsManager.getInstance().getPlayerString(participant, player) + ": " +
+                            (participant.getZ() - _config.getLocation().getGlobalZ()) + "<br>";
                 }
             }
             if (html.length() > 4)

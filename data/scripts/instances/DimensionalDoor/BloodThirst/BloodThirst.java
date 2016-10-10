@@ -98,8 +98,8 @@ public class BloodThirst extends L2AttackableAIScript
                         continue;
                     }
 
-                    L2Npc iNpc = addSpawn(iSpawn.getNpcId(), iSpawn.getX(), iSpawn.getY(), iSpawn.getZ(), iSpawn
-                            .getHeading(), false, 0, true, world.instanceId);
+                    L2Npc iNpc = addSpawn(iSpawn.getNpcId(), iSpawn.getX(), iSpawn.getY(), iSpawn.getZ(),
+                            iSpawn.getHeading(), false, 0, true, world.instanceId);
 
                     L2Spawn spawn = iNpc.getSpawn();
                     spawn.setRespawnDelay(20);
@@ -145,9 +145,9 @@ public class BloodThirst extends L2AttackableAIScript
             BloodThirstWorld world = (BloodThirstWorld) tmpworld;
             if (npc == world._bloodThirst)
             {
-                player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                        .get(4 * DimensionalDoor.getDimensionalDoorRewardRate(), 6 * DimensionalDoor
-                                .getDimensionalDoorRewardRate()), player, true);
+                player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                        Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 
                 InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
@@ -179,8 +179,8 @@ public class BloodThirst extends L2AttackableAIScript
         {
             if (!(world instanceof BloodThirstWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

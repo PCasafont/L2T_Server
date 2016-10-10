@@ -263,8 +263,8 @@ public class L2SummonInstance extends L2Summon
             L2Abnormal[] effects = getAllEffects();
             for (L2Abnormal e : effects)
             {
-                if (e.getSkill().getId() == 1323 || e.getSkill()
-                        .getId() == 7096) // Noblesse Blessing and Master's Blessing of Noblesse
+                if (e.getSkill().getId() == 1323 ||
+                        e.getSkill().getId() == 7096) // Noblesse Blessing and Master's Blessing of Noblesse
                 {
                     getOwner().storeSummonBuffs(effects);
                 }
@@ -277,8 +277,9 @@ public class L2SummonInstance extends L2Summon
         }
 
         // To prevent players re-summoning their dead summons endlessly
-        if (_summonPoints > 0 && !(getOwner() != null && getOwner().isPlayingEvent() && !getOwner().getEvent()
-                .isType(EventType.Survival) && !getOwner().getEvent().isType(EventType.TeamSurvival)))
+        if (_summonPoints > 0 && !(getOwner() != null && getOwner().isPlayingEvent() &&
+                !getOwner().getEvent().isType(EventType.Survival) &&
+                !getOwner().getEvent().isType(EventType.TeamSurvival)))
         {
             DecayTaskManager.getInstance().addDecayTask(this, 5000);
         }
@@ -348,8 +349,8 @@ public class L2SummonInstance extends L2Summon
         {
             if (Config.DEBUG)
             {
-                Log.warning("L2SummonInstance: " + _summon.getTemplate().Name + " (" + _activeChar
-                        .getName() + ") run task.");
+                Log.warning("L2SummonInstance: " + _summon.getTemplate().Name + " (" + _activeChar.getName() +
+                        ") run task.");
             }
 
             try
@@ -374,15 +375,15 @@ public class L2SummonInstance extends L2Summon
                     _summon.unSummon(_activeChar);
                 }
                 // check if it is time to consume another item
-                else if (newTimeRemaining <= _summon.getNextItemConsumeTime() && oldTimeRemaining > _summon
-                        .getNextItemConsumeTime())
+                else if (newTimeRemaining <= _summon.getNextItemConsumeTime() &&
+                        oldTimeRemaining > _summon.getNextItemConsumeTime())
                 {
                     _summon.decNextItemConsumeTime(maxTime / (_summon.getItemConsumeSteps() + 1));
 
                     // check if owner has enought itemConsume, if requested
-                    if (_summon.getItemConsumeCount() > 0 && _summon.getItemConsumeId() != 0 && !_summon
-                            .isDead() && !_summon.destroyItemByItemId("Consume", _summon.getItemConsumeId(), _summon
-                            .getItemConsumeCount(), _activeChar, true))
+                    if (_summon.getItemConsumeCount() > 0 && _summon.getItemConsumeId() != 0 && !_summon.isDead() &&
+                            !_summon.destroyItemByItemId("Consume", _summon.getItemConsumeId(),
+                                    _summon.getItemConsumeCount(), _activeChar, true))
                     {
                         _summon.unSummon(_activeChar);
                     }
@@ -390,7 +391,7 @@ public class L2SummonInstance extends L2Summon
 
                 // prevent useless packet-sending when the difference isn't visible.
                 /*if ((_summon._lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
-				{
+                {
 					_summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
 					_summon._lastShowntimeRemaining = (int) newTimeRemaining;
 					_summon.updateEffectIcons();
@@ -473,8 +474,8 @@ public class L2SummonInstance extends L2Summon
     @Override
     public int getAttackElementValue(byte attribute)
     {
-        if (getOwner() == null || !getOwner().getCurrentClass().isSummoner() || getOwner()
-                .getExpertiseWeaponPenalty() > 0)
+        if (getOwner() == null || !getOwner().getCurrentClass().isSummoner() ||
+                getOwner().getExpertiseWeaponPenalty() > 0)
         {
             return super.getAttackElementValue(attribute);
         }

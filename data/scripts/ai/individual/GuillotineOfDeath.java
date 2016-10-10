@@ -80,8 +80,8 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
             _firstBossInstance = null;
 
-            Log.info("GuillotineOfDeath AI: " + npc.getName() + ", has been killed by: " + killer
-                    .getName() + " at: " + System.currentTimeMillis());
+            Log.info("GuillotineOfDeath AI: " + npc.getName() + ", has been killed by: " + killer.getName() + " at: " +
+                    System.currentTimeMillis());
         }
 
         return super.onKill(npc, killer, isPet);

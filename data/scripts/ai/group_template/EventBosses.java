@@ -140,8 +140,8 @@ public class EventBosses extends L2AttackableAIScript
 
                 L2PcInstance playerToReward = playerInfo.getKey();
 
-                if (playerToReward == null || !playerToReward.isOnline() || !playerToReward
-                        .isInsideRadius(npc, 4000, false, false))
+                if (playerToReward == null || !playerToReward.isOnline() ||
+                        !playerToReward.isInsideRadius(npc, 4000, false, false))
                 {
                     continue;
                 }
@@ -177,14 +177,16 @@ public class EventBosses extends L2AttackableAIScript
 
                                         playerToReward.addItem(getName(), itemId, itemCount, npc, true);
 
-                                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc
-                                                .getName(), " Player:  " + playerToReward
-                                                .getName() + ", rewarded with: " + ItemTable.getInstance()
-                                                .getTemplate(itemId).getName() + "(" + itemCount + ")"));
+                                        npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(),
+                                                " Player:  " + playerToReward.getName() + ", rewarded with: " +
+                                                        ItemTable.getInstance().getTemplate(itemId).getName() + "(" +
+                                                        itemCount + ")"));
 
-                                        GmListTable.broadcastMessageToGMs(getName() + ": Player: " + playerToReward
-                                                .getName() + ", rewarded with: " + ItemTable.getInstance()
-                                                .getTemplate(itemId).getName() + "(" + itemCount + ")");
+                                        GmListTable.broadcastMessageToGMs(
+                                                getName() + ": Player: " + playerToReward.getName() +
+                                                        ", rewarded with: " +
+                                                        ItemTable.getInstance().getTemplate(itemId).getName() + "(" +
+                                                        itemCount + ")");
                                     }
                                 }
                             }

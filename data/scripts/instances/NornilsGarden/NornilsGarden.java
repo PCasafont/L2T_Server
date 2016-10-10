@@ -248,8 +248,8 @@ public class NornilsGarden extends Quest
         {
             if (!(world instanceof NornilsWorld) || world.templateId != INSTANCE_ID)
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return null;
             }
             // check for level difference again on reenter
@@ -450,8 +450,8 @@ public class NornilsGarden extends Quest
             // player must be near party leader
             if (!partyMember.isInsideRadius(player, 500, true, true))
             {
-                SystemMessage sm = SystemMessage
-                        .getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+                SystemMessage sm =
+                        SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
                 sm.addPcName(partyMember);
                 player.sendPacket(sm);
                 return "32330-08.html";
@@ -465,8 +465,8 @@ public class NornilsGarden extends Quest
                 }
                 else
                 {
-                    SystemMessage sm = SystemMessage
-                            .getSystemMessage(SystemMessageId.C1_QUEST_REQUIREMENT_NOT_SUFFICIENT);
+                    SystemMessage sm =
+                            SystemMessage.getSystemMessage(SystemMessageId.C1_QUEST_REQUIREMENT_NOT_SUFFICIENT);
                     sm.addPcName(partyMember);
                     player.sendPacket(sm);
                     return "32330-08.html";
@@ -483,8 +483,8 @@ public class NornilsGarden extends Quest
     @Override
     public String onEnterZone(L2Character character, L2ZoneType zone)
     {
-        if (character instanceof L2PcInstance && !character.isDead() && !character
-                .isTeleporting() && ((L2PcInstance) character).isOnline())
+        if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() &&
+                ((L2PcInstance) character).isOnline())
         {
             InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
             if (tmpworld instanceof NornilsWorld)
@@ -493,8 +493,8 @@ public class NornilsGarden extends Quest
                 {
                     if (zone.getId() == _auto[0])
                     {
-                        L2DoorInstance door = InstanceManager.getInstance().getInstance(tmpworld.instanceId)
-                                .getDoor(_auto[1]);
+                        L2DoorInstance door =
+                                InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(_auto[1]);
                         if (door != null)
                         {
                             door.openMe();
@@ -548,8 +548,8 @@ public class NornilsGarden extends Quest
         }
         else if (Util.contains(_final_gates, npc.getNpcId()))
         {
-            if (event.equalsIgnoreCase("32260-02.html") || event.equalsIgnoreCase("32261-02.html") || event
-                    .equalsIgnoreCase("32262-02.html"))
+            if (event.equalsIgnoreCase("32260-02.html") || event.equalsIgnoreCase("32261-02.html") ||
+                    event.equalsIgnoreCase("32262-02.html"))
             {
                 st.unset("correct");
             }
@@ -653,8 +653,8 @@ public class NornilsGarden extends Quest
                     InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
                     if (tmpworld instanceof NornilsWorld)
                     {
-                        L2DoorInstance door = InstanceManager.getInstance().getInstance(tmpworld.instanceId)
-                                .getDoor(_gk[2]);
+                        L2DoorInstance door =
+                                InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(_gk[2]);
                         if (door != null)
                         {
                             door.openMe();

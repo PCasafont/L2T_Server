@@ -254,9 +254,8 @@ public class L2Npc extends L2Character
                 if (Rnd.get(100) <= getSpiritShotChance())
                 {
                     _spiritshotamount = _spiritshotamount - 1;
-                    Broadcast
-                            .toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0, 0),
-                                    360000);
+                    Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0, 0),
+                            360000);
                     _spiritshotcharged = true;
                 }
             }
@@ -582,15 +581,16 @@ public class L2Npc extends L2Character
             return;
         }
 
-        boolean particular = getTemplate().getAIData().getMinSocial(false) >= 0 || getTemplate().getAIData()
-                .getMinSocial(true) >= 0;
+        boolean particular =
+                getTemplate().getAIData().getMinSocial(false) >= 0 || getTemplate().getAIData().getMinSocial(true) >= 0;
         boolean second = false;
         if (particular)
         {
-            if (getTemplate().getAIData().getMinSocial(true) != 0 && (getTemplate().getAIData()
-                    .getMinSocial(false) == 0 || Rnd
-                    .get(getTemplate().getAIData().getMinSocial(false) + getTemplate().getAIData()
-                            .getMinSocial(true)) > getTemplate().getAIData().getMinSocial(true)))
+            if (getTemplate().getAIData().getMinSocial(true) != 0 &&
+                    (getTemplate().getAIData().getMinSocial(false) == 0 ||
+                            Rnd.get(getTemplate().getAIData().getMinSocial(false) +
+                                    getTemplate().getAIData().getMinSocial(true)) >
+                                    getTemplate().getAIData().getMinSocial(true)))
             {
                 second = true;
             }
@@ -600,10 +600,10 @@ public class L2Npc extends L2Character
             second = Rnd.get(1) == 0;
         }
 
-        int minWait = particular ? getTemplate().getAIData()
-                .getMinSocial(second) : isMob() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION;
-        int maxWait = particular ? getTemplate().getAIData()
-                .getMaxSocial(second) : isMob() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION;
+        int minWait = particular ? getTemplate().getAIData().getMinSocial(second) :
+                isMob() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION;
+        int maxWait = particular ? getTemplate().getAIData().getMaxSocial(second) :
+                isMob() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION;
 
         // Calculate the delay before the next animation
         int interval = Rnd.get(minWait, maxWait) * 1000;
@@ -618,8 +618,9 @@ public class L2Npc extends L2Character
      */
     public boolean hasRandomAnimation()
     {
-        return Config.MAX_NPC_ANIMATION > 0 && !getAiType().equals(AIType.CORPSE) && (getTemplate().getAIData()
-                .getMaxSocial(false) != 0 || getTemplate().getAIData().getMaxSocial(true) != 0);
+        return Config.MAX_NPC_ANIMATION > 0 && !getAiType().equals(AIType.CORPSE) &&
+                (getTemplate().getAIData().getMaxSocial(false) != 0 ||
+                        getTemplate().getAIData().getMaxSocial(true) != 0);
     }
 
     /**
@@ -990,8 +991,8 @@ public class L2Npc extends L2Character
         {
             return false;
         }
-        if (player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() && player
-                .getInstanceId() != -1)
+        if (player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() &&
+                player.getInstanceId() != -1)
         {
             return false;
         }
@@ -1143,8 +1144,8 @@ public class L2Npc extends L2Character
                 }
                 else
                 {
-                    Log.info(getClass()
-                            .getSimpleName() + ": Unknown NPC bypass: \"" + command + "\" NpcId: " + getNpcId());
+                    Log.info(getClass().getSimpleName() + ": Unknown NPC bypass: \"" + command + "\" NpcId: " +
+                            getNpcId());
                 }
             }
         }
@@ -1374,8 +1375,8 @@ public class L2Npc extends L2Character
             player.sendPacket(ActionFailed.STATIC_PACKET);
             return;
         }
-        if (player.isCursedWeaponEquipped() && (!(player.getTarget() instanceof L2ClanHallManagerInstance) || !(player
-                .getTarget() instanceof L2DoormenInstance)))
+        if (player.isCursedWeaponEquipped() && (!(player.getTarget() instanceof L2ClanHallManagerInstance) ||
+                !(player.getTarget() instanceof L2DoormenInstance)))
         {
             player.setTarget(player);
             return;
@@ -1563,8 +1564,8 @@ public class L2Npc extends L2Character
 
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("EEEE d MMMMMMM");
 
-                long bossRespawnTime = System.currentTimeMillis() + GrandBossManager.getInstance()
-                        .getUnlockTime(npcTemplate.NpcId);
+                long bossRespawnTime =
+                        System.currentTimeMillis() + GrandBossManager.getInstance().getUnlockTime(npcTemplate.NpcId);
 
                 long earliestSpawnTime = 0;
                 long latestSpawnTime = 0;
@@ -1605,14 +1606,15 @@ public class L2Npc extends L2Character
 
                 if (!earliestSpawnTimeDay.equals(latestSpawnTimeDay))
                 {
-                    epicInfo += "Spawning between " + earliestSpawnTimeDay + " at " + dateFormatter
-                            .format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " + dateFormatter
-                            .format(latestSpawnTime) + ".<br>";
+                    epicInfo += "Spawning between " + earliestSpawnTimeDay + " at " +
+                            dateFormatter.format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " +
+                            dateFormatter.format(latestSpawnTime) + ".<br>";
                 }
                 else
                 {
-                    epicInfo += "Spawning on " + earliestSpawnTimeDay + " between " + dateFormatter
-                            .format(earliestSpawnTime) + " and " + dateFormatter.format(latestSpawnTime) + ".<br>";
+                    epicInfo += "Spawning on " + earliestSpawnTimeDay + " between " +
+                            dateFormatter.format(earliestSpawnTime) + " and " + dateFormatter.format(latestSpawnTime) +
+                            ".<br>";
                 }
             }
             html.replace("%bossList%", epicInfo);
@@ -1830,8 +1832,8 @@ public class L2Npc extends L2Character
     @Override
     public String toString()
     {
-        return getClass()
-                .getSimpleName() + ":" + getTemplate().Name + "(" + getNpcId() + ")" + "[" + getObjectId() + "]";
+        return getClass().getSimpleName() + ":" + getTemplate().Name + "(" + getNpcId() + ")" + "[" + getObjectId() +
+                "]";
     }
 
     public boolean isDecayed()
@@ -1967,10 +1969,8 @@ public class L2Npc extends L2Character
         {
             Log.warning("Npc " + npcId + " missing noTeach html!");
             NpcHtmlMessage msg = new NpcHtmlMessage(getObjectId());
-            final String sb = StringUtil
-                    .concat("<html><body>" +
-                                    "I cannot teach you any skills.<br>You must find your current class teachers.",
-                            "</body></html>");
+            final String sb = StringUtil.concat("<html><body>" +
+                    "I cannot teach you any skills.<br>You must find your current class teachers.", "</body></html>");
             msg.setHtml(sb);
             player.sendPacket(msg);
             return;

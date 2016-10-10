@@ -170,8 +170,8 @@ public final class ItemParser extends StatsParser
         }
         try
         {
-            Constructor<?> c = Class.forName("l2server.gameserver.templates.item.L2" + _type)
-                    .getConstructor(StatsSet.class);
+            Constructor<?> c =
+                    Class.forName("l2server.gameserver.templates.item.L2" + _type).getConstructor(StatsSet.class);
             _item = (L2Item) c.newInstance(_set);
         }
         catch (Exception e)

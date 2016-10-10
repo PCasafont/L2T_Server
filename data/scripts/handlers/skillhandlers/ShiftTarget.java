@@ -54,8 +54,8 @@ public class ShiftTarget implements ISkillHandler
         L2PcInstance otherMember = targetPlayer;
         while (otherMember == targetPlayer)
         {
-            otherMember = targetPlayer.getParty().getPartyMembers()
-                    .get(Rnd.get(targetPlayer.getParty().getMemberCount()));
+            otherMember =
+                    targetPlayer.getParty().getPartyMembers().get(Rnd.get(targetPlayer.getParty().getMemberCount()));
         }
 
         for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))

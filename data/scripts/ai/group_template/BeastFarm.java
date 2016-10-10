@@ -320,7 +320,7 @@ public class BeastFarm extends L2AttackableAIScript
         // despawn the old mob
         //TODO: same code? FIXED?
         /*if (_GrowthCapableMobs.get(npc.getNpcId()).getGrowthLevel() == 0)
-		{
+        {
 			npc.deleteMe();
 		}
 		else
@@ -333,8 +333,9 @@ public class BeastFarm extends L2AttackableAIScript
         if (Util.contains(TAMED_BEASTS, nextNpcId))
         {
             L2NpcTemplate template = NpcTable.getInstance().getTemplate(nextNpcId);
-            L2TamedBeastInstance nextNpc = new L2TamedBeastInstance(IdFactory.getInstance()
-                    .getNextId(), template, player, food, npc.getX(), npc.getY(), npc.getZ(), true);
+            L2TamedBeastInstance nextNpc =
+                    new L2TamedBeastInstance(IdFactory.getInstance().getNextId(), template, player, food, npc.getX(),
+                            npc.getY(), npc.getZ(), true);
 
             String name = _TamedBeastsData.keySet().toArray(new String[_TamedBeastsData.keySet().size()])[Rnd
                     .get(_TamedBeastsData.size())];
@@ -405,8 +406,7 @@ public class BeastFarm extends L2AttackableAIScript
         int npcId = npc.getNpcId();
         int skillId = skill.getId();
         // check if the npc and skills used are valid for this script.  Exit if invalid.
-        if (!Util
-                .contains(FEEDABLE_BEASTS, npcId) || skillId != SKILL_GOLDEN_SPICE && skillId != SKILL_CRYSTAL_SPICE &&
+        if (!Util.contains(FEEDABLE_BEASTS, npcId) || skillId != SKILL_GOLDEN_SPICE && skillId != SKILL_CRYSTAL_SPICE &&
                 skillId != SKILL_BLESSED_GOLDEN_SPICE && skillId != SKILL_BLESSED_CRYSTAL_SPICE &&
                 skillId != SKILL_SGRADE_GOLDEN_SPICE && skillId != SKILL_SGRADE_CRYSTAL_SPICE)
         {

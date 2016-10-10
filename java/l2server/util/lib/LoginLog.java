@@ -37,7 +37,7 @@ public class LoginLog
     public static final void add(String text, String cat)
     {
         /*
-		 * Logger _log = logs.get(cat); if (_log == null) { _log =
+         * Logger _log = logs.get(cat); if (_log == null) { _log =
 		 * Logger.getLogger(cat); logs.put(cat, _log); }
 		 */
 

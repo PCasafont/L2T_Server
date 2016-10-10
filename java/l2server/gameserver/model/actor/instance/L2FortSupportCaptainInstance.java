@@ -158,8 +158,8 @@ public class L2FortSupportCaptainInstance extends L2MerchantInstance implements 
                     }
                     for (SubUnitSkill sus : array)
                     {
-                        skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill()
-                                .getLevel(), sus.getReputation(), 0);
+                        skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(),
+                                sus.getReputation(), 0);
                     }
                     player.sendPacket(skilllist);
                 }
@@ -179,8 +179,8 @@ public class L2FortSupportCaptainInstance extends L2MerchantInstance implements 
     @Override
     public void showChatWindow(L2PcInstance player)
     {
-        if (player.getClan() == null || getFort().getOwnerClan() == null || player.getClan() != getFort()
-                .getOwnerClan())
+        if (player.getClan() == null || getFort().getOwnerClan() == null ||
+                player.getClan() != getFort().getOwnerClan())
         {
             NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
             html.setFile(player.getHtmlPrefix(), "fortress/supportunit-noclan.htm");

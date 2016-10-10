@@ -166,15 +166,15 @@ public class Balok extends L2AttackableAIScript
             {
                 InstanceManager.getInstance().showVidToInstance(106, world.instanceId); //Balok history :D
 
-                startQuestTimer("stage_1_balok_intro", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(106) + 5000, null, player);
+                startQuestTimer("stage_1_balok_intro", ScenePlayerDataTable.getInstance().getVideoDuration(106) + 5000,
+                        null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_balok_intro"))
             {
                 InstanceManager.getInstance().showVidToInstance(105, world.instanceId); //Balok intro
 
-                startQuestTimer("stage_1_spawn_balok", ScenePlayerDataTable.getInstance()
-                        .getVideoDuration(105) + 2000, null, player);
+                startQuestTimer("stage_1_spawn_balok", ScenePlayerDataTable.getInstance().getVideoDuration(105) + 2000,
+                        null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_spawn_balok"))
             {
@@ -200,8 +200,9 @@ public class Balok extends L2AttackableAIScript
             {
                 if (npc.getDistanceSq(world.balok) > 113125)
                 {
-                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(world.balok
-                            .getX() + 100, world.balok.getY() + 50, world.balok.getZ(), world.balok.getHeading()));
+                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                            new L2CharPosition(world.balok.getX() + 100, world.balok.getY() + 50, world.balok.getZ(),
+                                    world.balok.getHeading()));
                     startQuestTimer("stage_last_minion_walk", 2000, npc, null);
                 }
                 else
@@ -276,9 +277,8 @@ public class Balok extends L2AttackableAIScript
 
                         instPlayer.teleToLocation(randomJail[0], randomJail[1], randomJail[2]);
 
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new ExShowScreenMessage("$s1, locked away in the prison."
-                                        .replace("$s1", instPlayer.getName()), 5000));
+                        InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(
+                                "$s1, locked away in the prison.".replace("$s1", instPlayer.getName()), 5000));
                         break;
                     }
                     startQuestTimer("stage_last_send_minions", 2000, npc, null);
@@ -316,9 +316,9 @@ public class Balok extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
                         {
                             world._rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd
-                                    .get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor
-                                            .getDimensionalDoorRewardRate()), player, true);
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                                    Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(),
+                                            13 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
                         else
                         {
@@ -376,8 +376,8 @@ public class Balok extends L2AttackableAIScript
         {
             if (!(world instanceof CrystalPrisonWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 

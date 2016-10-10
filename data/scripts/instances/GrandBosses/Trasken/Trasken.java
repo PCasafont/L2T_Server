@@ -241,21 +241,17 @@ public class Trasken extends L2AttackableAIScript
                 world.Trasken.setIsMortal(false);
 
                 //Cast the earthquake
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new Earthquake(world.Trasken.getX(), world.Trasken
-                                .getY(), world.Trasken.getZ(), 5, 5));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new Earthquake(world.Trasken.getX(), world.Trasken.getY(), world.Trasken.getZ(), 5, 5));
                 //Custom Message
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(
-                                "You should decrease the number of Tentacles in order to weak Earth Wyrm Trasken",
-                                10000));
+                InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(
+                        "You should decrease the number of Tentacles in order to weak Earth Wyrm Trasken", 10000));
             }
             else if (event.equalsIgnoreCase("stage_all_raid_despawn"))
             {
                 //Cast the earthquake
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new Earthquake(world.Trasken.getX(), world.Trasken
-                                .getY(), world.Trasken.getZ(), 5, 5));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new Earthquake(world.Trasken.getX(), world.Trasken.getY(), world.Trasken.getZ(), 5, 5));
 
                 //set the tail invul
                 world.Trasken.setIsInvul(true);
@@ -267,9 +263,8 @@ public class Trasken extends L2AttackableAIScript
             else if (event.equalsIgnoreCase("stage_all_raid_spawn"))
             {
                 //Cast the earthquake
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new Earthquake(world.Trasken.getX(), world.Trasken
-                                .getY(), world.Trasken.getZ(), 5, 5));
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new Earthquake(world.Trasken.getX(), world.Trasken.getY(), world.Trasken.getZ(), 5, 5));
 
                 world.Trasken.setIsInvisible(false);
                 world.Trasken.doCast(world.isTraskenTime ? _traskenHaunting : _tailHaunting);
@@ -316,43 +311,39 @@ public class Trasken extends L2AttackableAIScript
 
                 if (world.isTraskenTime)
                 {
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId,
-                                    new ExShowScreenMessage("Focus all your power to Earth Wyrm trasken!",
-                                            10000)); //Custom Message
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage("Focus all your power to Earth Wyrm trasken!",
+                                    10000)); //Custom Message
                 }
             }
             else if (event.equalsIgnoreCase("stage_last_spawn_larvas"))
             {
                 for (int[] a : _larvaSpawns)
                 {
-                    L2Npc larva = addSpawn(_larvas[Rnd
-                            .get(_larvas.length)], a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
+                    L2Npc larva = addSpawn(_larvas[Rnd.get(_larvas.length)], a[0], a[1], a[2], a[3], false, 0, false,
+                            world.instanceId);
                     larva.setIsRunning(true);
                 }
             }
             else if (event.equalsIgnoreCase("stage_last_stomach_glands_message"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(1620001, 0, true,
-                                5000)); //Acid is secreting from the Stomach Glands
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new ExShowScreenMessage(1620001, 0, true, 5000)); //Acid is secreting from the Stomach Glands
             }
             else if (event.equalsIgnoreCase("stage_last_foes_message"))
             {
                 //Larvas?
                 startQuestTimer("stage_last_spawn_larvas", 7000, world.Trasken, null, true);
 
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId,
-                                new ExShowScreenMessage(1620003, 0, true, 5000)); //The heart is being protected by foes
+                InstanceManager.getInstance().sendPacket(world.instanceId,
+                        new ExShowScreenMessage(1620003, 0, true, 5000)); //The heart is being protected by foes
 
                 startQuestTimer("stage_last_eliminate_larvas_message", 6000, npc, null);
             }
             else if (event.equalsIgnoreCase("stage_last_eliminate_larvas_message"))
             {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(1620006, 0, true,
-                                5000)); //Eliminate those who protect the heart of the Earth Wyrm
+                InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1620006, 0, true,
+                        5000)); //Eliminate those who protect the heart of the Earth Wyrm
 
                 startQuestTimer("stage_last_heart_invul", 30000, npc, null);
             }
@@ -468,9 +459,8 @@ public class Trasken extends L2AttackableAIScript
                             pl.teleToLocation(_traskenInterior, true);
                         }
 
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new ExShowScreenMessage(1620005, 0, true,
-                                        5000)); //You were ingested by the Earth Wyrm
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new ExShowScreenMessage(1620005, 0, true, 5000)); //You were ingested by the Earth Wyrm
 
                         startQuestTimer("stage_last_stomach_glands_message", 6000, npc, null);
 
@@ -517,9 +507,8 @@ public class Trasken extends L2AttackableAIScript
                     {
                         world.isTeredorTime = true;
                         //Custom Message
-                        InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new ExShowScreenMessage(
-                                        "It's the time to kill Teredor's, search and destroy all of them!", 10000));
+                        InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(
+                                "It's the time to kill Teredor's, search and destroy all of them!", 10000));
                     }
                     break;
 
@@ -545,9 +534,8 @@ public class Trasken extends L2AttackableAIScript
                         }
                     }
 
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(1620002, 0, true,
-                                    5000)); //All Stomach Glands have been destroyed
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(1620002, 0, true, 5000)); //All Stomach Glands have been destroyed
 
                     startQuestTimer("stage_last_foes_message", 6000, npc, null);
                     break;
@@ -577,14 +565,13 @@ public class Trasken extends L2AttackableAIScript
 
                     //Hide the quest timer
                     InstanceManager.getInstance().sendPacket(world.instanceId, new ExSendUIEventRemove());
-                    InstanceManager.getInstance()
-                            .sendPacket(world.instanceId, new ExShowScreenMessage(1620011, 0, true,
-                                    5000)); //Heart of Earth Wyrm has been destroyed
+                    InstanceManager.getInstance().sendPacket(world.instanceId,
+                            new ExShowScreenMessage(1620011, 0, true, 5000)); //Heart of Earth Wyrm has been destroyed
                     InstanceManager.getInstance().broadcastMovie(49, world.instanceId);
                     InstanceManager.getInstance().setInstanceReuse(world.instanceId, _template, true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
-                    startQuestTimer("stage_last_teleport_back", ScenePlayerDataTable.getInstance()
-                            .getVideoDuration(49), npc, null);
+                    startQuestTimer("stage_last_teleport_back", ScenePlayerDataTable.getInstance().getVideoDuration(49),
+                            npc, null);
 
                     break;
             }
@@ -640,8 +627,8 @@ public class Trasken extends L2AttackableAIScript
         {
             if (!(world instanceof TraskenWorld))
             {
-                player.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+                player.sendPacket(
+                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
                 return;
             }
 
@@ -698,9 +685,11 @@ public class Trasken extends L2AttackableAIScript
             }
             else
             {
-                allPlayers.addAll(Config.TRASKEN_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ? player.getParty()
-                        .getCommandChannel().getMembers() : player.getParty().getCommandChannel() != null ? player
-                        .getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+                allPlayers.addAll(Config.TRASKEN_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ?
+                        player.getParty().getCommandChannel().getMembers() :
+                        player.getParty().getCommandChannel() != null ?
+                                player.getParty().getCommandChannel().getMembers() :
+                                player.getParty().getPartyMembers());
             }
 
             for (L2PcInstance enterPlayer : allPlayers)
@@ -720,8 +709,7 @@ public class Trasken extends L2AttackableAIScript
             startQuestTimer("stage_1_start", 60000, null, player);
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
-                    player
-                            .getName());
+                    player.getName());
             return;
         }
     }

@@ -84,8 +84,8 @@ public class L2DropCategory
         int subCatChance = 0;
         for (L2DropData drop : getAllDrops())
         {
-            if (drop.getItemId() == 57 || drop.getItemId() == 6360 || drop.getItemId() == 6361 || drop
-                    .getItemId() == 6362)
+            if (drop.getItemId() == 57 || drop.getItemId() == 6360 || drop.getItemId() == 6361 ||
+                    drop.getItemId() == 6362)
             {
                 drops.add(drop);
                 subCatChance += drop.getChance();

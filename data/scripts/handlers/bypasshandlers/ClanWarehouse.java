@@ -50,15 +50,15 @@ public class ClanWarehouse implements IBypassHandler
 
         if (activeChar.getClan() == null)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
             return false;
         }
 
         if (activeChar.getClan().getLevel() == 0)
         {
-            activeChar.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.ONLY_LEVEL_1_CLAN_OR_HIGHER_CAN_USE_WAREHOUSE));
+            activeChar.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.ONLY_LEVEL_1_CLAN_OR_HIGHER_CAN_USE_WAREHOUSE));
             return false;
         }
 
@@ -85,13 +85,13 @@ public class ClanWarehouse implements IBypassHandler
 
                 if (param.length > 2)
                 {
-                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]), SortedWareHouseWithdrawalList
-                            .getOrder(param[2]));
+                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]),
+                            SortedWareHouseWithdrawalList.getOrder(param[2]));
                 }
                 else if (param.length > 1)
                 {
-                    showWithdrawWindow(activeChar, WarehouseListType
-                            .valueOf(param[1]), SortedWareHouseWithdrawalList.A2Z);
+                    showWithdrawWindow(activeChar, WarehouseListType.valueOf(param[1]),
+                            SortedWareHouseWithdrawalList.A2Z);
                 }
                 else
                 {
@@ -107,8 +107,8 @@ public class ClanWarehouse implements IBypassHandler
 
                 if (Config.DEBUG)
                 {
-                    _log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar
-                            .getName() + "; Command: showDepositWindowClan; Message: Showing items to deposit.");
+                    _log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+                            "; Command: showDepositWindowClan; Message: Showing items to deposit.");
                 }
 
                 activeChar.sendPacket(new WareHouseDepositList(activeChar, WareHouseDepositList.CLAN));
@@ -130,8 +130,8 @@ public class ClanWarehouse implements IBypassHandler
 
         if ((player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE)
         {
-            player.sendPacket(SystemMessage
-                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
+            player.sendPacket(
+                    SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
             return;
         }
 
@@ -155,8 +155,8 @@ public class ClanWarehouse implements IBypassHandler
 
         if (Config.DEBUG)
         {
-            _log.fine("Source: L2WarehouseInstance.java; Player: " + player
-                    .getName() + "; Command: showRetrieveWindowClan; Message: Showing stored items.");
+            _log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+                    "; Command: showRetrieveWindowClan; Message: Showing stored items.");
         }
     }
 

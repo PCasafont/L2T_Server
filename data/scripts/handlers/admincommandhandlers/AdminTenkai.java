@@ -120,8 +120,8 @@ public class AdminTenkai implements IAdminCommandHandler
                 try
                 {
                     con = L2DatabaseFactory.getInstance().getConnection();
-                    PreparedStatement statement = con
-                            .prepareStatement("SELECT charId FROM characters WHERE char_name LIKE ?");
+                    PreparedStatement statement =
+                            con.prepareStatement("SELECT charId FROM characters WHERE char_name LIKE ?");
                     statement.setString(1, playerName);
                     ResultSet rset = statement.executeQuery();
                     if (rset.next())
@@ -179,7 +179,7 @@ public class AdminTenkai implements IAdminCommandHandler
         else if (command.startsWith("admin_packet"))
         {
             /*StringTokenizer st = new StringTokenizer(command, " ");
-			String token = st.nextToken();
+            String token = st.nextToken();
 			int type;
 			int[] args = new int[50];
 			switch (Integer.valueOf(st.nextToken()))
@@ -441,8 +441,8 @@ public class AdminTenkai implements IAdminCommandHandler
             //if (objId != -1)
             //CharNameTable.getInstance().removeName(objId);
             //GrandBossManager.getInstance().setBossStatus(_kelbimId, GrandBossManager.getInstance().FIGHTING);
-            Log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " + activeChar
-                    .getHeading());
+            Log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " +
+                    activeChar.getHeading());
         }
         else if (command.startsWith("admin_devdelete"))
         {
@@ -491,11 +491,9 @@ public class AdminTenkai implements IAdminCommandHandler
                 {
                     for (int j = 0; j < rows; j++)
                     {
-                        int x = activeChar
-                                .getX() + (int) (cos * (-(width / 2 - separation / 2) + separation * i) -
+                        int x = activeChar.getX() + (int) (cos * (-(width / 2 - separation / 2) + separation * i) -
                                 sin * (-(width / 2 - separation / 2) + separation * j));
-                        int y = activeChar
-                                .getY() + (int) (sin * (-(height / 2 - separation / 2) + separation * i) +
+                        int y = activeChar.getY() + (int) (sin * (-(height / 2 - separation / 2) + separation * i) +
                                 cos * (-(height / 2 - separation / 2) + separation * j));
 
                         spawnMonster(activeChar, id, 60, true, x, y, activeChar.getZ());
@@ -539,13 +537,13 @@ public class AdminTenkai implements IAdminCommandHandler
 
                 for (SpawnInfo deleted : _deletedSpawns)
                 {
-                    if (!line.contains(deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted
-                            .getZ()))
+                    if (!line.contains(
+                            deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ()))
                     {
                         writeOutput.println(line);
                         _deletedSpawns.remove(deleted);
-                        Log.warning(deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted
-                                .getZ());
+                        Log.warning(
+                                deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ());
                         break;
                     }
                 }
@@ -724,11 +722,11 @@ public class AdminTenkai implements IAdminCommandHandler
                 spawn.stopRespawn();
             }
 
-            activeChar.sendMessage("Created " + template1.Name + " on " + spawn.getX() + ", " + spawn
-                    .getY() + ", " + spawn.getZ());
+            activeChar.sendMessage(
+                    "Created " + template1.Name + " on " + spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ());
             //<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
-            Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn
-                    .getY() + "\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
+            Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() +
+                    "\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
             //_log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
         }
         catch (Exception e)

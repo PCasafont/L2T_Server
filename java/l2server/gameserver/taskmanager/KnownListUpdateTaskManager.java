@@ -85,8 +85,8 @@ public class KnownListUpdateTaskManager
                         {
                             Log.log(Level.WARNING,
                                     "KnownListUpdateTaskManager: updateRegion(" + _fullUpdateTimer + "," + updatePass +
-                                            ") failed for region " + r
-                                            .getName() + ". Full update scheduled. " + e.getMessage(), e);
+                                            ") failed for region " + r.getName() + ". Full update scheduled. " +
+                                            e.getMessage(), e);
                             _failedRegions.add(r);
                         }
                     }
@@ -125,8 +125,7 @@ public class KnownListUpdateTaskManager
 
                     // Some mobs need faster knownlist update
                     final boolean aggro = Config.GUARD_ATTACK_AGGRO_MOB && object instanceof L2GuardInstance ||
-                            object instanceof L2Attackable && ((L2Attackable) object)
-                                    .getEnemyClan() != null;
+                            object instanceof L2Attackable && ((L2Attackable) object).getEnemyClan() != null;
 
                     if (forgetObjects)
                     {

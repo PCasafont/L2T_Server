@@ -42,8 +42,9 @@ public class FleeNpc extends L2AttackableAIScript
     {
         if (npc.getNpcId() >= 18150 && npc.getNpcId() <= 18157)
         {
-            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX() + Rnd
-                    .get(-40, 40), npc.getY() + Rnd.get(-40, 40), npc.getZ(), npc.getHeading()));
+            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                    new L2CharPosition(npc.getX() + Rnd.get(-40, 40), npc.getY() + Rnd.get(-40, 40), npc.getZ(),
+                            npc.getHeading()));
             npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
             return null;
         }
@@ -51,8 +52,9 @@ public class FleeNpc extends L2AttackableAIScript
         {
             if (Rnd.get(3) == 2)
             {
-                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX() + Rnd
-                        .get(-200, 200), npc.getY() + Rnd.get(-200, 200), npc.getZ(), npc.getHeading()));
+                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+                        new L2CharPosition(npc.getX() + Rnd.get(-200, 200), npc.getY() + Rnd.get(-200, 200), npc.getZ(),
+                                npc.getHeading()));
             }
             npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
             return null;

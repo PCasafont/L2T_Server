@@ -55,8 +55,8 @@ public class RequestTempBan extends BaseRecievePacket
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con
-                    .prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
+            PreparedStatement statement =
+                    con.prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
             statement.setString(1, _accountName);
             statement.setString(2, "ban_temp");
             statement.setString(3, Long.toString(_banTime));

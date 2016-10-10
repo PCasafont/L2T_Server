@@ -86,8 +86,8 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler
                     else
                     {
                         castle = CastleManager.getInstance()
-                                .getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(), targetPet
-                                        .getOwner().getZ());
+                                .getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(),
+                                        targetPet.getOwner().getZ());
                     }
 
                     if (castle != null)
@@ -127,15 +127,13 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler
                         {
                             if (targetPlayer.isRevivingPet())
                             {
-                                player.sendPacket(SystemMessage
-                                        .getSystemMessage(
-                                                SystemMessageId.MASTER_CANNOT_RES)); // While a pet is attempting to resurrect, it cannot help in resurrecting its master.
+                                player.sendPacket(SystemMessage.getSystemMessage(
+                                        SystemMessageId.MASTER_CANNOT_RES)); // While a pet is attempting to resurrect, it cannot help in resurrecting its master.
                             }
                             else
                             {
-                                player.sendPacket(SystemMessage
-                                        .getSystemMessage(
-                                                SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
+                                player.sendPacket(SystemMessage.getSystemMessage(
+                                        SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
                             }
 
                             condGood = false;

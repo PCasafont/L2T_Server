@@ -166,8 +166,8 @@ public class Util
         byte[] data = new byte[len];
         for (int i = 0; i < len; i++)
         {
-            data[i] = (byte) ((Character.digit(hex.charAt(i * 3), 16) << 4) + Character
-                    .digit(hex.charAt(i * 3 + 1), 16));
+            data[i] =
+                    (byte) ((Character.digit(hex.charAt(i * 3), 16) << 4) + Character.digit(hex.charAt(i * 3 + 1), 16));
         }
         return data;
     }

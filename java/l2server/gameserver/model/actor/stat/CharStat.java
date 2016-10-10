@@ -155,8 +155,8 @@ public class CharStat
             return 0;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 1000;
         }
@@ -181,8 +181,8 @@ public class CharStat
             return 0;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 1000;
         }
@@ -233,8 +233,8 @@ public class CharStat
             return 1;
         }
 
-        double criticalHit = calcStat(Stats.CRITICAL_RATE, _activeChar
-                .getTemplate().baseCritRate, target, skill) * 10.0 + 0.5;
+        double criticalHit =
+                calcStat(Stats.CRITICAL_RATE, _activeChar.getTemplate().baseCritRate, target, skill) * 10.0 + 0.5;
 
         if (Formulas.isInFrontOf(target, _activeChar))
         {
@@ -302,7 +302,7 @@ public class CharStat
         }
 
 		/*if (val > Config.MAX_EVASION && !_activeChar.isGM())
-			val = Config.MAX_EVASION;*/
+            val = Config.MAX_EVASION;*/
         return val;
     }
 
@@ -486,8 +486,8 @@ public class CharStat
         {
             bonusSpdAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
         }
-        double val = calcStat(Stats.MAGIC_ATTACK_SPEED, _activeChar
-                .getTemplate().baseMAtkSpd * bonusSpdAtk, null, null);
+        double val =
+                calcStat(Stats.MAGIC_ATTACK_SPEED, _activeChar.getTemplate().baseMAtkSpd * bonusSpdAtk, null, null);
         if (!Config.isServer(Config.TENKAI) && val > Config.MAX_MATK_SPEED && !_activeChar.isGM())
         {
             val = Config.MAX_MATK_SPEED;
@@ -515,8 +515,8 @@ public class CharStat
         if (target != null)
         {
             //Radiant Heal Panic Heal Brilliant Heal have 100% critical when the target have this stat
-            if (calcStat(Stats.HEAL_CRIT_RATE, 1, target, skill) > 1 && skill
-                    .getSkillType() == L2SkillType.OVERHEAL && skill.getId() >= 11755 && skill.getId() <= 11757)
+            if (calcStat(Stats.HEAL_CRIT_RATE, 1, target, skill) > 1 && skill.getSkillType() == L2SkillType.OVERHEAL &&
+                    skill.getId() >= 11755 && skill.getId() <= 11757)
             {
                 return 1550;
             }
@@ -529,8 +529,8 @@ public class CharStat
             mrate = 40;
         }
 
-        int maxCritical = (int) Math
-                .round(calcStat(Stats.MAX_MAGIC_CRITICAL_RATE, Config.MAX_MCRIT_RATE, target, skill));
+        int maxCritical =
+                (int) Math.round(calcStat(Stats.MAX_MAGIC_CRITICAL_RATE, Config.MAX_MCRIT_RATE, target, skill));
         if (!Config.isServer(Config.TENKAI) && mrate > maxCritical)
         {
             mrate = maxCritical;
@@ -620,8 +620,8 @@ public class CharStat
             return 1;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 150;
         }
@@ -782,8 +782,8 @@ public class CharStat
             return 1;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 300;
         }
@@ -794,8 +794,9 @@ public class CharStat
             bonusAtk *= Config.L2JMOD_CHAMPION_SPD_ATK;
         }
 
-        int val = (int) Math.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar
-                .getTemplate().basePAtkSpd * bonusAtk, null, null));
+        int val = (int) Math
+                .round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().basePAtkSpd * bonusAtk, null,
+                        null));
         if (Config.isServer(Config.TENKAI) && val > 1400)
         {
             val = 1400 + (int) Math.pow(val - 1400, 0.75);
@@ -870,8 +871,8 @@ public class CharStat
             return 1;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 100;
         }
@@ -937,8 +938,8 @@ public class CharStat
             return 1;
         }
 
-        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar)
-                .isPlayingEvent() && ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
+        if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).isPlayingEvent() &&
+                ((L2PcInstance) _activeChar).getEvent().isType(EventType.StalkedSalkers))
         {
             return 180;
         }
@@ -951,8 +952,8 @@ public class CharStat
             return 0;
         }
 
-        baseRunSpd += calcStat(Stats.SPD_PER_DEX, 0, null, null) * (BaseStats.DEX
-                .calcBonus(_activeChar) - 1) * baseRunSpd;
+        baseRunSpd +=
+                calcStat(Stats.SPD_PER_DEX, 0, null, null) * (BaseStats.DEX.calcBonus(_activeChar) - 1) * baseRunSpd;
         int runSpeed = (int) Math.round(calcStat(Stats.RUN_SPEED, baseRunSpd, null, null));
 
         // Guessed formula

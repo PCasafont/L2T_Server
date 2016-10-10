@@ -58,7 +58,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
     private void handleSendPacket(L2PcInstance activeChar)
     {
         /*
-		 * -1 0 to initialize the race
+         * -1 0 to initialize the race
 		 * 0 15322 to start race
 		 * 13765 -1 in middle of race
 		 * -1 0 to end the race
@@ -128,8 +128,8 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			 _log.info("Total speed for "+(i+1)+" = "+speed[i]);
 			 }*/
 
-            MonRaceInfo spk = new MonRaceInfo(codes[2][0], codes[2][1], MonsterRace.getInstance()
-                    .getMonsters(), MonsterRace.getInstance().getSpeeds());
+            MonRaceInfo spk = new MonRaceInfo(codes[2][0], codes[2][1], MonsterRace.getInstance().getMonsters(),
+                    MonsterRace.getInstance().getSpeeds());
             activeChar.sendPacket(spk);
             activeChar.broadcastPacket(spk);
             ThreadPoolManager.getInstance().scheduleGeneral(new RunEnd(activeChar), 30000);

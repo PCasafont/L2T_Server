@@ -64,8 +64,8 @@ public class L2AKnightAI extends L2APlayerAI
             return true;
         }
 
-        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player
-                .getMaxHp() * 0.5 || _player.getTarget() instanceof L2Playable)
+        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
+                _player.getTarget() instanceof L2Playable)
         {
             for (L2Skill skill : _player.getAllSkills())
             {
