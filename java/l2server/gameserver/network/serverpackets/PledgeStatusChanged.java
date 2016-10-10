@@ -19,35 +19,33 @@ import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 
 /**
- *
- *
  * sample
  * 0000: cd b0 98 a0 48 1e 01 00 00 00 00 00 00 00 00 00	....H...........
  * 0010: 00 00 00 00 00									 .....
- *
+ * <p>
  * format   ddddd
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class PledgeStatusChanged extends L2GameServerPacket
 {
-	private L2Clan _clan;
-	
-	public PledgeStatusChanged(L2Clan clan)
-	{
-		_clan = clan;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(Config.SERVER_ID);
-		writeD(_clan.getLeaderId());
-		writeD(_clan.getClanId());
-		writeD(_clan.getCrestId());
-		writeD(_clan.getAllyId());
-		writeD(_clan.getAllyCrestId());
-		writeD(0);
-		writeD(0);
-	}
+    private L2Clan _clan;
+
+    public PledgeStatusChanged(L2Clan clan)
+    {
+        _clan = clan;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(Config.SERVER_ID);
+        writeD(_clan.getLeaderId());
+        writeD(_clan.getClanId());
+        writeD(_clan.getCrestId());
+        writeD(_clan.getAllyId());
+        writeD(_clan.getAllyCrestId());
+        writeD(0);
+        writeD(0);
+    }
 }

@@ -25,35 +25,35 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreListBuy extends L2ItemListPacket
 {
-	private int _objId;
-	private long _playerAdena;
-	private TradeList.TradeItem[] _items;
-	
-	public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer)
-	{
-		_objId = storePlayer.getObjectId();
-		_playerAdena = player.getAdena();
-		storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed
-		_items = storePlayer.getBuyList().getAvailableItems(player.getInventory());
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objId);
-		writeQ(_playerAdena);
-		writeD(0x00); // GoD ???
-		
-		writeD(_items.length);
-		
-		for (TradeList.TradeItem item : _items)
-		{
-			writeItem(item);
-			
-			writeD(item.getObjectId());
-			writeQ(item.getPrice());
-			writeQ(item.getItem().getReferencePrice() * 2);
-			writeQ(item.getStoreCount());
-		}
-	}
+    private int _objId;
+    private long _playerAdena;
+    private TradeList.TradeItem[] _items;
+
+    public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer)
+    {
+        _objId = storePlayer.getObjectId();
+        _playerAdena = player.getAdena();
+        storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed
+        _items = storePlayer.getBuyList().getAvailableItems(player.getInventory());
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objId);
+        writeQ(_playerAdena);
+        writeD(0x00); // GoD ???
+
+        writeD(_items.length);
+
+        for (TradeList.TradeItem item : _items)
+        {
+            writeItem(item);
+
+            writeD(item.getObjectId());
+            writeQ(item.getPrice());
+            writeQ(item.getItem().getReferencePrice() * 2);
+            writeQ(item.getStoreCount());
+        }
+    }
 }

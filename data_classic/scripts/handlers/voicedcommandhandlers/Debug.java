@@ -20,42 +20,39 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Debug implements IVoicedCommandHandler
 {
-	private static final String[] VOICED_COMMANDS =
-	{
-		"debug"
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
-	{
-		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-			return false;
-		
-		if (VOICED_COMMANDS[0].equalsIgnoreCase(command))
-		{
-			if (activeChar.isDebug())
-			{
-				activeChar.setDebug(null);
-				activeChar.sendMessage("Debugging disabled");
-			}
-			else
-			{
-				activeChar.setDebug(activeChar);
-				activeChar.sendMessage("Debugging enabled");
-			}
-		}
-		return true;
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
-	 */
-	public String[] getVoicedCommandList()
-	{
-		return VOICED_COMMANDS;
-	}
+    private static final String[] VOICED_COMMANDS = {"debug"};
+
+    /**
+     * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+    {
+        if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
+        {
+            return false;
+        }
+
+        if (VOICED_COMMANDS[0].equalsIgnoreCase(command))
+        {
+            if (activeChar.isDebug())
+            {
+                activeChar.setDebug(null);
+                activeChar.sendMessage("Debugging disabled");
+            }
+            else
+            {
+                activeChar.setDebug(activeChar);
+                activeChar.sendMessage("Debugging enabled");
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+     */
+    public String[] getVoicedCommandList()
+    {
+        return VOICED_COMMANDS;
+    }
 }

@@ -29,38 +29,35 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class ChangeHairAccessory implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.CHANGE_HAIR_ACCESSORY
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance)activeChar;
-		player.setShowHat(!player.isShowingHat());
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHANGE_HAIR_ACCESSORY};
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        if (!(activeChar instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) activeChar;
+        player.setShowHat(!player.isShowingHat());
 
 		/*
-		if (player.isShowingHat())
+        if (player.isShowingHat())
 			player.sendMessage(4168); // Hair accessories will be displayed from now on.
 		else
 			player.sendMessage(4167); // Hair accessories will no longer be displayed.
 		*/
-		player.broadcastUserInfo();
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+        player.broadcastUserInfo();
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

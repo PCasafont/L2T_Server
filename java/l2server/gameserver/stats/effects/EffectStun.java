@@ -26,58 +26,54 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectStun extends L2Effect
 {
-	public EffectStun(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.STUN;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.STUN;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		super.onStart();
-		getEffected().startStunning();
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopStunning(false);
-		super.onExit();
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		// just stop this effect
-		return false;
-	}
+    public EffectStun(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.STUN;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.STUN;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        super.onStart();
+        getEffected().startStunning();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopStunning(false);
+        super.onExit();
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        // just stop this effect
+        return false;
+    }
 }

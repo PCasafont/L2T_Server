@@ -20,29 +20,28 @@ import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.network.serverpackets.ExShowFortressMapInfo;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class RequestFortressMapInfo extends L2GameClientPacket
 {
-	private int _fortressId;
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		_fortressId = readD();
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		Fort fort = FortManager.getInstance().getFortById(_fortressId);
-		sendPacket(new ExShowFortressMapInfo(fort));
-	}
+    private int _fortressId;
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+        _fortressId = readD();
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        Fort fort = FortManager.getInstance().getFortById(_fortressId);
+        sendPacket(new ExShowFortressMapInfo(fort));
+    }
 }

@@ -19,23 +19,24 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExResponseCommissionItemList;
 
 /**
- *
  * @author Erlandys
  */
 public final class RequestCommissionRegistrableItemList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		player.sendPacket(new ExResponseCommissionItemList(player));
-	}
+
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+        player.sendPacket(new ExResponseCommissionItemList(player));
+    }
 }

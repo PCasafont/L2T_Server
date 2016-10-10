@@ -18,41 +18,39 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.L2Party;
 
 /**
- *
- * @author  chris_00
- *
- * ch Sddd
+ * @author chris_00
+ *         <p>
+ *         ch Sddd
  */
 public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
 {
-	
-	private L2Party _party;
-	private int _mode, _LeaderOID, _memberCount;
-	private String _name;
-	
-	/**
-	 *
-	 * @param party
-	 * @param mode 0 = Remove, 1 = Add
-	 */
-	public ExMPCCPartyInfoUpdate(L2Party party, int mode)
-	{
-		_party = party;
-		_name = _party.getLeader().getName();
-		_LeaderOID = _party.getPartyLeaderOID();
-		_memberCount = _party.getMemberCount();
-		_mode = mode;
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeS(_name);
-		writeD(_LeaderOID);
-		writeD(_memberCount);
-		writeD(_mode); //mode 0 = Remove Party, 1 = AddParty, maybe more...
-	}
+
+    private L2Party _party;
+    private int _mode, _LeaderOID, _memberCount;
+    private String _name;
+
+    /**
+     * @param party
+     * @param mode  0 = Remove, 1 = Add
+     */
+    public ExMPCCPartyInfoUpdate(L2Party party, int mode)
+    {
+        _party = party;
+        _name = _party.getLeader().getName();
+        _LeaderOID = _party.getPartyLeaderOID();
+        _memberCount = _party.getMemberCount();
+        _mode = mode;
+    }
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeS(_name);
+        writeD(_LeaderOID);
+        writeD(_memberCount);
+        writeD(_mode); //mode 0 = Remove Party, 1 = AddParty, maybe more...
+    }
 }

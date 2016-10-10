@@ -24,75 +24,83 @@ import l2server.gameserver.model.zone.L2SpawnZone;
 /**
  * A castle zone
  *
- * @author  durgus
+ * @author durgus
  */
 public class L2FortZone extends L2SpawnZone
 {
-	private int _fortId;
-	
-	public L2FortZone(int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("fortId"))
-		{
-			_fortId = Integer.parseInt(value);
-		}
-		else
-			super.setParameter(name, value);
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_FORT, true);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_FORT, false);
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-		
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
-	
-	public void updateZoneStatusForCharactersInside()
-	{
-	}
-	
-	/**
-	 * Removes all foreigners from the fort
-	 * @param owningClan
-	 */
-	public void banishForeigners(L2Clan owningClan)
-	{
-		for (L2Character temp : _characterList.values())
-		{
-			if (!(temp instanceof L2PcInstance))
-				continue;
-			if (((L2PcInstance) temp).getClan() == owningClan)
-				continue;
-			
-			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
-		}
-	}
-	
-	public int getFortId()
-	{
-		return _fortId;
-	}
-	
+    private int _fortId;
+
+    public L2FortZone(int id)
+    {
+        super(id);
+    }
+
+    @Override
+    public void setParameter(String name, String value)
+    {
+        if (name.equals("fortId"))
+        {
+            _fortId = Integer.parseInt(value);
+        }
+        else
+        {
+            super.setParameter(name, value);
+        }
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_FORT, true);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_FORT, false);
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
+
+    public void updateZoneStatusForCharactersInside()
+    {
+    }
+
+    /**
+     * Removes all foreigners from the fort
+     *
+     * @param owningClan
+     */
+    public void banishForeigners(L2Clan owningClan)
+    {
+        for (L2Character temp : _characterList.values())
+        {
+            if (!(temp instanceof L2PcInstance))
+            {
+                continue;
+            }
+            if (((L2PcInstance) temp).getClan() == owningClan)
+            {
+                continue;
+            }
+
+            ((L2PcInstance) temp)
+                    .teleToLocation(
+                            MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
+        }
+    }
+
+    public int getFortId()
+    {
+        return _fortId;
+    }
 }

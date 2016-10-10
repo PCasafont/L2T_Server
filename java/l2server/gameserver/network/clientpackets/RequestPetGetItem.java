@@ -30,40 +30,42 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public final class RequestPetGetItem extends L2GameClientPacket
 {
-	private int _objectId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_objectId = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2World world = L2World.getInstance();
-		L2ItemInstance item = (L2ItemInstance) world.findObject(_objectId);
-		if (item == null || getClient().getActiveChar() == null)
-			return;
-		
-		int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getItemId());
-		if (castleId > 0)
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		L2PetInstance pet = getClient().getActiveChar().getPet();
-		if (pet == null || pet.isDead() || pet.isOutOfControl())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		if (FortSiegeManager.getInstance().isCombat(item.getItemId()))
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		pet.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, item);
-	}
+    private int _objectId;
+
+    @Override
+    protected void readImpl()
+    {
+        _objectId = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2World world = L2World.getInstance();
+        L2ItemInstance item = (L2ItemInstance) world.findObject(_objectId);
+        if (item == null || getClient().getActiveChar() == null)
+        {
+            return;
+        }
+
+        int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getItemId());
+        if (castleId > 0)
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        L2PetInstance pet = getClient().getActiveChar().getPet();
+        if (pet == null || pet.isDead() || pet.isOutOfControl())
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+        if (FortSiegeManager.getInstance().isCombat(item.getItemId()))
+        {
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+        pet.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, item);
+    }
 }

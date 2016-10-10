@@ -28,24 +28,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class MagicVisor implements IItemHandler
 {
-	/**
-	 * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance)playable;
-		
-		if (!(player.getTarget() instanceof L2MonsterInstance))
-		{
-			player.sendMessage("You should target a monster to see its drop list!");
-			return;
-		}
-		
-		L2MonsterInstance mob = (L2MonsterInstance)player.getTarget();
-		
-		CustomCommunityBoard.sendDropPage(player, mob.getNpcId(), 1);
-	}
+    /**
+     * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) playable;
+
+        if (!(player.getTarget() instanceof L2MonsterInstance))
+        {
+            player.sendMessage("You should target a monster to see its drop list!");
+            return;
+        }
+
+        L2MonsterInstance mob = (L2MonsterInstance) player.getTarget();
+
+        CustomCommunityBoard.sendDropPage(player, mob.getNpcId(), 1);
+    }
 }

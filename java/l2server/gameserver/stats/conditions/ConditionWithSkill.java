@@ -20,30 +20,32 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionWithSkill.
  *
- * @author  Steuf
+ * @author Steuf
  */
 public class ConditionWithSkill extends Condition
 {
-	private final boolean _skill;
-	
-	/**
-	 * Instantiates a new condition with skill.
-	 *
-	 * @param skill the skill
-	 */
-	public ConditionWithSkill(boolean skill)
-	{
-		_skill = skill;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!_skill && env.skill != null)
-			return false;
-		return true;
-	}
+    private final boolean _skill;
+
+    /**
+     * Instantiates a new condition with skill.
+     *
+     * @param skill the skill
+     */
+    public ConditionWithSkill(boolean skill)
+    {
+        _skill = skill;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!_skill && env.skill != null)
+        {
+            return false;
+        }
+        return true;
+    }
 }

@@ -1,62 +1,102 @@
 <list>
-	<npc id="40001" templateId="32794" name="Dahlia" serverSideName="true" title="Global Teleporter" serverSideTitle="true"
-			level="70" type="L2Teleporter" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61"
-			INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40"
-			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40002" templateId="33123" name="Genius" serverSideName="true" title="Buffing Services" serverSideTitle="true" level="70"
-			type="L2NpcBuffer" atkRange="40" hpMax="6036" hpReg="13.43" mpMax="1493" mpReg="3.09" STR="80" CON="74" DEX="61" INT="28"
-			WIT="97" MEN="31" pAtk="2532" mAtk="946" pDef="1168" mDef="687" pAtkSpd="332" mAtkSpd="377" pCritRate="40" mCritRate="40"
-			walkSpd="80" runSpd="120" rHand="35105" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40003" templateId="32897" name="Prinz" serverSideName="true" title="General Merchant" serverSideTitle="true" level="70"
-			type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7" INT="7" WIT="9"
-			MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="50"
-			runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20"
-			darkRes="20" aiType="fighter">
-	</npc>
-	<npc id="40004" templateId="32153" name="Esthus" serverSideName="true" title="Server Information" serverSideTitle="true"
-			level="70" type="L2Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61"
-			INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40"
-			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40005" templateId="32147" name="Nelinn" serverSideName="true" title="Services NPC" serverSideTitle="true" level="70"
-			type="L2ServicesNpc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28"
-			WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40"
-			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40006" templateId="32237" name="Mayu" serverSideName="true" title="Event Manager" serverSideTitle="true" level="70"
-			type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
-			MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
-			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
-			darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40007" templateId="35693" name="Kraid" serverSideName="true" title="Donations Manager" serverSideTitle="true" level="70"
-			type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
-			MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
-			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
-			darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40009" templateId="35692" name="Patrol" serverSideName="true" title="L2Tenkai" serverSideTitle="true" level="99"
-			type="L2Guard" atkRange="1500" hpMax="156299800" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="180" CON="174" DEX="161"
-			INT="128" WIT="153" MEN="131" pAtk="600505408" mAtk="302900288" pDef="14692200" mDef="10638300" pAtkSpd="1359" mAtkSpd="1377"
-			pCritRate="340" mCritRate="240" walkSpd="80" runSpd="300" aggroRange="1000" rHand="10212" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40014" templateId="32236" name="Ornus" serverSideName="true" title="Aden Guard" serverSideTitle="true" level="70"
-			type="L2Npc" atkRange="40" hpMax="1585" hpReg="0.0" mpMax="2444" mpReg="0.0" STR="20" CON="1" DEX="1" INT="6" WIT="23"
-			MEN="31" pAtk="432" mAtk="486" pDef="516" mDef="900" pAtkSpd="233" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="40"
-			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
-			darkRes="0" aiType="fighter">
-	</npc>
-	<npc id="40015" templateId="18482" name="Thargion" serverSideName="true" title="Legendary Dragon" serverSideTitle="true"
-			level="70" type="L2Npc" atkRange="40" hpMax="1585" hpReg="0.0" mpMax="2444" mpReg="0.0" STR="20" CON="1" DEX="1" INT="6"
-			WIT="23" MEN="31" pAtk="432" mAtk="486" pDef="516" mDef="900" pAtkSpd="0" mAtkSpd="377" pCritRate="40" mCritRate="40"
-			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="fighter">
-	</npc>
+    <npc id="40001" templateId="32794" name="Dahlia" serverSideName="true" title="Global Teleporter"
+         serverSideTitle="true"
+         level="70" type="L2Teleporter" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
+         CON="74" DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40002" templateId="33123" name="Genius" serverSideName="true" title="Buffing Services"
+         serverSideTitle="true" level="70"
+         type="L2NpcBuffer" atkRange="40" hpMax="6036" hpReg="13.43" mpMax="1493" mpReg="3.09" STR="80" CON="74"
+         DEX="61" INT="28"
+         WIT="97" MEN="31" pAtk="2532" mAtk="946" pDef="1168" mDef="687" pAtkSpd="332" mAtkSpd="377" pCritRate="40"
+         mCritRate="40"
+         walkSpd="80" runSpd="120" rHand="35105" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40003" templateId="32897" name="Prinz" serverSideName="true" title="General Merchant"
+         serverSideTitle="true" level="70"
+         type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+    <npc id="40004" templateId="32153" name="Esthus" serverSideName="true" title="Server Information"
+         serverSideTitle="true"
+         level="70" type="L2Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
+         DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40005" templateId="32147" name="Nelinn" serverSideName="true" title="Services NPC" serverSideTitle="true"
+         level="70"
+         type="L2ServicesNpc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
+         DEX="61" INT="28"
+         WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40006" templateId="32237" name="Mayu" serverSideName="true" title="Event Manager" serverSideTitle="true"
+         level="70"
+         type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
+         INT="28" WIT="53"
+         MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40"
+         mCritRate="40" walkSpd="80"
+         runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+         holyRes="0"
+         darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40007" templateId="35693" name="Kraid" serverSideName="true" title="Donations Manager"
+         serverSideTitle="true" level="70"
+         type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
+         INT="28" WIT="53"
+         MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40"
+         mCritRate="40" walkSpd="80"
+         runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+         holyRes="0"
+         darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40009" templateId="35692" name="Patrol" serverSideName="true" title="L2Tenkai" serverSideTitle="true"
+         level="99"
+         type="L2Guard" atkRange="1500" hpMax="156299800" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="180" CON="174"
+         DEX="161"
+         INT="128" WIT="153" MEN="131" pAtk="600505408" mAtk="302900288" pDef="14692200" mDef="10638300" pAtkSpd="1359"
+         mAtkSpd="1377"
+         pCritRate="340" mCritRate="240" walkSpd="80" runSpd="300" aggroRange="1000" rHand="10212" collisionRadius="10"
+         collisionHeight="24"
+         fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40014" templateId="32236" name="Ornus" serverSideName="true" title="Aden Guard" serverSideTitle="true"
+         level="70"
+         type="L2Npc" atkRange="40" hpMax="1585" hpReg="0.0" mpMax="2444" mpReg="0.0" STR="20" CON="1" DEX="1" INT="6"
+         WIT="23"
+         MEN="31" pAtk="432" mAtk="486" pDef="516" mDef="900" pAtkSpd="233" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="40"
+         runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+         holyRes="0"
+         darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40015" templateId="18482" name="Thargion" serverSideName="true" title="Legendary Dragon"
+         serverSideTitle="true"
+         level="70" type="L2Npc" atkRange="40" hpMax="1585" hpReg="0.0" mpMax="2444" mpReg="0.0" STR="20" CON="1"
+         DEX="1" INT="6"
+         WIT="23" MEN="31" pAtk="432" mAtk="486" pDef="516" mDef="900" pAtkSpd="0" mAtkSpd="377" pCritRate="40"
+         mCritRate="40"
+         walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+         earthRes="0"
+         holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
 </list>

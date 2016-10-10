@@ -22,50 +22,50 @@ package l2server.gameserver.model;
  */
 public final class L2PledgeSkillLearn
 {
-	// these two build the primary key
-	private final int _id;
-	private final int _level;
-	
-	private final int _repCost;
-	private final int _baseLvl;
-	
-	public L2PledgeSkillLearn(int id, int lvl, int baseLvl, int cost)
-	{
-		_id = id;
-		_level = lvl;
-		_baseLvl = baseLvl;
-		_repCost = cost;
-	}
-	
-	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return _id;
-	}
-	
-	/**
-	 * @return Returns the level.
-	 */
-	public int getLevel()
-	{
-		return _level;
-	}
-	
-	/**
-	 * @return Returns the minLevel.
-	 */
-	public int getBaseLevel()
-	{
-		return _baseLvl;
-	}
-	
-	/**
-	 * @return Returns the spCost.
-	 */
-	public int getRepCost()
-	{
-		return _repCost;
-	}
+    // these two build the primary key
+    private final int _id;
+    private final int _level;
+
+    private final int _repCost;
+    private final int _baseLvl;
+
+    public L2PledgeSkillLearn(int id, int lvl, int baseLvl, int cost)
+    {
+        _id = id;
+        _level = lvl;
+        _baseLvl = baseLvl;
+        _repCost = cost;
+    }
+
+    /**
+     * @return Returns the id.
+     */
+    public int getId()
+    {
+        return _id;
+    }
+
+    /**
+     * @return Returns the level.
+     */
+    public int getLevel()
+    {
+        return _level;
+    }
+
+    /**
+     * @return Returns the minLevel.
+     */
+    public int getBaseLevel()
+    {
+        return _baseLvl;
+    }
+
+    /**
+     * @return Returns the spCost.
+     */
+    public int getRepCost()
+    {
+        return _repCost;
+    }
 }

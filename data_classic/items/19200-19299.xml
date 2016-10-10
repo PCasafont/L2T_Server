@@ -1,731 +1,731 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Main ingredient for making an Unidentified Immortal Necklace. -->
-	<item id="19200" type="EtcItem" name="Unidentified Immortal Necklace Gem">
-		<set name="icon" val="icon.etc_r1_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Immortal Earring. -->
-	<item id="19201" type="EtcItem" name="Unidentified Immortal Earring Gem">
-		<set name="icon" val="icon.etc_r1_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Immortal Ring. -->
-	<item id="19202" type="EtcItem" name="Unidentified Immortal Ring Gem">
-		<set name="icon" val="icon.etc_r1_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Shaper. -->
-	<item id="19203" type="EtcItem" name="Unidentified Apocalypse Shaper Fragment">
-		<set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Cutter. -->
-	<item id="19204" type="EtcItem" name="Unidentified Apocalypse Cutter Fragment">
-		<set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Slasher. -->
-	<item id="19205" type="EtcItem" name="Unidentified Apocalypse Slasher Fragment">
-		<set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Avenger. -->
-	<item id="19206" type="EtcItem" name="Unidentified Apocalypse Avenger Fragment">
-		<set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Fighter. -->
-	<item id="19207" type="EtcItem" name="Unidentified Apocalypse Fighter Fragment">
-		<set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Stormer. -->
-	<item id="19208" type="EtcItem" name="Unidentified Apocalypse Stormer Fragment">
-		<set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Thrower. -->
-	<item id="19209" type="EtcItem" name="Unidentified Apocalypse Thrower Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Shooter. -->
-	<item id="19210" type="EtcItem" name="Unidentified Apocalypse Shooter Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Buster. -->
-	<item id="19211" type="EtcItem" name="Unidentified Apocalypse Buster Fragment">
-		<set name="icon" val="icon.etc_vesper_burster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Caster. -->
-	<item id="19212" type="EtcItem" name="Unidentified Apocalypse Caster Fragment">
-		<set name="icon" val="icon.etc_vesper_caster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Apocalypse Retributer. -->
-	<item id="19213" type="EtcItem" name="Unidentified Apocalypse Retributer Fragment">
-		<set name="icon" val="icon.etc_vesper_singer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Helmet. -->
-	<item id="19217" type="EtcItem" name="Unidentified Twilight Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Breastplate. -->
-	<item id="19218" type="EtcItem" name="Unidentified Twilight Breastplate Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight Gaiters. -->
-	<item id="19219" type="EtcItem" name="Unidentified Twilight Gaiter Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Gauntlets. -->
-	<item id="19220" type="EtcItem" name="Unidentified Twilight Gauntlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight Boots. -->
-	<item id="19221" type="EtcItem" name="Unidentified Twilight Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Shield. -->
-	<item id="19222" type="EtcItem" name="Unidentified Twilight Shield Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight leather Helmet. -->
-	<item id="19223" type="EtcItem" name="Unidentified Twilight Leather Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight leather armor. -->
-	<item id="19224" type="EtcItem" name="Unidentified Twilight Leather Armor Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight leather Leggings. -->
-	<item id="19225" type="EtcItem" name="Unidentified Twilight Leather Legging Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight leather Gloves. -->
-	<item id="19226" type="EtcItem" name="Unidentified Twilight Leather Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight leather Boots. -->
-	<item id="19227" type="EtcItem" name="Unidentified Twilight Leather Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Circlet. -->
-	<item id="19228" type="EtcItem" name="Unidentified Twilight Circlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Tunic. -->
-	<item id="19229" type="EtcItem" name="Unidentified Twilight Tunic Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight Stockings. -->
-	<item id="19230" type="EtcItem" name="Unidentified Twilight Stocking Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight Gloves. -->
-	<item id="19231" type="EtcItem" name="Unidentified Twilight Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Twilight Shoes. -->
-	<item id="19232" type="EtcItem" name="Unidentified Twilight Shoe Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Sigil. -->
-	<item id="19233" type="EtcItem" name="Unidentified Twilight Sigil Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Necklace. -->
-	<item id="19234" type="EtcItem" name="Unidentified Twilight Necklace Gem">
-		<set name="icon" val="icon.etc_r2_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Earring. -->
-	<item id="19235" type="EtcItem" name="Unidentified Twilight Earring Gem">
-		<set name="icon" val="icon.etc_r2_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Twilight Ring. -->
-	<item id="19236" type="EtcItem" name="Unidentified Twilight Ring Gem">
-		<set name="icon" val="icon.etc_r2_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Shaper. -->
-	<item id="19237" type="EtcItem" name="Unidentified Specter Shaper Fragment">
-		<set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Cutter. -->
-	<item id="19238" type="EtcItem" name="Unidentified Specter Cutter Fragment">
-		<set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Slasher. -->
-	<item id="19239" type="EtcItem" name="Unidentified Specter Slasher Fragment">
-		<set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Avenger. -->
-	<item id="19240" type="EtcItem" name="Unidentified Specter Avenger Fragment">
-		<set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Fighter. -->
-	<item id="19241" type="EtcItem" name="Unidentified Specter Fighter Fragment">
-		<set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Stormer. -->
-	<item id="19242" type="EtcItem" name="Unidentified Specter Stormer Fragment">
-		<set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Thrower. -->
-	<item id="19243" type="EtcItem" name="Unidentified Specter Thrower Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Shooter. -->
-	<item id="19244" type="EtcItem" name="Unidentified Specter Shooter Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Buster. -->
-	<item id="19245" type="EtcItem" name="Unidentified Specter Buster Fragment">
-		<set name="icon" val="icon.etc_vesper_burster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Caster. -->
-	<item id="19246" type="EtcItem" name="Unidentified Specter Caster Fragment">
-		<set name="icon" val="icon.etc_vesper_caster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Specter Retributer. -->
-	<item id="19247" type="EtcItem" name="Unidentified Specter Retributer Fragment">
-		<set name="icon" val="icon.etc_vesper_singer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Helmet. -->
-	<item id="19251" type="EtcItem" name="Unidentified Seraph Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Breastplate. -->
-	<item id="19252" type="EtcItem" name="Unidentified Seraph Breastplate Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph Gaiters. -->
-	<item id="19253" type="EtcItem" name="Unidentified Seraph Gaiter Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified an Seraph Gauntlets. -->
-	<item id="19254" type="EtcItem" name="Unidentified Seraph Gauntlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph Boots. -->
-	<item id="19255" type="EtcItem" name="Unidentified Seraph Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified a Seraph Shield. -->
-	<item id="19256" type="EtcItem" name="Unidentified Seraph Shield Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph leather Helmet. -->
-	<item id="19257" type="EtcItem" name="Unidentified Seraph Leather Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph leather armor. -->
-	<item id="19258" type="EtcItem" name="Unidentified Seraph Leather Armor Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph leather Leggings. -->
-	<item id="19259" type="EtcItem" name="Unidentified Seraph Leather Legging Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph leather Gloves. -->
-	<item id="19260" type="EtcItem" name="Unidentified Seraph Leather Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph leather Boots. -->
-	<item id="19261" type="EtcItem" name="Unidentified Seraph Leather Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Circlet. -->
-	<item id="19262" type="EtcItem" name="Unidentified Seraph Circlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Tunic. -->
-	<item id="19263" type="EtcItem" name="Unidentified Seraph Tunic Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph Stockings. -->
-	<item id="19264" type="EtcItem" name="Unidentified Seraph Stocking Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph Gloves. -->
-	<item id="19265" type="EtcItem" name="Unidentified Seraph Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Seraph Shoes. -->
-	<item id="19266" type="EtcItem" name="Unidentified Seraph Shoe Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Sigil. -->
-	<item id="19267" type="EtcItem" name="Unidentified Seraph Sigil Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Necklace. -->
-	<item id="19268" type="EtcItem" name="Unidentified Seraph Necklace Gem">
-		<set name="icon" val="icon.etc_r95_necklace_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Earring. -->
-	<item id="19269" type="EtcItem" name="Unidentified Seraph Earring Gem">
-		<set name="icon" val="icon.etc_r95_earring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Seraph Ring. -->
-	<item id="19270" type="EtcItem" name="Unidentified Seraph Ring Gem">
-		<set name="icon" val="icon.etc_r95_ring_piece" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Shaper. -->
-	<item id="19271" type="EtcItem" name="Unidentified Amaranthine Shaper Fragment">
-		<set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Cutter. -->
-	<item id="19272" type="EtcItem" name="Unidentified Amaranthine Cutter Fragment">
-		<set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Slasher. -->
-	<item id="19273" type="EtcItem" name="Unidentified Amaranthine Slasher Fragment">
-		<set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Avenger. -->
-	<item id="19274" type="EtcItem" name="Unidentified Amaranthine Avenger Fragment">
-		<set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Fighter. -->
-	<item id="19275" type="EtcItem" name="Unidentified Amaranthine Fighter Fragment">
-		<set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Stormer. -->
-	<item id="19276" type="EtcItem" name="Unidentified Amaranthine Stormer Fragment">
-		<set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Thrower. -->
-	<item id="19277" type="EtcItem" name="Unidentified Amaranthine Thrower Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Shooter. -->
-	<item id="19278" type="EtcItem" name="Unidentified Amaranthine Shooter Fragment">
-		<set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Buster. -->
-	<item id="19279" type="EtcItem" name="Unidentified Amaranthine Buster Fragment">
-		<set name="icon" val="icon.etc_vesper_burster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Caster. -->
-	<item id="19280" type="EtcItem" name="Unidentified Amaranthine Caster Fragment">
-		<set name="icon" val="icon.etc_vesper_caster_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Amaranthine Retributer. -->
-	<item id="19281" type="EtcItem" name="Unidentified Amaranthine Retributer Fragment">
-		<set name="icon" val="icon.etc_vesper_singer_piece_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Helmet. -->
-	<item id="19285" type="EtcItem" name="Unidentified Eternal Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Breastplate. -->
-	<item id="19286" type="EtcItem" name="Unidentified Eternal Breastplate Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Gaiters. -->
-	<item id="19287" type="EtcItem" name="Unidentified Eternal Gaiter Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified an Eternal Gauntlets. -->
-	<item id="19288" type="EtcItem" name="Unidentified Eternal Gauntlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Boots. -->
-	<item id="19289" type="EtcItem" name="Unidentified Eternal Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Shield. -->
-	<item id="19290" type="EtcItem" name="Unidentified Eternal Shield Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Leather Helmet. -->
-	<item id="19291" type="EtcItem" name="Unidentified Eternal Leather Helmet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Leather Armor. -->
-	<item id="19292" type="EtcItem" name="Unidentified Eternal Leather Armor Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Leather Leggings. -->
-	<item id="19293" type="EtcItem" name="Unidentified Eternal Leather Legging Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Leather Gloves. -->
-	<item id="19294" type="EtcItem" name="Unidentified Eternal Leather Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Leather Boots. -->
-	<item id="19295" type="EtcItem" name="Unidentified Eternal Leather Boot Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Circlet. -->
-	<item id="19296" type="EtcItem" name="Unidentified Eternal Circlet Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making an Unidentified Eternal Tunic. -->
-	<item id="19297" type="EtcItem" name="Unidentified Eternal Tunic Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Stockings. -->
-	<item id="19298" type="EtcItem" name="Unidentified Eternal Stocking Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Main ingredient for making Unidentified Eternal Gloves. -->
-	<item id="19299" type="EtcItem" name="Unidentified Eternal Glove Ingredient">
-		<set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="is_stackable" val="true" />
-	</item>
+    <!-- Main ingredient for making an Unidentified Immortal Necklace. -->
+    <item id="19200" type="EtcItem" name="Unidentified Immortal Necklace Gem">
+        <set name="icon" val="icon.etc_r1_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Immortal Earring. -->
+    <item id="19201" type="EtcItem" name="Unidentified Immortal Earring Gem">
+        <set name="icon" val="icon.etc_r1_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Immortal Ring. -->
+    <item id="19202" type="EtcItem" name="Unidentified Immortal Ring Gem">
+        <set name="icon" val="icon.etc_r1_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Shaper. -->
+    <item id="19203" type="EtcItem" name="Unidentified Apocalypse Shaper Fragment">
+        <set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Cutter. -->
+    <item id="19204" type="EtcItem" name="Unidentified Apocalypse Cutter Fragment">
+        <set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Slasher. -->
+    <item id="19205" type="EtcItem" name="Unidentified Apocalypse Slasher Fragment">
+        <set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Avenger. -->
+    <item id="19206" type="EtcItem" name="Unidentified Apocalypse Avenger Fragment">
+        <set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Fighter. -->
+    <item id="19207" type="EtcItem" name="Unidentified Apocalypse Fighter Fragment">
+        <set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Stormer. -->
+    <item id="19208" type="EtcItem" name="Unidentified Apocalypse Stormer Fragment">
+        <set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Thrower. -->
+    <item id="19209" type="EtcItem" name="Unidentified Apocalypse Thrower Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Shooter. -->
+    <item id="19210" type="EtcItem" name="Unidentified Apocalypse Shooter Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Buster. -->
+    <item id="19211" type="EtcItem" name="Unidentified Apocalypse Buster Fragment">
+        <set name="icon" val="icon.etc_vesper_burster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Caster. -->
+    <item id="19212" type="EtcItem" name="Unidentified Apocalypse Caster Fragment">
+        <set name="icon" val="icon.etc_vesper_caster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Apocalypse Retributer. -->
+    <item id="19213" type="EtcItem" name="Unidentified Apocalypse Retributer Fragment">
+        <set name="icon" val="icon.etc_vesper_singer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Helmet. -->
+    <item id="19217" type="EtcItem" name="Unidentified Twilight Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Breastplate. -->
+    <item id="19218" type="EtcItem" name="Unidentified Twilight Breastplate Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight Gaiters. -->
+    <item id="19219" type="EtcItem" name="Unidentified Twilight Gaiter Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Gauntlets. -->
+    <item id="19220" type="EtcItem" name="Unidentified Twilight Gauntlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight Boots. -->
+    <item id="19221" type="EtcItem" name="Unidentified Twilight Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Shield. -->
+    <item id="19222" type="EtcItem" name="Unidentified Twilight Shield Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight leather Helmet. -->
+    <item id="19223" type="EtcItem" name="Unidentified Twilight Leather Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight leather armor. -->
+    <item id="19224" type="EtcItem" name="Unidentified Twilight Leather Armor Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight leather Leggings. -->
+    <item id="19225" type="EtcItem" name="Unidentified Twilight Leather Legging Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight leather Gloves. -->
+    <item id="19226" type="EtcItem" name="Unidentified Twilight Leather Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight leather Boots. -->
+    <item id="19227" type="EtcItem" name="Unidentified Twilight Leather Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Circlet. -->
+    <item id="19228" type="EtcItem" name="Unidentified Twilight Circlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Tunic. -->
+    <item id="19229" type="EtcItem" name="Unidentified Twilight Tunic Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight Stockings. -->
+    <item id="19230" type="EtcItem" name="Unidentified Twilight Stocking Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight Gloves. -->
+    <item id="19231" type="EtcItem" name="Unidentified Twilight Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Twilight Shoes. -->
+    <item id="19232" type="EtcItem" name="Unidentified Twilight Shoe Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Sigil. -->
+    <item id="19233" type="EtcItem" name="Unidentified Twilight Sigil Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Necklace. -->
+    <item id="19234" type="EtcItem" name="Unidentified Twilight Necklace Gem">
+        <set name="icon" val="icon.etc_r2_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Earring. -->
+    <item id="19235" type="EtcItem" name="Unidentified Twilight Earring Gem">
+        <set name="icon" val="icon.etc_r2_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Twilight Ring. -->
+    <item id="19236" type="EtcItem" name="Unidentified Twilight Ring Gem">
+        <set name="icon" val="icon.etc_r2_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Shaper. -->
+    <item id="19237" type="EtcItem" name="Unidentified Specter Shaper Fragment">
+        <set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Cutter. -->
+    <item id="19238" type="EtcItem" name="Unidentified Specter Cutter Fragment">
+        <set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Slasher. -->
+    <item id="19239" type="EtcItem" name="Unidentified Specter Slasher Fragment">
+        <set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Avenger. -->
+    <item id="19240" type="EtcItem" name="Unidentified Specter Avenger Fragment">
+        <set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Fighter. -->
+    <item id="19241" type="EtcItem" name="Unidentified Specter Fighter Fragment">
+        <set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Stormer. -->
+    <item id="19242" type="EtcItem" name="Unidentified Specter Stormer Fragment">
+        <set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Thrower. -->
+    <item id="19243" type="EtcItem" name="Unidentified Specter Thrower Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Shooter. -->
+    <item id="19244" type="EtcItem" name="Unidentified Specter Shooter Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Buster. -->
+    <item id="19245" type="EtcItem" name="Unidentified Specter Buster Fragment">
+        <set name="icon" val="icon.etc_vesper_burster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Caster. -->
+    <item id="19246" type="EtcItem" name="Unidentified Specter Caster Fragment">
+        <set name="icon" val="icon.etc_vesper_caster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Specter Retributer. -->
+    <item id="19247" type="EtcItem" name="Unidentified Specter Retributer Fragment">
+        <set name="icon" val="icon.etc_vesper_singer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Helmet. -->
+    <item id="19251" type="EtcItem" name="Unidentified Seraph Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Breastplate. -->
+    <item id="19252" type="EtcItem" name="Unidentified Seraph Breastplate Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph Gaiters. -->
+    <item id="19253" type="EtcItem" name="Unidentified Seraph Gaiter Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified an Seraph Gauntlets. -->
+    <item id="19254" type="EtcItem" name="Unidentified Seraph Gauntlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph Boots. -->
+    <item id="19255" type="EtcItem" name="Unidentified Seraph Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified a Seraph Shield. -->
+    <item id="19256" type="EtcItem" name="Unidentified Seraph Shield Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph leather Helmet. -->
+    <item id="19257" type="EtcItem" name="Unidentified Seraph Leather Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph leather armor. -->
+    <item id="19258" type="EtcItem" name="Unidentified Seraph Leather Armor Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph leather Leggings. -->
+    <item id="19259" type="EtcItem" name="Unidentified Seraph Leather Legging Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph leather Gloves. -->
+    <item id="19260" type="EtcItem" name="Unidentified Seraph Leather Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph leather Boots. -->
+    <item id="19261" type="EtcItem" name="Unidentified Seraph Leather Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Circlet. -->
+    <item id="19262" type="EtcItem" name="Unidentified Seraph Circlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Tunic. -->
+    <item id="19263" type="EtcItem" name="Unidentified Seraph Tunic Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph Stockings. -->
+    <item id="19264" type="EtcItem" name="Unidentified Seraph Stocking Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph Gloves. -->
+    <item id="19265" type="EtcItem" name="Unidentified Seraph Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Seraph Shoes. -->
+    <item id="19266" type="EtcItem" name="Unidentified Seraph Shoe Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_shoes_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Sigil. -->
+    <item id="19267" type="EtcItem" name="Unidentified Seraph Sigil Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Necklace. -->
+    <item id="19268" type="EtcItem" name="Unidentified Seraph Necklace Gem">
+        <set name="icon" val="icon.etc_r95_necklace_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Earring. -->
+    <item id="19269" type="EtcItem" name="Unidentified Seraph Earring Gem">
+        <set name="icon" val="icon.etc_r95_earring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Seraph Ring. -->
+    <item id="19270" type="EtcItem" name="Unidentified Seraph Ring Gem">
+        <set name="icon" val="icon.etc_r95_ring_piece" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Shaper. -->
+    <item id="19271" type="EtcItem" name="Unidentified Amaranthine Shaper Fragment">
+        <set name="icon" val="icon.etc_vesper_shaper_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Cutter. -->
+    <item id="19272" type="EtcItem" name="Unidentified Amaranthine Cutter Fragment">
+        <set name="icon" val="icon.etc_vesper_cutter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Slasher. -->
+    <item id="19273" type="EtcItem" name="Unidentified Amaranthine Slasher Fragment">
+        <set name="icon" val="icon.etc_vesper_slasher_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Avenger. -->
+    <item id="19274" type="EtcItem" name="Unidentified Amaranthine Avenger Fragment">
+        <set name="icon" val="icon.etc_vesper_avenger_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Fighter. -->
+    <item id="19275" type="EtcItem" name="Unidentified Amaranthine Fighter Fragment">
+        <set name="icon" val="icon.etc_vesper_fighter_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Stormer. -->
+    <item id="19276" type="EtcItem" name="Unidentified Amaranthine Stormer Fragment">
+        <set name="icon" val="icon.etc_vesper_stormer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Thrower. -->
+    <item id="19277" type="EtcItem" name="Unidentified Amaranthine Thrower Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Shooter. -->
+    <item id="19278" type="EtcItem" name="Unidentified Amaranthine Shooter Fragment">
+        <set name="icon" val="icon.etc_vesper_thrower_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Buster. -->
+    <item id="19279" type="EtcItem" name="Unidentified Amaranthine Buster Fragment">
+        <set name="icon" val="icon.etc_vesper_burster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Caster. -->
+    <item id="19280" type="EtcItem" name="Unidentified Amaranthine Caster Fragment">
+        <set name="icon" val="icon.etc_vesper_caster_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Amaranthine Retributer. -->
+    <item id="19281" type="EtcItem" name="Unidentified Amaranthine Retributer Fragment">
+        <set name="icon" val="icon.etc_vesper_singer_piece_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Helmet. -->
+    <item id="19285" type="EtcItem" name="Unidentified Eternal Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Breastplate. -->
+    <item id="19286" type="EtcItem" name="Unidentified Eternal Breastplate Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_cuirass_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Gaiters. -->
+    <item id="19287" type="EtcItem" name="Unidentified Eternal Gaiter Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gaiter_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified an Eternal Gauntlets. -->
+    <item id="19288" type="EtcItem" name="Unidentified Eternal Gauntlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gauntlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Boots. -->
+    <item id="19289" type="EtcItem" name="Unidentified Eternal Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Shield. -->
+    <item id="19290" type="EtcItem" name="Unidentified Eternal Shield Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_verteidiger_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Leather Helmet. -->
+    <item id="19291" type="EtcItem" name="Unidentified Eternal Leather Helmet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_helmet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Leather Armor. -->
+    <item id="19292" type="EtcItem" name="Unidentified Eternal Leather Armor Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_houberk_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Leather Leggings. -->
+    <item id="19293" type="EtcItem" name="Unidentified Eternal Leather Legging Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_legging_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Leather Gloves. -->
+    <item id="19294" type="EtcItem" name="Unidentified Eternal Leather Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Leather Boots. -->
+    <item id="19295" type="EtcItem" name="Unidentified Eternal Leather Boot Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_leather_boots_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Circlet. -->
+    <item id="19296" type="EtcItem" name="Unidentified Eternal Circlet Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_circlet_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making an Unidentified Eternal Tunic. -->
+    <item id="19297" type="EtcItem" name="Unidentified Eternal Tunic Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_jaket_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Stockings. -->
+    <item id="19298" type="EtcItem" name="Unidentified Eternal Stocking Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_hose_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Main ingredient for making Unidentified Eternal Gloves. -->
+    <item id="19299" type="EtcItem" name="Unidentified Eternal Glove Ingredient">
+        <set name="icon" val="icon.etc_sealed_vesper_gloves_piece_I00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="is_stackable" val="true" />
+    </item>
 </list>

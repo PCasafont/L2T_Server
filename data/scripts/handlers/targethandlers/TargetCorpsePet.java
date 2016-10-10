@@ -24,39 +24,40 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
- *
  * @author nBd
  */
 public class TargetCorpsePet implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (activeChar instanceof L2PcInstance)
-		{
-			// FIXME target = activeChar.getPet();
-			if (target != null && target.isDead())
-				return new L2Character[] { target };
-		}
-		
-		return null;
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_CORPSE_PET;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpsePet());
-	}
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        if (activeChar instanceof L2PcInstance)
+        {
+            // FIXME target = activeChar.getPet();
+            if (target != null && target.isDead())
+            {
+                return new L2Character[]{target};
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        // TODO Auto-generated method stub
+        return L2SkillTargetType.TARGET_CORPSE_PET;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpsePet());
+    }
 }

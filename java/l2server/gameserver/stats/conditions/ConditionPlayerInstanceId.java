@@ -27,48 +27,48 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerInstanceId extends Condition
 {
-	private final ArrayList<Integer> _instanceIds;
-	
-	/**
-	 * Instantiates a new condition player instance id.
-	 *
-	 * @param instanceIds the instance ids
-	 */
-	public ConditionPlayerInstanceId(ArrayList<Integer> instanceIds)
-	{
-		_instanceIds = instanceIds;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
-			return false;
-		}
-		
-		final int instanceId = env.player.getInstanceId();
-		
-		if (instanceId <= 0)
-		{
-			return false; // player not in instance
-		}
-		
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) env.player);
-		
-		if (world == null)
-		{
-			return false;
-		}
-		
-		if (world.instanceId != instanceId)
-		{
-			return false; // player in the different instance
-		}
-		
-		return _instanceIds.contains(world.templateId);
-	}
+    private final ArrayList<Integer> _instanceIds;
+
+    /**
+     * Instantiates a new condition player instance id.
+     *
+     * @param instanceIds the instance ids
+     */
+    public ConditionPlayerInstanceId(ArrayList<Integer> instanceIds)
+    {
+        _instanceIds = instanceIds;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!(env.player instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        final int instanceId = env.player.getInstanceId();
+
+        if (instanceId <= 0)
+        {
+            return false; // player not in instance
+        }
+
+        final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) env.player);
+
+        if (world == null)
+        {
+            return false;
+        }
+
+        if (world.instanceId != instanceId)
+        {
+            return false; // player in the different instance
+        }
+
+        return _instanceIds.contains(world.templateId);
+    }
 }

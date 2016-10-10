@@ -21,37 +21,38 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Link implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Link"
-	};
+    private static final String[] COMMANDS = {"Link"};
 
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		try
-		{
-			String path = command.substring(5).trim();
-			if (path.indexOf("..") != -1)
-				return false;
-			String filename = "" + path;
-			NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
-			html.setFile(activeChar.getHtmlPrefix(), filename);
-			html.replace("%objectId%", String.valueOf(target.getObjectId()));
-			activeChar.sendPacket(html);
-			return true;
-		}
-		catch (Exception e)
-		{
-			_log.info("Exception in " + getClass().getSimpleName());
-		}
-		return false;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        try
+        {
+            String path = command.substring(5).trim();
+            if (path.indexOf("..") != -1)
+            {
+                return false;
+            }
+            String filename = "" + path;
+            NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
+            html.setFile(activeChar.getHtmlPrefix(), filename);
+            html.replace("%objectId%", String.valueOf(target.getObjectId()));
+            activeChar.sendPacket(html);
+            return true;
+        }
+        catch (Exception e)
+        {
+            _log.info("Exception in " + getClass().getSimpleName());
+        }
+        return false;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

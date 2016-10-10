@@ -22,25 +22,24 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectDebuff extends L2Effect
 {
-	public EffectDebuff(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.DEBUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		// just stop this effect
-		return false;
-	}
+    public EffectDebuff(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.DEBUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        // just stop this effect
+        return false;
+    }
 }

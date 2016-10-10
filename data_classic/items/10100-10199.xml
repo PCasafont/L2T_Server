@@ -1,1295 +1,1295 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Spellbook needed to learn Diamond Dust. Used by Mystic Muses. -->
-	<item id="10100" type="EtcItem" name="Spellbook: Diamond Dust">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Throne of Ice. Used by Mystic Muses. -->
-	<item id="10101" type="EtcItem" name="Spellbook: Throne of Ice">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Throne of Wind. Used by Storm Screamers. -->
-	<item id="10102" type="EtcItem" name="Spellbook: Throne of Wind">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Divine Power. Used by Cardinals. -->
-	<item id="10103" type="EtcItem" name="Spellbook: Divine Power">
-		<set name="icon" val="icon.etc_spell_books_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Mana Gain. Used by Eva's Saints and Shillien Saints. -->
-	<item id="10104" type="EtcItem" name="Spellbook: Mana Gain">
-		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Amulet required for the Chant of Protection spell. Used by Doomcryers. -->
-	<item id="10105" type="EtcItem" name="Amulet: Chant of Protection">
-		<set name="icon" val="icon.etc_orcish_talisman_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Amulet required for the Seal of Blockade spell. Used by Dominators. -->
-	<item id="10106" type="EtcItem" name="Amulet: Seal of Blockade">
-		<set name="icon" val="icon.etc_orcish_talisman_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Fire Vortex Buster. Used by Archmages. -->
-	<item id="10107" type="EtcItem" name="Spellbook: Fire Vortex Buster">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Ice Vortex Crusher. Used by Mystic Muses. -->
-	<item id="10108" type="EtcItem" name="Spellbook: Ice Vortex Crusher">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Wind Vortex Slug. Used by Storm Screamers. -->
-	<item id="10109" type="EtcItem" name="Spellbook: Wind Vortex Slug">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Meteor. Can be used by an Archmage and a Soul Taker. Can be acquired at level 81. -->
-	<item id="10110" type="EtcItem" name="Forgotten Scroll: Meteor">
-		<set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Spellbook needed to learn Star Fall. Can be used by a Mystic Muse and a Storm Screamer. Can be acquired at level 81. -->
-	<item id="10111" type="EtcItem" name="Forgotten Scroll: Star Fall">
-		<set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="30000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Item needed for the Imbue Dark Seed Skill. -->
-	<item id="10112" type="EtcItem" name="Dark Seed">
-		<set name="icon" val="icon.etc_coda_i08" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Item needed for the Deadly Roulette, and Bleeding Shot skills. -->
-	<item id="10113" type="EtcItem" name="Special Bolt">
-		<set name="icon" val="icon.etc_wooden_bolt_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ingredient needed for a Dwarf to make a Dynasty Sigil. It can be sold to public stores. -->
-	<item id="10114" type="EtcItem" name="Sealed Dynasty Sigil Piece">
-		<set name="icon" val="icon.etc_plate_silver_i00" />
-		<set name="etcitem_type" val="material" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="60" />
-		<set name="price" val="53777" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- For Dwarves only. Recipe for the Sealed Dynasty Sigil. Requires Create Item Skill (Lv. 9). 60% success rate. -->
-	<item id="10115" type="EtcItem" name="Recipe: Sealed Dynasty Sigil (60%)">
-		<set name="icon" val="icon.etc_recipe_black_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="262000" />
-		<set name="recipe_id" val="913" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Recipes" />
-	</item>
-	<!-- Exclusive to Dwarves. Recipe for making a Sealed Dynasty Sigil. Requires Create Item - Skill Lv. 9. The success rate is 100%. -->
-	<item id="10116" type="EtcItem" name="Recipe: Sealed Dynasty Sigil">
-		<set name="icon" val="icon.etc_recipe_black_i00" />
-		<set name="default_action" val="recipe" />
-		<set name="etcitem_type" val="recipe" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="price" val="262000" />
-		<set name="recipe_id" val="2" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Rare Sealed Dynasty Sigil that requires a thorough varnishing. It can be varnished by the Blacksmith of Mammon. -->
-	<item id="10117" type="EtcItem" name="Foundation Sealed Dynasty Sigil">
-		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1370" />
-		<set name="price" val="6404000" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-		</for>
-	</item>
-	<!-- Rare Sealed Dynasty Sigil that requires a thorough varnishing. It can be varnished by the Blacksmith of Mammon. -->
-	<item id="10118" type="EtcItem" name="Foundation Dynasty Sigil">
-		<set name="icon" val="icon.dynasty_sigil_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="1390" />
-		<set name="price" val="6404000" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-		</for>
-	</item>
-	<!-- Increases Magic Resistance and Dark Resistance. -->
-	<item id="10119" type="Armor" name="Dynasty Sigil">
-		<set name="icon" val="icon.dynasty_sigil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="307" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="930" />
-		<set name="price" val="6404000" />
-		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="8311-1" />
-		<for>
-			<baseAdd stat="pDef" val="15" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Sealed Masterwork Item. Seal can be removed by the Blacksmith of Mammon or Maestro Ishuma. -->
-	<item id="10120" type="Armor" name="Sealed Dynasty Sigil">
-		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="307" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="930" />
-		<set name="price" val="6404000" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<baseAdd stat="pDef" val="15" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Sealed Masterwork Item. The seal can be broken with the help of the Blacksmith of Mammon. -->
-	<item id="10121" type="Armor" name="Sealed Arcana Sigil">
-		<set name="icon" val="icon.arcana_sigil_i01" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="161" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="940" />
-		<set name="price" val="3355000" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<baseAdd stat="pDef" val="13" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Cannot be crystallized or enchanted -->
-	<item id="10122" type="Armor" name="Red Crescent">
-		<set name="icon" val="icon.accessary_red_cresent_earing_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="48" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="150" />
-		<set name="price" val="20700" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="24" />
-		</for>
-	</item>
-	<!-- Cannot be crystallized or enchanted. -->
-	<item id="10123" type="Armor" name="Necklace of Devotion">
-		<set name="icon" val="icon.accessary_necklace_of_devotion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="65" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="150" />
-		<set name="price" val="27600" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="32" />
-		</for>
-	</item>
-	<!-- Cannot be crystallized or enchanted. -->
-	<item id="10124" type="Armor" name="Ring of Devotion">
-		<set name="icon" val="icon.accessary_ring_of_devotion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="32" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="150" />
-		<set name="price" val="13800" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="16" />
-		</for>
-	</item>
-	<!-- A Shadow Item with the power of a War Axe. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="10125" type="Weapon" name="Shadow Item: War Axe">
-		<set name="icon" val="icon.weapon_war_axe_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="533" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="300" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Can only be worn by Duelists and Grand Khavataris. -->
-	<item id="10126" type="Armor" name="Dynasty Leather Armor - Force Master">
-		<set name="icon" val="icon.armor_t92_ud_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="878" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="4180" />
-		<set name="price" val="18298000" />
-		<set name="element_enabled" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="armorSet" val="10126" />
-		<set name="equip_condition" val="{{ec_category;{@force_master}}}" />
-		<cond msgId="1518">
-			<and>
-				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
-				<player class_id_restriction="88, 114" />
-			</and>
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Can only be worn by Dreadnoughts, Titans, Fortune Seekers, Maestros, Doombringers and Soul Hounds. -->
-	<item id="10127" type="Armor" name="Dynasty Leather Armor - Weapon Master">
-		<set name="icon" val="icon.armor_t92_ub_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="878" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="4180" />
-		<set name="price" val="18298000" />
-		<set name="element_enabled" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="armorSet" val="10127" />
-		<set name="equip_condition" val="{{ec_category;{@weapon_master}}}" />
-		<cond msgId="1518">
-			<player class_id_restriction="89, 113, 117, 118, 131, 132, 133" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<item id="10128" type="Weapon" name="For Monster only (Crossbow)">
-		<set name="icon" val="icon.weapon_monster_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1530" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Magical scroll that transports you to your Fortress. If you don't have a Fortress, it will relocate you to the nearest village. -->
-	<item id="10129" type="EtcItem" name="Scroll of Escape: Fortress">
-		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="price" val="500" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2365-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magical scroll that transports you to your Fortress quickly. -->
-	<item id="10130" type="EtcItem" name="Blessed Scroll of Escape: Fortress">
-		<set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="price" val="80000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2364-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Transforms you into an Onyx Beast for 30 min. -->
-	<item id="10131" type="EtcItem" name="Transformation Scroll: Onyx Beast">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2371-1" />
-	</item>
-	<!-- Transforms you into a Doom Wraith for 30 min. -->
-	<item id="10132" type="EtcItem" name="Transformation Scroll: Doom Wraith">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2372-1" />
-	</item>
-	<!-- Transforms you into a Grail Apostle for 30 min. -->
-	<item id="10133" type="EtcItem" name="Transformation Scroll: Grail Apostle">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2373-1" />
-	</item>
-	<!-- Transforms you into a Unicorn for 30 min. -->
-	<item id="10134" type="EtcItem" name="Transformation Scroll: Unicorn">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2374-1" />
-	</item>
-	<!-- Transforms you into a Lilim Knight for 30 min. -->
-	<item id="10135" type="EtcItem" name="Transformation Scroll: Lilim Knight">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2375-1" />
-	</item>
-	<!-- Transforms you into a Golem Guardian for 30 min. -->
-	<item id="10136" type="EtcItem" name="Transformation Scroll: Golem Guardian">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2376-1" />
-	</item>
-	<!-- Transforms you into an Inferno Drake for 30 min. -->
-	<item id="10137" type="EtcItem" name="Transformation Scroll: Inferno Drake">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2377-1" />
-	</item>
-	<!-- Transforms you into a Dragon Bomber for 30 min. -->
-	<item id="10138" type="EtcItem" name="Transformation Scroll: Dragon Bomber">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2378-1" />
-	</item>
-	<!-- Bracelet that summons a cute Rainbow Clan Hall Agathion. Shadow Item. It lasts for 700 min. -->
-	<item id="10139" type="Armor" name="Agathion Bracelet">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="5414-1;3269-1;3267-1" />
-		<set name="duration" val="700" />
-	</item>
-	<!-- Makes Blessed Scroll of Escape available for up to 250 minutes, with a 60-second cooldown for Escape. Only one effect is applied, even if you wear 2 identical rings. -->
-	<item id="10140" type="Armor" name="Blessed Ring of Escape">
-		<set name="icon" val="icon.accessary_ring_of_mana_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="3408-1" />
-		<set name="duration" val="250" />
-		<for>
-			<baseAdd stat="mDef" val="24" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Can be transformed into a Yeti for a certain amount of time. Transformation is cancelled if unequipped. Effect does not stack with additional Talismans of the same type. -->
-	<item id="10141" type="Armor" name="Grey Talisman - Yeti Transform">
-		<set name="icon" val="icon.etc_talisman_i07" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="price" val="50000" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="3499-1" />
-		<set name="item_skill" val="3335-1" />
-		<set name="duration" val="70" />
-	</item>
-	<!-- Can be transformed into a Buffalo for a certain amount of time. Transformation is cancelled if unequipped. Effect does not stack with additional Talismans of the same type. -->
-	<item id="10142" type="Armor" name="Grey Talisman - Buffalo Transform">
-		<set name="icon" val="icon.etc_talisman_i07" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="price" val="50000" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="3499-1" />
-		<set name="item_skill" val="3336-1" />
-		<set name="duration" val="70" />
-	</item>
-	<!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Blessed Shield Lv. 6, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10143" type="EtcItem" name="Battleground Scroll: Shield Master">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2379-1;2380-1;2381-1;2382-1;2383-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Acumen Lv. 1, and Empower Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10144" type="EtcItem" name="Battleground Scroll: Wizard">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2379-1;2380-1;2381-1;2384-1;2385-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Acumen Lv. 1, and Heal Empower Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10145" type="EtcItem" name="Battleground Scroll: Healer">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2379-1;2380-1;2381-1;2384-1;2386-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Effects of Wind Walk Lv. 2, Might Lv. 3, Magic Barrier Lv. 2, Focus Lv. 1, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10146" type="EtcItem" name="Battleground Scroll: Dagger Master">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2379-1;2387-1;2381-1;2388-1;2383-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Effects of Wind Walk Lv. 2, Might Lv. 3, Magic Barrier Lv. 2, Guidance Lv. 1, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10147" type="EtcItem" name="Battleground Scroll: Bow Master">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2379-1;2387-1;2381-1;2389-1;2383-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Effects of Berserker Spirit Lv. 2 and Clarity Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
-	<item id="10148" type="EtcItem" name="Battleground Scroll: Berserker">
-		<set name="icon" val="icon.etc_scroll_white_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2390-1;2391-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Relocates you to the nearest village. Can only be used in Siege and Fortress war. -->
-	<item id="10149" type="EtcItem" name="Blessed Scroll of Escape (Battleground)">
-		<set name="icon" val="icon.etc_scroll_of_return_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2392-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Resurrects a dead character and restores his or her XP completely. Can only be used in Siege and Fortress war. -->
-	<item id="10150" type="EtcItem" name="Blessed Scroll of Resurrection (Battleground)">
-		<set name="icon" val="icon.etc_scroll_of_resurrection_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ScrollOfResurrection" />
-		<set name="item_skill" val="2393-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- When used, it transforms you into a pixy for a certain amount of time. It can only be used on the battleground during a siege battle or a fortress battle. It will have no effect if used while in a transformed state. -->
-	<item id="10151" type="EtcItem" name="Transformation Scroll (Battleground)">
-		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2394-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Recovers HP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
-	<item id="10152" type="EtcItem" name="Healing Potion (Battleground)">
-		<set name="icon" val="icon.etc_super_hp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="10" />
-		<set name="reuse_delay" val="180000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2395-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Recovers MP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
-	<item id="10153" type="EtcItem" name="Mana Recovery Potion (Battleground)">
-		<set name="icon" val="icon.etc_super_mp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="8" />
-		<set name="reuse_delay" val="180000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2401-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Recovers CP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
-	<item id="10154" type="EtcItem" name="CP Recovery Potion (Battleground)">
-		<set name="icon" val="icon.etc_super_cp_potion_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="9" />
-		<set name="reuse_delay" val="180000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2402-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Increases Hold/Sleep Resistance for a certain period of time. Can only be used in Castle and Fortress Sieges. -->
-	<item id="10155" type="EtcItem" name="Mental Strengthening Potion">
-		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2396-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Becomes invincible temporarily. Can only be used in Siege and Fortress war. -->
-	<item id="10156" type="EtcItem" name="Medusa's Potion">
-		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="shared_reuse_group" val="12" />
-		<set name="reuse_delay" val="180000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2397-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Increases Speed instantly. Can only be used in Siege and Fortress war. -->
-	<item id="10157" type="EtcItem" name="Quick Haste Potion">
-		<set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2398-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Obtains High-grade Fishing Mastery Lv. (Lv. 24). Effect does not stack with additional Talismans of the same type. -->
-	<item id="10158" type="Armor" name="Grey Talisman - High-grade Fishing">
-		<set name="icon" val="icon.etc_talisman_i07" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3315-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Disturbs movement of targets. Can only be used in Siege and Fortress war. -->
-	<item id="10159" type="EtcItem" name="Capture Rope">
-		<set name="icon" val="icon.etc_braided_hemp_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="2399-1" />
-		<set name="use_condition" val="{{uc_in_residence_siege_field}}" />
-	</item>
-	<!-- Red crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
-	<item id="10160" type="EtcItem" name="Cursed Red Soul Crystal - Stage 14">
-		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="20" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" />
-	</item>
-	<!-- Blue crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
-	<item id="10161" type="EtcItem" name="Cursed Blue Soul Crystal - Stage 14">
-		<set name="icon" val="icon.etc_broken_crystal_blue_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="20" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" />
-	</item>
-	<!-- Green crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
-	<item id="10162" type="EtcItem" name="Cursed Green Soul Crystal - Stage 14">
-		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="20" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2096-1" />
-	</item>
-	<!-- Necklace used to summon wolves. It takes away some XP the Pet Master earns. -->
-	<item id="10163" type="EtcItem" name="Wolf Collar">
-		<set name="icon" val="icon.etc_prefect_belt_i00" />
-		<set name="default_action" val="skill_maintain" />
-		<set name="etcitem_type" val="pet_collar" />
-		<set name="weight" val="10" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
-	</item>
-	<!-- Destroys the animal slayers of the Mimir Forest, the Crimson Spiders. -->
-	<item id="10164" type="EtcItem" name="Animal Slayer's List">
-		<set name="icon" val="icon.etc_letter_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Claw dripping with animal blood. Collect 50 of these and take them to Martin, the Pet Manager of the Town of Gludin. -->
-	<item id="10165" type="EtcItem" name="Bloody Red Claw">
-		<set name="icon" val="icon.etc_fang_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Instantly recovers 1,000 CP when used. -->
-	<item id="10166" type="EtcItem" name="Hot Springs CP Potion">
-		<set name="icon" val="icon.etc_hot_spring_mineral_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="elixir" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="25" />
-		<set name="shared_reuse_group" val="11" />
-		<set name="reuse_delay" val="300000" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2403-1" />
-	</item>
-	<!-- Magic lollipop with a cute piggy drawing on it. Makes a piggy noise when striking. Can transform yourself into a cute piggy for a certain amount of time. -->
-	<item id="10167" type="Weapon" name="Pig Lollipop">
-		<set name="icon" val="icon.etc_pig_candy_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="839-1" />
-		<set name="item_skill" val="3418-1" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Can only be worn by Hierophants, Dominators, Doomcryers and Judicators. -->
-	<item id="10168" type="Armor" name="Dynasty Leather Armor - Enchanter">
-		<set name="icon" val="icon.armor_t92_ud_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="878" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="4180" />
-		<set name="price" val="18298000" />
-		<set name="element_enabled" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="armorSet" val="10168" />
-		<set name="equip_condition" val="{{ec_category;{@buff_master}}}" />
-		<cond msgId="1518">
-			<player class_id_restriction="98, 115, 116, 136" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="170" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet that can be worn by the Kamael Race only, exclusively for the Enchanter class after completion of 2nd or 3rd class transfer. Cannot be worn in a subclass condition. Uses 2 hair accessory slots. -->
-	<item id="10169" type="Armor" name="Enchanter Circlet (Kamael only)">
-		<set name="icon" val="icon.accessary_weapon_master_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<cond msgId="1518">
-			<player class_id_restriction="136" />
-			<player level="40" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Dark Resistance + 30, MP + 31. -->
-	<item id="10170" type="Armor" name="Baylor's Earring">
-		<set name="icon" val="icon.accessary_dynasty_earing_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="487" />
-		<set name="crystal_type" val="s80" />
-		<set name="weight" val="150" />
-		<set name="price" val="12185000" />
-		<set name="enchant_enabled" val="1" />
-		<set name="isAugmentable" val="false" />
-		<for>
-			<baseAdd stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
-			<add stat="darkRes" val="30" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Dark Coda. For best results, a level 5-15 character must plant it on a level 5-15 monster. -->
-	<item id="10171" type="EtcItem" name="Seed: Dark Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Red Coda. For best results, a level 8-18 character must plant it on a level 8-18 monster. -->
-	<item id="10172" type="EtcItem" name="Seed: Red Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Chilly Coda. For best results, a level 11- 21 character must plant it on a level 11- 21 monster. -->
-	<item id="10173" type="EtcItem" name="Seed: Chilly Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Blue Coda. For best results, a level 14- 24 character must plant it on a level 14- 24 monster. -->
-	<item id="10174" type="EtcItem" name="Seed: Blue Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed" />
-		<set name="weight" val="1" />
-		<set name="price" val="10" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Gold colored, Goblin shaped hair accessory. Event item. -->
-	<item id="10175" type="Armor" name="Goblin Circlet (Event)">
-		<set name="icon" val="icon.accessory_taiwan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Mysterious costume accessory that covers half of the wearer's face. -->
-	<item id="10176" type="Armor" name="White Half Mask">
-		<set name="icon" val="icon.accessory_half_face_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Mysterious black mask. Don't you wish you knew where you could find the other half? 4th Anniversary commemorative item. -->
-	<item id="10177" type="Armor" name="Black Half Mask (Event)">
-		<set name="icon" val="icon.Accessary_black_half_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- A Cocktail made of various rare fruits. When consumed, it bestows temporary effects of Might, Shield, Wind Walk, Focus, Death Whisper, Guidance, Blessed Shield, Blessed Body, Haste, and Vampiric Rage for a certain amount of time. -->
-	<item id="10178" type="EtcItem" name="Sweet Fruit Cocktail">
-		<set name="icon" val="icon.etc_fruit_cocktail_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2404-1;2405-1;2406-1;2407-1;2408-1;2409-1;2410-1;2411-1;2412-1;2413-1" />
-	</item>
-	<!-- A Cocktail made of various rare fruits. When consumed, it bestows temporary effects of Berserker Spirit, Blessed Body, Magic Barrier, Shield, Wind Walk, Blessed Soul, Empower, Acumen, and Clarity effects for a certain amount of time. -->
-	<item id="10179" type="EtcItem" name="Fresh Fruit Cocktail">
-		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2414-1;2415-1;2416-1;2417-1;2418-1;2419-1;2406-1;2411-1;2405-1" />
-	</item>
-	<!--
-		A Battle Manual needed to learn Penetrating Shot. Used by Warders.
-		Required level: 20
-	-->
-	<item id="10180" type="EtcItem" name="Battle Manual - Penetrating Shot">
-		<set name="icon" val="icon.etc_kamael_skill_book_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="800" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Erase Mark. Used by Troopers and Warders.
-		Required level: 24
-	-->
-	<item id="10181" type="EtcItem" name="Battle Manual - Erase Mark">
-		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="1050" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Ultimate Escape. Used by Arbalesters.
-		Required level: 43
-	-->
-	<item id="10182" type="EtcItem" name="Battle Manual - Ultimate Escape">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="3700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Create Special Bolt. Used by Arbalesters.
-		Required level: 43
-	-->
-	<item id="10183" type="EtcItem" name="Battle Manual - Create Special Bolt">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="3700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Restoration Impact. Used by Inspectors.
-		Required level: 49
-	-->
-	<item id="10184" type="EtcItem" name="Battle Manual - Restoration Impact">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="4800" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Appetite for Destruction. Used by Inspectors.
-		Required level: 40
-	-->
-	<item id="10185" type="EtcItem" name="Battle Manual - Appetite for Destruction">
-		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="3200" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Restoration. Used by Inspectors.
-		Required level: 40
-	-->
-	<item id="10186" type="EtcItem" name="Battle Manual - Restoration">
-		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="3200" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Oblivion. Used by Inspectors.
-		Required level: 43
-	-->
-	<item id="10187" type="EtcItem" name="Battle Manual - Oblivion">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="3700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Thin Skin. Used by Inspectors.
-		Required level: 46
-	-->
-	<item id="10188" type="EtcItem" name="Battle Manual - Thin Skin">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="4250" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Protection Instinct. Used by Inspectors.
-		Required level: 46
-	-->
-	<item id="10189" type="EtcItem" name="Battle Manual - Protection Instinct">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="4250" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Vampiric Impulse. Used by Inspectors.
-		Required level: 52
-	-->
-	<item id="10190" type="EtcItem" name="Battle Manual - Vampiric Impulse">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="5400" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Magic Impulse. Used by Inspectors.
-		Required level: 55
-	-->
-	<item id="10191" type="EtcItem" name="Battle Manual - Magic Impulse">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="6250" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Enervation. Used by Inspectors.
-		Required level: 60
-	-->
-	<item id="10192" type="EtcItem" name="Battle Manual - Enervation">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="7200" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Weak Constitution. Used by Inspectors.
-		Required level: 62
-	-->
-	<item id="10193" type="EtcItem" name="Battle Manual - Weak Constitution">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="7700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Spite. Used by Inspectors.
-		Required level: 66
-	-->
-	<item id="10194" type="EtcItem" name="Battle Manual - Spite">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="8700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Mental Impoverish. Used by Inspectors.
-		Required level: 68
-	-->
-	<item id="10195" type="EtcItem" name="Battle Manual - Mental Impoverish">
-		<set name="icon" val="icon.etc_kamael_skill_book_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="7700" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Battle Manual needed to learn Soul Harmony. Used by Inspectors.
-		Required level: 70
-	-->
-	<item id="10196" type="EtcItem" name="Battle Manual - Soul Harmony">
-		<set name="icon" val="icon.etc_kamael_skill_book_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="9300" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Dark Coda. For best results, a level 5-15 character must plant it on a level 5-15 monster. -->
-	<item id="10197" type="EtcItem" name="Seed: Alternative Dark Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed2" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Red Coda. For best results, a level 8-18 character must plant it on a level 8-18 monster. -->
-	<item id="10198" type="EtcItem" name="Seed: Alternative Red Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed2" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
-	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Chilly Coda. For best results, a level 11- 21 character must plant it on a level 11- 21 monster. -->
-	<item id="10199" type="EtcItem" name="Seed: Alternative Chilly Coda">
-		<set name="icon" val="icon.etc_coda_seed_i00" />
-		<set name="default_action" val="seed" />
-		<set name="etcitem_type" val="seed2" />
-		<set name="weight" val="1" />
-		<set name="price" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="Seed" />
-		<set name="item_skill" val="2097-1" />
-	</item>
+    <!-- Spellbook needed to learn Diamond Dust. Used by Mystic Muses. -->
+    <item id="10100" type="EtcItem" name="Spellbook: Diamond Dust">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Throne of Ice. Used by Mystic Muses. -->
+    <item id="10101" type="EtcItem" name="Spellbook: Throne of Ice">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Throne of Wind. Used by Storm Screamers. -->
+    <item id="10102" type="EtcItem" name="Spellbook: Throne of Wind">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Divine Power. Used by Cardinals. -->
+    <item id="10103" type="EtcItem" name="Spellbook: Divine Power">
+        <set name="icon" val="icon.etc_spell_books_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Mana Gain. Used by Eva's Saints and Shillien Saints. -->
+    <item id="10104" type="EtcItem" name="Spellbook: Mana Gain">
+        <set name="icon" val="icon.etc_spell_books_assistance_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Amulet required for the Chant of Protection spell. Used by Doomcryers. -->
+    <item id="10105" type="EtcItem" name="Amulet: Chant of Protection">
+        <set name="icon" val="icon.etc_orcish_talisman_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Amulet required for the Seal of Blockade spell. Used by Dominators. -->
+    <item id="10106" type="EtcItem" name="Amulet: Seal of Blockade">
+        <set name="icon" val="icon.etc_orcish_talisman_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Fire Vortex Buster. Used by Archmages. -->
+    <item id="10107" type="EtcItem" name="Spellbook: Fire Vortex Buster">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Ice Vortex Crusher. Used by Mystic Muses. -->
+    <item id="10108" type="EtcItem" name="Spellbook: Ice Vortex Crusher">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Wind Vortex Slug. Used by Storm Screamers. -->
+    <item id="10109" type="EtcItem" name="Spellbook: Wind Vortex Slug">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Meteor. Can be used by an Archmage and a Soul Taker. Can be acquired at level 81. -->
+    <item id="10110" type="EtcItem" name="Forgotten Scroll: Meteor">
+        <set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Spellbook needed to learn Star Fall. Can be used by a Mystic Muse and a Storm Screamer. Can be acquired at level 81. -->
+    <item id="10111" type="EtcItem" name="Forgotten Scroll: Star Fall">
+        <set name="icon" val="BranchSys2.Icon.br_spell_books_magic_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="30000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Item needed for the Imbue Dark Seed Skill. -->
+    <item id="10112" type="EtcItem" name="Dark Seed">
+        <set name="icon" val="icon.etc_coda_i08" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Item needed for the Deadly Roulette, and Bleeding Shot skills. -->
+    <item id="10113" type="EtcItem" name="Special Bolt">
+        <set name="icon" val="icon.etc_wooden_bolt_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ingredient needed for a Dwarf to make a Dynasty Sigil. It can be sold to public stores. -->
+    <item id="10114" type="EtcItem" name="Sealed Dynasty Sigil Piece">
+        <set name="icon" val="icon.etc_plate_silver_i00" />
+        <set name="etcitem_type" val="material" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="60" />
+        <set name="price" val="53777" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- For Dwarves only. Recipe for the Sealed Dynasty Sigil. Requires Create Item Skill (Lv. 9). 60% success rate. -->
+    <item id="10115" type="EtcItem" name="Recipe: Sealed Dynasty Sigil (60%)">
+        <set name="icon" val="icon.etc_recipe_black_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="262000" />
+        <set name="recipe_id" val="913" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Recipes" />
+    </item>
+    <!-- Exclusive to Dwarves. Recipe for making a Sealed Dynasty Sigil. Requires Create Item - Skill Lv. 9. The success rate is 100%. -->
+    <item id="10116" type="EtcItem" name="Recipe: Sealed Dynasty Sigil">
+        <set name="icon" val="icon.etc_recipe_black_i00" />
+        <set name="default_action" val="recipe" />
+        <set name="etcitem_type" val="recipe" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="price" val="262000" />
+        <set name="recipe_id" val="2" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Rare Sealed Dynasty Sigil that requires a thorough varnishing. It can be varnished by the Blacksmith of Mammon. -->
+    <item id="10117" type="EtcItem" name="Foundation Sealed Dynasty Sigil">
+        <set name="icon" val="icon.armor_dynasty_sigil_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1370" />
+        <set name="price" val="6404000" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="305" />
+        </for>
+    </item>
+    <!-- Rare Sealed Dynasty Sigil that requires a thorough varnishing. It can be varnished by the Blacksmith of Mammon. -->
+    <item id="10118" type="EtcItem" name="Foundation Dynasty Sigil">
+        <set name="icon" val="icon.dynasty_sigil_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="1390" />
+        <set name="price" val="6404000" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="321" />
+        </for>
+    </item>
+    <!-- Increases Magic Resistance and Dark Resistance. -->
+    <item id="10119" type="Armor" name="Dynasty Sigil">
+        <set name="icon" val="icon.dynasty_sigil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="307" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="930" />
+        <set name="price" val="6404000" />
+        <set name="enchant_enabled" val="1" />
+        <set name="item_skill" val="8311-1" />
+        <for>
+            <baseAdd stat="pDef" val="15" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Sealed Masterwork Item. Seal can be removed by the Blacksmith of Mammon or Maestro Ishuma. -->
+    <item id="10120" type="Armor" name="Sealed Dynasty Sigil">
+        <set name="icon" val="icon.armor_dynasty_sigil_i01" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="307" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="930" />
+        <set name="price" val="6404000" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <baseAdd stat="pDef" val="15" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Sealed Masterwork Item. The seal can be broken with the help of the Blacksmith of Mammon. -->
+    <item id="10121" type="Armor" name="Sealed Arcana Sigil">
+        <set name="icon" val="icon.arcana_sigil_i01" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="161" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="940" />
+        <set name="price" val="3355000" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <baseAdd stat="pDef" val="13" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Cannot be crystallized or enchanted -->
+    <item id="10122" type="Armor" name="Red Crescent">
+        <set name="icon" val="icon.accessary_red_cresent_earing_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="48" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="150" />
+        <set name="price" val="20700" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="24" />
+        </for>
+    </item>
+    <!-- Cannot be crystallized or enchanted. -->
+    <item id="10123" type="Armor" name="Necklace of Devotion">
+        <set name="icon" val="icon.accessary_necklace_of_devotion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="65" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="150" />
+        <set name="price" val="27600" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="32" />
+        </for>
+    </item>
+    <!-- Cannot be crystallized or enchanted. -->
+    <item id="10124" type="Armor" name="Ring of Devotion">
+        <set name="icon" val="icon.accessary_ring_of_devotion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="32" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="150" />
+        <set name="price" val="13800" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="16" />
+        </for>
+    </item>
+    <!-- A Shadow Item with the power of a War Axe. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="10125" type="Weapon" name="Shadow Item: War Axe">
+        <set name="icon" val="icon.weapon_war_axe_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="533" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="300" />
+        <for>
+            <set stat="pAtk" val="139" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Can only be worn by Duelists and Grand Khavataris. -->
+    <item id="10126" type="Armor" name="Dynasty Leather Armor - Force Master">
+        <set name="icon" val="icon.armor_t92_ud_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="878" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="4180" />
+        <set name="price" val="18298000" />
+        <set name="element_enabled" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="armorSet" val="10126" />
+        <set name="equip_condition" val="{{ec_category;{@force_master}}}" />
+        <cond msgId="1518">
+            <and>
+                <player races="Human,Elf,DarkElf,Orc,Dwarf" />
+                <player class_id_restriction="88, 114" />
+            </and>
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="170" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Can only be worn by Dreadnoughts, Titans, Fortune Seekers, Maestros, Doombringers and Soul Hounds. -->
+    <item id="10127" type="Armor" name="Dynasty Leather Armor - Weapon Master">
+        <set name="icon" val="icon.armor_t92_ub_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="878" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="4180" />
+        <set name="price" val="18298000" />
+        <set name="element_enabled" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="armorSet" val="10127" />
+        <set name="equip_condition" val="{{ec_category;{@weapon_master}}}" />
+        <cond msgId="1518">
+            <player class_id_restriction="89, 113, 117, 118, 131, 132, 133" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="170" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <item id="10128" type="Weapon" name="For Monster only (Crossbow)">
+        <set name="icon" val="icon.weapon_monster_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1530" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <for>
+            <set stat="pAtk" val="31" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Magical scroll that transports you to your Fortress. If you don't have a Fortress, it will relocate you to the nearest village. -->
+    <item id="10129" type="EtcItem" name="Scroll of Escape: Fortress">
+        <set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="price" val="500" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2365-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magical scroll that transports you to your Fortress quickly. -->
+    <item id="10130" type="EtcItem" name="Blessed Scroll of Escape: Fortress">
+        <set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="price" val="80000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2364-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Transforms you into an Onyx Beast for 30 min. -->
+    <item id="10131" type="EtcItem" name="Transformation Scroll: Onyx Beast">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2371-1" />
+    </item>
+    <!-- Transforms you into a Doom Wraith for 30 min. -->
+    <item id="10132" type="EtcItem" name="Transformation Scroll: Doom Wraith">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2372-1" />
+    </item>
+    <!-- Transforms you into a Grail Apostle for 30 min. -->
+    <item id="10133" type="EtcItem" name="Transformation Scroll: Grail Apostle">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2373-1" />
+    </item>
+    <!-- Transforms you into a Unicorn for 30 min. -->
+    <item id="10134" type="EtcItem" name="Transformation Scroll: Unicorn">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2374-1" />
+    </item>
+    <!-- Transforms you into a Lilim Knight for 30 min. -->
+    <item id="10135" type="EtcItem" name="Transformation Scroll: Lilim Knight">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2375-1" />
+    </item>
+    <!-- Transforms you into a Golem Guardian for 30 min. -->
+    <item id="10136" type="EtcItem" name="Transformation Scroll: Golem Guardian">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2376-1" />
+    </item>
+    <!-- Transforms you into an Inferno Drake for 30 min. -->
+    <item id="10137" type="EtcItem" name="Transformation Scroll: Inferno Drake">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2377-1" />
+    </item>
+    <!-- Transforms you into a Dragon Bomber for 30 min. -->
+    <item id="10138" type="EtcItem" name="Transformation Scroll: Dragon Bomber">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2378-1" />
+    </item>
+    <!-- Bracelet that summons a cute Rainbow Clan Hall Agathion. Shadow Item. It lasts for 700 min. -->
+    <item id="10139" type="Armor" name="Agathion Bracelet">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="5414-1;3269-1;3267-1" />
+        <set name="duration" val="700" />
+    </item>
+    <!-- Makes Blessed Scroll of Escape available for up to 250 minutes, with a 60-second cooldown for Escape. Only one effect is applied, even if you wear 2 identical rings. -->
+    <item id="10140" type="Armor" name="Blessed Ring of Escape">
+        <set name="icon" val="icon.accessary_ring_of_mana_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="3408-1" />
+        <set name="duration" val="250" />
+        <for>
+            <baseAdd stat="mDef" val="24" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Can be transformed into a Yeti for a certain amount of time. Transformation is cancelled if unequipped. Effect does not stack with additional Talismans of the same type. -->
+    <item id="10141" type="Armor" name="Grey Talisman - Yeti Transform">
+        <set name="icon" val="icon.etc_talisman_i07" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="price" val="50000" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="unequip_skill" val="3499-1" />
+        <set name="item_skill" val="3335-1" />
+        <set name="duration" val="70" />
+    </item>
+    <!-- Can be transformed into a Buffalo for a certain amount of time. Transformation is cancelled if unequipped. Effect does not stack with additional Talismans of the same type. -->
+    <item id="10142" type="Armor" name="Grey Talisman - Buffalo Transform">
+        <set name="icon" val="icon.etc_talisman_i07" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="price" val="50000" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="unequip_skill" val="3499-1" />
+        <set name="item_skill" val="3336-1" />
+        <set name="duration" val="70" />
+    </item>
+    <!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Blessed Shield Lv. 6, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10143" type="EtcItem" name="Battleground Scroll: Shield Master">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2379-1;2380-1;2381-1;2382-1;2383-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Acumen Lv. 1, and Empower Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10144" type="EtcItem" name="Battleground Scroll: Wizard">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2379-1;2380-1;2381-1;2384-1;2385-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Effects of Wind Walk Lv. 2, Shield Lv. 3, Magic Barrier Lv. 2, Acumen Lv. 1, and Heal Empower Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10145" type="EtcItem" name="Battleground Scroll: Healer">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2379-1;2380-1;2381-1;2384-1;2386-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Effects of Wind Walk Lv. 2, Might Lv. 3, Magic Barrier Lv. 2, Focus Lv. 1, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10146" type="EtcItem" name="Battleground Scroll: Dagger Master">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2379-1;2387-1;2381-1;2388-1;2383-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Effects of Wind Walk Lv. 2, Might Lv. 3, Magic Barrier Lv. 2, Guidance Lv. 1, and Haste Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10147" type="EtcItem" name="Battleground Scroll: Bow Master">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2379-1;2387-1;2381-1;2389-1;2383-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Effects of Berserker Spirit Lv. 2 and Clarity Lv. 1 can be obtained for a certain period of time. Can only be used in Siege and Fortress war. -->
+    <item id="10148" type="EtcItem" name="Battleground Scroll: Berserker">
+        <set name="icon" val="icon.etc_scroll_white_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2390-1;2391-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Relocates you to the nearest village. Can only be used in Siege and Fortress war. -->
+    <item id="10149" type="EtcItem" name="Blessed Scroll of Escape (Battleground)">
+        <set name="icon" val="icon.etc_scroll_of_return_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2392-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Resurrects a dead character and restores his or her XP completely. Can only be used in Siege and Fortress war. -->
+    <item id="10150" type="EtcItem" name="Blessed Scroll of Resurrection (Battleground)">
+        <set name="icon" val="icon.etc_scroll_of_resurrection_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ScrollOfResurrection" />
+        <set name="item_skill" val="2393-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- When used, it transforms you into a pixy for a certain amount of time. It can only be used on the battleground during a siege battle or a fortress battle. It will have no effect if used while in a transformed state. -->
+    <item id="10151" type="EtcItem" name="Transformation Scroll (Battleground)">
+        <set name="icon" val="icon.etc_trans_4f_s_b_01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2394-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Recovers HP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
+    <item id="10152" type="EtcItem" name="Healing Potion (Battleground)">
+        <set name="icon" val="icon.etc_super_hp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="10" />
+        <set name="reuse_delay" val="180000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2395-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Recovers MP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
+    <item id="10153" type="EtcItem" name="Mana Recovery Potion (Battleground)">
+        <set name="icon" val="icon.etc_super_mp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="8" />
+        <set name="reuse_delay" val="180000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2401-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Recovers CP when in use. Characters below Lv. 52 are not affected. Usable only during a Siege or Fortress war. -->
+    <item id="10154" type="EtcItem" name="CP Recovery Potion (Battleground)">
+        <set name="icon" val="icon.etc_super_cp_potion_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="9" />
+        <set name="reuse_delay" val="180000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2402-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Increases Hold/Sleep Resistance for a certain period of time. Can only be used in Castle and Fortress Sieges. -->
+    <item id="10155" type="EtcItem" name="Mental Strengthening Potion">
+        <set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2396-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Becomes invincible temporarily. Can only be used in Siege and Fortress war. -->
+    <item id="10156" type="EtcItem" name="Medusa's Potion">
+        <set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="shared_reuse_group" val="12" />
+        <set name="reuse_delay" val="180000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2397-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Increases Speed instantly. Can only be used in Siege and Fortress war. -->
+    <item id="10157" type="EtcItem" name="Quick Haste Potion">
+        <set name="icon" val="icon.etc_lesser_potion_yellow_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2398-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Obtains High-grade Fishing Mastery Lv. (Lv. 24). Effect does not stack with additional Talismans of the same type. -->
+    <item id="10158" type="Armor" name="Grey Talisman - High-grade Fishing">
+        <set name="icon" val="icon.etc_talisman_i07" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="3315-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Disturbs movement of targets. Can only be used in Siege and Fortress war. -->
+    <item id="10159" type="EtcItem" name="Capture Rope">
+        <set name="icon" val="icon.etc_braided_hemp_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="2399-1" />
+        <set name="use_condition" val="{{uc_in_residence_siege_field}}" />
+    </item>
+    <!-- Red crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
+    <item id="10160" type="EtcItem" name="Cursed Red Soul Crystal - Stage 14">
+        <set name="icon" val="icon.etc_broken_crystal_red_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="20" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2096-1" />
+    </item>
+    <!-- Blue crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
+    <item id="10161" type="EtcItem" name="Cursed Blue Soul Crystal - Stage 14">
+        <set name="icon" val="icon.etc_broken_crystal_blue_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="20" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2096-1" />
+    </item>
+    <!-- Green crystal that is cursed by the darkness, stage 14. Take this to Legendary Blacksmith Shadai in Hellbound to process. -->
+    <item id="10162" type="EtcItem" name="Cursed Green Soul Crystal - Stage 14">
+        <set name="icon" val="icon.etc_broken_crystal_green_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="20" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2096-1" />
+    </item>
+    <!-- Necklace used to summon wolves. It takes away some XP the Pet Master earns. -->
+    <item id="10163" type="EtcItem" name="Wolf Collar">
+        <set name="icon" val="icon.etc_prefect_belt_i00" />
+        <set name="default_action" val="skill_maintain" />
+        <set name="etcitem_type" val="pet_collar" />
+        <set name="weight" val="10" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="SummonItems" />
+        <set name="item_skill" val="2046-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
+    </item>
+    <!-- Destroys the animal slayers of the Mimir Forest, the Crimson Spiders. -->
+    <item id="10164" type="EtcItem" name="Animal Slayer's List">
+        <set name="icon" val="icon.etc_letter_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Claw dripping with animal blood. Collect 50 of these and take them to Martin, the Pet Manager of the Town of Gludin. -->
+    <item id="10165" type="EtcItem" name="Bloody Red Claw">
+        <set name="icon" val="icon.etc_fang_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Instantly recovers 1,000 CP when used. -->
+    <item id="10166" type="EtcItem" name="Hot Springs CP Potion">
+        <set name="icon" val="icon.etc_hot_spring_mineral_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="elixir" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="25" />
+        <set name="shared_reuse_group" val="11" />
+        <set name="reuse_delay" val="300000" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2403-1" />
+    </item>
+    <!-- Magic lollipop with a cute piggy drawing on it. Makes a piggy noise when striking. Can transform yourself into a cute piggy for a certain amount of time. -->
+    <item id="10167" type="Weapon" name="Pig Lollipop">
+        <set name="icon" val="icon.etc_pig_candy_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="unequip_skill" val="839-1" />
+        <set name="item_skill" val="3418-1" />
+        <for>
+            <set stat="pAtk" val="1" />
+            <set stat="mAtk" val="1" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Can only be worn by Hierophants, Dominators, Doomcryers and Judicators. -->
+    <item id="10168" type="Armor" name="Dynasty Leather Armor - Enchanter">
+        <set name="icon" val="icon.armor_t92_ud_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="878" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="4180" />
+        <set name="price" val="18298000" />
+        <set name="element_enabled" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="armorSet" val="10168" />
+        <set name="equip_condition" val="{{ec_category;{@buff_master}}}" />
+        <cond msgId="1518">
+            <player class_id_restriction="98, 115, 116, 136" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="170" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet that can be worn by the Kamael Race only, exclusively for the Enchanter class after completion of 2nd or 3rd class transfer. Cannot be worn in a subclass condition. Uses 2 hair accessory slots. -->
+    <item id="10169" type="Armor" name="Enchanter Circlet (Kamael only)">
+        <set name="icon" val="icon.accessary_weapon_master_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <cond msgId="1518">
+            <player class_id_restriction="136" />
+            <player level="40" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Dark Resistance + 30, MP + 31. -->
+    <item id="10170" type="Armor" name="Baylor's Earring">
+        <set name="icon" val="icon.accessary_dynasty_earing_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="487" />
+        <set name="crystal_type" val="s80" />
+        <set name="weight" val="150" />
+        <set name="price" val="12185000" />
+        <set name="enchant_enabled" val="1" />
+        <set name="isAugmentable" val="false" />
+        <for>
+            <baseAdd stat="mDef" val="71" />
+            <add stat="maxMp" val="31" />
+            <add stat="darkRes" val="30" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Dark Coda. For best results, a level 5-15 character must plant it on a level 5-15 monster. -->
+    <item id="10171" type="EtcItem" name="Seed: Dark Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Red Coda. For best results, a level 8-18 character must plant it on a level 8-18 monster. -->
+    <item id="10172" type="EtcItem" name="Seed: Red Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Chilly Coda. For best results, a level 11- 21 character must plant it on a level 11- 21 monster. -->
+    <item id="10173" type="EtcItem" name="Seed: Chilly Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Blue Coda. For best results, a level 14- 24 character must plant it on a level 14- 24 monster. -->
+    <item id="10174" type="EtcItem" name="Seed: Blue Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed" />
+        <set name="weight" val="1" />
+        <set name="price" val="10" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Gold colored, Goblin shaped hair accessory. Event item. -->
+    <item id="10175" type="Armor" name="Goblin Circlet (Event)">
+        <set name="icon" val="icon.accessory_taiwan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Mysterious costume accessory that covers half of the wearer's face. -->
+    <item id="10176" type="Armor" name="White Half Mask">
+        <set name="icon" val="icon.accessory_half_face_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Mysterious black mask. Don't you wish you knew where you could find the other half? 4th Anniversary commemorative item. -->
+    <item id="10177" type="Armor" name="Black Half Mask (Event)">
+        <set name="icon" val="icon.Accessary_black_half_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- A Cocktail made of various rare fruits. When consumed, it bestows temporary effects of Might, Shield, Wind Walk, Focus, Death Whisper, Guidance, Blessed Shield, Blessed Body, Haste, and Vampiric Rage for a certain amount of time. -->
+    <item id="10178" type="EtcItem" name="Sweet Fruit Cocktail">
+        <set name="icon" val="icon.etc_fruit_cocktail_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2404-1;2405-1;2406-1;2407-1;2408-1;2409-1;2410-1;2411-1;2412-1;2413-1" />
+    </item>
+    <!-- A Cocktail made of various rare fruits. When consumed, it bestows temporary effects of Berserker Spirit, Blessed Body, Magic Barrier, Shield, Wind Walk, Blessed Soul, Empower, Acumen, and Clarity effects for a certain amount of time. -->
+    <item id="10179" type="EtcItem" name="Fresh Fruit Cocktail">
+        <set name="icon" val="icon.etc_fruit_cocktail_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2414-1;2415-1;2416-1;2417-1;2418-1;2419-1;2406-1;2411-1;2405-1" />
+    </item>
+    <!--
+        A Battle Manual needed to learn Penetrating Shot. Used by Warders.
+        Required level: 20
+    -->
+    <item id="10180" type="EtcItem" name="Battle Manual - Penetrating Shot">
+        <set name="icon" val="icon.etc_kamael_skill_book_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="800" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Erase Mark. Used by Troopers and Warders.
+        Required level: 24
+    -->
+    <item id="10181" type="EtcItem" name="Battle Manual - Erase Mark">
+        <set name="icon" val="icon.etc_kamael_skill_book_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="1050" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Ultimate Escape. Used by Arbalesters.
+        Required level: 43
+    -->
+    <item id="10182" type="EtcItem" name="Battle Manual - Ultimate Escape">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="3700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Create Special Bolt. Used by Arbalesters.
+        Required level: 43
+    -->
+    <item id="10183" type="EtcItem" name="Battle Manual - Create Special Bolt">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="3700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Restoration Impact. Used by Inspectors.
+        Required level: 49
+    -->
+    <item id="10184" type="EtcItem" name="Battle Manual - Restoration Impact">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="4800" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Appetite for Destruction. Used by Inspectors.
+        Required level: 40
+    -->
+    <item id="10185" type="EtcItem" name="Battle Manual - Appetite for Destruction">
+        <set name="icon" val="icon.etc_kamael_skill_book_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="3200" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Restoration. Used by Inspectors.
+        Required level: 40
+    -->
+    <item id="10186" type="EtcItem" name="Battle Manual - Restoration">
+        <set name="icon" val="icon.etc_kamael_skill_book_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="3200" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Oblivion. Used by Inspectors.
+        Required level: 43
+    -->
+    <item id="10187" type="EtcItem" name="Battle Manual - Oblivion">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="3700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Thin Skin. Used by Inspectors.
+        Required level: 46
+    -->
+    <item id="10188" type="EtcItem" name="Battle Manual - Thin Skin">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="4250" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Protection Instinct. Used by Inspectors.
+        Required level: 46
+    -->
+    <item id="10189" type="EtcItem" name="Battle Manual - Protection Instinct">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="4250" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Vampiric Impulse. Used by Inspectors.
+        Required level: 52
+    -->
+    <item id="10190" type="EtcItem" name="Battle Manual - Vampiric Impulse">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="5400" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Magic Impulse. Used by Inspectors.
+        Required level: 55
+    -->
+    <item id="10191" type="EtcItem" name="Battle Manual - Magic Impulse">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="6250" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Enervation. Used by Inspectors.
+        Required level: 60
+    -->
+    <item id="10192" type="EtcItem" name="Battle Manual - Enervation">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="7200" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Weak Constitution. Used by Inspectors.
+        Required level: 62
+    -->
+    <item id="10193" type="EtcItem" name="Battle Manual - Weak Constitution">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="7700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Spite. Used by Inspectors.
+        Required level: 66
+    -->
+    <item id="10194" type="EtcItem" name="Battle Manual - Spite">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="8700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Mental Impoverish. Used by Inspectors.
+        Required level: 68
+    -->
+    <item id="10195" type="EtcItem" name="Battle Manual - Mental Impoverish">
+        <set name="icon" val="icon.etc_kamael_skill_book_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="7700" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Battle Manual needed to learn Soul Harmony. Used by Inspectors.
+        Required level: 70
+    -->
+    <item id="10196" type="EtcItem" name="Battle Manual - Soul Harmony">
+        <set name="icon" val="icon.etc_kamael_skill_book_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="9300" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Dark Coda. For best results, a level 5-15 character must plant it on a level 5-15 monster. -->
+    <item id="10197" type="EtcItem" name="Seed: Alternative Dark Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed2" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Red Coda. For best results, a level 8-18 character must plant it on a level 8-18 monster. -->
+    <item id="10198" type="EtcItem" name="Seed: Alternative Red Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed2" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
+    <!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Chilly Coda. For best results, a level 11- 21 character must plant it on a level 11- 21 monster. -->
+    <item id="10199" type="EtcItem" name="Seed: Alternative Chilly Coda">
+        <set name="icon" val="icon.etc_coda_seed_i00" />
+        <set name="default_action" val="seed" />
+        <set name="etcitem_type" val="seed2" />
+        <set name="weight" val="1" />
+        <set name="price" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="Seed" />
+        <set name="item_skill" val="2097-1" />
+    </item>
 </list>

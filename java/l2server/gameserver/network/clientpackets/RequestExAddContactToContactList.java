@@ -27,28 +27,34 @@ import l2server.gameserver.network.serverpackets.ExConfirmAddingContact;
  */
 public class RequestExAddContactToContactList extends L2GameClientPacket
 {
-	private String _name;
-	
-	@Override
-	protected void readImpl()
-	{
-		_name = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		if (!Config.ALLOW_MAIL)
-			return;
-		
-		if (_name == null)
-			return;
-		
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		boolean charAdded = activeChar.getContactList().add(_name);
-		activeChar.sendPacket(new ExConfirmAddingContact(_name, charAdded));
-	}
+    private String _name;
+
+    @Override
+    protected void readImpl()
+    {
+        _name = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        if (!Config.ALLOW_MAIL)
+        {
+            return;
+        }
+
+        if (_name == null)
+        {
+            return;
+        }
+
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        boolean charAdded = activeChar.getContactList().add(_name);
+        activeChar.sendPacket(new ExConfirmAddingContact(_name, charAdded));
+    }
 }

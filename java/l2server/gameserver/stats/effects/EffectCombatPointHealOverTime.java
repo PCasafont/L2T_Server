@@ -23,53 +23,55 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectCombatPointHealOverTime extends L2Effect
 {
-	public EffectCombatPointHealOverTime(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	// Special constructor to steal this effect
-	public EffectCombatPointHealOverTime(Env env, L2Effect effect)
-	{
-		super(env, effect);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
-	 */
-	@Override
-	protected boolean effectCanBeStolen()
-	{
-		return true;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.HEAL_OVER_TIME;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-			return false;
-		
-		double cp = getEffected().getCurrentCp();
-		double maxcp = getEffected().getMaxCp();
-		cp += calc();
-		if (cp > maxcp)
-			cp = maxcp;
-		
-		getEffected().setCurrentCp(cp);
-		StatusUpdate sump = new StatusUpdate(getEffected());
-		sump.addAttribute(StatusUpdate.CUR_CP, (int) cp);
-		getEffected().sendPacket(sump);
-		return true;
-	}
+    public EffectCombatPointHealOverTime(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    // Special constructor to steal this effect
+    public EffectCombatPointHealOverTime(Env env, L2Effect effect)
+    {
+        super(env, effect);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+     */
+    @Override
+    protected boolean effectCanBeStolen()
+    {
+        return true;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.HEAL_OVER_TIME;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        if (getEffected().isDead())
+        {
+            return false;
+        }
+
+        double cp = getEffected().getCurrentCp();
+        double maxcp = getEffected().getMaxCp();
+        cp += calc();
+        if (cp > maxcp)
+        {
+            cp = maxcp;
+        }
+
+        getEffected().setCurrentCp(cp);
+        StatusUpdate sump = new StatusUpdate(getEffected());
+        sump.addAttribute(StatusUpdate.CUR_CP, (int) cp);
+        getEffected().sendPacket(sump);
+        return true;
+    }
 }

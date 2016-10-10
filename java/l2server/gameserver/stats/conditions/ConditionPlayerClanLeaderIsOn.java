@@ -19,31 +19,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
 
 /**
- *
  * @author LasTravel
  */
 
 public class ConditionPlayerClanLeaderIsOn extends Condition
 {
-	
-	public ConditionPlayerClanLeaderIsOn()
-	{
-		
-	}
-	
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
-			L2PcInstance _player = (L2PcInstance) env.player;
-			
-			if (_player == null || _player.getClan() == null)
-				return false;
-			
-			return _player.getClan().getLeader().isOnline();
-		}
-		
-		return false;
-	}
+
+    public ConditionPlayerClanLeaderIsOn()
+    {
+
+    }
+
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (env.player instanceof L2PcInstance)
+        {
+            L2PcInstance _player = (L2PcInstance) env.player;
+
+            if (_player == null || _player.getClan() == null)
+            {
+                return false;
+            }
+
+            return _player.getClan().getLeader().isOnline();
+        }
+
+        return false;
+    }
 }

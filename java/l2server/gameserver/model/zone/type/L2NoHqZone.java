@@ -26,32 +26,36 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoHqZone extends L2ZoneType
 {
-	public L2NoHqZone(final int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	protected void onEnter(final L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-			character.setInsideZone(L2Character.ZONE_NOHQ, true);
-	}
-	
-	@Override
-	protected void onExit(final L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-			character.setInsideZone(L2Character.ZONE_NOHQ, false);
-	}
-	
-	@Override
-	public void onDieInside(final L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(final L2Character character)
-	{
-	}
+    public L2NoHqZone(final int id)
+    {
+        super(id);
+    }
+
+    @Override
+    protected void onEnter(final L2Character character)
+    {
+        if (character instanceof L2PcInstance)
+        {
+            character.setInsideZone(L2Character.ZONE_NOHQ, true);
+        }
+    }
+
+    @Override
+    protected void onExit(final L2Character character)
+    {
+        if (character instanceof L2PcInstance)
+        {
+            character.setInsideZone(L2Character.ZONE_NOHQ, false);
+        }
+    }
+
+    @Override
+    public void onDieInside(final L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(final L2Character character)
+    {
+    }
 }

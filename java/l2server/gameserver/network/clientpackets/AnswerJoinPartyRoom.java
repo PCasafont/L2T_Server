@@ -17,27 +17,27 @@ package l2server.gameserver.network.clientpackets;
 
 /**
  * Format: (ch) d
- * @author  -Wooden-
  *
+ * @author -Wooden-
  */
 public final class AnswerJoinPartyRoom extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int _requesterID; // not tested, just guessed
-	
-	@Override
-	protected void readImpl()
-	{
-		_requesterID = readD();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		// TODO
-		//Logozo.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
-	}
+    @SuppressWarnings("unused")
+    private int _requesterID; // not tested, just guessed
+
+    @Override
+    protected void readImpl()
+    {
+        _requesterID = readD();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        // TODO
+        //Logozo.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
+    }
 }

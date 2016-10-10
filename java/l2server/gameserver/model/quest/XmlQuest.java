@@ -23,58 +23,64 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class XmlQuest extends Quest
 {
-	public class XmlQuestState
-	{
-		public int Id;
-	}
-	
-	public XmlQuest(int questId, String name, String descr)
-	{
-		super(questId, name, descr);
-		
+    public class XmlQuestState
+    {
+        public int Id;
+    }
+
+    public XmlQuest(int questId, String name, String descr)
+    {
+        super(questId, name, descr);
+
 		/*addStartNpc(_rafforty);
 		addTalkId(_rafforty);
 		addTalkId(_kier);
 		addFirstTalkId(_jinia);
 		addTalkId(_jinia);*/
-	}
-	
-	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		String htmltext = event;
-		QuestState st = player.getQuestState(getName());
-		
-		if (st == null)
-			return htmltext;
-		
-		return htmltext;
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-			return htmltext;
-		
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-			return null;
-		
-		return null;
-	}
-	
-	@Override
-	public boolean canStart(L2PcInstance player)
-	{
-		return true;//player.getLevel() >= _minLevel && player.getLevel() <= _maxLevel;
-	}
+    }
+
+    @Override
+    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+    {
+        String htmltext = event;
+        QuestState st = player.getQuestState(getName());
+
+        if (st == null)
+        {
+            return htmltext;
+        }
+
+        return htmltext;
+    }
+
+    @Override
+    public String onTalk(L2Npc npc, L2PcInstance player)
+    {
+        String htmltext = getNoQuestMsg(player);
+        QuestState st = player.getQuestState(getName());
+        if (st == null)
+        {
+            return htmltext;
+        }
+
+        return htmltext;
+    }
+
+    @Override
+    public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
+    {
+        QuestState st = player.getQuestState(getName());
+        if (st == null)
+        {
+            return null;
+        }
+
+        return null;
+    }
+
+    @Override
+    public boolean canStart(L2PcInstance player)
+    {
+        return true;//player.getLevel() >= _minLevel && player.getLevel() <= _maxLevel;
+    }
 }

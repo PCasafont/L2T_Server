@@ -20,30 +20,30 @@ import l2server.gameserver.model.L2ItemInstance;
 /**
  * sample
  * 0000: 17  1a 95 20 48  9b da 12 40  44 17 02 00  03 f0 fc ff  98 f1 ff ff									 .....
- *
+ * <p>
  * format  ddddd
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class GetItem extends L2GameServerPacket
 {
-	private L2ItemInstance _item;
-	private int _playerId;
-	
-	public GetItem(L2ItemInstance item, int playerId)
-	{
-		_item = item;
-		_playerId = playerId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_playerId);
-		writeD(_item.getObjectId());
-		
-		writeD(_item.getX());
-		writeD(_item.getY());
-		writeD(_item.getZ());
-	}
+    private L2ItemInstance _item;
+    private int _playerId;
+
+    public GetItem(L2ItemInstance item, int playerId)
+    {
+        _item = item;
+        _playerId = playerId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_playerId);
+        writeD(_item.getObjectId());
+
+        writeD(_item.getX());
+        writeD(_item.getY());
+        writeD(_item.getZ());
+    }
 }

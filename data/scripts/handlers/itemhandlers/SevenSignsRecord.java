@@ -28,16 +28,17 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
  */
 public class SevenSignsRecord implements IItemHandler
 {
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		playable.sendPacket(new SSQStatus(playable.getObjectId(), 1));
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    @Override
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        playable.sendPacket(new SSQStatus(playable.getObjectId(), 1));
+    }
 }

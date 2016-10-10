@@ -32,38 +32,38 @@ import l2server.gameserver.model.olympiad.HeroesManager;
  * d: hero Ally id
  * d: count
  * ]
+ *
  * @author -Wooden-
- * Format from KenM
- *
- * Re-written by godson
- *
+ *         Format from KenM
+ *         <p>
+ *         Re-written by godson
  */
 public class ExHeroList extends L2GameServerPacket
 {
-	private Map<Integer, HeroInfo> _heroList;
-	
-	public ExHeroList()
-	{
-		_heroList = HeroesManager.getInstance().getHeroes();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_heroList.size());
-		
-		for (HeroInfo hero : _heroList.values())
-		{
-			writeS(hero.getName());
-			writeD(hero.getClassId());
-			writeS(hero.getClanName());
-			writeD(hero.getClanCrest());
-			writeS(hero.getAllyName());
-			writeD(hero.getAllyCrest());
-			writeD(hero.getCount());
-		}
-	}
+    private Map<Integer, HeroInfo> _heroList;
+
+    public ExHeroList()
+    {
+        _heroList = HeroesManager.getInstance().getHeroes();
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_heroList.size());
+
+        for (HeroInfo hero : _heroList.values())
+        {
+            writeS(hero.getName());
+            writeD(hero.getClassId());
+            writeS(hero.getClanName());
+            writeD(hero.getClanCrest());
+            writeS(hero.getAllyName());
+            writeD(hero.getAllyCrest());
+            writeD(hero.getCount());
+        }
+    }
 }

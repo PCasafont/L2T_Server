@@ -16,27 +16,26 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class ProtectTheSupplies extends TerritoryWarSuperClass
 {
-	public static String qn1 = "730_ProtecttheSuppliesSafe.";
-	public static int qnu = 730;
-	public static String qna = "Protect the Supplies Safe";
-	
-	public ProtectTheSupplies()
-	{
-		super(qnu, qn1, qna);
-		NPC_IDS = new int[] { 36591, 36592, 36593, 36594, 36595, 36596, 36597, 36598, 36599 };
-		qn = qn1;
-		registerAttackIds();
-	}
-	
-	@Override
-	public int getTerritoryIdForThisNPCId(int npcid)
-	{
-		return npcid - 36510;
-	}
+    public static String qn1 = "730_ProtecttheSuppliesSafe.";
+    public static int qnu = 730;
+    public static String qna = "Protect the Supplies Safe";
+
+    public ProtectTheSupplies()
+    {
+        super(qnu, qn1, qna);
+        NPC_IDS = new int[]{36591, 36592, 36593, 36594, 36595, 36596, 36597, 36598, 36599};
+        qn = qn1;
+        registerAttackIds();
+    }
+
+    @Override
+    public int getTerritoryIdForThisNPCId(int npcid)
+    {
+        return npcid - 36510;
+    }
 }

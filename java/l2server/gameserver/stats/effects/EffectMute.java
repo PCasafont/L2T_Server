@@ -23,56 +23,52 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public class EffectMute extends L2Effect
 {
-	public EffectMute(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.MUTE;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.SILENCE;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		getEffected().startMuted();
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		// Simply stop the effect
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopMuted(false);
-	}
+    public EffectMute(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.MUTE;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.SILENCE;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        getEffected().startMuted();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        // Simply stop the effect
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopMuted(false);
+    }
 }

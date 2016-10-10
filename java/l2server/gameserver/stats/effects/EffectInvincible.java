@@ -23,35 +23,33 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public class EffectInvincible extends L2Effect
 {
-	public EffectInvincible(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.INVINCIBLE;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		// Simply stop the effect
-		return true;
-	}
+    public EffectInvincible(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.INVINCIBLE;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        // Simply stop the effect
+        return true;
+    }
 }

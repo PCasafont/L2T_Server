@@ -18,16 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * Format: (ch)
  *
- * @author  -Wooden-
+ * @author -Wooden-
  */
 public class ShowPCCafeCouponShowUI extends L2GameServerPacket
 {
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

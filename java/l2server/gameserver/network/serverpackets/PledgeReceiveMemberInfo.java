@@ -18,40 +18,41 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.L2ClanMember;
 
 /**
- *
- * @author  -Wooden-
+ * @author -Wooden-
  */
 public class PledgeReceiveMemberInfo extends L2GameServerPacket
 {
-	private L2ClanMember _member;
-	
-	/**
-	 * @param member
-	 */
-	public PledgeReceiveMemberInfo(L2ClanMember member)
-	{
-		_member = member;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_member.getPledgeType());
-		writeS(_member.getName());
-		writeS(_member.getTitle()); // title
-		writeD(_member.getPowerGrade()); // power
-		
-		//clan or subpledge name
-		if (_member.getPledgeType() != 0)
-		{
-			writeS(_member.getClan().getSubPledge(_member.getPledgeType()).getName());
-		}
-		else
-			writeS(_member.getClan().getName());
-		
-		writeS(_member.getApprenticeOrSponsorName()); // name of this member's apprentice/sponsor
-	}
+    private L2ClanMember _member;
+
+    /**
+     * @param member
+     */
+    public PledgeReceiveMemberInfo(L2ClanMember member)
+    {
+        _member = member;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_member.getPledgeType());
+        writeS(_member.getName());
+        writeS(_member.getTitle()); // title
+        writeD(_member.getPowerGrade()); // power
+
+        //clan or subpledge name
+        if (_member.getPledgeType() != 0)
+        {
+            writeS(_member.getClan().getSubPledge(_member.getPledgeType()).getName());
+        }
+        else
+        {
+            writeS(_member.getClan().getName());
+        }
+
+        writeS(_member.getApprenticeOrSponsorName()); // name of this member's apprentice/sponsor
+    }
 }

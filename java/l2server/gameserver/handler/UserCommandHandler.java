@@ -26,48 +26,52 @@ import l2server.log.Log;
  */
 public class UserCommandHandler
 {
-	
-	private TIntObjectHashMap<IUserCommandHandler> _datatable;
-	
-	public static UserCommandHandler getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private UserCommandHandler()
-	{
-		_datatable = new TIntObjectHashMap<IUserCommandHandler>();
-	}
-	
-	public void registerUserCommandHandler(IUserCommandHandler handler)
-	{
-		int[] ids = handler.getUserCommandList();
-		for (int id : ids)
-		{
-			if (Config.DEBUG)
-				Log.fine("Adding handler for user command " + id);
-			_datatable.put(id, handler);
-		}
-	}
-	
-	public IUserCommandHandler getUserCommandHandler(int userCommand)
-	{
-		if (Config.DEBUG)
-			Log.fine("getting handler for user command: " + userCommand);
-		return _datatable.get(userCommand);
-	}
-	
-	/**
-	 * @return
-	 */
-	public int size()
-	{
-		return _datatable.size();
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final UserCommandHandler _instance = new UserCommandHandler();
-	}
+
+    private TIntObjectHashMap<IUserCommandHandler> _datatable;
+
+    public static UserCommandHandler getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private UserCommandHandler()
+    {
+        _datatable = new TIntObjectHashMap<IUserCommandHandler>();
+    }
+
+    public void registerUserCommandHandler(IUserCommandHandler handler)
+    {
+        int[] ids = handler.getUserCommandList();
+        for (int id : ids)
+        {
+            if (Config.DEBUG)
+            {
+                Log.fine("Adding handler for user command " + id);
+            }
+            _datatable.put(id, handler);
+        }
+    }
+
+    public IUserCommandHandler getUserCommandHandler(int userCommand)
+    {
+        if (Config.DEBUG)
+        {
+            Log.fine("getting handler for user command: " + userCommand);
+        }
+        return _datatable.get(userCommand);
+    }
+
+    /**
+     * @return
+     */
+    public int size()
+    {
+        return _datatable.size();
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final UserCommandHandler _instance = new UserCommandHandler();
+    }
 }

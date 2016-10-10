@@ -19,27 +19,28 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * ddddd
+ *
  * @version $Revision: 1.1.2.3.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public class RecipeShopItemInfo extends L2GameServerPacket
 {
-	
-	private L2PcInstance _player;
-	private int _recipeId;
-	
-	public RecipeShopItemInfo(L2PcInstance player, int recipeId)
-	{
-		_player = player;
-		_recipeId = recipeId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_player.getObjectId());
-		writeD(_recipeId);
-		writeD((int) _player.getCurrentMp());
-		writeD(_player.getMaxMp());
-		writeD(0xffffffff);
-	}
+
+    private L2PcInstance _player;
+    private int _recipeId;
+
+    public RecipeShopItemInfo(L2PcInstance player, int recipeId)
+    {
+        _player = player;
+        _recipeId = recipeId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_player.getObjectId());
+        writeD(_recipeId);
+        writeD((int) _player.getCurrentMp());
+        writeD(_player.getMaxMp());
+        writeD(0xffffffff);
+    }
 }

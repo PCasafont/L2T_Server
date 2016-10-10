@@ -20,22 +20,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * A chat handler
  *
- * @author  Gigiikun
+ * @author Gigiikun
  */
 public class ChatBattlefield implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		20
-	};
-	
-	/**
-	 * Handle chat type 'battlefield'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		/*if (TerritoryWarManager.getInstance().isTWChannelOpen() && activeChar.getSiegeSide() > 0)
+    private static final int[] COMMAND_IDS = {20};
+
+    /**
+     * Handle chat type 'battlefield'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        /*if (TerritoryWarManager.getInstance().isTWChannelOpen() && activeChar.getSiegeSide() > 0)
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
@@ -43,14 +41,15 @@ public class ChatBattlefield implements IChatHandler
 				if (player.getSiegeSide() == activeChar.getSiegeSide())
 					player.sendPacket(cs);
 		}*/
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

@@ -25,57 +25,76 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public class RequestDispel extends L2GameClientPacket
 {
-	private int _objectId;
-	private int _skillId;
-	private int _skillLevel;
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		_objectId = readD();
-		_skillId = readD();
-		_skillLevel = readD();
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		if (_skillId <= 0 || _skillLevel <= 0)
-			return;
-		
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLevel);
-		if (skill == null)
-			return;
-		if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff())
-			return;
-		if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && skill.getTargetType() != L2SkillTargetType.TARGET_PARTY && skill.getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
-			return;
-		if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
-			return;
-		if (activeChar.getObjectId() == _objectId)
-			activeChar.stopSkillEffects(_skillId);
-		else
-		{
-			final L2PetInstance pet = activeChar.getPet();
-			if (pet != null && pet.getObjectId() == _objectId)
-				pet.stopSkillEffects(_skillId);
-			for (L2SummonInstance summon : activeChar.getSummons())
-				summon.stopSkillEffects(_skillId);
-		}
-	}
+    private int _objectId;
+    private int _skillId;
+    private int _skillLevel;
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+        _objectId = readD();
+        _skillId = readD();
+        _skillLevel = readD();
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        if (_skillId <= 0 || _skillLevel <= 0)
+        {
+            return;
+        }
+
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLevel);
+        if (skill == null)
+        {
+            return;
+        }
+        if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff())
+        {
+            return;
+        }
+        if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && skill
+                .getTargetType() != L2SkillTargetType.TARGET_PARTY && skill
+                .getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
+        {
+            return;
+        }
+        if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
+        {
+            return;
+        }
+        if (activeChar.getObjectId() == _objectId)
+        {
+            activeChar.stopSkillEffects(_skillId);
+        }
+        else
+        {
+            final L2PetInstance pet = activeChar.getPet();
+            if (pet != null && pet.getObjectId() == _objectId)
+            {
+                pet.stopSkillEffects(_skillId);
+            }
+            for (L2SummonInstance summon : activeChar.getSummons())
+            {
+                summon.stopSkillEffects(_skillId);
+            }
+        }
+    }
 }

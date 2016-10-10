@@ -26,83 +26,88 @@ import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
-
 /**
  * A chat handler
  *
- * @author  durgus
+ * @author durgus
  */
 public class ChatAll implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		0
-	};
-	
-	private static Logger _log = Logger.getLogger(ChatAll.class.getName());
-	
-	/**
-	 * Handle chat type 'all'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
-	{
-		boolean vcd_used = false;
-		if (text.startsWith("."))
-		{
-			StringTokenizer st = new StringTokenizer(text);
-			IVoicedCommandHandler vch;
-			String command = "";
-			
-			if (st.countTokens() > 1)
-			{
-				command = st.nextToken().substring(1);
-				params = text.substring(command.length() + 2);
-				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
-			}
-			else
-			{
-				command = text.substring(1);
-				if (Config.DEBUG)
-					_log.info("Command: " + command);
-				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
-			}
-			if (vch != null)
-			{
-				vch.useVoicedCommand(command, activeChar, params);
-				vcd_used = true;
-			}
-			else
-			{
-				if (Config.DEBUG)
-					_log.warning("No handler registered for bypass '" + command + "'");
-				vcd_used = false;
-			}
-		}
-		if (!vcd_used)
-		{
-			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getAppearance().getVisibleName(), text);
-			
-			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-			//synchronized (activeChar.getKnownList().getKnownPlayers())
-			{
-				for (L2PcInstance player : plrs)
-				{
-					if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
-						player.sendPacket(cs);
-				}
-			}
-			
-			activeChar.sendPacket(cs);
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {0};
+
+    private static Logger _log = Logger.getLogger(ChatAll.class.getName());
+
+    /**
+     * Handle chat type 'all'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public void handleChat(int type, L2PcInstance activeChar, String params, String text)
+    {
+        boolean vcd_used = false;
+        if (text.startsWith("."))
+        {
+            StringTokenizer st = new StringTokenizer(text);
+            IVoicedCommandHandler vch;
+            String command = "";
+
+            if (st.countTokens() > 1)
+            {
+                command = st.nextToken().substring(1);
+                params = text.substring(command.length() + 2);
+                vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
+            }
+            else
+            {
+                command = text.substring(1);
+                if (Config.DEBUG)
+                {
+                    _log.info("Command: " + command);
+                }
+                vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
+            }
+            if (vch != null)
+            {
+                vch.useVoicedCommand(command, activeChar, params);
+                vcd_used = true;
+            }
+            else
+            {
+                if (Config.DEBUG)
+                {
+                    _log.warning("No handler registered for bypass '" + command + "'");
+                }
+                vcd_used = false;
+            }
+        }
+        if (!vcd_used)
+        {
+            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getAppearance().getVisibleName(), text);
+
+            Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
+            //synchronized (activeChar.getKnownList().getKnownPlayers())
+            {
+                for (L2PcInstance player : plrs)
+                {
+                    if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList
+                            .isBlocked(player, activeChar))
+                    {
+                        player.sendPacket(cs);
+                    }
+                }
+            }
+
+            activeChar.sendPacket(cs);
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

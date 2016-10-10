@@ -24,176 +24,189 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 /**
- *
  * @author DS
- *
  */
 public enum BaseStats
 {
-	STR(new STR()), INT(new INT()), DEX(new DEX()), WIT(new WIT()), CON(new CON()), MEN(new MEN()), LUC(new LUC()), CHA(new CHA());
-	
-	public static final int MAX_STAT_VALUE = 300;
-	
-	private static final double[] STRbonus = new double[MAX_STAT_VALUE];
-	private static final double[] INTbonus = new double[MAX_STAT_VALUE];
-	private static final double[] DEXbonus = new double[MAX_STAT_VALUE];
-	private static final double[] WITbonus = new double[MAX_STAT_VALUE];
-	private static final double[] CONbonus = new double[MAX_STAT_VALUE];
-	private static final double[] MENbonus = new double[MAX_STAT_VALUE];
-	private static final double[] LUCbonus = new double[MAX_STAT_VALUE];
-	private static final double[] CHAbonus = new double[MAX_STAT_VALUE];
-	
-	private final BaseStat _stat;
-	
-	public final String getValue()
-	{
-		return _stat.getClass().getSimpleName();
-	}
-	
-	private BaseStats(BaseStat s)
-	{
-		_stat = s;
-	}
-	
-	public final double calcBonus(L2Character actor)
-	{
-		if (actor != null)
-			return _stat.calcBonus(actor);
-		
-		return 1;
-	}
-	
-	public static final BaseStats valueOfXml(String name)
-	{
-		name = name.intern();
-		for (BaseStats s : values())
-		{
-			if (s.getValue().equalsIgnoreCase(name))
-				return s;
-		}
-		
-		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
-	}
-	
-	private interface BaseStat
-	{
-		public double calcBonus(L2Character actor);
-	}
-	
-	private static final class STR implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return STRbonus[actor.getSTR() - 1];
-		}
-	}
-	
-	private static final class INT implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return INTbonus[actor.getINT() - 1];
-		}
-	}
-	
-	private static final class DEX implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return DEXbonus[actor.getDEX() - 1];
-		}
-	}
-	
-	private static final class WIT implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return WITbonus[actor.getWIT() - 1];
-		}
-	}
-	
-	private static final class CON implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return CONbonus[actor.getCON() - 1];
-		}
-	}
-	
-	private static final class MEN implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return MENbonus[actor.getMEN() - 1];
-		}
-	}
-	
-	private static final class LUC implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return LUCbonus[actor.getLUC() - 1];
-		}
-	}
-	
-	private static final class CHA implements BaseStat
-	{
-		@Override
-		public final double calcBonus(L2Character actor)
-		{
-			return CHAbonus[actor.getCHA() - 1];
-		}
-	}
-	
-	static
-	{
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/statBonus.xml");
-		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getFirstChild().getChildren())
-		{
-			if (!n.getName().equalsIgnoreCase("stat"))
-				continue;
-			
-			for (XmlNode bonusNode : n.getChildren())
-			{
-				if (!bonusNode.getName().equalsIgnoreCase("bonus"))
-					continue;
-				
-				switch (n.getString("name"))
-				{
-					case "STR":
-						STRbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "INT":
-						INTbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "CON":
-						CONbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "MEN":
-						MENbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "DEX":
-						DEXbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "WIT":
-						WITbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "LUC":
-						LUCbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-					case "CHA":
-						CHAbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
-						break;
-				}
-			}
-		}
-	}
+    STR(new STR()),
+    INT(new INT()),
+    DEX(new DEX()),
+    WIT(new WIT()),
+    CON(new CON()),
+    MEN(new MEN()),
+    LUC(new LUC()),
+    CHA(new CHA());
+
+    public static final int MAX_STAT_VALUE = 300;
+
+    private static final double[] STRbonus = new double[MAX_STAT_VALUE];
+    private static final double[] INTbonus = new double[MAX_STAT_VALUE];
+    private static final double[] DEXbonus = new double[MAX_STAT_VALUE];
+    private static final double[] WITbonus = new double[MAX_STAT_VALUE];
+    private static final double[] CONbonus = new double[MAX_STAT_VALUE];
+    private static final double[] MENbonus = new double[MAX_STAT_VALUE];
+    private static final double[] LUCbonus = new double[MAX_STAT_VALUE];
+    private static final double[] CHAbonus = new double[MAX_STAT_VALUE];
+
+    private final BaseStat _stat;
+
+    public final String getValue()
+    {
+        return _stat.getClass().getSimpleName();
+    }
+
+    private BaseStats(BaseStat s)
+    {
+        _stat = s;
+    }
+
+    public final double calcBonus(L2Character actor)
+    {
+        if (actor != null)
+        {
+            return _stat.calcBonus(actor);
+        }
+
+        return 1;
+    }
+
+    public static final BaseStats valueOfXml(String name)
+    {
+        name = name.intern();
+        for (BaseStats s : values())
+        {
+            if (s.getValue().equalsIgnoreCase(name))
+            {
+                return s;
+            }
+        }
+
+        throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
+    }
+
+    private interface BaseStat
+    {
+        public double calcBonus(L2Character actor);
+    }
+
+    private static final class STR implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return STRbonus[actor.getSTR() - 1];
+        }
+    }
+
+    private static final class INT implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return INTbonus[actor.getINT() - 1];
+        }
+    }
+
+    private static final class DEX implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return DEXbonus[actor.getDEX() - 1];
+        }
+    }
+
+    private static final class WIT implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return WITbonus[actor.getWIT() - 1];
+        }
+    }
+
+    private static final class CON implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return CONbonus[actor.getCON() - 1];
+        }
+    }
+
+    private static final class MEN implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return MENbonus[actor.getMEN() - 1];
+        }
+    }
+
+    private static final class LUC implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return LUCbonus[actor.getLUC() - 1];
+        }
+    }
+
+    private static final class CHA implements BaseStat
+    {
+        @Override
+        public final double calcBonus(L2Character actor)
+        {
+            return CHAbonus[actor.getCHA() - 1];
+        }
+    }
+
+    static
+    {
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/statBonus.xml");
+        XmlDocument doc = new XmlDocument(file);
+        for (XmlNode n : doc.getFirstChild().getChildren())
+        {
+            if (!n.getName().equalsIgnoreCase("stat"))
+            {
+                continue;
+            }
+
+            for (XmlNode bonusNode : n.getChildren())
+            {
+                if (!bonusNode.getName().equalsIgnoreCase("bonus"))
+                {
+                    continue;
+                }
+
+                switch (n.getString("name"))
+                {
+                    case "STR":
+                        STRbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "INT":
+                        INTbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "CON":
+                        CONbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "MEN":
+                        MENbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "DEX":
+                        DEXbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "WIT":
+                        WITbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "LUC":
+                        LUCbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                    case "CHA":
+                        CHAbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+                        break;
+                }
+            }
+        }
+    }
 }

@@ -26,63 +26,74 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
- *
  * @author nBd
  */
 public class TargetPartyOther implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (target != null && target != activeChar && activeChar.getParty() != null && target.getParty() != null && activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
-		{
-			if (!target.isDead())
-			{
-				if (target instanceof L2PcInstance)
-				{
-					L2PcInstance player = (L2PcInstance) target;
-					switch (skill.getId())
-					{
-					// FORCE BUFFS may cancel here but there should be a proper condition
-						case 426:
-							if (!player.isMageClass())
-								return new L2Character[] { target };
-							else
-								return null;
-						case 427:
-							if (player.isMageClass())
-								return new L2Character[] { target };
-							else
-								return null;
-					}
-				}
-				return new L2Character[] { target };
-			}
-			else
-				return null;
-		}
-		else
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-			return null;
-		}
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_PARTY_OTHER;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyOther());
-	}
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        if (target != null && target != activeChar && activeChar.getParty() != null && target
+                .getParty() != null && activeChar.getParty().getPartyLeaderOID() == target.getParty()
+                .getPartyLeaderOID())
+        {
+            if (!target.isDead())
+            {
+                if (target instanceof L2PcInstance)
+                {
+                    L2PcInstance player = (L2PcInstance) target;
+                    switch (skill.getId())
+                    {
+                        // FORCE BUFFS may cancel here but there should be a proper condition
+                        case 426:
+                            if (!player.isMageClass())
+                            {
+                                return new L2Character[]{target};
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                        case 427:
+                            if (player.isMageClass())
+                            {
+                                return new L2Character[]{target};
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                    }
+                }
+                return new L2Character[]{target};
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+            return null;
+        }
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        // TODO Auto-generated method stub
+        return L2SkillTargetType.TARGET_PARTY_OTHER;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyOther());
+    }
 }

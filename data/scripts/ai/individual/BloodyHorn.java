@@ -27,79 +27,79 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- *
- * Bloody Horns AI
- *
- * Source:
- * 			- http://l2wiki.com/Land_of_Chaos
+ *         <p>
+ *         Bloody Horns AI
+ *         <p>
+ *         Source:
+ *         - http://l2wiki.com/Land_of_Chaos
  */
 
 public class BloodyHorn extends L2AttackableAIScript
 {
-	private static final int _bloodyHorn = 19463;
-	private static final int[] _debufSkills = { 15537, 15538, 15539, 15540 };
-	
-	public BloodyHorn(int id, String name, String descr)
-	{
-		super(id, name, descr);
-		
-		addFirstTalkId(_bloodyHorn);
-		
-		addSpawnId(_bloodyHorn);
-		
-		addSpellFinishedId(_bloodyHorn);
-		
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
-				continue;
-			}
-			
-			if (spawn.getNpcId() == _bloodyHorn)
-			{
-				notifySpawn(spawn.getNpc());
-			}
-		}
-	}
-	
-	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
-		npc.doDie(null);
-		
-		return super.onSpellFinished(npc, player, skill);
-	}
-	
-	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getTarget() == null)
-		{
-			npc.setTarget(player);
-			
-			int level = Rnd.get(1, 2);
-			
-			npc.doCast(SkillTable.getInstance().getInfo(_debufSkills[Rnd.get(_debufSkills.length)], level));
-			
-			player.sendPacket(new ExShowScreenMessage(level == 1 ? 1802313 : 1802306, 2, 3000));
-		}
-		
-		return "";
-	}
-	
-	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		npc.setIsImmobilized(true);
-		
-		npc.setIsInvul(true);
-		
-		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new BloodyHorn(-1, "BloodyHorn", "ai");
-	}
+    private static final int _bloodyHorn = 19463;
+    private static final int[] _debufSkills = {15537, 15538, 15539, 15540};
+
+    public BloodyHorn(int id, String name, String descr)
+    {
+        super(id, name, descr);
+
+        addFirstTalkId(_bloodyHorn);
+
+        addSpawnId(_bloodyHorn);
+
+        addSpellFinishedId(_bloodyHorn);
+
+        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+        {
+            if (spawn == null)
+            {
+                continue;
+            }
+
+            if (spawn.getNpcId() == _bloodyHorn)
+            {
+                notifySpawn(spawn.getNpc());
+            }
+        }
+    }
+
+    @Override
+    public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
+    {
+        npc.doDie(null);
+
+        return super.onSpellFinished(npc, player, skill);
+    }
+
+    @Override
+    public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+    {
+        if (npc.getTarget() == null)
+        {
+            npc.setTarget(player);
+
+            int level = Rnd.get(1, 2);
+
+            npc.doCast(SkillTable.getInstance().getInfo(_debufSkills[Rnd.get(_debufSkills.length)], level));
+
+            player.sendPacket(new ExShowScreenMessage(level == 1 ? 1802313 : 1802306, 2, 3000));
+        }
+
+        return "";
+    }
+
+    @Override
+    public final String onSpawn(L2Npc npc)
+    {
+        npc.setIsImmobilized(true);
+
+        npc.setIsInvul(true);
+
+        return super.onSpawn(npc);
+    }
+
+    public static void main(String[] args)
+    {
+        new BloodyHorn(-1, "BloodyHorn", "ai");
+    }
 }

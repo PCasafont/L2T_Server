@@ -1,1217 +1,1217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (C-grade). -->
-	<item id="22600" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_c_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (C-grade). -->
-	<item id="22601" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (C-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_c_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (B-grade). -->
-	<item id="22602" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (B-grade). -->
-	<item id="22603" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (B-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (A-grade). -->
-	<item id="22604" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_a_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (A-grade). -->
-	<item id="22605" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (A-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_a_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (S-grade). -->
-	<item id="22606" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_s_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (S-grade). -->
-	<item id="22607" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (S-grade)">
-		<set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_s_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 2 Vitality Replenishing Potions. -->
-	<item id="22608" type="EtcItem" name="Vitality Maintaining Potion (30-minute) 2-unit Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 4 Vitality Replenishing Potions. -->
-	<item id="22609" type="EtcItem" name="Vitality Maintaining Potion (30-minute) 4-unit Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Luxury Cocktail that contains the flavors of many rare fruits. When consumed, you will feel the effects of Horn Melody Lv. 1, Pipe Organ Melody Lv. 1, Guitar Melody Lv. 1, Harp Melody Lv. 1 and Lute Melody Lv. 1 for 30 min. -->
-	<item id="22610" type="EtcItem" name="Luxury Cocktail">
-		<set name="icon" val="icon.etc_fruit_cocktail_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Beautiful white cloak. Provided to celebrate the New Lineage II Awakening Party. Can be equipped only when the cloak slot is open. -->
-	<item id="22611" type="Armor" name="New Lineage II Awakening Party Cloak">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="25" />
-		</for>
-	</item>
-	<!-- Pack containing XP Rune III (Lv. 1-99) 30% (3-hour). Cannot be exchanged once open. -->
-	<item id="22612" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (3-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Pack containing XP Rune III (Lv. 1-99) 30% (1-hour). Cannot be exchanged once open. -->
-	<item id="22613" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (1-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Pack containing XP Rune III (Lv. 1-99) 50% (1-hour). Cannot be exchanged once open. -->
-	<item id="22614" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (1-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Entrance pass that lets you enter Rim Kamaloka two more times. Can cancel the limit on entrance if used while a limit on entrance to Rim Kamaloka is in effect. Can only be used once a day outside the instance. After use, the effect disappears when the instance resets. -->
-	<item id="22615" type="EtcItem" name="Extra Pass: Rim Kamaloka">
-		<set name="icon" val="icon.ticket_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When used, you acquire a Jewelry Set of Fortune (A-grade). -->
-	<item id="22616" type="EtcItem" name="Jewelry Pack (A-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When used, you acquire a Jewelry Set of Fortune (B-grade). -->
-	<item id="22617" type="EtcItem" name="Jewelry Pack (B-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When used, you acquire a Jewelry Set of Fortune (C-grade). -->
-	<item id="22618" type="EtcItem" name="Jewelry Pack (C-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- When used, you acquire a Dynasty Accessory of Fortune set. -->
-	<item id="22619" type="EtcItem" name="Dynasty Accessory of Fortune Pack (S-grade)">
-		<set name="icon" val="icon.etc_jewel_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Item acquired upon completion of the Holiday Tree. When used, Vitality is restored as XP is acquired. Cooldown is 4 hours. -->
-	<item id="22620" type="EtcItem" name="Miracle of the Tree - Vitality Recovery - Event">
-		<set name="icon" val="BranchSys.icon.br_xmas_miracle_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		When the Vitality recovery potion is used, for 60 minutes, Vitality is restored as XP is acquired.
-	-->
-	<item id="22621" type="EtcItem" name="Vitality Recovery Potion - 1-hour">
-		<set name="icon" val="BranchSys2.br_essence_rose_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Magic scroll that teleports you to the nearest village. Weight is 0.
-	-->
-	<item id="22622" type="EtcItem" name="Blessed Scroll of Escape - 1-day">
-		<set name="icon" val="icon.etc_scroll_of_return_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Magic scroll that resurrects a dead player and completely restores XP.
-	-->
-	<item id="22623" type="EtcItem" name="Blessed Scroll of Resurrection - 1-day">
-		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Restores HP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
-	-->
-	<item id="22624" type="EtcItem" name="Elixir of Life - 1-day">
-		<set name="icon" val="icon.etc_super_potion_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Restores MP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
-	-->
-	<item id="22625" type="EtcItem" name="Elixir of Mind - 1-day">
-		<set name="icon" val="icon.etc_super_potion_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Restores CP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
-	-->
-	<item id="22626" type="EtcItem" name="Elixir of CP - 1-day">
-		<set name="icon" val="icon.etc_super_potion_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		When enchanted, P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bows. M. Atk. + 5 for all weapons. P. Atk./M. Atk. are greatly increased starting at + 4. All amounts are increased for blessed weapons.
-	-->
-	<item id="22627" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
-		<set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
-	-->
-	<item id="22628" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
-		<set name="icon" val="icon.scroll_of_enchant_armor_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are level 85 or above.
-	-->
-	<item id="22629" type="EtcItem" name="High-grade Life Stone (R-grade)">
-		<set name="icon" val="icon.r_mineral_rare_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are level 85 or above.
-	-->
-	<item id="22630" type="EtcItem" name="Top-grade Life Stone (R-grade)">
-		<set name="icon" val="icon.r_mineral_unique_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 95.
-	-->
-	<item id="22631" type="EtcItem" name="High-grade Life Stone (R95-grade)">
-		<set name="icon" val="icon.r95_mineral_rare_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 95.
-	-->
-	<item id="22632" type="EtcItem" name="Top-grade Life Stone (R95-grade)">
-		<set name="icon" val="icon.r95_mineral_unique_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 99.
-	-->
-	<item id="22633" type="EtcItem" name="High-grade Life Stone (R99-grade)">
-		<set name="icon" val="icon.r99_mineral_rare_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 99.
-	-->
-	<item id="22634" type="EtcItem" name="Top-grade Life Stone (R99-grade)">
-		<set name="icon" val="icon.r99_mineral_unique_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Fire attack increases by 5 when bestowed on a weapon. Fire attack and water defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22635" type="EtcItem" name="Fire Stone">
-		<set name="icon" val="icon.etc_fire_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Water attack increases by 5 when bestowed on a weapon. Water attack and fire defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22636" type="EtcItem" name="Water Stone">
-		<set name="icon" val="icon.etc_water_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Earth attack increases by 5 when bestowed on a weapon. Earth attack and wind defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22637" type="EtcItem" name="Earth Stone">
-		<set name="icon" val="icon.etc_earth_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Wind attack increases by 5 when bestowed on a weapon. Wind attack and earth defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22638" type="EtcItem" name="Wind Stone">
-		<set name="icon" val="icon.etc_wind_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Dark attack increases by 5 when bestowed on a weapon. Dark attack and holy defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22639" type="EtcItem" name="Dark Stone">
-		<set name="icon" val="icon.etc_unholy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Holy attack increases by 5 when bestowed on a weapon. Holy attack and dark defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22640" type="EtcItem" name="Holy Stone">
-		<set name="icon" val="icon.etc_holy_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Fire attack increases by 5 when bestowed on a weapon. Fire attack and water defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22641" type="EtcItem" name="Fire Crystal">
-		<set name="icon" val="icon.etc_fire_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Water attack increases by 5 when bestowed on a weapon. Water attack and fire defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22642" type="EtcItem" name="Water Crystal">
-		<set name="icon" val="icon.etc_water_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Earth attack increases by 5 when bestowed on a weapon. Earth attack and wind defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22643" type="EtcItem" name="Earth Crystal">
-		<set name="icon" val="icon.etc_earth_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Wind attack increases by 5 when bestowed on a weapon. Wind attack and earth defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22644" type="EtcItem" name="Wind Crystal">
-		<set name="icon" val="icon.etc_wind_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Dark attack increases by 5 when bestowed on a weapon. Dark attack and holy defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22645" type="EtcItem" name="Dark Crystal">
-		<set name="icon" val="icon.etc_unholy_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		Holy attack increases by 5 when bestowed on a weapon. Holy attack and dark defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
-	-->
-	<item id="22646" type="EtcItem" name="Holy Crystal">
-		<set name="icon" val="icon.etc_holy_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		When enchanted, P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bows. M. Atk. + 5 for all weapons. P. Atk./M. Atk. are greatly increased starting at + 4. All amounts are increased for blessed weapons. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0.
-	-->
-	<item id="22647" type="EtcItem" name="Blessed Scroll: Enchant Weapon (R-grade)">
-		<set name="icon" val="icon.blessed_scroll_of_enchant_weapon_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!--
-		Premium user exclusive item
-		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0.
-	-->
-	<item id="22648" type="EtcItem" name="Blessed Scroll: Enchant Armor (R-grade)">
-		<set name="icon" val="icon.blessed_scroll_of_enchant_armor_i06" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Using a Blessed Three-headed Dragon's Egg will give you great strength. -->
-	<item id="22649" type="EtcItem" name="Blessed Three-headed Dragon's Egg - 1-day">
-		<set name="icon" val="BranchSys3.Icon.g_threehead_source" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Emerald Weapon. One-handed sword form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22650" type="Weapon" name="Emerald Weapon: One-handed Sword">
-		<set name="icon" val="BranchSys3.Icon.g_beam_sword" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="144" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Dagger form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22651" type="Weapon" name="Emerald Weapon: Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_beam_sword" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="106" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="80" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Two-handed sword form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22652" type="Weapon" name="Emerald Weapon: Two-handed Sword">
-		<set name="icon" val="BranchSys3.Icon.g_beam_twohand_sword" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="209" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Fist weapon form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22653" type="Weapon" name="Emerald Weapon: Fist Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_dualfist" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="152" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Spear form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22654" type="Weapon" name="Emerald Weapon: Spear">
-		<set name="icon" val="BranchSys3.Icon.g_beam_pole" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="205" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Bow form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22655" type="Weapon" name="Emerald Weapon: Bow">
-		<set name="icon" val="BranchSys3.Icon.g_beam_bow" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="181" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="191" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Crossbow form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22656" type="Weapon" name="Emerald Weapon: Crossbow">
-		<set name="icon" val="BranchSys3.Icon.g_beam_twohand_crossbow" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="181" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="117" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. One-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22657" type="Weapon" name="Emerald Weapon: One-handed Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="172" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Two-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22658" type="Weapon" name="Emerald Weapon: Two-handed Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_twohand_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="101" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. One-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22659" type="Weapon" name="Emerald Weapon: One-handed Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_magic_twohand_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="172" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Two-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22660" type="Weapon" name="Emerald Weapon: Two-handed Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_magic_twohand_blunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="101" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="152" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Dualsword form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22661" type="Weapon" name="Emerald Weapon: Dualsword">
-		<set name="icon" val="BranchSys3.Icon.g_beam_dual" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="247" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Dual dagger form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22662" type="Weapon" name="Emerald Weapon: Dual Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_beam_dualdagger" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="205" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Dual blunt form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22663" type="Weapon" name="Emerald Weapon: Dual Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_beam_dualblunt" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="250" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Shield form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22664" type="Armor" name="Emerald Weapon: Shield">
-		<set name="icon" val="BranchSys3.Icon.g_beam_shield" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="none" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="200" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<baseSub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
-		</for>
-	</item>
-	<!-- Emerald Weapon. Sigil form. Basic Emerald Weapon Appearance Stone. -->
-	<item id="22665" type="Armor" name="Emerald Weapon: Sigil">
-		<set name="icon" val="BranchSys3.Icon.g_beam_sigil" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="0" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="100" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="47" />
-		</for>
-	</item>
-	<!-- Changes the appearance of a one-handed sword to that of an Emerald weapon. -->
-	<item id="22666" type="EtcItem" name="Emerald Weapon Appearance Stone: Sword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22650" />
-	</item>
-	<!-- Changes the appearance of a dagger to that of an Emerald weapon. -->
-	<item id="22667" type="EtcItem" name="Emerald Weapon Appearance Stone: Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22651" />
-	</item>
-	<!-- Changes the appearance of a two-handed sword to that of an Emerald weapon. -->
-	<item id="22668" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Sword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_sword" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22652" />
-	</item>
-	<!-- Changes the appearance of a fist weapon to that of an Emerald weapon. -->
-	<item id="22669" type="EtcItem" name="Emerald Weapon Appearance Stone: Fist Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22653" />
-	</item>
-	<!-- Changes the appearance of a spear to that of an Emerald weapon. -->
-	<item id="22670" type="EtcItem" name="Emerald Weapon Appearance Stone: Spear">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22654" />
-	</item>
-	<!-- Changes the appearance of a bow to that of an Emerald weapon. -->
-	<item id="22671" type="EtcItem" name="Emerald Weapon Appearance Stone: Bow">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_bow" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22655" />
-	</item>
-	<!-- Changes the appearance of a crossbow to that of an Emerald weapon. -->
-	<item id="22672" type="EtcItem" name="Emerald Weapon Appearance Stone: Crossbow">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_crossbow" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22656" />
-	</item>
-	<!-- Changes the appearance of a one-handed blunt to that of an Emerald weapon. -->
-	<item id="22673" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22657" />
-	</item>
-	<!-- Changes the appearance of a two-handed blunt to that of an Emerald weapon. -->
-	<item id="22674" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22658" />
-	</item>
-	<!-- Changes the appearance of a one-handed magic blunt to that of an Emerald weapon. -->
-	<item id="22675" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22659" />
-	</item>
-	<!-- Changes the appearance of a two-handed magic blunt to that of an Emerald weapon. -->
-	<item id="22676" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_twohand_blunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22660" />
-	</item>
-	<!-- Changes the appearance of a dualsword to that of an Emerald weapon. -->
-	<item id="22677" type="EtcItem" name="Emerald Weapon Appearance Stone: Dualsword">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22661" />
-	</item>
-	<!-- Changes the appearance of a dual dagger to that of an Emerald weapon. -->
-	<item id="22678" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Dagger">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22662" />
-	</item>
-	<!-- Changes the appearance of a dual blunt to that of an Emerald weapon. -->
-	<item id="22679" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Blunt Weapon">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualblunt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22663" />
-	</item>
-	<!-- Changes the appearance of a shield to that of an Emerald weapon. -->
-	<item id="22680" type="EtcItem" name="Emerald Weapon Appearance Stone: Shield">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_shield" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22664" />
-	</item>
-	<!-- Changes the appearance of a sigil to that of an Emerald weapon. -->
-	<item id="22681" type="EtcItem" name="Emerald Weapon Appearance Stone: Sigil">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sigil" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="AppearanceStone" />
-		<set name="standardItem" val="22665" />
-	</item>
-	<!-- Changes the appearance of an R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 125000 adena. -->
-	<item id="22682" type="EtcItem" name="Armor Appearance Stone (R-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of an S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 50000 adena. -->
-	<item id="22683" type="EtcItem" name="Armor Appearance Stone (S-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of an A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 24000 adena. -->
-	<item id="22684" type="EtcItem" name="Armor Appearance Stone (A-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 8000 adena. -->
-	<item id="22685" type="EtcItem" name="Armor Appearance Stone (B-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 1500 adena. -->
-	<item id="22686" type="EtcItem" name="Armor Appearance Stone (C-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 600 adena. -->
-	<item id="22687" type="EtcItem" name="Armor Appearance Stone (D-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of an R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22688" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of an S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22689" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of an A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22690" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22691" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22692" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Changes the appearance of a D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
-	<item id="22693" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade)">
-		<set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of R-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22694" type="EtcItem" name="Armor Restoration Stone (R-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_r" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of S-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22695" type="EtcItem" name="Armor Restoration Stone (S-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_s" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="s" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of A-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22696" type="EtcItem" name="Armor Restoration Stone (A-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_a" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="a" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of B-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22697" type="EtcItem" name="Armor Restoration Stone (B-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_b" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="b" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of C-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22698" type="EtcItem" name="Armor Restoration Stone (C-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_c" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
-	<!-- Restores the original appearance of D-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
-	<item id="22699" type="EtcItem" name="Armor Restoration Stone (D-grade)">
-		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_d" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="AppearanceStone" />
-	</item>
+    <!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (C-grade). -->
+    <item id="22600" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_c_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (C-grade). -->
+    <item id="22601" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (C-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_c_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (B-grade). -->
+    <item id="22602" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (B-grade). -->
+    <item id="22603" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (B-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (A-grade). -->
+    <item id="22604" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_a_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (A-grade). -->
+    <item id="22605" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (A-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_a_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 10,000 Mysterious Blessed Spiritshots (S-grade). -->
+    <item id="22606" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (10000) (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_s_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 5,000 Mysterious Blessed Spiritshots (S-grade). -->
+    <item id="22607" type="EtcItem" name="Mysterious Blessed Spiritshot Pack (5000) (S-grade)">
+        <set name="icon" val="br_cashtex.item.br_cash_pack_of_spiritshot_s_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 2 Vitality Replenishing Potions. -->
+    <item id="22608" type="EtcItem" name="Vitality Maintaining Potion (30-minute) 2-unit Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 4 Vitality Replenishing Potions. -->
+    <item id="22609" type="EtcItem" name="Vitality Maintaining Potion (30-minute) 4-unit Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Luxury Cocktail that contains the flavors of many rare fruits. When consumed, you will feel the effects of Horn Melody Lv. 1, Pipe Organ Melody Lv. 1, Guitar Melody Lv. 1, Harp Melody Lv. 1 and Lute Melody Lv. 1 for 30 min. -->
+    <item id="22610" type="EtcItem" name="Luxury Cocktail">
+        <set name="icon" val="icon.etc_fruit_cocktail_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Beautiful white cloak. Provided to celebrate the New Lineage II Awakening Party. Can be equipped only when the cloak slot is open. -->
+    <item id="22611" type="Armor" name="New Lineage II Awakening Party Cloak">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="25" />
+        </for>
+    </item>
+    <!-- Pack containing XP Rune III (Lv. 1-99) 30% (3-hour). Cannot be exchanged once open. -->
+    <item id="22612" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (3-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Pack containing XP Rune III (Lv. 1-99) 30% (1-hour). Cannot be exchanged once open. -->
+    <item id="22613" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (1-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Pack containing XP Rune III (Lv. 1-99) 50% (1-hour). Cannot be exchanged once open. -->
+    <item id="22614" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (1-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Entrance pass that lets you enter Rim Kamaloka two more times. Can cancel the limit on entrance if used while a limit on entrance to Rim Kamaloka is in effect. Can only be used once a day outside the instance. After use, the effect disappears when the instance resets. -->
+    <item id="22615" type="EtcItem" name="Extra Pass: Rim Kamaloka">
+        <set name="icon" val="icon.ticket_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When used, you acquire a Jewelry Set of Fortune (A-grade). -->
+    <item id="22616" type="EtcItem" name="Jewelry Pack (A-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When used, you acquire a Jewelry Set of Fortune (B-grade). -->
+    <item id="22617" type="EtcItem" name="Jewelry Pack (B-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When used, you acquire a Jewelry Set of Fortune (C-grade). -->
+    <item id="22618" type="EtcItem" name="Jewelry Pack (C-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- When used, you acquire a Dynasty Accessory of Fortune set. -->
+    <item id="22619" type="EtcItem" name="Dynasty Accessory of Fortune Pack (S-grade)">
+        <set name="icon" val="icon.etc_jewel_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Item acquired upon completion of the Holiday Tree. When used, Vitality is restored as XP is acquired. Cooldown is 4 hours. -->
+    <item id="22620" type="EtcItem" name="Miracle of the Tree - Vitality Recovery - Event">
+        <set name="icon" val="BranchSys.icon.br_xmas_miracle_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        When the Vitality recovery potion is used, for 60 minutes, Vitality is restored as XP is acquired.
+    -->
+    <item id="22621" type="EtcItem" name="Vitality Recovery Potion - 1-hour">
+        <set name="icon" val="BranchSys2.br_essence_rose_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Magic scroll that teleports you to the nearest village. Weight is 0.
+    -->
+    <item id="22622" type="EtcItem" name="Blessed Scroll of Escape - 1-day">
+        <set name="icon" val="icon.etc_scroll_of_return_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Magic scroll that resurrects a dead player and completely restores XP.
+    -->
+    <item id="22623" type="EtcItem" name="Blessed Scroll of Resurrection - 1-day">
+        <set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Restores HP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
+    -->
+    <item id="22624" type="EtcItem" name="Elixir of Life - 1-day">
+        <set name="icon" val="icon.etc_super_potion_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Restores MP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
+    -->
+    <item id="22625" type="EtcItem" name="Elixir of Mind - 1-day">
+        <set name="icon" val="icon.etc_super_potion_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Restores CP. Can only be used at level 85 or above upon themselves. Cooldown is 2 min.
+    -->
+    <item id="22626" type="EtcItem" name="Elixir of CP - 1-day">
+        <set name="icon" val="icon.etc_super_potion_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        When enchanted, P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bows. M. Atk. + 5 for all weapons. P. Atk./M. Atk. are greatly increased starting at + 4. All amounts are increased for blessed weapons.
+    -->
+    <item id="22627" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
+        <set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
+    -->
+    <item id="22628" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
+        <set name="icon" val="icon.scroll_of_enchant_armor_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are level 85 or above.
+    -->
+    <item id="22629" type="EtcItem" name="High-grade Life Stone (R-grade)">
+        <set name="icon" val="icon.r_mineral_rare_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are level 85 or above.
+    -->
+    <item id="22630" type="EtcItem" name="Top-grade Life Stone (R-grade)">
+        <set name="icon" val="icon.r_mineral_unique_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 95.
+    -->
+    <item id="22631" type="EtcItem" name="High-grade Life Stone (R95-grade)">
+        <set name="icon" val="icon.r95_mineral_rare_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 95.
+    -->
+    <item id="22632" type="EtcItem" name="Top-grade Life Stone (R95-grade)">
+        <set name="icon" val="icon.r95_mineral_unique_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        High-level mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 99.
+    -->
+    <item id="22633" type="EtcItem" name="High-grade Life Stone (R99-grade)">
+        <set name="icon" val="icon.r99_mineral_rare_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Top-grade mineral that has been petrified inside a creature through physical or magical damage. Can be used by characters who are above level 99.
+    -->
+    <item id="22634" type="EtcItem" name="Top-grade Life Stone (R99-grade)">
+        <set name="icon" val="icon.r99_mineral_unique_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Fire attack increases by 5 when bestowed on a weapon. Fire attack and water defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22635" type="EtcItem" name="Fire Stone">
+        <set name="icon" val="icon.etc_fire_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Water attack increases by 5 when bestowed on a weapon. Water attack and fire defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22636" type="EtcItem" name="Water Stone">
+        <set name="icon" val="icon.etc_water_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Earth attack increases by 5 when bestowed on a weapon. Earth attack and wind defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22637" type="EtcItem" name="Earth Stone">
+        <set name="icon" val="icon.etc_earth_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Wind attack increases by 5 when bestowed on a weapon. Wind attack and earth defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22638" type="EtcItem" name="Wind Stone">
+        <set name="icon" val="icon.etc_wind_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Dark attack increases by 5 when bestowed on a weapon. Dark attack and holy defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22639" type="EtcItem" name="Dark Stone">
+        <set name="icon" val="icon.etc_unholy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Holy attack increases by 5 when bestowed on a weapon. Holy attack and dark defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. Additional Elemental attributes cannot be bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22640" type="EtcItem" name="Holy Stone">
+        <set name="icon" val="icon.etc_holy_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Fire attack increases by 5 when bestowed on a weapon. Fire attack and water defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22641" type="EtcItem" name="Fire Crystal">
+        <set name="icon" val="icon.etc_fire_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Water attack increases by 5 when bestowed on a weapon. Water attack and fire defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22642" type="EtcItem" name="Water Crystal">
+        <set name="icon" val="icon.etc_water_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Earth attack increases by 5 when bestowed on a weapon. Earth attack and wind defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22643" type="EtcItem" name="Earth Crystal">
+        <set name="icon" val="icon.etc_earth_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Wind attack increases by 5 when bestowed on a weapon. Wind attack and earth defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22644" type="EtcItem" name="Wind Crystal">
+        <set name="icon" val="icon.etc_wind_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Dark attack increases by 5 when bestowed on a weapon. Dark attack and holy defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22645" type="EtcItem" name="Dark Crystal">
+        <set name="icon" val="icon.etc_unholy_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        Holy attack increases by 5 when bestowed on a weapon. Holy attack and dark defense increases by 6 when bestowed on armor. Elemental attributes can be bestowed from levels 1- 6. The crystal's power disappears when additional Elemental attributes are bestowed. Additionally, a maximum of three types of Elemental enhancement can be bestowed on armor, and opposite attributes cannot be bestowed together.
+    -->
+    <item id="22646" type="EtcItem" name="Holy Crystal">
+        <set name="icon" val="icon.etc_holy_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        When enchanted, P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bows. M. Atk. + 5 for all weapons. P. Atk./M. Atk. are greatly increased starting at + 4. All amounts are increased for blessed weapons. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0.
+    -->
+    <item id="22647" type="EtcItem" name="Blessed Scroll: Enchant Weapon (R-grade)">
+        <set name="icon" val="icon.blessed_scroll_of_enchant_weapon_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!--
+        Premium user exclusive item
+        When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0.
+    -->
+    <item id="22648" type="EtcItem" name="Blessed Scroll: Enchant Armor (R-grade)">
+        <set name="icon" val="icon.blessed_scroll_of_enchant_armor_i06" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Using a Blessed Three-headed Dragon's Egg will give you great strength. -->
+    <item id="22649" type="EtcItem" name="Blessed Three-headed Dragon's Egg - 1-day">
+        <set name="icon" val="BranchSys3.Icon.g_threehead_source" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Emerald Weapon. One-handed sword form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22650" type="Weapon" name="Emerald Weapon: One-handed Sword">
+        <set name="icon" val="BranchSys3.Icon.g_beam_sword" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="144" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Dagger form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22651" type="Weapon" name="Emerald Weapon: Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_beam_sword" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="106" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="80" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Two-handed sword form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22652" type="Weapon" name="Emerald Weapon: Two-handed Sword">
+        <set name="icon" val="BranchSys3.Icon.g_beam_twohand_sword" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="209" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="112" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Fist weapon form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22653" type="Weapon" name="Emerald Weapon: Fist Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_dualfist" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="152" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="112" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Spear form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22654" type="Weapon" name="Emerald Weapon: Spear">
+        <set name="icon" val="BranchSys3.Icon.g_beam_pole" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="205" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Bow form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22655" type="Weapon" name="Emerald Weapon: Bow">
+        <set name="icon" val="BranchSys3.Icon.g_beam_bow" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="181" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="191" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Crossbow form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22656" type="Weapon" name="Emerald Weapon: Crossbow">
+        <set name="icon" val="BranchSys3.Icon.g_beam_twohand_crossbow" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="181" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="117" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. One-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22657" type="Weapon" name="Emerald Weapon: One-handed Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="172" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Two-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22658" type="Weapon" name="Emerald Weapon: Two-handed Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_twohand_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="101" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="90" />
+            <set stat="mAtk" val="79" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. One-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22659" type="Weapon" name="Emerald Weapon: One-handed Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_magic_twohand_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="172" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="92" />
+            <set stat="mAtk" val="54" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Two-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22660" type="Weapon" name="Emerald Weapon: Two-handed Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_magic_twohand_blunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="101" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="152" />
+            <set stat="mAtk" val="122" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Dualsword form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22661" type="Weapon" name="Emerald Weapon: Dualsword">
+        <set name="icon" val="BranchSys3.Icon.g_beam_dual" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="247" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="107" />
+            <set stat="mAtk" val="51" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Dual dagger form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22662" type="Weapon" name="Emerald Weapon: Dual Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_beam_dualdagger" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="205" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="107" />
+            <set stat="mAtk" val="51" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Dual blunt form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22663" type="Weapon" name="Emerald Weapon: Dual Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_beam_dualblunt" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="250" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="125" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Shield form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22664" type="Armor" name="Emerald Weapon: Shield">
+        <set name="icon" val="BranchSys3.Icon.g_beam_shield" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="none" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="200" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <baseSub stat="rEvas" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="216" />
+        </for>
+    </item>
+    <!-- Emerald Weapon. Sigil form. Basic Emerald Weapon Appearance Stone. -->
+    <item id="22665" type="Armor" name="Emerald Weapon: Sigil">
+        <set name="icon" val="BranchSys3.Icon.g_beam_sigil" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="0" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="100" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="47" />
+        </for>
+    </item>
+    <!-- Changes the appearance of a one-handed sword to that of an Emerald weapon. -->
+    <item id="22666" type="EtcItem" name="Emerald Weapon Appearance Stone: Sword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22650" />
+    </item>
+    <!-- Changes the appearance of a dagger to that of an Emerald weapon. -->
+    <item id="22667" type="EtcItem" name="Emerald Weapon Appearance Stone: Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22651" />
+    </item>
+    <!-- Changes the appearance of a two-handed sword to that of an Emerald weapon. -->
+    <item id="22668" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Sword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_sword" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22652" />
+    </item>
+    <!-- Changes the appearance of a fist weapon to that of an Emerald weapon. -->
+    <item id="22669" type="EtcItem" name="Emerald Weapon Appearance Stone: Fist Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22653" />
+    </item>
+    <!-- Changes the appearance of a spear to that of an Emerald weapon. -->
+    <item id="22670" type="EtcItem" name="Emerald Weapon Appearance Stone: Spear">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22654" />
+    </item>
+    <!-- Changes the appearance of a bow to that of an Emerald weapon. -->
+    <item id="22671" type="EtcItem" name="Emerald Weapon Appearance Stone: Bow">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_bow" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22655" />
+    </item>
+    <!-- Changes the appearance of a crossbow to that of an Emerald weapon. -->
+    <item id="22672" type="EtcItem" name="Emerald Weapon Appearance Stone: Crossbow">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_crossbow" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22656" />
+    </item>
+    <!-- Changes the appearance of a one-handed blunt to that of an Emerald weapon. -->
+    <item id="22673" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22657" />
+    </item>
+    <!-- Changes the appearance of a two-handed blunt to that of an Emerald weapon. -->
+    <item id="22674" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22658" />
+    </item>
+    <!-- Changes the appearance of a one-handed magic blunt to that of an Emerald weapon. -->
+    <item id="22675" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22659" />
+    </item>
+    <!-- Changes the appearance of a two-handed magic blunt to that of an Emerald weapon. -->
+    <item id="22676" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_magic_twohand_blunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22660" />
+    </item>
+    <!-- Changes the appearance of a dualsword to that of an Emerald weapon. -->
+    <item id="22677" type="EtcItem" name="Emerald Weapon Appearance Stone: Dualsword">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22661" />
+    </item>
+    <!-- Changes the appearance of a dual dagger to that of an Emerald weapon. -->
+    <item id="22678" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Dagger">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22662" />
+    </item>
+    <!-- Changes the appearance of a dual blunt to that of an Emerald weapon. -->
+    <item id="22679" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Blunt Weapon">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualblunt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22663" />
+    </item>
+    <!-- Changes the appearance of a shield to that of an Emerald weapon. -->
+    <item id="22680" type="EtcItem" name="Emerald Weapon Appearance Stone: Shield">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_shield" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22664" />
+    </item>
+    <!-- Changes the appearance of a sigil to that of an Emerald weapon. -->
+    <item id="22681" type="EtcItem" name="Emerald Weapon Appearance Stone: Sigil">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_sigil" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="AppearanceStone" />
+        <set name="standardItem" val="22665" />
+    </item>
+    <!-- Changes the appearance of an R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 125000 adena. -->
+    <item id="22682" type="EtcItem" name="Armor Appearance Stone (R-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of an S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 50000 adena. -->
+    <item id="22683" type="EtcItem" name="Armor Appearance Stone (S-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of an A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 24000 adena. -->
+    <item id="22684" type="EtcItem" name="Armor Appearance Stone (A-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 8000 adena. -->
+    <item id="22685" type="EtcItem" name="Armor Appearance Stone (B-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 1500 adena. -->
+    <item id="22686" type="EtcItem" name="Armor Appearance Stone (C-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 600 adena. -->
+    <item id="22687" type="EtcItem" name="Armor Appearance Stone (D-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_shape_shifting_am_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of an R-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22688" type="EtcItem" name="Blessed Armor Appearance Stone (R-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of an S-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22689" type="EtcItem" name="Blessed Armor Appearance Stone (S-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of an A-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22690" type="EtcItem" name="Blessed Armor Appearance Stone (A-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a B-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22691" type="EtcItem" name="Blessed Armor Appearance Stone (B-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a C-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22692" type="EtcItem" name="Blessed Armor Appearance Stone (C-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Changes the appearance of a D-grade armor to that of different armor of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. -->
+    <item id="22693" type="EtcItem" name="Blessed Armor Appearance Stone (D-grade)">
+        <set name="icon" val="BranchSys3.Icon.g_bless_shape_shifting__am_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of R-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22694" type="EtcItem" name="Armor Restoration Stone (R-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_r" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of S-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22695" type="EtcItem" name="Armor Restoration Stone (S-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_s" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="s" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of A-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22696" type="EtcItem" name="Armor Restoration Stone (A-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_a" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="a" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of B-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22697" type="EtcItem" name="Armor Restoration Stone (B-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_b" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="b" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of C-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22698" type="EtcItem" name="Armor Restoration Stone (C-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_c" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
+    <!-- Restores the original appearance of D-grade armor (no hair accessories) whose appearances have been modified. Double-click to use. -->
+    <item id="22699" type="EtcItem" name="Armor Restoration Stone (D-grade)">
+        <set name="icon" val="BranchSys3.icon.g_wp_processing_stone_d" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="AppearanceStone" />
+    </item>
 </list>

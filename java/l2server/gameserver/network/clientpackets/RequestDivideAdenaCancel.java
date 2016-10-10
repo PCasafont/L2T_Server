@@ -23,21 +23,23 @@ import l2server.gameserver.network.serverpackets.ExDivideAdenaCancel;
  */
 public final class RequestDivideAdenaCancel extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		sendPacket(new ExDivideAdenaCancel());
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        sendPacket(new ExDivideAdenaCancel());
+    }
 }

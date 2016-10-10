@@ -23,31 +23,32 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectMpConsumePerLevel extends L2Effect
 {
-	public EffectMpConsumePerLevel(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-			return false;
-		
-		double base = calc();
-		double consume = (getEffected().getLevel() - 1) / 7.5 * base * getAbnormal().getDuration();
-		
-		if (consume > getEffected().getCurrentMp())
-		{
-			getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
-			return false;
-		}
-		
-		getEffected().reduceCurrentMp(consume);
-		return true;
-	}
+    public EffectMpConsumePerLevel(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        if (getEffected().isDead())
+        {
+            return false;
+        }
+
+        double base = calc();
+        double consume = (getEffected().getLevel() - 1) / 7.5 * base * getAbnormal().getDuration();
+
+        if (consume > getEffected().getCurrentMp())
+        {
+            getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+            return false;
+        }
+
+        getEffected().reduceCurrentMp(consume);
+        return true;
+    }
 }

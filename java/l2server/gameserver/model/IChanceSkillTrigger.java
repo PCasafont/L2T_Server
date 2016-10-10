@@ -19,37 +19,37 @@ package l2server.gameserver.model;
  * This interface provides method to handle triggered skills from other objects.<br>
  * For example, other skill, an effect, etc...
  *
- * @author  DrHouse
+ * @author DrHouse
  */
 public interface IChanceSkillTrigger
 {
-	/**
-	 * Just a flag
-	 */
-	public boolean triggersChanceSkill();
-	
-	/**
-	 * Triggered Id
-	 */
-	public int getTriggeredChanceId();
-	
-	/**
-	 * Triggered level
-	 */
-	public int getTriggeredChanceLevel();
-	
-	/**
-	 * Triggered enchant route
-	 */
-	public int getTriggeredChanceEnchantRoute();
-	
-	/**
-	 * Triggered enchant level
-	 */
-	public int getTriggeredChanceEnchantLevel();
-	
-	/**
-	 * Chance condition object
-	 */
-	public ChanceCondition getTriggeredChanceCondition();
+    /**
+     * Just a flag
+     */
+    public boolean triggersChanceSkill();
+
+    /**
+     * Triggered Id
+     */
+    public int getTriggeredChanceId();
+
+    /**
+     * Triggered level
+     */
+    public int getTriggeredChanceLevel();
+
+    /**
+     * Triggered enchant route
+     */
+    public int getTriggeredChanceEnchantRoute();
+
+    /**
+     * Triggered enchant level
+     */
+    public int getTriggeredChanceEnchantLevel();
+
+    /**
+     * Chance condition object
+     */
+    public ChanceCondition getTriggeredChanceCondition();
 }

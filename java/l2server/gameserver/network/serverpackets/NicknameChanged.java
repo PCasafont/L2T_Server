@@ -19,39 +19,38 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
- * @author  devScarlet
+ * @author devScarlet
  */
 public class NicknameChanged extends L2GameServerPacket
 {
-	private String _title;
-	private int _objectId;
-	
-	public NicknameChanged(L2PcInstance cha)
-	{
-		_objectId = cha.getObjectId();
-		_title = cha.getTitle();
-	}
-	
-	public NicknameChanged(L2Character cha)
-	{
-		_objectId = cha.getObjectId();
-		_title = cha.getTitle();
-	}
-	
-	public NicknameChanged(final int objectId, final String title)
-	{
-		_objectId = objectId;
-		_title = title;
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objectId);
-		writeS(_title);
-	}
+    private String _title;
+    private int _objectId;
+
+    public NicknameChanged(L2PcInstance cha)
+    {
+        _objectId = cha.getObjectId();
+        _title = cha.getTitle();
+    }
+
+    public NicknameChanged(L2Character cha)
+    {
+        _objectId = cha.getObjectId();
+        _title = cha.getTitle();
+    }
+
+    public NicknameChanged(final int objectId, final String title)
+    {
+        _objectId = objectId;
+        _title = title;
+    }
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objectId);
+        writeS(_title);
+    }
 }

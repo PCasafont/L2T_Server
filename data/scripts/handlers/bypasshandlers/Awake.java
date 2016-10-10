@@ -24,38 +24,38 @@ import l2server.gameserver.network.serverpackets.ExChangeToAwakenedClass;
 
 public class Awake implements IBypassHandler
 {
-	private static final String[] COMMANDS = { "Awake" };
-	
-	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-			return false;
-		
-		int awakenAtLevel = Config.isServer(Config.DREAMS) ? 86 : 85;
-		if (activeChar.getCurrentClass().getLevel() != 76)
-		{
-			activeChar.sendMessage("In order to awake you must have at least 3rd profession.");
-			return false;
-		}
-		else if (activeChar.getLevel() < awakenAtLevel)
-		{
-			activeChar.sendMessage("You must be level " + awakenAtLevel + " to awaken.");
-			return false;
-		}
-		
-		int classId = PlayerClassTable.getInstance().getAwakening(activeChar.getCurrentClass().getId());
-		//if (!Config.isServer(Config.DREAMS) && Integer.parseInt(command.split(" ")[1]) != classId)
-		//	return false;
-		
-		activeChar.setLastCheckedAwakeningClassId(classId);
-		activeChar.sendPacket(new ExChangeToAwakenedClass(classId));
-		return true;
-	}
-	
-	@Override
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"Awake"};
+
+    @Override
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        int awakenAtLevel = 85;
+        if (activeChar.getCurrentClass().getLevel() != 76)
+        {
+            activeChar.sendMessage("In order to awake you must have at least 3rd profession.");
+            return false;
+        }
+        else if (activeChar.getLevel() < awakenAtLevel)
+        {
+            activeChar.sendMessage("You must be level " + awakenAtLevel + " to awaken.");
+            return false;
+        }
+
+        int classId = PlayerClassTable.getInstance().getAwakening(activeChar.getCurrentClass().getId());
+
+        activeChar.setLastCheckedAwakeningClassId(classId);
+        activeChar.sendPacket(new ExChangeToAwakenedClass(classId));
+        return true;
+    }
+
+    @Override
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

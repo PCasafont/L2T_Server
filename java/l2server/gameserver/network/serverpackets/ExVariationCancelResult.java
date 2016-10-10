@@ -17,24 +17,23 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * Format: (ch)ddd
- *
  */
 public class ExVariationCancelResult extends L2GameServerPacket
 {
-	
-	private int _result;
-	
-	public ExVariationCancelResult(int result)
-	{
-		_result = result;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_result);
-	}
+
+    private int _result;
+
+    public ExVariationCancelResult(int result)
+    {
+        _result = result;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_result);
+    }
 }

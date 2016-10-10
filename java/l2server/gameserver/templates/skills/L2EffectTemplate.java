@@ -29,132 +29,132 @@ import l2server.log.Log;
 
 /**
  * @author mkizub
- *
  */
 public class L2EffectTemplate
 {
-	static Logger _log = Logger.getLogger(L2EffectTemplate.class.getName());
-	
-	private final Class<?> _func;
-	private final Constructor<?> _constructor;
-	
-	public final L2AbnormalTemplate abnormal;
-	
-	public final Condition applayCond;
-	public final Lambda lambda;
-	public final String funcName;
-	
-	public final int triggeredId;
-	public final int triggeredLevel;
-	public final int triggeredEnchantRoute;
-	public final int triggeredEnchantLevel;
-	public final ChanceCondition chanceCondition;
-	
-	public L2EffectTemplate(L2AbnormalTemplate pAbnormal, Condition pApplayCond, Lambda pLambda, String func, int trigId, int trigLvl, int trigEnchRt, int trigEnchLvl, ChanceCondition chanceCond)
-	{
-		abnormal = pAbnormal;
-		
-		applayCond = pApplayCond;
-		lambda = pLambda;
-		funcName = func;
-		
-		triggeredId = trigId;
-		triggeredLevel = trigLvl;
-		triggeredEnchantRoute = trigEnchRt;
-		triggeredEnchantLevel = trigEnchLvl;
-		chanceCondition = chanceCond;
-		
-		try
-		{
-			_func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
-		}
-		catch (ClassNotFoundException e)
-		{
-			throw new RuntimeException(e);
-		}
-		try
-		{
-			_constructor = _func.getConstructor(Env.class, L2EffectTemplate.class);
-		}
-		catch (NoSuchMethodException e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
-	
-	public L2Effect getEffect(Env env)
-	{
-		try
-		{
-			L2Effect effect = (L2Effect) _constructor.newInstance(env, this);
-			return effect;
-		}
-		catch (IllegalAccessException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InstantiationException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InvocationTargetException e)
-		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + _func + " Exception was: " + e.getTargetException().getMessage(), e.getTargetException());
-			return null;
-		}
-		
-	}
-	
-	/**
-	 * Creates an L2Effect instance from an existing one and an Env object.
-	 *
-	 * @param env
-	 * @param stolen
-	 * @return
-	 */
-	public static L2Effect getStolenEffect(Env env, L2Effect stolen)
-	{
-		Class<?> func;
-		Constructor<?> stolenCons;
-		try
-		{
-			func = Class.forName("l2server.gameserver.stats.effects.Effect" + stolen.getTemplate().funcName);
-		}
-		catch (ClassNotFoundException e)
-		{
-			throw new RuntimeException(e);
-		}
-		try
-		{
-			stolenCons = func.getConstructor(Env.class, L2Effect.class);
-		}
-		catch (NoSuchMethodException e)
-		{
-			throw new RuntimeException(e);
-		}
-		try
-		{
-			L2Effect effect = (L2Effect) stolenCons.newInstance(env, stolen);
-			// if (_applayCond != null)
-			// effect.setCondition(_applayCond);
-			return effect;
-		}
-		catch (IllegalAccessException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InstantiationException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InvocationTargetException e)
-		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " + e.getTargetException().getMessage(), e.getTargetException());
-			return null;
-		}
-	}
+    static Logger _log = Logger.getLogger(L2EffectTemplate.class.getName());
+
+    private final Class<?> _func;
+    private final Constructor<?> _constructor;
+
+    public final L2AbnormalTemplate abnormal;
+
+    public final Condition applayCond;
+    public final Lambda lambda;
+    public final String funcName;
+
+    public final int triggeredId;
+    public final int triggeredLevel;
+    public final int triggeredEnchantRoute;
+    public final int triggeredEnchantLevel;
+    public final ChanceCondition chanceCondition;
+
+    public L2EffectTemplate(L2AbnormalTemplate pAbnormal, Condition pApplayCond, Lambda pLambda, String func, int trigId, int trigLvl, int trigEnchRt, int trigEnchLvl, ChanceCondition chanceCond)
+    {
+        abnormal = pAbnormal;
+
+        applayCond = pApplayCond;
+        lambda = pLambda;
+        funcName = func;
+
+        triggeredId = trigId;
+        triggeredLevel = trigLvl;
+        triggeredEnchantRoute = trigEnchRt;
+        triggeredEnchantLevel = trigEnchLvl;
+        chanceCondition = chanceCond;
+
+        try
+        {
+            _func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
+        }
+        catch (ClassNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+        try
+        {
+            _constructor = _func.getConstructor(Env.class, L2EffectTemplate.class);
+        }
+        catch (NoSuchMethodException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public L2Effect getEffect(Env env)
+    {
+        try
+        {
+            L2Effect effect = (L2Effect) _constructor.newInstance(env, this);
+            return effect;
+        }
+        catch (IllegalAccessException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InstantiationException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InvocationTargetException e)
+        {
+            Log.log(Level.WARNING, "Error creating new instance of Class " + _func + " Exception was: " + e
+                    .getTargetException().getMessage(), e.getTargetException());
+            return null;
+        }
+    }
+
+    /**
+     * Creates an L2Effect instance from an existing one and an Env object.
+     *
+     * @param env
+     * @param stolen
+     * @return
+     */
+    public static L2Effect getStolenEffect(Env env, L2Effect stolen)
+    {
+        Class<?> func;
+        Constructor<?> stolenCons;
+        try
+        {
+            func = Class.forName("l2server.gameserver.stats.effects.Effect" + stolen.getTemplate().funcName);
+        }
+        catch (ClassNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+        try
+        {
+            stolenCons = func.getConstructor(Env.class, L2Effect.class);
+        }
+        catch (NoSuchMethodException e)
+        {
+            throw new RuntimeException(e);
+        }
+        try
+        {
+            L2Effect effect = (L2Effect) stolenCons.newInstance(env, stolen);
+            // if (_applayCond != null)
+            // effect.setCondition(_applayCond);
+            return effect;
+        }
+        catch (IllegalAccessException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InstantiationException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InvocationTargetException e)
+        {
+            Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " + e
+                    .getTargetException().getMessage(), e.getTargetException());
+            return null;
+        }
+    }
 }

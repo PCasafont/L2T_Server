@@ -24,26 +24,28 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionUsingSkill extends Condition
 {
-	private final int _skillId;
-	
-	/**
-	 * Instantiates a new condition using skill.
-	 *
-	 * @param skillId the skill id
-	 */
-	public ConditionUsingSkill(int skillId)
-	{
-		_skillId = skillId;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.skill == null)
-			return false;
-		return env.skill.getId() == _skillId;
-	}
+    private final int _skillId;
+
+    /**
+     * Instantiates a new condition using skill.
+     *
+     * @param skillId the skill id
+     */
+    public ConditionUsingSkill(int skillId)
+    {
+        _skillId = skillId;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (env.skill == null)
+        {
+            return false;
+        }
+        return env.skill.getId() == _skillId;
+    }
 }

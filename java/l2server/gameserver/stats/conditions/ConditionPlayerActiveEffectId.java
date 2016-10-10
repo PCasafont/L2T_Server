@@ -23,43 +23,45 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerActiveEffectId extends Condition
 {
-	
-	private final int _effectId;
-	private final int _effectLvl;
-	
-	/**
-	 * Instantiates a new condition player active effect id.
-	 *
-	 * @param effectId the effect id
-	 */
-	public ConditionPlayerActiveEffectId(int effectId)
-	{
-		_effectId = effectId;
-		_effectLvl = -1;
-	}
-	
-	/**
-	 * Instantiates a new condition player active effect id.
-	 *
-	 * @param effectId the effect id
-	 * @param effectLevel the effect level
-	 */
-	public ConditionPlayerActiveEffectId(int effectId, int effectLevel)
-	{
-		_effectId = effectId;
-		_effectLvl = effectLevel;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		final L2Abnormal e = env.player.getFirstEffect(_effectId);
-		if (e != null && (_effectLvl == -1 || _effectLvl <= e.getSkill().getLevel()))
-			return true;
-		
-		return false;
-	}
+
+    private final int _effectId;
+    private final int _effectLvl;
+
+    /**
+     * Instantiates a new condition player active effect id.
+     *
+     * @param effectId the effect id
+     */
+    public ConditionPlayerActiveEffectId(int effectId)
+    {
+        _effectId = effectId;
+        _effectLvl = -1;
+    }
+
+    /**
+     * Instantiates a new condition player active effect id.
+     *
+     * @param effectId    the effect id
+     * @param effectLevel the effect level
+     */
+    public ConditionPlayerActiveEffectId(int effectId, int effectLevel)
+    {
+        _effectId = effectId;
+        _effectLvl = effectLevel;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        final L2Abnormal e = env.player.getFirstEffect(_effectId);
+        if (e != null && (_effectLvl == -1 || _effectLvl <= e.getSkill().getLevel()))
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

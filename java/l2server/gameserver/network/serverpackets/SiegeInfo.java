@@ -45,47 +45,51 @@ import l2server.log.Log;
  */
 public class SiegeInfo extends L2GameServerPacket
 {
-	
-	private Castle _castle;
-	
-	public SiegeInfo(Castle castle)
-	{
-		_castle = castle;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		writeD(_castle.getCastleId());
-		writeD(_castle.getOwnerId() == activeChar.getClanId() && activeChar.isClanLeader() ? 0x01 : 0x00);
-		writeD(_castle.getOwnerId());
-		if (_castle.getOwnerId() > 0)
-		{
-			L2Clan owner = ClanTable.getInstance().getClan(_castle.getOwnerId());
-			if (owner != null)
-			{
-				writeS(owner.getName()); // Clan Name
-				writeS(owner.getLeaderName()); // Clan Leader Name
-				writeD(owner.getAllyId()); // Ally ID
-				writeS(owner.getAllyName()); // Ally Name
-			}
-			else
-				Log.warning("Null owner for castle: " + _castle.getName());
-		}
-		else
-		{
-			writeS(""); // Clan Name
-			writeS(""); // Clan Leader Name
-			writeD(0); // Ally ID
-			writeS(""); // Ally Name
-		}
-		
-		writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000));
-		writeD((int) (_castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
-		writeD(0x00); //number of choices?
-	}
+
+    private Castle _castle;
+
+    public SiegeInfo(Castle castle)
+    {
+        _castle = castle;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        writeD(_castle.getCastleId());
+        writeD(_castle.getOwnerId() == activeChar.getClanId() && activeChar.isClanLeader() ? 0x01 : 0x00);
+        writeD(_castle.getOwnerId());
+        if (_castle.getOwnerId() > 0)
+        {
+            L2Clan owner = ClanTable.getInstance().getClan(_castle.getOwnerId());
+            if (owner != null)
+            {
+                writeS(owner.getName()); // Clan Name
+                writeS(owner.getLeaderName()); // Clan Leader Name
+                writeD(owner.getAllyId()); // Ally ID
+                writeS(owner.getAllyName()); // Ally Name
+            }
+            else
+            {
+                Log.warning("Null owner for castle: " + _castle.getName());
+            }
+        }
+        else
+        {
+            writeS(""); // Clan Name
+            writeS(""); // Clan Leader Name
+            writeD(0); // Ally ID
+            writeS(""); // Ally Name
+        }
+
+        writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000));
+        writeD((int) (_castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
+        writeD(0x00); //number of choices?
+    }
 }

@@ -29,41 +29,38 @@ import l2server.log.Log;
  */
 public class TaskOlympiadSave extends Task
 {
-	
-	public static final String NAME = "olympiad_save";
-	
-	/**
-	 *
-	 * @see l2server.gameserver.taskmanager.Task#getName()
-	 */
-	@Override
-	public String getName()
-	{
-		return NAME;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
-	 */
-	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
-		if (Olympiad.getInstance().inCompPeriod())
-		{
-			Olympiad.getInstance().saveOlympiadStatus();
-			Log.info("Olympiad System: Data updated.");
-		}
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.taskmanager.Task#initialize()
-	 */
-	@Override
-	public void initialize()
-	{
-		super.initialize();
-		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_FIXED_SHEDULED, "900000", "1800000", "");
-	}
+
+    public static final String NAME = "olympiad_save";
+
+    /**
+     * @see l2server.gameserver.taskmanager.Task#getName()
+     */
+    @Override
+    public String getName()
+    {
+        return NAME;
+    }
+
+    /**
+     * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
+     */
+    @Override
+    public void onTimeElapsed(ExecutedTask task)
+    {
+        if (Olympiad.getInstance().inCompPeriod())
+        {
+            Olympiad.getInstance().saveOlympiadStatus();
+            Log.info("Olympiad System: Data updated.");
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.taskmanager.Task#initialize()
+     */
+    @Override
+    public void initialize()
+    {
+        super.initialize();
+        TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_FIXED_SHEDULED, "900000", "1800000", "");
+    }
 }

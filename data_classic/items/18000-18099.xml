@@ -1,2118 +1,2118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Blessed Immortal Ring. MP + 26 effect. -->
-	<item id="18000" type="Armor" name="Blessed Immortal Ring">
-		<set name="icon" val="icon.r1_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="64" />
-			<add stat="maxMp" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18001" type="Weapon" name="Blessed Apocalypse Shaper">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="454" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
-	<item id="18002" type="Weapon" name="Blessed Apocalypse Cutter">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
-	<item id="18003" type="Weapon" name="Blessed Apocalypse Slasher">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18004" type="Weapon" name="Blessed Apocalypse Avenger">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
-	<item id="18005" type="Weapon" name="Blessed Apocalypse Fighter">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
-	<item id="18006" type="Weapon" name="Blessed Apocalypse Stormer">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
-	<item id="18007" type="Weapon" name="Blessed Apocalypse Thrower">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="1022" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
-	<item id="18008" type="Weapon" name="Blessed Apocalypse Shooter">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<for>
-			<set stat="pAtk" val="920" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
-	<item id="18009" type="Weapon" name="Blessed Apocalypse Buster">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="301" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
-	<item id="18010" type="Weapon" name="Blessed Apocalypse Caster">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="301" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
-	<item id="18011" type="Weapon" name="Blessed Apocalypse Retributer">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="332" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
-	<item id="18012" type="Weapon" name="Blessed Apocalypse Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
-	<item id="18013" type="Weapon" name="Blessed Apocalypse Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="519" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
-	<item id="18014" type="Weapon" name="Blessed Apocalypse Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="632" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18015" type="Armor" name="Blessed Twilight Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="18016" type="Armor" name="Blessed Twilight Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="348" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18017" type="Armor" name="Blessed Twilight Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="217" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18018" type="Armor" name="Blessed Twilight Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18019" type="Armor" name="Blessed Twilight Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18020" type="Armor" name="Blessed Twilight Shield - Heavy Armor">
-		<set name="icon" val="icon.kratere_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="476" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18021" type="Armor" name="Blessed Twilight Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="18022" type="Armor" name="Blessed Twilight Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="278" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18023" type="Armor" name="Blessed Twilight Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="173" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18024" type="Armor" name="Blessed Twilight Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18025" type="Armor" name="Blessed Twilight Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18026" type="Armor" name="Blessed Twilight Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="18027" type="Armor" name="Blessed Twilight Tunic - Robe">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="191" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18028" type="Armor" name="Blessed Twilight Stockings - Robe">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="119" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18029" type="Armor" name="Blessed Twilight Gloves - Robe">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18030" type="Armor" name="Blessed Twilight Shoes - Robe">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="18031" type="Armor" name="Blessed Twilight Sigil - Robe">
-		<set name="icon" val="icon.weapon_dynaksus_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="920" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="43" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Twilight Necklace. MP + 58 effect. -->
-	<item id="18032" type="Armor" name="Blessed Twilight Necklace">
-		<set name="icon" val="icon.r2_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="146" />
-			<add stat="maxMp" val="58" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Twilight Earring. MP + 43 effect. -->
-	<item id="18033" type="Armor" name="Blessed Twilight Earring">
-		<set name="icon" val="icon.r2_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="109" />
-			<add stat="maxMp" val="43" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Twilight Ring. MP + 29 effect. -->
-	<item id="18034" type="Armor" name="Blessed Twilight Ring">
-		<set name="icon" val="icon.r2_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="73" />
-			<add stat="maxMp" val="29" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18035" type="Weapon" name="Blessed Specter Shaper">
-		<set name="icon" val="icon.weapon_ignicion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13279-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="526" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
-	<item id="18036" type="Weapon" name="Blessed Specter Cutter">
-		<set name="icon" val="icon.weapon_ninfea_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13252-3" />
-		<for>
-			<set stat="pAtk" val="602" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
-	<item id="18037" type="Weapon" name="Blessed Specter Slasher">
-		<set name="icon" val="icon.weapon_skia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13258-3" />
-		<for>
-			<set stat="pAtk" val="732" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18038" type="Weapon" name="Blessed Specter Avenger">
-		<set name="icon" val="icon.weapon_ikeon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13253-3" />
-		<for>
-			<set stat="pAtk" val="602" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
-	<item id="18039" type="Weapon" name="Blessed Specter Fighter">
-		<set name="icon" val="icon.weapon_deodos_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13264-3" />
-		<for>
-			<set stat="pAtk" val="732" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
-	<item id="18040" type="Weapon" name="Blessed Specter Stormer">
-		<set name="icon" val="icon.weapon_transgredi_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13263-3" />
-		<for>
-			<set stat="pAtk" val="602" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
-	<item id="18041" type="Weapon" name="Blessed Specter Thrower">
-		<set name="icon" val="icon.weapon_solenas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13289-3" />
-		<for>
-			<set stat="pAtk" val="1185" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
-	<item id="18042" type="Weapon" name="Blessed Specter Shooter">
-		<set name="icon" val="icon.weapon_lapis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13294-3" />
-		<for>
-			<set stat="pAtk" val="1067" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
-	<item id="18043" type="Weapon" name="Blessed Specter Buster">
-		<set name="icon" val="icon.weapon_zihel_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13295-3" />
-		<for>
-			<set stat="pAtk" val="481" />
-			<set stat="mAtk" val="349" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
-	<item id="18044" type="Weapon" name="Blessed Specter Caster">
-		<set name="icon" val="icon.weapon_alacer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13300-3" />
-		<for>
-			<set stat="pAtk" val="481" />
-			<set stat="mAtk" val="349" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
-	<item id="18045" type="Weapon" name="Blessed Specter Retributer">
-		<set name="icon" val="icon.weapon_rupe_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13304-3" />
-		<for>
-			<set stat="pAtk" val="586" />
-			<set stat="mAtk" val="384" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
-	<item id="18046" type="Weapon" name="Blessed Specter Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13274-3" />
-		<for>
-			<set stat="pAtk" val="732" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
-	<item id="18047" type="Weapon" name="Blessed Specter Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13287-3" />
-		<for>
-			<set stat="pAtk" val="602" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
-	<item id="18048" type="Weapon" name="Blessed Specter Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="isBlessed" val="true" />
-		<set name="enchant4_skill" val="13269-3" />
-		<for>
-			<set stat="pAtk" val="732" />
-			<set stat="mAtk" val="262" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18049" type="Armor" name="Blessed Seraph Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="144" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="18050" type="Armor" name="Blessed Seraph Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t401_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="7520" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="384" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18051" type="Armor" name="Blessed Seraph Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t401_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="3170" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="240" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18052" type="Armor" name="Blessed Seraph Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t401_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18053" type="Armor" name="Blessed Seraph Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t401_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18054" type="Armor" name="Blessed Seraph Shield - Heavy Armor">
-		<set name="icon" val="icon.beranka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1130" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="525" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18055" type="Armor" name="Blessed Seraph Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="144" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="18056" type="Armor" name="Blessed Seraph Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t402_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="4140" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="307" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18057" type="Armor" name="Blessed Seraph Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t402_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1320" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="192" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18058" type="Armor" name="Blessed Seraph Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t402_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18059" type="Armor" name="Blessed Seraph Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t402_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18060" type="Armor" name="Blessed Seraph Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="144" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="18061" type="Armor" name="Blessed Seraph Tunic - Robe">
-		<set name="icon" val="icon.armor_t403_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1750" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="47" />
-			<baseAdd stat="pDef" val="211" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18062" type="Armor" name="Blessed Seraph Stockings - Robe">
-		<set name="icon" val="icon.armor_t403_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="850" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="31" />
-			<baseAdd stat="pDef" val="132" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18063" type="Armor" name="Blessed Seraph Gloves - Robe">
-		<set name="icon" val="icon.armor_t403_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18064" type="Armor" name="Blessed Seraph Shoes - Robe">
-		<set name="icon" val="icon.armor_t403_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="18065" type="Armor" name="Blessed Seraph Sigil - Robe">
-		<set name="icon" val="icon.airtoil_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="920" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="48" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Seraph Necklace. MP + 62 effect. -->
-	<item id="18066" type="Armor" name="Blessed Seraph Necklace">
-		<set name="icon" val="icon.r95_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="165" />
-			<add stat="maxMp" val="62" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Seraph Earring. MP + 46 effect. -->
-	<item id="18067" type="Armor" name="Blessed Seraph Earring">
-		<set name="icon" val="icon.r95_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="124" />
-			<add stat="maxMp" val="46" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Blessed Seraph Ring. MP + 31 effect. -->
-	<item id="18068" type="Armor" name="Blessed Seraph Ring">
-		<set name="icon" val="icon.r95_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="150" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="82" />
-			<add stat="maxMp" val="31" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18069" type="Weapon" name="Blessed Amaranthine Shaper">
-		<set name="icon" val="icon.weapon_stanpid_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13282-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="575" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
-	<item id="18070" type="Weapon" name="Blessed Amaranthine Cutter">
-		<set name="icon" val="icon.weapon_plenitas_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13252-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="658" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
-	<item id="18071" type="Weapon" name="Blessed Amaranthine Slasher">
-		<set name="icon" val="icon.weapon_bauen_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13261-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="800" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
-	<item id="18072" type="Weapon" name="Blessed Amaranthine Avenger">
-		<set name="icon" val="icon.weapon_qutram_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13256-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="658" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
-	<item id="18073" type="Weapon" name="Blessed Amaranthine Fighter">
-		<set name="icon" val="icon.weapon_durga_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13267-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="800" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
-	<item id="18074" type="Weapon" name="Blessed Amaranthine Stormer">
-		<set name="icon" val="icon.weapon_crabel_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13263-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="658" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
-	<item id="18075" type="Weapon" name="Blessed Amaranthine Thrower">
-		<set name="icon" val="icon.weapon_castron_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="enchant4_skill" val="13292-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="1295" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
-	<item id="18076" type="Weapon" name="Blessed Amaranthine Shooter">
-		<set name="icon" val="icon.weapon_stilla_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<set name="enchant4_skill" val="13294-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="1166" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
-	<item id="18077" type="Weapon" name="Blessed Amaranthine Buster">
-		<set name="icon" val="icon.weaon_serapear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13295-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="526" />
-			<set stat="mAtk" val="382" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
-	<item id="18078" type="Weapon" name="Blessed Amaranthine Caster">
-		<set name="icon" val="icon.weapon_pilia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13299-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="526" />
-			<set stat="mAtk" val="382" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
-	<item id="18079" type="Weapon" name="Blessed Amaranthine Retributer">
-		<set name="icon" val="icon.weapon_shaelon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13304-3" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="640" />
-			<set stat="mAtk" val="420" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
-	<item id="18080" type="Weapon" name="Blessed Amaranthine Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13277-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="800" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
-	<item id="18081" type="Weapon" name="Blessed Amaranthine Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13287-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="658" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
-	<item id="18082" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="13272-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<set stat="pAtk" val="800" />
-			<set stat="mAtk" val="286" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18083" type="Armor" name="Blessed Eternal Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="153" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="18084" type="Armor" name="Blessed Eternal Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="7520" />
-		<set name="enchant4_skill" val="13310-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="408" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18085" type="Armor" name="Blessed Eternal Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="3170" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="255" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18086" type="Armor" name="Blessed Eternal Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18087" type="Armor" name="Blessed Eternal Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. -->
-	<item id="18088" type="Armor" name="Blessed Eternal Shield - Heavy Armor">
-		<set name="icon" val="icon.weapon_akra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1130" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="557" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18089" type="Armor" name="Blessed Eternal Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="153" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="18090" type="Armor" name="Blessed Eternal Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t702_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="4140" />
-		<set name="enchant4_skill" val="13311-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="326" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18091" type="Armor" name="Blessed Eternal Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t702_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1320" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="204" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18092" type="Armor" name="Blessed Eternal Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t702_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. -->
-	<item id="18093" type="Armor" name="Blessed Eternal Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t702_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18094" type="Armor" name="Blessed Eternal Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="153" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="18095" type="Armor" name="Blessed Eternal Tunic - Robe">
-		<set name="icon" val="icon.armor_t703_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1750" />
-		<set name="enchant4_skill" val="13312-3" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="49" />
-			<baseAdd stat="pDef" val="224" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18096" type="Armor" name="Blessed Eternal Stockings - Robe">
-		<set name="icon" val="icon.armor_t703_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="850" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="33" />
-			<baseAdd stat="pDef" val="140" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18097" type="Armor" name="Blessed Eternal Gloves - Robe">
-		<set name="icon" val="icon.armor_t703_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. -->
-	<item id="18098" type="Armor" name="Blessed Eternal Shoes - Robe">
-		<set name="icon" val="icon.armor_t703_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="102" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="18099" type="Armor" name="Blessed Eternal Sigil - Robe">
-		<set name="icon" val="icon.elos_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="920" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="51" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
+    <!-- Blessed Immortal Ring. MP + 26 effect. -->
+    <item id="18000" type="Armor" name="Blessed Immortal Ring">
+        <set name="icon" val="icon.r1_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="64" />
+            <add stat="maxMp" val="26" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18001" type="Weapon" name="Blessed Apocalypse Shaper">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="454" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+    <item id="18002" type="Weapon" name="Blessed Apocalypse Cutter">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="519" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+    <item id="18003" type="Weapon" name="Blessed Apocalypse Slasher">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="632" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18004" type="Weapon" name="Blessed Apocalypse Avenger">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="519" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+    <item id="18005" type="Weapon" name="Blessed Apocalypse Fighter">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="632" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+    <item id="18006" type="Weapon" name="Blessed Apocalypse Stormer">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="519" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+    <item id="18007" type="Weapon" name="Blessed Apocalypse Thrower">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <for>
+            <set stat="pAtk" val="1022" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+    <item id="18008" type="Weapon" name="Blessed Apocalypse Shooter">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <for>
+            <set stat="pAtk" val="920" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+    <item id="18009" type="Weapon" name="Blessed Apocalypse Buster">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="415" />
+            <set stat="mAtk" val="301" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+    <item id="18010" type="Weapon" name="Blessed Apocalypse Caster">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="415" />
+            <set stat="mAtk" val="301" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+    <item id="18011" type="Weapon" name="Blessed Apocalypse Retributer">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <for>
+            <set stat="pAtk" val="505" />
+            <set stat="mAtk" val="332" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+    <item id="18012" type="Weapon" name="Blessed Apocalypse Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="632" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+    <item id="18013" type="Weapon" name="Blessed Apocalypse Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="519" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+    <item id="18014" type="Weapon" name="Blessed Apocalypse Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <for>
+            <set stat="pAtk" val="632" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18015" type="Armor" name="Blessed Twilight Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="18016" type="Armor" name="Blessed Twilight Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="348" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18017" type="Armor" name="Blessed Twilight Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="217" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18018" type="Armor" name="Blessed Twilight Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18019" type="Armor" name="Blessed Twilight Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18020" type="Armor" name="Blessed Twilight Shield - Heavy Armor">
+        <set name="icon" val="icon.kratere_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="476" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18021" type="Armor" name="Blessed Twilight Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="18022" type="Armor" name="Blessed Twilight Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="278" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18023" type="Armor" name="Blessed Twilight Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="173" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18024" type="Armor" name="Blessed Twilight Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18025" type="Armor" name="Blessed Twilight Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18026" type="Armor" name="Blessed Twilight Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="18027" type="Armor" name="Blessed Twilight Tunic - Robe">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="191" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18028" type="Armor" name="Blessed Twilight Stockings - Robe">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="119" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18029" type="Armor" name="Blessed Twilight Gloves - Robe">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18030" type="Armor" name="Blessed Twilight Shoes - Robe">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="18031" type="Armor" name="Blessed Twilight Sigil - Robe">
+        <set name="icon" val="icon.weapon_dynaksus_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="920" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="43" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Twilight Necklace. MP + 58 effect. -->
+    <item id="18032" type="Armor" name="Blessed Twilight Necklace">
+        <set name="icon" val="icon.r2_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="146" />
+            <add stat="maxMp" val="58" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Twilight Earring. MP + 43 effect. -->
+    <item id="18033" type="Armor" name="Blessed Twilight Earring">
+        <set name="icon" val="icon.r2_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="109" />
+            <add stat="maxMp" val="43" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Twilight Ring. MP + 29 effect. -->
+    <item id="18034" type="Armor" name="Blessed Twilight Ring">
+        <set name="icon" val="icon.r2_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="73" />
+            <add stat="maxMp" val="29" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18035" type="Weapon" name="Blessed Specter Shaper">
+        <set name="icon" val="icon.weapon_ignicion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13279-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="526" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+    <item id="18036" type="Weapon" name="Blessed Specter Cutter">
+        <set name="icon" val="icon.weapon_ninfea_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13252-3" />
+        <for>
+            <set stat="pAtk" val="602" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+    <item id="18037" type="Weapon" name="Blessed Specter Slasher">
+        <set name="icon" val="icon.weapon_skia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13258-3" />
+        <for>
+            <set stat="pAtk" val="732" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18038" type="Weapon" name="Blessed Specter Avenger">
+        <set name="icon" val="icon.weapon_ikeon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13253-3" />
+        <for>
+            <set stat="pAtk" val="602" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+    <item id="18039" type="Weapon" name="Blessed Specter Fighter">
+        <set name="icon" val="icon.weapon_deodos_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13264-3" />
+        <for>
+            <set stat="pAtk" val="732" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+    <item id="18040" type="Weapon" name="Blessed Specter Stormer">
+        <set name="icon" val="icon.weapon_transgredi_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13263-3" />
+        <for>
+            <set stat="pAtk" val="602" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+    <item id="18041" type="Weapon" name="Blessed Specter Thrower">
+        <set name="icon" val="icon.weapon_solenas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13289-3" />
+        <for>
+            <set stat="pAtk" val="1185" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+    <item id="18042" type="Weapon" name="Blessed Specter Shooter">
+        <set name="icon" val="icon.weapon_lapis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13294-3" />
+        <for>
+            <set stat="pAtk" val="1067" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+    <item id="18043" type="Weapon" name="Blessed Specter Buster">
+        <set name="icon" val="icon.weapon_zihel_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13295-3" />
+        <for>
+            <set stat="pAtk" val="481" />
+            <set stat="mAtk" val="349" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+    <item id="18044" type="Weapon" name="Blessed Specter Caster">
+        <set name="icon" val="icon.weapon_alacer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13300-3" />
+        <for>
+            <set stat="pAtk" val="481" />
+            <set stat="mAtk" val="349" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+    <item id="18045" type="Weapon" name="Blessed Specter Retributer">
+        <set name="icon" val="icon.weapon_rupe_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13304-3" />
+        <for>
+            <set stat="pAtk" val="586" />
+            <set stat="mAtk" val="384" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+    <item id="18046" type="Weapon" name="Blessed Specter Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13274-3" />
+        <for>
+            <set stat="pAtk" val="732" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+    <item id="18047" type="Weapon" name="Blessed Specter Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13287-3" />
+        <for>
+            <set stat="pAtk" val="602" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+    <item id="18048" type="Weapon" name="Blessed Specter Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="isBlessed" val="true" />
+        <set name="enchant4_skill" val="13269-3" />
+        <for>
+            <set stat="pAtk" val="732" />
+            <set stat="mAtk" val="262" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18049" type="Armor" name="Blessed Seraph Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="144" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="18050" type="Armor" name="Blessed Seraph Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t401_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="7520" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="384" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18051" type="Armor" name="Blessed Seraph Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t401_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="3170" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="240" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18052" type="Armor" name="Blessed Seraph Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t401_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18053" type="Armor" name="Blessed Seraph Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t401_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18054" type="Armor" name="Blessed Seraph Shield - Heavy Armor">
+        <set name="icon" val="icon.beranka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1130" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="525" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18055" type="Armor" name="Blessed Seraph Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="144" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="18056" type="Armor" name="Blessed Seraph Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t402_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="4140" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="307" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18057" type="Armor" name="Blessed Seraph Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t402_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1320" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="192" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18058" type="Armor" name="Blessed Seraph Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t402_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18059" type="Armor" name="Blessed Seraph Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t402_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18060" type="Armor" name="Blessed Seraph Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="144" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="18061" type="Armor" name="Blessed Seraph Tunic - Robe">
+        <set name="icon" val="icon.armor_t403_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1750" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="47" />
+            <baseAdd stat="pDef" val="211" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18062" type="Armor" name="Blessed Seraph Stockings - Robe">
+        <set name="icon" val="icon.armor_t403_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="850" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="31" />
+            <baseAdd stat="pDef" val="132" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18063" type="Armor" name="Blessed Seraph Gloves - Robe">
+        <set name="icon" val="icon.armor_t403_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18064" type="Armor" name="Blessed Seraph Shoes - Robe">
+        <set name="icon" val="icon.armor_t403_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="18065" type="Armor" name="Blessed Seraph Sigil - Robe">
+        <set name="icon" val="icon.airtoil_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="920" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="48" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Seraph Necklace. MP + 62 effect. -->
+    <item id="18066" type="Armor" name="Blessed Seraph Necklace">
+        <set name="icon" val="icon.r95_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="165" />
+            <add stat="maxMp" val="62" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Seraph Earring. MP + 46 effect. -->
+    <item id="18067" type="Armor" name="Blessed Seraph Earring">
+        <set name="icon" val="icon.r95_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="124" />
+            <add stat="maxMp" val="46" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Blessed Seraph Ring. MP + 31 effect. -->
+    <item id="18068" type="Armor" name="Blessed Seraph Ring">
+        <set name="icon" val="icon.r95_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="150" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="82" />
+            <add stat="maxMp" val="31" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18069" type="Weapon" name="Blessed Amaranthine Shaper">
+        <set name="icon" val="icon.weapon_stanpid_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13282-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="575" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+    <item id="18070" type="Weapon" name="Blessed Amaranthine Cutter">
+        <set name="icon" val="icon.weapon_plenitas_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13252-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="658" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+    <item id="18071" type="Weapon" name="Blessed Amaranthine Slasher">
+        <set name="icon" val="icon.weapon_bauen_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13261-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="800" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+    <item id="18072" type="Weapon" name="Blessed Amaranthine Avenger">
+        <set name="icon" val="icon.weapon_qutram_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13256-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="658" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+    <item id="18073" type="Weapon" name="Blessed Amaranthine Fighter">
+        <set name="icon" val="icon.weapon_durga_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13267-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="800" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+    <item id="18074" type="Weapon" name="Blessed Amaranthine Stormer">
+        <set name="icon" val="icon.weapon_crabel_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13263-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="658" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+    <item id="18075" type="Weapon" name="Blessed Amaranthine Thrower">
+        <set name="icon" val="icon.weapon_castron_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="enchant4_skill" val="13292-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="1295" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+    <item id="18076" type="Weapon" name="Blessed Amaranthine Shooter">
+        <set name="icon" val="icon.weapon_stilla_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <set name="enchant4_skill" val="13294-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="1166" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+    <item id="18077" type="Weapon" name="Blessed Amaranthine Buster">
+        <set name="icon" val="icon.weaon_serapear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13295-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="526" />
+            <set stat="mAtk" val="382" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+    <item id="18078" type="Weapon" name="Blessed Amaranthine Caster">
+        <set name="icon" val="icon.weapon_pilia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13299-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="526" />
+            <set stat="mAtk" val="382" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+    <item id="18079" type="Weapon" name="Blessed Amaranthine Retributer">
+        <set name="icon" val="icon.weapon_shaelon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13304-3" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="640" />
+            <set stat="mAtk" val="420" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+    <item id="18080" type="Weapon" name="Blessed Amaranthine Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13277-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="800" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+    <item id="18081" type="Weapon" name="Blessed Amaranthine Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13287-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="658" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+    <item id="18082" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant4_skill" val="13272-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <set stat="pAtk" val="800" />
+            <set stat="mAtk" val="286" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18083" type="Armor" name="Blessed Eternal Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="153" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="18084" type="Armor" name="Blessed Eternal Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="7520" />
+        <set name="enchant4_skill" val="13310-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="408" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18085" type="Armor" name="Blessed Eternal Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="3170" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="255" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18086" type="Armor" name="Blessed Eternal Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18087" type="Armor" name="Blessed Eternal Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. -->
+    <item id="18088" type="Armor" name="Blessed Eternal Shield - Heavy Armor">
+        <set name="icon" val="icon.weapon_akra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1130" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="557" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18089" type="Armor" name="Blessed Eternal Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="153" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="18090" type="Armor" name="Blessed Eternal Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t702_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="4140" />
+        <set name="enchant4_skill" val="13311-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="326" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18091" type="Armor" name="Blessed Eternal Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t702_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1320" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="204" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18092" type="Armor" name="Blessed Eternal Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t702_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. -->
+    <item id="18093" type="Armor" name="Blessed Eternal Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t702_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18094" type="Armor" name="Blessed Eternal Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="153" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="18095" type="Armor" name="Blessed Eternal Tunic - Robe">
+        <set name="icon" val="icon.armor_t703_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1750" />
+        <set name="enchant4_skill" val="13312-3" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="49" />
+            <baseAdd stat="pDef" val="224" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18096" type="Armor" name="Blessed Eternal Stockings - Robe">
+        <set name="icon" val="icon.armor_t703_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="850" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="33" />
+            <baseAdd stat="pDef" val="140" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18097" type="Armor" name="Blessed Eternal Gloves - Robe">
+        <set name="icon" val="icon.armor_t703_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. -->
+    <item id="18098" type="Armor" name="Blessed Eternal Shoes - Robe">
+        <set name="icon" val="icon.armor_t703_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="102" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="18099" type="Armor" name="Blessed Eternal Sigil - Robe">
+        <set name="icon" val="icon.elos_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="920" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="51" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
 </list>

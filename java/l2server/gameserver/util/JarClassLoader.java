@@ -28,80 +28,84 @@ import l2server.log.Log;
 /**
  * This is a class loader for the dynamic extensions used by DynamicExtension class.
  *
+ * @author galun
  * @version $Revision: $ $Date: $
- * @author  galun
  */
 public class JarClassLoader extends ClassLoader
 {
-	HashSet<String> _jars = new HashSet<String>();
-	
-	public void addJarFile(String filename)
-	{
-		_jars.add(filename);
-	}
-	
-	@Override
-	public Class<?> findClass(String name) throws ClassNotFoundException
-	{
-		try
-		{
-			byte[] b = loadClassData(name);
-			return defineClass(name, b, 0, b.length);
-		}
-		catch (Exception e)
-		{
-			throw new ClassNotFoundException(name);
-		}
-	}
-	
-	private byte[] loadClassData(String name) throws IOException
-	{
-		byte[] classData = null;
-		for (String jarFile : _jars)
-		{
-			ZipFile zipFile = null;
-			DataInputStream zipStream = null;
-			try
-			{
-				File file = new File(jarFile);
-				zipFile = new ZipFile(file);
-				String fileName = name.replace('.', '/') + ".class";
-				ZipEntry entry = zipFile.getEntry(fileName);
-				if (entry == null)
-					continue;
-				classData = new byte[(int) entry.getSize()];
-				zipStream = new DataInputStream(zipFile.getInputStream(entry));
-				zipStream.readFully(classData, 0, (int) entry.getSize());
-				break;
-			}
-			catch (IOException e)
-			{
-				Log.log(Level.WARNING, jarFile + ": " + e.getMessage(), e);
-				continue;
-			}
-			finally
-			{
-				try
-				{
-					zipFile.close();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-				
-				try
-				{
-					zipStream.close();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		}
-		if (classData == null)
-			throw new IOException("class not found in " + _jars);
-		return classData;
-	}
+    HashSet<String> _jars = new HashSet<String>();
+
+    public void addJarFile(String filename)
+    {
+        _jars.add(filename);
+    }
+
+    @Override
+    public Class<?> findClass(String name) throws ClassNotFoundException
+    {
+        try
+        {
+            byte[] b = loadClassData(name);
+            return defineClass(name, b, 0, b.length);
+        }
+        catch (Exception e)
+        {
+            throw new ClassNotFoundException(name);
+        }
+    }
+
+    private byte[] loadClassData(String name) throws IOException
+    {
+        byte[] classData = null;
+        for (String jarFile : _jars)
+        {
+            ZipFile zipFile = null;
+            DataInputStream zipStream = null;
+            try
+            {
+                File file = new File(jarFile);
+                zipFile = new ZipFile(file);
+                String fileName = name.replace('.', '/') + ".class";
+                ZipEntry entry = zipFile.getEntry(fileName);
+                if (entry == null)
+                {
+                    continue;
+                }
+                classData = new byte[(int) entry.getSize()];
+                zipStream = new DataInputStream(zipFile.getInputStream(entry));
+                zipStream.readFully(classData, 0, (int) entry.getSize());
+                break;
+            }
+            catch (IOException e)
+            {
+                Log.log(Level.WARNING, jarFile + ": " + e.getMessage(), e);
+                continue;
+            }
+            finally
+            {
+                try
+                {
+                    zipFile.close();
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+                try
+                {
+                    zipStream.close();
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+        if (classData == null)
+        {
+            throw new IOException("class not found in " + _jars);
+        }
+        return classData;
+    }
 }

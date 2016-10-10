@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Increases Weight Gauge. -->
-	<skill id="3498" levels="1" name="Special Ability: Light">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_PASSIVE" />
-		<set name="magicLvl" val="46" />
-		<for>
-			<addPercent stat="maxLoad" val="20" />
-		</for>
-	</skill>
+    <!-- Increases Weight Gauge. -->
+    <skill id="3498" levels="1" name="Special Ability: Light">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="46" />
+        <for>
+            <addPercent stat="maxLoad" val="20" />
+        </for>
+    </skill>
 </list>

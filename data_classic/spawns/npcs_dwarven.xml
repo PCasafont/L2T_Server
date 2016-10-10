@@ -1,114 +1,114 @@
 <list>
-	<!-- [NPC_23_12_031223_01] -->
-	<spawn npcId="30531" x="116226" y="-178529" z="-948" heading="32768" respawn="60" /> <!-- Lockirin -->
-	<spawn npcId="30534" x="116190" y="-178615" z="-948" heading="24576" respawn="60" /> <!-- Keef -->
-	<spawn npcId="30532" x="116190" y="-178441" z="-948" heading="40960" respawn="60" /> <!-- Spiron -->
-	<spawn npcId="30536" x="116103" y="-178653" z="-948" heading="16384" respawn="60" /> <!-- Arin -->
-	<spawn npcId="30535" x="116103" y="-178407" z="-948" heading="49152" respawn="60" /> <!-- Filaur -->
-	<spawn npcId="30533" x="116016" y="-178615" z="-948" heading="8192" respawn="60" /> <!-- Balanki -->
-	<!-- [NPC_23_12_031223_02] -->
-	<spawn npcId="30523" x="115717" y="-183488" z="-1483" heading="8192" respawn="60" /> <!-- Gouph -->
-	<spawn npcId="30524" x="115618" y="-183265" z="-1483" heading="55000" respawn="60" /> <!-- Pippi -->
-	<!-- [NPC_t23_12_030917_01] -->
-	<spawn npcId="30671" x="117061" y="-181867" z="-1413" heading="36864" respawn="60" /> <!-- Croto -->
-	<!-- [NPC_t23_12_030917_02] -->
-	<spawn npcId="30651" x="116164" y="-184029" z="-1507" heading="8192" respawn="60" /> <!-- Dorf -->
-	<!-- [NPC_t23_12_030917_03] -->
-	<spawn npcId="30650" x="114990" y="-177294" z="-854" heading="0" respawn="60" /> <!-- Gerald -->
-	<!-- [NPC_t23_12_030917_04] -->
-	<spawn npcId="30550" x="115563" y="-182923" z="-1448" heading="8192" respawn="60" /> <!-- Gauri Twinklerock -->
-	<!-- [NPC_t23_12_030917_05] -->
-	<spawn npcId="30670" x="125832" y="-180002" z="-1773" heading="57344" respawn="60" /> <!-- Nyakuri -->
-	<!-- [t23_12_NPC_030708] -->
-	<spawn npcId="30555" x="114866" y="-180328" z="-881" heading="16384" respawn="60" /> <!-- Torocco -->
-	<!-- [t23_12_030704_01] -->
-	<spawn npcId="30527" x="115271" y="-182692" z="-1445" heading="4096" respawn="60" /> <!-- Silvera -->
-	<spawn npcId="30526" x="115315" y="-182155" z="-1444" heading="49152" respawn="60" /> <!-- Brunon -->
-	<!-- [t23_12_030704_02] -->
-	<spawn npcId="30542" x="116617" y="-184308" z="-1569" heading="49152" respawn="60" /> <!-- Runant -->
-	<spawn npcId="30544" x="116378" y="-184308" z="-1571" heading="49152" respawn="60" /> <!-- Cromwell -->
-	<!-- [23_12_030704] -->
-	<spawn npcId="30601" x="115632" y="-177996" z="-905" heading="32768" respawn="60" /> <!-- Newbie Helper -->
-	<!-- [23_12_NPC_021] -->
-	<spawn npcId="30525" x="115468" y="-182446" z="-1434" heading="32768" respawn="60" /> <!-- Bronk -->
-	<!-- [23_12_NPC_001] -->
-	<spawn npcId="30529" x="108753" y="-175344" z="-402" heading="28672" respawn="60" /> <!-- Maron -->
-	<!-- [23_12_NPC_002] -->
-	<spawn npcId="30528" x="108593" y="-174041" z="-406" heading="38500" respawn="60" /> <!-- Laferon -->
-	<!-- [23_12_NPC_003] -->
-	<spawn npcId="30530" x="108195" y="-172897" z="-551" heading="53248" respawn="60" /> <!-- Newbie Helper -->
-	<!-- [23_12_NPC_007] -->
-	<spawn npcId="30553" x="116852" y="-183595" z="-1566" heading="32768" respawn="60" /> <!-- Maryse Redbonnet -->
-	<!-- [23_12_NPC_010] -->
-	<spawn npcId="30518" x="115900" y="-177316" z="-915" heading="50000" respawn="60" /> <!-- Garita -->
-	<!-- [23_12_NPC_011] -->
-	<spawn npcId="30519" x="116268" y="-177524" z="-914" heading="32768" respawn="60" /> <!-- Mion -->
-	<!-- [23_12_NPC_012] -->
-	<spawn npcId="30537" x="114348" y="-178537" z="-813" heading="0" respawn="60" /> <!-- Daichir -->
-	<spawn npcId="30539" x="114409" y="-178415" z="-812" heading="57344" respawn="60" /> <!-- Chichirin -->
-	<spawn npcId="30538" x="114426" y="-178672" z="-812" heading="8192" respawn="60" /> <!-- Zimenf -->
-	<!-- [23_12_NPC_013] -->
-	<spawn npcId="30522" x="114832" y="-179520" z="-871" heading="49152" respawn="60" /> <!-- Airy -->
-	<!-- [23_12_NPC_014] -->
-	<spawn npcId="30521" x="114716" y="-180018" z="-871" heading="0" respawn="60" /> <!-- Murdoc -->
-	<!-- [23_12_NPC_015] -->
-	<spawn npcId="30520" x="115205" y="-180024" z="-870" heading="32768" respawn="60" /> <!-- Reed -->
-	<!-- [23_12_NPC_016] -->
-	<spawn npcId="30517" x="116192" y="-181072" z="-1344" heading="40960" respawn="60" /> <!-- Shari -->
-	<!-- [23_12_NPC_017] -->
-	<spawn npcId="30516" x="115741" y="-181645" z="-1344" heading="8192" respawn="60" /> <!-- Reep -->
-	<!-- [23_12_NPC_020] -->
-	<spawn npcId="30554" x="112656" y="-174864" z="-611" heading="8192" respawn="60" /> <!-- Bolter -->
-	<!-- [25_12_NPC01] -->
-	<spawn npcId="30556" x="178849" y="-184342" z="-342" heading="45056" respawn="60" /> <!-- Toma -->
-	<!-- [t23_12_001] -->
-	<group minZ="-604" maxZ="-404">
-		<vertex x="108520" y="-173936" />
-		<vertex x="109876" y="-173636" />
-		<vertex x="109132" y="-172528" />
-		<vertex x="108020" y="-172224" />
-		<spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
-	</group>
-	<!-- [t23_12_002] -->
-	<group minZ="-592" maxZ="-392">
-		<vertex x="107460" y="-174188" />
-		<vertex x="108416" y="-173672" />
-		<vertex x="108144" y="-172728" />
-		<vertex x="107124" y="-172800" />
-		<spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
-	</group>
-	<!-- [t23_12_003] -->
-	<group minZ="-592" maxZ="-342">
-		<vertex x="108624" y="-176004" />
-		<vertex x="109472" y="-175020" />
-		<vertex x="108740" y="-174364" />
-		<vertex x="107996" y="-174704" />
-		<spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
-	</group>
-	<!-- [t23_12_004] -->
-	<group minZ="-592" maxZ="-392">
-		<vertex x="109436" y="-174996" />
-		<vertex x="110296" y="-174132" />
-		<vertex x="109976" y="-173776" />
-		<vertex x="108816" y="-173880" />
-		<vertex x="108716" y="-174348" />
-		<spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
-	</group>
-	<!-- [quest_030919_24_11_001] -->
-	<group minZ="-3764" maxZ="-3364">
-		<vertex x="156492" y="-221176" />
-		<vertex x="158672" y="-220956" />
-		<vertex x="158908" y="-219412" />
-		<vertex x="155880" y="-218940" />
-		<spawn npcId="27132" respawn="180" amount="3" /> <!-- Krudel Lizardman -->
-	</group>
-	<!-- [quest_030919_25_12] -->
-	<group minZ="-3752" maxZ="-3452">
-		<vertex x="176532" y="-185904" />
-		<vertex x="177204" y="-185692" />
-		<vertex x="177216" y="-184776" />
-		<vertex x="176528" y="-184756" />
-		<spawn npcId="27114" respawn="180" amount="1" /> <!-- Succubus Queen -->
-	</group>
-	<!-- [event_dwarf_2511] -->
+    <!-- [NPC_23_12_031223_01] -->
+    <spawn npcId="30531" x="116226" y="-178529" z="-948" heading="32768" respawn="60" /> <!-- Lockirin -->
+    <spawn npcId="30534" x="116190" y="-178615" z="-948" heading="24576" respawn="60" /> <!-- Keef -->
+    <spawn npcId="30532" x="116190" y="-178441" z="-948" heading="40960" respawn="60" /> <!-- Spiron -->
+    <spawn npcId="30536" x="116103" y="-178653" z="-948" heading="16384" respawn="60" /> <!-- Arin -->
+    <spawn npcId="30535" x="116103" y="-178407" z="-948" heading="49152" respawn="60" /> <!-- Filaur -->
+    <spawn npcId="30533" x="116016" y="-178615" z="-948" heading="8192" respawn="60" /> <!-- Balanki -->
+    <!-- [NPC_23_12_031223_02] -->
+    <spawn npcId="30523" x="115717" y="-183488" z="-1483" heading="8192" respawn="60" /> <!-- Gouph -->
+    <spawn npcId="30524" x="115618" y="-183265" z="-1483" heading="55000" respawn="60" /> <!-- Pippi -->
+    <!-- [NPC_t23_12_030917_01] -->
+    <spawn npcId="30671" x="117061" y="-181867" z="-1413" heading="36864" respawn="60" /> <!-- Croto -->
+    <!-- [NPC_t23_12_030917_02] -->
+    <spawn npcId="30651" x="116164" y="-184029" z="-1507" heading="8192" respawn="60" /> <!-- Dorf -->
+    <!-- [NPC_t23_12_030917_03] -->
+    <spawn npcId="30650" x="114990" y="-177294" z="-854" heading="0" respawn="60" /> <!-- Gerald -->
+    <!-- [NPC_t23_12_030917_04] -->
+    <spawn npcId="30550" x="115563" y="-182923" z="-1448" heading="8192" respawn="60" /> <!-- Gauri Twinklerock -->
+    <!-- [NPC_t23_12_030917_05] -->
+    <spawn npcId="30670" x="125832" y="-180002" z="-1773" heading="57344" respawn="60" /> <!-- Nyakuri -->
+    <!-- [t23_12_NPC_030708] -->
+    <spawn npcId="30555" x="114866" y="-180328" z="-881" heading="16384" respawn="60" /> <!-- Torocco -->
+    <!-- [t23_12_030704_01] -->
+    <spawn npcId="30527" x="115271" y="-182692" z="-1445" heading="4096" respawn="60" /> <!-- Silvera -->
+    <spawn npcId="30526" x="115315" y="-182155" z="-1444" heading="49152" respawn="60" /> <!-- Brunon -->
+    <!-- [t23_12_030704_02] -->
+    <spawn npcId="30542" x="116617" y="-184308" z="-1569" heading="49152" respawn="60" /> <!-- Runant -->
+    <spawn npcId="30544" x="116378" y="-184308" z="-1571" heading="49152" respawn="60" /> <!-- Cromwell -->
+    <!-- [23_12_030704] -->
+    <spawn npcId="30601" x="115632" y="-177996" z="-905" heading="32768" respawn="60" /> <!-- Newbie Helper -->
+    <!-- [23_12_NPC_021] -->
+    <spawn npcId="30525" x="115468" y="-182446" z="-1434" heading="32768" respawn="60" /> <!-- Bronk -->
+    <!-- [23_12_NPC_001] -->
+    <spawn npcId="30529" x="108753" y="-175344" z="-402" heading="28672" respawn="60" /> <!-- Maron -->
+    <!-- [23_12_NPC_002] -->
+    <spawn npcId="30528" x="108593" y="-174041" z="-406" heading="38500" respawn="60" /> <!-- Laferon -->
+    <!-- [23_12_NPC_003] -->
+    <spawn npcId="30530" x="108195" y="-172897" z="-551" heading="53248" respawn="60" /> <!-- Newbie Helper -->
+    <!-- [23_12_NPC_007] -->
+    <spawn npcId="30553" x="116852" y="-183595" z="-1566" heading="32768" respawn="60" /> <!-- Maryse Redbonnet -->
+    <!-- [23_12_NPC_010] -->
+    <spawn npcId="30518" x="115900" y="-177316" z="-915" heading="50000" respawn="60" /> <!-- Garita -->
+    <!-- [23_12_NPC_011] -->
+    <spawn npcId="30519" x="116268" y="-177524" z="-914" heading="32768" respawn="60" /> <!-- Mion -->
+    <!-- [23_12_NPC_012] -->
+    <spawn npcId="30537" x="114348" y="-178537" z="-813" heading="0" respawn="60" /> <!-- Daichir -->
+    <spawn npcId="30539" x="114409" y="-178415" z="-812" heading="57344" respawn="60" /> <!-- Chichirin -->
+    <spawn npcId="30538" x="114426" y="-178672" z="-812" heading="8192" respawn="60" /> <!-- Zimenf -->
+    <!-- [23_12_NPC_013] -->
+    <spawn npcId="30522" x="114832" y="-179520" z="-871" heading="49152" respawn="60" /> <!-- Airy -->
+    <!-- [23_12_NPC_014] -->
+    <spawn npcId="30521" x="114716" y="-180018" z="-871" heading="0" respawn="60" /> <!-- Murdoc -->
+    <!-- [23_12_NPC_015] -->
+    <spawn npcId="30520" x="115205" y="-180024" z="-870" heading="32768" respawn="60" /> <!-- Reed -->
+    <!-- [23_12_NPC_016] -->
+    <spawn npcId="30517" x="116192" y="-181072" z="-1344" heading="40960" respawn="60" /> <!-- Shari -->
+    <!-- [23_12_NPC_017] -->
+    <spawn npcId="30516" x="115741" y="-181645" z="-1344" heading="8192" respawn="60" /> <!-- Reep -->
+    <!-- [23_12_NPC_020] -->
+    <spawn npcId="30554" x="112656" y="-174864" z="-611" heading="8192" respawn="60" /> <!-- Bolter -->
+    <!-- [25_12_NPC01] -->
+    <spawn npcId="30556" x="178849" y="-184342" z="-342" heading="45056" respawn="60" /> <!-- Toma -->
+    <!-- [t23_12_001] -->
+    <group minZ="-604" maxZ="-404">
+        <vertex x="108520" y="-173936" />
+        <vertex x="109876" y="-173636" />
+        <vertex x="109132" y="-172528" />
+        <vertex x="108020" y="-172224" />
+        <spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
+    </group>
+    <!-- [t23_12_002] -->
+    <group minZ="-592" maxZ="-392">
+        <vertex x="107460" y="-174188" />
+        <vertex x="108416" y="-173672" />
+        <vertex x="108144" y="-172728" />
+        <vertex x="107124" y="-172800" />
+        <spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
+    </group>
+    <!-- [t23_12_003] -->
+    <group minZ="-592" maxZ="-342">
+        <vertex x="108624" y="-176004" />
+        <vertex x="109472" y="-175020" />
+        <vertex x="108740" y="-174364" />
+        <vertex x="107996" y="-174704" />
+        <spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
+    </group>
+    <!-- [t23_12_004] -->
+    <group minZ="-592" maxZ="-392">
+        <vertex x="109436" y="-174996" />
+        <vertex x="110296" y="-174132" />
+        <vertex x="109976" y="-173776" />
+        <vertex x="108816" y="-173880" />
+        <vertex x="108716" y="-174348" />
+        <spawn npcId="18003" respawn="15" amount="10" /> <!-- Nepetir -->
+    </group>
+    <!-- [quest_030919_24_11_001] -->
+    <group minZ="-3764" maxZ="-3364">
+        <vertex x="156492" y="-221176" />
+        <vertex x="158672" y="-220956" />
+        <vertex x="158908" y="-219412" />
+        <vertex x="155880" y="-218940" />
+        <spawn npcId="27132" respawn="180" amount="3" /> <!-- Krudel Lizardman -->
+    </group>
+    <!-- [quest_030919_25_12] -->
+    <group minZ="-3752" maxZ="-3452">
+        <vertex x="176532" y="-185904" />
+        <vertex x="177204" y="-185692" />
+        <vertex x="177216" y="-184776" />
+        <vertex x="176528" y="-184756" />
+        <spawn npcId="27114" respawn="180" amount="1" /> <!-- Succubus Queen -->
+    </group>
+    <!-- [event_dwarf_2511] -->
 </list>

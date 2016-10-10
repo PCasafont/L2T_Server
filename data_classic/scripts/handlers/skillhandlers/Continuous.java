@@ -45,212 +45,245 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Continuous implements ISkillHandler
 {
-	//private static Logger _log = Logger.getLogger(Continuous.class.getName());
-	
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.BUFF,
-		L2SkillType.DEBUFF,
-		L2SkillType.CONT,
-		L2SkillType.CONTINUOUS_DEBUFF,
-		L2SkillType.UNDEAD_DEFENSE,
-		L2SkillType.AGGDEBUFF,
-		L2SkillType.FUSION
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		boolean acted = true;
-		
-		L2PcInstance player = null;
-		if (activeChar instanceof L2PcInstance)
-			player = (L2PcInstance)activeChar;
-		
-		if (skill.getEffectId() != 0)
-		{
-			L2Skill sk = SkillTable.getInstance().getInfo(skill.getEffectId(), skill.getEffectLvl() == 0 ? 1 : skill.getEffectLvl());
-			
-			if (sk != null)
-				skill = sk;
-		}
-		
-		for (L2Object obj: targets)
-		{
-			if (!(obj instanceof L2Character))
-				continue;
-				
-			L2Character target = (L2Character)obj;
-			byte shld = 0;
-			double ssMul = L2ItemInstance.CHARGED_NONE;
-			
-			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
-				target = activeChar;
-			
-			// Player holding a cursed weapon can't be buffed and can't buff
-			if (skill.getSkillType() == L2SkillType.BUFF && !(activeChar instanceof L2ClanHallManagerInstance))
-			{
-				if (target != activeChar)
-				{
-					if (target instanceof L2PcInstance)
-					{
-						L2PcInstance trg = (L2PcInstance)target;
-						if (trg.isCursedWeaponEquipped())
-							continue;
-						// Avoiding block checker players get buffed from outside
-						else if (trg.getBlockCheckerArena() != -1)
-							continue;
-					}
-					else if (player != null && player.isCursedWeaponEquipped())
-						continue;
-				}
-			}
-			
-			if (skill.isOffensive() || skill.isDebuff())
-			{
-				L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-				if (weaponInst != null)
-				{
-					if (skill.isMagic())
-					{
-						ssMul = weaponInst.getChargedSpiritShot();
-						if (skill.getId() != 1020) // vitalize
-							weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-					}
-					else
-					{
-						ssMul = weaponInst.getChargedSoulShot();
-						if (skill.getId() != 1020) // vitalize
-							weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-					}
-				}
-				// If there is no weapon equipped, check for an active summon.
-				else if (activeChar instanceof L2Summon)
-				{
-					L2Summon activeSummon = (L2Summon) activeChar;
-					if (skill.isMagic())
-					{
-						ssMul = activeSummon.getChargedSpiritShot();
-						activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-					}
-					else
-					{
-						ssMul = activeSummon.getChargedSoulShot();
-						activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-					}
-				}
-				else if (activeChar instanceof L2Npc)
-				{
-					if (skill.isMagic())
-					{
-						ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT : L2ItemInstance.CHARGED_NONE;
-						((L2Npc) activeChar)._soulshotcharged = false;
-					}
-					else
-					{
-						ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT : L2ItemInstance.CHARGED_NONE;
-						((L2Npc) activeChar)._spiritshotcharged = false;
-					}
-				}
-				
-				shld = Formulas.calcShldUse(activeChar, target, skill);
-				acted = true;//Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss);
-			}
-			
-			if (acted)
-			{
-				if (skill.isToggle())
-				{
-					L2Abnormal[] effects = target.getAllEffects();
-					if (effects != null)
-					{
-						for (L2Abnormal e : effects)
-						{
-							if (e != null)
-							{
-								if (e.getSkill().getId() == skill.getId())
-								{
-									e.exit();
-									return;
-								}
-							}
-						}
-					}
-				}
-				
-				// if this is a debuff let the duel manager know about it
-				// so the debuff can be removed after the duel
-				// (player & target must be in the same duel)
-				L2Abnormal[] effects = skill.getEffects(activeChar, target, new Env(shld, ssMul));
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill.getSkillType() == L2SkillType.BUFF) && player != null
-						&& player.getDuelId() == ((L2PcInstance) target).getDuelId())
-				{
-					DuelManager dm = DuelManager.getInstance();
-					for (L2Abnormal buff : effects)
-					{
-						if (buff != null)
-							dm.onBuff(((L2PcInstance) target), buff);
-					}
-				}
-				else
-				{
-					if (target instanceof L2PcInstance && effects.length > 0 && effects[0].canBeStolen())
-					{
-						for (L2SummonInstance summon : ((L2PcInstance)target).getSummons())
-							skill.getEffects(activeChar, summon, new Env(shld, ssMul));
-					}
-				}
-				
-				if (skill.getSkillType() == L2SkillType.AGGDEBUFF && effects.length > 0)
-				{
-					if (target instanceof L2Attackable)
-						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, (int) skill.getPower());
-					else if (target instanceof L2Playable)
-					{
-						if (target.getTarget() == activeChar)
-							target.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, activeChar);
-						else
-							target.setTarget(activeChar);
-					}
-				}
-				
-				if (effects.length == 0)
-					acted = false;
-			}
-			else
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
-			}
-			
-			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF && !acted)
-				activeChar.abortCast();
-			
-			// Possibility of a lethal strike
-			Formulas.calcLethalHit(activeChar, target, skill);
-		}
-		
-		// self Effect
-		if (skill.hasSelfEffects())
-		{
-			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
-			{
-				//Replace old effect with new one.
-				effect.exit();
-			}
-			skill.getEffectsSelf(activeChar);
-		}
-	}
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    //private static Logger _log = Logger.getLogger(Continuous.class.getName());
+
+    private static final L2SkillType[] SKILL_IDS = {
+            L2SkillType.BUFF,
+            L2SkillType.DEBUFF,
+            L2SkillType.CONT,
+            L2SkillType.CONTINUOUS_DEBUFF,
+            L2SkillType.UNDEAD_DEFENSE,
+            L2SkillType.AGGDEBUFF,
+            L2SkillType.FUSION
+    };
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        boolean acted = true;
+
+        L2PcInstance player = null;
+        if (activeChar instanceof L2PcInstance)
+        {
+            player = (L2PcInstance) activeChar;
+        }
+
+        if (skill.getEffectId() != 0)
+        {
+            L2Skill sk = SkillTable.getInstance()
+                    .getInfo(skill.getEffectId(), skill.getEffectLvl() == 0 ? 1 : skill.getEffectLvl());
+
+            if (sk != null)
+            {
+                skill = sk;
+            }
+        }
+
+        for (L2Object obj : targets)
+        {
+            if (!(obj instanceof L2Character))
+            {
+                continue;
+            }
+
+            L2Character target = (L2Character) obj;
+            byte shld = 0;
+            double ssMul = L2ItemInstance.CHARGED_NONE;
+
+            if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
+            {
+                target = activeChar;
+            }
+
+            // Player holding a cursed weapon can't be buffed and can't buff
+            if (skill.getSkillType() == L2SkillType.BUFF && !(activeChar instanceof L2ClanHallManagerInstance))
+            {
+                if (target != activeChar)
+                {
+                    if (target instanceof L2PcInstance)
+                    {
+                        L2PcInstance trg = (L2PcInstance) target;
+                        if (trg.isCursedWeaponEquipped())
+                        {
+                            continue;
+                        }
+                        // Avoiding block checker players get buffed from outside
+                        else if (trg.getBlockCheckerArena() != -1)
+                        {
+                            continue;
+                        }
+                    }
+                    else if (player != null && player.isCursedWeaponEquipped())
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            if (skill.isOffensive() || skill.isDebuff())
+            {
+                L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+                if (weaponInst != null)
+                {
+                    if (skill.isMagic())
+                    {
+                        ssMul = weaponInst.getChargedSpiritShot();
+                        if (skill.getId() != 1020) // vitalize
+                        {
+                            weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+                        }
+                    }
+                    else
+                    {
+                        ssMul = weaponInst.getChargedSoulShot();
+                        if (skill.getId() != 1020) // vitalize
+                        {
+                            weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+                        }
+                    }
+                }
+                // If there is no weapon equipped, check for an active summon.
+                else if (activeChar instanceof L2Summon)
+                {
+                    L2Summon activeSummon = (L2Summon) activeChar;
+                    if (skill.isMagic())
+                    {
+                        ssMul = activeSummon.getChargedSpiritShot();
+                        activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+                    }
+                    else
+                    {
+                        ssMul = activeSummon.getChargedSoulShot();
+                        activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+                    }
+                }
+                else if (activeChar instanceof L2Npc)
+                {
+                    if (skill.isMagic())
+                    {
+                        ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
+                                L2ItemInstance.CHARGED_NONE;
+                        ((L2Npc) activeChar)._soulshotcharged = false;
+                    }
+                    else
+                    {
+                        ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
+                                L2ItemInstance.CHARGED_NONE;
+                        ((L2Npc) activeChar)._spiritshotcharged = false;
+                    }
+                }
+
+                shld = Formulas.calcShldUse(activeChar, target, skill);
+                acted = true;//Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss);
+            }
+
+            if (acted)
+            {
+                if (skill.isToggle())
+                {
+                    L2Abnormal[] effects = target.getAllEffects();
+                    if (effects != null)
+                    {
+                        for (L2Abnormal e : effects)
+                        {
+                            if (e != null)
+                            {
+                                if (e.getSkill().getId() == skill.getId())
+                                {
+                                    e.exit();
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // if this is a debuff let the duel manager know about it
+                // so the debuff can be removed after the duel
+                // (player & target must be in the same duel)
+                L2Abnormal[] effects = skill.getEffects(activeChar, target, new Env(shld, ssMul));
+                if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill
+                        .getSkillType() == L2SkillType.BUFF) && player != null && player
+                        .getDuelId() == ((L2PcInstance) target).getDuelId())
+                {
+                    DuelManager dm = DuelManager.getInstance();
+                    for (L2Abnormal buff : effects)
+                    {
+                        if (buff != null)
+                        {
+                            dm.onBuff(((L2PcInstance) target), buff);
+                        }
+                    }
+                }
+                else
+                {
+                    if (target instanceof L2PcInstance && effects.length > 0 && effects[0].canBeStolen())
+                    {
+                        for (L2SummonInstance summon : ((L2PcInstance) target).getSummons())
+                        {
+                            skill.getEffects(activeChar, summon, new Env(shld, ssMul));
+                        }
+                    }
+                }
+
+                if (skill.getSkillType() == L2SkillType.AGGDEBUFF && effects.length > 0)
+                {
+                    if (target instanceof L2Attackable)
+                    {
+                        target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, (int) skill.getPower());
+                    }
+                    else if (target instanceof L2Playable)
+                    {
+                        if (target.getTarget() == activeChar)
+                        {
+                            target.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, activeChar);
+                        }
+                        else
+                        {
+                            target.setTarget(activeChar);
+                        }
+                    }
+                }
+
+                if (effects.length == 0)
+                {
+                    acted = false;
+                }
+            }
+            else
+            {
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
+            }
+
+            if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF && !acted)
+            {
+                activeChar.abortCast();
+            }
+
+            // Possibility of a lethal strike
+            Formulas.calcLethalHit(activeChar, target, skill);
+        }
+
+        // self Effect
+        if (skill.hasSelfEffects())
+        {
+            final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+            if (effect != null && effect.isSelfEffect())
+            {
+                //Replace old effect with new one.
+                effect.exit();
+            }
+            skill.getEffectsSelf(activeChar);
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

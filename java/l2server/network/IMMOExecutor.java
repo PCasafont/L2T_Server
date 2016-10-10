@@ -19,10 +19,10 @@
 package l2server.network;
 
 /**
- * @author KenM
  * @param <T>
+ * @author KenM
  */
 public interface IMMOExecutor<T extends MMOClient<?>>
 {
-	public void execute(ReceivablePacket<T> packet);
+    public void execute(ReceivablePacket<T> packet);
 }

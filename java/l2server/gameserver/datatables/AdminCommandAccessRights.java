@@ -31,90 +31,97 @@ import l2server.util.xml.XmlNode;
  */
 public class AdminCommandAccessRights
 {
-	/** The logger<br> */
-	
-	private Map<String, L2AdminCommandAccessRight> _adminCommandAccessRights;
-	
-	/**
-	 * Returns the one and only instance of this class<br><br>
-	 *
-	 * @return AdminCommandAccessRights: the one and only instance of this class<br>
-	 */
-	public static AdminCommandAccessRights getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	/** The access rights<br> */
-	private AdminCommandAccessRights()
-	{
-		loadAdminCommandAccessRights();
-	}
-	
-	/**
-	 * Loads admin command access rights from database<br>
-	 */
-	private void loadAdminCommandAccessRights()
-	{
-		_adminCommandAccessRights = new HashMap<String, L2AdminCommandAccessRight>();
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
-		
-		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("command"))
-					{
-						String adminCommand = d.getString("name");
-						String accessLevels = d.getString("accessLevels");
-						boolean confirm = d.getBool("configmDlg", false);
-						_adminCommandAccessRights.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
-					}
-				}
-			}
-		}
-		
-		Log.info("AdminCommandAccessRights: Loaded " + _adminCommandAccessRights.size() + " from xml.");
-	}
-	
-	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel)
-	{
-		if (accessLevel.getLevel() == AccessLevels._masterAccessLevelNum)
-			return true;
-		
-		L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(adminCommand);
-		
-		if (acar == null)
-		{
-			Log.info("AdminCommandAccessRights: No rights defined for admin command " + adminCommand + ".");
-			return false;
-		}
-		
-		return acar.hasAccess(accessLevel);
-	}
-	
-	public boolean requireConfirm(String command)
-	{
-		L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(command);
-		if (acar == null)
-		{
-			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
-			return false;
-		}
-		return _adminCommandAccessRights.get(command).getRequireConfirm();
-	}
-	
-	public void reloadAdminCommandAccessRights()
-	{
-		loadAdminCommandAccessRights();
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final AdminCommandAccessRights _instance = new AdminCommandAccessRights();
-	}
+    /**
+     * The logger<br>
+     */
+
+    private Map<String, L2AdminCommandAccessRight> _adminCommandAccessRights;
+
+    /**
+     * Returns the one and only instance of this class<br><br>
+     *
+     * @return AdminCommandAccessRights: the one and only instance of this class<br>
+     */
+    public static AdminCommandAccessRights getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    /**
+     * The access rights<br>
+     */
+    private AdminCommandAccessRights()
+    {
+        loadAdminCommandAccessRights();
+    }
+
+    /**
+     * Loads admin command access rights from database<br>
+     */
+    private void loadAdminCommandAccessRights()
+    {
+        _adminCommandAccessRights = new HashMap<String, L2AdminCommandAccessRight>();
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
+
+        XmlDocument doc = new XmlDocument(file);
+        for (XmlNode n : doc.getChildren())
+        {
+            if (n.getName().equalsIgnoreCase("list"))
+            {
+                for (XmlNode d : n.getChildren())
+                {
+                    if (d.getName().equalsIgnoreCase("command"))
+                    {
+                        String adminCommand = d.getString("name");
+                        String accessLevels = d.getString("accessLevels");
+                        boolean confirm = d.getBool("configmDlg", false);
+                        _adminCommandAccessRights
+                                .put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
+                    }
+                }
+            }
+        }
+
+        Log.info("AdminCommandAccessRights: Loaded " + _adminCommandAccessRights.size() + " from xml.");
+    }
+
+    public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel)
+    {
+        if (accessLevel.getLevel() == AccessLevels._masterAccessLevelNum)
+        {
+            return true;
+        }
+
+        L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(adminCommand);
+
+        if (acar == null)
+        {
+            Log.info("AdminCommandAccessRights: No rights defined for admin command " + adminCommand + ".");
+            return false;
+        }
+
+        return acar.hasAccess(accessLevel);
+    }
+
+    public boolean requireConfirm(String command)
+    {
+        L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(command);
+        if (acar == null)
+        {
+            Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
+            return false;
+        }
+        return _adminCommandAccessRights.get(command).getRequireConfirm();
+    }
+
+    public void reloadAdminCommandAccessRights()
+    {
+        loadAdminCommandAccessRights();
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final AdminCommandAccessRights _instance = new AdminCommandAccessRights();
+    }
 }

@@ -19,45 +19,46 @@ import java.util.Map;
 
 /**
  * Format: ch ddd [ddd]
- * @author  KenM
+ *
+ * @author KenM
  */
 public class ExGetBossRecord extends L2GameServerPacket
 {
-	private Map<Integer, Integer> _bossRecordInfo;
-	private int _ranking;
-	private int _totalPoints;
-	
-	public ExGetBossRecord(int ranking, int totalScore, Map<Integer, Integer> list)
-	{
-		_ranking = ranking;
-		_totalPoints = totalScore;
-		_bossRecordInfo = list;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_ranking);
-		writeD(_totalPoints);
-		if (_bossRecordInfo == null)
-		{
-			writeD(0x00);
-			writeD(0x00);
-			writeD(0x00);
-			writeD(0x00);
-		}
-		else
-		{
-			writeD(_bossRecordInfo.size()); //list size
-			for (int bossId : _bossRecordInfo.keySet())
-			{
-				writeD(bossId);
-				writeD(_bossRecordInfo.get(bossId));
-				writeD(0x00); //??
-			}
-		}
-	}
+    private Map<Integer, Integer> _bossRecordInfo;
+    private int _ranking;
+    private int _totalPoints;
+
+    public ExGetBossRecord(int ranking, int totalScore, Map<Integer, Integer> list)
+    {
+        _ranking = ranking;
+        _totalPoints = totalScore;
+        _bossRecordInfo = list;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_ranking);
+        writeD(_totalPoints);
+        if (_bossRecordInfo == null)
+        {
+            writeD(0x00);
+            writeD(0x00);
+            writeD(0x00);
+            writeD(0x00);
+        }
+        else
+        {
+            writeD(_bossRecordInfo.size()); //list size
+            for (int bossId : _bossRecordInfo.keySet())
+            {
+                writeD(bossId);
+                writeD(_bossRecordInfo.get(bossId));
+                writeD(0x00); //??
+            }
+        }
+    }
 }

@@ -1,6 +1,8 @@
 <list>
-	<shuttle id="3">
-		<stop x="17728" y="114176" z="-3502" time="15" doorId="0" outerDoorId="20210004" oustX="17320" oustY="114198" oustZ="-3442" />
-		<stop x="17728" y="114176" z="-11712" time="15" doorId="1" outerDoorId="20210005" oustX="17722" oustY="114571" oustZ="-11655" />
-	</shuttle>
+    <shuttle id="3">
+        <stop x="17728" y="114176" z="-3502" time="15" doorId="0" outerDoorId="20210004" oustX="17320" oustY="114198"
+              oustZ="-3442" />
+        <stop x="17728" y="114176" z="-11712" time="15" doorId="1" outerDoorId="20210005" oustX="17722" oustY="114571"
+              oustZ="-11655" />
+    </shuttle>
 </list>

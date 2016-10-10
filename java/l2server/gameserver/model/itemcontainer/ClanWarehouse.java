@@ -23,47 +23,49 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public final class ClanWarehouse extends Warehouse
 {
-	private L2Clan _clan;
-	
-	public ClanWarehouse(L2Clan clan)
-	{
-		_clan = clan;
-	}
-	
-	@Override
-	public String getName()
-	{
-		return "ClanWarehouse";
-	}
-	
-	@Override
-	public int getOwnerId()
-	{
-		return _clan.getLeaderId();
-	}
-	
-	@Override
-	public L2PcInstance getOwner()
-	{
-		return _clan.getLeader() != null ? _clan.getLeader().getPlayerInstance() : null;
-	}
-	
-	@Override
-	public ItemLocation getBaseLocation()
-	{
-		return ItemLocation.CLANWH;
-	}
-	
-	@Override
-	public boolean validateCapacity(long slots)
-	{
-		return _items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
-	}
-	
-	public void updateItemsOwnerId()
-	{
-		int newOwnerId = getOwnerId();
-		for (L2ItemInstance item : _items.values())
-			item.setOwnerId(newOwnerId);
-	}
+    private L2Clan _clan;
+
+    public ClanWarehouse(L2Clan clan)
+    {
+        _clan = clan;
+    }
+
+    @Override
+    public String getName()
+    {
+        return "ClanWarehouse";
+    }
+
+    @Override
+    public int getOwnerId()
+    {
+        return _clan.getLeaderId();
+    }
+
+    @Override
+    public L2PcInstance getOwner()
+    {
+        return _clan.getLeader() != null ? _clan.getLeader().getPlayerInstance() : null;
+    }
+
+    @Override
+    public ItemLocation getBaseLocation()
+    {
+        return ItemLocation.CLANWH;
+    }
+
+    @Override
+    public boolean validateCapacity(long slots)
+    {
+        return _items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
+    }
+
+    public void updateItemsOwnerId()
+    {
+        int newOwnerId = getOwnerId();
+        for (L2ItemInstance item : _items.values())
+        {
+            item.setOwnerId(newOwnerId);
+        }
+    }
 }

@@ -24,47 +24,53 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionLogicNot extends Condition
 {
-	
-	private Condition _condition;
-	
-	/**
-	 * Instantiates a new condition logic not.
-	 *
-	 * @param condition the condition
-	 */
-	public ConditionLogicNot(Condition condition)
-	{
-		_condition = condition;
-		if (getListener() != null)
-			_condition.setListener(this);
-	}
-	
-	/**
-	 * Sets the listener.
-	 *
-	 * @param listener the new listener
-	 * @see l2server.gameserver.stats.conditions.Condition#setListener(l2server.gameserver.stats.conditions.ConditionListener)
-	 */
-	@Override
-	void setListener(ConditionListener listener)
-	{
-		if (listener != null)
-			_condition.setListener(this);
-		else
-			_condition.setListener(null);
-		super.setListener(listener);
-	}
-	
-	/**
-	 * Test impl.
-	 *
-	 * @param env the env
-	 * @return true, if successful
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		return !_condition.test(env);
-	}
+
+    private Condition _condition;
+
+    /**
+     * Instantiates a new condition logic not.
+     *
+     * @param condition the condition
+     */
+    public ConditionLogicNot(Condition condition)
+    {
+        _condition = condition;
+        if (getListener() != null)
+        {
+            _condition.setListener(this);
+        }
+    }
+
+    /**
+     * Sets the listener.
+     *
+     * @param listener the new listener
+     * @see l2server.gameserver.stats.conditions.Condition#setListener(l2server.gameserver.stats.conditions.ConditionListener)
+     */
+    @Override
+    void setListener(ConditionListener listener)
+    {
+        if (listener != null)
+        {
+            _condition.setListener(this);
+        }
+        else
+        {
+            _condition.setListener(null);
+        }
+        super.setListener(listener);
+    }
+
+    /**
+     * Test impl.
+     *
+     * @param env the env
+     * @return true, if successful
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        return !_condition.test(env);
+    }
 }

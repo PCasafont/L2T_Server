@@ -1,710 +1,906 @@
 <list>
-	<npc id="31001" name="Claudia Athebaldt" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="22.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="mage" skillChance="100" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31002" name="Reorin" title="Maestro" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="16.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31003" name="Here I Come" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0" collisionHeight="16.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31004" name="Half Moon Love" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="15.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31005" name="Everlasting" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="5.0" collisionHeight="19.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="2" /> <!-- Magic Creatures -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31006" name="Dark Side of the Moon" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="9" /> <!-- Demons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31007" name="Wind Rider" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="11.0" collisionHeight="18.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31008" name="Shooting Star" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="13.0" collisionHeight="17.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31009" name="Cyclone Thunder" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="13.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="4" /> <!-- Animals -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31010" name="Hungry Baby" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0" collisionHeight="10.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31011" name="Salty Dog" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="24.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="13.0" collisionHeight="11.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="4" /> <!-- Animals -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31012" name="Raging Revolution" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="15.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31013" name="Valentine Blue" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="11.0" collisionHeight="16.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31014" name="Light My Fire" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="6.0" collisionHeight="13.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="2" /> <!-- Magic Creatures -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31015" name="Red Bullet" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="18.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5" collisionHeight="10.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="4" /> <!-- Animals -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31016" name="Shining Silver" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="110.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="5.0" collisionHeight="4.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="4" /> <!-- Animals -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31017" name="Over the Top" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="8.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="12" /> <!-- Bugs -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31018" name="Royal Straight" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5" collisionHeight="8.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="2" /> <!-- Magic Creatures -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31019" name="All Seven" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="6" /> <!-- Humanoids -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31020" name="Nasty Green" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0" collisionHeight="20.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="13" /> <!-- Fairies -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31021" name="Shortcut" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="16.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="6" /> <!-- Humanoids -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31022" name="Typhoon Tiger" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="12" /> <!-- Bugs -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31023" name="Red Hot" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="64.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="16.0" collisionHeight="6.800000190734863">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="7" /> <!-- Spirits -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31024" name="Galaxy Express" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0" collisionHeight="14.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="3" /> <!-- Beast -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31025" name="Best Condition" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0" collisionHeight="17.799999237060547">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="5" /> <!-- Plants -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31026" name="Albatross" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="21.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="6" /> <!-- Humanoids -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31027" name="Coffer of the Dead" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31028" name="Chest of Kernon" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31029" name="Chest of Golkonda" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31030" name="Hallate's Chest" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31031" name="Broadcasting Tower" level="70" type="L2Observation" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="35.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31032" name="Guard" level="80" type="L2Guard" baseAtkRange="1100" baseHpMax="3290.113" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754" baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="275" collisionRadius="8.0" collisionHeight="24.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-		<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-		<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-		<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31033" name="Sentinel" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754" baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="276" collisionRadius="8.0" collisionHeight="23.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="15" /> <!-- Elves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-		<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-		<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-		<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31034" name="Sentry" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754" baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="277" collisionRadius="7.0" collisionHeight="25.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="16" /> <!-- Dark Elves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-		<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-		<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-		<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31035" name="Defender" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754" baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="275" collisionRadius="8.0" collisionHeight="19.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-		<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-		<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-		<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31036" name="Centurion" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754" baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="35.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="273" collisionRadius="8.0" collisionHeight="27.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="17" /> <!-- Orcs -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-		<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-		<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-		<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31042" name="Kantabilon" title="Melody Maestro" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31043" name="Octavia" title="Melody Maestro" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="18.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31044" name="Galman" title="Trader of the Valley" level="70" type="L2Merchant" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="16.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31045" name="Kitzka" title="Trader of the Valley" level="70" type="L2Merchant" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="18" /> <!-- Dwarves -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31046" name="Marsden" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31047" name="Kell" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31048" name="McDermott" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31049" name="Pepper" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31050" name="Thora" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31051" name="Keach" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31052" name="Heid" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31053" name="Kidder" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="36.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="mage" skillChance="100" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31067" name="Rood" title="Pet Manager" level="70" type="L2PetManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="63.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="fighter" skillChance="15" clanRange="300" />
-		<skill id="4416" level="14" /> <!-- Humans -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="31074" name="Corpse of Hutaku" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="22.0" collisionHeight="23.5">
-		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
-		<ai type="corpse" skillChance="15" clanRange="300" />
-		<skill id="4416" level="17" /> <!-- Orcs -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="3" /> <!-- One-handed Sword -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
+    <npc id="31001" name="Claudia Athebaldt" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0"
+         collisionHeight="22.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="mage" skillChance="100" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31002" name="Reorin" title="Maestro" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="16.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31003" name="Here I Come" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0"
+         collisionHeight="16.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31004" name="Half Moon Love" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="15.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31005" name="Everlasting" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="5.0"
+         collisionHeight="19.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31006" name="Dark Side of the Moon" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31007" name="Wind Rider" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="11.0"
+         collisionHeight="18.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31008" name="Shooting Star" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="13.0"
+         collisionHeight="17.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31009" name="Cyclone Thunder" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="13.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31010" name="Hungry Baby" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0"
+         collisionHeight="10.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31011" name="Salty Dog" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5"
+         baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637"
+         baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4"
+         baseWalkSpd="24.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="13.0" collisionHeight="11.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31012" name="Raging Revolution" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="15.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31013" name="Valentine Blue" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="11.0"
+         collisionHeight="16.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31014" name="Light My Fire" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="6.0"
+         collisionHeight="13.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31015" name="Red Bullet" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="18.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5"
+         collisionHeight="10.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31016" name="Shining Silver" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="110.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="5.0"
+         collisionHeight="4.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31017" name="Over the Top" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0"
+         collisionHeight="8.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="12" /> <!-- Bugs -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31018" name="Royal Straight" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5"
+         collisionHeight="8.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31019" name="All Seven" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5"
+         baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637"
+         baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4"
+         baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31020" name="Nasty Green" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0"
+         collisionHeight="20.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="13" /> <!-- Fairies -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31021" name="Shortcut" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5"
+         baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637"
+         baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4"
+         baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="16.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31022" name="Typhoon Tiger" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="24.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="12" /> <!-- Bugs -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31023" name="Red Hot" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5"
+         baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637"
+         baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4"
+         baseWalkSpd="64.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="16.0"
+         collisionHeight="6.800000190734863">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31024" name="Galaxy Express" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0"
+         collisionHeight="14.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31025" name="Best Condition" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="14.0"
+         collisionHeight="17.799999237060547">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="5" /> <!-- Plants -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31026" name="Albatross" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5"
+         baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637"
+         baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4"
+         baseWalkSpd="45.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="21.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31027" name="Coffer of the Dead" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0"
+         collisionHeight="9.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31028" name="Chest of Kernon" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0"
+         collisionHeight="9.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31029" name="Chest of Golkonda" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0"
+         collisionHeight="9.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31030" name="Hallate's Chest" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0"
+         collisionHeight="9.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31031" name="Broadcasting Tower" level="70" type="L2Observation" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="35.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4390" level="1" /> <!-- Mystic Immunity -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31032" name="Guard" level="80" type="L2Guard" baseAtkRange="1100" baseHpMax="3290.113" baseHpReg="8.5"
+         baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754"
+         baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8"
+         baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="275" collisionRadius="8.0"
+         collisionHeight="24.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+        <skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+        <skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+        <skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="9" /> <!-- Bow -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31033" name="Sentinel" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5"
+         baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754"
+         baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8"
+         baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="276" collisionRadius="8.0"
+         collisionHeight="23.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="15" /> <!-- Elves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+        <skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+        <skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+        <skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="9" /> <!-- Bow -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31034" name="Sentry" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5"
+         baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754"
+         baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8"
+         baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="277" collisionRadius="7.0"
+         collisionHeight="25.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="16" /> <!-- Dark Elves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+        <skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+        <skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+        <skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="9" /> <!-- Bow -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31035" name="Defender" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5"
+         baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754"
+         baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8"
+         baseWalkSpd="50.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="275" collisionRadius="8.0"
+         collisionHeight="19.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+        <skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+        <skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+        <skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="9" /> <!-- Bow -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31036" name="Centurion" level="99" type="L2Guard" baseAtkRange="1100" baseHpMax="54282.227" baseHpReg="8.5"
+         baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="970.53754"
+         baseMAtk="662.75134" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="8"
+         baseWalkSpd="35.0" baseRunSpd="160.0" aggressive="true" aggroRange="300" rHand="273" collisionRadius="8.0"
+         collisionHeight="27.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="17" /> <!-- Orcs -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+        <skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+        <skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+        <skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="9" /> <!-- Bow -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31042" name="Kantabilon" title="Melody Maestro" level="70" type="L2Npc" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="17.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31043" name="Octavia" title="Melody Maestro" level="70" type="L2Npc" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0"
+         collisionHeight="18.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31044" name="Galman" title="Trader of the Valley" level="70" type="L2Merchant" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="16.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31045" name="Kitzka" title="Trader of the Valley" level="70" type="L2Merchant" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="17.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="18" /> <!-- Dwarves -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31046" name="Marsden" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31047" name="Kell" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31048" name="McDermott" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31049" name="Pepper" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31050" name="Thora" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31051" name="Keach" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31052" name="Heid" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.0">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31053" name="Kidder" title="Symbol Maker" level="70" type="L2SymbolMaker" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="36.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="mage" skillChance="100" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31067" name="Rood" title="Pet Manager" level="70" type="L2PetManager" baseAtkRange="40"
+         baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28"
+         WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847"
+         basePAtkSpd="253" baseCritRate="4" baseWalkSpd="63.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0"
+         collisionHeight="23.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="fighter" skillChance="15" clanRange="300" />
+        <skill id="4416" level="14" /> <!-- Humans -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="31074" name="Corpse of Hutaku" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683"
+         baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
+         basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253"
+         baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="22.0"
+         collisionHeight="23.5">
+        <elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+        <ai type="corpse" skillChance="15" clanRange="300" />
+        <skill id="4416" level="17" /> <!-- Orcs -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
 </list>

@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="1" id="34883" /> <!-- Bottle of Istina's Soul -->
-		<ingredient count="1" id="19455" /> <!-- Istina's Bracelet -->
-		<production count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19451" /> <!-- Istina's Ring -->
-		<production count="1" id="37510" /> <!-- Enhanced Istina's Ring - Warrior -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19452" /> <!-- Istina's Earring -->
-		<production count="1" id="37511" /> <!-- Enhanced Istina's Earring - Warrior -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19453" /> <!-- Istina's Necklace -->
-		<production count="1" id="37512" /> <!-- Enhanced Istina's Necklace - Warrior -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19451" /> <!-- Istina's Ring -->
-		<production count="1" id="37516" /> <!-- Enhanced Istina's Ring - Wizard -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19452" /> <!-- Istina's Earring -->
-		<production count="1" id="37517" /> <!-- Enhanced Istina's Earring - Wizard -->
-	</item>
-	<item>
-		<ingredient count="10" id="37506" /> <!-- Istina Crystal -->
-		<ingredient count="1" id="19453" /> <!-- Istina's Necklace -->
-		<production count="1" id="37518" /> <!-- Enhanced Istina's Necklace - Wizard -->
-	</item>
+    <item>
+        <ingredient count="1" id="34883" /> <!-- Bottle of Istina's Soul -->
+        <ingredient count="1" id="19455" /> <!-- Istina's Bracelet -->
+        <production count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19451" /> <!-- Istina's Ring -->
+        <production count="1" id="37510" /> <!-- Enhanced Istina's Ring - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19452" /> <!-- Istina's Earring -->
+        <production count="1" id="37511" /> <!-- Enhanced Istina's Earring - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19453" /> <!-- Istina's Necklace -->
+        <production count="1" id="37512" /> <!-- Enhanced Istina's Necklace - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19451" /> <!-- Istina's Ring -->
+        <production count="1" id="37516" /> <!-- Enhanced Istina's Ring - Wizard -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19452" /> <!-- Istina's Earring -->
+        <production count="1" id="37517" /> <!-- Enhanced Istina's Earring - Wizard -->
+    </item>
+    <item>
+        <ingredient count="10" id="37506" /> <!-- Istina Crystal -->
+        <ingredient count="1" id="19453" /> <!-- Istina's Necklace -->
+        <production count="1" id="37518" /> <!-- Enhanced Istina's Necklace - Wizard -->
+    </item>
 </list>

@@ -17,14 +17,14 @@ package l2server.gameserver.network.serverpackets;
 
 public class TradeOtherDone extends L2GameServerPacket
 {
-	
-	public TradeOtherDone()
-	{
-		// trigger packet
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    public TradeOtherDone()
+    {
+        // trigger packet
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

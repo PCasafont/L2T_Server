@@ -1,1368 +1,1368 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!--
-		Event Item
-		Temporarily increases Recovery Rate. Effect 1.
-	-->
-	<item id="20000" type="EtcItem" name="Spicy Kimchi">
-		<set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22000-1" />
-	</item>
-	<!--
-		Event Item
-		Temporarily increases Recovery Rate and power. Effect 2.
-	-->
-	<item id="20001" type="EtcItem" name="Spicy Kimchi">
-		<set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22001-1" />
-	</item>
-	<!--
-		Event Item
-		Temporarily increases Recovery Rate, power and power Speed. Effect 3.
-	-->
-	<item id="20002" type="EtcItem" name="Spicy Kimchi">
-		<set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22002-1" />
-	</item>
-	<!--
-		Event Item
-		Magically multiplies the effect of Spicy Kimchi by 5.
-	-->
-	<item id="20003" type="EtcItem" name="Sweet-and-Sour White Kimchi">
-		<set name="icon" val="BranchSys.icon.etc_kimchi_time_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22003-1" />
-	</item>
-	<!--
-		Event item
-		Recovers Vitality upon acquiring XP Vitality item with limited usage.
-	-->
-	<item id="20004" type="EtcItem" name="Vitality Ginseng">
-		<set name="icon" val="BranchSys.icon.etc_ginseng_recovery_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22004-1" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!--
-		Event item
-		Magic Red Ginseng that replenishes some Vitality. Vitality item with limited usage.
-	-->
-	<item id="20005" type="EtcItem" name="Vitality Red Ginseng">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22005-1" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- Can summon Majo when equipped. -->
-	<item id="20006" type="Armor" name="Agathion - Majo">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21000-1;23000-1" />
-	</item>
-	<!-- Can summon Gold Majo when equipped. -->
-	<item id="20007" type="Armor" name="Agathion - Gold Majo">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21001-1;23001-1" />
-	</item>
-	<!-- Can summon Black Majo when equipped. -->
-	<item id="20008" type="Armor" name="Agathion - Black Majo">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21002-1;23002-1" />
-	</item>
-	<!-- Can summon Majo when equipped. -->
-	<item id="20009" type="Armor" name="Agathion - Majo - Big Head (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21000-1;23000-1;23000-1;23004-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can summon Gold Majo when equipped. -->
-	<item id="20010" type="Armor" name="Agathion - Gold Majo - Resurrection (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21001-1;23001-1;23001-1;23005-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can summon Black Majo when equipped. -->
-	<item id="20011" type="Armor" name="Agathion - Black Majo - Escape (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21002-1;23002-1;23002-1;23006-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can summon Plaipitak when equipped. -->
-	<item id="20012" type="Armor" name="Agathion - Plaipitak">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1" />
-	</item>
-	<!-- Can summon Plaipitak when equipped. -->
-	<item id="20013" type="Armor" name="Agathion - Plaipitak - Big Head (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23007-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can summon Plaipitak when equipped. -->
-	<item id="20014" type="Armor" name="Agathion - Plaipitak - Resurrection (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23009-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can summon Plaipitak when equipped. -->
-	<item id="20015" type="Armor" name="Agathion - Plaipitak - Escape (30-day)">
-		<set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21003-1;23003-1;23008-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Magic lenses possess mysterious power. -->
-	<item id="20016" type="Armor" name="Horn-rimmed Glasses - Agility">
-		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21005-3" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Afro style hair. Uses 2 hair accessory slots. -->
-	<item id="20017" type="Armor" name="Afro Hair">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Afro style hair. Uses 2 hair accessory slots. -->
-	<item id="20018" type="Armor" name="Afro Hair - Big Head, Firework">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21006-1;21007-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Afro style hair. Uses 2 hair accessory slots. -->
-	<item id="20019" type="Armor" name="Afro Hair - Wind Walk">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21004-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Stylish uniform hat. Uses 2 hair accessory slots. -->
-	<item id="20020" type="Armor" name="Uniform Hat">
-		<set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wide-brimmed hat fashioned out of bamboo. Uses 2 hair accessory slots. -->
-	<item id="20021" type="Armor" name="Assassin's Bamboo Hat">
-		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Mask worn by a savage tribe. -->
-	<item id="20022" type="Armor" name="Ruthless Tribe Mask">
-		<set name="icon" val="BranchSys.icon.br_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory. Exclusive for female characters. -->
-	<item id="20023" type="Armor" name="Ribbon Hairband">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Shades your eyes in style. Exclusive for male characters. -->
-	<item id="20024" type="Armor" name="Visor">
-		<set name="icon" val="BranchSys.icon.br_Eye_Visor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<cond msgId="1518">
-			<player sex="0" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- This consumable item allows you to magically transport yourself to a specific location. -->
-	<item id="20025" type="EtcItem" name="My Teleport Scroll">
-		<set name="icon" val="icon.bookmark_scroll_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- Extra entrance pass that lets you enter Kamaloka (Hall of the Abyss). Can cancel the limit on entrance if used while a limit on entrance to the Hall of the Abyss exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
-	<item id="20026" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss)">
-		<set name="icon" val="icon.ticket_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22019-1" />
-	</item>
-	<!-- Extra entrance pass that lets you enter Near Kamaloka. Can cancel the limit on entrance if used while a limit on entrance to Near Kamaloka exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
-	<item id="20027" type="EtcItem" name="Extra Pass: Near Kamaloka">
-		<set name="icon" val="icon.ticket_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22020-1" />
-	</item>
-	<!-- Extra entrance pass that lets you enter Kamaloka (Labyrinth of the Abyss). Can cancel the limit on entrance if used while a limit on entrance to the Labyrinth of the Abyss exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
-	<item id="20028" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss)">
-		<set name="icon" val="icon.ticket_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="22021-1" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. -->
-	<item id="20029" type="Armor" name="Mount - Darkmane Pacer">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="619-1" />
-		<set name="item_skill" val="8247-1" />
-	</item>
-	<!-- Can mount a Darkmane Pacer when equipped. 30-day. -->
-	<item id="20030" type="Armor" name="Mount - Darkmane Pacer - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="619-1" />
-		<set name="item_skill" val="8247-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Hat that looks like Kat the Cat. Uses 2 hair accessory slots. -->
-	<item id="20031" type="Armor" name="Kat the Cat Hat">
-		<set name="icon" val="icon.accessory_cat_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like a skull. Uses 2 hair accessory slots. -->
-	<item id="20032" type="Armor" name="Skull Hat">
-		<set name="icon" val="icon.accessory_skeleton_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!--
-		Dimensional Item
-		Item consumed when saving a new My Teleport location. Can be shared within an account through the Dimensional Merchant.
-	-->
-	<item id="20033" type="EtcItem" name="My Teleport Flag">
-		<set name="icon" val="BranchSys.icon.br_flag_of_bookmark_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-	</item>
-	<!-- Tasty candy that replenishes your Vitality to a certain degree. Cooldown is 60 min. Vitality item with limited usage. -->
-	<item id="20034" type="EtcItem" name="Revita-Pop (Event)">
-		<set name="icon" val="BranchSys.br_hallowinday_candy_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="potion" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22006-1" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Majo. -->
-	<item id="20035" type="EtcItem" name="Agathion - Majo Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20006,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Gold Majo. -->
-	<item id="20036" type="EtcItem" name="Agathion - Gold Majo Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20007,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Black Majo. -->
-	<item id="20037" type="EtcItem" name="Agathion - Black Majo Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20008,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Majo usable for up to 30 days. -->
-	<item id="20038" type="EtcItem" name="Agathion - Majo Pack (30-day) - Big Head">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20009,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Gold Majo usable for up to 30 days. -->
-	<item id="20039" type="EtcItem" name="Agathion - Gold Majo Pack (30-day) - Resurrection">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20010,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Black Majo usable for up to 30 days. -->
-	<item id="20040" type="EtcItem" name="Agathion - Black Majo Pack (30-day) - Escape">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20011,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Plaipitak. -->
-	<item id="20041" type="EtcItem" name="Agathion - Plaipitak Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20012,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
-	<item id="20042" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Big Head">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20013,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
-	<item id="20043" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Resurrection">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20014,1,1,100" />
-	</item>
-	<!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
-	<item id="20044" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Escape">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20015,1,1,100" />
-	</item>
-	<!-- Contains a pair of Horn-rimmed Glasses. -->
-	<item id="20045" type="EtcItem" name="Horn-rimmed Glasses Pack - Agility">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20016,1,1,100" />
-	</item>
-	<!-- Contains an Afro Hair wig. -->
-	<item id="20046" type="EtcItem" name="Afro Hair Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20017,1,1,100" />
-	</item>
-	<!-- Contains an Afro Hair wig. -->
-	<item id="20047" type="EtcItem" name="Afro Hair Pack - Big Head, Firework">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20018,1,1,100" />
-	</item>
-	<!-- Contains an Afro Hair wig. -->
-	<item id="20048" type="EtcItem" name="Afro Hair Pack - Wind Walk">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20019,1,1,100" />
-	</item>
-	<!-- Contains a fancy Uniform Hat. -->
-	<item id="20049" type="EtcItem" name="Uniform Hat Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20020,1,1,100" />
-	</item>
-	<!-- Contains an Assassin's Bamboo Hat. -->
-	<item id="20050" type="EtcItem" name="Assassin's Bamboo Hat Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20021,1,1,100" />
-	</item>
-	<!-- Contains a Ruthless Tribe Mask. -->
-	<item id="20051" type="EtcItem" name="Ruthless Tribe Mask Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20022,1,1,100" />
-	</item>
-	<!-- Contains an elegant Ribbon Hairband. Exclusive for female characters. -->
-	<item id="20052" type="EtcItem" name="Ribbon Hairband Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20023,1,1,100" />
-	</item>
-	<!-- Contains a rakish Visor. Exclusive for male characters. -->
-	<item id="20053" type="EtcItem" name="Visor Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20024,1,1,100" />
-	</item>
-	<!-- Contains a My Teleport Scroll. -->
-	<item id="20054" type="EtcItem" name="My Teleport Scroll Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20025,1,1,100" />
-	</item>
-	<!-- Contains an extra entrance pass that allows you to enter Kamaloka (Hall of the Abyss). -->
-	<item id="20055" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20026,1,1,100" />
-	</item>
-	<!-- Contains an extra entrance pass that allows you to enter Near Kamaloka. -->
-	<item id="20056" type="EtcItem" name="Extra Pass: Near Kamaloka Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20027,1,1,100" />
-	</item>
-	<!-- Contains an extra entrance pass that allows you to enter Kamaloka (Labyrinth of the Abyss). -->
-	<item id="20057" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20028,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
-	<item id="20058" type="EtcItem" name="Mount - Darkmane Pacer Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20029,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
-	<item id="20059" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20030,1,1,100" />
-	</item>
-	<!-- Contains a Kat the Cat Hat. -->
-	<item id="20060" type="EtcItem" name="Kat the Cat Hat Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20031,1,1,100" />
-	</item>
-	<!-- Contains a Skull Hat. -->
-	<item id="20061" type="EtcItem" name="Skull Hat Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20032,1,1,100" />
-	</item>
-	<!-- Contains a My Teleport Flag. -->
-	<item id="20062" type="EtcItem" name="My Teleport Flag Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20033,1,1,100" />
-	</item>
-	<!-- Bracelet that summons the Baby Panda. -->
-	<item id="20063" type="Armor" name="Agathion - Baby Panda">
-		<set name="icon" val="BranchSys.icon.br_baby_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21008-1;23010-1" />
-	</item>
-	<!-- Bracelet that summons a Bamboo Panda. -->
-	<item id="20064" type="Armor" name="Agathion - Bamboo Panda">
-		<set name="icon" val="BranchSys.icon.br_kunfu_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21009-1;23011-1" />
-	</item>
-	<!-- Bracelet that summons the Sexy Panda. -->
-	<item id="20065" type="Armor" name="Agathion - Sexy Panda">
-		<set name="icon" val="BranchSys.icon.br_sexy_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21010-1;23012-1" />
-	</item>
-	<!-- Bracelet that summons the Baby Panda. -->
-	<item id="20066" type="Armor" name="Agathion - Baby Panda - Big Head (15-day)">
-		<set name="icon" val="BranchSys.icon.br_baby_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21008-1;23013-1" />
-		<set name="time" val="21600" />
-	</item>
-	<!-- Bracelet that summons a Bamboo Panda. -->
-	<item id="20067" type="Armor" name="Agathion - Bamboo Panda - Resurrection (15-day)">
-		<set name="icon" val="BranchSys.icon.br_kunfu_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21009-1;23014-1" />
-		<set name="time" val="21600" />
-	</item>
-	<!-- Bracelet that summons the Sexy Panda. -->
-	<item id="20068" type="Armor" name="Agathion - Sexy Panda - Escape (15-day)">
-		<set name="icon" val="BranchSys.icon.br_sexy_panda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21010-1;23015-1" />
-		<set name="time" val="21600" />
-	</item>
-	<!-- Wrapped Pack containing Baby Panda. -->
-	<item id="20069" type="EtcItem" name="Agathion - Baby Panda Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20063,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Bamboo Panda. -->
-	<item id="20070" type="EtcItem" name="Agathion - Bamboo Panda Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20064,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Sexy Panda. -->
-	<item id="20071" type="EtcItem" name="Agathion - Sexy Pandan Pack">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20065,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Baby Panda (15-day). -->
-	<item id="20072" type="EtcItem" name="Agathion - Baby Panda Pack (15-day) - Big Head">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20066,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Bamboo Panda (15-day). -->
-	<item id="20073" type="EtcItem" name="Agathion - Bamboo Panda Pack (15-day) - Resurrection">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20067,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Sexy Pandan (15-day). -->
-	<item id="20074" type="EtcItem" name="Agathion - Sexy Panda Pack (15-day) - Escape">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20068,1,1,100" />
-	</item>
-	<!-- Gift of joy. -->
-	<item id="20075" type="EtcItem" name="Santa's Gift - Joy - 4-hour">
-		<set name="icon" val="BranchSys.icon.br_xmas_present_joy_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22011-1" />
-		<set name="time" val="240" />
-	</item>
-	<!-- Gift of enjoyment. -->
-	<item id="20076" type="EtcItem" name="Santa's Gift - Enjoyment - 4-hour">
-		<set name="icon" val="BranchSys.icon.br_xmas_present_fun_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22012-1" />
-		<set name="time" val="240" />
-	</item>
-	<!-- Gift of luck. -->
-	<item id="20077" type="EtcItem" name="Santa's Gift - Luck - 4-hour">
-		<set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22017-1" />
-		<set name="time" val="240" />
-	</item>
-	<!-- Gift of luck. -->
-	<item id="20078" type="EtcItem" name="Santa's Gift - Luck - 4-hour">
-		<set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22018-1" />
-		<set name="time" val="240" />
-	</item>
-	<!-- Wrapped Pack containing Good Luck Bag. -->
-	<item id="20079" type="EtcItem" name="Good Luck Bag Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20081,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Lucky Four-leaf Pack. -->
-	<item id="20080" type="EtcItem" name="Lucky Four-leaf Clover Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20082,1,1,100" />
-	</item>
-	<!-- Lucky Bag filled with good luck. If you use it, you can acquire a hair accessory that has the Vitality recovery capability. -->
-	<item id="20081" type="EtcItem" name="Good Luck Bag">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22007-1" />
-	</item>
-	<!-- A Lucky Four-leaf Clover. Gives a random Vitality-imbued hair accessory. -->
-	<item id="20082" type="EtcItem" name="Lucky Four-leaf Clover">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22008-1" />
-		<set name="is_vitality" val="true" />
-	</item>
-	<!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
-	<item id="20083" type="Armor" name="Afro Hair - Vitality (3-hour)">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21011-1" />
-		<set name="time" val="180" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
-	<item id="20084" type="Armor" name="Afro Hair - Vitality (3-day)">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21011-1" />
-		<set name="time" val="4320" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
-	<item id="20085" type="Armor" name="Afro Hair - Vitality (30-day)">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21011-1" />
-		<set name="time" val="43200" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20086" type="Armor" name="Horn-rimmed Glasses - Vitality (3-hour)">
-		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21012-1" />
-		<set name="time" val="180" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20087" type="Armor" name="Horn-rimmed Glasses - Vitality (3-day)">
-		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21012-1" />
-		<set name="time" val="4320" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20088" type="Armor" name="Horn-rimmed Glasses - Vitality (30-day)">
-		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21012-1" />
-		<set name="time" val="43200" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20089" type="Armor" name="Assassin's Bamboo Hat - Vitality (3-hour)">
-		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21013-1" />
-		<set name="time" val="180" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20090" type="Armor" name="Assassin's Bamboo Hat - Vitality (3-day)">
-		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21013-1" />
-		<set name="time" val="4320" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
-	<item id="20091" type="Armor" name="Assassin's Bamboo Hat - Vitality (30-day)">
-		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21013-1" />
-		<set name="time" val="43200" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- This gift-wrapped pack contains the true spirit of the holiday season. -->
-	<item id="20092" type="EtcItem" name="Holiday Spirit Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20093,1,1,100" />
-	</item>
-	<!-- This provides you with a chance to acquire an Agathion - Rudolph, which Has Vitality Recovery Capability. -->
-	<item id="20093" type="EtcItem" name="Holiday Miracle">
-		<set name="icon" val="BranchSys.icon.br_xmas_miracle_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22009-1" />
-	</item>
-	<!-- Allows you to summon a cute Rudolph Agathion. Can only be used once every 12 hours. Vitality item with limited usage. -->
-	<item id="20094" type="Armor" name="Agathion - Rudolph - Vitality (30-day)">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;3425-1;5537-1;23016-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- This festive hat can put anyone into a the holiday spirit. -->
-	<item id="20095" type="Armor" name="Santa's Antlers">
-		<set name="icon" val="icon.accessory_santas_antler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- This gift-wrapped pack contains a Mysterious Formal Wear. -->
-	<item id="20096" type="EtcItem" name="Mysterious Formal Wear (Event) Pack">
-		<set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="capsuled_items" val="20097,1,1,100" />
-	</item>
-	<!-- Use this to acquire the Formal Wear. -->
-	<item id="20097" type="EtcItem" name="Mysterious Formal Wear (Event)">
-		<set name="icon" val="BranchSys.icon.br_mysterious_wedding_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="item_skill" val="22010-1" />
-	</item>
-	<!-- When donned, this magical garment transforms into a dashing tuxedo for men or a lovely wedding dress for ladies. -->
-	<item id="20098" type="Armor" name="Formal Wear (Event) - Shadow (1-hour)">
-		<set name="icon" val="icon.armor_t2000_ul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="alldress" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- When donned, this magical garment transforms into a dashing tuxedo for men or a lovely wedding dress for ladies. -->
-	<item id="20099" type="Armor" name="Formal Wear (Event) - 7-day">
-		<set name="icon" val="icon.armor_t2000_ul_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="alldress" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="time" val="10080" />
-	</item>
+    <!--
+        Event Item
+        Temporarily increases Recovery Rate. Effect 1.
+    -->
+    <item id="20000" type="EtcItem" name="Spicy Kimchi">
+        <set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22000-1" />
+    </item>
+    <!--
+        Event Item
+        Temporarily increases Recovery Rate and power. Effect 2.
+    -->
+    <item id="20001" type="EtcItem" name="Spicy Kimchi">
+        <set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22001-1" />
+    </item>
+    <!--
+        Event Item
+        Temporarily increases Recovery Rate, power and power Speed. Effect 3.
+    -->
+    <item id="20002" type="EtcItem" name="Spicy Kimchi">
+        <set name="icon" val="BranchSys.icon.etc_kimchi_power_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22002-1" />
+    </item>
+    <!--
+        Event Item
+        Magically multiplies the effect of Spicy Kimchi by 5.
+    -->
+    <item id="20003" type="EtcItem" name="Sweet-and-Sour White Kimchi">
+        <set name="icon" val="BranchSys.icon.etc_kimchi_time_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22003-1" />
+    </item>
+    <!--
+        Event item
+        Recovers Vitality upon acquiring XP Vitality item with limited usage.
+    -->
+    <item id="20004" type="EtcItem" name="Vitality Ginseng">
+        <set name="icon" val="BranchSys.icon.etc_ginseng_recovery_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22004-1" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!--
+        Event item
+        Magic Red Ginseng that replenishes some Vitality. Vitality item with limited usage.
+    -->
+    <item id="20005" type="EtcItem" name="Vitality Red Ginseng">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22005-1" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- Can summon Majo when equipped. -->
+    <item id="20006" type="Armor" name="Agathion - Majo">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21000-1;23000-1" />
+    </item>
+    <!-- Can summon Gold Majo when equipped. -->
+    <item id="20007" type="Armor" name="Agathion - Gold Majo">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21001-1;23001-1" />
+    </item>
+    <!-- Can summon Black Majo when equipped. -->
+    <item id="20008" type="Armor" name="Agathion - Black Majo">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21002-1;23002-1" />
+    </item>
+    <!-- Can summon Majo when equipped. -->
+    <item id="20009" type="Armor" name="Agathion - Majo - Big Head (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21000-1;23000-1;23000-1;23004-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can summon Gold Majo when equipped. -->
+    <item id="20010" type="Armor" name="Agathion - Gold Majo - Resurrection (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21001-1;23001-1;23001-1;23005-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can summon Black Majo when equipped. -->
+    <item id="20011" type="Armor" name="Agathion - Black Majo - Escape (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_mazu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21002-1;23002-1;23002-1;23006-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can summon Plaipitak when equipped. -->
+    <item id="20012" type="Armor" name="Agathion - Plaipitak">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21003-1;23003-1" />
+    </item>
+    <!-- Can summon Plaipitak when equipped. -->
+    <item id="20013" type="Armor" name="Agathion - Plaipitak - Big Head (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21003-1;23003-1;23007-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can summon Plaipitak when equipped. -->
+    <item id="20014" type="Armor" name="Agathion - Plaipitak - Resurrection (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21003-1;23003-1;23009-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can summon Plaipitak when equipped. -->
+    <item id="20015" type="Armor" name="Agathion - Plaipitak - Escape (30-day)">
+        <set name="icon" val="BranchSys.icon.br_bracelet_aga_pitak_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21003-1;23003-1;23008-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Magic lenses possess mysterious power. -->
+    <item id="20016" type="Armor" name="Horn-rimmed Glasses - Agility">
+        <set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21005-3" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Afro style hair. Uses 2 hair accessory slots. -->
+    <item id="20017" type="Armor" name="Afro Hair">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Afro style hair. Uses 2 hair accessory slots. -->
+    <item id="20018" type="Armor" name="Afro Hair - Big Head, Firework">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21006-1;21007-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Afro style hair. Uses 2 hair accessory slots. -->
+    <item id="20019" type="Armor" name="Afro Hair - Wind Walk">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21004-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Stylish uniform hat. Uses 2 hair accessory slots. -->
+    <item id="20020" type="Armor" name="Uniform Hat">
+        <set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wide-brimmed hat fashioned out of bamboo. Uses 2 hair accessory slots. -->
+    <item id="20021" type="Armor" name="Assassin's Bamboo Hat">
+        <set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Mask worn by a savage tribe. -->
+    <item id="20022" type="Armor" name="Ruthless Tribe Mask">
+        <set name="icon" val="BranchSys.icon.br_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory. Exclusive for female characters. -->
+    <item id="20023" type="Armor" name="Ribbon Hairband">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <cond msgId="1518">
+            <player sex="1" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Shades your eyes in style. Exclusive for male characters. -->
+    <item id="20024" type="Armor" name="Visor">
+        <set name="icon" val="BranchSys.icon.br_Eye_Visor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <cond msgId="1518">
+            <player sex="0" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- This consumable item allows you to magically transport yourself to a specific location. -->
+    <item id="20025" type="EtcItem" name="My Teleport Scroll">
+        <set name="icon" val="icon.bookmark_scroll_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- Extra entrance pass that lets you enter Kamaloka (Hall of the Abyss). Can cancel the limit on entrance if used while a limit on entrance to the Hall of the Abyss exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
+    <item id="20026" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss)">
+        <set name="icon" val="icon.ticket_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22019-1" />
+    </item>
+    <!-- Extra entrance pass that lets you enter Near Kamaloka. Can cancel the limit on entrance if used while a limit on entrance to Near Kamaloka exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
+    <item id="20027" type="EtcItem" name="Extra Pass: Near Kamaloka">
+        <set name="icon" val="icon.ticket_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22020-1" />
+    </item>
+    <!-- Extra entrance pass that lets you enter Kamaloka (Labyrinth of the Abyss). Can cancel the limit on entrance if used while a limit on entrance to the Labyrinth of the Abyss exists. Can only be used once a day outside the instant zone. After use, the effect disappears at the corresponding instant dungeon's reset time. -->
+    <item id="20028" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss)">
+        <set name="icon" val="icon.ticket_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="22021-1" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. -->
+    <item id="20029" type="Armor" name="Mount - Darkmane Pacer">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="619-1" />
+        <set name="item_skill" val="8247-1" />
+    </item>
+    <!-- Can mount a Darkmane Pacer when equipped. 30-day. -->
+    <item id="20030" type="Armor" name="Mount - Darkmane Pacer - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="619-1" />
+        <set name="item_skill" val="8247-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Hat that looks like Kat the Cat. Uses 2 hair accessory slots. -->
+    <item id="20031" type="Armor" name="Kat the Cat Hat">
+        <set name="icon" val="icon.accessory_cat_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like a skull. Uses 2 hair accessory slots. -->
+    <item id="20032" type="Armor" name="Skull Hat">
+        <set name="icon" val="icon.accessory_skeleton_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!--
+        Dimensional Item
+        Item consumed when saving a new My Teleport location. Can be shared within an account through the Dimensional Merchant.
+    -->
+    <item id="20033" type="EtcItem" name="My Teleport Flag">
+        <set name="icon" val="BranchSys.icon.br_flag_of_bookmark_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+    </item>
+    <!-- Tasty candy that replenishes your Vitality to a certain degree. Cooldown is 60 min. Vitality item with limited usage. -->
+    <item id="20034" type="EtcItem" name="Revita-Pop (Event)">
+        <set name="icon" val="BranchSys.br_hallowinday_candy_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="potion" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22006-1" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Majo. -->
+    <item id="20035" type="EtcItem" name="Agathion - Majo Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20006,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Gold Majo. -->
+    <item id="20036" type="EtcItem" name="Agathion - Gold Majo Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20007,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Black Majo. -->
+    <item id="20037" type="EtcItem" name="Agathion - Black Majo Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20008,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Majo usable for up to 30 days. -->
+    <item id="20038" type="EtcItem" name="Agathion - Majo Pack (30-day) - Big Head">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20009,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Gold Majo usable for up to 30 days. -->
+    <item id="20039" type="EtcItem" name="Agathion - Gold Majo Pack (30-day) - Resurrection">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20010,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Black Majo usable for up to 30 days. -->
+    <item id="20040" type="EtcItem" name="Agathion - Black Majo Pack (30-day) - Escape">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20011,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Plaipitak. -->
+    <item id="20041" type="EtcItem" name="Agathion - Plaipitak Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20012,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
+    <item id="20042" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Big Head">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20013,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
+    <item id="20043" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Resurrection">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20014,1,1,100" />
+    </item>
+    <!-- Contains an Agathion - Plaipitak usable for up to 30 days. -->
+    <item id="20044" type="EtcItem" name="Agathion - Plaipitak Pack (30-day) - Escape">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20015,1,1,100" />
+    </item>
+    <!-- Contains a pair of Horn-rimmed Glasses. -->
+    <item id="20045" type="EtcItem" name="Horn-rimmed Glasses Pack - Agility">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20016,1,1,100" />
+    </item>
+    <!-- Contains an Afro Hair wig. -->
+    <item id="20046" type="EtcItem" name="Afro Hair Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20017,1,1,100" />
+    </item>
+    <!-- Contains an Afro Hair wig. -->
+    <item id="20047" type="EtcItem" name="Afro Hair Pack - Big Head, Firework">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20018,1,1,100" />
+    </item>
+    <!-- Contains an Afro Hair wig. -->
+    <item id="20048" type="EtcItem" name="Afro Hair Pack - Wind Walk">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20019,1,1,100" />
+    </item>
+    <!-- Contains a fancy Uniform Hat. -->
+    <item id="20049" type="EtcItem" name="Uniform Hat Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20020,1,1,100" />
+    </item>
+    <!-- Contains an Assassin's Bamboo Hat. -->
+    <item id="20050" type="EtcItem" name="Assassin's Bamboo Hat Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20021,1,1,100" />
+    </item>
+    <!-- Contains a Ruthless Tribe Mask. -->
+    <item id="20051" type="EtcItem" name="Ruthless Tribe Mask Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20022,1,1,100" />
+    </item>
+    <!-- Contains an elegant Ribbon Hairband. Exclusive for female characters. -->
+    <item id="20052" type="EtcItem" name="Ribbon Hairband Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20023,1,1,100" />
+    </item>
+    <!-- Contains a rakish Visor. Exclusive for male characters. -->
+    <item id="20053" type="EtcItem" name="Visor Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20024,1,1,100" />
+    </item>
+    <!-- Contains a My Teleport Scroll. -->
+    <item id="20054" type="EtcItem" name="My Teleport Scroll Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20025,1,1,100" />
+    </item>
+    <!-- Contains an extra entrance pass that allows you to enter Kamaloka (Hall of the Abyss). -->
+    <item id="20055" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20026,1,1,100" />
+    </item>
+    <!-- Contains an extra entrance pass that allows you to enter Near Kamaloka. -->
+    <item id="20056" type="EtcItem" name="Extra Pass: Near Kamaloka Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20027,1,1,100" />
+    </item>
+    <!-- Contains an extra entrance pass that allows you to enter Kamaloka (Labyrinth of the Abyss). -->
+    <item id="20057" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20028,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer. -->
+    <item id="20058" type="EtcItem" name="Mount - Darkmane Pacer Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20029,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Darkmane Pacer (30-day). -->
+    <item id="20059" type="EtcItem" name="Mount - Darkmane Pacer Pack (30-day)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20030,1,1,100" />
+    </item>
+    <!-- Contains a Kat the Cat Hat. -->
+    <item id="20060" type="EtcItem" name="Kat the Cat Hat Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20031,1,1,100" />
+    </item>
+    <!-- Contains a Skull Hat. -->
+    <item id="20061" type="EtcItem" name="Skull Hat Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20032,1,1,100" />
+    </item>
+    <!-- Contains a My Teleport Flag. -->
+    <item id="20062" type="EtcItem" name="My Teleport Flag Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20033,1,1,100" />
+    </item>
+    <!-- Bracelet that summons the Baby Panda. -->
+    <item id="20063" type="Armor" name="Agathion - Baby Panda">
+        <set name="icon" val="BranchSys.icon.br_baby_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21008-1;23010-1" />
+    </item>
+    <!-- Bracelet that summons a Bamboo Panda. -->
+    <item id="20064" type="Armor" name="Agathion - Bamboo Panda">
+        <set name="icon" val="BranchSys.icon.br_kunfu_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21009-1;23011-1" />
+    </item>
+    <!-- Bracelet that summons the Sexy Panda. -->
+    <item id="20065" type="Armor" name="Agathion - Sexy Panda">
+        <set name="icon" val="BranchSys.icon.br_sexy_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21010-1;23012-1" />
+    </item>
+    <!-- Bracelet that summons the Baby Panda. -->
+    <item id="20066" type="Armor" name="Agathion - Baby Panda - Big Head (15-day)">
+        <set name="icon" val="BranchSys.icon.br_baby_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21008-1;23013-1" />
+        <set name="time" val="21600" />
+    </item>
+    <!-- Bracelet that summons a Bamboo Panda. -->
+    <item id="20067" type="Armor" name="Agathion - Bamboo Panda - Resurrection (15-day)">
+        <set name="icon" val="BranchSys.icon.br_kunfu_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21009-1;23014-1" />
+        <set name="time" val="21600" />
+    </item>
+    <!-- Bracelet that summons the Sexy Panda. -->
+    <item id="20068" type="Armor" name="Agathion - Sexy Panda - Escape (15-day)">
+        <set name="icon" val="BranchSys.icon.br_sexy_panda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21010-1;23015-1" />
+        <set name="time" val="21600" />
+    </item>
+    <!-- Wrapped Pack containing Baby Panda. -->
+    <item id="20069" type="EtcItem" name="Agathion - Baby Panda Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20063,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Bamboo Panda. -->
+    <item id="20070" type="EtcItem" name="Agathion - Bamboo Panda Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20064,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Sexy Panda. -->
+    <item id="20071" type="EtcItem" name="Agathion - Sexy Pandan Pack">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20065,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Baby Panda (15-day). -->
+    <item id="20072" type="EtcItem" name="Agathion - Baby Panda Pack (15-day) - Big Head">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20066,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Bamboo Panda (15-day). -->
+    <item id="20073" type="EtcItem" name="Agathion - Bamboo Panda Pack (15-day) - Resurrection">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20067,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Sexy Pandan (15-day). -->
+    <item id="20074" type="EtcItem" name="Agathion - Sexy Panda Pack (15-day) - Escape">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20068,1,1,100" />
+    </item>
+    <!-- Gift of joy. -->
+    <item id="20075" type="EtcItem" name="Santa's Gift - Joy - 4-hour">
+        <set name="icon" val="BranchSys.icon.br_xmas_present_joy_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22011-1" />
+        <set name="time" val="240" />
+    </item>
+    <!-- Gift of enjoyment. -->
+    <item id="20076" type="EtcItem" name="Santa's Gift - Enjoyment - 4-hour">
+        <set name="icon" val="BranchSys.icon.br_xmas_present_fun_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22012-1" />
+        <set name="time" val="240" />
+    </item>
+    <!-- Gift of luck. -->
+    <item id="20077" type="EtcItem" name="Santa's Gift - Luck - 4-hour">
+        <set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22017-1" />
+        <set name="time" val="240" />
+    </item>
+    <!-- Gift of luck. -->
+    <item id="20078" type="EtcItem" name="Santa's Gift - Luck - 4-hour">
+        <set name="icon" val="BranchSys.icon.br_xmas_present_luck_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22018-1" />
+        <set name="time" val="240" />
+    </item>
+    <!-- Wrapped Pack containing Good Luck Bag. -->
+    <item id="20079" type="EtcItem" name="Good Luck Bag Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20081,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Lucky Four-leaf Pack. -->
+    <item id="20080" type="EtcItem" name="Lucky Four-leaf Clover Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20082,1,1,100" />
+    </item>
+    <!-- Lucky Bag filled with good luck. If you use it, you can acquire a hair accessory that has the Vitality recovery capability. -->
+    <item id="20081" type="EtcItem" name="Good Luck Bag">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22007-1" />
+    </item>
+    <!-- A Lucky Four-leaf Clover. Gives a random Vitality-imbued hair accessory. -->
+    <item id="20082" type="EtcItem" name="Lucky Four-leaf Clover">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22008-1" />
+        <set name="is_vitality" val="true" />
+    </item>
+    <!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
+    <item id="20083" type="Armor" name="Afro Hair - Vitality (3-hour)">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21011-1" />
+        <set name="time" val="180" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
+    <item id="20084" type="Armor" name="Afro Hair - Vitality (3-day)">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21011-1" />
+        <set name="time" val="4320" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Afro style hair. Vitality skill cooldown is 12 hours. Uses 2 hair accessory slots. Vitality item with limited usage. -->
+    <item id="20085" type="Armor" name="Afro Hair - Vitality (30-day)">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21011-1" />
+        <set name="time" val="43200" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20086" type="Armor" name="Horn-rimmed Glasses - Vitality (3-hour)">
+        <set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21012-1" />
+        <set name="time" val="180" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20087" type="Armor" name="Horn-rimmed Glasses - Vitality (3-day)">
+        <set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21012-1" />
+        <set name="time" val="4320" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Magic Horn-rimmed Glasses. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20088" type="Armor" name="Horn-rimmed Glasses - Vitality (30-day)">
+        <set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21012-1" />
+        <set name="time" val="43200" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20089" type="Armor" name="Assassin's Bamboo Hat - Vitality (3-hour)">
+        <set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21013-1" />
+        <set name="time" val="180" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20090" type="Armor" name="Assassin's Bamboo Hat - Vitality (3-day)">
+        <set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21013-1" />
+        <set name="time" val="4320" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality skill cooldown is 12 hours. Vitality item with limited usage. -->
+    <item id="20091" type="Armor" name="Assassin's Bamboo Hat - Vitality (30-day)">
+        <set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21013-1" />
+        <set name="time" val="43200" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- This gift-wrapped pack contains the true spirit of the holiday season. -->
+    <item id="20092" type="EtcItem" name="Holiday Spirit Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20093,1,1,100" />
+    </item>
+    <!-- This provides you with a chance to acquire an Agathion - Rudolph, which Has Vitality Recovery Capability. -->
+    <item id="20093" type="EtcItem" name="Holiday Miracle">
+        <set name="icon" val="BranchSys.icon.br_xmas_miracle_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22009-1" />
+    </item>
+    <!-- Allows you to summon a cute Rudolph Agathion. Can only be used once every 12 hours. Vitality item with limited usage. -->
+    <item id="20094" type="Armor" name="Agathion - Rudolph - Vitality (30-day)">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;3425-1;5537-1;23016-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- This festive hat can put anyone into a the holiday spirit. -->
+    <item id="20095" type="Armor" name="Santa's Antlers">
+        <set name="icon" val="icon.accessory_santas_antler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- This gift-wrapped pack contains a Mysterious Formal Wear. -->
+    <item id="20096" type="EtcItem" name="Mysterious Formal Wear (Event) Pack">
+        <set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ExtractableItems" />
+        <set name="capsuled_items" val="20097,1,1,100" />
+    </item>
+    <!-- Use this to acquire the Formal Wear. -->
+    <item id="20097" type="EtcItem" name="Mysterious Formal Wear (Event)">
+        <set name="icon" val="BranchSys.icon.br_mysterious_wedding_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="item_skill" val="22010-1" />
+    </item>
+    <!-- When donned, this magical garment transforms into a dashing tuxedo for men or a lovely wedding dress for ladies. -->
+    <item id="20098" type="Armor" name="Formal Wear (Event) - Shadow (1-hour)">
+        <set name="icon" val="icon.armor_t2000_ul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="alldress" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- When donned, this magical garment transforms into a dashing tuxedo for men or a lovely wedding dress for ladies. -->
+    <item id="20099" type="Armor" name="Formal Wear (Event) - 7-day">
+        <set name="icon" val="icon.armor_t2000_ul_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="alldress" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="time" val="10080" />
+    </item>
 </list>

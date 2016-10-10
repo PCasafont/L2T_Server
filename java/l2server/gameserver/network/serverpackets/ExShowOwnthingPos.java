@@ -17,59 +17,25 @@ package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
 
-import l2server.gameserver.instancemanager.TerritoryWarManager;
-import l2server.gameserver.model.TerritoryWard;
-
 /**
  * Format: (ch) d[dddd]
  *
- * @author  -Gigiikun-
+ * @author -Gigiikun-
  */
 public class ExShowOwnthingPos extends L2GameServerPacket
 {
-	
-	public ExShowOwnthingPos()
-	{
-	}
-	
-	/**
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		if (TerritoryWarManager.getInstance().isTWInProgress())
-		{
-			List<TerritoryWard> territoryWardList = TerritoryWarManager.getInstance().getAllTerritoryWards();
-			writeD(territoryWardList.size());
-			for (TerritoryWard ward : territoryWardList)
-			{
-				writeD(ward.getTerritoryId());
-				
-				if (ward.getNpc() != null)
-				{
-					writeD(ward.getNpc().getX());
-					writeD(ward.getNpc().getY());
-					writeD(ward.getNpc().getZ());
-				}
-				else if (ward.getPlayer() != null)
-				{
-					writeD(ward.getPlayer().getX());
-					writeD(ward.getPlayer().getY());
-					writeD(ward.getPlayer().getZ());
-				}
-				else
-				{
-					writeD(0);
-					writeD(0);
-					writeD(0);
-				}
-			}
-		}
-		else
-		{
-			writeD(0);
-			//writeD(0);
-		}
-	}
+
+    public ExShowOwnthingPos()
+    {
+    }
+
+    /**
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(0);
+        //writeD(0);
+    }
 }

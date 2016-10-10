@@ -28,57 +28,59 @@ import l2server.log.Log;
  */
 public final class NewCharacter extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		if (Config.DEBUG)
-			Log.fine("CreateNewChar");
-		
-		NewCharacterSuccess ct = new NewCharacterSuccess();
-		
-		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(0);
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(0); // human fighter
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(1); // human mage
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(2); // elf fighter
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(3); // elf mage
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(4); // dark elf fighter
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(5); // dark elf mage
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(6); // orc fighter
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(7); // orc mage
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(8); // dwarf fighter
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(9); //kamael male soldier
-		ct.addChar(template);
-		
-		template = CharTemplateTable.getInstance().getTemplate(9); // kamael female soldier
-		ct.addChar(template);
-		
-		sendPacket(ct);
-	}
+
+    @Override
+    protected void readImpl()
+    {
+
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        if (Config.DEBUG)
+        {
+            Log.fine("CreateNewChar");
+        }
+
+        NewCharacterSuccess ct = new NewCharacterSuccess();
+
+        L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(0);
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(0); // human fighter
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(1); // human mage
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(2); // elf fighter
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(3); // elf mage
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(4); // dark elf fighter
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(5); // dark elf mage
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(6); // orc fighter
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(7); // orc mage
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(8); // dwarf fighter
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(9); //kamael male soldier
+        ct.addChar(template);
+
+        template = CharTemplateTable.getInstance().getTemplate(9); // kamael female soldier
+        ct.addChar(template);
+
+        sendPacket(ct);
+    }
 }

@@ -20,38 +20,41 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExUISetting;
 
 /**
- *
- * @author  KenM / mrTJO
+ * @author KenM / mrTJO
  */
 public class RequestKeyMapping extends L2GameClientPacket
 {
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		// trigger (no data)
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (Config.STORE_UI_SETTINGS)
-			activeChar.sendPacket(new ExUISetting(activeChar));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+        // trigger (no data)
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (Config.STORE_UI_SETTINGS)
+        {
+            activeChar.sendPacket(new ExUISetting(activeChar));
+        }
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

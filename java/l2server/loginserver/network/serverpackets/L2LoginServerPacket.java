@@ -19,10 +19,9 @@ import l2server.loginserver.network.L2LoginClient;
 import l2server.network.SendablePacket;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public abstract class L2LoginServerPacket extends SendablePacket<L2LoginClient>
 {
-	
+
 }

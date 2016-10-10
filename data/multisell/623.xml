@@ -1,375 +1,375 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9616" /> <!-- Dynasty Sword Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9617" /> <!-- Dynasty Blade Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9618" /> <!-- Dynasty Phantom Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9619" /> <!-- Dynasty Bow Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9620" /> <!-- Dynasty Knife Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9621" /> <!-- Dynasty Halberd Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9622" /> <!-- Dynasty Cudgel Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10547" /> <!-- Dynasty Crusher Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9623" /> <!-- Dynasty Mace Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10546" /> <!-- Dynasty Staff Piece -->
-	</item>
-	<item>
-		<ingredient count="68" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9624" /> <!-- Dynasty Bagh-Nakh Piece -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9967" /> <!-- Recipe: Dynasty Sword (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9968" /> <!-- Recipe: Dynasty Blade (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9969" /> <!-- Recipe: Dynasty Phantom (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9970" /> <!-- Recipe: Dynasty Bow (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9971" /> <!-- Recipe: Dynasty Knife (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9972" /> <!-- Recipe: Dynasty Halberd (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9973" /> <!-- Recipe: Dynasty Cudgel (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9974" /> <!-- Recipe: Dynasty Mace (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9975" /> <!-- Recipe: Dynasty Bagh-Nakh (60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10545" /> <!-- Recipe: Dynasty Crusher(60%) -->
-	</item>
-	<item>
-		<ingredient count="612" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10544" /> <!-- Recipe: Dynasty Staff(60%) -->
-	</item>
-	<item>
-		<ingredient count="41" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="104" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="10" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9530" /> <!-- Sealed Dynasty Breastplate Piece -->
-	</item>
-	<item>
-		<ingredient count="28" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="72" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="7" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9531" /> <!-- Sealed Dynasty Gaiters Piece -->
-	</item>
-	<item>
-		<ingredient count="16" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9532" /> <!-- Sealed Dynasty Helmet Piece -->
-	</item>
-	<item>
-		<ingredient count="13" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9533" /> <!-- Sealed Dynasty Gauntlets Piece -->
-	</item>
-	<item>
-		<ingredient count="13" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9534" /> <!-- Sealed Dynasty Boots Piece -->
-	</item>
-	<item>
-		<ingredient count="32" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="78" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="8" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9535" /> <!-- Sealed Dynasty Leather Armor Fragment -->
-	</item>
-	<item>
-		<ingredient count="22" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="53" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="6" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9536" /> <!-- Sealed Dynasty Leather Leggings Piece -->
-	</item>
-	<item>
-		<ingredient count="18" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="43" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9537" /> <!-- Sealed Dynasty Leather Helmet Piece -->
-	</item>
-	<item>
-		<ingredient count="13" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9538" /> <!-- Sealed Dynasty Leather Gloves Piece -->
-	</item>
-	<item>
-		<ingredient count="13" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9539" /> <!-- Sealed Dynasty Leather Boots Piece -->
-	</item>
-	<item>
-		<ingredient count="32" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="78" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="8" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9540" /> <!-- Sealed Dynasty Tunic Piece -->
-	</item>
-	<item>
-		<ingredient count="22" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="53" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="6" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9541" /> <!-- Sealed Dynasty Stockings Piece -->
-	</item>
-	<item>
-		<ingredient count="16" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9542" /> <!-- Sealed Dynasty Circlet Piece -->
-	</item>
-	<item>
-		<ingredient count="12" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9543" /> <!-- Sealed Dynasty Gloves Piece -->
-	</item>
-	<item>
-		<ingredient count="12" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9544" /> <!-- Sealed Dynasty Shoes Piece -->
-	</item>
-	<item>
-		<ingredient count="12" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9545" /> <!-- Sealed Dynasty Shield Fragment -->
-	</item>
-	<item>
-		<ingredient count="12" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10114" /> <!-- Sealed Dynasty Sigil Piece -->
-	</item>
-	<item>
-		<ingredient count="12" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="35" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9991" /> <!-- Sealed Dynasty Earring Gemstone -->
-	</item>
-	<item>
-		<ingredient count="17" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9992" /> <!-- Sealed Dynasty Necklace Gemstone -->
-	</item>
-	<item>
-		<ingredient count="10" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="25" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="2" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9993" /> <!-- Sealed Dynasty Ring Gemstone -->
-	</item>
-	<item>
-		<ingredient count="266" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="661" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="67" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9482" /> <!-- Recipe: Sealed Dynasty Breastplate (60%) -->
-	</item>
-	<item>
-		<ingredient count="166" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="413" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="42" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9483" /> <!-- Recipe: Sealed Dynasty Gaiters (60%) -->
-	</item>
-	<item>
-		<ingredient count="100" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="248" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9484" /> <!-- Recipe: Sealed Dynasty Helmet (60%) -->
-	</item>
-	<item>
-		<ingredient count="66" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9485" /> <!-- Recipe: Sealed Dynasty Gauntlets (60%) -->
-	</item>
-	<item>
-		<ingredient count="66" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9486" /> <!-- Recipe: Sealed Dynasty Boots (60%) -->
-	</item>
-	<item>
-		<ingredient count="200" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="498" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="50" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9487" /> <!-- Recipe: Sealed Dynasty Leather Armor (60%) -->
-	</item>
-	<item>
-		<ingredient count="125" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="314" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="31" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9488" /> <!-- Recipe: Sealed Dynasty Leather Leggings (60%) -->
-	</item>
-	<item>
-		<ingredient count="100" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="249" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9489" /> <!-- Recipe: Sealed Dynasty Leather Helmet (60%) -->
-	</item>
-	<item>
-		<ingredient count="66" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9490" /> <!-- Recipe: Sealed Dynasty Leather Gloves (60%) -->
-	</item>
-	<item>
-		<ingredient count="66" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9491" /> <!-- Recipe: Sealed Dynasty Leather Boots (60%) -->
-	</item>
-	<item>
-		<ingredient count="200" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="498" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="50" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9492" /> <!-- Recipe: Sealed Dynasty Tunic (60%) -->
-	</item>
-	<item>
-		<ingredient count="125" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="313" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="31" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9493" /> <!-- Recipe: Sealed Dynasty Stockings (60%) -->
-	</item>
-	<item>
-		<ingredient count="100" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="249" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9494" /> <!-- Recipe: Sealed Dynasty Circlet (60%) -->
-	</item>
-	<item>
-		<ingredient count="67" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="161" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9495" /> <!-- Recipe: Sealed Dynasty Gloves (60%) -->
-	</item>
-	<item>
-		<ingredient count="67" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="161" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9496" /> <!-- Recipe: Sealed Dynasty Shoes (60%) -->
-	</item>
-	<item>
-		<ingredient count="70" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="179" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9497" /> <!-- Recipe: Sealed Dynasty Shield (60%) -->
-	</item>
-	<item>
-		<ingredient count="70" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="179" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="10115" /> <!-- Recipe: Sealed Dynasty Sigil (60%) -->
-	</item>
-	<item>
-		<ingredient count="66" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="162" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="16" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9985" /> <!-- Recipe: Sealed Dynasty Earring (70%) -->
-	</item>
-	<item>
-		<ingredient count="88" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="220" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="21" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9986" /> <!-- Recipe: Sealed Dynasty Necklace (70%) -->
-	</item>
-	<item>
-		<ingredient count="42" id="9600" /> <!-- Hidden First Page -->
-		<ingredient count="110" id="9601" /> <!-- Hidden Second Page -->
-		<ingredient count="11" id="9602" /> <!-- Demon Contract Fragment -->
-		<production count="1" id="9987" /> <!-- Recipe: Sealed Dynasty Ring (70%) -->
-	</item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9616" /> <!-- Dynasty Sword Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9617" /> <!-- Dynasty Blade Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9618" /> <!-- Dynasty Phantom Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9619" /> <!-- Dynasty Bow Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9620" /> <!-- Dynasty Knife Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9621" /> <!-- Dynasty Halberd Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9622" /> <!-- Dynasty Cudgel Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10547" /> <!-- Dynasty Crusher Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9623" /> <!-- Dynasty Mace Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10546" /> <!-- Dynasty Staff Piece -->
+    </item>
+    <item>
+        <ingredient count="68" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="168" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9624" /> <!-- Dynasty Bagh-Nakh Piece -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9967" /> <!-- Recipe: Dynasty Sword (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9968" /> <!-- Recipe: Dynasty Blade (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9969" /> <!-- Recipe: Dynasty Phantom (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9970" /> <!-- Recipe: Dynasty Bow (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9971" /> <!-- Recipe: Dynasty Knife (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9972" /> <!-- Recipe: Dynasty Halberd (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9973" /> <!-- Recipe: Dynasty Cudgel (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9974" /> <!-- Recipe: Dynasty Mace (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9975" /> <!-- Recipe: Dynasty Bagh-Nakh (60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10545" /> <!-- Recipe: Dynasty Crusher(60%) -->
+    </item>
+    <item>
+        <ingredient count="612" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="1530" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="153" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10544" /> <!-- Recipe: Dynasty Staff(60%) -->
+    </item>
+    <item>
+        <ingredient count="41" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="104" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="10" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9530" /> <!-- Sealed Dynasty Breastplate Piece -->
+    </item>
+    <item>
+        <ingredient count="28" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="72" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="7" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9531" /> <!-- Sealed Dynasty Gaiters Piece -->
+    </item>
+    <item>
+        <ingredient count="16" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9532" /> <!-- Sealed Dynasty Helmet Piece -->
+    </item>
+    <item>
+        <ingredient count="13" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9533" /> <!-- Sealed Dynasty Gauntlets Piece -->
+    </item>
+    <item>
+        <ingredient count="13" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9534" /> <!-- Sealed Dynasty Boots Piece -->
+    </item>
+    <item>
+        <ingredient count="32" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="78" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="8" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9535" /> <!-- Sealed Dynasty Leather Armor Fragment -->
+    </item>
+    <item>
+        <ingredient count="22" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="53" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="6" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9536" /> <!-- Sealed Dynasty Leather Leggings Piece -->
+    </item>
+    <item>
+        <ingredient count="18" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="43" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9537" /> <!-- Sealed Dynasty Leather Helmet Piece -->
+    </item>
+    <item>
+        <ingredient count="13" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9538" /> <!-- Sealed Dynasty Leather Gloves Piece -->
+    </item>
+    <item>
+        <ingredient count="13" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9539" /> <!-- Sealed Dynasty Leather Boots Piece -->
+    </item>
+    <item>
+        <ingredient count="32" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="78" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="8" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9540" /> <!-- Sealed Dynasty Tunic Piece -->
+    </item>
+    <item>
+        <ingredient count="22" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="53" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="6" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9541" /> <!-- Sealed Dynasty Stockings Piece -->
+    </item>
+    <item>
+        <ingredient count="16" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9542" /> <!-- Sealed Dynasty Circlet Piece -->
+    </item>
+    <item>
+        <ingredient count="12" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9543" /> <!-- Sealed Dynasty Gloves Piece -->
+    </item>
+    <item>
+        <ingredient count="12" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9544" /> <!-- Sealed Dynasty Shoes Piece -->
+    </item>
+    <item>
+        <ingredient count="12" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9545" /> <!-- Sealed Dynasty Shield Fragment -->
+    </item>
+    <item>
+        <ingredient count="12" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="30" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10114" /> <!-- Sealed Dynasty Sigil Piece -->
+    </item>
+    <item>
+        <ingredient count="12" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="35" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="4" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9991" /> <!-- Sealed Dynasty Earring Gemstone -->
+    </item>
+    <item>
+        <ingredient count="17" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="42" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="5" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9992" /> <!-- Sealed Dynasty Necklace Gemstone -->
+    </item>
+    <item>
+        <ingredient count="10" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="25" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="2" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9993" /> <!-- Sealed Dynasty Ring Gemstone -->
+    </item>
+    <item>
+        <ingredient count="266" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="661" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="67" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9482" /> <!-- Recipe: Sealed Dynasty Breastplate (60%) -->
+    </item>
+    <item>
+        <ingredient count="166" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="413" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="42" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9483" /> <!-- Recipe: Sealed Dynasty Gaiters (60%) -->
+    </item>
+    <item>
+        <ingredient count="100" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="248" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9484" /> <!-- Recipe: Sealed Dynasty Helmet (60%) -->
+    </item>
+    <item>
+        <ingredient count="66" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9485" /> <!-- Recipe: Sealed Dynasty Gauntlets (60%) -->
+    </item>
+    <item>
+        <ingredient count="66" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9486" /> <!-- Recipe: Sealed Dynasty Boots (60%) -->
+    </item>
+    <item>
+        <ingredient count="200" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="498" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="50" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9487" /> <!-- Recipe: Sealed Dynasty Leather Armor (60%) -->
+    </item>
+    <item>
+        <ingredient count="125" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="314" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="31" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9488" /> <!-- Recipe: Sealed Dynasty Leather Leggings (60%) -->
+    </item>
+    <item>
+        <ingredient count="100" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="249" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9489" /> <!-- Recipe: Sealed Dynasty Leather Helmet (60%) -->
+    </item>
+    <item>
+        <ingredient count="66" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9490" /> <!-- Recipe: Sealed Dynasty Leather Gloves (60%) -->
+    </item>
+    <item>
+        <ingredient count="66" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="164" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9491" /> <!-- Recipe: Sealed Dynasty Leather Boots (60%) -->
+    </item>
+    <item>
+        <ingredient count="200" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="498" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="50" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9492" /> <!-- Recipe: Sealed Dynasty Tunic (60%) -->
+    </item>
+    <item>
+        <ingredient count="125" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="313" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="31" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9493" /> <!-- Recipe: Sealed Dynasty Stockings (60%) -->
+    </item>
+    <item>
+        <ingredient count="100" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="249" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="25" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9494" /> <!-- Recipe: Sealed Dynasty Circlet (60%) -->
+    </item>
+    <item>
+        <ingredient count="67" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="161" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9495" /> <!-- Recipe: Sealed Dynasty Gloves (60%) -->
+    </item>
+    <item>
+        <ingredient count="67" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="161" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9496" /> <!-- Recipe: Sealed Dynasty Shoes (60%) -->
+    </item>
+    <item>
+        <ingredient count="70" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="179" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9497" /> <!-- Recipe: Sealed Dynasty Shield (60%) -->
+    </item>
+    <item>
+        <ingredient count="70" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="179" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="17" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="10115" /> <!-- Recipe: Sealed Dynasty Sigil (60%) -->
+    </item>
+    <item>
+        <ingredient count="66" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="162" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="16" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9985" /> <!-- Recipe: Sealed Dynasty Earring (70%) -->
+    </item>
+    <item>
+        <ingredient count="88" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="220" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="21" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9986" /> <!-- Recipe: Sealed Dynasty Necklace (70%) -->
+    </item>
+    <item>
+        <ingredient count="42" id="9600" /> <!-- Hidden First Page -->
+        <ingredient count="110" id="9601" /> <!-- Hidden Second Page -->
+        <ingredient count="11" id="9602" /> <!-- Demon Contract Fragment -->
+        <production count="1" id="9987" /> <!-- Recipe: Sealed Dynasty Ring (70%) -->
+    </item>
 </list>

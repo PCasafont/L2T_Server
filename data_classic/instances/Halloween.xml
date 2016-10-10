@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Halloween">
-	<activityTime val="120" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="10" />
-	<spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
-	<spawnlist>
-		<spawn npcId="80343" x="153673" y="141696" z="-12741" heading="49715" respawn="60" />
-		<spawn npcId="80344" x="153680" y="141983" z="-12741" heading="20635" respawn="60" />
-		<spawn npcId="80345" x="153714" y="142290" z="-12741" heading="15233" respawn="60" />
-		<spawn npcId="80346" x="153354" y="142339" z="-12741" heading="56706" respawn="60" />
-		<spawn npcId="80343" x="153271" y="142054" z="-12741" heading="46196" respawn="60" />
-		<spawn npcId="80344" x="153065" y="142196" z="-12741" heading="26473" respawn="60" />
-		<spawn npcId="80345" x="153189" y="142505" z="-12741" heading="12368" respawn="60" />
-		<spawn npcId="80343" x="153263" y="142813" z="-12741" heading="13493" respawn="60" />
-		<spawn npcId="80344" x="153910" y="142620" z="-12741" heading="63326" respawn="60" />
-		<spawn npcId="80345" x="154165" y="142302" z="-12741" heading="56283" respawn="60" />
-		<spawn npcId="80346" x="154000" y="142104" z="-12741" heading="41905" respawn="60" />
-		<spawn npcId="80345" x="154006" y="141649" z="-12741" heading="7811" respawn="60" />
-		<spawn npcId="80343" x="153982" y="141820" z="-12741" heading="19302" respawn="60" />
-		<spawn npcId="80344" x="153739" y="141358" z="-12741" heading="47854" respawn="60" />
-		<spawn npcId="80345" x="153369" y="141430" z="-12741" heading="31323" respawn="60" />
-		<spawn npcId="80346" x="153165" y="141336" z="-12741" heading="37470" respawn="60" />
-		<spawn npcId="80344" x="152980" y="141739" z="-12741" heading="23085" respawn="60" />
-		<spawn npcId="80347" x="153254" y="142127" z="-12741" heading="64080" respawn="60" />
-		<spawn npcId="80347" x="153844" y="141855" z="-12741" heading="24182" respawn="60" />
-		<spawn npcId="80347" x="153873" y="142235" z="-12741" heading="36850" respawn="60" />
-		<spawn npcId="80348" x="153572" y="142421" z="-12741" heading="48768" respawn="60" />
-		<spawn npcId="80348" x="153458" y="141757" z="-12741" heading="11873" respawn="60" />
-	</spawnlist>
+    <activityTime val="120" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
+    <spawnlist>
+        <spawn npcId="80343" x="153673" y="141696" z="-12741" heading="49715" respawn="60" />
+        <spawn npcId="80344" x="153680" y="141983" z="-12741" heading="20635" respawn="60" />
+        <spawn npcId="80345" x="153714" y="142290" z="-12741" heading="15233" respawn="60" />
+        <spawn npcId="80346" x="153354" y="142339" z="-12741" heading="56706" respawn="60" />
+        <spawn npcId="80343" x="153271" y="142054" z="-12741" heading="46196" respawn="60" />
+        <spawn npcId="80344" x="153065" y="142196" z="-12741" heading="26473" respawn="60" />
+        <spawn npcId="80345" x="153189" y="142505" z="-12741" heading="12368" respawn="60" />
+        <spawn npcId="80343" x="153263" y="142813" z="-12741" heading="13493" respawn="60" />
+        <spawn npcId="80344" x="153910" y="142620" z="-12741" heading="63326" respawn="60" />
+        <spawn npcId="80345" x="154165" y="142302" z="-12741" heading="56283" respawn="60" />
+        <spawn npcId="80346" x="154000" y="142104" z="-12741" heading="41905" respawn="60" />
+        <spawn npcId="80345" x="154006" y="141649" z="-12741" heading="7811" respawn="60" />
+        <spawn npcId="80343" x="153982" y="141820" z="-12741" heading="19302" respawn="60" />
+        <spawn npcId="80344" x="153739" y="141358" z="-12741" heading="47854" respawn="60" />
+        <spawn npcId="80345" x="153369" y="141430" z="-12741" heading="31323" respawn="60" />
+        <spawn npcId="80346" x="153165" y="141336" z="-12741" heading="37470" respawn="60" />
+        <spawn npcId="80344" x="152980" y="141739" z="-12741" heading="23085" respawn="60" />
+        <spawn npcId="80347" x="153254" y="142127" z="-12741" heading="64080" respawn="60" />
+        <spawn npcId="80347" x="153844" y="141855" z="-12741" heading="24182" respawn="60" />
+        <spawn npcId="80347" x="153873" y="142235" z="-12741" heading="36850" respawn="60" />
+        <spawn npcId="80348" x="153572" y="142421" z="-12741" heading="48768" respawn="60" />
+        <spawn npcId="80348" x="153458" y="141757" z="-12741" heading="11873" respawn="60" />
+    </spawnlist>
 </instance>

@@ -23,63 +23,59 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
- *
  * @author nBd
  */
 public class EffectDisarm extends L2Effect
 {
-	public EffectDisarm(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.DISARM;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.DISARM;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-			return false;
-		
-		((L2PcInstance) getEffected()).disarmWeapons();
-		return true;
-		
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectDisarm(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.DISARM;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.DISARM;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (!(getEffected() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        ((L2PcInstance) getEffected()).disarmWeapons();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

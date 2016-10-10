@@ -16,6 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -31,49 +32,56 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestReceivedPost extends L2GameClientPacket
 {
-	
-	private int _msgId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_msgId = readD();
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL)
-			return;
-		
-		final Message msg = MailManager.getInstance().getMessage(_msgId);
-		if (msg == null)
-			return;
-		
-		if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-			return;
-		}
-		
-		if (msg.getReceiverId() != activeChar.getObjectId())
-		{
-			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
-			return;
-		}
-		
-		if (msg.isDeletedByReceiver())
-			return;
-		
-		activeChar.sendPacket(new ExReplyReceivedPost(msg));
-		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
-		msg.markAsRead();
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    private int _msgId;
+
+    @Override
+    protected void readImpl()
+    {
+        _msgId = readD();
+    }
+
+    @Override
+    public void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null || !Config.ALLOW_MAIL)
+        {
+            return;
+        }
+
+        final Message msg = MailManager.getInstance().getMessage(_msgId);
+        if (msg == null)
+        {
+            return;
+        }
+
+        if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
+            return;
+        }
+
+        if (msg.getReceiverId() != activeChar.getObjectId())
+        {
+            Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar
+                    .getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
+            return;
+        }
+
+        if (msg.isDeletedByReceiver())
+        {
+            return;
+        }
+
+        activeChar.sendPacket(new ExReplyReceivedPost(msg));
+        activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
+        msg.markAsRead();
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

@@ -24,27 +24,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestPrivateStoreManageBuy extends L2GameClientPacket
 {
-	
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player != null)
-		{
-			player.tryOpenPrivateBuyStore();
-		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    //
+
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player != null)
+        {
+            player.tryOpenPrivateBuyStore();
+        }
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

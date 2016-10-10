@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Fearon Siege" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="instance.xsd">
-	<activityTime val="180" />
-	<emptyDestroyTime val="5" />
-	<allowSummon val="false" />
-	<spawnPoint spawnX="83501" spawnY="148644" spawnZ="-3412" />
+<instance name="Fearon Siege" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="instance.xsd">
+    <activityTime val="180" />
+    <emptyDestroyTime val="5" />
+    <allowSummon val="false" />
+    <spawnPoint spawnX="83501" spawnY="148644" spawnZ="-3412" />
 </instance>

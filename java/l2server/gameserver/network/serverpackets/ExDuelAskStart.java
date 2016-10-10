@@ -17,27 +17,28 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * Format: ch Sd
- * @author  KenM
+ *
+ * @author KenM
  */
 public class ExDuelAskStart extends L2GameServerPacket
 {
-	
-	private String _requestorName;
-	private int _partyDuel;
-	
-	public ExDuelAskStart(String requestor, int partyDuel)
-	{
-		_requestorName = requestor;
-		_partyDuel = partyDuel;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeS(_requestorName);
-		writeD(_partyDuel);
-	}
+
+    private String _requestorName;
+    private int _partyDuel;
+
+    public ExDuelAskStart(String requestor, int partyDuel)
+    {
+        _requestorName = requestor;
+        _partyDuel = partyDuel;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeS(_requestorName);
+        writeD(_partyDuel);
+    }
 }

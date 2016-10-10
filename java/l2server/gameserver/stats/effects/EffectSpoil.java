@@ -26,69 +26,71 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- *
  * @author Ahmed
- *
- *		 This is the Effect support for spoil.
- *
- *		 This was originally done by _drunk_
+ *         <p>
+ *         This is the Effect support for spoil.
+ *         <p>
+ *         This was originally done by _drunk_
  */
 public class EffectSpoil extends L2Effect
 {
-	public EffectSpoil(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (!(getEffector() instanceof L2PcInstance))
-			return false;
-		
-		if (!(getEffected() instanceof L2MonsterInstance))
-			return false;
-		
-		L2MonsterInstance target = (L2MonsterInstance) getEffected();
-		
-		if (target == null)
-			return false;
-		
-		if (target.isSpoil())
-		{
-			getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
-			return false;
-		}
-		
-		// SPOIL SYSTEM by Lbaldi
-		boolean spoil = false;
-		if (target.isDead() == false)
-		{
-			spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
-			
-			if (spoil)
-			{
-				target.setSpoil(true);
-				target.setIsSpoiledBy(getEffector().getObjectId());
-				getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
-			}
-			target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
-		}
-		return true;
-		
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectSpoil(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (!(getEffector() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        if (!(getEffected() instanceof L2MonsterInstance))
+        {
+            return false;
+        }
+
+        L2MonsterInstance target = (L2MonsterInstance) getEffected();
+
+        if (target == null)
+        {
+            return false;
+        }
+
+        if (target.isSpoil())
+        {
+            getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
+            return false;
+        }
+
+        // SPOIL SYSTEM by Lbaldi
+        boolean spoil = false;
+        if (target.isDead() == false)
+        {
+            spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
+
+            if (spoil)
+            {
+                target.setSpoil(true);
+                target.setIsSpoiledBy(getEffector().getObjectId());
+                getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
+            }
+            target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
+        }
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

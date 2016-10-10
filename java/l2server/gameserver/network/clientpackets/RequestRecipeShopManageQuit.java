@@ -15,36 +15,35 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.Config;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class ...
  * cd(dd)
+ *
  * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
 public final class RequestRecipeShopManageQuit extends L2GameClientPacket
 {
-	//
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		if (!Config.isServer(Config.DREAMS))
-		{
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
-			player.broadcastUserInfo();
-			player.standUp();
-		}
-	}
+    //
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+        player.broadcastUserInfo();
+        player.standUp();
+    }
 }

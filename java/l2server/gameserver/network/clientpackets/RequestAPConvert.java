@@ -26,41 +26,43 @@ import l2server.gameserver.network.serverpackets.UserInfo;
  */
 public final class RequestAPConvert extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		if (player.getAbilityPoints() >= 16)
-		{
-			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
-			return;
-		}
-		
-		long requiredSp = AbilityTable.getInstance().getSpCostPerPoint(player.getAbilityPoints());
-		if (player.getSp() < requiredSp)
-		{
-			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
-			return;
-		}
-		
-		player.setSp(player.getSp() - requiredSp);
-		StatusUpdate su = new StatusUpdate(player);
-		su.addAttribute(StatusUpdate.SP, (int) player.getSp());
-		player.sendPacket(su);
-		player.sendPacket(new UserInfo(player));
-		
-		player.setAbilityPoints(player.getAbilityPoints() + 1);
-		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        if (player.getAbilityPoints() >= 16)
+        {
+            sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
+            return;
+        }
+
+        long requiredSp = AbilityTable.getInstance().getSpCostPerPoint(player.getAbilityPoints());
+        if (player.getSp() < requiredSp)
+        {
+            sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
+            return;
+        }
+
+        player.setSp(player.getSp() - requiredSp);
+        StatusUpdate su = new StatusUpdate(player);
+        su.addAttribute(StatusUpdate.SP, (int) player.getSp());
+        player.sendPacket(su);
+        player.sendPacket(new UserInfo(player));
+
+        player.setAbilityPoints(player.getAbilityPoints() + 1);
+        sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
+    }
 }

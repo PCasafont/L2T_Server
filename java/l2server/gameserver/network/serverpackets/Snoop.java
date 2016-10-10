@@ -17,33 +17,32 @@ package l2server.gameserver.network.serverpackets;
 
 public class Snoop extends L2GameServerPacket
 {
-	private int _convoId;
-	private String _name;
-	private int _type;
-	private String _speaker;
-	private String _msg;
-	
-	public Snoop(int id, String name, int type, String speaker, String msg)
-	{
-		_convoId = id;
-		_name = name;
-		_type = type;
-		_speaker = speaker;
-		_msg = msg;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_convoId);
-		writeS(_name);
-		writeD(0x00); //??
-		writeD(_type);
-		writeS(_speaker);
-		writeS(_msg);
-		
-	}
+    private int _convoId;
+    private String _name;
+    private int _type;
+    private String _speaker;
+    private String _msg;
+
+    public Snoop(int id, String name, int type, String speaker, String msg)
+    {
+        _convoId = id;
+        _name = name;
+        _type = type;
+        _speaker = speaker;
+        _msg = msg;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_convoId);
+        writeS(_name);
+        writeD(0x00); //??
+        writeD(_type);
+        writeS(_speaker);
+        writeS(_msg);
+    }
 }

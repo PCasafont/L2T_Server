@@ -1,993 +1,993 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Keshanberk in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31700" type="EtcItem" name="Unidentified Keshanberk">
-		<set name="icon" val="icon.weapon_kshanberk_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12303-1" />
-		<set name="standardItem" val="142" />
-		<set name="boundItem" val="30645" />
-	</item>
-	<!-- Crimson Sword*Sword of Revolution in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31701" type="EtcItem" name="Unidentified Crimson Sword*Sword of Revolution">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12304-1" />
-		<set name="standardItem" val="2553" />
-		<set name="boundItem" val="30649" />
-	</item>
-	<!-- Crimson Sword*Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31702" type="EtcItem" name="Unidentified Crimson Sword*Crimson Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12305-1" />
-		<set name="standardItem" val="2551" />
-		<set name="boundItem" val="30650" />
-	</item>
-	<!-- Crimson Sword*Elven Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31703" type="EtcItem" name="Unidentified Crimson Sword*Elven Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12306-1" />
-		<set name="standardItem" val="2552" />
-		<set name="boundItem" val="30651" />
-	</item>
-	<!-- Crimson Sword*Elven Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31704" type="EtcItem" name="Unidentified Crimson Sword*Elven Long Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12307-1" />
-		<set name="standardItem" val="2554" />
-		<set name="boundItem" val="30652" />
-	</item>
-	<!-- Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31705" type="EtcItem" name="Unidentified Crimson Sword">
-		<set name="icon" val="icon.weapon_crimson_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12308-1" />
-		<set name="standardItem" val="127" />
-		<set name="boundItem" val="30653" />
-	</item>
-	<!-- Crystal Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31706" type="EtcItem" name="Unidentified Crystal Staff">
-		<set name="icon" val="icon.weapon_crystal_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12309-1" />
-		<set name="standardItem" val="192" />
-		<set name="boundItem" val="30654" />
-	</item>
-	<!-- Crystal Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31707" type="EtcItem" name="Unidentified Crystal Dagger">
-		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12310-1" />
-		<set name="standardItem" val="14303" />
-		<set name="boundItem" val="30658" />
-	</item>
-	<!-- Kris in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31708" type="EtcItem" name="Unidentified Kris">
-		<set name="icon" val="icon.weapon_kris_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Kamael-exclusive weapon: Gastraphetes conversion, Unidentified Crossbow. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / crossbow) -->
-	<item id="31709" type="EtcItem" name="Unidentified Crossbow">
-		<set name="icon" val="icon.weapon_hunting_gun_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12311-1" />
-		<set name="standardItem" val="9221" />
-		<set name="boundItem" val="30666" />
-	</item>
-	<!-- Kamael-exclusive weapon: Light Crossbow conversion, Unidentified Cranequin. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / crossbow) -->
-	<item id="31710" type="EtcItem" name="Unidentified Cranequin">
-		<set name="icon" val="icon.weapon_hunting_gun_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12312-1" />
-		<set name="standardItem" val="9227" />
-		<set name="boundItem" val="30667" />
-	</item>
-	<!-- Kukuri in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31711" type="EtcItem" name="Unidentified Kukuri">
-		<set name="icon" val="icon.weapon_kukuri_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12313-1" />
-		<set name="standardItem" val="223" />
-		<set name="boundItem" val="30668" />
-	</item>
-	<!-- Compound Armor in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-piece / heavy armor) -->
-	<item id="31712" type="EtcItem" name="Unidentified Compound Armor">
-		<set name="icon" val="icon.armor_t61_ul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12314-1" />
-		<set name="standardItem" val="60" />
-		<set name="boundItem" val="30673" />
-	</item>
-	<!-- Compound Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Helmet) -->
-	<item id="31713" type="EtcItem" name="Unidentified Compound Helmet">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12315-1" />
-		<set name="standardItem" val="517" />
-		<set name="boundItem" val="30674" />
-	</item>
-	<!-- Compound Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="31714" type="EtcItem" name="Unidentified Compound Shield">
-		<set name="icon" val="icon.shield_composite_shield_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12316-1" />
-		<set name="standardItem" val="107" />
-		<set name="boundItem" val="30675" />
-	</item>
-	<!-- Compound Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31715" type="EtcItem" name="Unidentified Compound Boots">
-		<set name="icon" val="icon.armor_t61_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12317-1" />
-		<set name="standardItem" val="64" />
-		<set name="boundItem" val="30676" />
-	</item>
-	<!-- Conjuror's Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31716" type="EtcItem" name="Unidentified Conjuror's Staff">
-		<set name="icon" val="icon.weapon_conjure_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12318-1" />
-		<set name="standardItem" val="1304" />
-		<set name="boundItem" val="30677" />
-	</item>
-	<!-- Conjuror's Knife in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31717" type="EtcItem" name="Unidentified Conjuror's Knife">
-		<set name="icon" val="icon.weapon_conjure_knife_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12319-1" />
-		<set name="boundItem" val="30678" />
-	</item>
-	<!-- Katana*Katana in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31718" type="EtcItem" name="Unidentified Katana*Katana">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12320-1" />
-		<set name="standardItem" val="2582" />
-		<set name="boundItem" val="30679" />
-	</item>
-	<!-- Katana*Spirit Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31719" type="EtcItem" name="Unidentified Katana*Spirit Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12321-1" />
-		<set name="standardItem" val="2583" />
-		<set name="boundItem" val="30680" />
-	</item>
-	<!-- Katana*Raid Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31720" type="EtcItem" name="Unidentified Katana*Raid Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12322-1" />
-		<set name="standardItem" val="2584" />
-		<set name="boundItem" val="30681" />
-	</item>
-	<!-- Katana in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31721" type="EtcItem" name="Unidentified Katana">
-		<set name="icon" val="icon.weapon_katana_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12323-1" />
-		<set name="standardItem" val="74" />
-		<set name="boundItem" val="30682" />
-	</item>
-	<!-- Kamael-exclusive weapon: Lesser Giant's Sword conversion, Unidentified Katzbalger. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
-	<item id="31722" type="EtcItem" name="Unidentified Katzbalger">
-		<set name="icon" val="icon.weapon_tulwar_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12324-1" />
-		<set name="standardItem" val="9223" />
-		<set name="boundItem" val="30686" />
-	</item>
-	<!-- Kaim Vanul's Bones in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31723" type="EtcItem" name="Unidentified Kaim Vanul's Bones">
-		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12325-1" />
-		<set name="standardItem" val="14322" />
-		<set name="boundItem" val="30687" />
-	</item>
-	<!-- Kite Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="31724" type="EtcItem" name="Unidentified Kite Shield">
-		<set name="icon" val="icon.shield_kite_shield_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12326-1" />
-		<set name="standardItem" val="629" />
-		<set name="boundItem" val="30691" />
-	</item>
-	<!-- Karik Horn in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31725" type="EtcItem" name="Unidentified Karik Horn">
-		<set name="icon" val="icon.weapon_horn_of_karik_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12327-1" />
-		<set name="standardItem" val="7898" />
-		<set name="boundItem" val="30692" />
-	</item>
-	<!-- Caliburs in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31726" type="EtcItem" name="Unidentified Caliburs">
-		<set name="icon" val="icon.weapon_caliburs_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12328-1" />
-		<set name="standardItem" val="1298" />
-		<set name="boundItem" val="30696" />
-	</item>
-	<!-- Karmian Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
-	<item id="31727" type="EtcItem" name="Unidentified Karmian Stockings">
-		<set name="icon" val="icon.armor_t53_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12329-1" />
-		<set name="standardItem" val="471" />
-		<set name="boundItem" val="30700" />
-	</item>
-	<!-- Karmian Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
-	<item id="31728" type="EtcItem" name="Unidentified Karmian Tunic">
-		<set name="icon" val="icon.armor_t53_u_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12330-1" />
-		<set name="standardItem" val="439" />
-		<set name="boundItem" val="30701" />
-	</item>
-	<!-- Karmian Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31729" type="EtcItem" name="Unidentified Karmian Boots">
-		<set name="icon" val="icon.armor_t53_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12331-1" />
-		<set name="standardItem" val="2430" />
-		<set name="boundItem" val="30702" />
-	</item>
-	<!-- Karmian Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31730" type="EtcItem" name="Unidentified Karmian Gloves">
-		<set name="icon" val="icon.armor_t53_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12332-1" />
-		<set name="standardItem" val="2454" />
-		<set name="boundItem" val="30703" />
-	</item>
-	<!-- Carnage bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
-	<item id="31731" type="EtcItem" name="Unidentified Carnage Bow">
-		<set name="icon" val="icon.weapon_carnium_bow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12333-1" />
-		<set name="standardItem" val="288" />
-		<set name="boundItem" val="30704" />
-	</item>
-	<!-- Tsurugi in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31732" type="EtcItem" name="Unidentified Tsurugi">
-		<set name="icon" val="icon.weapon_tsurugi_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12334-1" />
-		<set name="standardItem" val="77" />
-		<set name="boundItem" val="30708" />
-	</item>
-	<!-- Chain Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="31733" type="EtcItem" name="Unidentified Chain Shield">
-		<set name="icon" val="icon.shield_chain_shield_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12335-1" />
-		<set name="standardItem" val="2495" />
-		<set name="boundItem" val="30712" />
-	</item>
-	<!-- Chain Mail Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / heavy armor) -->
-	<item id="31734" type="EtcItem" name="Unidentified Chain Mail Shirt">
-		<set name="icon" val="icon.armor_t48_u_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12336-1" />
-		<set name="standardItem" val="354" />
-		<set name="boundItem" val="30713" />
-	</item>
-	<!-- Chain Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
-	<item id="31735" type="EtcItem" name="Unidentified Chain Gaiters">
-		<set name="icon" val="icon.armor_t48_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12337-1" />
-		<set name="standardItem" val="381" />
-		<set name="boundItem" val="30714" />
-	</item>
-	<!-- Chain Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31736" type="EtcItem" name="Unidentified Chain Boots">
-		<set name="icon" val="icon.armor_t48_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12338-1" />
-		<set name="standardItem" val="2429" />
-		<set name="boundItem" val="30715" />
-	</item>
-	<!-- Chain Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31737" type="EtcItem" name="Unidentified Chain Gloves">
-		<set name="icon" val="icon.armor_t48_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12339-1" />
-		<set name="standardItem" val="2453" />
-		<set name="boundItem" val="30716" />
-	</item>
-	<!-- Bronze Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Helmet) -->
-	<item id="31738" type="EtcItem" name="Unidentified Bronze Helmet">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12340-1" />
-		<set name="standardItem" val="46" />
-		<set name="boundItem" val="30717" />
-	</item>
-	<!-- Bronze Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="31739" type="EtcItem" name="Unidentified Bronze Shield">
-		<set name="icon" val="icon.shield_bronze_shield_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12341-1" />
-		<set name="standardItem" val="626" />
-		<set name="boundItem" val="30718" />
-	</item>
-	<!-- Iron Plate Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
-	<item id="31740" type="EtcItem" name="Unidentified Iron Plate Gaiters">
-		<set name="icon" val="icon.armor_t12_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12342-1" />
-		<set name="standardItem" val="10020" />
-		<set name="boundItem" val="30719" />
-	</item>
-	<!-- Chakram in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / combat) -->
-	<item id="31741" type="EtcItem" name="Unidentified Chakram">
-		<set name="icon" val="icon.weapon_chakram_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12343-1" />
-		<set name="standardItem" val="263" />
-		<set name="boundItem" val="30720" />
-	</item>
-	<!-- Crimson Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31742" type="EtcItem" name="Unidentified Crimson Boots">
-		<set name="icon" val="icon.armor_t57_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12344-1" />
-		<set name="standardItem" val="1126" />
-		<set name="boundItem" val="30724" />
-	</item>
-	<!-- Crimson Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31743" type="EtcItem" name="Unidentified Rip Gauntlets">
-		<set name="icon" val="icon.armor_t40_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12345-1" />
-		<set name="boundItem" val="30725" />
-	</item>
-	<!-- Scroll of Wisdom in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon) -->
-	<item id="31744" type="EtcItem" name="Unidentified Scroll of Wisdom">
-		<set name="icon" val="icon.weapon_scroll_of_wisdom_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12346-1" />
-		<set name="standardItem" val="101" />
-		<set name="boundItem" val="30726" />
-	</item>
-	<!-- Stockings of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
-	<item id="31745" type="EtcItem" name="Unidentified Stockings of Knowledge">
-		<set name="icon" val="icon.armor_t41_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12347-1" />
-		<set name="standardItem" val="469" />
-		<set name="boundItem" val="30727" />
-	</item>
-	<!-- Tunic of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
-	<item id="31746" type="EtcItem" name="Unidentified Tunic of Knowledge">
-		<set name="icon" val="icon.armor_t41_u_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12348-1" />
-		<set name="standardItem" val="436" />
-		<set name="boundItem" val="30728" />
-	</item>
-	<!-- Gloves of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31747" type="EtcItem" name="Unidentified Gloves of Knowledge">
-		<set name="icon" val="icon.armor_t41_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12349-1" />
-		<set name="standardItem" val="2447" />
-		<set name="boundItem" val="30729" />
-	</item>
-	<!-- Boots of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31748" type="EtcItem" name="Unidentified Boots of Knowledge">
-		<set name="icon" val="icon.armor_t41_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12350-1" />
-		<set name="standardItem" val="2423" />
-		<set name="boundItem" val="30730" />
-	</item>
-	<!-- Striped Silk Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: undergarment) -->
-	<item id="31749" type="EtcItem" name="Unidentified Striped Silk Shirt">
-		<set name="icon" val="icon.etc_stripe_shirts_c_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12351-1" />
-		<set name="standardItem" val="9585" />
-		<set name="boundItem" val="30731" />
-	</item>
-	<!-- Striped Linen Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: undergarment) -->
-	<item id="31750" type="EtcItem" name="Unidentified Striped Linen Shirt">
-		<set name="icon" val="icon.etc_stripe_shirts_d_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12352-1" />
-		<set name="boundItem" val="30732" />
-	</item>
-	<!-- Kamael-exclusive weapon: Claymore conversion, Unidentified General's Katzbalger. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
-	<item id="31751" type="EtcItem" name="Unidentified General's Katzbalger">
-		<set name="icon" val="icon.weapon_tulwar_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12353-1" />
-		<set name="standardItem" val="9226" />
-		<set name="boundItem" val="30733" />
-	</item>
-	<!-- Spirit's Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31752" type="EtcItem" name="Unidentified Spirit's Staff">
-		<set name="icon" val="icon.weapon_sprites_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12354-1" />
-		<set name="standardItem" val="92" />
-		<set name="boundItem" val="30734" />
-	</item>
-	<!-- Cursed Maingauche in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31753" type="EtcItem" name="Unidentified Cursed Maingauche">
-		<set name="icon" val="icon.weapon_maingauche_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12355-1" />
-		<set name="standardItem" val="1660" />
-		<set name="boundItem" val="30738" />
-	</item>
-	<!-- Cursed Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
-	<item id="31754" type="EtcItem" name="Unidentified Cursed Dagger">
-		<set name="icon" val="icon.weapon_cursed_dagger_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12356-1" />
-		<set name="standardItem" val="226" />
-		<set name="boundItem" val="30739" />
-	</item>
-	<!-- Cursed Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
-	<item id="31755" type="EtcItem" name="Unidentified Cursed Stockings">
-		<set name="icon" val="icon.armor_t14_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12357-1" />
-		<set name="standardItem" val="10024" />
-		<set name="boundItem" val="30743" />
-	</item>
-	<!-- Cursed Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
-	<item id="31756" type="EtcItem" name="Unidentified Cursed Tunic">
-		<set name="icon" val="icon.armor_t14_u_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12358-1" />
-		<set name="standardItem" val="10023" />
-		<set name="boundItem" val="30744" />
-	</item>
-	<!-- Cursed Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31757" type="EtcItem" name="Unidentified Cursed Staff">
-		<set name="icon" val="icon.weapon_cursed_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12359-1" />
-		<set name="standardItem" val="195" />
-		<set name="boundItem" val="30745" />
-	</item>
-	<!-- Artisan's Sword*Sword of Revolution in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31758" type="EtcItem" name="Unidentified Artisan's Sword*Sword of Revolution">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12360-1" />
-		<set name="standardItem" val="2544" />
-		<set name="boundItem" val="30749" />
-	</item>
-	<!-- Artisan's Sword*Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31759" type="EtcItem" name="Unidentified Artisan's Sword*Crimson Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12361-1" />
-		<set name="standardItem" val="2542" />
-		<set name="boundItem" val="30750" />
-	</item>
-	<!-- Artisan's Sword*Artisan's Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31760" type="EtcItem" name="Unidentified Artisan's Sword*Artisan's Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12362-1" />
-		<set name="standardItem" val="2540" />
-		<set name="boundItem" val="30751" />
-	</item>
-	<!-- Artisan's Sword*Elven Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31761" type="EtcItem" name="Unidentified Artisan's Sword*Elven Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12363-1" />
-		<set name="standardItem" val="2543" />
-		<set name="boundItem" val="30752" />
-	</item>
-	<!-- Artisan's Sword*Elven Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31762" type="EtcItem" name="Unidentified Artisan's Sword*Elven Long Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12364-1" />
-		<set name="standardItem" val="2545" />
-		<set name="boundItem" val="30753" />
-	</item>
-	<!-- Artisan's Sword*Knight Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
-	<item id="31763" type="EtcItem" name="Unidentified Artisan's Sword*Knight's Sword">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12365-1" />
-		<set name="standardItem" val="2541" />
-		<set name="boundItem" val="30754" />
-	</item>
-	<!-- Artisan's Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
-	<item id="31764" type="EtcItem" name="Unidentified Artisan's Sword">
-		<set name="icon" val="icon.weapon_artisans_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12366-1" />
-		<set name="standardItem" val="126" />
-		<set name="boundItem" val="30755" />
-	</item>
-	<!-- Work Hammer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31765" type="EtcItem" name="Unidentified Work Hammer">
-		<set name="icon" val="icon.weapon_work_hammer_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12367-1" />
-		<set name="standardItem" val="168" />
-		<set name="boundItem" val="30756" />
-	</item>
-	<!-- Imperial Crusader Breastplate in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / heavy armor) -->
-	<item id="31766" type="EtcItem" name="Unidentified Imperial Crusader Breastplate">
-		<set name="icon" val="icon.armor_t88_u_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12368-1" />
-		<set name="standardItem" val="11510" />
-		<set name="boundItem" val="30757" />
-	</item>
-	<!-- Imperial Crusader Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: headgear) -->
-	<item id="31767" type="EtcItem" name="Unidentified Imperial Crusader Helmet">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12369-1" />
-		<set name="standardItem" val="11509" />
-		<set name="boundItem" val="30758" />
-	</item>
-	<!-- Imperial Crusader Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="31768" type="EtcItem" name="Unidentified Imperial Crusader Shield">
-		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12370-1" />
-		<set name="standardItem" val="11508" />
-		<set name="boundItem" val="30759" />
-	</item>
-	<!-- Imperial Crusader Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
-	<item id="31769" type="EtcItem" name="Unidentified Imperial Crusader Boots">
-		<set name="icon" val="icon.armor_t88_b_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12371-1" />
-		<set name="standardItem" val="11507" />
-		<set name="boundItem" val="30760" />
-	</item>
-	<!-- Imperial Crusader Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31770" type="EtcItem" name="Unidentified Imperial Crusader Gauntlets">
-		<set name="icon" val="icon.armor_t88_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12372-1" />
-		<set name="standardItem" val="11506" />
-		<set name="boundItem" val="30761" />
-	</item>
-	<!-- Imperial Crusader Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
-	<item id="31771" type="EtcItem" name="Unidentified Imperial Crusader Gaiters">
-		<set name="icon" val="icon.armor_t88_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12373-1" />
-		<set name="standardItem" val="11505" />
-		<set name="boundItem" val="30762" />
-	</item>
-	<!-- Imperial Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31772" type="EtcItem" name="Unidentified Imperial Staff">
-		<set name="icon" val="icon.weapon_imperial_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12374-1" />
-		<set name="standardItem" val="6366" />
-		<set name="boundItem" val="30763" />
-	</item>
-	<!-- Inferno Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="31773" type="EtcItem" name="Unidentified Inferno Staff">
-		<set name="icon" val="icon.weapon_inferno_staff_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12375-1" />
-		<set name="standardItem" val="198" />
-		<set name="boundItem" val="30767" />
-	</item>
-	<!-- Infernal Master in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / sword) -->
-	<item id="31774" type="EtcItem" name="Unidentified Infernal Master">
-		<set name="icon" val="icon.weapon_inferno_master_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12376-1" />
-		<set name="standardItem" val="7884" />
-		<set name="boundItem" val="30771" />
-	</item>
-	<!-- Necklace of Mermaid in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
-	<item id="31775" type="EtcItem" name="Unidentified Necklace of Mermaid">
-		<set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12377-1" />
-		<set name="standardItem" val="917" />
-		<set name="boundItem" val="30776" />
-	</item>
-	<!-- Necklace of Mermaid in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
-	<item id="31776" type="EtcItem" name="Unidentified Necklace of Mermaid">
-		<set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12378-1" />
-		<set name="standardItem" val="917" />
-		<set name="boundItem" val="30776" />
-	</item>
-	<!-- Kamael-exclusive weapon: Pa'agrian Sword conversion, Unidentified Immortal Edge. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
-	<item id="31777" type="EtcItem" name="Unidentified Immortal Edge">
-		<set name="icon" val="icon.weapon_invincible_blade_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12379-1" />
-		<set name="standardItem" val="9284" />
-		<set name="boundItem" val="30777" />
-	</item>
-	<!-- Ecliptic Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31778" type="EtcItem" name="Unidentified Ecliptic Axe">
-		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12380-1" />
-		<set name="standardItem" val="14305" />
-		<set name="boundItem" val="30781" />
-	</item>
-	<!-- Heathen's Book in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / other) -->
-	<item id="31779" type="EtcItem" name="Unidentified Heathen's Book">
-		<set name="icon" val="icon.weapon_heathens_book_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12381-1" />
-		<set name="standardItem" val="326" />
-		<set name="boundItem" val="30787" />
-	</item>
-	<!-- Winged Spear in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="31780" type="EtcItem" name="Unidentified Winged Spear">
-		<set name="icon" val="icon.weapon_winged_spear_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12382-1" />
-		<set name="standardItem" val="93" />
-		<set name="boundItem" val="30788" />
-	</item>
-	<!-- Widow Maker in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="31781" type="EtcItem" name="Unidentified Widow Maker">
-		<set name="icon" val="icon.weapon_widow_maker_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12383-1" />
-		<set name="standardItem" val="303" />
-		<set name="boundItem" val="30789" />
-	</item>
-	<!-- Silver Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31782" type="EtcItem" name="Unidentified Silver Axe">
-		<set name="icon" val="icon.weapon_war_pick_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12384-1" />
-		<set name="standardItem" val="161" />
-		<set name="boundItem" val="30793" />
-	</item>
-	<!-- War Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31783" type="EtcItem" name="Unidentified War Axe">
-		<set name="icon" val="icon.weapon_war_axe_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12385-1" />
-		<set name="standardItem" val="162" />
-		<set name="boundItem" val="30797" />
-	</item>
-	<!-- War Hammer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="31784" type="EtcItem" name="Unidentified War Hammer">
-		<set name="icon" val="icon.weapon_war_hammer_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12386-1" />
-		<set name="standardItem" val="293" />
-		<set name="boundItem" val="30801" />
-	</item>
-	<!-- Single-Edged Jamadhr in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / combat) -->
-	<item id="31785" type="EtcItem" name="Unidentified Single-Edged Jamadhr">
-		<set name="icon" val="icon.weapon_single-edged_jamadhr_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12387-1" />
-		<set name="standardItem" val="259" />
-		<set name="boundItem" val="30802" />
-	</item>
-	<!-- Orcish Poleaxe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="31786" type="EtcItem" name="Unidentified Orcish Poleaxe">
-		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12388-1" />
-		<set name="standardItem" val="14299" />
-		<set name="boundItem" val="30803" />
-	</item>
-	<!-- Orcish Glaive in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="31787" type="EtcItem" name="Unidentified Orcish Glaive">
-		<set name="icon" val="icon.weapon_orcish_glaive_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12389-1" />
-		<set name="standardItem" val="298" />
-		<set name="boundItem" val="30807" />
-	</item>
-	<!-- Onyx Beast's Eye Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Earring) -->
-	<item id="31788" type="EtcItem" name="Unidentified Onyx Beast's Eye Earring">
-		<set name="icon" val="icon.accessary_onyxbeastseye_earing_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12390-1" />
-		<set name="standardItem" val="851" />
-	</item>
-	<!-- Ogre Power Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31789" type="EtcItem" name="Unidentified Ogre Power Gauntlets">
-		<set name="icon" val="icon.armor_t45_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12391-1" />
-		<set name="boundItem" val="30813" />
-	</item>
-	<!-- Ogre Power Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="31790" type="EtcItem" name="Unidentified Ogre Power Gauntlets">
-		<set name="icon" val="icon.armor_t45_g_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12392-1" />
-		<set name="boundItem" val="30813" />
-	</item>
-	<!-- Near Forest Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
-	<item id="31791" type="EtcItem" name="Unidentified Near Forest Necklace">
-		<set name="icon" val="icon.accessary_near_forest_necklace_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12393-1" />
-		<set name="standardItem" val="912" />
-		<set name="boundItem" val="30815" />
-	</item>
-	<!-- Near Forest Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
-	<item id="31792" type="EtcItem" name="Unidentified Near Forest Necklace">
-		<set name="icon" val="icon.accessary_near_forest_necklace_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12394-1" />
-		<set name="standardItem" val="912" />
-		<set name="boundItem" val="30815" />
-	</item>
-	<!-- Soul Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
-	<item id="31793" type="EtcItem" name="Unidentified Soul Bow">
-		<set name="icon" val="icon.weapon_soul_bow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12395-1" />
-		<set name="standardItem" val="289" />
-		<set name="boundItem" val="30816" />
-	</item>
-	<!-- Spiritual Eye in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31794" type="EtcItem" name="Unidentified Spiritual Eye">
-		<set name="icon" val="icon.weapon_eye_of_soul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12396-1" />
-		<set name="standardItem" val="7894" />
-		<set name="boundItem" val="30820" />
-	</item>
-	<!-- Ring of Ages in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
-	<item id="31795" type="EtcItem" name="Unidentified Ring of Ages">
-		<set name="icon" val="icon.accessary_ring_of_ages_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12397-1" />
-		<set name="standardItem" val="885" />
-		<set name="boundItem" val="30825" />
-	</item>
-	<!-- Ring of Ages in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
-	<item id="31796" type="EtcItem" name="Unidentified Ring of Ages">
-		<set name="icon" val="icon.accessary_ring_of_ages_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12398-1" />
-		<set name="standardItem" val="885" />
-		<set name="boundItem" val="30825" />
-	</item>
-	<!-- Horn of Glory in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / other) -->
-	<item id="31797" type="EtcItem" name="Unidentified Horn of Glory">
-		<set name="icon" val="icon.weapon_horn_of_glory_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12399-1" />
-		<set name="standardItem" val="325" />
-		<set name="boundItem" val="30826" />
-	</item>
-	<!-- Mace of Miracle in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="31798" type="EtcItem" name="Unidentified Mace of Miracle">
-		<set name="icon" val="icon.weapon_mace_of_miracle_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12400-1" />
-		<set name="standardItem" val="181" />
-		<set name="boundItem" val="30827" />
-	</item>
-	<!-- Elven Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
-	<item id="31799" type="EtcItem" name="Unidentified Elven Stockings">
-		<set name="icon" val="icon.armor_t11_l_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="12401-1" />
-		<set name="standardItem" val="466" />
-		<set name="boundItem" val="30828" />
-	</item>
+    <!-- Keshanberk in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31700" type="EtcItem" name="Unidentified Keshanberk">
+        <set name="icon" val="icon.weapon_kshanberk_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12303-1" />
+        <set name="standardItem" val="142" />
+        <set name="boundItem" val="30645" />
+    </item>
+    <!-- Crimson Sword*Sword of Revolution in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31701" type="EtcItem" name="Unidentified Crimson Sword*Sword of Revolution">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12304-1" />
+        <set name="standardItem" val="2553" />
+        <set name="boundItem" val="30649" />
+    </item>
+    <!-- Crimson Sword*Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31702" type="EtcItem" name="Unidentified Crimson Sword*Crimson Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12305-1" />
+        <set name="standardItem" val="2551" />
+        <set name="boundItem" val="30650" />
+    </item>
+    <!-- Crimson Sword*Elven Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31703" type="EtcItem" name="Unidentified Crimson Sword*Elven Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12306-1" />
+        <set name="standardItem" val="2552" />
+        <set name="boundItem" val="30651" />
+    </item>
+    <!-- Crimson Sword*Elven Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31704" type="EtcItem" name="Unidentified Crimson Sword*Elven Long Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12307-1" />
+        <set name="standardItem" val="2554" />
+        <set name="boundItem" val="30652" />
+    </item>
+    <!-- Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31705" type="EtcItem" name="Unidentified Crimson Sword">
+        <set name="icon" val="icon.weapon_crimson_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12308-1" />
+        <set name="standardItem" val="127" />
+        <set name="boundItem" val="30653" />
+    </item>
+    <!-- Crystal Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31706" type="EtcItem" name="Unidentified Crystal Staff">
+        <set name="icon" val="icon.weapon_crystal_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12309-1" />
+        <set name="standardItem" val="192" />
+        <set name="boundItem" val="30654" />
+    </item>
+    <!-- Crystal Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31707" type="EtcItem" name="Unidentified Crystal Dagger">
+        <set name="icon" val="icon.weapon_crystal_dagger_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12310-1" />
+        <set name="standardItem" val="14303" />
+        <set name="boundItem" val="30658" />
+    </item>
+    <!-- Kris in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31708" type="EtcItem" name="Unidentified Kris">
+        <set name="icon" val="icon.weapon_kris_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Kamael-exclusive weapon: Gastraphetes conversion, Unidentified Crossbow. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / crossbow) -->
+    <item id="31709" type="EtcItem" name="Unidentified Crossbow">
+        <set name="icon" val="icon.weapon_hunting_gun_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12311-1" />
+        <set name="standardItem" val="9221" />
+        <set name="boundItem" val="30666" />
+    </item>
+    <!-- Kamael-exclusive weapon: Light Crossbow conversion, Unidentified Cranequin. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / crossbow) -->
+    <item id="31710" type="EtcItem" name="Unidentified Cranequin">
+        <set name="icon" val="icon.weapon_hunting_gun_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12312-1" />
+        <set name="standardItem" val="9227" />
+        <set name="boundItem" val="30667" />
+    </item>
+    <!-- Kukuri in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31711" type="EtcItem" name="Unidentified Kukuri">
+        <set name="icon" val="icon.weapon_kukuri_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12313-1" />
+        <set name="standardItem" val="223" />
+        <set name="boundItem" val="30668" />
+    </item>
+    <!-- Compound Armor in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-piece / heavy armor) -->
+    <item id="31712" type="EtcItem" name="Unidentified Compound Armor">
+        <set name="icon" val="icon.armor_t61_ul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12314-1" />
+        <set name="standardItem" val="60" />
+        <set name="boundItem" val="30673" />
+    </item>
+    <!-- Compound Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Helmet) -->
+    <item id="31713" type="EtcItem" name="Unidentified Compound Helmet">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12315-1" />
+        <set name="standardItem" val="517" />
+        <set name="boundItem" val="30674" />
+    </item>
+    <!-- Compound Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="31714" type="EtcItem" name="Unidentified Compound Shield">
+        <set name="icon" val="icon.shield_composite_shield_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12316-1" />
+        <set name="standardItem" val="107" />
+        <set name="boundItem" val="30675" />
+    </item>
+    <!-- Compound Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31715" type="EtcItem" name="Unidentified Compound Boots">
+        <set name="icon" val="icon.armor_t61_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12317-1" />
+        <set name="standardItem" val="64" />
+        <set name="boundItem" val="30676" />
+    </item>
+    <!-- Conjuror's Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31716" type="EtcItem" name="Unidentified Conjuror's Staff">
+        <set name="icon" val="icon.weapon_conjure_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12318-1" />
+        <set name="standardItem" val="1304" />
+        <set name="boundItem" val="30677" />
+    </item>
+    <!-- Conjuror's Knife in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31717" type="EtcItem" name="Unidentified Conjuror's Knife">
+        <set name="icon" val="icon.weapon_conjure_knife_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12319-1" />
+        <set name="boundItem" val="30678" />
+    </item>
+    <!-- Katana*Katana in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31718" type="EtcItem" name="Unidentified Katana*Katana">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12320-1" />
+        <set name="standardItem" val="2582" />
+        <set name="boundItem" val="30679" />
+    </item>
+    <!-- Katana*Spirit Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31719" type="EtcItem" name="Unidentified Katana*Spirit Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12321-1" />
+        <set name="standardItem" val="2583" />
+        <set name="boundItem" val="30680" />
+    </item>
+    <!-- Katana*Raid Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31720" type="EtcItem" name="Unidentified Katana*Raid Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12322-1" />
+        <set name="standardItem" val="2584" />
+        <set name="boundItem" val="30681" />
+    </item>
+    <!-- Katana in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31721" type="EtcItem" name="Unidentified Katana">
+        <set name="icon" val="icon.weapon_katana_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12323-1" />
+        <set name="standardItem" val="74" />
+        <set name="boundItem" val="30682" />
+    </item>
+    <!-- Kamael-exclusive weapon: Lesser Giant's Sword conversion, Unidentified Katzbalger. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
+    <item id="31722" type="EtcItem" name="Unidentified Katzbalger">
+        <set name="icon" val="icon.weapon_tulwar_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12324-1" />
+        <set name="standardItem" val="9223" />
+        <set name="boundItem" val="30686" />
+    </item>
+    <!-- Kaim Vanul's Bones in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31723" type="EtcItem" name="Unidentified Kaim Vanul's Bones">
+        <set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12325-1" />
+        <set name="standardItem" val="14322" />
+        <set name="boundItem" val="30687" />
+    </item>
+    <!-- Kite Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="31724" type="EtcItem" name="Unidentified Kite Shield">
+        <set name="icon" val="icon.shield_kite_shield_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12326-1" />
+        <set name="standardItem" val="629" />
+        <set name="boundItem" val="30691" />
+    </item>
+    <!-- Karik Horn in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31725" type="EtcItem" name="Unidentified Karik Horn">
+        <set name="icon" val="icon.weapon_horn_of_karik_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12327-1" />
+        <set name="standardItem" val="7898" />
+        <set name="boundItem" val="30692" />
+    </item>
+    <!-- Caliburs in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31726" type="EtcItem" name="Unidentified Caliburs">
+        <set name="icon" val="icon.weapon_caliburs_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12328-1" />
+        <set name="standardItem" val="1298" />
+        <set name="boundItem" val="30696" />
+    </item>
+    <!-- Karmian Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
+    <item id="31727" type="EtcItem" name="Unidentified Karmian Stockings">
+        <set name="icon" val="icon.armor_t53_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12329-1" />
+        <set name="standardItem" val="471" />
+        <set name="boundItem" val="30700" />
+    </item>
+    <!-- Karmian Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
+    <item id="31728" type="EtcItem" name="Unidentified Karmian Tunic">
+        <set name="icon" val="icon.armor_t53_u_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12330-1" />
+        <set name="standardItem" val="439" />
+        <set name="boundItem" val="30701" />
+    </item>
+    <!-- Karmian Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31729" type="EtcItem" name="Unidentified Karmian Boots">
+        <set name="icon" val="icon.armor_t53_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12331-1" />
+        <set name="standardItem" val="2430" />
+        <set name="boundItem" val="30702" />
+    </item>
+    <!-- Karmian Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31730" type="EtcItem" name="Unidentified Karmian Gloves">
+        <set name="icon" val="icon.armor_t53_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12332-1" />
+        <set name="standardItem" val="2454" />
+        <set name="boundItem" val="30703" />
+    </item>
+    <!-- Carnage bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
+    <item id="31731" type="EtcItem" name="Unidentified Carnage Bow">
+        <set name="icon" val="icon.weapon_carnium_bow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12333-1" />
+        <set name="standardItem" val="288" />
+        <set name="boundItem" val="30704" />
+    </item>
+    <!-- Tsurugi in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31732" type="EtcItem" name="Unidentified Tsurugi">
+        <set name="icon" val="icon.weapon_tsurugi_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12334-1" />
+        <set name="standardItem" val="77" />
+        <set name="boundItem" val="30708" />
+    </item>
+    <!-- Chain Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="31733" type="EtcItem" name="Unidentified Chain Shield">
+        <set name="icon" val="icon.shield_chain_shield_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12335-1" />
+        <set name="standardItem" val="2495" />
+        <set name="boundItem" val="30712" />
+    </item>
+    <!-- Chain Mail Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / heavy armor) -->
+    <item id="31734" type="EtcItem" name="Unidentified Chain Mail Shirt">
+        <set name="icon" val="icon.armor_t48_u_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12336-1" />
+        <set name="standardItem" val="354" />
+        <set name="boundItem" val="30713" />
+    </item>
+    <!-- Chain Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
+    <item id="31735" type="EtcItem" name="Unidentified Chain Gaiters">
+        <set name="icon" val="icon.armor_t48_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12337-1" />
+        <set name="standardItem" val="381" />
+        <set name="boundItem" val="30714" />
+    </item>
+    <!-- Chain Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31736" type="EtcItem" name="Unidentified Chain Boots">
+        <set name="icon" val="icon.armor_t48_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12338-1" />
+        <set name="standardItem" val="2429" />
+        <set name="boundItem" val="30715" />
+    </item>
+    <!-- Chain Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31737" type="EtcItem" name="Unidentified Chain Gloves">
+        <set name="icon" val="icon.armor_t48_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12339-1" />
+        <set name="standardItem" val="2453" />
+        <set name="boundItem" val="30716" />
+    </item>
+    <!-- Bronze Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Helmet) -->
+    <item id="31738" type="EtcItem" name="Unidentified Bronze Helmet">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12340-1" />
+        <set name="standardItem" val="46" />
+        <set name="boundItem" val="30717" />
+    </item>
+    <!-- Bronze Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="31739" type="EtcItem" name="Unidentified Bronze Shield">
+        <set name="icon" val="icon.shield_bronze_shield_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12341-1" />
+        <set name="standardItem" val="626" />
+        <set name="boundItem" val="30718" />
+    </item>
+    <!-- Iron Plate Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
+    <item id="31740" type="EtcItem" name="Unidentified Iron Plate Gaiters">
+        <set name="icon" val="icon.armor_t12_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12342-1" />
+        <set name="standardItem" val="10020" />
+        <set name="boundItem" val="30719" />
+    </item>
+    <!-- Chakram in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / combat) -->
+    <item id="31741" type="EtcItem" name="Unidentified Chakram">
+        <set name="icon" val="icon.weapon_chakram_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12343-1" />
+        <set name="standardItem" val="263" />
+        <set name="boundItem" val="30720" />
+    </item>
+    <!-- Crimson Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31742" type="EtcItem" name="Unidentified Crimson Boots">
+        <set name="icon" val="icon.armor_t57_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12344-1" />
+        <set name="standardItem" val="1126" />
+        <set name="boundItem" val="30724" />
+    </item>
+    <!-- Crimson Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31743" type="EtcItem" name="Unidentified Rip Gauntlets">
+        <set name="icon" val="icon.armor_t40_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12345-1" />
+        <set name="boundItem" val="30725" />
+    </item>
+    <!-- Scroll of Wisdom in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon) -->
+    <item id="31744" type="EtcItem" name="Unidentified Scroll of Wisdom">
+        <set name="icon" val="icon.weapon_scroll_of_wisdom_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12346-1" />
+        <set name="standardItem" val="101" />
+        <set name="boundItem" val="30726" />
+    </item>
+    <!-- Stockings of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
+    <item id="31745" type="EtcItem" name="Unidentified Stockings of Knowledge">
+        <set name="icon" val="icon.armor_t41_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12347-1" />
+        <set name="standardItem" val="469" />
+        <set name="boundItem" val="30727" />
+    </item>
+    <!-- Tunic of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
+    <item id="31746" type="EtcItem" name="Unidentified Tunic of Knowledge">
+        <set name="icon" val="icon.armor_t41_u_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12348-1" />
+        <set name="standardItem" val="436" />
+        <set name="boundItem" val="30728" />
+    </item>
+    <!-- Gloves of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31747" type="EtcItem" name="Unidentified Gloves of Knowledge">
+        <set name="icon" val="icon.armor_t41_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12349-1" />
+        <set name="standardItem" val="2447" />
+        <set name="boundItem" val="30729" />
+    </item>
+    <!-- Boots of Knowledge in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31748" type="EtcItem" name="Unidentified Boots of Knowledge">
+        <set name="icon" val="icon.armor_t41_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12350-1" />
+        <set name="standardItem" val="2423" />
+        <set name="boundItem" val="30730" />
+    </item>
+    <!-- Striped Silk Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: undergarment) -->
+    <item id="31749" type="EtcItem" name="Unidentified Striped Silk Shirt">
+        <set name="icon" val="icon.etc_stripe_shirts_c_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12351-1" />
+        <set name="standardItem" val="9585" />
+        <set name="boundItem" val="30731" />
+    </item>
+    <!-- Striped Linen Shirt in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: undergarment) -->
+    <item id="31750" type="EtcItem" name="Unidentified Striped Linen Shirt">
+        <set name="icon" val="icon.etc_stripe_shirts_d_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12352-1" />
+        <set name="boundItem" val="30732" />
+    </item>
+    <!-- Kamael-exclusive weapon: Claymore conversion, Unidentified General's Katzbalger. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
+    <item id="31751" type="EtcItem" name="Unidentified General's Katzbalger">
+        <set name="icon" val="icon.weapon_tulwar_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12353-1" />
+        <set name="standardItem" val="9226" />
+        <set name="boundItem" val="30733" />
+    </item>
+    <!-- Spirit's Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31752" type="EtcItem" name="Unidentified Spirit's Staff">
+        <set name="icon" val="icon.weapon_sprites_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12354-1" />
+        <set name="standardItem" val="92" />
+        <set name="boundItem" val="30734" />
+    </item>
+    <!-- Cursed Maingauche in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31753" type="EtcItem" name="Unidentified Cursed Maingauche">
+        <set name="icon" val="icon.weapon_maingauche_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12355-1" />
+        <set name="standardItem" val="1660" />
+        <set name="boundItem" val="30738" />
+    </item>
+    <!-- Cursed Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
+    <item id="31754" type="EtcItem" name="Unidentified Cursed Dagger">
+        <set name="icon" val="icon.weapon_cursed_dagger_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12356-1" />
+        <set name="standardItem" val="226" />
+        <set name="boundItem" val="30739" />
+    </item>
+    <!-- Cursed Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
+    <item id="31755" type="EtcItem" name="Unidentified Cursed Stockings">
+        <set name="icon" val="icon.armor_t14_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12357-1" />
+        <set name="standardItem" val="10024" />
+        <set name="boundItem" val="30743" />
+    </item>
+    <!-- Cursed Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / robe) -->
+    <item id="31756" type="EtcItem" name="Unidentified Cursed Tunic">
+        <set name="icon" val="icon.armor_t14_u_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12358-1" />
+        <set name="standardItem" val="10023" />
+        <set name="boundItem" val="30744" />
+    </item>
+    <!-- Cursed Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31757" type="EtcItem" name="Unidentified Cursed Staff">
+        <set name="icon" val="icon.weapon_cursed_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12359-1" />
+        <set name="standardItem" val="195" />
+        <set name="boundItem" val="30745" />
+    </item>
+    <!-- Artisan's Sword*Sword of Revolution in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31758" type="EtcItem" name="Unidentified Artisan's Sword*Sword of Revolution">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12360-1" />
+        <set name="standardItem" val="2544" />
+        <set name="boundItem" val="30749" />
+    </item>
+    <!-- Artisan's Sword*Crimson Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31759" type="EtcItem" name="Unidentified Artisan's Sword*Crimson Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12361-1" />
+        <set name="standardItem" val="2542" />
+        <set name="boundItem" val="30750" />
+    </item>
+    <!-- Artisan's Sword*Artisan's Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31760" type="EtcItem" name="Unidentified Artisan's Sword*Artisan's Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12362-1" />
+        <set name="standardItem" val="2540" />
+        <set name="boundItem" val="30751" />
+    </item>
+    <!-- Artisan's Sword*Elven Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31761" type="EtcItem" name="Unidentified Artisan's Sword*Elven Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12363-1" />
+        <set name="standardItem" val="2543" />
+        <set name="boundItem" val="30752" />
+    </item>
+    <!-- Artisan's Sword*Elven Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31762" type="EtcItem" name="Unidentified Artisan's Sword*Elven Long Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12364-1" />
+        <set name="standardItem" val="2545" />
+        <set name="boundItem" val="30753" />
+    </item>
+    <!-- Artisan's Sword*Knight Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+    <item id="31763" type="EtcItem" name="Unidentified Artisan's Sword*Knight's Sword">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12365-1" />
+        <set name="standardItem" val="2541" />
+        <set name="boundItem" val="30754" />
+    </item>
+    <!-- Artisan's Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / sword) -->
+    <item id="31764" type="EtcItem" name="Unidentified Artisan's Sword">
+        <set name="icon" val="icon.weapon_artisans_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12366-1" />
+        <set name="standardItem" val="126" />
+        <set name="boundItem" val="30755" />
+    </item>
+    <!-- Work Hammer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31765" type="EtcItem" name="Unidentified Work Hammer">
+        <set name="icon" val="icon.weapon_work_hammer_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12367-1" />
+        <set name="standardItem" val="168" />
+        <set name="boundItem" val="30756" />
+    </item>
+    <!-- Imperial Crusader Breastplate in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: upper / heavy armor) -->
+    <item id="31766" type="EtcItem" name="Unidentified Imperial Crusader Breastplate">
+        <set name="icon" val="icon.armor_t88_u_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12368-1" />
+        <set name="standardItem" val="11510" />
+        <set name="boundItem" val="30757" />
+    </item>
+    <!-- Imperial Crusader Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: headgear) -->
+    <item id="31767" type="EtcItem" name="Unidentified Imperial Crusader Helmet">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12369-1" />
+        <set name="standardItem" val="11509" />
+        <set name="boundItem" val="30758" />
+    </item>
+    <!-- Imperial Crusader Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="31768" type="EtcItem" name="Unidentified Imperial Crusader Shield">
+        <set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12370-1" />
+        <set name="standardItem" val="11508" />
+        <set name="boundItem" val="30759" />
+    </item>
+    <!-- Imperial Crusader Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Boots) -->
+    <item id="31769" type="EtcItem" name="Unidentified Imperial Crusader Boots">
+        <set name="icon" val="icon.armor_t88_b_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12371-1" />
+        <set name="standardItem" val="11507" />
+        <set name="boundItem" val="30760" />
+    </item>
+    <!-- Imperial Crusader Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31770" type="EtcItem" name="Unidentified Imperial Crusader Gauntlets">
+        <set name="icon" val="icon.armor_t88_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12372-1" />
+        <set name="standardItem" val="11506" />
+        <set name="boundItem" val="30761" />
+    </item>
+    <!-- Imperial Crusader Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / heavy armor) -->
+    <item id="31771" type="EtcItem" name="Unidentified Imperial Crusader Gaiters">
+        <set name="icon" val="icon.armor_t88_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12373-1" />
+        <set name="standardItem" val="11505" />
+        <set name="boundItem" val="30762" />
+    </item>
+    <!-- Imperial Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31772" type="EtcItem" name="Unidentified Imperial Staff">
+        <set name="icon" val="icon.weapon_imperial_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12374-1" />
+        <set name="standardItem" val="6366" />
+        <set name="boundItem" val="30763" />
+    </item>
+    <!-- Inferno Staff in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="31773" type="EtcItem" name="Unidentified Inferno Staff">
+        <set name="icon" val="icon.weapon_inferno_staff_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12375-1" />
+        <set name="standardItem" val="198" />
+        <set name="boundItem" val="30767" />
+    </item>
+    <!-- Infernal Master in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / sword) -->
+    <item id="31774" type="EtcItem" name="Unidentified Infernal Master">
+        <set name="icon" val="icon.weapon_inferno_master_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12376-1" />
+        <set name="standardItem" val="7884" />
+        <set name="boundItem" val="30771" />
+    </item>
+    <!-- Necklace of Mermaid in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
+    <item id="31775" type="EtcItem" name="Unidentified Necklace of Mermaid">
+        <set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12377-1" />
+        <set name="standardItem" val="917" />
+        <set name="boundItem" val="30776" />
+    </item>
+    <!-- Necklace of Mermaid in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
+    <item id="31776" type="EtcItem" name="Unidentified Necklace of Mermaid">
+        <set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12378-1" />
+        <set name="standardItem" val="917" />
+        <set name="boundItem" val="30776" />
+    </item>
+    <!-- Kamael-exclusive weapon: Pa'agrian Sword conversion, Unidentified Immortal Edge. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / ancient sword) -->
+    <item id="31777" type="EtcItem" name="Unidentified Immortal Edge">
+        <set name="icon" val="icon.weapon_invincible_blade_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12379-1" />
+        <set name="standardItem" val="9284" />
+        <set name="boundItem" val="30777" />
+    </item>
+    <!-- Ecliptic Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31778" type="EtcItem" name="Unidentified Ecliptic Axe">
+        <set name="icon" val="icon.weapon_eclipse_axe_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12380-1" />
+        <set name="standardItem" val="14305" />
+        <set name="boundItem" val="30781" />
+    </item>
+    <!-- Heathen's Book in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / other) -->
+    <item id="31779" type="EtcItem" name="Unidentified Heathen's Book">
+        <set name="icon" val="icon.weapon_heathens_book_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12381-1" />
+        <set name="standardItem" val="326" />
+        <set name="boundItem" val="30787" />
+    </item>
+    <!-- Winged Spear in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="31780" type="EtcItem" name="Unidentified Winged Spear">
+        <set name="icon" val="icon.weapon_winged_spear_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12382-1" />
+        <set name="standardItem" val="93" />
+        <set name="boundItem" val="30788" />
+    </item>
+    <!-- Widow Maker in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="31781" type="EtcItem" name="Unidentified Widow Maker">
+        <set name="icon" val="icon.weapon_widow_maker_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12383-1" />
+        <set name="standardItem" val="303" />
+        <set name="boundItem" val="30789" />
+    </item>
+    <!-- Silver Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31782" type="EtcItem" name="Unidentified Silver Axe">
+        <set name="icon" val="icon.weapon_war_pick_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12384-1" />
+        <set name="standardItem" val="161" />
+        <set name="boundItem" val="30793" />
+    </item>
+    <!-- War Axe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31783" type="EtcItem" name="Unidentified War Axe">
+        <set name="icon" val="icon.weapon_war_axe_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12385-1" />
+        <set name="standardItem" val="162" />
+        <set name="boundItem" val="30797" />
+    </item>
+    <!-- War Hammer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="31784" type="EtcItem" name="Unidentified War Hammer">
+        <set name="icon" val="icon.weapon_war_hammer_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12386-1" />
+        <set name="standardItem" val="293" />
+        <set name="boundItem" val="30801" />
+    </item>
+    <!-- Single-Edged Jamadhr in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / combat) -->
+    <item id="31785" type="EtcItem" name="Unidentified Single-Edged Jamadhr">
+        <set name="icon" val="icon.weapon_single-edged_jamadhr_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12387-1" />
+        <set name="standardItem" val="259" />
+        <set name="boundItem" val="30802" />
+    </item>
+    <!-- Orcish Poleaxe in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="31786" type="EtcItem" name="Unidentified Orcish Poleaxe">
+        <set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12388-1" />
+        <set name="standardItem" val="14299" />
+        <set name="boundItem" val="30803" />
+    </item>
+    <!-- Orcish Glaive in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="31787" type="EtcItem" name="Unidentified Orcish Glaive">
+        <set name="icon" val="icon.weapon_orcish_glaive_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12389-1" />
+        <set name="standardItem" val="298" />
+        <set name="boundItem" val="30807" />
+    </item>
+    <!-- Onyx Beast's Eye Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Earring) -->
+    <item id="31788" type="EtcItem" name="Unidentified Onyx Beast's Eye Earring">
+        <set name="icon" val="icon.accessary_onyxbeastseye_earing_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12390-1" />
+        <set name="standardItem" val="851" />
+    </item>
+    <!-- Ogre Power Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31789" type="EtcItem" name="Unidentified Ogre Power Gauntlets">
+        <set name="icon" val="icon.armor_t45_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12391-1" />
+        <set name="boundItem" val="30813" />
+    </item>
+    <!-- Ogre Power Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="31790" type="EtcItem" name="Unidentified Ogre Power Gauntlets">
+        <set name="icon" val="icon.armor_t45_g_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12392-1" />
+        <set name="boundItem" val="30813" />
+    </item>
+    <!-- Near Forest Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
+    <item id="31791" type="EtcItem" name="Unidentified Near Forest Necklace">
+        <set name="icon" val="icon.accessary_near_forest_necklace_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12393-1" />
+        <set name="standardItem" val="912" />
+        <set name="boundItem" val="30815" />
+    </item>
+    <!-- Near Forest Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Necklace) -->
+    <item id="31792" type="EtcItem" name="Unidentified Near Forest Necklace">
+        <set name="icon" val="icon.accessary_near_forest_necklace_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12394-1" />
+        <set name="standardItem" val="912" />
+        <set name="boundItem" val="30815" />
+    </item>
+    <!-- Soul Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
+    <item id="31793" type="EtcItem" name="Unidentified Soul Bow">
+        <set name="icon" val="icon.weapon_soul_bow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12395-1" />
+        <set name="standardItem" val="289" />
+        <set name="boundItem" val="30816" />
+    </item>
+    <!-- Spiritual Eye in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31794" type="EtcItem" name="Unidentified Spiritual Eye">
+        <set name="icon" val="icon.weapon_eye_of_soul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12396-1" />
+        <set name="standardItem" val="7894" />
+        <set name="boundItem" val="30820" />
+    </item>
+    <!-- Ring of Ages in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
+    <item id="31795" type="EtcItem" name="Unidentified Ring of Ages">
+        <set name="icon" val="icon.accessary_ring_of_ages_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12397-1" />
+        <set name="standardItem" val="885" />
+        <set name="boundItem" val="30825" />
+    </item>
+    <!-- Ring of Ages in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Ring) -->
+    <item id="31796" type="EtcItem" name="Unidentified Ring of Ages">
+        <set name="icon" val="icon.accessary_ring_of_ages_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12398-1" />
+        <set name="standardItem" val="885" />
+        <set name="boundItem" val="30825" />
+    </item>
+    <!-- Horn of Glory in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / other) -->
+    <item id="31797" type="EtcItem" name="Unidentified Horn of Glory">
+        <set name="icon" val="icon.weapon_horn_of_glory_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12399-1" />
+        <set name="standardItem" val="325" />
+        <set name="boundItem" val="30826" />
+    </item>
+    <!-- Mace of Miracle in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="31798" type="EtcItem" name="Unidentified Mace of Miracle">
+        <set name="icon" val="icon.weapon_mace_of_miracle_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12400-1" />
+        <set name="standardItem" val="181" />
+        <set name="boundItem" val="30827" />
+    </item>
+    <!-- Elven Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: lower / robe) -->
+    <item id="31799" type="EtcItem" name="Unidentified Elven Stockings">
+        <set name="icon" val="icon.armor_t11_l_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="12401-1" />
+        <set name="standardItem" val="466" />
+        <set name="boundItem" val="30828" />
+    </item>
 </list>

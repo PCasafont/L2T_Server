@@ -28,35 +28,37 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExGetPremiumItemList extends L2GameServerPacket
 {
-	
-	private L2PcInstance _activeChar;
-	
-	private Map<Integer, L2PremiumItem> _map;
-	
-	public ExGetPremiumItemList(L2PcInstance activeChar)
-	{
-		_activeChar = activeChar;
-		_map = _activeChar.getPremiumItemList();
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		if (!_map.isEmpty())
-		{
-			writeD(_map.size());
-			for (Entry<Integer, L2PremiumItem> entry : _map.entrySet())
-			{
-				L2PremiumItem item = entry.getValue();
-				writeD(entry.getKey());
-				writeD(_activeChar.getObjectId());
-				writeD(item.getItemId());
-				writeQ(item.getCount());
-				writeD(0);
-				writeS(item.getSender());
-			}
-		}
-		else
-			writeD(0);
-	}
+
+    private L2PcInstance _activeChar;
+
+    private Map<Integer, L2PremiumItem> _map;
+
+    public ExGetPremiumItemList(L2PcInstance activeChar)
+    {
+        _activeChar = activeChar;
+        _map = _activeChar.getPremiumItemList();
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        if (!_map.isEmpty())
+        {
+            writeD(_map.size());
+            for (Entry<Integer, L2PremiumItem> entry : _map.entrySet())
+            {
+                L2PremiumItem item = entry.getValue();
+                writeD(entry.getKey());
+                writeD(_activeChar.getObjectId());
+                writeD(item.getItemId());
+                writeQ(item.getCount());
+                writeD(0);
+                writeS(item.getSender());
+            }
+        }
+        else
+        {
+            writeD(0);
+        }
+    }
 }

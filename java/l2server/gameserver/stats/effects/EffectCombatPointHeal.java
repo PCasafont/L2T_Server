@@ -25,43 +25,46 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectCombatPointHeal extends L2Effect
 {
-	public EffectCombatPointHeal(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		L2Character target = getEffected();
-		if (target.isInvul(getEffector()))
-			return false;
-		
-		double cp = calc();
-		
-		if (target.getCurrentCp() + cp > target.getMaxCp())
-			cp = target.getMaxCp() - target.getCurrentCp();
-		target.setCurrentCp(cp + target.getCurrentCp());
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
-		sm.addNumber((int) cp);
-		target.sendPacket(sm);
-		return false;
-	}
+    public EffectCombatPointHeal(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean onStart()
+    {
+        L2Character target = getEffected();
+        if (target.isInvul(getEffector()))
+        {
+            return false;
+        }
+
+        double cp = calc();
+
+        if (target.getCurrentCp() + cp > target.getMaxCp())
+        {
+            cp = target.getMaxCp() - target.getCurrentCp();
+        }
+        target.setCurrentCp(cp + target.getCurrentCp());
+
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
+        sm.addNumber((int) cp);
+        target.sendPacket(sm);
+        return false;
+    }
 }

@@ -30,123 +30,137 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PlayerAssistsManager
 {
-	public class PlayerInfo
-	{
-		public Map<L2PcInstance, Long> AttackTimers = new HashMap<L2PcInstance, Long>();
-		public Map<L2PcInstance, Long> HelpTimers = new HashMap<L2PcInstance, Long>();
-	}
-	
-	Map<Integer, PlayerInfo> _players = new HashMap<Integer, PlayerInfo>();
-	
-	public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target)
-	{
-		synchronized (_players)
-		{
-			PlayerInfo playerInfo = _players.get(target.getObjectId());
-			if (playerInfo == null)
-			{
-				playerInfo = new PlayerInfo();
-				_players.put(target.getObjectId(), playerInfo);
-			}
-			
-			synchronized (playerInfo)
-			{
-				long time = System.currentTimeMillis() + 10000L;
-				playerInfo.AttackTimers.put(attacker, time);
-			}
-		}
-	}
-	
-	public void updateHelpTimer(L2PcInstance helper, L2PcInstance target)
-	{
-		synchronized (_players)
-		{
-			PlayerInfo playerInfo = _players.get(target.getObjectId());
-			if (playerInfo == null)
-			{
-				playerInfo = new PlayerInfo();
-				_players.put(target.getObjectId(), playerInfo);
-			}
-			
-			synchronized (playerInfo)
-			{
-				long time = System.currentTimeMillis() + 10000L;
-				playerInfo.HelpTimers.put(helper, time);
-			}
-		}
-	}
-	
-	public List<L2PcInstance> getAssistants(L2PcInstance killer, L2PcInstance victim, boolean killed)
-	{
-		long curTime = System.currentTimeMillis();
-		Set<L2PcInstance> assistants = new HashSet<L2PcInstance>();
-		if (killer != null && _players.containsKey(killer.getObjectId()))
-		{
-			PlayerInfo killerInfo = _players.get(killer.getObjectId());
-			
-			// Gather the assistants
-			List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
-			for (L2PcInstance assistant : killerInfo.HelpTimers.keySet())
-			{
-				if (killerInfo.HelpTimers.get(assistant) > curTime)
-					assistants.add(assistant);
-				else
-					toDeleteList.add(assistant);
-			}
-			
-			// Delete unnecessary assistants
-			for (L2PcInstance toDelete : toDeleteList)
-				killerInfo.HelpTimers.remove(toDelete);
-		}
-		
-		if (victim != null && _players.containsKey(victim.getObjectId()))
-		{
-			PlayerInfo victimInfo = _players.get(victim.getObjectId());
-			
-			// Gather more assistants
-			for (L2PcInstance assistant : victimInfo.AttackTimers.keySet())
-			{
-				if (victimInfo.AttackTimers.get(assistant) > curTime)
-				{
-					assistants.add(assistant);
-					if (_players.containsKey(assistant.getObjectId()))
-					{
-						PlayerInfo assistantInfo = _players.get(assistant.getObjectId());
-						
-						// Gather the assistant's assistants
-						List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
-						for (Entry<L2PcInstance, Long> assistantsAssistant : assistantInfo.HelpTimers.entrySet())
-						{
-							if (assistantsAssistant.getValue() > curTime)
-								assistants.add(assistantsAssistant.getKey());
-							else
-								toDeleteList.add(assistantsAssistant.getKey());
-						}
-						
-						// Delete unnecessary assistants
-						for (L2PcInstance toDelete : toDeleteList)
-							assistantInfo.HelpTimers.remove(toDelete);
-					}
-				}
-			}
-			
-			if (killed)
-				victimInfo.AttackTimers.clear();
-		}
-		
-		assistants.remove(killer);
-		assistants.remove(victim);
-		return new ArrayList<L2PcInstance>(assistants);
-	}
-	
-	public static final PlayerAssistsManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final PlayerAssistsManager _instance = new PlayerAssistsManager();
-	}
+    public class PlayerInfo
+    {
+        public Map<L2PcInstance, Long> AttackTimers = new HashMap<L2PcInstance, Long>();
+        public Map<L2PcInstance, Long> HelpTimers = new HashMap<L2PcInstance, Long>();
+    }
+
+    Map<Integer, PlayerInfo> _players = new HashMap<Integer, PlayerInfo>();
+
+    public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target)
+    {
+        synchronized (_players)
+        {
+            PlayerInfo playerInfo = _players.get(target.getObjectId());
+            if (playerInfo == null)
+            {
+                playerInfo = new PlayerInfo();
+                _players.put(target.getObjectId(), playerInfo);
+            }
+
+            synchronized (playerInfo)
+            {
+                long time = System.currentTimeMillis() + 10000L;
+                playerInfo.AttackTimers.put(attacker, time);
+            }
+        }
+    }
+
+    public void updateHelpTimer(L2PcInstance helper, L2PcInstance target)
+    {
+        synchronized (_players)
+        {
+            PlayerInfo playerInfo = _players.get(target.getObjectId());
+            if (playerInfo == null)
+            {
+                playerInfo = new PlayerInfo();
+                _players.put(target.getObjectId(), playerInfo);
+            }
+
+            synchronized (playerInfo)
+            {
+                long time = System.currentTimeMillis() + 10000L;
+                playerInfo.HelpTimers.put(helper, time);
+            }
+        }
+    }
+
+    public List<L2PcInstance> getAssistants(L2PcInstance killer, L2PcInstance victim, boolean killed)
+    {
+        long curTime = System.currentTimeMillis();
+        Set<L2PcInstance> assistants = new HashSet<L2PcInstance>();
+        if (killer != null && _players.containsKey(killer.getObjectId()))
+        {
+            PlayerInfo killerInfo = _players.get(killer.getObjectId());
+
+            // Gather the assistants
+            List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
+            for (L2PcInstance assistant : killerInfo.HelpTimers.keySet())
+            {
+                if (killerInfo.HelpTimers.get(assistant) > curTime)
+                {
+                    assistants.add(assistant);
+                }
+                else
+                {
+                    toDeleteList.add(assistant);
+                }
+            }
+
+            // Delete unnecessary assistants
+            for (L2PcInstance toDelete : toDeleteList)
+            {
+                killerInfo.HelpTimers.remove(toDelete);
+            }
+        }
+
+        if (victim != null && _players.containsKey(victim.getObjectId()))
+        {
+            PlayerInfo victimInfo = _players.get(victim.getObjectId());
+
+            // Gather more assistants
+            for (L2PcInstance assistant : victimInfo.AttackTimers.keySet())
+            {
+                if (victimInfo.AttackTimers.get(assistant) > curTime)
+                {
+                    assistants.add(assistant);
+                    if (_players.containsKey(assistant.getObjectId()))
+                    {
+                        PlayerInfo assistantInfo = _players.get(assistant.getObjectId());
+
+                        // Gather the assistant's assistants
+                        List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
+                        for (Entry<L2PcInstance, Long> assistantsAssistant : assistantInfo.HelpTimers.entrySet())
+                        {
+                            if (assistantsAssistant.getValue() > curTime)
+                            {
+                                assistants.add(assistantsAssistant.getKey());
+                            }
+                            else
+                            {
+                                toDeleteList.add(assistantsAssistant.getKey());
+                            }
+                        }
+
+                        // Delete unnecessary assistants
+                        for (L2PcInstance toDelete : toDeleteList)
+                        {
+                            assistantInfo.HelpTimers.remove(toDelete);
+                        }
+                    }
+                }
+            }
+
+            if (killed)
+            {
+                victimInfo.AttackTimers.clear();
+            }
+        }
+
+        assistants.remove(killer);
+        assistants.remove(victim);
+        return new ArrayList<L2PcInstance>(assistants);
+    }
+
+    public static final PlayerAssistsManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final PlayerAssistsManager _instance = new PlayerAssistsManager();
+    }
 }

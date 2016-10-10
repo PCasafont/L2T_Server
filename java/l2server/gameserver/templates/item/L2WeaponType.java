@@ -17,47 +17,69 @@ package l2server.gameserver.templates.item;
 
 /**
  * @author mkizub
- * <BR>Description of Weapon Type
+ *         <BR>Description of Weapon Type
  */
 public enum L2WeaponType implements L2ItemType
 {
-	SWORD("Sword"), BLUNT("Blunt"), DAGGER("Dagger"), BOW("Bow"), POLE("Pole"), NONE("None"), DUAL("Dual Sword"), ETC("Etc"), FIST("Fist"), DUALFIST("Dual Fist"), FISHINGROD("Rod"), RAPIER("Rapier"), ANCIENTSWORD("Ancient"), CROSSBOWK("Crossbow"), FLAG("Flag"), OWNTHING("Ownthing"), DUALDAGGER("Dual Dagger"), CROSSBOW("Crossbow"), DUALBLUNT("Dual Blunt"),
-	
-	// L2J CUSTOM, BACKWARD COMPATIBILITY
-	BIGBLUNT("Big Blunt"), BIGSWORD("Big Sword");
-	
-	private final int _mask;
-	private final String _name;
-	
-	/**
-	 * Constructor of the L2WeaponType.
-	 * @param id : int designating the ID of the WeaponType
-	 * @param name : String designating the name of the WeaponType
-	 */
-	private L2WeaponType(String name)
-	{
-		_mask = 1 << ordinal();
-		_name = name;
-	}
-	
-	/**
-	 * Returns the ID of the item after applying the mask.
-	 * @return int : ID of the item
-	 */
-	@Override
-	public int mask()
-	{
-		return _mask;
-	}
-	
-	/**
-	 * Returns the name of the WeaponType
-	 * @return String
-	 */
-	@Override
-	public String toString()
-	{
-		return _name;
-	}
-	
+    SWORD("Sword"),
+    BLUNT("Blunt"),
+    DAGGER("Dagger"),
+    BOW("Bow"),
+    POLE("Pole"),
+    NONE("None"),
+    DUAL("Dual Sword"),
+    ETC("Etc"),
+    FIST("Fist"),
+    DUALFIST("Dual Fist"),
+    FISHINGROD("Rod"),
+    RAPIER("Rapier"),
+    ANCIENTSWORD("Ancient"),
+    CROSSBOWK("Crossbow"),
+    FLAG("Flag"),
+    OWNTHING("Ownthing"),
+    DUALDAGGER("Dual Dagger"),
+    CROSSBOW("Crossbow"),
+    DUALBLUNT("Dual Blunt"),
+
+    // L2J CUSTOM, BACKWARD COMPATIBILITY
+    BIGBLUNT("Big Blunt"),
+    BIGSWORD("Big Sword");
+
+    private final int _mask;
+    private final String _name;
+
+    /**
+     * Constructor of the L2WeaponType.
+     *
+     * @param id   : int designating the ID of the WeaponType
+     * @param name : String designating the name of the WeaponType
+     */
+    private L2WeaponType(String name)
+    {
+        _mask = 1 << ordinal();
+        _name = name;
+    }
+
+    /**
+     * Returns the ID of the item after applying the mask.
+     *
+     * @return int : ID of the item
+     */
+    @Override
+    public int mask()
+    {
+        return _mask;
+    }
+
+    /**
+     * Returns the name of the WeaponType
+     *
+     * @return String
+     */
+    @Override
+    public String toString()
+    {
+        return _name;
+    }
+
 }

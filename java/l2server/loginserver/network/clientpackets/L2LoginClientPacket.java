@@ -22,28 +22,27 @@ import l2server.loginserver.network.L2LoginClient;
 import l2server.network.ReceivablePacket;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient>
 {
-	
-	/**
-	 * @see l2server.mmocore.network.ReceivablePacket#read()
-	 */
-	@Override
-	protected final boolean read()
-	{
-		try
-		{
-			return readImpl();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
-			return false;
-		}
-	}
-	
-	protected abstract boolean readImpl();
+
+    /**
+     * @see l2server.mmocore.network.ReceivablePacket#read()
+     */
+    @Override
+    protected final boolean read()
+    {
+        try
+        {
+            return readImpl();
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+    protected abstract boolean readImpl();
 }

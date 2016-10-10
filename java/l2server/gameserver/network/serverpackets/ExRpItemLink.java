@@ -18,28 +18,27 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.L2ItemInstance;
 
 /**
- *
- * @author  KenM
+ * @author KenM
  */
 public final class ExRpItemLink extends L2ItemListPacket
 {
-	private final L2ItemInstance _item;
-	
-	public ExRpItemLink(L2ItemInstance item)
-	{
-		_item = item;
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeItem(_item);
-	}
+    private final L2ItemInstance _item;
+
+    public ExRpItemLink(L2ItemInstance item)
+    {
+        _item = item;
+    }
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
+
+    /**
+     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeItem(_item);
+    }
 }

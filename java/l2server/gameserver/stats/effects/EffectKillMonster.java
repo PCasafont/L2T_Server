@@ -23,36 +23,39 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectKillMonster extends L2Effect
 {
-	public EffectKillMonster(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() == null || !(getEffected() instanceof L2MonsterInstance) || getEffected().isRaid() || getEffected().isChampion())
-			return false;
-		
-		L2PcInstance player = getEffector().getActingPlayer();
-		if (player == null)
-			return false;
-		
-		getEffected().reduceCurrentHp(getEffected().getCurrentHp() - 1, getEffector(), null);
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectKillMonster(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() == null || !(getEffected() instanceof L2MonsterInstance) || getEffected()
+                .isRaid() || getEffected().isChampion())
+        {
+            return false;
+        }
+
+        L2PcInstance player = getEffector().getActingPlayer();
+        if (player == null)
+        {
+            return false;
+        }
+
+        getEffected().reduceCurrentHp(getEffected().getCurrentHp() - 1, getEffector(), null);
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

@@ -23,34 +23,38 @@ import l2server.gameserver.model.olympiad.HeroesManager;
  * c (id) 0xD0
  * h (subid) 0x0C
  * S the hero's words :)
- * @author -Wooden-
  *
+ * @author -Wooden-
  */
 public final class RequestWriteHeroWords extends L2GameClientPacket
 {
-	
-	private String _heroWords;
-	
-	/**
-	 * @param buf
-	 * @param client
-	 */
-	@Override
-	protected void readImpl()
-	{
-		_heroWords = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null || !player.isHero())
-			return;
-		
-		if (_heroWords == null || _heroWords.length() > 300)
-			return;
-		
-		HeroesManager.getInstance().setHeroMessage(player, _heroWords);
-	}
+
+    private String _heroWords;
+
+    /**
+     * @param buf
+     * @param client
+     */
+    @Override
+    protected void readImpl()
+    {
+        _heroWords = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance player = getClient().getActiveChar();
+        if (player == null || !player.isHero())
+        {
+            return;
+        }
+
+        if (_heroWords == null || _heroWords.length() > 300)
+        {
+            return;
+        }
+
+        HeroesManager.getInstance().setHeroMessage(player, _heroWords);
+    }
 }

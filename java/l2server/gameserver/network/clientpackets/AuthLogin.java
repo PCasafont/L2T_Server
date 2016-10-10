@@ -36,62 +36,62 @@ import l2server.log.Log;
  */
 public final class AuthLogin extends L2GameClientPacket
 {
-	// loginName + keys must match what the loginserver used.
-	private String _loginName;
-	private int _playKey1;
-	private int _playKey2;
-	private int _loginKey1;
-	private int _loginKey2;
-	
-	/**
-	 * @param decrypt
-	 */
-	@Override
-	protected void readImpl()
-	{
-		_loginName = readS().toLowerCase();
-		_playKey2 = readD();
-		_playKey1 = readD();
-		_loginKey1 = readD();
-		_loginKey2 = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2GameClient client = getClient();
-		if (_loginName.length() == 0 || !client.isProtocolOk())
-		{
-			client.close((L2GameServerPacket) null);
-			return;
-		}
-		SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
-		if (Config.DEBUG)
-		{
-			Log.info("user:" + _loginName);
-			Log.info("key:" + key);
-		}
-		
-		// avoid potential exploits
-		if (client.getAccountName() == null)
-		{
-			if (!_loginName.equalsIgnoreCase("IdEmpty"))
-			{
-				client.setAccountName(_loginName);
-				LoginServerThread.getInstance().addGameServerLogin(_loginName, client);
-			}
-			LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
-		}
-		//sendVitalityInfo(client);
-	}
-	
-	@SuppressWarnings("unused")
-	private void sendVitalityInfo(L2GameClient client)
-	{
-		Connection con = null;
-		int vitalityPoints = Config.STARTING_VITALITY_POINTS;
-		int vitalityItemsUsed = 0;
-		/*
+    // loginName + keys must match what the loginserver used.
+    private String _loginName;
+    private int _playKey1;
+    private int _playKey2;
+    private int _loginKey1;
+    private int _loginKey2;
+
+    /**
+     * @param decrypt
+     */
+    @Override
+    protected void readImpl()
+    {
+        _loginName = readS().toLowerCase();
+        _playKey2 = readD();
+        _playKey1 = readD();
+        _loginKey1 = readD();
+        _loginKey2 = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2GameClient client = getClient();
+        if (_loginName.length() == 0 || !client.isProtocolOk())
+        {
+            client.close((L2GameServerPacket) null);
+            return;
+        }
+        SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
+        if (Config.DEBUG)
+        {
+            Log.info("user:" + _loginName);
+            Log.info("key:" + key);
+        }
+
+        // avoid potential exploits
+        if (client.getAccountName() == null)
+        {
+            if (!_loginName.equalsIgnoreCase("IdEmpty"))
+            {
+                client.setAccountName(_loginName);
+                LoginServerThread.getInstance().addGameServerLogin(_loginName, client);
+            }
+            LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
+        }
+        //sendVitalityInfo(client);
+    }
+
+    @SuppressWarnings("unused")
+    private void sendVitalityInfo(L2GameClient client)
+    {
+        Connection con = null;
+        int vitalityPoints = Config.STARTING_VITALITY_POINTS;
+        int vitalityItemsUsed = 0;
+        /*
 		 *
 			Connection con = null;
 			try
@@ -127,57 +127,61 @@ public final class AuthLogin extends L2GameClientPacket
 			}
 
 		 */
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
-			statement.setString(1, client.getAccountName());
-			statement.setString(2, "vitality");
-			ResultSet rset = statement.executeQuery();
-			
-			if (rset.next())
-				vitalityPoints = rset.getInt("value");
-			else
-			{
-				statement.close();
-				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
-				statement.setString(1, client.getAccountName());
-				statement.setString(2, "vitality");
-				statement.setInt(3, Config.STARTING_VITALITY_POINTS);
-				statement.execute();
-			}
-			
-			rset.close();
-			statement.close();
-			
-			statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
-			statement.setString(1, client.getAccountName());
-			statement.setString(2, "vit_items_used");
-			rset = statement.executeQuery();
-			if (rset.next())
-				vitalityItemsUsed = rset.getInt("value");
-			else
-			{
-				statement.close();
-				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
-				statement.setString(1, client.getAccountName());
-				statement.setString(2, "vit_items_used");
-				statement.setInt(3, 0);
-				statement.execute();
-			}
-			
-			rset.close();
-			statement.close();
-			
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Could not restore account vitality points: " + e.getMessage(), e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-		client.sendPacket(new ExLoginVitalityEffectInfo(vitalityPoints, vitalityItemsUsed));
-	}
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = con
+                    .prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+            statement.setString(1, client.getAccountName());
+            statement.setString(2, "vitality");
+            ResultSet rset = statement.executeQuery();
+
+            if (rset.next())
+            {
+                vitalityPoints = rset.getInt("value");
+            }
+            else
+            {
+                statement.close();
+                statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+                statement.setString(1, client.getAccountName());
+                statement.setString(2, "vitality");
+                statement.setInt(3, Config.STARTING_VITALITY_POINTS);
+                statement.execute();
+            }
+
+            rset.close();
+            statement.close();
+
+            statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+            statement.setString(1, client.getAccountName());
+            statement.setString(2, "vit_items_used");
+            rset = statement.executeQuery();
+            if (rset.next())
+            {
+                vitalityItemsUsed = rset.getInt("value");
+            }
+            else
+            {
+                statement.close();
+                statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+                statement.setString(1, client.getAccountName());
+                statement.setString(2, "vit_items_used");
+                statement.setInt(3, 0);
+                statement.execute();
+            }
+
+            rset.close();
+            statement.close();
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Could not restore account vitality points: " + e.getMessage(), e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+        client.sendPacket(new ExLoginVitalityEffectInfo(vitalityPoints, vitalityItemsUsed));
+    }
 }

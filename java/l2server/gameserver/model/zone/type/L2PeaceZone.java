@@ -16,80 +16,81 @@
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 
 /**
  * A peaceful zone
  *
- * @author  durgus
+ * @author durgus
  */
 public class L2PeaceZone extends L2ZoneType
 {
-	boolean _enabled;
-	
-	public L2PeaceZone(int id)
-	{
-		super(id);
-		
-		_enabled = true;
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (!_enabled)
-		{
-			return;
-		}
-		
-		if (!GMEventManager.getInstance().onEnterZone(character, this))
-			return;
-		
-		character.setInsideZone(L2Character.ZONE_PEACE, true);
-		
-		if (character instanceof L2PcInstance && ((L2PcInstance) character).isCombatFlagEquipped() && TerritoryWarManager.getInstance().isTWInProgress())
-			TerritoryWarManager.getInstance().dropCombatFlag((L2PcInstance) character, false, true);
-		
-		character.setInsideZone(L2Character.ZONE_CROSS_SERVER, true);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		character.setInsideZone(L2Character.ZONE_PEACE, false);
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-	}
-	
-	public boolean isEnabled()
-	{
-		return _enabled;
-	}
-	
-	public void setZoneEnabled(boolean val)
-	{
-		_enabled = val;
-		
-		for (L2Character chara : getCharactersInside().values())
-		{
-			if (chara == null)
-				continue;
-			
-			if (_enabled)
-				onEnter(chara);
-			else
-				onExit(chara);
-		}
-	}
+    boolean _enabled;
+
+    public L2PeaceZone(int id)
+    {
+        super(id);
+
+        _enabled = true;
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        if (!_enabled)
+        {
+            return;
+        }
+
+        if (!GMEventManager.getInstance().onEnterZone(character, this))
+        {
+            return;
+        }
+
+        character.setInsideZone(L2Character.ZONE_PEACE, true);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        character.setInsideZone(L2Character.ZONE_PEACE, false);
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+    }
+
+    public boolean isEnabled()
+    {
+        return _enabled;
+    }
+
+    public void setZoneEnabled(boolean val)
+    {
+        _enabled = val;
+
+        for (L2Character chara : getCharactersInside().values())
+        {
+            if (chara == null)
+            {
+                continue;
+            }
+
+            if (_enabled)
+            {
+                onEnter(chara);
+            }
+            else
+            {
+                onExit(chara);
+            }
+        }
+    }
 }

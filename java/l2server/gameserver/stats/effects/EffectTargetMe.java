@@ -27,77 +27,85 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- *
  * @author -Nemesiss-
  */
 public class EffectTargetMe extends L2Effect
 {
-	public EffectTargetMe(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.DEBUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Playable)
-		{
-			if (getEffected() instanceof L2SiegeSummonInstance)
-				return false;
-			
-			if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected())
-				return false;
-			
-			if (getEffected().getTarget() != getEffector())
-			{
-				// Target is different
-				getEffected().abortAttack();
-				getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				getEffected().setTarget(getEffector());
-				if (getEffected() instanceof L2PcInstance)
-					getEffected().sendPacket(new MyTargetSelected(getEffector().getObjectId(), 0));
-			}
-			
-			if (getAbnormal().getTemplate().duration > 0)
-				((L2Playable) getEffected()).setLockedTarget(getEffector());
-			
-			return true;
-		}
-		else if (getEffected() instanceof L2Attackable && !getEffected().isRaid())
-			return true;
-		
-		return false;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		if (getEffected() instanceof L2Playable)
-			((L2Playable) getEffected()).setLockedTarget(null);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		// nothing
-		return false;
-	}
+    public EffectTargetMe(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.DEBUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() instanceof L2Playable)
+        {
+            if (getEffected() instanceof L2SiegeSummonInstance)
+            {
+                return false;
+            }
+
+            if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected())
+            {
+                return false;
+            }
+
+            if (getEffected().getTarget() != getEffector())
+            {
+                // Target is different
+                getEffected().abortAttack();
+                getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+                getEffected().setTarget(getEffector());
+                if (getEffected() instanceof L2PcInstance)
+                {
+                    getEffected().sendPacket(new MyTargetSelected(getEffector().getObjectId(), 0));
+                }
+            }
+
+            if (getAbnormal().getTemplate().duration > 0)
+            {
+                ((L2Playable) getEffected()).setLockedTarget(getEffector());
+            }
+
+            return true;
+        }
+        else if (getEffected() instanceof L2Attackable && !getEffected().isRaid())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        if (getEffected() instanceof L2Playable)
+        {
+            ((L2Playable) getEffected()).setLockedTarget(null);
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        // nothing
+        return false;
+    }
 }

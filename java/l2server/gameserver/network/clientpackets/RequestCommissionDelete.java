@@ -18,31 +18,32 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Erlandys
  */
 public final class RequestCommissionDelete extends L2GameClientPacket
 {
-	
-	long _auctionID;
-	int _category;
-	int _duration;
-	
-	@Override
-	protected void readImpl()
-	{
-		_auctionID = readQ();
-		_category = readD();
-		_duration = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
+
+    long _auctionID;
+    int _category;
+    int _duration;
+
+    @Override
+    protected void readImpl()
+    {
+        _auctionID = readQ();
+        _category = readD();
+        _duration = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
 		/*AuctionManager am = AuctionManager.getInstance();
 		am.checkForAuctionsDeletion();
 		Auctions auction = am.getAuctionById(_auctionID);
@@ -63,5 +64,5 @@ public final class RequestCommissionDelete extends L2GameClientPacket
 			player.sendPacket(new ExResponseCommissionList(player));
 			player.sendPacket(new ExResponseCommissionItemList(player));
 		}*/
-	}
+    }
 }

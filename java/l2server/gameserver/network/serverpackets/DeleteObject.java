@@ -18,29 +18,28 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.L2Object;
 
 /**
- *
  * format  cdd
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class DeleteObject extends L2GameServerPacket
 {
-	private final int _objectId;
-	
-	public DeleteObject(L2Object obj)
-	{
-		_objectId = obj.getObjectId();
-	}
-	
-	public DeleteObject(int objectId)
-	{
-		_objectId = objectId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objectId);
-		writeC(0x00); //c2
-	}
+    private final int _objectId;
+
+    public DeleteObject(L2Object obj)
+    {
+        _objectId = obj.getObjectId();
+    }
+
+    public DeleteObject(int objectId)
+    {
+        _objectId = objectId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objectId);
+        writeC(0x00); //c2
+    }
 }

@@ -23,59 +23,61 @@ import l2server.Config;
 import l2server.log.Log;
 
 /**
- *
  * @author nBd
- *
  */
 public class BypassHandler
 {
-	
-	private TIntObjectHashMap<IBypassHandler> _datatable;
-	
-	public static BypassHandler getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private BypassHandler()
-	{
-		_datatable = new TIntObjectHashMap<IBypassHandler>();
-	}
-	
-	public void registerBypassHandler(IBypassHandler handler)
-	{
-		for (String element : handler.getBypassList())
-		{
-			if (Config.DEBUG)
-				Log.log(Level.FINE, "Adding handler for command " + element);
-			
-			_datatable.put(element.toLowerCase().hashCode(), handler);
-		}
-	}
-	
-	public IBypassHandler getBypassHandler(String BypassCommand)
-	{
-		String command = BypassCommand;
-		
-		if (BypassCommand.indexOf(" ") != -1)
-		{
-			command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
-		}
-		
-		if (Config.DEBUG)
-			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
-		
-		return _datatable.get(command.toLowerCase().hashCode());
-	}
-	
-	public int size()
-	{
-		return _datatable.size();
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final BypassHandler _instance = new BypassHandler();
-	}
+
+    private TIntObjectHashMap<IBypassHandler> _datatable;
+
+    public static BypassHandler getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private BypassHandler()
+    {
+        _datatable = new TIntObjectHashMap<IBypassHandler>();
+    }
+
+    public void registerBypassHandler(IBypassHandler handler)
+    {
+        for (String element : handler.getBypassList())
+        {
+            if (Config.DEBUG)
+            {
+                Log.log(Level.FINE, "Adding handler for command " + element);
+            }
+
+            _datatable.put(element.toLowerCase().hashCode(), handler);
+        }
+    }
+
+    public IBypassHandler getBypassHandler(String BypassCommand)
+    {
+        String command = BypassCommand;
+
+        if (BypassCommand.indexOf(" ") != -1)
+        {
+            command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
+        }
+
+        if (Config.DEBUG)
+        {
+            Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
+        }
+
+        return _datatable.get(command.toLowerCase().hashCode());
+    }
+
+    public int size()
+    {
+        return _datatable.size();
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final BypassHandler _instance = new BypassHandler();
+    }
 }

@@ -1,1183 +1,1183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Shaper. Deleted after event. -->
-	<item id="39100" type="Weapon" name="+ 4 Apocalypse Shaper Coupon">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Cutter. Deleted after event. -->
-	<item id="39101" type="Weapon" name="+ 4 Apocalypse Cutter Coupon">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Slasher. Deleted after event. -->
-	<item id="39102" type="Weapon" name="+ 4 Apocalypse Slasher Coupon">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Avenger. Deleted after event. -->
-	<item id="39103" type="Weapon" name="+ 4 Apocalypse Avenger Coupon">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Fighter. Deleted after event. -->
-	<item id="39104" type="Weapon" name="+ 4 Apocalypse Fighter Coupon">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Stormer. Deleted after event. -->
-	<item id="39105" type="Weapon" name="+ 4 Apocalypse Stormer Coupon">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Thrower. Deleted after event. -->
-	<item id="39106" type="Weapon" name="+ 4 Apocalypse Thrower Coupon">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Shooter. Deleted after event. -->
-	<item id="39107" type="Weapon" name="+ 4 Apocalypse Shooter Coupon">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Buster. Deleted after event. -->
-	<item id="39108" type="Weapon" name="+ 4 Apocalypse Buster Coupon">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Caster. Deleted after event. -->
-	<item id="39109" type="Weapon" name="+ 4 Apocalypse Caster Coupon">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Retributer. Deleted after event. -->
-	<item id="39110" type="Weapon" name="+ 4 Apocalypse Retributer Coupon">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dualsword. Deleted after event. -->
-	<item id="39111" type="Weapon" name="+ 4 Apocalypse Dualsword Coupon">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dual Dagger. Deleted after event. -->
-	<item id="39112" type="Weapon" name="+ 4 Apocalypse Dual Dagger Coupon">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dual Blunt Weapon. Deleted after event. -->
-	<item id="39113" type="Weapon" name="+ 4 Apocalypse Dual Blunt Weapon Coupon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Shaper. Deleted after event. -->
-	<item id="39114" type="Weapon" name="+ 5 Apocalypse Shaper Coupon">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Cutter. Deleted after event. -->
-	<item id="39115" type="Weapon" name="+ 5 Apocalypse Cutter Coupon">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Slasher. Deleted after event. -->
-	<item id="39116" type="Weapon" name="+ 5 Apocalypse Slasher Coupon">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Avenger. Deleted after event. -->
-	<item id="39117" type="Weapon" name="+ 5 Apocalypse Avenger Coupon">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Fighter. Deleted after event. -->
-	<item id="39118" type="Weapon" name="+ 5 Apocalypse Fighter Coupon">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Stormer. Deleted after event. -->
-	<item id="39119" type="Weapon" name="+ 5 Apocalypse Stormer Coupon">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Thrower. Deleted after event. -->
-	<item id="39120" type="Weapon" name="+ 5 Apocalypse Thrower Coupon">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Shooter. Deleted after event. -->
-	<item id="39121" type="Weapon" name="+ 5 Apocalypse Shooter Coupon">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Buster. Deleted after event. -->
-	<item id="39122" type="Weapon" name="+ 5 Apocalypse Buster Coupon">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Caster. Deleted after event. -->
-	<item id="39123" type="Weapon" name="+ 5 Apocalypse Caster Coupon">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Retributer. Deleted after event. -->
-	<item id="39124" type="Weapon" name="+ 5 Apocalypse Retributer Coupon">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dualsword. Deleted after event. -->
-	<item id="39125" type="Weapon" name="+ 5 Apocalypse Dualsword Coupon">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dual Dagger. Deleted after event. -->
-	<item id="39126" type="Weapon" name="+ 5 Apocalypse Dual Dagger Coupon">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dual Blunt Weapon. Deleted after event. -->
-	<item id="39127" type="Weapon" name="+ 5 Apocalypse Dual Blunt Weapon Coupon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Shaper. Deleted after event. -->
-	<item id="39128" type="Weapon" name="+ 6 Apocalypse Shaper Coupon">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Cutter. Deleted after event. -->
-	<item id="39129" type="Weapon" name="+ 6 Apocalypse Cutter Coupon">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Slasher. Deleted after event. -->
-	<item id="39130" type="Weapon" name="+ 6 Apocalypse Slasher Coupon">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Avenger. Deleted after event. -->
-	<item id="39131" type="Weapon" name="+ 6 Apocalypse Avenger Coupon">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Fighter. Deleted after event. -->
-	<item id="39132" type="Weapon" name="+ 6 Apocalypse Fighter Coupon">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Stormer. Deleted after event. -->
-	<item id="39133" type="Weapon" name="+ 6 Apocalypse Stormer Coupon">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Thrower. Deleted after event. -->
-	<item id="39134" type="Weapon" name="+ 6 Apocalypse Thrower Coupon">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Shooter. Deleted after event. -->
-	<item id="39135" type="Weapon" name="+ 6 Apocalypse Shooter Coupon">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Buster. Deleted after event. -->
-	<item id="39136" type="Weapon" name="+ 6 Apocalypse Buster Coupon">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Caster. Deleted after event. -->
-	<item id="39137" type="Weapon" name="+ 6 Apocalypse Caster Coupon">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Retributer. Deleted after event. -->
-	<item id="39138" type="Weapon" name="+ 6 Apocalypse Retributer Coupon">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dualsword. Deleted after event. -->
-	<item id="39139" type="Weapon" name="+ 6 Apocalypse Dualsword Coupon">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dual Dagger. Deleted after event. -->
-	<item id="39140" type="Weapon" name="+ 6 Apocalypse Dual Dagger Coupon">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dual Blunt Weapon. Deleted after event. -->
-	<item id="39141" type="Weapon" name="+ 6 Apocalypse Dual Blunt Weapon Coupon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Shaper. Deleted after event. -->
-	<item id="39142" type="Weapon" name="+ 7 Apocalypse Shaper Coupon">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Cutter. Deleted after event. -->
-	<item id="39143" type="Weapon" name="+ 7 Apocalypse Cutter Coupon">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Slasher. Deleted after event. -->
-	<item id="39144" type="Weapon" name="+ 7 Apocalypse Slasher Coupon">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Avenger. Deleted after event. -->
-	<item id="39145" type="Weapon" name="+ 7 Apocalypse Avenger Coupon">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Fighter. Deleted after event. -->
-	<item id="39146" type="Weapon" name="+ 7 Apocalypse Fighter Coupon">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Stormer. Deleted after event. -->
-	<item id="39147" type="Weapon" name="+ 7 Apocalypse Stormer Coupon">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Thrower. Deleted after event. -->
-	<item id="39148" type="Weapon" name="+ 7 Apocalypse Thrower Coupon">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Shooter. Deleted after event. -->
-	<item id="39149" type="Weapon" name="+ 7 Apocalypse Shooter Coupon">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Buster. Deleted after event. -->
-	<item id="39150" type="Weapon" name="+ 7 Apocalypse Buster Coupon">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Caster. Deleted after event. -->
-	<item id="39151" type="Weapon" name="+ 7 Apocalypse Caster Coupon">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Retributer. Deleted after event. -->
-	<item id="39152" type="Weapon" name="+ 7 Apocalypse Retributer Coupon">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dualsword. Deleted after event. -->
-	<item id="39153" type="Weapon" name="+ 7 Apocalypse Dualsword Coupon">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dual Dagger. Deleted after event. -->
-	<item id="39154" type="Weapon" name="+ 7 Apocalypse Dual Dagger Coupon">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dual Blunt Weapon. Deleted after event. -->
-	<item id="39155" type="Weapon" name="+ 7 Apocalypse Dual Blunt Weapon Coupon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Shaper. Deleted after event. -->
-	<item id="39156" type="Weapon" name="+ 8 Apocalypse Shaper Coupon">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Cutter. Deleted after event. -->
-	<item id="39157" type="Weapon" name="+ 8 Apocalypse Cutter Coupon">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Slasher. Deleted after event. -->
-	<item id="39158" type="Weapon" name="+ 8 Apocalypse Slasher Coupon">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Avenger. Deleted after event. -->
-	<item id="39159" type="Weapon" name="+ 8 Apocalypse Avenger Coupon">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Fighter. Deleted after event. -->
-	<item id="39160" type="Weapon" name="+ 8 Apocalypse Fighter Coupon">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Stormer. Deleted after event. -->
-	<item id="39161" type="Weapon" name="+ 8 Apocalypse Stormer Coupon">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Thrower. Deleted after event. -->
-	<item id="39162" type="Weapon" name="+ 8 Apocalypse Thrower Coupon">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Shooter. Deleted after event. -->
-	<item id="39163" type="Weapon" name="+ 8 Apocalypse Shooter Coupon">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Buster. Deleted after event. -->
-	<item id="39164" type="Weapon" name="+ 8 Apocalypse Buster Coupon">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Caster. Deleted after event. -->
-	<item id="39165" type="Weapon" name="+ 8 Apocalypse Caster Coupon">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Retributer. Deleted after event. -->
-	<item id="39166" type="Weapon" name="+ 8 Apocalypse Retributer Coupon">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dualsword. Deleted after event. -->
-	<item id="39167" type="Weapon" name="+ 8 Apocalypse Dualsword Coupon">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dual Dagger. Deleted after event. -->
-	<item id="39168" type="Weapon" name="+ 8 Apocalypse Dual Dagger Coupon">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dual Blunt Weapon. Deleted after event. -->
-	<item id="39169" type="Weapon" name="+ 8 Apocalypse Dual Blunt Weapon Coupon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="1" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Helmet. Deleted after event. -->
-	<item id="39170" type="Armor" name="+ 5 Eternal Helmet Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Breastplate. Deleted after event. -->
-	<item id="39171" type="Armor" name="+ 5 Eternal Breastplate Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="7520" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gaiters. Deleted after event. -->
-	<item id="39172" type="Armor" name="+ 5 Eternal Gaiters Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="3170" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gauntlets. Deleted after event. -->
-	<item id="39173" type="Armor" name="+ 5 Eternal Gauntlets Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="510" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Boots. Deleted after event. -->
-	<item id="39174" type="Armor" name="+ 5 Eternal Boots Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1070" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Shield. Deleted after event. -->
-	<item id="39175" type="Armor" name="+ 5 Eternal Shield Coupon - Heavy Armor">
-		<set name="icon" val="icon.weapon_akra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1130" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Leather Helmet. Deleted after event. -->
-	<item id="39176" type="Armor" name="+ 5 Eternal Leather Helmet Coupon - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Armor. Deleted after event. -->
-	<item id="39177" type="Armor" name="+ 5 Eternal Leather Armor Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="4140" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Leggings. Deleted after event. -->
-	<item id="39178" type="Armor" name="+ 5 Eternal Leather Leggings Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1320" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Gloves. Deleted after event. -->
-	<item id="39179" type="Armor" name="+ 5 Eternal Leather Gloves Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="510" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Boots. Deleted after event. -->
-	<item id="39180" type="Armor" name="+ 5 Eternal Leather Boots Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1070" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Circlet. Deleted after event. -->
-	<item id="39181" type="Armor" name="+ 5 Eternal Circlet Coupon - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Tunic. Deleted after event. -->
-	<item id="39182" type="Armor" name="+ 5 Eternal Tunic Coupon - Robe">
-		<set name="icon" val="icon.armor_t703_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1750" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Stockings. Deleted after event. -->
-	<item id="39183" type="Armor" name="+ 5 Eternal Stockings Coupon - Robe">
-		<set name="icon" val="icon.armor_t703_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="850" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gloves. Deleted after event. -->
-	<item id="39184" type="Armor" name="+ 5 Eternal Gloves Coupon - Robe">
-		<set name="icon" val="icon.armor_t703_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="510" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Shoes. Deleted after event. -->
-	<item id="39185" type="Armor" name="+ 5 Eternal Shoes Coupon - Robe">
-		<set name="icon" val="icon.armor_t703_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1070" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Sigil. Deleted after event. -->
-	<item id="39186" type="Armor" name="+ 5 Eternal Sigil Coupon - Robe">
-		<set name="icon" val="icon.elos_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="920" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Helmet. Deleted after event. -->
-	<item id="39187" type="Armor" name="+ 6 Eternal Helmet Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Breastplate. Deleted after event. -->
-	<item id="39188" type="Armor" name="+ 6 Eternal Breastplate Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="7520" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Gaiters. Deleted after event. -->
-	<item id="39189" type="Armor" name="+ 6 Eternal Gaiters Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="3170" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Gauntlets. Deleted after event. -->
-	<item id="39190" type="Armor" name="+ 6 Eternal Gauntlets Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="510" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Boots. Deleted after event. -->
-	<item id="39191" type="Armor" name="+ 6 Eternal Boots Coupon - Heavy Armor">
-		<set name="icon" val="icon.armor_t701_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1070" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Shield. Deleted after event. -->
-	<item id="39192" type="Armor" name="+ 6 Eternal Shield Coupon - Heavy Armor">
-		<set name="icon" val="icon.weapon_akra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1130" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Leather Helmet. Deleted after event. -->
-	<item id="39193" type="Armor" name="+ 6 Eternal Leather Helmet Coupon - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Armor. Deleted after event. -->
-	<item id="39194" type="Armor" name="+ 6 Eternal Leather Armor Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="4140" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Leggings. Deleted after event. -->
-	<item id="39195" type="Armor" name="+ 6 Eternal Leather Leggings Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1320" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Gloves. Deleted after event. -->
-	<item id="39196" type="Armor" name="+ 6 Eternal Leather Gloves Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="510" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Boots. Deleted after event. -->
-	<item id="39197" type="Armor" name="+ 6 Eternal Leather Boots Coupon - Light Armor">
-		<set name="icon" val="icon.armor_t702_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1070" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Circlet. Deleted after event. -->
-	<item id="39198" type="Armor" name="+ 6 Eternal Circlet Coupon - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="530" />
-	</item>
-	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Tunic. Deleted after event. -->
-	<item id="39199" type="Armor" name="+ 6 Eternal Tunic Coupon - Robe">
-		<set name="icon" val="icon.armor_t703_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="weight" val="1750" />
-	</item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Shaper. Deleted after event. -->
+    <item id="39100" type="Weapon" name="+ 4 Apocalypse Shaper Coupon">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Cutter. Deleted after event. -->
+    <item id="39101" type="Weapon" name="+ 4 Apocalypse Cutter Coupon">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Slasher. Deleted after event. -->
+    <item id="39102" type="Weapon" name="+ 4 Apocalypse Slasher Coupon">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Avenger. Deleted after event. -->
+    <item id="39103" type="Weapon" name="+ 4 Apocalypse Avenger Coupon">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Fighter. Deleted after event. -->
+    <item id="39104" type="Weapon" name="+ 4 Apocalypse Fighter Coupon">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Stormer. Deleted after event. -->
+    <item id="39105" type="Weapon" name="+ 4 Apocalypse Stormer Coupon">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Thrower. Deleted after event. -->
+    <item id="39106" type="Weapon" name="+ 4 Apocalypse Thrower Coupon">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Shooter. Deleted after event. -->
+    <item id="39107" type="Weapon" name="+ 4 Apocalypse Shooter Coupon">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Buster. Deleted after event. -->
+    <item id="39108" type="Weapon" name="+ 4 Apocalypse Buster Coupon">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Caster. Deleted after event. -->
+    <item id="39109" type="Weapon" name="+ 4 Apocalypse Caster Coupon">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Retributer. Deleted after event. -->
+    <item id="39110" type="Weapon" name="+ 4 Apocalypse Retributer Coupon">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dualsword. Deleted after event. -->
+    <item id="39111" type="Weapon" name="+ 4 Apocalypse Dualsword Coupon">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dual Dagger. Deleted after event. -->
+    <item id="39112" type="Weapon" name="+ 4 Apocalypse Dual Dagger Coupon">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Apocalypse Dual Blunt Weapon. Deleted after event. -->
+    <item id="39113" type="Weapon" name="+ 4 Apocalypse Dual Blunt Weapon Coupon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Shaper. Deleted after event. -->
+    <item id="39114" type="Weapon" name="+ 5 Apocalypse Shaper Coupon">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Cutter. Deleted after event. -->
+    <item id="39115" type="Weapon" name="+ 5 Apocalypse Cutter Coupon">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Slasher. Deleted after event. -->
+    <item id="39116" type="Weapon" name="+ 5 Apocalypse Slasher Coupon">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Avenger. Deleted after event. -->
+    <item id="39117" type="Weapon" name="+ 5 Apocalypse Avenger Coupon">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Fighter. Deleted after event. -->
+    <item id="39118" type="Weapon" name="+ 5 Apocalypse Fighter Coupon">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Stormer. Deleted after event. -->
+    <item id="39119" type="Weapon" name="+ 5 Apocalypse Stormer Coupon">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Thrower. Deleted after event. -->
+    <item id="39120" type="Weapon" name="+ 5 Apocalypse Thrower Coupon">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Shooter. Deleted after event. -->
+    <item id="39121" type="Weapon" name="+ 5 Apocalypse Shooter Coupon">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Buster. Deleted after event. -->
+    <item id="39122" type="Weapon" name="+ 5 Apocalypse Buster Coupon">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Caster. Deleted after event. -->
+    <item id="39123" type="Weapon" name="+ 5 Apocalypse Caster Coupon">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Retributer. Deleted after event. -->
+    <item id="39124" type="Weapon" name="+ 5 Apocalypse Retributer Coupon">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dualsword. Deleted after event. -->
+    <item id="39125" type="Weapon" name="+ 5 Apocalypse Dualsword Coupon">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dual Dagger. Deleted after event. -->
+    <item id="39126" type="Weapon" name="+ 5 Apocalypse Dual Dagger Coupon">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Apocalypse Dual Blunt Weapon. Deleted after event. -->
+    <item id="39127" type="Weapon" name="+ 5 Apocalypse Dual Blunt Weapon Coupon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Shaper. Deleted after event. -->
+    <item id="39128" type="Weapon" name="+ 6 Apocalypse Shaper Coupon">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Cutter. Deleted after event. -->
+    <item id="39129" type="Weapon" name="+ 6 Apocalypse Cutter Coupon">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Slasher. Deleted after event. -->
+    <item id="39130" type="Weapon" name="+ 6 Apocalypse Slasher Coupon">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Avenger. Deleted after event. -->
+    <item id="39131" type="Weapon" name="+ 6 Apocalypse Avenger Coupon">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Fighter. Deleted after event. -->
+    <item id="39132" type="Weapon" name="+ 6 Apocalypse Fighter Coupon">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Stormer. Deleted after event. -->
+    <item id="39133" type="Weapon" name="+ 6 Apocalypse Stormer Coupon">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Thrower. Deleted after event. -->
+    <item id="39134" type="Weapon" name="+ 6 Apocalypse Thrower Coupon">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Shooter. Deleted after event. -->
+    <item id="39135" type="Weapon" name="+ 6 Apocalypse Shooter Coupon">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Buster. Deleted after event. -->
+    <item id="39136" type="Weapon" name="+ 6 Apocalypse Buster Coupon">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Caster. Deleted after event. -->
+    <item id="39137" type="Weapon" name="+ 6 Apocalypse Caster Coupon">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Retributer. Deleted after event. -->
+    <item id="39138" type="Weapon" name="+ 6 Apocalypse Retributer Coupon">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dualsword. Deleted after event. -->
+    <item id="39139" type="Weapon" name="+ 6 Apocalypse Dualsword Coupon">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dual Dagger. Deleted after event. -->
+    <item id="39140" type="Weapon" name="+ 6 Apocalypse Dual Dagger Coupon">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Apocalypse Dual Blunt Weapon. Deleted after event. -->
+    <item id="39141" type="Weapon" name="+ 6 Apocalypse Dual Blunt Weapon Coupon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Shaper. Deleted after event. -->
+    <item id="39142" type="Weapon" name="+ 7 Apocalypse Shaper Coupon">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Cutter. Deleted after event. -->
+    <item id="39143" type="Weapon" name="+ 7 Apocalypse Cutter Coupon">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Slasher. Deleted after event. -->
+    <item id="39144" type="Weapon" name="+ 7 Apocalypse Slasher Coupon">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Avenger. Deleted after event. -->
+    <item id="39145" type="Weapon" name="+ 7 Apocalypse Avenger Coupon">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Fighter. Deleted after event. -->
+    <item id="39146" type="Weapon" name="+ 7 Apocalypse Fighter Coupon">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Stormer. Deleted after event. -->
+    <item id="39147" type="Weapon" name="+ 7 Apocalypse Stormer Coupon">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Thrower. Deleted after event. -->
+    <item id="39148" type="Weapon" name="+ 7 Apocalypse Thrower Coupon">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Shooter. Deleted after event. -->
+    <item id="39149" type="Weapon" name="+ 7 Apocalypse Shooter Coupon">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Buster. Deleted after event. -->
+    <item id="39150" type="Weapon" name="+ 7 Apocalypse Buster Coupon">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Caster. Deleted after event. -->
+    <item id="39151" type="Weapon" name="+ 7 Apocalypse Caster Coupon">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Retributer. Deleted after event. -->
+    <item id="39152" type="Weapon" name="+ 7 Apocalypse Retributer Coupon">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dualsword. Deleted after event. -->
+    <item id="39153" type="Weapon" name="+ 7 Apocalypse Dualsword Coupon">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dual Dagger. Deleted after event. -->
+    <item id="39154" type="Weapon" name="+ 7 Apocalypse Dual Dagger Coupon">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 7 Apocalypse Dual Blunt Weapon. Deleted after event. -->
+    <item id="39155" type="Weapon" name="+ 7 Apocalypse Dual Blunt Weapon Coupon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Shaper. Deleted after event. -->
+    <item id="39156" type="Weapon" name="+ 8 Apocalypse Shaper Coupon">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Cutter. Deleted after event. -->
+    <item id="39157" type="Weapon" name="+ 8 Apocalypse Cutter Coupon">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Slasher. Deleted after event. -->
+    <item id="39158" type="Weapon" name="+ 8 Apocalypse Slasher Coupon">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Avenger. Deleted after event. -->
+    <item id="39159" type="Weapon" name="+ 8 Apocalypse Avenger Coupon">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Fighter. Deleted after event. -->
+    <item id="39160" type="Weapon" name="+ 8 Apocalypse Fighter Coupon">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Stormer. Deleted after event. -->
+    <item id="39161" type="Weapon" name="+ 8 Apocalypse Stormer Coupon">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Thrower. Deleted after event. -->
+    <item id="39162" type="Weapon" name="+ 8 Apocalypse Thrower Coupon">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Shooter. Deleted after event. -->
+    <item id="39163" type="Weapon" name="+ 8 Apocalypse Shooter Coupon">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Buster. Deleted after event. -->
+    <item id="39164" type="Weapon" name="+ 8 Apocalypse Buster Coupon">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Caster. Deleted after event. -->
+    <item id="39165" type="Weapon" name="+ 8 Apocalypse Caster Coupon">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Retributer. Deleted after event. -->
+    <item id="39166" type="Weapon" name="+ 8 Apocalypse Retributer Coupon">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dualsword. Deleted after event. -->
+    <item id="39167" type="Weapon" name="+ 8 Apocalypse Dualsword Coupon">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dual Dagger. Deleted after event. -->
+    <item id="39168" type="Weapon" name="+ 8 Apocalypse Dual Dagger Coupon">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 8 Apocalypse Dual Blunt Weapon. Deleted after event. -->
+    <item id="39169" type="Weapon" name="+ 8 Apocalypse Dual Blunt Weapon Coupon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="1" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Helmet. Deleted after event. -->
+    <item id="39170" type="Armor" name="+ 5 Eternal Helmet Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Breastplate. Deleted after event. -->
+    <item id="39171" type="Armor" name="+ 5 Eternal Breastplate Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="7520" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gaiters. Deleted after event. -->
+    <item id="39172" type="Armor" name="+ 5 Eternal Gaiters Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="3170" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gauntlets. Deleted after event. -->
+    <item id="39173" type="Armor" name="+ 5 Eternal Gauntlets Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="510" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Boots. Deleted after event. -->
+    <item id="39174" type="Armor" name="+ 5 Eternal Boots Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1070" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Shield. Deleted after event. -->
+    <item id="39175" type="Armor" name="+ 5 Eternal Shield Coupon - Heavy Armor">
+        <set name="icon" val="icon.weapon_akra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1130" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Leather Helmet. Deleted after event. -->
+    <item id="39176" type="Armor" name="+ 5 Eternal Leather Helmet Coupon - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Armor. Deleted after event. -->
+    <item id="39177" type="Armor" name="+ 5 Eternal Leather Armor Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="4140" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Leggings. Deleted after event. -->
+    <item id="39178" type="Armor" name="+ 5 Eternal Leather Leggings Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1320" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Gloves. Deleted after event. -->
+    <item id="39179" type="Armor" name="+ 5 Eternal Leather Gloves Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="510" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Leather Boots. Deleted after event. -->
+    <item id="39180" type="Armor" name="+ 5 Eternal Leather Boots Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1070" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Circlet. Deleted after event. -->
+    <item id="39181" type="Armor" name="+ 5 Eternal Circlet Coupon - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Tunic. Deleted after event. -->
+    <item id="39182" type="Armor" name="+ 5 Eternal Tunic Coupon - Robe">
+        <set name="icon" val="icon.armor_t703_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1750" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Stockings. Deleted after event. -->
+    <item id="39183" type="Armor" name="+ 5 Eternal Stockings Coupon - Robe">
+        <set name="icon" val="icon.armor_t703_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="850" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Gloves. Deleted after event. -->
+    <item id="39184" type="Armor" name="+ 5 Eternal Gloves Coupon - Robe">
+        <set name="icon" val="icon.armor_t703_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="510" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Eternal Shoes. Deleted after event. -->
+    <item id="39185" type="Armor" name="+ 5 Eternal Shoes Coupon - Robe">
+        <set name="icon" val="icon.armor_t703_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1070" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Eternal Sigil. Deleted after event. -->
+    <item id="39186" type="Armor" name="+ 5 Eternal Sigil Coupon - Robe">
+        <set name="icon" val="icon.elos_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="920" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Helmet. Deleted after event. -->
+    <item id="39187" type="Armor" name="+ 6 Eternal Helmet Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Breastplate. Deleted after event. -->
+    <item id="39188" type="Armor" name="+ 6 Eternal Breastplate Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="7520" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Gaiters. Deleted after event. -->
+    <item id="39189" type="Armor" name="+ 6 Eternal Gaiters Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="3170" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Gauntlets. Deleted after event. -->
+    <item id="39190" type="Armor" name="+ 6 Eternal Gauntlets Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="510" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Boots. Deleted after event. -->
+    <item id="39191" type="Armor" name="+ 6 Eternal Boots Coupon - Heavy Armor">
+        <set name="icon" val="icon.armor_t701_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1070" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Shield. Deleted after event. -->
+    <item id="39192" type="Armor" name="+ 6 Eternal Shield Coupon - Heavy Armor">
+        <set name="icon" val="icon.weapon_akra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1130" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Leather Helmet. Deleted after event. -->
+    <item id="39193" type="Armor" name="+ 6 Eternal Leather Helmet Coupon - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Armor. Deleted after event. -->
+    <item id="39194" type="Armor" name="+ 6 Eternal Leather Armor Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="4140" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Leggings. Deleted after event. -->
+    <item id="39195" type="Armor" name="+ 6 Eternal Leather Leggings Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1320" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Gloves. Deleted after event. -->
+    <item id="39196" type="Armor" name="+ 6 Eternal Leather Gloves Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="510" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Leather Boots. Deleted after event. -->
+    <item id="39197" type="Armor" name="+ 6 Eternal Leather Boots Coupon - Light Armor">
+        <set name="icon" val="icon.armor_t702_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1070" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Circlet. Deleted after event. -->
+    <item id="39198" type="Armor" name="+ 6 Eternal Circlet Coupon - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="530" />
+    </item>
+    <!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Tunic. Deleted after event. -->
+    <item id="39199" type="Armor" name="+ 6 Eternal Tunic Coupon - Robe">
+        <set name="icon" val="icon.armor_t703_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="weight" val="1750" />
+    </item>
 </list>

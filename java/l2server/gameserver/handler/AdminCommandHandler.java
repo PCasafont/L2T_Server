@@ -26,55 +26,59 @@ import l2server.log.Log;
  */
 public class AdminCommandHandler
 {
-	
-	private TIntObjectHashMap<IAdminCommandHandler> _datatable;
-	
-	public static AdminCommandHandler getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	private AdminCommandHandler()
-	{
-		_datatable = new TIntObjectHashMap<IAdminCommandHandler>();
-	}
-	
-	public void registerAdminCommandHandler(IAdminCommandHandler handler)
-	{
-		String[] ids = handler.getAdminCommandList();
-		for (String id : ids)
-		{
-			if (Config.DEBUG)
-				Log.fine("Adding handler for command " + id);
-			_datatable.put(id.hashCode(), handler);
-		}
-	}
-	
-	public IAdminCommandHandler getAdminCommandHandler(String adminCommand)
-	{
-		String command = adminCommand;
-		if (adminCommand.indexOf(" ") != -1)
-		{
-			command = adminCommand.substring(0, adminCommand.indexOf(" "));
-		}
-		if (Config.DEBUG)
-			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
-		//Log.info(command);
-		
-		return _datatable.get(command.hashCode());
-	}
-	
-	/**
-	 * @return
-	 */
-	public int size()
-	{
-		return _datatable.size();
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final AdminCommandHandler _instance = new AdminCommandHandler();
-	}
+
+    private TIntObjectHashMap<IAdminCommandHandler> _datatable;
+
+    public static AdminCommandHandler getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    private AdminCommandHandler()
+    {
+        _datatable = new TIntObjectHashMap<IAdminCommandHandler>();
+    }
+
+    public void registerAdminCommandHandler(IAdminCommandHandler handler)
+    {
+        String[] ids = handler.getAdminCommandList();
+        for (String id : ids)
+        {
+            if (Config.DEBUG)
+            {
+                Log.fine("Adding handler for command " + id);
+            }
+            _datatable.put(id.hashCode(), handler);
+        }
+    }
+
+    public IAdminCommandHandler getAdminCommandHandler(String adminCommand)
+    {
+        String command = adminCommand;
+        if (adminCommand.indexOf(" ") != -1)
+        {
+            command = adminCommand.substring(0, adminCommand.indexOf(" "));
+        }
+        if (Config.DEBUG)
+        {
+            Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
+        }
+        //Log.info(command);
+
+        return _datatable.get(command.hashCode());
+    }
+
+    /**
+     * @return
+     */
+    public int size()
+    {
+        return _datatable.size();
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final AdminCommandHandler _instance = new AdminCommandHandler();
+    }
 }

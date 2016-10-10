@@ -22,56 +22,64 @@ import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- *
  * @author Pere
- *
  */
 
 public class ExInstanceList extends L2GameServerPacket
 {
-	
-	private int _current = -1;
-	private int _objId;
-	
-	public ExInstanceList(L2PcInstance player)
-	{
-		_objId = player.getObjectId();
-		
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		
-		if (world != null)
-			_current = world.templateId;
-	};
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_current);
-		
-		Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(_objId);
-		
-		int size = _instanceTimes.size();
-		
-		if (_instanceTimes.containsKey(_current))
-			size--;
-		
-		writeD(size);
-		
-		for (int instanceId : _instanceTimes.keySet())
-		{
-			if (_current == instanceId)
-				continue;
-			
-			int remainingTime = (int) ((_instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000);
-			
-			if (remainingTime < 0)
-				continue;
-			
-			writeD(instanceId);
-			writeD(remainingTime);
-		}
-	}
+
+    private int _current = -1;
+    private int _objId;
+
+    public ExInstanceList(L2PcInstance player)
+    {
+        _objId = player.getObjectId();
+
+        InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+
+        if (world != null)
+        {
+            _current = world.templateId;
+        }
+    }
+
+    ;
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_current);
+
+        Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(_objId);
+
+        int size = _instanceTimes.size();
+
+        if (_instanceTimes.containsKey(_current))
+        {
+            size--;
+        }
+
+        writeD(size);
+
+        for (int instanceId : _instanceTimes.keySet())
+        {
+            if (_current == instanceId)
+            {
+                continue;
+            }
+
+            int remainingTime = (int) ((_instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000);
+
+            if (remainingTime < 0)
+            {
+                continue;
+            }
+
+            writeD(instanceId);
+            writeD(remainingTime);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-	<item>
-		<ingredient count="100000" id="57" /> <!-- Adena -->
-		<production count="1" id="39597" /> <!-- Warp Crystal -->
-	</item>
+    <item>
+        <ingredient count="100000" id="57" /> <!-- Adena -->
+        <production count="1" id="39597" /> <!-- Warp Crystal -->
+    </item>
 </list>

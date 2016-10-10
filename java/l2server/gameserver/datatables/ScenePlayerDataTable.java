@@ -32,71 +32,71 @@ import l2server.util.xml.XmlNode;
 
 public class ScenePlayerDataTable implements Reloadable
 {
-	
-	private Map<Integer, Integer> _sceneDataTable;
-	
-	@Override
-	public boolean reload()
-	{
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scenePlayerData.xml");
-		XmlDocument doc = new XmlDocument(file);
-		
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("scene"))
-					{
-						int id = d.getInt("id");
-						
-						int time = d.getInt("time");
-						
-						_sceneDataTable.put(id, time);
-					}
-				}
-				
-				Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
-			}
-		}
-		
-		return false;
-	}
-	
-	public static ScenePlayerDataTable getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	public Map<Integer, Integer> getSceneTable()
-	{
-		return _sceneDataTable;
-	}
-	
-	public int getVideoDuration(int vidId)
-	{
-		return _sceneDataTable.get(vidId);
-	}
-	
-	private ScenePlayerDataTable()
-	{
-		_sceneDataTable = new HashMap<Integer, Integer>();
-		
-		reload();
-		
-		ReloadableManager.getInstance().register("scenes", this);
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success)
-	{
-		return "Scene Data Table reloaded";
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final ScenePlayerDataTable _instance = new ScenePlayerDataTable();
-	}
+
+    private Map<Integer, Integer> _sceneDataTable;
+
+    @Override
+    public boolean reload()
+    {
+        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scenePlayerData.xml");
+        XmlDocument doc = new XmlDocument(file);
+
+        for (XmlNode n : doc.getChildren())
+        {
+            if (n.getName().equalsIgnoreCase("list"))
+            {
+                for (XmlNode d : n.getChildren())
+                {
+                    if (d.getName().equalsIgnoreCase("scene"))
+                    {
+                        int id = d.getInt("id");
+
+                        int time = d.getInt("time");
+
+                        _sceneDataTable.put(id, time);
+                    }
+                }
+
+                Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
+            }
+        }
+
+        return false;
+    }
+
+    public static ScenePlayerDataTable getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    public Map<Integer, Integer> getSceneTable()
+    {
+        return _sceneDataTable;
+    }
+
+    public int getVideoDuration(int vidId)
+    {
+        return _sceneDataTable.get(vidId);
+    }
+
+    private ScenePlayerDataTable()
+    {
+        _sceneDataTable = new HashMap<Integer, Integer>();
+
+        reload();
+
+        ReloadableManager.getInstance().register("scenes", this);
+    }
+
+    @Override
+    public String getReloadMessage(boolean success)
+    {
+        return "Scene Data Table reloaded";
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final ScenePlayerDataTable _instance = new ScenePlayerDataTable();
+    }
 }

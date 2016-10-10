@@ -1,4 +1,3 @@
-
 package l2server.gameserver.network.serverpackets;
 
 /**
@@ -6,9 +5,9 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExTutorialList extends L2GameServerPacket
 {
-	@Override
-	public void writeImpl()
-	{
-		writeB(new byte[1]); // unk (TODO: check size)
-	}
+    @Override
+    public void writeImpl()
+    {
+        writeB(new byte[1]); // unk (TODO: check size)
+    }
 }

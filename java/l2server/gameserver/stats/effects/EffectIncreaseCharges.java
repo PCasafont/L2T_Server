@@ -21,58 +21,59 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- *
  * @author DS
- *
- * Effect will generate charges for L2PcInstance targets
- * Number of charges in "value", maximum number in "count" effect variables
- *
+ *         <p>
+ *         Effect will generate charges for L2PcInstance targets
+ *         Number of charges in "value", maximum number in "count" effect variables
  */
 public class EffectIncreaseCharges extends L2Effect
 {
-	public EffectIncreaseCharges(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() == null)
-		{
-			return false;
-		}
-		
-		if (!(getEffected() instanceof L2PcInstance))
-		{
-			return false;
-		}
-		
-		int count = getAbnormal().getCount();
-		if (count == 15)
-		{
-			if (((L2PcInstance) getEffected()).getClassId() < 140)
-				count = 2;
-			else if (((L2PcInstance) getEffected()).getClassId() != 152 && ((L2PcInstance) getEffected()).getClassId() != 155)
-				count = 10;
-		}
-		
-		((L2PcInstance) getEffected()).increaseCharges((int) calc(), count);
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false; // abort effect even if count > 1
-	}
+    public EffectIncreaseCharges(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() == null)
+        {
+            return false;
+        }
+
+        if (!(getEffected() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        int count = getAbnormal().getCount();
+        if (count == 15)
+        {
+            if (((L2PcInstance) getEffected()).getClassId() < 140)
+            {
+                count = 2;
+            }
+            else if (((L2PcInstance) getEffected()).getClassId() != 152 && ((L2PcInstance) getEffected())
+                    .getClassId() != 155)
+            {
+                count = 10;
+            }
+        }
+
+        ((L2PcInstance) getEffected()).increaseCharges((int) calc(), count);
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false; // abort effect even if count > 1
+    }
 }

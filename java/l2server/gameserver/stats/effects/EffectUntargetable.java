@@ -27,81 +27,86 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author mkizub
- *
  */
 public class EffectUntargetable extends L2Effect
 {
-	public EffectUntargetable(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.UNTARGETABLE;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
-			return false;
-		
-		for (L2Character target : getEffected().getKnownList().getKnownCharacters())
-		{
-			if (target != null && target != getEffected())
-			{
-				if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null && target.getActingPlayer().getParty() != null && target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty())
-					continue;
-				
-				if (target.getTarget() == getEffected() || target.getAI() != null && target.getAI().getAttackTarget() == getEffected())
-				{
-					target.setTarget(null);
-					target.abortAttack();
-					// It should not abort the cast
-					//target.abortCast();
-					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					
-					if (target instanceof L2Attackable)
-						((L2Attackable) target).reduceHate(getEffected(), ((L2Attackable) target).getHating(getEffected()));
-				}
-			}
-		}
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return true;
-	}
+    public EffectUntargetable(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.UNTARGETABLE;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
+        {
+            return false;
+        }
+
+        for (L2Character target : getEffected().getKnownList().getKnownCharacters())
+        {
+            if (target != null && target != getEffected())
+            {
+                if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null && target
+                        .getActingPlayer().getParty() != null && target.getActingPlayer().getParty() == getEffected()
+                        .getActingPlayer().getParty())
+                {
+                    continue;
+                }
+
+                if (target.getTarget() == getEffected() || target.getAI() != null && target.getAI()
+                        .getAttackTarget() == getEffected())
+                {
+                    target.setTarget(null);
+                    target.abortAttack();
+                    // It should not abort the cast
+                    //target.abortCast();
+                    target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+
+                    if (target instanceof L2Attackable)
+                    {
+                        ((L2Attackable) target)
+                                .reduceHate(getEffected(), ((L2Attackable) target).getHating(getEffected()));
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return true;
+    }
 }

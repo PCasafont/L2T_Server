@@ -1,1493 +1,1493 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Dragon Slayer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / sword) -->
-	<item id="33700" type="EtcItem" name="Unidentified Dragon Slayer - Event">
-		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Soul Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
-	<item id="33701" type="EtcItem" name="Unidentified Soul Bow - Event">
-		<set name="icon" val="icon.weapon_soul_bow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Elysian in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="33702" type="EtcItem" name="Unidentified Elysian - Event">
-		<set name="icon" val="icon.weapon_elysian_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Flaming Dragon Skull in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
-	<item id="33703" type="EtcItem" name="Unidentified Flaming Dragon Skull - Event">
-		<set name="icon" val="icon.weapon_dragon_flame_head_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Branch of the Mother Tree in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="33704" type="EtcItem" name="Unidentified Branch of the Mother Tree - Event">
-		<set name="icon" val="icon.weapon_worldtrees_branch_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Doom Crusher in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
-	<item id="33705" type="EtcItem" name="Unidentified Doom Crusher - Event">
-		<set name="icon" val="icon.weapon_doom_crusher_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Tallum Glaive in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
-	<item id="33706" type="EtcItem" name="Unidentified Tallum Glaive - Event">
-		<set name="icon" val="icon.weapon_tallum_glaive_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Dragon Grinder in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / fist weapon) -->
-	<item id="33707" type="EtcItem" name="Unidentified Dragon Grinder - Event">
-		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Tallum Blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dual weapon) -->
-	<item id="33708" type="EtcItem" name="Unidentified Tallum Blade*Damascus - Event">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Helm of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Headgear) -->
-	<item id="33709" type="EtcItem" name="Unidentified Helm of Nightmare - Event">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Shield of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
-	<item id="33710" type="EtcItem" name="Unidentified Shield of Nightmare - Event">
-		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Boots of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: boots) -->
-	<item id="33711" type="EtcItem" name="Unidentified Boots of Nightmare - Event">
-		<set name="icon" val="icon.armor_t80_b_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Robe of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / robe) -->
-	<item id="33712" type="EtcItem" name="Unidentified Robe of Nightmare - Event">
-		<set name="icon" val="icon.armor_t82_ul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Leather Armor of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / light armor) -->
-	<item id="33713" type="EtcItem" name="Unidentified Leather Armor of Nightmare - Event">
-		<set name="icon" val="icon.armor_t81_ul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Gauntlets of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
-	<item id="33714" type="EtcItem" name="Unidentified Gauntlets of Nightmare - Event">
-		<set name="icon" val="icon.armor_t80_g_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Armor of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / heavy armor) -->
-	<item id="33715" type="EtcItem" name="Unidentified Armor of Nightmare - Event">
-		<set name="icon" val="icon.armor_t80_ul_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Dynasty Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
-	<item id="33716" type="EtcItem" name="Unidentified Dynasty Bow - Event">
-		<set name="icon" val="icon.weapon_dynasty_bow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Dualsword that contains the power of a Duelist. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33717" type="Weapon" name="Legacy Duelist Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Spear that contains the power of a Dreadnought. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33718" type="Weapon" name="Legacy Dreadnought Spear">
-		<set name="icon" val="icon.weapon_eigelus_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Phoenix Knight. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33719" type="Weapon" name="Legacy Phoenix Knight Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Hell Knight. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33720" type="Weapon" name="Legacy Hell Knight Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Bow that contains the power of a Sagittarius. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33721" type="Weapon" name="Legacy Sagittarius Bow">
-		<set name="icon" val="icon.weapon_karupis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="mp_consume" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Dual daggers that contains the power of an Adventurer. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33722" type="Weapon" name="Legacy Adventurer Dual Daggers">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of an Archmage. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33723" type="Weapon" name="Legacy Archmage Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Soultaker. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33724" type="Weapon" name="Legacy Soultaker Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Blunt Weapon that contains the power of an Arcana Lord. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33725" type="Weapon" name="Legacy Arcana Lord Blunt Weapon">
-		<set name="icon" val="icon.weapon_kitz_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Staff that contains the power of a Cardinal. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33726" type="Weapon" name="Legacy Cardinal Staff">
-		<set name="icon" val="icon.weapon_arcorda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Staff that contains the power of a Hierophant. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33727" type="Weapon" name="Legacy Hierophant Staff">
-		<set name="icon" val="icon.weapon_arcorda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of an Eva's Templar. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33728" type="Weapon" name="Legacy Eva's Templar Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Sword Muse. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33729" type="Weapon" name="Legacy Sword Muse Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Dagger that contains the power of a Wind Rider. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33730" type="Weapon" name="Legacy Wind Rider Dagger">
-		<set name="icon" val="icon.weapon_radice_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Bow that contains the power of a Moonlight Sentinel. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33731" type="Weapon" name="Legacy Moonlight Sentinel Bow">
-		<set name="icon" val="icon.weapon_karupis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="mp_consume" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Mystic Muse. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33732" type="Weapon" name="Legacy Mystic Muse Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Blunt Weapon that contains the power of an Elemental Master. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33733" type="Weapon" name="Legacy Elemental Master Blunt Weapon">
-		<set name="icon" val="icon.weapon_kitz_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Blunt Weapon that contains the power of an Eva's Saint. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33734" type="Weapon" name="Legacy Eva's Saint Blunt Weapon">
-		<set name="icon" val="icon.weapon_kitz_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Shillien Templar. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33735" type="Weapon" name="Legacy Shillien Templar Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Dualsword that contains the power of a Spectral Dancer. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33736" type="Weapon" name="Legacy Spectral Dancer Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Dagger that contains the power of a Ghost Hunter. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33737" type="Weapon" name="Legacy Ghost Hunter Dagger">
-		<set name="icon" val="icon.weapon_radice_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Bow that contains the power of a Ghost Sentinel. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33738" type="Weapon" name="Legacy Ghost Sentinel Bow">
-		<set name="icon" val="icon.weapon_karupis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="mp_consume" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Storm Screamer. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33739" type="Weapon" name="Legacy Storm Screamer Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Spectral Master. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33740" type="Weapon" name="Legacy Spectral Master Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Blunt Weapon that contains the power of a Shillien Saint. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33741" type="Weapon" name="Legacy Shillien Saint Blunt Weapon">
-		<set name="icon" val="icon.weapon_kitz_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Two-handed Sword that contains the power of a Titan. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33742" type="Weapon" name="Legacy Titan Two-handed Sword">
-		<set name="icon" val="icon.weapon_spigel_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Fist Weapon that contains the power of a Grand Khavatari. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33743" type="Weapon" name="Legacy Grand Khavatari Fist Weapon">
-		<set name="icon" val="icon.weapon_fantasma_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Dominator. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33744" type="Weapon" name="Legacy Dominator Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Dualsword that contains the power of a Doomcryer. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33745" type="Weapon" name="Legacy Doomcryer Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Dagger that contains the power of a Fortune Seeker. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33746" type="Weapon" name="Legacy Fortune Seeker Dagger">
-		<set name="icon" val="icon.weapon_radice_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="5" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- Staff with sealed power of a Maestro. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33747" type="Weapon" name="Staff with Sealed Power of a Maestro">
-		<set name="icon" val="icon.weapon_arcorda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="20" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="6" />
-			<baseAdd stat="accCombat" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Can acquire a Kukurin Feather Helm. -->
-	<item id="33748" type="EtcItem" name="Small Kukurin Pouch">
-		<set name="icon" val="icon.etc_pouch_yellow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Can acquire a Kukurin Feather Helm and a Kukurin Bracelet. -->
-	<item id="33749" type="EtcItem" name="Big Kukurin Pouch">
-		<set name="icon" val="icon.etc_pouch_yellow_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33750" type="Weapon" name="Test - old requiem weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33751" type="Weapon" name="Test - color varying requiem weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33752" type="Weapon" name="Test - apo requiem weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33753" type="Weapon" name="Test - color varying apo weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33754" type="Weapon" name="Test - old fanta weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33755" type="Weapon" name="Test - color varying fanta weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33756" type="Weapon" name="Test - old heli weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33757" type="Weapon" name="Test - color varying heli weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33758" type="Weapon" name="Test - Old Celestial Weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
-	<item id="33759" type="Weapon" name="Test - Color Varying Celestial Weapon">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dagger that contains the power of a Fortune Seeker. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33760" type="Weapon" name="Legacy Fortune Seeker Dagger">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Doombringer. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33761" type="Weapon" name="Legacy Doombringer Sword">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Soul Hound (male). Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33762" type="Weapon" name="Legacy Soul Hound Sword (Male)">
-		<set name="icon" val="icon.weapon_terakan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Sword that contains the power of a Soul Hound (female). Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33763" type="Weapon" name="Legacy Soul Hound Sword (Female)">
-		<set name="icon" val="icon.weapon_netra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbowk" />
-		<set name="bodypart" val="lrhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="10" />
-			<baseSub stat="accCombat" val="1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
-	</item>
-	<!-- Crossbow that contains the power of a Trickster. Cannot be exchanged, dropped, destroyed, sold in a private store, or used in an Auction House. Enchantment, augmentation, and addition of attributes are not possible. Can be stored in a private warehouse. -->
-	<item id="33764" type="EtcItem" name="Legacy Trickster Crossbow">
-		<set name="icon" val="icon.etc_echo_crystal_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Sword that contains the power of a Judicator. Cannot be enchanted, agumented, or assigned an attribute. -->
-	<item id="33765" type="Weapon" name="Legacy Judicator Sword">
-		<set name="icon" val="icon.weapon_aseldor_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="soulshots" val="6" />
-		<set name="spiritshots" val="6" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="30" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- For 30 minutes, it receives the following level 1 effects: Horn Melody, Lute Melody, Pipe Organ Melody, Guitar Melody, Harp Melody and Drum Melody. Can be used at level 85 or above. Cooldown is 2 min. -->
-	<item id="33766" type="EtcItem" name="Elixir of Blessing">
-		<set name="icon" val="icon.etc_super_potion_i03" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="5" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Increases Lethal Strike Resistance upon use. Shadow weapon. -->
-	<item id="33767" type="Armor" name="Talisman (R-grade) - Lethal Strike Resistance (Active)">
-		<set name="icon" val="icon.r85_talisman_md_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13350-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Increases resistance to damage shield when equipped. Shadow weapon. -->
-	<item id="33768" type="Armor" name="Talisman (R-grade) - Damage Reflect Resistance (Active)">
-		<set name="icon" val="icon.r85_talisman_md_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13349-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Increases Lethal Strike Resistance upon use. Shadow weapon. -->
-	<item id="33769" type="Armor" name="Talisman (R-grade) - Lethal Strike Resistance (Active)">
-		<set name="icon" val="icon.r85_talisman_md_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13350-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Increases resistance to damage shield upon use. Shadow weapon. -->
-	<item id="33770" type="Armor" name="Talisman (R-grade) - Damage Reflect Resistance (Active)">
-		<set name="icon" val="icon.r85_talisman_md_up_active" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="deco1" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="equip_reuse_delay" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="13349-1" />
-		<set name="duration" val="60" />
-	</item>
-	<!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
-	<item id="33771" type="EtcItem" name="Aden Hero's Reward Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
-	<item id="33772" type="EtcItem" name="Aden Hero's Reward Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
-	<item id="33773" type="EtcItem" name="Aden Hero's Reward Box">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on no-grade weapons. -->
-	<item id="33774" type="EtcItem" name="Soulshot (No-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on D-grade weapons. -->
-	<item id="33775" type="EtcItem" name="Soulshot (D-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on C-grade weapons. -->
-	<item id="33776" type="EtcItem" name="Soulshot (C-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_green_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on B-grade weapons. -->
-	<item id="33777" type="EtcItem" name="Soulshot (B-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on A-grade weapons. -->
-	<item id="33778" type="EtcItem" name="Soulshot (A-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on S-grade weapons. -->
-	<item id="33779" type="EtcItem" name="Soulshot (S-grade) - Event">
-		<set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on R-grade weapons. -->
-	<item id="33780" type="EtcItem" name="Soulshot (R-grade) - Event">
-		<set name="icon" val="icon.soulshot_r_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on no-grade weapons. -->
-	<item id="33781" type="EtcItem" name="Spiritshot (No-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on D-grade weapons. -->
-	<item id="33782" type="EtcItem" name="Spiritshot (D-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on C-grade weapons. -->
-	<item id="33783" type="EtcItem" name="Spiritshot (C-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_green_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on B-grade weapons. -->
-	<item id="33784" type="EtcItem" name="Spiritshot (B-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on A-grade weapons. -->
-	<item id="33785" type="EtcItem" name="Spiritshot (A-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on S-grade weapons. -->
-	<item id="33786" type="EtcItem" name="Spiritshot (S-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on R-grade weapons. -->
-	<item id="33787" type="EtcItem" name="Spiritshot (R-grade) - Event">
-		<set name="icon" val="icon.spiritshot_r_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on no-grade weapons. -->
-	<item id="33788" type="EtcItem" name="Blessed Spiritshot (No-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_white_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on D-grade weapons. -->
-	<item id="33789" type="EtcItem" name="Blessed Spiritshot (D-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_blue_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on C-grade weapons. -->
-	<item id="33790" type="EtcItem" name="Blessed Spiritshot (C-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_green_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on B-grade weapons. -->
-	<item id="33791" type="EtcItem" name="Blessed Spiritshot (B-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_red_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on A-grade weapons. -->
-	<item id="33792" type="EtcItem" name="Blessed Spiritshot (A-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_silver_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on S-grade weapons. -->
-	<item id="33793" type="EtcItem" name="Blessed Spiritshot (S-grade) - Event">
-		<set name="icon" val="icon.etc_spell_shot_gold_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on R-grade weapons. -->
-	<item id="33794" type="EtcItem" name="Blessed Spiritshot (R-grade) - Event">
-		<set name="icon" val="icon.blessed_spiritshot_r_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Contains 3 Returning Hero's Vitality Replenishing Juices that replenish your vitality for 4 hours. -->
-	<item id="33795" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice 3-unit Pack - Event">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Gift box that contains 250 Returning Hero's Marks, 1 Returning Hero's Potion Pack, and 1 Returning Hero's Support Box. -->
-	<item id="33796" type="EtcItem" name="Returning Hero's Gold Chest - Event">
-		<set name="icon" val="icon.present_of_destination_event" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Bracelet that can summon Tersi's Light, which was distributed by the temple to oppose Shilen's darkness. Requires room in the inventory and the weight limit to receive the Specter of Light. -->
-	<item id="33797" type="Armor" name="Agathion - Tersi's Light - Event">
-		<set name="icon" val="icon.bracelet_tersi_agathion" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="shirt" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Summons a Specter of Light. It can only be used in a Peaceful Zone. -->
-	<item id="33798" type="EtcItem" name="Specter of Light - Event">
-		<set name="icon" val="icon.tersi_specter_seed" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Shards of Light are summoned when used on a Specter of Light. It can only be used in a Peaceful Zone. -->
-	<item id="33799" type="EtcItem" name="Fragment of Light - Event">
-		<set name="icon" val="icon.tersi_light_gragment" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
+    <!-- Dragon Slayer in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / sword) -->
+    <item id="33700" type="EtcItem" name="Unidentified Dragon Slayer - Event">
+        <set name="icon" val="icon.weapon_dragon_slayer_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Soul Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
+    <item id="33701" type="EtcItem" name="Unidentified Soul Bow - Event">
+        <set name="icon" val="icon.weapon_soul_bow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Elysian in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="33702" type="EtcItem" name="Unidentified Elysian - Event">
+        <set name="icon" val="icon.weapon_elysian_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Flaming Dragon Skull in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / blunt) -->
+    <item id="33703" type="EtcItem" name="Unidentified Flaming Dragon Skull - Event">
+        <set name="icon" val="icon.weapon_dragon_flame_head_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Branch of the Mother Tree in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="33704" type="EtcItem" name="Unidentified Branch of the Mother Tree - Event">
+        <set name="icon" val="icon.weapon_worldtrees_branch_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Doom Crusher in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / blunt) -->
+    <item id="33705" type="EtcItem" name="Unidentified Doom Crusher - Event">
+        <set name="icon" val="icon.weapon_doom_crusher_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Tallum Glaive in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / spear) -->
+    <item id="33706" type="EtcItem" name="Unidentified Tallum Glaive - Event">
+        <set name="icon" val="icon.weapon_tallum_glaive_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Dragon Grinder in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / fist weapon) -->
+    <item id="33707" type="EtcItem" name="Unidentified Dragon Grinder - Event">
+        <set name="icon" val="icon.weapon_dragon_grinder_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Tallum Blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dual weapon) -->
+    <item id="33708" type="EtcItem" name="Unidentified Tallum Blade*Damascus - Event">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Helm of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Headgear) -->
+    <item id="33709" type="EtcItem" name="Unidentified Helm of Nightmare - Event">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Shield of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Shield) -->
+    <item id="33710" type="EtcItem" name="Unidentified Shield of Nightmare - Event">
+        <set name="icon" val="icon.shield_shield_of_nightmare_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Boots of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: boots) -->
+    <item id="33711" type="EtcItem" name="Unidentified Boots of Nightmare - Event">
+        <set name="icon" val="icon.armor_t80_b_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Robe of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / robe) -->
+    <item id="33712" type="EtcItem" name="Unidentified Robe of Nightmare - Event">
+        <set name="icon" val="icon.armor_t82_ul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Leather Armor of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / light armor) -->
+    <item id="33713" type="EtcItem" name="Unidentified Leather Armor of Nightmare - Event">
+        <set name="icon" val="icon.armor_t81_ul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Gauntlets of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: Gloves) -->
+    <item id="33714" type="EtcItem" name="Unidentified Gauntlets of Nightmare - Event">
+        <set name="icon" val="icon.armor_t80_g_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Armor of Nightmare in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one piece / heavy armor) -->
+    <item id="33715" type="EtcItem" name="Unidentified Armor of Nightmare - Event">
+        <set name="icon" val="icon.armor_t80_ul_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Dynasty Bow in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / bow) -->
+    <item id="33716" type="EtcItem" name="Unidentified Dynasty Bow - Event">
+        <set name="icon" val="icon.weapon_dynasty_bow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Dualsword that contains the power of a Duelist. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33717" type="Weapon" name="Legacy Duelist Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Spear that contains the power of a Dreadnought. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33718" type="Weapon" name="Legacy Dreadnought Spear">
+        <set name="icon" val="icon.weapon_eigelus_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Phoenix Knight. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33719" type="Weapon" name="Legacy Phoenix Knight Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Hell Knight. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33720" type="Weapon" name="Legacy Hell Knight Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Bow that contains the power of a Sagittarius. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33721" type="Weapon" name="Legacy Sagittarius Bow">
+        <set name="icon" val="icon.weapon_karupis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="mp_consume" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Dual daggers that contains the power of an Adventurer. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33722" type="Weapon" name="Legacy Adventurer Dual Daggers">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of an Archmage. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33723" type="Weapon" name="Legacy Archmage Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Soultaker. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33724" type="Weapon" name="Legacy Soultaker Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Blunt Weapon that contains the power of an Arcana Lord. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33725" type="Weapon" name="Legacy Arcana Lord Blunt Weapon">
+        <set name="icon" val="icon.weapon_kitz_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Staff that contains the power of a Cardinal. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33726" type="Weapon" name="Legacy Cardinal Staff">
+        <set name="icon" val="icon.weapon_arcorda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Staff that contains the power of a Hierophant. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33727" type="Weapon" name="Legacy Hierophant Staff">
+        <set name="icon" val="icon.weapon_arcorda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of an Eva's Templar. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33728" type="Weapon" name="Legacy Eva's Templar Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Sword Muse. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33729" type="Weapon" name="Legacy Sword Muse Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Dagger that contains the power of a Wind Rider. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33730" type="Weapon" name="Legacy Wind Rider Dagger">
+        <set name="icon" val="icon.weapon_radice_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Bow that contains the power of a Moonlight Sentinel. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33731" type="Weapon" name="Legacy Moonlight Sentinel Bow">
+        <set name="icon" val="icon.weapon_karupis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="mp_consume" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Mystic Muse. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33732" type="Weapon" name="Legacy Mystic Muse Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Blunt Weapon that contains the power of an Elemental Master. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33733" type="Weapon" name="Legacy Elemental Master Blunt Weapon">
+        <set name="icon" val="icon.weapon_kitz_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Blunt Weapon that contains the power of an Eva's Saint. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33734" type="Weapon" name="Legacy Eva's Saint Blunt Weapon">
+        <set name="icon" val="icon.weapon_kitz_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Shillien Templar. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33735" type="Weapon" name="Legacy Shillien Templar Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Dualsword that contains the power of a Spectral Dancer. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33736" type="Weapon" name="Legacy Spectral Dancer Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Dagger that contains the power of a Ghost Hunter. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33737" type="Weapon" name="Legacy Ghost Hunter Dagger">
+        <set name="icon" val="icon.weapon_radice_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Bow that contains the power of a Ghost Sentinel. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33738" type="Weapon" name="Legacy Ghost Sentinel Bow">
+        <set name="icon" val="icon.weapon_karupis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="mp_consume" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Storm Screamer. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33739" type="Weapon" name="Legacy Storm Screamer Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Spectral Master. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33740" type="Weapon" name="Legacy Spectral Master Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Blunt Weapon that contains the power of a Shillien Saint. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33741" type="Weapon" name="Legacy Shillien Saint Blunt Weapon">
+        <set name="icon" val="icon.weapon_kitz_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Two-handed Sword that contains the power of a Titan. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33742" type="Weapon" name="Legacy Titan Two-handed Sword">
+        <set name="icon" val="icon.weapon_spigel_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Fist Weapon that contains the power of a Grand Khavatari. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33743" type="Weapon" name="Legacy Grand Khavatari Fist Weapon">
+        <set name="icon" val="icon.weapon_fantasma_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Dominator. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33744" type="Weapon" name="Legacy Dominator Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Dualsword that contains the power of a Doomcryer. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33745" type="Weapon" name="Legacy Doomcryer Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Dagger that contains the power of a Fortune Seeker. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33746" type="Weapon" name="Legacy Fortune Seeker Dagger">
+        <set name="icon" val="icon.weapon_radice_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="5" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- Staff with sealed power of a Maestro. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33747" type="Weapon" name="Staff with Sealed Power of a Maestro">
+        <set name="icon" val="icon.weapon_arcorda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="20" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="6" />
+            <baseAdd stat="accCombat" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Can acquire a Kukurin Feather Helm. -->
+    <item id="33748" type="EtcItem" name="Small Kukurin Pouch">
+        <set name="icon" val="icon.etc_pouch_yellow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Can acquire a Kukurin Feather Helm and a Kukurin Bracelet. -->
+    <item id="33749" type="EtcItem" name="Big Kukurin Pouch">
+        <set name="icon" val="icon.etc_pouch_yellow_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33750" type="Weapon" name="Test - old requiem weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33751" type="Weapon" name="Test - color varying requiem weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33752" type="Weapon" name="Test - apo requiem weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33753" type="Weapon" name="Test - color varying apo weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33754" type="Weapon" name="Test - old fanta weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33755" type="Weapon" name="Test - color varying fanta weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33756" type="Weapon" name="Test - old heli weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33757" type="Weapon" name="Test - color varying heli weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33758" type="Weapon" name="Test - Old Celestial Weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dummy item - do not delete. Deleting this causes errors to the AI. It must be kept in the level time in the event that numbers 33717 - 33765 are changed. Must be maintained even if the order of the items is changed. -->
+    <item id="33759" type="Weapon" name="Test - Color Varying Celestial Weapon">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dagger that contains the power of a Fortune Seeker. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33760" type="Weapon" name="Legacy Fortune Seeker Dagger">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Doombringer. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33761" type="Weapon" name="Legacy Doombringer Sword">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Soul Hound (male). Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33762" type="Weapon" name="Legacy Soul Hound Sword (Male)">
+        <set name="icon" val="icon.weapon_terakan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Sword that contains the power of a Soul Hound (female). Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33763" type="Weapon" name="Legacy Soul Hound Sword (Female)">
+        <set name="icon" val="icon.weapon_netra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbowk" />
+        <set name="bodypart" val="lrhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="10" />
+            <baseSub stat="accCombat" val="1.5" />
+            <set stat="pAtkSpd" val="303" />
+        </for>
+    </item>
+    <!-- Crossbow that contains the power of a Trickster. Cannot be exchanged, dropped, destroyed, sold in a private store, or used in an Auction House. Enchantment, augmentation, and addition of attributes are not possible. Can be stored in a private warehouse. -->
+    <item id="33764" type="EtcItem" name="Legacy Trickster Crossbow">
+        <set name="icon" val="icon.etc_echo_crystal_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Sword that contains the power of a Judicator. Cannot be enchanted, agumented, or assigned an attribute. -->
+    <item id="33765" type="Weapon" name="Legacy Judicator Sword">
+        <set name="icon" val="icon.weapon_aseldor_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="soulshots" val="6" />
+        <set name="spiritshots" val="6" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="30" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- For 30 minutes, it receives the following level 1 effects: Horn Melody, Lute Melody, Pipe Organ Melody, Guitar Melody, Harp Melody and Drum Melody. Can be used at level 85 or above. Cooldown is 2 min. -->
+    <item id="33766" type="EtcItem" name="Elixir of Blessing">
+        <set name="icon" val="icon.etc_super_potion_i03" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="5" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Increases Lethal Strike Resistance upon use. Shadow weapon. -->
+    <item id="33767" type="Armor" name="Talisman (R-grade) - Lethal Strike Resistance (Active)">
+        <set name="icon" val="icon.r85_talisman_md_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13350-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Increases resistance to damage shield when equipped. Shadow weapon. -->
+    <item id="33768" type="Armor" name="Talisman (R-grade) - Damage Reflect Resistance (Active)">
+        <set name="icon" val="icon.r85_talisman_md_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13349-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Increases Lethal Strike Resistance upon use. Shadow weapon. -->
+    <item id="33769" type="Armor" name="Talisman (R-grade) - Lethal Strike Resistance (Active)">
+        <set name="icon" val="icon.r85_talisman_md_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13350-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Increases resistance to damage shield upon use. Shadow weapon. -->
+    <item id="33770" type="Armor" name="Talisman (R-grade) - Damage Reflect Resistance (Active)">
+        <set name="icon" val="icon.r85_talisman_md_up_active" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="deco1" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="equip_reuse_delay" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="13349-1" />
+        <set name="duration" val="60" />
+    </item>
+    <!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
+    <item id="33771" type="EtcItem" name="Aden Hero's Reward Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
+    <item id="33772" type="EtcItem" name="Aden Hero's Reward Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Reward box given in exchange for saving Aden from danger. Double-click to use. -->
+    <item id="33773" type="EtcItem" name="Aden Hero's Reward Box">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on no-grade weapons. -->
+    <item id="33774" type="EtcItem" name="Soulshot (No-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on D-grade weapons. -->
+    <item id="33775" type="EtcItem" name="Soulshot (D-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on C-grade weapons. -->
+    <item id="33776" type="EtcItem" name="Soulshot (C-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_green_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on B-grade weapons. -->
+    <item id="33777" type="EtcItem" name="Soulshot (B-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on A-grade weapons. -->
+    <item id="33778" type="EtcItem" name="Soulshot (A-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on S-grade weapons. -->
+    <item id="33779" type="EtcItem" name="Soulshot (S-grade) - Event">
+        <set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily inflict a powerful attack on the enemy. Can be used on R-grade weapons. -->
+    <item id="33780" type="EtcItem" name="Soulshot (R-grade) - Event">
+        <set name="icon" val="icon.soulshot_r_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on no-grade weapons. -->
+    <item id="33781" type="EtcItem" name="Spiritshot (No-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on D-grade weapons. -->
+    <item id="33782" type="EtcItem" name="Spiritshot (D-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on C-grade weapons. -->
+    <item id="33783" type="EtcItem" name="Spiritshot (C-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_green_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on B-grade weapons. -->
+    <item id="33784" type="EtcItem" name="Spiritshot (B-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on A-grade weapons. -->
+    <item id="33785" type="EtcItem" name="Spiritshot (A-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on S-grade weapons. -->
+    <item id="33786" type="EtcItem" name="Spiritshot (S-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Spirit light is bestowed on the weapon to temporarily strengthen M. Atk. Can be used on R-grade weapons. -->
+    <item id="33787" type="EtcItem" name="Spiritshot (R-grade) - Event">
+        <set name="icon" val="icon.spiritshot_r_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on no-grade weapons. -->
+    <item id="33788" type="EtcItem" name="Blessed Spiritshot (No-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_white_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on D-grade weapons. -->
+    <item id="33789" type="EtcItem" name="Blessed Spiritshot (D-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_blue_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on C-grade weapons. -->
+    <item id="33790" type="EtcItem" name="Blessed Spiritshot (C-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_green_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on B-grade weapons. -->
+    <item id="33791" type="EtcItem" name="Blessed Spiritshot (B-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_red_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on A-grade weapons. -->
+    <item id="33792" type="EtcItem" name="Blessed Spiritshot (A-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_silver_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on S-grade weapons. -->
+    <item id="33793" type="EtcItem" name="Blessed Spiritshot (S-grade) - Event">
+        <set name="icon" val="icon.etc_spell_shot_gold_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Higher level spirit light is bestowed on the weapon to temporarily strengthen M. Atk. greatly. Can be used on R-grade weapons. -->
+    <item id="33794" type="EtcItem" name="Blessed Spiritshot (R-grade) - Event">
+        <set name="icon" val="icon.blessed_spiritshot_r_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Contains 3 Returning Hero's Vitality Replenishing Juices that replenish your vitality for 4 hours. -->
+    <item id="33795" type="EtcItem" name="Returning Hero's Vitality Replenishing Juice 3-unit Pack - Event">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Gift box that contains 250 Returning Hero's Marks, 1 Returning Hero's Potion Pack, and 1 Returning Hero's Support Box. -->
+    <item id="33796" type="EtcItem" name="Returning Hero's Gold Chest - Event">
+        <set name="icon" val="icon.present_of_destination_event" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Bracelet that can summon Tersi's Light, which was distributed by the temple to oppose Shilen's darkness. Requires room in the inventory and the weight limit to receive the Specter of Light. -->
+    <item id="33797" type="Armor" name="Agathion - Tersi's Light - Event">
+        <set name="icon" val="icon.bracelet_tersi_agathion" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="shirt" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Summons a Specter of Light. It can only be used in a Peaceful Zone. -->
+    <item id="33798" type="EtcItem" name="Specter of Light - Event">
+        <set name="icon" val="icon.tersi_specter_seed" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Shards of Light are summoned when used on a Specter of Light. It can only be used in a Peaceful Zone. -->
+    <item id="33799" type="EtcItem" name="Fragment of Light - Event">
+        <set name="icon" val="icon.tersi_light_gragment" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
 </list>

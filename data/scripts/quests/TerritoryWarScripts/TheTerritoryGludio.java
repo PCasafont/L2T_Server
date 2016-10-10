@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritoryGludio extends TerritoryWarSuperClass
 {
-	public static String qn1 = "717_FortheSakeoftheTerritoryGludio";
-	public static int qnu = 717;
-	public static String qna = "For the Sake of the Territory - Gludio";
-	
-	public TheTerritoryGludio()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36499;
-		TERRITORY_ID = 81;
-		LEADER_IDS = new int[] { 36508, 36510, 36513, 36591 };
-		GUARD_IDS = new int[] { 36509, 36511, 36512 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Gludio has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "717_FortheSakeoftheTerritoryGludio";
+    public static int qnu = 717;
+    public static String qna = "For the Sake of the Territory - Gludio";
+
+    public TheTerritoryGludio()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36499;
+        TERRITORY_ID = 81;
+        LEADER_IDS = new int[]{36508, 36510, 36513, 36591};
+        GUARD_IDS = new int[]{36509, 36511, 36512};
+        qn = qn1;
+        Text = new String[]{"The catapult of Gludio has been destroyed!"};
+        registerKillIds();
+    }
 }

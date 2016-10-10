@@ -1,1829 +1,1829 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Max MP + 15 / Increases Resistance to Knock Back. -->
-	<effect id="30000" rarity="1" slot="2">
-		<add stat="maxMp" val="15" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Max MP + 15 / Increases Resistance to Knock Down. -->
-	<effect id="30001" rarity="1" slot="2">
-		<add stat="maxMp" val="15" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Max MP + 15 / Increases Resistance to Drag. -->
-	<effect id="30002" rarity="1" slot="2">
-		<add stat="maxMp" val="15" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Max MP + 15 / Increases Resistance to Binding. -->
-	<effect id="30003" rarity="1" slot="2">
-		<add stat="maxMp" val="15" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Max MP + 15 / Increases Resistance to Binding. -->
-	<effect id="30004" rarity="1" slot="2">
-		<add stat="maxMp" val="15" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Max HP + 19 / Max CP + 13 -->
-	<effect id="30005" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<add stat="maxCp" val="13" />
-	</effect>
-	<!-- Max HP + 19 / Increases Dark P. Def. -->
-	<effect id="30006" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Dark P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Wind P. Def. -->
-	<effect id="30007" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Wind P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Water P. Def. -->
-	<effect id="30008" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Water P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Fire P. Def. -->
-	<effect id="30009" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Fire P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Earth P. Def. -->
-	<effect id="30010" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Holy P. Def. -->
-	<effect id="30011" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Bleed. -->
-	<effect id="30012" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Mental Attacks. -->
-	<effect id="30013" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Paralysis. -->
-	<effect id="30014" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Poison. -->
-	<effect id="30015" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Shock. -->
-	<effect id="30016" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Sleep. -->
-	<effect id="30017" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Knock Back. -->
-	<effect id="30018" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Knock Down. -->
-	<effect id="30019" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Drag. -->
-	<effect id="30020" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Binding. -->
-	<effect id="30021" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Max HP + 19 / Increases Resistance to Binding. -->
-	<effect id="30022" rarity="1" slot="2">
-		<add stat="maxHp" val="19" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Max CP + 13 / Increases Dark P. Def. -->
-	<effect id="30023" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Dark P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Wind P. Def. -->
-	<effect id="30024" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Wind P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Water P. Def. -->
-	<effect id="30025" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Water P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Fire P. Def. -->
-	<effect id="30026" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Fire P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Earth P. Def. -->
-	<effect id="30027" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Holy P. Def. -->
-	<effect id="30028" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Bleed. -->
-	<effect id="30029" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Mental Attacks. -->
-	<effect id="30030" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Paralysis. -->
-	<effect id="30031" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Poison. -->
-	<effect id="30032" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Shock. -->
-	<effect id="30033" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Sleep. -->
-	<effect id="30034" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Knock Back. -->
-	<effect id="30035" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Knock Down. -->
-	<effect id="30036" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Drag. -->
-	<effect id="30037" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Binding. -->
-	<effect id="30038" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Max CP + 13 / Increases Resistance to Binding. -->
-	<effect id="30039" rarity="1" slot="2">
-		<add stat="maxCp" val="13" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Wind P. Def. -->
-	<effect id="30040" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Wind P. Def" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Water P. Def. -->
-	<effect id="30041" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Water P. Def" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Fire P. Def. -->
-	<effect id="30042" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Fire P. Def" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Earth P. Def. -->
-	<effect id="30043" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Holy P. Def. -->
-	<effect id="30044" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30045" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30046" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30047" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Poison. -->
-	<effect id="30048" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Shock. -->
-	<effect id="30049" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30050" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30051" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30052" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Drag. -->
-	<effect id="30053" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Binding. -->
-	<effect id="30054" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Dark P. Def. / Increases Resistance to Binding. -->
-	<effect id="30055" rarity="1" slot="2">
-		<effect desc="Increases Dark P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Water P. Def. -->
-	<effect id="30056" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Water P. Def" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Fire P. Def. -->
-	<effect id="30057" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Fire P. Def" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Earth P. Def. -->
-	<effect id="30058" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Holy P. Def. -->
-	<effect id="30059" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30060" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30061" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30062" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Poison. -->
-	<effect id="30063" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Shock. -->
-	<effect id="30064" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30065" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30066" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30067" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Drag. -->
-	<effect id="30068" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Binding. -->
-	<effect id="30069" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Wind P. Def. / Increases Resistance to Binding. -->
-	<effect id="30070" rarity="1" slot="2">
-		<effect desc="Increases Wind P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Fire P. Def. -->
-	<effect id="30071" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Fire P. Def" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Earth P. Def. -->
-	<effect id="30072" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Holy P. Def. -->
-	<effect id="30073" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30074" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30075" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30076" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Poison. -->
-	<effect id="30077" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Shock. -->
-	<effect id="30078" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30079" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30080" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30081" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Drag. -->
-	<effect id="30082" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Binding. -->
-	<effect id="30083" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Water P. Def. / Increases Resistance to Binding. -->
-	<effect id="30084" rarity="1" slot="2">
-		<effect desc="Increases Water P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Earth P. Def. -->
-	<effect id="30085" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Earth P. Def" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Holy P. Def. -->
-	<effect id="30086" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30087" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30088" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30089" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Poison. -->
-	<effect id="30090" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Shock. -->
-	<effect id="30091" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30092" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30093" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30094" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Drag. -->
-	<effect id="30095" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Binding. -->
-	<effect id="30096" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Fire P. Def. / Increases Resistance to Binding. -->
-	<effect id="30097" rarity="1" slot="2">
-		<effect desc="Increases Fire P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Holy P. Def. -->
-	<effect id="30098" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Holy P. Def" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30099" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30100" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30101" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Poison. -->
-	<effect id="30102" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Shock. -->
-	<effect id="30103" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30104" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30105" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30106" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Drag. -->
-	<effect id="30107" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Binding. -->
-	<effect id="30108" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Earth P. Def. / Increases Resistance to Binding. -->
-	<effect id="30109" rarity="1" slot="2">
-		<effect desc="Increases Earth P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Bleed. -->
-	<effect id="30110" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Bleed" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Mental Attacks. -->
-	<effect id="30111" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Paralysis. -->
-	<effect id="30112" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Poison. -->
-	<effect id="30113" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Shock. -->
-	<effect id="30114" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Sleep. -->
-	<effect id="30115" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Knock Back. -->
-	<effect id="30116" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Knock Down. -->
-	<effect id="30117" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Drag. -->
-	<effect id="30118" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Binding. -->
-	<effect id="30119" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Holy P. Def. / Increases Resistance to Binding. -->
-	<effect id="30120" rarity="1" slot="2">
-		<effect desc="Increases Holy P. Def" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Mental Attacks. -->
-	<effect id="30121" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Mental Attacks" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Paralysis. -->
-	<effect id="30122" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Poison. -->
-	<effect id="30123" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Shock. -->
-	<effect id="30124" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Sleep. -->
-	<effect id="30125" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Knock Back. -->
-	<effect id="30126" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Knock Down. -->
-	<effect id="30127" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Drag. -->
-	<effect id="30128" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Binding. -->
-	<effect id="30129" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Bleed. / Increases Resistance to Binding. -->
-	<effect id="30130" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Bleed" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Paralysis. -->
-	<effect id="30131" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Paralysis" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Poison. -->
-	<effect id="30132" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Shock. -->
-	<effect id="30133" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Sleep. -->
-	<effect id="30134" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Knock Back. -->
-	<effect id="30135" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Knock Down. -->
-	<effect id="30136" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Drag. -->
-	<effect id="30137" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Binding. -->
-	<effect id="30138" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Mental Attacks. / Increases Resistance to Binding. -->
-	<effect id="30139" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Mental Attacks" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Poison. -->
-	<effect id="30140" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Poison" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Shock. -->
-	<effect id="30141" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Sleep. -->
-	<effect id="30142" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Knock Back. -->
-	<effect id="30143" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Knock Down. -->
-	<effect id="30144" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Drag. -->
-	<effect id="30145" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Binding. -->
-	<effect id="30146" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Paralysis. / Increases Resistance to Binding. -->
-	<effect id="30147" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Paralysis" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Shock. -->
-	<effect id="30148" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Shock" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Sleep. -->
-	<effect id="30149" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Knock Back. -->
-	<effect id="30150" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Knock Down. -->
-	<effect id="30151" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Drag. -->
-	<effect id="30152" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Binding. -->
-	<effect id="30153" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Poison. / Increases Resistance to Binding. -->
-	<effect id="30154" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Poison" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Sleep. -->
-	<effect id="30155" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Sleep" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Knock Back. -->
-	<effect id="30156" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Knock Down. -->
-	<effect id="30157" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Drag. -->
-	<effect id="30158" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Binding. -->
-	<effect id="30159" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Shock. / Increases Resistance to Binding. -->
-	<effect id="30160" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Shock" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Sleep. / Increases Resistance to Knock Back. -->
-	<effect id="30161" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Sleep" />
-		<effect desc="Increases Resistance to Knock Back" />
-	</effect>
-	<!-- Increases Resistance to Sleep. / Increases Resistance to Knock Down. -->
-	<effect id="30162" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Sleep" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Sleep. / Increases Resistance to Drag. -->
-	<effect id="30163" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Sleep" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Sleep. / Increases Resistance to Binding. -->
-	<effect id="30164" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Sleep" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Sleep. / Increases Resistance to Binding. -->
-	<effect id="30165" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Sleep" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Knock Back. / Increases Resistance to Knock Down. -->
-	<effect id="30166" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Back" />
-		<effect desc="Increases Resistance to Knock Down" />
-	</effect>
-	<!-- Increases Resistance to Knock Back. / Increases Resistance to Drag. -->
-	<effect id="30167" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Back" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Knock Back. / Increases Resistance to Binding. -->
-	<effect id="30168" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Back" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Knock Back. / Increases Resistance to Binding. -->
-	<effect id="30169" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Back" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Knock Down. / Increases Resistance to Drag. -->
-	<effect id="30170" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Down" />
-		<effect desc="Increases Resistance to Drag" />
-	</effect>
-	<!-- Increases Resistance to Knock Down. / Increases Resistance to Binding. -->
-	<effect id="30171" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Down" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Knock Down. / Increases Resistance to Binding. -->
-	<effect id="30172" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Knock Down" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Drag. / Increases Resistance to Binding. -->
-	<effect id="30173" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Drag" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Drag. / Increases Resistance to Binding. -->
-	<effect id="30174" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Drag" />
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!-- Increases Resistance to Binding. -->
-	<effect id="30175" rarity="1" slot="2">
-		<effect desc="Increases Resistance to Binding" />
-	</effect>
-	<!--  -->
-	<effect id="30176" rarity="1" slot="1">
-		<effect desc="" />
-	</effect>
-	<!-- M. Def. + 1 -->
-	<effect id="30177" rarity="1" slot="1">
-		<add stat="mDef" val="1" />
-	</effect>
-	<!-- M. Def. + 2 -->
-	<effect id="30178" rarity="1" slot="1">
-		<add stat="mDef" val="2" />
-	</effect>
-	<!-- M. Def. + 3 -->
-	<effect id="30179" rarity="1" slot="1">
-		<add stat="mDef" val="3" />
-	</effect>
-	<!-- M. Def. + 4 -->
-	<effect id="30180" rarity="1" slot="1">
-		<add stat="mDef" val="4" />
-	</effect>
-	<!-- M. Def. + 5 -->
-	<effect id="30181" rarity="1" slot="1">
-		<add stat="mDef" val="5" />
-	</effect>
-	<!-- M. Def. + 6 -->
-	<effect id="30182" rarity="1" slot="1">
-		<add stat="mDef" val="6" />
-	</effect>
-	<!-- M. Def. + 7 -->
-	<effect id="30183" rarity="1" slot="1">
-		<add stat="mDef" val="7" />
-	</effect>
-	<!-- M. Def. + 8 -->
-	<effect id="30184" rarity="1" slot="1">
-		<add stat="mDef" val="8" />
-	</effect>
-	<!-- M. Def. + 9 -->
-	<effect id="30185" rarity="1" slot="1">
-		<add stat="mDef" val="9" />
-	</effect>
-	<!-- M. Def. + 10 -->
-	<effect id="30186" rarity="1" slot="1">
-		<add stat="mDef" val="10" />
-	</effect>
-	<!-- M. Def. + 11 -->
-	<effect id="30187" rarity="1" slot="1">
-		<add stat="mDef" val="11" />
-	</effect>
-	<!-- M. Def. + 12 -->
-	<effect id="30188" rarity="1" slot="1">
-		<add stat="mDef" val="12" />
-	</effect>
-	<!-- M. Def. + 13 -->
-	<effect id="30189" rarity="1" slot="1">
-		<add stat="mDef" val="13" />
-	</effect>
-	<!-- M. Def. + 14 -->
-	<effect id="30190" rarity="1" slot="1">
-		<add stat="mDef" val="14" />
-	</effect>
-	<!-- M. Def. + 15 -->
-	<effect id="30191" rarity="1" slot="1">
-		<add stat="mDef" val="15" />
-	</effect>
-	<!-- M. Def. + 16 -->
-	<effect id="30192" rarity="1" slot="1">
-		<add stat="mDef" val="16" />
-	</effect>
-	<!-- M. Def. + 17 -->
-	<effect id="30193" rarity="1" slot="1">
-		<add stat="mDef" val="17" />
-	</effect>
-	<!-- M. Def. + 18 -->
-	<effect id="30194" rarity="1" slot="1">
-		<add stat="mDef" val="18" />
-	</effect>
-	<!-- M. Def. + 19 -->
-	<effect id="30195" rarity="1" slot="1">
-		<add stat="mDef" val="19" />
-	</effect>
-	<!-- M. Def. + 20 -->
-	<effect id="30196" rarity="1" slot="1">
-		<add stat="mDef" val="20" />
-	</effect>
-	<!-- M. Def. + 21 -->
-	<effect id="30197" rarity="1" slot="1">
-		<add stat="mDef" val="21" />
-	</effect>
-	<!-- M. Def. + 22 -->
-	<effect id="30198" rarity="1" slot="1">
-		<add stat="mDef" val="22" />
-	</effect>
-	<!-- M. Def. + 23 -->
-	<effect id="30199" rarity="1" slot="1">
-		<add stat="mDef" val="23" />
-	</effect>
-	<!-- M. Def. + 24 -->
-	<effect id="30200" rarity="1" slot="1">
-		<add stat="mDef" val="24" />
-	</effect>
-	<!-- M. Def. + 25 -->
-	<effect id="30201" rarity="1" slot="1">
-		<add stat="mDef" val="25" />
-	</effect>
-	<!-- M. Def. + 26 -->
-	<effect id="30202" rarity="1" slot="1">
-		<add stat="mDef" val="26" />
-	</effect>
-	<!-- M. Def. + 27 -->
-	<effect id="30203" rarity="1" slot="1">
-		<add stat="mDef" val="27" />
-	</effect>
-	<!-- M. Def. + 28 -->
-	<effect id="30204" rarity="1" slot="1">
-		<add stat="mDef" val="28" />
-	</effect>
-	<!-- M. Def. + 29 -->
-	<effect id="30205" rarity="1" slot="1">
-		<add stat="mDef" val="29" />
-	</effect>
-	<!-- M. Def. + 30 -->
-	<effect id="30206" rarity="1" slot="1">
-		<add stat="mDef" val="30" />
-	</effect>
-	<!-- M. Def. + 31 -->
-	<effect id="30207" rarity="1" slot="1">
-		<add stat="mDef" val="31" />
-	</effect>
-	<!-- M. Def. + 32 -->
-	<effect id="30208" rarity="1" slot="1">
-		<add stat="mDef" val="32" />
-	</effect>
-	<!-- M. Def. + 33 -->
-	<effect id="30209" rarity="1" slot="1">
-		<add stat="mDef" val="33" />
-	</effect>
-	<!-- M. Def. + 34 -->
-	<effect id="30210" rarity="1" slot="1">
-		<add stat="mDef" val="34" />
-	</effect>
-	<!-- M. Def. + 35 -->
-	<effect id="30211" rarity="1" slot="1">
-		<add stat="mDef" val="35" />
-	</effect>
-	<!-- M. Def. + 36 -->
-	<effect id="30212" rarity="1" slot="1">
-		<add stat="mDef" val="36" />
-	</effect>
-	<!-- M. Def. + 37 -->
-	<effect id="30213" rarity="1" slot="1">
-		<add stat="mDef" val="37" />
-	</effect>
-	<!-- M. Def. + 38 -->
-	<effect id="30214" rarity="1" slot="1">
-		<add stat="mDef" val="38" />
-	</effect>
-	<!-- M. Def. + 39 -->
-	<effect id="30215" rarity="1" slot="1">
-		<add stat="mDef" val="39" />
-	</effect>
-	<!-- M. Def. + 40 -->
-	<effect id="30216" rarity="1" slot="1">
-		<add stat="mDef" val="40" />
-	</effect>
-	<!-- M. Def. + 41 -->
-	<effect id="30217" rarity="1" slot="1">
-		<add stat="mDef" val="41" />
-	</effect>
-	<!-- M. Def. + 42 -->
-	<effect id="30218" rarity="1" slot="1">
-		<add stat="mDef" val="42" />
-	</effect>
-	<!-- M. Def. + 43 -->
-	<effect id="30219" rarity="1" slot="1">
-		<add stat="mDef" val="43" />
-	</effect>
-	<!-- M. Def. + 44 -->
-	<effect id="30220" rarity="1" slot="1">
-		<add stat="mDef" val="44" />
-	</effect>
-	<!-- M. Def. + 45 -->
-	<effect id="30221" rarity="1" slot="1">
-		<add stat="mDef" val="45" />
-	</effect>
-	<!-- M. Def. + 46 -->
-	<effect id="30222" rarity="1" slot="1">
-		<add stat="mDef" val="46" />
-	</effect>
-	<!-- M. Def. + 47 -->
-	<effect id="30223" rarity="1" slot="1">
-		<add stat="mDef" val="47" />
-	</effect>
-	<!-- M. Def. + 48 -->
-	<effect id="30224" rarity="1" slot="1">
-		<add stat="mDef" val="48" />
-	</effect>
-	<!-- M. Def. + 49 -->
-	<effect id="30225" rarity="1" slot="1">
-		<add stat="mDef" val="49" />
-	</effect>
-	<!-- M. Def. + 50 -->
-	<effect id="30226" rarity="1" slot="1">
-		<add stat="mDef" val="50" />
-	</effect>
-	<!-- M. Def. + 8.0 -->
-	<effect id="30227" rarity="1" slot="1">
-		<add stat="mDef" val="8.0" />
-	</effect>
-	<!-- M. Def. + 9.0 -->
-	<effect id="30228" rarity="1" slot="1">
-		<add stat="mDef" val="9.0" />
-	</effect>
-	<!-- M. Def. + 10.0 -->
-	<effect id="30229" rarity="1" slot="1">
-		<add stat="mDef" val="10.0" />
-	</effect>
-	<!-- M. Def. + 11.0 -->
-	<effect id="30230" rarity="1" slot="1">
-		<add stat="mDef" val="11.0" />
-	</effect>
-	<!-- M. Def. + 12.0 / Speed + 7 / CON +2 and MEN +1 -->
-	<effect id="30231" rarity="2" slot="2">
-		<add stat="mDef" val="12.0" />
-		<add stat="runSpd" val="7" />
-		<effect desc="CON +2 and MEN +1" />
-	</effect>
-	<!-- M. Def. + 13.0 / Speed + 7, Max HP + 200, Max MP + 200 / STR +1, CON +2, INT +1, MEN +2 -->
-	<effect id="30232" rarity="3" slot="3">
-		<add stat="mDef" val="13.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<baseAdd stat="STR" val="1" />
-		<baseAdd stat="CON" val="2" />
-		<baseAdd stat="INT" val="1" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 14.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 20. STR +2, \nDEX +1, CON +2, INT +2, WIT +1, MEN +2 -->
-	<effect id="30233" rarity="4" slot="4">
-		<add stat="mDef" val="14.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<effect desc="MP Consumption - 3%" />
-		<effect desc="Resistance to Water" />
-		<effect desc="Fire" />
-		<effect desc="Wind" />
-		<effect desc="Earth + 20. STR +2" />
-		<baseAdd stat="DEX" val="1" />
-		<baseAdd stat="CON" val="2" />
-		<baseAdd stat="INT" val="2" />
-		<baseAdd stat="WIT" val="1" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 15.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 25. Increase\ns Damage Reflect Resistance. STR +2, DEX +1, CON +\n2, INT +2, WIT +1, MEN +2 -->
-	<effect id="30234" rarity="4" slot="4">
-		<add stat="mDef" val="15.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<effect desc="MP Consumption - 3%" />
-		<effect desc="Resistance to Water" />
-		<effect desc="Fire" />
-		<effect desc="Wind" />
-		<effect desc="Earth + 25. Increases Damage Reflect Resistance. STR +2" />
-		<baseAdd stat="DEX" val="1" />
-		<baseAdd stat="CON" val="2" />
-		<baseAdd stat="INT" val="2" />
-		<baseAdd stat="WIT" val="1" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 16.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 30. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 2 -->
-	<effect id="30235" rarity="4" slot="4">
-		<add stat="mDef" val="16.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<effect desc="MP Consumption - 3%" />
-		<effect desc="Resistance to Water" />
-		<effect desc="Fire" />
-		<effect desc="Wind" />
-		<effect desc="Earth + 30. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
-		<effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2" />
-		<baseAdd stat="DEX" val="2" />
-		<baseAdd stat="CON" val="3" />
-		<baseAdd stat="INT" val="2" />
-		<baseAdd stat="WIT" val="2" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 17.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 35. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 3 -->
-	<effect id="30236" rarity="4" slot="4">
-		<add stat="mDef" val="17.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<effect desc="MP Consumption - 3%" />
-		<effect desc="Resistance to Water" />
-		<effect desc="Fire" />
-		<effect desc="Wind" />
-		<effect desc="Earth + 35. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
-		<effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2" />
-		<baseAdd stat="DEX" val="2" />
-		<baseAdd stat="CON" val="3" />
-		<baseAdd stat="INT" val="2" />
-		<baseAdd stat="WIT" val="2" />
-		<baseAdd stat="MEN" val="3" />
-	</effect>
-	<!-- M. Def. + 18.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 40. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN +\n 3 -->
-	<effect id="30237" rarity="4" slot="4">
-		<add stat="mDef" val="18.0" />
-		<add stat="runSpd" val="7" />
-		<add stat="maxHp" val="200" />
-		<add stat="maxMp" val="200" />
-		<effect desc="MP Consumption - 3%" />
-		<effect desc="Resistance to Water" />
-		<effect desc="Fire" />
-		<effect desc="Wind" />
-		<effect desc="Earth + 40. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
-		<effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 3" />
-		<baseAdd stat="DEX" val="3" />
-		<baseAdd stat="CON" val="3" />
-		<baseAdd stat="INT" val="3" />
-		<baseAdd stat="WIT" val="3" />
-		<baseAdd stat="MEN" val="3" />
-	</effect>
-	<!-- Active: Power of Pa'agrio -->
-	<effect id="30238" rarity="4" slot="4">
-		<effect desc="Active: Power of Pa'agrio" />
-	</effect>
-	<!-- Active: Power of Pa'agrio -->
-	<effect id="30239" rarity="4" slot="4">
-		<effect desc="Active: Power of Pa'agrio" />
-	</effect>
-	<!-- Active: Portal of Sayha -->
-	<effect id="30240" rarity="4" slot="4">
-		<effect desc="Active: Portal of Sayha" />
-	</effect>
-	<!-- Active: Power of Sayha -->
-	<effect id="30241" rarity="4" slot="4">
-		<effect desc="Active: Power of Sayha" />
-	</effect>
-	<!-- Active: Power of Sayha -->
-	<effect id="30242" rarity="4" slot="4">
-		<effect desc="Active: Power of Sayha" />
-	</effect>
-	<!-- Active: Power of Eva -->
-	<effect id="30243" rarity="4" slot="4">
-		<effect desc="Active: Power of Eva" />
-	</effect>
-	<!-- Active: Power of Eva -->
-	<effect id="30244" rarity="4" slot="4">
-		<effect desc="Active: Power of Eva" />
-	</effect>
-	<!-- Passive: Power of Maphr -->
-	<effect id="30245" rarity="4" slot="4">
-		<effect desc="Passive: Power of Maphr" />
-	</effect>
-	<!-- Passive: Power of Maphr -->
-	<effect id="30246" rarity="4" slot="4">
-		<effect desc="Passive: Power of Maphr" />
-	</effect>
-	<!-- Resistance to Fire + 5 -->
-	<effect id="30247" rarity="1" slot="1">
-		<effect desc="Resistance to Fire + 5" />
-	</effect>
-	<!-- Resistance to Fire + 10 -->
-	<effect id="30248" rarity="1" slot="1">
-		<effect desc="Resistance to Fire + 10" />
-	</effect>
-	<!-- Resistance to Fire + 15 -->
-	<effect id="30249" rarity="1" slot="1">
-		<effect desc="Resistance to Fire + 15" />
-	</effect>
-	<!-- Resistance to Water + 5 -->
-	<effect id="30250" rarity="1" slot="1">
-		<effect desc="Resistance to Water + 5" />
-	</effect>
-	<!-- Resistance to Water + 10 -->
-	<effect id="30251" rarity="1" slot="1">
-		<effect desc="Resistance to Water + 10" />
-	</effect>
-	<!-- Resistance to Water + 15 -->
-	<effect id="30252" rarity="1" slot="1">
-		<effect desc="Resistance to Water + 15" />
-	</effect>
-	<!-- Resistance to Wind + 5 -->
-	<effect id="30253" rarity="1" slot="1">
-		<effect desc="Resistance to Wind + 5" />
-	</effect>
-	<!-- Resistance to Wind + 10 -->
-	<effect id="30254" rarity="1" slot="1">
-		<effect desc="Resistance to Wind + 10" />
-	</effect>
-	<!-- Resistance to Wind + 15 -->
-	<effect id="30255" rarity="1" slot="1">
-		<effect desc="Resistance to Wind + 15" />
-	</effect>
-	<!-- Resistance to Earth + 5 -->
-	<effect id="30256" rarity="1" slot="1">
-		<effect desc="Resistance to Earth + 5" />
-	</effect>
-	<!-- Resistance to Earth + 10 -->
-	<effect id="30257" rarity="1" slot="1">
-		<effect desc="Resistance to Earth + 10" />
-	</effect>
-	<!-- Resistance to Earth + 15 -->
-	<effect id="30258" rarity="1" slot="1">
-		<effect desc="Resistance to Earth + 15" />
-	</effect>
-	<!-- Active: Stuns and cancels the targeting on nearby enemies, and teleport forward. Consumes 10 B-grade Gemstones. -->
-	<effect id="30259" rarity="4" slot="2">
-		<effect desc="Active: Stuns and cancels the targeting on nearby enemies, and teleport forward. Consumes 10 B-grade Gemstones" />
-	</effect>
-	<!-- Active: Temporarily increases Speed, P. Evasion, and HP Recovery Bonus. Consumes 10 B-grade Gemstones upon use. -->
-	<effect id="30260" rarity="4" slot="2">
-		<effect desc="Active: Temporarily increases Speed, P. Evasion, and HP Recovery Bonus. Consumes 10 B-grade Gemstones upon use" />
-	</effect>
-	<!-- Active: Available when HP drops to 20% or below. Becomes Invincible for a certain period of time. Consumes 20 B-grade Gemstones upon use. -->
-	<effect id="30261" rarity="4" slot="2">
-		<effect desc="Active: Available when HP drops to 20% or below. Becomes Invincible for a certain period of time. Consumes 20 B-grade Gemstones upon use" />
-	</effect>
-	<!-- Active: Temporarily blocks the target's physical/magic skills. Consumes 30 B-grade Gemstones upon use. -->
-	<effect id="30262" rarity="4" slot="2">
-		<effect desc="Active: Temporarily blocks the target's physical/magic skills. Consumes 30 B-grade Gemstones upon use" />
-	</effect>
-	<!-- Active: Temporarily cannot be targetted. Consumes 10 B-grade Gemstones. -->
-	<effect id="30263" rarity="4" slot="2">
-		<effect desc="Active: Temporarily cannot be targetted. Consumes 10 B-grade Gemstones" />
-	</effect>
-	<!-- Active: Temporarily increases Damage Reflect Resistance. -->
-	<effect id="30264" rarity="4" slot="2">
-		<effect desc="Active: Temporarily increases Damage Reflect Resistance" />
-	</effect>
-	<!-- Active: Temporarily increases Damage Reflect Resistance. -->
-	<effect id="30265" rarity="4" slot="2">
-		<effect desc="Active: Temporarily increases Damage Reflect Resistance" />
-	</effect>
-	<!-- Active: Temporarily increases Damage Reflect Resistance. -->
-	<effect id="30266" rarity="4" slot="2">
-		<effect desc="Active: Temporarily increases Damage Reflect Resistance" />
-	</effect>
-	<!-- Passive: When attacking, has a chance of restricting the target's chat function. -->
-	<effect id="30267" rarity="4" slot="2">
-		<effect desc="Passive: When attacking, has a chance of restricting the target's chat function" />
-	</effect>
-	<!-- Passive: When equipped, returns 20% of received damage back to the enemy. -->
-	<effect id="30268" rarity="4" slot="2">
-		<skill id="13514" level="1" />
-	</effect>
-	<!-- Active: When used, increases P. Critical Damage by 15% for 5 minutes. -->
-	<effect id="30269" rarity="4" slot="2">
-		<skill id="13515" level="1" />
-	</effect>
-	<!-- Passive: When equipped, increases Damage Reflect Resistance by 50%. -->
-	<effect id="30270" rarity="4" slot="2">
-		<skill id="13516" level="1" />
-	</effect>
-	<!-- Active: When used, increases Max HP and Max CP by 10% for 5 minutes. -->
-	<effect id="30271" rarity="4" slot="2">
-		<skill id="13517" level="1" />
-	</effect>
-	<!-- Active: When used, makes invincible for 30 seconds. The effect will be cancelled when you attack. -->
-	<effect id="30272" rarity="4" slot="2">
-		<skill id="13518" level="1" />
-	</effect>
-	<!-- Active: When used, prevents you from dying for 10 seconds. Can be used when HP is 20% or below. -->
-	<effect id="30273" rarity="4" slot="2">
-		<skill id="13519" level="1" />
-	</effect>
-	<!-- Active: Prevents the target from using physical/magical skills for 5 seconds. -->
-	<effect id="30274" rarity="4" slot="2">
-		<skill id="13520" level="1" />
-	</effect>
-	<!-- Active: Inflicts Sleep on the target for 5 seconds. -->
-	<effect id="30275" rarity="4" slot="2">
-		<skill id="13521" level="1" />
-	</effect>
-	<!-- Active: Decreases the target's Atk. Spd. And Casting Spd. By 50% for 10 seconds. -->
-	<effect id="30276" rarity="4" slot="2">
-		<skill id="13522" level="1" />
-	</effect>
-	<!-- Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds. -->
-	<effect id="30277" rarity="4" slot="2">
-		<skill id="13523" level="1" />
-	</effect>
-	<!-- Passive: When equipped, has a chance of recovering 3% of damage inflicted on the enemy as HP. -->
-	<effect id="30278" rarity="4" slot="4">
-		<effect desc="Passive: When equipped, has a chance of recovering 3% of damage inflicted on the enemy as HP" />
-	</effect>
-	<!-- Passive: When equipped, has a chance of recovering 5% of damage inflicted on the enemy as HP. -->
-	<effect id="30279" rarity="4" slot="4">
-		<effect desc="Passive: When equipped, has a chance of recovering 5% of damage inflicted on the enemy as HP" />
-	</effect>
-	<!-- Active: When used, has a chance of recovering 4% of damage inflicted on the enemy as HP for 30 minutes. -->
-	<effect id="30280" rarity="4" slot="4">
-		<effect desc="Active: When used, has a chance of recovering 4% of damage inflicted on the enemy as HP for 30 minutes" />
-	</effect>
-	<!-- Active: When used, has a chance of recovering 6% of damage inflicted on the enemy as HP for 60 minutes. -->
-	<effect id="30281" rarity="4" slot="4">
-		<effect desc="Active: When used, has a chance of recovering 6% of damage inflicted on the enemy as HP for 60 minutes" />
-	</effect>
-	<!-- Passive: When equipped, returns 3% of received damage back to the enemy. -->
-	<effect id="30282" rarity="4" slot="4">
-		<effect desc="Passive: When equipped, returns 3% of received damage back to the enemy" />
-	</effect>
-	<!-- Passive: When equipped, returns 5% of received damage back to the enemy. -->
-	<effect id="30283" rarity="4" slot="4">
-		<effect desc="Passive: When equipped, returns 5% of received damage back to the enemy" />
-	</effect>
-	<!-- Active: Returns 7% of received damage back to the enemy for 5 minutes -->
-	<effect id="30284" rarity="4" slot="4">
-		<effect desc="Active: Returns 7% of received damage back to the enemy for 5 minutes" />
-	</effect>
-	<!-- Active: Returns 15% of received damage back to the enemy for 5 minutes -->
-	<effect id="30285" rarity="4" slot="4">
-		<effect desc="Active: Returns 15% of received damage back to the enemy for 5 minutes" />
-	</effect>
-	<!-- Effect: When hit, increases PvP P. Atk. for a certain amount of time. -->
-	<effect id="30286" rarity="4" slot="4">
-		<effect desc="Effect: When hit, increases PvP P. Atk. for a certain amount of time" />
-	</effect>
-	<!-- Passive: When equipped, increases PvP P. Atk. -->
-	<effect id="30287" rarity="4" slot="4">
-		<effect desc="Passive: When equipped, increases PvP P. Atk" />
-	</effect>
-	<!-- Effect: When hit, momentarily prevents the target from using physical/magical skills. -->
-	<effect id="30288" rarity="4" slot="4">
-		<effect desc="Effect: When hit, momentarily prevents the target from using physical/magical skills" />
-	</effect>
-	<!-- Active: Recovers HP by 15%, MP by 15%, and CP by 20%. Can be used in Olympiad. -->
-	<effect id="30289" rarity="4" slot="4">
-		<effect desc="Active: Recovers HP by 15%, MP by 15%, and CP by 20%. Can be used in Olympiad" />
-	</effect>
-	<!-- Active: Recovers HP by 30%, MP by 30%, and CP by 40%. Can be used in Olympiad. -->
-	<effect id="30290" rarity="4" slot="4">
-		<effect desc="Active: Recovers HP by 30%, MP by 30%, and CP by 40%. Can be used in Olympiad" />
-	</effect>
-	<!-- Active: Increases P. Def. by 10% for a certain amount of time. -->
-	<effect id="30291" rarity="4" slot="4">
-		<effect desc="Active: Increases P. Def. by 10% for a certain amount of time" />
-	</effect>
-	<!-- Active: Increases M. Def. by 10% for a certain amount of time. -->
-	<effect id="30292" rarity="4" slot="4">
-		<effect desc="Active: Increases M. Def. by 10% for a certain amount of time" />
-	</effect>
-	<!-- Active: Increases P. Def. and M. Def. by 10% for a certain amount of time. -->
-	<effect id="30293" rarity="4" slot="4">
-		<effect desc="Active: Increases P. Def. and M. Def. by 10% for a certain amount of time" />
-	</effect>
-	<!-- Active: Cancels all abnormal status and makes you invincible for 3 seconds. Cannot use when immobilized. Can be used in the Olympiad. -->
-	<effect id="30294" rarity="4" slot="4">
-		<effect desc="Active: Cancels all abnormal status and makes you invincible for 3 seconds. Cannot use when immobilized. Can be used in the Olympiad" />
-	</effect>
-	<!-- Active: Cancels all abnormal status and makes you invincible for 7 seconds. Cannot use when immobilized. Can be used in the Olympiad. -->
-	<effect id="30295" rarity="4" slot="4">
-		<effect desc="Active: Cancels all abnormal status and makes you invincible for 7 seconds. Cannot use when immobilized. Can be used in the Olympiad" />
-	</effect>
-	<!-- Active: Teleports to the village. Cannot be used in special locations such as GM room. -->
-	<effect id="30296" rarity="4" slot="4">
-		<effect desc="Active: Teleports to the village. Cannot be used in special locations such as GM room" />
-	</effect>
-	<!-- Active: Teleports party members to the village. Cannot be used in special locations such as GM room. -->
-	<effect id="30297" rarity="4" slot="4">
-		<effect desc="Active: Teleports party members to the village. Cannot be used in special locations such as GM room" />
-	</effect>
-	<!-- Passive: Increases weight gauge by 200%. -->
-	<effect id="30298" rarity="4" slot="4">
-		<effect desc="Passive: Increases weight gauge by 200%" />
-	</effect>
-	<!-- M. Def. + 8 -->
-	<effect id="30299" rarity="2" slot="2">
-		<add stat="mDef" val="8" />
-	</effect>
-	<!-- M. Def. + 9 -->
-	<effect id="30300" rarity="2" slot="2">
-		<add stat="mDef" val="9" />
-	</effect>
-	<!-- M. Def. + 10 -->
-	<effect id="30301" rarity="2" slot="2">
-		<add stat="mDef" val="10" />
-	</effect>
-	<!-- M. Def. + 11 -->
-	<effect id="30302" rarity="2" slot="2">
-		<add stat="mDef" val="11" />
-		<add stat="runSpd" val="7" />
-	</effect>
-	<!-- M. Def. + 12 / Speed + 7 / Max HP + 510\nMax MP + 510\nAttribute Resistance +\n 6\nSTR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, M\nEN + 1 -->
-	<effect id="30303" rarity="2" slot="2">
-		<add stat="mDef" val="12" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 510Max MP + 510Attribute Resistance + 6STR + 1" />
-		<baseAdd stat="DEX" val="1" />
-		<baseAdd stat="CON" val="1" />
-		<baseAdd stat="INT" val="1" />
-		<baseAdd stat="WIT" val="1" />
-		<baseAdd stat="MEN" val="1" />
-	</effect>
-	<!-- M. Def. + 13 / Speed + 7 / Max HP + 520\nMax MP + 520\nSkill MP Consumption -\n 3%\nAttribute Resistance + 12\nSTR + 2, DEX + 2, \nCON + 2, INT + 2, WIT + 2, MEN + 2 -->
-	<effect id="30304" rarity="2" slot="2">
-		<add stat="mDef" val="13" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 520Max MP + 520Skill MP Consumption - 3%Attribute Resistance + 12STR + 2" />
-		<baseAdd stat="DEX" val="2" />
-		<baseAdd stat="CON" val="2" />
-		<baseAdd stat="INT" val="2" />
-		<baseAdd stat="WIT" val="2" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 14 / Speed + 7 / Max HP + 531\nMax MP + 531\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nAttribute Resi\nstance + 18\nSTR + 3, DEX + 3, CON + 2, INT + 3, W\nIT + 3, MEN + 2 -->
-	<effect id="30305" rarity="2" slot="2">
-		<add stat="mDef" val="14" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 531Max MP + 531Skill MP Consumption - 3%Damage Reflect Resistance + 5Attribute Resistance + 18STR + 3" />
-		<baseAdd stat="DEX" val="3" />
-		<baseAdd stat="CON" val="2" />
-		<baseAdd stat="INT" val="3" />
-		<baseAdd stat="WIT" val="3" />
-		<baseAdd stat="MEN" val="2" />
-	</effect>
-	<!-- M. Def. + 15 / Speed + 7 / Max HP + 536\nMax MP + 536\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nAttribute Resistance + 24\nSTR + 3, DEX + 3,\n CON + 3, INT + 3, WIT + 3, MEN + 3 -->
-	<effect id="30306" rarity="2" slot="2">
-		<add stat="mDef" val="15" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 536Max MP + 536Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Attribute Resistance + 24STR + 3" />
-		<baseAdd stat="DEX" val="3" />
-		<baseAdd stat="CON" val="3" />
-		<baseAdd stat="INT" val="3" />
-		<baseAdd stat="WIT" val="3" />
-		<baseAdd stat="MEN" val="3" />
-	</effect>
-	<!-- M. Def. + 16 / Speed + 7 / Max HP + 541\nMax MP + 541\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nAttribute Resistance + \n30\nSTR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, M\nEN + 3 -->
-	<effect id="30307" rarity="2" slot="2">
-		<add stat="mDef" val="16" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 541Max MP + 541Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Attribute Resistance + 30STR + 4" />
-		<baseAdd stat="DEX" val="4" />
-		<baseAdd stat="CON" val="3" />
-		<baseAdd stat="INT" val="4" />
-		<baseAdd stat="WIT" val="4" />
-		<baseAdd stat="MEN" val="3" />
-	</effect>
-	<!-- M. Def. + 17 / Speed + 7 / Max HP + 547\nMax MP + 547\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5 Vampiric Rage +\n 5%\nSkill Cooldown - 3%\nReceived Damage - 3%;Att\nribute Resistance + 36\nSTR + 4, DEX + 4, CON + 4,\n INT + 4, WIT + 4, MEN + 4 -->
-	<effect id="30308" rarity="2" slot="2">
-		<add stat="mDef" val="17" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 547Max MP + 547Skill MP Consumption - 3%Damage Reflect Resistance + 5 Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%;Attribute Resistance + 36STR + 4" />
-		<baseAdd stat="DEX" val="4" />
-		<baseAdd stat="CON" val="4" />
-		<baseAdd stat="INT" val="4" />
-		<baseAdd stat="WIT" val="4" />
-		<baseAdd stat="MEN" val="4" />
-	</effect>
-	<!-- M. Def. + 18 / Speed + 7 / Max HP + 552\nMax MP + 552\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nReceived Damage - 3%\nA\nttribute Resistance + 36\nSTR + 4, DEX + 4, CON + \n4, INT + 4, WIT + 4, MEN + 4 -->
-	<effect id="30309" rarity="2" slot="2">
-		<add stat="mDef" val="18" />
-		<add stat="runSpd" val="7" />
-		<effect desc="Max HP + 552Max MP + 552Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%Attribute Resistance + 36STR + 4" />
-		<baseAdd stat="DEX" val="4" />
-		<baseAdd stat="CON" val="4" />
-		<baseAdd stat="INT" val="4" />
-		<baseAdd stat="WIT" val="4" />
-		<baseAdd stat="MEN" val="4" />
-	</effect>
-	<!-- Active: Einhasad's Wrath -->
-	<effect id="30310" rarity="4" slot="4">
-		<effect desc="Active: Einhasad's Wrath" />
-	</effect>
-	<!-- Active: Einhasad's Wrath/Einhasad's Protection -->
-	<effect id="30311" rarity="4" slot="4">
-		<effect desc="Active: Einhasad's WrathActive: Einhasad's Protection" />
-	</effect>
-	<!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence -->
-	<effect id="30312" rarity="4" slot="4">
-		<effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's Silence" />
-	</effect>
-	<!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence/Einhasad's Salvation -->
-	<effect id="30313" rarity="4" slot="4">
-		<effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's SilenceActive: Einhasad's Salvation" />
-	</effect>
-	<!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence/Einhasad's Salvation/Einhasad's Blessing -->
-	<effect id="30314" rarity="4" slot="4">
-		<effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's SilenceActive: Einhasad's SalvationActive: Einhasad's Blessing" />
-	</effect>
-	<!-- P. Def. + 5%. -->
-	<effect id="30315" rarity="4" slot="1">
-		<addPercent stat="pDef" val="5" />
-	</effect>
-	<!-- Elemental Def. + 30. -->
-	<effect id="30316" rarity="4" slot="1">
-		<add stat="fireRes" val="30" />
-		<add stat="waterRes" val="30" />
-		<add stat="windRes" val="30" />
-		<add stat="earthRes" val="30" />
-	</effect>
-	<!-- Alignment Def. + 30. -->
-	<effect id="30317" rarity="4" slot="1">
-		<add stat="holyRes" val="30" />
-		<add stat="darkRes" val="30" />
-	</effect>
-	<!-- P. Skill MP Consumption - 1%. -->
-	<effect id="30318" rarity="4" slot="1">
-		<subPercent stat="PhysicalMpConsumeRate" val="1" />
-	</effect>
-	<!-- M. Skill MP Consumption - 1%. -->
-	<effect id="30319" rarity="4" slot="1">
-		<subPercent stat="MagicalMpConsumeRate" val="1" />
-	</effect>
-	<!-- Skill MP Consumption - 1%. -->
-	<effect id="30320" rarity="4" slot="1">
-		<subPercent stat="MagicalMpConsumeRate" val="1" />
-		<subPercent stat="PhysicalMpConsumeRate" val="1" />
-		<subPercent stat="DanceMpConsumeRate" val="1" />
-	</effect>
-	<!-- P. Skill Critical Damage + 1%. -->
-	<effect id="30321" rarity="4" slot="1">
-		<addPercent stat="pSkillCritDmg" val="1" />
-	</effect>
-	<!-- M. Skill Critical Damage + 1%. -->
-	<effect id="30322" rarity="4" slot="1">
-		<addPercent stat="mCritDmg" val="1" />
-	</effect>
-	<!-- Received Heal Amount + 1%. -->
-	<effect id="30323" rarity="4" slot="1">
-		<addPercent stat="gainHp" val="1" />
-	</effect>
-	<!-- Fire Resistance + 20. -->
-	<effect id="30324" rarity="3" slot="1">
-		<add stat="fireRes" val="20" />
-	</effect>
-	<!-- Water Resistance + 20. -->
-	<effect id="30325" rarity="3" slot="1">
-		<add stat="waterRes" val="20" />
-	</effect>
-	<!-- Wind Resistance + 20. -->
-	<effect id="30326" rarity="3" slot="1">
-		<add stat="windRes" val="20" />
-	</effect>
-	<!-- Earth Resistance + 20. -->
-	<effect id="30327" rarity="3" slot="1">
-		<add stat="earthRes" val="20" />
-	</effect>
-	<!-- Holy Resistance + 20. -->
-	<effect id="30328" rarity="3" slot="1">
-		<add stat="holyRes" val="20" />
-	</effect>
-	<!-- Dark Resistance + 20. -->
-	<effect id="30329" rarity="3" slot="1">
-		<add stat="darkRes" val="20" />
-	</effect>
-	<!-- Fire Resistance + 10. -->
-	<effect id="30330" rarity="2" slot="1">
-		<add stat="fireRes" val="20" />
-	</effect>
-	<!-- Water Resistance + 10. -->
-	<effect id="30331" rarity="2" slot="1">
-		<add stat="waterRes" val="20" />
-	</effect>
-	<!-- Wind Resistance + 10. -->
-	<effect id="30332" rarity="2" slot="1">
-		<add stat="windRes" val="20" />
-	</effect>
-	<!-- Earth Resistance + 10. -->
-	<effect id="30333" rarity="2" slot="1">
-		<add stat="earthRes" val="20" />
-	</effect>
-	<!-- Holy Resistance + 10. -->
-	<effect id="30334" rarity="2" slot="1">
-		<add stat="holyRes" val="20" />
-	</effect>
-	<!-- Dark Resistance + 10. -->
-	<effect id="30335" rarity="2" slot="1">
-		<add stat="darkRes" val="20" />
-	</effect>
-	<!-- P. Atk. + 212. -->
-	<effect id="30336" rarity="1" slot="1">
-		<add stat="pAtk" val="212" />
-	</effect>
-	<!-- M. Atk. + 498. -->
-	<effect id="30337" rarity="1" slot="1">
-		<add stat="mAtk" val="498" />
-	</effect>
-	<!-- P. Accuracy + 2. -->
-	<effect id="30338" rarity="1" slot="1">
-		<add stat="accCombat" val="2" />
-	</effect>
-	<!-- M. Accuracy + 2. -->
-	<effect id="30339" rarity="1" slot="1">
-		<add stat="accMagic" val="2" />
-	</effect>
-	<!-- M. Def. + 5%. -->
-	<effect id="30340" rarity="4" slot="2">
-		<addPercent stat="mDef" val="5" />
-	</effect>
-	<!-- Stun/ Knock Back/ Knock Down Resistance + 10. -->
-	<effect id="30341" rarity="4" slot="2">
-		<addPercent stat="stunRes" val="10" />
-		<addPercent stat="knockBackRes" val="10" />
-		<addPercent stat="knockDownRes" val="10" />
-	</effect>
-	<!-- Petrify/ Hold Resistance + 10. -->
-	<effect id="30342" rarity="4" slot="2">
-		<addPercent stat="petrifyRes" val="10" />
-		<addPercent stat="holdRes" val="10" />
-	</effect>
-	<!-- Mental/ Aerial Yoke Resistance + 10. -->
-	<effect id="30343" rarity="4" slot="2">
-		<addPercent stat="derangementRes" val="10" />
-		<addPercent stat="aerialYokeRes" val="10" />
-	</effect>
-	<!-- Paralyze/ Pull Resistance + 10. -->
-	<effect id="30344" rarity="4" slot="2">
-		<addPercent stat="paralysisRes" val="10" />
-		<addPercent stat="pullRes" val="10" />
-	</effect>
-	<!-- STR +1 -->
-	<effect id="30345" rarity="4" slot="2">
-		<baseAdd stat="STR" val="1" />
-	</effect>
-	<!-- DEX +1 -->
-	<effect id="30346" rarity="4" slot="2">
-		<baseAdd stat="DEX" val="1" />
-	</effect>
-	<!-- CON +1 -->
-	<effect id="30347" rarity="4" slot="2">
-		<baseAdd stat="CON" val="1" />
-	</effect>
-	<!-- INT +1 -->
-	<effect id="30348" rarity="4" slot="2">
-		<baseAdd stat="INT" val="1" />
-	</effect>
-	<!-- WIT +1 -->
-	<effect id="30349" rarity="4" slot="2">
-		<baseAdd stat="WIT" val="1" />
-	</effect>
-	<!-- MEN +1 -->
-	<effect id="30350" rarity="4" slot="2">
-		<baseAdd stat="MEN" val="1" />
-	</effect>
-	<!-- Speed + 7. -->
-	<effect id="30351" rarity="4" slot="2">
-		<add stat="runSpd" val="7" />
-	</effect>
-	<!-- Stun Resistance + 10. -->
-	<effect id="30352" rarity="3" slot="2">
-		<addPercent stat="stunRes" val="10" />
-	</effect>
-	<!-- Hold Resistance + 10. -->
-	<effect id="30353" rarity="3" slot="2">
-		<addPercent stat="knockBackRes" val="10" />
-	</effect>
-	<!-- Bleed Resistance + 10. -->
-	<effect id="30354" rarity="3" slot="2">
-		<addPercent stat="bleedRes" val="10" />
-	</effect>
-	<!-- Paralyze Resistance + 10. -->
-	<effect id="30355" rarity="3" slot="2">
-		<addPercent stat="paralysisRes" val="10" />
-	</effect>
-	<!-- Mental Resistance + 10. -->
-	<effect id="30356" rarity="3" slot="2">
-		<addPercent stat="derangementRes" val="10" />
-	</effect>
-	<!-- Sleep Resistance + 10. -->
-	<effect id="30357" rarity="3" slot="2">
-		<addPercent stat="sleepRes" val="10" />
-	</effect>
-	<!-- Poison Resistance + 10. -->
-	<effect id="30358" rarity="3" slot="2">
-		<addPercent stat="poisonRes" val="10" />
-	</effect>
-	<!-- Knock Back/ Knock Down Resistance + 10. -->
-	<effect id="30359" rarity="3" slot="2">
-		<addPercent stat="knockBackRes" val="10" />
-		<addPercent stat="knockDownRes" val="10" />
-	</effect>
-	<!-- Aerial Yoke Resistance + 10. -->
-	<effect id="30360" rarity="3" slot="2">
-		<addPercent stat="aerialYokeRes" val="10" />
-	</effect>
-	<!-- Pull Resistance + 10. -->
-	<effect id="30361" rarity="3" slot="2">
-		<addPercent stat="pullRes" val="10" />
-	</effect>
-	<!-- Petrify Resistance + 10. -->
-	<effect id="30362" rarity="3" slot="2">
-		<addPercent stat="petrifyRes" val="10" />
-	</effect>
-	<!-- Stun Resistance + 5. -->
-	<effect id="30363" rarity="2" slot="2">
-		<addPercent stat="stunRes" val="5" />
-	</effect>
-	<!-- Hold Resistance + 5. -->
-	<effect id="30364" rarity="2" slot="2">
-		<addPercent stat="holdRes" val="5" />
-	</effect>
-	<!-- Bleed Resistance + 5. -->
-	<effect id="30365" rarity="2" slot="2">
-		<addPercent stat="bleedRes" val="5" />
-	</effect>
-	<!-- Paralyze Resistance + 5. -->
-	<effect id="30366" rarity="2" slot="2">
-		<addPercent stat="paralysisRes" val="5" />
-	</effect>
-	<!-- Mental Resistance + 5. -->
-	<effect id="30367" rarity="2" slot="2">
-		<addPercent stat="derangementRes" val="5" />
-	</effect>
-	<!-- Sleep Resistance + 5. -->
-	<effect id="30368" rarity="2" slot="2">
-		<addPercent stat="sleepRes" val="5" />
-	</effect>
-	<!-- Poison Resistance + 5. -->
-	<effect id="30369" rarity="2" slot="2">
-		<addPercent stat="poisonRes" val="5" />
-	</effect>
-	<!-- Knock Back/ Knock Down Resistance + 5. -->
-	<effect id="30370" rarity="2" slot="2">
-		<addPercent stat="knockBackRes" val="5" />
-		<addPercent stat="knockDownRes" val="5" />
-	</effect>
-	<!-- Aerial Yoke Resistance + 5. -->
-	<effect id="30371" rarity="2" slot="2">
-		<addPercent stat="aerialYokeRes" val="5" />
-	</effect>
-	<!-- Pull Resistance + 5. -->
-	<effect id="30372" rarity="2" slot="2">
-		<addPercent stat="pullRes" val="5" />
-	</effect>
-	<!-- Petrify Resistance + 5. -->
-	<effect id="30373" rarity="2" slot="2">
-		<addPercent stat="petrifyRes" val="5" />
-	</effect>
-	<!-- Max HP + 266, HP Recovery Bonus + 8. -->
-	<effect id="30374" rarity="1" slot="2">
-		<add stat="maxHp" val="266" />
-		<add stat="regHp" val="8" />
-	</effect>
-	<!-- Max MP + 117, MP Recovery Bonus + 4. -->
-	<effect id="30375" rarity="1" slot="2">
-		<add stat="maxMp" val="117" />
-		<add stat="regMp" val="4" />
-	</effect>
-	<!-- Max CP + 266, CP Recovery Bonus + 8. -->
-	<effect id="30376" rarity="1" slot="2">
-		<add stat="maxCp" val="266" />
-		<add stat="regCp" val="8" />
-	</effect>
+    <!-- Max MP + 15 / Increases Resistance to Knock Back. -->
+    <effect id="30000" rarity="1" slot="2">
+        <add stat="maxMp" val="15" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Max MP + 15 / Increases Resistance to Knock Down. -->
+    <effect id="30001" rarity="1" slot="2">
+        <add stat="maxMp" val="15" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Max MP + 15 / Increases Resistance to Drag. -->
+    <effect id="30002" rarity="1" slot="2">
+        <add stat="maxMp" val="15" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Max MP + 15 / Increases Resistance to Binding. -->
+    <effect id="30003" rarity="1" slot="2">
+        <add stat="maxMp" val="15" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Max MP + 15 / Increases Resistance to Binding. -->
+    <effect id="30004" rarity="1" slot="2">
+        <add stat="maxMp" val="15" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Max HP + 19 / Max CP + 13 -->
+    <effect id="30005" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <add stat="maxCp" val="13" />
+    </effect>
+    <!-- Max HP + 19 / Increases Dark P. Def. -->
+    <effect id="30006" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Dark P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Wind P. Def. -->
+    <effect id="30007" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Wind P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Water P. Def. -->
+    <effect id="30008" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Water P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Fire P. Def. -->
+    <effect id="30009" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Fire P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Earth P. Def. -->
+    <effect id="30010" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Holy P. Def. -->
+    <effect id="30011" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Bleed. -->
+    <effect id="30012" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Mental Attacks. -->
+    <effect id="30013" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Paralysis. -->
+    <effect id="30014" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Poison. -->
+    <effect id="30015" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Shock. -->
+    <effect id="30016" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Sleep. -->
+    <effect id="30017" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Knock Back. -->
+    <effect id="30018" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Knock Down. -->
+    <effect id="30019" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Drag. -->
+    <effect id="30020" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Binding. -->
+    <effect id="30021" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Max HP + 19 / Increases Resistance to Binding. -->
+    <effect id="30022" rarity="1" slot="2">
+        <add stat="maxHp" val="19" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Max CP + 13 / Increases Dark P. Def. -->
+    <effect id="30023" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Dark P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Wind P. Def. -->
+    <effect id="30024" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Wind P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Water P. Def. -->
+    <effect id="30025" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Water P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Fire P. Def. -->
+    <effect id="30026" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Fire P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Earth P. Def. -->
+    <effect id="30027" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Holy P. Def. -->
+    <effect id="30028" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Bleed. -->
+    <effect id="30029" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Mental Attacks. -->
+    <effect id="30030" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Paralysis. -->
+    <effect id="30031" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Poison. -->
+    <effect id="30032" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Shock. -->
+    <effect id="30033" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Sleep. -->
+    <effect id="30034" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Knock Back. -->
+    <effect id="30035" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Knock Down. -->
+    <effect id="30036" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Drag. -->
+    <effect id="30037" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Binding. -->
+    <effect id="30038" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Max CP + 13 / Increases Resistance to Binding. -->
+    <effect id="30039" rarity="1" slot="2">
+        <add stat="maxCp" val="13" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Wind P. Def. -->
+    <effect id="30040" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Wind P. Def" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Water P. Def. -->
+    <effect id="30041" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Water P. Def" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Fire P. Def. -->
+    <effect id="30042" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Fire P. Def" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Earth P. Def. -->
+    <effect id="30043" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Holy P. Def. -->
+    <effect id="30044" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30045" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30046" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30047" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Poison. -->
+    <effect id="30048" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Shock. -->
+    <effect id="30049" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30050" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30051" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30052" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Drag. -->
+    <effect id="30053" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Binding. -->
+    <effect id="30054" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Dark P. Def. / Increases Resistance to Binding. -->
+    <effect id="30055" rarity="1" slot="2">
+        <effect desc="Increases Dark P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Water P. Def. -->
+    <effect id="30056" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Water P. Def" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Fire P. Def. -->
+    <effect id="30057" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Fire P. Def" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Earth P. Def. -->
+    <effect id="30058" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Holy P. Def. -->
+    <effect id="30059" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30060" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30061" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30062" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Poison. -->
+    <effect id="30063" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Shock. -->
+    <effect id="30064" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30065" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30066" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30067" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Drag. -->
+    <effect id="30068" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Binding. -->
+    <effect id="30069" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Wind P. Def. / Increases Resistance to Binding. -->
+    <effect id="30070" rarity="1" slot="2">
+        <effect desc="Increases Wind P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Fire P. Def. -->
+    <effect id="30071" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Fire P. Def" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Earth P. Def. -->
+    <effect id="30072" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Holy P. Def. -->
+    <effect id="30073" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30074" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30075" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30076" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Poison. -->
+    <effect id="30077" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Shock. -->
+    <effect id="30078" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30079" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30080" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30081" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Drag. -->
+    <effect id="30082" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Binding. -->
+    <effect id="30083" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Water P. Def. / Increases Resistance to Binding. -->
+    <effect id="30084" rarity="1" slot="2">
+        <effect desc="Increases Water P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Earth P. Def. -->
+    <effect id="30085" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Earth P. Def" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Holy P. Def. -->
+    <effect id="30086" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30087" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30088" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30089" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Poison. -->
+    <effect id="30090" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Shock. -->
+    <effect id="30091" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30092" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30093" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30094" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Drag. -->
+    <effect id="30095" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Binding. -->
+    <effect id="30096" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Fire P. Def. / Increases Resistance to Binding. -->
+    <effect id="30097" rarity="1" slot="2">
+        <effect desc="Increases Fire P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Holy P. Def. -->
+    <effect id="30098" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Holy P. Def" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30099" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30100" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30101" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Poison. -->
+    <effect id="30102" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Shock. -->
+    <effect id="30103" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30104" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30105" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30106" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Drag. -->
+    <effect id="30107" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Binding. -->
+    <effect id="30108" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Earth P. Def. / Increases Resistance to Binding. -->
+    <effect id="30109" rarity="1" slot="2">
+        <effect desc="Increases Earth P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Bleed. -->
+    <effect id="30110" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Bleed" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Mental Attacks. -->
+    <effect id="30111" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Paralysis. -->
+    <effect id="30112" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Poison. -->
+    <effect id="30113" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Shock. -->
+    <effect id="30114" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Sleep. -->
+    <effect id="30115" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Knock Back. -->
+    <effect id="30116" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Knock Down. -->
+    <effect id="30117" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Drag. -->
+    <effect id="30118" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Binding. -->
+    <effect id="30119" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Holy P. Def. / Increases Resistance to Binding. -->
+    <effect id="30120" rarity="1" slot="2">
+        <effect desc="Increases Holy P. Def" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Mental Attacks. -->
+    <effect id="30121" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Mental Attacks" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Paralysis. -->
+    <effect id="30122" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Poison. -->
+    <effect id="30123" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Shock. -->
+    <effect id="30124" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Sleep. -->
+    <effect id="30125" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Knock Back. -->
+    <effect id="30126" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Knock Down. -->
+    <effect id="30127" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Drag. -->
+    <effect id="30128" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Binding. -->
+    <effect id="30129" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Bleed. / Increases Resistance to Binding. -->
+    <effect id="30130" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Bleed" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Paralysis. -->
+    <effect id="30131" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Paralysis" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Poison. -->
+    <effect id="30132" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Shock. -->
+    <effect id="30133" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Sleep. -->
+    <effect id="30134" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Knock Back. -->
+    <effect id="30135" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Knock Down. -->
+    <effect id="30136" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Drag. -->
+    <effect id="30137" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Binding. -->
+    <effect id="30138" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Mental Attacks. / Increases Resistance to Binding. -->
+    <effect id="30139" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Mental Attacks" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Poison. -->
+    <effect id="30140" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Poison" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Shock. -->
+    <effect id="30141" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Sleep. -->
+    <effect id="30142" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Knock Back. -->
+    <effect id="30143" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Knock Down. -->
+    <effect id="30144" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Drag. -->
+    <effect id="30145" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Binding. -->
+    <effect id="30146" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Paralysis. / Increases Resistance to Binding. -->
+    <effect id="30147" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Paralysis" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Shock. -->
+    <effect id="30148" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Shock" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Sleep. -->
+    <effect id="30149" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Knock Back. -->
+    <effect id="30150" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Knock Down. -->
+    <effect id="30151" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Drag. -->
+    <effect id="30152" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Binding. -->
+    <effect id="30153" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Poison. / Increases Resistance to Binding. -->
+    <effect id="30154" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Poison" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Sleep. -->
+    <effect id="30155" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Sleep" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Knock Back. -->
+    <effect id="30156" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Knock Down. -->
+    <effect id="30157" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Drag. -->
+    <effect id="30158" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Binding. -->
+    <effect id="30159" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Shock. / Increases Resistance to Binding. -->
+    <effect id="30160" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Shock" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Sleep. / Increases Resistance to Knock Back. -->
+    <effect id="30161" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Sleep" />
+        <effect desc="Increases Resistance to Knock Back" />
+    </effect>
+    <!-- Increases Resistance to Sleep. / Increases Resistance to Knock Down. -->
+    <effect id="30162" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Sleep" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Sleep. / Increases Resistance to Drag. -->
+    <effect id="30163" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Sleep" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Sleep. / Increases Resistance to Binding. -->
+    <effect id="30164" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Sleep" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Sleep. / Increases Resistance to Binding. -->
+    <effect id="30165" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Sleep" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Knock Back. / Increases Resistance to Knock Down. -->
+    <effect id="30166" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Back" />
+        <effect desc="Increases Resistance to Knock Down" />
+    </effect>
+    <!-- Increases Resistance to Knock Back. / Increases Resistance to Drag. -->
+    <effect id="30167" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Back" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Knock Back. / Increases Resistance to Binding. -->
+    <effect id="30168" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Back" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Knock Back. / Increases Resistance to Binding. -->
+    <effect id="30169" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Back" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Knock Down. / Increases Resistance to Drag. -->
+    <effect id="30170" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Down" />
+        <effect desc="Increases Resistance to Drag" />
+    </effect>
+    <!-- Increases Resistance to Knock Down. / Increases Resistance to Binding. -->
+    <effect id="30171" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Down" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Knock Down. / Increases Resistance to Binding. -->
+    <effect id="30172" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Knock Down" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Drag. / Increases Resistance to Binding. -->
+    <effect id="30173" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Drag" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Drag. / Increases Resistance to Binding. -->
+    <effect id="30174" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Drag" />
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!-- Increases Resistance to Binding. -->
+    <effect id="30175" rarity="1" slot="2">
+        <effect desc="Increases Resistance to Binding" />
+    </effect>
+    <!--  -->
+    <effect id="30176" rarity="1" slot="1">
+        <effect desc="" />
+    </effect>
+    <!-- M. Def. + 1 -->
+    <effect id="30177" rarity="1" slot="1">
+        <add stat="mDef" val="1" />
+    </effect>
+    <!-- M. Def. + 2 -->
+    <effect id="30178" rarity="1" slot="1">
+        <add stat="mDef" val="2" />
+    </effect>
+    <!-- M. Def. + 3 -->
+    <effect id="30179" rarity="1" slot="1">
+        <add stat="mDef" val="3" />
+    </effect>
+    <!-- M. Def. + 4 -->
+    <effect id="30180" rarity="1" slot="1">
+        <add stat="mDef" val="4" />
+    </effect>
+    <!-- M. Def. + 5 -->
+    <effect id="30181" rarity="1" slot="1">
+        <add stat="mDef" val="5" />
+    </effect>
+    <!-- M. Def. + 6 -->
+    <effect id="30182" rarity="1" slot="1">
+        <add stat="mDef" val="6" />
+    </effect>
+    <!-- M. Def. + 7 -->
+    <effect id="30183" rarity="1" slot="1">
+        <add stat="mDef" val="7" />
+    </effect>
+    <!-- M. Def. + 8 -->
+    <effect id="30184" rarity="1" slot="1">
+        <add stat="mDef" val="8" />
+    </effect>
+    <!-- M. Def. + 9 -->
+    <effect id="30185" rarity="1" slot="1">
+        <add stat="mDef" val="9" />
+    </effect>
+    <!-- M. Def. + 10 -->
+    <effect id="30186" rarity="1" slot="1">
+        <add stat="mDef" val="10" />
+    </effect>
+    <!-- M. Def. + 11 -->
+    <effect id="30187" rarity="1" slot="1">
+        <add stat="mDef" val="11" />
+    </effect>
+    <!-- M. Def. + 12 -->
+    <effect id="30188" rarity="1" slot="1">
+        <add stat="mDef" val="12" />
+    </effect>
+    <!-- M. Def. + 13 -->
+    <effect id="30189" rarity="1" slot="1">
+        <add stat="mDef" val="13" />
+    </effect>
+    <!-- M. Def. + 14 -->
+    <effect id="30190" rarity="1" slot="1">
+        <add stat="mDef" val="14" />
+    </effect>
+    <!-- M. Def. + 15 -->
+    <effect id="30191" rarity="1" slot="1">
+        <add stat="mDef" val="15" />
+    </effect>
+    <!-- M. Def. + 16 -->
+    <effect id="30192" rarity="1" slot="1">
+        <add stat="mDef" val="16" />
+    </effect>
+    <!-- M. Def. + 17 -->
+    <effect id="30193" rarity="1" slot="1">
+        <add stat="mDef" val="17" />
+    </effect>
+    <!-- M. Def. + 18 -->
+    <effect id="30194" rarity="1" slot="1">
+        <add stat="mDef" val="18" />
+    </effect>
+    <!-- M. Def. + 19 -->
+    <effect id="30195" rarity="1" slot="1">
+        <add stat="mDef" val="19" />
+    </effect>
+    <!-- M. Def. + 20 -->
+    <effect id="30196" rarity="1" slot="1">
+        <add stat="mDef" val="20" />
+    </effect>
+    <!-- M. Def. + 21 -->
+    <effect id="30197" rarity="1" slot="1">
+        <add stat="mDef" val="21" />
+    </effect>
+    <!-- M. Def. + 22 -->
+    <effect id="30198" rarity="1" slot="1">
+        <add stat="mDef" val="22" />
+    </effect>
+    <!-- M. Def. + 23 -->
+    <effect id="30199" rarity="1" slot="1">
+        <add stat="mDef" val="23" />
+    </effect>
+    <!-- M. Def. + 24 -->
+    <effect id="30200" rarity="1" slot="1">
+        <add stat="mDef" val="24" />
+    </effect>
+    <!-- M. Def. + 25 -->
+    <effect id="30201" rarity="1" slot="1">
+        <add stat="mDef" val="25" />
+    </effect>
+    <!-- M. Def. + 26 -->
+    <effect id="30202" rarity="1" slot="1">
+        <add stat="mDef" val="26" />
+    </effect>
+    <!-- M. Def. + 27 -->
+    <effect id="30203" rarity="1" slot="1">
+        <add stat="mDef" val="27" />
+    </effect>
+    <!-- M. Def. + 28 -->
+    <effect id="30204" rarity="1" slot="1">
+        <add stat="mDef" val="28" />
+    </effect>
+    <!-- M. Def. + 29 -->
+    <effect id="30205" rarity="1" slot="1">
+        <add stat="mDef" val="29" />
+    </effect>
+    <!-- M. Def. + 30 -->
+    <effect id="30206" rarity="1" slot="1">
+        <add stat="mDef" val="30" />
+    </effect>
+    <!-- M. Def. + 31 -->
+    <effect id="30207" rarity="1" slot="1">
+        <add stat="mDef" val="31" />
+    </effect>
+    <!-- M. Def. + 32 -->
+    <effect id="30208" rarity="1" slot="1">
+        <add stat="mDef" val="32" />
+    </effect>
+    <!-- M. Def. + 33 -->
+    <effect id="30209" rarity="1" slot="1">
+        <add stat="mDef" val="33" />
+    </effect>
+    <!-- M. Def. + 34 -->
+    <effect id="30210" rarity="1" slot="1">
+        <add stat="mDef" val="34" />
+    </effect>
+    <!-- M. Def. + 35 -->
+    <effect id="30211" rarity="1" slot="1">
+        <add stat="mDef" val="35" />
+    </effect>
+    <!-- M. Def. + 36 -->
+    <effect id="30212" rarity="1" slot="1">
+        <add stat="mDef" val="36" />
+    </effect>
+    <!-- M. Def. + 37 -->
+    <effect id="30213" rarity="1" slot="1">
+        <add stat="mDef" val="37" />
+    </effect>
+    <!-- M. Def. + 38 -->
+    <effect id="30214" rarity="1" slot="1">
+        <add stat="mDef" val="38" />
+    </effect>
+    <!-- M. Def. + 39 -->
+    <effect id="30215" rarity="1" slot="1">
+        <add stat="mDef" val="39" />
+    </effect>
+    <!-- M. Def. + 40 -->
+    <effect id="30216" rarity="1" slot="1">
+        <add stat="mDef" val="40" />
+    </effect>
+    <!-- M. Def. + 41 -->
+    <effect id="30217" rarity="1" slot="1">
+        <add stat="mDef" val="41" />
+    </effect>
+    <!-- M. Def. + 42 -->
+    <effect id="30218" rarity="1" slot="1">
+        <add stat="mDef" val="42" />
+    </effect>
+    <!-- M. Def. + 43 -->
+    <effect id="30219" rarity="1" slot="1">
+        <add stat="mDef" val="43" />
+    </effect>
+    <!-- M. Def. + 44 -->
+    <effect id="30220" rarity="1" slot="1">
+        <add stat="mDef" val="44" />
+    </effect>
+    <!-- M. Def. + 45 -->
+    <effect id="30221" rarity="1" slot="1">
+        <add stat="mDef" val="45" />
+    </effect>
+    <!-- M. Def. + 46 -->
+    <effect id="30222" rarity="1" slot="1">
+        <add stat="mDef" val="46" />
+    </effect>
+    <!-- M. Def. + 47 -->
+    <effect id="30223" rarity="1" slot="1">
+        <add stat="mDef" val="47" />
+    </effect>
+    <!-- M. Def. + 48 -->
+    <effect id="30224" rarity="1" slot="1">
+        <add stat="mDef" val="48" />
+    </effect>
+    <!-- M. Def. + 49 -->
+    <effect id="30225" rarity="1" slot="1">
+        <add stat="mDef" val="49" />
+    </effect>
+    <!-- M. Def. + 50 -->
+    <effect id="30226" rarity="1" slot="1">
+        <add stat="mDef" val="50" />
+    </effect>
+    <!-- M. Def. + 8.0 -->
+    <effect id="30227" rarity="1" slot="1">
+        <add stat="mDef" val="8.0" />
+    </effect>
+    <!-- M. Def. + 9.0 -->
+    <effect id="30228" rarity="1" slot="1">
+        <add stat="mDef" val="9.0" />
+    </effect>
+    <!-- M. Def. + 10.0 -->
+    <effect id="30229" rarity="1" slot="1">
+        <add stat="mDef" val="10.0" />
+    </effect>
+    <!-- M. Def. + 11.0 -->
+    <effect id="30230" rarity="1" slot="1">
+        <add stat="mDef" val="11.0" />
+    </effect>
+    <!-- M. Def. + 12.0 / Speed + 7 / CON +2 and MEN +1 -->
+    <effect id="30231" rarity="2" slot="2">
+        <add stat="mDef" val="12.0" />
+        <add stat="runSpd" val="7" />
+        <effect desc="CON +2 and MEN +1" />
+    </effect>
+    <!-- M. Def. + 13.0 / Speed + 7, Max HP + 200, Max MP + 200 / STR +1, CON +2, INT +1, MEN +2 -->
+    <effect id="30232" rarity="3" slot="3">
+        <add stat="mDef" val="13.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <baseAdd stat="STR" val="1" />
+        <baseAdd stat="CON" val="2" />
+        <baseAdd stat="INT" val="1" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 14.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 20. STR +2, \nDEX +1, CON +2, INT +2, WIT +1, MEN +2 -->
+    <effect id="30233" rarity="4" slot="4">
+        <add stat="mDef" val="14.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <effect desc="MP Consumption - 3%" />
+        <effect desc="Resistance to Water" />
+        <effect desc="Fire" />
+        <effect desc="Wind" />
+        <effect desc="Earth + 20. STR +2" />
+        <baseAdd stat="DEX" val="1" />
+        <baseAdd stat="CON" val="2" />
+        <baseAdd stat="INT" val="2" />
+        <baseAdd stat="WIT" val="1" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 15.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 25. Increase\ns Damage Reflect Resistance. STR +2, DEX +1, CON +\n2, INT +2, WIT +1, MEN +2 -->
+    <effect id="30234" rarity="4" slot="4">
+        <add stat="mDef" val="15.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <effect desc="MP Consumption - 3%" />
+        <effect desc="Resistance to Water" />
+        <effect desc="Fire" />
+        <effect desc="Wind" />
+        <effect desc="Earth + 25. Increases Damage Reflect Resistance. STR +2" />
+        <baseAdd stat="DEX" val="1" />
+        <baseAdd stat="CON" val="2" />
+        <baseAdd stat="INT" val="2" />
+        <baseAdd stat="WIT" val="1" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 16.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 30. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 2 -->
+    <effect id="30235" rarity="4" slot="4">
+        <add stat="mDef" val="16.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <effect desc="MP Consumption - 3%" />
+        <effect desc="Resistance to Water" />
+        <effect desc="Fire" />
+        <effect desc="Wind" />
+        <effect desc="Earth + 30. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
+        <effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2" />
+        <baseAdd stat="DEX" val="2" />
+        <baseAdd stat="CON" val="3" />
+        <baseAdd stat="INT" val="2" />
+        <baseAdd stat="WIT" val="2" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 17.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 35. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 3 -->
+    <effect id="30236" rarity="4" slot="4">
+        <add stat="mDef" val="17.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <effect desc="MP Consumption - 3%" />
+        <effect desc="Resistance to Water" />
+        <effect desc="Fire" />
+        <effect desc="Wind" />
+        <effect desc="Earth + 35. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
+        <effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2" />
+        <baseAdd stat="DEX" val="2" />
+        <baseAdd stat="CON" val="3" />
+        <baseAdd stat="INT" val="2" />
+        <baseAdd stat="WIT" val="2" />
+        <baseAdd stat="MEN" val="3" />
+    </effect>
+    <!-- M. Def. + 18.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 40. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN +\n 3 -->
+    <effect id="30237" rarity="4" slot="4">
+        <add stat="mDef" val="18.0" />
+        <add stat="runSpd" val="7" />
+        <add stat="maxHp" val="200" />
+        <add stat="maxMp" val="200" />
+        <effect desc="MP Consumption - 3%" />
+        <effect desc="Resistance to Water" />
+        <effect desc="Fire" />
+        <effect desc="Wind" />
+        <effect desc="Earth + 40. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical" />
+        <effect desc="magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 3" />
+        <baseAdd stat="DEX" val="3" />
+        <baseAdd stat="CON" val="3" />
+        <baseAdd stat="INT" val="3" />
+        <baseAdd stat="WIT" val="3" />
+        <baseAdd stat="MEN" val="3" />
+    </effect>
+    <!-- Active: Power of Pa'agrio -->
+    <effect id="30238" rarity="4" slot="4">
+        <effect desc="Active: Power of Pa'agrio" />
+    </effect>
+    <!-- Active: Power of Pa'agrio -->
+    <effect id="30239" rarity="4" slot="4">
+        <effect desc="Active: Power of Pa'agrio" />
+    </effect>
+    <!-- Active: Portal of Sayha -->
+    <effect id="30240" rarity="4" slot="4">
+        <effect desc="Active: Portal of Sayha" />
+    </effect>
+    <!-- Active: Power of Sayha -->
+    <effect id="30241" rarity="4" slot="4">
+        <effect desc="Active: Power of Sayha" />
+    </effect>
+    <!-- Active: Power of Sayha -->
+    <effect id="30242" rarity="4" slot="4">
+        <effect desc="Active: Power of Sayha" />
+    </effect>
+    <!-- Active: Power of Eva -->
+    <effect id="30243" rarity="4" slot="4">
+        <effect desc="Active: Power of Eva" />
+    </effect>
+    <!-- Active: Power of Eva -->
+    <effect id="30244" rarity="4" slot="4">
+        <effect desc="Active: Power of Eva" />
+    </effect>
+    <!-- Passive: Power of Maphr -->
+    <effect id="30245" rarity="4" slot="4">
+        <effect desc="Passive: Power of Maphr" />
+    </effect>
+    <!-- Passive: Power of Maphr -->
+    <effect id="30246" rarity="4" slot="4">
+        <effect desc="Passive: Power of Maphr" />
+    </effect>
+    <!-- Resistance to Fire + 5 -->
+    <effect id="30247" rarity="1" slot="1">
+        <effect desc="Resistance to Fire + 5" />
+    </effect>
+    <!-- Resistance to Fire + 10 -->
+    <effect id="30248" rarity="1" slot="1">
+        <effect desc="Resistance to Fire + 10" />
+    </effect>
+    <!-- Resistance to Fire + 15 -->
+    <effect id="30249" rarity="1" slot="1">
+        <effect desc="Resistance to Fire + 15" />
+    </effect>
+    <!-- Resistance to Water + 5 -->
+    <effect id="30250" rarity="1" slot="1">
+        <effect desc="Resistance to Water + 5" />
+    </effect>
+    <!-- Resistance to Water + 10 -->
+    <effect id="30251" rarity="1" slot="1">
+        <effect desc="Resistance to Water + 10" />
+    </effect>
+    <!-- Resistance to Water + 15 -->
+    <effect id="30252" rarity="1" slot="1">
+        <effect desc="Resistance to Water + 15" />
+    </effect>
+    <!-- Resistance to Wind + 5 -->
+    <effect id="30253" rarity="1" slot="1">
+        <effect desc="Resistance to Wind + 5" />
+    </effect>
+    <!-- Resistance to Wind + 10 -->
+    <effect id="30254" rarity="1" slot="1">
+        <effect desc="Resistance to Wind + 10" />
+    </effect>
+    <!-- Resistance to Wind + 15 -->
+    <effect id="30255" rarity="1" slot="1">
+        <effect desc="Resistance to Wind + 15" />
+    </effect>
+    <!-- Resistance to Earth + 5 -->
+    <effect id="30256" rarity="1" slot="1">
+        <effect desc="Resistance to Earth + 5" />
+    </effect>
+    <!-- Resistance to Earth + 10 -->
+    <effect id="30257" rarity="1" slot="1">
+        <effect desc="Resistance to Earth + 10" />
+    </effect>
+    <!-- Resistance to Earth + 15 -->
+    <effect id="30258" rarity="1" slot="1">
+        <effect desc="Resistance to Earth + 15" />
+    </effect>
+    <!-- Active: Stuns and cancels the targeting on nearby enemies, and teleport forward. Consumes 10 B-grade Gemstones. -->
+    <effect id="30259" rarity="4" slot="2">
+        <effect desc="Active: Stuns and cancels the targeting on nearby enemies, and teleport forward. Consumes 10 B-grade Gemstones" />
+    </effect>
+    <!-- Active: Temporarily increases Speed, P. Evasion, and HP Recovery Bonus. Consumes 10 B-grade Gemstones upon use. -->
+    <effect id="30260" rarity="4" slot="2">
+        <effect desc="Active: Temporarily increases Speed, P. Evasion, and HP Recovery Bonus. Consumes 10 B-grade Gemstones upon use" />
+    </effect>
+    <!-- Active: Available when HP drops to 20% or below. Becomes Invincible for a certain period of time. Consumes 20 B-grade Gemstones upon use. -->
+    <effect id="30261" rarity="4" slot="2">
+        <effect desc="Active: Available when HP drops to 20% or below. Becomes Invincible for a certain period of time. Consumes 20 B-grade Gemstones upon use" />
+    </effect>
+    <!-- Active: Temporarily blocks the target's physical/magic skills. Consumes 30 B-grade Gemstones upon use. -->
+    <effect id="30262" rarity="4" slot="2">
+        <effect desc="Active: Temporarily blocks the target's physical/magic skills. Consumes 30 B-grade Gemstones upon use" />
+    </effect>
+    <!-- Active: Temporarily cannot be targetted. Consumes 10 B-grade Gemstones. -->
+    <effect id="30263" rarity="4" slot="2">
+        <effect desc="Active: Temporarily cannot be targetted. Consumes 10 B-grade Gemstones" />
+    </effect>
+    <!-- Active: Temporarily increases Damage Reflect Resistance. -->
+    <effect id="30264" rarity="4" slot="2">
+        <effect desc="Active: Temporarily increases Damage Reflect Resistance" />
+    </effect>
+    <!-- Active: Temporarily increases Damage Reflect Resistance. -->
+    <effect id="30265" rarity="4" slot="2">
+        <effect desc="Active: Temporarily increases Damage Reflect Resistance" />
+    </effect>
+    <!-- Active: Temporarily increases Damage Reflect Resistance. -->
+    <effect id="30266" rarity="4" slot="2">
+        <effect desc="Active: Temporarily increases Damage Reflect Resistance" />
+    </effect>
+    <!-- Passive: When attacking, has a chance of restricting the target's chat function. -->
+    <effect id="30267" rarity="4" slot="2">
+        <effect desc="Passive: When attacking, has a chance of restricting the target's chat function" />
+    </effect>
+    <!-- Passive: When equipped, returns 20% of received damage back to the enemy. -->
+    <effect id="30268" rarity="4" slot="2">
+        <skill id="13514" level="1" />
+    </effect>
+    <!-- Active: When used, increases P. Critical Damage by 15% for 5 minutes. -->
+    <effect id="30269" rarity="4" slot="2">
+        <skill id="13515" level="1" />
+    </effect>
+    <!-- Passive: When equipped, increases Damage Reflect Resistance by 50%. -->
+    <effect id="30270" rarity="4" slot="2">
+        <skill id="13516" level="1" />
+    </effect>
+    <!-- Active: When used, increases Max HP and Max CP by 10% for 5 minutes. -->
+    <effect id="30271" rarity="4" slot="2">
+        <skill id="13517" level="1" />
+    </effect>
+    <!-- Active: When used, makes invincible for 30 seconds. The effect will be cancelled when you attack. -->
+    <effect id="30272" rarity="4" slot="2">
+        <skill id="13518" level="1" />
+    </effect>
+    <!-- Active: When used, prevents you from dying for 10 seconds. Can be used when HP is 20% or below. -->
+    <effect id="30273" rarity="4" slot="2">
+        <skill id="13519" level="1" />
+    </effect>
+    <!-- Active: Prevents the target from using physical/magical skills for 5 seconds. -->
+    <effect id="30274" rarity="4" slot="2">
+        <skill id="13520" level="1" />
+    </effect>
+    <!-- Active: Inflicts Sleep on the target for 5 seconds. -->
+    <effect id="30275" rarity="4" slot="2">
+        <skill id="13521" level="1" />
+    </effect>
+    <!-- Active: Decreases the target's Atk. Spd. And Casting Spd. By 50% for 10 seconds. -->
+    <effect id="30276" rarity="4" slot="2">
+        <skill id="13522" level="1" />
+    </effect>
+    <!-- Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds. -->
+    <effect id="30277" rarity="4" slot="2">
+        <skill id="13523" level="1" />
+    </effect>
+    <!-- Passive: When equipped, has a chance of recovering 3% of damage inflicted on the enemy as HP. -->
+    <effect id="30278" rarity="4" slot="4">
+        <effect desc="Passive: When equipped, has a chance of recovering 3% of damage inflicted on the enemy as HP" />
+    </effect>
+    <!-- Passive: When equipped, has a chance of recovering 5% of damage inflicted on the enemy as HP. -->
+    <effect id="30279" rarity="4" slot="4">
+        <effect desc="Passive: When equipped, has a chance of recovering 5% of damage inflicted on the enemy as HP" />
+    </effect>
+    <!-- Active: When used, has a chance of recovering 4% of damage inflicted on the enemy as HP for 30 minutes. -->
+    <effect id="30280" rarity="4" slot="4">
+        <effect desc="Active: When used, has a chance of recovering 4% of damage inflicted on the enemy as HP for 30 minutes" />
+    </effect>
+    <!-- Active: When used, has a chance of recovering 6% of damage inflicted on the enemy as HP for 60 minutes. -->
+    <effect id="30281" rarity="4" slot="4">
+        <effect desc="Active: When used, has a chance of recovering 6% of damage inflicted on the enemy as HP for 60 minutes" />
+    </effect>
+    <!-- Passive: When equipped, returns 3% of received damage back to the enemy. -->
+    <effect id="30282" rarity="4" slot="4">
+        <effect desc="Passive: When equipped, returns 3% of received damage back to the enemy" />
+    </effect>
+    <!-- Passive: When equipped, returns 5% of received damage back to the enemy. -->
+    <effect id="30283" rarity="4" slot="4">
+        <effect desc="Passive: When equipped, returns 5% of received damage back to the enemy" />
+    </effect>
+    <!-- Active: Returns 7% of received damage back to the enemy for 5 minutes -->
+    <effect id="30284" rarity="4" slot="4">
+        <effect desc="Active: Returns 7% of received damage back to the enemy for 5 minutes" />
+    </effect>
+    <!-- Active: Returns 15% of received damage back to the enemy for 5 minutes -->
+    <effect id="30285" rarity="4" slot="4">
+        <effect desc="Active: Returns 15% of received damage back to the enemy for 5 minutes" />
+    </effect>
+    <!-- Effect: When hit, increases PvP P. Atk. for a certain amount of time. -->
+    <effect id="30286" rarity="4" slot="4">
+        <effect desc="Effect: When hit, increases PvP P. Atk. for a certain amount of time" />
+    </effect>
+    <!-- Passive: When equipped, increases PvP P. Atk. -->
+    <effect id="30287" rarity="4" slot="4">
+        <effect desc="Passive: When equipped, increases PvP P. Atk" />
+    </effect>
+    <!-- Effect: When hit, momentarily prevents the target from using physical/magical skills. -->
+    <effect id="30288" rarity="4" slot="4">
+        <effect desc="Effect: When hit, momentarily prevents the target from using physical/magical skills" />
+    </effect>
+    <!-- Active: Recovers HP by 15%, MP by 15%, and CP by 20%. Can be used in Olympiad. -->
+    <effect id="30289" rarity="4" slot="4">
+        <effect desc="Active: Recovers HP by 15%, MP by 15%, and CP by 20%. Can be used in Olympiad" />
+    </effect>
+    <!-- Active: Recovers HP by 30%, MP by 30%, and CP by 40%. Can be used in Olympiad. -->
+    <effect id="30290" rarity="4" slot="4">
+        <effect desc="Active: Recovers HP by 30%, MP by 30%, and CP by 40%. Can be used in Olympiad" />
+    </effect>
+    <!-- Active: Increases P. Def. by 10% for a certain amount of time. -->
+    <effect id="30291" rarity="4" slot="4">
+        <effect desc="Active: Increases P. Def. by 10% for a certain amount of time" />
+    </effect>
+    <!-- Active: Increases M. Def. by 10% for a certain amount of time. -->
+    <effect id="30292" rarity="4" slot="4">
+        <effect desc="Active: Increases M. Def. by 10% for a certain amount of time" />
+    </effect>
+    <!-- Active: Increases P. Def. and M. Def. by 10% for a certain amount of time. -->
+    <effect id="30293" rarity="4" slot="4">
+        <effect desc="Active: Increases P. Def. and M. Def. by 10% for a certain amount of time" />
+    </effect>
+    <!-- Active: Cancels all abnormal status and makes you invincible for 3 seconds. Cannot use when immobilized. Can be used in the Olympiad. -->
+    <effect id="30294" rarity="4" slot="4">
+        <effect desc="Active: Cancels all abnormal status and makes you invincible for 3 seconds. Cannot use when immobilized. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active: Cancels all abnormal status and makes you invincible for 7 seconds. Cannot use when immobilized. Can be used in the Olympiad. -->
+    <effect id="30295" rarity="4" slot="4">
+        <effect desc="Active: Cancels all abnormal status and makes you invincible for 7 seconds. Cannot use when immobilized. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active: Teleports to the village. Cannot be used in special locations such as GM room. -->
+    <effect id="30296" rarity="4" slot="4">
+        <effect desc="Active: Teleports to the village. Cannot be used in special locations such as GM room" />
+    </effect>
+    <!-- Active: Teleports party members to the village. Cannot be used in special locations such as GM room. -->
+    <effect id="30297" rarity="4" slot="4">
+        <effect desc="Active: Teleports party members to the village. Cannot be used in special locations such as GM room" />
+    </effect>
+    <!-- Passive: Increases weight gauge by 200%. -->
+    <effect id="30298" rarity="4" slot="4">
+        <effect desc="Passive: Increases weight gauge by 200%" />
+    </effect>
+    <!-- M. Def. + 8 -->
+    <effect id="30299" rarity="2" slot="2">
+        <add stat="mDef" val="8" />
+    </effect>
+    <!-- M. Def. + 9 -->
+    <effect id="30300" rarity="2" slot="2">
+        <add stat="mDef" val="9" />
+    </effect>
+    <!-- M. Def. + 10 -->
+    <effect id="30301" rarity="2" slot="2">
+        <add stat="mDef" val="10" />
+    </effect>
+    <!-- M. Def. + 11 -->
+    <effect id="30302" rarity="2" slot="2">
+        <add stat="mDef" val="11" />
+        <add stat="runSpd" val="7" />
+    </effect>
+    <!-- M. Def. + 12 / Speed + 7 / Max HP + 510\nMax MP + 510\nAttribute Resistance +\n 6\nSTR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, M\nEN + 1 -->
+    <effect id="30303" rarity="2" slot="2">
+        <add stat="mDef" val="12" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 510Max MP + 510Attribute Resistance + 6STR + 1" />
+        <baseAdd stat="DEX" val="1" />
+        <baseAdd stat="CON" val="1" />
+        <baseAdd stat="INT" val="1" />
+        <baseAdd stat="WIT" val="1" />
+        <baseAdd stat="MEN" val="1" />
+    </effect>
+    <!-- M. Def. + 13 / Speed + 7 / Max HP + 520\nMax MP + 520\nSkill MP Consumption -\n 3%\nAttribute Resistance + 12\nSTR + 2, DEX + 2, \nCON + 2, INT + 2, WIT + 2, MEN + 2 -->
+    <effect id="30304" rarity="2" slot="2">
+        <add stat="mDef" val="13" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 520Max MP + 520Skill MP Consumption - 3%Attribute Resistance + 12STR + 2" />
+        <baseAdd stat="DEX" val="2" />
+        <baseAdd stat="CON" val="2" />
+        <baseAdd stat="INT" val="2" />
+        <baseAdd stat="WIT" val="2" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 14 / Speed + 7 / Max HP + 531\nMax MP + 531\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nAttribute Resi\nstance + 18\nSTR + 3, DEX + 3, CON + 2, INT + 3, W\nIT + 3, MEN + 2 -->
+    <effect id="30305" rarity="2" slot="2">
+        <add stat="mDef" val="14" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 531Max MP + 531Skill MP Consumption - 3%Damage Reflect Resistance + 5Attribute Resistance + 18STR + 3" />
+        <baseAdd stat="DEX" val="3" />
+        <baseAdd stat="CON" val="2" />
+        <baseAdd stat="INT" val="3" />
+        <baseAdd stat="WIT" val="3" />
+        <baseAdd stat="MEN" val="2" />
+    </effect>
+    <!-- M. Def. + 15 / Speed + 7 / Max HP + 536\nMax MP + 536\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nAttribute Resistance + 24\nSTR + 3, DEX + 3,\n CON + 3, INT + 3, WIT + 3, MEN + 3 -->
+    <effect id="30306" rarity="2" slot="2">
+        <add stat="mDef" val="15" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 536Max MP + 536Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Attribute Resistance + 24STR + 3" />
+        <baseAdd stat="DEX" val="3" />
+        <baseAdd stat="CON" val="3" />
+        <baseAdd stat="INT" val="3" />
+        <baseAdd stat="WIT" val="3" />
+        <baseAdd stat="MEN" val="3" />
+    </effect>
+    <!-- M. Def. + 16 / Speed + 7 / Max HP + 541\nMax MP + 541\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nAttribute Resistance + \n30\nSTR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, M\nEN + 3 -->
+    <effect id="30307" rarity="2" slot="2">
+        <add stat="mDef" val="16" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 541Max MP + 541Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Attribute Resistance + 30STR + 4" />
+        <baseAdd stat="DEX" val="4" />
+        <baseAdd stat="CON" val="3" />
+        <baseAdd stat="INT" val="4" />
+        <baseAdd stat="WIT" val="4" />
+        <baseAdd stat="MEN" val="3" />
+    </effect>
+    <!-- M. Def. + 17 / Speed + 7 / Max HP + 547\nMax MP + 547\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5 Vampiric Rage +\n 5%\nSkill Cooldown - 3%\nReceived Damage - 3%;Att\nribute Resistance + 36\nSTR + 4, DEX + 4, CON + 4,\n INT + 4, WIT + 4, MEN + 4 -->
+    <effect id="30308" rarity="2" slot="2">
+        <add stat="mDef" val="17" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 547Max MP + 547Skill MP Consumption - 3%Damage Reflect Resistance + 5 Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%;Attribute Resistance + 36STR + 4" />
+        <baseAdd stat="DEX" val="4" />
+        <baseAdd stat="CON" val="4" />
+        <baseAdd stat="INT" val="4" />
+        <baseAdd stat="WIT" val="4" />
+        <baseAdd stat="MEN" val="4" />
+    </effect>
+    <!-- M. Def. + 18 / Speed + 7 / Max HP + 552\nMax MP + 552\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nReceived Damage - 3%\nA\nttribute Resistance + 36\nSTR + 4, DEX + 4, CON + \n4, INT + 4, WIT + 4, MEN + 4 -->
+    <effect id="30309" rarity="2" slot="2">
+        <add stat="mDef" val="18" />
+        <add stat="runSpd" val="7" />
+        <effect desc="Max HP + 552Max MP + 552Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%Attribute Resistance + 36STR + 4" />
+        <baseAdd stat="DEX" val="4" />
+        <baseAdd stat="CON" val="4" />
+        <baseAdd stat="INT" val="4" />
+        <baseAdd stat="WIT" val="4" />
+        <baseAdd stat="MEN" val="4" />
+    </effect>
+    <!-- Active: Einhasad's Wrath -->
+    <effect id="30310" rarity="4" slot="4">
+        <effect desc="Active: Einhasad's Wrath" />
+    </effect>
+    <!-- Active: Einhasad's Wrath/Einhasad's Protection -->
+    <effect id="30311" rarity="4" slot="4">
+        <effect desc="Active: Einhasad's WrathActive: Einhasad's Protection" />
+    </effect>
+    <!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence -->
+    <effect id="30312" rarity="4" slot="4">
+        <effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's Silence" />
+    </effect>
+    <!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence/Einhasad's Salvation -->
+    <effect id="30313" rarity="4" slot="4">
+        <effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's SilenceActive: Einhasad's Salvation" />
+    </effect>
+    <!-- Active: Einhasad's Wrath/Einhasad's Protection/Einhasad's Silence/Einhasad's Salvation/Einhasad's Blessing -->
+    <effect id="30314" rarity="4" slot="4">
+        <effect desc="Active: Einhasad's WrathActive: Einhasad's ProtectionActive: Einhasad's SilenceActive: Einhasad's SalvationActive: Einhasad's Blessing" />
+    </effect>
+    <!-- P. Def. + 5%. -->
+    <effect id="30315" rarity="4" slot="1">
+        <addPercent stat="pDef" val="5" />
+    </effect>
+    <!-- Elemental Def. + 30. -->
+    <effect id="30316" rarity="4" slot="1">
+        <add stat="fireRes" val="30" />
+        <add stat="waterRes" val="30" />
+        <add stat="windRes" val="30" />
+        <add stat="earthRes" val="30" />
+    </effect>
+    <!-- Alignment Def. + 30. -->
+    <effect id="30317" rarity="4" slot="1">
+        <add stat="holyRes" val="30" />
+        <add stat="darkRes" val="30" />
+    </effect>
+    <!-- P. Skill MP Consumption - 1%. -->
+    <effect id="30318" rarity="4" slot="1">
+        <subPercent stat="PhysicalMpConsumeRate" val="1" />
+    </effect>
+    <!-- M. Skill MP Consumption - 1%. -->
+    <effect id="30319" rarity="4" slot="1">
+        <subPercent stat="MagicalMpConsumeRate" val="1" />
+    </effect>
+    <!-- Skill MP Consumption - 1%. -->
+    <effect id="30320" rarity="4" slot="1">
+        <subPercent stat="MagicalMpConsumeRate" val="1" />
+        <subPercent stat="PhysicalMpConsumeRate" val="1" />
+        <subPercent stat="DanceMpConsumeRate" val="1" />
+    </effect>
+    <!-- P. Skill Critical Damage + 1%. -->
+    <effect id="30321" rarity="4" slot="1">
+        <addPercent stat="pSkillCritDmg" val="1" />
+    </effect>
+    <!-- M. Skill Critical Damage + 1%. -->
+    <effect id="30322" rarity="4" slot="1">
+        <addPercent stat="mCritDmg" val="1" />
+    </effect>
+    <!-- Received Heal Amount + 1%. -->
+    <effect id="30323" rarity="4" slot="1">
+        <addPercent stat="gainHp" val="1" />
+    </effect>
+    <!-- Fire Resistance + 20. -->
+    <effect id="30324" rarity="3" slot="1">
+        <add stat="fireRes" val="20" />
+    </effect>
+    <!-- Water Resistance + 20. -->
+    <effect id="30325" rarity="3" slot="1">
+        <add stat="waterRes" val="20" />
+    </effect>
+    <!-- Wind Resistance + 20. -->
+    <effect id="30326" rarity="3" slot="1">
+        <add stat="windRes" val="20" />
+    </effect>
+    <!-- Earth Resistance + 20. -->
+    <effect id="30327" rarity="3" slot="1">
+        <add stat="earthRes" val="20" />
+    </effect>
+    <!-- Holy Resistance + 20. -->
+    <effect id="30328" rarity="3" slot="1">
+        <add stat="holyRes" val="20" />
+    </effect>
+    <!-- Dark Resistance + 20. -->
+    <effect id="30329" rarity="3" slot="1">
+        <add stat="darkRes" val="20" />
+    </effect>
+    <!-- Fire Resistance + 10. -->
+    <effect id="30330" rarity="2" slot="1">
+        <add stat="fireRes" val="20" />
+    </effect>
+    <!-- Water Resistance + 10. -->
+    <effect id="30331" rarity="2" slot="1">
+        <add stat="waterRes" val="20" />
+    </effect>
+    <!-- Wind Resistance + 10. -->
+    <effect id="30332" rarity="2" slot="1">
+        <add stat="windRes" val="20" />
+    </effect>
+    <!-- Earth Resistance + 10. -->
+    <effect id="30333" rarity="2" slot="1">
+        <add stat="earthRes" val="20" />
+    </effect>
+    <!-- Holy Resistance + 10. -->
+    <effect id="30334" rarity="2" slot="1">
+        <add stat="holyRes" val="20" />
+    </effect>
+    <!-- Dark Resistance + 10. -->
+    <effect id="30335" rarity="2" slot="1">
+        <add stat="darkRes" val="20" />
+    </effect>
+    <!-- P. Atk. + 212. -->
+    <effect id="30336" rarity="1" slot="1">
+        <add stat="pAtk" val="212" />
+    </effect>
+    <!-- M. Atk. + 498. -->
+    <effect id="30337" rarity="1" slot="1">
+        <add stat="mAtk" val="498" />
+    </effect>
+    <!-- P. Accuracy + 2. -->
+    <effect id="30338" rarity="1" slot="1">
+        <add stat="accCombat" val="2" />
+    </effect>
+    <!-- M. Accuracy + 2. -->
+    <effect id="30339" rarity="1" slot="1">
+        <add stat="accMagic" val="2" />
+    </effect>
+    <!-- M. Def. + 5%. -->
+    <effect id="30340" rarity="4" slot="2">
+        <addPercent stat="mDef" val="5" />
+    </effect>
+    <!-- Stun/ Knock Back/ Knock Down Resistance + 10. -->
+    <effect id="30341" rarity="4" slot="2">
+        <addPercent stat="stunRes" val="10" />
+        <addPercent stat="knockBackRes" val="10" />
+        <addPercent stat="knockDownRes" val="10" />
+    </effect>
+    <!-- Petrify/ Hold Resistance + 10. -->
+    <effect id="30342" rarity="4" slot="2">
+        <addPercent stat="petrifyRes" val="10" />
+        <addPercent stat="holdRes" val="10" />
+    </effect>
+    <!-- Mental/ Aerial Yoke Resistance + 10. -->
+    <effect id="30343" rarity="4" slot="2">
+        <addPercent stat="derangementRes" val="10" />
+        <addPercent stat="aerialYokeRes" val="10" />
+    </effect>
+    <!-- Paralyze/ Pull Resistance + 10. -->
+    <effect id="30344" rarity="4" slot="2">
+        <addPercent stat="paralysisRes" val="10" />
+        <addPercent stat="pullRes" val="10" />
+    </effect>
+    <!-- STR +1 -->
+    <effect id="30345" rarity="4" slot="2">
+        <baseAdd stat="STR" val="1" />
+    </effect>
+    <!-- DEX +1 -->
+    <effect id="30346" rarity="4" slot="2">
+        <baseAdd stat="DEX" val="1" />
+    </effect>
+    <!-- CON +1 -->
+    <effect id="30347" rarity="4" slot="2">
+        <baseAdd stat="CON" val="1" />
+    </effect>
+    <!-- INT +1 -->
+    <effect id="30348" rarity="4" slot="2">
+        <baseAdd stat="INT" val="1" />
+    </effect>
+    <!-- WIT +1 -->
+    <effect id="30349" rarity="4" slot="2">
+        <baseAdd stat="WIT" val="1" />
+    </effect>
+    <!-- MEN +1 -->
+    <effect id="30350" rarity="4" slot="2">
+        <baseAdd stat="MEN" val="1" />
+    </effect>
+    <!-- Speed + 7. -->
+    <effect id="30351" rarity="4" slot="2">
+        <add stat="runSpd" val="7" />
+    </effect>
+    <!-- Stun Resistance + 10. -->
+    <effect id="30352" rarity="3" slot="2">
+        <addPercent stat="stunRes" val="10" />
+    </effect>
+    <!-- Hold Resistance + 10. -->
+    <effect id="30353" rarity="3" slot="2">
+        <addPercent stat="knockBackRes" val="10" />
+    </effect>
+    <!-- Bleed Resistance + 10. -->
+    <effect id="30354" rarity="3" slot="2">
+        <addPercent stat="bleedRes" val="10" />
+    </effect>
+    <!-- Paralyze Resistance + 10. -->
+    <effect id="30355" rarity="3" slot="2">
+        <addPercent stat="paralysisRes" val="10" />
+    </effect>
+    <!-- Mental Resistance + 10. -->
+    <effect id="30356" rarity="3" slot="2">
+        <addPercent stat="derangementRes" val="10" />
+    </effect>
+    <!-- Sleep Resistance + 10. -->
+    <effect id="30357" rarity="3" slot="2">
+        <addPercent stat="sleepRes" val="10" />
+    </effect>
+    <!-- Poison Resistance + 10. -->
+    <effect id="30358" rarity="3" slot="2">
+        <addPercent stat="poisonRes" val="10" />
+    </effect>
+    <!-- Knock Back/ Knock Down Resistance + 10. -->
+    <effect id="30359" rarity="3" slot="2">
+        <addPercent stat="knockBackRes" val="10" />
+        <addPercent stat="knockDownRes" val="10" />
+    </effect>
+    <!-- Aerial Yoke Resistance + 10. -->
+    <effect id="30360" rarity="3" slot="2">
+        <addPercent stat="aerialYokeRes" val="10" />
+    </effect>
+    <!-- Pull Resistance + 10. -->
+    <effect id="30361" rarity="3" slot="2">
+        <addPercent stat="pullRes" val="10" />
+    </effect>
+    <!-- Petrify Resistance + 10. -->
+    <effect id="30362" rarity="3" slot="2">
+        <addPercent stat="petrifyRes" val="10" />
+    </effect>
+    <!-- Stun Resistance + 5. -->
+    <effect id="30363" rarity="2" slot="2">
+        <addPercent stat="stunRes" val="5" />
+    </effect>
+    <!-- Hold Resistance + 5. -->
+    <effect id="30364" rarity="2" slot="2">
+        <addPercent stat="holdRes" val="5" />
+    </effect>
+    <!-- Bleed Resistance + 5. -->
+    <effect id="30365" rarity="2" slot="2">
+        <addPercent stat="bleedRes" val="5" />
+    </effect>
+    <!-- Paralyze Resistance + 5. -->
+    <effect id="30366" rarity="2" slot="2">
+        <addPercent stat="paralysisRes" val="5" />
+    </effect>
+    <!-- Mental Resistance + 5. -->
+    <effect id="30367" rarity="2" slot="2">
+        <addPercent stat="derangementRes" val="5" />
+    </effect>
+    <!-- Sleep Resistance + 5. -->
+    <effect id="30368" rarity="2" slot="2">
+        <addPercent stat="sleepRes" val="5" />
+    </effect>
+    <!-- Poison Resistance + 5. -->
+    <effect id="30369" rarity="2" slot="2">
+        <addPercent stat="poisonRes" val="5" />
+    </effect>
+    <!-- Knock Back/ Knock Down Resistance + 5. -->
+    <effect id="30370" rarity="2" slot="2">
+        <addPercent stat="knockBackRes" val="5" />
+        <addPercent stat="knockDownRes" val="5" />
+    </effect>
+    <!-- Aerial Yoke Resistance + 5. -->
+    <effect id="30371" rarity="2" slot="2">
+        <addPercent stat="aerialYokeRes" val="5" />
+    </effect>
+    <!-- Pull Resistance + 5. -->
+    <effect id="30372" rarity="2" slot="2">
+        <addPercent stat="pullRes" val="5" />
+    </effect>
+    <!-- Petrify Resistance + 5. -->
+    <effect id="30373" rarity="2" slot="2">
+        <addPercent stat="petrifyRes" val="5" />
+    </effect>
+    <!-- Max HP + 266, HP Recovery Bonus + 8. -->
+    <effect id="30374" rarity="1" slot="2">
+        <add stat="maxHp" val="266" />
+        <add stat="regHp" val="8" />
+    </effect>
+    <!-- Max MP + 117, MP Recovery Bonus + 4. -->
+    <effect id="30375" rarity="1" slot="2">
+        <add stat="maxMp" val="117" />
+        <add stat="regMp" val="4" />
+    </effect>
+    <!-- Max CP + 266, CP Recovery Bonus + 8. -->
+    <effect id="30376" rarity="1" slot="2">
+        <add stat="maxCp" val="266" />
+        <add stat="regCp" val="8" />
+    </effect>
 </list>

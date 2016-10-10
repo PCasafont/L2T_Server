@@ -19,32 +19,33 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Format: ch Sddddddddd
- * @author  KenM
+ *
+ * @author KenM
  */
 public class ExDuelUpdateUserInfo extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
-	
-	public ExDuelUpdateUserInfo(L2PcInstance cha)
-	{
-		_activeChar = cha;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeS(_activeChar.getName());
-		writeD(_activeChar.getObjectId());
-		writeD(_activeChar.getCurrentClass().getId());
-		writeD(_activeChar.getLevel());
-		writeD((int) _activeChar.getCurrentHp());
-		writeD(_activeChar.getMaxVisibleHp());
-		writeD((int) _activeChar.getCurrentMp());
-		writeD(_activeChar.getMaxMp());
-		writeD((int) _activeChar.getCurrentCp());
-		writeD(_activeChar.getMaxCp());
-	}
+    private L2PcInstance _activeChar;
+
+    public ExDuelUpdateUserInfo(L2PcInstance cha)
+    {
+        _activeChar = cha;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeS(_activeChar.getName());
+        writeD(_activeChar.getObjectId());
+        writeD(_activeChar.getCurrentClass().getId());
+        writeD(_activeChar.getLevel());
+        writeD((int) _activeChar.getCurrentHp());
+        writeD(_activeChar.getMaxVisibleHp());
+        writeD((int) _activeChar.getCurrentMp());
+        writeD(_activeChar.getMaxMp());
+        writeD((int) _activeChar.getCurrentCp());
+        writeD(_activeChar.getMaxCp());
+    }
 }

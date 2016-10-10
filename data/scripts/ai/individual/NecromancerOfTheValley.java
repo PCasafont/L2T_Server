@@ -1,4 +1,3 @@
-
 package ai.individual;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -15,44 +14,45 @@ import ai.group_template.L2AttackableAIScript;
 
 public class NecromancerOfTheValley extends L2AttackableAIScript
 {
-	private static final int necromancerOfTheValley = 22858;
-	
-	public NecromancerOfTheValley(int questId, String name, String descr)
-	{
-		super(questId, name, descr);
-		
-		addKillId(necromancerOfTheValley);
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (Rnd.get(100) < 30)
-		{
-			L2Character attacker = isPet ? killer.getPet() : killer;
-			
-			if (attacker == null)
-			{
-				return super.onKill(npc, killer, isPet);
-			}
-			
-			for (int a = 22818; a < 22820; a++)
-			{
-				L2Attackable minion = (L2Attackable) addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-				
-				minion.setIsRunning(true);
-				
-				minion.addDamageHate(attacker, 0, 500);
-				
-				minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
-			}
-		}
-		
-		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new NecromancerOfTheValley(-1, "NecromancerOfTheValley", "ai");
-	}
+    private static final int necromancerOfTheValley = 22858;
+
+    public NecromancerOfTheValley(int questId, String name, String descr)
+    {
+        super(questId, name, descr);
+
+        addKillId(necromancerOfTheValley);
+    }
+
+    @Override
+    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+    {
+        if (Rnd.get(100) < 30)
+        {
+            L2Character attacker = isPet ? killer.getPet() : killer;
+
+            if (attacker == null)
+            {
+                return super.onKill(npc, killer, isPet);
+            }
+
+            for (int a = 22818; a < 22820; a++)
+            {
+                L2Attackable minion = (L2Attackable) addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc
+                        .getHeading(), false, 0, true);
+
+                minion.setIsRunning(true);
+
+                minion.addDamageHate(attacker, 0, 500);
+
+                minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+            }
+        }
+
+        return super.onKill(npc, killer, isPet);
+    }
+
+    public static void main(String[] args)
+    {
+        new NecromancerOfTheValley(-1, "NecromancerOfTheValley", "ai");
+    }
 }

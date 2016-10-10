@@ -22,17 +22,17 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class MagicSkillCancelled extends L2GameServerPacket
 {
-	
-	private int _objectId;
-	
-	public MagicSkillCancelled(int objectId)
-	{
-		_objectId = objectId;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_objectId);
-	}
+
+    private int _objectId;
+
+    public MagicSkillCancelled(int objectId)
+    {
+        _objectId = objectId;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_objectId);
+    }
 }

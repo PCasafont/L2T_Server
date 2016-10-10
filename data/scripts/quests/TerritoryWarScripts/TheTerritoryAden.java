@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritoryAden extends TerritoryWarSuperClass
 {
-	public static String qn1 = "721_FortheSakeoftheTerritoryAden";
-	public static int qnu = 721;
-	public static String qna = "For the Sake of the Territory - Aden";
-	
-	public TheTerritoryAden()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36503;
-		TERRITORY_ID = 85;
-		LEADER_IDS = new int[] { 36532, 36534, 36537, 36595 };
-		GUARD_IDS = new int[] { 36533, 36535, 36536 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Aden has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "721_FortheSakeoftheTerritoryAden";
+    public static int qnu = 721;
+    public static String qna = "For the Sake of the Territory - Aden";
+
+    public TheTerritoryAden()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36503;
+        TERRITORY_ID = 85;
+        LEADER_IDS = new int[]{36532, 36534, 36537, 36595};
+        GUARD_IDS = new int[]{36533, 36535, 36536};
+        qn = qn1;
+        Text = new String[]{"The catapult of Aden has been destroyed!"};
+        registerKillIds();
+    }
 }

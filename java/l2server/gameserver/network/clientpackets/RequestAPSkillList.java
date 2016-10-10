@@ -22,20 +22,22 @@ import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
  */
 public final class RequestAPSkillList extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-			return;
-		
-		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        if (getClient().getActiveChar() == null)
+        {
+            return;
+        }
+
+        sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
+    }
 }

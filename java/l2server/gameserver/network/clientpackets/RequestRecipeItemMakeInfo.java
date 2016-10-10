@@ -22,24 +22,26 @@ import l2server.gameserver.network.serverpackets.RecipeItemMakeInfo;
  */
 public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
 {
-	//
-	
-	private int _id;
-	
-	@Override
-	protected void readImpl()
-	{
-		_id = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		RecipeItemMakeInfo response = new RecipeItemMakeInfo(_id, player);
-		sendPacket(response);
-	}
+    //
+
+    private int _id;
+
+    @Override
+    protected void readImpl()
+    {
+        _id = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        RecipeItemMakeInfo response = new RecipeItemMakeInfo(_id, player);
+        sendPacket(response);
+    }
 }

@@ -28,33 +28,37 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class BypassUserCmd extends L2GameClientPacket
 {
-	static Logger _log = Logger.getLogger(BypassUserCmd.class.getName());
-	
-	private int _command;
-	
-	@Override
-	protected void readImpl()
-	{
-		_command = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(_command);
-		
-		if (handler == null)
-		{
-			if (player.isGM())
-				player.sendMessage("User commandID " + _command + " not implemented yet.");
-		}
-		else
-		{
-			handler.useUserCommand(_command, getClient().getActiveChar());
-		}
-	}
+    static Logger _log = Logger.getLogger(BypassUserCmd.class.getName());
+
+    private int _command;
+
+    @Override
+    protected void readImpl()
+    {
+        _command = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(_command);
+
+        if (handler == null)
+        {
+            if (player.isGM())
+            {
+                player.sendMessage("User commandID " + _command + " not implemented yet.");
+            }
+        }
+        else
+        {
+            handler.useUserCommand(_command, getClient().getActiveChar());
+        }
+    }
 }

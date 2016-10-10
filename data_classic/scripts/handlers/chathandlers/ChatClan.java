@@ -21,34 +21,33 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 /**
  * A chat handler
  *
- * @author  durgus
+ * @author durgus
  */
 public class ChatClan implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		4
-	};
-	
-	/**
-	 * Handle chat type 'clan'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
-	 */
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.getClan() != null)
-		{
-			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
-		}
-	}
-	
-	/**
-	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-	 */
-	public int[] getChatTypeList()
-	{
-		return COMMAND_IDS;
-	}
+    private static final int[] COMMAND_IDS = {4};
+
+    /**
+     * Handle chat type 'clan'
+     *
+     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+     */
+    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+    {
+        if (activeChar.getClan() != null)
+        {
+            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+            activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
+        }
+    }
+
+    /**
+     * Returns the chat types registered to this handler
+     *
+     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+     */
+    public int[] getChatTypeList()
+    {
+        return COMMAND_IDS;
+    }
 }

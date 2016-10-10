@@ -20,18 +20,20 @@ import l2server.gameserver.network.serverpackets.ExResponseBeautyListPacket;
 
 public final class RequestBeautyList extends L2GameClientPacket
 {
-	//private int _unknown;
-	
-	@Override
-	protected final void readImpl()
-	{
-		//_unknown = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		if (BeautyTable.getInstance().getTemplate(0) != null)
-			sendPacket(new ExResponseBeautyListPacket());
-	}
+    //private int _unknown;
+
+    @Override
+    protected final void readImpl()
+    {
+        //_unknown = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        if (BeautyTable.getInstance().getTemplate(0) != null)
+        {
+            sendPacket(new ExResponseBeautyListPacket());
+        }
+    }
 }

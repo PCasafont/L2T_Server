@@ -25,29 +25,32 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillAgathion extends L2Skill
 {
-	private int _npcId;
-	
-	public L2SkillAgathion(StatsSet set)
-	{
-		super(set);
-		_npcId = set.getInteger("npcId", 0);
-	}
-	
-	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) caster;
-		
-		if (activeChar.isInOlympiadMode())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
-			return;
-		}
-		
-		activeChar.setAgathionId(_npcId);
-		activeChar.broadcastUserInfo();
-	}
+    private int _npcId;
+
+    public L2SkillAgathion(StatsSet set)
+    {
+        super(set);
+        _npcId = set.getInteger("npcId", 0);
+    }
+
+    @Override
+    public void useSkill(L2Character caster, L2Object[] targets)
+    {
+        if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) caster;
+
+        if (activeChar.isInOlympiadMode())
+        {
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            return;
+        }
+
+        activeChar.setAgathionId(_npcId);
+        activeChar.broadcastUserInfo();
+    }
 }

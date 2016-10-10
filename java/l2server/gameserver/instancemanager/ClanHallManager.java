@@ -31,170 +31,199 @@ import l2server.gameserver.model.zone.type.L2ClanHallZone;
 import l2server.log.Log;
 
 /**
- *
- * @author  Steuf
+ * @author Steuf
  */
 public class ClanHallManager
 {
-	
-	private Map<Integer, ClanHall> _clanHall;
-	private Map<Integer, ClanHall> _freeClanHall;
-	private Map<Integer, ClanHall> _allClanHalls;
-	private boolean _loaded = false;
-	
-	public static ClanHallManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
-	
-	public boolean loaded()
-	{
-		return _loaded;
-	}
-	
-	private ClanHallManager()
-	{
-		Log.info("Initializing ClanHallManager");
-		_clanHall = new HashMap<Integer, ClanHall>();
-		_freeClanHall = new HashMap<Integer, ClanHall>();
-		_allClanHalls = new HashMap<Integer, ClanHall>();
-		load();
-	}
-	
-	/** Reload All Clan Hall */
-	/*	public final void reload() Cant reload atm - would loose zone info
+
+    private Map<Integer, ClanHall> _clanHall;
+    private Map<Integer, ClanHall> _freeClanHall;
+    private Map<Integer, ClanHall> _allClanHalls;
+    private boolean _loaded = false;
+
+    public static ClanHallManager getInstance()
+    {
+        return SingletonHolder._instance;
+    }
+
+    public boolean loaded()
+    {
+        return _loaded;
+    }
+
+    private ClanHallManager()
+    {
+        Log.info("Initializing ClanHallManager");
+        _clanHall = new HashMap<Integer, ClanHall>();
+        _freeClanHall = new HashMap<Integer, ClanHall>();
+        _allClanHalls = new HashMap<Integer, ClanHall>();
+        load();
+    }
+
+    /** Reload All Clan Hall */
+    /*	public final void reload() Cant reload atm - would loose zone info
 		{
 			_clanHall.clear();
 			_freeClanHall.clear();
 			load();
 		}
 	 */
-	
-	/** Load All Clan Hall */
-	private final void load()
-	{
-		Connection con = null;
-		try
-		{
-			int id, ownerId, grade = 0;
-			String Name, Desc, Location;
-			long lease, paidUntil = 0;
-			boolean paid = false;
-			PreparedStatement statement;
-			ResultSet rs;
-			con = L2DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("SELECT * FROM clanhall ORDER BY id");
-			rs = statement.executeQuery();
-			while (rs.next())
-			{
-				id = rs.getInt("id");
-				Name = rs.getString("name");
-				ownerId = rs.getInt("ownerId");
-				lease = rs.getLong("lease");
-				Desc = rs.getString("desc");
-				Location = rs.getString("location");
-				paidUntil = rs.getLong("paidUntil");
-				grade = rs.getInt("Grade");
-				paid = rs.getBoolean("paid");
-				
-				ClanHall ch = new ClanHall(id, Name, ownerId, lease, Desc, Location, paidUntil, grade, paid);
-				_allClanHalls.put(id, ch);
-				
-				if (ownerId > 0)
-				{
-					final L2Clan owner = ClanTable.getInstance().getClan(ownerId);
-					if (owner != null)
-					{
-						_clanHall.put(id, ch);
-						owner.setHasHideout(id);
-						continue;
-					}
-					else
-						ch.free();
-				}
-				_freeClanHall.put(id, ch);
-				
-				Auction auc = ClanHallAuctionManager.getInstance().getAuction(id);
-				if (auc == null && lease > 0)
-					ClanHallAuctionManager.getInstance().initNPC(id);
-			}
-			
-			statement.close();
-			Log.info("Loaded: " + getClanHalls().size() + " clan halls");
-			Log.info("Loaded: " + getFreeClanHalls().size() + " free clan halls");
-			_loaded = true;
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Exception: ClanHallManager.load(): " + e.getMessage(), e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-	
-	/** Get Map with all FreeClanHalls */
-	public final Map<Integer, ClanHall> getFreeClanHalls()
-	{
-		return _freeClanHall;
-	}
-	
-	/** Get Map with all ClanHalls that have owner*/
-	public final Map<Integer, ClanHall> getClanHalls()
-	{
-		return _clanHall;
-	}
-	
-	/** Get Map with all ClanHalls*/
-	public final Map<Integer, ClanHall> getAllClanHalls()
-	{
-		return _allClanHalls;
-	}
-	
-	/** Check is free ClanHall */
-	public final boolean isFree(int chId)
-	{
-		if (_freeClanHall.containsKey(chId))
-			return true;
-		return false;
-	}
-	
-	/** Free a ClanHall */
-	public final synchronized void setFree(int chId)
-	{
-		_freeClanHall.put(chId, _clanHall.get(chId));
-		ClanTable.getInstance().getClan(_freeClanHall.get(chId).getOwnerId()).setHasHideout(0);
-		_freeClanHall.get(chId).free();
-		_clanHall.remove(chId);
-	}
-	
-	/** Set ClanHallOwner */
-	public final synchronized void setOwner(int chId, L2Clan clan)
-	{
-		if (!_clanHall.containsKey(chId))
-		{
-			_clanHall.put(chId, _freeClanHall.get(chId));
-			_freeClanHall.remove(chId);
-		}
-		else
-			_clanHall.get(chId).free();
-		ClanTable.getInstance().getClan(clan.getClanId()).setHasHideout(chId);
-		_clanHall.get(chId).setOwner(clan);
-	}
-	
-	/** Get Clan Hall by Id */
-	public final ClanHall getClanHallById(int clanHallId)
-	{
-		if (_clanHall.containsKey(clanHallId))
-			return _clanHall.get(clanHallId);
-		if (_freeClanHall.containsKey(clanHallId))
-			return _freeClanHall.get(clanHallId);
-		Log.warning("Clan hall id " + clanHallId + " not found in clanhall table!");
-		return null;
-	}
-	
-	/** Get Clan Hall by x,y,z */
+
+    /**
+     * Load All Clan Hall
+     */
+    private final void load()
+    {
+        Connection con = null;
+        try
+        {
+            int id, ownerId, grade = 0;
+            String Name, Desc, Location;
+            long lease, paidUntil = 0;
+            boolean paid = false;
+            PreparedStatement statement;
+            ResultSet rs;
+            con = L2DatabaseFactory.getInstance().getConnection();
+            statement = con.prepareStatement("SELECT * FROM clanhall ORDER BY id");
+            rs = statement.executeQuery();
+            while (rs.next())
+            {
+                id = rs.getInt("id");
+                Name = rs.getString("name");
+                ownerId = rs.getInt("ownerId");
+                lease = rs.getLong("lease");
+                Desc = rs.getString("desc");
+                Location = rs.getString("location");
+                paidUntil = rs.getLong("paidUntil");
+                grade = rs.getInt("Grade");
+                paid = rs.getBoolean("paid");
+
+                ClanHall ch = new ClanHall(id, Name, ownerId, lease, Desc, Location, paidUntil, grade, paid);
+                _allClanHalls.put(id, ch);
+
+                if (ownerId > 0)
+                {
+                    final L2Clan owner = ClanTable.getInstance().getClan(ownerId);
+                    if (owner != null)
+                    {
+                        _clanHall.put(id, ch);
+                        owner.setHasHideout(id);
+                        continue;
+                    }
+                    else
+                    {
+                        ch.free();
+                    }
+                }
+                _freeClanHall.put(id, ch);
+
+                Auction auc = ClanHallAuctionManager.getInstance().getAuction(id);
+                if (auc == null && lease > 0)
+                {
+                    ClanHallAuctionManager.getInstance().initNPC(id);
+                }
+            }
+
+            statement.close();
+            Log.info("Loaded: " + getClanHalls().size() + " clan halls");
+            Log.info("Loaded: " + getFreeClanHalls().size() + " free clan halls");
+            _loaded = true;
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Exception: ClanHallManager.load(): " + e.getMessage(), e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+    }
+
+    /**
+     * Get Map with all FreeClanHalls
+     */
+    public final Map<Integer, ClanHall> getFreeClanHalls()
+    {
+        return _freeClanHall;
+    }
+
+    /**
+     * Get Map with all ClanHalls that have owner
+     */
+    public final Map<Integer, ClanHall> getClanHalls()
+    {
+        return _clanHall;
+    }
+
+    /**
+     * Get Map with all ClanHalls
+     */
+    public final Map<Integer, ClanHall> getAllClanHalls()
+    {
+        return _allClanHalls;
+    }
+
+    /**
+     * Check is free ClanHall
+     */
+    public final boolean isFree(int chId)
+    {
+        if (_freeClanHall.containsKey(chId))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Free a ClanHall
+     */
+    public final synchronized void setFree(int chId)
+    {
+        _freeClanHall.put(chId, _clanHall.get(chId));
+        ClanTable.getInstance().getClan(_freeClanHall.get(chId).getOwnerId()).setHasHideout(0);
+        _freeClanHall.get(chId).free();
+        _clanHall.remove(chId);
+    }
+
+    /**
+     * Set ClanHallOwner
+     */
+    public final synchronized void setOwner(int chId, L2Clan clan)
+    {
+        if (!_clanHall.containsKey(chId))
+        {
+            _clanHall.put(chId, _freeClanHall.get(chId));
+            _freeClanHall.remove(chId);
+        }
+        else
+        {
+            _clanHall.get(chId).free();
+        }
+        ClanTable.getInstance().getClan(clan.getClanId()).setHasHideout(chId);
+        _clanHall.get(chId).setOwner(clan);
+    }
+
+    /**
+     * Get Clan Hall by Id
+     */
+    public final ClanHall getClanHallById(int clanHallId)
+    {
+        if (_clanHall.containsKey(clanHallId))
+        {
+            return _clanHall.get(clanHallId);
+        }
+        if (_freeClanHall.containsKey(clanHallId))
+        {
+            return _freeClanHall.get(clanHallId);
+        }
+        Log.warning("Clan hall id " + clanHallId + " not found in clanhall table!");
+        return null;
+    }
+
+    /**
+     * Get Clan Hall by x,y,z
+     */
 	/*
 		public final ClanHall getClanHall(int x, int y, int z)
 		{
@@ -206,40 +235,47 @@ public class ClanHallManager
 
 			return null;
 		}*/
-	
-	public final ClanHall getNearbyClanHall(int x, int y, int maxDist)
-	{
-		L2ClanHallZone zone = null;
-		
-		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
-		{
-			zone = ch.getValue().getZone();
-			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
-				return ch.getValue();
-		}
-		for (Map.Entry<Integer, ClanHall> ch : _freeClanHall.entrySet())
-		{
-			zone = ch.getValue().getZone();
-			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
-				return ch.getValue();
-		}
-		return null;
-	}
-	
-	/** Get Clan Hall by Owner */
-	public final ClanHall getClanHallByOwner(L2Clan clan)
-	{
-		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
-		{
-			if (clan.getClanId() == ch.getValue().getOwnerId())
-				return ch.getValue();
-		}
-		return null;
-	}
-	
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final ClanHallManager _instance = new ClanHallManager();
-	}
+    public final ClanHall getNearbyClanHall(int x, int y, int maxDist)
+    {
+        L2ClanHallZone zone = null;
+
+        for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
+        {
+            zone = ch.getValue().getZone();
+            if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
+            {
+                return ch.getValue();
+            }
+        }
+        for (Map.Entry<Integer, ClanHall> ch : _freeClanHall.entrySet())
+        {
+            zone = ch.getValue().getZone();
+            if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
+            {
+                return ch.getValue();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Get Clan Hall by Owner
+     */
+    public final ClanHall getClanHallByOwner(L2Clan clan)
+    {
+        for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
+        {
+            if (clan.getClanId() == ch.getValue().getOwnerId())
+            {
+                return ch.getValue();
+            }
+        }
+        return null;
+    }
+
+    @SuppressWarnings("synthetic-access")
+    private static class SingletonHolder
+    {
+        protected static final ClanHallManager _instance = new ClanHallManager();
+    }
 }

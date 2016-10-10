@@ -23,29 +23,28 @@ import l2server.gameserver.pathfinding.cellnodes.CellPathFinding;
 import l2server.gameserver.pathfinding.geonodes.GeoPathFinding;
 
 /**
- *
  * @author -Nemesiss-
  */
 public abstract class PathFinding
 {
-	public static PathFinding getInstance()
-	{
-		if (!Config.GEODATA_CELLFINDING)
-		{
-			//Higher Memory Usage, Smaller Cpu Usage
-			return GeoPathFinding.getInstance();
-		}
-		else
-		// Cell pathfinding, calculated directly from geodata files
-		{
-			return CellPathFinding.getInstance();
-		}
-	}
-	
-	public abstract boolean pathNodesExist(short regionoffset);
-	
-	public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable);
-	
+    public static PathFinding getInstance()
+    {
+        if (!Config.GEODATA_CELLFINDING)
+        {
+            //Higher Memory Usage, Smaller Cpu Usage
+            return GeoPathFinding.getInstance();
+        }
+        else
+        // Cell pathfinding, calculated directly from geodata files
+        {
+            return CellPathFinding.getInstance();
+        }
+    }
+
+    public abstract boolean pathNodesExist(short regionoffset);
+
+    public abstract List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable);
+
 	/*
 	public List<AbstractNodeLoc> search(AbstractNode start, AbstractNode end, int instanceId)
 	{
@@ -148,63 +147,68 @@ public abstract class PathFinding
 		return null;
 	}
 	 */
-	/**
-	 * Convert geodata position to pathnode position
-	 * @param geo_pos
-	 * @return pathnode position
-	 */
-	public short getNodePos(int geo_pos)
-	{
-		return (short) (geo_pos >> 3); //OK?
-	}
-	
-	/**
-	 * Convert node position to pathnode block position
-	 * @param geo_pos
-	 * @return pathnode block position (0...255)
-	 */
-	public short getNodeBlock(int node_pos)
-	{
-		return (short) (node_pos % 256);
-	}
-	
-	public byte getRegionX(int node_pos)
-	{
-		return (byte) ((node_pos >> 8) + Config.WORLD_X_MIN);
-	}
-	
-	public byte getRegionY(int node_pos)
-	{
-		return (byte) ((node_pos >> 8) + Config.WORLD_Y_MIN);
-	}
-	
-	public short getRegionOffset(byte rx, byte ry)
-	{
-		return (short) ((rx << 5) + ry);
-	}
-	
-	/**
-	 * Convert pathnode x to World x position
-	 * @param node_x, rx
-	 * @return
-	 */
-	public int calculateWorldX(short node_x)
-	{
-		return L2World.MAP_MIN_X + node_x * 128 + 48;
-	}
-	
-	/**
-	 * Convert pathnode y to World y position
-	 * @param node_y
-	 * @return
-	 */
-	public int calculateWorldY(short node_y)
-	{
-		return L2World.MAP_MIN_Y + node_y * 128 + 48;
-	}
-	
-	public String[] getStat()
-	{
-		return null;
-	}
+
+    /**
+     * Convert geodata position to pathnode position
+     *
+     * @param geo_pos
+     * @return pathnode position
+     */
+    public short getNodePos(int geo_pos)
+    {
+        return (short) (geo_pos >> 3); //OK?
+    }
+
+    /**
+     * Convert node position to pathnode block position
+     *
+     * @param geo_pos
+     * @return pathnode block position (0...255)
+     */
+    public short getNodeBlock(int node_pos)
+    {
+        return (short) (node_pos % 256);
+    }
+
+    public byte getRegionX(int node_pos)
+    {
+        return (byte) ((node_pos >> 8) + Config.WORLD_X_MIN);
+    }
+
+    public byte getRegionY(int node_pos)
+    {
+        return (byte) ((node_pos >> 8) + Config.WORLD_Y_MIN);
+    }
+
+    public short getRegionOffset(byte rx, byte ry)
+    {
+        return (short) ((rx << 5) + ry);
+    }
+
+    /**
+     * Convert pathnode x to World x position
+     *
+     * @param node_x, rx
+     * @return
+     */
+    public int calculateWorldX(short node_x)
+    {
+        return L2World.MAP_MIN_X + node_x * 128 + 48;
+    }
+
+    /**
+     * Convert pathnode y to World y position
+     *
+     * @param node_y
+     * @return
+     */
+    public int calculateWorldY(short node_y)
+    {
+        return L2World.MAP_MIN_Y + node_y * 128 + 48;
+    }
+
+    public String[] getStat()
+    {
+        return null;
+    }
 }

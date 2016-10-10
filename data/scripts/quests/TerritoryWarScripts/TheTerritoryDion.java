@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritoryDion extends TerritoryWarSuperClass
 {
-	public static String qn1 = "718_FortheSakeoftheTerritoryDion";
-	public static int qnu = 718;
-	public static String qna = "For the Sake of the Territory - Dion";
-	
-	public TheTerritoryDion()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36500;
-		TERRITORY_ID = 82;
-		LEADER_IDS = new int[] { 36514, 36516, 36519, 36592 };
-		GUARD_IDS = new int[] { 36515, 36517, 36518 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Dion has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "718_FortheSakeoftheTerritoryDion";
+    public static int qnu = 718;
+    public static String qna = "For the Sake of the Territory - Dion";
+
+    public TheTerritoryDion()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36500;
+        TERRITORY_ID = 82;
+        LEADER_IDS = new int[]{36514, 36516, 36519, 36592};
+        GUARD_IDS = new int[]{36515, 36517, 36518};
+        qn = qn1;
+        Text = new String[]{"The catapult of Dion has been destroyed!"};
+        registerKillIds();
+    }
 }

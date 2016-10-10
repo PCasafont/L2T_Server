@@ -17,28 +17,27 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * Format: (ch)ddd
- *
  */
 public class ExPutItemResultForVariationMake extends L2GameServerPacket
 {
-	
-	private int _itemObjId;
-	private int _itemId;
-	
-	public ExPutItemResultForVariationMake(int itemObjId, int itemId)
-	{
-		_itemObjId = itemObjId;
-		_itemId = itemId;
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_itemObjId);
-		writeD(_itemId);
-		writeD(1);
-	}
+
+    private int _itemObjId;
+    private int _itemId;
+
+    public ExPutItemResultForVariationMake(int itemObjId, int itemId)
+    {
+        _itemObjId = itemObjId;
+        _itemId = itemId;
+    }
+
+    /**
+     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_itemObjId);
+        writeD(_itemId);
+        writeD(1);
+    }
 }

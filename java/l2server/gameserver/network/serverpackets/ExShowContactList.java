@@ -24,28 +24,28 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * Format: (ch)d[S]
  * d: Number of Contacts
  * [
- * 	S: Character Name
+ * S: Character Name
  * ]
  *
  * @author UnAfraid & mrTJO
  */
 public class ExShowContactList extends L2GameServerPacket
 {
-	private final List<String> _contacts;
-	
-	public ExShowContactList(L2PcInstance player)
-	{
-		_contacts = new ArrayList<String>();
-		_contacts.addAll(player.getContactList().getAllContacts());
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_contacts.size());
-		for (String name : _contacts)
-		{
-			writeS(name);
-		}
-	}
+    private final List<String> _contacts;
+
+    public ExShowContactList(L2PcInstance player)
+    {
+        _contacts = new ArrayList<String>();
+        _contacts.addAll(player.getContactList().getAllContacts());
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_contacts.size());
+        for (String name : _contacts)
+        {
+            writeS(name);
+        }
+    }
 }

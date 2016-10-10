@@ -23,51 +23,47 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
  * @author Kerberos
- *
  */
 public class EffectRecovery extends L2Effect
 {
-	public EffectRecovery(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance)
-		{
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectRecovery(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() instanceof L2PcInstance)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

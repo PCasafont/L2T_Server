@@ -1,360 +1,360 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- In order to gather monsters that would protect its territory, Antharas created countless sacrifice victims. The Bleeding Fly was enchanted by the stench of corpses and came up above ground. This nobility of purgatory, who feeds on the blood of hatred and fear, called itself the Gatekeeper of Antharas, and it took its place on one side of the Valley where there is an endless stream of reckless challengers. -->
-	<skill id="6900" levels="1" name="Raid Boss (Lv. 84)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- A Drake warrior that was once called the right wing of Antharas in battle. During the war against the gods, it lost two of its wings to injury and fell into a deep part of Purgatory. However, it was recently awakened by Antharas' call. It hold a deep grudge against the gods, especially Einhasad, and it believes that only the darkness of Shilen can bring rest to the world. -->
-	<skill id="6901" levels="1" name="Raid Boss (Lv. 84)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- It was once the subordinate of the Dark Dragon Skelus. It was one of the nobility of Purgatory who resided deep inside. But it came above ground at Antharas' calling. It protects the Antharas' Nest, and it also informs Skelus about the area's developments. When it was in Purgatory, it was called "Hell's Corpse Detonator" because of its sinister pleasure in making its comrades explode. -->
-	<skill id="6902" levels="1" name="Raid Boss (Lv. 84)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- A monsters summoned from Purgatory by the demon Maluk in exchange for one finger. As part of their agreement, Maluk presented an endless supply of hunting prey. The Spike Slasher accepted the proposal and came above ground with its subordinates in tow from Purgatory. -->
-	<skill id="6903" levels="1" name="Raid Boss (Lv. 84)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- The monster was created by the demon Maluk by joining a high-Lv. demon with a dragon. It possesses the advantages of both demons and dragons. Maluk offered this exceptional creature to Antharas. Antharas fed its blood to the Muscle Bomber and appointed it as the Valley's Watcher. -->
-	<skill id="6904" levels="1" name="Raid Boss (Lv. 84)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- They say that this monster was created through the fusion of a Human hero's body, who opened the Gate of Purgatory, and the spitefulness of countless monsters. However, this rumor is not confirmed. In any case, it has come above ground at Shilen's command, and it watches over the dragon's dungeon as an aide of Antharas. It possess exceptional abilities, and it is uniquely rational and cold-hearted. As such, it supposedly gives good assistance to the tyrant Antharas. -->
-	<skill id="6905" levels="1" name="Raid Boss (Lv. 85)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- A purgatory monster sent to Antharas by Shilen. The Behemoth Leader who came above ground was filled with uncontrollable madness as soon as it was unshackled. It killed countless monsters and eventually even tore off some of the flesh of Antharas, its master. Antharas burst into laughter at its foolish actions, and he cast a spell so that it would guard the Essence of Antharas, which maintains the dungeon's barrier. -->
-	<skill id="6906" levels="1" name="Raid Boss (Lv. 85)">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- A Knight of Purgatory who has long assisted Antharas, together with the Black Dagger Wing. During the war against the gods, it broke both arms and fell into a deep slumber within Purgatory. It recently awakened at Antharas' call. When the Dragon Beast appeared above ground, Antharas sliced off his own flesh in order to create its two arms. Then, he made it guard the dragon's dungeon. -->
-	<skill id="6907" levels="1" name="Raid Boss (Lv. 85)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- Shows the game master's charming actions. -->
-	<skill id="6909" levels="1" name="Charming">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="2700" />
-	</skill>
-	<!-- Shows the game master's dancing skills. -->
-	<skill id="6910" levels="1" name="Dance">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="4800" />
-	</skill>
-	<!-- Shows the game master's greeting. -->
-	<skill id="6911" levels="1" name="Greeting">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3200" />
-	</skill>
-	<!-- Antharas' Stigma Aftermath. For 10 seconds, decreases 500 HP and 300 MP per second. -->
-	<skill id="6912" levels="1" name="Stigma Aftermath">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="castRange" val="1200" />
-		<set name="effectRange" val="1700" />
-	</skill>
-	<!-- As a result of the challenge, for 15 seconds, increases P. Def. by 360 and M. Def. by 270. -->
-	<skill id="6913" levels="1" name="Challenge of Faith">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="83" />
-		<set name="reuseDelay" val="60000" />
-		<for>
-			<abnormal duration="15" stackLvl="1" stackType="pd_md_up_special">
-				<effect type="Buff" val="0" />
-				<add stat="pDef" val="360" />
-				<add stat="mDef" val="270" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Atk Spd increased by 10%.
-		Level 2: Atk Spd increased by 20%.
-		Level 3: Atk Spd increased by 30%.
-		Level 4: Atk Spd increased by 40%.
-		Level 5: Atk Spd increased by 50%.
-		Level 6: Atk Spd increased by 60%.
-		Level 7: Atk Spd increased by 70%.
-		Level 8: Atk Spd increased by 80%.
-		Level 9: Atk Spd increased by 90%.
-		Level 10: Atk Spd increased by 100%.
-	-->
-	<skill id="6914" levels="10" name="Haste">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-	</skill>
-	<!-- 
-		Level 1: Casting Spd. is increased by 10%.
-		Level 2: Casting Spd. is increased by 20%.
-		Level 3: Casting Spd. is increased by 30%.
-		Level 4: Casting Spd. is increased by 40%.
-		Level 5: Casting Spd. is increased by 50%.
-		Level 6: Casting Spd. is increased by 60%.
-		Level 7: Casting Spd. is increased by 70%.
-		Level 8: Casting Spd. is increased by 80%.
-		Level 9: Casting Spd. is increased by 90%.
-		Level 10: Casting Spd. is increased by 100%.
-	-->
-	<skill id="6915" levels="10" name="Acumen">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-	</skill>
-	<!-- See the summoned spirit perform cute tricks. -->
-	<skill id="6916" levels="1" name="Antharas' Cute Tricks">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-	</skill>
-	<!-- Able to see the summoned spirit's splendor. -->
-	<skill id="6917" levels="1" name="Kanna's Splendor">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-	</skill>
-	<!-- Able to see the summoned spirit's splendor. -->
-	<skill id="6918" levels="1" name="Kallesin's Splendor">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-	</skill>
-	<skill id="6919" levels="1" name="Challenge Acceptance">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-	</skill>
-	<!-- A collector's luck. Increases P. Atk. by 15%, Critical Rate by 10%, Critical Damage by 10%, Atk. Spd. by 3%, and Speed by 5. -->
-	<skill id="6920" levels="1" name="Collector's Fortune">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-	</skill>
-	<!-- P. Def. decreases temporarily. -->
-	<skill id="6921" levels="1" name="Penetrating Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="1" />
-		<set name="castRange" val="500" />
-		<set name="effectRange" val="1000" />
-	</skill>
-	<!-- 
-		Level 1: P. Atk. + 8%.
-		Level 2: P. Atk. + 12%.
-		Level 3: P. Atk. + 15%.
-	-->
-	<skill id="6922" levels="3" name="Adventurer's Might">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: M. Atk. + 55%.
-		Level 2: M. Atk. + 65%.
-		Level 3: M. Atk. + 75%.
-	-->
-	<skill id="6923" levels="3" name="Adventurer's Empower">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: P. Def. + 8%.
-		Level 2: P. Def. + 12%.
-		Level 3: P. Def. + 15%.
-	-->
-	<skill id="6924" levels="3" name="Adventurer's Shield">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: M. Def. + 23%.
-		Level 2: M. Def. + 30%.
-	-->
-	<skill id="6925" levels="2" name="Adventurer's Magic Barrier">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Max HP + 10%.
-		Level 2: Max HP + 15%.
-		Level 3: Max HP + 20%.
-		Level 4: Max HP + 25%.
-		Level 5: Max HP + 30%.
-		Level 6: Max HP + 35%.
-	-->
-	<skill id="6926" levels="6" name="Adventurer's Blessed Body">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Max MP + 10%.
-		Level 2: Max MP + 15%.
-		Level 3: Max MP + 20%.
-		Level 4: Max MP + 25%.
-		Level 5: Max MP + 30%.
-		Level 6: Max MP + 35%.
-	-->
-	<skill id="6927" levels="6" name="Adventurer's Blessed Soul">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: P. Critical Rate + 20%.
-		Level 2: P. Critical Rate + 25%.
-		Level 3: P. Critical Rate + 30%.
-	-->
-	<skill id="6928" levels="3" name="Adventurer's Focus">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: M. Critical Rate + 1.
-		Level 2: M. Critical Rate + 2.
-	-->
-	<skill id="6929" levels="2" name="Adventurer's Wild Magic">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Atk. Spd. + 15%.
-		Level 2: Atk. Spd. + 33%.
-	-->
-	<skill id="6930" levels="2" name="Adventurer's Haste">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Casting Spd. + 15%.
-		Level 2: Casting Spd. + 23%.
-		Level 3: Casting Spd. + 30%.
-	-->
-	<skill id="6931" levels="3" name="Adventurer's Acumen">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Has a chance of absorbing 6% of damage inflicted on the enemy as HP.
-		Level 2: Has a chance of absorbing 7% of damage inflicted on the enemy as HP.
-		Level 3: Has a chance of absorbing 8% of damage inflicted on the enemy as HP.
-		Level 4: Has a chance of absorbing 9% of damage inflicted on the enemy as HP.
-	-->
-	<skill id="6932" levels="4" name="Adventurer's Vampiric Rage">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: P. Atk. + 5%, M. Atk. + 10%, Atk. Spd. + 5%, Casting Spd. + 5%, and Speed + 5. P. Def. - 5%, M. Def. - 10%, and Evasion - 2.
-		Level 2: P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. + 8%, Casting Spd. + 8%, and Speed + 8. P. Def. - 8%, M. Def. - 16%, and Evasion - 4.
-	-->
-	<skill id="6933" levels="2" name="Adventurer's Berserker Spirit">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: P. Critical Rate + 25%.
-		Level 2: P. Critical Rate + 30%.
-		Level 3: P. Critical Rate + 35%.
-	-->
-	<skill id="6934" levels="3" name="Adventurer's Death Whisper">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- 
-		Level 1: Speed + 20.
-		Level 2: Speed + 33.
-	-->
-	<skill id="6935" levels="2" name="Adventurer's Wind Walk">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
+    <!-- In order to gather monsters that would protect its territory, Antharas created countless sacrifice victims. The Bleeding Fly was enchanted by the stench of corpses and came up above ground. This nobility of purgatory, who feeds on the blood of hatred and fear, called itself the Gatekeeper of Antharas, and it took its place on one side of the Valley where there is an endless stream of reckless challengers. -->
+    <skill id="6900" levels="1" name="Raid Boss (Lv. 84)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- A Drake warrior that was once called the right wing of Antharas in battle. During the war against the gods, it lost two of its wings to injury and fell into a deep part of Purgatory. However, it was recently awakened by Antharas' call. It hold a deep grudge against the gods, especially Einhasad, and it believes that only the darkness of Shilen can bring rest to the world. -->
+    <skill id="6901" levels="1" name="Raid Boss (Lv. 84)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- It was once the subordinate of the Dark Dragon Skelus. It was one of the nobility of Purgatory who resided deep inside. But it came above ground at Antharas' calling. It protects the Antharas' Nest, and it also informs Skelus about the area's developments. When it was in Purgatory, it was called "Hell's Corpse Detonator" because of its sinister pleasure in making its comrades explode. -->
+    <skill id="6902" levels="1" name="Raid Boss (Lv. 84)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- A monsters summoned from Purgatory by the demon Maluk in exchange for one finger. As part of their agreement, Maluk presented an endless supply of hunting prey. The Spike Slasher accepted the proposal and came above ground with its subordinates in tow from Purgatory. -->
+    <skill id="6903" levels="1" name="Raid Boss (Lv. 84)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- The monster was created by the demon Maluk by joining a high-Lv. demon with a dragon. It possesses the advantages of both demons and dragons. Maluk offered this exceptional creature to Antharas. Antharas fed its blood to the Muscle Bomber and appointed it as the Valley's Watcher. -->
+    <skill id="6904" levels="1" name="Raid Boss (Lv. 84)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- They say that this monster was created through the fusion of a Human hero's body, who opened the Gate of Purgatory, and the spitefulness of countless monsters. However, this rumor is not confirmed. In any case, it has come above ground at Shilen's command, and it watches over the dragon's dungeon as an aide of Antharas. It possess exceptional abilities, and it is uniquely rational and cold-hearted. As such, it supposedly gives good assistance to the tyrant Antharas. -->
+    <skill id="6905" levels="1" name="Raid Boss (Lv. 85)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- A purgatory monster sent to Antharas by Shilen. The Behemoth Leader who came above ground was filled with uncontrollable madness as soon as it was unshackled. It killed countless monsters and eventually even tore off some of the flesh of Antharas, its master. Antharas burst into laughter at its foolish actions, and he cast a spell so that it would guard the Essence of Antharas, which maintains the dungeon's barrier. -->
+    <skill id="6906" levels="1" name="Raid Boss (Lv. 85)">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- A Knight of Purgatory who has long assisted Antharas, together with the Black Dagger Wing. During the war against the gods, it broke both arms and fell into a deep slumber within Purgatory. It recently awakened at Antharas' call. When the Dragon Beast appeared above ground, Antharas sliced off his own flesh in order to create its two arms. Then, he made it guard the dragon's dungeon. -->
+    <skill id="6907" levels="1" name="Raid Boss (Lv. 85)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- Shows the game master's charming actions. -->
+    <skill id="6909" levels="1" name="Charming">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="2700" />
+    </skill>
+    <!-- Shows the game master's dancing skills. -->
+    <skill id="6910" levels="1" name="Dance">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="4800" />
+    </skill>
+    <!-- Shows the game master's greeting. -->
+    <skill id="6911" levels="1" name="Greeting">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3200" />
+    </skill>
+    <!-- Antharas' Stigma Aftermath. For 10 seconds, decreases 500 HP and 300 MP per second. -->
+    <skill id="6912" levels="1" name="Stigma Aftermath">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="castRange" val="1200" />
+        <set name="effectRange" val="1700" />
+    </skill>
+    <!-- As a result of the challenge, for 15 seconds, increases P. Def. by 360 and M. Def. by 270. -->
+    <skill id="6913" levels="1" name="Challenge of Faith">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="83" />
+        <set name="reuseDelay" val="60000" />
+        <for>
+            <abnormal duration="15" stackLvl="1" stackType="pd_md_up_special">
+                <effect type="Buff" val="0" />
+                <add stat="pDef" val="360" />
+                <add stat="mDef" val="270" />
+            </abnormal>
+        </for>
+    </skill>
+    <!--
+        Level 1: Atk Spd increased by 10%.
+        Level 2: Atk Spd increased by 20%.
+        Level 3: Atk Spd increased by 30%.
+        Level 4: Atk Spd increased by 40%.
+        Level 5: Atk Spd increased by 50%.
+        Level 6: Atk Spd increased by 60%.
+        Level 7: Atk Spd increased by 70%.
+        Level 8: Atk Spd increased by 80%.
+        Level 9: Atk Spd increased by 90%.
+        Level 10: Atk Spd increased by 100%.
+    -->
+    <skill id="6914" levels="10" name="Haste">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+    </skill>
+    <!--
+        Level 1: Casting Spd. is increased by 10%.
+        Level 2: Casting Spd. is increased by 20%.
+        Level 3: Casting Spd. is increased by 30%.
+        Level 4: Casting Spd. is increased by 40%.
+        Level 5: Casting Spd. is increased by 50%.
+        Level 6: Casting Spd. is increased by 60%.
+        Level 7: Casting Spd. is increased by 70%.
+        Level 8: Casting Spd. is increased by 80%.
+        Level 9: Casting Spd. is increased by 90%.
+        Level 10: Casting Spd. is increased by 100%.
+    -->
+    <skill id="6915" levels="10" name="Acumen">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+    </skill>
+    <!-- See the summoned spirit perform cute tricks. -->
+    <skill id="6916" levels="1" name="Antharas' Cute Tricks">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+    </skill>
+    <!-- Able to see the summoned spirit's splendor. -->
+    <skill id="6917" levels="1" name="Kanna's Splendor">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+    </skill>
+    <!-- Able to see the summoned spirit's splendor. -->
+    <skill id="6918" levels="1" name="Kallesin's Splendor">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+    </skill>
+    <skill id="6919" levels="1" name="Challenge Acceptance">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+    </skill>
+    <!-- A collector's luck. Increases P. Atk. by 15%, Critical Rate by 10%, Critical Damage by 10%, Atk. Spd. by 3%, and Speed by 5. -->
+    <skill id="6920" levels="1" name="Collector's Fortune">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+    </skill>
+    <!-- P. Def. decreases temporarily. -->
+    <skill id="6921" levels="1" name="Penetrating Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="1" />
+        <set name="castRange" val="500" />
+        <set name="effectRange" val="1000" />
+    </skill>
+    <!--
+        Level 1: P. Atk. + 8%.
+        Level 2: P. Atk. + 12%.
+        Level 3: P. Atk. + 15%.
+    -->
+    <skill id="6922" levels="3" name="Adventurer's Might">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: M. Atk. + 55%.
+        Level 2: M. Atk. + 65%.
+        Level 3: M. Atk. + 75%.
+    -->
+    <skill id="6923" levels="3" name="Adventurer's Empower">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: P. Def. + 8%.
+        Level 2: P. Def. + 12%.
+        Level 3: P. Def. + 15%.
+    -->
+    <skill id="6924" levels="3" name="Adventurer's Shield">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: M. Def. + 23%.
+        Level 2: M. Def. + 30%.
+    -->
+    <skill id="6925" levels="2" name="Adventurer's Magic Barrier">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Max HP + 10%.
+        Level 2: Max HP + 15%.
+        Level 3: Max HP + 20%.
+        Level 4: Max HP + 25%.
+        Level 5: Max HP + 30%.
+        Level 6: Max HP + 35%.
+    -->
+    <skill id="6926" levels="6" name="Adventurer's Blessed Body">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Max MP + 10%.
+        Level 2: Max MP + 15%.
+        Level 3: Max MP + 20%.
+        Level 4: Max MP + 25%.
+        Level 5: Max MP + 30%.
+        Level 6: Max MP + 35%.
+    -->
+    <skill id="6927" levels="6" name="Adventurer's Blessed Soul">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: P. Critical Rate + 20%.
+        Level 2: P. Critical Rate + 25%.
+        Level 3: P. Critical Rate + 30%.
+    -->
+    <skill id="6928" levels="3" name="Adventurer's Focus">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: M. Critical Rate + 1.
+        Level 2: M. Critical Rate + 2.
+    -->
+    <skill id="6929" levels="2" name="Adventurer's Wild Magic">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Atk. Spd. + 15%.
+        Level 2: Atk. Spd. + 33%.
+    -->
+    <skill id="6930" levels="2" name="Adventurer's Haste">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Casting Spd. + 15%.
+        Level 2: Casting Spd. + 23%.
+        Level 3: Casting Spd. + 30%.
+    -->
+    <skill id="6931" levels="3" name="Adventurer's Acumen">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Has a chance of absorbing 6% of damage inflicted on the enemy as HP.
+        Level 2: Has a chance of absorbing 7% of damage inflicted on the enemy as HP.
+        Level 3: Has a chance of absorbing 8% of damage inflicted on the enemy as HP.
+        Level 4: Has a chance of absorbing 9% of damage inflicted on the enemy as HP.
+    -->
+    <skill id="6932" levels="4" name="Adventurer's Vampiric Rage">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: P. Atk. + 5%, M. Atk. + 10%, Atk. Spd. + 5%, Casting Spd. + 5%, and Speed + 5. P. Def. - 5%, M. Def. - 10%, and Evasion - 2.
+        Level 2: P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. + 8%, Casting Spd. + 8%, and Speed + 8. P. Def. - 8%, M. Def. - 16%, and Evasion - 4.
+    -->
+    <skill id="6933" levels="2" name="Adventurer's Berserker Spirit">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: P. Critical Rate + 25%.
+        Level 2: P. Critical Rate + 30%.
+        Level 3: P. Critical Rate + 35%.
+    -->
+    <skill id="6934" levels="3" name="Adventurer's Death Whisper">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!--
+        Level 1: Speed + 20.
+        Level 2: Speed + 33.
+    -->
+    <skill id="6935" levels="2" name="Adventurer's Wind Walk">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
 </list>

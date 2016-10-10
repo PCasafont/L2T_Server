@@ -20,24 +20,26 @@ import l2server.gameserver.network.serverpackets.HennaRemoveList;
 
 public final class RequestHennaRemoveList extends L2GameClientPacket
 {
-	
-	// This is just a trigger packet...
-	@SuppressWarnings("unused")
-	private int _unknown;
-	
-	@Override
-	protected void readImpl()
-	{
-		_unknown = readD(); // ??
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		activeChar.sendPacket(new HennaRemoveList(activeChar));
-	}
+
+    // This is just a trigger packet...
+    @SuppressWarnings("unused")
+    private int _unknown;
+
+    @Override
+    protected void readImpl()
+    {
+        _unknown = readD(); // ??
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        activeChar.sendPacket(new HennaRemoveList(activeChar));
+    }
 }

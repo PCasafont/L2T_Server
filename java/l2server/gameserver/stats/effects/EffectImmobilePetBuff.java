@@ -27,43 +27,44 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectImmobilePetBuff extends L2Effect
 {
-	private L2Summon _pet;
-	
-	public EffectImmobilePetBuff(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		_pet = null;
-		
-		if (getEffected() instanceof L2Summon && getEffector() instanceof L2PcInstance && ((L2Summon) getEffected()).getOwner() == getEffector())
-		{
-			_pet = (L2Summon) getEffected();
-			_pet.setIsImmobilized(true);
-			return true;
-		}
-		return false;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		_pet.setIsImmobilized(false);
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		// just stop this effect
-		return false;
-	}
+    private L2Summon _pet;
+
+    public EffectImmobilePetBuff(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    @Override
+    public boolean onStart()
+    {
+        _pet = null;
+
+        if (getEffected() instanceof L2Summon && getEffector() instanceof L2PcInstance && ((L2Summon) getEffected())
+                .getOwner() == getEffector())
+        {
+            _pet = (L2Summon) getEffected();
+            _pet.setIsImmobilized(true);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onExit()
+    {
+        _pet.setIsImmobilized(false);
+    }
+
+    @Override
+    public boolean onActionTime()
+    {
+        // just stop this effect
+        return false;
+    }
 }

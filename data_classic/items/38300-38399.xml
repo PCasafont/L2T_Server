@@ -1,1095 +1,1095 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- CON + 3. Female only. -->
-	<item id="38300" type="Armor" name="Daisy Hairpin - CON">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. Female only. -->
-	<item id="38301" type="Armor" name="Daisy Hairpin - MEN">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. Female only. -->
-	<item id="38302" type="Armor" name="Daisy Hairpin - INT">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. Female only. -->
-	<item id="38303" type="Armor" name="Daisy Hairpin - WIT">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. Female only. -->
-	<item id="38304" type="Armor" name="Daisy Hairpin - Critical Rate">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. Female only. -->
-	<item id="38305" type="Armor" name="Daisy Hairpin - Critical Damage">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. Female only. -->
-	<item id="38306" type="Armor" name="Daisy Hairpin - P. Def.">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. Female only. -->
-	<item id="38307" type="Armor" name="Daisy Hairpin - M. Def.">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. Female only. -->
-	<item id="38308" type="Armor" name="Daisy Hairpin - Evasion">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. Female only. -->
-	<item id="38309" type="Armor" name="Daisy Hairpin - P. Atk.">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. Female only. -->
-	<item id="38310" type="Armor" name="Daisy Hairpin - M. Atk.">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. Female only. -->
-	<item id="38311" type="Armor" name="Daisy Hairpin - Accuracy">
-		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- STR + 3. -->
-	<item id="38312" type="Armor" name="Little Angel Wings - STR">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9554-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- DEX + 3. -->
-	<item id="38313" type="Armor" name="Little Angel Wings - DEX">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9555-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- CON + 3. -->
-	<item id="38314" type="Armor" name="Little Angel Wings - CON">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. -->
-	<item id="38315" type="Armor" name="Little Angel Wings - MEN">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. -->
-	<item id="38316" type="Armor" name="Little Angel Wings - INT">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. -->
-	<item id="38317" type="Armor" name="Little Angel Wings - WIT">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. -->
-	<item id="38318" type="Armor" name="Little Angel Wings - Critical Rate">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
-	<item id="38319" type="Armor" name="Little Angel Wings - Critical Damage">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. -->
-	<item id="38320" type="Armor" name="Little Angel Wings - P. Def.">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. -->
-	<item id="38321" type="Armor" name="Little Angel Wings - M. Def.">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. -->
-	<item id="38322" type="Armor" name="Little Angel Wings - Evasion">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. -->
-	<item id="38323" type="Armor" name="Little Angel Wings - P. Atk.">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. -->
-	<item id="38324" type="Armor" name="Little Angel Wings - M. Atk.">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. -->
-	<item id="38325" type="Armor" name="Little Angel Wings - Accuracy">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- STR + 3. -->
-	<item id="38326" type="Armor" name="Fairy Antennae - STR">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9554-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- DEX + 3. -->
-	<item id="38327" type="Armor" name="Fairy Antennae - DEX">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9555-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- CON + 3. -->
-	<item id="38328" type="Armor" name="Fairy Antennae - CON">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. -->
-	<item id="38329" type="Armor" name="Fairy Antennae - MEN">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. -->
-	<item id="38330" type="Armor" name="Fairy Antennae - INT">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. -->
-	<item id="38331" type="Armor" name="Fairy Antennae - WIT">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. -->
-	<item id="38332" type="Armor" name="Fairy Antennae - Critical Rate">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
-	<item id="38333" type="Armor" name="Fairy Antennae - Critical Damage">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. -->
-	<item id="38334" type="Armor" name="Fairy Antennae - P. Def.">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. -->
-	<item id="38335" type="Armor" name="Fairy Antennae - M. Def.">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. -->
-	<item id="38336" type="Armor" name="Fairy Antennae - Evasion">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. -->
-	<item id="38337" type="Armor" name="Fairy Antennae - P. Atk.">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. -->
-	<item id="38338" type="Armor" name="Fairy Antennae - M. Atk.">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. -->
-	<item id="38339" type="Armor" name="Fairy Antennae - Accuracy">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- STR + 3. -->
-	<item id="38340" type="Armor" name="Chapeau - STR">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9554-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- DEX + 3. -->
-	<item id="38341" type="Armor" name="Chapeau - DEX">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9555-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- CON + 3. -->
-	<item id="38342" type="Armor" name="Chapeau - CON">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. -->
-	<item id="38343" type="Armor" name="Chapeau - MEN">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. -->
-	<item id="38344" type="Armor" name="Chapeau - INT">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. -->
-	<item id="38345" type="Armor" name="Chapeau - WIT">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. -->
-	<item id="38346" type="Armor" name="Chapeau - Critical Rate">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
-	<item id="38347" type="Armor" name="Chapeau - Critical Damage">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. -->
-	<item id="38348" type="Armor" name="Chapeau - P. Def.">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. -->
-	<item id="38349" type="Armor" name="Chapeau - M. Def.">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. -->
-	<item id="38350" type="Armor" name="Chapeau - Evasion">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. -->
-	<item id="38351" type="Armor" name="Chapeau - P. Atk.">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. -->
-	<item id="38352" type="Armor" name="Chapeau - M. Atk.">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. -->
-	<item id="38353" type="Armor" name="Chapeau - Accuracy">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- STR + 3. -->
-	<item id="38354" type="Armor" name="Artisan's Goggles - STR">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9554-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- DEX + 3. -->
-	<item id="38355" type="Armor" name="Artisan's Goggles - DEX">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9555-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- CON + 3. -->
-	<item id="38356" type="Armor" name="Artisan's Goggles - CON">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. -->
-	<item id="38357" type="Armor" name="Artisan's Goggles - MEN">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. -->
-	<item id="38358" type="Armor" name="Artisan's Goggles - INT">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. -->
-	<item id="38359" type="Armor" name="Artisan's Goggles - WIT">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. -->
-	<item id="38360" type="Armor" name="Artisan's Goggles - Critical Rate">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
-	<item id="38361" type="Armor" name="Artisan's Goggles - Critical Damage">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. -->
-	<item id="38362" type="Armor" name="Artisan's Goggles - P. Def.">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. -->
-	<item id="38363" type="Armor" name="Artisan's Goggles - M. Def.">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. -->
-	<item id="38364" type="Armor" name="Artisan's Goggles - Evasion">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. -->
-	<item id="38365" type="Armor" name="Artisan's Goggles - P. Atk.">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. -->
-	<item id="38366" type="Armor" name="Artisan's Goggles - M. Atk.">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. -->
-	<item id="38367" type="Armor" name="Artisan's Goggles - Accuracy">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- STR + 3. -->
-	<item id="38368" type="Armor" name="Arrow-pierced Apple - STR">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9554-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- DEX + 3. -->
-	<item id="38369" type="Armor" name="Arrow-pierced Apple - DEX">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9555-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- CON + 3. -->
-	<item id="38370" type="Armor" name="Arrow-pierced Apple - CON">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9556-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MEN + 3. -->
-	<item id="38371" type="Armor" name="Arrow-pierced Apple - MEN">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9557-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- INT + 3. -->
-	<item id="38372" type="Armor" name="Arrow-pierced Apple - INT">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9558-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- WIT + 3. -->
-	<item id="38373" type="Armor" name="Arrow-pierced Apple - WIT">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9559-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Rate + 50. -->
-	<item id="38374" type="Armor" name="Arrow-pierced Apple - Critical Rate">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9560-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
-	<item id="38375" type="Armor" name="Arrow-pierced Apple - Critical Damage">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9561-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Def. + 5%. -->
-	<item id="38376" type="Armor" name="Arrow-pierced Apple - P. Def.">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9562-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Def. + 5%. -->
-	<item id="38377" type="Armor" name="Arrow-pierced Apple - M. Def.">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9563-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Evasion + 5. -->
-	<item id="38378" type="Armor" name="Arrow-pierced Apple - Evasion">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9564-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- P. Atk. + 5%. -->
-	<item id="38379" type="Armor" name="Arrow-pierced Apple - P. Atk.">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9565-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- M. Atk. + 10%. -->
-	<item id="38380" type="Armor" name="Arrow-pierced Apple - M. Atk.">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9566-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Accuracy + 5. -->
-	<item id="38381" type="Armor" name="Arrow-pierced Apple - Accuracy">
-		<set name="icon" val="icon.accessory_arrow_apple_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="item_skill" val="9567-1" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="38382" type="Weapon" name="Apprentice's Spellbook">
-		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="650" />
-		<set name="soulshots" val="0" />
-		<set name="spiritshots" val="0" />
-		<set name="random_damage" val="10" />
-		<for>
-			<set stat="pAtk" val="9" />
-			<set stat="mAtk" val="12" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Double-click to obtain a Lady's Hairpin with pendant options. -->
-	<item id="38383" type="EtcItem" name="Lady's Hairpin Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Party Mask with pendant options. -->
-	<item id="38384" type="EtcItem" name="Party Mask Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Monocle with pendant options. -->
-	<item id="38385" type="EtcItem" name="Monocle Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Maiden's Hairpin with pendant options. -->
-	<item id="38386" type="EtcItem" name="Maiden's Hairpin Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Forget-me-not Hairpin with pendant options. -->
-	<item id="38387" type="EtcItem" name="Forget-me-not Hairpin Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Daisy Hairpin with pendant options. -->
-	<item id="38388" type="EtcItem" name="Daisy Hairpin Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain Little Angel Wings with pendant options. -->
-	<item id="38389" type="EtcItem" name="Little Angel Wings Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain Fairy Antennae with pendant options. -->
-	<item id="38390" type="EtcItem" name="Fairy Antennae Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Chapeau with pendant options. -->
-	<item id="38391" type="EtcItem" name="Chapeau Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain Artisan's Goggles with pendant options. -->
-	<item id="38392" type="EtcItem" name="Artisan's Goggles Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain an Arrow-pierced Apple with pendant options. -->
-	<item id="38393" type="EtcItem" name="Arrow-pierced Apple Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Pirate's Eyepatch with pendant options. -->
-	<item id="38394" type="EtcItem" name="Pirate's Eyepatch Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain an Outlaw's Eyepatch with pendant options. -->
-	<item id="38395" type="EtcItem" name="Outlaw's Eyepatch Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Double-click to obtain a Party Hat with pendant options. -->
-	<item id="38396" type="EtcItem" name="Party Hat Pendant Pouch">
-		<set name="icon" val="icon.etc_pouch_gold_i00" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- 2-hour.When possessed, gives Expertise D Skill. -->
-	<item id="38397" type="EtcItem" name="Expertise Rune (D-grade) - 2-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing Expertise Rune (D-grade) (2-hour). -->
-	<item id="38398" type="EtcItem" name="Expertise Rune Pack - D-grade">
-		<set name="icon" val="icon.etc_equip_item_box_i00" />
-		<set name="weight" val="10" />
-	</item>
-	<!-- 2-hour.When possessed, gives Expertise C Skill. -->
-	<item id="38399" type="EtcItem" name="Expertise Rune (C-grade) - 2-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
-		<set name="weight" val="0" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
+    <!-- CON + 3. Female only. -->
+    <item id="38300" type="Armor" name="Daisy Hairpin - CON">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. Female only. -->
+    <item id="38301" type="Armor" name="Daisy Hairpin - MEN">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. Female only. -->
+    <item id="38302" type="Armor" name="Daisy Hairpin - INT">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. Female only. -->
+    <item id="38303" type="Armor" name="Daisy Hairpin - WIT">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. Female only. -->
+    <item id="38304" type="Armor" name="Daisy Hairpin - Critical Rate">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. Female only. -->
+    <item id="38305" type="Armor" name="Daisy Hairpin - Critical Damage">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. Female only. -->
+    <item id="38306" type="Armor" name="Daisy Hairpin - P. Def.">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. Female only. -->
+    <item id="38307" type="Armor" name="Daisy Hairpin - M. Def.">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. Female only. -->
+    <item id="38308" type="Armor" name="Daisy Hairpin - Evasion">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. Female only. -->
+    <item id="38309" type="Armor" name="Daisy Hairpin - P. Atk.">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. Female only. -->
+    <item id="38310" type="Armor" name="Daisy Hairpin - M. Atk.">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. Female only. -->
+    <item id="38311" type="Armor" name="Daisy Hairpin - Accuracy">
+        <set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- STR + 3. -->
+    <item id="38312" type="Armor" name="Little Angel Wings - STR">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9554-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- DEX + 3. -->
+    <item id="38313" type="Armor" name="Little Angel Wings - DEX">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9555-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- CON + 3. -->
+    <item id="38314" type="Armor" name="Little Angel Wings - CON">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. -->
+    <item id="38315" type="Armor" name="Little Angel Wings - MEN">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. -->
+    <item id="38316" type="Armor" name="Little Angel Wings - INT">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. -->
+    <item id="38317" type="Armor" name="Little Angel Wings - WIT">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. -->
+    <item id="38318" type="Armor" name="Little Angel Wings - Critical Rate">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. -->
+    <item id="38319" type="Armor" name="Little Angel Wings - Critical Damage">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. -->
+    <item id="38320" type="Armor" name="Little Angel Wings - P. Def.">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. -->
+    <item id="38321" type="Armor" name="Little Angel Wings - M. Def.">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. -->
+    <item id="38322" type="Armor" name="Little Angel Wings - Evasion">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. -->
+    <item id="38323" type="Armor" name="Little Angel Wings - P. Atk.">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. -->
+    <item id="38324" type="Armor" name="Little Angel Wings - M. Atk.">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. -->
+    <item id="38325" type="Armor" name="Little Angel Wings - Accuracy">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- STR + 3. -->
+    <item id="38326" type="Armor" name="Fairy Antennae - STR">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9554-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- DEX + 3. -->
+    <item id="38327" type="Armor" name="Fairy Antennae - DEX">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9555-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- CON + 3. -->
+    <item id="38328" type="Armor" name="Fairy Antennae - CON">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. -->
+    <item id="38329" type="Armor" name="Fairy Antennae - MEN">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. -->
+    <item id="38330" type="Armor" name="Fairy Antennae - INT">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. -->
+    <item id="38331" type="Armor" name="Fairy Antennae - WIT">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. -->
+    <item id="38332" type="Armor" name="Fairy Antennae - Critical Rate">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. -->
+    <item id="38333" type="Armor" name="Fairy Antennae - Critical Damage">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. -->
+    <item id="38334" type="Armor" name="Fairy Antennae - P. Def.">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. -->
+    <item id="38335" type="Armor" name="Fairy Antennae - M. Def.">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. -->
+    <item id="38336" type="Armor" name="Fairy Antennae - Evasion">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. -->
+    <item id="38337" type="Armor" name="Fairy Antennae - P. Atk.">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. -->
+    <item id="38338" type="Armor" name="Fairy Antennae - M. Atk.">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. -->
+    <item id="38339" type="Armor" name="Fairy Antennae - Accuracy">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- STR + 3. -->
+    <item id="38340" type="Armor" name="Chapeau - STR">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9554-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- DEX + 3. -->
+    <item id="38341" type="Armor" name="Chapeau - DEX">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9555-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- CON + 3. -->
+    <item id="38342" type="Armor" name="Chapeau - CON">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. -->
+    <item id="38343" type="Armor" name="Chapeau - MEN">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. -->
+    <item id="38344" type="Armor" name="Chapeau - INT">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. -->
+    <item id="38345" type="Armor" name="Chapeau - WIT">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. -->
+    <item id="38346" type="Armor" name="Chapeau - Critical Rate">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. -->
+    <item id="38347" type="Armor" name="Chapeau - Critical Damage">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. -->
+    <item id="38348" type="Armor" name="Chapeau - P. Def.">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. -->
+    <item id="38349" type="Armor" name="Chapeau - M. Def.">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. -->
+    <item id="38350" type="Armor" name="Chapeau - Evasion">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. -->
+    <item id="38351" type="Armor" name="Chapeau - P. Atk.">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. -->
+    <item id="38352" type="Armor" name="Chapeau - M. Atk.">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. -->
+    <item id="38353" type="Armor" name="Chapeau - Accuracy">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- STR + 3. -->
+    <item id="38354" type="Armor" name="Artisan's Goggles - STR">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9554-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- DEX + 3. -->
+    <item id="38355" type="Armor" name="Artisan's Goggles - DEX">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9555-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- CON + 3. -->
+    <item id="38356" type="Armor" name="Artisan's Goggles - CON">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. -->
+    <item id="38357" type="Armor" name="Artisan's Goggles - MEN">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. -->
+    <item id="38358" type="Armor" name="Artisan's Goggles - INT">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. -->
+    <item id="38359" type="Armor" name="Artisan's Goggles - WIT">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. -->
+    <item id="38360" type="Armor" name="Artisan's Goggles - Critical Rate">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. -->
+    <item id="38361" type="Armor" name="Artisan's Goggles - Critical Damage">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. -->
+    <item id="38362" type="Armor" name="Artisan's Goggles - P. Def.">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. -->
+    <item id="38363" type="Armor" name="Artisan's Goggles - M. Def.">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. -->
+    <item id="38364" type="Armor" name="Artisan's Goggles - Evasion">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. -->
+    <item id="38365" type="Armor" name="Artisan's Goggles - P. Atk.">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. -->
+    <item id="38366" type="Armor" name="Artisan's Goggles - M. Atk.">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. -->
+    <item id="38367" type="Armor" name="Artisan's Goggles - Accuracy">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- STR + 3. -->
+    <item id="38368" type="Armor" name="Arrow-pierced Apple - STR">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9554-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- DEX + 3. -->
+    <item id="38369" type="Armor" name="Arrow-pierced Apple - DEX">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9555-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- CON + 3. -->
+    <item id="38370" type="Armor" name="Arrow-pierced Apple - CON">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9556-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MEN + 3. -->
+    <item id="38371" type="Armor" name="Arrow-pierced Apple - MEN">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9557-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- INT + 3. -->
+    <item id="38372" type="Armor" name="Arrow-pierced Apple - INT">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9558-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- WIT + 3. -->
+    <item id="38373" type="Armor" name="Arrow-pierced Apple - WIT">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9559-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Rate + 50. -->
+    <item id="38374" type="Armor" name="Arrow-pierced Apple - Critical Rate">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9560-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Critical Damage + 90, M. Critical Damage + 68. -->
+    <item id="38375" type="Armor" name="Arrow-pierced Apple - Critical Damage">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9561-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Def. + 5%. -->
+    <item id="38376" type="Armor" name="Arrow-pierced Apple - P. Def.">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9562-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Def. + 5%. -->
+    <item id="38377" type="Armor" name="Arrow-pierced Apple - M. Def.">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9563-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Evasion + 5. -->
+    <item id="38378" type="Armor" name="Arrow-pierced Apple - Evasion">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9564-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- P. Atk. + 5%. -->
+    <item id="38379" type="Armor" name="Arrow-pierced Apple - P. Atk.">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9565-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- M. Atk. + 10%. -->
+    <item id="38380" type="Armor" name="Arrow-pierced Apple - M. Atk.">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9566-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Accuracy + 5. -->
+    <item id="38381" type="Armor" name="Arrow-pierced Apple - Accuracy">
+        <set name="icon" val="icon.accessory_arrow_apple_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="item_skill" val="9567-1" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="38382" type="Weapon" name="Apprentice's Spellbook">
+        <set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="650" />
+        <set name="soulshots" val="0" />
+        <set name="spiritshots" val="0" />
+        <set name="random_damage" val="10" />
+        <for>
+            <set stat="pAtk" val="9" />
+            <set stat="mAtk" val="12" />
+            <set stat="rCrit" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Double-click to obtain a Lady's Hairpin with pendant options. -->
+    <item id="38383" type="EtcItem" name="Lady's Hairpin Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Party Mask with pendant options. -->
+    <item id="38384" type="EtcItem" name="Party Mask Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Monocle with pendant options. -->
+    <item id="38385" type="EtcItem" name="Monocle Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Maiden's Hairpin with pendant options. -->
+    <item id="38386" type="EtcItem" name="Maiden's Hairpin Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Forget-me-not Hairpin with pendant options. -->
+    <item id="38387" type="EtcItem" name="Forget-me-not Hairpin Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Daisy Hairpin with pendant options. -->
+    <item id="38388" type="EtcItem" name="Daisy Hairpin Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain Little Angel Wings with pendant options. -->
+    <item id="38389" type="EtcItem" name="Little Angel Wings Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain Fairy Antennae with pendant options. -->
+    <item id="38390" type="EtcItem" name="Fairy Antennae Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Chapeau with pendant options. -->
+    <item id="38391" type="EtcItem" name="Chapeau Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain Artisan's Goggles with pendant options. -->
+    <item id="38392" type="EtcItem" name="Artisan's Goggles Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain an Arrow-pierced Apple with pendant options. -->
+    <item id="38393" type="EtcItem" name="Arrow-pierced Apple Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Pirate's Eyepatch with pendant options. -->
+    <item id="38394" type="EtcItem" name="Pirate's Eyepatch Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain an Outlaw's Eyepatch with pendant options. -->
+    <item id="38395" type="EtcItem" name="Outlaw's Eyepatch Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Double-click to obtain a Party Hat with pendant options. -->
+    <item id="38396" type="EtcItem" name="Party Hat Pendant Pouch">
+        <set name="icon" val="icon.etc_pouch_gold_i00" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- 2-hour.When possessed, gives Expertise D Skill. -->
+    <item id="38397" type="EtcItem" name="Expertise Rune (D-grade) - 2-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing Expertise Rune (D-grade) (2-hour). -->
+    <item id="38398" type="EtcItem" name="Expertise Rune Pack - D-grade">
+        <set name="icon" val="icon.etc_equip_item_box_i00" />
+        <set name="weight" val="10" />
+    </item>
+    <!-- 2-hour.When possessed, gives Expertise C Skill. -->
+    <item id="38399" type="EtcItem" name="Expertise Rune (C-grade) - 2-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+        <set name="weight" val="0" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
 </list>

@@ -23,35 +23,37 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectDirectPcDmg extends L2Effect
 {
-	public EffectDirectPcDmg(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.DEBUFF;
-	}
-	
-	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85)
-			return false;
-		
-		double damage = calc();
-		((L2PcInstance) getEffected()).getStatus().reduceHp(damage, getEffector(), true, false, false, true, false);
-		
-		return true;
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectDirectPcDmg(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.DEBUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85)
+        {
+            return false;
+        }
+
+        double damage = calc();
+        ((L2PcInstance) getEffected()).getStatus().reduceHp(damage, getEffector(), true, false, false, true, false);
+
+        return true;
+    }
+
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

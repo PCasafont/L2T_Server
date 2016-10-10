@@ -24,56 +24,64 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 {
-	//
-	
-	private int _id;
-	private int _recipeId;
-	@SuppressWarnings("unused")
-	private long _unknow;
-	
-	@Override
-	protected void readImpl()
-	{
-		_id = readD();
-		_recipeId = readD();
-		_unknow = readQ();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (!getClient().getFloodProtectors().getManufacture().tryPerformAction("RecipeShopMake"))
-			return;
-		
-		L2PcInstance manufacturer = L2World.getInstance().getPlayer(_id);
-		if (manufacturer == null)
-			return;
-		
-		manufacturer.hasBeenStoreActive();
-		
-		if (manufacturer.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1)
-			return;
-		
-		if (activeChar.getPrivateStoreType() != 0)
-		{
-			activeChar.sendMessage("Cannot make items while trading");
-			return;
-		}
-		if (manufacturer.getPrivateStoreType() != 5)
-		{
-			//activeChar.sendMessage("Cannot make items while trading");
-			return;
-		}
-		
-		if (activeChar.isInCraftMode() || manufacturer.isInCraftMode())
-		{
-			activeChar.sendMessage("Currently in Craft Mode");
-			return;
-		}
-		RecipeController.getInstance().requestManufactureItem(manufacturer, _recipeId, activeChar);
-	}
+    //
+
+    private int _id;
+    private int _recipeId;
+    @SuppressWarnings("unused")
+    private long _unknow;
+
+    @Override
+    protected void readImpl()
+    {
+        _id = readD();
+        _recipeId = readD();
+        _unknow = readQ();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (!getClient().getFloodProtectors().getManufacture().tryPerformAction("RecipeShopMake"))
+        {
+            return;
+        }
+
+        L2PcInstance manufacturer = L2World.getInstance().getPlayer(_id);
+        if (manufacturer == null)
+        {
+            return;
+        }
+
+        manufacturer.hasBeenStoreActive();
+
+        if (manufacturer.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1)
+        {
+            return;
+        }
+
+        if (activeChar.getPrivateStoreType() != 0)
+        {
+            activeChar.sendMessage("Cannot make items while trading");
+            return;
+        }
+        if (manufacturer.getPrivateStoreType() != 5)
+        {
+            //activeChar.sendMessage("Cannot make items while trading");
+            return;
+        }
+
+        if (activeChar.isInCraftMode() || manufacturer.isInCraftMode())
+        {
+            activeChar.sendMessage("Currently in Craft Mode");
+            return;
+        }
+        RecipeController.getInstance().requestManufactureItem(manufacturer, _recipeId, activeChar);
+    }
 }

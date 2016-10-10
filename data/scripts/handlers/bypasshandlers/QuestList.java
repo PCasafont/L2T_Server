@@ -23,21 +23,23 @@ import l2server.gameserver.network.serverpackets.ExShowQuestInfo;
 
 public class QuestList implements IBypassHandler
 {
-	private static final String[] COMMANDS = { "questlist" };
-	
-	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2AdventurerInstance))
-			return false;
-		
-		activeChar.sendPacket(new ExShowQuestInfo());
-		return true;
-	}
-	
-	@Override
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"questlist"};
+
+    @Override
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (!(target instanceof L2AdventurerInstance))
+        {
+            return false;
+        }
+
+        activeChar.sendPacket(new ExShowQuestInfo());
+        return true;
+    }
+
+    @Override
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

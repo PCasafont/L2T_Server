@@ -1,1074 +1,1074 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<skill id="15500" levels="1" name="Major Energy of Life">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<skill id="15501" levels="1" name="Superior Energy of Life">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<skill id="15502" levels="1" name="Energy of Mana">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<skill id="15503" levels="1" name="Major Energy of Mana">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<skill id="15504" levels="1" name="Superior Energy of Mana">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<!-- For 1 hr. 30 sec., P. Atk. + 100%. -->
-	<skill id="15506" levels="1" name="Wondrous Herb of Power">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<!-- For 1 hr. 30 sec., M. Atk. + 400%. -->
-	<skill id="15507" levels="1" name="Wondrous Herb of Magic">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
-	</skill>
-	<!-- Special armor reduces damage received from servitors. -->
-	<skill id="15508" levels="4" name="Special Armor">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_PASSIVE" />
-	</skill>
-	<!-- Powerful attack on enemies near target. -->
-	<skill id="15509" levels="1" name="Laido Destruction">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Repairs ally. -->
-	<skill id="15510" levels="1" name="Laido Repair">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="7000" />
-		<set name="castRange" val="50" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Powerful attack on enemy. -->
-	<skill id="15511" levels="1" name="Laido Punch">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Attacks a single enemy. -->
-	<skill id="15512" levels="1" name="Single Stroke">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Attacks a single enemy. -->
-	<skill id="15513" levels="1" name="Vital Hit">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Connects target and nearby enemies with chains for damage. -->
-	<skill id="15514" levels="1" name="Bloody Chain">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Emits power from the eyes for powerful damage. -->
-	<skill id="15515" levels="1" name="Penetrating Eyes">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="4000" />
-		<set name="castRange" val="100" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Twists the flow of time to summon a bigger version of the self upon death (Presentation). -->
-	<skill id="15516" levels="1" name="Summon Giant Illusion">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Swings arms to attack target. -->
-	<skill id="15517" levels="1" name="Chaos Attack">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="800" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="70" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- 
-		Level 1: Confuses the interior of the target's body, decreasing P. Def. / M. Def. by 10%.
-		Level 2: Confuses the interior of the target's body, decreasing P. Def. / M. Def. by 15%.
-	-->
-	<skill id="15518" levels="2" name="Confuse Body">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Summons real body. (Presentation) -->
-	<skill id="15519" levels="1" name="Summon Undead">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15520" levels="1" name="Rush Raid">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Swings arms to attack target. -->
-	<skill id="15521" levels="1" name="Flailing Spin">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="70" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Damages enemy with dark poison and drains HP gradually. -->
-	<skill id="15522" levels="1" name="Dark Poison">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="100" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="4000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="isDebuff" val="true" />
-		<set name="ignoreResists" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
-				<effect type="DamOverTime" val="14000" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Increases Speed. -->
-	<skill id="15523" levels="1" name="Accelerate">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<for>
-			<abnormal duration="15">
-				<effect type="Buff" val="0" />
-				<add stat="runSpd" val="50" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Sucks blood from the enemy, continuously draining HP. -->
-	<skill id="15524" levels="1" name="Suck Blood">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="100" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="isDebuff" val="true" />
-		<set name="ignoreResists" val="true" />
-		<set name="saveVs" val="CON" />
-		<for>
-			<abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
-				<effect type="DamOverTime" val="14000" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15525" levels="2" name="Rush Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="100" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Powerful attack on enemies near target. -->
-	<skill id="15526" levels="1" name="Karamar Breaker">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="800" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="skillRadius" val="150" />
-	</skill>
-	<!-- AoE M. Atk. On target's area. -->
-	<skill id="15527" levels="1" name="Chaos Breath">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="800" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-		<set name="skillRadius" val="150" />
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15528" levels="1" name="Kaonel Rush">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="100" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Soul is drained. P. Def./ M. Def. - 30%, and Atk. Spd. + 10%. -->
-	<skill id="15529" levels="1" name="Absorb Spirit">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="3000" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Afflicted with Sleep and unable to move momentarily. -->
-	<skill id="15530" levels="1" name="Slumber">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="13" />
-		<set name="power" val="100" />
-		<set name="hitTime" val="3000" />
-		<set name="reuseDelay" val="8000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="skillRadius" val="150" />
-		<set name="isDebuff" val="true" />
-		<set name="ignoreResists" val="true" />
-		<set name="saveVs" val="MEN" />
-		<for>
-			<abnormal duration="10" landRate="70" visualEffect="sleep">
-				<effect type="Sleep" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Afflicted with Hold and unable to move momentarily. -->
-	<skill id="15531" levels="1" name="Hold">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="13" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="8000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Emits power from the eyes for powerful damage. -->
-	<skill id="15532" levels="1" name="Pupil Focus">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Damages enemy with poison and drains HP gradually. -->
-	<skill id="15533" levels="1" name="Spiteful Grudge">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Cuts enemy for powerful damage. -->
-	<skill id="15534" levels="1" name="Mutilate Body">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="70" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Breathes a crimson breath on enemies within 120 degrees in front of you to inflict damage. -->
-	<skill id="15535" levels="1" name="Bloody Breath">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- You are in the Land of Chaos. You can feel Krogel's power around you. -->
-	<skill id="15536" levels="1" name="Chaotic Mana">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="500" />
-		<set name="reuseDelay" val="3000" />
-	</skill>
-	<!-- 
-		Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
-		Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
-	-->
-	<skill id="15537" levels="2" name="Blood Sacrifice: Decrease Speed">
-		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL_PERCENT" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="#hp" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="isDebuff" val="true" />
-	</skill>
-	<!-- 
-		Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
-		Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
-	-->
-	<skill id="15538" levels="2" name="Blood Sacrifice: Decrease Accuracy">
-		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL_PERCENT" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="#hp" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="isDebuff" val="true" />
-	</skill>
-	<!-- 
-		Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
-		Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
-	-->
-	<skill id="15539" levels="2" name="Blood Sacrifice: Decrease P. Def.">
-		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL_PERCENT" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="#hp" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="isDebuff" val="true" />
-	</skill>
-	<!-- 
-		Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
-		Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
-	-->
-	<skill id="15540" levels="2" name="Blood Sacrifice: Decrease M. Def.">
-		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="HEAL_PERCENT" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="99" />
-		<set name="power" val="#hp" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="isDebuff" val="true" />
-	</skill>
-	<!-- A pillar of fire rushes from beneath your target's feet for damage. -->
-	<skill id="15541" levels="1" name="Flame Pillar">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15542" levels="1" name="Rush Raid">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="100" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Throws poison dust on enemy, draining their HP. -->
-	<skill id="15543" levels="1" name="Poison Fog">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15544" levels="1" name="Rush Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Powerful attack on enemies in a fan-shaped radius of you. -->
-	<skill id="15545" levels="1" name="Cubit Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="2000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-	</skill>
-	<!-- Hides for a while. -->
-	<skill id="15546" levels="1" name="Dark Invisibility">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="5000" />
-	</skill>
-	<!-- Swings sword at an enemy. -->
-	<skill id="15547" levels="1" name="Point Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Restores a part of allies' HP. -->
-	<skill id="15548" levels="1" name="Partial Healing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Decreases near enemies' Casting Spd. by 20% and Critical Damage by 30%. -->
-	<skill id="15549" levels="1" name="Soul Break">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Powerful attack on enemy's vital point. Speed increases upon hit. Has a low chance of doing Half-kill. -->
-	<skill id="15550" levels="1" name="Heart Destroyer">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="BLOW" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
-		<set name="baseCritRate" val="30" />
-		<set name="blowChance" val="40" />
-		<set name="lethal1" val="30" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-	</skill>
-	<!-- Hits enemy's vital point, weakening P. Atk. -->
-	<skill id="15551" levels="1" name="Weaken Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-	</skill>
-	<!-- Decreases target's P. Atk. By 30%. -->
-	<skill id="15552" levels="1" name="Hell's Prison">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="DEBUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-		<set name="isDebuff" val="true" />
-		<for>
-			<abnormal duration="10" landRate="80">
-				<effect type="Debuff" val="0" />
-				<subPercent stat="pAtk" val="30" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Powerful attack on target and nearby enemies. -->
-	<skill id="15554" levels="1" name="Broad Hit">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="50000" />
-		<set name="hitTime" val="6800" />
-		<set name="coolTime" val="1000" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-		<set name="skillRadius" val="150" />
-	</skill>
-	<!-- Hits enemy's vital point. -->
-	<skill id="15555" levels="1" name="Cunning Strike">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="BLOW" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="10" />
-		<set name="power" val="50000" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-		<set name="blowChance" val="20" />
-		<set name="overHit" val="true" />
-		<set name="nextActionAttack" val="true" />
-	</skill>
-	<!-- Provokes target into attacking you by forcefully changing their target. -->
-	<skill id="15556" levels="1" name="Provoke">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-	</skill>
-	<!-- Decreases target's Atk. Spd. by 10%. -->
-	<skill id="15557" levels="1" name="Crossbow Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Attacks enemy and decreases their Casting Spd. -->
-	<skill id="15558" levels="1" name="Soul Howl">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="500" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Powerful attack on the whole party and poison damage. -->
-	<skill id="15559" levels="1" name="Poison Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="7000" />
-	</skill>
-	<!-- Bleeding for 5 sec. -->
-	<skill id="15561" levels="1" name="Connected Drain">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-	</skill>
-	<!-- Instantly kills a party member. -->
-	<skill id="15562" levels="1" name="Lethal Edge">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- P. Atk. On a single enemy. -->
-	<skill id="15564" levels="2" name="Theor's Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="70" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- AoE P. Atk. On nearby enemies. -->
-	<skill id="15565" levels="1" name="Theor's AoE Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="3000" />
-		<set name="reuseDelay" val="5000" />
-	</skill>
-	<!-- Disarms nearby enemies. -->
-	<skill id="15566" levels="1" name="Disarm">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="5000" />
-	</skill>
-	<!-- Aerial Yoke. -->
-	<skill id="15567" levels="1" name="Aerial Yoke">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="5000" />
-	</skill>
-	<!-- Powerful rush attack on enemy. -->
-	<skill id="15568" levels="1" name="Forward March">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="100" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- For 30 sec., reflects 50% of received damage. -->
-	<skill id="15570" levels="1" name="Master Siege Shield">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="100" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="150000" />
-	</skill>
-	<!-- Powerful attack on enemy. -->
-	<skill id="15571" levels="1" name="Master Siege Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="100" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="1000" />
-		<set name="castRange" val="80" />
-		<set name="effectRange" val="400" />
-	</skill>
-	<!-- Atk. Spd. + 15%. -->
-	<skill id="15572" levels="1" name="Krogel's Haste">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-		<for>
-			<abnormal duration="300">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pAtkSpd" val="15" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Powerful attack on castle doors and walls. -->
-	<skill id="15574" levels="1" name="Master Siege Hammer">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="mpConsume" val="100" />
-		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15575" levels="1" name="Dedicated Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15576" levels="1" name="Dedicated Shot">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="250" />
-		<set name="effectRange" val="750" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15577" levels="1" name="Furious Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Powerful P. Atk. On enemies 180 degrees to the front of you. -->
-	<skill id="15578" levels="1" name="Furious Bombing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="200" />
-		<set name="effectRange" val="700" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15579" levels="1" name="Cursed Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Powerful M. Atk. On target and nearby enemies. -->
-	<skill id="15580" levels="1" name="Cursed Bombing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="250" />
-		<set name="effectRange" val="750" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15581" levels="1" name="Fearsome Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Powerful M. Atk. On target and nearby enemies. -->
-	<skill id="15582" levels="1" name="Fearsome Bombing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="250" />
-		<set name="effectRange" val="750" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15583" levels="1" name="Despairing Blow">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Powerful attack on nearby enemies. -->
-	<skill id="15584" levels="1" name="Despairing Bombing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-	</skill>
-	<!-- Swings a spark-filled chain for a powerful M. Atk. -->
-	<skill id="15585" levels="1" name="Hateful Blow">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="power" val="300" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Swings a spark-filled chain for a powerful M. Atk. On target and nearby enemies. -->
-	<skill id="15586" levels="1" name="Chains of Hatred">
-		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="power" val="230" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="250" />
-		<set name="effectRange" val="750" />
-	</skill>
-	<!-- Ranged attack on enemies to the front in a rectangular radius of you. -->
-	<skill id="15587" levels="1" name="High-speed Shot">
-		<set name="target" val="TARGET_FRONT_AREA" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="11500" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
-		<set name="castRange" val="300" />
-		<set name="effectRange" val="800" />
-	</skill>
-	<!-- Powerful M. Atk. on enemy. -->
-	<skill id="15588" levels="1" name="Soulful Blow">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="power" val="300" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="250" />
-		<set name="effectRange" val="750" />
-	</skill>
-	<!-- Powerful P. Atk. on enemy. -->
-	<skill id="15589" levels="1" name="Painful Blow">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="16500" />
-		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="5000" />
-		<set name="castRange" val="150" />
-		<set name="effectRange" val="650" />
-	</skill>
-	<!-- Afflicted with Fear and moving against own will. -->
-	<skill id="15590" levels="1" name="Fear of Lindvior">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
-	</skill>
-	<!-- Reflects a part of received damage. -->
-	<skill id="15592" levels="1" name="Dark Wind Armor">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="1500" />
-		<set name="staticHitTime" val="true" />
-		<for>
-			<abnormal duration="120" stackLvl="1">
-				<add stat="reflectDam" val="50" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- Ranged projectile. -->
-	<skill id="15593" levels="1" name="Air Strike">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="1000" />
-		<set name="reuseDelay" val="3000" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-	</skill>
-	<!-- Stomping on the ground when enraged. -->
-	<skill id="15594" levels="1" name="Lindvior's Speed Decrease">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1000" />
-	</skill>
-	<!-- P. Atk. On nearby enemies. -->
-	<skill id="15595" levels="1" name="Lindvior's Fall">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-	</skill>
-	<!-- Lindvior takes off. -->
-	<skill id="15596" levels="1" name="Presentation - Lindvior's Takeoff">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="hitTime" val="4200" />
-		<set name="staticHitTime" val="true" />
-	</skill>
-	<!-- Lindvior lands. -->
-	<skill id="15597" levels="1" name="Presentation - Lindvior's Landing">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="5000" />
-	</skill>
-	<!-- Ranged projectile. -->
-	<skill id="15598" levels="1" name="Mighty Wind Strike">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="MDAM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="power" val="1200" />
-		<set name="hitTime" val="2500" />
-		<set name="castRange" val="2500" />
-		<set name="effectRange" val="3000" />
-		<set name="staticHitTime" val="true" />
-	</skill>
+    <skill id="15500" levels="1" name="Major Energy of Life">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <skill id="15501" levels="1" name="Superior Energy of Life">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <skill id="15502" levels="1" name="Energy of Mana">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <skill id="15503" levels="1" name="Major Energy of Mana">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <skill id="15504" levels="1" name="Superior Energy of Mana">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <!-- For 1 hr. 30 sec., P. Atk. + 100%. -->
+    <skill id="15506" levels="1" name="Wondrous Herb of Power">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <!-- For 1 hr. 30 sec., M. Atk. + 400%. -->
+    <skill id="15507" levels="1" name="Wondrous Herb of Magic">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="2000" />
+        <set name="effectRange" val="2500" />
+    </skill>
+    <!-- Special armor reduces damage received from servitors. -->
+    <skill id="15508" levels="4" name="Special Armor">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_PASSIVE" />
+    </skill>
+    <!-- Powerful attack on enemies near target. -->
+    <skill id="15509" levels="1" name="Laido Destruction">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Repairs ally. -->
+    <skill id="15510" levels="1" name="Laido Repair">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="7000" />
+        <set name="castRange" val="50" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Powerful attack on enemy. -->
+    <skill id="15511" levels="1" name="Laido Punch">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Attacks a single enemy. -->
+    <skill id="15512" levels="1" name="Single Stroke">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Attacks a single enemy. -->
+    <skill id="15513" levels="1" name="Vital Hit">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Connects target and nearby enemies with chains for damage. -->
+    <skill id="15514" levels="1" name="Bloody Chain">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Emits power from the eyes for powerful damage. -->
+    <skill id="15515" levels="1" name="Penetrating Eyes">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="4000" />
+        <set name="castRange" val="100" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Twists the flow of time to summon a bigger version of the self upon death (Presentation). -->
+    <skill id="15516" levels="1" name="Summon Giant Illusion">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Swings arms to attack target. -->
+    <skill id="15517" levels="1" name="Chaos Attack">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="800" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="70" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!--
+        Level 1: Confuses the interior of the target's body, decreasing P. Def. / M. Def. by 10%.
+        Level 2: Confuses the interior of the target's body, decreasing P. Def. / M. Def. by 15%.
+    -->
+    <skill id="15518" levels="2" name="Confuse Body">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Summons real body. (Presentation) -->
+    <skill id="15519" levels="1" name="Summon Undead">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15520" levels="1" name="Rush Raid">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="500" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Swings arms to attack target. -->
+    <skill id="15521" levels="1" name="Flailing Spin">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="70" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Damages enemy with dark poison and drains HP gradually. -->
+    <skill id="15522" levels="1" name="Dark Poison">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="99" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="100" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="4000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="isDebuff" val="true" />
+        <set name="ignoreResists" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
+                <effect type="DamOverTime" val="14000" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Increases Speed. -->
+    <skill id="15523" levels="1" name="Accelerate">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <for>
+            <abnormal duration="15">
+                <effect type="Buff" val="0" />
+                <add stat="runSpd" val="50" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Sucks blood from the enemy, continuously draining HP. -->
+    <skill id="15524" levels="1" name="Suck Blood">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="99" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="100" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="isDebuff" val="true" />
+        <set name="ignoreResists" val="true" />
+        <set name="saveVs" val="CON" />
+        <for>
+            <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
+                <effect type="DamOverTime" val="14000" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15525" levels="2" name="Rush Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="100" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Powerful attack on enemies near target. -->
+    <skill id="15526" levels="1" name="Karamar Breaker">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="800" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="skillRadius" val="150" />
+    </skill>
+    <!-- AoE M. Atk. On target's area. -->
+    <skill id="15527" levels="1" name="Chaos Breath">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="800" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+        <set name="skillRadius" val="150" />
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15528" levels="1" name="Kaonel Rush">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="100" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Soul is drained. P. Def./ M. Def. - 30%, and Atk. Spd. + 10%. -->
+    <skill id="15529" levels="1" name="Absorb Spirit">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="3000" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Afflicted with Sleep and unable to move momentarily. -->
+    <skill id="15530" levels="1" name="Slumber">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="99" />
+        <set name="mpConsume" val="13" />
+        <set name="power" val="100" />
+        <set name="hitTime" val="3000" />
+        <set name="reuseDelay" val="8000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="skillRadius" val="150" />
+        <set name="isDebuff" val="true" />
+        <set name="ignoreResists" val="true" />
+        <set name="saveVs" val="MEN" />
+        <for>
+            <abnormal duration="10" landRate="70" visualEffect="sleep">
+                <effect type="Sleep" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Afflicted with Hold and unable to move momentarily. -->
+    <skill id="15531" levels="1" name="Hold">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="13" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="8000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Emits power from the eyes for powerful damage. -->
+    <skill id="15532" levels="1" name="Pupil Focus">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Damages enemy with poison and drains HP gradually. -->
+    <skill id="15533" levels="1" name="Spiteful Grudge">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Cuts enemy for powerful damage. -->
+    <skill id="15534" levels="1" name="Mutilate Body">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="70" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Breathes a crimson breath on enemies within 120 degrees in front of you to inflict damage. -->
+    <skill id="15535" levels="1" name="Bloody Breath">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- You are in the Land of Chaos. You can feel Krogel's power around you. -->
+    <skill id="15536" levels="1" name="Chaotic Mana">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="500" />
+        <set name="reuseDelay" val="3000" />
+    </skill>
+    <!--
+        Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
+        Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
+    -->
+    <skill id="15537" levels="2" name="Blood Sacrifice: Decrease Speed">
+        <table name="#hp">50 100</table>
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL_PERCENT" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="#hp" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="isDebuff" val="true" />
+    </skill>
+    <!--
+        Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
+        Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
+    -->
+    <skill id="15538" levels="2" name="Blood Sacrifice: Decrease Accuracy">
+        <table name="#hp">50 100</table>
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL_PERCENT" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="#hp" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="isDebuff" val="true" />
+    </skill>
+    <!--
+        Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
+        Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
+    -->
+    <skill id="15539" levels="2" name="Blood Sacrifice: Decrease P. Def.">
+        <table name="#hp">50 100</table>
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL_PERCENT" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="#hp" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="isDebuff" val="true" />
+    </skill>
+    <!--
+        Level 1: Restores 50% of enemy's HP and gives an abnormal status debuff.
+        Level 2: Restores 100% of enemy's HP and gives an abnormal status debuff.
+    -->
+    <skill id="15540" levels="2" name="Blood Sacrifice: Decrease M. Def.">
+        <table name="#hp">50 100</table>
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="HEAL_PERCENT" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="99" />
+        <set name="power" val="#hp" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+        <set name="isDebuff" val="true" />
+    </skill>
+    <!-- A pillar of fire rushes from beneath your target's feet for damage. -->
+    <skill id="15541" levels="1" name="Flame Pillar">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15542" levels="1" name="Rush Raid">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="100" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Throws poison dust on enemy, draining their HP. -->
+    <skill id="15543" levels="1" name="Poison Fog">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15544" levels="1" name="Rush Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Powerful attack on enemies in a fan-shaped radius of you. -->
+    <skill id="15545" levels="1" name="Cubit Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="2000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+    </skill>
+    <!-- Hides for a while. -->
+    <skill id="15546" levels="1" name="Dark Invisibility">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="5000" />
+    </skill>
+    <!-- Swings sword at an enemy. -->
+    <skill id="15547" levels="1" name="Point Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Restores a part of allies' HP. -->
+    <skill id="15548" levels="1" name="Partial Healing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Decreases near enemies' Casting Spd. by 20% and Critical Damage by 30%. -->
+    <skill id="15549" levels="1" name="Soul Break">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="4000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Powerful attack on enemy's vital point. Speed increases upon hit. Has a low chance of doing Half-kill. -->
+    <skill id="15550" levels="1" name="Heart Destroyer">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="BLOW" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="99" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="40" />
+        <set name="effectRange" val="400" />
+        <set name="baseCritRate" val="30" />
+        <set name="blowChance" val="40" />
+        <set name="lethal1" val="30" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+    </skill>
+    <!-- Hits enemy's vital point, weakening P. Atk. -->
+    <skill id="15551" levels="1" name="Weaken Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+    </skill>
+    <!-- Decreases target's P. Atk. By 30%. -->
+    <skill id="15552" levels="1" name="Hell's Prison">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+        <set name="isDebuff" val="true" />
+        <for>
+            <abnormal duration="10" landRate="80">
+                <effect type="Debuff" val="0" />
+                <subPercent stat="pAtk" val="30" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Powerful attack on target and nearby enemies. -->
+    <skill id="15554" levels="1" name="Broad Hit">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="50000" />
+        <set name="hitTime" val="6800" />
+        <set name="coolTime" val="1000" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+        <set name="skillRadius" val="150" />
+    </skill>
+    <!-- Hits enemy's vital point. -->
+    <skill id="15555" levels="1" name="Cunning Strike">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="BLOW" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="99" />
+        <set name="mpConsume" val="10" />
+        <set name="power" val="50000" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+        <set name="blowChance" val="20" />
+        <set name="overHit" val="true" />
+        <set name="nextActionAttack" val="true" />
+    </skill>
+    <!-- Provokes target into attacking you by forcefully changing their target. -->
+    <skill id="15556" levels="1" name="Provoke">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="5000" />
+    </skill>
+    <!-- Decreases target's Atk. Spd. by 10%. -->
+    <skill id="15557" levels="1" name="Crossbow Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Attacks enemy and decreases their Casting Spd. -->
+    <skill id="15558" levels="1" name="Soul Howl">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="4000" />
+        <set name="coolTime" val="500" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Powerful attack on the whole party and poison damage. -->
+    <skill id="15559" levels="1" name="Poison Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="7000" />
+    </skill>
+    <!-- Bleeding for 5 sec. -->
+    <skill id="15561" levels="1" name="Connected Drain">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="1000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+    </skill>
+    <!-- Instantly kills a party member. -->
+    <skill id="15562" levels="1" name="Lethal Edge">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- P. Atk. On a single enemy. -->
+    <skill id="15564" levels="2" name="Theor's Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="70" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- AoE P. Atk. On nearby enemies. -->
+    <skill id="15565" levels="1" name="Theor's AoE Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="3000" />
+        <set name="reuseDelay" val="5000" />
+    </skill>
+    <!-- Disarms nearby enemies. -->
+    <skill id="15566" levels="1" name="Disarm">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="5000" />
+    </skill>
+    <!-- Aerial Yoke. -->
+    <skill id="15567" levels="1" name="Aerial Yoke">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="5000" />
+    </skill>
+    <!-- Powerful rush attack on enemy. -->
+    <skill id="15568" levels="1" name="Forward March">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="10" />
+        <set name="hitTime" val="100" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- For 30 sec., reflects 50% of received damage. -->
+    <skill id="15570" levels="1" name="Master Siege Shield">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="100" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="150000" />
+    </skill>
+    <!-- Powerful attack on enemy. -->
+    <skill id="15571" levels="1" name="Master Siege Attack">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="100" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="1000" />
+        <set name="castRange" val="80" />
+        <set name="effectRange" val="400" />
+    </skill>
+    <!-- Atk. Spd. + 15%. -->
+    <skill id="15572" levels="1" name="Krogel's Haste">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+        <for>
+            <abnormal duration="300">
+                <effect type="Buff" val="0" />
+                <addPercent stat="pAtkSpd" val="15" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Powerful attack on castle doors and walls. -->
+    <skill id="15574" levels="1" name="Master Siege Hammer">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="mpConsume" val="100" />
+        <set name="hitTime" val="5000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15575" levels="1" name="Dedicated Blow">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15576" levels="1" name="Dedicated Shot">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="250" />
+        <set name="effectRange" val="750" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15577" levels="1" name="Furious Blow">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Powerful P. Atk. On enemies 180 degrees to the front of you. -->
+    <skill id="15578" levels="1" name="Furious Bombing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="200" />
+        <set name="effectRange" val="700" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15579" levels="1" name="Cursed Blow">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Powerful M. Atk. On target and nearby enemies. -->
+    <skill id="15580" levels="1" name="Cursed Bombing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="2000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="250" />
+        <set name="effectRange" val="750" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15581" levels="1" name="Fearsome Blow">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Powerful M. Atk. On target and nearby enemies. -->
+    <skill id="15582" levels="1" name="Fearsome Bombing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="250" />
+        <set name="effectRange" val="750" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15583" levels="1" name="Despairing Blow">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Powerful attack on nearby enemies. -->
+    <skill id="15584" levels="1" name="Despairing Bombing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+    </skill>
+    <!-- Swings a spark-filled chain for a powerful M. Atk. -->
+    <skill id="15585" levels="1" name="Hateful Blow">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="power" val="300" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Swings a spark-filled chain for a powerful M. Atk. On target and nearby enemies. -->
+    <skill id="15586" levels="1" name="Chains of Hatred">
+        <set name="target" val="TARGET_AREA" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="power" val="230" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="250" />
+        <set name="effectRange" val="750" />
+    </skill>
+    <!-- Ranged attack on enemies to the front in a rectangular radius of you. -->
+    <skill id="15587" levels="1" name="High-speed Shot">
+        <set name="target" val="TARGET_FRONT_AREA" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="11500" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="10000" />
+        <set name="castRange" val="300" />
+        <set name="effectRange" val="800" />
+    </skill>
+    <!-- Powerful M. Atk. on enemy. -->
+    <skill id="15588" levels="1" name="Soulful Blow">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="power" val="300" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="250" />
+        <set name="effectRange" val="750" />
+    </skill>
+    <!-- Powerful P. Atk. on enemy. -->
+    <skill id="15589" levels="1" name="Painful Blow">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="PDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="16500" />
+        <set name="hitTime" val="1500" />
+        <set name="coolTime" val="200" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="150" />
+        <set name="effectRange" val="650" />
+    </skill>
+    <!-- Afflicted with Fear and moving against own will. -->
+    <skill id="15590" levels="1" name="Fear of Lindvior">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="500" />
+    </skill>
+    <!-- Reflects a part of received damage. -->
+    <skill id="15592" levels="1" name="Dark Wind Armor">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="1500" />
+        <set name="staticHitTime" val="true" />
+        <for>
+            <abnormal duration="120" stackLvl="1">
+                <add stat="reflectDam" val="50" />
+            </abnormal>
+        </for>
+    </skill>
+    <!-- Ranged projectile. -->
+    <skill id="15593" levels="1" name="Air Strike">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="1000" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="600" />
+        <set name="effectRange" val="1100" />
+    </skill>
+    <!-- Stomping on the ground when enraged. -->
+    <skill id="15594" levels="1" name="Lindvior's Speed Decrease">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1000" />
+    </skill>
+    <!-- P. Atk. On nearby enemies. -->
+    <skill id="15595" levels="1" name="Lindvior's Fall">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+    </skill>
+    <!-- Lindvior takes off. -->
+    <skill id="15596" levels="1" name="Presentation - Lindvior's Takeoff">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="hitTime" val="4200" />
+        <set name="staticHitTime" val="true" />
+    </skill>
+    <!-- Lindvior lands. -->
+    <skill id="15597" levels="1" name="Presentation - Lindvior's Landing">
+        <set name="target" val="TARGET_NONE" />
+        <set name="skillType" val="NOTDONE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="5000" />
+    </skill>
+    <!-- Ranged projectile. -->
+    <skill id="15598" levels="1" name="Mighty Wind Strike">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="power" val="1200" />
+        <set name="hitTime" val="2500" />
+        <set name="castRange" val="2500" />
+        <set name="effectRange" val="3000" />
+        <set name="staticHitTime" val="true" />
+    </skill>
 </list>

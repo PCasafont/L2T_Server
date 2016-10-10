@@ -16,23 +16,25 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class KillTheKeyTargets extends TerritoryWarSuperClass
 {
-	public static String qn1 = "738_DestroyKeyTargets";
-	public static int qnu = 738;
-	public static String qna = "Destroy Key Targets";
-	
-	public KillTheKeyTargets()
-	{
-		super(qnu, qn1, qna);
-		CLASS_IDS = new int[] { 51, 115, 57, 118 };
-		qn = qn1;
-		RANDOM_MIN = 3;
-		RANDOM_MAX = 8;
-		Text = new String[] { "Out of MAX Production and Curse you have defeated KILL.", "You weakened the enemy's attack!" };
-	}
+    public static String qn1 = "738_DestroyKeyTargets";
+    public static int qnu = 738;
+    public static String qna = "Destroy Key Targets";
+
+    public KillTheKeyTargets()
+    {
+        super(qnu, qn1, qna);
+        CLASS_IDS = new int[]{51, 115, 57, 118};
+        qn = qn1;
+        RANDOM_MIN = 3;
+        RANDOM_MAX = 8;
+        Text = new String[]{
+                "Out of MAX Production and Curse you have defeated KILL.",
+                "You weakened the enemy's attack!"
+        };
+    }
 }

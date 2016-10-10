@@ -23,37 +23,52 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 public class AppearanceStone implements IItemHandler
 {
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		final L2PcInstance activeChar = (L2PcInstance) playable;
-		if (activeChar.isCastingNow())// || activeChar.getActiveAppearanceStone() != null)
-			return;
-		
-		activeChar.setActiveAppearanceStone(item);
-		
-		if (item.getName().contains("Restoration"))
-		{
-			activeChar.sendPacket(new ExShowScreenMessage("Double click on the item from which you want to remove the custom appearance", 3000));
-		}
-		else if (item.getItem().getStandardItem() > 0)
-		{
-			activeChar.sendPacket(new ExShowScreenMessage("Double click on the item on which you want to add the custom appearance", 3000));
-		}
-		else
-		{
-			int type = 0;
-			if (item.getName().contains("Weapon"))
-				type = 1;
-			if (item.getName().contains("Armor") || item.getName().contains("Top") || item.getName().contains("Gloves") || item.getName().contains("Pants") || 
-					item.getName().contains("Shoes") || item.getName().contains("Formal Wear"))
-				type = 2;
-			if (item.getName().contains("Accessory"))
-				type = 3;
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
 
-			activeChar.sendPacket(new ExShowItemAppearanceWindow(type, item.getItemId()));
-		}
-	}
+        final L2PcInstance activeChar = (L2PcInstance) playable;
+        if (activeChar.isCastingNow())// || activeChar.getActiveAppearanceStone() != null)
+        {
+            return;
+        }
+
+        activeChar.setActiveAppearanceStone(item);
+
+        if (item.getName().contains("Restoration"))
+        {
+            activeChar
+                    .sendPacket(new ExShowScreenMessage(
+                            "Double click on the item from which you want to remove the custom appearance", 3000));
+        }
+        else if (item.getItem().getStandardItem() > 0)
+        {
+            activeChar
+                    .sendPacket(new ExShowScreenMessage(
+                            "Double click on the item on which you want to add the custom appearance", 3000));
+        }
+        else
+        {
+            int type = 0;
+            if (item.getName().contains("Weapon"))
+            {
+                type = 1;
+            }
+            if (item.getName().contains("Armor") || item.getName().contains("Top") || item.getName()
+                    .contains("Gloves") || item.getName().contains("Pants") || item.getName().contains("Shoes") || item
+                    .getName().contains("Formal Wear"))
+            {
+                type = 2;
+            }
+            if (item.getName().contains("Accessory"))
+            {
+                type = 3;
+            }
+
+            activeChar.sendPacket(new ExShowItemAppearanceWindow(type, item.getItemId()));
+        }
+    }
 }

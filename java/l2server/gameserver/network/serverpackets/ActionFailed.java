@@ -22,15 +22,15 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class ActionFailed extends L2GameServerPacket
 {
-	public static final ActionFailed STATIC_PACKET = new ActionFailed();
-	
-	private ActionFailed()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(0x00);
-	}
+    public static final ActionFailed STATIC_PACKET = new ActionFailed();
+
+    private ActionFailed()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(0x00);
+    }
 }

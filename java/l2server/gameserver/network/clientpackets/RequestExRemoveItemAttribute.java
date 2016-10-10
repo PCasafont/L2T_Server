@@ -28,110 +28,141 @@ import l2server.gameserver.templates.item.L2Weapon;
 
 public class RequestExRemoveItemAttribute extends L2GameClientPacket
 {
-	private int _objectId;
-	private long _price;
-	private byte _element;
-	
-	public RequestExRemoveItemAttribute()
-	{
-	}
-	
-	@Override
-	public void readImpl()
-	{
-		_objectId = readD();
-		_element = (byte) readD();
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
-		
-		if (targetItem == null)
-			return;
-		
-		if (targetItem.getElementals() == null || targetItem.getElemental(_element) == null)
-			return;
-		
-		if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))
-		{
-			if (targetItem.isEquipped())
-				targetItem.getElemental(_element).removeBonus(activeChar);
-			targetItem.clearElementAttr(_element);
-			activeChar.sendPacket(new UserInfo(activeChar));
-			
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(targetItem);
-			activeChar.sendPacket(iu);
-			SystemMessage sm;
-			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
-			if (targetItem.getEnchantLevel() > 0)
-			{
-				if (targetItem.isArmor())
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_S3_ATTRIBUTE_REMOVED_RESISTANCE_TO_S4_DECREASED);
-				else
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ELEMENTAL_POWER_REMOVED);
-				sm.addNumber(targetItem.getEnchantLevel());
-				sm.addItemName(targetItem);
-				if (targetItem.isArmor())
-				{
-					sm.addElemental(realElement);
-					sm.addElemental(Elementals.getOppositeElement(realElement));
-				}
-			}
-			else
-			{
-				if (targetItem.isArmor())
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ATTRIBUTE_REMOVED_RESISTANCE_S3_DECREASED);
-				else
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ELEMENTAL_POWER_REMOVED);
-				sm.addItemName(targetItem);
-				if (targetItem.isArmor())
-				{
-					sm.addElemental(realElement);
-					sm.addElemental(Elementals.getOppositeElement(realElement));
-				}
-			}
-			activeChar.sendPacket(sm);
-			activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
-			return;
-		}
-		else
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_ATTRIBUTE));
-			return;
-		}
-	}
-	
-	private long getPrice(L2ItemInstance item)
-	{
-		switch (item.getItem().getCrystalType())
-		{
-			case L2Item.CRYSTAL_S:
-				if (item.getItem() instanceof L2Weapon)
-					_price = 50000;
-				else
-					_price = 40000;
-				break;
-			case L2Item.CRYSTAL_S80:
-				if (item.getItem() instanceof L2Weapon)
-					_price = 100000;
-				else
-					_price = 80000;
-				break;
-			case L2Item.CRYSTAL_S84:
-				if (item.getItem() instanceof L2Weapon)
-					_price = 200000;
-				else
-					_price = 160000;
-				break;
-		}
-		
-		return _price;
-	}
+    private int _objectId;
+    private long _price;
+    private byte _element;
+
+    public RequestExRemoveItemAttribute()
+    {
+    }
+
+    @Override
+    public void readImpl()
+    {
+        _objectId = readD();
+        _element = (byte) readD();
+    }
+
+    @Override
+    public void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
+
+        if (targetItem == null)
+        {
+            return;
+        }
+
+        if (targetItem.getElementals() == null || targetItem.getElemental(_element) == null)
+        {
+            return;
+        }
+
+        if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))
+        {
+            if (targetItem.isEquipped())
+            {
+                targetItem.getElemental(_element).removeBonus(activeChar);
+            }
+            targetItem.clearElementAttr(_element);
+            activeChar.sendPacket(new UserInfo(activeChar));
+
+            InventoryUpdate iu = new InventoryUpdate();
+            iu.addModifiedItem(targetItem);
+            activeChar.sendPacket(iu);
+            SystemMessage sm;
+            byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
+            if (targetItem.getEnchantLevel() > 0)
+            {
+                if (targetItem.isArmor())
+                {
+                    sm = SystemMessage
+                            .getSystemMessage(SystemMessageId.S1_S2_S3_ATTRIBUTE_REMOVED_RESISTANCE_TO_S4_DECREASED);
+                }
+                else
+                {
+                    sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ELEMENTAL_POWER_REMOVED);
+                }
+                sm.addNumber(targetItem.getEnchantLevel());
+                sm.addItemName(targetItem);
+                if (targetItem.isArmor())
+                {
+                    sm.addElemental(realElement);
+                    sm.addElemental(Elementals.getOppositeElement(realElement));
+                }
+            }
+            else
+            {
+                if (targetItem.isArmor())
+                {
+                    sm = SystemMessage
+                            .getSystemMessage(SystemMessageId.S1_S2_ATTRIBUTE_REMOVED_RESISTANCE_S3_DECREASED);
+                }
+                else
+                {
+                    sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ELEMENTAL_POWER_REMOVED);
+                }
+                sm.addItemName(targetItem);
+                if (targetItem.isArmor())
+                {
+                    sm.addElemental(realElement);
+                    sm.addElemental(Elementals.getOppositeElement(realElement));
+                }
+            }
+            activeChar.sendPacket(sm);
+            activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
+            return;
+        }
+        else
+        {
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_ATTRIBUTE));
+            return;
+        }
+    }
+
+    private long getPrice(L2ItemInstance item)
+    {
+        switch (item.getItem().getCrystalType())
+        {
+            case L2Item.CRYSTAL_S:
+                if (item.getItem() instanceof L2Weapon)
+                {
+                    _price = 50000;
+                }
+                else
+                {
+                    _price = 40000;
+                }
+                break;
+            case L2Item.CRYSTAL_S80:
+                if (item.getItem() instanceof L2Weapon)
+                {
+                    _price = 100000;
+                }
+                else
+                {
+                    _price = 80000;
+                }
+                break;
+            case L2Item.CRYSTAL_S84:
+                if (item.getItem() instanceof L2Weapon)
+                {
+                    _price = 200000;
+                }
+                else
+                {
+                    _price = 160000;
+                }
+                break;
+        }
+
+        return _price;
+    }
 }

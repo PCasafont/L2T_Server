@@ -23,24 +23,24 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameEnd extends L2GameServerPacket
 {
-	boolean _isRedTeamWin;
-	
-	/**
-	 * Show Minigame Results
-	 *
-	 * @param isRedTeamWin: Is Red Team Winner?
-	 */
-	public ExCubeGameEnd(boolean isRedTeamWin)
-	{
-		_isRedTeamWin = isRedTeamWin;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-	 */
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_isRedTeamWin ? 0x01 : 0x00);
-	}
+    boolean _isRedTeamWin;
+
+    /**
+     * Show Minigame Results
+     *
+     * @param isRedTeamWin: Is Red Team Winner?
+     */
+    public ExCubeGameEnd(boolean isRedTeamWin)
+    {
+        _isRedTeamWin = isRedTeamWin;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+     */
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_isRedTeamWin ? 0x01 : 0x00);
+    }
 }

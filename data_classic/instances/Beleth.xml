@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Beleth Grand Boss Instance">
-	<activityTime val="120" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="10" />
-	<spawnPoint spawnX="9033" spawnY="252550" spawnZ="-1936" />
-	<doorlist>
-		<door doorId="20240001" />
-		<door doorId="20240002" />
-		<door doorId="20240003" />
-	</doorlist>
+    <activityTime val="120" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="9033" spawnY="252550" spawnZ="-1936" />
+    <doorlist>
+        <door doorId="20240001" />
+        <door doorId="20240002" />
+        <door doorId="20240003" />
+    </doorlist>
 </instance>

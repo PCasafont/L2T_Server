@@ -31,51 +31,50 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class GiveReco implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.GIVE_RECO
-	};
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.GIVE_RECO};
 
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-	 */
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Object obj : targets)
-		{
-			if (obj instanceof L2PcInstance)
-			{
-				L2PcInstance target = (L2PcInstance) obj;
-				int power = (int)skill.getPower();
-				int reco  = target.getRecomHave();
-				
-				if (reco + power >= 255)
-					power = 255-reco;
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+     */
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        for (L2Object obj : targets)
+        {
+            if (obj instanceof L2PcInstance)
+            {
+                L2PcInstance target = (L2PcInstance) obj;
+                int power = (int) skill.getPower();
+                int reco = target.getRecomHave();
 
-				if (power > 0)
-				{
-					target.setRecomHave(reco+power);
+                if (reco + power >= 255)
+                {
+                    power = 255 - reco;
+                }
 
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATIONS);
-					sm.addNumber(power);
-					
-					target.sendPacket(sm);
-					target.sendPacket(new UserInfo(target));
-					target.sendPacket(new ExVoteSystemInfo(target));
-				}
-				else
-					target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
-			}
-		}
-	}
+                if (power > 0)
+                {
+                    target.setRecomHave(reco + power);
 
-	/**
-	 *
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-	 */
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+                    SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATIONS);
+                    sm.addNumber(power);
+
+                    target.sendPacket(sm);
+                    target.sendPacket(new UserInfo(target));
+                    target.sendPacket(new ExVoteSystemInfo(target));
+                }
+                else
+                {
+                    target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
+                }
+            }
+        }
+    }
+
+    /**
+     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+     */
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

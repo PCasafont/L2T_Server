@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritorySchuttgart extends TerritoryWarSuperClass
 {
-	public static String qn1 = "725_FortheSakeoftheTerritorySchuttgart";
-	public static int qnu = 725;
-	public static String qna = "For the Sake of the Territory - Schuttgart";
-	
-	public TheTerritorySchuttgart()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36507;
-		TERRITORY_ID = 89;
-		LEADER_IDS = new int[] { 36556, 36558, 36561, 36599 };
-		GUARD_IDS = new int[] { 36557, 36559, 36560 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Schuttgart has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "725_FortheSakeoftheTerritorySchuttgart";
+    public static int qnu = 725;
+    public static String qna = "For the Sake of the Territory - Schuttgart";
+
+    public TheTerritorySchuttgart()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36507;
+        TERRITORY_ID = 89;
+        LEADER_IDS = new int[]{36556, 36558, 36561, 36599};
+        GUARD_IDS = new int[]{36557, 36559, 36560};
+        qn = qn1;
+        Text = new String[]{"The catapult of Schuttgart has been destroyed!"};
+        registerKillIds();
+    }
 }

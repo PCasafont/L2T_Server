@@ -17,18 +17,17 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author Gnat
- *
  **/
 
 public class ExBirthdayPopup extends L2GameServerPacket
 {
-	
-	public ExBirthdayPopup()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-	}
+
+    public ExBirthdayPopup()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+    }
 }

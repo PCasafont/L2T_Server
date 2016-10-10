@@ -20,35 +20,38 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author -Wooden-
- *
  */
 public final class SnoopQuit extends L2GameClientPacket
 {
-	
-	private int _snoopID;
-	
-	@Override
-	protected void readImpl()
-	{
-		_snoopID = readD();
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = L2World.getInstance().getPlayer(_snoopID);
-		if (player == null)
-			return;
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		player.removeSnooper(activeChar);
-		activeChar.removeSnooped(player);
-	}
+
+    private int _snoopID;
+
+    @Override
+    protected void readImpl()
+    {
+        _snoopID = readD();
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = L2World.getInstance().getPlayer(_snoopID);
+        if (player == null)
+        {
+            return;
+        }
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        player.removeSnooper(activeChar);
+        activeChar.removeSnooped(player);
+    }
 }

@@ -21,54 +21,53 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- *
  * @author DS
- *
- * Effect will generate charges for L2PcInstance targets
- * Number of charges in "value", maximum number in "count" effect variables
- *
+ *         <p>
+ *         Effect will generate charges for L2PcInstance targets
+ *         Number of charges in "value", maximum number in "count" effect variables
  */
 public class EffectCantEscape extends L2Effect
 {
-	public EffectCantEscape(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected() == null)
-			return false;
-		
-		if (!(getEffected() instanceof L2PcInstance))
-			return false;
-		
-		((L2PcInstance) getEffected()).setCanEscape(false);
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		((L2PcInstance) getEffected()).setCanEscape(true);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return true; // abort effect even if count > 1
-	}
+    public EffectCantEscape(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected() == null)
+        {
+            return false;
+        }
+
+        if (!(getEffected() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        ((L2PcInstance) getEffected()).setCanEscape(false);
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        ((L2PcInstance) getEffected()).setCanEscape(true);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return true; // abort effect even if count > 1
+    }
 }

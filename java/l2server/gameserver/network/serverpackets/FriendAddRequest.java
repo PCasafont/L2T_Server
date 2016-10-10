@@ -16,14 +16,13 @@
 package l2server.gameserver.network.serverpackets;
 
 /**
- *
  * sample
  * <p>
  * 7d
  * c1 b2 e0 4a
  * 00 00 00 00
  * <p>
- *
+ * <p>
  * format
  * cdd
  *
@@ -31,23 +30,23 @@ package l2server.gameserver.network.serverpackets;
  */
 public class FriendAddRequest extends L2GameServerPacket
 {
-	
-	private String _requestorName;
-	
-	/**
-	 * @param int objectId of the target
-	 * @param int
-	 */
-	public FriendAddRequest(String requestorName)
-	{
-		_requestorName = requestorName;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeC(0x00);
-		writeS(_requestorName);
-		writeD(0);
-	}
+
+    private String _requestorName;
+
+    /**
+     * @param int objectId of the target
+     * @param int
+     */
+    public FriendAddRequest(String requestorName)
+    {
+        _requestorName = requestorName;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeC(0x00);
+        writeS(_requestorName);
+        writeD(0);
+    }
 }

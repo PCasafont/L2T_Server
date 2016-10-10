@@ -22,27 +22,29 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerClassNameStartsWith extends Condition
 {
-	private final ArrayList<String> _className;
-	
-	public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
-	{
-		_className = className;
-	}
-	
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-			return false;
-		
-		for (String className : _className)
-		{
-			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
-			{
-				return true;
-			}
-		}
-		
-		return false;
-	}
+    private final ArrayList<String> _className;
+
+    public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
+    {
+        _className = className;
+    }
+
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!(env.player instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        for (String className : _className)
+        {
+            if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

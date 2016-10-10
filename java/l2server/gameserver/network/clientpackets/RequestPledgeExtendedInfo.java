@@ -18,23 +18,23 @@ package l2server.gameserver.network.clientpackets;
 /**
  * Format: (c) S
  * S: pledge name?
- * @author  -Wooden-
  *
+ * @author -Wooden-
  */
 public class RequestPledgeExtendedInfo extends L2GameClientPacket
 {
-	
-	@SuppressWarnings("unused")
-	private String _name;
-	
-	@Override
-	protected void readImpl()
-	{
-		_name = readS();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-	}
+
+    @SuppressWarnings("unused")
+    private String _name;
+
+    @Override
+    protected void readImpl()
+    {
+        _name = readS();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+    }
 }

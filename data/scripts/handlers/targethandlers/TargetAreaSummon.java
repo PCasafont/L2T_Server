@@ -31,59 +31,70 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 
 /**
- *
  * @author Sandro
  */
 public class TargetAreaSummon implements ISkillTargetTypeHandler
 {
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
-	 */
-	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		List<L2Character> targetList = new ArrayList<L2Character>();
-		// FIXME target = activeChar.getPet();
-		if (target == null || !(target instanceof L2SummonInstance) || target.isDead())
-			return null;
-		
-		if (onlyFirst)
-			return new L2Character[] { target };
-		
-		final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
-		final int radius = skill.getSkillRadius();
-		
-		for (L2Character obj : objs)
-		{
-			if (obj == null || obj == target || obj == activeChar)
-				continue;
-			
-			if (!Util.checkIfInRange(radius, target, obj, true))
-				continue;
-			
-			if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
-				continue;
-			
-			targetList.add(obj);
-		}
-		
-		if (targetList.isEmpty())
-			return null;
-		
-		return targetList.toArray(new L2Character[targetList.size()]);
-	}
-	
-	/**
-	 * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
-	 */
-	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
-		return L2SkillTargetType.TARGET_AREA_SUMMON;
-	}
-	
-	public static void main(String[] args)
-	{
-		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaSummon());
-	}
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
+     */
+    @Override
+    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+    {
+        List<L2Character> targetList = new ArrayList<L2Character>();
+        // FIXME target = activeChar.getPet();
+        if (target == null || !(target instanceof L2SummonInstance) || target.isDead())
+        {
+            return null;
+        }
+
+        if (onlyFirst)
+        {
+            return new L2Character[]{target};
+        }
+
+        final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
+        final int radius = skill.getSkillRadius();
+
+        for (L2Character obj : objs)
+        {
+            if (obj == null || obj == target || obj == activeChar)
+            {
+                continue;
+            }
+
+            if (!Util.checkIfInRange(radius, target, obj, true))
+            {
+                continue;
+            }
+
+            if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
+            {
+                continue;
+            }
+
+            targetList.add(obj);
+        }
+
+        if (targetList.isEmpty())
+        {
+            return null;
+        }
+
+        return targetList.toArray(new L2Character[targetList.size()]);
+    }
+
+    /**
+     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
+     */
+    @Override
+    public Enum<L2SkillTargetType> getTargetType()
+    {
+        return L2SkillTargetType.TARGET_AREA_SUMMON;
+    }
+
+    public static void main(String[] args)
+    {
+        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaSummon());
+    }
 }

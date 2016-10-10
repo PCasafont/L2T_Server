@@ -22,22 +22,21 @@ import l2server.gameserver.network.serverpackets.HennaEquipList;
 
 public class DrawHenna implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Draw"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2SymbolMakerInstance))
-			return false;
-		
-		activeChar.sendPacket(new HennaEquipList(activeChar, activeChar.getCurrentClass().getAllowedDyes()));
-		return true;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"Draw"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        if (!(target instanceof L2SymbolMakerInstance))
+        {
+            return false;
+        }
+
+        activeChar.sendPacket(new HennaEquipList(activeChar, activeChar.getCurrentClass().getAllowedDyes()));
+        return true;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

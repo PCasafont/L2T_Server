@@ -36,81 +36,93 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AdminAnnouncements implements IAdminCommandHandler
 {
-	
-	private static final String[] ADMIN_COMMANDS = { "admin_list_announcements", "admin_reload_announcements", "admin_announce_announcements", "admin_add_announcement", "admin_del_announcement", "admin_announce", "admin_announce_menu" };
-	
-	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_list_announcements"))
-		{
-			Announcements.getInstance().listAnnouncements(activeChar);
-		}
-		else if (command.equals("admin_reload_announcements"))
-		{
-			Announcements.getInstance().loadAnnouncements();
-			Announcements.getInstance().listAnnouncements(activeChar);
-		}
-		else if (command.startsWith("admin_announce_menu"))
-		{
-			if (Config.GM_ANNOUNCER_NAME && command.length() > 20)
-				command += " (" + activeChar.getName() + ")";
-			Announcements.getInstance().handleAnnounce(command, 20);
-			AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
-		}
-		else if (command.equals("admin_announce_announcements"))
-		{
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			// synchronized (L2World.getInstance().getAllPlayers())
-			{
-				for (L2PcInstance player : pls)
-					Announcements.getInstance().showAnnouncements(player);
-			}
-			Announcements.getInstance().listAnnouncements(activeChar);
-		}
-		else if (command.startsWith("admin_add_announcement"))
-		{
-			// FIXME the player can send only 16 chars (if you try to send more
-			// it sends null), remove this function or not?
-			if (!command.equals("admin_add_announcement"))
-			{
-				try
-				{
-					String val = command.substring(23);
-					Announcements.getInstance().addAnnouncement(val);
-					Announcements.getInstance().listAnnouncements(activeChar);
-				}
-				catch (StringIndexOutOfBoundsException e)
-				{
-				}// ignore errors
-			}
-		}
-		else if (command.startsWith("admin_del_announcement"))
-		{
-			try
-			{
-				int val = Integer.parseInt(command.substring(23));
-				Announcements.getInstance().delAnnouncement(val);
-				Announcements.getInstance().listAnnouncements(activeChar);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-			}
-		}
-		
-		// Command is admin announce
-		else if (command.startsWith("admin_announce"))
-		{
-			command = command.substring(15);
-			// Call method from another class
-			Announcements.getInstance().handleAnnounce(command, 0);
-		}
-		return true;
-	}
-	
-	@Override
-	public String[] getAdminCommandList()
-	{
-		return ADMIN_COMMANDS;
-	}
+
+    private static final String[] ADMIN_COMMANDS = {
+            "admin_list_announcements",
+            "admin_reload_announcements",
+            "admin_announce_announcements",
+            "admin_add_announcement",
+            "admin_del_announcement",
+            "admin_announce",
+            "admin_announce_menu"
+    };
+
+    @Override
+    public boolean useAdminCommand(String command, L2PcInstance activeChar)
+    {
+        if (command.equals("admin_list_announcements"))
+        {
+            Announcements.getInstance().listAnnouncements(activeChar);
+        }
+        else if (command.equals("admin_reload_announcements"))
+        {
+            Announcements.getInstance().loadAnnouncements();
+            Announcements.getInstance().listAnnouncements(activeChar);
+        }
+        else if (command.startsWith("admin_announce_menu"))
+        {
+            if (Config.GM_ANNOUNCER_NAME && command.length() > 20)
+            {
+                command += " (" + activeChar.getName() + ")";
+            }
+            Announcements.getInstance().handleAnnounce(command, 20);
+            AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
+        }
+        else if (command.equals("admin_announce_announcements"))
+        {
+            Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+            // synchronized (L2World.getInstance().getAllPlayers())
+            {
+                for (L2PcInstance player : pls)
+                {
+                    Announcements.getInstance().showAnnouncements(player);
+                }
+            }
+            Announcements.getInstance().listAnnouncements(activeChar);
+        }
+        else if (command.startsWith("admin_add_announcement"))
+        {
+            // FIXME the player can send only 16 chars (if you try to send more
+            // it sends null), remove this function or not?
+            if (!command.equals("admin_add_announcement"))
+            {
+                try
+                {
+                    String val = command.substring(23);
+                    Announcements.getInstance().addAnnouncement(val);
+                    Announcements.getInstance().listAnnouncements(activeChar);
+                }
+                catch (StringIndexOutOfBoundsException e)
+                {
+                }// ignore errors
+            }
+        }
+        else if (command.startsWith("admin_del_announcement"))
+        {
+            try
+            {
+                int val = Integer.parseInt(command.substring(23));
+                Announcements.getInstance().delAnnouncement(val);
+                Announcements.getInstance().listAnnouncements(activeChar);
+            }
+            catch (StringIndexOutOfBoundsException e)
+            {
+            }
+        }
+
+        // Command is admin announce
+        else if (command.startsWith("admin_announce"))
+        {
+            command = command.substring(15);
+            // Call method from another class
+            Announcements.getInstance().handleAnnounce(command, 0);
+        }
+        return true;
+    }
+
+    @Override
+    public String[] getAdminCommandList()
+    {
+        return ADMIN_COMMANDS;
+    }
 }

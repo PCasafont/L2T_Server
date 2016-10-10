@@ -26,27 +26,27 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestDismissAlly extends L2GameClientPacket
 {
-	//static Logger _log = Logger.getLogger(RequestDismissAlly.class.getName());
-	
-	@Override
-	protected void readImpl()
-	{
-		// trigger packet
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
-			return;
-		}
-		if (!activeChar.isClanLeader())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FEATURE_ONLY_FOR_ALLIANCE_LEADER));
-			return;
-		}
-		activeChar.getClan().dissolveAlly(activeChar);
-	}
+    //static Logger _log = Logger.getLogger(RequestDismissAlly.class.getName());
+
+    @Override
+    protected void readImpl()
+    {
+        // trigger packet
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        if (!activeChar.isClanLeader())
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FEATURE_ONLY_FOR_ALLIANCE_LEADER));
+            return;
+        }
+        activeChar.getClan().dissolveAlly(activeChar);
+    }
 }

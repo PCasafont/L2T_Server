@@ -1,2077 +1,2077 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19800" type="Armor" name="Bound Immortal Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19737" />
-		<set name="standardItem" val="19736" />
-		<set name="blessedItem" val="19864" />
-		<for>
-			<baseAdd stat="pDef" val="114" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19801" type="Armor" name="Bound Immortal Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19737" />
-		<set name="standardItem" val="19737" />
-		<set name="blessedItem" val="19865" />
-		<for>
-			<baseAdd stat="pDef" val="243" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19802" type="Armor" name="Bound Immortal Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19737" />
-		<set name="standardItem" val="19738" />
-		<set name="blessedItem" val="19866" />
-		<for>
-			<baseAdd stat="pDef" val="152" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19803" type="Armor" name="Bound Immortal Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19737" />
-		<set name="standardItem" val="19739" />
-		<set name="blessedItem" val="19867" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19804" type="Armor" name="Bound Immortal Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19737" />
-		<set name="standardItem" val="19740" />
-		<set name="blessedItem" val="19868" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19805" type="Armor" name="Bound Immortal Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19742" />
-		<set name="standardItem" val="19741" />
-		<set name="blessedItem" val="19869" />
-		<for>
-			<baseAdd stat="pDef" val="114" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="19806" type="Armor" name="Bound Immortal Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19742" />
-		<set name="standardItem" val="19742" />
-		<set name="blessedItem" val="19870" />
-		<for>
-			<baseAdd stat="mDef" val="36" />
-			<baseAdd stat="pDef" val="167" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19807" type="Armor" name="Bound Immortal Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19742" />
-		<set name="standardItem" val="19743" />
-		<set name="blessedItem" val="19871" />
-		<for>
-			<baseAdd stat="mDef" val="24" />
-			<baseAdd stat="pDef" val="104" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19808" type="Armor" name="Bound Immortal Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19742" />
-		<set name="standardItem" val="19744" />
-		<set name="blessedItem" val="19872" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19809" type="Armor" name="Bound Immortal Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19742" />
-		<set name="standardItem" val="19745" />
-		<set name="blessedItem" val="19873" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19810" type="Armor" name="Bound Twilight Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19746" />
-		<set name="blessedItem" val="19874" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19811" type="Armor" name="Bound Twilight Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19747" />
-		<set name="blessedItem" val="19875" />
-		<for>
-			<baseAdd stat="pDef" val="335" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19812" type="Armor" name="Bound Twilight Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19748" />
-		<set name="blessedItem" val="19876" />
-		<for>
-			<baseAdd stat="pDef" val="209" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19813" type="Armor" name="Bound Twilight Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19749" />
-		<set name="blessedItem" val="19877" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19814" type="Armor" name="Bound Twilight Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19750" />
-		<set name="blessedItem" val="19878" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19815" type="Armor" name="Bound Twilight Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.kratere_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19747" />
-		<set name="standardItem" val="19751" />
-		<set name="blessedItem" val="19879" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="458" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19816" type="Armor" name="Bound Twilight Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19753" />
-		<set name="standardItem" val="19752" />
-		<set name="blessedItem" val="19880" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19817" type="Armor" name="Bound Twilight Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19753" />
-		<set name="standardItem" val="19753" />
-		<set name="blessedItem" val="19881" />
-		<for>
-			<baseAdd stat="pDef" val="268" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19818" type="Armor" name="Bound Twilight Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19753" />
-		<set name="standardItem" val="19754" />
-		<set name="blessedItem" val="19882" />
-		<for>
-			<baseAdd stat="pDef" val="168" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19819" type="Armor" name="Bound Twilight Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19753" />
-		<set name="standardItem" val="19755" />
-		<set name="blessedItem" val="19883" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19820" type="Armor" name="Bound Twilight Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19753" />
-		<set name="standardItem" val="19756" />
-		<set name="blessedItem" val="19884" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19821" type="Armor" name="Bound Twilight Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19758" />
-		<set name="standardItem" val="19757" />
-		<set name="blessedItem" val="19885" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="19822" type="Armor" name="Bound Twilight Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19758" />
-		<set name="standardItem" val="19758" />
-		<set name="blessedItem" val="19886" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="184" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19823" type="Armor" name="Bound Twilight Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19758" />
-		<set name="standardItem" val="19759" />
-		<set name="blessedItem" val="19887" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="115" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19824" type="Armor" name="Bound Twilight Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19758" />
-		<set name="standardItem" val="19760" />
-		<set name="blessedItem" val="19888" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19825" type="Armor" name="Bound Twilight Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19758" />
-		<set name="standardItem" val="19761" />
-		<set name="blessedItem" val="19889" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19826" type="Armor" name="Bound Seraph Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="blessedItem" val="19890" />
-		<for>
-			<baseAdd stat="pDef" val="139" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19827" type="Armor" name="Bound Seraph Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="7520" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19763" />
-		<set name="standardItem" val="19763" />
-		<for>
-			<baseAdd stat="pDef" val="370" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19828" type="Armor" name="Bound Seraph Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="3170" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19763" />
-		<set name="standardItem" val="19764" />
-		<for>
-			<baseAdd stat="pDef" val="231" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19829" type="Armor" name="Bound Seraph Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19763" />
-		<set name="standardItem" val="19765" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19830" type="Armor" name="Bound Seraph Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19763" />
-		<set name="standardItem" val="19766" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19831" type="Armor" name="Bound Seraph Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.beranka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19763" />
-		<set name="standardItem" val="19767" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="505" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19832" type="Armor" name="Bound Seraph Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19769" />
-		<set name="standardItem" val="19768" />
-		<set name="blessedItem" val="19896" />
-		<for>
-			<baseAdd stat="pDef" val="139" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19833" type="Armor" name="Bound Seraph Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19769" />
-		<set name="standardItem" val="19769" />
-		<set name="blessedItem" val="19897" />
-		<for>
-			<baseAdd stat="pDef" val="296" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19834" type="Armor" name="Bound Seraph Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19769" />
-		<set name="standardItem" val="19770" />
-		<set name="blessedItem" val="19898" />
-		<for>
-			<baseAdd stat="pDef" val="185" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19835" type="Armor" name="Bound Seraph Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19769" />
-		<set name="standardItem" val="19771" />
-		<set name="blessedItem" val="19899" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19836" type="Armor" name="Bound Seraph Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19769" />
-		<set name="standardItem" val="19772" />
-		<set name="blessedItem" val="19900" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19837" type="Armor" name="Bound Seraph Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19774" />
-		<set name="standardItem" val="19773" />
-		<set name="blessedItem" val="19901" />
-		<for>
-			<baseAdd stat="pDef" val="139" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="19838" type="Armor" name="Bound Seraph Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t403_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19774" />
-		<set name="standardItem" val="19774" />
-		<set name="blessedItem" val="19902" />
-		<for>
-			<baseAdd stat="mDef" val="47" />
-			<baseAdd stat="pDef" val="204" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19839" type="Armor" name="Bound Seraph Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t403_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19774" />
-		<set name="standardItem" val="19775" />
-		<set name="blessedItem" val="19903" />
-		<for>
-			<baseAdd stat="mDef" val="31" />
-			<baseAdd stat="pDef" val="127" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19840" type="Armor" name="Bound Seraph Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t403_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19774" />
-		<set name="standardItem" val="19776" />
-		<set name="blessedItem" val="19904" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19841" type="Armor" name="Bound Seraph Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t403_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19774" />
-		<set name="standardItem" val="19777" />
-		<set name="blessedItem" val="19905" />
-		<for>
-			<baseAdd stat="pDef" val="93" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19842" type="Armor" name="Bound Eternal Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19778" />
-		<set name="blessedItem" val="19906" />
-		<for>
-			<baseAdd stat="pDef" val="147" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19843" type="Armor" name="Bound Eternal Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t701_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="7520" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19779" />
-		<set name="blessedItem" val="19907" />
-		<for>
-			<baseAdd stat="pDef" val="392" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19844" type="Armor" name="Bound Eternal Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t701_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="3170" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19780" />
-		<set name="blessedItem" val="19908" />
-		<for>
-			<baseAdd stat="pDef" val="245" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19845" type="Armor" name="Bound Eternal Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t701_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19781" />
-		<set name="blessedItem" val="19909" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19846" type="Armor" name="Bound Eternal Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t701_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19782" />
-		<set name="blessedItem" val="19910" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19847" type="Armor" name="Bound Eternal Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.weapon_akra_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19779" />
-		<set name="standardItem" val="19783" />
-		<set name="blessedItem" val="19911" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="536" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19848" type="Armor" name="Bound Eternal Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19785" />
-		<set name="standardItem" val="19784" />
-		<set name="blessedItem" val="19912" />
-		<for>
-			<baseAdd stat="pDef" val="147" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19849" type="Armor" name="Bound Eternal Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t702_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19785" />
-		<set name="standardItem" val="19785" />
-		<set name="blessedItem" val="19913" />
-		<for>
-			<baseAdd stat="pDef" val="313" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19850" type="Armor" name="Bound Eternal Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t702_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19785" />
-		<set name="standardItem" val="19786" />
-		<set name="blessedItem" val="19914" />
-		<for>
-			<baseAdd stat="pDef" val="196" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19851" type="Armor" name="Bound Eternal Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t702_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19785" />
-		<set name="standardItem" val="19787" />
-		<set name="blessedItem" val="19915" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19852" type="Armor" name="Bound Eternal Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t702_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19785" />
-		<set name="standardItem" val="19788" />
-		<set name="blessedItem" val="19916" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19853" type="Armor" name="Bound Eternal Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19790" />
-		<set name="standardItem" val="19789" />
-		<set name="blessedItem" val="19917" />
-		<for>
-			<baseAdd stat="pDef" val="147" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases M. Evasion and Mental Attack Resistance when enchanted to + 4. -->
-	<item id="19854" type="Armor" name="Bound Eternal Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t703_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19790" />
-		<set name="standardItem" val="19790" />
-		<set name="blessedItem" val="19918" />
-		<for>
-			<baseAdd stat="mDef" val="49" />
-			<baseAdd stat="pDef" val="215" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19855" type="Armor" name="Bound Eternal Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t703_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19790" />
-		<set name="standardItem" val="19791" />
-		<set name="blessedItem" val="19919" />
-		<for>
-			<baseAdd stat="mDef" val="33" />
-			<baseAdd stat="pDef" val="134" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19856" type="Armor" name="Bound Eternal Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t703_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19790" />
-		<set name="standardItem" val="19792" />
-		<set name="blessedItem" val="19920" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="19857" type="Armor" name="Bound Eternal Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t703_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r99" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="armorSet" val="19790" />
-		<set name="standardItem" val="19793" />
-		<set name="blessedItem" val="19921" />
-		<for>
-			<baseAdd stat="pDef" val="98" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<item id="19858" type="Armor" name="Blessed Immortal Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="118" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19859" type="Armor" name="Blessed Immortal Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t501_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="315" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19860" type="Armor" name="Blessed Immortal Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t501_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="197" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19861" type="Armor" name="Blessed Immortal Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t501_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19862" type="Armor" name="Blessed Immortal Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t501_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. -->
-	<item id="19863" type="Armor" name="Blessed Immortal Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.weapon_sacon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="armorSet" val="19731" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="431" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="19864" type="Armor" name="Blessed Immortal Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19737" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="118" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19865" type="Armor" name="Blessed Immortal Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="armorSet" val="19737" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="252" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19866" type="Armor" name="Blessed Immortal Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="armorSet" val="19737" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="157" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19867" type="Armor" name="Blessed Immortal Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19737" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19868" type="Armor" name="Blessed Immortal Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t502_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19737" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="19869" type="Armor" name="Blessed Immortal Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19742" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="118" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="19870" type="Armor" name="Blessed Immortal Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="armorSet" val="19742" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="36" />
-			<baseAdd stat="pDef" val="173" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19871" type="Armor" name="Blessed Immortal Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="armorSet" val="19742" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="24" />
-			<baseAdd stat="pDef" val="108" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19872" type="Armor" name="Blessed Immortal Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19742" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19873" type="Armor" name="Blessed Immortal Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t503_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19742" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="78" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="19874" type="Armor" name="Blessed Twilight Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19875" type="Armor" name="Blessed Twilight Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="348" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19876" type="Armor" name="Blessed Twilight Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="217" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19877" type="Armor" name="Blessed Twilight Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19878" type="Armor" name="Blessed Twilight Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t601_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. -->
-	<item id="19879" type="Armor" name="Blessed Twilight Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.kratere_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="armorSet" val="19747" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="476" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="19880" type="Armor" name="Blessed Twilight Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19753" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19881" type="Armor" name="Blessed Twilight Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="armorSet" val="19753" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="278" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19882" type="Armor" name="Blessed Twilight Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="armorSet" val="19753" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="173" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19883" type="Armor" name="Blessed Twilight Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19753" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19884" type="Armor" name="Blessed Twilight Leather Boots - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19753" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="19885" type="Armor" name="Blessed Twilight Circlet - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19758" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="130" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="19886" type="Armor" name="Blessed Twilight Tunic - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="armorSet" val="19758" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="191" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19887" type="Armor" name="Blessed Twilight Stockings - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="armorSet" val="19758" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="119" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19888" type="Armor" name="Blessed Twilight Gloves - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19758" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19889" type="Armor" name="Blessed Twilight Shoes - Recovery Type / Robe">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19758" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="87" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<item id="19890" type="Armor" name="Blessed Seraph Helmet - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="144" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="19891" type="Armor" name="Blessed Seraph Breastplate - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="7520" />
-		<set name="enchant4_skill" val="13308-3" />
-		<set name="item_skill" val="13063-1" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="384" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19892" type="Armor" name="Blessed Seraph Gaiters - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="3170" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="240" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19893" type="Armor" name="Blessed Seraph Gauntlets - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
-	<item id="19894" type="Armor" name="Blessed Seraph Boots - Defense Type / Heavy">
-		<set name="icon" val="icon.armor_t401_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1070" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="1.0" />
-		</for>
-	</item>
-	<!-- Additionally increases Shield Defense. -->
-	<item id="19895" type="Armor" name="Blessed Seraph Shield - Defense Type / Heavy">
-		<set name="icon" val="icon.beranka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1130" />
-		<set name="armorSet" val="19763" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="525" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<item id="19896" type="Armor" name="Blessed Seraph Leather Helmet - Enchant Type / Light">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="530" />
-		<set name="armorSet" val="19769" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="144" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.3" />
-			<enchant stat="mEvasRate" val="0.3" />
-		</for>
-	</item>
-	<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="19897" type="Armor" name="Blessed Seraph Leather Armor - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="4140" />
-		<set name="armorSet" val="19769" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="307" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="3" />
-			<enchant stat="mAtk" val="2" />
-		</for>
-	</item>
-	<item id="19898" type="Armor" name="Blessed Seraph Leather Leggings - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1320" />
-		<set name="armorSet" val="19769" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="192" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.5" />
-			<enchant stat="mCritRate" val="0.5" />
-		</for>
-	</item>
-	<item id="19899" type="Armor" name="Blessed Seraph Leather Gloves - Enchant Type / Light">
-		<set name="icon" val="icon.armor_t402_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="510" />
-		<set name="armorSet" val="19769" />
-		<set name="isBlessed" val="true" />
-		<for>
-			<baseAdd stat="pDef" val="96" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.3" />
-			<enchant stat="accMagic" val="0.3" />
-		</for>
-	</item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19800" type="Armor" name="Bound Immortal Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19737" />
+        <set name="standardItem" val="19736" />
+        <set name="blessedItem" val="19864" />
+        <for>
+            <baseAdd stat="pDef" val="114" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19801" type="Armor" name="Bound Immortal Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19737" />
+        <set name="standardItem" val="19737" />
+        <set name="blessedItem" val="19865" />
+        <for>
+            <baseAdd stat="pDef" val="243" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19802" type="Armor" name="Bound Immortal Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19737" />
+        <set name="standardItem" val="19738" />
+        <set name="blessedItem" val="19866" />
+        <for>
+            <baseAdd stat="pDef" val="152" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19803" type="Armor" name="Bound Immortal Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19737" />
+        <set name="standardItem" val="19739" />
+        <set name="blessedItem" val="19867" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19804" type="Armor" name="Bound Immortal Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19737" />
+        <set name="standardItem" val="19740" />
+        <set name="blessedItem" val="19868" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19805" type="Armor" name="Bound Immortal Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19742" />
+        <set name="standardItem" val="19741" />
+        <set name="blessedItem" val="19869" />
+        <for>
+            <baseAdd stat="pDef" val="114" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="19806" type="Armor" name="Bound Immortal Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19742" />
+        <set name="standardItem" val="19742" />
+        <set name="blessedItem" val="19870" />
+        <for>
+            <baseAdd stat="mDef" val="36" />
+            <baseAdd stat="pDef" val="167" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19807" type="Armor" name="Bound Immortal Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19742" />
+        <set name="standardItem" val="19743" />
+        <set name="blessedItem" val="19871" />
+        <for>
+            <baseAdd stat="mDef" val="24" />
+            <baseAdd stat="pDef" val="104" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19808" type="Armor" name="Bound Immortal Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19742" />
+        <set name="standardItem" val="19744" />
+        <set name="blessedItem" val="19872" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19809" type="Armor" name="Bound Immortal Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19742" />
+        <set name="standardItem" val="19745" />
+        <set name="blessedItem" val="19873" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19810" type="Armor" name="Bound Twilight Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19746" />
+        <set name="blessedItem" val="19874" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19811" type="Armor" name="Bound Twilight Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19747" />
+        <set name="blessedItem" val="19875" />
+        <for>
+            <baseAdd stat="pDef" val="335" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19812" type="Armor" name="Bound Twilight Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19748" />
+        <set name="blessedItem" val="19876" />
+        <for>
+            <baseAdd stat="pDef" val="209" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19813" type="Armor" name="Bound Twilight Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19749" />
+        <set name="blessedItem" val="19877" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19814" type="Armor" name="Bound Twilight Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19750" />
+        <set name="blessedItem" val="19878" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19815" type="Armor" name="Bound Twilight Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.kratere_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19747" />
+        <set name="standardItem" val="19751" />
+        <set name="blessedItem" val="19879" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="458" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19816" type="Armor" name="Bound Twilight Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19753" />
+        <set name="standardItem" val="19752" />
+        <set name="blessedItem" val="19880" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19817" type="Armor" name="Bound Twilight Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19753" />
+        <set name="standardItem" val="19753" />
+        <set name="blessedItem" val="19881" />
+        <for>
+            <baseAdd stat="pDef" val="268" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19818" type="Armor" name="Bound Twilight Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19753" />
+        <set name="standardItem" val="19754" />
+        <set name="blessedItem" val="19882" />
+        <for>
+            <baseAdd stat="pDef" val="168" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19819" type="Armor" name="Bound Twilight Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19753" />
+        <set name="standardItem" val="19755" />
+        <set name="blessedItem" val="19883" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19820" type="Armor" name="Bound Twilight Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19753" />
+        <set name="standardItem" val="19756" />
+        <set name="blessedItem" val="19884" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19821" type="Armor" name="Bound Twilight Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19758" />
+        <set name="standardItem" val="19757" />
+        <set name="blessedItem" val="19885" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="19822" type="Armor" name="Bound Twilight Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19758" />
+        <set name="standardItem" val="19758" />
+        <set name="blessedItem" val="19886" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="184" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19823" type="Armor" name="Bound Twilight Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19758" />
+        <set name="standardItem" val="19759" />
+        <set name="blessedItem" val="19887" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="115" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19824" type="Armor" name="Bound Twilight Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19758" />
+        <set name="standardItem" val="19760" />
+        <set name="blessedItem" val="19888" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19825" type="Armor" name="Bound Twilight Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19758" />
+        <set name="standardItem" val="19761" />
+        <set name="blessedItem" val="19889" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19826" type="Armor" name="Bound Seraph Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="blessedItem" val="19890" />
+        <for>
+            <baseAdd stat="pDef" val="139" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19827" type="Armor" name="Bound Seraph Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="7520" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19763" />
+        <set name="standardItem" val="19763" />
+        <for>
+            <baseAdd stat="pDef" val="370" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19828" type="Armor" name="Bound Seraph Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="3170" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19763" />
+        <set name="standardItem" val="19764" />
+        <for>
+            <baseAdd stat="pDef" val="231" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19829" type="Armor" name="Bound Seraph Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19763" />
+        <set name="standardItem" val="19765" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19830" type="Armor" name="Bound Seraph Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19763" />
+        <set name="standardItem" val="19766" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19831" type="Armor" name="Bound Seraph Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.beranka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19763" />
+        <set name="standardItem" val="19767" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="505" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19832" type="Armor" name="Bound Seraph Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19769" />
+        <set name="standardItem" val="19768" />
+        <set name="blessedItem" val="19896" />
+        <for>
+            <baseAdd stat="pDef" val="139" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19833" type="Armor" name="Bound Seraph Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19769" />
+        <set name="standardItem" val="19769" />
+        <set name="blessedItem" val="19897" />
+        <for>
+            <baseAdd stat="pDef" val="296" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19834" type="Armor" name="Bound Seraph Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19769" />
+        <set name="standardItem" val="19770" />
+        <set name="blessedItem" val="19898" />
+        <for>
+            <baseAdd stat="pDef" val="185" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19835" type="Armor" name="Bound Seraph Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19769" />
+        <set name="standardItem" val="19771" />
+        <set name="blessedItem" val="19899" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19836" type="Armor" name="Bound Seraph Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19769" />
+        <set name="standardItem" val="19772" />
+        <set name="blessedItem" val="19900" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19837" type="Armor" name="Bound Seraph Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19774" />
+        <set name="standardItem" val="19773" />
+        <set name="blessedItem" val="19901" />
+        <for>
+            <baseAdd stat="pDef" val="139" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="19838" type="Armor" name="Bound Seraph Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t403_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19774" />
+        <set name="standardItem" val="19774" />
+        <set name="blessedItem" val="19902" />
+        <for>
+            <baseAdd stat="mDef" val="47" />
+            <baseAdd stat="pDef" val="204" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19839" type="Armor" name="Bound Seraph Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t403_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19774" />
+        <set name="standardItem" val="19775" />
+        <set name="blessedItem" val="19903" />
+        <for>
+            <baseAdd stat="mDef" val="31" />
+            <baseAdd stat="pDef" val="127" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19840" type="Armor" name="Bound Seraph Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t403_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19774" />
+        <set name="standardItem" val="19776" />
+        <set name="blessedItem" val="19904" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19841" type="Armor" name="Bound Seraph Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t403_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19774" />
+        <set name="standardItem" val="19777" />
+        <set name="blessedItem" val="19905" />
+        <for>
+            <baseAdd stat="pDef" val="93" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19842" type="Armor" name="Bound Eternal Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19778" />
+        <set name="blessedItem" val="19906" />
+        <for>
+            <baseAdd stat="pDef" val="147" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19843" type="Armor" name="Bound Eternal Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t701_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="7520" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19779" />
+        <set name="blessedItem" val="19907" />
+        <for>
+            <baseAdd stat="pDef" val="392" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19844" type="Armor" name="Bound Eternal Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t701_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="3170" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19780" />
+        <set name="blessedItem" val="19908" />
+        <for>
+            <baseAdd stat="pDef" val="245" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19845" type="Armor" name="Bound Eternal Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t701_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19781" />
+        <set name="blessedItem" val="19909" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19846" type="Armor" name="Bound Eternal Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t701_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19782" />
+        <set name="blessedItem" val="19910" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19847" type="Armor" name="Bound Eternal Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.weapon_akra_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19779" />
+        <set name="standardItem" val="19783" />
+        <set name="blessedItem" val="19911" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="536" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19848" type="Armor" name="Bound Eternal Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19785" />
+        <set name="standardItem" val="19784" />
+        <set name="blessedItem" val="19912" />
+        <for>
+            <baseAdd stat="pDef" val="147" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19849" type="Armor" name="Bound Eternal Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t702_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19785" />
+        <set name="standardItem" val="19785" />
+        <set name="blessedItem" val="19913" />
+        <for>
+            <baseAdd stat="pDef" val="313" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19850" type="Armor" name="Bound Eternal Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t702_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19785" />
+        <set name="standardItem" val="19786" />
+        <set name="blessedItem" val="19914" />
+        <for>
+            <baseAdd stat="pDef" val="196" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19851" type="Armor" name="Bound Eternal Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t702_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19785" />
+        <set name="standardItem" val="19787" />
+        <set name="blessedItem" val="19915" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19852" type="Armor" name="Bound Eternal Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t702_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19785" />
+        <set name="standardItem" val="19788" />
+        <set name="blessedItem" val="19916" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19853" type="Armor" name="Bound Eternal Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19790" />
+        <set name="standardItem" val="19789" />
+        <set name="blessedItem" val="19917" />
+        <for>
+            <baseAdd stat="pDef" val="147" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. Increases M. Evasion and Mental Attack Resistance when enchanted to + 4. -->
+    <item id="19854" type="Armor" name="Bound Eternal Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t703_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19790" />
+        <set name="standardItem" val="19790" />
+        <set name="blessedItem" val="19918" />
+        <for>
+            <baseAdd stat="mDef" val="49" />
+            <baseAdd stat="pDef" val="215" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19855" type="Armor" name="Bound Eternal Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t703_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19790" />
+        <set name="standardItem" val="19791" />
+        <set name="blessedItem" val="19919" />
+        <for>
+            <baseAdd stat="mDef" val="33" />
+            <baseAdd stat="pDef" val="134" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19856" type="Armor" name="Bound Eternal Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t703_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19790" />
+        <set name="standardItem" val="19792" />
+        <set name="blessedItem" val="19920" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="19857" type="Armor" name="Bound Eternal Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t703_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r99" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="armorSet" val="19790" />
+        <set name="standardItem" val="19793" />
+        <set name="blessedItem" val="19921" />
+        <for>
+            <baseAdd stat="pDef" val="98" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <item id="19858" type="Armor" name="Blessed Immortal Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="118" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19859" type="Armor" name="Blessed Immortal Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t501_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="315" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19860" type="Armor" name="Blessed Immortal Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t501_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="197" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19861" type="Armor" name="Blessed Immortal Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t501_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19862" type="Armor" name="Blessed Immortal Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t501_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. -->
+    <item id="19863" type="Armor" name="Blessed Immortal Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.weapon_sacon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="armorSet" val="19731" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="431" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="19864" type="Armor" name="Blessed Immortal Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19737" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="118" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19865" type="Armor" name="Blessed Immortal Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="armorSet" val="19737" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="252" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19866" type="Armor" name="Blessed Immortal Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="armorSet" val="19737" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="157" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19867" type="Armor" name="Blessed Immortal Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19737" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19868" type="Armor" name="Blessed Immortal Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t502_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19737" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="19869" type="Armor" name="Blessed Immortal Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19742" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="118" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="19870" type="Armor" name="Blessed Immortal Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="armorSet" val="19742" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="36" />
+            <baseAdd stat="pDef" val="173" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19871" type="Armor" name="Blessed Immortal Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="armorSet" val="19742" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="24" />
+            <baseAdd stat="pDef" val="108" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19872" type="Armor" name="Blessed Immortal Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19742" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19873" type="Armor" name="Blessed Immortal Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t503_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19742" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="78" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="19874" type="Armor" name="Blessed Twilight Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19875" type="Armor" name="Blessed Twilight Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="348" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19876" type="Armor" name="Blessed Twilight Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="217" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19877" type="Armor" name="Blessed Twilight Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19878" type="Armor" name="Blessed Twilight Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t601_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. -->
+    <item id="19879" type="Armor" name="Blessed Twilight Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.kratere_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="armorSet" val="19747" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="476" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="19880" type="Armor" name="Blessed Twilight Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19753" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19881" type="Armor" name="Blessed Twilight Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="armorSet" val="19753" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="278" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19882" type="Armor" name="Blessed Twilight Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="armorSet" val="19753" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="173" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19883" type="Armor" name="Blessed Twilight Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19753" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19884" type="Armor" name="Blessed Twilight Leather Boots - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19753" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="19885" type="Armor" name="Blessed Twilight Circlet - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19758" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="130" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="19886" type="Armor" name="Blessed Twilight Tunic - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="armorSet" val="19758" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="191" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19887" type="Armor" name="Blessed Twilight Stockings - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="armorSet" val="19758" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="119" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19888" type="Armor" name="Blessed Twilight Gloves - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19758" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19889" type="Armor" name="Blessed Twilight Shoes - Recovery Type / Robe">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19758" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="87" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <item id="19890" type="Armor" name="Blessed Seraph Helmet - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="144" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="19891" type="Armor" name="Blessed Seraph Breastplate - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="7520" />
+        <set name="enchant4_skill" val="13308-3" />
+        <set name="item_skill" val="13063-1" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="384" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19892" type="Armor" name="Blessed Seraph Gaiters - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="3170" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="240" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19893" type="Armor" name="Blessed Seraph Gauntlets - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
+    <item id="19894" type="Armor" name="Blessed Seraph Boots - Defense Type / Heavy">
+        <set name="icon" val="icon.armor_t401_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1070" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="1.0" />
+        </for>
+    </item>
+    <!-- Additionally increases Shield Defense. -->
+    <item id="19895" type="Armor" name="Blessed Seraph Shield - Defense Type / Heavy">
+        <set name="icon" val="icon.beranka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1130" />
+        <set name="armorSet" val="19763" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="525" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <item id="19896" type="Armor" name="Blessed Seraph Leather Helmet - Enchant Type / Light">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="530" />
+        <set name="armorSet" val="19769" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="144" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.3" />
+            <enchant stat="mEvasRate" val="0.3" />
+        </for>
+    </item>
+    <!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="19897" type="Armor" name="Blessed Seraph Leather Armor - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="4140" />
+        <set name="armorSet" val="19769" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="307" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="3" />
+            <enchant stat="mAtk" val="2" />
+        </for>
+    </item>
+    <item id="19898" type="Armor" name="Blessed Seraph Leather Leggings - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1320" />
+        <set name="armorSet" val="19769" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="192" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.5" />
+            <enchant stat="mCritRate" val="0.5" />
+        </for>
+    </item>
+    <item id="19899" type="Armor" name="Blessed Seraph Leather Gloves - Enchant Type / Light">
+        <set name="icon" val="icon.armor_t402_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="510" />
+        <set name="armorSet" val="19769" />
+        <set name="isBlessed" val="true" />
+        <for>
+            <baseAdd stat="pDef" val="96" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.3" />
+            <enchant stat="accMagic" val="0.3" />
+        </for>
+    </item>
 </list>

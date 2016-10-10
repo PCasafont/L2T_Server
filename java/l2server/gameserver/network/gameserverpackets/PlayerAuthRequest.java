@@ -22,27 +22,25 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author -Wooden-
- *
  */
 public class PlayerAuthRequest extends BaseSendablePacket
 {
-	public PlayerAuthRequest(String account, SessionKey key)
-	{
-		writeC(0x05);
-		writeS(account);
-		writeD(key.playOkID1);
-		writeD(key.playOkID2);
-		writeD(key.loginOkID1);
-		writeD(key.loginOkID2);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public PlayerAuthRequest(String account, SessionKey key)
+    {
+        writeC(0x05);
+        writeS(account);
+        writeD(key.playOkID1);
+        writeD(key.playOkID2);
+        writeD(key.loginOkID1);
+        writeD(key.loginOkID2);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

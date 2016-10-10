@@ -16,23 +16,22 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class KillTheKnights extends TerritoryWarSuperClass
 {
-	public static String qn1 = "734_Piercethroughashield";
-	public static int qnu = 734;
-	public static String qna = "Pierce through a shield";
-	
-	public KillTheKnights()
-	{
-		super(qnu, qn1, qna);
-		CLASS_IDS = new int[] { 6, 91, 5, 90, 20, 99, 33, 106, 139, 148, 149, 150, 151 };
-		qn = qn1;
-		RANDOM_MIN = 10;
-		RANDOM_MAX = 15;
-		Text = new String[] { "Out of MAX Knights you have defeated KILL.", "You weakened the enemy's attack!" };
-	}
+    public static String qn1 = "734_Piercethroughashield";
+    public static int qnu = 734;
+    public static String qna = "Pierce through a shield";
+
+    public KillTheKnights()
+    {
+        super(qnu, qn1, qna);
+        CLASS_IDS = new int[]{6, 91, 5, 90, 20, 99, 33, 106, 139, 148, 149, 150, 151};
+        qn = qn1;
+        RANDOM_MIN = 10;
+        RANDOM_MAX = 15;
+        Text = new String[]{"Out of MAX Knights you have defeated KILL.", "You weakened the enemy's attack!"};
+    }
 }

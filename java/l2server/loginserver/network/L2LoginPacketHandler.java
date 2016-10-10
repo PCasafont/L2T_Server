@@ -31,76 +31,76 @@ import l2server.util.Util;
 /**
  * Handler for packets received by Login Server
  *
- * @author  KenM
+ * @author KenM
  */
 public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 {
-	
-	/**
-	 * @see l2server.mmocore.network.IPacketHandler#handlePacket(java.nio.ByteBuffer, l2server.mmocore.interfaces.MMOClient)
-	 */
-	@Override
-	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)
-	{
-		int opcode = buf.get() & 0xFF;
-		
-		ReceivablePacket<L2LoginClient> packet = null;
-		LoginClientState state = client.getState();
-		
-		switch (state)
-		{
-			case CONNECTED:
-				switch (opcode)
-				{
-					case 0x07:
-						packet = new AuthGameGuard();
-						break;
-					default:
-						debugOpcode(buf, opcode, state);
-						break;
-				}
-				break;
-			case AUTHED_GG:
-				switch (opcode)
-				{
-					case 0x00:
-						packet = new RequestAuthLogin();
-						break;
-					case 0x12:
-						packet = new RequestAuthLogin2();
-						break;
-					default:
-						debugOpcode(buf, opcode, state);
-						break;
-				}
-				break;
-			case AUTHED_LOGIN:
-				switch (opcode)
-				{
-					case 0x02:
-						packet = new RequestServerLogin();
-						break;
-					case 0x05:
-						packet = new RequestServerList();
-						break;
-					default:
-						debugOpcode(buf, opcode, state);
-						break;
-				}
-				break;
-		}
-		return packet;
-	}
-	
-	private void debugOpcode(ByteBuffer buf, int opcode, LoginClientState state)
-	{
-		Log.info("Unknown Opcode: " + opcode + " for state: " + state.name());
-		String op = "0x" + Integer.toHexString(opcode);
-		
-		int size = buf.remaining();
-		Log.warning("Unknown Packet: " + op + " on State: " + state.name());
-		byte[] array = new byte[size];
-		buf.get(array);
-		Log.warning(Util.printData(array, size));
-	}
+
+    /**
+     * @see l2server.mmocore.network.IPacketHandler#handlePacket(java.nio.ByteBuffer, l2server.mmocore.interfaces.MMOClient)
+     */
+    @Override
+    public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)
+    {
+        int opcode = buf.get() & 0xFF;
+
+        ReceivablePacket<L2LoginClient> packet = null;
+        LoginClientState state = client.getState();
+
+        switch (state)
+        {
+            case CONNECTED:
+                switch (opcode)
+                {
+                    case 0x07:
+                        packet = new AuthGameGuard();
+                        break;
+                    default:
+                        debugOpcode(buf, opcode, state);
+                        break;
+                }
+                break;
+            case AUTHED_GG:
+                switch (opcode)
+                {
+                    case 0x00:
+                        packet = new RequestAuthLogin();
+                        break;
+                    case 0x12:
+                        packet = new RequestAuthLogin2();
+                        break;
+                    default:
+                        debugOpcode(buf, opcode, state);
+                        break;
+                }
+                break;
+            case AUTHED_LOGIN:
+                switch (opcode)
+                {
+                    case 0x02:
+                        packet = new RequestServerLogin();
+                        break;
+                    case 0x05:
+                        packet = new RequestServerList();
+                        break;
+                    default:
+                        debugOpcode(buf, opcode, state);
+                        break;
+                }
+                break;
+        }
+        return packet;
+    }
+
+    private void debugOpcode(ByteBuffer buf, int opcode, LoginClientState state)
+    {
+        Log.info("Unknown Opcode: " + opcode + " for state: " + state.name());
+        String op = "0x" + Integer.toHexString(opcode);
+
+        int size = buf.remaining();
+        Log.warning("Unknown Packet: " + op + " on State: " + state.name());
+        byte[] array = new byte[size];
+        buf.get(array);
+        Log.warning(Util.printData(array, size));
+    }
 }

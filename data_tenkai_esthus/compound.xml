@@ -1,82 +1,134 @@
 ﻿<list>
-	<combination item1="38850" item2="38850" result="38851" chance="50" />	<!-- Topaz - Lv. 1 > Topaz - Lv. 2 -->
-	<combination item1="38851" item2="38851" result="38852" chance="50" />	<!-- Topaz - Lv. 2 > Topaz - Lv. 3 -->
-	<combination item1="38852" item2="38852" result="38853" chance="50" />	<!-- Topaz - Lv. 3 > Topaz - Lv. 4 -->
-	<combination item1="38853" item2="38853" result="38854" chance="50" />	<!-- Topaz - Lv. 4 > Topaz - Lv. 5 -->
-	<combination item1="38855" item2="38855" result="38856" chance="50" />	<!-- Ruby - Lv. 1 > Ruby - Lv. 2 -->
-	<combination item1="38856" item2="38856" result="38857" chance="50" />	<!-- Ruby - Lv. 2 > Ruby - Lv. 3 -->
-	<combination item1="38857" item2="38857" result="38858" chance="50" />	<!-- Ruby - Lv. 3 > Ruby - Lv. 4 -->
-	<combination item1="38858" item2="38858" result="38859" chance="50" />	<!-- Ruby - Lv. 4 > Ruby - Lv. 5 -->
-	<combination item1="38870" item2="38870" result="38871" chance="50" />	<!-- Obsidian - Lv. 1 > Obsidian - Lv. 2 -->
-	<combination item1="38871" item2="38871" result="38872" chance="50" />	<!-- Obsidian - Lv. 2 > Obsidian - Lv. 3 -->
-	<combination item1="38872" item2="38872" result="38873" chance="50" />	<!-- Obsidian - Lv. 3 > Obsidian - Lv. 4 -->
-	<combination item1="38873" item2="38873" result="38874" chance="50" />	<!-- Obsidian - Lv. 4 > Obsidian - Lv. 5 -->
-	<combination item1="38875" item2="38875" result="38876" chance="50" />	<!-- Opal - Lv. 1 > Opal - Lv. 2 -->
-	<combination item1="38876" item2="38876" result="38877" chance="50" />	<!-- Opal - Lv. 2 > Opal - Lv. 3 -->
-	<combination item1="38877" item2="38877" result="38878" chance="50" />	<!-- Opal - Lv. 3 > Opal - Lv. 4 -->
-	<combination item1="38878" item2="38878" result="38879" chance="50" />	<!-- Opal - Lv. 4 > Opal - Lv. 5 -->
-	<combination item1="38880" item2="38880" result="38881" chance="50" />	<!-- Emerald - Lv. 1 > Emerald - Lv. 2 -->
-	<combination item1="38881" item2="38881" result="38882" chance="50" />	<!-- Emerald - Lv. 2 > Emerald - Lv. 3 -->
-	<combination item1="38882" item2="38882" result="38883" chance="50" />	<!-- Emerald - Lv. 3 > Emerald - Lv. 4 -->
-	<combination item1="38883" item2="38883" result="38884" chance="50" />	<!-- Emerald - Lv. 4 > Emerald - Lv. 5 -->
-	<combination item1="38885" item2="38885" result="38886" chance="50" />	<!-- Aquamarine - Lv. 1 > Aquamarine - Lv. 2 -->
-	<combination item1="38886" item2="38886" result="38887" chance="50" />	<!-- Aquamarine - Lv. 2 > Aquamarine - Lv. 3 -->
-	<combination item1="38887" item2="38887" result="38888" chance="50" />	<!-- Aquamarine - Lv. 3 > Aquamarine - Lv. 4 -->
-	<combination item1="38888" item2="38888" result="38889" chance="50" />	<!-- Aquamarine - Lv. 4 > Aquamarine - Lv. 5 -->
-	<combination item1="38890" item2="38890" result="38891" chance="50" />	<!-- Diamond - Lv. 1 > Diamond - Lv. 2 -->
-	<combination item1="38891" item2="38891" result="38892" chance="50" />	<!-- Diamond - Lv. 2 > Diamond - Lv. 3 -->
-	<combination item1="38892" item2="38892" result="38893" chance="50" />	<!-- Diamond - Lv. 3 > Diamond - Lv. 4 -->
-	<combination item1="38893" item2="38893" result="38894" chance="50" />	<!-- Diamond - Lv. 4 > Diamond - Lv. 5 -->
-	<combination item1="38895" item2="38895" result="38896" chance="50" />	<!-- Pearl - Lv. 1 > Pearl - Lv. 2 -->
-	<combination item1="38896" item2="38896" result="38897" chance="50" />	<!-- Pearl - Lv. 2 > Pearl - Lv. 3 -->
-	<combination item1="38897" item2="38897" result="38898" chance="50" />	<!-- Pearl - Lv. 3 > Pearl - Lv. 4 -->
-	<combination item1="38898" item2="38898" result="38899" chance="50" />	<!-- Pearl - Lv. 4 > Pearl - Lv. 5 -->
-	<combination item1="38927" item2="38927" result="38928" chance="50" />	<!-- Sapphire - Lv. 1 > Sapphire - Lv. 2 -->
-	<combination item1="38928" item2="38928" result="38929" chance="50" />	<!-- Sapphire - Lv. 2 > Sapphire - Lv. 3 -->
-	<combination item1="38929" item2="38929" result="38930" chance="50" />	<!-- Sapphire - Lv. 3 > Sapphire - Lv. 4 -->
-	<combination item1="38930" item2="38930" result="38931" chance="50" />	<!-- Sapphire - Lv. 4 > Sapphire - Lv. 5 -->
-	<combination item1="34989" item2="34989" result="39572" chance="8" />	<!-- Talisman - Longing > Talisman - Insanity -->
-	<combination item1="39634" item2="39634" result="39635" chance="100" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39635" item2="39634" result="39636" chance="96" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39636" item2="39634" result="39637" chance="92" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39637" item2="39634" result="39638" chance="88" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39638" item2="39634" result="39639" chance="84" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39639" item2="39634" result="39640" chance="80" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39640" item2="39634" result="39641" chance="76" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39641" item2="39634" result="39642" chance="72" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39642" item2="39634" result="39643" chance="68" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39643" item2="39634" result="39644" chance="64" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39644" item2="39634" result="39645" chance="60" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39645" item2="39634" result="39646" chance="56" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39646" item2="39634" result="39647" chance="52" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39647" item2="39634" result="39648" chance="48" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39648" item2="39634" result="39649" chance="44" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39649" item2="39634" result="39650" chance="40" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39650" item2="39634" result="39651" chance="36" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39651" item2="39634" result="39652" chance="32" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39652" item2="39634" result="39653" chance="28" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39653" item2="39634" result="39654" chance="24" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39654" item2="39634" result="39655" chance="20" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39655" item2="39634" result="39656" chance="16" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="39656" item2="39634" result="39657" chance="12" />	<!-- Venir's Talisman > Venir's Talisman -->
-	<combination item1="26476" item2="26476" result="26477" chance="50" />	<!-- Vital Stone - Lv. 1 > Vital Stone - Lv. 2 -->
-	<combination item1="26477" item2="26477" result="26478" chance="50" />	<!-- Vital Stone - Lv. 2 > Vital Stone - Lv. 3 -->
-	<combination item1="26478" item2="26478" result="26479" chance="50" />	<!-- Vital Stone - Lv. 3 > Vital Stone - Lv. 4 -->
-	<combination item1="26479" item2="26479" result="26480" chance="50" />	<!-- Vital Stone - Lv. 4 > Vital Stone - Lv. 5 -->
-	<combination item1="26481" item2="26481" result="26482" chance="50" />	<!-- Garnet - Lv. 1 > Garnet - Lv. 2 -->
-	<combination item1="26482" item2="26482" result="26483" chance="50" />	<!-- Garnet - Lv. 2 > Garnet - Lv. 3 -->
-	<combination item1="26483" item2="26483" result="26484" chance="50" />	<!-- Garnet - Lv. 3 > Garnet - Lv. 4 -->
-	<combination item1="26484" item2="26484" result="26485" chance="50" />	<!-- Garnet - Lv. 4 > Garnet - Lv. 5 -->
-	<combination item1="26486" item2="26486" result="26487" chance="50" />	<!-- Tanzanite - Lv. 1 > Tanzanite - Lv. 2 -->
-	<combination item1="26487" item2="26487" result="26488" chance="50" />	<!-- Tanzanite - Lv. 2 > Tanzanite - Lv. 3 -->
-	<combination item1="26488" item2="26488" result="26489" chance="50" />	<!-- Tanzanite - Lv. 3 > Tanzanite - Lv. 4 -->
-	<combination item1="26489" item2="26489" result="26490" chance="50" />	<!-- Tanzanite - Lv. 4 > Tanzanite - Lv. 5 -->
-	<combination item1="26497" item2="26497" result="26498" chance="50" />	<!-- Cat's Eye - Lv. 1 > Cat's Eye - Lv. 2 -->
-	<combination item1="26498" item2="26498" result="26499" chance="50" />	<!-- Cat's Eye - Lv. 2 > Cat's Eye - Lv. 3 -->
-	<combination item1="26499" item2="26499" result="26500" chance="50" />	<!-- Cat's Eye - Lv. 3 > Cat's Eye - Lv. 4 -->
-	<combination item1="26500" item2="26500" result="26501" chance="50" />	<!-- Cat's Eye - Lv. 4 > Cat's Eye - Lv. 5 -->
-	<combination item1="26502" item2="26502" result="26503" chance="50" />	<!-- Amethyst - Lv. 1 > Amethyst - Lv. 2 -->
-	<combination item1="26503" item2="26503" result="26504" chance="50" />	<!-- Amethyst - Lv. 2 > Amethyst - Lv. 3 -->
-	<combination item1="26504" item2="26504" result="26505" chance="50" />	<!-- Amethyst - Lv. 3 > Amethyst - Lv. 4 -->
-	<combination item1="26505" item2="26505" result="26506" chance="50" />	<!-- Amethyst - Lv. 4 > Amethyst - Lv. 5 -->
+    <combination item1="38850" item2="38850" result="38851" chance="50" />    <!-- Topaz - Lv. 1 > Topaz - Lv. 2 -->
+    <combination item1="38851" item2="38851" result="38852" chance="50" />    <!-- Topaz - Lv. 2 > Topaz - Lv. 3 -->
+    <combination item1="38852" item2="38852" result="38853" chance="50" />    <!-- Topaz - Lv. 3 > Topaz - Lv. 4 -->
+    <combination item1="38853" item2="38853" result="38854" chance="50" />    <!-- Topaz - Lv. 4 > Topaz - Lv. 5 -->
+    <combination item1="38855" item2="38855" result="38856" chance="50" />    <!-- Ruby - Lv. 1 > Ruby - Lv. 2 -->
+    <combination item1="38856" item2="38856" result="38857" chance="50" />    <!-- Ruby - Lv. 2 > Ruby - Lv. 3 -->
+    <combination item1="38857" item2="38857" result="38858" chance="50" />    <!-- Ruby - Lv. 3 > Ruby - Lv. 4 -->
+    <combination item1="38858" item2="38858" result="38859" chance="50" />    <!-- Ruby - Lv. 4 > Ruby - Lv. 5 -->
+    <combination item1="38870" item2="38870" result="38871"
+                 chance="50" />    <!-- Obsidian - Lv. 1 > Obsidian - Lv. 2 -->
+    <combination item1="38871" item2="38871" result="38872"
+                 chance="50" />    <!-- Obsidian - Lv. 2 > Obsidian - Lv. 3 -->
+    <combination item1="38872" item2="38872" result="38873"
+                 chance="50" />    <!-- Obsidian - Lv. 3 > Obsidian - Lv. 4 -->
+    <combination item1="38873" item2="38873" result="38874"
+                 chance="50" />    <!-- Obsidian - Lv. 4 > Obsidian - Lv. 5 -->
+    <combination item1="38875" item2="38875" result="38876" chance="50" />    <!-- Opal - Lv. 1 > Opal - Lv. 2 -->
+    <combination item1="38876" item2="38876" result="38877" chance="50" />    <!-- Opal - Lv. 2 > Opal - Lv. 3 -->
+    <combination item1="38877" item2="38877" result="38878" chance="50" />    <!-- Opal - Lv. 3 > Opal - Lv. 4 -->
+    <combination item1="38878" item2="38878" result="38879" chance="50" />    <!-- Opal - Lv. 4 > Opal - Lv. 5 -->
+    <combination item1="38880" item2="38880" result="38881" chance="50" />    <!-- Emerald - Lv. 1 > Emerald - Lv. 2 -->
+    <combination item1="38881" item2="38881" result="38882" chance="50" />    <!-- Emerald - Lv. 2 > Emerald - Lv. 3 -->
+    <combination item1="38882" item2="38882" result="38883" chance="50" />    <!-- Emerald - Lv. 3 > Emerald - Lv. 4 -->
+    <combination item1="38883" item2="38883" result="38884" chance="50" />    <!-- Emerald - Lv. 4 > Emerald - Lv. 5 -->
+    <combination item1="38885" item2="38885" result="38886"
+                 chance="50" />    <!-- Aquamarine - Lv. 1 > Aquamarine - Lv. 2 -->
+    <combination item1="38886" item2="38886" result="38887"
+                 chance="50" />    <!-- Aquamarine - Lv. 2 > Aquamarine - Lv. 3 -->
+    <combination item1="38887" item2="38887" result="38888"
+                 chance="50" />    <!-- Aquamarine - Lv. 3 > Aquamarine - Lv. 4 -->
+    <combination item1="38888" item2="38888" result="38889"
+                 chance="50" />    <!-- Aquamarine - Lv. 4 > Aquamarine - Lv. 5 -->
+    <combination item1="38890" item2="38890" result="38891" chance="50" />    <!-- Diamond - Lv. 1 > Diamond - Lv. 2 -->
+    <combination item1="38891" item2="38891" result="38892" chance="50" />    <!-- Diamond - Lv. 2 > Diamond - Lv. 3 -->
+    <combination item1="38892" item2="38892" result="38893" chance="50" />    <!-- Diamond - Lv. 3 > Diamond - Lv. 4 -->
+    <combination item1="38893" item2="38893" result="38894" chance="50" />    <!-- Diamond - Lv. 4 > Diamond - Lv. 5 -->
+    <combination item1="38895" item2="38895" result="38896" chance="50" />    <!-- Pearl - Lv. 1 > Pearl - Lv. 2 -->
+    <combination item1="38896" item2="38896" result="38897" chance="50" />    <!-- Pearl - Lv. 2 > Pearl - Lv. 3 -->
+    <combination item1="38897" item2="38897" result="38898" chance="50" />    <!-- Pearl - Lv. 3 > Pearl - Lv. 4 -->
+    <combination item1="38898" item2="38898" result="38899" chance="50" />    <!-- Pearl - Lv. 4 > Pearl - Lv. 5 -->
+    <combination item1="38927" item2="38927" result="38928"
+                 chance="50" />    <!-- Sapphire - Lv. 1 > Sapphire - Lv. 2 -->
+    <combination item1="38928" item2="38928" result="38929"
+                 chance="50" />    <!-- Sapphire - Lv. 2 > Sapphire - Lv. 3 -->
+    <combination item1="38929" item2="38929" result="38930"
+                 chance="50" />    <!-- Sapphire - Lv. 3 > Sapphire - Lv. 4 -->
+    <combination item1="38930" item2="38930" result="38931"
+                 chance="50" />    <!-- Sapphire - Lv. 4 > Sapphire - Lv. 5 -->
+    <combination item1="34989" item2="34989" result="39572"
+                 chance="8" />    <!-- Talisman - Longing > Talisman - Insanity -->
+    <combination item1="39634" item2="39634" result="39635"
+                 chance="100" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39635" item2="39634" result="39636"
+                 chance="96" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39636" item2="39634" result="39637"
+                 chance="92" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39637" item2="39634" result="39638"
+                 chance="88" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39638" item2="39634" result="39639"
+                 chance="84" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39639" item2="39634" result="39640"
+                 chance="80" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39640" item2="39634" result="39641"
+                 chance="76" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39641" item2="39634" result="39642"
+                 chance="72" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39642" item2="39634" result="39643"
+                 chance="68" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39643" item2="39634" result="39644"
+                 chance="64" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39644" item2="39634" result="39645"
+                 chance="60" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39645" item2="39634" result="39646"
+                 chance="56" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39646" item2="39634" result="39647"
+                 chance="52" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39647" item2="39634" result="39648"
+                 chance="48" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39648" item2="39634" result="39649"
+                 chance="44" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39649" item2="39634" result="39650"
+                 chance="40" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39650" item2="39634" result="39651"
+                 chance="36" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39651" item2="39634" result="39652"
+                 chance="32" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39652" item2="39634" result="39653"
+                 chance="28" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39653" item2="39634" result="39654"
+                 chance="24" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39654" item2="39634" result="39655"
+                 chance="20" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39655" item2="39634" result="39656"
+                 chance="16" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="39656" item2="39634" result="39657"
+                 chance="12" />    <!-- Venir's Talisman > Venir's Talisman -->
+    <combination item1="26476" item2="26476" result="26477"
+                 chance="50" />    <!-- Vital Stone - Lv. 1 > Vital Stone - Lv. 2 -->
+    <combination item1="26477" item2="26477" result="26478"
+                 chance="50" />    <!-- Vital Stone - Lv. 2 > Vital Stone - Lv. 3 -->
+    <combination item1="26478" item2="26478" result="26479"
+                 chance="50" />    <!-- Vital Stone - Lv. 3 > Vital Stone - Lv. 4 -->
+    <combination item1="26479" item2="26479" result="26480"
+                 chance="50" />    <!-- Vital Stone - Lv. 4 > Vital Stone - Lv. 5 -->
+    <combination item1="26481" item2="26481" result="26482" chance="50" />    <!-- Garnet - Lv. 1 > Garnet - Lv. 2 -->
+    <combination item1="26482" item2="26482" result="26483" chance="50" />    <!-- Garnet - Lv. 2 > Garnet - Lv. 3 -->
+    <combination item1="26483" item2="26483" result="26484" chance="50" />    <!-- Garnet - Lv. 3 > Garnet - Lv. 4 -->
+    <combination item1="26484" item2="26484" result="26485" chance="50" />    <!-- Garnet - Lv. 4 > Garnet - Lv. 5 -->
+    <combination item1="26486" item2="26486" result="26487"
+                 chance="50" />    <!-- Tanzanite - Lv. 1 > Tanzanite - Lv. 2 -->
+    <combination item1="26487" item2="26487" result="26488"
+                 chance="50" />    <!-- Tanzanite - Lv. 2 > Tanzanite - Lv. 3 -->
+    <combination item1="26488" item2="26488" result="26489"
+                 chance="50" />    <!-- Tanzanite - Lv. 3 > Tanzanite - Lv. 4 -->
+    <combination item1="26489" item2="26489" result="26490"
+                 chance="50" />    <!-- Tanzanite - Lv. 4 > Tanzanite - Lv. 5 -->
+    <combination item1="26497" item2="26497" result="26498"
+                 chance="50" />    <!-- Cat's Eye - Lv. 1 > Cat's Eye - Lv. 2 -->
+    <combination item1="26498" item2="26498" result="26499"
+                 chance="50" />    <!-- Cat's Eye - Lv. 2 > Cat's Eye - Lv. 3 -->
+    <combination item1="26499" item2="26499" result="26500"
+                 chance="50" />    <!-- Cat's Eye - Lv. 3 > Cat's Eye - Lv. 4 -->
+    <combination item1="26500" item2="26500" result="26501"
+                 chance="50" />    <!-- Cat's Eye - Lv. 4 > Cat's Eye - Lv. 5 -->
+    <combination item1="26502" item2="26502" result="26503"
+                 chance="50" />    <!-- Amethyst - Lv. 1 > Amethyst - Lv. 2 -->
+    <combination item1="26503" item2="26503" result="26504"
+                 chance="50" />    <!-- Amethyst - Lv. 2 > Amethyst - Lv. 3 -->
+    <combination item1="26504" item2="26504" result="26505"
+                 chance="50" />    <!-- Amethyst - Lv. 3 > Amethyst - Lv. 4 -->
+    <combination item1="26505" item2="26505" result="26506"
+                 chance="50" />    <!-- Amethyst - Lv. 4 > Amethyst - Lv. 5 -->
 </list>

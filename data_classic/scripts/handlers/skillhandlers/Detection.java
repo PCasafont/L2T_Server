@@ -29,50 +29,56 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Detection implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.DETECTION
-	};
-	
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		final boolean hasParty;
-		final boolean hasClan;
-		final boolean hasAlly;
-		final L2PcInstance player = activeChar.getActingPlayer();
-		if (player != null)
-		{
-			hasParty = player.isInParty();
-			hasClan = player.getClanId() > 0;
-			hasAlly = player.getAllyId() > 0;
-		}
-		else
-		{
-			hasParty = false;
-			hasClan = false;
-			hasAlly = false;
-		}
-		
-		for (L2PcInstance target : activeChar.getKnownList().getKnownPlayersInRadius(skill.getSkillRadius()))
-		{
-			if (target != null && target.getAppearance().getInvisible())
-			{
-				if (hasParty && target.getParty() != null && player.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
-					continue;
-				if (hasClan && player.getClanId() == target.getClanId())
-					continue;
-				if (hasAlly && player.getAllyId() == target.getAllyId())
-					continue;
-				
-				L2Abnormal eHide = target.getFirstEffect(L2AbnormalType.HIDE);
-				if (eHide != null)
-					eHide.exit();
-			}
-		}
-	}
-	
-	public L2SkillType[] getSkillIds()
-	{
-		return SKILL_IDS;
-	}
+    private static final L2SkillType[] SKILL_IDS = {L2SkillType.DETECTION};
+
+    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+    {
+        final boolean hasParty;
+        final boolean hasClan;
+        final boolean hasAlly;
+        final L2PcInstance player = activeChar.getActingPlayer();
+        if (player != null)
+        {
+            hasParty = player.isInParty();
+            hasClan = player.getClanId() > 0;
+            hasAlly = player.getAllyId() > 0;
+        }
+        else
+        {
+            hasParty = false;
+            hasClan = false;
+            hasAlly = false;
+        }
+
+        for (L2PcInstance target : activeChar.getKnownList().getKnownPlayersInRadius(skill.getSkillRadius()))
+        {
+            if (target != null && target.getAppearance().getInvisible())
+            {
+                if (hasParty && target.getParty() != null && player.getParty().getPartyLeaderOID() == target.getParty()
+                        .getPartyLeaderOID())
+                {
+                    continue;
+                }
+                if (hasClan && player.getClanId() == target.getClanId())
+                {
+                    continue;
+                }
+                if (hasAlly && player.getAllyId() == target.getAllyId())
+                {
+                    continue;
+                }
+
+                L2Abnormal eHide = target.getFirstEffect(L2AbnormalType.HIDE);
+                if (eHide != null)
+                {
+                    eHide.exit();
+                }
+            }
+        }
+    }
+
+    public L2SkillType[] getSkillIds()
+    {
+        return SKILL_IDS;
+    }
 }

@@ -1,1784 +1,1784 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Ancient Spellbook needed to learn Cyclone. Can be used by a Storm Screamer. -->
-	<item id="8900" type="EtcItem" name="Ancient Spellbook: Cyclone">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Raging Waves. Used by Mystic Muses. -->
-	<item id="8901" type="EtcItem" name="Ancient Spellbook: Raging Waves">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Day of Doom. Can be used by a Soultaker. -->
-	<item id="8902" type="EtcItem" name="Ancient Spellbook: Day of Doom">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Gehenna. Can be used by a Soultaker. -->
-	<item id="8903" type="EtcItem" name="Ancient Spellbook: Gehenna">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Anti-summoning Field. Can be used by an Arcana Lord, Elemental Master, and Spectral Master. -->
-	<item id="8904" type="EtcItem" name="Ancient Spellbook: Anti-summoning Field">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Purification Field. Used by a Cardinal. -->
-	<item id="8905" type="EtcItem" name="Ancient Spellbook: Purification Field">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Miracle. Used by a Cardinal. -->
-	<item id="8906" type="EtcItem" name="Ancient Spellbook: Miracle">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Flames of Invincibility. Used by a Dominator. -->
-	<item id="8907" type="EtcItem" name="Ancient Spellbook: Flames of Invincibility">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Ancient Spellbook needed to learn Mass Recharge. Can be used by an Eva's Saint and Shillien Saint. -->
-	<item id="8908" type="EtcItem" name="Ancient Spellbook: Mass Recharge">
-		<set name="icon" val="icon.etc_spell_books_element_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="40000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Blueprint needed to learn the Summon Swoop Cannon technique. Can be used by a Warsmith.
-		Required level: 68
-	-->
-	<item id="8909" type="EtcItem" name="Blueprint: Summon Swoop Cannon">
-		<set name="icon" val="icon.etc_plan_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="9600" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Hair accessory containing dark feather. It uses 2 hair accessory slots. This is an event item. -->
-	<item id="8910" type="Armor" name="Black Feather Mask (Event)">
-		<set name="icon" val="icon.accessary_black_feather_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Black-colored half mask. Event Item. -->
-	<item id="8911" type="Armor" name="Black Half Mask (Event)">
-		<set name="icon" val="icon.Accessary_black_half_mask_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hairpin made in the shape of a flower. -->
-	<item id="8912" type="Armor" name="Single Stem Flower">
-		<set name="icon" val="icon.accessory_hairpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Butterfly-shaped Hairpin. Female only. -->
-	<item id="8913" type="Armor" name="Butterfly Hairpin">
-		<set name="icon" val="icon.Accessary_butterfly_hearpin_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Luxurious Gold Circlet. It uses 2 hair accessory slots. -->
-	<item id="8914" type="Armor" name="Luxurious Gold Circlet">
-		<set name="icon" val="icon.Accessary_gold_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Luxurious Silver Circlet. It uses 2 hair accessory slots. -->
-	<item id="8915" type="Armor" name="Luxurious Silver Circlet">
-		<set name="icon" val="icon.Accessary_gold_circlet_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Eyepatch accessory. When you use the pendant, slots change. -->
-	<item id="8916" type="Armor" name="Eyepatch">
-		<set name="icon" val="icon.Accessary_one_eye_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- The goddess' circlet. This is a female-use hair accessory. It uses 2 hair accessory slots. -->
-	<item id="8917" type="Armor" name="Goddess Circlet">
-		<set name="icon" val="icon.Accessary_goddess_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<cond msgId="1518">
-			<player sex="1" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Medieval hat made of leather. It uses 2 hair accessory slots. -->
-	<item id="8918" type="Armor" name="Leather Cap">
-		<set name="icon" val="icon.Accessary_middle_ages_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="2000000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat befitting a favored member of Zaken's crew. Uses 2 hair accessory slots. Event item. -->
-	<item id="8919" type="Armor" name="First Mate Hat (Event)">
-		<set name="icon" val="icon.Accessary_middle_ages_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hair accessory imbued with Holy energy. It uses 2 hair accessory slots. -->
-	<item id="8920" type="Armor" name="Angel Halo">
-		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hair accessory possessed of dark energy. It uses 2 hair accessory slots. -->
-	<item id="8921" type="Armor" name="Demon Circlet">
-		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat worn by pirates. It uses 2 hair accessory slots. -->
-	<item id="8922" type="Armor" name="Pirate Hat">
-		<set name="icon" val="icon.Accessary_sea_robber_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="2000000" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Scar. This is a male-only accessory. -->
-	<item id="8923" type="Armor" name="Scar">
-		<set name="icon" val="icon.Accessary_scar_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="price" val="500000" />
-		<cond msgId="1518">
-			<player sex="0" />
-		</cond>
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Boat Ticket from Primeval Isle to Rune. -->
-	<item id="8924" type="EtcItem" name="Boat Ticket: Primeval Isle to Rune.">
-		<set name="icon" val="icon.etc_ticket_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="20" />
-		<set name="price" val="25000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Boat Ticket from Rune to Primeval Isle. -->
-	<item id="8925" type="EtcItem" name="Boat Ticket: Rune to Primeval Isle">
-		<set name="icon" val="icon.etc_ticket_blue_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="20" />
-		<set name="price" val="25000" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8926" type="Weapon" name="Shadow Item: Sword of Delusion">
-		<set name="icon" val="icon.time_weapon_sword_of_delusion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="470" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Poleaxe. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8927" type="Weapon" name="Shadow Item: Poleaxe">
-		<set name="icon" val="icon.time_weapon_poleaxe_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="670" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8928" type="Weapon" name="Shadow Item: Stick of Eternity">
-		<set name="icon" val="icon.time_weapon_stick_of_eternity_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="380" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of an Inferno Staff. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8929" type="Weapon" name="Shadow Item: Inferno Staff">
-		<set name="icon" val="icon.time_weapon_inferno_staff_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Pa'agrio Hammer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8930" type="Weapon" name="Shadow Item: Pa'agrio Hammer">
-		<set name="icon" val="icon.time_weapon_paagrio_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Dark Screamer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8931" type="Weapon" name="Shadow Item: Dark Screamer">
-		<set name="icon" val="icon.time_weapon_dark_screamer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of an Akat Longbow. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8932" type="Weapon" name="Shadow Item: Akat Longbow">
-		<set name="icon" val="icon.time_weapon_akat_long_bow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
-		<set name="damage_range" val="0;0;10;0" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="580" />
-		<set name="soulshots" val="9" />
-		<set name="spiritshots" val="3" />
-		<set name="mp_consume" val="3" />
-		<set name="reuse_delay" val="820" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="316" />
-			<set stat="mAtk" val="84" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Pa'agrian Sword. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8933" type="Weapon" name="Shadow Item: Pa'agrian Sword">
-		<set name="icon" val="icon.time_weapon_sword_of_paagrio_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="660" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Fisted Blade. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8934" type="Weapon" name="Shadow Item: Fisted Blade">
-		<set name="icon" val="icon.time_weapon_fist_blade_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;90" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="500" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- Test -->
-	<item id="8935" type="Weapon" name="Test Rapier">
-		<set name="icon" val="icon.weapon_monster_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="1380" />
-		<set name="price" val="6130000" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- Santa's Horn Hat, which is made to celebrate the holy day. -->
-	<item id="8936" type="Armor" name="Santa's Antlers">
-		<set name="icon" val="icon.accessory_santas_antler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_dropable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a StormBringer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8937" type="Weapon" name="Shadow Item: StormBringer*StormBringer">
-		<set name="icon" val="icon.time_weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="780" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="120" />
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="78" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
-	<item id="8938" type="Weapon" name="Tallum Blade*Damascus">
-		<set name="icon" val="icon.weapon_dual_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="2157" />
-		<set name="crystal_type" val="a" />
-		<set name="weight" val="1890" />
-		<set name="price" val="26968400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3045-17" />
-		<set name="item_skill" val="3552-1" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Dominic's Mark. Used in carrying out a secret mission. -->
-	<item id="8939" type="EtcItem" name="Dominic's Mark">
-		<set name="icon" val="icon.etc_leash_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark of the Future. Received from Grand Master Klaus Blackbird of Oren Castle Town. -->
-	<item id="8940" type="EtcItem" name="Mark of the Future: Human">
-		<set name="icon" val="icon.etc_jewel_green_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark of the Future. Received from Warehouse Chief Alder of Schuttgart Castle Town. -->
-	<item id="8941" type="EtcItem" name="Mark of the Future: Dwarf">
-		<set name="icon" val="icon.etc_jewel_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark of the Future. Received from Magister Juris of Town of Giran. -->
-	<item id="8942" type="EtcItem" name="Mark of the Future: Elf">
-		<set name="icon" val="icon.etc_jewel_silver_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark of the Future. Received from Grand Master Oltran of Town of Aden. -->
-	<item id="8943" type="EtcItem" name="Mark of the Future: Dark Elf">
-		<set name="icon" val="icon.etc_jewel_white_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!-- Mark of the Future. Received from High Prefect Aklan of Goddard Castle Town. -->
-	<item id="8944" type="EtcItem" name="Mark of the Future: Orc">
-		<set name="icon" val="icon.etc_jewel_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_questitem" val="true" />
-	</item>
-	<!--
-		Spellbook needed to learn Celestial Shield. Used by Bishops.
-		Required level: 64
-	-->
-	<item id="8945" type="EtcItem" name="Spellbook: Celestial Shield">
-		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="8100" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Spellbook need to learn Invocation. Used by Bishops, Elders, and Shillien Elders.
-		Required level: 56
-	-->
-	<item id="8946" type="EtcItem" name="Spellbook: Invocation">
-		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="price" val="6250" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Hair accessory in the shape of Rabbit Ears. -->
-	<item id="8947" type="Armor" name="L2day - Rabbit Ears">
-		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wing-shaped hair accessory. -->
-	<item id="8948" type="Armor" name="L2day - Little Angel Wings">
-		<set name="icon" val="icon.accessory_hair_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Cute antennae hair accessory with stars. -->
-	<item id="8949" type="Armor" name="L2day - Fairy Antennae">
-		<set name="icon" val="icon.accessory_hair_feeler_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair2" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Fancy hat containing feather. Uses 2 accessory slot spaces. -->
-	<item id="8950" type="Armor" name="L2day - Chapeau">
-		<set name="icon" val="icon.accessory_archer_hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Big, round goggles to protect your eyes. Uses 2 accessory slot spaces. -->
-	<item id="8951" type="Armor" name="L2day - Artisan's Goggles">
-		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="8952" type="EtcItem" name="Major Herb of Life">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2278-2" />
-	</item>
-	<item id="8953" type="EtcItem" name="Major Herb of Mana">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2279-2" />
-	</item>
-	<!-- Increases SP by 500 when used. Can only be used by characters level 76 or above. -->
-	<item id="8954" type="EtcItem" name="Blue Primeval Crystal">
-		<set name="icon" val="icon.etc_sp_crystal_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="10" />
-		<set name="price" val="50000" />
-		<set name="reuse_delay" val="1000" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2306-1" />
-	</item>
-	<!-- Increases SP by 1000 when used. Can only be used by characters level 76 or above. -->
-	<item id="8955" type="EtcItem" name="Green Primeval Crystal">
-		<set name="icon" val="icon.etc_sp_crystal_i02" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="10" />
-		<set name="price" val="100000" />
-		<set name="reuse_delay" val="1000" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2306-2" />
-	</item>
-	<!-- Increases SP by 2000 when used. Can only be used by characters level 76 or above. -->
-	<item id="8956" type="EtcItem" name="Red Primeval Crystal">
-		<set name="icon" val="icon.etc_sp_crystal_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="crystal_type" val="s" />
-		<set name="weight" val="10" />
-		<set name="price" val="200000" />
-		<set name="reuse_delay" val="1000" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2306-3" />
-	</item>
-	<!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for Shadow Items appropriate to your level. -->
-	<item id="8957" type="EtcItem" name="Attack Orders">
-		<set name="icon" val="icon.etc_lottery_card_i00" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for Shadow Items appropriate to your level. -->
-	<item id="8958" type="EtcItem" name="Defense Orders">
-		<set name="icon" val="icon.etc_lottery_card_i00" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for consumables appropriate to your level. -->
-	<item id="8959" type="EtcItem" name="Supply Orders">
-		<set name="icon" val="icon.etc_lottery_card_i00" />
-		<set name="weight" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- One can receive a no-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8960" type="EtcItem" name="Shadow Armor Set Pack (No-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive a D-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8961" type="EtcItem" name="Shadow Armor Set Pack (D-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive a C-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8962" type="EtcItem" name="Shadow Armor Set Pack (C-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive a B-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8963" type="EtcItem" name="Shadow Armor Set Pack (B-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive an A-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8964" type="EtcItem" name="Shadow Armor Set Pack (A-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive an S-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
-	<item id="8965" type="EtcItem" name="Shadow Armor Set Pack (S-grade)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2200-2" />
-	</item>
-	<!-- One can receive no-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8966" type="EtcItem" name="Item Set Pack (No-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-25" />
-	</item>
-	<!-- One can receive D-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8967" type="EtcItem" name="Item Set Pack (D-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-26" />
-	</item>
-	<!-- One can receive C-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8968" type="EtcItem" name="Item Set Pack (C-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-27" />
-	</item>
-	<!-- One can receive B-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8969" type="EtcItem" name="Item Set Pack (B-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-28" />
-	</item>
-	<!-- One can receive A-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8970" type="EtcItem" name="Item Set Pack (A-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-29" />
-	</item>
-	<!-- One can receive A- and S-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
-	<item id="8971" type="EtcItem" name="Item Set Pack (A/S-grade) (Warrior)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2308-30" />
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Great Spear. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8972" type="Weapon" name="Shadow Item: Great Spear">
-		<set name="icon" val="icon.weapon_long_spear_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="707" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Falchion. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8973" type="Weapon" name="Shadow Item: Falchion">
-		<set name="icon" val="icon.weapon_falchion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="510" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of an Iron Hammer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8974" type="Weapon" name="Shadow Item: Iron Hammer">
-		<set name="icon" val="icon.weapon_iron_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="617" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Voodoo Doll. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8975" type="Weapon" name="Shadow Item: Voodoo Doll">
-		<set name="icon" val="icon.weapon_voodoo_doll_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="etc" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="210" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Flanged Mace. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8976" type="Weapon" name="Shadow Item: Flanged Mace">
-		<set name="icon" val="icon.weapon_buzdygan_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="600" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Mage Staff. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8977" type="Weapon" name="Shadow Item: Mage Staff">
-		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="350" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="31" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Sword Breaker. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8978" type="Weapon" name="Shadow Item: Sword Breaker">
-		<set name="icon" val="icon.weapon_sword_breaker_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="370" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="27" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Viper Fang. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8979" type="Weapon" name="Shadow Item: Viper Fang">
-		<set name="icon" val="icon.weapon_vipers_canine_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;32;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="520" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="38" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Compound Bow. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8980" type="Weapon" name="Shadow Item: Compound Bow">
-		<set name="icon" val="icon.weapon_composition_bow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
-		<set name="damage_range" val="0;0;10;0" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="627" />
-		<set name="soulshots" val="7" />
-		<set name="spiritshots" val="2" />
-		<set name="mp_consume" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Crucifix of Blessing. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8981" type="Weapon" name="Shadow Item: Crucifix of Blessing">
-		<set name="icon" val="icon.weapon_crucifix_of_blessing_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="etc" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="207" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Two-handed Sword. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8982" type="Weapon" name="Shadow Item: Two-handed Sword">
-		<set name="icon" val="icon.weapon_two_handed_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="730" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Crimson Sword. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8983" type="Weapon" name="Shadow Item: Crimson Sword">
-		<set name="icon" val="icon.weapon_crimson_sword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="500" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Spiked Club. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8984" type="Weapon" name="Shadow Item: Spiked Club">
-		<set name="icon" val="icon.weapon_spike_club_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="590" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Staff of Magic. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8985" type="Weapon" name="Shadow Item: Staff of Magic">
-		<set name="icon" val="icon.weapon_staff_of_magicpower_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="57" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Kukuri. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8986" type="Weapon" name="Shadow Item: Kukuri">
-		<set name="icon" val="icon.weapon_kukuri_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="360" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="56" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Dagger of Mana. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8987" type="Weapon" name="Shadow Item: Dagger of Mana">
-		<set name="icon" val="icon.weapon_dagger_of_mana_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="250" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="45" />
-			<set stat="mAtk" val="52" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Triple-Edged Jamadhr. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8988" type="Weapon" name="Shadow Item: Triple-Edged Jamadhr">
-		<set name="icon" val="icon.weapon_triple-edged_jamadhr_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;32;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="520" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Gastraphetes. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8989" type="Weapon" name="Shadow Item: Gastraphetes">
-		<set name="icon" val="icon.weapon_gastraphetes_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
-		<set name="damage_range" val="0;0;10;0" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="620" />
-		<set name="soulshots" val="8" />
-		<set name="spiritshots" val="2" />
-		<set name="mp_consume" val="2" />
-		<set name="reuse_delay" val="1500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="132" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a War Hammer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8990" type="Weapon" name="Shadow Item: War Hammer">
-		<set name="icon" val="icon.weapon_war_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="d" />
-		<set name="weight" val="700" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8991" type="Weapon" name="Shadow Item: Sword of Delusion">
-		<set name="icon" val="icon.weapon_sword_of_delusion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="470" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Poleaxe. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8992" type="Weapon" name="Shadow Item: Poleaxe">
-		<set name="icon" val="icon.weapon_poleaxe_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="670" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3599-1" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8993" type="Weapon" name="Shadow Item: Stick of Eternity">
-		<set name="icon" val="icon.weapon_stick_of_eternity_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="380" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of an Inferno Staff. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8994" type="Weapon" name="Shadow Item: Inferno Staff">
-		<set name="icon" val="icon.weapon_inferno_staff_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Pa'agrio Hammer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8995" type="Weapon" name="Shadow Item: Pa'agrio Hammer">
-		<set name="icon" val="icon.weapon_paagrio_hammer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Dark Screamer. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8996" type="Weapon" name="Shadow Item: Dark Screamer">
-		<set name="icon" val="icon.weapon_dark_screamer_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="340" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of an Akat Longbow. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8997" type="Weapon" name="Shadow Item: Akat Longbow">
-		<set name="icon" val="icon.weapon_akat_long_bow_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="500" />
-		<set name="damage_range" val="0;0;10;0" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="580" />
-		<set name="soulshots" val="9" />
-		<set name="spiritshots" val="3" />
-		<set name="mp_consume" val="3" />
-		<set name="reuse_delay" val="820" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="316" />
-			<set stat="mAtk" val="84" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Pa'agrian Sword. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8998" type="Weapon" name="Shadow Item: Pa'agrian Sword">
-		<set name="icon" val="icon.weapon_sword_of_paagrio_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;44;120" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="660" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
-	<!-- This Shadow Item contains the mirrored power of a Fisted Blade. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8999" type="Weapon" name="Shadow Item: Fisted Blade">
-		<set name="icon" val="icon.weapon_fist_blade_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;90" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_type" val="c" />
-		<set name="weight" val="500" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="duration" val="600" />
-		<for>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
-	</item>
+    <!-- Ancient Spellbook needed to learn Cyclone. Can be used by a Storm Screamer. -->
+    <item id="8900" type="EtcItem" name="Ancient Spellbook: Cyclone">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Raging Waves. Used by Mystic Muses. -->
+    <item id="8901" type="EtcItem" name="Ancient Spellbook: Raging Waves">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Day of Doom. Can be used by a Soultaker. -->
+    <item id="8902" type="EtcItem" name="Ancient Spellbook: Day of Doom">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Gehenna. Can be used by a Soultaker. -->
+    <item id="8903" type="EtcItem" name="Ancient Spellbook: Gehenna">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Anti-summoning Field. Can be used by an Arcana Lord, Elemental Master, and Spectral Master. -->
+    <item id="8904" type="EtcItem" name="Ancient Spellbook: Anti-summoning Field">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Purification Field. Used by a Cardinal. -->
+    <item id="8905" type="EtcItem" name="Ancient Spellbook: Purification Field">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Miracle. Used by a Cardinal. -->
+    <item id="8906" type="EtcItem" name="Ancient Spellbook: Miracle">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Flames of Invincibility. Used by a Dominator. -->
+    <item id="8907" type="EtcItem" name="Ancient Spellbook: Flames of Invincibility">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Ancient Spellbook needed to learn Mass Recharge. Can be used by an Eva's Saint and Shillien Saint. -->
+    <item id="8908" type="EtcItem" name="Ancient Spellbook: Mass Recharge">
+        <set name="icon" val="icon.etc_spell_books_element_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="40000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Blueprint needed to learn the Summon Swoop Cannon technique. Can be used by a Warsmith.
+        Required level: 68
+    -->
+    <item id="8909" type="EtcItem" name="Blueprint: Summon Swoop Cannon">
+        <set name="icon" val="icon.etc_plan_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="9600" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Hair accessory containing dark feather. It uses 2 hair accessory slots. This is an event item. -->
+    <item id="8910" type="Armor" name="Black Feather Mask (Event)">
+        <set name="icon" val="icon.accessary_black_feather_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Black-colored half mask. Event Item. -->
+    <item id="8911" type="Armor" name="Black Half Mask (Event)">
+        <set name="icon" val="icon.Accessary_black_half_mask_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hairpin made in the shape of a flower. -->
+    <item id="8912" type="Armor" name="Single Stem Flower">
+        <set name="icon" val="icon.accessory_hairpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <cond msgId="1518">
+            <player sex="1" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Butterfly-shaped Hairpin. Female only. -->
+    <item id="8913" type="Armor" name="Butterfly Hairpin">
+        <set name="icon" val="icon.Accessary_butterfly_hearpin_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <cond msgId="1518">
+            <player sex="1" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Luxurious Gold Circlet. It uses 2 hair accessory slots. -->
+    <item id="8914" type="Armor" name="Luxurious Gold Circlet">
+        <set name="icon" val="icon.Accessary_gold_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Luxurious Silver Circlet. It uses 2 hair accessory slots. -->
+    <item id="8915" type="Armor" name="Luxurious Silver Circlet">
+        <set name="icon" val="icon.Accessary_gold_circlet_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Eyepatch accessory. When you use the pendant, slots change. -->
+    <item id="8916" type="Armor" name="Eyepatch">
+        <set name="icon" val="icon.Accessary_one_eye_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- The goddess' circlet. This is a female-use hair accessory. It uses 2 hair accessory slots. -->
+    <item id="8917" type="Armor" name="Goddess Circlet">
+        <set name="icon" val="icon.Accessary_goddess_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <cond msgId="1518">
+            <player sex="1" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Medieval hat made of leather. It uses 2 hair accessory slots. -->
+    <item id="8918" type="Armor" name="Leather Cap">
+        <set name="icon" val="icon.Accessary_middle_ages_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="2000000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat befitting a favored member of Zaken's crew. Uses 2 hair accessory slots. Event item. -->
+    <item id="8919" type="Armor" name="First Mate Hat (Event)">
+        <set name="icon" val="icon.Accessary_middle_ages_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hair accessory imbued with Holy energy. It uses 2 hair accessory slots. -->
+    <item id="8920" type="Armor" name="Angel Halo">
+        <set name="icon" val="icon.Accessary_angel_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hair accessory possessed of dark energy. It uses 2 hair accessory slots. -->
+    <item id="8921" type="Armor" name="Demon Circlet">
+        <set name="icon" val="icon.Accessary_demon_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat worn by pirates. It uses 2 hair accessory slots. -->
+    <item id="8922" type="Armor" name="Pirate Hat">
+        <set name="icon" val="icon.Accessary_sea_robber_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="2000000" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Scar. This is a male-only accessory. -->
+    <item id="8923" type="Armor" name="Scar">
+        <set name="icon" val="icon.Accessary_scar_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="price" val="500000" />
+        <cond msgId="1518">
+            <player sex="0" />
+        </cond>
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Boat Ticket from Primeval Isle to Rune. -->
+    <item id="8924" type="EtcItem" name="Boat Ticket: Primeval Isle to Rune.">
+        <set name="icon" val="icon.etc_ticket_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="20" />
+        <set name="price" val="25000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Boat Ticket from Rune to Primeval Isle. -->
+    <item id="8925" type="EtcItem" name="Boat Ticket: Rune to Primeval Isle">
+        <set name="icon" val="icon.etc_ticket_blue_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="20" />
+        <set name="price" val="25000" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8926" type="Weapon" name="Shadow Item: Sword of Delusion">
+        <set name="icon" val="icon.time_weapon_sword_of_delusion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="470" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="139" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Poleaxe. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8927" type="Weapon" name="Shadow Item: Poleaxe">
+        <set name="icon" val="icon.time_weapon_poleaxe_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="80" />
+        <set name="damage_range" val="0;0;66;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="670" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="3599-1" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="139" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8928" type="Weapon" name="Shadow Item: Stick of Eternity">
+        <set name="icon" val="icon.time_weapon_stick_of_eternity_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="380" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="111" />
+            <set stat="mAtk" val="101" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of an Inferno Staff. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8929" type="Weapon" name="Shadow Item: Inferno Staff">
+        <set name="icon" val="icon.time_weapon_inferno_staff_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="135" />
+            <set stat="mAtk" val="111" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Pa'agrio Hammer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8930" type="Weapon" name="Shadow Item: Pa'agrio Hammer">
+        <set name="icon" val="icon.time_weapon_paagrio_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="135" />
+            <set stat="mAtk" val="111" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Dark Screamer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8931" type="Weapon" name="Shadow Item: Dark Screamer">
+        <set name="icon" val="icon.time_weapon_dark_screamer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="122" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of an Akat Longbow. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8932" type="Weapon" name="Shadow Item: Akat Longbow">
+        <set name="icon" val="icon.time_weapon_akat_long_bow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="500" />
+        <set name="damage_range" val="0;0;10;0" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="580" />
+        <set name="soulshots" val="9" />
+        <set name="spiritshots" val="3" />
+        <set name="mp_consume" val="3" />
+        <set name="reuse_delay" val="820" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="316" />
+            <set stat="mAtk" val="84" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="227" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Pa'agrian Sword. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8933" type="Weapon" name="Shadow Item: Pa'agrian Sword">
+        <set name="icon" val="icon.time_weapon_sword_of_paagrio_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="660" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="169" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Fisted Blade. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8934" type="Weapon" name="Shadow Item: Fisted Blade">
+        <set name="icon" val="icon.time_weapon_fist_blade_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;90" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="500" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="169" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- Test -->
+    <item id="8935" type="Weapon" name="Test Rapier">
+        <set name="icon" val="icon.weapon_monster_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="1380" />
+        <set name="price" val="6130000" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="enchant_enabled" val="1" />
+        <for>
+            <set stat="pAtk" val="156" />
+            <set stat="mAtk" val="83" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- Santa's Horn Hat, which is made to celebrate the holy day. -->
+    <item id="8936" type="Armor" name="Santa's Antlers">
+        <set name="icon" val="icon.accessory_santas_antler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_dropable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a StormBringer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8937" type="Weapon" name="Shadow Item: StormBringer*StormBringer">
+        <set name="icon" val="icon.time_weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="780" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="120" />
+        <for>
+            <set stat="pAtk" val="175" />
+            <set stat="mAtk" val="78" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
+    <item id="8938" type="Weapon" name="Tallum Blade*Damascus">
+        <set name="icon" val="icon.weapon_dual_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="2157" />
+        <set name="crystal_type" val="a" />
+        <set name="weight" val="1890" />
+        <set name="price" val="26968400" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="enchant_enabled" val="1" />
+        <set name="enchant4_skill" val="3045-17" />
+        <set name="item_skill" val="3552-1" />
+        <for>
+            <set stat="pAtk" val="305" />
+            <set stat="mAtk" val="121" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Dominic's Mark. Used in carrying out a secret mission. -->
+    <item id="8939" type="EtcItem" name="Dominic's Mark">
+        <set name="icon" val="icon.etc_leash_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark of the Future. Received from Grand Master Klaus Blackbird of Oren Castle Town. -->
+    <item id="8940" type="EtcItem" name="Mark of the Future: Human">
+        <set name="icon" val="icon.etc_jewel_green_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark of the Future. Received from Warehouse Chief Alder of Schuttgart Castle Town. -->
+    <item id="8941" type="EtcItem" name="Mark of the Future: Dwarf">
+        <set name="icon" val="icon.etc_jewel_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark of the Future. Received from Magister Juris of Town of Giran. -->
+    <item id="8942" type="EtcItem" name="Mark of the Future: Elf">
+        <set name="icon" val="icon.etc_jewel_silver_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark of the Future. Received from Grand Master Oltran of Town of Aden. -->
+    <item id="8943" type="EtcItem" name="Mark of the Future: Dark Elf">
+        <set name="icon" val="icon.etc_jewel_white_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!-- Mark of the Future. Received from High Prefect Aklan of Goddard Castle Town. -->
+    <item id="8944" type="EtcItem" name="Mark of the Future: Orc">
+        <set name="icon" val="icon.etc_jewel_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_questitem" val="true" />
+    </item>
+    <!--
+        Spellbook needed to learn Celestial Shield. Used by Bishops.
+        Required level: 64
+    -->
+    <item id="8945" type="EtcItem" name="Spellbook: Celestial Shield">
+        <set name="icon" val="icon.etc_spell_books_assistance_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="8100" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Spellbook need to learn Invocation. Used by Bishops, Elders, and Shillien Elders.
+        Required level: 56
+    -->
+    <item id="8946" type="EtcItem" name="Spellbook: Invocation">
+        <set name="icon" val="icon.etc_spell_books_assistance_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="price" val="6250" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Hair accessory in the shape of Rabbit Ears. -->
+    <item id="8947" type="Armor" name="L2day - Rabbit Ears">
+        <set name="icon" val="icon.accessory_rabbit_ear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wing-shaped hair accessory. -->
+    <item id="8948" type="Armor" name="L2day - Little Angel Wings">
+        <set name="icon" val="icon.accessory_hair_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Cute antennae hair accessory with stars. -->
+    <item id="8949" type="Armor" name="L2day - Fairy Antennae">
+        <set name="icon" val="icon.accessory_hair_feeler_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair2" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Fancy hat containing feather. Uses 2 accessory slot spaces. -->
+    <item id="8950" type="Armor" name="L2day - Chapeau">
+        <set name="icon" val="icon.accessory_archer_hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Big, round goggles to protect your eyes. Uses 2 accessory slot spaces. -->
+    <item id="8951" type="Armor" name="L2day - Artisan's Goggles">
+        <set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="8952" type="EtcItem" name="Major Herb of Life">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2278-2" />
+    </item>
+    <item id="8953" type="EtcItem" name="Major Herb of Mana">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2279-2" />
+    </item>
+    <!-- Increases SP by 500 when used. Can only be used by characters level 76 or above. -->
+    <item id="8954" type="EtcItem" name="Blue Primeval Crystal">
+        <set name="icon" val="icon.etc_sp_crystal_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="10" />
+        <set name="price" val="50000" />
+        <set name="reuse_delay" val="1000" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2306-1" />
+    </item>
+    <!-- Increases SP by 1000 when used. Can only be used by characters level 76 or above. -->
+    <item id="8955" type="EtcItem" name="Green Primeval Crystal">
+        <set name="icon" val="icon.etc_sp_crystal_i02" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="10" />
+        <set name="price" val="100000" />
+        <set name="reuse_delay" val="1000" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2306-2" />
+    </item>
+    <!-- Increases SP by 2000 when used. Can only be used by characters level 76 or above. -->
+    <item id="8956" type="EtcItem" name="Red Primeval Crystal">
+        <set name="icon" val="icon.etc_sp_crystal_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="crystal_type" val="s" />
+        <set name="weight" val="10" />
+        <set name="price" val="200000" />
+        <set name="reuse_delay" val="1000" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2306-3" />
+    </item>
+    <!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for Shadow Items appropriate to your level. -->
+    <item id="8957" type="EtcItem" name="Attack Orders">
+        <set name="icon" val="icon.etc_lottery_card_i00" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for Shadow Items appropriate to your level. -->
+    <item id="8958" type="EtcItem" name="Defense Orders">
+        <set name="icon" val="icon.etc_lottery_card_i00" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Fantastic Scroll of Escape event item. A Warehouse Keeper can exchange these for consumables appropriate to your level. -->
+    <item id="8959" type="EtcItem" name="Supply Orders">
+        <set name="icon" val="icon.etc_lottery_card_i00" />
+        <set name="weight" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- One can receive a no-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8960" type="EtcItem" name="Shadow Armor Set Pack (No-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive a D-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8961" type="EtcItem" name="Shadow Armor Set Pack (D-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive a C-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8962" type="EtcItem" name="Shadow Armor Set Pack (C-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive a B-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8963" type="EtcItem" name="Shadow Armor Set Pack (B-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive an A-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8964" type="EtcItem" name="Shadow Armor Set Pack (A-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive an S-grade Shadow Armor set by Double-clicking. (Can be used when the Weight Gauge is below 60% and there are more than 20 empty inventory slots.) -->
+    <item id="8965" type="EtcItem" name="Shadow Armor Set Pack (S-grade)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2200-2" />
+    </item>
+    <!-- One can receive no-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8966" type="EtcItem" name="Item Set Pack (No-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-25" />
+    </item>
+    <!-- One can receive D-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8967" type="EtcItem" name="Item Set Pack (D-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-26" />
+    </item>
+    <!-- One can receive C-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8968" type="EtcItem" name="Item Set Pack (C-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-27" />
+    </item>
+    <!-- One can receive B-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8969" type="EtcItem" name="Item Set Pack (B-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-28" />
+    </item>
+    <!-- One can receive A-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8970" type="EtcItem" name="Item Set Pack (A-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-29" />
+    </item>
+    <!-- One can receive A- and S-grade Supplies for Warriors by Double-clicking. (Can be used when the Weight Gauge is below 80% and there are 10 or more empty inventory slots.) -->
+    <item id="8971" type="EtcItem" name="Item Set Pack (A/S-grade) (Warrior)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="2308-30" />
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Great Spear. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8972" type="Weapon" name="Shadow Item: Great Spear">
+        <set name="icon" val="icon.weapon_long_spear_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="80" />
+        <set name="damage_range" val="0;0;66;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="707" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="3599-1" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="31" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Falchion. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8973" type="Weapon" name="Shadow Item: Falchion">
+        <set name="icon" val="icon.weapon_falchion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="510" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="31" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of an Iron Hammer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8974" type="Weapon" name="Shadow Item: Iron Hammer">
+        <set name="icon" val="icon.weapon_iron_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="617" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="31" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Voodoo Doll. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8975" type="Weapon" name="Shadow Item: Voodoo Doll">
+        <set name="icon" val="icon.weapon_voodoo_doll_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="etc" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="210" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="25" />
+            <set stat="mAtk" val="28" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Flanged Mace. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8976" type="Weapon" name="Shadow Item: Flanged Mace">
+        <set name="icon" val="icon.weapon_buzdygan_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="600" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="31" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Mage Staff. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8977" type="Weapon" name="Shadow Item: Mage Staff">
+        <set name="icon" val="icon.weapon_apprentices_staff_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="350" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="30" />
+            <set stat="mAtk" val="31" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Sword Breaker. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8978" type="Weapon" name="Shadow Item: Sword Breaker">
+        <set name="icon" val="icon.weapon_sword_breaker_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="370" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="27" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Viper Fang. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8979" type="Weapon" name="Shadow Item: Viper Fang">
+        <set name="icon" val="icon.weapon_vipers_canine_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;32;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="520" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="38" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Compound Bow. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8980" type="Weapon" name="Shadow Item: Compound Bow">
+        <set name="icon" val="icon.weapon_composition_bow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="500" />
+        <set name="damage_range" val="0;0;10;0" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="627" />
+        <set name="soulshots" val="7" />
+        <set name="spiritshots" val="2" />
+        <set name="mp_consume" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="64" />
+            <set stat="mAtk" val="21" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Crucifix of Blessing. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8981" type="Weapon" name="Shadow Item: Crucifix of Blessing">
+        <set name="icon" val="icon.weapon_crucifix_of_blessing_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="etc" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="207" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="25" />
+            <set stat="mAtk" val="28" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Two-handed Sword. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8982" type="Weapon" name="Shadow Item: Two-handed Sword">
+        <set name="icon" val="icon.weapon_two_handed_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="730" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="78" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Crimson Sword. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8983" type="Weapon" name="Shadow Item: Crimson Sword">
+        <set name="icon" val="icon.weapon_crimson_sword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="500" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="64" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Spiked Club. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8984" type="Weapon" name="Shadow Item: Spiked Club">
+        <set name="icon" val="icon.weapon_spike_club_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="590" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="64" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Staff of Magic. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8985" type="Weapon" name="Shadow Item: Staff of Magic">
+        <set name="icon" val="icon.weapon_staff_of_magicpower_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="62" />
+            <set stat="mAtk" val="57" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Kukuri. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8986" type="Weapon" name="Shadow Item: Kukuri">
+        <set name="icon" val="icon.weapon_kukuri_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="360" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="56" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Dagger of Mana. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8987" type="Weapon" name="Shadow Item: Dagger of Mana">
+        <set name="icon" val="icon.weapon_dagger_of_mana_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="250" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="45" />
+            <set stat="mAtk" val="52" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Triple-Edged Jamadhr. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8988" type="Weapon" name="Shadow Item: Triple-Edged Jamadhr">
+        <set name="icon" val="icon.weapon_triple-edged_jamadhr_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;32;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="520" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="78" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Gastraphetes. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8989" type="Weapon" name="Shadow Item: Gastraphetes">
+        <set name="icon" val="icon.weapon_gastraphetes_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="500" />
+        <set name="damage_range" val="0;0;10;0" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="620" />
+        <set name="soulshots" val="8" />
+        <set name="spiritshots" val="2" />
+        <set name="mp_consume" val="2" />
+        <set name="reuse_delay" val="1500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="132" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a War Hammer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8990" type="Weapon" name="Shadow Item: War Hammer">
+        <set name="icon" val="icon.weapon_war_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="80" />
+        <set name="damage_range" val="0;0;66;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="d" />
+        <set name="weight" val="700" />
+        <set name="soulshots" val="2" />
+        <set name="spiritshots" val="2" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="3599-1" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="64" />
+            <set stat="mAtk" val="39" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8991" type="Weapon" name="Shadow Item: Sword of Delusion">
+        <set name="icon" val="icon.weapon_sword_of_delusion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="470" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="139" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Poleaxe. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8992" type="Weapon" name="Shadow Item: Poleaxe">
+        <set name="icon" val="icon.weapon_poleaxe_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="80" />
+        <set name="damage_range" val="0;0;66;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="670" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="item_skill" val="3599-1" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="139" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8993" type="Weapon" name="Shadow Item: Stick of Eternity">
+        <set name="icon" val="icon.weapon_stick_of_eternity_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="380" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="111" />
+            <set stat="mAtk" val="101" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of an Inferno Staff. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8994" type="Weapon" name="Shadow Item: Inferno Staff">
+        <set name="icon" val="icon.weapon_inferno_staff_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="135" />
+            <set stat="mAtk" val="111" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Pa'agrio Hammer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8995" type="Weapon" name="Shadow Item: Pa'agrio Hammer">
+        <set name="icon" val="icon.weapon_paagrio_hammer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;46;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="135" />
+            <set stat="mAtk" val="111" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Dark Screamer. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8996" type="Weapon" name="Shadow Item: Dark Screamer">
+        <set name="icon" val="icon.weapon_dark_screamer_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="340" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="122" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of an Akat Longbow. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8997" type="Weapon" name="Shadow Item: Akat Longbow">
+        <set name="icon" val="icon.weapon_akat_long_bow_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="500" />
+        <set name="damage_range" val="0;0;10;0" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="580" />
+        <set name="soulshots" val="9" />
+        <set name="spiritshots" val="3" />
+        <set name="mp_consume" val="3" />
+        <set name="reuse_delay" val="820" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="316" />
+            <set stat="mAtk" val="84" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="227" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Pa'agrian Sword. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8998" type="Weapon" name="Shadow Item: Pa'agrian Sword">
+        <set name="icon" val="icon.weapon_sword_of_paagrio_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;44;120" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="660" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="169" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
+    <!-- This Shadow Item contains the mirrored power of a Fisted Blade. It cannot be crystallized or granted functions besides enchantment. -->
+    <item id="8999" type="Weapon" name="Shadow Item: Fisted Blade">
+        <set name="icon" val="icon.weapon_fist_blade_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="attack_range" val="40" />
+        <set name="damage_range" val="0;0;40;90" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_type" val="c" />
+        <set name="weight" val="500" />
+        <set name="soulshots" val="3" />
+        <set name="spiritshots" val="3" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="duration" val="600" />
+        <for>
+            <set stat="pAtk" val="169" />
+            <set stat="mAtk" val="76" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+        </for>
+    </item>
 </list>

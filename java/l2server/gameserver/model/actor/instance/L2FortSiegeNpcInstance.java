@@ -25,38 +25,46 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2FortSiegeNpcInstance extends L2Npc
 {
-	public L2FortSiegeNpcInstance(int objectID, L2NpcTemplate template)
-	{
-		super(objectID, template);
-		setInstanceType(InstanceType.L2FortSiegeNpcInstance);
-	}
-	
-	@Override
-	public void showChatWindow(L2PcInstance player, int val)
-	{
-		player.sendPacket(ActionFailed.STATIC_PACKET);
-		
-		String filename;
-		
-		if (val == 0)
-			filename = "fortress/merchant.htm";
-		else
-			filename = "fortress/merchant-" + val + ".htm";
-		
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile(player.getHtmlPrefix(), filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcId%", String.valueOf(getNpcId()));
-		if (getFort().getOwnerClan() != null)
-			html.replace("%clanname%", getFort().getOwnerClan().getName());
-		else
-			html.replace("%clanname%", "NPC");
-		player.sendPacket(html);
-	}
-	
-	@Override
-	public boolean hasRandomAnimation()
-	{
-		return false;
-	}
+    public L2FortSiegeNpcInstance(int objectID, L2NpcTemplate template)
+    {
+        super(objectID, template);
+        setInstanceType(InstanceType.L2FortSiegeNpcInstance);
+    }
+
+    @Override
+    public void showChatWindow(L2PcInstance player, int val)
+    {
+        player.sendPacket(ActionFailed.STATIC_PACKET);
+
+        String filename;
+
+        if (val == 0)
+        {
+            filename = "fortress/merchant.htm";
+        }
+        else
+        {
+            filename = "fortress/merchant-" + val + ".htm";
+        }
+
+        NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+        html.setFile(player.getHtmlPrefix(), filename);
+        html.replace("%objectId%", String.valueOf(getObjectId()));
+        html.replace("%npcId%", String.valueOf(getNpcId()));
+        if (getFort().getOwnerClan() != null)
+        {
+            html.replace("%clanname%", getFort().getOwnerClan().getName());
+        }
+        else
+        {
+            html.replace("%clanname%", "NPC");
+        }
+        player.sendPacket(html);
+    }
+
+    @Override
+    public boolean hasRandomAnimation()
+    {
+        return false;
+    }
 }

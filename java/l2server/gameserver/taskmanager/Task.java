@@ -23,27 +23,28 @@ import l2server.log.Log;
 
 /**
  * @author Layane
- *
  */
 public abstract class Task
 {
-	
-	public void initialize()
-	{
-		if (Config.DEBUG)
-			Log.info("Task" + getName() + " inializate");
-	}
-	
-	public ScheduledFuture<?> launchSpecial(ExecutedTask instance)
-	{
-		return null;
-	}
-	
-	public abstract String getName();
-	
-	public abstract void onTimeElapsed(ExecutedTask task);
-	
-	public void onDestroy()
-	{
-	}
+
+    public void initialize()
+    {
+        if (Config.DEBUG)
+        {
+            Log.info("Task" + getName() + " inializate");
+        }
+    }
+
+    public ScheduledFuture<?> launchSpecial(ExecutedTask instance)
+    {
+        return null;
+    }
+
+    public abstract String getName();
+
+    public abstract void onTimeElapsed(ExecutedTask task);
+
+    public void onDestroy()
+    {
+    }
 }

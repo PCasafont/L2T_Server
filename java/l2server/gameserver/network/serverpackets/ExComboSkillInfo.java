@@ -20,13 +20,13 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExComboSkillInfo extends L2GameServerPacket
 {
-	public ExComboSkillInfo()
-	{
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		// TODO packet structure
-	}
+    public ExComboSkillInfo()
+    {
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        // TODO packet structure
+    }
 }

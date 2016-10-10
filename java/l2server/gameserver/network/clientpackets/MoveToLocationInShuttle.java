@@ -29,70 +29,73 @@ import l2server.util.Point3D;
  */
 public class MoveToLocationInShuttle extends L2GameClientPacket
 {
-	private int _shuttleId;
-	private int _targetX;
-	private int _targetY;
-	private int _targetZ;
-	private int _originX;
-	private int _originY;
-	private int _originZ;
-	
-	public TaskPriority getPriority()
-	{
-		return TaskPriority.PR_HIGH;
-	}
-	
-	@Override
-	protected void readImpl()
-	{
-		_shuttleId = readD();
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
-		{
-			activeChar.sendPacket(new ExStopMoveInShuttle(activeChar, _shuttleId));
-			return;
-		}
-		
-		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW)
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (activeChar.isSitting() || activeChar.isMovementDisabled())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (!activeChar.isInShuttle())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		final L2ShuttleInstance shuttle = activeChar.getShuttle();
-		if (shuttle.getObjectId() != _shuttleId)
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		activeChar.setInVehiclePosition(new Point3D(_targetX, _targetY, _targetZ));
-		activeChar.broadcastPacket(new ExMoveToLocationInShuttle(activeChar));
-	}
+    private int _shuttleId;
+    private int _targetX;
+    private int _targetY;
+    private int _targetZ;
+    private int _originX;
+    private int _originY;
+    private int _originZ;
+
+    public TaskPriority getPriority()
+    {
+        return TaskPriority.PR_HIGH;
+    }
+
+    @Override
+    protected void readImpl()
+    {
+        _shuttleId = readD();
+        _targetX = readD();
+        _targetY = readD();
+        _targetZ = readD();
+        _originX = readD();
+        _originY = readD();
+        _originZ = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        final L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
+        {
+            activeChar.sendPacket(new ExStopMoveInShuttle(activeChar, _shuttleId));
+            return;
+        }
+
+        if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem()
+                .getItemType() == L2WeaponType.BOW)
+        {
+            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (activeChar.isSitting() || activeChar.isMovementDisabled())
+        {
+            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (!activeChar.isInShuttle())
+        {
+            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        final L2ShuttleInstance shuttle = activeChar.getShuttle();
+        if (shuttle.getObjectId() != _shuttleId)
+        {
+            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        activeChar.setInVehiclePosition(new Point3D(_targetX, _targetY, _targetZ));
+        activeChar.broadcastPacket(new ExMoveToLocationInShuttle(activeChar));
+    }
 }

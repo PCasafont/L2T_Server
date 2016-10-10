@@ -24,54 +24,56 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectManaHeal extends L2Effect
 {
-	public EffectManaHeal(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	// Special constructor to steal this effect
-	public EffectManaHeal(Env env, L2Effect effect)
-	{
-		super(env, effect);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead())
-			return false;
-		
-		if (getEffected() instanceof L2DoorInstance)
-			return false;
-		
-		double mp = getEffected().getCurrentMp();
-		mp += calc();
-		
-		getEffected().setCurrentMp(mp);
-		StatusUpdate sump = new StatusUpdate(getEffected());
-		sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
-		getEffected().sendPacket(sump);
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectManaHeal(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    // Special constructor to steal this effect
+    public EffectManaHeal(Env env, L2Effect effect)
+    {
+        super(env, effect);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected().isDead())
+        {
+            return false;
+        }
+
+        if (getEffected() instanceof L2DoorInstance)
+        {
+            return false;
+        }
+
+        double mp = getEffected().getCurrentMp();
+        mp += calc();
+
+        getEffected().setCurrentMp(mp);
+        StatusUpdate sump = new StatusUpdate(getEffected());
+        sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
+        getEffected().sendPacket(sump);
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

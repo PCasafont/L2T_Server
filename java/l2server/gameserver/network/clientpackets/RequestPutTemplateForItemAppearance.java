@@ -37,47 +37,57 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestPutTemplateForItemAppearance extends L2GameClientPacket
 {
-	private int _objectId1;
-	private int _objectId2;
-	
-	@Override
-	protected void readImpl()
-	{
-		_objectId1 = readD();
-		_objectId2 = readD();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		if (_objectId1 == _objectId2)
-			return;
-		
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		L2ItemInstance stone = player.getActiveAppearanceStone();
-		if (stone == null)
-			return;
-		
-		L2ItemInstance target = player.getInventory().getItemByObjectId(_objectId1);
-		if (target == null)
-			return;
-		
-		L2ItemInstance template = player.getInventory().getItemByObjectId(_objectId2);
-		if (template == null)
-			return;
-		
-		if (!template.getItem().canBeUsedAsApp() || template.getTime() > 0)
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
-			return;
-		}
-		
+    private int _objectId1;
+    private int _objectId2;
+
+    @Override
+    protected void readImpl()
+    {
+        _objectId1 = readD();
+        _objectId2 = readD();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        if (_objectId1 == _objectId2)
+        {
+            return;
+        }
+
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        L2ItemInstance stone = player.getActiveAppearanceStone();
+        if (stone == null)
+        {
+            return;
+        }
+
+        L2ItemInstance target = player.getInventory().getItemByObjectId(_objectId1);
+        if (target == null)
+        {
+            return;
+        }
+
+        L2ItemInstance template = player.getInventory().getItemByObjectId(_objectId2);
+        if (template == null)
+        {
+            return;
+        }
+
+        if (!template.getItem().canBeUsedAsApp() || template.getTime() > 0)
+        {
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
+            return;
+        }
+
 		/*boolean isCostume = false;
 		switch (template.getItemId())
 		{
@@ -137,91 +147,112 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 				isCostume = true;
 				break;
 		}*/
-		
-		int type = stone.getStoneType();
-		int itemType = target.getItem().getType2();
-		int itemTypeTemp = template.getItem().getType2();
-		if (target.getItem().getBodyPart() == L2Item.SLOT_BACK)
-			itemType = L2Item.TYPE2_SHIELD_ARMOR;
-		if (template.getItem().getBodyPart() == L2Item.SLOT_BACK)
-			itemTypeTemp = L2Item.TYPE2_SHIELD_ARMOR;
-		
-		boolean isCorrectType = type == -1 || itemType == itemTypeTemp;
-		boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() || target.getItem().getBodyPart() == L2Item.SLOT_BACK;
-		
-		boolean valid = true;
-		if (!isCorrectGrade || !isCorrectType || target.getItem().getItemGrade() < template.getItem().getItemGrade())
-			valid = false;
-		
-		L2ItemType templateType = template.getItem().getItemType();
-		L2ItemType targetType = target.getItem().getItemType();
-		int targetBodyPart = target.getItem().getBodyPart();
-		int templateBodyPart = template.getItem().getBodyPart();
-		if (valid && targetType != templateType)
-		{
-			valid = false;
-			if (templateType == L2ArmorType.NONE && templateBodyPart == L2Item.SLOT_ALLDRESS)
-				valid = true;
-			
-			if (Config.isServer(Config.TENKAI))
-			{
-				Map<L2ItemType, Integer> typeGroups = new HashMap<L2ItemType, Integer>();
-				typeGroups.put(L2WeaponType.SWORD, 0);
-				typeGroups.put(L2WeaponType.BLUNT, 0);
-				typeGroups.put(L2WeaponType.DUAL, 1);
-				typeGroups.put(L2WeaponType.DUALBLUNT, 1);
-				typeGroups.put(L2WeaponType.ANCIENTSWORD, 2);
-				typeGroups.put(L2WeaponType.BIGBLUNT, 2);
-				typeGroups.put(L2WeaponType.BIGSWORD, 2);
-				
-				typeGroups.put(L2ArmorType.HEAVY, 3);
-				typeGroups.put(L2ArmorType.LIGHT, 3);
-				typeGroups.put(L2ArmorType.MAGIC, 3);
-				typeGroups.put(L2ArmorType.NONE, 4);
-				
-				int templateTypeGroup = -1;
-				if (typeGroups.containsKey(templateType))
-					templateTypeGroup = typeGroups.get(templateType);
-				
-				int targetTypeGroup = -1;
-				if (typeGroups.containsKey(targetType))
-					targetTypeGroup = typeGroups.get(targetType);
-				
-				if (templateTypeGroup >= 0 && templateTypeGroup == targetTypeGroup)
-					valid = true;
-			}
-		}
-		
-		if (valid && targetBodyPart != templateBodyPart)
-		{
-			valid = false;
-			if ((targetBodyPart == L2Item.SLOT_FULL_ARMOR || targetBodyPart == L2Item.SLOT_CHEST) && (templateBodyPart == L2Item.SLOT_ALLDRESS || templateBodyPart == L2Item.SLOT_FULL_ARMOR || templateBodyPart == L2Item.SLOT_CHEST))
-				valid = true;
-		}
-		
-		if (!valid)
-		{
-			sendPacket(new ExPutTemplateResultForItemAppearance(0));
-			return;
-		}
-		
-		sendPacket(new ExPutTemplateResultForItemAppearance(2));
-		
-		int templateId = template.getItemId();
-		if (!player.destroyItem("Appearance", stone.getObjectId(), 1, player, true) || !player.destroyItem("Appearance", template, player, true))
-		{
-			sendPacket(new ExPutTemplateResultForItemAppearance(0));
-			return;
-		}
-		
-		target.setAppearance(templateId);
-		sendPacket(new ExItemAppearanceResult(1, target));
-		
-		InventoryUpdate iu = new InventoryUpdate();
-		iu.addModifiedItem(target);
-		player.sendPacket(iu);
-		player.broadcastUserInfo();
-		
-		Util.logToFile(player.getName() + " is applying " + template.getName() + " on his " + target.getName() + ".", "Appearances", "txt", true, true);
-	}
+
+        int type = stone.getStoneType();
+        int itemType = target.getItem().getType2();
+        int itemTypeTemp = template.getItem().getType2();
+        if (target.getItem().getBodyPart() == L2Item.SLOT_BACK)
+        {
+            itemType = L2Item.TYPE2_SHIELD_ARMOR;
+        }
+        if (template.getItem().getBodyPart() == L2Item.SLOT_BACK)
+        {
+            itemTypeTemp = L2Item.TYPE2_SHIELD_ARMOR;
+        }
+
+        boolean isCorrectType = type == -1 || itemType == itemTypeTemp;
+        boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() || target
+                .getItem().getBodyPart() == L2Item.SLOT_BACK;
+
+        boolean valid = true;
+        if (!isCorrectGrade || !isCorrectType || target.getItem().getItemGrade() < template.getItem().getItemGrade())
+        {
+            valid = false;
+        }
+
+        L2ItemType templateType = template.getItem().getItemType();
+        L2ItemType targetType = target.getItem().getItemType();
+        int targetBodyPart = target.getItem().getBodyPart();
+        int templateBodyPart = template.getItem().getBodyPart();
+        if (valid && targetType != templateType)
+        {
+            valid = false;
+            if (templateType == L2ArmorType.NONE && templateBodyPart == L2Item.SLOT_ALLDRESS)
+            {
+                valid = true;
+            }
+
+            if (Config.isServer(Config.TENKAI))
+            {
+                Map<L2ItemType, Integer> typeGroups = new HashMap<L2ItemType, Integer>();
+                typeGroups.put(L2WeaponType.SWORD, 0);
+                typeGroups.put(L2WeaponType.BLUNT, 0);
+                typeGroups.put(L2WeaponType.DUAL, 1);
+                typeGroups.put(L2WeaponType.DUALBLUNT, 1);
+                typeGroups.put(L2WeaponType.ANCIENTSWORD, 2);
+                typeGroups.put(L2WeaponType.BIGBLUNT, 2);
+                typeGroups.put(L2WeaponType.BIGSWORD, 2);
+
+                typeGroups.put(L2ArmorType.HEAVY, 3);
+                typeGroups.put(L2ArmorType.LIGHT, 3);
+                typeGroups.put(L2ArmorType.MAGIC, 3);
+                typeGroups.put(L2ArmorType.NONE, 4);
+
+                int templateTypeGroup = -1;
+                if (typeGroups.containsKey(templateType))
+                {
+                    templateTypeGroup = typeGroups.get(templateType);
+                }
+
+                int targetTypeGroup = -1;
+                if (typeGroups.containsKey(targetType))
+                {
+                    targetTypeGroup = typeGroups.get(targetType);
+                }
+
+                if (templateTypeGroup >= 0 && templateTypeGroup == targetTypeGroup)
+                {
+                    valid = true;
+                }
+            }
+        }
+
+        if (valid && targetBodyPart != templateBodyPart)
+        {
+            valid = false;
+            if ((targetBodyPart == L2Item.SLOT_FULL_ARMOR || targetBodyPart == L2Item.SLOT_CHEST) &&
+                    (templateBodyPart == L2Item.SLOT_ALLDRESS || templateBodyPart == L2Item.SLOT_FULL_ARMOR ||
+                            templateBodyPart == L2Item.SLOT_CHEST))
+            {
+                valid = true;
+            }
+        }
+
+        if (!valid)
+        {
+            sendPacket(new ExPutTemplateResultForItemAppearance(0));
+            return;
+        }
+
+        sendPacket(new ExPutTemplateResultForItemAppearance(2));
+
+        int templateId = template.getItemId();
+        if (!player.destroyItem("Appearance", stone.getObjectId(), 1, player, true) || !player
+                .destroyItem("Appearance", template, player, true))
+        {
+            sendPacket(new ExPutTemplateResultForItemAppearance(0));
+            return;
+        }
+
+        target.setAppearance(templateId);
+        sendPacket(new ExItemAppearanceResult(1, target));
+
+        InventoryUpdate iu = new InventoryUpdate();
+        iu.addModifiedItem(target);
+        player.sendPacket(iu);
+        player.broadcastUserInfo();
+
+        Util.logToFile(player.getName() + " is applying " + template.getName() + " on his " + target
+                .getName() + ".", "Appearances", "txt", true, true);
+    }
 }

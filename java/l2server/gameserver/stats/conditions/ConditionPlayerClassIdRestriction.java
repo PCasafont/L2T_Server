@@ -25,26 +25,28 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerClassIdRestriction extends Condition
 {
-	private final ArrayList<Integer> _classIds;
-	
-	/**
-	 * Instantiates a new condition player class id restriction.
-	 *
-	 * @param classId the class id
-	 */
-	public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId)
-	{
-		_classIds = classId;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-			return false;
-		return _classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
-	}
+    private final ArrayList<Integer> _classIds;
+
+    /**
+     * Instantiates a new condition player class id restriction.
+     *
+     * @param classId the class id
+     */
+    public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId)
+    {
+        _classIds = classId;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!(env.player instanceof L2PcInstance))
+        {
+            return false;
+        }
+        return _classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
+    }
 }

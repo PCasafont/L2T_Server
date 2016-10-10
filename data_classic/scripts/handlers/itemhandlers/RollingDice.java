@@ -33,60 +33,67 @@ import l2server.util.Rnd;
 
 public class RollingDice implements IItemHandler
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		int itemId = item.getItemId();
-		
-		if (activeChar.isInOlympiadMode())
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
-			return;
-		}
-		
-		if (itemId == 4625 || itemId == 4626 || itemId == 4627 || itemId == 4628)
-		{
-			int number = rollDice(activeChar);
-			if (number == 0)
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_MAY_NOT_THROW_THE_DICE_AT_THIS_TIME_TRY_AGAIN_LATER));
-				return;
-			}
-			
-			Broadcast.toSelfAndKnownPlayers(activeChar, new Dice(activeChar.getObjectId(), item.getItemId(), number, activeChar.getX() - 30, activeChar.getY() - 30, activeChar.getZ()));
-			
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ROLLED_S2);
-			sm.addString(activeChar.getName());
-			sm.addNumber(number);
-			
-			activeChar.sendPacket(sm);
-			if (activeChar.isInsideZone(L2Character.ZONE_PEACE))
-				Broadcast.toKnownPlayers(activeChar, sm);
-			else if (activeChar.isInParty())
-				activeChar.getParty().broadcastToPartyMembers(activeChar, sm);
-		}
-	}
-	
-	/**
-	 * 
-	 * @param player
-	 * @return
-	 */
-	private int rollDice(L2PcInstance player)
-	{
-		// Check if the dice is ready
-		if (!player.getFloodProtectors().getRollDice().
-				tryPerformAction("roll dice"))
-		{
-			return 0;
-		}
-		return Rnd.get(1, 6);
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) playable;
+        int itemId = item.getItemId();
+
+        if (activeChar.isInOlympiadMode())
+        {
+            activeChar.sendPacket(SystemMessage
+                    .getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+            return;
+        }
+
+        if (itemId == 4625 || itemId == 4626 || itemId == 4627 || itemId == 4628)
+        {
+            int number = rollDice(activeChar);
+            if (number == 0)
+            {
+                activeChar.sendPacket(SystemMessage
+                        .getSystemMessage(SystemMessageId.YOU_MAY_NOT_THROW_THE_DICE_AT_THIS_TIME_TRY_AGAIN_LATER));
+                return;
+            }
+
+            Broadcast.toSelfAndKnownPlayers(activeChar, new Dice(activeChar.getObjectId(), item
+                    .getItemId(), number, activeChar.getX() - 30, activeChar.getY() - 30, activeChar.getZ()));
+
+            SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ROLLED_S2);
+            sm.addString(activeChar.getName());
+            sm.addNumber(number);
+
+            activeChar.sendPacket(sm);
+            if (activeChar.isInsideZone(L2Character.ZONE_PEACE))
+            {
+                Broadcast.toKnownPlayers(activeChar, sm);
+            }
+            else if (activeChar.isInParty())
+            {
+                activeChar.getParty().broadcastToPartyMembers(activeChar, sm);
+            }
+        }
+    }
+
+    /**
+     * @param player
+     * @return
+     */
+    private int rollDice(L2PcInstance player)
+    {
+        // Check if the dice is ready
+        if (!player.getFloodProtectors().getRollDice().
+                tryPerformAction("roll dice"))
+        {
+            return 0;
+        }
+        return Rnd.get(1, 6);
+    }
 }

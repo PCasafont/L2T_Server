@@ -1,4 +1,3 @@
-
 package l2server.gameserver.network.serverpackets;
 
 /**
@@ -6,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExMpccPartymasterList extends L2GameServerPacket
 {
-	private int _size;
-	
-	public ExMpccPartymasterList(int size)
-	{
-		_size = size;
-	}
-	
-	@Override
-	public void writeImpl()
-	{
-		writeD(_size);
-	}
+    private int _size;
+
+    public ExMpccPartymasterList(int size)
+    {
+        _size = size;
+    }
+
+    @Override
+    public void writeImpl()
+    {
+        writeD(_size);
+    }
 }

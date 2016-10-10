@@ -23,54 +23,55 @@ import l2server.gameserver.stats.VisualEffect;
  * L2AbnormalZone zones give entering players abnormal effects
  * Default effect is big head
  *
- * @author  durgus
+ * @author durgus
  */
 public class L2AbnormalZone extends L2ZoneType
 {
-	private int abnormal = VisualEffect.BIG_HEAD.getId();
-	
-	public L2AbnormalZone(int id)
-	{
-		super(id);
-	}
-	
-	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("AbnormalMask"))
-		{
-			abnormal = Integer.parseInt(value);
-		}
-		else if (name.equals("SpecialMask"))
-		{
-			abnormal = Integer.parseInt(value);
-		}
-		else
-			super.setParameter(name, value);
-	}
-	
-	@Override
-	protected void onEnter(L2Character character)
-	{
-		character.startVisualEffect(abnormal);
-	}
-	
-	@Override
-	protected void onExit(L2Character character)
-	{
-		character.stopVisualEffect(abnormal);
-	}
-	
-	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-		onExit(character);
-	}
-	
-	@Override
-	public void onReviveInside(L2Character character)
-	{
-		onEnter(character);
-	}
-	
+    private int abnormal = VisualEffect.BIG_HEAD.getId();
+
+    public L2AbnormalZone(int id)
+    {
+        super(id);
+    }
+
+    @Override
+    public void setParameter(String name, String value)
+    {
+        if (name.equals("AbnormalMask"))
+        {
+            abnormal = Integer.parseInt(value);
+        }
+        else if (name.equals("SpecialMask"))
+        {
+            abnormal = Integer.parseInt(value);
+        }
+        else
+        {
+            super.setParameter(name, value);
+        }
+    }
+
+    @Override
+    protected void onEnter(L2Character character)
+    {
+        character.startVisualEffect(abnormal);
+    }
+
+    @Override
+    protected void onExit(L2Character character)
+    {
+        character.stopVisualEffect(abnormal);
+    }
+
+    @Override
+    public void onDieInside(L2Character character, L2Character killer)
+    {
+        onExit(character);
+    }
+
+    @Override
+    public void onReviveInside(L2Character character)
+    {
+        onEnter(character);
+    }
 }

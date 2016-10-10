@@ -24,38 +24,43 @@ import l2server.gameserver.network.serverpackets.ExCursedWeaponList;
 
 /**
  * Format: (ch)
- * @author  -Wooden-
+ *
+ * @author -Wooden-
  */
 public class RequestCursedWeaponList extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		//nothing to read it's just a trigger
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2Character activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		//send a ExCursedWeaponList :p
-		List<Integer> list = new ArrayList<Integer>();
-		for (int id : CursedWeaponsManager.getInstance().getCursedWeaponsIds())
-			list.add(id);
-		
-		activeChar.sendPacket(new ExCursedWeaponList(list));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    @Override
+    protected void readImpl()
+    {
+        //nothing to read it's just a trigger
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2Character activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        //send a ExCursedWeaponList :p
+        List<Integer> list = new ArrayList<Integer>();
+        for (int id : CursedWeaponsManager.getInstance().getCursedWeaponsIds())
+        {
+            list.add(id);
+        }
+
+        activeChar.sendPacket(new ExCursedWeaponList(list));
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

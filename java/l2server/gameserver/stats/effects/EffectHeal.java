@@ -24,59 +24,63 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectHeal extends L2Effect
 {
-	public EffectHeal(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	// Special constructor to steal this effect
-	public EffectHeal(Env env, L2Effect effect)
-	{
-		super(env, effect);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead())
-			return false;
-		
-		if (getEffected() instanceof L2DoorInstance)
-			return false;
-		
-		double hp = getEffected().getCurrentHp();
-		double maxhp = getEffected().getMaxHp();
-		
-		double recoveredHp = calc();
-		hp += recoveredHp;
-		if (hp > maxhp)
-			hp = maxhp;
-		
-		getEffected().setCurrentHp(hp);
-		StatusUpdate suhp = new StatusUpdate(getEffected());
-		suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
-		getEffected().sendPacket(suhp);
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
+    public EffectHeal(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    // Special constructor to steal this effect
+    public EffectHeal(Env env, L2Effect effect)
+    {
+        super(env, effect);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        if (getEffected().isDead())
+        {
+            return false;
+        }
+
+        if (getEffected() instanceof L2DoorInstance)
+        {
+            return false;
+        }
+
+        double hp = getEffected().getCurrentHp();
+        double maxhp = getEffected().getMaxHp();
+
+        double recoveredHp = calc();
+        hp += recoveredHp;
+        if (hp > maxhp)
+        {
+            hp = maxhp;
+        }
+
+        getEffected().setCurrentHp(hp);
+        StatusUpdate suhp = new StatusUpdate(getEffected());
+        suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
+        getEffected().sendPacket(suhp);
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
 }

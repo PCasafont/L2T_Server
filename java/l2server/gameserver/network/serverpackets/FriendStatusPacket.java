@@ -27,26 +27,25 @@ import l2server.gameserver.model.L2World;
  * d: Player Object ID <BR>
  *
  * @author JIV
- *
  */
 public class FriendStatusPacket extends L2GameServerPacket
 {
-	private boolean _online;
-	private int _objid;
-	private String _name;
-	
-	public FriendStatusPacket(int objId)
-	{
-		_objid = objId;
-		_name = CharNameTable.getInstance().getNameById(objId);
-		_online = L2World.getInstance().getPlayer(objId) != null;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_online ? 1 : 0);
-		writeS(_name);
-		writeD(_objid);
-	}
+    private boolean _online;
+    private int _objid;
+    private String _name;
+
+    public FriendStatusPacket(int objId)
+    {
+        _objid = objId;
+        _name = CharNameTable.getInstance().getNameById(objId);
+        _online = L2World.getInstance().getPlayer(objId) != null;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_online ? 1 : 0);
+        writeS(_name);
+        writeD(_objid);
+    }
 }

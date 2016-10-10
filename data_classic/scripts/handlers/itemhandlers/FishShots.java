@@ -29,56 +29,61 @@ import l2server.gameserver.util.Broadcast;
 
 /**
  * @author -Nemesiss-
- *
  */
 public class FishShots implements IItemHandler
 {
-	private static final int[] SKILL_IDS =
-	{
-		2181, 2182, 2183, 2184, 2185, 2186
-	};
-	
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-		
-		if (weaponInst == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
-			return;
-		
-		if (weaponInst.getChargedFishshot())
-			// spirit shot is already active
-			return;
-		
-		int FishshotId = item.getItemId();
-		int grade = weaponItem.getCrystalType();
-		long count = item.getCount();
-		
-		if ((grade == L2Item.CRYSTAL_NONE && FishshotId != 6535) || (grade == L2Item.CRYSTAL_D && FishshotId != 6536) || (grade == L2Item.CRYSTAL_C && FishshotId != 6537) || (grade == L2Item.CRYSTAL_B && FishshotId != 6538)
-				|| (grade == L2Item.CRYSTAL_A && FishshotId != 6539) || (FishshotId != 6540 && grade == L2Item.CRYSTAL_S ))
-		{
-			//1479 - This fishing shot is not fit for the fishing pole crystal.
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WRONG_FISHINGSHOT_GRADE));
-			return;
-		}
-		
-		if (count < 1)
-			return;
-		
-		weaponInst.setChargedFishshot(true);
-		activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
-		L2Object oldTarget = activeChar.getTarget();
-		activeChar.setTarget(activeChar);
-		
-		Broadcast.toSelfAndKnownPlayers(activeChar, new MagicSkillUse(activeChar, SKILL_IDS[grade], 1, 0, 0));
-		activeChar.setTarget(oldTarget);
-	}
+    private static final int[] SKILL_IDS = {2181, 2182, 2183, 2184, 2185, 2186};
+
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) playable;
+        L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+        L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+
+        if (weaponInst == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
+        {
+            return;
+        }
+
+        if (weaponInst.getChargedFishshot())
+        // spirit shot is already active
+        {
+            return;
+        }
+
+        int FishshotId = item.getItemId();
+        int grade = weaponItem.getCrystalType();
+        long count = item.getCount();
+
+        if ((grade == L2Item.CRYSTAL_NONE && FishshotId != 6535) || (grade == L2Item.CRYSTAL_D && FishshotId != 6536) ||
+                (grade == L2Item.CRYSTAL_C && FishshotId != 6537) ||
+                (grade == L2Item.CRYSTAL_B && FishshotId != 6538) ||
+                (grade == L2Item.CRYSTAL_A && FishshotId != 6539) || (FishshotId != 6540 && grade == L2Item.CRYSTAL_S))
+        {
+            //1479 - This fishing shot is not fit for the fishing pole crystal.
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WRONG_FISHINGSHOT_GRADE));
+            return;
+        }
+
+        if (count < 1)
+        {
+            return;
+        }
+
+        weaponInst.setChargedFishshot(true);
+        activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
+        L2Object oldTarget = activeChar.getTarget();
+        activeChar.setTarget(activeChar);
+
+        Broadcast.toSelfAndKnownPlayers(activeChar, new MagicSkillUse(activeChar, SKILL_IDS[grade], 1, 0, 0));
+        activeChar.setTarget(oldTarget);
+    }
 }

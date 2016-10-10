@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritoryGiran extends TerritoryWarSuperClass
 {
-	public static String qn1 = "719_FortheSakeoftheTerritoryGiran";
-	public static int qnu = 719;
-	public static String qna = "For the Sake of the Territory - Giran";
-	
-	public TheTerritoryGiran()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36501;
-		TERRITORY_ID = 83;
-		LEADER_IDS = new int[] { 36520, 36522, 36525, 36593 };
-		GUARD_IDS = new int[] { 36521, 36523, 36524 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Giran has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "719_FortheSakeoftheTerritoryGiran";
+    public static int qnu = 719;
+    public static String qna = "For the Sake of the Territory - Giran";
+
+    public TheTerritoryGiran()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36501;
+        TERRITORY_ID = 83;
+        LEADER_IDS = new int[]{36520, 36522, 36525, 36593};
+        GUARD_IDS = new int[]{36521, 36523, 36524};
+        qn = qn1;
+        Text = new String[]{"The catapult of Giran has been destroyed!"};
+        registerKillIds();
+    }
 }

@@ -30,109 +30,121 @@ import l2server.gameserver.model.quest.Quest;
 
 public class WorldAltars extends Quest
 {
-	private static final String _qn = "WorldAltars";
-	private static final boolean _debug = false;
-	
-	private static final int[] _altarIds = { 143, 144, 145, 146 };
-	private static final int[] _bossIds = { 80351, 80352, 80353, 80354 };
-	
-	public WorldAltars(int questId, String name, String descr)
-	{
-		super(questId, name, descr);
-		for (int i : _altarIds)
-		{
-			addTalkId(i);
-			addStartNpc(i);
-			addFirstTalkId(i);
-		}
-		
-		for (int i : _bossIds)
-			addKillId(i);
-	}
-	
-	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		return "WorldAltars.html";
-	}
-	
-	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.startsWith("trySpawnBoss"))
-		{
-			if (!_debug)
-			{
-				L2Party party = player.getParty();
-				if (party == null)
-				{
-					player.sendMessage("You can't beat such challenge alone!");
-					return "";
-				}
-				if (party.getLeader() != player)
-				{
-					player.sendMessage("You aren't the team group leader!");
-					return "";
-				}
-				if (party.getMemberCount() < 4)
-				{
-					player.sendMessage("You will need at least 4 different players!");
-					return "";
-				}
-				//Check if have at least 4 different players
-				Map<String, String> pIps = new HashMap<String, String>();
-				for (L2PcInstance pMember : party.getPartyMembers())
-				{
-					if (pMember == null)
-						continue;
-					
-					if (pIps.size() >= 4)
-						break;
-					
-					if (!pMember.isInsideRadius(npc, 1000, false, false))
-					{
-						player.sendMessage("World Altars: " + pMember.getName() + " is far!");
-						return "";
-					}
-					
-					if (pIps.containsKey(pMember.getExternalIP()))
-					{
-						if (pIps.get(pMember.getExternalIP()).equalsIgnoreCase(pMember.getInternalIP()))
-							continue;
-					}
-					pIps.put(pMember.getExternalIP(), pMember.getInternalIP());
-				}
-				
-				if (pIps.size() >= 4)
-				{
-					if (!CustomWorldAltars.getInstance().notifyTrySpawnBosss(npc))
-						return "WorldAltars-no.html";
-				}
-				else
-				{
-					player.sendMessage("You don't have enough different players!");
-					return "";
-				}
-			}
-			else
-			{
-				if (!CustomWorldAltars.getInstance().notifyTrySpawnBosss(npc))
-					return "WorldAltars-no.html";
-			}
-		}
-		return super.onAdvEvent(event, npc, player);
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		CustomWorldAltars.getInstance().notifyBossKilled(npc);
-		
-		return super.onKill(npc, player, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new WorldAltars(-1, _qn, "ai");
-	}
+    private static final String _qn = "WorldAltars";
+    private static final boolean _debug = false;
+
+    private static final int[] _altarIds = {143, 144, 145, 146};
+    private static final int[] _bossIds = {80351, 80352, 80353, 80354};
+
+    public WorldAltars(int questId, String name, String descr)
+    {
+        super(questId, name, descr);
+        for (int i : _altarIds)
+        {
+            addTalkId(i);
+            addStartNpc(i);
+            addFirstTalkId(i);
+        }
+
+        for (int i : _bossIds)
+        {
+            addKillId(i);
+        }
+    }
+
+    @Override
+    public String onFirstTalk(L2Npc npc, L2PcInstance player)
+    {
+        return "WorldAltars.html";
+    }
+
+    @Override
+    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+    {
+        if (event.startsWith("trySpawnBoss"))
+        {
+            if (!_debug)
+            {
+                L2Party party = player.getParty();
+                if (party == null)
+                {
+                    player.sendMessage("You can't beat such challenge alone!");
+                    return "";
+                }
+                if (party.getLeader() != player)
+                {
+                    player.sendMessage("You aren't the team group leader!");
+                    return "";
+                }
+                if (party.getMemberCount() < 4)
+                {
+                    player.sendMessage("You will need at least 4 different players!");
+                    return "";
+                }
+                //Check if have at least 4 different players
+                Map<String, String> pIps = new HashMap<String, String>();
+                for (L2PcInstance pMember : party.getPartyMembers())
+                {
+                    if (pMember == null)
+                    {
+                        continue;
+                    }
+
+                    if (pIps.size() >= 4)
+                    {
+                        break;
+                    }
+
+                    if (!pMember.isInsideRadius(npc, 1000, false, false))
+                    {
+                        player.sendMessage("World Altars: " + pMember.getName() + " is far!");
+                        return "";
+                    }
+
+                    if (pIps.containsKey(pMember.getExternalIP()))
+                    {
+                        if (pIps.get(pMember.getExternalIP()).equalsIgnoreCase(pMember.getInternalIP()))
+                        {
+                            continue;
+                        }
+                    }
+                    pIps.put(pMember.getExternalIP(), pMember.getInternalIP());
+                }
+
+                if (pIps.size() >= 4)
+                {
+                    if (!CustomWorldAltars.getInstance().notifyTrySpawnBosss(npc))
+                    {
+                        return "WorldAltars-no.html";
+                    }
+                }
+                else
+                {
+                    player.sendMessage("You don't have enough different players!");
+                    return "";
+                }
+            }
+            else
+            {
+                if (!CustomWorldAltars.getInstance().notifyTrySpawnBosss(npc))
+                {
+                    return "WorldAltars-no.html";
+                }
+            }
+        }
+        return super.onAdvEvent(event, npc, player);
+    }
+
+    @Override
+    public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
+    {
+        CustomWorldAltars.getInstance().notifyBossKilled(npc);
+
+        return super.onKill(npc, player, isPet);
+    }
+
+    public static void main(String[] args)
+    {
+        new WorldAltars(-1, _qn, "ai");
+    }
 }

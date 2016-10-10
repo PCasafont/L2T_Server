@@ -37,48 +37,48 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author littlecrow
- *
- *		 Implementation of the Fear Effect
+ *         <p>
+ *         Implementation of the Fear Effect
  */
 public class EffectFear extends L2Effect
 {
-	public static final int FEAR_RANGE = 500;
-	
-	private int _dX = -1;
-	private int _dY = -1;
-	
-	public EffectFear(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.FEAR;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.FEAR;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		// Fear skills cannot be used in event
-		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
-			return false;
-		
+    public static final int FEAR_RANGE = 500;
+
+    private int _dX = -1;
+    private int _dY = -1;
+
+    public EffectFear(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.FEAR;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.FEAR;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        // Fear skills cannot be used in event
+        if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
+        {
+            return false;
+        }
+
 		/* Tenkai custom - Kilian: I don't see the sense of PvE-only fears and never heard of it either, so commented out
 		// Fear skills cannot be used l2pcinstance to l2pcinstance. Heroic
 		// Dread, Curse: Fear, Fear, Horror, Sword Symphony, Word of Fear, Hell Scream and
@@ -102,70 +102,85 @@ public class EffectFear extends L2Effect
 			}
 		}
 		 */
-		
-		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance || getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance || getEffected() instanceof L2SiegeSummonInstance)
-			return false;
-		
-		if (!getEffected().isAfraid())
-		{
-			if (getEffected().isCastingNow() && getEffected().canAbortCast())
-				getEffected().abortCast();
-			
-			if (getEffected().getX() > getEffector().getX())
-				_dX = 1;
-			if (getEffected().getY() > getEffector().getY())
-				_dY = 1;
-			
-			getEffected().startFear();
-			getEffected().startVisualEffect(VisualEffect.SKULL_FEAR);
-			onActionTime();
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopVisualEffect(VisualEffect.SKULL_FEAR);
-		getEffected().stopFear(false);
-		getEffected().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		int posX = getEffected().getX();
-		int posY = getEffected().getY();
-		int posZ = getEffected().getZ();
-		
-		if (getEffected().getX() > getEffector().getX())
-			_dX = 1;
-		if (getEffected().getY() > getEffector().getY())
-			_dY = 1;
-		
-		posX += _dX * FEAR_RANGE;
-		posY += _dY * FEAR_RANGE;
-		
-		if (Config.GEODATA > 0)
-		{
-			Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ, getEffected().getInstanceId());
-			posX = destiny.getX();
-			posY = destiny.getY();
-		}
-		
-		if (!(getEffected() instanceof L2PetInstance))
-			getEffected().setRunning();
-		
-		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(posX, posY, posZ, 0));
-		return true;
-	}
+
+        if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
+                getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
+                getEffected() instanceof L2SiegeSummonInstance)
+        {
+            return false;
+        }
+
+        if (!getEffected().isAfraid())
+        {
+            if (getEffected().isCastingNow() && getEffected().canAbortCast())
+            {
+                getEffected().abortCast();
+            }
+
+            if (getEffected().getX() > getEffector().getX())
+            {
+                _dX = 1;
+            }
+            if (getEffected().getY() > getEffector().getY())
+            {
+                _dY = 1;
+            }
+
+            getEffected().startFear();
+            getEffected().startVisualEffect(VisualEffect.SKULL_FEAR);
+            onActionTime();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopVisualEffect(VisualEffect.SKULL_FEAR);
+        getEffected().stopFear(false);
+        getEffected().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        int posX = getEffected().getX();
+        int posY = getEffected().getY();
+        int posZ = getEffected().getZ();
+
+        if (getEffected().getX() > getEffector().getX())
+        {
+            _dX = 1;
+        }
+        if (getEffected().getY() > getEffector().getY())
+        {
+            _dY = 1;
+        }
+
+        posX += _dX * FEAR_RANGE;
+        posY += _dY * FEAR_RANGE;
+
+        if (Config.GEODATA > 0)
+        {
+            Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected()
+                    .getZ(), posX, posY, posZ, getEffected().getInstanceId());
+            posX = destiny.getX();
+            posY = destiny.getY();
+        }
+
+        if (!(getEffected() instanceof L2PetInstance))
+        {
+            getEffected().setRunning();
+        }
+
+        getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(posX, posY, posZ, 0));
+        return true;
+    }
 }

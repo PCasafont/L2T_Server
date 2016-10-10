@@ -21,23 +21,25 @@ import l2server.gameserver.model.entity.Castle;
 /**
  * Format : (h) d [dS]
  * h  sub id
- *
+ * <p>
  * d: number of manors
  * [
  * d: id
  * S: manor name
  * ]
- * @author l3x
  *
+ * @author l3x
  */
 public class ExSendManorList extends L2GameServerPacket
 {
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(CastleManager.getInstance().getCastles().size());
-		for (Castle castle : CastleManager.getInstance().getCastles())
-			writeD(castle.getCastleId());
-	}
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(CastleManager.getInstance().getCastles().size());
+        for (Castle castle : CastleManager.getInstance().getCastles())
+        {
+            writeD(castle.getCastleId());
+        }
+    }
 }

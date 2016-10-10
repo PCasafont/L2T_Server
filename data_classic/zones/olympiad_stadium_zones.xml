@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
-	<!-- Olympiad Stadium Zones -->
-	<zone name="Olympiad Normal Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-5000" maxZ="0">
-		<node X="-89897" Y="-254247" />
-		<node X="-86110" Y="-254256" />
-		<node X="-86110" Y="-251348" />
-		<node X="-89897" Y="-251340" />
-		<!-- point1 -->
-		<spawn X="-89539" Y="-252827" Z="-3319" />
-		<spawn X="-89539" Y="-252842" Z="-3319" />
-		<spawn X="-89539" Y="-252857" Z="-3319" />
-		<!-- point2 -->
-		<spawn X="-86621" Y="-252827" Z="-3319" />
-		<spawn X="-86621" Y="-252842" Z="-3319" />
-		<spawn X="-86621" Y="-252857" Z="-3319" />
-		<!-- buffer1 -->
-		<spawn X="-89500" Y="-252813" Z="-3319" />
-		<!-- buffer2 -->
-		<spawn X="-86666" Y="-252880" Z="-3319" />
-		<!-- observer -->
-		<spawn X="-88000" Y="-252500" Z="-3500" />
-	</zone>
-	<zone name="Olympiad Three Bridges Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-8000" maxZ="-3000">
-		<node X="-77200" Y="-254200" />
-		<node X="-73800" Y="-254200" />
-		<node X="-73800" Y="-250800" />
-		<node X="-77200" Y="-250800" />
-		<!-- point1 -->
-		<spawn X="-74034" Y="-252443" Z="-7719" />
-		<spawn X="-74034" Y="-252458" Z="-7719" />
-		<spawn X="-74034" Y="-252473" Z="-7719" />
-		<!-- point2 -->
-		<spawn X="-76900" Y="-252443" Z="-7719" />
-		<spawn X="-76900" Y="-252458" Z="-7719" />
-		<spawn X="-76900" Y="-252473" Z="-7719" />
-		<!-- buffer1 -->
-		<spawn X="-74079" Y="-252503" Z="-7719" />
-		<!-- buffer2 -->
-		<spawn X="-76847" Y="-252420" Z="-7719" />
-		<!-- observer -->
-		<spawn X="-75700" Y="-252000" Z="-7500" />
-	</zone>
-	<zone name="Olympiad Heroes Vestiges Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-9000" maxZ="-4000">
-		<node X="-86500" Y="-241000" />
-		<node X="-89600" Y="-241000" />
-		<node X="-89600" Y="-237500" />
-		<node X="-86500" Y="-237500" />
-		<!-- point1 -->
-		<spawn X="-86783" Y="-239335" Z="-8450" />
-		<spawn X="-86783" Y="-239350" Z="-8450" />
-		<spawn X="-86783" Y="-239365" Z="-8450" />
-		<!-- point2 -->
-		<spawn X="-89369" Y="-239335" Z="-8450" />
-		<spawn X="-89369" Y="-239350" Z="-8450" />
-		<spawn X="-89369" Y="-239365" Z="-8450" />
-		<!-- buffer1 -->
-		<spawn X="-86843" Y="-239387" Z="-8450" />
-		<!-- buffer2 -->
-		<spawn X="-89309" Y="-239313" Z="-8450" />
-		<!-- observer -->
-		<spawn X="-88000" Y="-239000" Z="-8300" />
-	</zone>
-	<zone name="Olympiad Orbis Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-9000" maxZ="-4000">
-		<node X="-77200" Y="-241500" />
-		<node X="-73800" Y="-241500" />
-		<node X="-73800" Y="-237000" />
-		<node X="-77200" Y="-237000" />
-		<!-- point1 -->
-		<spawn X="-76796" Y="-239166" Z="-8194" />
-		<spawn X="-76796" Y="-239181" Z="-8194" />
-		<spawn X="-76796" Y="-239196" Z="-8194" />
-		<!-- point2 -->
-		<spawn X="-74188" Y="-239166" Z="-8194" />
-		<spawn X="-74188" Y="-239181" Z="-8194" />
-		<spawn X="-74188" Y="-239196" Z="-8194" />
-		<!-- buffer1 -->
-		<spawn X="-76751" Y="-239144" Z="-8194" />
-		<!-- buffer2 -->
-		<spawn X="-74158" Y="-239217" Z="-8194" />
-		<!-- observer -->
-		<spawn X="-75200" Y="-239600" Z="-8000" />
-	</zone>
+    <!-- Olympiad Stadium Zones -->
+    <zone name="Olympiad Normal Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-5000" maxZ="0">
+        <node X="-89897" Y="-254247" />
+        <node X="-86110" Y="-254256" />
+        <node X="-86110" Y="-251348" />
+        <node X="-89897" Y="-251340" />
+        <!-- point1 -->
+        <spawn X="-89539" Y="-252827" Z="-3319" />
+        <spawn X="-89539" Y="-252842" Z="-3319" />
+        <spawn X="-89539" Y="-252857" Z="-3319" />
+        <!-- point2 -->
+        <spawn X="-86621" Y="-252827" Z="-3319" />
+        <spawn X="-86621" Y="-252842" Z="-3319" />
+        <spawn X="-86621" Y="-252857" Z="-3319" />
+        <!-- buffer1 -->
+        <spawn X="-89500" Y="-252813" Z="-3319" />
+        <!-- buffer2 -->
+        <spawn X="-86666" Y="-252880" Z="-3319" />
+        <!-- observer -->
+        <spawn X="-88000" Y="-252500" Z="-3500" />
+    </zone>
+    <zone name="Olympiad Three Bridges Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-8000" maxZ="-3000">
+        <node X="-77200" Y="-254200" />
+        <node X="-73800" Y="-254200" />
+        <node X="-73800" Y="-250800" />
+        <node X="-77200" Y="-250800" />
+        <!-- point1 -->
+        <spawn X="-74034" Y="-252443" Z="-7719" />
+        <spawn X="-74034" Y="-252458" Z="-7719" />
+        <spawn X="-74034" Y="-252473" Z="-7719" />
+        <!-- point2 -->
+        <spawn X="-76900" Y="-252443" Z="-7719" />
+        <spawn X="-76900" Y="-252458" Z="-7719" />
+        <spawn X="-76900" Y="-252473" Z="-7719" />
+        <!-- buffer1 -->
+        <spawn X="-74079" Y="-252503" Z="-7719" />
+        <!-- buffer2 -->
+        <spawn X="-76847" Y="-252420" Z="-7719" />
+        <!-- observer -->
+        <spawn X="-75700" Y="-252000" Z="-7500" />
+    </zone>
+    <zone name="Olympiad Heroes Vestiges Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-9000" maxZ="-4000">
+        <node X="-86500" Y="-241000" />
+        <node X="-89600" Y="-241000" />
+        <node X="-89600" Y="-237500" />
+        <node X="-86500" Y="-237500" />
+        <!-- point1 -->
+        <spawn X="-86783" Y="-239335" Z="-8450" />
+        <spawn X="-86783" Y="-239350" Z="-8450" />
+        <spawn X="-86783" Y="-239365" Z="-8450" />
+        <!-- point2 -->
+        <spawn X="-89369" Y="-239335" Z="-8450" />
+        <spawn X="-89369" Y="-239350" Z="-8450" />
+        <spawn X="-89369" Y="-239365" Z="-8450" />
+        <!-- buffer1 -->
+        <spawn X="-86843" Y="-239387" Z="-8450" />
+        <!-- buffer2 -->
+        <spawn X="-89309" Y="-239313" Z="-8450" />
+        <!-- observer -->
+        <spawn X="-88000" Y="-239000" Z="-8300" />
+    </zone>
+    <zone name="Olympiad Orbis Arena" type="OlympiadStadiumZone" shape="NPoly" minZ="-9000" maxZ="-4000">
+        <node X="-77200" Y="-241500" />
+        <node X="-73800" Y="-241500" />
+        <node X="-73800" Y="-237000" />
+        <node X="-77200" Y="-237000" />
+        <!-- point1 -->
+        <spawn X="-76796" Y="-239166" Z="-8194" />
+        <spawn X="-76796" Y="-239181" Z="-8194" />
+        <spawn X="-76796" Y="-239196" Z="-8194" />
+        <!-- point2 -->
+        <spawn X="-74188" Y="-239166" Z="-8194" />
+        <spawn X="-74188" Y="-239181" Z="-8194" />
+        <spawn X="-74188" Y="-239196" Z="-8194" />
+        <!-- buffer1 -->
+        <spawn X="-76751" Y="-239144" Z="-8194" />
+        <!-- buffer2 -->
+        <spawn X="-74158" Y="-239217" Z="-8194" />
+        <!-- observer -->
+        <spawn X="-75200" Y="-239600" Z="-8000" />
+    </zone>
 </list>

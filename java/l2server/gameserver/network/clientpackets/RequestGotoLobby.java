@@ -20,26 +20,27 @@ import l2server.gameserver.network.serverpackets.CharSelectionInfo;
 
 /**
  * (ch)
- * @author  KenM
+ *
+ * @author KenM
  */
 public class RequestGotoLobby extends L2GameClientPacket
 {
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-	 */
-	@Override
-	protected void readImpl()
-	{
-		// trigger
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2GameClient client = getClient();
-		client.sendPacket(new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1));
-	}
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+     */
+    @Override
+    protected void readImpl()
+    {
+        // trigger
+    }
+
+    /**
+     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2GameClient client = getClient();
+        client.sendPacket(new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1));
+    }
 }

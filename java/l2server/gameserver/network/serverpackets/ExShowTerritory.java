@@ -20,27 +20,27 @@ import l2server.gameserver.model.L2Territory.Point;
 
 /**
  * @author Pere
- * It crashes the client on Ertheia!!
+ *         It crashes the client on Ertheia!!
  */
 public final class ExShowTerritory extends L2GameServerPacket
 {
-	private final L2Territory _territory;
-	
-	public ExShowTerritory(L2Territory territory)
-	{
-		_territory = territory;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_territory.getMinZ());
-		writeD(_territory.getMaxZ());
-		writeD(_territory.getPoints().size());
-		for (Point p : _territory.getPoints())
-		{
-			writeD(p._x);
-			writeD(p._y);
-		}
-	}
+    private final L2Territory _territory;
+
+    public ExShowTerritory(L2Territory territory)
+    {
+        _territory = territory;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_territory.getMinZ());
+        writeD(_territory.getMaxZ());
+        writeD(_territory.getPoints().size());
+        for (Point p : _territory.getPoints())
+        {
+            writeD(p._x);
+            writeD(p._y);
+        }
+    }
 }

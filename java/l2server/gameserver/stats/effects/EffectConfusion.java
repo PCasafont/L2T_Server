@@ -31,86 +31,86 @@ import l2server.util.Rnd;
 
 /**
  * @author littlecrow
- *
- *		 Implementation of the Confusion Effect
+ *         <p>
+ *         Implementation of the Confusion Effect
  */
 public class EffectConfusion extends L2Effect
 {
-	public EffectConfusion(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
-	 */
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.CONFUSION;
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.CONFUSION;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		getEffected().startConfused();
-		onActionTime();
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopConfused(getAbnormal());
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		List<L2Character> targetList = new ArrayList<L2Character>();
-		
-		// Getting the possible targets
-		
-		Collection<L2Object> objs = getEffected().getKnownList().getKnownObjects().values();
-		// synchronized (getEffected().getKnownList().getKnownObjects())
-		{
-			for (L2Object obj : objs)
-			{
-				if (obj instanceof L2Character && obj != getEffected())
-					targetList.add((L2Character) obj);
-			}
-		}
-		// if there is no target, exit function
-		if (targetList.isEmpty())
-			return true;
-		
-		// Choosing randomly a new target
-		int nextTargetIdx = Rnd.nextInt(targetList.size());
-		L2Object target = targetList.get(nextTargetIdx);
-		
-		// Attacking the target
-		getEffected().setTarget(target);
-		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-		
-		return true;
-	}
+    public EffectConfusion(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#getType()
+     */
+    @Override
+    public L2EffectType getEffectType()
+    {
+        return L2EffectType.CONFUSION;
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.CONFUSION;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        getEffected().startConfused();
+        onActionTime();
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopConfused(getAbnormal());
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        List<L2Character> targetList = new ArrayList<L2Character>();
+
+        // Getting the possible targets
+
+        Collection<L2Object> objs = getEffected().getKnownList().getKnownObjects().values();
+        // synchronized (getEffected().getKnownList().getKnownObjects())
+        {
+            for (L2Object obj : objs)
+            {
+                if (obj instanceof L2Character && obj != getEffected())
+                {
+                    targetList.add((L2Character) obj);
+                }
+            }
+        }
+        // if there is no target, exit function
+        if (targetList.isEmpty())
+        {
+            return true;
+        }
+
+        // Choosing randomly a new target
+        int nextTargetIdx = Rnd.nextInt(targetList.size());
+        L2Object target = targetList.get(nextTargetIdx);
+
+        // Attacking the target
+        getEffected().setTarget(target);
+        getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+
+        return true;
+    }
 }

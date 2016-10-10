@@ -1,1999 +1,1999 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<item id="17800" type="Armor" name="Orc Female Wig - B">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17801" type="Armor" name="Orc Female Wig - C">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17802" type="Armor" name="Orc Female Wig - D">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17803" type="Armor" name="Orc Mage Male Wig - A">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17804" type="Armor" name="Orc Mage Male Wig - B">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17805" type="Armor" name="Orc Mage Male Wig - C">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17806" type="Armor" name="Orc Mage Male Wig - D">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17807" type="Armor" name="Orc Female Shaman Wig - A">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17808" type="Armor" name="Orc Female Shaman Wig - B">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17809" type="Armor" name="Orc Female Shaman Wig - C">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17810" type="Armor" name="Orc Female Shaman Wig - D">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17811" type="Armor" name="Kamael Male Wig - A">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17812" type="Armor" name="Kamael Male Wig - B">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17813" type="Armor" name="Kamael Male Wig - C">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17814" type="Armor" name="Kamael Male Wig - D">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17815" type="Armor" name="Kamael Female Wig - A">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17816" type="Armor" name="Kamael Female Wig - B">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17817" type="Armor" name="Kamael Female Wig - C">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<item id="17818" type="Armor" name="Kamael Female Wig - D">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Letter containing request from Magmeld delegation leader Lada. Go and find Lada in Hunter Village. -->
-	<item id="17819" type="EtcItem" name="Lada's Letter">
-		<set name="icon" val="icon.etc_permit_card_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Stone with the energy of decaying darkness. Bring it to Jonah and the Mysterious Priest in Ancient Arcan. -->
-	<item id="17820" type="EtcItem" name="Trace of Decaying Darkness">
-		<set name="icon" val="icon.etc_stone_black_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="0" />
-	</item>
-	<!-- Proof received by those who have completed the first class transfer. Can be exchanged for equipment. -->
-	<item id="17821" type="EtcItem" name="Proof of Courage">
-		<set name="icon" val="icon.item_normal52" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-	</item>
-	<!-- Proof received by those who have completed the second class transfer. Can be exchanged for equipment. -->
-	<item id="17822" type="EtcItem" name="Proof of Justice">
-		<set name="icon" val="icon.item_normal52" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-	</item>
-	<!-- Life Stone that can augment a hair accessory. Can attach a fighter-type option. -->
-	<item id="17823" type="EtcItem" name="Life Stone: Hair Accessory - Warrior">
-		<set name="icon" val="icon.etc_mineral_general_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Life Stone that can augment a hair accessory. Can attach a mystic-type option. -->
-	<item id="17824" type="EtcItem" name="Life Stone: Hair Accessory - Wizard">
-		<set name="icon" val="icon.etc_mineral_general_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="2" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<item id="17825" type="EtcItem" name="STR Dye">
-		<set name="icon" val="icon.etc_str_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<item id="17826" type="EtcItem" name="DEX Dye">
-		<set name="icon" val="icon.etc_dex_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<item id="17827" type="EtcItem" name="CON Dye">
-		<set name="icon" val="icon.etc_con_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<item id="17828" type="EtcItem" name="INT Dye">
-		<set name="icon" val="icon.etc_int_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<item id="17829" type="EtcItem" name="WIT Dye">
-		<set name="icon" val="icon.etc_wit_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<item id="17830" type="EtcItem" name="MEN Dye">
-		<set name="icon" val="icon.etc_men_hena_i02" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17831" type="Weapon" name="Bound Requiem Shaper">
-		<set name="icon" val="icon.weapon_aspeda_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17290" />
-		<set name="blessedItem" val="17967" />
-		<set name="enchant4_skill" val="13279-3" />
-		<for>
-			<set stat="pAtk" val="369" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17832" type="Weapon" name="Bound Requiem Cutter">
-		<set name="icon" val="icon.weapon_estia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17291" />
-		<set name="blessedItem" val="17968" />
-		<set name="enchant4_skill" val="13252-3" />
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17833" type="Weapon" name="Bound Requiem Slasher">
-		<set name="icon" val="icon.weapon_polion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17292" />
-		<set name="blessedItem" val="17969" />
-		<set name="enchant4_skill" val="13258-3" />
-		<for>
-			<set stat="pAtk" val="514" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17834" type="Weapon" name="Bound Requiem Avenger">
-		<set name="icon" val="icon.weapon_batista_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17293" />
-		<set name="blessedItem" val="17970" />
-		<set name="enchant4_skill" val="13253-3" />
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17835" type="Weapon" name="Bound Requiem Fighter">
-		<set name="icon" val="icon.weapon_fantasma_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17294" />
-		<set name="blessedItem" val="17971" />
-		<set name="enchant4_skill" val="13264-3" />
-		<for>
-			<set stat="pAtk" val="514" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17836" type="Weapon" name="Bound Requiem Stormer">
-		<set name="icon" val="icon.weapon_soryu_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17295" />
-		<set name="blessedItem" val="17972" />
-		<set name="enchant4_skill" val="13263-3" />
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17837" type="Weapon" name="Bound Requiem Thrower">
-		<set name="icon" val="icon.weapon_grabathus_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17296" />
-		<set name="blessedItem" val="17973" />
-		<set name="enchant4_skill" val="13289-3" />
-		<for>
-			<set stat="pAtk" val="831" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17838" type="Weapon" name="Bound Requiem Shooter">
-		<set name="icon" val="icon.weapon_shyayaka_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17297" />
-		<set name="blessedItem" val="17974" />
-		<set name="enchant4_skill" val="13294-3" />
-		<for>
-			<set stat="pAtk" val="748" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17839" type="Weapon" name="Bound Requiem Buster">
-		<set name="icon" val="icon.weapon_kaynon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="standardItem" val="17298" />
-		<set name="blessedItem" val="17975" />
-		<set name="enchant4_skill" val="13295-3" />
-		<for>
-			<set stat="pAtk" val="338" />
-			<set stat="mAtk" val="245" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17840" type="Weapon" name="Bound Requiem Caster">
-		<set name="icon" val="icon.weapon_anatrian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="standardItem" val="17299" />
-		<set name="blessedItem" val="17976" />
-		<set name="enchant4_skill" val="13296-3" />
-		<for>
-			<set stat="pAtk" val="338" />
-			<set stat="mAtk" val="245" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17841" type="Weapon" name="Bound Requiem Retributer">
-		<set name="icon" val="icon.weapon_grangkaz_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17300" />
-		<set name="blessedItem" val="17977" />
-		<set name="enchant4_skill" val="13301-3" />
-		<for>
-			<set stat="pAtk" val="411" />
-			<set stat="mAtk" val="270" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17842" type="Weapon" name="Bound Requiem Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17301" />
-		<set name="blessedItem" val="17978" />
-		<set name="enchant4_skill" val="13274-3" />
-		<for>
-			<set stat="pAtk" val="514" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17843" type="Weapon" name="Bound Requiem Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17302" />
-		<set name="blessedItem" val="17979" />
-		<set name="enchant4_skill" val="13279-3" />
-		<for>
-			<set stat="pAtk" val="422" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17844" type="Weapon" name="Bound Requiem Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17303" />
-		<set name="blessedItem" val="17980" />
-		<set name="enchant4_skill" val="13269-3" />
-		<for>
-			<set stat="pAtk" val="514" />
-			<set stat="mAtk" val="186" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17845" type="Armor" name="Bound Immortal Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17304" />
-		<set name="blessedItem" val="17981" />
-		<for>
-			<baseAdd stat="pDef" val="114" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="17846" type="Armor" name="Bound Immortal Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t501_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17305" />
-		<set name="blessedItem" val="17982" />
-		<for>
-			<baseAdd stat="pDef" val="304" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17847" type="Armor" name="Bound Immortal Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t501_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17306" />
-		<set name="blessedItem" val="17983" />
-		<for>
-			<baseAdd stat="pDef" val="190" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17848" type="Armor" name="Bound Immortal Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t501_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17307" />
-		<set name="blessedItem" val="17984" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17849" type="Armor" name="Bound Immortal Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t501_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17308" />
-		<set name="blessedItem" val="17985" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17850" type="Armor" name="Bound Immortal Shield - Heavy Armor">
-		<set name="icon" val="icon.weapon_sacon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17309" />
-		<set name="blessedItem" val="17986" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="415" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17851" type="Armor" name="Bound Immortal Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17310" />
-		<set name="blessedItem" val="17987" />
-		<for>
-			<baseAdd stat="pDef" val="114" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="17852" type="Armor" name="Bound Immortal Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t502_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17311" />
-		<set name="blessedItem" val="17988" />
-		<for>
-			<baseAdd stat="pDef" val="243" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17853" type="Armor" name="Bound Immortal Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t502_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17312" />
-		<set name="blessedItem" val="17989" />
-		<for>
-			<baseAdd stat="pDef" val="152" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17854" type="Armor" name="Bound Immortal Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t502_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17313" />
-		<set name="blessedItem" val="17990" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17855" type="Armor" name="Bound Immortal Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t502_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17314" />
-		<set name="blessedItem" val="17991" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17856" type="Armor" name="Bound Immortal Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17315" />
-		<set name="blessedItem" val="17992" />
-		<for>
-			<baseAdd stat="pDef" val="114" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="17857" type="Armor" name="Bound Immortal Tunic - Robe">
-		<set name="icon" val="icon.armor_t503_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17316" />
-		<set name="blessedItem" val="17993" />
-		<for>
-			<baseAdd stat="mDef" val="36" />
-			<baseAdd stat="pDef" val="167" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17858" type="Armor" name="Bound Immortal Stockings - Robe">
-		<set name="icon" val="icon.armor_t503_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17317" />
-		<set name="blessedItem" val="17994" />
-		<for>
-			<baseAdd stat="mDef" val="24" />
-			<baseAdd stat="pDef" val="104" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17859" type="Armor" name="Bound Immortal Gloves - Robe">
-		<set name="icon" val="icon.armor_t503_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17318" />
-		<set name="blessedItem" val="17995" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17860" type="Armor" name="Bound Immortal Shoes - Robe">
-		<set name="icon" val="icon.armor_t503_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17319" />
-		<set name="blessedItem" val="17996" />
-		<for>
-			<baseAdd stat="pDef" val="76" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17861" type="Armor" name="Bound Immortal Sigil - Robe">
-		<set name="icon" val="icon.weapon_karyen_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="920" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17320" />
-		<set name="blessedItem" val="17997" />
-		<for>
-			<baseAdd stat="pDef" val="37" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 53. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17862" type="Armor" name="Bound Immortal Necklace">
-		<set name="icon" val="icon.r1_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17321" />
-		<set name="blessedItem" val="17998" />
-		<for>
-			<baseAdd stat="mDef" val="123" />
-			<add stat="maxMp" val="53" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 40. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17863" type="Armor" name="Bound Immortal Earring">
-		<set name="icon" val="icon.r1_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17322" />
-		<set name="blessedItem" val="17999" />
-		<for>
-			<baseAdd stat="mDef" val="92" />
-			<add stat="maxMp" val="40" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 26. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17864" type="Armor" name="Bound Immortal Ring">
-		<set name="icon" val="icon.r1_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17323" />
-		<set name="blessedItem" val="18000" />
-		<for>
-			<baseAdd stat="mDef" val="62" />
-			<add stat="maxMp" val="26" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17865" type="Weapon" name="Bound Apocalypse Shaper">
-		<set name="icon" val="icon.weapon_phasian_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17324" />
-		<set name="blessedItem" val="18001" />
-		<for>
-			<set stat="pAtk" val="428" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17866" type="Weapon" name="Bound Apocalypse Cutter">
-		<set name="icon" val="icon.weapon_pasis_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17325" />
-		<set name="blessedItem" val="18002" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17867" type="Weapon" name="Bound Apocalypse Slasher">
-		<set name="icon" val="icon.weapon_volver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigsword" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17326" />
-		<set name="blessedItem" val="18003" />
-		<for>
-			<set stat="pAtk" val="595" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17868" type="Weapon" name="Bound Apocalypse Avenger">
-		<set name="icon" val="icon.weapon_raksilion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17327" />
-		<set name="blessedItem" val="18004" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17869" type="Weapon" name="Bound Apocalypse Fighter">
-		<set name="icon" val="icon.weapon_kirche_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualfist" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1550" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17328" />
-		<set name="blessedItem" val="18005" />
-		<for>
-			<set stat="pAtk" val="595" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17870" type="Weapon" name="Bound Apocalypse Stormer">
-		<set name="icon" val="icon.weapon_grave_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="pole" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17329" />
-		<set name="blessedItem" val="18006" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17871" type="Weapon" name="Bound Apocalypse Thrower">
-		<set name="icon" val="icon.weapon_spina_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="1500" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17330" />
-		<set name="blessedItem" val="18007" />
-		<for>
-			<set stat="pAtk" val="963" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="293" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17872" type="Weapon" name="Bound Apocalypse Shooter">
-		<set name="icon" val="icon.weapon_medianox_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="crossbow" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1580" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="reuse_delay" val="400" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17331" />
-		<set name="blessedItem" val="18008" />
-		<for>
-			<set stat="pAtk" val="866" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="10" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="1.5" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17873" type="Weapon" name="Bound Apocalypse Buster">
-		<set name="icon" val="icon.weapon_imerose_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="sword" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="standardItem" val="17332" />
-		<set name="blessedItem" val="18009" />
-		<for>
-			<set stat="pAtk" val="392" />
-			<set stat="mAtk" val="285" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17874" type="Weapon" name="Bound Apocalypse Caster">
-		<set name="icon" val="icon.weapon_yuke_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="blunt" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="standardItem" val="17333" />
-		<set name="blessedItem" val="18010" />
-		<for>
-			<set stat="pAtk" val="392" />
-			<set stat="mAtk" val="285" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17875" type="Weapon" name="Bound Apocalypse Retributer">
-		<set name="icon" val="icon.weapon_herencia_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="bigblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1080" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="standardItem" val="17334" />
-		<set name="blessedItem" val="18011" />
-		<for>
-			<set stat="pAtk" val="477" />
-			<set stat="mAtk" val="314" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17876" type="Weapon" name="Bound Apocalypse Dualsword">
-		<set name="icon" val="icon.weapon_r_dualsword_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dual" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17335" />
-		<set name="blessedItem" val="18012" />
-		<for>
-			<set stat="pAtk" val="595" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="8" />
-			<set stat="mCritRate" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17877" type="Weapon" name="Bound Apocalypse Dual Dagger">
-		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualdagger" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="2050" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17336" />
-		<set name="blessedItem" val="18013" />
-		<for>
-			<set stat="pAtk" val="489" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17878" type="Weapon" name="Bound Apocalypse Dual Blunt Weapon">
-		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dualblunt" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1740" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17337" />
-		<set name="blessedItem" val="18014" />
-		<for>
-			<set stat="pAtk" val="595" />
-			<set stat="mAtk" val="226" />
-			<set stat="rCrit" val="6" />
-			<set stat="mCritRate" val="4" />
-			<baseAdd stat="accCombat" val="8" />
-			<baseAdd stat="accMagic" val="8" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17879" type="Armor" name="Bound Twilight Helmet - Heavy Armor">
-		<set name="icon" val="icon.armor_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17338" />
-		<set name="blessedItem" val="18015" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
-	<item id="17880" type="Armor" name="Bound Twilight Breastplate - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="7520" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17339" />
-		<set name="blessedItem" val="18016" />
-		<for>
-			<baseAdd stat="pDef" val="335" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17881" type="Armor" name="Bound Twilight Gaiters - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="heavy" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="3170" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17340" />
-		<set name="blessedItem" val="18017" />
-		<for>
-			<baseAdd stat="pDef" val="209" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17882" type="Armor" name="Bound Twilight Gauntlets - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17341" />
-		<set name="blessedItem" val="18018" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17883" type="Armor" name="Bound Twilight Boots - Heavy Armor">
-		<set name="icon" val="icon.armor_t601_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17342" />
-		<set name="blessedItem" val="18019" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17884" type="Armor" name="Bound Twilight Shield - Heavy Armor">
-		<set name="icon" val="icon.kratere_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17343" />
-		<set name="blessedItem" val="18020" />
-		<for>
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="458" />
-			<enchant stat="sDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17885" type="Armor" name="Bound Twilight Leather Helmet - Light Armor">
-		<set name="icon" val="icon.armor_leather_helmet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17344" />
-		<set name="blessedItem" val="18021" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
-	<item id="17886" type="Armor" name="Bound Twilight Leather Armor - Light Armor">
-		<set name="icon" val="icon.armor_t602_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="4140" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17345" />
-		<set name="blessedItem" val="18022" />
-		<for>
-			<baseAdd stat="pDef" val="268" />
-			<baseAdd stat="rEvas" val="5" />
-			<baseAdd stat="mEvasRate" val="5" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17887" type="Armor" name="Bound Twilight Leather Leggings - Light Armor">
-		<set name="icon" val="icon.armor_t602_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="light" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1320" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17346" />
-		<set name="blessedItem" val="18023" />
-		<for>
-			<baseAdd stat="pDef" val="168" />
-			<baseAdd stat="rEvas" val="3" />
-			<baseAdd stat="mEvasRate" val="3" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17888" type="Armor" name="Bound Twilight Leather Gloves - Light Armor">
-		<set name="icon" val="icon.armor_t602_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17347" />
-		<set name="blessedItem" val="18024" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17889" type="Armor" name="Bound Twilight Leather Boots - Light Armor">
-		<set name="icon" val="icon.armor_t602_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17348" />
-		<set name="blessedItem" val="18025" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17890" type="Armor" name="Bound Twilight Circlet - Robe">
-		<set name="icon" val="icon.armor_circlet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="head" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="530" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17349" />
-		<set name="blessedItem" val="18026" />
-		<for>
-			<baseAdd stat="pDef" val="126" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rEvas" val="0.2" />
-			<enchant stat="mEvasRate" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
-	<item id="17891" type="Armor" name="Bound Twilight Tunic - Robe">
-		<set name="icon" val="icon.armor_t603_u_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1750" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17350" />
-		<set name="blessedItem" val="18027" />
-		<for>
-			<baseAdd stat="mDef" val="41" />
-			<baseAdd stat="pDef" val="184" />
-			<add stat="maxMp" val="649" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="pAtk" val="2" />
-			<enchant stat="mAtk" val="1.4" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17892" type="Armor" name="Bound Twilight Stockings - Robe">
-		<set name="icon" val="icon.armor_t603_l_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="magic" />
-		<set name="bodypart" val="legs" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="850" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17351" />
-		<set name="blessedItem" val="18028" />
-		<for>
-			<baseAdd stat="mDef" val="27" />
-			<baseAdd stat="pDef" val="115" />
-			<add stat="maxMp" val="427" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="rCrit" val="0.34" />
-			<enchant stat="mCritRate" val="0.34" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17893" type="Armor" name="Bound Twilight Gloves - Robe">
-		<set name="icon" val="icon.armor_t603_g_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="gloves" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="510" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17352" />
-		<set name="blessedItem" val="18029" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="accCombat" val="0.2" />
-			<enchant stat="accMagic" val="0.2" />
-		</for>
-	</item>
-	<!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17894" type="Armor" name="Bound Twilight Shoes - Robe">
-		<set name="icon" val="icon.armor_t603_b_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="feet" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="1070" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17353" />
-		<set name="blessedItem" val="18030" />
-		<for>
-			<baseAdd stat="pDef" val="84" />
-			<enchant stat="pDef" val="0" />
-			<enchant stat="runSpd" val="0.6" />
-		</for>
-	</item>
-	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17895" type="Armor" name="Bound Twilight Sigil - Robe">
-		<set name="icon" val="icon.weapon_dynaksus_i00" />
-		<set name="default_action" val="equip" />
-		<set name="armor_type" val="sigil" />
-		<set name="bodypart" val="lhand" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="920" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17354" />
-		<set name="blessedItem" val="18031" />
-		<for>
-			<baseAdd stat="pDef" val="41" />
-			<baseSub stat="rEvas" val="8" />
-			<baseSub stat="mEvasRate" val="8" />
-			<enchant stat="pDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 58. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17896" type="Armor" name="Bound Twilight Necklace">
-		<set name="icon" val="icon.r2_necklace_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="neck" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17355" />
-		<set name="blessedItem" val="18032" />
-		<for>
-			<baseAdd stat="mDef" val="139" />
-			<add stat="maxMp" val="58" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 43. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17897" type="Armor" name="Bound Twilight Earring">
-		<set name="icon" val="icon.r2_earring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rear;lear" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17356" />
-		<set name="blessedItem" val="18033" />
-		<for>
-			<baseAdd stat="mDef" val="105" />
-			<add stat="maxMp" val="43" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- MP + 29. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17898" type="Armor" name="Bound Twilight Ring">
-		<set name="icon" val="icon.r2_ring_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rfinger;lfinger" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17357" />
-		<set name="blessedItem" val="18034" />
-		<for>
-			<baseAdd stat="mDef" val="70" />
-			<add stat="maxMp" val="29" />
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="17899" type="Weapon" name="Bound Specter Shaper">
-		<set name="icon" val="icon.weapon_ignicion_i00" />
-		<set name="default_action" val="equip" />
-		<set name="weapon_type" val="dagger" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="immediate_effect" val="1" />
-		<set name="crystal_count" val="1" />
-		<set name="crystal_type" val="r95" />
-		<set name="weight" val="1520" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="standardItem" val="17382" />
-		<set name="blessedItem" val="18035" />
-		<set name="enchant4_skill" val="13279-3" />
-		<for>
-			<set stat="pAtk" val="496" />
-			<set stat="mAtk" val="275" />
-			<set stat="rCrit" val="12" />
-			<set stat="mCritRate" val="12" />
-			<baseSub stat="accCombat" val="3.75" />
-			<baseSub stat="accMagic" val="3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant stat="pAtk" val="0" />
-			<enchant stat="mAtk" val="0" />
-		</for>
-	</item>
+    <item id="17800" type="Armor" name="Orc Female Wig - B">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17801" type="Armor" name="Orc Female Wig - C">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17802" type="Armor" name="Orc Female Wig - D">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17803" type="Armor" name="Orc Mage Male Wig - A">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17804" type="Armor" name="Orc Mage Male Wig - B">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17805" type="Armor" name="Orc Mage Male Wig - C">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17806" type="Armor" name="Orc Mage Male Wig - D">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17807" type="Armor" name="Orc Female Shaman Wig - A">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17808" type="Armor" name="Orc Female Shaman Wig - B">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17809" type="Armor" name="Orc Female Shaman Wig - C">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17810" type="Armor" name="Orc Female Shaman Wig - D">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17811" type="Armor" name="Kamael Male Wig - A">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17812" type="Armor" name="Kamael Male Wig - B">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17813" type="Armor" name="Kamael Male Wig - C">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17814" type="Armor" name="Kamael Male Wig - D">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17815" type="Armor" name="Kamael Female Wig - A">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17816" type="Armor" name="Kamael Female Wig - B">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17817" type="Armor" name="Kamael Female Wig - C">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <item id="17818" type="Armor" name="Kamael Female Wig - D">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Letter containing request from Magmeld delegation leader Lada. Go and find Lada in Hunter Village. -->
+    <item id="17819" type="EtcItem" name="Lada's Letter">
+        <set name="icon" val="icon.etc_permit_card_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Stone with the energy of decaying darkness. Bring it to Jonah and the Mysterious Priest in Ancient Arcan. -->
+    <item id="17820" type="EtcItem" name="Trace of Decaying Darkness">
+        <set name="icon" val="icon.etc_stone_black_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="0" />
+    </item>
+    <!-- Proof received by those who have completed the first class transfer. Can be exchanged for equipment. -->
+    <item id="17821" type="EtcItem" name="Proof of Courage">
+        <set name="icon" val="icon.item_normal52" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+    </item>
+    <!-- Proof received by those who have completed the second class transfer. Can be exchanged for equipment. -->
+    <item id="17822" type="EtcItem" name="Proof of Justice">
+        <set name="icon" val="icon.item_normal52" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+    </item>
+    <!-- Life Stone that can augment a hair accessory. Can attach a fighter-type option. -->
+    <item id="17823" type="EtcItem" name="Life Stone: Hair Accessory - Warrior">
+        <set name="icon" val="icon.etc_mineral_general_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Life Stone that can augment a hair accessory. Can attach a mystic-type option. -->
+    <item id="17824" type="EtcItem" name="Life Stone: Hair Accessory - Wizard">
+        <set name="icon" val="icon.etc_mineral_general_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="2" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <item id="17825" type="EtcItem" name="STR Dye">
+        <set name="icon" val="icon.etc_str_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <item id="17826" type="EtcItem" name="DEX Dye">
+        <set name="icon" val="icon.etc_dex_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <item id="17827" type="EtcItem" name="CON Dye">
+        <set name="icon" val="icon.etc_con_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <item id="17828" type="EtcItem" name="INT Dye">
+        <set name="icon" val="icon.etc_int_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <item id="17829" type="EtcItem" name="WIT Dye">
+        <set name="icon" val="icon.etc_wit_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <item id="17830" type="EtcItem" name="MEN Dye">
+        <set name="icon" val="icon.etc_men_hena_i02" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17831" type="Weapon" name="Bound Requiem Shaper">
+        <set name="icon" val="icon.weapon_aspeda_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17290" />
+        <set name="blessedItem" val="17967" />
+        <set name="enchant4_skill" val="13279-3" />
+        <for>
+            <set stat="pAtk" val="369" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17832" type="Weapon" name="Bound Requiem Cutter">
+        <set name="icon" val="icon.weapon_estia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17291" />
+        <set name="blessedItem" val="17968" />
+        <set name="enchant4_skill" val="13252-3" />
+        <for>
+            <set stat="pAtk" val="422" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17833" type="Weapon" name="Bound Requiem Slasher">
+        <set name="icon" val="icon.weapon_polion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17292" />
+        <set name="blessedItem" val="17969" />
+        <set name="enchant4_skill" val="13258-3" />
+        <for>
+            <set stat="pAtk" val="514" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17834" type="Weapon" name="Bound Requiem Avenger">
+        <set name="icon" val="icon.weapon_batista_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17293" />
+        <set name="blessedItem" val="17970" />
+        <set name="enchant4_skill" val="13253-3" />
+        <for>
+            <set stat="pAtk" val="422" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17835" type="Weapon" name="Bound Requiem Fighter">
+        <set name="icon" val="icon.weapon_fantasma_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17294" />
+        <set name="blessedItem" val="17971" />
+        <set name="enchant4_skill" val="13264-3" />
+        <for>
+            <set stat="pAtk" val="514" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17836" type="Weapon" name="Bound Requiem Stormer">
+        <set name="icon" val="icon.weapon_soryu_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17295" />
+        <set name="blessedItem" val="17972" />
+        <set name="enchant4_skill" val="13263-3" />
+        <for>
+            <set stat="pAtk" val="422" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17837" type="Weapon" name="Bound Requiem Thrower">
+        <set name="icon" val="icon.weapon_grabathus_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17296" />
+        <set name="blessedItem" val="17973" />
+        <set name="enchant4_skill" val="13289-3" />
+        <for>
+            <set stat="pAtk" val="831" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17838" type="Weapon" name="Bound Requiem Shooter">
+        <set name="icon" val="icon.weapon_shyayaka_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17297" />
+        <set name="blessedItem" val="17974" />
+        <set name="enchant4_skill" val="13294-3" />
+        <for>
+            <set stat="pAtk" val="748" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17839" type="Weapon" name="Bound Requiem Buster">
+        <set name="icon" val="icon.weapon_kaynon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="standardItem" val="17298" />
+        <set name="blessedItem" val="17975" />
+        <set name="enchant4_skill" val="13295-3" />
+        <for>
+            <set stat="pAtk" val="338" />
+            <set stat="mAtk" val="245" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17840" type="Weapon" name="Bound Requiem Caster">
+        <set name="icon" val="icon.weapon_anatrian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="standardItem" val="17299" />
+        <set name="blessedItem" val="17976" />
+        <set name="enchant4_skill" val="13296-3" />
+        <for>
+            <set stat="pAtk" val="338" />
+            <set stat="mAtk" val="245" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17841" type="Weapon" name="Bound Requiem Retributer">
+        <set name="icon" val="icon.weapon_grangkaz_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17300" />
+        <set name="blessedItem" val="17977" />
+        <set name="enchant4_skill" val="13301-3" />
+        <for>
+            <set stat="pAtk" val="411" />
+            <set stat="mAtk" val="270" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17842" type="Weapon" name="Bound Requiem Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17301" />
+        <set name="blessedItem" val="17978" />
+        <set name="enchant4_skill" val="13274-3" />
+        <for>
+            <set stat="pAtk" val="514" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17843" type="Weapon" name="Bound Requiem Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17302" />
+        <set name="blessedItem" val="17979" />
+        <set name="enchant4_skill" val="13279-3" />
+        <for>
+            <set stat="pAtk" val="422" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17844" type="Weapon" name="Bound Requiem Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17303" />
+        <set name="blessedItem" val="17980" />
+        <set name="enchant4_skill" val="13269-3" />
+        <for>
+            <set stat="pAtk" val="514" />
+            <set stat="mAtk" val="186" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17845" type="Armor" name="Bound Immortal Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17304" />
+        <set name="blessedItem" val="17981" />
+        <for>
+            <baseAdd stat="pDef" val="114" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="17846" type="Armor" name="Bound Immortal Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t501_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17305" />
+        <set name="blessedItem" val="17982" />
+        <for>
+            <baseAdd stat="pDef" val="304" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17847" type="Armor" name="Bound Immortal Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t501_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17306" />
+        <set name="blessedItem" val="17983" />
+        <for>
+            <baseAdd stat="pDef" val="190" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17848" type="Armor" name="Bound Immortal Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t501_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17307" />
+        <set name="blessedItem" val="17984" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17849" type="Armor" name="Bound Immortal Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t501_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17308" />
+        <set name="blessedItem" val="17985" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17850" type="Armor" name="Bound Immortal Shield - Heavy Armor">
+        <set name="icon" val="icon.weapon_sacon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17309" />
+        <set name="blessedItem" val="17986" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="415" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17851" type="Armor" name="Bound Immortal Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17310" />
+        <set name="blessedItem" val="17987" />
+        <for>
+            <baseAdd stat="pDef" val="114" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="17852" type="Armor" name="Bound Immortal Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t502_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17311" />
+        <set name="blessedItem" val="17988" />
+        <for>
+            <baseAdd stat="pDef" val="243" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17853" type="Armor" name="Bound Immortal Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t502_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17312" />
+        <set name="blessedItem" val="17989" />
+        <for>
+            <baseAdd stat="pDef" val="152" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17854" type="Armor" name="Bound Immortal Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t502_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17313" />
+        <set name="blessedItem" val="17990" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17855" type="Armor" name="Bound Immortal Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t502_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17314" />
+        <set name="blessedItem" val="17991" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17856" type="Armor" name="Bound Immortal Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17315" />
+        <set name="blessedItem" val="17992" />
+        <for>
+            <baseAdd stat="pDef" val="114" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="17857" type="Armor" name="Bound Immortal Tunic - Robe">
+        <set name="icon" val="icon.armor_t503_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17316" />
+        <set name="blessedItem" val="17993" />
+        <for>
+            <baseAdd stat="mDef" val="36" />
+            <baseAdd stat="pDef" val="167" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17858" type="Armor" name="Bound Immortal Stockings - Robe">
+        <set name="icon" val="icon.armor_t503_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17317" />
+        <set name="blessedItem" val="17994" />
+        <for>
+            <baseAdd stat="mDef" val="24" />
+            <baseAdd stat="pDef" val="104" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17859" type="Armor" name="Bound Immortal Gloves - Robe">
+        <set name="icon" val="icon.armor_t503_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17318" />
+        <set name="blessedItem" val="17995" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17860" type="Armor" name="Bound Immortal Shoes - Robe">
+        <set name="icon" val="icon.armor_t503_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17319" />
+        <set name="blessedItem" val="17996" />
+        <for>
+            <baseAdd stat="pDef" val="76" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17861" type="Armor" name="Bound Immortal Sigil - Robe">
+        <set name="icon" val="icon.weapon_karyen_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="920" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17320" />
+        <set name="blessedItem" val="17997" />
+        <for>
+            <baseAdd stat="pDef" val="37" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 53. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17862" type="Armor" name="Bound Immortal Necklace">
+        <set name="icon" val="icon.r1_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17321" />
+        <set name="blessedItem" val="17998" />
+        <for>
+            <baseAdd stat="mDef" val="123" />
+            <add stat="maxMp" val="53" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 40. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17863" type="Armor" name="Bound Immortal Earring">
+        <set name="icon" val="icon.r1_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17322" />
+        <set name="blessedItem" val="17999" />
+        <for>
+            <baseAdd stat="mDef" val="92" />
+            <add stat="maxMp" val="40" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 26. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17864" type="Armor" name="Bound Immortal Ring">
+        <set name="icon" val="icon.r1_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17323" />
+        <set name="blessedItem" val="18000" />
+        <for>
+            <baseAdd stat="mDef" val="62" />
+            <add stat="maxMp" val="26" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17865" type="Weapon" name="Bound Apocalypse Shaper">
+        <set name="icon" val="icon.weapon_phasian_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17324" />
+        <set name="blessedItem" val="18001" />
+        <for>
+            <set stat="pAtk" val="428" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Focus, or Health. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17866" type="Weapon" name="Bound Apocalypse Cutter">
+        <set name="icon" val="icon.weapon_pasis_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17325" />
+        <set name="blessedItem" val="18002" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17867" type="Weapon" name="Bound Apocalypse Slasher">
+        <set name="icon" val="icon.weapon_volver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigsword" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17326" />
+        <set name="blessedItem" val="18003" />
+        <for>
+            <set stat="pAtk" val="595" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17868" type="Weapon" name="Bound Apocalypse Avenger">
+        <set name="icon" val="icon.weapon_raksilion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17327" />
+        <set name="blessedItem" val="18004" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17869" type="Weapon" name="Bound Apocalypse Fighter">
+        <set name="icon" val="icon.weapon_kirche_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualfist" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1550" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17328" />
+        <set name="blessedItem" val="18005" />
+        <for>
+            <set stat="pAtk" val="595" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17870" type="Weapon" name="Bound Apocalypse Stormer">
+        <set name="icon" val="icon.weapon_grave_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="pole" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2010" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17329" />
+        <set name="blessedItem" val="18006" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17871" type="Weapon" name="Bound Apocalypse Thrower">
+        <set name="icon" val="icon.weapon_spina_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="1500" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17330" />
+        <set name="blessedItem" val="18007" />
+        <for>
+            <set stat="pAtk" val="963" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="293" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17872" type="Weapon" name="Bound Apocalypse Shooter">
+        <set name="icon" val="icon.weapon_medianox_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="crossbow" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1580" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="reuse_delay" val="400" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17331" />
+        <set name="blessedItem" val="18008" />
+        <for>
+            <set stat="pAtk" val="866" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="10" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="1.5" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17873" type="Weapon" name="Bound Apocalypse Buster">
+        <set name="icon" val="icon.weapon_imerose_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="sword" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="standardItem" val="17332" />
+        <set name="blessedItem" val="18009" />
+        <for>
+            <set stat="pAtk" val="392" />
+            <set stat="mAtk" val="285" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17874" type="Weapon" name="Bound Apocalypse Caster">
+        <set name="icon" val="icon.weapon_yuke_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="blunt" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="standardItem" val="17333" />
+        <set name="blessedItem" val="18010" />
+        <for>
+            <set stat="pAtk" val="392" />
+            <set stat="mAtk" val="285" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="379" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17875" type="Weapon" name="Bound Apocalypse Retributer">
+        <set name="icon" val="icon.weapon_herencia_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="bigblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1080" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_magic_weapon" val="true" />
+        <set name="standardItem" val="17334" />
+        <set name="blessedItem" val="18011" />
+        <for>
+            <set stat="pAtk" val="477" />
+            <set stat="mAtk" val="314" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Haste, Damage Up, or Health. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17876" type="Weapon" name="Bound Apocalypse Dualsword">
+        <set name="icon" val="icon.weapon_r_dualsword_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dual" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17335" />
+        <set name="blessedItem" val="18012" />
+        <for>
+            <set stat="pAtk" val="595" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="8" />
+            <set stat="mCritRate" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17877" type="Weapon" name="Bound Apocalypse Dual Dagger">
+        <set name="icon" val="icon.weapon_r_dualdagger_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualdagger" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="10" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="2050" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17336" />
+        <set name="blessedItem" val="18013" />
+        <for>
+            <set stat="pAtk" val="489" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17878" type="Weapon" name="Bound Apocalypse Dual Blunt Weapon">
+        <set name="icon" val="icon.weapon_r_dualblunt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dualblunt" />
+        <set name="bodypart" val="lrhand" />
+        <set name="random_damage" val="20" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1740" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17337" />
+        <set name="blessedItem" val="18014" />
+        <for>
+            <set stat="pAtk" val="595" />
+            <set stat="mAtk" val="226" />
+            <set stat="rCrit" val="6" />
+            <set stat="mCritRate" val="4" />
+            <baseAdd stat="accCombat" val="8" />
+            <baseAdd stat="accMagic" val="8" />
+            <set stat="pAtkSpd" val="325" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17879" type="Armor" name="Bound Twilight Helmet - Heavy Armor">
+        <set name="icon" val="icon.armor_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17338" />
+        <set name="blessedItem" val="18015" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
+    <item id="17880" type="Armor" name="Bound Twilight Breastplate - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="7520" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17339" />
+        <set name="blessedItem" val="18016" />
+        <for>
+            <baseAdd stat="pDef" val="335" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17881" type="Armor" name="Bound Twilight Gaiters - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="heavy" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="3170" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17340" />
+        <set name="blessedItem" val="18017" />
+        <for>
+            <baseAdd stat="pDef" val="209" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17882" type="Armor" name="Bound Twilight Gauntlets - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17341" />
+        <set name="blessedItem" val="18018" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17883" type="Armor" name="Bound Twilight Boots - Heavy Armor">
+        <set name="icon" val="icon.armor_t601_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17342" />
+        <set name="blessedItem" val="18019" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows an attack or defense type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17884" type="Armor" name="Bound Twilight Shield - Heavy Armor">
+        <set name="icon" val="icon.kratere_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17343" />
+        <set name="blessedItem" val="18020" />
+        <for>
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <set stat="rShld" val="20" />
+            <set stat="sDef" val="458" />
+            <enchant stat="sDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17885" type="Armor" name="Bound Twilight Leather Helmet - Light Armor">
+        <set name="icon" val="icon.armor_leather_helmet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17344" />
+        <set name="blessedItem" val="18021" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
+    <item id="17886" type="Armor" name="Bound Twilight Leather Armor - Light Armor">
+        <set name="icon" val="icon.armor_t602_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="4140" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17345" />
+        <set name="blessedItem" val="18022" />
+        <for>
+            <baseAdd stat="pDef" val="268" />
+            <baseAdd stat="rEvas" val="5" />
+            <baseAdd stat="mEvasRate" val="5" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17887" type="Armor" name="Bound Twilight Leather Leggings - Light Armor">
+        <set name="icon" val="icon.armor_t602_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="light" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1320" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17346" />
+        <set name="blessedItem" val="18023" />
+        <for>
+            <baseAdd stat="pDef" val="168" />
+            <baseAdd stat="rEvas" val="3" />
+            <baseAdd stat="mEvasRate" val="3" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17888" type="Armor" name="Bound Twilight Leather Gloves - Light Armor">
+        <set name="icon" val="icon.armor_t602_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17347" />
+        <set name="blessedItem" val="18024" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows an assassin or enchant type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17889" type="Armor" name="Bound Twilight Leather Boots - Light Armor">
+        <set name="icon" val="icon.armor_t602_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17348" />
+        <set name="blessedItem" val="18025" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17890" type="Armor" name="Bound Twilight Circlet - Robe">
+        <set name="icon" val="icon.armor_circlet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="head" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="530" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17349" />
+        <set name="blessedItem" val="18026" />
+        <for>
+            <baseAdd stat="pDef" val="126" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rEvas" val="0.2" />
+            <enchant stat="mEvasRate" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
+    <item id="17891" type="Armor" name="Bound Twilight Tunic - Robe">
+        <set name="icon" val="icon.armor_t603_u_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1750" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17350" />
+        <set name="blessedItem" val="18027" />
+        <for>
+            <baseAdd stat="mDef" val="41" />
+            <baseAdd stat="pDef" val="184" />
+            <add stat="maxMp" val="649" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="pAtk" val="2" />
+            <enchant stat="mAtk" val="1.4" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17892" type="Armor" name="Bound Twilight Stockings - Robe">
+        <set name="icon" val="icon.armor_t603_l_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="magic" />
+        <set name="bodypart" val="legs" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="850" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17351" />
+        <set name="blessedItem" val="18028" />
+        <for>
+            <baseAdd stat="mDef" val="27" />
+            <baseAdd stat="pDef" val="115" />
+            <add stat="maxMp" val="427" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="rCrit" val="0.34" />
+            <enchant stat="mCritRate" val="0.34" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17893" type="Armor" name="Bound Twilight Gloves - Robe">
+        <set name="icon" val="icon.armor_t603_g_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="gloves" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="510" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17352" />
+        <set name="blessedItem" val="18029" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="accCombat" val="0.2" />
+            <enchant stat="accMagic" val="0.2" />
+        </for>
+    </item>
+    <!-- Bestows a magic or recovery type set option. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17894" type="Armor" name="Bound Twilight Shoes - Robe">
+        <set name="icon" val="icon.armor_t603_b_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="feet" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="1070" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17353" />
+        <set name="blessedItem" val="18030" />
+        <for>
+            <baseAdd stat="pDef" val="84" />
+            <enchant stat="pDef" val="0" />
+            <enchant stat="runSpd" val="0.6" />
+        </for>
+    </item>
+    <!-- Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17895" type="Armor" name="Bound Twilight Sigil - Robe">
+        <set name="icon" val="icon.weapon_dynaksus_i00" />
+        <set name="default_action" val="equip" />
+        <set name="armor_type" val="sigil" />
+        <set name="bodypart" val="lhand" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="920" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17354" />
+        <set name="blessedItem" val="18031" />
+        <for>
+            <baseAdd stat="pDef" val="41" />
+            <baseSub stat="rEvas" val="8" />
+            <baseSub stat="mEvasRate" val="8" />
+            <enchant stat="pDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 58. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17896" type="Armor" name="Bound Twilight Necklace">
+        <set name="icon" val="icon.r2_necklace_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="neck" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17355" />
+        <set name="blessedItem" val="18032" />
+        <for>
+            <baseAdd stat="mDef" val="139" />
+            <add stat="maxMp" val="58" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 43. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17897" type="Armor" name="Bound Twilight Earring">
+        <set name="icon" val="icon.r2_earring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rear;lear" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17356" />
+        <set name="blessedItem" val="18033" />
+        <for>
+            <baseAdd stat="mDef" val="105" />
+            <add stat="maxMp" val="43" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- MP + 29. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17898" type="Armor" name="Bound Twilight Ring">
+        <set name="icon" val="icon.r2_ring_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rfinger;lfinger" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17357" />
+        <set name="blessedItem" val="18034" />
+        <for>
+            <baseAdd stat="mDef" val="70" />
+            <add stat="maxMp" val="29" />
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Bestows one of the following functions: Guidance, Haste, or Focus. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. -->
+    <item id="17899" type="Weapon" name="Bound Specter Shaper">
+        <set name="icon" val="icon.weapon_ignicion_i00" />
+        <set name="default_action" val="equip" />
+        <set name="weapon_type" val="dagger" />
+        <set name="bodypart" val="rhand" />
+        <set name="random_damage" val="5" />
+        <set name="immediate_effect" val="1" />
+        <set name="crystal_count" val="1" />
+        <set name="crystal_type" val="r95" />
+        <set name="weight" val="1520" />
+        <set name="soulshots" val="1" />
+        <set name="spiritshots" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="standardItem" val="17382" />
+        <set name="blessedItem" val="18035" />
+        <set name="enchant4_skill" val="13279-3" />
+        <for>
+            <set stat="pAtk" val="496" />
+            <set stat="mAtk" val="275" />
+            <set stat="rCrit" val="12" />
+            <set stat="mCritRate" val="12" />
+            <baseSub stat="accCombat" val="3.75" />
+            <baseSub stat="accMagic" val="3.75" />
+            <set stat="pAtkSpd" val="433" />
+            <enchant stat="pAtk" val="0" />
+            <enchant stat="mAtk" val="0" />
+        </for>
+    </item>
 </list>

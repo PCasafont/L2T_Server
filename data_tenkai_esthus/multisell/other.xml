@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Tenkai Event Manager -->
 <list>
-	<item>
-		<ingredient count="10" id="46537" /> <!-- Mystic Soul Crystal Fragment -->
-		<production count="1" id="46553" /> <!-- Mystic Soul Crystal -->
-	</item>
-	<item>
-		<ingredient count="10" id="36513" /> <!-- Elcyum Powder -->
-		<ingredient count="2000" id="57" /> <!-- Adena -->
-		<production count="1" id="36514" /> <!-- Elcyum Crystal -->
-	</item>
-	<item>
-		<ingredient count="10" id="36514" /> <!-- Elcyum Crystal -->
-		<production count="1" id="36515" /> <!-- Elcyum -->
-	</item>
-	<item>
-		<ingredient id="4356" count="135" /> <!-- Gold Einhasad -->
-		<production id="36414" count="1" /> <!-- Dragon Claw -->
-	</item>
-	<item>
-		<ingredient id="57" count="2500000" /> <!-- Adena -->
-		<production id="36949" count="1" /> <!-- Chaos Essence -->
-	</item>
-	<item>
-		<ingredient id="57" count="1500000" /> <!-- Adena -->
-		<production id="37494" count="1" /> <!-- Chaos Essence (Dual Class) -->
-	</item>
-	<item>
-		<ingredient id="57" count="8000" /> <!-- Adena -->
-		<production id="35562" count="1" /> <!-- Energy of Destruction -->
-	</item>
-	<item>
-		<ingredient id="57" count="3000" /> <!-- Adena -->
-		<production id="35563" count="1" /> <!-- Giant's Energy -->
-	</item>
-	<item>
-		<ingredient id="57" count="1000000" /> <!-- Adena -->
-		<production count="1" id="23474" />	<!-- Scroll: PK (Low-grade) -->
-	</item>
-	<item>
-		<ingredient id="57" count="3000000" /> <!-- Adena -->
-		<production count="1" id="23475" />	<!-- Scroll: PK (Mid-grade) -->
-	</item>
-	<item>
-		<ingredient id="57" count="5000000" /> <!-- Adena -->
-		<production count="1" id="23476" />	<!-- Scroll: PK (High-grade) -->
-	</item>
-	<item>
-		<ingredient id="57" count="10000000" /> <!-- Adena -->
-		<production count="1" id="23477" />	<!-- Scroll: PK (Top-grade) -->
-	</item>
-	<item>
-		<ingredient id="57" count="500000" /> <!-- Adena -->
-		<production count="1" id="9910" />	<!-- Blood Oath -->
-	</item>
-	<item>
-		<ingredient id="57" count="8000000" /> <!-- Adena -->
-		<production count="1" id="9911" />	<!-- Blood Alliance -->
-	</item>
+    <item>
+        <ingredient count="10" id="46537" /> <!-- Mystic Soul Crystal Fragment -->
+        <production count="1" id="46553" /> <!-- Mystic Soul Crystal -->
+    </item>
+    <item>
+        <ingredient count="10" id="36513" /> <!-- Elcyum Powder -->
+        <ingredient count="2000" id="57" /> <!-- Adena -->
+        <production count="1" id="36514" /> <!-- Elcyum Crystal -->
+    </item>
+    <item>
+        <ingredient count="10" id="36514" /> <!-- Elcyum Crystal -->
+        <production count="1" id="36515" /> <!-- Elcyum -->
+    </item>
+    <item>
+        <ingredient id="4356" count="135" /> <!-- Gold Einhasad -->
+        <production id="36414" count="1" /> <!-- Dragon Claw -->
+    </item>
+    <item>
+        <ingredient id="57" count="2500000" /> <!-- Adena -->
+        <production id="36949" count="1" /> <!-- Chaos Essence -->
+    </item>
+    <item>
+        <ingredient id="57" count="1500000" /> <!-- Adena -->
+        <production id="37494" count="1" /> <!-- Chaos Essence (Dual Class) -->
+    </item>
+    <item>
+        <ingredient id="57" count="8000" /> <!-- Adena -->
+        <production id="35562" count="1" /> <!-- Energy of Destruction -->
+    </item>
+    <item>
+        <ingredient id="57" count="3000" /> <!-- Adena -->
+        <production id="35563" count="1" /> <!-- Giant's Energy -->
+    </item>
+    <item>
+        <ingredient id="57" count="1000000" /> <!-- Adena -->
+        <production count="1" id="23474" />    <!-- Scroll: PK (Low-grade) -->
+    </item>
+    <item>
+        <ingredient id="57" count="3000000" /> <!-- Adena -->
+        <production count="1" id="23475" />    <!-- Scroll: PK (Mid-grade) -->
+    </item>
+    <item>
+        <ingredient id="57" count="5000000" /> <!-- Adena -->
+        <production count="1" id="23476" />    <!-- Scroll: PK (High-grade) -->
+    </item>
+    <item>
+        <ingredient id="57" count="10000000" /> <!-- Adena -->
+        <production count="1" id="23477" />    <!-- Scroll: PK (Top-grade) -->
+    </item>
+    <item>
+        <ingredient id="57" count="500000" /> <!-- Adena -->
+        <production count="1" id="9910" />    <!-- Blood Oath -->
+    </item>
+    <item>
+        <ingredient id="57" count="8000000" /> <!-- Adena -->
+        <production count="1" id="9911" />    <!-- Blood Alliance -->
+    </item>
 </list>

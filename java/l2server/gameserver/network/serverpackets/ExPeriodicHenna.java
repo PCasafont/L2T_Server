@@ -20,11 +20,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class ExPeriodicHenna extends L2GameServerPacket
 {
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(0x00);
-		writeD(0x00);
-		writeD(0x00);
-	}
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(0x00);
+        writeD(0x00);
+        writeD(0x00);
+    }
 }

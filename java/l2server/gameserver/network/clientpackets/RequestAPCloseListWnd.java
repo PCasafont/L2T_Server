@@ -22,17 +22,17 @@ import l2server.gameserver.network.serverpackets.ExCloseAPListWnd;
  */
 public final class RequestAPCloseListWnd extends L2GameClientPacket
 {
-	@Override
-	protected void readImpl()
-	{
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		sendPacket(new ExCloseAPListWnd());
-	}
+    @Override
+    protected void readImpl()
+    {
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        sendPacket(new ExCloseAPListWnd());
+    }
 }

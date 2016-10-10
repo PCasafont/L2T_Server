@@ -1,666 +1,668 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<skill id="2100" levels="1" name="Escape (1-second)">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="RECALL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="1000" />
-		<set name="staticHitTime" val="true" />
-	</skill>
-	<!-- Enlarges the user's head. -->
-	<skill id="2103" levels="1" name="Mysterious Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-		<for>
-			<abnormal duration="300" stackLvl="0" stackType="big_head" visualEffect="bighead">
-				<effect type="BigHead" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<skill id="2104" levels="1" name="Greater Soulshot Compressed Package (No-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="1835" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2105" levels="1" name="Greater Soulshot Compressed Package (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="1463" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2106" levels="1" name="Greater Soulshot Compressed Package (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="1464" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2107" levels="1" name="Greater Soulshot Compressed Package (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="1465" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2110" levels="1" name="Greater Spiritshot Compressed Package (No-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="2509" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2111" levels="1" name="Greater Spiritshot Compressed Package (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="2510" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2112" levels="1" name="Greater Spiritshot Compressed Package (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="2511" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2113" levels="1" name="Greater Spiritshot Compressed Package (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="2512" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2116" levels="1" name="Greater Blessed Spiritshot Compressed Package (No-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="3947" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2117" levels="1" name="Greater Blessed Spiritshot Compressed Package (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="3948" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2118" levels="1" name="Greater Blessed Spiritshot Compressed Package (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="3949" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2119" levels="1" name="Greater Blessed Spiritshot Compressed Package (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="create_item_count" val="1000" />
-		<set name="create_item_id" val="3950" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2122" levels="1" name="Facelifting Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="faceId" val="0" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2123" levels="1" name="Facelifting Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="faceId" val="1" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2124" levels="1" name="Facelifting Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="faceId" val="2" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2125" levels="1" name="Dye Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairColorId" val="0" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2126" levels="1" name="Dye Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairColorId" val="1" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2127" levels="1" name="Dye Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairColorId" val="2" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2128" levels="1" name="Dye Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairColorId" val="3" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2129" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="0" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2130" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="1" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2131" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="2" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2132" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="3" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2133" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="4" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2134" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="5" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2135" levels="1" name="Hair Style Change Potion">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CHANGE_APPEARANCE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="500" />
-		<set name="staticHitTime" val="true" />
-		<set name="hairStyleId" val="6" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2136" levels="1" name="Rice Cake">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="HEAL_PERCENT" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="power" val="3" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2140" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2141" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2142" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2143" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2144" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2145" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2146" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2147" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2148" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2149" levels="1" name="Item - Carol Sound Crystal">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="DUMMY" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="isPotion" val="true" />
-	</skill>
-	<skill id="2150" levels="1" name="Soulshot (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SOULSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2151" levels="1" name="Soulshot (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SOULSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2152" levels="1" name="Soulshot (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SOULSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2155" levels="1" name="Spiritshot (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2156" levels="1" name="Spiritshot (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2157" levels="1" name="Spiritshot (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2160" levels="1" name="Blessed Spiritshot (D-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2161" levels="1" name="Blessed Spiritshot (C-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2162" levels="1" name="Blessed Spiritshot (B-grade) ">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="SPIRITSHOT" />
-		<set name="operateType" val="OP_ACTIVE" />
-	</skill>
-	<skill id="2165" levels="1" name="Momentum Stone">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="simultaneousCast" val="true" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-		<for>
-			<abnormal count="15" noicon="1">
-				<effect type="IncreaseCharges" val="1" />
-			</abnormal>
-		</for>
-	</skill>
-	<skill id="2166" levels="2" name="CP Potion">
-		<table name="#power"> 50 200 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="COMBATPOINTHEAL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="power" val="#power" />
-		<set name="reuseDelay" val="600" />
-		<set name="isPotion" val="true" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2167" levels="3" name="SP Scroll">
-		<table name="#power"> 500 5000 100000 500000 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="GIVE_SP" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="power" val="#power" />
-		<set name="hitTime" val="200" />
-		<set name="reuseDelay" val="3000" />
-		<set name="staticHitTime" val="true" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<!-- 
-		Level 1: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 1.
-		Level 2: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 2.
-		Level 3: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 3.
-		Level 4: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 4.
-	-->
-	<skill id="2168" levels="4" name="Lucky Charm">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="10000" />
-		<set name="staticHitTime" val="true" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-		<for>
-			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="reduce_drop_penalty">
-				<effect type="CharmOfLuck" val="0" />
-			</abnormal>
-		</for>
-	</skill>
-	<!-- 
-		Level 1: Increases Casting Spd. Effect 2.
-		Level 2: Increases Casting Spd. Effect 3.
-	-->
-	<skill id="2169" levels="2" name="Magic Haste Potion">
-		<table name="#names">Magic Haste Potion;Greater Magic Haste Potion</table>
-		<table name="#mAtkSpd"> 23 30 </table>
-		<table name="#abnormalLvl"> 2 3 </table>
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="name" val="#names" />
-		<set name="isPotion" val="true" />
-		<set name="buffDuration" val="1200000" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-		<for>
-			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="casting_time_down">
-				<effect type="Buff" val="0" />
-				<addPercent stat="mAtkSpd" val="#mAtkSpd" />
-			</abnormal>
-		</for>
-	</skill>
-	<skill id="2170" levels="1" name="Scroll: Cancel Sleep">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="NEGATE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="coolTime" val="1000" />
-		<set name="castRange" val="400" />
-		<set name="effectRange" val="900" />
-		<set name="negateAbnormals" val="sleep,1" />
-		<cond addName="1" msgId="113">
-			<player flyMounted="False" />
-		</cond>
-	</skill>
-	<skill id="2171" levels="1" name="Spellbook Paper">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="EXTRACTABLE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="5917,1,10;5918,1,10;5919,1,10;5920,1,10;736,1,60" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2172" levels="1" name="Scroll of Giants">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="EXTRACTABLE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="5922,1,2.5;5923,1,2.5;5924,1,2.5;5925,1,2.5;5926,1,2.5;5927,1,2.5;5928,1,2.5;5929,1,2.5;5930,1,2.5;5931,1,2.5;5932,1,2.5;5933,1,2.5;5934,1,2.5;5935,1,2.5;5936,1,2.5;5937,1,2.5;5938,1,2.5;5939,1,2.5;5940,1,2.5;5941,1,2.5;5942,1,25;5943,1,25" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2173" levels="1" name="Book of Giants">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="EXTRACTABLE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="5945,1,5;5946,1,5;5947,1,5;5948,1,5;5949,1,5;5950,1,5;5951,1,5;5952,1,5;5953,1,5;5954,1,5;5942,1,25;5943,1,25" />
-		<cond msgId="129">
-			<and>
-				<player invSize="10" />
-				<player weight="80" />
-			</and>
-		</cond>
-	</skill>
-	<skill id="2177" levels="1" name="Blessed Scroll of Escape: Clan Hall">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="RECALL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="200" />
-		<set name="staticHitTime" val="true" />
-		<set name="recallType" val="ClanHall" />
-		<cond addName="1" msgId="113">
-			<player clanHall="-1" />
-		</cond>
-	</skill>
-	<skill id="2178" levels="1" name="Blessed Scroll of Escape: Castle">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="RECALL" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="itemConsumeCount" val="1" />
-		<set name="hitTime" val="200" />
-		<set name="staticHitTime" val="true" />
-		<set name="recallType" val="Castle" />
-		<cond addName="1" msgId="113">
-			<player castle="-1" />
-		</cond>
-	</skill>
-	<skill id="2180" levels="1" name="Wyvern Food">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="FEED_PET" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="magicLvl" val="1" />
-		<set name="feed" val="450" />
-	</skill>
+    <skill id="2100" levels="1" name="Escape (1-second)">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="RECALL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="1000" />
+        <set name="staticHitTime" val="true" />
+    </skill>
+    <!-- Enlarges the user's head. -->
+    <skill id="2103" levels="1" name="Mysterious Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+        <for>
+            <abnormal duration="300" stackLvl="0" stackType="big_head" visualEffect="bighead">
+                <effect type="BigHead" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="2104" levels="1" name="Greater Soulshot Compressed Package (No-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="1835" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2105" levels="1" name="Greater Soulshot Compressed Package (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="1463" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2106" levels="1" name="Greater Soulshot Compressed Package (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="1464" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2107" levels="1" name="Greater Soulshot Compressed Package (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="1465" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2110" levels="1" name="Greater Spiritshot Compressed Package (No-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="2509" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2111" levels="1" name="Greater Spiritshot Compressed Package (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="2510" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2112" levels="1" name="Greater Spiritshot Compressed Package (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="2511" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2113" levels="1" name="Greater Spiritshot Compressed Package (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="2512" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2116" levels="1" name="Greater Blessed Spiritshot Compressed Package (No-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="3947" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2117" levels="1" name="Greater Blessed Spiritshot Compressed Package (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="3948" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2118" levels="1" name="Greater Blessed Spiritshot Compressed Package (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="3949" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2119" levels="1" name="Greater Blessed Spiritshot Compressed Package (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CREATE_ITEM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="create_item_count" val="1000" />
+        <set name="create_item_id" val="3950" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2122" levels="1" name="Facelifting Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="faceId" val="0" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2123" levels="1" name="Facelifting Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="faceId" val="1" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2124" levels="1" name="Facelifting Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="faceId" val="2" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2125" levels="1" name="Dye Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairColorId" val="0" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2126" levels="1" name="Dye Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairColorId" val="1" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2127" levels="1" name="Dye Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairColorId" val="2" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2128" levels="1" name="Dye Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairColorId" val="3" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2129" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="0" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2130" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="1" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2131" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="2" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2132" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="3" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2133" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="4" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2134" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="5" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2135" levels="1" name="Hair Style Change Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="CHANGE_APPEARANCE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="500" />
+        <set name="staticHitTime" val="true" />
+        <set name="hairStyleId" val="6" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2136" levels="1" name="Rice Cake">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="HEAL_PERCENT" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="power" val="3" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2140" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2141" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2142" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2143" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2144" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2145" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2146" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2147" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2148" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2149" levels="1" name="Item - Carol Sound Crystal">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="isPotion" val="true" />
+    </skill>
+    <skill id="2150" levels="1" name="Soulshot (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SOULSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2151" levels="1" name="Soulshot (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SOULSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2152" levels="1" name="Soulshot (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SOULSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2155" levels="1" name="Spiritshot (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2156" levels="1" name="Spiritshot (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2157" levels="1" name="Spiritshot (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2160" levels="1" name="Blessed Spiritshot (D-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2161" levels="1" name="Blessed Spiritshot (C-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2162" levels="1" name="Blessed Spiritshot (B-grade) ">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="SPIRITSHOT" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <skill id="2165" levels="1" name="Momentum Stone">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="simultaneousCast" val="true" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+        <for>
+            <abnormal count="15" noicon="1">
+                <effect type="IncreaseCharges" val="1" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="2166" levels="2" name="CP Potion">
+        <table name="#power">50 200</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="COMBATPOINTHEAL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="power" val="#power" />
+        <set name="reuseDelay" val="600" />
+        <set name="isPotion" val="true" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2167" levels="3" name="SP Scroll">
+        <table name="#power">500 5000 100000 500000</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="GIVE_SP" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="power" val="#power" />
+        <set name="hitTime" val="200" />
+        <set name="reuseDelay" val="3000" />
+        <set name="staticHitTime" val="true" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <!--
+        Level 1: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 1.
+        Level 2: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 2.
+        Level 3: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 3.
+        Level 4: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 4.
+    -->
+    <skill id="2168" levels="4" name="Lucky Charm">
+        <table name="#abnormalLvl">1 2 3 4 5 6</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="2000" />
+        <set name="reuseDelay" val="10000" />
+        <set name="staticHitTime" val="true" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+        <for>
+            <abnormal duration="3600" stackLvl="#abnormalLvl" stackType="reduce_drop_penalty">
+                <effect type="CharmOfLuck" val="0" />
+            </abnormal>
+        </for>
+    </skill>
+    <!--
+        Level 1: Increases Casting Spd. Effect 2.
+        Level 2: Increases Casting Spd. Effect 3.
+    -->
+    <skill id="2169" levels="2" name="Magic Haste Potion">
+        <table name="#names">Magic Haste Potion;Greater Magic Haste Potion</table>
+        <table name="#mAtkSpd">23 30</table>
+        <table name="#abnormalLvl">2 3</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="name" val="#names" />
+        <set name="isPotion" val="true" />
+        <set name="buffDuration" val="1200000" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+        <for>
+            <abnormal duration="1200" stackLvl="#abnormalLvl" stackType="casting_time_down">
+                <effect type="Buff" val="0" />
+                <addPercent stat="mAtkSpd" val="#mAtkSpd" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="2170" levels="1" name="Scroll: Cancel Sleep">
+        <set name="target" val="TARGET_ONE" />
+        <set name="skillType" val="NEGATE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="coolTime" val="1000" />
+        <set name="castRange" val="400" />
+        <set name="effectRange" val="900" />
+        <set name="negateAbnormals" val="sleep,1" />
+        <cond addName="1" msgId="113">
+            <player flyMounted="False" />
+        </cond>
+    </skill>
+    <skill id="2171" levels="1" name="Spellbook Paper">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="EXTRACTABLE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="capsuled_items_skill" val="5917,1,10;5918,1,10;5919,1,10;5920,1,10;736,1,60" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2172" levels="1" name="Scroll of Giants">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="EXTRACTABLE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="capsuled_items_skill"
+             val="5922,1,2.5;5923,1,2.5;5924,1,2.5;5925,1,2.5;5926,1,2.5;5927,1,2.5;5928,1,2.5;5929,1,2.5;5930,1,2.5;5931,1,2.5;5932,1,2.5;5933,1,2.5;5934,1,2.5;5935,1,2.5;5936,1,2.5;5937,1,2.5;5938,1,2.5;5939,1,2.5;5940,1,2.5;5941,1,2.5;5942,1,25;5943,1,25" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2173" levels="1" name="Book of Giants">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="EXTRACTABLE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="capsuled_items_skill"
+             val="5945,1,5;5946,1,5;5947,1,5;5948,1,5;5949,1,5;5950,1,5;5951,1,5;5952,1,5;5953,1,5;5954,1,5;5942,1,25;5943,1,25" />
+        <cond msgId="129">
+            <and>
+                <player invSize="10" />
+                <player weight="80" />
+            </and>
+        </cond>
+    </skill>
+    <skill id="2177" levels="1" name="Blessed Scroll of Escape: Clan Hall">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="RECALL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="200" />
+        <set name="staticHitTime" val="true" />
+        <set name="recallType" val="ClanHall" />
+        <cond addName="1" msgId="113">
+            <player clanHall="-1" />
+        </cond>
+    </skill>
+    <skill id="2178" levels="1" name="Blessed Scroll of Escape: Castle">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="RECALL" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="hitTime" val="200" />
+        <set name="staticHitTime" val="true" />
+        <set name="recallType" val="Castle" />
+        <cond addName="1" msgId="113">
+            <player castle="-1" />
+        </cond>
+    </skill>
+    <skill id="2180" levels="1" name="Wyvern Food">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="FEED_PET" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="1" />
+        <set name="feed" val="450" />
+    </skill>
 </list>

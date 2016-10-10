@@ -30,80 +30,84 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 {
-	private int _objectId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_objectId = readD();
-	}
-	
-	/**
-	 * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
-	 */
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		L2ItemInstance stone = player.getActiveAppearanceStone();
-		if (stone == null)
-			return;
-		
-		L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
-			return;
-		
-		if (!item.getItem().canBeUsedAsApp() || item.getTime() != -1)
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
-			return;
-		}
-		
-		int type = stone.getStoneType();
-		int itemType = item.getItem().getType2();
-		if (item.getItem().getBodyPart() == L2Item.SLOT_BACK)
-			itemType = L2Item.TYPE2_SHIELD_ARMOR;
-		
-		switch (item.getItem().getBodyPart())
-		{
-			case L2Item.SLOT_HAIR:
-			case L2Item.SLOT_HAIR2:
-			case L2Item.SLOT_HAIRALL:
-			case L2Item.SLOT_BACK:
-				break;
-			default:
-			{
-				boolean isCorrectGrade = item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain();
-				boolean isCorrectType = type == -1 || itemType == type;
-				if (Config.isServer(Config.DREAMS))
-					player.sendMessage(item.getItem().getItemGradePlain() + "..." + stone.getItem().getItemGradePlain());
-				
-				if (!isCorrectGrade || !isCorrectType)
-				{
-					sendPacket(new ExPutTargetResultForItemAppearance(0, 0));
-					if (Config.isServer(Config.DREAMS))
-						player.sendMessage("Nope. " + isCorrectGrade);
-					return;
-				}
-				break;
-			}
-		}
-		
-		// TODO adena price
-		sendPacket(new ExPutTargetResultForItemAppearance(1, 30));
-		
-		// TODO fix that
-		sendPacket(new ExShowScreenMessage("Warning: adding the appearance item will start the transformation right away...", 3000));
-		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				sendPacket(new ExShowScreenMessage("...destroying the stone and the appearance item!", 3000));
-			}
-		}, 3000);
-	}
+    private int _objectId;
+
+    @Override
+    protected void readImpl()
+    {
+        _objectId = readD();
+    }
+
+    /**
+     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
+     */
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        L2ItemInstance stone = player.getActiveAppearanceStone();
+        if (stone == null)
+        {
+            return;
+        }
+
+        L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
+        if (item == null)
+        {
+            return;
+        }
+
+        if (!item.getItem().canBeUsedAsApp() || item.getTime() != -1)
+        {
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
+            return;
+        }
+
+        int type = stone.getStoneType();
+        int itemType = item.getItem().getType2();
+        if (item.getItem().getBodyPart() == L2Item.SLOT_BACK)
+        {
+            itemType = L2Item.TYPE2_SHIELD_ARMOR;
+        }
+
+        switch (item.getItem().getBodyPart())
+        {
+            case L2Item.SLOT_HAIR:
+            case L2Item.SLOT_HAIR2:
+            case L2Item.SLOT_HAIRALL:
+            case L2Item.SLOT_BACK:
+                break;
+            default:
+            {
+                boolean isCorrectGrade = item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain();
+                boolean isCorrectType = type == -1 || itemType == type;
+                if (!isCorrectGrade || !isCorrectType)
+                {
+                    sendPacket(new ExPutTargetResultForItemAppearance(0, 0));
+                    return;
+                }
+                break;
+            }
+        }
+
+        // TODO adena price
+        sendPacket(new ExPutTargetResultForItemAppearance(1, 30));
+
+        // TODO fix that
+        sendPacket(new ExShowScreenMessage(
+                "Warning: adding the appearance item will start the transformation right away...", 3000));
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                sendPacket(new ExShowScreenMessage("...destroying the stone and the appearance item!", 3000));
+            }
+        }, 3000);
+    }
 }

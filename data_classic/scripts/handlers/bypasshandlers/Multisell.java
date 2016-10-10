@@ -21,40 +21,36 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Multisell implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"multisell",
-		"exc_multisell"
-	};
-	
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		try
-		{
-			String listId;
-			if (command.toLowerCase().startsWith(COMMANDS[0])) // multisell
-			{
-				listId = command.substring(9).trim();
-				MultiSell.getInstance().separateAndSend(listId, activeChar, target, false);
-				return true;
-			}
-			else if (command.toLowerCase().startsWith(COMMANDS[1])) // exc_multisell
-			{
-				listId = command.substring(13).trim();
-				MultiSell.getInstance().separateAndSend(listId, activeChar, target, true);
-				return true;
-			}
-			return false;
-		}
-		catch (Exception e)
-		{
-			_log.info("Exception in " + getClass().getSimpleName());
-		}
-		return false;
-	}
-	
-	public String[] getBypassList()
-	{
-		return COMMANDS;
-	}
+    private static final String[] COMMANDS = {"multisell", "exc_multisell"};
+
+    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+    {
+        try
+        {
+            String listId;
+            if (command.toLowerCase().startsWith(COMMANDS[0])) // multisell
+            {
+                listId = command.substring(9).trim();
+                MultiSell.getInstance().separateAndSend(listId, activeChar, target, false);
+                return true;
+            }
+            else if (command.toLowerCase().startsWith(COMMANDS[1])) // exc_multisell
+            {
+                listId = command.substring(13).trim();
+                MultiSell.getInstance().separateAndSend(listId, activeChar, target, true);
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e)
+        {
+            _log.info("Exception in " + getClass().getSimpleName());
+        }
+        return false;
+    }
+
+    public String[] getBypassList()
+    {
+        return COMMANDS;
+    }
 }

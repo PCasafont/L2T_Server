@@ -19,7 +19,7 @@ import l2server.gameserver.model.actor.L2Character;
 
 /**
  * Interface of AI and client state.
- *
+ * <p>
  * To correctly send messages to client we need it's state.
  * For example, if we've sent 'StartAutoAttack' message, we need to
  * send 'StopAutoAttack' message before any other action. Or
@@ -28,7 +28,7 @@ import l2server.gameserver.model.actor.L2Character;
  * any other reason). Thus, we need to know the state of
  * client, i.e. which messages we've sent and how the client
  * will show the scene.
- *
+ * <p>
  * Close to this task is the task of AI.
  * If a player's character is attacking a mob, his ATTACK may be
  * iterrupted by an event, that temporary disable attacking.
@@ -37,7 +37,7 @@ import l2server.gameserver.model.actor.L2Character;
  * more complex, since we want them to decide when to use magic,
  * or when to follow the player for physical combat, or when to escape,
  * to help another mob, etc.
- *
+ * <p>
  * This interface is hiding complexity of server<->client
  * interaction and multiple states of a character. It allows to
  * set a desired, simple "wish" of a character, and the implementation
@@ -56,32 +56,41 @@ import l2server.gameserver.model.actor.L2Character;
  * was disabled, it causes changing if its behavour, and if client's
  * state for the character is "moving" we send messages to clients
  * to stop the avatar/mob.
- *
  */
 public interface Ctrl
 {
-	
-	/** the character this AI serves */
-	L2Character getActor();
-	
-	/** get current intention */
-	CtrlIntention getIntention();
-	
-	/** get current ATTACK target */
-	L2Character getAttackTarget();
-	
-	/** Set general state/intention for AI, with optional data */
-	void setIntention(CtrlIntention intention);
-	
-	void setIntention(CtrlIntention intention, Object arg0);
-	
-	void setIntention(CtrlIntention intention, Object arg0, Object arg1);
-	
-	/** Event, that notifies about previous step result, or user command,
-	 * that does not change current general intention */
-	void notifyEvent(CtrlEvent evt);
-	
-	void notifyEvent(CtrlEvent evt, Object arg0);
-	
-	void notifyEvent(CtrlEvent evt, Object arg0, Object arg1);
+
+    /**
+     * the character this AI serves
+     */
+    L2Character getActor();
+
+    /**
+     * get current intention
+     */
+    CtrlIntention getIntention();
+
+    /**
+     * get current ATTACK target
+     */
+    L2Character getAttackTarget();
+
+    /**
+     * Set general state/intention for AI, with optional data
+     */
+    void setIntention(CtrlIntention intention);
+
+    void setIntention(CtrlIntention intention, Object arg0);
+
+    void setIntention(CtrlIntention intention, Object arg0, Object arg1);
+
+    /**
+     * Event, that notifies about previous step result, or user command,
+     * that does not change current general intention
+     */
+    void notifyEvent(CtrlEvent evt);
+
+    void notifyEvent(CtrlEvent evt, Object arg0);
+
+    void notifyEvent(CtrlEvent evt, Object arg0, Object arg1);
 }

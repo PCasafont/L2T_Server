@@ -27,34 +27,34 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetAggro extends Condition
 {
-	
-	private final boolean _isAggro;
-	
-	/**
-	 * Instantiates a new condition target aggro.
-	 *
-	 * @param isAggro the is aggro
-	 */
-	public ConditionTargetAggro(boolean isAggro)
-	{
-		_isAggro = isAggro;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		L2Character target = env.target;
-		if (target instanceof L2MonsterInstance)
-		{
-			return ((L2MonsterInstance) target).isAggressive() == _isAggro;
-		}
-		if (target instanceof L2PcInstance)
-		{
-			return ((L2PcInstance) target).getReputation() < 0;
-		}
-		return false;
-	}
+
+    private final boolean _isAggro;
+
+    /**
+     * Instantiates a new condition target aggro.
+     *
+     * @param isAggro the is aggro
+     */
+    public ConditionTargetAggro(boolean isAggro)
+    {
+        _isAggro = isAggro;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        L2Character target = env.target;
+        if (target instanceof L2MonsterInstance)
+        {
+            return ((L2MonsterInstance) target).isAggressive() == _isAggro;
+        }
+        if (target instanceof L2PcInstance)
+        {
+            return ((L2PcInstance) target).getReputation() < 0;
+        }
+        return false;
+    }
 }

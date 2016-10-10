@@ -28,29 +28,33 @@ import l2server.gameserver.network.serverpackets.UserInfo;
  */
 public final class Appearing extends L2GameClientPacket
 {
-	
-	@Override
-	protected void readImpl()
-	{
-		
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (activeChar.isTeleporting())
-			activeChar.onTeleported();
-		
-		sendPacket(new UserInfo(activeChar));
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    @Override
+    protected void readImpl()
+    {
+
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (activeChar.isTeleporting())
+        {
+            activeChar.onTeleported();
+        }
+
+        sendPacket(new UserInfo(activeChar));
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

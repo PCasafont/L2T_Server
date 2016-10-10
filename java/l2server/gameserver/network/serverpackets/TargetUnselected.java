@@ -19,7 +19,7 @@ import l2server.gameserver.model.actor.L2Character;
 
 /**
  * format  dddd
- *
+ * <p>
  * sample
  * 0000: 3a  69 08 10 48  02 c1 00 00  f7 56 00 00  89 ea ff	:i..H.....V.....
  * 0010: ff  0c b2 d8 61									 ....a
@@ -28,29 +28,29 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class TargetUnselected extends L2GameServerPacket
 {
-	private int _targetObjId;
-	private int _x;
-	private int _y;
-	private int _z;
-	
-	/**
-	 * @param _characters
-	 */
-	public TargetUnselected(L2Character character)
-	{
-		_targetObjId = character.getObjectId();
-		_x = character.getX();
-		_y = character.getY();
-		_z = character.getZ();
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(0x00); //??
-	}
+    private int _targetObjId;
+    private int _x;
+    private int _y;
+    private int _z;
+
+    /**
+     * @param _characters
+     */
+    public TargetUnselected(L2Character character)
+    {
+        _targetObjId = character.getObjectId();
+        _x = character.getX();
+        _y = character.getY();
+        _z = character.getZ();
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_targetObjId);
+        writeD(_x);
+        writeD(_y);
+        writeD(_z);
+        writeD(0x00); //??
+    }
 }

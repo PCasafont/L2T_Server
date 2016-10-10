@@ -31,93 +31,106 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestHennaEquip extends L2GameClientPacket
 {
-	private int _symbolId;
-	
-	// format  cd
-	
-	/**
-	 * packet type id 0xbb
-	 * format:		cd
-	 * @param decrypt
-	 */
-	@Override
-	protected void readImpl()
-	{
-		_symbolId = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaEquip"))
-			return;
-		
-		L2Henna henna = HennaTable.getInstance().getTemplate(_symbolId);
-		if (henna == null)
-			return;
-		
-		long _count = 0;
-		
-		/**
-		 *  Prevents henna drawing exploit:
-		 * 1) talk to L2SymbolMakerInstance
-		 * 2) RequestHennaList
-		 * 3) Don't close the window and go to a GrandMaster and change your subclass
-		 * 4) Get SymbolMaker range again and press draw
-		 * You could draw any kind of henna just having the required subclass...
-		 */
-		boolean cheater = true;
-		for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes())
-		{
-			if (h.getSymbolId() == henna.getSymbolId())
-			{
-				cheater = false;
-				break;
-			}
-		}
-		try
-		{
-			_count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
-		}
-		catch (Exception e)
-		{
-		}
-		
-		if (activeChar.getHennaEmptySlots() == 0 || henna.isFourthSlot() && activeChar.getHenna(4) != null)
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
-			return;
-		}
-		
-		if (!henna.isFourthSlot())
-		{
-			if (activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1 || activeChar.getHenna(4) == null && activeChar.getHennaEmptySlots() < 2)
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
-				return;
-			}
-		}
-		
-		if (!cheater && _count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() && activeChar.addHenna(henna))
-		{
-			activeChar.destroyItemByItemId("Henna", henna.getDyeId(), henna.getAmountDyeRequire(), activeChar, true);
-			activeChar.reduceAdena("Henna", henna.getPrice(), activeChar.getLastFolkNPC(), true);
-			
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(activeChar.getInventory().getAdenaInstance());
-			activeChar.sendPacket(iu);
-			
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOL_ADDED));
-		}
-		else
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
-			if (!activeChar.isGM() && cheater)
-				Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar.getName() + " of account " + activeChar.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
-		}
-	}
+    private int _symbolId;
+
+    // format  cd
+
+    /**
+     * packet type id 0xbb
+     * format:		cd
+     *
+     * @param decrypt
+     */
+    @Override
+    protected void readImpl()
+    {
+        _symbolId = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaEquip"))
+        {
+            return;
+        }
+
+        L2Henna henna = HennaTable.getInstance().getTemplate(_symbolId);
+        if (henna == null)
+        {
+            return;
+        }
+
+        long _count = 0;
+
+        /**
+         *  Prevents henna drawing exploit:
+         * 1) talk to L2SymbolMakerInstance
+         * 2) RequestHennaList
+         * 3) Don't close the window and go to a GrandMaster and change your subclass
+         * 4) Get SymbolMaker range again and press draw
+         * You could draw any kind of henna just having the required subclass...
+         */
+        boolean cheater = true;
+        for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes())
+        {
+            if (h.getSymbolId() == henna.getSymbolId())
+            {
+                cheater = false;
+                break;
+            }
+        }
+        try
+        {
+            _count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
+        }
+        catch (Exception e)
+        {
+        }
+
+        if (activeChar.getHennaEmptySlots() == 0 || henna.isFourthSlot() && activeChar.getHenna(4) != null)
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
+            return;
+        }
+
+        if (!henna.isFourthSlot())
+        {
+            if (activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1 || activeChar
+                    .getHenna(4) == null && activeChar.getHennaEmptySlots() < 2)
+            {
+                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
+                return;
+            }
+        }
+
+        if (!cheater && _count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() && activeChar
+                .addHenna(henna))
+        {
+            activeChar.destroyItemByItemId("Henna", henna.getDyeId(), henna.getAmountDyeRequire(), activeChar, true);
+            activeChar.reduceAdena("Henna", henna.getPrice(), activeChar.getLastFolkNPC(), true);
+
+            InventoryUpdate iu = new InventoryUpdate();
+            iu.addModifiedItem(activeChar.getInventory().getAdenaInstance());
+            activeChar.sendPacket(iu);
+
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOL_ADDED));
+        }
+        else
+        {
+            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
+            if (!activeChar.isGM() && cheater)
+            {
+                Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar
+                        .getName() + " of account " + activeChar
+                        .getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
+            }
+        }
+    }
 }

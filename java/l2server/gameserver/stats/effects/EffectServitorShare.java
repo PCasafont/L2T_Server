@@ -24,47 +24,55 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectServitorShare extends L2Effect
 {
-	public EffectServitorShare(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.BUFF;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-			return false;
-		
-		L2PcInstance player = (L2PcInstance) getEffected();
-		for (L2Summon summon : player.getSummons())
-			summon.updateAndBroadcastStatus(1);
-		
-		return true;
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance player = (L2PcInstance) getEffected();
-		if (player.getSummons().size() != 0)
-		{
-			for (L2Summon summon : player.getSummons())
-				summon.updateAndBroadcastStatus(1);
-		}
-	}
+    public EffectServitorShare(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.BUFF;
+    }
+
+    @Override
+    public boolean onStart()
+    {
+        if (!(getEffected() instanceof L2PcInstance))
+        {
+            return false;
+        }
+
+        L2PcInstance player = (L2PcInstance) getEffected();
+        for (L2Summon summon : player.getSummons())
+        {
+            summon.updateAndBroadcastStatus(1);
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
+
+    @Override
+    public void onExit()
+    {
+        if (!(getEffected() instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance player = (L2PcInstance) getEffected();
+        if (player.getSummons().size() != 0)
+        {
+            for (L2Summon summon : player.getSummons())
+            {
+                summon.updateAndBroadcastStatus(1);
+            }
+        }
+    }
 }

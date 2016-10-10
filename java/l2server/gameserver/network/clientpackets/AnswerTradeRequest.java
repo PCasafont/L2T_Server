@@ -29,78 +29,82 @@ import l2server.gameserver.network.serverpackets.TradeDone;
  */
 public final class AnswerTradeRequest extends L2GameClientPacket
 {
-	//
-	
-	private int _response;
-	
-	@Override
-	protected void readImpl()
-	{
-		_response = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-			return;
-		
-		if (player.getEvent() != null)
-		{
-			player.sendMessage("You cannot trade while being involved in an event!");
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (player.getOlympiadGameId() > -1)
-		{
-			player.sendMessage("You cannot trade while being involved in the Grand Olympiad!");
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (!player.getAccessLevel().allowTransaction())
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		L2PcInstance partner = player.getActiveRequester();
-		if (partner == null)
-		{
-			// Trade partner not found, cancel trade
-			player.sendPacket(new TradeDone(0));
-			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
-			player.sendPacket(msg);
-			player.setActiveRequester(null);
-			msg = null;
-			return;
-		}
-		else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null)
-		{
-			// Trade partner not found, cancel trade
-			player.sendPacket(new TradeDone(0));
-			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
-			player.sendPacket(msg);
-			player.setActiveRequester(null);
-			msg = null;
-			return;
-		}
-		
-		if (_response == 1 && !partner.isRequestExpired())
-			player.startTrade(partner);
-		else
-		{
-			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.C1_DENIED_TRADE_REQUEST);
-			msg.addString(player.getName());
-			partner.sendPacket(msg);
-			msg = null;
-		}
-		
-		// Clears requesting status
-		player.setActiveRequester(null);
-		partner.onTransactionResponse();
-	}
+    //
+
+    private int _response;
+
+    @Override
+    protected void readImpl()
+    {
+        _response = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance player = getClient().getActiveChar();
+        if (player == null)
+        {
+            return;
+        }
+
+        if (player.getEvent() != null)
+        {
+            player.sendMessage("You cannot trade while being involved in an event!");
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (player.getOlympiadGameId() > -1)
+        {
+            player.sendMessage("You cannot trade while being involved in the Grand Olympiad!");
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        if (!player.getAccessLevel().allowTransaction())
+        {
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+            sendPacket(ActionFailed.STATIC_PACKET);
+            return;
+        }
+
+        L2PcInstance partner = player.getActiveRequester();
+        if (partner == null)
+        {
+            // Trade partner not found, cancel trade
+            player.sendPacket(new TradeDone(0));
+            SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
+            player.sendPacket(msg);
+            player.setActiveRequester(null);
+            msg = null;
+            return;
+        }
+        else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null)
+        {
+            // Trade partner not found, cancel trade
+            player.sendPacket(new TradeDone(0));
+            SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
+            player.sendPacket(msg);
+            player.setActiveRequester(null);
+            msg = null;
+            return;
+        }
+
+        if (_response == 1 && !partner.isRequestExpired())
+        {
+            player.startTrade(partner);
+        }
+        else
+        {
+            SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.C1_DENIED_TRADE_REQUEST);
+            msg.addString(player.getName());
+            partner.sendPacket(msg);
+            msg = null;
+        }
+
+        // Clears requesting status
+        player.setActiveRequester(null);
+        partner.onTransactionResponse();
+    }
 }

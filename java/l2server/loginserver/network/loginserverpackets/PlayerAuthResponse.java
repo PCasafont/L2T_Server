@@ -21,24 +21,22 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author -Wooden-
- *
  */
 public class PlayerAuthResponse extends BaseSendablePacket
 {
-	public PlayerAuthResponse(String account, boolean response)
-	{
-		writeC(0x03);
-		writeS(account);
-		writeC(response ? 1 : 0);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public PlayerAuthResponse(String account, boolean response)
+    {
+        writeC(0x03);
+        writeS(account);
+        writeC(response ? 1 : 0);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

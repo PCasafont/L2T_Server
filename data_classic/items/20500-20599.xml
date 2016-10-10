@@ -1,1459 +1,1459 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Hat that looks like the Feline King. -->
-	<item id="20500" type="Armor" name="Feline King Hat">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. -->
-	<item id="20501" type="Armor" name="Kai the Cat Hat">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Can mount a Gold Maned Lion when equipped. -->
-	<item id="20502" type="Armor" name="Mount - Gold Maned Lion">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="839-1" />
-		<set name="item_skill" val="8262-1" />
-	</item>
-	<!-- Can mount a Gold Maned Lion when equipped. -->
-	<item id="20503" type="Armor" name="Mount - Gold Maned Lion - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="839-1" />
-		<set name="item_skill" val="8262-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. -->
-	<item id="20504" type="Armor" name="Mount - Steam Beetle - 30-day">
-		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="30" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="839-1" />
-		<set name="item_skill" val="8261-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Pomona. -->
-	<item id="20505" type="EtcItem" name="Agathion - Pomona Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20495,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Pomona (7-day). -->
-	<item id="20506" type="EtcItem" name="Agathion - Pomona Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20496,1,1,100" />
-	</item>
-	<!-- Wrapped Pack for events containing Mother's Wreath (24-hour). -->
-	<item id="20507" type="EtcItem" name="Mother's Wreath Pack (24-hour) (Event)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20497,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mother's Wreath (3-day). -->
-	<item id="20508" type="EtcItem" name="Mother's Wreath Pack (3-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20498,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen Hat. -->
-	<item id="20509" type="EtcItem" name="Feline Queen Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20499,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Feline King Hat. -->
-	<item id="20510" type="EtcItem" name="Feline King Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20500,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Kai the Cat Hat. -->
-	<item id="20511" type="EtcItem" name="Kai the Cat Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20501,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion. -->
-	<item id="20512" type="EtcItem" name="Mount - Gold Maned Lion Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20502,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
-	<item id="20513" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day) - 30-day">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20503,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
-	<item id="20514" type="EtcItem" name="Mount - Steam Beetle Pack (30-day) - 30-day">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20504,1,1,100" />
-	</item>
-	<!-- A Heavenly Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon can be acquired at a constant rate. -->
-	<item id="20515" type="EtcItem" name="Huge Fortuna Box">
-		<set name="icon" val="BranchSys.icon.br_fortuna_box_s_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22071-1" />
-	</item>
-	<!-- A Heavenly Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor can be acquired at a constant rate. -->
-	<item id="20516" type="EtcItem" name="Huge Fortuna Cube">
-		<set name="icon" val="BranchSys.icon.br_fortuna_cube_s_i00" />
-		<set name="default_action" val="capsule" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22072-1" />
-	</item>
-	<!--
-		10% increases in enchant success rate. 
-		P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4.
-	-->
-	<item id="20517" type="EtcItem" name="Scroll: Enchant Weapon (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_wp_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22073-1" />
-	</item>
-	<!--
-		10% increases in enchant success rate. 
-		Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4.
-	-->
-	<item id="20518" type="EtcItem" name="Scroll: Enchant Armor (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_am_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scrl_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22074-1" />
-	</item>
-	<!--
-		10% increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4. Cannot use weapons enchanted by above 16.
-	-->
-	<item id="20519" type="EtcItem" name="Ancient Scroll: Enchant Weapon (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_wp_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22075-1" />
-	</item>
-	<!--
-		10% increases in enchant success rate. 
-		When enchant fails, the existing enchant value is retained. 
-		Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4. Cannot use armors enchanted by above 16.
-	-->
-	<item id="20520" type="EtcItem" name="Ancient Scroll: Enchant Armor (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_am_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22076-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4. Can enchant standard weapons to + 12 and magical weapons to + 7.
-	-->
-	<item id="20521" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_wp" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22077-1" />
-	</item>
-	<!--
-		Enchant success rate is 100%. 
-		Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4.
-	-->
-	<item id="20522" type="EtcItem" name="Heavenly Scroll: Enchant Armor (S-grade)">
-		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_am_s_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="ancient_crystal_enchant_am" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="EnchantScrolls" />
-		<set name="item_skill" val="22078-1" />
-	</item>
-	<!-- Increases Water Resistance by 20%. -->
-	<item id="20523" type="EtcItem" name="Scroll: Water Resistance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22079-1" />
-	</item>
-	<!-- Increases Wind Resistance by 20%. -->
-	<item id="20524" type="EtcItem" name="Scroll: Wind Resistance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22080-1" />
-	</item>
-	<!-- Increases Fire Resistance by 20%. -->
-	<item id="20525" type="EtcItem" name="Scroll: Fire Resistance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22081-1" />
-	</item>
-	<!-- Increases Holy Resistance by 23%. -->
-	<item id="20526" type="EtcItem" name="Scroll: Holy Resistance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22082-1" />
-	</item>
-	<!-- Increases Dark Resistance by 23%. -->
-	<item id="20527" type="EtcItem" name="Scroll: Dark Resistance">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22083-1" />
-	</item>
-	<!-- Increases Hold/Sleep/Mental Attack Resistance by 40. -->
-	<item id="20528" type="EtcItem" name="Scroll: Mental Shield">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22084-1" />
-	</item>
-	<!-- Increases the power of Critical Attacks by 30. -->
-	<item id="20529" type="EtcItem" name="Scroll: Focus">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22085-1" />
-	</item>
-	<!-- Decreases damage that is cancelled by magic by 36. -->
-	<item id="20530" type="EtcItem" name="Scroll: Concentration">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22086-1" />
-	</item>
-	<!-- Increases Shield Defense rate by 15. -->
-	<item id="20531" type="EtcItem" name="Scroll: Blessed Shield">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22087-1" />
-	</item>
-	<!-- Increases Evasion rate by 4. -->
-	<item id="20532" type="EtcItem" name="Scroll: Agility">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22088-1" />
-	</item>
-	<!-- Increases HP Recovery Rate by 20%. -->
-	<item id="20533" type="EtcItem" name="Scroll: Regeneration">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22089-1" />
-	</item>
-	<!-- Increases Shield Defense by 40%. -->
-	<item id="20534" type="EtcItem" name="Scroll: Advanced Block">
-		<set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22090-1" />
-	</item>
-	<!-- Can mount a Steam Beetle when equipped. -->
-	<item id="20535" type="Armor" name="Mount - Steam Beetle - 30-day">
-		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8261-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Can mount a Gold Maned Lion when equipped. -->
-	<item id="20536" type="Armor" name="Mount - Gold Maned Lion - 30-day">
-		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="rbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="8262-1" />
-		<set name="time" val="43200" />
-	</item>
-	<!-- Afro style hair. Uses 2 hair accessory slots. Vitality cooldown 12 hour. Vitality item with limited usage. -->
-	<item id="20537" type="Armor" name="Afro Hair - Vitality (7-day)">
-		<set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21011-1" />
-		<set name="time" val="10080" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Magic horn-rimmed glasses with mysterious power. Vitality cooldown 12 hour. Vitality item with limited usage. -->
-	<item id="20538" type="Armor" name="Horn-rimmed Glasses - Vitality (7-day)">
-		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hair" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21012-1" />
-		<set name="time" val="10080" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality cooldown 12 hour. Vitality item with limited usage. -->
-	<item id="20539" type="Armor" name="Assassin's Bamboo Hat - Vitality (7-day)">
-		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21013-1" />
-		<set name="time" val="10080" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
-	<item id="20540" type="EtcItem" name="Mount - Steam Beetle Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20535,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
-	<item id="20541" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20536,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Afro Hair (7-day). -->
-	<item id="20542" type="EtcItem" name="Afro Hair Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20537,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Horn-rimmed Glasses (7-day). -->
-	<item id="20543" type="EtcItem" name="Horn-rimmed Glasses Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20538,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Assassin's Bamboo Hat (7-day). -->
-	<item id="20544" type="EtcItem" name="Assassin's Bamboo Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20539,1,1,100" />
-	</item>
-	<!-- Delicious beverage made with rare fruits. Increases Atk. Spd. by 33% when used. -->
-	<item id="20545" type="EtcItem" name="Haste Potion">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="2429-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Delicious beverage made with rare fruits. P. Critical Rate increases by 30% when used. -->
-	<item id="20546" type="EtcItem" name="Critical Rate Juice">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="2432-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Delicious juice made with rare fruits. It is very light. Speed increases by 33 when used. -->
-	<item id="20547" type="EtcItem" name="Wind Walk Juice">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="item_skill" val="2437-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (5-hour). Timer starts once package is opened. -->
-	<item id="20548" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20335,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (5-hour). -->
-	<item id="20549" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20336,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (10-hour). -->
-	<item id="20550" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20337,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (10-hour). -->
-	<item id="20551" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20338,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (7-day). -->
-	<item id="20552" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20339,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (7-day). -->
-	<item id="20553" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20340,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 30% (5-hour). -->
-	<item id="20554" type="EtcItem" name="SP Rune 30% Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20341,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 50% (5-hour). -->
-	<item id="20555" type="EtcItem" name="SP Rune 50% Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20342,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 30% (10-hour). -->
-	<item id="20556" type="EtcItem" name="SP Rune 30% Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20343,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 50% (10-hour). -->
-	<item id="20557" type="EtcItem" name="SP Rune 50% Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20344,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 30% (7-day). -->
-	<item id="20558" type="EtcItem" name="SP Rune 30% Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20345,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing SP Rune 50% (7-day). -->
-	<item id="20559" type="EtcItem" name="SP Rune 50% Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20346,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (5-hour). -->
-	<item id="20560" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20347,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (5-hour). -->
-	<item id="20561" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (5-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20348,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (10-hour). -->
-	<item id="20562" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20349,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (5-hour). -->
-	<item id="20563" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (10-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20350,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (7-day). -->
-	<item id="20564" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20351,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (7-day). -->
-	<item id="20565" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20352,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Rune of Feather (24-hour). -->
-	<item id="20566" type="EtcItem" name="Rune of Feather Pack (24-hour)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="22066,1,1,100" />
-	</item>
-	<!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
-	<item id="20567" type="Armor" name="Eva's Circlet (Event) - 3-day">
-		<set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21087-1" />
-		<set name="time" val="4320" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
-	<item id="20568" type="Armor" name="Eva's Circlet - 7-day">
-		<set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21087-1" />
-		<set name="time" val="10080" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
-	<item id="20569" type="Armor" name="Eva's Circlet">
-		<set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
-	<item id="20570" type="EtcItem" name="Eva's Rune (Event) - 5-hour">
-		<set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22091-1" />
-		<set name="time" val="300" />
-	</item>
-	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
-	<item id="20571" type="EtcItem" name="Eva's Rune (Event) - 3-day">
-		<set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22091-1" />
-		<set name="time" val="4320" />
-	</item>
-	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, increases acquired XP by 30%. The timer decreases even during log-off state. Only one XP Rune can be applied at any given time regardless of additional XP Runes in ones inventory. -->
-	<item id="20572" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 3-hour">
-		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
-		<set name="etcitem_type" val="rune" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22039-1" />
-		<set name="time" val="180" />
-	</item>
-	<!-- Mysterious box containing the blessings of Eva. -->
-	<item id="20573" type="EtcItem" name="Small Scroll Chest (Event)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Mysterious box containing the blessings of Eva. -->
-	<item id="20574" type="EtcItem" name="Large Scroll Chest (Event)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Mysterious box containing the blessings of Eva. -->
-	<item id="20575" type="EtcItem" name="Chest of Experience (Event)">
-		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="capsuled_items" val="20342,1,1,100;20336,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Eva's Circlet (3-day). The timer starts once the box is opened. -->
-	<item id="20576" type="EtcItem" name="Eva's Circlet Pack (3-day) (Event)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="20567,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Eva's Circlet (7-day). -->
-	<item id="20577" type="EtcItem" name="Eva's Circlet Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20568,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Eva's Circlet. -->
-	<item id="20578" type="EtcItem" name="Eva's Circlet Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20569,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Eva's Rune (5-hour). The timer start once the box is opened. -->
-	<item id="20579" type="EtcItem" name="Eva's Rune Pack (5-hour) (Event)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="20570,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Eva's Rune (3-day). The timer start once the box is opened. -->
-	<item id="20580" type="EtcItem" name="Eva's Rune Pack (3-day) (Event)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="20571,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (3-hour). The timer start once the box is opened. -->
-	<item id="20581" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (3-hour) (Event)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="20572,1,1,100" />
-	</item>
-	<!-- Delicious beverage made with rare fruits. P. Atk. + 15% for 60 minutes when used. -->
-	<item id="20582" type="EtcItem" name="P. Atk. Potion">
-		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="1" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="2436-1" />
-		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
-	</item>
-	<!-- Magical scroll that relocates you to the nearest village. -->
-	<item id="20583" type="EtcItem" name="Blessed Scroll of Escape (Event)">
-		<set name="icon" val="icon.etc_scroll_of_return_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22103-1" />
-	</item>
-	<!-- Magical scroll that resurrects a dead character and restores his or her XP completely. -->
-	<item id="20584" type="EtcItem" name="Blessed Scroll of Resurrection (Event)">
-		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="120" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22104-1" />
-	</item>
-	<!-- Double-click to summon a Fire Spirit. -->
-	<item id="20585" type="EtcItem" name="Seed of Fire (Event)">
-		<set name="icon" val="BranchSys.icon.br_seed_of_fire_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="10" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22095-1" />
-	</item>
-	<!-- Double-click to summon an explosive Fire Spirit. -->
-	<item id="20586" type="EtcItem" name="Explosive Seed of Fire (Event)">
-		<set name="icon" val="BranchSys.icon.br_seed_of_explosive_fire_i00" />
-		<set name="default_action" val="skill_reduce" />
-		<set name="etcitem_type" val="scroll" />
-		<set name="weight" val="10" />
-		<set name="is_stackable" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22096-1" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Weaver. -->
-	<item id="20587" type="EtcItem" name="Agathion - Weaver Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20591,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Weaver (24-hour). -->
-	<item id="20588" type="EtcItem" name="Agathion - Weaver Pack (24-hour) - Power of the Golden Calf">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20592,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Agathion - Weaver (3-day). -->
-	<item id="20589" type="EtcItem" name="Agathion - Weaver Pack (3-day) - Power of the Golden Calf">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20593,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Summon of Love Bracelet (24-hour). -->
-	<item id="20590" type="EtcItem" name="Summon of Love Bracelet Pack (24-hour) (Event)">
-		<set name="icon" val="icon.etc_pi_gift_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="capsuled_items" val="20594,1,1,100" />
-	</item>
-	<!-- Bracelet that summons an Agathion - Weaver. -->
-	<item id="20591" type="Armor" name="Agathion - Weaver">
-		<set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21091-1;23076-1" />
-	</item>
-	<!-- Bracelet that summons an Agathion - Weaver. -->
-	<item id="20592" type="Armor" name="Agathion - Weaver - Power of the Golden Calf (24-hour)">
-		<set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21091-1;23077-1" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Bracelet that summons an Agathion - Weaver. -->
-	<item id="20593" type="Armor" name="Agathion - Weaver - Power of the Golden Calf (3-day)">
-		<set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="150" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_premium" val="true" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-		<set name="item_skill" val="3267-1;21091-1;23077-1" />
-		<set name="time" val="4320" />
-	</item>
-	<!-- Bracelet that can summon a lover. The summon is possible when the summoner and the one being summoned are all party members who are equipped with the Summon of Love Bracelet. -->
-	<item id="20594" type="Armor" name="Summon of Love Bracelet (Event) - 24-hour">
-		<set name="icon" val="BranchSys.icon.br_ring_of_friendship_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="lbracelet" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="21088-1" />
-		<set name="time" val="1440" />
-	</item>
-	<!-- Thank you gift that helps the warrior occupation series. -->
-	<item id="20595" type="EtcItem" name="Girl's Gift of Gratitude">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22097-1" />
-	</item>
-	<!-- Thank you gift that helps the wizard occupation series. -->
-	<item id="20596" type="EtcItem" name="Boy's Gift of Gratitude">
-		<set name="immediate_effect" val="1" />
-		<set name="ex_immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="isOlyRestricted" val="true" />
-		<set name="item_skill" val="22098-1" />
-	</item>
-	<!-- Soulstone that is consumed for an Agathion - Weaver's special skill. -->
-	<item id="20597" type="EtcItem" name="Girl's Soulstone">
-		<set name="icon" val="BranchSys.icon.br_sevenlove_stone_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Shadow Staff (7-day). -->
-	<item id="20598" type="EtcItem" name="Twilight Staff Pack (7-day) - Dance of Shadow">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20600,1,1,100" />
-	</item>
-	<!-- Wrapped Pack containing Anniversary Hat (7-day). -->
-	<item id="20599" type="EtcItem" name="Anniversary Hat Pack (7-day) - Soul of Phoenix">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="default_action" val="peel" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="100" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="capsuled_items" val="20601,1,1,100" />
-	</item>
+    <!-- Hat that looks like the Feline King. -->
+    <item id="20500" type="Armor" name="Feline King Hat">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. -->
+    <item id="20501" type="Armor" name="Kai the Cat Hat">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Can mount a Gold Maned Lion when equipped. -->
+    <item id="20502" type="Armor" name="Mount - Gold Maned Lion">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="839-1" />
+        <set name="item_skill" val="8262-1" />
+    </item>
+    <!-- Can mount a Gold Maned Lion when equipped. -->
+    <item id="20503" type="Armor" name="Mount - Gold Maned Lion - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="839-1" />
+        <set name="item_skill" val="8262-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. -->
+    <item id="20504" type="Armor" name="Mount - Steam Beetle - 30-day">
+        <set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="30" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="839-1" />
+        <set name="item_skill" val="8261-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Pomona. -->
+    <item id="20505" type="EtcItem" name="Agathion - Pomona Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20495,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Pomona (7-day). -->
+    <item id="20506" type="EtcItem" name="Agathion - Pomona Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20496,1,1,100" />
+    </item>
+    <!-- Wrapped Pack for events containing Mother's Wreath (24-hour). -->
+    <item id="20507" type="EtcItem" name="Mother's Wreath Pack (24-hour) (Event)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20497,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mother's Wreath (3-day). -->
+    <item id="20508" type="EtcItem" name="Mother's Wreath Pack (3-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20498,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen Hat. -->
+    <item id="20509" type="EtcItem" name="Feline Queen Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20499,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Feline King Hat. -->
+    <item id="20510" type="EtcItem" name="Feline King Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20500,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Kai the Cat Hat. -->
+    <item id="20511" type="EtcItem" name="Kai the Cat Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20501,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion. -->
+    <item id="20512" type="EtcItem" name="Mount - Gold Maned Lion Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20502,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
+    <item id="20513" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day) - 30-day">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20503,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
+    <item id="20514" type="EtcItem" name="Mount - Steam Beetle Pack (30-day) - 30-day">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20504,1,1,100" />
+    </item>
+    <!-- A Heavenly Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon can be acquired at a constant rate. -->
+    <item id="20515" type="EtcItem" name="Huge Fortuna Box">
+        <set name="icon" val="BranchSys.icon.br_fortuna_box_s_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22071-1" />
+    </item>
+    <!-- A Heavenly Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor can be acquired at a constant rate. -->
+    <item id="20516" type="EtcItem" name="Huge Fortuna Cube">
+        <set name="icon" val="BranchSys.icon.br_fortuna_cube_s_i00" />
+        <set name="default_action" val="capsule" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22072-1" />
+    </item>
+    <!--
+        10% increases in enchant success rate.
+        P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4.
+    -->
+    <item id="20517" type="EtcItem" name="Scroll: Enchant Weapon (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_scrl_of_ench_wp_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22073-1" />
+    </item>
+    <!--
+        10% increases in enchant success rate.
+        Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4.
+    -->
+    <item id="20518" type="EtcItem" name="Scroll: Enchant Armor (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_scrl_of_ench_am_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scrl_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22074-1" />
+    </item>
+    <!--
+        10% increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4. Cannot use weapons enchanted by above 16.
+    -->
+    <item id="20519" type="EtcItem" name="Ancient Scroll: Enchant Weapon (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_wp_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22075-1" />
+    </item>
+    <!--
+        10% increases in enchant success rate.
+        When enchant fails, the existing enchant value is retained.
+        Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4. Cannot use armors enchanted by above 16.
+    -->
+    <item id="20520" type="EtcItem" name="Ancient Scroll: Enchant Armor (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_am_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22076-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        P. Atk. for S-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons increases by 5 when enchanted. P. Atk. for sword, two-handed blunt, two-handed dualsword, and combat and dual-handed weapons increases by 6. P. Atk. for bow weapons increases by 10. M. Atk. for all weapons increases by 4. P. Atk. and M. Atk. Increases two times after + 4. Can enchant standard weapons to + 12 and magical weapons to + 7.
+    -->
+    <item id="20521" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_wp" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22077-1" />
+    </item>
+    <!--
+        Enchant success rate is 100%.
+        Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4.
+    -->
+    <item id="20522" type="EtcItem" name="Heavenly Scroll: Enchant Armor (S-grade)">
+        <set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_am_s_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="ancient_crystal_enchant_am" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="EnchantScrolls" />
+        <set name="item_skill" val="22078-1" />
+    </item>
+    <!-- Increases Water Resistance by 20%. -->
+    <item id="20523" type="EtcItem" name="Scroll: Water Resistance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22079-1" />
+    </item>
+    <!-- Increases Wind Resistance by 20%. -->
+    <item id="20524" type="EtcItem" name="Scroll: Wind Resistance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22080-1" />
+    </item>
+    <!-- Increases Fire Resistance by 20%. -->
+    <item id="20525" type="EtcItem" name="Scroll: Fire Resistance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22081-1" />
+    </item>
+    <!-- Increases Holy Resistance by 23%. -->
+    <item id="20526" type="EtcItem" name="Scroll: Holy Resistance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22082-1" />
+    </item>
+    <!-- Increases Dark Resistance by 23%. -->
+    <item id="20527" type="EtcItem" name="Scroll: Dark Resistance">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22083-1" />
+    </item>
+    <!-- Increases Hold/Sleep/Mental Attack Resistance by 40. -->
+    <item id="20528" type="EtcItem" name="Scroll: Mental Shield">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22084-1" />
+    </item>
+    <!-- Increases the power of Critical Attacks by 30. -->
+    <item id="20529" type="EtcItem" name="Scroll: Focus">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22085-1" />
+    </item>
+    <!-- Decreases damage that is cancelled by magic by 36. -->
+    <item id="20530" type="EtcItem" name="Scroll: Concentration">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22086-1" />
+    </item>
+    <!-- Increases Shield Defense rate by 15. -->
+    <item id="20531" type="EtcItem" name="Scroll: Blessed Shield">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22087-1" />
+    </item>
+    <!-- Increases Evasion rate by 4. -->
+    <item id="20532" type="EtcItem" name="Scroll: Agility">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22088-1" />
+    </item>
+    <!-- Increases HP Recovery Rate by 20%. -->
+    <item id="20533" type="EtcItem" name="Scroll: Regeneration">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22089-1" />
+    </item>
+    <!-- Increases Shield Defense by 40%. -->
+    <item id="20534" type="EtcItem" name="Scroll: Advanced Block">
+        <set name="icon" val="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22090-1" />
+    </item>
+    <!-- Can mount a Steam Beetle when equipped. -->
+    <item id="20535" type="Armor" name="Mount - Steam Beetle - 30-day">
+        <set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="8261-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Can mount a Gold Maned Lion when equipped. -->
+    <item id="20536" type="Armor" name="Mount - Gold Maned Lion - 30-day">
+        <set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="rbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="8262-1" />
+        <set name="time" val="43200" />
+    </item>
+    <!-- Afro style hair. Uses 2 hair accessory slots. Vitality cooldown 12 hour. Vitality item with limited usage. -->
+    <item id="20537" type="Armor" name="Afro Hair - Vitality (7-day)">
+        <set name="icon" val="BranchSys.icon.br_Afro_hair_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21011-1" />
+        <set name="time" val="10080" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Magic horn-rimmed glasses with mysterious power. Vitality cooldown 12 hour. Vitality item with limited usage. -->
+    <item id="20538" type="Armor" name="Horn-rimmed Glasses - Vitality (7-day)">
+        <set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hair" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21012-1" />
+        <set name="time" val="10080" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wide brimmed hat made of bamboo. Uses 2 hair accessory slots. Vitality cooldown 12 hour. Vitality item with limited usage. -->
+    <item id="20539" type="Armor" name="Assassin's Bamboo Hat - Vitality (7-day)">
+        <set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21013-1" />
+        <set name="time" val="10080" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Mount - Steam Beetle (30-day). -->
+    <item id="20540" type="EtcItem" name="Mount - Steam Beetle Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20535,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Mount - Gold Maned Lion (30-day). -->
+    <item id="20541" type="EtcItem" name="Mount - Gold Maned Lion Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20536,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Afro Hair (7-day). -->
+    <item id="20542" type="EtcItem" name="Afro Hair Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20537,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Horn-rimmed Glasses (7-day). -->
+    <item id="20543" type="EtcItem" name="Horn-rimmed Glasses Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20538,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Assassin's Bamboo Hat (7-day). -->
+    <item id="20544" type="EtcItem" name="Assassin's Bamboo Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20539,1,1,100" />
+    </item>
+    <!-- Delicious beverage made with rare fruits. Increases Atk. Spd. by 33% when used. -->
+    <item id="20545" type="EtcItem" name="Haste Potion">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="2429-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Delicious beverage made with rare fruits. P. Critical Rate increases by 30% when used. -->
+    <item id="20546" type="EtcItem" name="Critical Rate Juice">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="2432-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Delicious juice made with rare fruits. It is very light. Speed increases by 33 when used. -->
+    <item id="20547" type="EtcItem" name="Wind Walk Juice">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="item_skill" val="2437-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (5-hour). Timer starts once package is opened. -->
+    <item id="20548" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20335,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (5-hour). -->
+    <item id="20549" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20336,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (10-hour). -->
+    <item id="20550" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20337,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (10-hour). -->
+    <item id="20551" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20338,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (7-day). -->
+    <item id="20552" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20339,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (7-day). -->
+    <item id="20553" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20340,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 30% (5-hour). -->
+    <item id="20554" type="EtcItem" name="SP Rune 30% Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20341,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 50% (5-hour). -->
+    <item id="20555" type="EtcItem" name="SP Rune 50% Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20342,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 30% (10-hour). -->
+    <item id="20556" type="EtcItem" name="SP Rune 30% Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20343,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 50% (10-hour). -->
+    <item id="20557" type="EtcItem" name="SP Rune 50% Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20344,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 30% (7-day). -->
+    <item id="20558" type="EtcItem" name="SP Rune 30% Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20345,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing SP Rune 50% (7-day). -->
+    <item id="20559" type="EtcItem" name="SP Rune 50% Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20346,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (5-hour). -->
+    <item id="20560" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20347,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (5-hour). -->
+    <item id="20561" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (5-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20348,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (10-hour). -->
+    <item id="20562" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20349,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (5-hour). -->
+    <item id="20563" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (10-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20350,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 3) (7-day). -->
+    <item id="20564" type="EtcItem" name="Rune of Crystal (Lv. 3) Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20351,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Crystal (Lv. 5) (7-day). -->
+    <item id="20565" type="EtcItem" name="Rune of Crystal (Lv. 5) Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20352,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Rune of Feather (24-hour). -->
+    <item id="20566" type="EtcItem" name="Rune of Feather Pack (24-hour)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="22066,1,1,100" />
+    </item>
+    <!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
+    <item id="20567" type="Armor" name="Eva's Circlet (Event) - 3-day">
+        <set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21087-1" />
+        <set name="time" val="4320" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
+    <item id="20568" type="Armor" name="Eva's Circlet - 7-day">
+        <set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21087-1" />
+        <set name="time" val="10080" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet containing Eva's mysterious power. Uses 2 accessory slots. -->
+    <item id="20569" type="Armor" name="Eva's Circlet">
+        <set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
+    <item id="20570" type="EtcItem" name="Eva's Rune (Event) - 5-hour">
+        <set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22091-1" />
+        <set name="time" val="300" />
+    </item>
+    <!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
+    <item id="20571" type="EtcItem" name="Eva's Rune (Event) - 3-day">
+        <set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22091-1" />
+        <set name="time" val="4320" />
+    </item>
+    <!-- Ancient charm endowed with mysterious symbols. When held in your inventory, increases acquired XP by 30%. The timer decreases even during log-off state. Only one XP Rune can be applied at any given time regardless of additional XP Runes in ones inventory. -->
+    <item id="20572" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% - 3-hour">
+        <set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+        <set name="etcitem_type" val="rune" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22039-1" />
+        <set name="time" val="180" />
+    </item>
+    <!-- Mysterious box containing the blessings of Eva. -->
+    <item id="20573" type="EtcItem" name="Small Scroll Chest (Event)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Mysterious box containing the blessings of Eva. -->
+    <item id="20574" type="EtcItem" name="Large Scroll Chest (Event)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Mysterious box containing the blessings of Eva. -->
+    <item id="20575" type="EtcItem" name="Chest of Experience (Event)">
+        <set name="icon" val="icon.etc_box_of_adventure_1_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="capsuled_items" val="20342,1,1,100;20336,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Eva's Circlet (3-day). The timer starts once the box is opened. -->
+    <item id="20576" type="EtcItem" name="Eva's Circlet Pack (3-day) (Event)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="20567,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Eva's Circlet (7-day). -->
+    <item id="20577" type="EtcItem" name="Eva's Circlet Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20568,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Eva's Circlet. -->
+    <item id="20578" type="EtcItem" name="Eva's Circlet Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20569,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Eva's Rune (5-hour). The timer start once the box is opened. -->
+    <item id="20579" type="EtcItem" name="Eva's Rune Pack (5-hour) (Event)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="20570,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Eva's Rune (3-day). The timer start once the box is opened. -->
+    <item id="20580" type="EtcItem" name="Eva's Rune Pack (3-day) (Event)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="20571,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 30% (3-hour). The timer start once the box is opened. -->
+    <item id="20581" type="EtcItem" name="XP Rune III (Lv. 1-99) 30% Pack (3-hour) (Event)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="20572,1,1,100" />
+    </item>
+    <!-- Delicious beverage made with rare fruits. P. Atk. + 15% for 60 minutes when used. -->
+    <item id="20582" type="EtcItem" name="P. Atk. Potion">
+        <set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="1" />
+        <set name="reuse_delay" val="3000" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="2436-1" />
+        <set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+    </item>
+    <!-- Magical scroll that relocates you to the nearest village. -->
+    <item id="20583" type="EtcItem" name="Blessed Scroll of Escape (Event)">
+        <set name="icon" val="icon.etc_scroll_of_return_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22103-1" />
+    </item>
+    <!-- Magical scroll that resurrects a dead character and restores his or her XP completely. -->
+    <item id="20584" type="EtcItem" name="Blessed Scroll of Resurrection (Event)">
+        <set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="120" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22104-1" />
+    </item>
+    <!-- Double-click to summon a Fire Spirit. -->
+    <item id="20585" type="EtcItem" name="Seed of Fire (Event)">
+        <set name="icon" val="BranchSys.icon.br_seed_of_fire_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="10" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22095-1" />
+    </item>
+    <!-- Double-click to summon an explosive Fire Spirit. -->
+    <item id="20586" type="EtcItem" name="Explosive Seed of Fire (Event)">
+        <set name="icon" val="BranchSys.icon.br_seed_of_explosive_fire_i00" />
+        <set name="default_action" val="skill_reduce" />
+        <set name="etcitem_type" val="scroll" />
+        <set name="weight" val="10" />
+        <set name="is_stackable" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="handler" val="ItemSkills" />
+        <set name="item_skill" val="22096-1" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Weaver. -->
+    <item id="20587" type="EtcItem" name="Agathion - Weaver Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20591,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Weaver (24-hour). -->
+    <item id="20588" type="EtcItem" name="Agathion - Weaver Pack (24-hour) - Power of the Golden Calf">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20592,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Agathion - Weaver (3-day). -->
+    <item id="20589" type="EtcItem" name="Agathion - Weaver Pack (3-day) - Power of the Golden Calf">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20593,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Summon of Love Bracelet (24-hour). -->
+    <item id="20590" type="EtcItem" name="Summon of Love Bracelet Pack (24-hour) (Event)">
+        <set name="icon" val="icon.etc_pi_gift_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="capsuled_items" val="20594,1,1,100" />
+    </item>
+    <!-- Bracelet that summons an Agathion - Weaver. -->
+    <item id="20591" type="Armor" name="Agathion - Weaver">
+        <set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21091-1;23076-1" />
+    </item>
+    <!-- Bracelet that summons an Agathion - Weaver. -->
+    <item id="20592" type="Armor" name="Agathion - Weaver - Power of the Golden Calf (24-hour)">
+        <set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21091-1;23077-1" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Bracelet that summons an Agathion - Weaver. -->
+    <item id="20593" type="Armor" name="Agathion - Weaver - Power of the Golden Calf (3-day)">
+        <set name="icon" val="BranchSys.icon.br_aga_womanweaver_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="150" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_premium" val="true" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="unequip_skill" val="3267-1" />
+        <set name="item_skill" val="3267-1;21091-1;23077-1" />
+        <set name="time" val="4320" />
+    </item>
+    <!-- Bracelet that can summon a lover. The summon is possible when the summoner and the one being summoned are all party members who are equipped with the Summon of Love Bracelet. -->
+    <item id="20594" type="Armor" name="Summon of Love Bracelet (Event) - 24-hour">
+        <set name="icon" val="BranchSys.icon.br_ring_of_friendship_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="lbracelet" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="21088-1" />
+        <set name="time" val="1440" />
+    </item>
+    <!-- Thank you gift that helps the warrior occupation series. -->
+    <item id="20595" type="EtcItem" name="Girl's Gift of Gratitude">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22097-1" />
+    </item>
+    <!-- Thank you gift that helps the wizard occupation series. -->
+    <item id="20596" type="EtcItem" name="Boy's Gift of Gratitude">
+        <set name="immediate_effect" val="1" />
+        <set name="ex_immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="isOlyRestricted" val="true" />
+        <set name="item_skill" val="22098-1" />
+    </item>
+    <!-- Soulstone that is consumed for an Agathion - Weaver's special skill. -->
+    <item id="20597" type="EtcItem" name="Girl's Soulstone">
+        <set name="icon" val="BranchSys.icon.br_sevenlove_stone_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Shadow Staff (7-day). -->
+    <item id="20598" type="EtcItem" name="Twilight Staff Pack (7-day) - Dance of Shadow">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20600,1,1,100" />
+    </item>
+    <!-- Wrapped Pack containing Anniversary Hat (7-day). -->
+    <item id="20599" type="EtcItem" name="Anniversary Hat Pack (7-day) - Soul of Phoenix">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="default_action" val="peel" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="100" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_depositable" val="false" />
+        <set name="is_stackable" val="true" />
+        <set name="is_premium" val="true" />
+        <set name="capsuled_items" val="20601,1,1,100" />
+    </item>
 </list>

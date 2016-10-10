@@ -28,26 +28,28 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionTargetRaceId extends Condition
 {
-	private final ArrayList<Integer> _raceIds;
-	
-	/**
-	 * Instantiates a new condition target race id.
-	 *
-	 * @param raceId the race id
-	 */
-	public ConditionTargetRaceId(ArrayList<Integer> raceId)
-	{
-		_raceIds = raceId;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-	 */
-	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.target instanceof L2Npc))
-			return false;
-		return _raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
-	}
+    private final ArrayList<Integer> _raceIds;
+
+    /**
+     * Instantiates a new condition target race id.
+     *
+     * @param raceId the race id
+     */
+    public ConditionTargetRaceId(ArrayList<Integer> raceId)
+    {
+        _raceIds = raceId;
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+     */
+    @Override
+    public boolean testImpl(Env env)
+    {
+        if (!(env.target instanceof L2Npc))
+        {
+            return false;
+        }
+        return _raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
+    }
 }

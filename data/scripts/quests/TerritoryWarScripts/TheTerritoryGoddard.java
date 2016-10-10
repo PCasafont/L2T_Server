@@ -16,25 +16,24 @@
 package quests.TerritoryWarScripts;
 
 /**
- *
  * @author Gigiikun
  */
 
 public class TheTerritoryGoddard extends TerritoryWarSuperClass
 {
-	public static String qn1 = "723_FortheSakeoftheTerritoryGoddard";
-	public static int qnu = 723;
-	public static String qna = "For the Sake of the Territory - Goddard";
-	
-	public TheTerritoryGoddard()
-	{
-		super(qnu, qn1, qna);
-		CATAPULT_ID = 36505;
-		TERRITORY_ID = 87;
-		LEADER_IDS = new int[] { 36544, 36546, 36549, 36597 };
-		GUARD_IDS = new int[] { 36545, 36547, 36548 };
-		qn = qn1;
-		Text = new String[] { "The catapult of Goddard has been destroyed!" };
-		registerKillIds();
-	}
+    public static String qn1 = "723_FortheSakeoftheTerritoryGoddard";
+    public static int qnu = 723;
+    public static String qna = "For the Sake of the Territory - Goddard";
+
+    public TheTerritoryGoddard()
+    {
+        super(qnu, qn1, qna);
+        CATAPULT_ID = 36505;
+        TERRITORY_ID = 87;
+        LEADER_IDS = new int[]{36544, 36546, 36549, 36597};
+        GUARD_IDS = new int[]{36545, 36547, 36548};
+        qn = qn1;
+        Text = new String[]{"The catapult of Goddard has been destroyed!"};
+        registerKillIds();
+    }
 }

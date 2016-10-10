@@ -27,46 +27,52 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public final class ExShowBeautyList extends L2GameServerPacket
 {
-	private long _adena;
-	private long _tickets;
-	private boolean _isFace;
-	
-	public ExShowBeautyList(long adena, long tickets, boolean isFace)
-	{
-		_adena = adena;
-		_tickets = tickets;
-		_isFace = isFace;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		
-		writeQ(_adena);
-		writeQ(_tickets);
-		
-		writeD(_isFace ? 1 : 0);
-		
-		Map<Integer, BeautyInfo> styles = null;
-		if (!_isFace)
-			styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
-		else
-			styles = BeautyTable.getInstance().getTemplate(0).getFaceStyles();
-		
-		writeD(styles.size());
-		
-		for (int id : styles.keySet())
-		{
-			writeD(id);
-			writeD(99999999); // Remaining units
-		}
-		
-		writeD(0);
-		/*writeD(styles.size()); // For now ignore the already bought ones
+    private long _adena;
+    private long _tickets;
+    private boolean _isFace;
+
+    public ExShowBeautyList(long adena, long tickets, boolean isFace)
+    {
+        _adena = adena;
+        _tickets = tickets;
+        _isFace = isFace;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        writeQ(_adena);
+        writeQ(_tickets);
+
+        writeD(_isFace ? 1 : 0);
+
+        Map<Integer, BeautyInfo> styles = null;
+        if (!_isFace)
+        {
+            styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
+        }
+        else
+        {
+            styles = BeautyTable.getInstance().getTemplate(0).getFaceStyles();
+        }
+
+        writeD(styles.size());
+
+        for (int id : styles.keySet())
+        {
+            writeD(id);
+            writeD(99999999); // Remaining units
+        }
+
+        writeD(0);
+        /*writeD(styles.size()); // For now ignore the already bought ones
 
 		for (int id : styles.keySet())
 		{
@@ -74,5 +80,5 @@ public final class ExShowBeautyList extends L2GameServerPacket
 			writeD(1);
 			writeD(101);
 		}*/
-	}
+    }
 }

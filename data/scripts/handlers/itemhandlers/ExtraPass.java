@@ -27,50 +27,55 @@ import l2server.gameserver.stats.SkillHolder;
 
 public class ExtraPass implements IItemHandler
 {
-	/**
-	 *
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		SkillHolder[] skills = item.getItem().getSkills();
-		if (skills == null)
-			return;
-		
-		L2Skill instanceSkill = skills[0].getSkill();
-		if (instanceSkill == null)
-			return;
-		
-		if (activeChar.isSkillDisabled(instanceSkill))
-		{
-			activeChar.sendMessage(item.getName() + " is currently under reuse!");
-			return;
-		}
-		
-		int instanceId = (int) instanceSkill.getPower();
-		Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
-		if (_instanceTimes.isEmpty() || !_instanceTimes.containsKey(instanceId))
-		{
-			activeChar.sendMessage("You don't have reuse!");
-			return;
-		}
-		
-		for (int instId : _instanceTimes.keySet())
-		{
-			if (instId == instanceId)
-			{
-				activeChar.doCast(instanceSkill);
-				InstanceManager.getInstance().deleteInstanceTime(activeChar.getObjectId(), instId);
-				break;
-			}
-		}
-		
-		activeChar.sendMessage("Instance reuse were restarted!");
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    @Override
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) playable;
+
+        SkillHolder[] skills = item.getItem().getSkills();
+        if (skills == null)
+        {
+            return;
+        }
+
+        L2Skill instanceSkill = skills[0].getSkill();
+        if (instanceSkill == null)
+        {
+            return;
+        }
+
+        if (activeChar.isSkillDisabled(instanceSkill))
+        {
+            activeChar.sendMessage(item.getName() + " is currently under reuse!");
+            return;
+        }
+
+        int instanceId = (int) instanceSkill.getPower();
+        Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
+        if (_instanceTimes.isEmpty() || !_instanceTimes.containsKey(instanceId))
+        {
+            activeChar.sendMessage("You don't have reuse!");
+            return;
+        }
+
+        for (int instId : _instanceTimes.keySet())
+        {
+            if (instId == instanceId)
+            {
+                activeChar.doCast(instanceSkill);
+                InstanceManager.getInstance().deleteInstanceTime(activeChar.getObjectId(), instId);
+                break;
+            }
+        }
+
+        activeChar.sendMessage("Instance reuse were restarted!");
+    }
 }

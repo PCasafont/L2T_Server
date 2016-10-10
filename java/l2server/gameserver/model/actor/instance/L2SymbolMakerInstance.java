@@ -21,24 +21,24 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SymbolMakerInstance extends L2Npc
 {
-	public L2SymbolMakerInstance(int objectID, L2NpcTemplate template)
-	{
-		super(objectID, template);
-		setInstanceType(InstanceType.L2SymbolMakerInstance);
-	}
-	
-	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
-		return "symbolmaker/SymbolMaker.htm";
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.model.L2Object#isAttackable()
-	 */
-	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
-		return false;
-	}
+    public L2SymbolMakerInstance(int objectID, L2NpcTemplate template)
+    {
+        super(objectID, template);
+        setInstanceType(InstanceType.L2SymbolMakerInstance);
+    }
+
+    @Override
+    public String getHtmlPath(int npcId, int val)
+    {
+        return "symbolmaker/SymbolMaker.htm";
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.model.L2Object#isAttackable()
+     */
+    @Override
+    public boolean isAutoAttackable(L2Character attacker)
+    {
+        return false;
+    }
 }

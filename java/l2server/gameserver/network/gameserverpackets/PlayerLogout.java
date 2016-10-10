@@ -21,23 +21,21 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author -Wooden-
- *
  */
 public class PlayerLogout extends BaseSendablePacket
 {
-	public PlayerLogout(String player)
-	{
-		writeC(0x03);
-		writeS(player);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
-	 */
-	@Override
-	public byte[] getContent() throws IOException
-	{
-		return getBytes();
-	}
-	
+    public PlayerLogout(String player)
+    {
+        writeC(0x03);
+        writeS(player);
+    }
+
+    /* (non-Javadoc)
+     * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
+     */
+    @Override
+    public byte[] getContent() throws IOException
+    {
+        return getBytes();
+    }
 }

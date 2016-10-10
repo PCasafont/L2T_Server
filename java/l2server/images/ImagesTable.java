@@ -24,25 +24,25 @@ import javax.swing.ImageIcon;
  * Usage of this class causes images to be loaded and kept in memory, and therefore should only be used by helper applications.
  * Some icons from famfamfam (http://www.famfamfam.com/) credit *MUST* be given.
  *
- * @author  KenM
+ * @author KenM
  */
 public class ImagesTable
 {
-	private static final Map<String, ImageIcon> IMAGES = new HashMap<String, ImageIcon>();
-	
-	public static final String IMAGES_DIRECTORY = "../images/";
-	
-	public static ImageIcon getImage(String name)
-	{
-		if (!IMAGES.containsKey(name))
-		{
-			IMAGES.put(name, new ImageIcon(IMAGES_DIRECTORY + name));
-		}
-		return IMAGES.get(name);
-	}
-	
-	private ImagesTable()
-	{
-		//none
-	}
+    private static final Map<String, ImageIcon> IMAGES = new HashMap<String, ImageIcon>();
+
+    public static final String IMAGES_DIRECTORY = "../images/";
+
+    public static ImageIcon getImage(String name)
+    {
+        if (!IMAGES.containsKey(name))
+        {
+            IMAGES.put(name, new ImageIcon(IMAGES_DIRECTORY + name));
+        }
+        return IMAGES.get(name);
+    }
+
+    private ImagesTable()
+    {
+        //none
+    }
 }

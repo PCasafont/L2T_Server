@@ -29,35 +29,38 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ScrollOfPkReduce implements IItemHandler
 {
-	/**
-	 * 
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-			return;
-		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		L2Skill itemSkill = item.getItem().getSkills()[0].getSkill();
-		
-		int power = (int)itemSkill.getPower();
-		
-		if (activeChar.getPkKills() < power)
-			return;
-		
-		activeChar.setPkKills(activeChar.getPkKills() - power);
-		
-		L2Skill skill = SkillTable.getInstance().getInfo(itemSkill.getId(), itemSkill.getLevel());
-		activeChar.useMagic(skill, true, true);
-						
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
-		sm.addItemName(item);
-		activeChar.sendPacket(sm);
-		
-		activeChar.broadcastUserInfo();
-		
-		activeChar.sendMessage("PK count reduced by: " + power);
-	}
+    /**
+     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+     */
+    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+    {
+        if (!(playable instanceof L2PcInstance))
+        {
+            return;
+        }
+
+        L2PcInstance activeChar = (L2PcInstance) playable;
+
+        L2Skill itemSkill = item.getItem().getSkills()[0].getSkill();
+
+        int power = (int) itemSkill.getPower();
+
+        if (activeChar.getPkKills() < power)
+        {
+            return;
+        }
+
+        activeChar.setPkKills(activeChar.getPkKills() - power);
+
+        L2Skill skill = SkillTable.getInstance().getInfo(itemSkill.getId(), itemSkill.getLevel());
+        activeChar.useMagic(skill, true, true);
+
+        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
+        sm.addItemName(item);
+        activeChar.sendPacket(sm);
+
+        activeChar.broadcastUserInfo();
+
+        activeChar.sendMessage("PK count reduced by: " + power);
+    }
 }

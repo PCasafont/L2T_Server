@@ -32,15 +32,15 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class Item
 {
-	public int id;
-	
-	public String type;
-	
-	public String name;
-	
-	public StatsSet set;
-	
-	public int currentLevel;
-	
-	public L2Item item;
+    public int id;
+
+    public String type;
+
+    public String name;
+
+    public StatsSet set;
+
+    public int currentLevel;
+
+    public L2Item item;
 }

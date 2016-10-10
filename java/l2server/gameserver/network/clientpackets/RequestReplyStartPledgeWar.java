@@ -27,37 +27,41 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestReplyStartPledgeWar extends L2GameClientPacket
 {
-	//
-	
-	private int _answer;
-	
-	@Override
-	protected void readImpl()
-	{
-		@SuppressWarnings("unused")
-		String _reqName = readS();
-		_answer = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-			return;
-		L2PcInstance requestor = activeChar.getActiveRequester();
-		if (requestor == null)
-			return;
-		
-		if (_answer == 1)
-		{
-			ClanWarManager.getInstance().storeClansWars(requestor.getClanId(), activeChar.getClanId(), requestor.getObjectId());
-		}
-		else
-		{
-			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_PROCLAMATION_HAS_BEEN_REFUSED));
-		}
-		activeChar.setActiveRequester(null);
-		requestor.onTransactionResponse();
-	}
+    //
+
+    private int _answer;
+
+    @Override
+    protected void readImpl()
+    {
+        @SuppressWarnings("unused") String _reqName = readS();
+        _answer = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        L2PcInstance activeChar = getClient().getActiveChar();
+        if (activeChar == null)
+        {
+            return;
+        }
+        L2PcInstance requestor = activeChar.getActiveRequester();
+        if (requestor == null)
+        {
+            return;
+        }
+
+        if (_answer == 1)
+        {
+            ClanWarManager.getInstance()
+                    .storeClansWars(requestor.getClanId(), activeChar.getClanId(), requestor.getObjectId());
+        }
+        else
+        {
+            requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_PROCLAMATION_HAS_BEEN_REFUSED));
+        }
+        activeChar.setActiveRequester(null);
+        requestor.onTransactionResponse();
+    }
 }

@@ -30,55 +30,52 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectClanGate extends L2Effect
 {
-	public EffectClanGate(Env env, L2EffectTemplate template)
-	{
-		super(env, template);
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
-	 */
-	@Override
-	public boolean onStart()
-	{
-		getEffected().startVisualEffect(VisualEffect.MAGIC_CIRCLE);
-		if (getEffected() instanceof L2PcInstance)
-		{
-			L2Clan clan = ((L2PcInstance) getEffected()).getClan();
-			if (clan != null)
-			{
-				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
-				clan.broadcastToOtherOnlineMembers(msg, (L2PcInstance) getEffected());
-			}
-		}
-		
-		return true;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-	 */
-	@Override
-	public boolean onActionTime()
-	{
-		return false;
-	}
-	
-	/**
-	 *
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
-	 */
-	@Override
-	public void onExit()
-	{
-		getEffected().stopVisualEffect(VisualEffect.MAGIC_CIRCLE);
-	}
-	
-	@Override
-	public L2AbnormalType getAbnormalType()
-	{
-		return L2AbnormalType.CLAN_GATE;
-	}
+    public EffectClanGate(Env env, L2EffectTemplate template)
+    {
+        super(env, template);
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onStart()
+     */
+    @Override
+    public boolean onStart()
+    {
+        getEffected().startVisualEffect(VisualEffect.MAGIC_CIRCLE);
+        if (getEffected() instanceof L2PcInstance)
+        {
+            L2Clan clan = ((L2PcInstance) getEffected()).getClan();
+            if (clan != null)
+            {
+                SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
+                clan.broadcastToOtherOnlineMembers(msg, (L2PcInstance) getEffected());
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+     */
+    @Override
+    public boolean onActionTime()
+    {
+        return false;
+    }
+
+    /**
+     * @see l2server.gameserver.model.L2Abnormal#onExit()
+     */
+    @Override
+    public void onExit()
+    {
+        getEffected().stopVisualEffect(VisualEffect.MAGIC_CIRCLE);
+    }
+
+    @Override
+    public L2AbnormalType getAbnormalType()
+    {
+        return L2AbnormalType.CLAN_GATE;
+    }
 }

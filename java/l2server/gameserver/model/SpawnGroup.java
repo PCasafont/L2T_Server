@@ -15,98 +15,95 @@
 
 package l2server.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import l2server.Config;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Pere
  */
 public class SpawnGroup
 {
-	private final int _minZ;
-	private final int _maxZ;
-	private final L2Territory _territory = new L2Territory(0);
-	private final List<L2Spawn> _spawns = new ArrayList<L2Spawn>();
-	
-	public SpawnGroup(XmlNode node)
-	{
-		_minZ = node.getInt("minZ");
-		_maxZ = node.getInt("maxZ");
-		for (XmlNode subNode : node.getChildren())
-		{
-			if (subNode.getName().equalsIgnoreCase("vertex"))
-			{
-				int x = subNode.getInt("x");
-				int y = subNode.getInt("y");
-				_territory.add(x, y, _minZ, _maxZ, 0);
-			}
-			else if (subNode.getName().equalsIgnoreCase("spawn"))
-			{
-				int npcId = subNode.getInt("npcId");
-				int amount = subNode.getInt("amount");
-				int respawn = subNode.getInt("respawn");
-				int randomRespawn = subNode.getInt("randomRespawn", 0);
-				String dbName = subNode.getString("dbName", null);
-				
-				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
-				if (t == null)
-				{
-					Log.warning("Spawn group: no npc template with id " + npcId);
-					continue;
-				}
-				else if (t.Type.equals("L2Defender") && Config.isServer(Config.DREAMS))
-					continue;
-				
-				for (int i = 0; i < amount; i++)
-				{
-					try
-					{
-						L2Spawn spawn = new L2Spawn(t);
-						spawn.setRespawnDelay(respawn);
-						spawn.setRandomRespawnDelay(randomRespawn);
-						spawn.startRespawn();
-						spawn.setGroup(this);
-						spawn.setDbName(dbName);
-						
-						spawn.doSpawn();
-						
-						_spawns.add(spawn);
-						
-						if (t.Type.equals("L2Monster"))
-						{
-							t.addKnownSpawn(spawn);
-						}
-					}
-					catch (Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
-				
-				SearchDropManager.getInstance().addLootInfo(t, true);
-			}
-		}
-	}
-	
-	public int[] getRandomPoint()
-	{
-		return _territory.getRandomPoint();
-	}
-	
-	public L2Territory getTerritory()
-	{
-		return _territory;
-	}
-	
-	public List<L2Spawn> getSpawns()
-	{
-		return _spawns;
-	}
+    private final int _minZ;
+    private final int _maxZ;
+    private final L2Territory _territory = new L2Territory(0);
+    private final List<L2Spawn> _spawns = new ArrayList<L2Spawn>();
+
+    public SpawnGroup(XmlNode node)
+    {
+        _minZ = node.getInt("minZ");
+        _maxZ = node.getInt("maxZ");
+        for (XmlNode subNode : node.getChildren())
+        {
+            if (subNode.getName().equalsIgnoreCase("vertex"))
+            {
+                int x = subNode.getInt("x");
+                int y = subNode.getInt("y");
+                _territory.add(x, y, _minZ, _maxZ, 0);
+            }
+            else if (subNode.getName().equalsIgnoreCase("spawn"))
+            {
+                int npcId = subNode.getInt("npcId");
+                int amount = subNode.getInt("amount");
+                int respawn = subNode.getInt("respawn");
+                int randomRespawn = subNode.getInt("randomRespawn", 0);
+                String dbName = subNode.getString("dbName", null);
+
+                L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
+                if (t == null)
+                {
+                    Log.warning("Spawn group: no npc template with id " + npcId);
+                    continue;
+                }
+
+                for (int i = 0; i < amount; i++)
+                {
+                    try
+                    {
+                        L2Spawn spawn = new L2Spawn(t);
+                        spawn.setRespawnDelay(respawn);
+                        spawn.setRandomRespawnDelay(randomRespawn);
+                        spawn.startRespawn();
+                        spawn.setGroup(this);
+                        spawn.setDbName(dbName);
+
+                        spawn.doSpawn();
+
+                        _spawns.add(spawn);
+
+                        if (t.Type.equals("L2Monster"))
+                        {
+                            t.addKnownSpawn(spawn);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+
+                SearchDropManager.getInstance().addLootInfo(t, true);
+            }
+        }
+    }
+
+    public int[] getRandomPoint()
+    {
+        return _territory.getRandomPoint();
+    }
+
+    public L2Territory getTerritory()
+    {
+        return _territory;
+    }
+
+    public List<L2Spawn> getSpawns()
+    {
+        return _spawns;
+    }
 }

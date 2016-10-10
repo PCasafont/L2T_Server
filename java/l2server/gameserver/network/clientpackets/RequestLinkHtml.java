@@ -23,42 +23,44 @@ import l2server.log.Log;
 
 /**
  * @author zabbix
- * Lets drink to code!
+ *         Lets drink to code!
  */
 public final class RequestLinkHtml extends L2GameClientPacket
 {
-	
-	private String _link;
-	
-	@Override
-	protected void readImpl()
-	{
-		_link = readS();
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		L2PcInstance actor = getClient().getActiveChar();
-		if (actor == null)
-			return;
-		
-		if (_link.contains("..") || !_link.contains(".htm"))
-		{
-			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + _link + "', skipped");
-			return;
-		}
-		try
-		{
-			String filename = "" + _link;
-			NpcHtmlMessage msg = new NpcHtmlMessage(0);
-			msg.disableValidation();
-			msg.setFile(actor.getHtmlPrefix(), filename);
-			sendPacket(msg);
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Bad RequestLinkHtml: ", e);
-		}
-	}
+
+    private String _link;
+
+    @Override
+    protected void readImpl()
+    {
+        _link = readS();
+    }
+
+    @Override
+    public void runImpl()
+    {
+        L2PcInstance actor = getClient().getActiveChar();
+        if (actor == null)
+        {
+            return;
+        }
+
+        if (_link.contains("..") || !_link.contains(".htm"))
+        {
+            Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + _link + "', skipped");
+            return;
+        }
+        try
+        {
+            String filename = "" + _link;
+            NpcHtmlMessage msg = new NpcHtmlMessage(0);
+            msg.disableValidation();
+            msg.setFile(actor.getHtmlPrefix(), filename);
+            sendPacket(msg);
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Bad RequestLinkHtml: ", e);
+        }
+    }
 }

@@ -27,34 +27,36 @@ import l2server.gameserver.cache.CrestCache;
  * 0030: ...
  * 0530: 10 91 00 00 00 60 9b d1 01 e4 6e ee 52 97 dd	   .....`....n.R..
  * </code>
- *
- *
+ * <p>
+ * <p>
  * format   dd x...x
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
 public class AllyCrest extends L2GameServerPacket
 {
-	private int _crestId;
-	private byte[] _data;
-	
-	public AllyCrest(int crestId)
-	{
-		_crestId = crestId;
-		_data = CrestCache.getInstance().getAllyCrest(_crestId);
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(Config.SERVER_ID); // server id?
-		writeD(_crestId);
-		if (_data != null)
-		{
-			writeD(_data.length);
-			writeB(_data);
-		}
-		else
-			writeD(0);
-	}
+    private int _crestId;
+    private byte[] _data;
+
+    public AllyCrest(int crestId)
+    {
+        _crestId = crestId;
+        _data = CrestCache.getInstance().getAllyCrest(_crestId);
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(Config.SERVER_ID); // server id?
+        writeD(_crestId);
+        if (_data != null)
+        {
+            writeD(_data.length);
+            writeB(_data);
+        }
+        else
+        {
+            writeD(0);
+        }
+    }
 }

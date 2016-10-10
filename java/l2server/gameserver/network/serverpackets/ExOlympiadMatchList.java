@@ -26,47 +26,53 @@ import l2server.gameserver.model.olympiad.OlympiadGameTask;
  * d: number of matches
  * d: unknown (always 0)
  * [
- *  d: arena
- *  d: match type
- *  d: status
- *  S: player 1 name
- *  S: player 2 name
+ * d: arena
+ * d: match type
+ * d: status
+ * S: player 1 name
+ * S: player 2 name
  * ]
  *
  * @author mrTJO
  */
 public class ExOlympiadMatchList extends L2GameServerPacket
 {
-	private final List<OlympiadGameTask> _games;
-	
-	/**
-	 * @param games: competitions list
-	 */
-	public ExOlympiadMatchList(List<OlympiadGameTask> games)
-	{
-		_games = games;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(_games.size());
-		writeD(0x00);
-		
-		for (OlympiadGameTask curGame : _games)
-		{
-			writeD(curGame.getGame().getGameId()); // Stadium Id (Arena 1 = 0)
-			
-			if (curGame.getGame() instanceof OlympiadGameNonClassed)
-				writeD(1);
-			else if (curGame.getGame() instanceof OlympiadGameClassed)
-				writeD(2);
-			else
-				writeD(0);
-			
-			writeD(curGame.isRunning() ? 0x02 : 0x01); // (1 = Standby, 2 = Playing)
-			writeS(curGame.getGame().getPlayerNames()[0]); // Player 1 Name
-			writeS(curGame.getGame().getPlayerNames()[1]); // Player 2 Name
-		}
-	}
+    private final List<OlympiadGameTask> _games;
+
+    /**
+     * @param games: competitions list
+     */
+    public ExOlympiadMatchList(List<OlympiadGameTask> games)
+    {
+        _games = games;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(_games.size());
+        writeD(0x00);
+
+        for (OlympiadGameTask curGame : _games)
+        {
+            writeD(curGame.getGame().getGameId()); // Stadium Id (Arena 1 = 0)
+
+            if (curGame.getGame() instanceof OlympiadGameNonClassed)
+            {
+                writeD(1);
+            }
+            else if (curGame.getGame() instanceof OlympiadGameClassed)
+            {
+                writeD(2);
+            }
+            else
+            {
+                writeD(0);
+            }
+
+            writeD(curGame.isRunning() ? 0x02 : 0x01); // (1 = Standby, 2 = Playing)
+            writeS(curGame.getGame().getPlayerNames()[0]); // Player 1 Name
+            writeS(curGame.getGame().getPlayerNames()[1]); // Player 2 Name
+        }
+    }
 }

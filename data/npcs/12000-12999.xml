@@ -1,292 +1,357 @@
 <list>
-	<npc id="12077" name="Wolf" level="15" type="L2Pet" atkRange="40" hpMax="390" hpReg="2.5" mpMax="191" mpReg="1.2" STR="88"
-			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279" mAtkSpd="333" pCritRate="40"
-			mCritRate="40" walkSpd="27" runSpd="138" collisionRadius="13" collisionHeight="11.5" fireRes="20" waterRes="20" windRes="20"
-			earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="4" /> <!-- Animals -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-	</npc>
-	<npc id="12311" name="Hatchling of the Wind" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5" mpMax="516"
-			mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159" pAtkSpd="279"
-			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4715" level="1" /> <!-- Wind Dragon -->
-		<skill id="4710" level="1" /> <!-- Wild Stun -->
-	</npc>
-	<npc id="12312" name="Hatchling of the Stars" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5" mpMax="516"
-			mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159" pAtkSpd="279"
-			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4716" level="1" /> <!-- Star Dragon -->
-		<skill id="4712" level="1" /> <!-- Bright Burst -->
-	</npc>
-	<npc id="12313" name="Hatchling of Twilight" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5" mpMax="516"
-			mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159" pAtkSpd="279"
-			mAtkSpd="257" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4714" level="1" /> <!-- Twilight Dragon -->
-	</npc>
-	<npc id="12526" name="Wind Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4715" level="1" /> <!-- Wind Dragon -->
-		<skill id="4710" level="1" /> <!-- Wild Stun -->
-		<skill id="4270" level="1" /> <!-- Weight Penalty -->
-	</npc>
-	<npc id="12527" name="Star Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4716" level="1" /> <!-- Star Dragon -->
-		<skill id="4712" level="1" /> <!-- Bright Burst -->
-		<skill id="4270" level="1" /> <!-- Weight Penalty -->
-	</npc>
-	<npc id="12528" name="Strider of Dusk" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4714" level="1" /> <!-- Twilight Dragon -->
-		<skill id="4270" level="1" /> <!-- Weight Penalty -->
-	</npc>
-	<npc id="12564" name="Sin Eater" level="15" type="L2Pet" atkRange="40" hpMax="193" hpReg="7.2513" mpMax="191" mpReg="1.2"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="66" runSpd="138" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="13" /> <!-- Fairies -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-	</npc>
-	<npc id="12621" name="Wyvern" level="70" type="L2Pet" atkRange="40" hpMax="3858" hpReg="7.5" mpMax="1723" mpReg="2.7" STR="88"
-			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="441" pAtkSpd="279" mAtkSpd="500"
-			pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="250" collisionHeight="80" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="10" /> <!-- Dragons -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-		<skill id="4289" level="1" /> <!-- Wyvern Breath -->
-	</npc>
-	<npc id="12774" name="Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45" mpReg="0.9" STR="88"
-			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500" pCritRate="10"
-			mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="10" collisionHeight="10.5" fireRes="20" waterRes="20" windRes="20"
-			earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12775" name="High Quality Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="23" collisionHeight="25" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12776" name="Defective Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="15" collisionHeight="16" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12777" name="Large Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="23" collisionHeight="25" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12778" name="High Quality Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0" mpMax="45"
-			mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="34" collisionHeight="40" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12779" name="Defective Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0" mpMax="45" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
-			pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="28" collisionHeight="31" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="3" /> <!-- Light Armor Type -->
-		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
-	</npc>
-	<npc id="12780" name="Baby Buffalo" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332" mpReg="1.5"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="33" runSpd="132" collisionRadius="12" collisionHeight="15" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="3" /> <!-- Beast -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="12781" name="Baby Kookaburra" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332" mpReg="1.5"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279" mAtkSpd="333"
-			pCritRate="40" mCritRate="40" walkSpd="15" runSpd="132" collisionRadius="7" collisionHeight="15" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="3" /> <!-- Beast -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
-	<npc id="12782" name="Baby Cougar" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332" mpReg="1.5"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279" mAtkSpd="257"
-			pCritRate="40" mCritRate="40" walkSpd="31" runSpd="132" collisionRadius="11" collisionHeight="15.7" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
-		<skill id="4416" level="3" /> <!-- Beast -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-	</npc>
+    <npc id="12077" name="Wolf" level="15" type="L2Pet" atkRange="40" hpMax="390" hpReg="2.5" mpMax="191" mpReg="1.2"
+         STR="88"
+         CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279"
+         mAtkSpd="333" pCritRate="40"
+         mCritRate="40" walkSpd="27" runSpd="138" collisionRadius="13" collisionHeight="11.5" fireRes="20" waterRes="20"
+         windRes="20"
+         earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+    </npc>
+    <npc id="12311" name="Hatchling of the Wind" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+         mpMax="516"
+         mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
+         pAtkSpd="279"
+         mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10"
+         fireRes="20"
+         waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15"
+         soulshots="2" spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4715" level="1" /> <!-- Wind Dragon -->
+        <skill id="4710" level="1" /> <!-- Wild Stun -->
+    </npc>
+    <npc id="12312" name="Hatchling of the Stars" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+         mpMax="516"
+         mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
+         pAtkSpd="279"
+         mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10"
+         fireRes="20"
+         waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15"
+         soulshots="2" spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4716" level="1" /> <!-- Star Dragon -->
+        <skill id="4712" level="1" /> <!-- Bright Burst -->
+    </npc>
+    <npc id="12313" name="Hatchling of Twilight" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+         mpMax="516"
+         mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
+         pAtkSpd="279"
+         mAtkSpd="257" pCritRate="40" mCritRate="40" walkSpd="88" runSpd="154" collisionRadius="9" collisionHeight="10"
+         fireRes="20"
+         waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15"
+         soulshots="2" spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4714" level="1" /> <!-- Twilight Dragon -->
+    </npc>
+    <npc id="12526" name="Wind Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+         mpReg="2.4"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4715" level="1" /> <!-- Wind Dragon -->
+        <skill id="4710" level="1" /> <!-- Wild Stun -->
+        <skill id="4270" level="1" /> <!-- Weight Penalty -->
+    </npc>
+    <npc id="12527" name="Star Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+         mpReg="2.4"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4716" level="1" /> <!-- Star Dragon -->
+        <skill id="4712" level="1" /> <!-- Bright Burst -->
+        <skill id="4270" level="1" /> <!-- Weight Penalty -->
+    </npc>
+    <npc id="12528" name="Strider of Dusk" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+         mpReg="2.4"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="23" collisionHeight="31" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4714" level="1" /> <!-- Twilight Dragon -->
+        <skill id="4270" level="1" /> <!-- Weight Penalty -->
+    </npc>
+    <npc id="12564" name="Sin Eater" level="15" type="L2Pet" atkRange="40" hpMax="193" hpReg="7.2513" mpMax="191"
+         mpReg="1.2"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="66" runSpd="138" collisionRadius="10" collisionHeight="24" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="13" /> <!-- Fairies -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+    </npc>
+    <npc id="12621" name="Wyvern" level="70" type="L2Pet" atkRange="40" hpMax="3858" hpReg="7.5" mpMax="1723"
+         mpReg="2.7" STR="88"
+         CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="441" pAtkSpd="279"
+         mAtkSpd="500"
+         pCritRate="40" mCritRate="40" walkSpd="88" runSpd="188" collisionRadius="250" collisionHeight="80" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+        <skill id="4289" level="1" /> <!-- Wyvern Breath -->
+    </npc>
+    <npc id="12774" name="Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+         mpReg="0.9" STR="88"
+         CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
+         pCritRate="10"
+         mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="10" collisionHeight="10.5" fireRes="20" waterRes="20"
+         windRes="20"
+         earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12775" name="High Quality Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+         mpReg="0.9"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
+         mAtkSpd="500"
+         pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="23" collisionHeight="25" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12776" name="Defective Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+         mpReg="0.9"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
+         mAtkSpd="500"
+         pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="15" collisionHeight="16" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12777" name="Large Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+         mpReg="0.9"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
+         mAtkSpd="500"
+         pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="23" collisionHeight="25" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12778" name="High Quality Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0"
+         mpMax="45"
+         mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33"
+         pAtkSpd="253"
+         mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="34" collisionHeight="40"
+         fireRes="20"
+         waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12779" name="Defective Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0" mpMax="45"
+         mpReg="0.9"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
+         mAtkSpd="500"
+         pCritRate="10" mCritRate="10" walkSpd="50" runSpd="100" collisionRadius="28" collisionHeight="31" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15">
+        <skill id="4416" level="19" /> <!-- Misc. -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4415" level="5" /> <!-- Blunt Weapon -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
+    </npc>
+    <npc id="12780" name="Baby Buffalo" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+         mpReg="1.5"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="33" runSpd="132" collisionRadius="12" collisionHeight="15" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="12781" name="Baby Kookaburra" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+         mpReg="1.5"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
+         mAtkSpd="333"
+         pCritRate="40" mCritRate="40" walkSpd="15" runSpd="132" collisionRadius="7" collisionHeight="15" fireRes="20"
+         waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
+    <npc id="12782" name="Baby Cougar" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+         mpReg="1.5"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
+         mAtkSpd="257"
+         pCritRate="40" mCritRate="40" walkSpd="31" runSpd="132" collisionRadius="11" collisionHeight="15.7"
+         fireRes="20" waterRes="20"
+         windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+         spiritshots="2">
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+        <skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+        <skill id="4410" level="11" /> <!-- Average P. Atk. -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="1" /> <!-- Bare Hands -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+    </npc>
 </list>

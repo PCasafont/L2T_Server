@@ -39,41 +39,40 @@ import l2server.gameserver.model.actor.L2Playable;
 
 public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T>
 {
-	public static L2ObjectSet<L2Object> createL2ObjectSet()
-	{
-		switch (Config.SET_TYPE)
-		{
-			case WorldObjectSet:
-				return new WorldObjectSet<L2Object>();
-			default:
-				return new L2ObjectHashSet<L2Object>();
-		}
-	}
-	
-	public static L2ObjectSet<L2Playable> createL2PlayerSet()
-	{
-		switch (Config.SET_TYPE)
-		{
-			case WorldObjectSet:
-				return new WorldObjectSet<L2Playable>();
-			default:
-				return new L2ObjectHashSet<L2Playable>();
-		}
-	}
-	
-	public abstract int size();
-	
-	public abstract boolean isEmpty();
-	
-	public abstract void clear();
-	
-	public abstract void put(T obj);
-	
-	public abstract void remove(T obj);
-	
-	public abstract boolean contains(T obj);
-	
-	@Override
-	public abstract Iterator<T> iterator();
-	
+    public static L2ObjectSet<L2Object> createL2ObjectSet()
+    {
+        switch (Config.SET_TYPE)
+        {
+            case WorldObjectSet:
+                return new WorldObjectSet<L2Object>();
+            default:
+                return new L2ObjectHashSet<L2Object>();
+        }
+    }
+
+    public static L2ObjectSet<L2Playable> createL2PlayerSet()
+    {
+        switch (Config.SET_TYPE)
+        {
+            case WorldObjectSet:
+                return new WorldObjectSet<L2Playable>();
+            default:
+                return new L2ObjectHashSet<L2Playable>();
+        }
+    }
+
+    public abstract int size();
+
+    public abstract boolean isEmpty();
+
+    public abstract void clear();
+
+    public abstract void put(T obj);
+
+    public abstract void remove(T obj);
+
+    public abstract boolean contains(T obj);
+
+    @Override
+    public abstract Iterator<T> iterator();
 }

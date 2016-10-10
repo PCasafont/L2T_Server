@@ -1,4 +1,3 @@
-
 package l2server.gameserver.network.clientpackets;
 
 /**
@@ -6,14 +5,14 @@ package l2server.gameserver.network.clientpackets;
  */
 public class RequestMagicSkillList extends L2GameClientPacket
 {
-	@Override
-	public void readImpl()
-	{
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		//Log.info(getType() + " packet was received from " + getClient() + ".");
-	}
+    @Override
+    public void readImpl()
+    {
+    }
+
+    @Override
+    public void runImpl()
+    {
+        //Log.info(getType() + " packet was received from " + getClient() + ".");
+    }
 }

@@ -1,1172 +1,1172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Wrapped Pack containing Kai the Cat hat. -->
-	<item id="21500" type="EtcItem" name="Kai the Cat Hat Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Hat that looks like Kai the Cat. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21501" type="Armor" name="Kai the Cat Hat - 7-day">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21502" type="Armor" name="Kai the Cat Hat - 7-day (Event)">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21503" type="Armor" name="Kai the Cat Hat - 30-day">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21504" type="Armor" name="Kai the Cat Hat - 30-day (Event)">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. Uses 2 hair accessory slots. -->
-	<item id="21505" type="Armor" name="Kai the Cat Hat">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Kai the Cat. Uses 2 hair accessory slots. -->
-	<item id="21506" type="Armor" name="Kai the Cat Hat - Event">
-		<set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Feline Queen hat (7-day). -->
-	<item id="21507" type="EtcItem" name="Feline Queen Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen hat (7-day). -->
-	<item id="21508" type="EtcItem" name="Feline Queen Hat Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen Hat (30-day). -->
-	<item id="21509" type="EtcItem" name="Feline Queen Hat Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen hat (30-day). -->
-	<item id="21510" type="EtcItem" name="Feline Queen Hat Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen hat. -->
-	<item id="21511" type="EtcItem" name="Feline Queen Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline Queen hat. -->
-	<item id="21512" type="EtcItem" name="Feline Queen Hat Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Hat that looks like Feline Queen. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21513" type="Armor" name="Feline Queen Hat - 7-day">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline Queen. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21514" type="Armor" name="Feline Queen Hat - 7-day (Event)">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline Queen. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21515" type="Armor" name="Feline Queen Hat - 30-day">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline Queen. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21516" type="Armor" name="Feline Queen Hat - 30-day (Event)">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline Queen. Uses 2 hair accessory slots. -->
-	<item id="21517" type="Armor" name="Feline Queen Hat">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline Queen. Uses 2 hair accessory slots. -->
-	<item id="21518" type="Armor" name="Feline Queen Hat - Event">
-		<set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Feline King hat (7-day). -->
-	<item id="21519" type="EtcItem" name="Feline King Hat Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline King hat (7-day). -->
-	<item id="21520" type="EtcItem" name="Feline King Hat Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline King hat (30-day). -->
-	<item id="21521" type="EtcItem" name="Feline King Hat Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline King hat (30-day). -->
-	<item id="21522" type="EtcItem" name="Feline King Hat Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline King hat. -->
-	<item id="21523" type="EtcItem" name="Feline King Hat Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Feline King hat. -->
-	<item id="21524" type="EtcItem" name="Feline King Hat Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Hat that looks like Feline King. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21525" type="Armor" name="Feline King Hat - 7-day">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline King. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21526" type="Armor" name="Feline King Hat - 7-day (Event)">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline King. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21527" type="Armor" name="Feline King Hat - 30-day">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline King. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21528" type="Armor" name="Feline King Hat - 30-day (Event)">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline King. Uses 2 hair accessory slots. -->
-	<item id="21529" type="Armor" name="Feline King Hat">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Hat that looks like Feline King. Uses 2 hair accessory slots. -->
-	<item id="21530" type="Armor" name="Feline King Hat - Event">
-		<set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing ribbon hairband (7-day). -->
-	<item id="21531" type="EtcItem" name="Ribbon Hairband Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ribbon hairband (7-day). -->
-	<item id="21532" type="EtcItem" name="Ribbon Hairband Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Ribbon Hairband (30-day). Females only. -->
-	<item id="21533" type="EtcItem" name="Ribbon Hairband Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ribbon hairband (30-day). -->
-	<item id="21534" type="EtcItem" name="Ribbon Hairband Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ribbon hairband. -->
-	<item id="21535" type="EtcItem" name="Ribbon Hairband Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing ribbon hairband. -->
-	<item id="21536" type="EtcItem" name="Ribbon Hairband Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Large ribbon hair accessory (7-day). Females only. Uses 2 hair accessory slots. -->
-	<item id="21537" type="Armor" name="Ribbon Hairband - 7-day">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory (7-day). Females only. Uses 2 hair accessory slots. -->
-	<item id="21538" type="Armor" name="Ribbon Hairband - 7-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory (30-day). Females only. Uses 2 hair accessory slots. -->
-	<item id="21539" type="Armor" name="Ribbon Hairband - 30-day">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory (30-day). Females only. Uses 2 hair accessory slots. -->
-	<item id="21540" type="Armor" name="Ribbon Hairband - 30-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory. Females only. Uses 2 hair accessory slots. -->
-	<item id="21541" type="Armor" name="Ribbon Hairband">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Large ribbon hair accessory. Females only. Uses 2 hair accessory slots. -->
-	<item id="21542" type="Armor" name="Ribbon Hairband - Event">
-		<set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing refined dapper cap (7-day). -->
-	<item id="21543" type="EtcItem" name="Refined Dapper Cap Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing refined dapper cap (7-day). -->
-	<item id="21544" type="EtcItem" name="Refined Dapper Cap Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Refined Dapper Cap (30-day). -->
-	<item id="21545" type="EtcItem" name="Refined Dapper Cap Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing refined dapper cap (30-day). -->
-	<item id="21546" type="EtcItem" name="Refined Dapper Cap Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing refined dapper cap. -->
-	<item id="21547" type="EtcItem" name="Refined Dapper Cap Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing refined dapper cap. -->
-	<item id="21548" type="EtcItem" name="Refined Dapper Cap Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Refined dapper's hat. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21549" type="Armor" name="Refined Dapper Cap - 7-day">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined dapper's hat. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21550" type="Armor" name="Refined Dapper Cap - 7-day (Event)">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- A Refined Dapper Cap. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21551" type="Armor" name="Refined Dapper Cap - 30-day">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined dapper's hat. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21552" type="Armor" name="Refined Dapper Cap - 30-day (Event)">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined dapper's hat. Uses 2 hair accessory slots. -->
-	<item id="21553" type="Armor" name="Refined Dapper Cap">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Refined dapper's hat. Uses 2 hair accessory slots. -->
-	<item id="21554" type="Armor" name="Refined Dapper Cap - Event">
-		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing valkyrie circlet (7-day). -->
-	<item id="21555" type="EtcItem" name="Valkyrie Circlet Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing valkyrie circlet (7-day). -->
-	<item id="21556" type="EtcItem" name="Valkyrie Circlet Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing valkyrie circlet (30-day). -->
-	<item id="21557" type="EtcItem" name="Valkyrie Circlet Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing valkyrie circlet (30-day). -->
-	<item id="21558" type="EtcItem" name="Valkyrie Circlet Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing Valkyrie Circlet. -->
-	<item id="21559" type="EtcItem" name="Valkyrie Circlet Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing valkyrie circlet. -->
-	<item id="21560" type="EtcItem" name="Valkyrie Circlet Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Circlet covered with a valkyrie's strength. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21561" type="Armor" name="Valkyrie Circlet - 7-day">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet covered with a valkyrie's strength. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21562" type="Armor" name="Valkyrie Circlet - 7-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet covered with a valkyrie's strength. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21563" type="Armor" name="Valkyrie Circlet - 30-day">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet covered with a valkyrie's strength. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21564" type="Armor" name="Valkyrie Circlet - 30-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet imbued with a Valkyrie's strength. Uses 2 hair accessory slots. -->
-	<item id="21565" type="Armor" name="Valkyrie Circlet">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Circlet covered with a valkyrie's strength. Uses 2 hair accessory slots. -->
-	<item id="21566" type="Armor" name="Valkyrie Circlet - Event">
-		<set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing plastic hair (7-day). -->
-	<item id="21567" type="EtcItem" name="Plastic Hair Pack (7-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing plastic hair (7-day). -->
-	<item id="21568" type="EtcItem" name="Plastic Hair Pack (7-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing plastic hair (30-day). -->
-	<item id="21569" type="EtcItem" name="Plastic Hair Pack (30-day)">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing plastic hair (30-day). -->
-	<item id="21570" type="EtcItem" name="Plastic Hair Pack (30-day) - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing plastic hair. -->
-	<item id="21571" type="EtcItem" name="Plastic Hair Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing plastic hair. -->
-	<item id="21572" type="EtcItem" name="Plastic Hair Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21573" type="Armor" name="Plastic Hair - 7-day">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 7-day. Uses 2 hair accessory slots. -->
-	<item id="21574" type="Armor" name="Plastic Hair - 7-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21575" type="Armor" name="Plastic Hair - 30-day">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 30-day. Uses 2 hair accessory slots. -->
-	<item id="21576" type="Armor" name="Plastic Hair - 30-day (Event)">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. Uses 2 hair accessory slots. -->
-	<item id="21577" type="Armor" name="Plastic Hair">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. Uses 2 hair accessory slots. -->
-	<item id="21578" type="Armor" name="Plastic Hair - Event">
-		<set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- If you bring it to the Dimensional Merchant, you can exchange an ordinary S84-grade item for a Masterwork Item. -->
-	<item id="21579" type="EtcItem" name="Neolithic Crystal (S84-grade)">
-		<set name="icon" val="BranchSys2.icon.etc_warding_orb_gold_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="20" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Special shirt that was handcrafted by the best weavers of Aden. Can be enchanted up to + 10 with Power Shirt exclusive enchant scrolls. Each enchant level bestows the shirt with special additional bonuses. -->
-	<item id="21580" type="Armor" name="Power Shirt">
-		<set name="icon" val="BranchSys2.icon.7anni_shirt_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="chest" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="130" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<baseAdd stat="pDef" val="28" />
-		</for>
-	</item>
-	<!--
-		Enchant scroll exclusive to Power Shirts.
-		Increases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied.
-	-->
-	<item id="21581" type="EtcItem" name="Scroll: Enchant Power Shirt">
-		<set name="icon" val="BranchSys2.icon.etc_scroll_of_enchant_shirt_i01" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!--
-		Enchant scroll exclusive to Power Shirts.
-		Increases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted up to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0.
-	-->
-	<item id="21582" type="EtcItem" name="Blessed Scroll: Enchant Power Shirt">
-		<set name="icon" val="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="120" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
-	<item id="21583" type="Armor" name="Festival's Cloak - Pitch Black">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
-			<player cloakStatus="1" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<add stat="fireRes" val="7" />
-			<add stat="waterRes" val="7" />
-			<add stat="windRes" val="7" />
-			<add stat="earthRes" val="7" />
-			<add stat="holyRes" val="7" />
-			<add stat="darkRes" val="7" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Festival's Cloak - Pitch Black. -->
-	<item id="21584" type="EtcItem" name="Festival's Cloak - Pitch Black Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Cloak with the feeling of pitch black darkness. When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. -->
-	<item id="21585" type="Armor" name="Festival's Cloak - Pitch Black - Event">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
-			<player cloakStatus="1" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<add stat="fireRes" val="7" />
-			<add stat="waterRes" val="7" />
-			<add stat="windRes" val="7" />
-			<add stat="earthRes" val="7" />
-			<add stat="holyRes" val="7" />
-			<add stat="darkRes" val="7" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Festival's Cloak - True Black. -->
-	<item id="21586" type="EtcItem" name="Festival's Cloak - Pitch Black Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
-	<item id="21587" type="Armor" name="Festival's Cloak - Blood Red">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i01" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
-			<player cloakStatus="1" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<add stat="fireRes" val="7" />
-			<add stat="waterRes" val="7" />
-			<add stat="windRes" val="7" />
-			<add stat="earthRes" val="7" />
-			<add stat="holyRes" val="7" />
-			<add stat="darkRes" val="7" />
-		</for>
-	</item>
-	<!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
-	<item id="21588" type="Armor" name="Festival's Cloak - Pearl White">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
-			<player cloakStatus="1" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<add stat="fireRes" val="7" />
-			<add stat="waterRes" val="7" />
-			<add stat="windRes" val="7" />
-			<add stat="earthRes" val="7" />
-			<add stat="holyRes" val="7" />
-			<add stat="darkRes" val="7" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Festival's Cloak - Pearl White. -->
-	<item id="21589" type="EtcItem" name="Festival's Cloak - Pearl White Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
-	<item id="21590" type="Armor" name="Festival's Cloak - Pearl White - Event">
-		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="back" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="220" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
-			<player cloakStatus="1" />
-		</cond>
-		<for>
-			<baseAdd stat="pDef" val="25" />
-			<add stat="fireRes" val="7" />
-			<add stat="waterRes" val="7" />
-			<add stat="windRes" val="7" />
-			<add stat="earthRes" val="7" />
-			<add stat="holyRes" val="7" />
-			<add stat="darkRes" val="7" />
-		</for>
-	</item>
-	<!-- Wrapped Pack containing Festival's Cloak - Pearl White. -->
-	<item id="21591" type="EtcItem" name="Festival's Cloak - Pearl White Pack - Event">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing each of Antharas' Earring (180-day), Valakas' Earring (180-day), Baium's Ring (180-day), Zaken's Earring (180-day), and Queen Ant's Ring (180-day). -->
-	<item id="21592" type="EtcItem" name="M. Def. Accessory 5 Type Pack">
-		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Shiny jewel obtained through the Wondrous Cubic. It looks like you would get quite a large sum by selling it at a shop. -->
-	<item id="21593" type="EtcItem" name="Ziggo's Jewel">
-		<set name="icon" val="icon.etc_jewel_red_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- It's your birthday! Hair accessory that shows you are 1 year older. Uses 2 hair accessory slots. -->
-	<item id="21594" type="Armor" name="Birthday Hat">
-		<set name="icon" val="icon.accessory_birthday_cap_i00" />
-		<set name="default_action" val="equip" />
-		<set name="bodypart" val="hairall" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<for>
-			<enchant stat="mDef" val="0" />
-		</for>
-	</item>
-	<!-- Sweet and tasty birthday cake that you can share with others. This special cake casts a Vitality maintenance buff on all party members for 5 minutes - meaning that you will not lose Vitality while this buff is active. Your cake will disappear after 20 min. -->
-	<item id="21595" type="EtcItem" name="Birthday Cake">
-		<set name="icon" val="BranchSys.icon.br_birthday_cake_i00" />
-		<set name="immediate_effect" val="1" />
-		<set name="weight" val="10" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-	</item>
-	<!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 6 feathers of blessing. -->
-	<item id="21596" type="EtcItem" name="Blessing Package 100">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 6 Superior Minions. -->
-	<item id="21597" type="EtcItem" name="Hunting Package 100">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 3 feathers of blessing. -->
-	<item id="21598" type="EtcItem" name="Blessing Package 200">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
-	<!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 3 Superior Minions. -->
-	<item id="21599" type="EtcItem" name="Hunting Package 200">
-		<set name="icon" val="icon.etc_pi_gift_box_i04" />
-		<set name="immediate_effect" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_stackable" val="true" />
-	</item>
+    <!-- Wrapped Pack containing Kai the Cat hat. -->
+    <item id="21500" type="EtcItem" name="Kai the Cat Hat Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Hat that looks like Kai the Cat. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21501" type="Armor" name="Kai the Cat Hat - 7-day">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21502" type="Armor" name="Kai the Cat Hat - 7-day (Event)">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21503" type="Armor" name="Kai the Cat Hat - 30-day">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21504" type="Armor" name="Kai the Cat Hat - 30-day (Event)">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. Uses 2 hair accessory slots. -->
+    <item id="21505" type="Armor" name="Kai the Cat Hat">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Kai the Cat. Uses 2 hair accessory slots. -->
+    <item id="21506" type="Armor" name="Kai the Cat Hat - Event">
+        <set name="icon" val="icon.accessory_chi_the_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Feline Queen hat (7-day). -->
+    <item id="21507" type="EtcItem" name="Feline Queen Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen hat (7-day). -->
+    <item id="21508" type="EtcItem" name="Feline Queen Hat Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen Hat (30-day). -->
+    <item id="21509" type="EtcItem" name="Feline Queen Hat Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen hat (30-day). -->
+    <item id="21510" type="EtcItem" name="Feline Queen Hat Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen hat. -->
+    <item id="21511" type="EtcItem" name="Feline Queen Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline Queen hat. -->
+    <item id="21512" type="EtcItem" name="Feline Queen Hat Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Hat that looks like Feline Queen. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21513" type="Armor" name="Feline Queen Hat - 7-day">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline Queen. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21514" type="Armor" name="Feline Queen Hat - 7-day (Event)">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline Queen. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21515" type="Armor" name="Feline Queen Hat - 30-day">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline Queen. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21516" type="Armor" name="Feline Queen Hat - 30-day (Event)">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline Queen. Uses 2 hair accessory slots. -->
+    <item id="21517" type="Armor" name="Feline Queen Hat">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline Queen. Uses 2 hair accessory slots. -->
+    <item id="21518" type="Armor" name="Feline Queen Hat - Event">
+        <set name="icon" val="icon.accessory_queen_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Feline King hat (7-day). -->
+    <item id="21519" type="EtcItem" name="Feline King Hat Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline King hat (7-day). -->
+    <item id="21520" type="EtcItem" name="Feline King Hat Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline King hat (30-day). -->
+    <item id="21521" type="EtcItem" name="Feline King Hat Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline King hat (30-day). -->
+    <item id="21522" type="EtcItem" name="Feline King Hat Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline King hat. -->
+    <item id="21523" type="EtcItem" name="Feline King Hat Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Feline King hat. -->
+    <item id="21524" type="EtcItem" name="Feline King Hat Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Hat that looks like Feline King. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21525" type="Armor" name="Feline King Hat - 7-day">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline King. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21526" type="Armor" name="Feline King Hat - 7-day (Event)">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline King. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21527" type="Armor" name="Feline King Hat - 30-day">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline King. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21528" type="Armor" name="Feline King Hat - 30-day (Event)">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline King. Uses 2 hair accessory slots. -->
+    <item id="21529" type="Armor" name="Feline King Hat">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Hat that looks like Feline King. Uses 2 hair accessory slots. -->
+    <item id="21530" type="Armor" name="Feline King Hat - Event">
+        <set name="icon" val="icon.accessory_king_of_cat_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing ribbon hairband (7-day). -->
+    <item id="21531" type="EtcItem" name="Ribbon Hairband Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ribbon hairband (7-day). -->
+    <item id="21532" type="EtcItem" name="Ribbon Hairband Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Ribbon Hairband (30-day). Females only. -->
+    <item id="21533" type="EtcItem" name="Ribbon Hairband Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ribbon hairband (30-day). -->
+    <item id="21534" type="EtcItem" name="Ribbon Hairband Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ribbon hairband. -->
+    <item id="21535" type="EtcItem" name="Ribbon Hairband Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing ribbon hairband. -->
+    <item id="21536" type="EtcItem" name="Ribbon Hairband Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Large ribbon hair accessory (7-day). Females only. Uses 2 hair accessory slots. -->
+    <item id="21537" type="Armor" name="Ribbon Hairband - 7-day">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory (7-day). Females only. Uses 2 hair accessory slots. -->
+    <item id="21538" type="Armor" name="Ribbon Hairband - 7-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory (30-day). Females only. Uses 2 hair accessory slots. -->
+    <item id="21539" type="Armor" name="Ribbon Hairband - 30-day">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory (30-day). Females only. Uses 2 hair accessory slots. -->
+    <item id="21540" type="Armor" name="Ribbon Hairband - 30-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory. Females only. Uses 2 hair accessory slots. -->
+    <item id="21541" type="Armor" name="Ribbon Hairband">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Large ribbon hair accessory. Females only. Uses 2 hair accessory slots. -->
+    <item id="21542" type="Armor" name="Ribbon Hairband - Event">
+        <set name="icon" val="BranchSys.icon.br_Ribbon_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing refined dapper cap (7-day). -->
+    <item id="21543" type="EtcItem" name="Refined Dapper Cap Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing refined dapper cap (7-day). -->
+    <item id="21544" type="EtcItem" name="Refined Dapper Cap Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Refined Dapper Cap (30-day). -->
+    <item id="21545" type="EtcItem" name="Refined Dapper Cap Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing refined dapper cap (30-day). -->
+    <item id="21546" type="EtcItem" name="Refined Dapper Cap Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing refined dapper cap. -->
+    <item id="21547" type="EtcItem" name="Refined Dapper Cap Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing refined dapper cap. -->
+    <item id="21548" type="EtcItem" name="Refined Dapper Cap Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Refined dapper's hat. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21549" type="Armor" name="Refined Dapper Cap - 7-day">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined dapper's hat. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21550" type="Armor" name="Refined Dapper Cap - 7-day (Event)">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- A Refined Dapper Cap. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21551" type="Armor" name="Refined Dapper Cap - 30-day">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined dapper's hat. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21552" type="Armor" name="Refined Dapper Cap - 30-day (Event)">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined dapper's hat. Uses 2 hair accessory slots. -->
+    <item id="21553" type="Armor" name="Refined Dapper Cap">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Refined dapper's hat. Uses 2 hair accessory slots. -->
+    <item id="21554" type="Armor" name="Refined Dapper Cap - Event">
+        <set name="icon" val="icon.accessory_dandy_cap2_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing valkyrie circlet (7-day). -->
+    <item id="21555" type="EtcItem" name="Valkyrie Circlet Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing valkyrie circlet (7-day). -->
+    <item id="21556" type="EtcItem" name="Valkyrie Circlet Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing valkyrie circlet (30-day). -->
+    <item id="21557" type="EtcItem" name="Valkyrie Circlet Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing valkyrie circlet (30-day). -->
+    <item id="21558" type="EtcItem" name="Valkyrie Circlet Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing Valkyrie Circlet. -->
+    <item id="21559" type="EtcItem" name="Valkyrie Circlet Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing valkyrie circlet. -->
+    <item id="21560" type="EtcItem" name="Valkyrie Circlet Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Circlet covered with a valkyrie's strength. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21561" type="Armor" name="Valkyrie Circlet - 7-day">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet covered with a valkyrie's strength. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21562" type="Armor" name="Valkyrie Circlet - 7-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet covered with a valkyrie's strength. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21563" type="Armor" name="Valkyrie Circlet - 30-day">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet covered with a valkyrie's strength. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21564" type="Armor" name="Valkyrie Circlet - 30-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet imbued with a Valkyrie's strength. Uses 2 hair accessory slots. -->
+    <item id="21565" type="Armor" name="Valkyrie Circlet">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Circlet covered with a valkyrie's strength. Uses 2 hair accessory slots. -->
+    <item id="21566" type="Armor" name="Valkyrie Circlet - Event">
+        <set name="icon" val="BranchSys.icon.br_valkyrie_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing plastic hair (7-day). -->
+    <item id="21567" type="EtcItem" name="Plastic Hair Pack (7-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing plastic hair (7-day). -->
+    <item id="21568" type="EtcItem" name="Plastic Hair Pack (7-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing plastic hair (30-day). -->
+    <item id="21569" type="EtcItem" name="Plastic Hair Pack (30-day)">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing plastic hair (30-day). -->
+    <item id="21570" type="EtcItem" name="Plastic Hair Pack (30-day) - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing plastic hair. -->
+    <item id="21571" type="EtcItem" name="Plastic Hair Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing plastic hair. -->
+    <item id="21572" type="EtcItem" name="Plastic Hair Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21573" type="Armor" name="Plastic Hair - 7-day">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 7-day. Uses 2 hair accessory slots. -->
+    <item id="21574" type="Armor" name="Plastic Hair - 7-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21575" type="Armor" name="Plastic Hair - 30-day">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. 30-day. Uses 2 hair accessory slots. -->
+    <item id="21576" type="Armor" name="Plastic Hair - 30-day (Event)">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. Uses 2 hair accessory slots. -->
+    <item id="21577" type="Armor" name="Plastic Hair">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Plastic hair. Changes into an attractive pink wig for women and a handsome blue wig for men. Uses 2 hair accessory slots. -->
+    <item id="21578" type="Armor" name="Plastic Hair - Event">
+        <set name="icon" val="BranchSys.icon.br_plastic_hair_f_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- If you bring it to the Dimensional Merchant, you can exchange an ordinary S84-grade item for a Masterwork Item. -->
+    <item id="21579" type="EtcItem" name="Neolithic Crystal (S84-grade)">
+        <set name="icon" val="BranchSys2.icon.etc_warding_orb_gold_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="20" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Special shirt that was handcrafted by the best weavers of Aden. Can be enchanted up to + 10 with Power Shirt exclusive enchant scrolls. Each enchant level bestows the shirt with special additional bonuses. -->
+    <item id="21580" type="Armor" name="Power Shirt">
+        <set name="icon" val="BranchSys2.icon.7anni_shirt_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="chest" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="130" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <baseAdd stat="pDef" val="28" />
+        </for>
+    </item>
+    <!--
+        Enchant scroll exclusive to Power Shirts.
+        Increases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied.
+    -->
+    <item id="21581" type="EtcItem" name="Scroll: Enchant Power Shirt">
+        <set name="icon" val="BranchSys2.icon.etc_scroll_of_enchant_shirt_i01" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!--
+        Enchant scroll exclusive to Power Shirts.
+        Increases the Power Shirt P. Def. and M. Def. by 1. Starting from + 4, P. Def. + 3. Can be safely enchanted up to + 3 and can be enchanted up to a max of + 10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from + 4. At + 5, + 7, + 8, and + 9, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0.
+    -->
+    <item id="21582" type="EtcItem" name="Blessed Scroll: Enchant Power Shirt">
+        <set name="icon" val="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="120" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
+    <item id="21583" type="Armor" name="Festival's Cloak - Pitch Black">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <cond msgId="2453">
+            <player cloakStatus="1" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <add stat="fireRes" val="7" />
+            <add stat="waterRes" val="7" />
+            <add stat="windRes" val="7" />
+            <add stat="earthRes" val="7" />
+            <add stat="holyRes" val="7" />
+            <add stat="darkRes" val="7" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Festival's Cloak - Pitch Black. -->
+    <item id="21584" type="EtcItem" name="Festival's Cloak - Pitch Black Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Cloak with the feeling of pitch black darkness. When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. -->
+    <item id="21585" type="Armor" name="Festival's Cloak - Pitch Black - Event">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <cond msgId="2453">
+            <player cloakStatus="1" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <add stat="fireRes" val="7" />
+            <add stat="waterRes" val="7" />
+            <add stat="windRes" val="7" />
+            <add stat="earthRes" val="7" />
+            <add stat="holyRes" val="7" />
+            <add stat="darkRes" val="7" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Festival's Cloak - True Black. -->
+    <item id="21586" type="EtcItem" name="Festival's Cloak - Pitch Black Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
+    <item id="21587" type="Armor" name="Festival's Cloak - Blood Red">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i01" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <cond msgId="2453">
+            <player cloakStatus="1" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <add stat="fireRes" val="7" />
+            <add stat="waterRes" val="7" />
+            <add stat="windRes" val="7" />
+            <add stat="earthRes" val="7" />
+            <add stat="holyRes" val="7" />
+            <add stat="darkRes" val="7" />
+        </for>
+    </item>
+    <!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
+    <item id="21588" type="Armor" name="Festival's Cloak - Pearl White">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <cond msgId="2453">
+            <player cloakStatus="1" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <add stat="fireRes" val="7" />
+            <add stat="waterRes" val="7" />
+            <add stat="windRes" val="7" />
+            <add stat="earthRes" val="7" />
+            <add stat="holyRes" val="7" />
+            <add stat="darkRes" val="7" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Festival's Cloak - Pearl White. -->
+    <item id="21589" type="EtcItem" name="Festival's Cloak - Pearl White Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- When an armor set above the Dynasty level is worn, the Sealed Cloak Slot will be open so that the cloak can be equipped. Cannot be enchanted, augmented, or assigned an attribute. -->
+    <item id="21590" type="Armor" name="Festival's Cloak - Pearl White - Event">
+        <set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="back" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="220" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <cond msgId="2453">
+            <player cloakStatus="1" />
+        </cond>
+        <for>
+            <baseAdd stat="pDef" val="25" />
+            <add stat="fireRes" val="7" />
+            <add stat="waterRes" val="7" />
+            <add stat="windRes" val="7" />
+            <add stat="earthRes" val="7" />
+            <add stat="holyRes" val="7" />
+            <add stat="darkRes" val="7" />
+        </for>
+    </item>
+    <!-- Wrapped Pack containing Festival's Cloak - Pearl White. -->
+    <item id="21591" type="EtcItem" name="Festival's Cloak - Pearl White Pack - Event">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing each of Antharas' Earring (180-day), Valakas' Earring (180-day), Baium's Ring (180-day), Zaken's Earring (180-day), and Queen Ant's Ring (180-day). -->
+    <item id="21592" type="EtcItem" name="M. Def. Accessory 5 Type Pack">
+        <set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Shiny jewel obtained through the Wondrous Cubic. It looks like you would get quite a large sum by selling it at a shop. -->
+    <item id="21593" type="EtcItem" name="Ziggo's Jewel">
+        <set name="icon" val="icon.etc_jewel_red_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- It's your birthday! Hair accessory that shows you are 1 year older. Uses 2 hair accessory slots. -->
+    <item id="21594" type="Armor" name="Birthday Hat">
+        <set name="icon" val="icon.accessory_birthday_cap_i00" />
+        <set name="default_action" val="equip" />
+        <set name="bodypart" val="hairall" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <for>
+            <enchant stat="mDef" val="0" />
+        </for>
+    </item>
+    <!-- Sweet and tasty birthday cake that you can share with others. This special cake casts a Vitality maintenance buff on all party members for 5 minutes - meaning that you will not lose Vitality while this buff is active. Your cake will disappear after 20 min. -->
+    <item id="21595" type="EtcItem" name="Birthday Cake">
+        <set name="icon" val="BranchSys.icon.br_birthday_cake_i00" />
+        <set name="immediate_effect" val="1" />
+        <set name="weight" val="10" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+    </item>
+    <!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 6 feathers of blessing. -->
+    <item id="21596" type="EtcItem" name="Blessing Package 100">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 6 Superior Minions. -->
+    <item id="21597" type="EtcItem" name="Hunting Package 100">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 3 feathers of blessing. -->
+    <item id="21598" type="EtcItem" name="Blessing Package 200">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
+    <!-- Wrapped Pack containing 9 Vitality Replenishing Potions and 3 Superior Minions. -->
+    <item id="21599" type="EtcItem" name="Hunting Package 200">
+        <set name="icon" val="icon.etc_pi_gift_box_i04" />
+        <set name="immediate_effect" val="1" />
+        <set name="is_tradable" val="false" />
+        <set name="is_dropable" val="false" />
+        <set name="is_sellable" val="false" />
+        <set name="is_stackable" val="true" />
+    </item>
 </list>

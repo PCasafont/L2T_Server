@@ -31,42 +31,47 @@ import l2server.log.Log;
  */
 public final class RequestPledgeInfo extends L2GameClientPacket
 {
-	
-	private int _clanId;
-	
-	@Override
-	protected void readImpl()
-	{
-		_clanId = readD();
-	}
-	
-	@Override
-	protected void runImpl()
-	{
-		if (Config.DEBUG)
-			Log.log(Level.FINE, "Info for clan " + _clanId + " requested");
-		
-		L2PcInstance activeChar = getClient().getActiveChar();
-		
-		if (activeChar == null)
-			return;
-		
-		L2Clan clan = ClanTable.getInstance().getClan(_clanId);
-		if (clan == null)
-		{
-			if (Config.DEBUG)
-				Log.warning("Clan data for clanId " + _clanId + " is missing for player " + activeChar.getName());
-			return; // we have no clan data ?!? should not happen
-		}
-		
-		PledgeInfo pc = new PledgeInfo(clan);
-		activeChar.sendPacket(pc);
-		
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
+
+    private int _clanId;
+
+    @Override
+    protected void readImpl()
+    {
+        _clanId = readD();
+    }
+
+    @Override
+    protected void runImpl()
+    {
+        if (Config.DEBUG)
+        {
+            Log.log(Level.FINE, "Info for clan " + _clanId + " requested");
+        }
+
+        L2PcInstance activeChar = getClient().getActiveChar();
+
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        L2Clan clan = ClanTable.getInstance().getClan(_clanId);
+        if (clan == null)
+        {
+            if (Config.DEBUG)
+            {
+                Log.warning("Clan data for clanId " + _clanId + " is missing for player " + activeChar.getName());
+            }
+            return; // we have no clan data ?!? should not happen
+        }
+
+        PledgeInfo pc = new PledgeInfo(clan);
+        activeChar.sendPacket(pc);
+    }
+
+    @Override
+    protected boolean triggersOnActionRequest()
+    {
+        return false;
+    }
 }

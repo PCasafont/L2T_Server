@@ -20,28 +20,28 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExResponseBeautyResetPacket extends L2GameServerPacket
 {
-	private long _adena;
-	private long _tickets;
-	private int _hair;
-	private int _face;
-	private int _hairColor;
-	
-	public ExResponseBeautyResetPacket(long adena, long tickets, int hair, int face, int hairColor)
-	{
-		_adena = adena;
-		_tickets = tickets;
-		_hair = hair;
-		_face = face;
-		_hairColor = hairColor;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeQ(_adena);
-		writeQ(_tickets);
-		writeD(_hair);
-		writeD(_face);
-		writeD(_hairColor);
-	}
+    private long _adena;
+    private long _tickets;
+    private int _hair;
+    private int _face;
+    private int _hairColor;
+
+    public ExResponseBeautyResetPacket(long adena, long tickets, int hair, int face, int hairColor)
+    {
+        _adena = adena;
+        _tickets = tickets;
+        _hair = hair;
+        _face = face;
+        _hairColor = hairColor;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeQ(_adena);
+        writeQ(_tickets);
+        writeD(_hair);
+        writeD(_face);
+        writeD(_hairColor);
+    }
 }

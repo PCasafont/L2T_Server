@@ -26,65 +26,74 @@ import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
  */
 public final class L2EnchantSkillLearn
 {
-	private final int _id;
-	private final int _baseLvl;
-	private final TIntHashSet _enchantRoutes = new TIntHashSet();
-	
-	public L2EnchantSkillLearn(int id, int baseLvl)
-	{
-		_id = id;
-		_baseLvl = baseLvl;
-	}
-	
-	public void addNewEnchantRoute(int route)
-	{
-		_enchantRoutes.add(route);
-	}
-	
-	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return _id;
-	}
-	
-	/**
-	 * @return Returns the minLevel.
-	 */
-	public int getBaseLevel()
-	{
-		return _baseLvl;
-	}
-	
-	public int[] getAllRoutes()
-	{
-		return _enchantRoutes.toArray();
-	}
-	
-	public boolean isMaxEnchant(int route, int level)
-	{
-		if (route < 1 || !_enchantRoutes.contains(route))
-		{
-			return false;
-		}
-		
-		if (level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size())
-			return true;
-		
-		return false;
-	}
-	
-	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
-	{
-		if (route < 1 || !_enchantRoutes.contains(route))
-			return null;
-		
-		if (level < 1)
-			return EnchantCostsTable.getInstance().getEnchantGroupDetails().get(0);
-		else if (level > EnchantCostsTable.getInstance().getEnchantGroupDetails().size())
-			return EnchantCostsTable.getInstance().getEnchantGroupDetails().get(EnchantCostsTable.getInstance().getEnchantGroupDetails().size() - 1);
-		
-		return EnchantCostsTable.getInstance().getEnchantGroupDetails().get(level - 1);
-	}
+    private final int _id;
+    private final int _baseLvl;
+    private final TIntHashSet _enchantRoutes = new TIntHashSet();
+
+    public L2EnchantSkillLearn(int id, int baseLvl)
+    {
+        _id = id;
+        _baseLvl = baseLvl;
+    }
+
+    public void addNewEnchantRoute(int route)
+    {
+        _enchantRoutes.add(route);
+    }
+
+    /**
+     * @return Returns the id.
+     */
+    public int getId()
+    {
+        return _id;
+    }
+
+    /**
+     * @return Returns the minLevel.
+     */
+    public int getBaseLevel()
+    {
+        return _baseLvl;
+    }
+
+    public int[] getAllRoutes()
+    {
+        return _enchantRoutes.toArray();
+    }
+
+    public boolean isMaxEnchant(int route, int level)
+    {
+        if (route < 1 || !_enchantRoutes.contains(route))
+        {
+            return false;
+        }
+
+        if (level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
+    {
+        if (route < 1 || !_enchantRoutes.contains(route))
+        {
+            return null;
+        }
+
+        if (level < 1)
+        {
+            return EnchantCostsTable.getInstance().getEnchantGroupDetails().get(0);
+        }
+        else if (level > EnchantCostsTable.getInstance().getEnchantGroupDetails().size())
+        {
+            return EnchantCostsTable.getInstance().getEnchantGroupDetails()
+                    .get(EnchantCostsTable.getInstance().getEnchantGroupDetails().size() - 1);
+        }
+
+        return EnchantCostsTable.getInstance().getEnchantGroupDetails().get(level - 1);
+    }
 }

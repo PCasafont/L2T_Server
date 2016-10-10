@@ -28,62 +28,64 @@ import l2server.log.Log;
  */
 public final class FuncTemplate
 {
-	public Condition applayCond;
-	public final Class<?> func;
-	public final Constructor<?> constructor;
-	public final Stats stat;
-	public final Lambda lambda;
-	
-	public FuncTemplate(Condition pApplayCond, String pFunc, Stats pStat, Lambda pLambda)
-	{
-		applayCond = pApplayCond;
-		stat = pStat;
-		lambda = pLambda;
-		try
-		{
-			func = Class.forName("l2server.gameserver.stats.funcs.Func" + pFunc);
-		}
-		catch (ClassNotFoundException e)
-		{
-			throw new RuntimeException(e);
-		}
-		try
-		{
-			constructor = func.getConstructor(new Class[] { Stats.class, // stats to update
-			Object.class, // owner
-			Lambda.class // value for function
-			});
-		}
-		catch (NoSuchMethodException e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
-	
-	public Func getFunc(Object owner)
-	{
-		try
-		{
-			Func f = (Func) constructor.newInstance(stat, owner, lambda);
-			if (applayCond != null)
-				f.setCondition(applayCond);
-			return f;
-		}
-		catch (IllegalAccessException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InstantiationException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		catch (InvocationTargetException e)
-		{
-			Log.log(Level.WARNING, "", e);
-			return null;
-		}
-		
-	}
+    public Condition applayCond;
+    public final Class<?> func;
+    public final Constructor<?> constructor;
+    public final Stats stat;
+    public final Lambda lambda;
+
+    public FuncTemplate(Condition pApplayCond, String pFunc, Stats pStat, Lambda pLambda)
+    {
+        applayCond = pApplayCond;
+        stat = pStat;
+        lambda = pLambda;
+        try
+        {
+            func = Class.forName("l2server.gameserver.stats.funcs.Func" + pFunc);
+        }
+        catch (ClassNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+        try
+        {
+            constructor = func.getConstructor(new Class[]{
+                    Stats.class, // stats to update
+                    Object.class, // owner
+                    Lambda.class // value for function
+            });
+        }
+        catch (NoSuchMethodException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Func getFunc(Object owner)
+    {
+        try
+        {
+            Func f = (Func) constructor.newInstance(stat, owner, lambda);
+            if (applayCond != null)
+            {
+                f.setCondition(applayCond);
+            }
+            return f;
+        }
+        catch (IllegalAccessException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InstantiationException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+        catch (InvocationTargetException e)
+        {
+            Log.log(Level.WARNING, "", e);
+            return null;
+        }
+    }
 }

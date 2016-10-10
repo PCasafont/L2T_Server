@@ -19,49 +19,49 @@ import l2server.Config;
 import l2server.gameserver.cache.CrestCache;
 
 /**
- *
- *
  * sample
  * 0000: 84 6d 06 00 00 36 05 00 00 42 4d 36 05 00 00 00	.m...6...BM6....
  * 0010: 00 00 00 36 04 00 00 28 00 00 00 10 00 00 00 10	...6...(........
  * 0020: 00 00 00 01 00 08 00 00 00 00 00 00 01 00 00 c4	................
  * 0030: ...
  * 0530: 10 91 00 00 00 60 9b d1 01 e4 6e ee 52 97 dd	   .....`....n.R..
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * format   dd x...x
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class PledgeCrest extends L2GameServerPacket
 {
-	private final int _crestId;
-	private final byte[] _data;
-	
-	public PledgeCrest(int crestId)
-	{
-		_crestId = crestId;
-		_data = CrestCache.getInstance().getPledgeCrest(_crestId);
-	}
-	
-	public PledgeCrest(int crestId, byte[] data)
-	{
-		_crestId = crestId;
-		_data = data;
-	}
-	
-	@Override
-	protected final void writeImpl()
-	{
-		writeD(Config.SERVER_ID); // server id?
-		writeD(_crestId);
-		if (_data != null)
-		{
-			writeD(_data.length);
-			writeB(_data);
-		}
-		else
-			writeD(0);
-	}
+    private final int _crestId;
+    private final byte[] _data;
+
+    public PledgeCrest(int crestId)
+    {
+        _crestId = crestId;
+        _data = CrestCache.getInstance().getPledgeCrest(_crestId);
+    }
+
+    public PledgeCrest(int crestId, byte[] data)
+    {
+        _crestId = crestId;
+        _data = data;
+    }
+
+    @Override
+    protected final void writeImpl()
+    {
+        writeD(Config.SERVER_ID); // server id?
+        writeD(_crestId);
+        if (_data != null)
+        {
+            writeD(_data.length);
+            writeB(_data);
+        }
+        else
+        {
+            writeD(0);
+        }
+    }
 }
