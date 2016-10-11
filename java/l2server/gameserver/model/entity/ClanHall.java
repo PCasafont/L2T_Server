@@ -46,13 +46,13 @@ public class ClanHall
     private long _lease;
     private String _desc;
     private String _location;
-    protected long _paidUntil;
+    private long _paidUntil;
     private L2ClanHallZone _zone;
     private int _grade;
-    protected final int _chRate = 604800000;
-    protected boolean _isFree = true;
+    private final int _chRate = 604800000;
+    private boolean _isFree = true;
     private Map<Integer, ClanHallFunction> _functions;
-    protected boolean _paid;
+    private boolean _paid;
 
     /**
      * Clan Hall Functions
@@ -70,8 +70,8 @@ public class ClanHall
     {
         private int _type;
         private int _lvl;
-        protected int _fee;
-        protected int _tempFee;
+        int _fee;
+        int _tempFee;
         private long _rate;
         private long _endDate;
         protected boolean _inDebt;
@@ -340,7 +340,7 @@ public class ClanHall
     /**
      * Return Door
      */
-    public final L2DoorInstance getDoor(int doorId)
+    private L2DoorInstance getDoor(int doorId)
     {
         if (doorId <= 0)
         {
@@ -434,12 +434,12 @@ public class ClanHall
         }
     }
 
-    public void openCloseDoor(int doorId, boolean open)
+    private void openCloseDoor(int doorId, boolean open)
     {
         openCloseDoor(getDoor(doorId), open);
     }
 
-    public void openCloseDoor(L2DoorInstance door, boolean open)
+    private void openCloseDoor(L2DoorInstance door, boolean open)
     {
         if (door != null)
         {
@@ -523,7 +523,7 @@ public class ClanHall
     /**
      * Remove function In List and in DB
      */
-    public void removeFunction(int functionType)
+    private void removeFunction(int functionType)
     {
         _functions.remove(functionType);
         Connection con = null;
@@ -602,7 +602,7 @@ public class ClanHall
     /**
      * Update DB
      */
-    public void updateDb()
+    private void updateDb()
     {
         Connection con = null;
         try

@@ -37,9 +37,9 @@ public class L2CharTemplate
     public double baseMpMax;
     public double baseCpMax;
 
-    public float baseHpReg;
-    public float baseMpReg;
-    public float baseCpReg;
+    float baseHpReg;
+    float baseMpReg;
+    private float baseCpReg;
 
     public float basePAtk;
     public float baseMAtk;
@@ -48,9 +48,9 @@ public class L2CharTemplate
     public int basePAtkSpd;
     public int baseMAtkSpd;
     public final float baseMReuseRate;
-    public final int baseShldDef;
+    private final int baseShldDef;
     public int baseAtkRange;
-    public final int baseShldRate;
+    private final int baseShldRate;
     public int baseCritRate;
     public int baseMCritRate;
     public float baseWalkSpd;
@@ -71,8 +71,8 @@ public class L2CharTemplate
     public double baseDarkRes;
 
     //C4 Stats
-    public final int baseMpConsumeRate;
-    public final int baseHpConsumeRate;
+    private final int baseMpConsumeRate;
+    private final int baseHpConsumeRate;
 
     //Start Locs
     public final int startX;

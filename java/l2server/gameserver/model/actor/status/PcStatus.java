@@ -420,7 +420,7 @@ public class PcStatus extends PlayableStatus
         setCurrentCp(newCp, true);
     }
 
-    public final void setCurrentCp(double newCp, boolean broadcastPacket)
+    private void setCurrentCp(double newCp, boolean broadcastPacket)
     {
         // Get the Max CP of the L2Character
         int maxCp = getActiveChar().getStat().getMaxCp();

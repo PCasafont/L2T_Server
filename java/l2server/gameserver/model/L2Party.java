@@ -64,8 +64,8 @@ public class L2Party
 
     public static final byte ITEM_LOOTER = 0;
     public static final byte ITEM_RANDOM = 1;
-    public static final byte ITEM_RANDOM_SPOIL = 2;
-    public static final byte ITEM_ORDER = 3;
+    private static final byte ITEM_RANDOM_SPOIL = 2;
+    private static final byte ITEM_ORDER = 3;
     public static final byte ITEM_ORDER_SPOIL = 4;
 
     private final CopyOnWriteArrayList<L2PcInstance> _members;
@@ -290,7 +290,7 @@ public class L2Party
         }
     }
 
-    public void broadcastToPartyMembersNewLeader()
+    private void broadcastToPartyMembersNewLeader()
     {
         for (L2PcInstance member : getPartyMembers())
         {
@@ -589,7 +589,7 @@ public class L2Party
     /**
      * Disperse a party and sends a message to all its members.
      */
-    public void disbandParty()
+    private void disbandParty()
     {
         _disbanding = true;
         if (_members != null)
@@ -824,7 +824,7 @@ public class L2Party
      *
      * @param adena
      */
-    public void distributeCurrency(L2PcInstance player, int itemId, long amount, L2Character target)
+    private void distributeCurrency(L2PcInstance player, int itemId, long amount, L2Character target)
     {
         // Get all the party members
         List<L2PcInstance> membersList = getPartyMembers();
@@ -1540,7 +1540,7 @@ public class L2Party
         return tagId;
     }
 
-    public final int indexOfPartyMember(final L2Object player)
+    private int indexOfPartyMember(final L2Object player)
     {
         if (!(player instanceof L2PcInstance))
         {

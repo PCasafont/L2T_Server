@@ -371,7 +371,7 @@ public final class Rnd
         return rnd.get(min, max);
     }
 
-    public static final RandomContainer newInstance(final RandomType type)
+    private static RandomContainer newInstance(final RandomType type)
     {
         switch (type)
         {

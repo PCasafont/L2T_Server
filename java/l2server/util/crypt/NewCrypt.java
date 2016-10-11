@@ -26,8 +26,8 @@ import java.util.logging.Logger;
 public class NewCrypt
 {
     protected static Logger _log = Logger.getLogger(NewCrypt.class.getName());
-    BlowfishEngine _crypt;
-    BlowfishEngine _decrypt;
+    private BlowfishEngine _crypt;
+    private BlowfishEngine _decrypt;
 
     /**
      * @param blowfishKey

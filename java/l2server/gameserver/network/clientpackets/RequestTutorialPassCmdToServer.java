@@ -20,7 +20,7 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class RequestTutorialPassCmdToServer extends L2GameClientPacket
 {
-    String _bypass = null;
+    private String _bypass = null;
 
     @Override
     protected void readImpl()

@@ -22,7 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public final class ConditionItemId extends Condition
+final class ConditionItemId extends Condition
 {
 
     private final int _itemId;

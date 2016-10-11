@@ -17,14 +17,14 @@ import java.util.Calendar;
  */
 public class Curfew
 {
-    public static Curfew _instance = null;
+    private static Curfew _instance = null;
 
     private CurfewTask _ctask;
     private StartTask _task;
 
     private int _eventTown = 9;
     private String eventTownName = "Giran";
-    public long curfewEnd = 0;
+    private long curfewEnd = 0;
 
     public static Curfew getInstance()
     {
@@ -50,7 +50,7 @@ public class Curfew
         eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
     }
 
-    public void start()
+    private void start()
     {
         for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
         {
@@ -124,7 +124,7 @@ public class Curfew
         }
     }
 
-    public void scheduleCurfew()
+    private void scheduleCurfew()
     {
         try
         {
@@ -137,7 +137,7 @@ public class Curfew
         }
     }
 
-    public void scheduleEventStart()
+    private void scheduleEventStart()
     {
         try
         {

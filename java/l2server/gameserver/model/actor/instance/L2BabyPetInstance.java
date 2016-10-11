@@ -192,7 +192,7 @@ public final class L2BabyPetInstance extends L2PetInstance
         }
     }
 
-    protected void castSkill(L2Skill skill)
+    private void castSkill(L2Skill skill)
     {
         // casting automatically stops any other action (such as autofollow or a move-to).
         // We need to gather the necessary info to restore the previous state.

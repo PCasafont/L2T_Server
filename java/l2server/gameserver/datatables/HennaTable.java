@@ -160,7 +160,7 @@ public class HennaTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final HennaTable _instance = new HennaTable();
+        static final HennaTable _instance = new HennaTable();
     }
 
     @Override

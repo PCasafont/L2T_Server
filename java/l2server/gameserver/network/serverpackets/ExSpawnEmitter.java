@@ -26,7 +26,7 @@ public class ExSpawnEmitter extends L2GameServerPacket
     private final int _playerObjectId;
     private final int _npcObjectId;
 
-    public ExSpawnEmitter(int playerObjectId, int npcObjectId)
+    private ExSpawnEmitter(int playerObjectId, int npcObjectId)
     {
         _playerObjectId = playerObjectId;
         _npcObjectId = npcObjectId;

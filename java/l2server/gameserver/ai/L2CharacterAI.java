@@ -56,10 +56,11 @@ public class L2CharacterAI extends AbstractAI
 {
     public static class IntentionCommand
     {
-        protected final CtrlIntention _crtlIntention;
-        protected final Object _arg0, _arg1;
+        final CtrlIntention _crtlIntention;
+        final Object _arg0;
+        final Object _arg1;
 
-        protected IntentionCommand(CtrlIntention pIntention, Object pArg0, Object pArg1)
+        IntentionCommand(CtrlIntention pIntention, Object pArg0, Object pArg1)
         {
             _crtlIntention = pIntention;
             _arg0 = pArg0;
@@ -916,7 +917,7 @@ public class L2CharacterAI extends AbstractAI
         // do nothing
     }
 
-    protected boolean maybeMoveToPosition(Point3D worldPosition, int offset)
+    boolean maybeMoveToPosition(Point3D worldPosition, int offset)
     {
         if (worldPosition == null)
         {
@@ -987,7 +988,7 @@ public class L2CharacterAI extends AbstractAI
      * @param offset The Interact area radius
      * @return True if a movement must be done
      */
-    protected boolean maybeMoveToPawn(L2Object target, int offset)
+    boolean maybeMoveToPawn(L2Object target, int offset)
     {
         // Get the distance between the current position of the L2Character and the target (x,y)
         if (target == null)
@@ -1099,7 +1100,7 @@ public class L2CharacterAI extends AbstractAI
      * @param target The targeted L2Object
      * @return True if the target is lost or dead (false if fakedeath)
      */
-    protected boolean checkTargetLostOrDead(L2Character target)
+    boolean checkTargetLostOrDead(L2Character target)
     {
         if (target == null || target.isAlikeDead())
         {
@@ -1131,7 +1132,7 @@ public class L2CharacterAI extends AbstractAI
      * @param target The targeted L2Object
      * @return True if the target is lost
      */
-    protected boolean checkTargetLost(L2Object target)
+    boolean checkTargetLost(L2Object target)
     {
         // check if player is fakedeath
         if (target instanceof L2PcInstance)
@@ -1159,7 +1160,7 @@ public class L2CharacterAI extends AbstractAI
         return false;
     }
 
-    protected class SelfAnalysis
+    class SelfAnalysis
     {
         public boolean isMage = false;
         public boolean isBalanced;
@@ -1335,7 +1336,7 @@ public class L2CharacterAI extends AbstractAI
         }
     }
 
-    protected class TargetAnalysis
+    class TargetAnalysis
     {
         public L2Character character;
         public boolean isMage;
@@ -1414,7 +1415,7 @@ public class L2CharacterAI extends AbstractAI
         }
     }
 
-    public boolean canAura(L2Skill sk)
+    boolean canAura(L2Skill sk)
     {
         if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA ||
                 sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA ||
@@ -1431,7 +1432,7 @@ public class L2CharacterAI extends AbstractAI
         return false;
     }
 
-    public boolean canAOE(L2Skill sk)
+    boolean canAOE(L2Skill sk)
     {
         if (sk.getSkillType() != L2SkillType.NEGATE || sk.getSkillType() != L2SkillType.CANCEL)
         {
@@ -1587,7 +1588,7 @@ public class L2CharacterAI extends AbstractAI
         return false;
     }
 
-    public boolean canParty(L2Skill sk)
+    boolean canParty(L2Skill sk)
     {
         if (sk.getTargetType() == L2SkillTargetType.TARGET_PARTY)
         {
@@ -1625,7 +1626,7 @@ public class L2CharacterAI extends AbstractAI
         return false;
     }
 
-    public boolean isParty(L2Skill sk)
+    boolean isParty(L2Skill sk)
     {
         if (sk.getTargetType() == L2SkillTargetType.TARGET_PARTY)
         {

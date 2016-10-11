@@ -331,6 +331,6 @@ public class CharNameTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CharNameTable _instance = new CharNameTable();
+        static final CharNameTable _instance = new CharNameTable();
     }
 }

@@ -1305,7 +1305,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         insertObjectIdAndShowChatWindow(player, html1.toString());
     }
 
-    public void showPledgeSkillList(L2PcInstance player)
+    private void showPledgeSkillList(L2PcInstance player)
     {
         if (Config.DEBUG)
         {
@@ -1389,7 +1389,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         player.sendMessage("Pledge name changed.");
     }
 
-    public void assignSubPledgeLeader(L2PcInstance player, String clanName, String leaderName)
+    private void assignSubPledgeLeader(L2PcInstance player, String clanName, String leaderName)
     {
         if (Config.DEBUG)
         {
@@ -1464,7 +1464,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         sm = null;
     }
 
-    public void createSubPledge(L2PcInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
+    private void createSubPledge(L2PcInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
     {
         if (Config.DEBUG)
         {
@@ -1583,7 +1583,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         }
     }
 
-    public void changeClanLeader(L2PcInstance player, String target)
+    private void changeClanLeader(L2PcInstance player, String target)
     {
         if (Config.DEBUG)
         {
@@ -1632,7 +1632,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         clan.setNewLeader(member);
     }
 
-    public void recoverClan(L2PcInstance player, int clanId)
+    private void recoverClan(L2PcInstance player, int clanId)
     {
         if (Config.DEBUG)
         {
@@ -1651,7 +1651,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         clan.updateClanInDB();
     }
 
-    public void dissolveClan(L2PcInstance player, int clanId)
+    private void dissolveClan(L2PcInstance player, int clanId)
     {
         if (Config.DEBUG)
         {
@@ -1852,7 +1852,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         }
     }
 
-    public void showSkillList(L2PcInstance player)
+    private void showSkillList(L2PcInstance player)
     {
         if (player.isTransformed())
         {

@@ -45,9 +45,9 @@ public class MultiSell implements Reloadable
     public static final int PAGE_SIZE = 40;
 
     public static final int PC_BANG_POINTS = -100;
-    public static final int CLAN_REPUTATION = -200;
-    public static final int FAME = -300;
-    public static final int RAID_POINTS = -500;
+    private static final int CLAN_REPUTATION = -200;
+    private static final int FAME = -300;
+    private static final int RAID_POINTS = -500;
 
     private final Map<String, ListContainer> _entries = new HashMap<String, ListContainer>();
     private int _nextId = 1;
@@ -409,6 +409,6 @@ public class MultiSell implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final MultiSell _instance = new MultiSell();
+        static final MultiSell _instance = new MultiSell();
     }
 }

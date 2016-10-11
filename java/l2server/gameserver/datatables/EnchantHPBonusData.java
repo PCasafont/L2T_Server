@@ -175,6 +175,6 @@ public class EnchantHPBonusData
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final EnchantHPBonusData _instance = new EnchantHPBonusData();
+        static final EnchantHPBonusData _instance = new EnchantHPBonusData();
     }
 }

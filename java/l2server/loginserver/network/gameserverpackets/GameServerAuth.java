@@ -44,7 +44,7 @@ import java.util.logging.Logger;
 public class GameServerAuth extends BaseRecievePacket
 {
     protected static Logger _log = Logger.getLogger(GameServerAuth.class.getName());
-    GameServerThread _server;
+    private GameServerThread _server;
     private byte[] _hexId;
     private int _desiredId;
     @SuppressWarnings("unused")

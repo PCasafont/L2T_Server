@@ -62,7 +62,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
     private int _accessLevel;
     private int _lastServer;
     private SessionKey _sessionKey;
-    public int _sessionId;
+    private int _sessionId;
     private boolean _joinedGS;
     private Map<Integer, Integer> _charsOnServers;
     private Map<Integer, long[]> _charsToDelete;
@@ -191,7 +191,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
         return _sessionId;
     }
 
-    public boolean hasJoinedGS()
+    private boolean hasJoinedGS()
     {
         return _joinedGS;
     }

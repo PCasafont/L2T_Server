@@ -32,7 +32,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 {
     private static final int DEFAULT_MOVE_DELAY = 100;
 
-    ScheduledFuture<?> _task = null;
+    private ScheduledFuture<?> _task = null;
     private List<L2NpcWalkerNode> _route = null;
     private int _currentPos = 0;
     private long _nextMoveTime = 0;
@@ -197,7 +197,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
         super.onEvtArrivedBlocked(blocked_at_pos);
     }
 
-    public void walkToLocation()
+    private void walkToLocation()
     {
         if (_currentPos < _route.size() - 1)
         {

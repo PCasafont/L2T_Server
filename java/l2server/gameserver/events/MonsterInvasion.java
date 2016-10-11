@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 public class MonsterInvasion
 {
-    public static MonsterInvasion _instance = null;
+    private static MonsterInvasion _instance = null;
 
     private StartTask _task;
 
@@ -61,7 +61,7 @@ public class MonsterInvasion
         eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
     }
 
-    public void start()
+    private void start()
     {
         Announcements.getInstance().announceToAll("A monster army is trying to invade " + eventTownName + "!");
         Announcements.getInstance().announceToAll("No monster can survive! Charge!");
@@ -381,7 +381,7 @@ public class MonsterInvasion
         return -1;//_eventTown;
     }
 
-    public void scheduleEventStart()
+    private void scheduleEventStart()
     {
         try
         {

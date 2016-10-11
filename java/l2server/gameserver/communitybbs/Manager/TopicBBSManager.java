@@ -36,7 +36,7 @@ public class TopicBBSManager extends BaseBBSManager
     private final List<Topic> _table;
     private final Map<Forum, Integer> _maxId;
 
-    protected TopicBBSManager()
+    private TopicBBSManager()
     {
         _table = new ArrayList<Topic>();
         _maxId = new ConcurrentHashMap<Forum, Integer>();
@@ -400,6 +400,6 @@ public class TopicBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        protected static final TopicBBSManager _instance = new TopicBBSManager();
+        static final TopicBBSManager _instance = new TopicBBSManager();
     }
 }

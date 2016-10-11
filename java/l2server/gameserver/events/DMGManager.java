@@ -22,7 +22,7 @@ import java.util.Map.Entry;
  * @author LasTravel
  */
 
-public class DMGManager
+class DMGManager
 {
 
     // Config

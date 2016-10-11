@@ -48,7 +48,7 @@ public abstract class L2Playable extends L2Character
      * @param objectId Identifier of the object to initialized
      * @param template The L2CharTemplate to apply to the L2PlayableInstance
      */
-    public L2Playable(int objectId, L2CharTemplate template)
+    protected L2Playable(int objectId, L2CharTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2Playable);
@@ -181,7 +181,7 @@ public abstract class L2Playable extends L2Character
         return true;
     }
 
-    public boolean checkIfPvP(L2Character target)
+    protected boolean checkIfPvP(L2Character target)
     {
         if (target == null)
         {
@@ -384,7 +384,7 @@ public abstract class L2Playable extends L2Character
         _lockedTarget = cha;
     }
 
-    L2PcInstance transferDmgTo;
+    private L2PcInstance transferDmgTo;
 
     public void setTransferDamageTo(L2PcInstance val)
     {

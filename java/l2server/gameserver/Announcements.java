@@ -56,7 +56,7 @@ public class Announcements
         return SingletonHolder._instance;
     }
 
-    public void loadAnnouncements()
+    private void loadAnnouncements()
     {
         _announcements.clear();
 
@@ -252,6 +252,6 @@ public class Announcements
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final Announcements _instance = new Announcements();
+        static final Announcements _instance = new Announcements();
     }
 }

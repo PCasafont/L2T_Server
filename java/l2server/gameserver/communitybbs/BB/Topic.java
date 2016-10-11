@@ -71,7 +71,7 @@ public class Topic
     /**
      *
      */
-    public void insertindb()
+    private void insertindb()
     {
         Connection con = null;
         try

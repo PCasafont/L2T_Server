@@ -705,7 +705,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         }
     }
 
-    protected String getSubClassMenu(Race pRace)
+    private String getSubClassMenu(Race pRace)
     {
         if (Config.ALT_GAME_SUBCLASS_EVERYWHERE || pRace != Race.Kamael)
         {
@@ -715,12 +715,12 @@ public class L2VillageMasterInstance extends L2NpcInstance
         return "villagemaster/SubClass_NoOther.htm";
     }
 
-    protected String getSubClassFail()
+    private String getSubClassFail()
     {
         return "villagemaster/SubClass_Fail.htm";
     }
 
-    protected boolean checkQuests(L2PcInstance player)
+    private boolean checkQuests(L2PcInstance player)
     {
         // Noble players can add subbclasses without quests
         if (player.isNoble())
@@ -884,12 +884,12 @@ public class L2VillageMasterInstance extends L2NpcInstance
         return found;
     }
 
-    protected boolean checkVillageMasterRace(PlayerClass pclass)
+    private boolean checkVillageMasterRace(PlayerClass pclass)
     {
         return true;
     }
 
-    protected boolean checkVillageMasterTeachType(PlayerClass pclass)
+    private boolean checkVillageMasterTeachType(PlayerClass pclass)
     {
         return true;
     }
@@ -897,7 +897,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
     /*
      * Returns true if this classId allowed for master
      */
-    public final boolean checkVillageMaster(int classId)
+    private boolean checkVillageMaster(int classId)
     {
         return checkVillageMaster(PlayerClassTable.getInstance().getClassById(classId));
     }
@@ -905,7 +905,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
     /*
      * Returns true if this PlayerClass is allowed for master
      */
-    public final boolean checkVillageMaster(PlayerClass pclass)
+    private boolean checkVillageMaster(PlayerClass pclass)
     {
         if (Config.ALT_GAME_SUBCLASS_EVERYWHERE)
         {

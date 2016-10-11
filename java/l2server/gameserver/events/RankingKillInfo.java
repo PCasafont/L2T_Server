@@ -463,6 +463,6 @@ public class RankingKillInfo
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final RankingKillInfo _instance = new RankingKillInfo();
+        static final RankingKillInfo _instance = new RankingKillInfo();
     }
 }

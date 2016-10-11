@@ -124,6 +124,6 @@ public class GlobalVariablesManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final GlobalVariablesManager _instance = new GlobalVariablesManager();
+        static final GlobalVariablesManager _instance = new GlobalVariablesManager();
     }
 }

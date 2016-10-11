@@ -265,7 +265,7 @@ public class PcAppearance
     /**
      * @return Returns the owner.
      */
-    public L2PcInstance getOwner()
+    private L2PcInstance getOwner()
     {
         return _owner;
     }

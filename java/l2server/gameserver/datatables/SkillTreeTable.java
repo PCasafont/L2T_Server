@@ -758,7 +758,7 @@ public class SkillTreeTable
         return result.toArray(new L2SkillLearn[result.size()]);
     }
 
-    public final L2SkillLearn getSkillTopLevelFor(final int skillId, final L2PcInstance player)
+    private L2SkillLearn getSkillTopLevelFor(final int skillId, final L2PcInstance player)
     {
         Set<Long> skillIds = player.getCurrentClass().getSkills().keySet();
 
@@ -798,7 +798,7 @@ public class SkillTreeTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SkillTreeTable _instance = new SkillTreeTable();
+        static final SkillTreeTable _instance = new SkillTreeTable();
     }
 
     public void reload()

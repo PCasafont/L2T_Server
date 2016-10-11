@@ -25,13 +25,13 @@ public abstract class BaseRecievePacket
     private byte[] _decrypt;
     private int _off;
 
-    public BaseRecievePacket(byte[] decrypt)
+    protected BaseRecievePacket(byte[] decrypt)
     {
         _decrypt = decrypt;
         _off = 1; // skip packet type id
     }
 
-    public int readD()
+    protected int readD()
     {
         int result = _decrypt[_off++] & 0xff;
         result |= _decrypt[_off++] << 8 & 0xff00;
@@ -40,13 +40,13 @@ public abstract class BaseRecievePacket
         return result;
     }
 
-    public int readC()
+    protected int readC()
     {
         int result = _decrypt[_off++] & 0xff;
         return result;
     }
 
-    public int readH()
+    protected int readH()
     {
         int result = _decrypt[_off++] & 0xff;
         result |= _decrypt[_off++] << 8 & 0xff00;
@@ -66,7 +66,7 @@ public abstract class BaseRecievePacket
         return Double.longBitsToDouble(result);
     }
 
-    public String readS()
+    protected String readS()
     {
         String result = null;
         try
@@ -82,7 +82,7 @@ public abstract class BaseRecievePacket
         return result;
     }
 
-    public final byte[] readB(int length)
+    protected final byte[] readB(int length)
     {
         byte[] result = new byte[length];
         for (int i = 0; i < length; i++)
@@ -93,7 +93,7 @@ public abstract class BaseRecievePacket
         return result;
     }
 
-    public long readQ()
+    protected long readQ()
     {
         long result = _decrypt[_off++] & 0xff;
         result |= (_decrypt[_off++] & 0xffl) << 8l;

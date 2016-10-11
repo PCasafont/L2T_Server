@@ -249,6 +249,6 @@ public class ClanHallAuctionManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ClanHallAuctionManager _instance = new ClanHallAuctionManager();
+        static final ClanHallAuctionManager _instance = new ClanHallAuctionManager();
     }
 }

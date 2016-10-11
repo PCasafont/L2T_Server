@@ -53,7 +53,7 @@ public class L2LoginServer
         return _instance;
     }
 
-    public L2LoginServer()
+    private L2LoginServer()
     {
         ServerMode.serverMode = ServerMode.MODE_LOGINSERVER;
         // Local Constants

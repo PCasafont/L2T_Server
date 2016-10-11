@@ -67,10 +67,10 @@ public class AutoSpawnHandler
     private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs
     private static final int DEFAULT_DESPAWN = 3600000; // 1 hour in millisecs
 
-    protected Map<Integer, AutoSpawnInstance> _registeredSpawns;
-    protected Map<Integer, ScheduledFuture<?>> _runningSpawns;
+    private Map<Integer, AutoSpawnInstance> _registeredSpawns;
+    private Map<Integer, ScheduledFuture<?>> _runningSpawns;
 
-    protected boolean _activeState = true;
+    private boolean _activeState = true;
 
     private AutoSpawnHandler()
     {
@@ -192,7 +192,7 @@ public class AutoSpawnHandler
      * @param int     despawnDelay (If < 0 = default value or if = 0, function disabled)
      * @return AutoSpawnInstance spawnInst
      */
-    public AutoSpawnInstance registerSpawn(int npcId, int[][] spawnPoints, int initialDelay, int respawnDelay, int despawnDelay)
+    private AutoSpawnInstance registerSpawn(int npcId, int[][] spawnPoints, int initialDelay, int respawnDelay, int despawnDelay)
     {
         if (initialDelay < 0)
         {
@@ -246,7 +246,7 @@ public class AutoSpawnHandler
      * @param int despawnDelay (If < 0 = default value or if = 0, function disabled)
      * @return AutoSpawnInstance spawnInst
      */
-    public AutoSpawnInstance registerSpawn(int npcId, int initialDelay, int respawnDelay, int despawnDelay)
+    private AutoSpawnInstance registerSpawn(int npcId, int initialDelay, int respawnDelay, int despawnDelay)
     {
         return registerSpawn(npcId, null, initialDelay, respawnDelay, despawnDelay);
     }
@@ -258,7 +258,7 @@ public class AutoSpawnHandler
      * @param AutoSpawnInstance spawnInst
      * @return boolean removedSuccessfully
      */
-    public boolean removeSpawn(AutoSpawnInstance spawnInst)
+    private boolean removeSpawn(AutoSpawnInstance spawnInst)
     {
         if (!isSpawnRegistered(spawnInst))
         {
@@ -309,7 +309,7 @@ public class AutoSpawnHandler
      * @param AutoSpawnInstance spawnInst
      * @param boolean           isActive
      */
-    public void setSpawnActive(AutoSpawnInstance spawnInst, boolean isActive)
+    private void setSpawnActive(AutoSpawnInstance spawnInst, boolean isActive)
     {
         if (spawnInst == null)
         {
@@ -448,7 +448,7 @@ public class AutoSpawnHandler
      * @param int objectId
      * @return boolean isAssigned
      */
-    public final boolean isSpawnRegistered(int objectId)
+    private boolean isSpawnRegistered(int objectId)
     {
         return _registeredSpawns.containsKey(objectId);
     }
@@ -459,7 +459,7 @@ public class AutoSpawnHandler
      * @param AutoSpawnInstance spawnInst
      * @return boolean isAssigned
      */
-    public final boolean isSpawnRegistered(AutoSpawnInstance spawnInst)
+    private boolean isSpawnRegistered(AutoSpawnInstance spawnInst)
     {
         return _registeredSpawns.containsValue(spawnInst);
     }
@@ -476,7 +476,7 @@ public class AutoSpawnHandler
     {
         private int _objectId;
 
-        protected AutoSpawner(int objectId)
+        AutoSpawner(int objectId)
         {
             _objectId = objectId;
         }
@@ -597,7 +597,7 @@ public class AutoSpawnHandler
     {
         private int _objectId;
 
-        protected AutoDespawner(int objectId)
+        AutoDespawner(int objectId)
         {
             _objectId = objectId;
         }
@@ -651,19 +651,19 @@ public class AutoSpawnHandler
      */
     public static class AutoSpawnInstance
     {
-        protected int _objectId;
+        int _objectId;
 
         protected int _spawnIndex;
 
-        protected int _npcId;
+        int _npcId;
 
-        protected int _initDelay;
+        int _initDelay;
 
-        protected int _resDelay;
+        int _resDelay;
 
-        protected int _desDelay;
+        int _desDelay;
 
-        protected int _lastLocIndex = -1;
+        int _lastLocIndex = -1;
 
         private List<L2Npc> _npcList = new Vector<L2Npc>();
 
@@ -675,7 +675,7 @@ public class AutoSpawnHandler
 
         private boolean _broadcastAnnouncement = false;
 
-        protected AutoSpawnInstance(int npcId, int initDelay, int respawnDelay, int despawnDelay)
+        AutoSpawnInstance(int npcId, int initDelay, int respawnDelay, int despawnDelay)
         {
             _npcId = npcId;
             _initDelay = initDelay;
@@ -683,17 +683,17 @@ public class AutoSpawnHandler
             _desDelay = despawnDelay;
         }
 
-        protected void setSpawnActive(boolean activeValue)
+        void setSpawnActive(boolean activeValue)
         {
             _spawnActive = activeValue;
         }
 
-        protected boolean addNpcInstance(L2Npc npcInst)
+        boolean addNpcInstance(L2Npc npcInst)
         {
             return _npcList.add(npcInst);
         }
 
-        protected boolean removeNpcInstance(L2Npc npcInst)
+        boolean removeNpcInstance(L2Npc npcInst)
         {
             return _npcList.remove(npcInst);
         }
@@ -808,6 +808,6 @@ public class AutoSpawnHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final AutoSpawnHandler _instance = new AutoSpawnHandler();
+        static final AutoSpawnHandler _instance = new AutoSpawnHandler();
     }
 }

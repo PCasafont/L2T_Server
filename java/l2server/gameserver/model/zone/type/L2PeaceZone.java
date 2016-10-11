@@ -26,7 +26,7 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2PeaceZone extends L2ZoneType
 {
-    boolean _enabled;
+    private boolean _enabled;
 
     public L2PeaceZone(int id)
     {

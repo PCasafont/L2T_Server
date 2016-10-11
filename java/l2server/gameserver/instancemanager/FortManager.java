@@ -195,7 +195,7 @@ public class FortManager implements InstanceListManager
         return getFortIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
     }
 
-    public final int getFortIndex(int x, int y, int z)
+    private int getFortIndex(int x, int y, int z)
     {
         Fort fort;
         for (int i = 0; i < _forts.size(); i++)
@@ -231,6 +231,6 @@ public class FortManager implements InstanceListManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final FortManager _instance = new FortManager();
+        static final FortManager _instance = new FortManager();
     }
 }

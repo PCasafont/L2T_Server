@@ -202,6 +202,6 @@ public class QuestManager extends ScriptManager<Quest>
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final QuestManager _instance = new QuestManager();
+        static final QuestManager _instance = new QuestManager();
     }
 }

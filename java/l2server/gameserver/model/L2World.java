@@ -589,7 +589,7 @@ public final class L2World
      * @param object L2object that determine the center of the circular area
      * @param radius Radius of the circular area
      */
-    public List<L2Object> getVisibleObjects(L2Object object, int radius)
+    private List<L2Object> getVisibleObjects(L2Object object, int radius)
     {
         if (object == null || !object.isVisible())
         {
@@ -934,6 +934,6 @@ public final class L2World
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final L2World _instance = new L2World();
+        static final L2World _instance = new L2World();
     }
 }

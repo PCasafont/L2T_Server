@@ -28,7 +28,7 @@ public abstract class MMOClient<T extends MMOConnection<?>>
 {
     private final T _con;
 
-    public MMOClient(final T con)
+    protected MMOClient(final T con)
     {
         _con = con;
     }

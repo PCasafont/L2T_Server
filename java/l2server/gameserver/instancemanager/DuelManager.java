@@ -248,6 +248,6 @@ public class DuelManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final DuelManager _instance = new DuelManager();
+        static final DuelManager _instance = new DuelManager();
     }
 }

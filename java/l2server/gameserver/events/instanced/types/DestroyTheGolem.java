@@ -289,7 +289,7 @@ public class DestroyTheGolem extends EventInstance
         }
     }
 
-    class UnspawnGolemsTask implements Runnable
+    private class UnspawnGolemsTask implements Runnable
     {
         @Override
         @SuppressWarnings("synthetic-access")

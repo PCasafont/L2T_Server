@@ -151,7 +151,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
         onEvent(ChanceCondition.EVT_KILL, 0, false, target, null, Elementals.NONE);
     }
 
-    public void onEvent(int event, int damage, boolean critical, L2Character target, L2Skill skill, byte element)
+    private void onEvent(int event, int damage, boolean critical, L2Character target, L2Skill skill, byte element)
     {
         if (_owner.isDead())
         {

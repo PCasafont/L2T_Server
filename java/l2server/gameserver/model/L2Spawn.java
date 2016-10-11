@@ -67,7 +67,7 @@ public class L2Spawn
     /**
      * Is it scheduled for respawn?
      */
-    protected boolean _scheduled = false;
+    private boolean _scheduled = false;
 
     /**
      * The X position of the spwan point
@@ -92,7 +92,7 @@ public class L2Spawn
     /**
      * The possible coords in which to spawn [x, y, z, chance]
      */
-    List<int[]> _randomCoords;
+    private List<int[]> _randomCoords;
 
     /**
      * The delay between a L2NpcInstance remove and its re-spawn
@@ -125,7 +125,7 @@ public class L2Spawn
     /**
      * The task launching the function doSpawn()
      */
-    class SpawnTask implements Runnable
+    private class SpawnTask implements Runnable
     {
         @Override
         public void run()
@@ -572,7 +572,7 @@ public class L2Spawn
         }
     }
 
-    public static void notifyNpcSpawned(L2Npc npc)
+    private static void notifyNpcSpawned(L2Npc npc)
     {
         synchronized (_spawnListeners)
         {
@@ -639,7 +639,7 @@ public class L2Spawn
         return _npc.getTemplate();
     }
 
-    public int getInstanceId()
+    private int getInstanceId()
     {
         return _instanceId;
     }

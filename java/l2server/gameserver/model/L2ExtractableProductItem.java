@@ -18,7 +18,7 @@ package l2server.gameserver.model;
 /**
  * @author -Nemesiss-, Zoey76
  */
-public class L2ExtractableProductItem
+class L2ExtractableProductItem
 {
     private final int[] _id;
     private final int[] _ammount;

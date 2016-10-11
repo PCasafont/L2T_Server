@@ -51,10 +51,10 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class ArtificialPlayersManager implements Reloadable
 {
-    List<L2ApInstance> _players = new ArrayList<L2ApInstance>();
+    private List<L2ApInstance> _players = new ArrayList<L2ApInstance>();
 
-    ScheduledFuture<?> _pvpCheck = null;
-    List<L2Party> _partiesSent = new ArrayList<L2Party>();
+    private ScheduledFuture<?> _pvpCheck = null;
+    private List<L2Party> _partiesSent = new ArrayList<L2Party>();
 
     private ArtificialPlayersManager()
     {
@@ -232,7 +232,7 @@ public class ArtificialPlayersManager implements Reloadable
      * @param classId the classId of the AP to create
      * @return a new (and spawned) L2ApInstance
      */
-    public L2ApInstance createChar(int classId)
+    private L2ApInstance createChar(int classId)
     {
         L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
         PlayerClass cl = PlayerClassTable.getInstance().getClassById(classId);
@@ -336,7 +336,7 @@ public class ArtificialPlayersManager implements Reloadable
      *
      * @param classCombination List of ClassIDs
      */
-    public L2Party createParty(List<Integer> classCombination)
+    private L2Party createParty(List<Integer> classCombination)
     {
         List<L2ApInstance> available = new ArrayList<L2ApInstance>();
 
@@ -392,7 +392,7 @@ public class ArtificialPlayersManager implements Reloadable
      * Create a L2APlayerInstance party with random members
      * <b>NOTE:</b> In fact, creates a static party ATM D:
      */
-    public L2Party createRandomParty()
+    private L2Party createRandomParty()
     {
         List<Integer> classCombination = new ArrayList<Integer>();
 
@@ -446,7 +446,7 @@ public class ArtificialPlayersManager implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ArtificialPlayersManager _instance = new ArtificialPlayersManager();
+        static final ArtificialPlayersManager _instance = new ArtificialPlayersManager();
     }
 
     @Override

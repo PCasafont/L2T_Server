@@ -36,7 +36,7 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectFear extends L2Effect
 {
-    public static final int FEAR_RANGE = 500;
+    private static final int FEAR_RANGE = 500;
 
     private int _dX = -1;
     private int _dY = -1;

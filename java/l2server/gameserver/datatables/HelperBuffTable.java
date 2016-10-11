@@ -203,6 +203,6 @@ public class HelperBuffTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final HelperBuffTable _instance = new HelperBuffTable();
+        static final HelperBuffTable _instance = new HelperBuffTable();
     }
 }

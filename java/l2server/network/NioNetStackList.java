@@ -64,9 +64,9 @@ public final class NioNetStackList<E>
 
     protected final class NioNetStackNode
     {
-        protected NioNetStackNode _next;
+        NioNetStackNode _next;
 
-        protected E _value;
+        E _value;
     }
 
     private final class NioNetStackNodeBuf

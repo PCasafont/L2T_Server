@@ -55,7 +55,7 @@ public class CrestCache
         reload();
     }
 
-    public void reload()
+    private void reload()
     {
         FileFilter filter = new BmpFilter();
 
@@ -131,7 +131,7 @@ public class CrestCache
                 " files loaded.");
     }
 
-    public void convertOldPedgeFiles()
+    private void convertOldPedgeFiles()
     {
         File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/");
 
@@ -185,12 +185,12 @@ public class CrestCache
         }
     }
 
-    public float getMemoryUsage()
+    private float getMemoryUsage()
     {
         return (float) _bytesBuffLen / 1048576;
     }
 
-    public int getLoadedFiles()
+    private int getLoadedFiles()
     {
         return _loadedFiles;
     }
@@ -238,7 +238,7 @@ public class CrestCache
         }
     }
 
-    public void removeOldPledgeCrest(int id)
+    private void removeOldPledgeCrest(int id)
     {
         File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Pledge_" + id + ".bmp");
         try
@@ -380,6 +380,6 @@ public class CrestCache
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CrestCache _instance = new CrestCache();
+        static final CrestCache _instance = new CrestCache();
     }
 }

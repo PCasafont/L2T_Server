@@ -24,7 +24,7 @@ public class CursedBattle extends EventInstance
 {
     private L2PcInstance _cursedPlayer;
 
-    List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
+    private List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
 
     public CursedBattle(int id, EventConfig config)
     {
@@ -197,7 +197,7 @@ public class CursedBattle extends EventInstance
         }
     }
 
-    public boolean isCursedPlayer(int objectId)
+    private boolean isCursedPlayer(int objectId)
     {
         return _cursedPlayer == null ? false : _cursedPlayer.getObjectId() == objectId;
     }

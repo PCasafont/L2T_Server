@@ -28,9 +28,9 @@ public class ExNoticePostSent extends L2GameServerPacket
         return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
     }
 
-    boolean _showAnim;
+    private boolean _showAnim;
 
-    public ExNoticePostSent(boolean showAnimation)
+    private ExNoticePostSent(boolean showAnimation)
     {
         _showAnim = showAnimation;
     }

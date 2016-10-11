@@ -63,7 +63,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
     public static final int SKILL_DIVINE_EXPANSION = 10956;
     public static final int SKILL_CLAN_LUCK = 390;
 
-    public static final boolean geoEnabled = Config.GEODATA > 0;
+    private static final boolean geoEnabled = Config.GEODATA > 0;
 
     public static enum SkillOpType
     {
@@ -100,7 +100,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
     public final static int COND_LOWHP = 0x0020;
     public final static int COND_ROBES = 0x0040;
     public final static int COND_CHARGES = 0x0080;
-    public final static int COND_SHIELD = 0x0100;
+    private final static int COND_SHIELD = 0x0100;
     public final static int COND_FRONT = 0x0200;
 
     private static final Func[] _emptyFunctionSet = new Func[0];
@@ -264,13 +264,13 @@ public abstract class L2Skill implements IChanceSkillTrigger
     private final float _ignoredDefPercent;
     private final boolean _canBeUsedWhenDisabled;
 
-    protected List<Condition> _preCondition;
-    protected List<Condition> _itemPreCondition;
-    protected FuncTemplate[] _funcTemplates;
-    protected L2AbnormalTemplate[] _effectTemplates;
-    protected L2AbnormalTemplate[] _effectTemplatesSelf;
+    private List<Condition> _preCondition;
+    private List<Condition> _itemPreCondition;
+    private FuncTemplate[] _funcTemplates;
+    private L2AbnormalTemplate[] _effectTemplates;
+    private L2AbnormalTemplate[] _effectTemplatesSelf;
 
-    protected ChanceCondition _chanceCondition = null;
+    private ChanceCondition _chanceCondition = null;
 
     // Flying support
     private final String _flyType;
@@ -1310,7 +1310,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return getSkillType() == L2SkillType.PUMPING || getSkillType() == L2SkillType.REELING;
     }
 
-    public final int getWeaponsAllowed()
+    private int getWeaponsAllowed()
     {
         return _weaponsAllowed;
     }
@@ -1439,7 +1439,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return _flyCourse;
     }
 
-    public final boolean isSkillTypeOffensive()
+    private boolean isSkillTypeOffensive()
     {
         switch (_skillType)
         {
@@ -1649,7 +1649,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return true;
     }
 
-    public final L2Object[] getTargetList(L2Character activeChar, boolean onlyFirst)
+    private L2Object[] getTargetList(L2Character activeChar, boolean onlyFirst)
     {
         // Init to null the target of the skill
         L2Character target = null;
@@ -2575,7 +2575,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return true;
     }
 
-    public static final boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
+    private static boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
     {
         if (target == null || isDead != target.isDead())
         {
@@ -2632,7 +2632,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return _effectTemplates;
     }
 
-    public boolean hasSelfEffects()
+    protected boolean hasSelfEffects()
     {
         return _effectTemplatesSelf != null && _effectTemplatesSelf.length > 0;
     }
@@ -2861,7 +2861,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return effects.toArray(new L2Abnormal[effects.size()]);
     }
 
-    public final L2Abnormal[] getEffectsSelf(L2Character effector)
+    protected final L2Abnormal[] getEffectsSelf(L2Character effector)
     {
         if (!hasSelfEffects() || isPassive())
         {
@@ -3275,7 +3275,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return L2SkillBehaviorType.FRIENDLY;
     }
 
-    public final boolean isAttack()
+    private boolean isAttack()
     {
         switch (getSkillType())
         {

@@ -508,6 +508,6 @@ public class CursedWeaponsManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CursedWeaponsManager _instance = new CursedWeaponsManager();
+        static final CursedWeaponsManager _instance = new CursedWeaponsManager();
     }
 }

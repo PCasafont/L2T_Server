@@ -146,6 +146,6 @@ public class EnchantEffectTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final EnchantEffectTable _instance = new EnchantEffectTable();
+        static final EnchantEffectTable _instance = new EnchantEffectTable();
     }
 }

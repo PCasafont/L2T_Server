@@ -359,7 +359,7 @@ public class CustomCommunityBoard
         _bossIds.addAll(bossIds.keySet());
     }
 
-    public String getCustomGrandBossInfo()
+    private String getCustomGrandBossInfo()
     {
         StringBuilder sb = new StringBuilder();
 
@@ -504,7 +504,7 @@ public class CustomCommunityBoard
         return sb.toString();
     }
 
-    public String getCustomRBInfo(int pageToShow, boolean isGM)
+    private String getCustomRBInfo(int pageToShow, boolean isGM)
     {
         StringBuilder sb = new StringBuilder();
         sb.append(
@@ -1026,7 +1026,7 @@ public class CustomCommunityBoard
         return sb.toString();
     }
 
-    public void sendDropPage(L2PcInstance pl, int npcId, int page, L2Npc npc)
+    private void sendDropPage(L2PcInstance pl, int npcId, int page, L2Npc npc)
     {
         if (pl == null)
         {
@@ -1345,7 +1345,7 @@ public class CustomCommunityBoard
         return sb.toString();
     }
 
-    public String getCommunityPage(String pageName)
+    private String getCommunityPage(String pageName)
     {
         return HtmCache.getInstance().getHtm(null, "CommunityBoard/" + pageName + ".htm");
     }
@@ -1638,6 +1638,6 @@ public class CustomCommunityBoard
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CustomCommunityBoard _instance = new CustomCommunityBoard();
+        static final CustomCommunityBoard _instance = new CustomCommunityBoard();
     }
 }

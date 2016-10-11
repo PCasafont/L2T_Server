@@ -206,7 +206,7 @@ public class CharKnownList extends ObjectKnownList
         }
     }
 
-    public L2Character getActiveChar()
+    L2Character getActiveChar()
     {
         return (L2Character) super.getActiveObject();
     }
@@ -268,7 +268,7 @@ public class CharKnownList extends ObjectKnownList
         return _knownRelations;
     }
 
-    public final Map<Integer, L2Summon> getKnownSummons()
+    final Map<Integer, L2Summon> getKnownSummons()
     {
         if (_knownSummons == null)
         {

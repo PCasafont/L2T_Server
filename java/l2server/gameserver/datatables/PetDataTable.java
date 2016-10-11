@@ -43,7 +43,7 @@ public class PetDataTable
         load();
     }
 
-    public void load()
+    private void load()
     {
         _petTable.clear();
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "PetData.xml");
@@ -424,7 +424,7 @@ public class PetDataTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PetDataTable _instance = new PetDataTable();
+        static final PetDataTable _instance = new PetDataTable();
     }
 
     public static void main(String... s)

@@ -24,7 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author DS
  *         Credits to Diamond
  */
-public class CellNodeBuffer
+class CellNodeBuffer
 {
     private static final byte EAST = 1;
     private static final byte WEST = 2;

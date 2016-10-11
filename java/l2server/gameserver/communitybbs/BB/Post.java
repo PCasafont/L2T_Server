@@ -65,7 +65,7 @@ public class Post
         insertindb(cp);
     }
 
-    public void insertindb(CPost cp)
+    private void insertindb(CPost cp)
     {
         Connection con = null;
         try

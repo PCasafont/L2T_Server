@@ -27,8 +27,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameChangeTeam extends L2GameServerPacket
 {
-    L2PcInstance _player;
-    boolean _fromRedTeam;
+    private L2PcInstance _player;
+    private boolean _fromRedTeam;
 
     /**
      * Move Player from Team x to Team y

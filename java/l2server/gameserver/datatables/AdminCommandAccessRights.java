@@ -122,6 +122,6 @@ public class AdminCommandAccessRights
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final AdminCommandAccessRights _instance = new AdminCommandAccessRights();
+        static final AdminCommandAccessRights _instance = new AdminCommandAccessRights();
     }
 }

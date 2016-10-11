@@ -22,7 +22,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class RestartResponse extends L2GameServerPacket
 {
-    public static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
+    private static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
     private static final RestartResponse STATIC_PACKET_FALSE = new RestartResponse(false);
 
     public static final RestartResponse valueOf(boolean result)
@@ -32,7 +32,7 @@ public final class RestartResponse extends L2GameServerPacket
 
     private boolean _result;
 
-    public RestartResponse(boolean result)
+    private RestartResponse(boolean result)
     {
         _result = result;
     }

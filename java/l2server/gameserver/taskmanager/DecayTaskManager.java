@@ -33,10 +33,10 @@ import java.util.logging.Level;
 public class DecayTaskManager
 {
 
-    protected Map<L2Character, Long> _decayTasks = new ConcurrentHashMap<L2Character, Long>();
+    private Map<L2Character, Long> _decayTasks = new ConcurrentHashMap<L2Character, Long>();
 
-    public static final int RAID_BOSS_DECAY_TIME = 30000;
-    public static final int ATTACKABLE_DECAY_TIME = 8500;
+    private static final int RAID_BOSS_DECAY_TIME = 30000;
+    private static final int ATTACKABLE_DECAY_TIME = 8500;
 
     private DecayTaskManager()
     {
@@ -72,7 +72,7 @@ public class DecayTaskManager
 
     private class DecayScheduler implements Runnable
     {
-        protected DecayScheduler()
+        DecayScheduler()
         {
             // Do nothing
         }
@@ -149,6 +149,6 @@ public class DecayTaskManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final DecayTaskManager _instance = new DecayTaskManager();
+        static final DecayTaskManager _instance = new DecayTaskManager();
     }
 }

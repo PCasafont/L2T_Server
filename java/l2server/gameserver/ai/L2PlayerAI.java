@@ -33,14 +33,14 @@ public class L2PlayerAI extends L2PlayableAI
 
     private boolean _thinking; // to prevent recursive thinking
 
-    IntentionCommand _nextIntention = null;
+    private IntentionCommand _nextIntention = null;
 
     public L2PlayerAI(AIAccessor accessor)
     {
         super(accessor);
     }
 
-    void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
+    private void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
     {
         _nextIntention = new IntentionCommand(intention, arg0, arg1);
     }

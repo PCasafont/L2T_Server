@@ -75,23 +75,23 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
     /**
      * sort order Z..A
      */
-    public static final byte Z2A = -1;
+    private static final byte Z2A = -1;
     /**
      * sort order Grade non..S
      */
-    public static final byte GRADE = 2;
+    private static final byte GRADE = 2;
     /**
      * sort order Recipe Level 1..9
      */
-    public static final byte LEVEL = 3;
+    private static final byte LEVEL = 3;
     /**
      * sort order body part (wearing)
      */
-    public static final byte WEAR = 4;
+    private static final byte WEAR = 4;
     /**
      * Maximum Items to put into list
      */
-    public static final int MAX_SORT_LIST_ITEMS = 300;
+    private static final int MAX_SORT_LIST_ITEMS = 300;
 
     /**
      * This will instantiate the Warehouselist the Player asked for
@@ -243,7 +243,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
     {
         private byte order = 0;
 
-        protected WarehouseItemNameComparator(byte sortOrder)
+        WarehouseItemNameComparator(byte sortOrder)
         {
             order = sortOrder;
         }
@@ -274,7 +274,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 
         private RecipeController rc = null;
 
-        protected WarehouseItemRecipeComparator(int sortOrder)
+        WarehouseItemRecipeComparator(int sortOrder)
         {
             order = sortOrder;
             rc = RecipeController.getInstance();
@@ -334,7 +334,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
     {
         private byte order = 0;
 
-        protected WarehouseItemBodypartComparator(byte sortOrder)
+        WarehouseItemBodypartComparator(byte sortOrder)
         {
             order = sortOrder;
         }
@@ -363,7 +363,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
     {
         byte order = 0;
 
-        protected WarehouseItemGradeComparator(byte sortOrder)
+        WarehouseItemGradeComparator(byte sortOrder)
         {
             order = sortOrder;
         }

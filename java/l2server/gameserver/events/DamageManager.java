@@ -29,7 +29,7 @@ import java.util.concurrent.ScheduledFuture;
 public class DamageManager
 {
     private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<Integer, DamageInfo>();
-    protected static ScheduledFuture<?> _saveTask;
+    private static ScheduledFuture<?> _saveTask;
 
     public String getRankingInfo()
     {
@@ -336,6 +336,6 @@ public class DamageManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final DamageManager _instance = new DamageManager();
+        static final DamageManager _instance = new DamageManager();
     }
 }

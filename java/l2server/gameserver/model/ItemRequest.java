@@ -20,10 +20,10 @@ package l2server.gameserver.model;
  */
 public class ItemRequest
 {
-    int _objectId;
-    int _itemId;
-    long _count;
-    long _price;
+    private int _objectId;
+    private int _itemId;
+    private long _count;
+    private long _price;
 
     public ItemRequest(int objectId, long count, long price)
     {

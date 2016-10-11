@@ -49,7 +49,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public abstract class L2ZoneType
 {
     private final int _id;
-    protected L2ZoneForm _zone;
+    private L2ZoneForm _zone;
     protected ConcurrentHashMap<Integer, L2Character> _characterList;
 
     /**
@@ -337,7 +337,7 @@ public abstract class L2ZoneType
      *
      * @param object
      */
-    public boolean isInsideZone(L2Object object)
+    protected boolean isInsideZone(L2Object object)
     {
         return isInsideZone(object.getX(), object.getY(), object.getZ());
     }
@@ -456,7 +456,7 @@ public abstract class L2ZoneType
 
     public abstract void onReviveInside(L2Character character);
 
-    public ConcurrentHashMap<Integer, L2Character> getCharactersInside()
+    protected ConcurrentHashMap<Integer, L2Character> getCharactersInside()
     {
         return _characterList;
     }
@@ -479,7 +479,7 @@ public abstract class L2ZoneType
         _questEvents.put(EventType, questByEvents);
     }
 
-    public ArrayList<Quest> getQuestByEvent(Quest.QuestEventType EventType)
+    private ArrayList<Quest> getQuestByEvent(Quest.QuestEventType EventType)
     {
         if (_questEvents == null)
         {
@@ -512,7 +512,7 @@ public abstract class L2ZoneType
         return _target;
     }
 
-    public void setTargetType(InstanceType type)
+    protected void setTargetType(InstanceType type)
     {
         _target = type;
         _checkAffected = true;
@@ -583,7 +583,7 @@ public abstract class L2ZoneType
         }, ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
     }
 
-    public void stopWholeZone()
+    private void stopWholeZone()
     {
         for (L2Character ch : _characterList.values())
         {
@@ -603,7 +603,7 @@ public abstract class L2ZoneType
         }
     }
 
-    public void broadcastMovie(int vidId)
+    private void broadcastMovie(int vidId)
     {
         for (L2PcInstance pl : getPlayersInside())
         {
@@ -617,7 +617,7 @@ public abstract class L2ZoneType
         }
     }
 
-    public void startWholeZone()
+    private void startWholeZone()
     {
         for (L2Character ch : _characterList.values())
         {

@@ -25,9 +25,9 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameChangePoints extends L2GameServerPacket
 {
-    int _timeLeft;
-    int _bluePoints;
-    int _redPoints;
+    private int _timeLeft;
+    private int _bluePoints;
+    private int _redPoints;
 
     /**
      * Change Client Point Counter

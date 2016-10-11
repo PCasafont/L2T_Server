@@ -94,7 +94,7 @@ public abstract class Inventory extends ItemContainer
     private final List<PaperdollListener> _paperdollListeners;
 
     // protected to be accessed from child classes only
-    protected int _totalWeight;
+    int _totalWeight;
 
     // used to quickly check for using of items of special type
     private int _wearedMask;
@@ -824,7 +824,7 @@ public abstract class Inventory extends ItemContainer
     /**
      * Constructor of the inventory
      */
-    protected Inventory()
+    Inventory()
     {
         _paperdoll = new L2ItemInstance[PAPERDOLL_TOTALSLOTS];
         _paperdollListeners = new ArrayList<PaperdollListener>();
@@ -849,7 +849,7 @@ public abstract class Inventory extends ItemContainer
      *
      * @return ChangeRecorder
      */
-    public ChangeRecorder newRecorder()
+    private ChangeRecorder newRecorder()
     {
         return new ChangeRecorder(this);
     }
@@ -863,7 +863,7 @@ public abstract class Inventory extends ItemContainer
      * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
      * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
      */
-    public L2ItemInstance dropItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
+    L2ItemInstance dropItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
     {
         if (item == null)
         {
@@ -1128,7 +1128,7 @@ public abstract class Inventory extends ItemContainer
      *
      * @param PaperdollListener pointing out the listener
      */
-    public synchronized void addPaperdollListener(PaperdollListener listener)
+    private synchronized void addPaperdollListener(PaperdollListener listener)
     {
         assert !_paperdollListeners.contains(listener);
         _paperdollListeners.add(listener);
@@ -1139,7 +1139,7 @@ public abstract class Inventory extends ItemContainer
      *
      * @param PaperdollListener pointing out the listener to be deleted
      */
-    public synchronized void removePaperdollListener(PaperdollListener listener)
+    private synchronized void removePaperdollListener(PaperdollListener listener)
     {
         _paperdollListeners.remove(listener);
     }
@@ -1157,7 +1157,7 @@ public abstract class Inventory extends ItemContainer
      * @param item : L2ItemInstance pointing out the item to add in slot
      * @return L2ItemInstance designating the item placed in the slot before
      */
-    public synchronized L2ItemInstance setPaperdollItem(int slot, L2ItemInstance item, boolean updateDb)
+    private synchronized L2ItemInstance setPaperdollItem(int slot, L2ItemInstance item, boolean updateDb)
     {
         L2ItemInstance old = _paperdoll[slot];
         if (old != item)
@@ -1512,7 +1512,7 @@ public abstract class Inventory extends ItemContainer
      *
      * @param item : L2ItemInstance designating the item and slot used.
      */
-    public void equipItem(L2ItemInstance item, boolean updateDb)
+    private void equipItem(L2ItemInstance item, boolean updateDb)
     {
         if (getOwner() instanceof L2PcInstance && ((L2PcInstance) getOwner()).getPrivateStoreType() != 0)
         {

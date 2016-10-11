@@ -30,7 +30,7 @@ import l2server.log.Log;
 public class TaskOlympiadSave extends Task
 {
 
-    public static final String NAME = "olympiad_save";
+    private static final String NAME = "olympiad_save";
 
     /**
      * @see l2server.gameserver.taskmanager.Task#getName()

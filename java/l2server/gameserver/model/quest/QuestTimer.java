@@ -27,7 +27,7 @@ public class QuestTimer
 {
     // =========================================================
     // Schedule Task
-    public class ScheduleTimerTask implements Runnable
+    private class ScheduleTimerTask implements Runnable
     {
         @Override
         public void run()
@@ -130,17 +130,17 @@ public class QuestTimer
 
     // =========================================================
     // Property - Public
-    public final boolean getIsActive()
+    private boolean getIsActive()
     {
         return _isActive;
     }
 
-    public final boolean getIsRepeating()
+    private boolean getIsRepeating()
     {
         return _isRepeating;
     }
 
-    public final Quest getQuest()
+    private Quest getQuest()
     {
         return _quest;
     }
@@ -150,12 +150,12 @@ public class QuestTimer
         return _name;
     }
 
-    public final L2Npc getNpc()
+    private L2Npc getNpc()
     {
         return _npc;
     }
 
-    public final L2PcInstance getPlayer()
+    private L2PcInstance getPlayer()
     {
         return _player;
     }

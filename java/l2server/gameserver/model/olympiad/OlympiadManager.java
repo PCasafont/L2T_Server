@@ -54,7 +54,7 @@ public class OlympiadManager
         return _classBasedRegisters;
     }
 
-    protected final List<List<Integer>> hasEnoughRegisteredClassed()
+    final List<List<Integer>> hasEnoughRegisteredClassed()
     {
         List<List<Integer>> result = null;
         for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
@@ -72,12 +72,12 @@ public class OlympiadManager
         return result;
     }
 
-    protected final boolean hasEnoughRegisteredNonClassed()
+    final boolean hasEnoughRegisteredNonClassed()
     {
         return _nonClassBasedRegisters.size() >= Config.ALT_OLY_NONCLASSED;
     }
 
-    protected final void clearRegistered()
+    final void clearRegistered()
     {
         _nonClassBasedRegisters.clear();
         _classBasedRegisters.clear();
@@ -133,7 +133,7 @@ public class OlympiadManager
         return isRegistered(player, false) || isInCompetition(player, false);
     }
 
-    public final boolean isInCompetition(L2PcInstance player, boolean showMessage)
+    private boolean isInCompetition(L2PcInstance player, boolean showMessage)
     {
         if (!Olympiad._inCompPeriod)
         {
@@ -503,6 +503,6 @@ public class OlympiadManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final OlympiadManager _instance = new OlympiadManager();
+        static final OlympiadManager _instance = new OlympiadManager();
     }
 }

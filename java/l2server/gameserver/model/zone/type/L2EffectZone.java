@@ -184,12 +184,12 @@ public class L2EffectZone extends L2ZoneType
         return SkillTable.getInstance().getInfo(skillId, skillLvl);
     }
 
-    public boolean isEnabled()
+    private boolean isEnabled()
     {
         return _enabled;
     }
 
-    public int getChance()
+    private int getChance()
     {
         return _chance;
     }
@@ -215,7 +215,7 @@ public class L2EffectZone extends L2ZoneType
         //Logozo.info("Zone: "+this+" adding skill: "+skillId+" lvl: "+skillLvL);
     }
 
-    public void removeSkill(int skillId)
+    private void removeSkill(int skillId)
     {
         if (_skills != null)
         {
@@ -248,7 +248,7 @@ public class L2EffectZone extends L2ZoneType
         }
     }
 
-    protected Collection<L2Character> getCharacterList()
+    private Collection<L2Character> getCharacterList()
     {
         return _characterList.values();
     }

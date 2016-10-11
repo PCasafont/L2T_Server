@@ -372,7 +372,7 @@ public class SearchDropManager
         return null;
     }
 
-    public void overrideDrops(L2NpcTemplate temp)
+    private void overrideDrops(L2NpcTemplate temp)
     {
         for (Entry<Integer, Drops> i : _allDrops.entrySet())
         {
@@ -405,6 +405,6 @@ public class SearchDropManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SearchDropManager _instance = new SearchDropManager();
+        static final SearchDropManager _instance = new SearchDropManager();
     }
 }

@@ -52,23 +52,23 @@ public final class L2NpcTemplate extends L2CharTemplate
     public static final int AIST_NEGATIVE = 1;
     public static final int AIST_DEBUFF = 2;
     public static final int AIST_ATK = 3;
-    public static final int AIST_ROOT = 4;
-    public static final int AIST_STUN = 5;
-    public static final int AIST_SLEEP = 6;
-    public static final int AIST_PARALYZE = 7;
-    public static final int AIST_FOSSIL = 8;
-    public static final int AIST_FLOAT = 9;
+    private static final int AIST_ROOT = 4;
+    private static final int AIST_STUN = 5;
+    private static final int AIST_SLEEP = 6;
+    private static final int AIST_PARALYZE = 7;
+    private static final int AIST_FOSSIL = 8;
+    private static final int AIST_FLOAT = 9;
     public static final int AIST_IMMOBILIZE = 10;
     public static final int AIST_HEAL = 11;
     public static final int AIST_RES = 12;
-    public static final int AIST_DOT = 13;
+    private static final int AIST_DOT = 13;
     public static final int AIST_COT = 14;
     public static final int AIST_UNIVERSAL = 15;
-    public static final int AIST_MANA = 16;
+    private static final int AIST_MANA = 16;
     public static final int AIST_LONG_RANGE = 17;
     public static final int AIST_SHORT_RANGE = 18;
     public static final int AIST_GENERAL = 19;
-    public static final int AIST_COUNT = 20;
+    private static final int AIST_COUNT = 20;
 
     public int NpcId;
     public int TemplateId;
@@ -90,7 +90,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     public int LHand;
     public int EnchantEffect;
     public boolean RandomWalk;
-    public L2NpcRace Race;
+    private L2NpcRace Race;
     public int ExtraDropGroup;
     public boolean Targetable;
     public boolean IsNonTalking;
@@ -103,12 +103,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 
     public int FixedAccuracy;
     public int FixedEvasion;
-    public float HatersDamageMultiplier;
+    private float HatersDamageMultiplier;
 
     //Skill AI
     @SuppressWarnings("unchecked")
     public List<L2Skill>[] aiSkills = new List[AIST_COUNT];
-    public boolean[] aiSkillChecks = new boolean[AIST_COUNT];
+    private boolean[] aiSkillChecks = new boolean[AIST_COUNT];
 
     private L2NpcAIData _aiData = new L2NpcAIData();
 
@@ -616,12 +616,12 @@ public final class L2NpcTemplate extends L2CharTemplate
      * @param clazz
      * @return
      */
-    public static boolean isAssignableTo(Object obj, Class<?> clazz)
+    private static boolean isAssignableTo(Object obj, Class<?> clazz)
     {
         return L2NpcTemplate.isAssignableTo(obj.getClass(), clazz);
     }
 
-    public static boolean isAssignableTo(Class<?> sub, Class<?> clazz)
+    private static boolean isAssignableTo(Class<?> sub, Class<?> clazz)
     {
         // if clazz represents an interface
         if (clazz.isInterface())
@@ -764,7 +764,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         return _aiData;
     }
 
-    public void addBuffSkill(L2Skill skill)
+    private void addBuffSkill(L2Skill skill)
     {
         if (aiSkills[AIST_BUFF] == null)
         {
@@ -774,7 +774,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_BUFF] = true;
     }
 
-    public void addHealSkill(L2Skill skill)
+    private void addHealSkill(L2Skill skill)
     {
         if (aiSkills[AIST_HEAL] == null)
         {
@@ -784,7 +784,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_HEAL] = true;
     }
 
-    public void addResSkill(L2Skill skill)
+    private void addResSkill(L2Skill skill)
     {
         if (aiSkills[AIST_RES] == null)
         {
@@ -794,7 +794,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_RES] = true;
     }
 
-    public void addAtkSkill(L2Skill skill)
+    private void addAtkSkill(L2Skill skill)
     {
         if (aiSkills[AIST_ATK] == null)
         {
@@ -804,7 +804,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_ATK] = true;
     }
 
-    public void addDebuffSkill(L2Skill skill)
+    private void addDebuffSkill(L2Skill skill)
     {
         if (aiSkills[AIST_DEBUFF] == null)
         {
@@ -874,7 +874,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_FOSSIL] = true;
     }
 
-    public void addNegativeSkill(L2Skill skill)
+    private void addNegativeSkill(L2Skill skill)
     {
         if (aiSkills[AIST_NEGATIVE] == null)
         {
@@ -904,7 +904,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_DOT] = true;
     }
 
-    public void addUniversalSkill(L2Skill skill)
+    private void addUniversalSkill(L2Skill skill)
     {
         if (aiSkills[AIST_UNIVERSAL] == null)
         {
@@ -914,7 +914,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_UNIVERSAL] = true;
     }
 
-    public void addCOTSkill(L2Skill skill)
+    private void addCOTSkill(L2Skill skill)
     {
         if (aiSkills[AIST_COT] == null)
         {
@@ -934,7 +934,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_MANA] = true;
     }
 
-    public void addGeneralSkill(L2Skill skill)
+    private void addGeneralSkill(L2Skill skill)
     {
         if (aiSkills[AIST_GENERAL] == null)
         {
@@ -944,7 +944,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         aiSkillChecks[AIST_GENERAL] = true;
     }
 
-    public void addRangeSkill(L2Skill skill)
+    private void addRangeSkill(L2Skill skill)
     {
         if (skill.getCastRange() <= 150 && skill.getCastRange() > 0)
         {

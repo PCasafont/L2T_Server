@@ -37,7 +37,7 @@ public class L2DynamicZone extends L2ZoneType
     private Future<?> _task;
     private L2Skill _skill;
 
-    protected void setTask(Future<?> task)
+    private void setTask(Future<?> task)
     {
         _task = task;
     }
@@ -92,7 +92,7 @@ public class L2DynamicZone extends L2ZoneType
         character.stopSkillEffects(_skill.getId());
     }
 
-    protected void remove()
+    private void remove()
     {
         if (_task == null)
         {

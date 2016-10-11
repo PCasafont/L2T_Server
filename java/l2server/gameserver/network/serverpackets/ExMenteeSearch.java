@@ -25,8 +25,9 @@ import java.util.ArrayList;
  */
 public class ExMenteeSearch extends L2GameServerPacket
 {
-    ArrayList<L2PcInstance> _mentees;
-    int _page, _playersInPage;
+    private ArrayList<L2PcInstance> _mentees;
+    private int _page;
+    private int _playersInPage;
 
     public ExMenteeSearch(int page, int minLevel, int maxLevel)
     {

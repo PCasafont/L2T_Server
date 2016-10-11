@@ -22,7 +22,7 @@ import java.util.*;
  * values present in the map.
  */
 @SuppressWarnings("unchecked")
-public class ValueSortMap
+class ValueSortMap
 {
     public Map<Integer, Integer> sortThis(Map<Integer, Integer> map, boolean asc)
     {
@@ -55,7 +55,7 @@ public class ValueSortMap
      * @return LinkedHashMap Sorted new LinkedHashMap
      */
     @SuppressWarnings("rawtypes")
-    public static LinkedHashMap sortMapByValue(Map inMap, boolean ascendingOrder)
+    private static LinkedHashMap sortMapByValue(Map inMap, boolean ascendingOrder)
     {
         return sortMapByValue(inMap, null, ascendingOrder);
     }

@@ -137,7 +137,7 @@ public class L2ControlTowerInstance extends L2Npc
         getGuards().add(guard);
     }
 
-    public final List<L2Spawn> getGuards()
+    private List<L2Spawn> getGuards()
     {
         if (_guards == null)
         {

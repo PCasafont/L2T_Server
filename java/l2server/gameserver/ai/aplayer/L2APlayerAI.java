@@ -46,14 +46,14 @@ import java.util.concurrent.ScheduledFuture;
  */
 public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 {
-    protected L2ApInstance _player;
-    protected long _timer;
+    L2ApInstance _player;
+    private long _timer;
 
     //protected TIntIntHashMap _hate = new TIntIntHashMap();
 
     private ScheduledFuture<?> _task;
 
-    public L2APlayerAI(AIAccessor accessor)
+    L2APlayerAI(AIAccessor accessor)
     {
         super(accessor);
         _player = (L2ApInstance) _accessor.getActor();
@@ -161,7 +161,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
         }
     }
 
-    protected L2Character decideTarget()
+    private L2Character decideTarget()
     {
         L2Character target = _player.getTarget() instanceof L2Character ? (L2Character) _player.getTarget() : null;
 
@@ -241,7 +241,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
         setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(newX, newY, newZ, 0));
     }
 
-    protected boolean interactWith(L2Character target)
+    boolean interactWith(L2Character target)
     {
         if (_player.isAlly(target))
         {
@@ -294,7 +294,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
         return false;
     }
 
-    protected void think()
+    void think()
     {
         // If this object no longer belongs to the player, cancel the task
         if (this != _accessor.getActor().getAI())
@@ -525,7 +525,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
      * @param abnormalType The abnormalType to check
      * @return Returns true if exists at last one occurrence of given abnormalType
      */
-    protected boolean hasAbnormalType(L2PcInstance player, String abnormalType)
+    boolean hasAbnormalType(L2PcInstance player, String abnormalType)
     {
         if (player != null && !abnormalType.equals("none"))
         {

@@ -46,17 +46,17 @@ public abstract class EventInstance
     }
 
     protected final EventConfig _config;
-    protected final int _id;
-    protected final int _instanceId;
+    private final int _id;
+    private final int _instanceId;
 
     protected EventTeam[] _teams = new EventTeam[4];
-    protected EventState _state = EventState.INACTIVE;
+    private EventState _state = EventState.INACTIVE;
 
     private int _participants;
 
     private long _startTime = 0;
 
-    public EventInstance(int id, EventConfig config)
+    protected EventInstance(int id, EventConfig config)
     {
         _id = id;
         _config = config;
@@ -88,7 +88,7 @@ public abstract class EventInstance
         }, 20000L);
     }
 
-    public boolean startFight()
+    protected boolean startFight()
     {
         for (EventTeam team : _teams)
         {
@@ -249,7 +249,7 @@ public abstract class EventInstance
         return _startTime;
     }
 
-    public abstract void calculateRewards();
+    protected abstract void calculateRewards();
 
     protected void onContribution(L2PcInstance player, int weight)
     {
@@ -414,7 +414,7 @@ public abstract class EventInstance
         }
     }
 
-    public void stopFight()
+    protected void stopFight()
     {
         //Announcements.getInstance().announceToAll("The " + _config.getEventName() + " has ended.");
         calculateRewards();
@@ -657,7 +657,7 @@ public abstract class EventInstance
         return false;
     }
 
-    public void sendToAllParticipants(L2GameServerPacket packet)
+    private void sendToAllParticipants(L2GameServerPacket packet)
     {
         for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
         {
@@ -694,7 +694,7 @@ public abstract class EventInstance
         }
     }
 
-    public void sendToAllParticipants(String message)
+    protected void sendToAllParticipants(String message)
     {
         sendToAllParticipants(new CreatureSay(0, Say2.PARTYROOM_ALL, "Instanced Events", message));
     }
@@ -777,7 +777,7 @@ public abstract class EventInstance
         return html;
     }
 
-    public abstract String getRunningInfo(L2PcInstance player);
+    protected abstract String getRunningInfo(L2PcInstance player);
 
     public void observe(L2PcInstance playerInstance)
     {
@@ -930,7 +930,7 @@ public abstract class EventInstance
         return _config.getType();
     }
 
-    public void setState(EventState state)
+    protected void setState(EventState state)
     {
         _state = state;
     }
@@ -1020,7 +1020,7 @@ public abstract class EventInstance
         }
     }
 
-    public int getParticipatedPlayersCount()
+    protected int getParticipatedPlayersCount()
     {
         //if (!isState(EventState.PARTICIPATING) && !isState(EventState.STARTING) && !isState(EventState.STARTED))
         //	return 0;

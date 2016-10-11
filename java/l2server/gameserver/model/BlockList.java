@@ -161,12 +161,12 @@ public class BlockList
         }
     }
 
-    public boolean isInBlockList(L2PcInstance target)
+    private boolean isInBlockList(L2PcInstance target)
     {
         return _blockList.contains(target.getObjectId());
     }
 
-    public boolean isInBlockList(int targetId)
+    private boolean isInBlockList(int targetId)
     {
         return _blockList.contains(targetId);
     }
@@ -182,7 +182,7 @@ public class BlockList
         return blockList.isBlockAll() || blockList.isInBlockList(target);
     }
 
-    public static boolean isBlocked(L2PcInstance listOwner, int targetId)
+    private static boolean isBlocked(L2PcInstance listOwner, int targetId)
     {
         BlockList blockList = listOwner.getBlockList();
         return blockList.isBlockAll() || blockList.isInBlockList(targetId);

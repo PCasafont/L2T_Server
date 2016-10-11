@@ -22,7 +22,7 @@ public class FuncSet extends Func
 {
     private final Lambda _lambda;
 
-    public FuncSet(Stats pStat, Object owner, Lambda lambda)
+    FuncSet(Stats pStat, Object owner, Lambda lambda)
     {
         super(pStat, owner);
         _lambda = lambda;

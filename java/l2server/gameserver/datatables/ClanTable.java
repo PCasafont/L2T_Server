@@ -283,7 +283,7 @@ public class ClanTable
         return clan;
     }
 
-    public boolean setClanNameConditions(L2PcInstance player, String clanName)
+    private boolean setClanNameConditions(L2PcInstance player, String clanName)
     {
         if (player == null)
         {
@@ -310,7 +310,7 @@ public class ClanTable
         return true;
     }
 
-    public synchronized void destroyClan(int clanId)
+    private synchronized void destroyClan(int clanId)
     {
         L2Clan clan = getClan(clanId);
         if (clan == null)
@@ -486,6 +486,6 @@ public class ClanTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ClanTable _instance = new ClanTable();
+        static final ClanTable _instance = new ClanTable();
     }
 }

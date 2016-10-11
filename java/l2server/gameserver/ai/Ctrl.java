@@ -57,7 +57,7 @@ import l2server.gameserver.model.actor.L2Character;
  * state for the character is "moving" we send messages to clients
  * to stop the avatar/mob.
  */
-public interface Ctrl
+interface Ctrl
 {
 
     /**

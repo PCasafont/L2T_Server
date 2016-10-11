@@ -74,7 +74,7 @@ public class CharSelectInfoPackage
         return _objectId;
     }
 
-    public void setObjectId(int objectId)
+    private void setObjectId(int objectId)
     {
         _objectId = objectId;
     }

@@ -123,6 +123,6 @@ public class PetNameTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PetNameTable _instance = new PetNameTable();
+        static final PetNameTable _instance = new PetNameTable();
     }
 }

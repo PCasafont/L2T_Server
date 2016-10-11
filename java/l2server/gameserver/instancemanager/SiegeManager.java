@@ -338,6 +338,6 @@ public class SiegeManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SiegeManager _instance = new SiegeManager();
+        static final SiegeManager _instance = new SiegeManager();
     }
 }

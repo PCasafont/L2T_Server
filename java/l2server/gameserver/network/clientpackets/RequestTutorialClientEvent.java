@@ -20,7 +20,7 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class RequestTutorialClientEvent extends L2GameClientPacket
 {
-    int eventId = 0;
+    private int eventId = 0;
 
     @Override
     protected void readImpl()

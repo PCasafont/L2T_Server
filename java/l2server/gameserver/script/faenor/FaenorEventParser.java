@@ -67,7 +67,7 @@ public class FaenorEventParser extends FaenorParser
         parseEventDropAndMessage(eventNode);
     }
 
-    protected void parseEventDropAndMessage(Node eventNode)
+    private void parseEventDropAndMessage(Node eventNode)
     {
 
         for (Node node = eventNode.getFirstChild(); node != null; node = node.getNextSibling())

@@ -51,7 +51,7 @@ public class IPv4Filter implements IAcceptFilter, Runnable
         return ip[0] & 0xFF | ip[1] << 8 & 0xFF00 | ip[2] << 16 & 0xFF0000 | ip[3] << 24 & 0xFF000000;
     }
 
-    protected static final class Flood
+    static final class Flood
     {
         long lastAccess;
         int trys;

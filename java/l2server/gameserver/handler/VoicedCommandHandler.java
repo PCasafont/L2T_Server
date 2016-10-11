@@ -77,6 +77,6 @@ public class VoicedCommandHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final VoicedCommandHandler _instance = new VoicedCommandHandler();
+        static final VoicedCommandHandler _instance = new VoicedCommandHandler();
     }
 }

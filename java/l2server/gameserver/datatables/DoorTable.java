@@ -61,7 +61,7 @@ public class DoorTable
         parseData();
     }
 
-    public void parseData()
+    private void parseData()
     {
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "doorData.xml");
         XmlDocument doc = new XmlDocument(file);
@@ -94,7 +94,7 @@ public class DoorTable
         Log.info("DoorTable: Loaded " + _doors.size() + " Door Templates for " + _regions.size() + " regions.");
     }
 
-    public void insertCollisionData(StatsSet set)
+    private void insertCollisionData(StatsSet set)
     {
         int posX, posY, nodeX, nodeY, height;
         height = set.getInteger("height");
@@ -190,7 +190,7 @@ public class DoorTable
         return _doors.get(doorId);
     }
 
-    public void putDoor(L2DoorInstance door, int region)
+    private void putDoor(L2DoorInstance door, int region)
     {
         _doors.put(door.getDoorId(), door);
 
@@ -286,7 +286,7 @@ public class DoorTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final DoorTable _instance = new DoorTable();
+        static final DoorTable _instance = new DoorTable();
     }
 
     public static void addDoorGroup(String groupName, int doorId)

@@ -26,8 +26,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class WarehouseCacheManager
 {
-    protected final ConcurrentHashMap<L2PcInstance, Long> _cachedWh;
-    protected final long _cacheTime;
+    private final ConcurrentHashMap<L2PcInstance, Long> _cachedWh;
+    private final long _cacheTime;
 
     public static WarehouseCacheManager getInstance()
     {
@@ -51,7 +51,7 @@ public class WarehouseCacheManager
         _cachedWh.remove(pc);
     }
 
-    public class CacheScheduler implements Runnable
+    private class CacheScheduler implements Runnable
     {
         @Override
         public void run()
@@ -71,6 +71,6 @@ public class WarehouseCacheManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final WarehouseCacheManager _instance = new WarehouseCacheManager();
+        static final WarehouseCacheManager _instance = new WarehouseCacheManager();
     }
 }

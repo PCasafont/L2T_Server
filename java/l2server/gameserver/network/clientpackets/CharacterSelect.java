@@ -40,7 +40,7 @@ import java.util.logging.Logger;
 public class CharacterSelect extends L2GameClientPacket
 {
 
-    protected static final Logger _logAccounting = Logger.getLogger("accounting");
+    private static final Logger _logAccounting = Logger.getLogger("accounting");
 
     // cd
     private int _charSlot;

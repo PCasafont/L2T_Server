@@ -49,7 +49,7 @@ abstract class AbstractAI implements Ctrl
 
     class FollowTask implements Runnable
     {
-        protected int _range = 70;
+        int _range = 70;
 
         public FollowTask()
         {
@@ -108,7 +108,7 @@ abstract class AbstractAI implements Ctrl
     /**
      * The character that this AI manages
      */
-    protected final L2Character _actor;
+    final L2Character _actor;
 
     /**
      * An accessor for private methods of the actor
@@ -118,36 +118,36 @@ abstract class AbstractAI implements Ctrl
     /**
      * Current long-term intention
      */
-    protected CtrlIntention _intention = AI_INTENTION_IDLE;
+    CtrlIntention _intention = AI_INTENTION_IDLE;
     /**
      * Current long-term intention parameter
      */
-    protected Object _intentionArg0 = null;
+    Object _intentionArg0 = null;
     /**
      * Current long-term intention parameter
      */
-    protected Object _intentionArg1 = null;
+    Object _intentionArg1 = null;
 
     /**
      * Flags about client's state, in order to know which messages to send
      */
-    protected volatile boolean _clientMoving;
+    volatile boolean _clientMoving;
     /**
      * Flags about client's state, in order to know which messages to send
      */
-    protected volatile boolean _clientAutoAttacking;
+    private volatile boolean _clientAutoAttacking;
     /**
      * Flags about client's state, in order to know which messages to send
      */
-    protected int _clientMovingToPawnOffset;
+    int _clientMovingToPawnOffset;
 
     /**
      * Different targets this AI maintains
      */
     private L2Object _target;
     private L2Character _castTarget;
-    protected L2Character _attackTarget;
-    protected L2Character _followTarget;
+    L2Character _attackTarget;
+    private L2Character _followTarget;
 
     /**
      * The skill we are currently casting by INTENTION_CAST
@@ -159,7 +159,7 @@ abstract class AbstractAI implements Ctrl
      */
     private int _moveToPawnTimeout;
 
-    protected Future<?> _followTask = null;
+    private Future<?> _followTask = null;
     private static final int FOLLOW_INTERVAL = 1000;
     private static final int ATTACK_FOLLOW_INTERVAL = 500;
 
@@ -168,7 +168,7 @@ abstract class AbstractAI implements Ctrl
      *
      * @param accessor The AI accessor of the L2Character
      */
-    protected AbstractAI(L2Character.AIAccessor accessor)
+    AbstractAI(L2Character.AIAccessor accessor)
     {
         _accessor = accessor;
 
@@ -194,7 +194,7 @@ abstract class AbstractAI implements Ctrl
         return _intention;
     }
 
-    protected void setCastTarget(L2Character target)
+    void setCastTarget(L2Character target)
     {
         _castTarget = target;
     }
@@ -207,7 +207,7 @@ abstract class AbstractAI implements Ctrl
         return _castTarget;
     }
 
-    protected void setAttackTarget(L2Character target)
+    void setAttackTarget(L2Character target)
     {
         _attackTarget = target;
     }
@@ -574,7 +574,7 @@ abstract class AbstractAI implements Ctrl
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT><BR><BR>
      */
-    protected void clientActionFailed()
+    void clientActionFailed()
     {
         if (_actor instanceof L2PcInstance)
         {
@@ -587,7 +587,7 @@ abstract class AbstractAI implements Ctrl
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT><BR><BR>
      */
-    protected void moveToPawn(L2Object pawn, int offset)
+    void moveToPawn(L2Object pawn, int offset)
     {
         // Check if actor can move
         if (!_actor.isMovementDisabled())
@@ -704,7 +704,7 @@ abstract class AbstractAI implements Ctrl
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT><BR><BR>
      */
-    protected void moveTo(int x, int y, int z)
+    void moveTo(int x, int y, int z)
     {
         // Chek if actor can move
         if (!_actor.isMovementDisabled())
@@ -731,7 +731,7 @@ abstract class AbstractAI implements Ctrl
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT><BR><BR>
      */
-    protected void clientStopMoving(L2CharPosition pos)
+    void clientStopMoving(L2CharPosition pos)
     {
 		/*
 		 if (Config.DEBUG)
@@ -765,7 +765,7 @@ abstract class AbstractAI implements Ctrl
     }
 
     // Client has already arrived to target, no need to force StopMove packet
-    protected void clientStoppedMoving()
+    void clientStoppedMoving()
     {
         if (_clientMovingToPawnOffset > 0) // movetoPawn needs to be stopped
         {
@@ -869,7 +869,7 @@ abstract class AbstractAI implements Ctrl
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT><BR><BR>
      */
-    protected void clientNotifyDead()
+    void clientNotifyDead()
     {
         // Send a Server->Client packet Die to the actor and all L2PcInstance in its _knownPlayers
         Die msg = new Die(_actor);
@@ -961,17 +961,17 @@ abstract class AbstractAI implements Ctrl
         _followTarget = null;
     }
 
-    protected L2Character getFollowTarget()
+    L2Character getFollowTarget()
     {
         return _followTarget;
     }
 
-    protected L2Object getTarget()
+    L2Object getTarget()
     {
         return _target;
     }
 
-    protected void setTarget(L2Object target)
+    void setTarget(L2Object target)
     {
         _target = target;
     }

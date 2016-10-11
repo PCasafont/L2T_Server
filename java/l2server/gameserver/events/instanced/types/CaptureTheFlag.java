@@ -267,7 +267,7 @@ public class CaptureTheFlag extends EventInstance
         _flagsSpawned = false;
     }
 
-    public void spawnFlag(EventTeam team)
+    private void spawnFlag(EventTeam team)
     {
         L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getFlagId());
 

@@ -449,7 +449,7 @@ public class L2Abnormal
     /**
      * Notify started
      */
-    public boolean onStart()
+    private boolean onStart()
     {
         if (_visualEffect != null)
         {
@@ -504,7 +504,7 @@ public class L2Abnormal
     /**
      * Cancel the effect in the the abnormal effect map of the effected L2Character.<BR><BR>
      */
-    public void onExit()
+    private void onExit()
     {
         for (L2Effect effect : _effects)
         {
@@ -523,7 +523,7 @@ public class L2Abnormal
     /**
      * Cancel the effect in the the abnormal effect map of the effected L2Character.<BR><BR>
      */
-    public boolean onActionTime()
+    private boolean onActionTime()
     {
         boolean toReturn = true;
         for (L2Effect effect : _effects)
@@ -786,7 +786,7 @@ public class L2Abnormal
         return getSkill().getLevelHash();
     }
 
-    public int getPeriodStartTicks()
+    private int getPeriodStartTicks()
     {
         return _periodStartTicks;
     }
@@ -843,7 +843,7 @@ public class L2Abnormal
      *
      * @return
      */
-    protected boolean effectCanBeStolen()
+    private boolean effectCanBeStolen()
     {
         for (L2Effect effect : _effects)
         {
@@ -862,7 +862,7 @@ public class L2Abnormal
         return "L2Effect [_skill=" + _skill + ", _state=" + _state + ", _duration=" + _duration + "]";
     }
 
-    public boolean isSelfEffectType()
+    private boolean isSelfEffectType()
     {
         for (L2Effect effect : _effects)
         {

@@ -119,6 +119,6 @@ public class PartyMatchRoomList
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PartyMatchRoomList _instance = new PartyMatchRoomList();
+        static final PartyMatchRoomList _instance = new PartyMatchRoomList();
     }
 }

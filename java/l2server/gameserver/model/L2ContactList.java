@@ -56,7 +56,7 @@ public class L2ContactList
         restore();
     }
 
-    public void restore()
+    private void restore()
     {
         _contacts.clear();
 

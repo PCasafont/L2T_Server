@@ -72,6 +72,6 @@ public class UserCommandHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final UserCommandHandler _instance = new UserCommandHandler();
+        static final UserCommandHandler _instance = new UserCommandHandler();
     }
 }

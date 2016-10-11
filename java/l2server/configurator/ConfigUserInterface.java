@@ -78,7 +78,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
         });
     }
 
-    public ConfigUserInterface(ResourceBundle bundle)
+    private ConfigUserInterface(ResourceBundle bundle)
     {
         setBundle(bundle);
         setTitle(bundle.getString("toolName"));
@@ -713,7 +713,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
     /**
      * @return Returns the configuration.
      */
-    public List<ConfigFile> getConfigs()
+    private List<ConfigFile> getConfigs()
     {
         return _configs;
     }
@@ -723,7 +723,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
      * human readable form.
      */
 
-    public static String unCamelize(final String keyName)
+    private static String unCamelize(final String keyName)
     {
         Pattern p = Pattern.compile("\\p{Lu}");
         Matcher m = p.matcher(keyName);
@@ -744,7 +744,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
     /**
      * @param bundle The bundle to set.
      */
-    public void setBundle(ResourceBundle bundle)
+    private void setBundle(ResourceBundle bundle)
     {
         _bundle = bundle;
     }
@@ -752,7 +752,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
     /**
      * @return Returns the bundle.
      */
-    public ResourceBundle getBundle()
+    private ResourceBundle getBundle()
     {
         return _bundle;
     }

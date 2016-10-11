@@ -22,7 +22,7 @@ public class FuncSub extends Func
 {
     private final Lambda _lambda;
 
-    public FuncSub(Stats pStat, Object owner, Lambda lambda)
+    FuncSub(Stats pStat, Object owner, Lambda lambda)
     {
         super(pStat, owner);
         _lambda = lambda;

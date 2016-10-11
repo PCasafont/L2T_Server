@@ -270,7 +270,7 @@ public class L2PetInstance extends L2Summon
      * @param owner
      * @param control
      */
-    public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
+    L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
     {
         this(objectId, template, owner, control,
                 (byte) (template.TemplateId == 12564 ? owner.getLevel() : template.Level));
@@ -285,7 +285,7 @@ public class L2PetInstance extends L2Summon
      * @param control
      * @param level
      */
-    public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control, byte level)
+    L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control, byte level)
     {
         super(objectId, template, owner);
         setInstanceType(InstanceType.L2PetInstance);
@@ -315,7 +315,7 @@ public class L2PetInstance extends L2Summon
         setStat(new PetStat(this));
     }
 
-    public boolean isRespawned()
+    private boolean isRespawned()
     {
         return _respawned;
     }
@@ -855,7 +855,7 @@ public class L2PetInstance extends L2Summon
         }
     }
 
-    public void dropItemHere(L2ItemInstance dropit)
+    private void dropItemHere(L2ItemInstance dropit)
     {
         dropit = getInventory().dropItem("Drop", dropit.getObjectId(), dropit.getCount(), getOwner(), this);
 
@@ -1051,7 +1051,7 @@ public class L2PetInstance extends L2Summon
     /**
      * Restore the specified % of experience this L2PetInstance has lost.<BR><BR>
      */
-    public void restoreExp(double restorePercent)
+    private void restoreExp(double restorePercent)
     {
         if (_expBeforeDeath > 0)
         {
@@ -1164,7 +1164,7 @@ public class L2PetInstance extends L2Summon
         L2World.getInstance().addPet(oldOwnerId, this);
     }
 
-    public int getCurrentLoad()
+    private int getCurrentLoad()
     {
         return _inventory.getTotalWeight();
     }
@@ -1180,7 +1180,7 @@ public class L2PetInstance extends L2Summon
         return Config.INVENTORY_MAXIMUM_PET;
     }
 
-    public void refreshOverloaded()
+    private void refreshOverloaded()
     {
         int maxLoad = getMaxLoad();
         if (maxLoad > 0)

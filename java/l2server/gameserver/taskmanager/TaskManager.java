@@ -41,7 +41,7 @@ import static l2server.gameserver.taskmanager.TaskTypes.*;
 public final class TaskManager
 {
 
-    protected static final String[] SQL_STATEMENTS = {
+    private static final String[] SQL_STATEMENTS = {
             "SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
             "UPDATE global_tasks SET last_activation=? WHERE id=?",
             "SELECT id FROM global_tasks WHERE task=?",
@@ -49,7 +49,7 @@ public final class TaskManager
     };
 
     private final HashMap<Integer, Task> _tasks = new HashMap<Integer, Task>();
-    protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<ExecutedTask>();
+    private final ArrayList<ExecutedTask> _currentTasks = new ArrayList<ExecutedTask>();
 
     public class ExecutedTask implements Runnable
     {
@@ -175,7 +175,7 @@ public final class TaskManager
         }
     }
 
-    public void registerTask(Task task)
+    private void registerTask(Task task)
     {
         int key = task.getName().hashCode();
         if (!_tasks.containsKey(key))
@@ -333,7 +333,7 @@ public final class TaskManager
         return addUniqueTask(task, type, param1, param2, param3, 0);
     }
 
-    public static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
+    private static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
     {
         Connection con = null;
 
@@ -385,7 +385,7 @@ public final class TaskManager
         return addTask(task, type, param1, param2, param3, 0);
     }
 
-    public static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
+    private static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
     {
         Connection con = null;
 
@@ -426,6 +426,6 @@ public final class TaskManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final TaskManager _instance = new TaskManager();
+        static final TaskManager _instance = new TaskManager();
     }
 }

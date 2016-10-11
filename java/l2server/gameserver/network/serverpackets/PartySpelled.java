@@ -34,9 +34,9 @@ public class PartySpelled extends L2GameServerPacket
 
     private static class Effect
     {
-        protected int _skillId;
-        protected int _dat;
-        protected int _duration;
+        int _skillId;
+        int _dat;
+        int _duration;
 
         public Effect(int pSkillId, int pDat, int pDuration)
         {

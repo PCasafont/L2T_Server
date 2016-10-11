@@ -905,7 +905,7 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param pos
+     * @param geo_pos
      * @return Block Index: 0-255
      */
     private static int getBlock(int geo_pos)
@@ -914,7 +914,7 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param pos
+     * @param geo_pos
      * @return Cell Index: 0-7
      */
     private static int getCell(int geo_pos)
@@ -960,8 +960,8 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
+     * @param geox
+     * @param geoy
      * @param z
      * @return Nearest Z
      */
@@ -1049,8 +1049,8 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
+     * @param geox
+     * @param geoy
      * @param z
      * @return One layer higher Z than parameter Z
      */
@@ -1139,8 +1139,8 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
+     * @param geox
+     * @param geoy
      * @param zmin
      * @param zmax
      * @return Z betwen zmin and zmax
@@ -1791,6 +1791,6 @@ public class GeoEngine extends GeoData
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final GeoEngine _instance = new GeoEngine();
+        static final GeoEngine _instance = new GeoEngine();
     }
 }

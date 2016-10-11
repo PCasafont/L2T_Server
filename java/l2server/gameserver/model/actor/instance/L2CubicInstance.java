@@ -45,52 +45,52 @@ import java.util.logging.Level;
 public class L2CubicInstance
 {
     // Type of Cubics
-    public static final int STORM_CUBIC = 1;
-    public static final int VAMPIRIC_CUBIC = 2;
+    private static final int STORM_CUBIC = 1;
+    private static final int VAMPIRIC_CUBIC = 2;
     public static final int LIFE_CUBIC = 3;
-    public static final int VIPER_CUBIC = 4;
-    public static final int POLTERGEIST_CUBIC = 5;
-    public static final int BINDING_CUBIC = 6;
-    public static final int AQUA_CUBIC = 7;
-    public static final int SPARK_CUBIC = 8;
-    public static final int ATTRACT_CUBIC = 9;
-    public static final int SMART_CUBIC_EVATEMPLAR = 10;
-    public static final int SMART_CUBIC_SHILLIENTEMPLAR = 11;
-    public static final int SMART_CUBIC_ARCANALORD = 12;
-    public static final int SMART_CUBIC_ELEMENTALMASTER = 13;
-    public static final int SMART_CUBIC_SPECTRALMASTER = 14;
-    public static final int KNIGHT_CUBIC = 15;
-    public static final int AVENGING_CUBIC = 16;
-    public static final int FAIRY_OF_LIFE = 17;
-    public static final int BUFF_CUBIC = 18;
-    public static final int MIND_CUBIC = 19;
-    public static final int PHANTOM_CUBIC = 20;
-    public static final int HEX_CUBIC = 21;
-    public static final int GUARDIAN_CUBIC = 22;
+    private static final int VIPER_CUBIC = 4;
+    private static final int POLTERGEIST_CUBIC = 5;
+    private static final int BINDING_CUBIC = 6;
+    private static final int AQUA_CUBIC = 7;
+    private static final int SPARK_CUBIC = 8;
+    private static final int ATTRACT_CUBIC = 9;
+    private static final int SMART_CUBIC_EVATEMPLAR = 10;
+    private static final int SMART_CUBIC_SHILLIENTEMPLAR = 11;
+    private static final int SMART_CUBIC_ARCANALORD = 12;
+    private static final int SMART_CUBIC_ELEMENTALMASTER = 13;
+    private static final int SMART_CUBIC_SPECTRALMASTER = 14;
+    private static final int KNIGHT_CUBIC = 15;
+    private static final int AVENGING_CUBIC = 16;
+    private static final int FAIRY_OF_LIFE = 17;
+    private static final int BUFF_CUBIC = 18;
+    private static final int MIND_CUBIC = 19;
+    private static final int PHANTOM_CUBIC = 20;
+    private static final int HEX_CUBIC = 21;
+    private static final int GUARDIAN_CUBIC = 22;
 
     // Max range of cubic skills
     // TODO: Check/fix the max range
-    public static final int MAX_MAGIC_RANGE = 900;
+    private static final int MAX_MAGIC_RANGE = 900;
 
     // Cubic skills
-    public static final int SKILL_CUBIC_HEAL = 4051;
+    private static final int SKILL_CUBIC_HEAL = 4051;
     public static final int SKILL_CUBIC_CURE = 5579;
-    public static final int SKILL_BUFF_CUBIC_HEAL = 10082;
-    public static final int SKILL_MIND_CUBIC_HEAL = 10084;
+    private static final int SKILL_BUFF_CUBIC_HEAL = 10082;
+    private static final int SKILL_MIND_CUBIC_HEAL = 10084;
 
-    protected L2PcInstance _owner;
-    protected L2Character _target;
+    private L2PcInstance _owner;
+    private L2Character _target;
 
-    protected int _id;
-    protected int _matk;
-    protected int _activationtime;
-    protected int _activationchance;
-    protected int _maxcount;
-    protected int _currentcount;
-    protected boolean _active;
+    private int _id;
+    private int _matk;
+    private int _activationtime;
+    private int _activationchance;
+    private int _maxcount;
+    private int _currentcount;
+    private boolean _active;
     private boolean _givenByOther;
 
-    protected List<L2Skill> _skills = new ArrayList<L2Skill>();
+    private List<L2Skill> _skills = new ArrayList<L2Skill>();
 
     private Future<?> _disappearTask;
     private Future<?> _actionTask;
@@ -580,7 +580,7 @@ public class L2CubicInstance
         }
     }
 
-    public void useCubicContinuous(L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
+    private void useCubicContinuous(L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
     {
         for (L2Character target : (L2Character[]) targets)
         {
@@ -627,7 +627,7 @@ public class L2CubicInstance
         }
     }
 
-    public void useCubicMdam(L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
+    private void useCubicMdam(L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
     {
         for (L2Character target : (L2Character[]) targets)
         {
@@ -701,7 +701,7 @@ public class L2CubicInstance
         }
     }
 
-    public void useCubicDisabler(L2SkillType type, L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
+    private void useCubicDisabler(L2SkillType type, L2CubicInstance activeCubic, L2Skill skill, L2Object[] targets)
     {
         if (Config.DEBUG)
         {
@@ -827,7 +827,7 @@ public class L2CubicInstance
     /**
      * returns true if the target is inside of the owner's max Cubic range
      */
-    public boolean isInCubicRange(L2Character owner, L2Character target)
+    private boolean isInCubicRange(L2Character owner, L2Character target)
     {
         if (owner == null || target == null)
         {
@@ -851,7 +851,7 @@ public class L2CubicInstance
     /**
      * this sets the friendly target for a cubic
      */
-    public void cubicTargetForHeal()
+    private void cubicTargetForHeal()
     {
         L2Character target = null;
 

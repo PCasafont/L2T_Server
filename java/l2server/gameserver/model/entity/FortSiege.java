@@ -51,7 +51,7 @@ public class FortSiege implements Siegable
         All, Attacker, Owner,
     }
 
-    public class ScheduleEndSiegeTask implements Runnable
+    private class ScheduleEndSiegeTask implements Runnable
     {
         @Override
         public void run()
@@ -176,7 +176,7 @@ public class FortSiege implements Siegable
         }
     }
 
-    public class ScheduleSuspiciousMerchantSpawn implements Runnable
+    private class ScheduleSuspiciousMerchantSpawn implements Runnable
     {
         @Override
         public void run()
@@ -199,7 +199,7 @@ public class FortSiege implements Siegable
         }
     }
 
-    public class ScheduleSiegeRestore implements Runnable
+    private class ScheduleSiegeRestore implements Runnable
     {
         @Override
         public void run()
@@ -226,12 +226,12 @@ public class FortSiege implements Siegable
     private List<L2SiegeClan> _attackerClans = new ArrayList<L2SiegeClan>();
 
     // Fort setting
-    protected ArrayList<L2Spawn> _commanders = new ArrayList<L2Spawn>();
+    private ArrayList<L2Spawn> _commanders = new ArrayList<L2Spawn>();
     private final Fort _fort;
     private boolean _isInProgress = false;
-    ScheduledFuture<?> _siegeEnd = null;
-    ScheduledFuture<?> _siegeRestore = null;
-    ScheduledFuture<?> _siegeStartTask = null;
+    private ScheduledFuture<?> _siegeEnd = null;
+    private ScheduledFuture<?> _siegeRestore = null;
+    private ScheduledFuture<?> _siegeStartTask = null;
 
     public FortSiege(Fort fort)
     {
@@ -385,7 +385,7 @@ public class FortSiege implements Siegable
         announceToPlayer(sm);
     }
 
-    public void updatePlayerSiegeStateFlags(boolean clear)
+    private void updatePlayerSiegeStateFlags(boolean clear)
     {
         L2Clan clan;
         for (L2SiegeClan siegeclan : getAttackerClans())
@@ -455,7 +455,7 @@ public class FortSiege implements Siegable
     /**
      * Return true if object is inside the zone
      */
-    public boolean checkIfInZone(L2Object object)
+    private boolean checkIfInZone(L2Object object)
     {
         return checkIfInZone(object.getX(), object.getY(), object.getZ());
     }
@@ -498,7 +498,7 @@ public class FortSiege implements Siegable
     /**
      * Clear all registered siege clans from database for fort
      */
-    public void clearSiegeClan()
+    private void clearSiegeClan()
     {
         Connection con = null;
         PreparedStatement statement = null;
@@ -580,7 +580,7 @@ public class FortSiege implements Siegable
     /**
      * Return list of L2PcInstance in the zone.
      */
-    public List<L2PcInstance> getPlayersInZone()
+    private List<L2PcInstance> getPlayersInZone()
     {
         return getFort().getZone().getAllPlayers();
     }
@@ -588,7 +588,7 @@ public class FortSiege implements Siegable
     /**
      * Return list of L2PcInstance owning the fort in the zone.
      */
-    public List<L2PcInstance> getOwnersInZone()
+    private List<L2PcInstance> getOwnersInZone()
     {
         List<L2PcInstance> players = new ArrayList<L2PcInstance>();
         L2Clan clan;
@@ -824,7 +824,7 @@ public class FortSiege implements Siegable
      * Start the auto tasks<BR>
      * <BR>
      */
-    public void checkAutoTask()
+    private void checkAutoTask()
     {
         if (_siegeStartTask != null) //safety check
         {
@@ -890,7 +890,7 @@ public class FortSiege implements Siegable
     /**
      * Start the auto tasks<BR><BR>
      */
-    public void startAutoTask(boolean setTime)
+    private void startAutoTask(boolean setTime)
     {
         if (_siegeStartTask != null)
         {
@@ -915,7 +915,7 @@ public class FortSiege implements Siegable
     /**
      * Teleport players
      */
-    public void teleportPlayer(TeleportWhoType teleportWho, MapRegionTable.TeleportWhereType teleportWhere)
+    private void teleportPlayer(TeleportWhoType teleportWho, MapRegionTable.TeleportWhereType teleportWhere)
     {
         List<L2PcInstance> players;
         switch (teleportWho)
@@ -960,7 +960,7 @@ public class FortSiege implements Siegable
      *
      * @param player The L2PcInstance of the player trying to register
      */
-    public boolean checkIfCanRegister(L2PcInstance player)
+    private boolean checkIfCanRegister(L2PcInstance player)
     {
         boolean b = true;
         if (player.getClan() == null || player.getClan().getLevel() < Config.FS_MIN_CLAN_LVL)
@@ -1330,7 +1330,7 @@ public class FortSiege implements Siegable
         return null;
     }
 
-    public void resetSiege()
+    private void resetSiege()
     {
         // reload commanders and repair doors
         removeCommanders();

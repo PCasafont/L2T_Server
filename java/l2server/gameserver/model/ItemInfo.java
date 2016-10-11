@@ -84,7 +84,7 @@ public class ItemInfo implements ItemInstanceInfo
 
     private int _location;
 
-    boolean _elemEnchanted = false;
+    private boolean _elemEnchanted = false;
     private byte _elemAtkType = -2;
     private int _elemAtkPower = 0;
     private int[] _elemDefAttr = {0, 0, 0, 0, 0, 0};

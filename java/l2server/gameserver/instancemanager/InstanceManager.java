@@ -68,7 +68,7 @@ public class InstanceManager
     private static final String DELETE_INSTANCE_TIME =
             "DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
 
-    public long getInstanceTime(int playerObjId, int id)
+    private long getInstanceTime(int playerObjId, int id)
     {
         if (!_playerInstanceTimes.containsKey(playerObjId))
         {
@@ -90,7 +90,7 @@ public class InstanceManager
         return _playerInstanceTimes.get(playerObjId);
     }
 
-    public void setInstanceTime(int playerObjId, int id, long time)
+    private void setInstanceTime(int playerObjId, int id, long time)
     {
         if (!_playerInstanceTimes.containsKey(playerObjId))
         {
@@ -120,7 +120,7 @@ public class InstanceManager
         }
     }
 
-    public void deleteInstanceTime(int playerObjId, int id)
+    private void deleteInstanceTime(int playerObjId, int id)
     {
         Connection con = null;
         try
@@ -144,7 +144,7 @@ public class InstanceManager
         }
     }
 
-    public void restoreInstanceTimes(int playerObjId)
+    private void restoreInstanceTimes(int playerObjId)
     {
         if (_playerInstanceTimes.containsKey(playerObjId))
         {
@@ -411,7 +411,7 @@ public class InstanceManager
     /**
      * @param instId
      */
-    public void stopWholeInstance(int instId)
+    private void stopWholeInstance(int instId)
     {
         for (L2Npc mobs : getInstance(instId).getNpcs())
         {
@@ -446,7 +446,7 @@ public class InstanceManager
      * @param vidId
      * @param instId
      */
-    public void broadcastMovie(int vidId, int instId)
+    private void broadcastMovie(int vidId, int instId)
     {
         for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
         {
@@ -461,7 +461,7 @@ public class InstanceManager
     /**
      * @param instId
      */
-    public void startWholeInstance(int instId)
+    private void startWholeInstance(int instId)
     {
         Instance inst = getInstance(instId);
         if (inst == null)
@@ -495,7 +495,7 @@ public class InstanceManager
      * @param instanceId
      * @param packet
      */
-    public void sendPacket(int instanceId, L2GameServerPacket packet)
+    private void sendPacket(int instanceId, L2GameServerPacket packet)
     {
         for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
         {
@@ -597,7 +597,7 @@ public class InstanceManager
     /**
      * @param instId
      */
-    public void despawnAll(int instId)
+    private void despawnAll(int instId)
     {
         if (getInstance(instId) == null || getInstance(instId).getNpcs() == null)
         {
@@ -915,6 +915,6 @@ public class InstanceManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final InstanceManager _instance = new InstanceManager();
+        static final InstanceManager _instance = new InstanceManager();
     }
 }

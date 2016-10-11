@@ -46,10 +46,10 @@ import java.util.logging.Level;
  */
 public class Shutdown extends Thread
 {
-    public static final int SIGTERM = 0;
-    public static final int GM_SHUTDOWN = 1;
-    public static final int GM_RESTART = 2;
-    public static final int ABORT = 3;
+    private static final int SIGTERM = 0;
+    private static final int GM_SHUTDOWN = 1;
+    private static final int GM_RESTART = 2;
+    private static final int ABORT = 3;
     private static final String[] MODE_TEXT = {"SIGTERM", "shutting down", "restarting", "aborting"};
 
     private int _shutdownMode = SIGTERM;
@@ -358,7 +358,7 @@ public class Shutdown extends Thread
     /**
      * this disconnects all clients from the server
      */
-    public void disconnectAllCharacters()
+    private void disconnectAllCharacters()
     {
         Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
         //synchronized (L2World.getInstance().getAllPlayers())
@@ -560,6 +560,6 @@ public class Shutdown extends Thread
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final Shutdown _instance = new Shutdown();
+        static final Shutdown _instance = new Shutdown();
     }
 }

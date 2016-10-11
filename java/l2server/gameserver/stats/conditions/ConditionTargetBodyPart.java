@@ -25,7 +25,7 @@ import l2server.gameserver.templates.item.L2Item;
  *
  * @author mkizub
  */
-public class ConditionTargetBodyPart extends Condition
+class ConditionTargetBodyPart extends Condition
 {
 
     private L2Armor _armor;

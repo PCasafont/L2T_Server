@@ -40,7 +40,7 @@ public class L2BossZone extends L2ZoneType
     private int _timeInvade;
     private boolean _enabled = true;
     private HashMap<Integer, PlayerEntry> _playerEntries;
-    protected CopyOnWriteArrayList<L2Character> _raidList;
+    private CopyOnWriteArrayList<L2Character> _raidList;
     private Location _exitLocation;
 
     public L2BossZone(int id)

@@ -41,10 +41,10 @@ public final class OlympiadGameTask implements Runnable
 {
     protected static final long BATTLE_PERIOD = Config.ALT_OLY_BATTLE; // 6 mins
 
-    public static final int[] TELEPORT_TO_ARENA = {120, 60, 30, 15, 10, 5, 4, 3, 2, 1, 0};
-    public static final int[] BATTLE_START_TIME_FIRST = {60, 50, 40, 30, 20, 10, 0};
-    public static final int[] BATTLE_START_TIME_SECOND = {10, 5, 4, 3, 2, 1, 0};
-    public static final int[] TELEPORT_TO_TOWN = {40, 30, 20, 10, 5, 4, 3, 2, 1, 0};
+    private static final int[] TELEPORT_TO_ARENA = {120, 60, 30, 15, 10, 5, 4, 3, 2, 1, 0};
+    private static final int[] BATTLE_START_TIME_FIRST = {60, 50, 40, 30, 20, 10, 0};
+    private static final int[] BATTLE_START_TIME_SECOND = {10, 5, 4, 3, 2, 1, 0};
+    private static final int[] TELEPORT_TO_TOWN = {40, 30, 20, 10, 5, 4, 3, 2, 1, 0};
 
     private final L2OlympiadStadiumZone _zone;
     private AbstractOlympiadGame _game;
@@ -548,7 +548,7 @@ public final class OlympiadGameTask implements Runnable
         }
     }
 
-    public void openDoors()
+    private void openDoors()
     {
         for (L2DoorInstance door : _doors)
         {
@@ -559,7 +559,7 @@ public final class OlympiadGameTask implements Runnable
         }
     }
 
-    public void closeDoors()
+    private void closeDoors()
     {
         for (L2DoorInstance door : _doors)
         {
@@ -570,7 +570,7 @@ public final class OlympiadGameTask implements Runnable
         }
     }
 
-    public void spawnBuffers()
+    private void spawnBuffers()
     {
         for (L2Spawn spawn : _buffers)
         {
@@ -580,7 +580,7 @@ public final class OlympiadGameTask implements Runnable
         }
     }
 
-    public void deleteBuffers()
+    private void deleteBuffers()
     {
         for (L2Spawn spawn : _buffers)
         {

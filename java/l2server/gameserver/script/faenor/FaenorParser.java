@@ -31,15 +31,15 @@ import java.util.Locale;
  */
 public abstract class FaenorParser extends Parser
 {
-    protected static FaenorInterface _bridge = FaenorInterface.getInstance();
-    protected static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd MMM yyyy", Locale.US);
+    static FaenorInterface _bridge = FaenorInterface.getInstance();
+    static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd MMM yyyy", Locale.US);
 
-    public final static boolean DEBUG = true;
+    final static boolean DEBUG = true;
 
     /*
      * UTILITY FUNCTIONS
      */
-    public static String attribute(Node node, String attributeName)
+    static String attribute(Node node, String attributeName)
     {
         return attribute(node, attributeName, null);
     }
@@ -49,7 +49,7 @@ public abstract class FaenorParser extends Parser
         return element(node, elementName, null);
     }
 
-    public static String attribute(Node node, String attributeName, String defaultValue)
+    private static String attribute(Node node, String attributeName, String defaultValue)
     {
         try
         {
@@ -65,7 +65,7 @@ public abstract class FaenorParser extends Parser
         }
     }
 
-    public static String element(Node parentNode, String elementName, String defaultValue)
+    private static String element(Node parentNode, String elementName, String defaultValue)
     {
         try
         {
@@ -89,7 +89,7 @@ public abstract class FaenorParser extends Parser
         throw new NullPointerException();
     }
 
-    public static boolean isNodeName(Node node, String name)
+    static boolean isNodeName(Node node, String name)
     {
         return node.getNodeName().equalsIgnoreCase(name);
     }
@@ -99,12 +99,12 @@ public abstract class FaenorParser extends Parser
         return DATE_FORMAT.parse(date);
     }
 
-    public static double getPercent(String percent)
+    static double getPercent(String percent)
     {
         return Double.parseDouble(percent.split("%")[0]) / 100.0;
     }
 
-    protected static int getInt(String number)
+    static int getInt(String number)
     {
         return Integer.parseInt(number);
     }
@@ -119,7 +119,7 @@ public abstract class FaenorParser extends Parser
         return Float.parseFloat(number);
     }
 
-    protected static String getParserName(String name)
+    static String getParserName(String name)
     {
         return "faenor.Faenor" + name + "Parser";
     }

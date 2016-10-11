@@ -24,14 +24,14 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventsMatchMaker
 {
-    public static EventsMatchMaker _instance = null;
+    private static EventsMatchMaker _instance = null;
 
     private MatchMakingTask _pvpTask;
     private MatchMakingTask _specialTask;
-    public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<Integer, EventInstance>();
+    private ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<Integer, EventInstance>();
     private int _nextInstanceId = 1;
 
-    public static EventsMatchMaker getInstance()
+    private static EventsMatchMaker getInstance()
     {
         if (_instance == null)
         {
@@ -56,12 +56,12 @@ public class EventsMatchMaker
         }
     }
 
-    public MatchMakingTask getPvpTask()
+    private MatchMakingTask getPvpTask()
     {
         return _pvpTask;
     }
 
-    public MatchMakingTask getSpecialTask()
+    private MatchMakingTask getSpecialTask()
     {
         return _specialTask;
     }
@@ -304,7 +304,7 @@ public class EventsMatchMaker
         }
     }
 
-    public void join(L2PcInstance playerInstance, boolean pvp)
+    private void join(L2PcInstance playerInstance, boolean pvp)
     {
         if (isPlayerParticipant(playerInstance.getObjectId()))
         {
@@ -366,7 +366,7 @@ public class EventsMatchMaker
         playerInstance.sendPacket(npcHtmlMessage);
     }
 
-    public synchronized boolean addParticipant(L2PcInstance playerInstance, boolean pvp)
+    private synchronized boolean addParticipant(L2PcInstance playerInstance, boolean pvp)
     {
         // Check for nullpoitner
         if (playerInstance == null)
@@ -386,7 +386,7 @@ public class EventsMatchMaker
         return true;
     }
 
-    public void leave(L2PcInstance playerInstance)
+    private void leave(L2PcInstance playerInstance)
     {
         if (!isPlayerParticipant(playerInstance.getObjectId()))
         {
@@ -405,7 +405,7 @@ public class EventsMatchMaker
         }
     }
 
-    public boolean removeParticipant(int playerObjectId)
+    private boolean removeParticipant(int playerObjectId)
     {
         if (_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null ||
                 _specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
@@ -608,7 +608,7 @@ public class EventsMatchMaker
         return a;
     }
 
-    public String getPlayerString(L2PcInstance player, L2PcInstance reader)
+    private String getPlayerString(L2PcInstance player, L2PcInstance reader)
     {
         String color = "FFFFFF";
         if (player == reader)
@@ -653,7 +653,7 @@ public class EventsMatchMaker
         return -1;
     }
 
-    public EventInstance getParticipantEvent(int playerObjectId)
+    private EventInstance getParticipantEvent(int playerObjectId)
     {
         for (EventInstance event : Instances.values())
         {
@@ -695,7 +695,7 @@ public class EventsMatchMaker
         return getParticipantEvent(playerObjectId).getParticipantEnemyTeam(playerObjectId);
     }
 
-    public boolean isPlayerParticipant(int playerObjectId)
+    private boolean isPlayerParticipant(int playerObjectId)
     {
         if (_pvpTask.getRegisteredPlayers().containsKey(playerObjectId) ||
                 _specialTask.getRegisteredPlayers().containsKey(playerObjectId))
@@ -713,7 +713,7 @@ public class EventsMatchMaker
         return false;
     }
 
-    public EventInstance createInstance(int id, int[] group, EventConfig config)
+    private EventInstance createInstance(int id, int[] group, EventConfig config)
     {
         // A map of lists to access the players sorted by class
         Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<Integer, List<L2PcInstance>>();

@@ -470,7 +470,7 @@ public class L2Manor
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final L2Manor _instance = new L2Manor();
+        static final L2Manor _instance = new L2Manor();
     }
 
     public static void main(String[] arg)

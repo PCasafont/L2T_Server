@@ -130,7 +130,7 @@ public class L2DropData
      *
      * @return String[]
      */
-    public String[] getStateIDs()
+    private String[] getStateIDs()
     {
         return _stateID;
     }
@@ -170,7 +170,7 @@ public class L2DropData
      *
      * @return boolean
      */
-    public boolean isQuestDrop()
+    private boolean isQuestDrop()
     {
         return _questID != null && _stateID != null;
     }

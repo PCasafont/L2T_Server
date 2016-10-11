@@ -123,12 +123,12 @@ public class ShortCuts
         registerShortCutInDb(shortcut, oldShortCut);
     }
 
-    public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut)
+    private void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut)
     {
         registerShortCutInDb(shortcut, oldShortCut, -1);
     }
 
-    public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut, int levelRange)
+    private void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut, int levelRange)
     {
         if (oldShortCut != null)
         {
@@ -331,7 +331,7 @@ public class ShortCuts
         restore(_owner.getClassIndex(), _owner.getGearGradeForCurrentLevel(), true);
     }
 
-    public void restore(final int classIndex, final int levelRange, boolean loadDefault)
+    private void restore(final int classIndex, final int levelRange, boolean loadDefault)
     {
         _hasPresetForCurrentLevel =
                 _shortCuts.containsKey(classIndex) && _shortCuts.get(classIndex).containsKey(levelRange) &&

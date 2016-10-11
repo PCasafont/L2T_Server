@@ -22,7 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExMentorAdd extends L2GameServerPacket
 {
-    L2PcInstance _player;
+    private L2PcInstance _player;
 
     public ExMentorAdd(L2PcInstance activeChar)
     {

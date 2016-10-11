@@ -66,11 +66,11 @@ public final class Formulas
      */
     private static final int HP_REGENERATE_PERIOD = 3000; // 3 secs
 
-    public static final byte SHIELD_DEFENSE_FAILED = 0; // no shield defense
-    public static final byte SHIELD_DEFENSE_SUCCEED = 1; // normal shield defense
-    public static final byte SHIELD_DEFENSE_PERFECT_BLOCK = 2; // perfect block
+    private static final byte SHIELD_DEFENSE_FAILED = 0; // no shield defense
+    private static final byte SHIELD_DEFENSE_SUCCEED = 1; // normal shield defense
+    private static final byte SHIELD_DEFENSE_PERFECT_BLOCK = 2; // perfect block
 
-    public static final byte SKILL_REFLECT_FAILED = 0; // no reflect
+    private static final byte SKILL_REFLECT_FAILED = 0; // no reflect
     public static final byte SKILL_REFLECT_EFFECTS = 1; // normal reflect, some damage reflected some other not
     public static final byte SKILL_REFLECT_VENGEANCE = 2; // 100% of the damage affect both
 
@@ -1612,7 +1612,7 @@ public final class Formulas
         return cha.calcStat(Stats.REGENERATE_CP_RATE, init, null, null) * cpRegenMultiplier + cpRegenBonus;
     }
 
-    public static final double calcSiegeRegenModifer(L2PcInstance activeChar)
+    private static double calcSiegeRegenModifer(L2PcInstance activeChar)
     {
         if (activeChar == null || activeChar.getClan() == null)
         {
@@ -2980,7 +2980,7 @@ public final class Formulas
     /**
      * Calculate value of lethal chance
      */
-    public static final double calcLethal(L2Character activeChar, L2Character target, int baseLethal, int magiclvl)
+    private static double calcLethal(L2Character activeChar, L2Character target, int baseLethal, int magiclvl)
     {
         double chance = 0;
         if (magiclvl > 0)
@@ -3241,7 +3241,7 @@ public final class Formulas
         return chance < Rnd.get(1000);
     }
 
-    public static boolean calcMagicMiss(L2Character attacker, L2Character target)
+    private static boolean calcMagicMiss(L2Character attacker, L2Character target)
     {
         if (Config.isServer(Config.TENKAI))
         {
@@ -3300,7 +3300,7 @@ public final class Formulas
      * @param sendSysMsg
      * @return
      */
-    public static byte calcShldUse(L2Character attacker, L2Character target, L2Skill skill, boolean sendSysMsg)
+    private static byte calcShldUse(L2Character attacker, L2Character target, L2Skill skill, boolean sendSysMsg)
     {
         if (skill != null && (skill.ignoreShield() || skill.isMagic()))
         {
@@ -3419,7 +3419,7 @@ public final class Formulas
         return d > 0;
     }
 
-    public static double calcSkillResistance(L2Character attacker, L2Character target, L2Skill skill)
+    private static double calcSkillResistance(L2Character attacker, L2Character target, L2Skill skill)
     {
         double multiplier = 100; // initialize...
 
@@ -3452,7 +3452,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcSkillTypeResistance(L2Character target, L2SkillType type)
+    private static double calcSkillTypeResistance(L2Character target, L2SkillType type)
     {
         double multiplier = 100.0;
         if (type != null)
@@ -3474,7 +3474,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcSkillProficiency(L2Skill skill, L2Character attacker, L2Character target)
+    private static double calcSkillProficiency(L2Skill skill, L2Character attacker, L2Character target)
     {
         double multiplier = 100; // initialize...
 
@@ -3506,7 +3506,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcSkillTypeProficiency(double multiplier, L2Character attacker, L2Character target, L2SkillType type)
+    private static double calcSkillTypeProficiency(double multiplier, L2Character attacker, L2Character target, L2SkillType type)
     {
         if (type != null)
         {
@@ -3527,7 +3527,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcEffectTypeResistance(L2Character target, L2AbnormalType type)
+    private static double calcEffectTypeResistance(L2Character target, L2AbnormalType type)
     {
         double multiplier = 1.0;
         if (type != null)
@@ -3605,7 +3605,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcEffectTypeProficiency(L2Character attacker, L2Character target, L2AbnormalType type)
+    private static double calcEffectTypeProficiency(L2Character attacker, L2Character target, L2AbnormalType type)
     {
         double multiplier = 1.0;
         if (type != null)
@@ -3686,7 +3686,7 @@ public final class Formulas
         return multiplier;
     }
 
-    public static double calcSkillStatModifier(L2Skill skill, L2Character attacker, L2Character target)
+    private static double calcSkillStatModifier(L2Skill skill, L2Character attacker, L2Character target)
     {
         if (Config.isServer(Config.TENKAI))
         {
@@ -3703,7 +3703,7 @@ public final class Formulas
         }
     }
 
-    public static int calcLvlDependModifier(L2Character attacker, L2Character target, L2Skill skill)
+    private static int calcLvlDependModifier(L2Character attacker, L2Character target, L2Skill skill)
     {
         if (skill.getLevelDepend() == 0)
         {
@@ -3740,7 +3740,7 @@ public final class Formulas
         return deltamod;
     }
 
-    public static int calcElementModifier(L2Character attacker, L2Character target, L2Skill skill)
+    private static int calcElementModifier(L2Character attacker, L2Character target, L2Skill skill)
     {
         final byte element = skill.getElement();
 
@@ -4420,7 +4420,7 @@ public final class Formulas
         return Rnd.get(100) < actor.getSkillMastery();
     }
 
-    public static double calcValakasAttribute(L2Character attacker, L2Character target, L2Skill skill)
+    private static double calcValakasAttribute(L2Character attacker, L2Character target, L2Skill skill)
     {
         double calcPower = 0;
         double calcDefen = 0;
@@ -4442,7 +4442,7 @@ public final class Formulas
         return calcPower - calcDefen;
     }
 
-    public static double calcElemental(L2Character attacker, L2Character target, L2Skill skill)
+    private static double calcElemental(L2Character attacker, L2Character target, L2Skill skill)
     {
         byte element = attacker.getAttackElement();
         int calcPower = attacker.getAttackElementValue(element);
@@ -4713,7 +4713,7 @@ public final class Formulas
         return false;
     }
 
-    public static double damageMultiplier(L2Character attacker, L2Character target)
+    private static double damageMultiplier(L2Character attacker, L2Character target)
     {
         if (!Config.isServer(Config.TENKAI))
         {

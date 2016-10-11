@@ -38,7 +38,7 @@ public class L2NpcWalkerNode
         this(moveX, moveY, moveZ, delay, null, chatText, running);
     }
 
-    public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
+    private L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
     {
         _moveX = x;
         _moveY = y;

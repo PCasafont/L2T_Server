@@ -228,7 +228,7 @@ public enum VisualEffect
         return _id;
     }
 
-    public final String getName()
+    private String getName()
     {
         return _name;
     }

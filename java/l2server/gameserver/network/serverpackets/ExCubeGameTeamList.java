@@ -40,11 +40,11 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 {
 
     // Players Lists
-    List<L2PcInstance> _bluePlayers;
-    List<L2PcInstance> _redPlayers;
+    private List<L2PcInstance> _bluePlayers;
+    private List<L2PcInstance> _redPlayers;
 
     // Common Values
-    int _roomNumber;
+    private int _roomNumber;
 
     /**
      * Show Minigame Waiting List to Player

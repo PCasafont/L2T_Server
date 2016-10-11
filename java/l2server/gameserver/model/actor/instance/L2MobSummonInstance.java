@@ -96,7 +96,7 @@ public class L2MobSummonInstance extends L2SummonInstance
         }
     }
 
-    public void showMobWindow(L2PcInstance player)
+    private void showMobWindow(L2PcInstance player)
     {
         // Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
         NpcHtmlMessage htmlMessage = new NpcHtmlMessage(getObjectId());
@@ -547,12 +547,12 @@ public class L2MobSummonInstance extends L2SummonInstance
         return true;
     }
 
-    public void setControlItem(L2ItemInstance item)
+    private void setControlItem(L2ItemInstance item)
     {
         _controlItem = item;
     }
 
-    public L2ItemInstance getControlItem()
+    private L2ItemInstance getControlItem()
     {
         return _controlItem;
     }

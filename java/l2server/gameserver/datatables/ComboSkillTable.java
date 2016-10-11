@@ -87,6 +87,6 @@ public class ComboSkillTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ComboSkillTable _instance = new ComboSkillTable();
+        static final ComboSkillTable _instance = new ComboSkillTable();
     }
 }

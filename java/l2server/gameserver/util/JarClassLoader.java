@@ -31,9 +31,9 @@ import java.util.zip.ZipFile;
  * @author galun
  * @version $Revision: $ $Date: $
  */
-public class JarClassLoader extends ClassLoader
+class JarClassLoader extends ClassLoader
 {
-    HashSet<String> _jars = new HashSet<String>();
+    private HashSet<String> _jars = new HashSet<String>();
 
     public void addJarFile(String filename)
     {

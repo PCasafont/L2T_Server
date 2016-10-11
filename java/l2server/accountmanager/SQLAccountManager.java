@@ -37,7 +37,7 @@ import java.util.ArrayList;
  * @author netimperia
  * @version $Revision: 2.3.2.1.2.3 $ $Date: 2005/08/08 22:47:12 $
  */
-public class SQLAccountManager
+class SQLAccountManager
 {
     private static String _uname = "";
     private static String _pass = "";

@@ -31,12 +31,12 @@ import java.util.concurrent.Future;
 public final class FusionSkill
 {
 
-    protected int _skillCastRange;
-    protected int _fusionId;
-    protected int _fusionLevel;
-    protected L2Character _caster;
-    protected L2Character _target;
-    protected Future<?> _geoCheckTask;
+    private int _skillCastRange;
+    private int _fusionId;
+    private int _fusionLevel;
+    private L2Character _caster;
+    private L2Character _target;
+    private Future<?> _geoCheckTask;
 
     public L2Character getCaster()
     {
@@ -101,7 +101,7 @@ public final class FusionSkill
         _geoCheckTask.cancel(true);
     }
 
-    public class GeoCheckTask implements Runnable
+    private class GeoCheckTask implements Runnable
     {
         @Override
         public void run()

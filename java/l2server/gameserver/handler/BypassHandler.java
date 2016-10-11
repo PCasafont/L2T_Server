@@ -77,6 +77,6 @@ public class BypassHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final BypassHandler _instance = new BypassHandler();
+        static final BypassHandler _instance = new BypassHandler();
     }
 }

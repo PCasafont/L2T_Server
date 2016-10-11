@@ -75,11 +75,11 @@ public class Server
     private final DeadLockDetector _deadDetectThread;
     private final IdFactory _idFactory;
     public static Server gameServer;
-    public static ServerGui gui;
+    private static ServerGui gui;
     private LoginServerThread _loginThread;
     public static final Calendar dateTimeServerStarted = Calendar.getInstance();
 
-    public long getUsedMemoryMB()
+    private long getUsedMemoryMB()
     {
         return (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576; // ;
     }
@@ -99,7 +99,7 @@ public class Server
         return _deadDetectThread;
     }
 
-    public Server() throws Exception
+    private Server() throws Exception
     {
         long serverLoadStart = System.currentTimeMillis();
 
@@ -539,9 +539,9 @@ public class Server
         Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
     }
 
-    static long _t = 0;
+    private static long _t = 0;
 
-    public static void printSection(String s)
+    private static void printSection(String s)
     {
         long t = System.currentTimeMillis();
         //if (_t > 0)

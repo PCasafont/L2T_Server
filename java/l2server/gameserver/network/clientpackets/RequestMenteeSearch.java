@@ -23,7 +23,9 @@ import l2server.gameserver.network.serverpackets.ExMenteeSearch;
  */
 public class RequestMenteeSearch extends L2GameClientPacket
 {
-    int _page, _minLevel, _maxLevel;
+    private int _page;
+    private int _minLevel;
+    private int _maxLevel;
 
     @Override
     protected void readImpl()

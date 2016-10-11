@@ -54,7 +54,7 @@ public class NpcWalkersTable
         }
     }
 
-    public void load()
+    private void load()
     {
         _routes.clear();
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
@@ -127,6 +127,6 @@ public class NpcWalkersTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final NpcWalkersTable _instance = new NpcWalkersTable();
+        static final NpcWalkersTable _instance = new NpcWalkersTable();
     }
 }

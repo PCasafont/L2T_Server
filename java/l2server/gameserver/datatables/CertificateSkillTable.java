@@ -313,7 +313,7 @@ public class CertificateSkillTable
         return actualSubCerts;
     }
 
-    public void resetSubClassCertificates(L2PcInstance player)
+    private void resetSubClassCertificates(L2PcInstance player)
     {
         L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
         if (certsItem != null)
@@ -335,7 +335,7 @@ public class CertificateSkillTable
         }
     }
 
-    public void resetDualClassCertificates(L2PcInstance player)
+    private void resetDualClassCertificates(L2PcInstance player)
     {
         L2ItemInstance certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
         if (certsItem != null)
@@ -365,6 +365,6 @@ public class CertificateSkillTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CertificateSkillTable _instance = new CertificateSkillTable();
+        static final CertificateSkillTable _instance = new CertificateSkillTable();
     }
 }

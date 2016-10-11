@@ -129,7 +129,7 @@ public class GeoEditorThread extends Thread
         }
     }
 
-    public void sendGmPosition(int gx, int gy, short z)
+    private void sendGmPosition(int gx, int gy, short z)
     {
         if (!isConnected())
         {
@@ -165,12 +165,12 @@ public class GeoEditorThread extends Thread
         }
     }
 
-    public void sendGmPosition(L2PcInstance _gm)
+    private void sendGmPosition(L2PcInstance _gm)
     {
         sendGmPosition(_gm.getX(), _gm.getY(), (short) _gm.getZ());
     }
 
-    public void sendPing()
+    private void sendPing()
     {
         if (!isConnected())
         {

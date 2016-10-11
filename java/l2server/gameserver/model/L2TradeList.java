@@ -89,7 +89,7 @@ public class L2TradeList
     /**
      * @param hasLimitedStockItem The hasLimitedStockItem to set.
      */
-    public void setHasLimitedStockItem(boolean hasLimitedStockItem)
+    private void setHasLimitedStockItem(boolean hasLimitedStockItem)
     {
         _hasLimitedStockItem = hasLimitedStockItem;
     }
@@ -303,7 +303,7 @@ public class L2TradeList
             _nextRestoreTime = nextRestoreTime;
         }
 
-        protected void saveDataTimer()
+        void saveDataTimer()
         {
             Connection con = null;
             try

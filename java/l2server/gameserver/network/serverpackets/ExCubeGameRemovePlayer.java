@@ -27,8 +27,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameRemovePlayer extends L2GameServerPacket
 {
-    L2PcInstance _player;
-    boolean _isRedTeam;
+    private L2PcInstance _player;
+    private boolean _isRedTeam;
 
     /**
      * Remove Player from Minigame Waiting List

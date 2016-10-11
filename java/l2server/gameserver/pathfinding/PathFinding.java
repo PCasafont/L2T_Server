@@ -154,7 +154,7 @@ public abstract class PathFinding
      * @param geo_pos
      * @return pathnode position
      */
-    public short getNodePos(int geo_pos)
+    protected short getNodePos(int geo_pos)
     {
         return (short) (geo_pos >> 3); //OK?
     }
@@ -165,22 +165,22 @@ public abstract class PathFinding
      * @param geo_pos
      * @return pathnode block position (0...255)
      */
-    public short getNodeBlock(int node_pos)
+    protected short getNodeBlock(int node_pos)
     {
         return (short) (node_pos % 256);
     }
 
-    public byte getRegionX(int node_pos)
+    protected byte getRegionX(int node_pos)
     {
         return (byte) ((node_pos >> 8) + Config.WORLD_X_MIN);
     }
 
-    public byte getRegionY(int node_pos)
+    protected byte getRegionY(int node_pos)
     {
         return (byte) ((node_pos >> 8) + Config.WORLD_Y_MIN);
     }
 
-    public short getRegionOffset(byte rx, byte ry)
+    protected short getRegionOffset(byte rx, byte ry)
     {
         return (short) ((rx << 5) + ry);
     }

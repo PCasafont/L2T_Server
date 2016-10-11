@@ -33,7 +33,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 {
 
     private L2PcInstance _player;
-    int _friendObjId;
+    private int _friendObjId;
     private String _name;
     private int _isOnline;
     private int _level;

@@ -46,7 +46,7 @@ public class GMSkillTable
         return SingletonHolder._instance;
     }
 
-    public L2Skill[] getGMSkills()
+    private L2Skill[] getGMSkills()
     {
         return _gmSkills;
     }
@@ -75,6 +75,6 @@ public class GMSkillTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final GMSkillTable _instance = new GMSkillTable();
+        static final GMSkillTable _instance = new GMSkillTable();
     }
 }

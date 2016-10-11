@@ -45,15 +45,15 @@ import java.util.logging.Level;
  */
 public abstract class L2Vehicle extends L2Character
 {
-    protected int _dockId = 0;
+    private int _dockId = 0;
     protected final ArrayList<L2PcInstance> _passengers = new ArrayList<L2PcInstance>();
-    protected Location _oustLoc = null;
+    private Location _oustLoc = null;
     private Runnable _engine = null;
 
-    protected VehiclePathPoint[] _currentPath = null;
-    protected int _runState = 0;
+    private VehiclePathPoint[] _currentPath = null;
+    private int _runState = 0;
 
-    public L2Vehicle(int objectId, L2CharTemplate template)
+    protected L2Vehicle(int objectId, L2CharTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2Vehicle);
@@ -85,7 +85,7 @@ public abstract class L2Vehicle extends L2Character
         _engine = r;
     }
 
-    public void runEngine(int delay)
+    private void runEngine(int delay)
     {
         if (_engine != null)
         {
@@ -217,13 +217,13 @@ public abstract class L2Vehicle extends L2Character
         _oustLoc = loc;
     }
 
-    public Location getOustLoc()
+    protected Location getOustLoc()
     {
         return _oustLoc != null ? _oustLoc :
                 MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
     }
 
-    public void oustPlayers()
+    private void oustPlayers()
     {
         L2PcInstance player;
 
@@ -247,7 +247,7 @@ public abstract class L2Vehicle extends L2Character
         removePassenger(player);
     }
 
-    public boolean addPassenger(L2PcInstance player)
+    protected boolean addPassenger(L2PcInstance player)
     {
         if (player == null || _passengers.contains(player))
         {
@@ -275,7 +275,7 @@ public abstract class L2Vehicle extends L2Character
         }
     }
 
-    public boolean isEmpty()
+    protected boolean isEmpty()
     {
         return _passengers.isEmpty();
     }
@@ -285,7 +285,7 @@ public abstract class L2Vehicle extends L2Character
         return _passengers;
     }
 
-    public void broadcastToPassengers(L2GameServerPacket sm)
+    protected void broadcastToPassengers(L2GameServerPacket sm)
     {
         for (L2PcInstance player : _passengers)
         {

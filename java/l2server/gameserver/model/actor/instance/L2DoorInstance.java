@@ -113,7 +113,7 @@ public class L2DoorInstance extends L2Character
      */
     public class AIAccessor extends L2Character.AIAccessor
     {
-        protected AIAccessor()
+        AIAccessor()
         {
         }
 
@@ -235,7 +235,7 @@ public class L2DoorInstance extends L2Character
         return (_openType & OPEN_BY_CLICK) != 0;
     }
 
-    public final boolean isOpenableByTime()
+    private boolean isOpenableByTime()
     {
         return (_openType & OPEN_BY_TIME) != 0;
     }
@@ -279,7 +279,7 @@ public class L2DoorInstance extends L2Character
         }
     }
 
-    public boolean getIsAttackableDoor()
+    private boolean getIsAttackableDoor()
     {
         return _isAttackableDoor;
     }
@@ -614,17 +614,17 @@ public class L2DoorInstance extends L2Character
         return getTemplate().emmiter;
     }
 
-    public boolean isWall()
+    private boolean isWall()
     {
         return getTemplate().isWall;
     }
 
-    public String getGroupName()
+    private String getGroupName()
     {
         return getTemplate().groupName;
     }
 
-    public int getChildId()
+    private int getChildId()
     {
         return getTemplate().childDoorId;
     }

@@ -186,7 +186,7 @@ public class CharStat
         return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
     }
 
-    public L2Character getActiveChar()
+    L2Character getActiveChar()
     {
         return _activeChar;
     }
@@ -363,7 +363,7 @@ public class CharStat
         return _level;
     }
 
-    public void setLevel(byte value)
+    void setLevel(byte value)
     {
         _level = value;
     }

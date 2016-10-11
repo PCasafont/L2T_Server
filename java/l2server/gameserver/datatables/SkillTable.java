@@ -182,7 +182,7 @@ public class SkillTable implements Reloadable
         return getSkillHashCode(skillId, skillLevel, enchant / 1000, enchant % 1000);
     }
 
-    public static long getSkillHashCode(int skillId, int skillLevel, int skillEnchantRouteId, int skillEnchantLevel)
+    private static long getSkillHashCode(int skillId, int skillLevel, int skillEnchantRouteId, int skillEnchantLevel)
     {
         //return skillId * 1000000L + skillLevel * 10000L + skillEnchantRouteId * 100L + skillEnchantRouteLevel;
         return ((long) skillId << 32) + (skillEnchantRouteId * 1000 + skillEnchantLevel << 16) + skillLevel;
@@ -266,7 +266,7 @@ public class SkillTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SkillTable _instance = new SkillTable();
+        static final SkillTable _instance = new SkillTable();
     }
 
     /**

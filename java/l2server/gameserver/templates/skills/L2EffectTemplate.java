@@ -37,9 +37,9 @@ public class L2EffectTemplate
     private final Class<?> _func;
     private final Constructor<?> _constructor;
 
-    public final L2AbnormalTemplate abnormal;
+    private final L2AbnormalTemplate abnormal;
 
-    public final Condition applayCond;
+    private final Condition applayCond;
     public final Lambda lambda;
     public final String funcName;
 

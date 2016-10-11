@@ -30,7 +30,7 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 {
     public static final int MIN_Z = -895;
     public static final int MAX_Z = 6105;
-    public static final int STEP = 300;
+    private static final int STEP = 300;
 
     private int _command;
     private int _param1;

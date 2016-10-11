@@ -455,7 +455,7 @@ public abstract class ItemContainer
      * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
      * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
      */
-    public L2ItemInstance destroyItem(String process, L2ItemInstance item, long count, L2PcInstance actor, Object reference)
+    L2ItemInstance destroyItem(String process, L2ItemInstance item, long count, L2PcInstance actor, Object reference)
     {
         synchronized (item)
         {
@@ -579,7 +579,7 @@ public abstract class ItemContainer
      *
      * @param item : L2ItemInstance to be added from inventory
      */
-    protected void addItem(L2ItemInstance item)
+    void addItem(L2ItemInstance item)
     {
         synchronized (_items)
         {
@@ -592,7 +592,7 @@ public abstract class ItemContainer
      *
      * @param item : L2ItemInstance to be removed from inventory
      */
-    protected boolean removeItem(L2ItemInstance item)
+    boolean removeItem(L2ItemInstance item)
     {
         synchronized (_items)
         {
@@ -603,7 +603,7 @@ public abstract class ItemContainer
     /**
      * Refresh the weight of equipment loaded
      */
-    protected void refreshWeight()
+    void refreshWeight()
     {
     }
 
@@ -708,7 +708,7 @@ public abstract class ItemContainer
         return true;
     }
 
-    public boolean validateWeight(long weight)
+    boolean validateWeight(long weight)
     {
         return true;
     }

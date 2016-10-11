@@ -151,7 +151,7 @@ public class SecondaryPasswordAuth
         return true;
     }
 
-    public boolean insertWrongAttempt(int attempts)
+    private boolean insertWrongAttempt(int attempts)
     {
         Connection con = null;
         try

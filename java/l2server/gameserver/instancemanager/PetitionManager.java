@@ -102,12 +102,12 @@ public final class PetitionManager
             _petitioner = petitioner;
         }
 
-        protected boolean addLogMessage(CreatureSay cs)
+        boolean addLogMessage(CreatureSay cs)
         {
             return _messageLog.add(cs);
         }
 
-        protected List<CreatureSay> getLogMessages()
+        List<CreatureSay> getLogMessages()
         {
             return _messageLog;
         }
@@ -350,12 +350,12 @@ public final class PetitionManager
         return false;
     }
 
-    protected Map<Integer, Petition> getCompletedPetitions()
+    private Map<Integer, Petition> getCompletedPetitions()
     {
         return _completedPetitions;
     }
 
-    protected Map<Integer, Petition> getPendingPetitions()
+    private Map<Integer, Petition> getPendingPetitions()
     {
         return _pendingPetitions;
     }
@@ -670,6 +670,6 @@ public final class PetitionManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PetitionManager _instance = new PetitionManager();
+        static final PetitionManager _instance = new PetitionManager();
     }
 }

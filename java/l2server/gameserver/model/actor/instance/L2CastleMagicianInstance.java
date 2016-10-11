@@ -37,9 +37,9 @@ import l2server.util.Rnd;
  */
 public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTrainer
 {
-    protected static final int COND_ALL_FALSE = 0;
-    protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
-    protected static final int COND_OWNER = 2;
+    private static final int COND_ALL_FALSE = 0;
+    private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
+    private static final int COND_OWNER = 2;
 
     /**
      * @param template
@@ -415,7 +415,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
         }
     }
 
-    protected int validateCondition(L2PcInstance player)
+    private int validateCondition(L2PcInstance player)
     {
         if (player.isGM())
         {

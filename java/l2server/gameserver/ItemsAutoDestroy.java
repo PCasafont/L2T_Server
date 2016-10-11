@@ -27,8 +27,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ItemsAutoDestroy
 {
-    protected List<L2ItemInstance> _items = null;
-    protected static long _sleep;
+    private List<L2ItemInstance> _items = null;
+    private static long _sleep;
 
     private ItemsAutoDestroy()
     {
@@ -54,7 +54,7 @@ public class ItemsAutoDestroy
         _items.add(item);
     }
 
-    public synchronized void removeItems()
+    private synchronized void removeItems()
     {
         if (Config.DEBUG)
         {
@@ -121,7 +121,7 @@ public class ItemsAutoDestroy
         }
     }
 
-    protected class CheckItemsForDestroy extends Thread
+    private class CheckItemsForDestroy extends Thread
     {
         @Override
         public void run()
@@ -133,6 +133,6 @@ public class ItemsAutoDestroy
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ItemsAutoDestroy _instance = new ItemsAutoDestroy();
+        static final ItemsAutoDestroy _instance = new ItemsAutoDestroy();
     }
 }

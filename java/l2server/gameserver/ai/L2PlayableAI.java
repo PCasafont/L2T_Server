@@ -38,7 +38,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
     /**
      * @param accessor
      */
-    public L2PlayableAI(AIAccessor accessor)
+    L2PlayableAI(AIAccessor accessor)
     {
         super(accessor);
     }

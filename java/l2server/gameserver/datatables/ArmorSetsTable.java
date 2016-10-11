@@ -118,6 +118,6 @@ public class ArmorSetsTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ArmorSetsTable _instance = new ArmorSetsTable();
+        static final ArmorSetsTable _instance = new ArmorSetsTable();
     }
 }

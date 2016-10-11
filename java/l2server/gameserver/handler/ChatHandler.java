@@ -84,6 +84,6 @@ public class ChatHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ChatHandler _instance = new ChatHandler();
+        static final ChatHandler _instance = new ChatHandler();
     }
 }

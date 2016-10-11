@@ -25,7 +25,7 @@ public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
     private final int _objectId;
     private final String _msg;
 
-    public ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
+    private ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
     {
         _objectId = player.getObjectId();
         _msg = msg;

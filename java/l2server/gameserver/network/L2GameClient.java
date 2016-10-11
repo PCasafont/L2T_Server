@@ -66,7 +66,7 @@ import java.util.logging.Logger;
  */
 public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable
 {
-    protected static final Logger _logAccounting = Logger.getLogger("accounting");
+    private static final Logger _logAccounting = Logger.getLogger("accounting");
 
     /**
      * CONNECTED	- client has just connected
@@ -98,8 +98,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
     private final FloodProtectors _floodProtectors = new FloodProtectors(this);
 
     // Task
-    protected ScheduledFuture<?> _autoSaveInDB;
-    protected ScheduledFuture<?> _cleanupTask = null;
+    private ScheduledFuture<?> _autoSaveInDB;
+    private ScheduledFuture<?> _cleanupTask = null;
 
     private L2GameServerPacket _aditionalClosePacket;
 
@@ -173,7 +173,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         }
     }
 
-    public ClientStats getStats()
+    private ClientStats getStats()
     {
         return _stats;
     }
@@ -391,7 +391,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
     /**
      * Save the L2PcInstance to the database.
      */
-    public void saveCharToDisk()
+    private void saveCharToDisk()
     {
         try
         {
@@ -746,7 +746,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         close(gsp);
     }
 
-    public final void cancelAutoSave()
+    private void cancelAutoSave()
     {
         // we are going to mannually save the char bellow thus we can force the cancel
         ScheduledFuture<?> future = _autoSaveInDB;
@@ -874,7 +874,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         }
     }
 
-    class DisconnectTask implements Runnable
+    private class DisconnectTask implements Runnable
     {
         /**
          * @see java.lang.Runnable#run()
@@ -1030,7 +1030,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         }
     }
 
-    class CleanupTask implements Runnable
+    private class CleanupTask implements Runnable
     {
         /**
          * @see java.lang.Runnable#run()
@@ -1078,7 +1078,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         }
     }
 
-    class AutoSaveTask implements Runnable
+    private class AutoSaveTask implements Runnable
     {
         @Override
         public void run()

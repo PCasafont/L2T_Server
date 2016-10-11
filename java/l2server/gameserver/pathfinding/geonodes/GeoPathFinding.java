@@ -108,7 +108,7 @@ public class GeoPathFinding extends PathFinding
         return searchByClosest2(start, end);
     }
 
-    public List<AbstractNodeLoc> searchByClosest2(GeoNode start, GeoNode end)
+    private List<AbstractNodeLoc> searchByClosest2(GeoNode start, GeoNode end)
     {
         // Always continues checking from the closest to target non-blocked
         // node from to_visit list. There's extra length in path if needed
@@ -188,7 +188,7 @@ public class GeoPathFinding extends PathFinding
         return null;
     }
 
-    public List<AbstractNodeLoc> constructPath2(AbstractNode node)
+    private List<AbstractNodeLoc> constructPath2(AbstractNode node)
     {
         LinkedList<AbstractNodeLoc> path = new LinkedList<AbstractNodeLoc>();
         int previousDirectionX = -1000;
@@ -499,6 +499,6 @@ public class GeoPathFinding extends PathFinding
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final GeoPathFinding _instance = new GeoPathFinding();
+        static final GeoPathFinding _instance = new GeoPathFinding();
     }
 }

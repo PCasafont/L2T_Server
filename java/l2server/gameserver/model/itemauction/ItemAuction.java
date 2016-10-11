@@ -211,7 +211,7 @@ public final class ItemAuction
         }
     }
 
-    public final int getAndSetLastBidPlayerObjectId(final int playerObjId)
+    private int getAndSetLastBidPlayerObjectId(final int playerObjId)
     {
         final int lastBid = _lastBidPlayerObjId;
         _lastBidPlayerObjId = playerObjId;
@@ -223,7 +223,7 @@ public final class ItemAuction
         updatePlayerBidInternal(bid, delete);
     }
 
-    final void updatePlayerBidInternal(final ItemAuctionBid bid, final boolean delete)
+    private void updatePlayerBidInternal(final ItemAuctionBid bid, final boolean delete)
     {
         Connection con = null;
         try
@@ -419,7 +419,7 @@ public final class ItemAuction
         }
     }
 
-    public final void broadcastToAllBidders(final L2GameServerPacket packet)
+    private void broadcastToAllBidders(final L2GameServerPacket packet)
     {
         ThreadPoolManager.getInstance().executeTask(new Runnable()
         {

@@ -56,7 +56,7 @@ public class EnchantMultiSellTable implements Reloadable
         }
     }
 
-    public Map<Integer, EnchantMultiSellCategory> _categories = new HashMap<Integer, EnchantMultiSellCategory>();
+    private Map<Integer, EnchantMultiSellCategory> _categories = new HashMap<Integer, EnchantMultiSellCategory>();
 
     private EnchantMultiSellTable()
     {
@@ -137,6 +137,6 @@ public class EnchantMultiSellTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final EnchantMultiSellTable _instance = new EnchantMultiSellTable();
+        static final EnchantMultiSellTable _instance = new EnchantMultiSellTable();
     }
 }

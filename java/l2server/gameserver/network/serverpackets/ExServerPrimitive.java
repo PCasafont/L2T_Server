@@ -82,7 +82,7 @@ public class ExServerPrimitive extends L2GameServerPacket
      * @param y             the y coordinate for this point
      * @param z             the z coordinate for this point
      */
-    public void addPoint(String name, int color, boolean isNameColored, int x, int y, int z)
+    private void addPoint(String name, int color, boolean isNameColored, int x, int y, int z)
     {
         _points.add(new Point(name, color, isNameColored, x, y, z));
     }
@@ -141,7 +141,7 @@ public class ExServerPrimitive extends L2GameServerPacket
      * @param y2            the y coordinate for this line end point
      * @param z2            the z coordinate for this line end point
      */
-    public void addLine(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
+    private void addLine(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
     {
         _lines.add(new Line(name, color, isNameColored, x, y, z, x2, y2, z2));
     }
@@ -175,7 +175,7 @@ public class ExServerPrimitive extends L2GameServerPacket
      * @param y2            the y coordinate for this line end point
      * @param z2            the z coordinate for this line end point
      */
-    public void addLine(String name, Color color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
+    private void addLine(String name, Color color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
     {
         addLine(name, color.getRGB(), isNameColored, x, y, z, x2, y2, z2);
     }

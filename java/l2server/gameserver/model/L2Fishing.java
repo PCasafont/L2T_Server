@@ -111,7 +111,7 @@ public class L2Fishing implements Runnable
         }
     }
 
-    public void changeHp(int hp, int pen)
+    private void changeHp(int hp, int pen)
     {
         _fishCurHp -= hp;
         if (_fishCurHp < 0)
@@ -136,7 +136,7 @@ public class L2Fishing implements Runnable
         }
     }
 
-    public synchronized void doDie(boolean win)
+    private synchronized void doDie(boolean win)
     {
         if (_fishAiTask != null)
         {
@@ -166,7 +166,7 @@ public class L2Fishing implements Runnable
         _fisher = null;
     }
 
-    protected void aiTask()
+    private void aiTask()
     {
         if (_thinking)
         {

@@ -55,6 +55,6 @@ public class NobleSkillTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final NobleSkillTable _instance = new NobleSkillTable();
+        static final NobleSkillTable _instance = new NobleSkillTable();
     }
 }

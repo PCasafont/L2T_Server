@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * @author DS
  */
-public final class OlympiadAnnouncer implements Runnable
+final class OlympiadAnnouncer implements Runnable
 {
     private static final int OLY_MANAGER = 31688;
 

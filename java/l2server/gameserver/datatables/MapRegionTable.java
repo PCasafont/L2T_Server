@@ -121,12 +121,12 @@ public class MapRegionTable
         }
     }
 
-    public final int getMapRegionX(int posX)
+    private int getMapRegionX(int posX)
     {
         return (posX >> 15) + 9;// + centerTileX;
     }
 
-    public final int getMapRegionY(int posY)
+    private int getMapRegionY(int posY)
     {
         return (posY >> 15) + 10;// + centerTileX;
     }
@@ -365,7 +365,7 @@ public class MapRegionTable
         return getTownSimpleName(nearestTownId);
     }
 
-    public String getTownSimpleName(int townId)
+    private String getTownSimpleName(int townId)
     {
         String nearestTown;
         switch (townId)
@@ -672,6 +672,6 @@ public class MapRegionTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final MapRegionTable _instance = new MapRegionTable();
+        static final MapRegionTable _instance = new MapRegionTable();
     }
 }

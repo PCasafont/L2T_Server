@@ -43,12 +43,12 @@ public class SpawnDataManager
 
     private Map<String, DbSpawnData> _dbSpawnData = new HashMap<String, DbSpawnData>();
 
-    public SpawnDataManager()
+    private SpawnDataManager()
     {
         loadDbSpawnData();
     }
 
-    public void loadDbSpawnData()
+    private void loadDbSpawnData()
     {
         Connection con = null;
         PreparedStatement statement = null;
@@ -146,6 +146,6 @@ public class SpawnDataManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SpawnDataManager _instance = new SpawnDataManager();
+        static final SpawnDataManager _instance = new SpawnDataManager();
     }
 }

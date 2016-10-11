@@ -21,7 +21,7 @@ package l2server.gameserver.network.serverpackets;
 public class ExWaitWaitingSubStituteInfo extends L2GameServerPacket
 {
 
-    boolean _turnOn;
+    private boolean _turnOn;
 
     public ExWaitWaitingSubStituteInfo(boolean turnOn)
     {

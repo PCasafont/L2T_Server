@@ -48,7 +48,7 @@ public class OlympiadGameClassed extends OlympiadGameNormal
         return Config.ALT_OLY_CLASSED_REWARD;
     }
 
-    protected static final OlympiadGameClassed createGame(int id, List<List<Integer>> classList)
+    static final OlympiadGameClassed createGame(int id, List<List<Integer>> classList)
     {
         if (classList == null || classList.isEmpty())
         {

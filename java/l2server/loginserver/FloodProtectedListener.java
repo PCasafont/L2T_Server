@@ -29,14 +29,14 @@ import java.util.logging.Level;
 /**
  * @author -Wooden-
  */
-public abstract class FloodProtectedListener extends Thread
+abstract class FloodProtectedListener extends Thread
 {
     private Map<String, ForeignConnection> _floodProtection = new HashMap<String, ForeignConnection>();
     private String _listenIp;
     private int _port;
     private ServerSocket _serverSocket;
 
-    public FloodProtectedListener(String listenIp, int port) throws IOException
+    FloodProtectedListener(String listenIp, int port) throws IOException
     {
         _port = port;
         _listenIp = listenIp;
@@ -124,7 +124,7 @@ public abstract class FloodProtectedListener extends Thread
         }
     }
 
-    protected static class ForeignConnection
+    static class ForeignConnection
     {
         public int connectionNumber;
         public long lastConnection;
@@ -140,7 +140,7 @@ public abstract class FloodProtectedListener extends Thread
         }
     }
 
-    public abstract void addClient(Socket s);
+    protected abstract void addClient(Socket s);
 
     public void removeFloodProtection(String ip)
     {

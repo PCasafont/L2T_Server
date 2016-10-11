@@ -643,7 +643,7 @@ public class RegionBBSManager extends BaseBBSManager
      * @param type the type
      * @return the community page
      */
-    public String getCommunityPage(int page, String type)
+    private String getCommunityPage(int page, String type)
     {
         if (_communityPages.get(page) != null)
         {
@@ -665,6 +665,6 @@ public class RegionBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        protected static final RegionBBSManager _instance = new RegionBBSManager();
+        static final RegionBBSManager _instance = new RegionBBSManager();
     }
 }

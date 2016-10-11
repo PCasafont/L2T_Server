@@ -39,7 +39,7 @@ import java.util.logging.Logger;
 public final class RequestRestart extends L2GameClientPacket
 {
 
-    protected static final Logger _logAccounting = Logger.getLogger("accounting");
+    private static final Logger _logAccounting = Logger.getLogger("accounting");
 
     @Override
     protected void readImpl()

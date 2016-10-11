@@ -450,6 +450,6 @@ public class CustomWorldAltars
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CustomWorldAltars _instance = new CustomWorldAltars();
+        static final CustomWorldAltars _instance = new CustomWorldAltars();
     }
 }

@@ -130,7 +130,7 @@ public class L2SkillSiegeFlag extends L2Skill
      * @param isCheckOnly
      * @return
      */
-    public static boolean checkIfOkToPlaceFlag(L2Character activeChar, Castle castle, boolean isCheckOnly)
+    private static boolean checkIfOkToPlaceFlag(L2Character activeChar, Castle castle, boolean isCheckOnly)
     {
         if (!(activeChar instanceof L2PcInstance))
         {
@@ -183,7 +183,7 @@ public class L2SkillSiegeFlag extends L2Skill
      * @param isCheckOnly
      * @return
      */
-    public static boolean checkIfOkToPlaceFlag(L2Character activeChar, Fort fort, boolean isCheckOnly)
+    private static boolean checkIfOkToPlaceFlag(L2Character activeChar, Fort fort, boolean isCheckOnly)
     {
         if (!(activeChar instanceof L2PcInstance))
         {

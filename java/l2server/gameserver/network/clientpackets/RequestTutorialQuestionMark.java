@@ -21,7 +21,7 @@ import l2server.gameserver.model.quest.QuestState;
 public class RequestTutorialQuestionMark extends L2GameClientPacket
 {
     //
-    int _number = 0;
+    private int _number = 0;
 
     @Override
     protected void readImpl()

@@ -62,7 +62,7 @@ public class Instance
     private boolean _isTimerIncrease = true;
     private String _timerText = "";
 
-    protected ScheduledFuture<?> _CheckTimeUpTask = null;
+    private ScheduledFuture<?> _CheckTimeUpTask = null;
 
     public Instance(int id)
     {
@@ -103,7 +103,7 @@ public class Instance
     /**
      * Sets the status for the instance for summon friend type skills
      */
-    public void setAllowSummon(boolean b)
+    private void setAllowSummon(boolean b)
     {
         _allowSummon = b;
     }
@@ -119,7 +119,7 @@ public class Instance
     /*
      * Sets PvP zone status of the instance
      */
-    public void setPvPInstance(boolean b)
+    private void setPvPInstance(boolean b)
     {
         _isPvPInstance = b;
     }
@@ -208,7 +208,7 @@ public class Instance
      *
      * @param objectId
      */
-    public void ejectPlayer(int objectId)
+    private void ejectPlayer(int objectId)
     {
         L2PcInstance player = L2World.getInstance().getPlayer(objectId);
         if (player != null && player.getInstanceId() == getId())
@@ -581,7 +581,7 @@ public class Instance
         }
     }
 
-    protected void doCheckTimeUp(int remaining)
+    private void doCheckTimeUp(int remaining)
     {
         CreatureSay cs = null;
         int timeLeft;
@@ -695,7 +695,7 @@ public class Instance
         }
     }
 
-    public class TimeUp implements Runnable
+    private class TimeUp implements Runnable
     {
         @Override
         public void run()

@@ -84,7 +84,7 @@ public class L2SkillContinuousCasts extends L2Skill
         }
     }
 
-    public boolean cast(L2Character activeChar, Point3D position)
+    private boolean cast(L2Character activeChar, Point3D position)
     {
         if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this)
         {

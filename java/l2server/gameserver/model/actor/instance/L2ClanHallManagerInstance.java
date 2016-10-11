@@ -38,10 +38,10 @@ import java.util.StringTokenizer;
 
 public class L2ClanHallManagerInstance extends L2MerchantInstance
 {
-    protected static final int COND_OWNER_FALSE = 0;
-    protected static final int COND_ALL_FALSE = 1;
+    private static final int COND_OWNER_FALSE = 0;
+    private static final int COND_ALL_FALSE = 1;
     protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 2;
-    protected static final int COND_OWNER = 3;
+    private static final int COND_OWNER = 3;
     private int _clanHallId = -1;
 
     /**
@@ -1650,7 +1650,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
         player.sendPacket(html);
     }
 
-    protected int validateCondition(L2PcInstance player)
+    private int validateCondition(L2PcInstance player)
     {
         if (getClanHall() == null)
         {
@@ -1677,7 +1677,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
     /**
      * Return the L2ClanHall this L2NpcInstance belongs to.
      */
-    public final ClanHall getClanHall()
+    private ClanHall getClanHall()
     {
         if (_clanHallId < 0)
         {

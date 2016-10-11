@@ -124,6 +124,6 @@ public class EventDroplist
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final EventDroplist _instance = new EventDroplist();
+        static final EventDroplist _instance = new EventDroplist();
     }
 }

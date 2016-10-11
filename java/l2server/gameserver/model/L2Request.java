@@ -30,18 +30,18 @@ public class L2Request
 {
     private static final int REQUEST_TIMEOUT = 15; //in secs
 
-    protected L2PcInstance _player;
-    protected L2PcInstance _partner;
-    protected boolean _isRequestor;
-    protected boolean _isAnswerer;
-    protected L2GameClientPacket _requestPacket;
+    private L2PcInstance _player;
+    private L2PcInstance _partner;
+    private boolean _isRequestor;
+    private boolean _isAnswerer;
+    private L2GameClientPacket _requestPacket;
 
     public L2Request(L2PcInstance player)
     {
         _player = player;
     }
 
-    protected void clear()
+    private void clear()
     {
         _partner = null;
         _requestPacket = null;
@@ -143,7 +143,7 @@ public class L2Request
     /**
      * Return True if a transaction is in progress.<BR><BR>
      */
-    public boolean isProcessingRequest()
+    private boolean isProcessingRequest()
     {
         return _partner != null;
     }

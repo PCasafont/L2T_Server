@@ -123,9 +123,9 @@ public abstract class L2Character extends L2Object
     private boolean _isPendingRevive = false;
     private boolean _isRunning = false;
     private boolean _refuseBuffs = false; // Tenkai custom - refuse buffs from out of party
-    protected boolean _showSummonAnimation = false;
-    protected boolean _isTeleporting = false;
-    protected boolean _isInvul = false;
+    boolean _showSummonAnimation = false;
+    private boolean _isTeleporting = false;
+    private boolean _isInvul = false;
     private boolean _isMortal = true; // Char will die when HP decreased to 0
     private boolean _isFlying = false;
 
@@ -157,7 +157,7 @@ public abstract class L2Character extends L2Object
      */
     protected FusionSkill _fusionSkill;
 
-    protected Point3D _skillCastPosition;
+    private Point3D _skillCastPosition;
 
     /**
      * Zone system
@@ -205,7 +205,7 @@ public abstract class L2Character extends L2Object
      *
      * @param d
      */
-    public void setDebug(L2Character d)
+    protected void setDebug(L2Character d)
     {
         _debugger = d;
     }
@@ -244,7 +244,7 @@ public abstract class L2Character extends L2Object
         return null;
     }
 
-    public boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
+    protected boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
     {
         // Default: NPCs consume virtual items for their skills
         // TODO: should be logged if even happens.. should be false
@@ -363,7 +363,7 @@ public abstract class L2Character extends L2Object
      * @param objectId Identifier of the object to initialized
      * @param template The L2CharTemplate to apply to the object
      */
-    public L2Character(int objectId, L2CharTemplate template)
+    protected L2Character(int objectId, L2CharTemplate template)
     {
         super(objectId);
         setInstanceType(InstanceType.L2Character);
@@ -436,7 +436,7 @@ public abstract class L2Character extends L2Object
         revalidateZone(true);
     }
 
-    public void onTeleported()
+    protected void onTeleported()
     {
         if (!isTeleporting())
         {
@@ -498,7 +498,7 @@ public abstract class L2Character extends L2Object
      * L2PcInstance in the detection area of the L2Character are identified in <B>_knownPlayers</B>.
      * In order to inform other players of state modification on the L2Character, server just need to go through _knownPlayers to send Server->Client Packet<BR><BR>
      */
-    public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
+    protected void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
     {
         Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
         //synchronized (getKnownList().getKnownPlayers())
@@ -661,7 +661,7 @@ public abstract class L2Character extends L2Object
      * <B><U> Overridden in </U> :</B><BR><BR>
      * <li> L2PcInstance</li><BR><BR>
      */
-    public void teleToLocation(int x, int y, int z, int heading, boolean allowRandomOffset)
+    protected void teleToLocation(int x, int y, int z, int heading, boolean allowRandomOffset)
     {
         // Stop movement
         stopMove(null, false);
@@ -1663,7 +1663,7 @@ public abstract class L2Character extends L2Object
      *
      * @param skill The L2Skill to use
      */
-    public void doCast(L2Skill skill, boolean second)
+    private void doCast(L2Skill skill, boolean second)
     {
         beginCast(skill, false, second);
     }
@@ -1702,7 +1702,7 @@ public abstract class L2Character extends L2Object
         beginCast(skill, false, false, target, targets);
     }
 
-    public void doSimultaneousCast(L2Skill skill, L2Character target, L2Object[] targets)
+    private void doSimultaneousCast(L2Skill skill, L2Character target, L2Object[] targets)
     {
         if (!checkDoCastConditions(skill))// || this instanceof L2PcInstance)
         {
@@ -2659,12 +2659,12 @@ public abstract class L2Character extends L2Object
      * @param reuse delay
      *              <BR><B>Overridden in :</B>  (L2PcInstance)
      */
-    public void addTimeStamp(L2Skill skill, long reuse)
+    protected void addTimeStamp(L2Skill skill, long reuse)
     {
         /***/
     }
 
-    public void startFusionSkill(L2Character target, L2Skill skill)
+    private void startFusionSkill(L2Character target, L2Skill skill)
     {
         if (skill.getSkillType() != L2SkillType.FUSION)
         {
@@ -2825,7 +2825,7 @@ public abstract class L2Character extends L2Object
         return true;
     }
 
-    public void deleteMe()
+    protected void deleteMe()
     {
         setDebug(null);
 
@@ -2835,7 +2835,7 @@ public abstract class L2Character extends L2Object
         }
     }
 
-    protected void calculateRewards(L2Character killer)
+    void calculateRewards(L2Character killer)
     {
     }
 
@@ -2945,7 +2945,7 @@ public abstract class L2Character extends L2Object
     /**
      * Return True if the L2Character is minion.
      */
-    public boolean isMinion()
+    boolean isMinion()
     {
         return false;
     }
@@ -2983,7 +2983,7 @@ public abstract class L2Character extends L2Object
         return _lastSimultaneousSkillCast;
     }
 
-    public void setLastSimultaneousSkillCast(L2Skill skill)
+    private void setLastSimultaneousSkillCast(L2Skill skill)
     {
         _lastSimultaneousSkillCast = skill;
     }
@@ -3076,7 +3076,7 @@ public abstract class L2Character extends L2Object
         return isAffected(L2EffectType.PHYSICAL_MUTE.getMask());
     }
 
-    public final boolean isPhysicalAttackMuted()
+    private boolean isPhysicalAttackMuted()
     {
         return isAffected(L2EffectType.PHYSICAL_ATTACK_MUTE.getMask());
     }
@@ -3099,7 +3099,7 @@ public abstract class L2Character extends L2Object
         return isConfused() || isAfraid() || isInLove();
     }
 
-    public final boolean isOverloaded()
+    private boolean isOverloaded()
     {
         return _isOverloaded;
     }
@@ -3107,7 +3107,7 @@ public abstract class L2Character extends L2Object
     /**
      * Set the overloaded status of the L2Character is overloaded (if True, the L2PcInstance can't take more item).
      */
-    public final void setIsOverloaded(boolean value)
+    protected final void setIsOverloaded(boolean value)
     {
         _isOverloaded = value;
     }
@@ -3133,7 +3133,7 @@ public abstract class L2Character extends L2Object
         _isPendingRevive = value;
     }
 
-    public boolean isDisarmed()
+    protected boolean isDisarmed()
     {
         return isAffected(L2EffectType.DISARM.getMask());
     }
@@ -3244,7 +3244,7 @@ public abstract class L2Character extends L2Object
         return _isTeleporting;
     }
 
-    public void setIsTeleporting(boolean value)
+    protected void setIsTeleporting(boolean value)
     {
         _isTeleporting = value;
     }
@@ -3274,7 +3274,7 @@ public abstract class L2Character extends L2Object
         return false;
     }
 
-    public boolean isResurrectionBlocked()
+    protected boolean isResurrectionBlocked()
     {
         return isAffected(L2EffectType.BLOCK_RESURRECTION.getMask());
     }
@@ -3284,7 +3284,7 @@ public abstract class L2Character extends L2Object
         return _isFlying;
     }
 
-    public final void setIsFlying(boolean mode)
+    protected final void setIsFlying(boolean mode)
     {
         _isFlying = mode;
     }
@@ -3327,17 +3327,17 @@ public abstract class L2Character extends L2Object
      * <p>
      * Removes the need for instanceof checks.
      */
-    public void initCharStat()
+    protected void initCharStat()
     {
         _stat = new CharStat(this);
     }
 
-    public final void setStat(CharStat value)
+    protected final void setStat(CharStat value)
     {
         _stat = value;
     }
 
-    public CharStatus getStatus()
+    protected CharStatus getStatus()
     {
         return _status;
     }
@@ -3348,12 +3348,12 @@ public abstract class L2Character extends L2Object
      * <p>
      * Removes the need for instanceof checks.
      */
-    public void initCharStatus()
+    protected void initCharStatus()
     {
         _status = new CharStatus(this);
     }
 
-    public final void setStatus(CharStatus value)
+    protected final void setStatus(CharStatus value)
     {
         _status = value;
     }
@@ -3890,7 +3890,7 @@ public abstract class L2Character extends L2Object
         _effects.stopAllEffects();
     }
 
-    public void stopAllEffectsExceptThoseThatLastThroughDeath()
+    protected void stopAllEffectsExceptThoseThatLastThroughDeath()
     {
         _effects.stopAllEffectsExceptThoseThatLastThroughDeath();
     }
@@ -3954,7 +3954,7 @@ public abstract class L2Character extends L2Object
         _effects.stopEffects(type);
     }
 
-    public final void stopEffects(L2EffectType type)
+    protected final void stopEffects(L2EffectType type)
     {
         _effects.stopEffects(type);
     }
@@ -3963,7 +3963,7 @@ public abstract class L2Character extends L2Object
      * Exits all buffs effects of the skills with "removedOnAnyAction" set.
      * Called on any action except movement (attack, cast).
      */
-    public final void stopEffectsOnAction(L2Skill skill)
+    private void stopEffectsOnAction(L2Skill skill)
     {
         _effects.stopEffectsOnAction(skill);
     }
@@ -4193,7 +4193,7 @@ public abstract class L2Character extends L2Object
      * <li>L2Summon</li>
      * <li>L2DoorInstance</li><BR><BR>
      */
-    public abstract void updateAbnormalEffect();
+    protected abstract void updateAbnormalEffect();
 
     /**
      * Update active skills in progress (In Use and Not In Use because stacked) icons on client.<BR><BR>
@@ -4217,7 +4217,7 @@ public abstract class L2Character extends L2Object
      *
      * @param partyOnly
      */
-    public void updateEffectIcons(boolean partyOnly)
+    void updateEffectIcons(boolean partyOnly)
     {
         // overridden
     }
@@ -4478,9 +4478,9 @@ public abstract class L2Character extends L2Object
     /**
      * Future Skill Cast
      */
-    protected Future<?> _skillCast;
-    protected Future<?> _skillCast2;
-    protected Future<?> _simultSkillCast;
+    private Future<?> _skillCast;
+    private Future<?> _skillCast2;
+    private Future<?> _simultSkillCast;
 
     /**
      * Add a Func to the Calculator set of the L2Character.<BR><BR>
@@ -4586,7 +4586,7 @@ public abstract class L2Character extends L2Object
      *
      * @param f The Func object to remove from the Calculator corresponding to the state affected
      */
-    public final void removeStatFunc(Func f)
+    private void removeStatFunc(Func f)
     {
         if (f == null)
         {
@@ -4981,12 +4981,12 @@ public abstract class L2Character extends L2Object
         return _isCastingNow;
     }
 
-    public boolean isCastingNow1()
+    protected boolean isCastingNow1()
     {
         return _isCastingNow;
     }
 
-    public final boolean canCastNow(L2Skill skill)
+    protected final boolean canCastNow(L2Skill skill)
     {
         // Horrible hotfix
 		/*if (!canDoubleCast() && _isCastingNow
@@ -5032,7 +5032,7 @@ public abstract class L2Character extends L2Object
         return _isCastingSimultaneouslyNow;
     }
 
-    public void setIsCastingSimultaneouslyNow(boolean value)
+    private void setIsCastingSimultaneouslyNow(boolean value)
     {
         _isCastingSimultaneouslyNow = value;
     }
@@ -5066,7 +5066,7 @@ public abstract class L2Character extends L2Object
     /**
      * Return True if the L2Character has aborted its attack.<BR><BR>
      */
-    public final boolean isAttackAborted()
+    private boolean isAttackAborted()
     {
         return _attacking <= 0;
     }
@@ -5460,7 +5460,7 @@ public abstract class L2Character extends L2Object
      * @param z      The Y position of the destination
      * @param offset The size of the interaction area of the L2Character targeted
      */
-    protected void moveToLocation(int x, int y, int z, int offset)
+    private void moveToLocation(int x, int y, int z, int offset)
     {
         // Get the Move Speed of the L2Charcater
         float speed = getStat().getMoveSpeed();
@@ -6165,7 +6165,7 @@ public abstract class L2Character extends L2Object
     /**
      * Set _attacking corresponding to Attacking Body part to CHEST.<BR><BR>
      */
-    public void setAttackingBodypart()
+    private void setAttackingBodypart()
     {
         _attacking = Inventory.PAPERDOLL_CHEST;
     }
@@ -6758,7 +6758,7 @@ public abstract class L2Character extends L2Object
         return isInsidePeaceZone(attacker, this);
     }
 
-    public boolean isInsidePeaceZone(L2PcInstance attacker, L2Object target)
+    protected boolean isInsidePeaceZone(L2PcInstance attacker, L2Object target)
     {
         return !attacker.getAccessLevel().allowPeaceAttack() && isInsidePeaceZone((L2Object) attacker, target);
     }
@@ -6879,7 +6879,7 @@ public abstract class L2Character extends L2Object
     /**
      * Return the Attack Speed of the L2Character (delay (in milliseconds) before next attack).<BR><BR>
      */
-    public int calculateTimeBetweenAttacks(L2Character target, L2Weapon weapon)
+    private int calculateTimeBetweenAttacks(L2Character target, L2Weapon weapon)
     {
         double atkSpd = 0;
         if (weapon != null && !isTransformed())
@@ -6909,7 +6909,7 @@ public abstract class L2Character extends L2Object
         return Formulas.calcPAtkSpd(this, target, atkSpd);
     }
 
-    public int calculateReuseTime(L2Character target, L2Weapon weapon)
+    private int calculateReuseTime(L2Character target, L2Weapon weapon)
     {
         if (weapon == null || isTransformed())
         {
@@ -6939,7 +6939,7 @@ public abstract class L2Character extends L2Object
     /**
      * Return True if the L2Character use a dual weapon.<BR><BR>
      */
-    public boolean isUsingDualWeapon()
+    protected boolean isUsingDualWeapon()
     {
         return false;
     }
@@ -7026,7 +7026,7 @@ public abstract class L2Character extends L2Object
      * @param skill The L2Skill to remove from the L2Character
      * @return The L2Skill removed
      */
-    public L2Skill removeSkill(L2Skill skill)
+    protected L2Skill removeSkill(L2Skill skill)
     {
         if (skill == null)
         {
@@ -7036,7 +7036,7 @@ public abstract class L2Character extends L2Object
         return removeSkill(skill.getId(), true);
     }
 
-    public L2Skill removeSkill(L2Skill skill, boolean cancelEffect)
+    protected L2Skill removeSkill(L2Skill skill, boolean cancelEffect)
     {
         if (skill == null)
         {
@@ -7128,7 +7128,7 @@ public abstract class L2Character extends L2Object
         return oldSkill;
     }
 
-    public void removeChanceSkill(int id)
+    private void removeChanceSkill(int id)
     {
         if (_chanceSkills == null)
         {
@@ -7265,7 +7265,7 @@ public abstract class L2Character extends L2Object
      *
      * @param skillId The identifier of the L2Skill to check the knowledge
      */
-    public L2Skill getKnownSkill(int skillId)
+    protected L2Skill getKnownSkill(int skillId)
     {
         if (_skills == null)
         {
@@ -7305,7 +7305,7 @@ public abstract class L2Character extends L2Object
      *
      * @param mut The L2Skill to use
      */
-    public void onMagicLaunchedTimer(MagicUseTask mut)
+    private void onMagicLaunchedTimer(MagicUseTask mut)
     {
         final L2Skill skill = mut.skill;
         L2Object[] targets = mut.targets;
@@ -7477,7 +7477,7 @@ public abstract class L2Character extends L2Object
     /*
 	 * Runs in the end of skill casting
 	 */
-    public void onMagicHitTimer(MagicUseTask mut)
+    private void onMagicHitTimer(MagicUseTask mut)
     {
         final L2Skill skill = mut.skill;
         final L2Object[] targets = mut.targets;
@@ -7746,7 +7746,7 @@ public abstract class L2Character extends L2Object
     /*
 	 * Runs after skill hitTime+coolTime
 	 */
-    public void onMagicFinalizer(MagicUseTask mut)
+    private void onMagicFinalizer(MagicUseTask mut)
     {
         if (mut.simultaneously)
         {
@@ -7818,12 +7818,12 @@ public abstract class L2Character extends L2Object
     }
 
     // Quest event ON_SPELL_FNISHED
-    protected void notifyQuestEventSkillFinished(L2Skill skill, L2Object target)
+    void notifyQuestEventSkillFinished(L2Skill skill, L2Object target)
     {
 
     }
 
-    public Map<Integer, Long> getDisabledSkills()
+    protected Map<Integer, Long> getDisabledSkills()
     {
         return _disabledSkills;
     }
@@ -7836,7 +7836,7 @@ public abstract class L2Character extends L2Object
      *
      * @param skill The L2Skill to enable
      */
-    public void enableSkill(L2Skill skill)
+    protected void enableSkill(L2Skill skill)
     {
         if (skill == null || _disabledSkills == null)
         {
@@ -8791,7 +8791,7 @@ public abstract class L2Character extends L2Object
         reduceCurrentHp(i, attacker, !skill.isToggle(), true, skill);
     }
 
-    public void reduceCurrentHp(double i, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
+    protected void reduceCurrentHp(double i, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
     {
         if (i == -1)
         {
@@ -8921,7 +8921,7 @@ public abstract class L2Character extends L2Object
 
     protected L2Object[] _continuousDebuffTargets = null;
 
-    public L2Object[] getContinuousDebuffTargets()
+    private L2Object[] getContinuousDebuffTargets()
     {
         return _continuousDebuffTargets;
     }
@@ -8931,7 +8931,7 @@ public abstract class L2Character extends L2Object
         _continuousDebuffTargets = targets;
     }
 
-    public void abortContinuousDebuff(L2Skill skill)
+    private void abortContinuousDebuff(L2Skill skill)
     {
         if (_continuousDebuffTargets == null || skill == null)
         {
@@ -9036,7 +9036,7 @@ public abstract class L2Character extends L2Object
     /**
      * @return true
      */
-    public boolean giveRaidCurse()
+    protected boolean giveRaidCurse()
     {
         return true;
     }
@@ -9094,7 +9094,7 @@ public abstract class L2Character extends L2Object
         return _faceoffTarget;
     }
 
-    public void addSkillEffect(L2Skill newSkill)
+    protected void addSkillEffect(L2Skill newSkill)
     {
         if (newSkill != null)
         {
@@ -9108,7 +9108,7 @@ public abstract class L2Character extends L2Object
         }
     }
 
-    public L2Skill removeSkillEffect(int skillId, boolean removeActiveEffect)
+    protected L2Skill removeSkillEffect(int skillId, boolean removeActiveEffect)
     {
         // Remove the skill from the L2Character _skills
         L2Skill oldSkill = getSkills().get(skillId);
@@ -9184,7 +9184,7 @@ public abstract class L2Character extends L2Object
         return oldSkill;
     }
 
-    public Map<Integer, L2Skill> getSkills()
+    protected Map<Integer, L2Skill> getSkills()
     {
         return _skills;
     }

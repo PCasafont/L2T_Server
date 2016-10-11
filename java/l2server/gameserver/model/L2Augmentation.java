@@ -81,7 +81,7 @@ public final class L2Augmentation
         return id;
     }
 
-    public L2Skill getSkill()
+    private L2Skill getSkill()
     {
         if (_effect2 != null && _effect2.getSkill() != null)
         {

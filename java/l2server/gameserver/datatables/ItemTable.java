@@ -541,7 +541,7 @@ public class ItemTable implements Reloadable
         return "Item Templates have been reloaded";
     }
 
-    protected static class ResetOwner implements Runnable
+    static class ResetOwner implements Runnable
     {
         L2ItemInstance _item;
 
@@ -576,6 +576,6 @@ public class ItemTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ItemTable _instance = new ItemTable();
+        static final ItemTable _instance = new ItemTable();
     }
 }

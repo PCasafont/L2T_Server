@@ -42,7 +42,7 @@ public class PcRefund extends ItemContainer
     }
 
     @Override
-    public L2PcInstance getOwner()
+    protected L2PcInstance getOwner()
     {
         return _owner;
     }

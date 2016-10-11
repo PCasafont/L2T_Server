@@ -97,6 +97,6 @@ public class ScenePlayerDataTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ScenePlayerDataTable _instance = new ScenePlayerDataTable();
+        static final ScenePlayerDataTable _instance = new ScenePlayerDataTable();
     }
 }

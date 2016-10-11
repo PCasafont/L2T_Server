@@ -50,7 +50,7 @@ public final class CharTemplateTable implements Reloadable
         ReloadableManager.getInstance().register("chartemplates", this);
     }
 
-    public void load()
+    private void load()
     {
         File file = null;
 
@@ -205,6 +205,6 @@ public final class CharTemplateTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CharTemplateTable _instance = new CharTemplateTable();
+        static final CharTemplateTable _instance = new CharTemplateTable();
     }
 }

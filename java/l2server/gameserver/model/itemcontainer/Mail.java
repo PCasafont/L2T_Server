@@ -54,12 +54,12 @@ public class Mail extends ItemContainer
     }
 
     @Override
-    public ItemLocation getBaseLocation()
+    protected ItemLocation getBaseLocation()
     {
         return ItemLocation.MAIL;
     }
 
-    public int getMessageId()
+    private int getMessageId()
     {
         return _messageId;
     }

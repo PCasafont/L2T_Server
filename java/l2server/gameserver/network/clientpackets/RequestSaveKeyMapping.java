@@ -30,10 +30,10 @@ import java.util.Map;
  */
 public class RequestSaveKeyMapping extends L2GameClientPacket
 {
-    int _tabNum;
+    private int _tabNum;
 
-    Map<Integer, List<ActionKey>> _keyMap = new HashMap<Integer, List<ActionKey>>();
-    Map<Integer, List<Integer>> _catMap = new HashMap<Integer, List<Integer>>();
+    private Map<Integer, List<ActionKey>> _keyMap = new HashMap<Integer, List<ActionKey>>();
+    private Map<Integer, List<Integer>> _catMap = new HashMap<Integer, List<Integer>>();
 
     /**
      * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -79,7 +79,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
         readD();
     }
 
-    public void insertCategory(int cat, int cmd)
+    private void insertCategory(int cat, int cmd)
     {
         if (_catMap.containsKey(cat))
         {
@@ -93,7 +93,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
         }
     }
 
-    public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
+    private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
     {
         ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
         if (_keyMap.containsKey(cat))

@@ -35,7 +35,7 @@ public class L2DoormenInstance extends L2NpcInstance
     /**
      * @param template
      */
-    public L2DoormenInstance(int objectID, L2NpcTemplate template)
+    L2DoormenInstance(int objectID, L2NpcTemplate template)
     {
         super(objectID, template);
         setInstanceType(InstanceType.L2DoormenInstance);
@@ -110,7 +110,7 @@ public class L2DoormenInstance extends L2NpcInstance
         player.sendPacket(html);
     }
 
-    protected void openDoors(L2PcInstance player, String command)
+    void openDoors(L2PcInstance player, String command)
     {
         StringTokenizer st = new StringTokenizer(command.substring(10), ", ");
         st.nextToken();
@@ -121,7 +121,7 @@ public class L2DoormenInstance extends L2NpcInstance
         }
     }
 
-    protected void closeDoors(L2PcInstance player, String command)
+    void closeDoors(L2PcInstance player, String command)
     {
         StringTokenizer st = new StringTokenizer(command.substring(11), ", ");
         st.nextToken();
@@ -132,7 +132,7 @@ public class L2DoormenInstance extends L2NpcInstance
         }
     }
 
-    protected void cannotManageDoors(L2PcInstance player)
+    private void cannotManageDoors(L2PcInstance player)
     {
         player.sendPacket(ActionFailed.STATIC_PACKET);
 
@@ -141,7 +141,7 @@ public class L2DoormenInstance extends L2NpcInstance
         player.sendPacket(html);
     }
 
-    protected void doTeleport(L2PcInstance player, String command)
+    private void doTeleport(L2PcInstance player, String command)
     {
         final int whereTo = Integer.parseInt(command.substring(5).trim());
         L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(whereTo);
@@ -160,12 +160,12 @@ public class L2DoormenInstance extends L2NpcInstance
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    protected boolean isOwnerClan(L2PcInstance player)
+    boolean isOwnerClan(L2PcInstance player)
     {
         return true;
     }
 
-    protected boolean isUnderSiege()
+    boolean isUnderSiege()
     {
         return false;
     }

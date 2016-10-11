@@ -1,6 +1,6 @@
 package l2server.gameserver.network;
 
-public class GameCrypt
+class GameCrypt
 {
     private final byte[] _inKey = new byte[16];
     private final byte[] _outKey = new byte[16];

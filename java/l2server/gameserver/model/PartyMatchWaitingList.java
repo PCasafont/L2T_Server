@@ -63,6 +63,6 @@ public class PartyMatchWaitingList
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PartyMatchWaitingList _instance = new PartyMatchWaitingList();
+        static final PartyMatchWaitingList _instance = new PartyMatchWaitingList();
     }
 }

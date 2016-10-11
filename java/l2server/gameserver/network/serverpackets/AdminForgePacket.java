@@ -61,7 +61,7 @@ public class AdminForgePacket extends L2GameServerPacket
      * @param b
      * @param string
      */
-    public boolean generate(byte b, String string)
+    private boolean generate(byte b, String string)
     {
         if (b == 'C' || b == 'c')
         {

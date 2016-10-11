@@ -59,7 +59,7 @@ public class PlayerStatDataTable
         parseData();
     }
 
-    public void parseData()
+    private void parseData()
     {
         _regenData.clear();
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
@@ -202,6 +202,6 @@ public class PlayerStatDataTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PlayerStatDataTable _instance = new PlayerStatDataTable();
+        static final PlayerStatDataTable _instance = new PlayerStatDataTable();
     }
 }

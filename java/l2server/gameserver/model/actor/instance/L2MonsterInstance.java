@@ -49,7 +49,7 @@ public class L2MonsterInstance extends L2Attackable
     private L2MonsterInstance _master = null;
     private MinionList _minionList = null;
 
-    protected ScheduledFuture<?> _maintenanceTask = null;
+    ScheduledFuture<?> _maintenanceTask = null;
 
     private static final int MONSTER_MAINTENANCE_INTERVAL = 1000;
 
@@ -136,7 +136,7 @@ public class L2MonsterInstance extends L2Attackable
         }
     }
 
-    protected int getMaintenanceInterval()
+    int getMaintenanceInterval()
     {
         return MONSTER_MAINTENANCE_INTERVAL;
     }
@@ -144,7 +144,7 @@ public class L2MonsterInstance extends L2Attackable
     /**
      * Spawn all minions at a regular interval
      */
-    protected void startMaintenanceTask()
+    void startMaintenanceTask()
     {
         // maintenance task now used only for minions spawn
         if (getTemplate().getMinionData() == null && getTemplate().getRandomMinionData() == null)

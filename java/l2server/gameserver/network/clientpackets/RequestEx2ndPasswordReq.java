@@ -30,8 +30,9 @@ import l2server.gameserver.security.SecondaryPasswordAuth;
 public class RequestEx2ndPasswordReq extends L2GameClientPacket
 {
     //
-    int _changePass;
-    String _password, _newPassword;
+    private int _changePass;
+    private String _password;
+    private String _newPassword;
 
     @Override
     protected void readImpl()

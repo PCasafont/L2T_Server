@@ -20,16 +20,16 @@ import l2server.Config;
 public class ClientStats
 {
     public int processedPackets = 0;
-    public int droppedPackets = 0;
-    public int unknownPackets = 0;
-    public int totalQueueSize = 0;
-    public int maxQueueSize = 0;
-    public int totalBursts = 0;
-    public int maxBurstSize = 0;
+    private int droppedPackets = 0;
+    private int unknownPackets = 0;
+    private int totalQueueSize = 0;
+    private int maxQueueSize = 0;
+    private int totalBursts = 0;
+    private int maxBurstSize = 0;
     public int shortFloods = 0;
     public int longFloods = 0;
-    public int totalQueueOverflows = 0;
-    public int totalUnderflowExceptions = 0;
+    private int totalQueueOverflows = 0;
+    private int totalUnderflowExceptions = 0;
 
     private final int[] _packetsInSecond;
     private long _packetCountStartTick = 0;
@@ -60,7 +60,7 @@ public class ClientStats
     /**
      * Returns true if incoming packet need to be dropped
      */
-    protected final boolean dropPacket()
+    final boolean dropPacket()
     {
         final boolean result = _floodDetected || _queueOverflowDetected;
         if (result)
@@ -74,7 +74,7 @@ public class ClientStats
      * Returns true if flood detected first and ActionFailed packet need to be sent.
      * Later during flood returns true (and send ActionFailed) once per second.
      */
-    protected final boolean countPacket(int queueSize)
+    final boolean countPacket(int queueSize)
     {
         processedPackets++;
         totalQueueSize += queueSize;
@@ -93,7 +93,7 @@ public class ClientStats
     /**
      * Counts unknown packets and return true if threshold is reached.
      */
-    protected final boolean countUnknownPacket()
+    final boolean countUnknownPacket()
     {
         unknownPackets++;
 
@@ -114,7 +114,7 @@ public class ClientStats
      *
      * @param count - current number of processed packets in burst
      */
-    protected final boolean countBurst(int count)
+    final boolean countBurst(int count)
     {
         if (count > maxBurstSize)
         {
@@ -133,7 +133,7 @@ public class ClientStats
     /**
      * Counts queue overflows and return true if threshold is reached.
      */
-    protected final boolean countQueueOverflow()
+    final boolean countQueueOverflow()
     {
         _queueOverflowDetected = true;
         totalQueueOverflows++;
@@ -153,7 +153,7 @@ public class ClientStats
     /**
      * Counts underflow exceptions and return true if threshold is reached.
      */
-    protected final boolean countUnderflowException()
+    final boolean countUnderflowException()
     {
         totalUnderflowExceptions++;
 
@@ -172,7 +172,7 @@ public class ClientStats
     /**
      * Returns true if maximum number of floods per minute is reached.
      */
-    protected final boolean countFloods()
+    final boolean countFloods()
     {
         return _floodsInMin > Config.CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN;
     }

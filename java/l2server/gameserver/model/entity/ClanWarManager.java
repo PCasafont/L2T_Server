@@ -38,7 +38,7 @@ public class ClanWarManager
         return _instance == null ? (_instance = new ClanWarManager()) : _instance;
     }
 
-    public final void load()
+    private void load()
     {
         List<ClanWar> wars = new ArrayList<ClanWar>();
         for (ClanWar war : _wars)
@@ -128,7 +128,7 @@ public class ClanWarManager
         }
     }
 
-    public void deleteWar(int clanId1, int clanId2)
+    private void deleteWar(int clanId1, int clanId2)
     {
         Connection con = null;
         try
@@ -275,7 +275,7 @@ public class ClanWarManager
         Log.log(Level.INFO, "Saved " + _wars.size() + " wars data.");
     }
 
-    public void removeWar(ClanWar war)
+    private void removeWar(ClanWar war)
     {
         _wars.remove(war);
     }

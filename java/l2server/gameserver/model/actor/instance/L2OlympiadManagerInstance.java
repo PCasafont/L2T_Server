@@ -25,7 +25,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  *
  * @author godson
  */
-public class L2OlympiadManagerInstance extends L2Npc
+class L2OlympiadManagerInstance extends L2Npc
 {
     public L2OlympiadManagerInstance(int objectId, L2NpcTemplate template)
     {

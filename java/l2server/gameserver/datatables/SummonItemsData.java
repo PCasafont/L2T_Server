@@ -87,6 +87,6 @@ public class SummonItemsData
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SummonItemsData _instance = new SummonItemsData();
+        static final SummonItemsData _instance = new SummonItemsData();
     }
 }

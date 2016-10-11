@@ -49,7 +49,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
         }
     }
 
-    public void stopMove()
+    private void stopMove()
     {
         _isDoingAMove = false;
         _movesDone++;
@@ -72,11 +72,11 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 
     class MoveTask implements Runnable
     {
-        protected int _x;
-        protected int _y;
-        protected int _z;
+        int _x;
+        int _y;
+        int _z;
 
-        protected MoveTask(int x, int y, int z)
+        MoveTask(int x, int y, int z)
         {
             _x = x;
             _y = y;
@@ -102,7 +102,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
         }
     }
 
-    class CommanderPatienceTask implements Runnable
+    private class CommanderPatienceTask implements Runnable
     {
         @Override
         public void run()

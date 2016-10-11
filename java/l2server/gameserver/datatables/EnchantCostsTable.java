@@ -326,7 +326,7 @@ public class EnchantCostsTable
         return 0;
     }
 
-    public void addEnchantDetail(EnchantSkillDetail detail)
+    private void addEnchantDetail(EnchantSkillDetail detail)
     {
         _enchantDetails.add(detail);
     }
@@ -339,7 +339,7 @@ public class EnchantCostsTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final EnchantCostsTable _instance = new EnchantCostsTable();
+        static final EnchantCostsTable _instance = new EnchantCostsTable();
     }
 
     public void reload()

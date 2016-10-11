@@ -60,7 +60,7 @@ public class CastleManorManager
     private static final int NEXT_PERIOD_APPROVE_MIN = Config.ALT_MANOR_APPROVE_MIN; //
     private static final int MANOR_REFRESH = Config.ALT_MANOR_REFRESH_TIME; // 20:00
     private static final int MANOR_REFRESH_MIN = Config.ALT_MANOR_REFRESH_MIN; //
-    protected static final long MAINTENANCE_PERIOD = Config.ALT_MANOR_MAINTENANCE_PERIOD; // 6 mins
+    private static final long MAINTENANCE_PERIOD = Config.ALT_MANOR_MAINTENANCE_PERIOD; // 6 mins
 
     private Calendar _manorRefresh;
     private Calendar _periodApprove;
@@ -68,9 +68,9 @@ public class CastleManorManager
     private boolean _underMaintenance;
     private boolean _disabled;
 
-    protected ScheduledFuture<?> _scheduledManorRefresh;
-    protected ScheduledFuture<?> _scheduledMaintenanceEnd;
-    protected ScheduledFuture<?> _scheduledNextPeriodapprove;
+    private ScheduledFuture<?> _scheduledManorRefresh;
+    private ScheduledFuture<?> _scheduledMaintenanceEnd;
+    private ScheduledFuture<?> _scheduledNextPeriodapprove;
 
     public static final CastleManorManager getInstance()
     {
@@ -310,7 +310,7 @@ public class CastleManorManager
         updatePeriodApprove();
     }
 
-    public void updateManorRefresh()
+    private void updateManorRefresh()
     {
         Log.info("Manor System: Manor refresh updated");
 
@@ -348,7 +348,7 @@ public class CastleManorManager
         }, getMillisToManorRefresh());
     }
 
-    public void updatePeriodApprove()
+    private void updatePeriodApprove()
     {
         Log.info("Manor System: Manor period approve updated");
 
@@ -367,7 +367,7 @@ public class CastleManorManager
         }, getMillisToNextPeriodApprove());
     }
 
-    public long getMillisToManorRefresh()
+    private long getMillisToManorRefresh()
     {
         // use safe interval 120s to prevent double run
         if (_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
@@ -380,7 +380,7 @@ public class CastleManorManager
         return _manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
     }
 
-    public void setNewManorRefresh()
+    private void setNewManorRefresh()
     {
         _manorRefresh = Calendar.getInstance();
         _manorRefresh.set(Calendar.HOUR_OF_DAY, MANOR_REFRESH);
@@ -389,7 +389,7 @@ public class CastleManorManager
         _manorRefresh.add(Calendar.HOUR_OF_DAY, 24);
     }
 
-    public long getMillisToNextPeriodApprove()
+    private long getMillisToNextPeriodApprove()
     {
         // use safe interval 120s to prevent double run
         if (_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
@@ -402,7 +402,7 @@ public class CastleManorManager
         return _periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
     }
 
-    public void setNewPeriodApprove()
+    private void setNewPeriodApprove()
     {
         _periodApprove = Calendar.getInstance();
         _periodApprove.set(Calendar.HOUR_OF_DAY, NEXT_PERIOD_APPROVE);
@@ -411,7 +411,7 @@ public class CastleManorManager
         _periodApprove.add(Calendar.HOUR_OF_DAY, 24);
     }
 
-    public void setNextPeriod()
+    private void setNextPeriod()
     {
         for (Castle c : CastleManager.getInstance().getCastles())
         {
@@ -507,7 +507,7 @@ public class CastleManorManager
         }
     }
 
-    public void approveNextPeriod()
+    private void approveNextPeriod()
     {
         for (Castle c : CastleManager.getInstance().getCastles())
         {
@@ -603,7 +603,7 @@ public class CastleManorManager
         return _underMaintenance;
     }
 
-    public void setUnderMaintenance(boolean mode)
+    private void setUnderMaintenance(boolean mode)
     {
         _underMaintenance = mode;
     }
@@ -640,6 +640,6 @@ public class CastleManorManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final CastleManorManager _instance = new CastleManorManager();
+        static final CastleManorManager _instance = new CastleManorManager();
     }
 }

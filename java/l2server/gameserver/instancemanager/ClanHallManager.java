@@ -142,7 +142,7 @@ public class ClanHallManager
     /**
      * Get Map with all FreeClanHalls
      */
-    public final Map<Integer, ClanHall> getFreeClanHalls()
+    private Map<Integer, ClanHall> getFreeClanHalls()
     {
         return _freeClanHall;
     }
@@ -150,7 +150,7 @@ public class ClanHallManager
     /**
      * Get Map with all ClanHalls that have owner
      */
-    public final Map<Integer, ClanHall> getClanHalls()
+    private Map<Integer, ClanHall> getClanHalls()
     {
         return _clanHall;
     }
@@ -276,6 +276,6 @@ public class ClanHallManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ClanHallManager _instance = new ClanHallManager();
+        static final ClanHallManager _instance = new ClanHallManager();
     }
 }

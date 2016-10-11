@@ -222,12 +222,12 @@ public class L2DecoyInstance extends L2Attackable
         }
     }
 
-    public void decTimeRemaining(int value)
+    private void decTimeRemaining(int value)
     {
         _timeRemaining -= value;
     }
 
-    public int getTimeRemaining()
+    private int getTimeRemaining()
     {
         return _timeRemaining;
     }
@@ -301,14 +301,14 @@ public class L2DecoyInstance extends L2Attackable
         return null;
     }
 
-    public void deleteMe(L2PcInstance owner)
+    private void deleteMe(L2PcInstance owner)
     {
         decayMe();
         getKnownList().removeAllKnownObjects();
         owner.setDecoy(null);
     }
 
-    public synchronized void unSummon(L2PcInstance owner)
+    private synchronized void unSummon(L2PcInstance owner)
     {
         if (_decoyLifeTask != null)
         {

@@ -79,6 +79,6 @@ public class AdminCommandHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final AdminCommandHandler _instance = new AdminCommandHandler();
+        static final AdminCommandHandler _instance = new AdminCommandHandler();
     }
 }

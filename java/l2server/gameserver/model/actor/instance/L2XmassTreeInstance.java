@@ -41,7 +41,7 @@ public class L2XmassTreeInstance extends L2Npc
         private L2XmassTreeInstance _caster;
         private L2Skill _skill;
 
-        protected XmassAI(L2XmassTreeInstance caster, L2Skill skill)
+        XmassAI(L2XmassTreeInstance caster, L2Skill skill)
         {
             _caster = caster;
             _skill = skill;

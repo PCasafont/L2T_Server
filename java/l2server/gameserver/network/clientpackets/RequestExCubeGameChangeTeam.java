@@ -29,8 +29,8 @@ import l2server.log.Log;
 public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 {
 
-    int _arena;
-    int _team;
+    private int _arena;
+    private int _team;
 
     @Override
     protected void readImpl()

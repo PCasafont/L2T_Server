@@ -25,13 +25,13 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectBuff extends L2Effect
 {
-    public EffectBuff(Env env, L2EffectTemplate template)
+    EffectBuff(Env env, L2EffectTemplate template)
     {
         super(env, template);
     }
 
     // Special constructor to steal this effect
-    public EffectBuff(Env env, L2Effect effect)
+    EffectBuff(Env env, L2Effect effect)
     {
         super(env, effect);
     }

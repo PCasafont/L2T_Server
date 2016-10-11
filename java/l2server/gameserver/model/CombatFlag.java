@@ -27,13 +27,13 @@ public class CombatFlag
 {
     //
 
-    protected L2PcInstance _player = null;
+    private L2PcInstance _player = null;
     public int playerId = 0;
 
     public L2ItemInstance itemInstance;
 
-    public Location _location;
-    public int _itemId;
+    private Location _location;
+    private int _itemId;
     private L2ItemInstance _item = null;
 
     // =========================================================

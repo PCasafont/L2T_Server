@@ -20,12 +20,12 @@ package l2server.gameserver.model.entity;
  */
 public class ActionKey
 {
-    int _cat;
-    int _cmd;
-    int _key;
-    int _tgKey1;
-    int _tgKey2;
-    int _show;
+    private int _cat;
+    private int _cmd;
+    private int _key;
+    private int _tgKey1;
+    private int _tgKey2;
+    private int _show;
 
     /**
      * L2ActionKey Initialization

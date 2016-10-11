@@ -181,6 +181,6 @@ public class SqlUtils
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SqlUtils _instance = new SqlUtils();
+        static final SqlUtils _instance = new SqlUtils();
     }
 }

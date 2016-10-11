@@ -106,7 +106,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 
     }
 
-    void writePledge(int mainOrSubpledge)
+    private void writePledge(int mainOrSubpledge)
     {
         writeD(mainOrSubpledge);
         writeD(_clan.getClanId());

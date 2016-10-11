@@ -33,7 +33,7 @@ public class L2AbnormalTemplate
 {
     static Logger _log = Logger.getLogger(L2AbnormalTemplate.class.getName());
 
-    public final Condition applayCond;
+    private final Condition applayCond;
     public final int counter;
     public final int duration; // in seconds
     public final VisualEffect[] visualEffect;

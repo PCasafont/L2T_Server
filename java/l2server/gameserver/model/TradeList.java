@@ -574,7 +574,7 @@ public class TradeList
      * @param count    : int
      * @return
      */
-    public synchronized TradeItem removeItem(int objectId, int itemId, long count)
+    private synchronized TradeItem removeItem(int objectId, int itemId, long count)
     {
         if (isLocked())
         {
@@ -725,7 +725,7 @@ public class TradeList
     /**
      * Cancels TradeList confirmation
      */
-    public void invalidateConfirmation()
+    private void invalidateConfirmation()
     {
         _confirmed = false;
     }
@@ -807,7 +807,7 @@ public class TradeList
     /**
      * Count items slots
      */
-    public int countItemsSlots(L2PcInstance partner)
+    private int countItemsSlots(L2PcInstance partner)
     {
         int slots = 0;
 
@@ -838,7 +838,7 @@ public class TradeList
     /**
      * Calc weight of items in tradeList
      */
-    public int calcItemsWeight()
+    private int calcItemsWeight()
     {
         long weight = 0;
 

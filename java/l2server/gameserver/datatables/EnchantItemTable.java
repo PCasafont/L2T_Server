@@ -21,11 +21,11 @@ public class EnchantItemTable implements Reloadable
 
     public class EnchantSupportItem
     {
-        protected final EnchantTargetType _targetType;
-        protected final int _grade;
-        protected final int _maxEnchantLevel;
-        protected final int _chanceAdd;
-        protected final int _itemId;
+        final EnchantTargetType _targetType;
+        final int _grade;
+        final int _maxEnchantLevel;
+        final int _chanceAdd;
+        final int _itemId;
 
         public EnchantSupportItem(EnchantTargetType targetType, int type, int level, int chance, int items)
         {

@@ -33,10 +33,10 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 {
     public int mysteriousBoxId = 0;
 
-    protected Future<?> _victimSpawnKeyBoxTask = null;
-    protected Future<?> _victimShout = null;
-    protected Future<?> _changeImmortalTask = null;
-    protected Future<?> _onDeadEventTask = null;
+    private Future<?> _victimSpawnKeyBoxTask = null;
+    private Future<?> _victimShout = null;
+    private Future<?> _changeImmortalTask = null;
+    private Future<?> _onDeadEventTask = null;
 
     public L2SepulcherMonsterInstance(int objectId, L2NpcTemplate template)
     {

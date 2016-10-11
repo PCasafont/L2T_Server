@@ -31,7 +31,7 @@ public class PlayerAssistsManager
         public Map<L2PcInstance, Long> HelpTimers = new HashMap<L2PcInstance, Long>();
     }
 
-    Map<Integer, PlayerInfo> _players = new HashMap<Integer, PlayerInfo>();
+    private Map<Integer, PlayerInfo> _players = new HashMap<Integer, PlayerInfo>();
 
     public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target)
     {
@@ -156,6 +156,6 @@ public class PlayerAssistsManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final PlayerAssistsManager _instance = new PlayerAssistsManager();
+        static final PlayerAssistsManager _instance = new PlayerAssistsManager();
     }
 }

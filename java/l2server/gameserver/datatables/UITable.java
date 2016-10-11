@@ -140,6 +140,6 @@ public class UITable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final UITable _instance = new UITable();
+        static final UITable _instance = new UITable();
     }
 }

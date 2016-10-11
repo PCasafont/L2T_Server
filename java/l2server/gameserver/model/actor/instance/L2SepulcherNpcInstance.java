@@ -39,9 +39,9 @@ import java.util.concurrent.Future;
  */
 public class L2SepulcherNpcInstance extends L2Npc
 {
-    protected Future<?> _closeTask = null;
-    protected Future<?> _spawnNextMysteriousBoxTask = null;
-    protected Future<?> _spawnMonsterTask = null;
+    private Future<?> _closeTask = null;
+    private Future<?> _spawnNextMysteriousBoxTask = null;
+    private Future<?> _spawnMonsterTask = null;
 
     private final static String HTML_FILE_PATH = "SepulcherNpc/";
     private final static int HALLS_KEY = 7260;
@@ -374,7 +374,7 @@ public class L2SepulcherNpcInstance extends L2Npc
         }
     }
 
-    public void openNextDoor(int npcId)
+    private void openNextDoor(int npcId)
     {
         int doorId = FourSepulchersManager.getInstance().getHallGateKeepers().get(npcId);
         DoorTable _doorTable = DoorTable.getInstance();
@@ -475,7 +475,7 @@ public class L2SepulcherNpcInstance extends L2Npc
         }
     }
 
-    public void showHtmlFile(L2PcInstance player, String file)
+    private void showHtmlFile(L2PcInstance player, String file)
     {
         NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
         html.setFile(player.getHtmlPrefix(), "SepulcherNpc/" + file);

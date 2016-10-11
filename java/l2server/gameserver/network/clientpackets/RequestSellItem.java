@@ -99,7 +99,7 @@ public final class RequestSellItem extends L2GameClientPacket
         processSell();
     }
 
-    protected void processSell()
+    private void processSell()
     {
         L2PcInstance player = getClient().getActiveChar();
 

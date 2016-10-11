@@ -21,7 +21,7 @@ package l2server.gameserver.network.serverpackets;
 public class ExRegistPartySubstitute extends L2GameServerPacket
 {
 
-    int k[];
+    private int[] k;
 
     public ExRegistPartySubstitute(int l[])
     {

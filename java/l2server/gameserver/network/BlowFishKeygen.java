@@ -2,7 +2,7 @@ package l2server.gameserver.network;
 
 import l2server.util.Rnd;
 
-public class BlowFishKeygen
+class BlowFishKeygen
 {
     // block instantiation
     private BlowFishKeygen()

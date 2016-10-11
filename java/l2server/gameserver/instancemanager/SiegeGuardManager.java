@@ -64,7 +64,7 @@ public class SiegeGuardManager
     /**
      * Add guard.<BR><BR>
      */
-    public void addSiegeGuard(int x, int y, int z, int heading, int npcId)
+    private void addSiegeGuard(int x, int y, int z, int heading, int npcId)
     {
         saveSiegeGuard(x, y, z, heading, npcId, 0);
     }
@@ -303,7 +303,7 @@ public class SiegeGuardManager
     // =========================================================
     // Proeprty
 
-    public final Castle getCastle()
+    private Castle getCastle()
     {
         return _castle;
     }

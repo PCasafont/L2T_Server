@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerPkCount extends Condition
 {
-    public final int _pk;
+    private final int _pk;
 
     /**
      * Instantiates a new condition player pk count.

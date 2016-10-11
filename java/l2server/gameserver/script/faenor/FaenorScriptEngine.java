@@ -38,8 +38,8 @@ import java.util.zip.ZipFile;
 public class FaenorScriptEngine extends ScriptEngine
 {
     static Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
-    public final static String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
-    public final static boolean DEBUG = true;
+    private final static String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
+    private final static boolean DEBUG = true;
 
     private LinkedList<ScriptDocument> _scripts;
 
@@ -149,7 +149,7 @@ public class FaenorScriptEngine extends ScriptEngine
         }
     }
 
-    public void parsePackages()
+    private void parsePackages()
     {
         L2ScriptEngineManager sem = L2ScriptEngineManager.getInstance();
         ScriptContext context = sem.getScriptContext("beanshell");
@@ -169,7 +169,7 @@ public class FaenorScriptEngine extends ScriptEngine
         }
     }
 
-    public void parseScript(ScriptDocument script, ScriptContext context)
+    private void parseScript(ScriptDocument script, ScriptContext context)
     {
         if (DEBUG)
         {
@@ -226,6 +226,6 @@ public class FaenorScriptEngine extends ScriptEngine
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final FaenorScriptEngine _instance = new FaenorScriptEngine();
+        static final FaenorScriptEngine _instance = new FaenorScriptEngine();
     }
 }

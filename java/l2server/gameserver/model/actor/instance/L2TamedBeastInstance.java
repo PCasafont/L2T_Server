@@ -109,34 +109,34 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
         return new Point3D(_homeX, _homeY, _homeZ);
     }
 
-    public void setHome(int x, int y, int z)
+    private void setHome(int x, int y, int z)
     {
         _homeX = x;
         _homeY = y;
         _homeZ = z;
     }
 
-    public void setHome(L2Character c)
+    private void setHome(L2Character c)
     {
         setHome(c.getX(), c.getY(), c.getZ());
     }
 
-    public int getRemainingTime()
+    private int getRemainingTime()
     {
         return _remainingTime;
     }
 
-    public void setRemainingTime(int duration)
+    private void setRemainingTime(int duration)
     {
         _remainingTime = duration;
     }
 
-    public int getFoodType()
+    private int getFoodType()
     {
         return _foodSkillId;
     }
 
-    public void setFoodType(int foodItemId)
+    private void setFoodType(int foodItemId)
     {
         if (foodItemId > 0)
         {
@@ -411,7 +411,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
      *
      * @see l2server.gameserver.model.actor.L2Character#doCast(l2server.gameserver.model.L2Skill)
      */
-    protected void sitCastAndFollow(L2Skill skill, L2Character target)
+    private void sitCastAndFollow(L2Skill skill, L2Character target)
     {
         stopMove(null);
         broadcastPacket(new StopMove(this));

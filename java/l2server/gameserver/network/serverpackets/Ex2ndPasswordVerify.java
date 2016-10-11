@@ -25,7 +25,8 @@ public class Ex2ndPasswordVerify extends L2GameServerPacket
     public static final int PASSWORD_WRONG = 0x01;
     public static final int PASSWORD_BAN = 0x02;
 
-    int _wrongTentatives, _mode;
+    private int _wrongTentatives;
+    private int _mode;
 
     public Ex2ndPasswordVerify(int mode, int wrongTentatives)
     {

@@ -232,7 +232,7 @@ public class ConsoleTab extends JPanel
         }
     }
 
-    public synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra)
+    private synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra)
     {
         ConsoleFilterInstance fi = _filters[f.ordinal()];
         if (!fi.isEnabled())
@@ -314,7 +314,7 @@ public class ConsoleTab extends JPanel
         });
     }
 
-    public synchronized void reloadDoc()
+    private synchronized void reloadDoc()
     {
         _textPane.setText("");
 

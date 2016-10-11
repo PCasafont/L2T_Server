@@ -357,6 +357,6 @@ public class AirShipManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final AirShipManager _instance = new AirShipManager();
+        static final AirShipManager _instance = new AirShipManager();
     }
 }

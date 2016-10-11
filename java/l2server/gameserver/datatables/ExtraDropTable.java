@@ -114,6 +114,6 @@ public class ExtraDropTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final ExtraDropTable _instance = new ExtraDropTable();
+        static final ExtraDropTable _instance = new ExtraDropTable();
     }
 }

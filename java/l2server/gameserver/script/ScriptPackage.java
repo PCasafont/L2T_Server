@@ -42,7 +42,7 @@ public class ScriptPackage
     /**
      * @return Returns the otherFiles.
      */
-    public List<String> getOtherFiles()
+    private List<String> getOtherFiles()
     {
         return _otherFiles;
     }
@@ -85,7 +85,7 @@ public class ScriptPackage
     /**
      * @return Returns the name.
      */
-    public String getName()
+    private String getName()
     {
         return _name;
     }

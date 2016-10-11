@@ -29,7 +29,7 @@ import java.io.File;
 public class TaskScript extends Task
 {
 
-    public static final String NAME = "script";
+    private static final String NAME = "script";
 
     /**
      * @see l2server.gameserver.taskmanager.Task#getName()

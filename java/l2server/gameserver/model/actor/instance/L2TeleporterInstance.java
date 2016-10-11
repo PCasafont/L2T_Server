@@ -257,7 +257,7 @@ public class L2TeleporterInstance extends L2Npc
         player.sendPacket(html);
     }
 
-    protected void doTeleport(L2PcInstance player, int val)
+    private void doTeleport(L2PcInstance player, int val)
     {
         L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(val);
         if (list != null)

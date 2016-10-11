@@ -26,8 +26,8 @@ public class PacketOpcodes
     private static boolean GENERATE_MISSING_PACKETS = true;
 
     public static final PacketFamily ClientPacketsFamily = new PacketFamily();
-    public static final Map<Class<?>, byte[]> ClientPackets = new HashMap<Class<?>, byte[]>();
-    public static final Map<Class<?>, byte[]> ServerPackets = new HashMap<Class<?>, byte[]>();
+    private static final Map<Class<?>, byte[]> ClientPackets = new HashMap<Class<?>, byte[]>();
+    private static final Map<Class<?>, byte[]> ServerPackets = new HashMap<Class<?>, byte[]>();
 
     private static long _lastModified = 0;
 

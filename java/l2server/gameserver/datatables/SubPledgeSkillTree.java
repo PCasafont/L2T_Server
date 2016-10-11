@@ -34,7 +34,7 @@ public class SubPledgeSkillTree
 {
     private TLongObjectHashMap<SubUnitSkill> _skilltree = new TLongObjectHashMap<SubPledgeSkillTree.SubUnitSkill>();
 
-    public SubPledgeSkillTree()
+    private SubPledgeSkillTree()
     {
         load();
     }
@@ -208,6 +208,6 @@ public class SubPledgeSkillTree
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final SubPledgeSkillTree _instance = new SubPledgeSkillTree();
+        static final SubPledgeSkillTree _instance = new SubPledgeSkillTree();
     }
 }

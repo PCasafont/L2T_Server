@@ -56,6 +56,6 @@ public class BossManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final BossManager _instance = new BossManager();
+        static final BossManager _instance = new BossManager();
     }
 }

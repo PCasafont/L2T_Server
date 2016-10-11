@@ -114,6 +114,6 @@ public class TeleportLocationTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final TeleportLocationTable _instance = new TeleportLocationTable();
+        static final TeleportLocationTable _instance = new TeleportLocationTable();
     }
 }

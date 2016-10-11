@@ -23,7 +23,7 @@ import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
  */
 public final class TaskCleanUp extends Task
 {
-    public static final String NAME = "clean_up";
+    private static final String NAME = "clean_up";
 
     /**
      * @see l2server.gameserver.taskmanager.Task#getName()

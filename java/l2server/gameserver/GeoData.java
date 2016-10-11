@@ -29,7 +29,7 @@ import l2server.util.Point3D;
 public class GeoData
 {
 
-    protected GeoData()
+    GeoData()
     {
     }
 
@@ -191,6 +191,6 @@ public class GeoData
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        protected static final GeoData _instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
+        static final GeoData _instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
     }
 }

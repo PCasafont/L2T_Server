@@ -34,7 +34,7 @@ public class L2AccessLevel
     /**
      * Child access levels
      */
-    L2AccessLevel[] _childsAccessLevel = null;
+    private L2AccessLevel[] _childsAccessLevel = null;
     /**
      * Child access levels
      */
@@ -129,7 +129,7 @@ public class L2AccessLevel
      *
      * @return String: access level name<br>
      */
-    public String getName()
+    private String getName()
     {
         return _name;
     }
