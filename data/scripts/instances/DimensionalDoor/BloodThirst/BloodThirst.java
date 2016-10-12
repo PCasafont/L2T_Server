@@ -107,8 +107,14 @@ public class BloodThirst extends L2AttackableAIScript
                 }
 
                 final int instanceId = world.instanceId;
-                ThreadPoolManager.getInstance().scheduleGeneral(
-                        () -> InstanceManager.getInstance().startWholeInstance(instanceId), 13000);
+                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        InstanceManager.getInstance().startWholeInstance(instanceId);
+                    }
+                }, 13000);
             }
         }
         else if (event.equalsIgnoreCase("enterToInstance"))

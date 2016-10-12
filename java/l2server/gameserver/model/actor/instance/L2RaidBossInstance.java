@@ -130,7 +130,14 @@ public class L2RaidBossInstance extends L2MonsterInstance
             getMinionList().spawnMinions();
         }
 
-        _maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> checkAndReturnToSpawn(), 60000, getMaintenanceInterval() + Rnd.get(5000));
+        _maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                checkAndReturnToSpawn();
+            }
+        }, 60000, getMaintenanceInterval() + Rnd.get(5000));
     }
 
     protected void checkAndReturnToSpawn()

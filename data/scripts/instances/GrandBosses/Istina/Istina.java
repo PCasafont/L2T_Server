@@ -528,7 +528,14 @@ public class Istina extends L2AttackableAIScript
 
                         delay += Rnd.get(3, 5) * 1000;
 
-                        ThreadPoolManager.getInstance().scheduleGeneral(() -> world.Istina.doCast(randomSkill), delay);
+                        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                world.Istina.doCast(randomSkill);
+                            }
+                        }, delay);
                     }
                     startQuestTimer("stage_all_manifestation_of_authority", Rnd.get(68000 + delay, 68000 + delay * 2),
                             world.Istina, null);

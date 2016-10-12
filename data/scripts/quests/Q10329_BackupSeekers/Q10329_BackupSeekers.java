@@ -121,27 +121,35 @@ public class Q10329_BackupSeekers extends Quest
             guide.broadcastPacket(ns);
 
             // Say another thing after 7.5s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId1));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId1));
+                }
             }, 7500);
 
             // And another thing after 15s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId2));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId2));
+                }
             }, 15000);
 
             // Delete in 1 min
@@ -195,51 +203,67 @@ public class Q10329_BackupSeekers extends Quest
             guide.broadcastPacket(ns);
 
             // Say another thing after 7.5s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId3));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId3));
+                }
             }, 7500);
 
             // And another thing after 15s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId4));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId4));
+                }
             }, 15000);
 
             // Say another thing after 23.5s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId5));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId5));
+                }
             }, 23500);
 
             // And another thing after 30s
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (guide.isDecayed())
+                @Override
+                public void run()
                 {
-                    return;
-                }
+                    if (guide.isDecayed())
+                    {
+                        return;
+                    }
 
-                guide.broadcastPacket(
-                        new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId6));
+                    guide.broadcastPacket(
+                            new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId6));
+                }
             }, 30000);
 
             // Delete in 1 min
@@ -363,11 +387,15 @@ public class Q10329_BackupSeekers extends Quest
         if (guideAI.getCurrentPos() == guideRoute.size() - 1)
         {
             // Delete in 5 sec
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (!guideAI.getActor().isDecayed())
+                @Override
+                public void run()
                 {
-                    guideAI.getActor().deleteMe();
+                    if (!guideAI.getActor().isDecayed())
+                    {
+                        guideAI.getActor().deleteMe();
+                    }
                 }
             }, 2000);
             return null;

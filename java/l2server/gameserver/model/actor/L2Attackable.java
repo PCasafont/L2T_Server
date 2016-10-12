@@ -1931,27 +1931,31 @@ public class L2Attackable extends L2Npc
             }
         }
 
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            if (isSpoil() && _sweepItems != null && player.getCurrentClass().getLevel() >= 85)
+            @Override
+            public void run()
             {
-                final L2PcInstance spoiler = L2World.getInstance().getPlayer(getIsSpoiledBy());
-                if (spoiler != null && Util.checkIfInRange(900, L2Attackable.this, spoiler, false))
+                if (isSpoil() && _sweepItems != null && player.getCurrentClass().getLevel() >= 85)
                 {
-                    setSpoil(false);
-                    for (RewardItem ritem : _sweepItems)
+                    final L2PcInstance spoiler = L2World.getInstance().getPlayer(getIsSpoiledBy());
+                    if (spoiler != null && Util.checkIfInRange(900, L2Attackable.this, spoiler, false))
                     {
-                        if (spoiler.isInParty())
+                        setSpoil(false);
+                        for (L2Attackable.RewardItem ritem : _sweepItems)
                         {
-                            spoiler.getParty().distributeItem(spoiler, ritem, true, L2Attackable.this);
+                            if (spoiler.isInParty())
+                            {
+                                spoiler.getParty().distributeItem(spoiler, ritem, true, L2Attackable.this);
+                            }
+                            else
+                            {
+                                spoiler.addItem("Sweep", ritem.getItemId(), ritem.getCount(), spoiler, true);
+                            }
                         }
-                        else
-                        {
-                            spoiler.addItem("Sweep", ritem.getItemId(), ritem.getCount(), spoiler, true);
-                        }
-                    }
 
-                    endDecayTask();
+                        endDecayTask();
+                    }
                 }
             }
         }, 500);

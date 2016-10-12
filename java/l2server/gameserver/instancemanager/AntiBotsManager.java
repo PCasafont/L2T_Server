@@ -464,13 +464,17 @@ public class AntiBotsManager
 
                         if (Config.ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED)
                         {
-                            ThreadPoolManager.getInstance().scheduleGeneral(() ->
+                            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                             {
-                                GmListTable.broadcastMessageToGMs(
-                                        player.getName() + " has been kicked. His system was outdated.");
-                                if (!player.isGM())
+                                @Override
+                                public void run()
                                 {
-                                    player.logout();
+                                    GmListTable.broadcastMessageToGMs(
+                                            player.getName() + " has been kicked. His system was outdated.");
+                                    if (!player.isGM())
+                                    {
+                                        player.logout();
+                                    }
                                 }
                             }, 20000);
                         }
@@ -1034,7 +1038,7 @@ public class AntiBotsManager
             BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 
             String line;
-            StringBuilder response = new StringBuilder();
+            StringBuffer response = new StringBuffer();
             while ((line = rd.readLine()) != null)
             {
                 response.append(line);

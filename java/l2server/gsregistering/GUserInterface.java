@@ -125,7 +125,14 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 
     public void refreshAsync()
     {
-        Runnable r = () -> GUserInterface.this.refreshServers();
+        Runnable r = new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                GUserInterface.this.refreshServers();
+            }
+        };
         Thread t = new Thread(r, "LoaderThread");
         t.start();
     }
@@ -134,11 +141,25 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
     public void load()
     {
 
-        SwingUtilities.invokeLater(() -> _progressBar.setVisible(true));
+        SwingUtilities.invokeLater(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                _progressBar.setVisible(true);
+            }
+        });
 
         super.load();
 
-        SwingUtilities.invokeLater(() -> _progressBar.setVisible(false));
+        SwingUtilities.invokeLater(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                _progressBar.setVisible(false);
+            }
+        });
     }
 
     /**
@@ -170,47 +191,55 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         // load succeeded?
         if (isLoaded())
         {
-            SwingUtilities.invokeLater(() ->
+            SwingUtilities.invokeLater(new Runnable()
             {
-                int size = GameServerTable.getInstance().getServerNames().size();
-                if (size == 0)
+                @Override
+                public void run()
                 {
-                    String title = getBundle().getString("error");
-                    String msg = getBundle().getString("noServerNames");
-                    JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
-                    System.exit(1);
-                }
-                // reset
-                _dtm.setRowCount(0);
-
-                for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
-                {
-                    String name = GameServerTable.getInstance().getServerNameById(id);
-                    JButton button =
-                            new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
-                    button.addActionListener(e ->
+                    int size = GameServerTable.getInstance().getServerNames().size();
+                    if (size == 0)
                     {
-                        String sid = String.valueOf(id);
-                        String sname = GameServerTable.getInstance().getServerNameById(id);
+                        String title = getBundle().getString("error");
+                        String msg = getBundle().getString("noServerNames");
+                        JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
+                        System.exit(1);
+                    }
+                    // reset
+                    _dtm.setRowCount(0);
 
-                        int choice = JOptionPane.showConfirmDialog(getFrame(),
-                                getBundle().getString("confirmRemoveText").replace("%d", sid)
-                                        .replace("%s", sname), getBundle().getString("confirmRemoveTitle"),
-                                JOptionPane.YES_NO_OPTION);
-                        if (choice == JOptionPane.YES_OPTION)
+                    for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
+                    {
+                        String name = GameServerTable.getInstance().getServerNameById(id);
+                        JButton button =
+                                new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
+                        button.addActionListener(new ActionListener()
                         {
-                            try
+                            @Override
+                            public void actionPerformed(ActionEvent e)
                             {
-                                BaseGameServerRegister.unregisterGameServer(id);
-                                GUserInterface.this.refreshAsync();
+                                String sid = String.valueOf(id);
+                                String sname = GameServerTable.getInstance().getServerNameById(id);
+
+                                int choice = JOptionPane.showConfirmDialog(getFrame(),
+                                        getBundle().getString("confirmRemoveText").replace("%d", sid)
+                                                .replace("%s", sname), getBundle().getString("confirmRemoveTitle"),
+                                        JOptionPane.YES_NO_OPTION);
+                                if (choice == JOptionPane.YES_OPTION)
+                                {
+                                    try
+                                    {
+                                        BaseGameServerRegister.unregisterGameServer(id);
+                                        GUserInterface.this.refreshAsync();
+                                    }
+                                    catch (SQLException e1)
+                                    {
+                                        GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
+                                    }
+                                }
                             }
-                            catch (SQLException e1)
-                            {
-                                GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
-                            }
-                        }
-                    });
-                    _dtm.addRow(new Object[]{id, name, button});
+                        });
+                        _dtm.addRow(new Object[]{id, name, button});
+                    }
                 }
             });
         }
@@ -224,37 +253,39 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
     {
         String cmd = e.getActionCommand();
 
-        switch (cmd)
+        if (cmd.equals("register"))
         {
-            case "register":
-                RegisterDialog rd = new RegisterDialog(this);
-                rd.setVisible(true);
-                break;
-            case "exit":
-                System.exit(0);
-            case "about":
-                JOptionPane.showMessageDialog(getFrame(),
-                        getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
-                                getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
-                                getBundle().getString("translation"), getBundle().getString("aboutItem"),
-                        JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
-                break;
-            case "removeAll":
-                int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
-                        getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
-                if (choice == JOptionPane.YES_OPTION)
+            RegisterDialog rd = new RegisterDialog(this);
+            rd.setVisible(true);
+        }
+        else if (cmd.equals("exit"))
+        {
+            System.exit(0);
+        }
+        else if (cmd.equals("about"))
+        {
+            JOptionPane.showMessageDialog(getFrame(),
+                    getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
+                            getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
+                            getBundle().getString("translation"), getBundle().getString("aboutItem"),
+                    JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+        }
+        else if (cmd.equals("removeAll"))
+        {
+            int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
+                    getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
+            if (choice == JOptionPane.YES_OPTION)
+            {
+                try
                 {
-                    try
-                    {
-                        BaseGameServerRegister.unregisterAllGameServers();
-                        refreshAsync();
-                    }
-                    catch (SQLException e1)
-                    {
-                        GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
-                    }
+                    BaseGameServerRegister.unregisterAllGameServers();
+                    refreshAsync();
                 }
-                break;
+                catch (SQLException e1)
+                {
+                    GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
+                }
+            }
         }
     }
 

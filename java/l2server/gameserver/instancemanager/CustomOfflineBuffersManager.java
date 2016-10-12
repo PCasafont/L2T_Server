@@ -343,11 +343,15 @@ public class CustomOfflineBuffersManager
 
                         player.sendMessage(
                                 "World Buffers: " + buffer.getName() + " is casting: " + skill.getName() + " on you!");
-                        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+                        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                         {
-                            if (canGetBuffs(player))
+                            @Override
+                            public void run()
                             {
-                                skill.getEffects(player, player);
+                                if (canGetBuffs(player))
+                                {
+                                    skill.getEffects(player, player);
+                                }
                             }
                         }, Formulas.calcAtkSpd(player, skill, skill.getHitTime()));
 

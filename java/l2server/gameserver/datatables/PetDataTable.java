@@ -61,121 +61,121 @@ public class PetDataTable
                     L2PetData data = new L2PetData();
                     for (XmlNode p : d.getChildren())
                     {
-                        switch (p.getName())
+                        if (p.getName().equals("set"))
                         {
-                            case "set":
-                                String type = p.getString("name");
-                                if ("food".equals(type))
+                            String type = p.getString("name");
+                            if ("food".equals(type))
+                            {
+                                String[] values = p.getString("val").split(";");
+                                int[] food = new int[values.length];
+                                for (int i = 0; i < values.length; i++)
                                 {
-                                    String[] values = p.getString("val").split(";");
-                                    int[] food = new int[values.length];
-                                    for (int i = 0; i < values.length; i++)
+                                    food[i] = Integer.parseInt(values[i]);
+                                }
+                                data.set_food(food);
+                            }
+                            else if ("load".equals(type))
+                            {
+                                data.set_load(p.getInt("val"));
+                            }
+                            else if ("hungry_limit".equals(type))
+                            {
+                                data.set_hungry_limit(p.getInt("val"));
+                            }
+                            //sync_level and evolve ignored
+                        }
+                        else if (p.getName().equals("skills"))
+                        {
+                            for (XmlNode s : p.getChildren())
+                            {
+                                if (s.getName().equals("skill"))
+                                {
+                                    int skillId = s.getInt("skillId");
+                                    int skillLvl = s.getInt("skillLvl");
+                                    int minLvl = s.getInt("minLvl");
+                                    data.addNewSkill(skillId, skillLvl, minLvl);
+                                }
+                            }
+                        }
+                        else if (p.getName().equals("stats"))
+                        {
+                            for (XmlNode s : p.getChildren())
+                            {
+                                if (s.getName().equals("stat"))
+                                {
+                                    int level = s.getInt("level");
+                                    L2PetLevelData stat = new L2PetLevelData();
+                                    for (XmlNode bean : s.getChildren())
                                     {
-                                        food[i] = Integer.parseInt(values[i]);
-                                    }
-                                    data.set_food(food);
-                                }
-                                else if ("load".equals(type))
-                                {
-                                    data.set_load(p.getInt("val"));
-                                }
-                                else if ("hungry_limit".equals(type))
-                                {
-                                    data.set_hungry_limit(p.getInt("val"));
-                                }
-                                //sync_level and evolve ignored
-                                break;
-                            case "skills":
-                                for (XmlNode s : p.getChildren())
-                                {
-                                    if (s.getName().equals("skill"))
-                                    {
-                                        int skillId = s.getInt("skillId");
-                                        int skillLvl = s.getInt("skillLvl");
-                                        int minLvl = s.getInt("minLvl");
-                                        data.addNewSkill(skillId, skillLvl, minLvl);
-                                    }
-                                }
-                                break;
-                            case "stats":
-                                for (XmlNode s : p.getChildren())
-                                {
-                                    if (s.getName().equals("stat"))
-                                    {
-                                        int level = s.getInt("level");
-                                        L2PetLevelData stat = new L2PetLevelData();
-                                        for (XmlNode bean : s.getChildren())
+                                        if (bean.getName().equals("set"))
                                         {
-                                            if (bean.getName().equals("set"))
+                                            String type = bean.getString("name");
+                                            String value = bean.getString("val");
+                                            if ("exp".equals(type))
                                             {
-                                                String type = bean.getString("name");
-                                                String value = bean.getString("val");
-                                                if ("exp".equals(type))
-                                                {
-                                                    stat.setPetMaxExp(Long.parseLong(value));
-                                                }
-                                                else if ("get_exp_type".equals(type))
-                                                {
-                                                    stat.setOwnerExpTaken(Integer.parseInt(value));
-                                                }
-                                                else if ("consume_meal_in_battle".equals(type))
-                                                {
-                                                    stat.setPetFeedBattle(Integer.parseInt(value));
-                                                }
-                                                else if ("consume_meal_in_normal".equals(type))
-                                                {
-                                                    stat.setPetFeedNormal(Integer.parseInt(value));
-                                                }
-                                                else if ("max_meal".equals(type))
-                                                {
-                                                    stat.setPetMaxFeed(Integer.parseInt(value));
-                                                }
-                                                else if ("soulshot_count".equals(type))
-                                                {
-                                                    stat.setPetSoulShot((short) Integer.parseInt(value));
-                                                }
-                                                else if ("spiritshot_count".equals(type))
-                                                {
-                                                    stat.setPetSpiritShot((short) Integer.parseInt(value));
-                                                }
-                                                else if ("hp".equals(type))
-                                                {
-                                                    stat.setPetMaxHP(Integer.parseInt(value));
-                                                }
-                                                else if ("mp".equals(type))
-                                                {
-                                                    stat.setPetMaxMP(Integer.parseInt(value));
-                                                }
-                                                else if ("pdef".equals(type))
-                                                {
-                                                    stat.setPetPDef(Integer.parseInt(value));
-                                                }
-                                                else if ("mdef".equals(type))
-                                                {
-                                                    stat.setPetMDef(Integer.parseInt(value));
-                                                }
-                                                else if ("patk".equals(type))
-                                                {
-                                                    stat.setPetPAtk(Integer.parseInt(value));
-                                                }
-                                                else if ("matk".equals(type))
-                                                {
-                                                    stat.setPetMAtk(Integer.parseInt(value));
-                                                }
-                                                else if ("hpreg".equals(type))
-                                                {
-                                                    stat.setPetRegenHP(Integer.parseInt(value));
-                                                }
-                                                else if ("mpreg".equals(type))
-                                                {
-                                                    stat.setPetRegenMP(Integer.parseInt(value));
-                                                }
+                                                stat.setPetMaxExp(Long.parseLong(value));
+                                            }
+                                            else if ("get_exp_type".equals(type))
+                                            {
+                                                stat.setOwnerExpTaken(Integer.parseInt(value));
+                                            }
+                                            else if ("consume_meal_in_battle".equals(type))
+                                            {
+                                                stat.setPetFeedBattle(Integer.parseInt(value));
+                                            }
+                                            else if ("consume_meal_in_normal".equals(type))
+                                            {
+                                                stat.setPetFeedNormal(Integer.parseInt(value));
+                                            }
+                                            else if ("max_meal".equals(type))
+                                            {
+                                                stat.setPetMaxFeed(Integer.parseInt(value));
+                                            }
+                                            else if ("soulshot_count".equals(type))
+                                            {
+                                                stat.setPetSoulShot((short) Integer.parseInt(value));
+                                            }
+                                            else if ("spiritshot_count".equals(type))
+                                            {
+                                                stat.setPetSpiritShot((short) Integer.parseInt(value));
+                                            }
+                                            else if ("hp".equals(type))
+                                            {
+                                                stat.setPetMaxHP(Integer.parseInt(value));
+                                            }
+                                            else if ("mp".equals(type))
+                                            {
+                                                stat.setPetMaxMP(Integer.parseInt(value));
+                                            }
+                                            else if ("pdef".equals(type))
+                                            {
+                                                stat.setPetPDef(Integer.parseInt(value));
+                                            }
+                                            else if ("mdef".equals(type))
+                                            {
+                                                stat.setPetMDef(Integer.parseInt(value));
+                                            }
+                                            else if ("patk".equals(type))
+                                            {
+                                                stat.setPetPAtk(Integer.parseInt(value));
+                                            }
+                                            else if ("matk".equals(type))
+                                            {
+                                                stat.setPetMAtk(Integer.parseInt(value));
+                                            }
+                                            else if ("hpreg".equals(type))
+                                            {
+                                                stat.setPetRegenHP(Integer.parseInt(value));
+                                            }
+                                            else if ("mpreg".equals(type))
+                                            {
+                                                stat.setPetRegenMP(Integer.parseInt(value));
                                             }
                                         }
-                                        data.addNewStat(stat, level);
                                     }
+                                    data.addNewStat(stat, level);
                                 }
-                                break;
+                            }
                         }
                     }
                     _petTable.put(npcId, data);

@@ -67,10 +67,14 @@ public class ConfigUserInterface extends JFrame implements ActionListener
         final ResourceBundle bundle =
                 ResourceBundle.getBundle("configurator.Configurator", Locale.getDefault(), LanguageControl.INSTANCE);
 
-        SwingUtilities.invokeLater(() ->
+        SwingUtilities.invokeLater(new Runnable()
         {
-            ConfigUserInterface cui = new ConfigUserInterface(bundle);
-            cui.setVisible(true);
+            @Override
+            public void run()
+            {
+                ConfigUserInterface cui = new ConfigUserInterface(bundle);
+                cui.setVisible(true);
+            }
         });
     }
 
@@ -657,43 +661,44 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
         StringBuilder errors = new StringBuilder();
 
-        switch (cmd)
+        if (cmd.equals("save"))
         {
-            case "save":
-                for (ConfigFile cf : ConfigUserInterface.this.getConfigs())
+            for (ConfigFile cf : ConfigUserInterface.this.getConfigs())
+            {
+                try
                 {
-                    try
-                    {
-                        cf.save();
-                    }
-                    catch (Exception e1)
-                    {
-                        e1.printStackTrace();
-                        errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " +
-                                getBundle().getString("reason") + e1.getLocalizedMessage() + "\r\n");
-                    }
+                    cf.save();
                 }
-                if (errors.length() == 0)
+                catch (Exception e1)
                 {
-                    JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("success"), "OK",
-                            JOptionPane.INFORMATION_MESSAGE);
+                    e1.printStackTrace();
+                    errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " +
+                            getBundle().getString("reason") + e1.getLocalizedMessage() + "\r\n");
                 }
-                else
-                {
-                    JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle().getString("error"),
-                            JOptionPane.ERROR_MESSAGE);
-                    System.exit(2);
-                }
-                break;
-            case "exit":
-                System.exit(0);
-            case "about":
-                JOptionPane.showMessageDialog(ConfigUserInterface.this,
-                        getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
-                                getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
-                                getBundle().getString("translation"), getBundle().getString("aboutItem"),
-                        JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
-                break;
+            }
+            if (errors.length() == 0)
+            {
+                JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("success"), "OK",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle().getString("error"),
+                        JOptionPane.ERROR_MESSAGE);
+                System.exit(2);
+            }
+        }
+        else if (cmd.equals("exit"))
+        {
+            System.exit(0);
+        }
+        else if (cmd.equals("about"))
+        {
+            JOptionPane.showMessageDialog(ConfigUserInterface.this,
+                    getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
+                            getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
+                            getBundle().getString("translation"), getBundle().getString("aboutItem"),
+                    JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
         }
     }
 

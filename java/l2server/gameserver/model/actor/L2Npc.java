@@ -2126,8 +2126,14 @@ public class L2Npc extends L2Character
 
     public final void tell(final int delay, final L2PcInstance player, final String message)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(
-                () -> broadcastPacket(new CreatureSay(getObjectId(), Say2.TELL, getName(), message)), delay);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                broadcastPacket(new CreatureSay(getObjectId(), Say2.TELL, getName(), message));
+            }
+        }, delay);
     }
 
     public final void say(final String message)
@@ -2137,7 +2143,13 @@ public class L2Npc extends L2Character
 
     public final void say(final int delay, final String message)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(
-                () -> broadcastPacket(new CreatureSay(getObjectId(), Say2.ALL, getName(), message)), delay);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                broadcastPacket(new CreatureSay(getObjectId(), Say2.ALL, getName(), message));
+            }
+        }, delay);
     }
 }

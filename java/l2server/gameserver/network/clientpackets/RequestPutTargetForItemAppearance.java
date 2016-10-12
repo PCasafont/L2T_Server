@@ -99,7 +99,13 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
         // TODO fix that
         sendPacket(new ExShowScreenMessage(
                 "Warning: adding the appearance item will start the transformation right away...", 3000));
-        ThreadPoolManager.getInstance().scheduleGeneral(
-                () -> sendPacket(new ExShowScreenMessage("...destroying the stone and the appearance item!", 3000)), 3000);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                sendPacket(new ExShowScreenMessage("...destroying the stone and the appearance item!", 3000));
+            }
+        }, 3000);
     }
 }

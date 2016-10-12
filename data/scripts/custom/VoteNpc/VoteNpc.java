@@ -427,7 +427,7 @@ public class VoteNpc extends Quest
             BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 
             String line;
-            StringBuilder response = new StringBuilder();
+            StringBuffer response = new StringBuffer();
             while ((line = rd.readLine()) != null)
             {
                 response.append(line);

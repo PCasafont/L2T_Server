@@ -207,11 +207,15 @@ public class Q10326_RespectYourElders extends Quest
         if (guideAI.getCurrentPos() == _guideRoute.size() - 1)
         {
             // Delete in 5 sec
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (!guideAI.getActor().isDecayed())
+                @Override
+                public void run()
                 {
-                    guideAI.getActor().deleteMe();
+                    if (!guideAI.getActor().isDecayed())
+                    {
+                        guideAI.getActor().deleteMe();
+                    }
                 }
             }, 5000);
             return null;

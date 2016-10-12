@@ -360,13 +360,17 @@ public class ClanWarManager
             {
                 _task.cancel(true);
             }
-            _task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+            _task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
             {
-                if (_warState == WarState.DECLARED)
+                @Override
+                public void run()
                 {
-                    delete();
-                    _clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() +
-                            " has been stopped. Didn't accept declaration!"); // TODO: System message.
+                    if (_warState == WarState.DECLARED)
+                    {
+                        delete();
+                        _clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() +
+                                " has been stopped. Didn't accept declaration!"); // TODO: System message.
+                    }
                 }
             }, _startTime - System.currentTimeMillis());
         }
@@ -377,11 +381,15 @@ public class ClanWarManager
             {
                 _task.cancel(true);
             }
-            _task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+            _task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
             {
-                if (_warState == WarState.STARTED)
+                @Override
+                public void run()
                 {
-                    stop();
+                    if (_warState == WarState.STARTED)
+                    {
+                        stop();
+                    }
                 }
             }, _endTime - System.currentTimeMillis());
         }
@@ -392,11 +400,15 @@ public class ClanWarManager
             {
                 _task.cancel(true);
             }
-            _task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+            _task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
             {
-                if (_warState == WarState.REPOSE)
+                @Override
+                public void run()
                 {
-                    delete();
+                    if (_warState == WarState.REPOSE)
+                    {
+                        delete();
+                    }
                 }
             }, _deleteTime - System.currentTimeMillis());
         }

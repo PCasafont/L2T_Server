@@ -71,7 +71,7 @@ public class MultiSort
 
         for (int i = 0; i < valueList.length; i++)
         {
-            tempIntList[i] = valueList[i];
+            tempIntList[i] = Integer.valueOf(valueList[i]);
         }
 
         return Arrays.asList(tempIntList);

@@ -920,7 +920,7 @@ public class FourSepulchersManager
                 return;
         }
 
-        if (_hallInUse.get(npcId))
+        if (_hallInUse.get(npcId).booleanValue())
         {
             showHtmlFile(player, npcId + "-FULL.htm", npc, null);
             return;
@@ -1611,7 +1611,7 @@ public class FourSepulchersManager
                 // hall not used right now, so its manager will not tell you
                 // anything :)
                 // if you don't need this - delete next two lines.
-                if (!_hallInUse.get(temp.getNpcId()))
+                if (!_hallInUse.get(temp.getNpcId()).booleanValue())
                 {
                     continue;
                 }

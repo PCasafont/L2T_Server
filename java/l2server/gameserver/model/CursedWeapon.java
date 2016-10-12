@@ -378,8 +378,14 @@ public class CursedWeapon
         {
             _player.stopTransformation(true);
 
-            ThreadPoolManager.getInstance().scheduleGeneral(
-                    () -> TransformationManager.getInstance().transformPlayer(transformationId, _player), 500);
+            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    TransformationManager.getInstance().transformPlayer(transformationId, _player);
+                }
+            }, 500);
         }
         else
         {

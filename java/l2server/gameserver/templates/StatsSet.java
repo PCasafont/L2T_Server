@@ -72,7 +72,7 @@ public final class StatsSet
         }
         if (val instanceof Boolean)
         {
-            return (Boolean) val;
+            return ((Boolean) val).booleanValue();
         }
         try
         {
@@ -101,7 +101,7 @@ public final class StatsSet
         }
         if (val instanceof Boolean)
         {
-            return (Boolean) val;
+            return ((Boolean) val).booleanValue();
         }
         try
         {

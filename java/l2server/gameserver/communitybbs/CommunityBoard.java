@@ -122,27 +122,28 @@ public class CommunityBoard
         switch (Config.COMMUNITY_TYPE)
         {
             case 2:
-                switch (url)
+                if (url.equals("Topic"))
                 {
-                    case "Topic":
-                        TopicBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-                        break;
-                    case "Post":
-                        PostBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-                        break;
-                    case "Region":
-                        RegionBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-                        break;
-                    case "Notice":
-                        ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-                        break;
-                    default:
-                        ShowBoard sb =
-                                new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
-                        activeChar.sendPacket(sb);
-                        activeChar.sendPacket(new ShowBoard(null, "102"));
-                        activeChar.sendPacket(new ShowBoard(null, "103"));
-                        break;
+                    TopicBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                }
+                else if (url.equals("Post"))
+                {
+                    PostBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                }
+                else if (url.equals("Region"))
+                {
+                    RegionBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                }
+                else if (url.equals("Notice"))
+                {
+                    ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                }
+                else
+                {
+                    ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
+                    activeChar.sendPacket(sb);
+                    activeChar.sendPacket(new ShowBoard(null, "102"));
+                    activeChar.sendPacket(new ShowBoard(null, "103"));
                 }
                 break;
             case 1:

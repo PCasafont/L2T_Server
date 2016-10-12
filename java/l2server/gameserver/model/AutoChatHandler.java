@@ -46,10 +46,11 @@ public class AutoChatHandler implements SpawnListener
 
     private static final int DEFAULT_CHAT_DELAY = 60000; // 60 secs by default
 
-    protected final Map<Integer, AutoChatInstance> _registeredChats = new HashMap<>();
+    protected final Map<Integer, AutoChatInstance> _registeredChats;
 
     private AutoChatHandler()
     {
+        _registeredChats = new HashMap<>();
         L2Spawn.addSpawnListener(this);
     }
 
@@ -70,7 +71,7 @@ public class AutoChatHandler implements SpawnListener
         }
 
         // create clean list
-        _registeredChats.clear();
+        _registeredChats = new HashMap<>();
     }
 
     public static AutoChatHandler getInstance()
@@ -762,7 +763,7 @@ public class AutoChatHandler implements SpawnListener
 
                             L2PcInstance randomPlayer = nearbyPlayers.get(randomPlayerIndex);
 
-                            if (text.contains("%player_random%"))
+                            if (text.indexOf("%player_random%") > -1)
                             {
                                 text = text.replaceAll("%player_random%", randomPlayer.getName());
                             }

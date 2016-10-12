@@ -1169,13 +1169,13 @@ public class SagasSuperClass extends QuestJython
         }
 
         // unload all subclasses
-        for (Quest _script : _scripts)
+        for (int index = 0; index < _scripts.size(); index++)
         {
-            if (_script == null)
+            if (_scripts.get(index) == null)
             {
                 continue;
             }
-            QuestManager.getInstance().removeQuest(_script);
+            QuestManager.getInstance().removeQuest(_scripts.get(index));
         }
         _scripts.clear();
 

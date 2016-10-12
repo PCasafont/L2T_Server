@@ -77,31 +77,31 @@ public class L2DoorTemplate extends L2CharTemplate
         childDoorId = set.getInteger("child_id_event", -1);
         // true if door is opening
         String masterevent = set.getString("master_close_event", "act_nothing");
-        switch (masterevent)
+        if (masterevent.equals("act_open"))
         {
-            case "act_open":
-                masterDoorClose = 1;
-                break;
-            case "act_close":
-                masterDoorClose = -1;
-                break;
-            default:
-                masterDoorClose = 0;
-                break;
+            masterDoorClose = 1;
+        }
+        else if (masterevent.equals("act_close"))
+        {
+            masterDoorClose = -1;
+        }
+        else
+        {
+            masterDoorClose = 0;
         }
         //#2
         masterevent = set.getString("master_open_event", "act_nothing");
-        switch (masterevent)
+        if (masterevent.equals("act_open"))
         {
-            case "act_open":
-                masterDoorOpen = 1;
-                break;
-            case "act_close":
-                masterDoorOpen = -1;
-                break;
-            default:
-                masterDoorOpen = 0;
-                break;
+            masterDoorOpen = 1;
+        }
+        else if (masterevent.equals("act_close"))
+        {
+            masterDoorOpen = -1;
+        }
+        else
+        {
+            masterDoorOpen = 0;
         }
     }
 }

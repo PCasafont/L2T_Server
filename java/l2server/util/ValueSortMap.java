@@ -173,9 +173,9 @@ public class ValueSortMap
             }
 
             // Put all not null values in returning LinkedHashMap
-            for (Object aValueList : valueList)
+            for (int i = 0; i < valueList.size(); i++)
             {
-                value = aValueList;
+                value = valueList.get(i);
                 key = hmTmpMap.get(value);
 
                 sortedMap.put(key, value);
@@ -214,9 +214,9 @@ public class ValueSortMap
             }
 
             // Put all not null values in returning LinkedHashMap
-            for (Object aValueList : valueList)
+            for (int i = 0; i < valueList.size(); i++)
             {
-                sortedValue = aValueList;
+                sortedValue = valueList.get(i);
 
                 // Search this value in temp HashMap and if found remove it
                 keySet = hmTmpMap.keySet();

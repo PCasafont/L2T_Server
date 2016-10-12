@@ -241,7 +241,7 @@ public class AntiFeedManager
             return false; // no such event registered
         }
 
-        final Integer addrHash = client.getConnectionAddress().hashCode();
+        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
         Connections conns = event.get(addrHash);
         if (conns == null)
         {
@@ -270,7 +270,7 @@ public class AntiFeedManager
             return;
         }
 
-        final Integer addrHash = client.getConnectionAddress().hashCode();
+        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
         _eventIPs.forEachValue(new DisconnectProcedure(addrHash));
     }
 
@@ -314,7 +314,7 @@ public class AntiFeedManager
             return max;
         }
 
-        final Integer addrHash = client.getConnectionAddress().hashCode();
+        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
         final int limit = Config.L2JMOD_DUALBOX_CHECK_WHITELIST.get(addrHash);
         return limit < 0 ? 0 : limit + max;
     }

@@ -57,86 +57,86 @@ public class AdminManor implements IAdminCommandHandler
         StringTokenizer st = new StringTokenizer(command);
         command = st.nextToken();
 
-        switch (command)
+        if (command.equals("admin_manor"))
         {
-            case "admin_manor":
-                showMainPage(activeChar);
-                break;
-            case "admin_manor_setnext":
-                CastleManorManager.getInstance().setNextPeriod();
-                CastleManorManager.getInstance().setNewManorRefresh();
-                CastleManorManager.getInstance().updateManorRefresh();
-                activeChar.sendMessage("Manor System: set to next period");
-                showMainPage(activeChar);
-                break;
-            case "admin_manor_approve":
-                CastleManorManager.getInstance().approveNextPeriod();
-                CastleManorManager.getInstance().setNewPeriodApprove();
-                CastleManorManager.getInstance().updatePeriodApprove();
-                activeChar.sendMessage("Manor System: next period approved");
-                showMainPage(activeChar);
-                break;
-            case "admin_manor_reset":
-                int castleId = 0;
-                try
-                {
-                    castleId = Integer.parseInt(st.nextToken());
-                }
-                catch (Exception ignored)
-                {
-                }
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_setnext"))
+        {
+            CastleManorManager.getInstance().setNextPeriod();
+            CastleManorManager.getInstance().setNewManorRefresh();
+            CastleManorManager.getInstance().updateManorRefresh();
+            activeChar.sendMessage("Manor System: set to next period");
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_approve"))
+        {
+            CastleManorManager.getInstance().approveNextPeriod();
+            CastleManorManager.getInstance().setNewPeriodApprove();
+            CastleManorManager.getInstance().updatePeriodApprove();
+            activeChar.sendMessage("Manor System: next period approved");
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_reset"))
+        {
+            int castleId = 0;
+            try
+            {
+                castleId = Integer.parseInt(st.nextToken());
+            }
+            catch (Exception ignored)
+            {
+            }
 
-                if (castleId > 0)
+            if (castleId > 0)
+            {
+                Castle castle = CastleManager.getInstance().getCastleById(castleId);
+                castle.resetManor();
+                activeChar.sendMessage("Manor data for " + castle.getName() + " was nulled");
+            }
+            else
+            {
+                for (Castle castle : CastleManager.getInstance().getCastles())
                 {
-                    Castle castle = CastleManager.getInstance().getCastleById(castleId);
                     castle.resetManor();
-                    activeChar.sendMessage("Manor data for " + castle.getName() + " was nulled");
                 }
-                else
-                {
-                    for (Castle castle : CastleManager.getInstance().getCastles())
-                    {
-                        castle.resetManor();
-                    }
-                    activeChar.sendMessage("Manor data was nulled");
-                }
-                showMainPage(activeChar);
-                break;
-            case "admin_manor_setmaintenance":
-            {
-                boolean mode = CastleManorManager.getInstance().isUnderMaintenance();
-                CastleManorManager.getInstance().setUnderMaintenance(!mode);
-                if (mode)
-                {
-                    activeChar.sendMessage("Manor System: not under maintenance");
-                }
-                else
-                {
-                    activeChar.sendMessage("Manor System: under maintenance");
-                }
-                showMainPage(activeChar);
-                break;
+                activeChar.sendMessage("Manor data was nulled");
             }
-            case "admin_manor_save":
-                CastleManorManager.getInstance().save();
-                activeChar.sendMessage("Manor System: all data saved");
-                showMainPage(activeChar);
-                break;
-            case "admin_manor_disable":
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_setmaintenance"))
+        {
+            boolean mode = CastleManorManager.getInstance().isUnderMaintenance();
+            CastleManorManager.getInstance().setUnderMaintenance(!mode);
+            if (mode)
             {
-                boolean mode = CastleManorManager.getInstance().isDisabled();
-                CastleManorManager.getInstance().setDisabled(!mode);
-                if (mode)
-                {
-                    activeChar.sendMessage("Manor System: enabled");
-                }
-                else
-                {
-                    activeChar.sendMessage("Manor System: disabled");
-                }
-                showMainPage(activeChar);
-                break;
+                activeChar.sendMessage("Manor System: not under maintenance");
             }
+            else
+            {
+                activeChar.sendMessage("Manor System: under maintenance");
+            }
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_save"))
+        {
+            CastleManorManager.getInstance().save();
+            activeChar.sendMessage("Manor System: all data saved");
+            showMainPage(activeChar);
+        }
+        else if (command.equals("admin_manor_disable"))
+        {
+            boolean mode = CastleManorManager.getInstance().isDisabled();
+            CastleManorManager.getInstance().setDisabled(!mode);
+            if (mode)
+            {
+                activeChar.sendMessage("Manor System: enabled");
+            }
+            else
+            {
+                activeChar.sendMessage("Manor System: disabled");
+            }
+            showMainPage(activeChar);
         }
 
         return true;

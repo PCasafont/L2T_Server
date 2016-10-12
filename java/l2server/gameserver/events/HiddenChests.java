@@ -166,89 +166,93 @@ public class HiddenChests
 
         final int fIndex = index;
 
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            try
+            @Override
+            public void run()
             {
-
-                L2Spawn chestSpawn = new L2Spawn(tmpl);
-                int x = 0;
-                int y = 0;
-                int z = 0;
-                boolean found = false;
-                while (!found)
+                try
                 {
-                    L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
-                    L2Npc randomNpc = randomSpawn.getNpc();
-                    while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
-                            randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
-                            randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
-                            randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
-                    {
-                        randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
-                    }
 
-                    x = randomNpc.getX() + Rnd.get(800) - 400;
-                    y = randomNpc.getY() + Rnd.get(800) - 400;
-                    z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
-
-                    int sec = 0;
-                    while (!GeoData.getInstance()
-                            .canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) &&
-                            sec < 20)
+                    L2Spawn chestSpawn = new L2Spawn(tmpl);
+                    int x = 0;
+                    int y = 0;
+                    int z = 0;
+                    boolean found = false;
+                    while (!found)
                     {
+                        L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+                        L2Npc randomNpc = randomSpawn.getNpc();
+                        while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
+                                randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
+                                randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
+                                randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
+                        {
+                            randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+                        }
+
                         x = randomNpc.getX() + Rnd.get(800) - 400;
                         y = randomNpc.getY() + Rnd.get(800) - 400;
                         z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
-                        chestSpawn.getNpc().setXYZ(x, y, z);
-                        sec++;
+
+                        int sec = 0;
+                        while (!GeoData.getInstance()
+                                .canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) &&
+                                sec < 20)
+                        {
+                            x = randomNpc.getX() + Rnd.get(800) - 400;
+                            y = randomNpc.getY() + Rnd.get(800) - 400;
+                            z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
+                            chestSpawn.getNpc().setXYZ(x, y, z);
+                            sec++;
+                        }
+
+                        if (sec < 20)
+                        {
+                            found = true;
+                        }
                     }
 
-                    if (sec < 20)
+                    chestSpawn.setX(x);
+                    chestSpawn.setY(y);
+                    chestSpawn.setZ(z);
+                    chestSpawn.setHeading(Rnd.get(65536));
+                    chestSpawn.setRespawnDelay(respawnTime);
+                    chestSpawn.setInstanceId(0);
+
+                    SpawnTable.getInstance().addNewSpawn(chestSpawn, false);
+
+                    chestSpawn.stopRespawn();
+                    chestSpawn.doSpawn();
+
+                    String name = "";
+                    for (int j = 0; j < 10; j++)
                     {
-                        found = true;
+                        int rnd = (int) (Math.random() * 36);
+                        char c = (char) ('0' + rnd);
+                        if (rnd >= 10)
+                        {
+                            c = (char) ('a' + rnd - 10);
+                        }
+                        name += c;
                     }
-                }
 
-                chestSpawn.setX(x);
-                chestSpawn.setY(y);
-                chestSpawn.setZ(z);
-                chestSpawn.setHeading(Rnd.get(65536));
-                chestSpawn.setRespawnDelay(respawnTime);
-                chestSpawn.setInstanceId(0);
+                    chestSpawn.getNpc().setName(name);
 
-                SpawnTable.getInstance().addNewSpawn(chestSpawn, false);
+                    _specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
 
-                chestSpawn.stopRespawn();
-                chestSpawn.doSpawn();
-
-                String name = "";
-                for (int j = 0; j < 10; j++)
-                {
-                    int rnd = (int) (Math.random() * 36);
-                    char c = (char) ('0' + rnd);
-                    if (rnd >= 10)
+                    if (delayed)
                     {
-                        c = (char) ('a' + rnd - 10);
+                        Announcements.getInstance().announceToAll("The treasure chest #" + (fIndex + 1) +
+                                " has respawned! Use .treasure for hints to find it.");
                     }
-                    name += c;
+
+                    _specialChestSpawns[fIndex] = chestSpawn;
                 }
-
-                chestSpawn.getNpc().setName(name);
-
-                _specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
-
-                if (delayed)
+                catch (Exception e)
                 {
-                    Announcements.getInstance().announceToAll("The treasure chest #" + (fIndex + 1) +
-                            " has respawned! Use .treasure for hints to find it.");
+                    e.printStackTrace();
                 }
-
-                _specialChestSpawns[fIndex] = chestSpawn;
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
             }
         }, delayed ? 6 * 3600 * 1000 : 1000);
     }
@@ -393,8 +397,14 @@ public class HiddenChests
                     Announcements.getInstance().announceToAll(name + " has opened a treasure chest!");
                     _chest.reduceCurrentHp(_chest.getMaxHp() + 1, _player, null);
 
-                    ThreadPoolManager.getInstance().scheduleGeneral(
-                            () -> HiddenChests.getInstance().moveChest(_chest, !_player.isGM()), 5000L);
+                    ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            HiddenChests.getInstance().moveChest(_chest, !_player.isGM());
+                        }
+                    }, 5000L);
                 }
             }
         }
