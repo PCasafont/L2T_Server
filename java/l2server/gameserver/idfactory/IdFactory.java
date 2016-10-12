@@ -29,46 +29,6 @@ import java.sql.*;
 public abstract class IdFactory
 {
 
-    @Deprecated
-    protected static final String[] ID_UPDATES = {
-            "UPDATE items				 SET owner_id = ?	WHERE owner_id = ?",
-            "UPDATE items				 SET object_id = ?   WHERE object_id = ?",
-            "UPDATE character_quests	  SET charId = ?	 WHERE charId = ?",
-            "UPDATE character_contacts     SET charId = ?     WHERE charId = ?",
-            "UPDATE character_contacts     SET friendId = ?   WHERE contactId = ?",
-            "UPDATE character_friends	 SET charId = ?	 WHERE charId = ?",
-            "UPDATE character_friends	 SET friendId = ?   WHERE friendId = ?",
-            "UPDATE character_hennas	  SET charId = ? WHERE charId = ?",
-            "UPDATE character_recipebook  SET charId = ? WHERE charId = ?",
-            "UPDATE character_recipeshoplist  SET charId = ? WHERE charId = ?",
-            "UPDATE character_shortcuts   SET charId = ? WHERE charId = ?",
-            "UPDATE character_shortcuts   SET shortcut_id = ? WHERE shortcut_id = ? AND type = 1",
-            // items
-            "UPDATE character_macroses	SET charId = ? WHERE charId = ?",
-            "UPDATE character_skills	  SET charId = ? WHERE charId = ?",
-            "UPDATE character_skills_save SET charId = ? WHERE charId = ?",
-            "UPDATE character_subclasses  SET charId = ? WHERE charId = ?",
-            "UPDATE character_ui_actions  SET charId = ? WHERE charId = ?",
-            "UPDATE character_ui_categories  SET charId = ? WHERE charId = ?",
-            "UPDATE characters			SET charId = ? WHERE charId = ?",
-            "UPDATE characters			SET clanid = ?	  WHERE clanid = ?",
-            "UPDATE clan_data			 SET clan_id = ?	 WHERE clan_id = ?",
-            "UPDATE siege_clans		   SET clan_id = ?	 WHERE clan_id = ?",
-            "UPDATE clan_data			 SET ally_id = ?	 WHERE ally_id = ?",
-            "UPDATE clan_data			 SET leader_id = ?   WHERE leader_id = ?",
-            "UPDATE pets				  SET item_obj_id = ? WHERE item_obj_id = ?",
-            "UPDATE character_hennas	 SET charId = ? WHERE charId = ?",
-            "UPDATE itemsonground		 SET object_id = ?   WHERE object_id = ?",
-            "UPDATE clanhall_auction_bid		  SET bidderId = ?	  WHERE bidderId = ?",
-            "UPDATE olympiad_fights		SET charOneId = ?	 WHERE charOneId = ?",
-            "UPDATE olympiad_fights		SET charTwoId = ?	 WHERE charTwoId = ?",
-            "UPDATE heroes_diary		SET charId = ?	 WHERE charId = ?",
-            "UPDATE olympiad_nobles		SET charId = ?	 WHERE charId = ?",
-            "UPDATE character_offline_trade SET charId = ?	 WHERE charId = ?",
-            "UPDATE character_offline_trade_items SET charId = ? WHERE charId = ?",
-            "UPDATE clanhall			 SET ownerId = ?	   WHERE ownerId = ?"
-    };
-
     protected static final String[] ID_CHECKS = {
             "SELECT owner_id	FROM items				 WHERE object_id >= ?   AND object_id < ?",
             "SELECT object_id   FROM items				 WHERE object_id >= ?   AND object_id < ?",
@@ -295,7 +255,6 @@ public abstract class IdFactory
     }
 
     /**
-     * @param con
      * @return
      * @throws SQLException
      */
@@ -392,7 +351,6 @@ public abstract class IdFactory
     /**
      * return a used Object ID back to the pool
      *
-     * @param object ID
      */
     public abstract void releaseId(int id);
 

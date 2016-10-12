@@ -81,7 +81,7 @@ public class Observation implements IBypassHandler
         return false;
     }
 
-    private static final void doObserve(L2PcInstance player, L2Npc npc, String val)
+    private static void doObserve(L2PcInstance player, L2Npc npc, String val)
     {
         StringTokenizer st = new StringTokenizer(val);
         long cost = Long.parseLong(st.nextToken());

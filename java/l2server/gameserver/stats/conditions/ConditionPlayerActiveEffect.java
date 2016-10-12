@@ -26,7 +26,6 @@ public class ConditionPlayerActiveEffect extends Condition
     /**
      * Instantiates a new condition player active effect id.
      *
-     * @param effectId the effect id
      */
     public ConditionPlayerActiveEffect(String effectName)
     {

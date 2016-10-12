@@ -365,7 +365,7 @@ public final class PrimeFinder
      * @param desiredCapacity the capacity desired by the user.
      * @return the capacity which should be used for a hashtable.
      */
-    public static final int nextPrime(int desiredCapacity)
+    public static int nextPrime(int desiredCapacity)
     {
         int i = Arrays.binarySearch(PRIME_CAPACITIES, desiredCapacity);
         if (i < 0)

@@ -25,7 +25,7 @@ public class DiscussionManager
     private boolean _votesEnabled = false;
     private boolean _globalChatDisabled = false;
 
-    public static final DiscussionManager getInstance()
+    public static DiscussionManager getInstance()
     {
         return SingletonHolder._instance;
     }

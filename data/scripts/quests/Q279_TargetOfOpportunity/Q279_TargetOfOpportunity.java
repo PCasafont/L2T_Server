@@ -154,7 +154,7 @@ public final class Q279_TargetOfOpportunity extends Quest
         return null;
     }
 
-    private static final boolean haveAllExceptThis(QuestState st, int idx)
+    private static boolean haveAllExceptThis(QuestState st, int idx)
     {
         for (int i = 0; i < SEAL_COMPONENTS.length; i++)
         {

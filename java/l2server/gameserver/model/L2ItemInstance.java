@@ -950,7 +950,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
     /**
      * Sets the level of enchantment of the item
      *
-     * @param int
      */
     public void setEnchantLevel(int enchantLevel)
     {
@@ -1815,7 +1814,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
      * functions, if this particular item instance is enhanched
      * for a particular player.
      *
-     * @param player : L2Character designating the player
      * @return Func[]
      */
     public Func[] getStatFuncs()
@@ -1899,7 +1897,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
     /**
      * Returns a L2ItemInstance stored in database from its objectID
      *
-     * @param objectId : int designating the objectID of the item
      * @return L2ItemInstance
      */
     public static L2ItemInstance restoreFromDb(int ownerId, ResultSet rs)

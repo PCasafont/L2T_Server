@@ -36,7 +36,7 @@ import java.util.logging.Level;
 public class FortSiegeManager
 {
 
-    public static final FortSiegeManager getInstance()
+    public static FortSiegeManager getInstance()
     {
         return SingletonHolder._instance;
     }

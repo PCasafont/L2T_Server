@@ -28,7 +28,6 @@ public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient
 {
 
     /**
-     * @see l2server.mmocore.network.ReceivablePacket#read()
      */
     @Override
     protected final boolean read()

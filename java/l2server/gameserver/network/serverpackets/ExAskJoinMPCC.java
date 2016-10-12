@@ -26,7 +26,6 @@ public class ExAskJoinMPCC extends L2GameServerPacket
     private String _requestorName;
 
     /**
-     * @param String Name of CCLeader
      */
     public ExAskJoinMPCC(String requestorName)
     {

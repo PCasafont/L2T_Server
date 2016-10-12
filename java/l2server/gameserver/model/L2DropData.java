@@ -158,7 +158,6 @@ public class L2DropData
     /**
      * Sets the questID
      *
-     * @param String designating the questID to set.
      */
     public void setQuestID(String questID)
     {

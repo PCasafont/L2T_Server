@@ -12,12 +12,12 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- * coded by Balancer
- * balancer@balancer.ru
- * http://balancer.ru
- * <p>
- * version 0.1, 2005-03-12
+/*
+  coded by Balancer
+  balancer@balancer.ru
+  http://balancer.ru
+  <p>
+  version 0.1, 2005-03-12
  */
 
 package l2server.gameserver.model;

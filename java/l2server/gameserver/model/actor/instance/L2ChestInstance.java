@@ -284,7 +284,7 @@ public class L2ChestInstance extends L2MonsterInstance
             }
             else if (prize < 25)
             {
-                MSU = new MagicSkillUse(player, player, 2023, 1, 1, 0, 00);
+                MSU = new MagicSkillUse(player, player, 2023, 1, 1, 0, 0);
                 skill = SkillTable.getInstance().getInfo(2023, 1);
                 player.sendPacket(MSU);
                 player.broadcastPacket(MSU);

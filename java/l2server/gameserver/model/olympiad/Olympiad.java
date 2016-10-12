@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author godson
+/*
+  @author godson
  */
 
 package l2server.gameserver.model.olympiad;

@@ -35,7 +35,7 @@ public class AntiFeedManager
     private Map<Integer, Long> _lastDeathTimes;
     private TIntObjectHashMap<Map<Integer, Connections>> _eventIPs;
 
-    public static final AntiFeedManager getInstance()
+    public static AntiFeedManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -187,7 +187,6 @@ public class AntiFeedManager
      * higher than max.
      *
      * @param eventId
-     * @param _player
      * @param max
      * @return
      */
@@ -263,7 +262,6 @@ public class AntiFeedManager
     /**
      * Remove player connection IP address from all registered events lists.
      *
-     * @param _player
      */
     public final void onDisconnect(L2GameClient client)
     {

@@ -617,7 +617,6 @@ public class LoginController
      *
      * @param user
      * @param password
-     * @param address
      * @return
      */
     public boolean loginValid(String user, String password, L2LoginClient client)// throws HackingException
@@ -877,9 +876,6 @@ public class LoginController
     /**
      * user name is not case sensitive any more
      *
-     * @param user
-     * @param password
-     * @param address
      * @return
      */
     public String loginValid(String sessionKey, L2LoginClient client)// throws HackingException

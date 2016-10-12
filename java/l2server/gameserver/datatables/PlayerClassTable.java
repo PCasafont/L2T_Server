@@ -45,7 +45,7 @@ public class PlayerClassTable implements Reloadable
 
     private final Map<Integer, List<Integer>> _awakeningBannedSubclasses = new HashMap<Integer, List<Integer>>();
 
-    public static final PlayerClassTable getInstance()
+    public static PlayerClassTable getInstance()
     {
         return SingletonHolder._instance;
     }

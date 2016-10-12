@@ -51,7 +51,6 @@ public class FaenorInterface implements EngineInterface
     /**
      * Adds a new Quest Drop to an NPC
      *
-     * @see l2server.gameserver.script.EngineInterface#addQuestDrop(int)
      */
     @Override
     public void addQuestDrop(int npcID, int itemID, int min, int max, int chance, String questID, String[] states)
@@ -70,7 +69,6 @@ public class FaenorInterface implements EngineInterface
     /**
      * Adds a new Drop to an NPC
      *
-     * @see l2server.gameserver.script.EngineInterface#addQuestDrop(int)
      */
     public void addDrop(int npcID, int itemID, int min, int max, boolean sweep, int chance) throws NullPointerException
     {
@@ -114,7 +112,6 @@ public class FaenorInterface implements EngineInterface
      *
      * @param npc
      * @param drop
-     * @param sweep
      */
     public void addDrop(L2NpcTemplate npc, L2DropData drop, int category)
     {

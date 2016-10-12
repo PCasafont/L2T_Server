@@ -56,7 +56,7 @@ public class OlympiadGameManager implements Runnable
         Log.info("Olympiad System: Loaded " + _tasks.length + " stadium instances.");
     }
 
-    public static final OlympiadGameManager getInstance()
+    public static OlympiadGameManager getInstance()
     {
         return SingletonHolder._instance;
     }

@@ -41,7 +41,6 @@ public final class GGAuth extends L2LoginServerPacket
     }
 
     /**
-     * @see l2server.mmocore.network.SendablePacket#write()
      */
     @Override
     protected void write()

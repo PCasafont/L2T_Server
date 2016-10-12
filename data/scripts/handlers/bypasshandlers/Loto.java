@@ -85,7 +85,7 @@ public class Loto implements IBypassHandler
     // 23 - current lottery jackpot
     // 24 - Previous winning numbers/Prize claim
     // >24 - check lottery ticket by item object id
-    public static final void showLotoWindow(L2PcInstance player, L2Npc npc, int val)
+    public static void showLotoWindow(L2PcInstance player, L2Npc npc, int val)
     {
         int npcId = npc.getTemplate().NpcId;
         String filename;

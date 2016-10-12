@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class DuelManager
 {
 
-    public static final DuelManager getInstance()
+    public static DuelManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -168,7 +168,6 @@ public class DuelManager
      * Registers a debuff which will be removed if the duel ends
      *
      * @param player
-     * @param debuff
      */
     public void onBuff(L2PcInstance player, L2Abnormal buff)
     {

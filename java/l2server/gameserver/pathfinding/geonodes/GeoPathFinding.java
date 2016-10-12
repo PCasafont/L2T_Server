@@ -48,7 +48,6 @@ public class GeoPathFinding extends PathFinding
     }
 
     /**
-     * @see l2server.gameserver.pathfinding.PathFinding#PathNodesExist(short)
      */
     @Override
     public boolean pathNodesExist(short regionoffset)
@@ -57,7 +56,6 @@ public class GeoPathFinding extends PathFinding
     }
 
     /**
-     * @see l2server.gameserver.pathfinding.PathFinding#FindPath(int, int, short, int, int, short)
      */
     @Override
     public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)

@@ -204,7 +204,7 @@ public class Halloween extends Quest
             eventState = 1;
 
             startQuestTimer("stop_event", 130 * 60000, null, null);
-            startQuestTimer("stage_1_start_event", Debug ? 1 * 60000 : 10 * 60000, null, null);
+            startQuestTimer("stage_1_start_event", Debug ? 60000 : 10 * 60000, null, null);
         }
         else if (event.equalsIgnoreCase("stage_1_start_event"))
         {

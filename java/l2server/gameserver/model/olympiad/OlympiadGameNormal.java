@@ -56,7 +56,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
         _playerTwo.player.setOlympiadGameId(id);
     }
 
-    protected static final OlympiadParticipant[] createListOfParticipants(List<Integer> list)
+    protected static OlympiadParticipant[] createListOfParticipants(List<Integer> list)
     {
         if (list == null || list.isEmpty() || list.size() < 2)
         {
@@ -839,7 +839,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
     {
     }
 
-    protected static final void saveResults(OlympiadParticipant one, OlympiadParticipant two, int _winner, long _startTime, long _fightTime, CompetitionType type)
+    protected static void saveResults(OlympiadParticipant one, OlympiadParticipant two, int _winner, long _startTime, long _fightTime, CompetitionType type)
     {
         Connection con = null;
         try

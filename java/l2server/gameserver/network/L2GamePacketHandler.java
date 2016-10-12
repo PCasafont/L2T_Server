@@ -66,7 +66,7 @@ public final class L2GamePacketHandler
                     break;
                 case 4:
                 default:
-                    opcode = buf.getInt() & 0xffffffff;
+                    opcode = buf.getInt();
             }
             accumOpcodes[opcodeCount] = opcode;
             opcodeCount++;

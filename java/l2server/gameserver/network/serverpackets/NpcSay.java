@@ -34,7 +34,6 @@ public final class NpcSay extends L2GameServerPacket
     private List<String> _parameters;
 
     /**
-     * @param _characters
      */
     public NpcSay(int objectId, int messageType, int npcId, String text)
     {

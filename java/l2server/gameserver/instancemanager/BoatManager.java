@@ -38,7 +38,7 @@ public class BoatManager
     public static final int GLUDIN_HARBOR = 2;
     public static final int RUNE_HARBOR = 3;
 
-    public static final BoatManager getInstance()
+    public static BoatManager getInstance()
     {
         return SingletonHolder._instance;
     }

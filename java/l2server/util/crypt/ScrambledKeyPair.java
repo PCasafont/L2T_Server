@@ -49,8 +49,8 @@ public class ScrambledKeyPair
         // step 1 : 0x4d-0x50 <-> 0x00-0x04
         for (int i = 0; i < 4; i++)
         {
-            byte temp = scrambledMod[0x00 + i];
-            scrambledMod[0x00 + i] = scrambledMod[0x4d + i];
+            byte temp = scrambledMod[i];
+            scrambledMod[i] = scrambledMod[0x4d + i];
             scrambledMod[0x4d + i] = temp;
         }
         // step 2 : xor first 0x40 bytes with  last 0x40 bytes

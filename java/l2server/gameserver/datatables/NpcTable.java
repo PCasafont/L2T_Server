@@ -672,7 +672,6 @@ public class NpcTable
     }
 
     /**
-     * @param class1
      * @return
      */
     public Set<Integer> getAllNpcOfL2jClass(Class<?> clazz)

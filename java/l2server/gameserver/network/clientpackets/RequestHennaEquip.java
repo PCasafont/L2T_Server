@@ -39,7 +39,6 @@ public final class RequestHennaEquip extends L2GameClientPacket
      * packet type id 0xbb
      * format:		cd
      *
-     * @param decrypt
      */
     @Override
     protected void readImpl()
@@ -69,13 +68,13 @@ public final class RequestHennaEquip extends L2GameClientPacket
 
         long _count = 0;
 
-        /**
-         *  Prevents henna drawing exploit:
-         * 1) talk to L2SymbolMakerInstance
-         * 2) RequestHennaList
-         * 3) Don't close the window and go to a GrandMaster and change your subclass
-         * 4) Get SymbolMaker range again and press draw
-         * You could draw any kind of henna just having the required subclass...
+        /*
+           Prevents henna drawing exploit:
+          1) talk to L2SymbolMakerInstance
+          2) RequestHennaList
+          3) Don't close the window and go to a GrandMaster and change your subclass
+          4) Get SymbolMaker range again and press draw
+          You could draw any kind of henna just having the required subclass...
          */
         boolean cheater = true;
         for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes())

@@ -60,7 +60,7 @@ public class L2LoginServer
         final String LOG_FOLDER = "log"; // Name of folder for log file
         final String LOG_NAME = "./log.cfg"; // Name of log file
 
-        /*** Main ***/
+        /** Main ***/
         // Create log folder
         File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
         logFolder.mkdir();

@@ -642,7 +642,6 @@ public class LoginServerThread extends Thread
     }
 
     /**
-     * @param server_gm_only
      */
     public void sendServerStatus(int id, int value)
     {

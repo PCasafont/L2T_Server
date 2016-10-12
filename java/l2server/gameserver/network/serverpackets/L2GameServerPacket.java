@@ -41,7 +41,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
      * Set "invisible" boolean flag in the packet.
      * Packets from invisible characters will not be broadcasted to players.
      *
-     * @param b
+     * @param objectId
      */
     public void setInvisibleCharacter(final int objectId)
     {
@@ -49,7 +49,6 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
     }
 
     /**
-     * @see l2server.mmocore.network.SendablePacket#write()
      */
     @Override
     protected void write()

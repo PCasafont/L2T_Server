@@ -31,8 +31,6 @@ public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
     private int _response;
 
     /**
-     * @param buf
-     * @param client
      */
     @Override
     protected void readImpl()

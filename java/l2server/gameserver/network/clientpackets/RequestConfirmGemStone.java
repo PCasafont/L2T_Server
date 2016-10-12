@@ -36,8 +36,6 @@ public final class RequestConfirmGemStone extends L2GameClientPacket
     private long _gemStoneCount;
 
     /**
-     * @param buf
-     * @param client
      */
     @Override
     protected void readImpl()
@@ -49,7 +47,6 @@ public final class RequestConfirmGemStone extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

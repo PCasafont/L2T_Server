@@ -36,7 +36,7 @@ import java.util.logging.Level;
  */
 public final class ItemAuctionManager
 {
-    public static final ItemAuctionManager getInstance()
+    public static ItemAuctionManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -135,7 +135,7 @@ public final class ItemAuctionManager
         return _auctionIds.getAndIncrement();
     }
 
-    public final static void deleteAuction(final int auctionId)
+    public static void deleteAuction(final int auctionId)
     {
         Connection con = null;
         try

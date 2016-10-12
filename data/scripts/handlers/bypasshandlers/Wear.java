@@ -63,7 +63,7 @@ public class Wear implements IBypassHandler
         return false;
     }
 
-    private static final void showWearWindow(L2PcInstance player, int val)
+    private static void showWearWindow(L2PcInstance player, int val)
     {
         player.tempInventoryDisable();
 

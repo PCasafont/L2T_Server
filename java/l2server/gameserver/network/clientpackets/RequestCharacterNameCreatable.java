@@ -31,7 +31,6 @@ public final class RequestCharacterNameCreatable extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

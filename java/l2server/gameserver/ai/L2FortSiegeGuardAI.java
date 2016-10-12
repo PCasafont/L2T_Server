@@ -896,7 +896,6 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
      * <li>Add the target to the actor _aggroList or update hate if already present </li>
      * <li>Set the actor Intention to AI_INTENTION_ATTACK (if actor is L2GuardInstance check if it isn't too far from its home location)</li><BR><BR>
      *
-     * @param attacker The L2Character that attacks
      * @param aggro    The value of hate to add to the actor against the target
      */
     @Override

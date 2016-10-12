@@ -103,7 +103,7 @@ public final class SystemMessage extends L2GameServerPacket
     private static final byte TYPE_NUMBER = 1;
     private static final byte TYPE_TEXT = 0;
 
-    public static final SystemMessage sendString(final String text)
+    public static SystemMessage sendString(final String text)
     {
         if (text == null)
         {
@@ -115,7 +115,7 @@ public final class SystemMessage extends L2GameServerPacket
         return sm;
     }
 
-    public static final SystemMessage getSystemMessage(final SystemMessageId smId)
+    public static SystemMessage getSystemMessage(final SystemMessageId smId)
     {
         SystemMessage sm = smId.getStaticSystemMessage();
         if (sm != null)

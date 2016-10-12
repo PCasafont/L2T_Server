@@ -154,7 +154,7 @@ public class NornilsGarden extends Quest
             {8605, 1, 10}, {8604, 2, 40}, {8603, 3, 70}
     };
 
-    private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
+    private static void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
     {
         final int chance = Rnd.get(100);
         for (int[] element : drop)
@@ -166,7 +166,7 @@ public class NornilsGarden extends Quest
         }
     }
 
-    private static final void removeBuffs(L2Character ch)
+    private static void removeBuffs(L2Character ch)
     {
         for (L2Abnormal e : ch.getAllEffects())
         {
@@ -183,7 +183,7 @@ public class NornilsGarden extends Quest
         }
     }
 
-    private static final void giveBuffs(L2Character ch)
+    private static void giveBuffs(L2Character ch)
     {
         if (skill1 != null)
         {
@@ -203,7 +203,7 @@ public class NornilsGarden extends Quest
         }
     }
 
-    private static final void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
+    private static void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
     {
         QuestState st = player.getQuestState(qn);
         if (st == null)
@@ -406,7 +406,7 @@ public class NornilsGarden extends Quest
         }
     }
 
-    private static final String checkConditions(L2Npc npc, L2PcInstance player)
+    private static String checkConditions(L2Npc npc, L2PcInstance player)
     {
         final L2Party party = player.getParty();
         // player must be in party

@@ -26,7 +26,6 @@ public class ConditionPlayerInsideZoneId extends Condition
     /**
      * Instantiates a new condition player landing zone.
      *
-     * @param val the val
      */
     public ConditionPlayerInsideZoneId(int id)
     {

@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author FBIagent
+/*
+  @author FBIagent
  */
 
 package handlers.itemhandlers;

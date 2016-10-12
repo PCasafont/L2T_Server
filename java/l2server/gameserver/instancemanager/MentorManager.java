@@ -101,7 +101,7 @@ public class MentorManager
                 "be delivered and you will not receive these items.";
     }
 
-    public static final MentorManager getInstance()
+    public static MentorManager getInstance()
     {
         return SingletonHolder._instance;
     }

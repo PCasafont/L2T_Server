@@ -962,7 +962,7 @@ public class CustomAuctionManager
         load(false);
     }
 
-    public static final CustomAuctionManager getInstance()
+    public static CustomAuctionManager getInstance()
     {
         return SingletonHolder._instance;
     }

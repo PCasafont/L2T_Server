@@ -65,7 +65,6 @@ public final class RequestSellItem extends L2GameClientPacket
      * <p>
      * format:		cdd (ddd)
      *
-     * @param decrypt
      */
 
     @Override

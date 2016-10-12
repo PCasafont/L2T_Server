@@ -134,7 +134,7 @@ public class Unlock implements ISkillHandler
         }
     }
 
-    private static final boolean doorUnlock(L2Skill skill)
+    private static boolean doorUnlock(L2Skill skill)
     {
         if (skill.getSkillType() == L2SkillType.UNLOCK_SPECIAL)
         {
@@ -156,7 +156,7 @@ public class Unlock implements ISkillHandler
         }
     }
 
-    private static final boolean chestUnlock(L2Skill skill, L2Character chest)
+    private static boolean chestUnlock(L2Skill skill, L2Character chest)
     {
         int chance = 0;
         if (chest.getLevel() > 60)
@@ -204,7 +204,7 @@ public class Unlock implements ISkillHandler
         return Rnd.get(100) < chance;
     }
 
-    private static final boolean chestTrap(L2Character chest)
+    private static boolean chestTrap(L2Character chest)
     {
         if (chest.getLevel() > 60)
         {

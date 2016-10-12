@@ -48,7 +48,6 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

@@ -172,7 +172,7 @@ public class Message
                 UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
     }
 
-    public static final PreparedStatement getStatement(Message msg, Connection con) throws SQLException
+    public static PreparedStatement getStatement(Message msg, Connection con) throws SQLException
     {
         PreparedStatement stmt = con.prepareStatement(
                 "INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, systemMessage1, systemMessage2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");

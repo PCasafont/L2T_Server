@@ -130,7 +130,7 @@ public class DenOfEvil extends L2AttackableAIScript
             zone.addSkill(skillId, skillLevel + 1);
             if (skillLevel == 3) // 3+1=4
             {
-                ThreadPoolManager.getInstance().scheduleAi(new KashaDestruction(zone), 2 * 60 * 1000l);
+                ThreadPoolManager.getInstance().scheduleAi(new KashaDestruction(zone), 2 * 60 * 1000L);
                 zone.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.KASHA_EYE_PITCHES_TOSSES_EXPLODE));
             }
             else if (skillLevel == 2) // 2+1=3

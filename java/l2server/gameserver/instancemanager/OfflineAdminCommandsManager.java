@@ -25,7 +25,7 @@ public class OfflineAdminCommandsManager
 
     private L2PcInstance _dummy;
 
-    public static final OfflineAdminCommandsManager getInstance()
+    public static OfflineAdminCommandsManager getInstance()
     {
         return SingletonHolder._instance;
     }

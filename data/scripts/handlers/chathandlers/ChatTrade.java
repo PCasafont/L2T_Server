@@ -42,7 +42,6 @@ public class ChatTrade implements IChatHandler
     /**
      * Handle chat type 'trade'
      *
-     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
      */
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)

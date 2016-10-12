@@ -188,7 +188,7 @@ public final class ExBasicActionList extends L2GameServerPacket
     private final static ExBasicActionList STATIC_PACKET_TRANSFORMED = new ExBasicActionList(_actionsOnTransform);
     private final static ExBasicActionList STATIC_PACKET = new ExBasicActionList(_defaultActionList);
 
-    public final static ExBasicActionList getStaticPacket(final L2PcInstance player)
+    public static ExBasicActionList getStaticPacket(final L2PcInstance player)
     {
         return player.isTransformed() ? STATIC_PACKET_TRANSFORMED : STATIC_PACKET;
     }
@@ -200,8 +200,8 @@ public final class ExBasicActionList extends L2GameServerPacket
         _actionIds = actionIds;
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

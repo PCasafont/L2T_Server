@@ -34,8 +34,6 @@ public class FriendAddRequest extends L2GameServerPacket
     private String _requestorName;
 
     /**
-     * @param int objectId of the target
-     * @param int
      */
     public FriendAddRequest(String requestorName)
     {

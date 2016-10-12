@@ -906,7 +906,7 @@ public class TenkaiAuctionManager implements Reloadable
         load();
     }
 
-    public static final TenkaiAuctionManager getInstance()
+    public static TenkaiAuctionManager getInstance()
     {
         return SingletonHolder._instance;
     }

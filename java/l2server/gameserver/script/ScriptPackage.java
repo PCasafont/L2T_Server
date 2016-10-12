@@ -56,7 +56,6 @@ public class ScriptPackage
     }
 
     /**
-     * @param scriptFiles The scriptFiles to set.
      */
     private void addFiles(ZipFile pack)
     {

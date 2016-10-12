@@ -29,7 +29,7 @@ import java.util.Map;
 public class QuestManager extends ScriptManager<Quest>
 {
 
-    public static final QuestManager getInstance()
+    public static QuestManager getInstance()
     {
         return SingletonHolder._instance;
     }

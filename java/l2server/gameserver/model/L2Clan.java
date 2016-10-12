@@ -253,7 +253,6 @@ public class L2Clan
     }
 
     /**
-     * @param leaderId The leaderId to set.
      */
     public void setLeader(L2ClanMember leader)
     {
@@ -3319,7 +3318,6 @@ public class L2Clan
      * Check if clan learn this squad skill
      *
      * @param skill
-     * @param clan
      * @return true if can be added
      */
     public boolean isLearnableSubSkill(L2Skill skill)

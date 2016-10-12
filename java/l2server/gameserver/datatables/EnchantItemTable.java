@@ -348,7 +348,7 @@ public class EnchantItemTable implements Reloadable
     /**
      * Return true if item can be enchanted
      */
-    public static final boolean isEnchantable(L2ItemInstance item)
+    public static boolean isEnchantable(L2ItemInstance item)
     {
         if (item.isHeroItem() && !item.getItem().isEnchantable())
         {

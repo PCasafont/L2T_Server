@@ -150,7 +150,6 @@ public class PcAppearance
     }
 
     /**
-     * @param byte value
      */
     public final void setFace(int value)
     {
@@ -163,7 +162,6 @@ public class PcAppearance
     }
 
     /**
-     * @param byte value
      */
     public final void setHairColor(int value)
     {
@@ -176,7 +174,6 @@ public class PcAppearance
     }
 
     /**
-     * @param byte value
      */
     public final void setHairStyle(int value)
     {
@@ -192,7 +189,6 @@ public class PcAppearance
     }
 
     /**
-     * @param boolean isfemale
      */
     public final void setSex(boolean isfemale)
     {

@@ -57,7 +57,6 @@ public class AuthGameGuard extends L2LoginClientPacket
     }
 
     /**
-     * @see l2server.loginserver.clientpackets.L2LoginClientPacket#readImpl()
      */
     @Override
     protected boolean readImpl()
@@ -78,7 +77,6 @@ public class AuthGameGuard extends L2LoginClientPacket
     }
 
     /**
-     * @see l2server.mmocore.network.ReceivablePacket#run()
      */
     @Override
     public void run()

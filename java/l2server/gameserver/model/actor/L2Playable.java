@@ -327,7 +327,6 @@ public abstract class L2Playable extends L2Character
     }
 
     /**
-     * @param blessing
      */
     public void stopProtectionBlessing(L2Abnormal effect)
     {

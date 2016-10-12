@@ -26,9 +26,6 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket
     private int _heading;
 
     /**
-     * @param actor
-     * @param destination
-     * @param origin
      */
     public ExMoveToLocationInAirShip(L2PcInstance player)
     {

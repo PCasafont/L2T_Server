@@ -80,7 +80,6 @@ public class EventTeam
     /**
      * Removes a player from the team<br><br>
      *
-     * @param playerName as String<br>
      */
     public void removePlayer(int playerObjectId)
     {
@@ -132,7 +131,6 @@ public class EventTeam
     /**
      * Is given player in this team?<br><br>
      *
-     * @param playerName as String<br>
      * @return boolean: true if player is in this team, otherwise false<br>
      */
     public boolean containsPlayer(int playerObjectId)

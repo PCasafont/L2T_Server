@@ -57,12 +57,12 @@ public class PacketOpcodes
         }, 10000, 10000);
     }
 
-    public static final void init()
+    public static void init()
     {
         // Dummy method to trigger the static block
     }
 
-    private static final void load()
+    private static void load()
     {
         File file = new File(Config.DATAPACK_ROOT, PROTOCOL_FILE);
         if (!file.exists())
@@ -158,7 +158,7 @@ public class PacketOpcodes
 		}*/
     }
 
-    private static final void parsePacketFamily(XmlNode d, boolean isClientPacket, byte[] parentOpcode, PacketFamily family)
+    private static void parsePacketFamily(XmlNode d, boolean isClientPacket, byte[] parentOpcode, PacketFamily family)
     {
         int length;
         switch (d.getString("switchtype"))
@@ -475,7 +475,7 @@ public class PacketOpcodes
         }
     }
 
-    public static final byte[] getClientPacketOpcode(Class<?> packetClass)
+    public static byte[] getClientPacketOpcode(Class<?> packetClass)
     {
         byte[] opcode = ClientPackets.get(packetClass);
         if (opcode == null)
@@ -486,7 +486,7 @@ public class PacketOpcodes
         return opcode;
     }
 
-    public static final byte[] getServerPacketOpcode(Class<?> packetClass)
+    public static byte[] getServerPacketOpcode(Class<?> packetClass)
     {
         byte[] opcode = ServerPackets.get(packetClass);
         if (opcode == null)

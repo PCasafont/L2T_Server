@@ -46,8 +46,6 @@ public class Post
     private List<CPost> _post;
 
     /**
-     * @param restore
-     * @param t
      */
     //public enum ConstructorType {REPLY, CREATE };
     public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)

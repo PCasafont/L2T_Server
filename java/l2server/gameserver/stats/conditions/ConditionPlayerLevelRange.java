@@ -27,7 +27,6 @@ public class ConditionPlayerLevelRange extends Condition
     /**
      * Instantiates a new condition player levels range.
      *
-     * @param the {@code levels} range.
      */
     public ConditionPlayerLevelRange(int[] levels)
     {

@@ -50,7 +50,6 @@ public final class L2Armor extends L2Item
      * <LI>_mpBonus & _hpBonus</LI>
      * <LI>enchant4Skill</LI>
      *
-     * @param type : L2ArmorType designating the type of armor
      * @param set  : StatsSet designating the set of couples (key,value) caracterizing the armor
      * @see L2Item constructor
      */
@@ -197,7 +196,6 @@ public final class L2Armor extends L2Item
      * Returns array of Func objects containing the list of functions used by the armor
      *
      * @param instance : L2ItemInstance pointing out the armor
-     * @param player   : L2Character pointing out the player
      * @return Func[] : array of functions
      */
     @Override

@@ -12,12 +12,12 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- * coded by Balancer
- * balancer@balancer.ru
- * http://balancer.ru
- * <p>
- * version 0.1, 2005-06-06
+/*
+  coded by Balancer
+  balancer@balancer.ru
+  http://balancer.ru
+  <p>
+  version 0.1, 2005-06-06
  */
 
 package l2server.util.lib;
@@ -34,7 +34,7 @@ public class LoginLog
 {
     private static final Logger _log = Logger.getLogger(LoginLog.class.getName());
 
-    public static final void add(String text, String cat)
+    public static void add(String text, String cat)
     {
         /*
          * Logger _log = logs.get(cat); if (_log == null) { _log =

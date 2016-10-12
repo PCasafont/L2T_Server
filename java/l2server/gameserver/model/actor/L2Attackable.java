@@ -333,7 +333,6 @@ public class L2Attackable extends L2Npc
      * Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it
      *
      * @param objectId      Identifier of the object to initialized
-     * @param L2NpcTemplate Template to apply to the NPC
      */
     public L2Attackable(int objectId, L2NpcTemplate template)
     {
@@ -484,7 +483,6 @@ public class L2Attackable extends L2Npc
     /**
      * Reduce the current HP of the L2Attackable, update its _aggroList and launch the doDie Task if necessary.
      *
-     * @param i        The HP decrease value
      * @param attacker The L2Character who attacks
      * @param awake    The awake state (If True : stop sleeping)
      */
@@ -1449,7 +1447,6 @@ public class L2Attackable extends L2Npc
      *
      * @param drop          The L2DropData count is being calculated for
      * @param lastAttacker  The L2PcInstance that has killed the L2Attackable
-     * @param deepBlueDrop  Factor to divide the drop chance
      * @param levelModifier level modifier in %'s (will be subtracted from drop chance)
      */
     private RewardItem calculateRewardItem(L2PcInstance lastAttacker, L2DropData drop, int levelModifier, boolean isSweep)
@@ -1565,9 +1562,7 @@ public class L2Attackable extends L2Npc
      * Calculates quantity of items for specific drop CATEGORY according to current situation
      * Only a max of ONE item from a category is allowed to be dropped.
      *
-     * @param drop          The L2DropData count is being calculated for
      * @param lastAttacker  The L2PcInstance that has killed the L2Attackable
-     * @param deepBlueDrop  Factor to divide the drop chance
      * @param levelModifier level modifier in %'s (will be subtracted from drop chance)
      */
     private RewardItem[] calculateCategorizedRewardItems(L2PcInstance lastAttacker, L2DropCategory categoryDrops, int levelModifier)
@@ -2379,7 +2374,6 @@ public class L2Attackable extends L2Npc
     /**
      * Calculate the Experience and SP to distribute to attacker (L2PcInstance, L2SummonInstance or L2Party) of the L2Attackable.
      *
-     * @param diff   The difference of level between attacker (L2PcInstance, L2SummonInstance or L2Party) and the L2Attackable
      * @param damage The damages given by the attacker (L2PcInstance, L2SummonInstance or L2Party)
      */
     private long[] calculateExpAndSp(int attackerLevel, int monsterLevel, int damage)

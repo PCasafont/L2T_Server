@@ -764,29 +764,29 @@ public class L2VillageMasterInstance extends L2NpcInstance
             baseClassId = currentBaseId;
         }
 
-        /**
-         * If the race of your main class is Elf or Dark Elf,
-         * you may not select each class as a subclass to the other class.
-         *
-         * If the race of your main class is Kamael, you may not subclass any other race
-         * If the race of your main class is NOT Kamael, you may not subclass any Kamael class
-         *
-         * You may not select Overlord and Warsmith class as a subclass.
-         *
-         * You may not select a similar class as the subclass.
-         * The occupations classified as similar classes are as follows:
-         *
-         * Treasure Hunter, Plainswalker and Abyss Walker
-         * Hawkeye, Silver Ranger and Phantom Ranger
-         * Paladin, Dark Avenger, Temple Knight and Shillien Knight
-         * Warlocks, Elemental Summoner and Phantom Summoner
-         * Elder and Shillien Elder
-         * Swordsinger and Bladedancer
-         * Sorcerer, Spellsinger and Spellhowler
-         *
-         * Also, Kamael have a special, hidden 4 subclass, the inspector, which can
-         * only be taken if you have already completed the other two Kamael subclasses
-         *
+        /*
+          If the race of your main class is Elf or Dark Elf,
+          you may not select each class as a subclass to the other class.
+
+          If the race of your main class is Kamael, you may not subclass any other race
+          If the race of your main class is NOT Kamael, you may not subclass any Kamael class
+
+          You may not select Overlord and Warsmith class as a subclass.
+
+          You may not select a similar class as the subclass.
+          The occupations classified as similar classes are as follows:
+
+          Treasure Hunter, Plainswalker and Abyss Walker
+          Hawkeye, Silver Ranger and Phantom Ranger
+          Paladin, Dark Avenger, Temple Knight and Shillien Knight
+          Warlocks, Elemental Summoner and Phantom Summoner
+          Elder and Shillien Elder
+          Swordsinger and Bladedancer
+          Sorcerer, Spellsinger and Spellhowler
+
+          Also, Kamael have a special, hidden 4 subclass, the inspector, which can
+          only be taken if you have already completed the other two Kamael subclasses
+
          */
         List<Integer> availSubs = PlayerClassTable.getInstance().getAvailableSubclasses(player, baseClassId);
 
@@ -915,7 +915,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         return checkVillageMasterRace(pclass) && checkVillageMasterTeachType(pclass);
     }
 
-    private static final String formatClassForDisplay(PlayerClass className)
+    private static String formatClassForDisplay(PlayerClass className)
     {
         String classNameStr = className.getName();
         char[] charArray = classNameStr.toCharArray();
@@ -931,12 +931,12 @@ public class L2VillageMasterInstance extends L2NpcInstance
         return classNameStr;
     }
 
-    private static final Iterator<SubClass> iterSubClasses(L2PcInstance player)
+    private static Iterator<SubClass> iterSubClasses(L2PcInstance player)
     {
         return player.getSubClasses().values().iterator();
     }
 
-    private static final void dissolveClan(L2PcInstance player, int clanId)
+    private static void dissolveClan(L2PcInstance player, int clanId)
     {
         if (!player.isClanLeader())
         {
@@ -1000,7 +1000,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         player.deathPenalty(false, false, false, false);
     }
 
-    private static final void recoverClan(L2PcInstance player, int clanId)
+    private static void recoverClan(L2PcInstance player, int clanId)
     {
         if (!player.isClanLeader())
         {
@@ -1013,7 +1013,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         clan.updateClanInDB();
     }
 
-    private static final void changeClanLeader(L2PcInstance player, String target)
+    private static void changeClanLeader(L2PcInstance player, String target)
     {
         if (!player.isClanLeader())
         {
@@ -1069,7 +1069,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         clan.setNewLeader(member);
     }
 
-    private static final void createSubPledge(L2PcInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
+    private static void createSubPledge(L2PcInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
     {
         if (!player.isClanLeader())
         {
@@ -1185,7 +1185,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         }
     }
 
-    private static final void renameSubPledge(L2PcInstance player, int pledgeType, String pledgeName)
+    private static void renameSubPledge(L2PcInstance player, int pledgeType, String pledgeName)
     {
         if (!player.isClanLeader())
         {
@@ -1218,7 +1218,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
         player.sendMessage("Pledge name changed.");
     }
 
-    private static final void assignSubPledgeLeader(L2PcInstance player, String clanName, String leaderName)
+    private static void assignSubPledgeLeader(L2PcInstance player, String clanName, String leaderName)
     {
         if (!player.isClanLeader())
         {
@@ -1285,7 +1285,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
      *
      * @param player
      */
-    public static final void showPledgeSkillList(L2PcInstance player)
+    public static void showPledgeSkillList(L2PcInstance player)
     {
         if (player.getClan() == null || !player.isClanLeader())
         {

@@ -29,7 +29,6 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
     private L2Clan _clan;
 
     /**
-     * @param member
      */
     public PledgeReceiveSubPledgeCreated(SubPledge subPledge, L2Clan clan)
     {
@@ -38,7 +37,6 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
     }
 
     /**
-     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
      */
     @Override
     protected final void writeImpl()

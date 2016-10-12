@@ -35,7 +35,6 @@ public final class RequestHennaRemove extends L2GameClientPacket
      * packet type id 0xbb
      * format:		cd
      *
-     * @param decrypt
      */
     @Override
     protected void readImpl()

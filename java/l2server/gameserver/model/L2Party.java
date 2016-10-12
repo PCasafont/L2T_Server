@@ -95,7 +95,6 @@ public class L2Party
      * constructor ensures party has always one member - leader
      *
      * @param leader
-     * @param itemDistributionMode
      */
     public L2Party(L2PcInstance leader, int itemDistribution)
     {
@@ -822,7 +821,6 @@ public class L2Party
     /**
      * distribute adena to party members
      *
-     * @param adena
      */
     public void distributeCurrency(L2PcInstance player, int itemId, long amount, L2Character target)
     {

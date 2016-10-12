@@ -832,7 +832,7 @@ public class CustomOfflineBuffersManager
         }
     }
 
-    public static final CustomOfflineBuffersManager getInstance()
+    public static CustomOfflineBuffersManager getInstance()
     {
         return SingletonHolder._instance;
     }

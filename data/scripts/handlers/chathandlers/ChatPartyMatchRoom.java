@@ -33,7 +33,6 @@ public class ChatPartyMatchRoom implements IChatHandler
     /**
      * Handle chat type 'partymatchroom'
      *
-     * @see net.sf.l2j.gameserver.handler.IChatHandler#handleChat(int, net.sf.l2j.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
      */
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String target, String text)
@@ -55,7 +54,6 @@ public class ChatPartyMatchRoom implements IChatHandler
     /**
      * Returns the chat types registered to this handler
      *
-     * @see net.sf.l2j.gameserver.handler.IChatHandler#getChatTypeList()
      */
     @Override
     public int[] getChatTypeList()

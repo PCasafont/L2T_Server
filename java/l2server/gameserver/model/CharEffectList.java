@@ -294,7 +294,6 @@ public class CharEffectList
     /**
      * Returns the first effect matching the given skillId
      *
-     * @param index
      * @return
      */
     public final L2Abnormal getFirstEffect(int skillId)
@@ -442,7 +441,6 @@ public class CharEffectList
     /**
      * Returns the first effect matching the given skillId
      *
-     * @param index
      * @return
      */
     public final L2Abnormal getFirstEffect(final String stackType)

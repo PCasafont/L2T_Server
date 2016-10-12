@@ -51,7 +51,6 @@ public enum L2WeaponType implements L2ItemType
     /**
      * Constructor of the L2WeaponType.
      *
-     * @param id   : int designating the ID of the WeaponType
      * @param name : String designating the name of the WeaponType
      */
     private L2WeaponType(String name)

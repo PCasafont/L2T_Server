@@ -41,7 +41,6 @@ public final class RequestRefineCancel extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

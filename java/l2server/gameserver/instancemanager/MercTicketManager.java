@@ -52,7 +52,7 @@ import java.util.logging.Level;
 public class MercTicketManager
 {
 
-    public static final MercTicketManager getInstance()
+    public static MercTicketManager getInstance()
     {
         return SingletonHolder._instance;
     }

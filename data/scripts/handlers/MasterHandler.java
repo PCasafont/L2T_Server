@@ -121,7 +121,6 @@ public class MasterHandler
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminSummon());
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTarget());
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTeleport());
-        AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTerritoryWar());
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTest());
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTenkai());
         AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
@@ -153,7 +152,6 @@ public class MasterHandler
         BypassHandler.getInstance().registerBypassHandler(new Loto());
         BypassHandler.getInstance().registerBypassHandler(new ManorManager());
         BypassHandler.getInstance().registerBypassHandler(new Multisell());
-        BypassHandler.getInstance().registerBypassHandler(new Noblesse());
         BypassHandler.getInstance().registerBypassHandler(new Observation());
         BypassHandler.getInstance().registerBypassHandler(new OlympiadManagerLink());
         BypassHandler.getInstance().registerBypassHandler(new OlympiadManagerLink());
@@ -172,7 +170,6 @@ public class MasterHandler
         BypassHandler.getInstance().registerBypassHandler(new SupportMagic());
         BypassHandler.getInstance().registerBypassHandler(new Teleport());
         BypassHandler.getInstance().registerBypassHandler(new TerritoryStatus());
-        BypassHandler.getInstance().registerBypassHandler(new TerritoryWar());
         BypassHandler.getInstance().registerBypassHandler(new Transform());
         BypassHandler.getInstance().registerBypassHandler(new VoiceCommand());
         BypassHandler.getInstance().registerBypassHandler(new Wear());
@@ -186,7 +183,6 @@ public class MasterHandler
     {
         ChatHandler.getInstance().registerChatHandler(new ChatAll());
         ChatHandler.getInstance().registerChatHandler(new ChatAlliance());
-        ChatHandler.getInstance().registerChatHandler(new ChatBattlefield());
         ChatHandler.getInstance().registerChatHandler(new ChatClan());
         ChatHandler.getInstance().registerChatHandler(new ChatHeroVoice());
         ChatHandler.getInstance().registerChatHandler(new ChatParty());
@@ -234,7 +230,6 @@ public class MasterHandler
         ItemHandler.getInstance().registerItemHandler(new BeastSpice());
         ItemHandler.getInstance().registerItemHandler(new TeleportBookmark());
         ItemHandler.getInstance().registerItemHandler(new Elixir());
-        ItemHandler.getInstance().registerItemHandler(new Disguise());
         ItemHandler.getInstance().registerItemHandler(new MagicGem());
         ItemHandler.getInstance().registerItemHandler(new MagicVisor());
         ItemHandler.getInstance().registerItemHandler(new MobSummonItems());
@@ -342,15 +337,7 @@ public class MasterHandler
 
         VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new CustomVoiced());
 
-        if (!Config.isServer(Config.DREAMS))
-        {
-            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Sell());
-        }
-        else
-        {
-            VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new DreamsSell());
-        }
-
+        VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Sell());
         VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new TryOn());
         Log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
     }

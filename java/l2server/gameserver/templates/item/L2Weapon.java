@@ -78,7 +78,6 @@ public final class L2Weapon extends L2Item
      * <LI>_atkSpeed & _AtkReuse</LI>
      * <LI>_mpConsume</LI>
      *
-     * @param type : L2ArmorType designating the type of armor
      * @param set  : StatsSet designating the set of couples (key,value) caracterizing the armor
      * @see L2Item constructor
      */
@@ -307,7 +306,6 @@ public final class L2Weapon extends L2Item
      * Returns array of Func objects containing the list of functions used by the weapon
      *
      * @param instance : L2ItemInstance pointing out the weapon
-     * @param player   : L2Character pointing out the player
      * @return Func[] : array of functions
      */
     @Override

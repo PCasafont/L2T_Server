@@ -39,7 +39,6 @@ public final class RequestShowBoard extends L2GameClientPacket
      * <p>
      * format:		cd
      *
-     * @param decrypt
      */
     @Override
     protected final void readImpl()

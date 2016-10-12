@@ -44,7 +44,6 @@ public final class AuthLogin extends L2GameClientPacket
     private int _loginKey2;
 
     /**
-     * @param decrypt
      */
     @Override
     protected void readImpl()

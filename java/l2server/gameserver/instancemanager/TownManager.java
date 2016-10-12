@@ -25,7 +25,7 @@ import l2server.gameserver.model.zone.type.L2TownZone;
 
 public class TownManager
 {
-    public final static L2TownZone getClosestTown(L2Object activeObject)
+    public static L2TownZone getClosestTown(L2Object activeObject)
     {
         if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance)
         {
@@ -138,7 +138,7 @@ public class TownManager
         return getTown(16); // Default to floran
     }
 
-    public final static int getClosestLocation(L2Object activeObject)
+    public static int getClosestLocation(L2Object activeObject)
     {
         switch (MapRegionTable.getInstance()
                 .getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY()))
@@ -221,7 +221,7 @@ public class TownManager
         return 0;
     }
 
-    public final static boolean townHasCastleInSiege(int townId)
+    public static boolean townHasCastleInSiege(int townId)
     {
         //int[] castleidarray = {0,0,0,0,0,0,0,1,2,3,4,0,5,0,0,6,0};
         int[] castleidarray = {
@@ -278,7 +278,7 @@ public class TownManager
         return false;
     }
 
-    public final static boolean townHasCastleInSiege(int x, int y)
+    public static boolean townHasCastleInSiege(int x, int y)
     {
         int curtown = MapRegionTable.getInstance().getMapRegion(x, y);
         //int[] castleidarray = {0,0,0,0,0,1,0,2,3,4,5,0,0,6,0,0,0,0};
@@ -337,7 +337,7 @@ public class TownManager
         return false;
     }
 
-    public final static L2TownZone getTown(int townId)
+    public static L2TownZone getTown(int townId)
     {
         for (L2TownZone temp : ZoneManager.getInstance().getAllZones(L2TownZone.class))
         {
@@ -357,7 +357,7 @@ public class TownManager
      * @param z
      * @return
      */
-    public final static L2TownZone getTown(int x, int y, int z)
+    public static L2TownZone getTown(int x, int y, int z)
     {
         for (L2ZoneType temp : ZoneManager.getInstance().getZones(x, y, z))
         {

@@ -41,11 +41,6 @@ public final class ShortCutRegister extends L2GameServerPacket
     /**
      * Register new skill shortcut
      *
-     * @param slot
-     * @param type
-     * @param typeId
-     * @param level
-     * @param dat2
      */
     public ShortCutRegister(L2ShortCut shortcut)
     {
@@ -74,7 +69,7 @@ public final class ShortCutRegister extends L2GameServerPacket
                 writeC(0x00); // C5
                 writeD(_shortcut.getCharacterType());
                 break;
-            /** these are same as default case, no need to duplicate, enable if packet get changed
+            /* these are same as default case, no need to duplicate, enable if packet get changed
              */
             /*	case L2ShortCut.TYPE_ACTION: //3
              *		writeD(_shortcut.getId());

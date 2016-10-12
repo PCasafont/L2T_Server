@@ -39,7 +39,6 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

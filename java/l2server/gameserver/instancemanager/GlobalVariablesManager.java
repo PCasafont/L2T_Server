@@ -116,7 +116,7 @@ public class GlobalVariablesManager
         return _variablesMap.get(var);
     }
 
-    public static final GlobalVariablesManager getInstance()
+    public static GlobalVariablesManager getInstance()
     {
         return SingletonHolder._instance;
     }

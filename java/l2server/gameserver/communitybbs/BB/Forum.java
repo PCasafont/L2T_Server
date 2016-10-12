@@ -61,7 +61,6 @@ public class Forum
      * addForum(l2server.gameserver.communitybbs.BB.Forum)} to add forum
      * to the forums manager.
      *
-     * @param i
      */
     public Forum(int Forumid, Forum FParent)
     {

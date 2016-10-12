@@ -245,7 +245,6 @@ public class Instance
      * Adds a door into the instance
      *
      * @param doorId - from doors.csv
-     * @param open   - initial state of the door
      */
     public void addDoor(int doorId, StatsSet set)
     {

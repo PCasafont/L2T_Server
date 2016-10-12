@@ -270,7 +270,7 @@ public class Fort
                 {
                     spawnSpecialEnvoys();
                     ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this),
-                            1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+                            60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
                 }
             }
         }, 10000L);
@@ -402,7 +402,6 @@ public class Fort
     /**
      * Get the objects distance to this fort
      *
-     * @param object
      * @return
      */
     public double getDistance(L2Object obj)
@@ -445,7 +444,6 @@ public class Fort
      * This method will set owner for Fort
      *
      * @param clan
-     * @param updateClanPoints
      */
     public boolean setOwner(L2Clan clan, boolean updateClansReputation)
     {
@@ -490,8 +488,7 @@ public class Fort
             }
 
             spawnSpecialEnvoys();
-            ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(this),
-                    1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+            ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(this), 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
             // if clan have already fortress, remove it
             if (clan.getHasFort() > 0)
             {
@@ -675,16 +672,16 @@ public class Fort
                 setOwnerClan(clan);
                 int runCount = getOwnedTime() / (Config.FS_UPDATE_FRQ * 60);
                 long initial = System.currentTimeMillis() - _lastOwnedTime.getTimeInMillis();
-                while (initial > Config.FS_UPDATE_FRQ * 60000l)
+                while (initial > Config.FS_UPDATE_FRQ * 60000L)
                 {
-                    initial -= Config.FS_UPDATE_FRQ * 60000l;
+                    initial -= Config.FS_UPDATE_FRQ * 60000L;
                 }
-                initial = Config.FS_UPDATE_FRQ * 60000l - initial;
+                initial = Config.FS_UPDATE_FRQ * 60000L - initial;
                 if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < Config.FS_MAX_OWN_TIME * 3600)
                 {
                     _fortUpdater[0] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
                             new FortUpdater(this, clan, runCount, UpdaterType.PERIODIC_UPDATE), initial,
-                            Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
+                            Config.FS_UPDATE_FRQ * 60000L); // Schedule owner tasks to start running
                     if (Config.FS_MAX_OWN_TIME > 0)
                     {
                         _fortUpdater[1] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
@@ -911,8 +908,8 @@ public class Fort
                 }
                 _fortUpdater[0] = ThreadPoolManager.getInstance()
                         .scheduleGeneralAtFixedRate(new FortUpdater(this, clan, 0, UpdaterType.PERIODIC_UPDATE),
-                                Config.FS_UPDATE_FRQ * 60000l,
-                                Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
+                                Config.FS_UPDATE_FRQ * 60000L,
+                                Config.FS_UPDATE_FRQ * 60000L); // Schedule owner tasks to start running
                 if (Config.FS_MAX_OWN_TIME > 0)
                 {
                     _fortUpdater[1] = ThreadPoolManager.getInstance()
@@ -1024,8 +1021,8 @@ public class Fort
         }
 
         return (int) (
-                (_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000l - System.currentTimeMillis()) /
-                        1000l);
+                (_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000L - System.currentTimeMillis()) /
+                        1000L);
     }
 
     public final long getTimeTillNextFortUpdate()
@@ -1094,10 +1091,6 @@ public class Fort
     }
 
     /**
-     * @param State.<BR>    0 - not decided yet<BR>
-     *                      1 - independent<BR>
-     *                      2 - contracted with castle<BR><BR>
-     * @param CastleId.<BR> set Castle Id for contracted fort
      */
     public final void setFortState(int state, int castleId)
     {

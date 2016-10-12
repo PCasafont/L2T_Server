@@ -1114,7 +1114,6 @@ public class BlowfishEngine
     /**
      * initialise a Blowfish cipher.
      *
-     * @param encryption whether or not we are for encryption.
      * @param key        the key used to set up the cipher.
      * @throws IllegalArgumentException if the params argument is inappropriate.
      */

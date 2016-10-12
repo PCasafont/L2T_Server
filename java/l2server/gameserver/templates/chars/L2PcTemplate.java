@@ -56,7 +56,6 @@ public class L2PcTemplate extends L2CharTemplate
     /**
      * Adds starter equipment
      *
-     * @param i
      */
     public void addItem(int itemId, int amount, boolean equipped)
     {

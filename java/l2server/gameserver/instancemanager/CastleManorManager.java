@@ -72,7 +72,7 @@ public class CastleManorManager
     protected ScheduledFuture<?> _scheduledMaintenanceEnd;
     protected ScheduledFuture<?> _scheduledNextPeriodapprove;
 
-    public static final CastleManorManager getInstance()
+    public static CastleManorManager getInstance()
     {
         return SingletonHolder._instance;
     }

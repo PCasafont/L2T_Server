@@ -25,7 +25,7 @@ public final class RestartResponse extends L2GameServerPacket
     public static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
     private static final RestartResponse STATIC_PACKET_FALSE = new RestartResponse(false);
 
-    public static final RestartResponse valueOf(boolean result)
+    public static RestartResponse valueOf(boolean result)
     {
         return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
     }

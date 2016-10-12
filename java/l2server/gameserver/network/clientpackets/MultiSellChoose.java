@@ -256,7 +256,7 @@ public class MultiSellChoose extends L2GameClientPacket
                 ArrayList<L2Augmentation> augmentation = new ArrayList<L2Augmentation>();
                 Elementals[] elemental = null;
                 int appearance = 0;
-                /** All ok, remove items and add final product */
+                /* All ok, remove items and add final product */
                 for (Ingredient e : entry.getIngredients())
                 {
                     if (e.getItemId() < 0)

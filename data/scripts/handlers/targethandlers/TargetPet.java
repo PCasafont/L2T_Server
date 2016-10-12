@@ -28,7 +28,6 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 public class TargetPet implements ISkillTargetTypeHandler
 {
     /**
-     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
      */
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
@@ -44,7 +43,6 @@ public class TargetPet implements ISkillTargetTypeHandler
     }
 
     /**
-     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
      */
     @Override
     public Enum<L2SkillTargetType> getTargetType()

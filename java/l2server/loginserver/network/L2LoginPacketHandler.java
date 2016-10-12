@@ -33,7 +33,6 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 {
 
     /**
-     * @see l2server.mmocore.network.IPacketHandler#handlePacket(java.nio.ByteBuffer, l2server.mmocore.interfaces.MMOClient)
      */
     @Override
     public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)

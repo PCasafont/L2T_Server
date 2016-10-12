@@ -34,8 +34,6 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
     private int _objectId;
 
     /**
-     * @param buf
-     * @param client
      */
     @Override
     protected void readImpl()
@@ -44,7 +42,6 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

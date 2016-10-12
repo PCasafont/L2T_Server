@@ -45,7 +45,7 @@ public class AirShipManager
     private TIntObjectHashMap<L2AirShipInstance> _airShips = new TIntObjectHashMap<L2AirShipInstance>();
     private TIntObjectHashMap<AirShipTeleportList> _teleports = new TIntObjectHashMap<AirShipTeleportList>();
 
-    public static final AirShipManager getInstance()
+    public static AirShipManager getInstance()
     {
         return SingletonHolder._instance;
     }

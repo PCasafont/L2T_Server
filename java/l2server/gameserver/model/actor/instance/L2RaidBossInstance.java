@@ -51,7 +51,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
      * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
      *
      * @param objectId      Identifier of the object to initialized
-     * @param L2NpcTemplate Template to apply to the NPC
      */
     public L2RaidBossInstance(int objectId, L2NpcTemplate template)
     {

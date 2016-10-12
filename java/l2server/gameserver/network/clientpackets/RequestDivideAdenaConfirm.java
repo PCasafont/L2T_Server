@@ -33,7 +33,6 @@ public final class RequestDivideAdenaConfirm extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

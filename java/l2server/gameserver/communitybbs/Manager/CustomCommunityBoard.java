@@ -1630,7 +1630,7 @@ public class CustomCommunityBoard
         loadForumNews();
     }
 
-    public static final CustomCommunityBoard getInstance()
+    public static CustomCommunityBoard getInstance()
     {
         return SingletonHolder._instance;
     }

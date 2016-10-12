@@ -142,6 +142,7 @@ public class HealPercent implements ISkillHandler
             case HPCPHEAL_PERCENT:
                 hp = true;
                 cp = true;
+            default:
         }
 
         //StatusUpdate su = null;

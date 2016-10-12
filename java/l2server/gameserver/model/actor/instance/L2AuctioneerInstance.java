@@ -302,7 +302,7 @@ public final class L2AuctioneerInstance extends L2Npc
             {
                 List<Auction> auctions = ClanHallAuctionManager.getInstance().getAuctions();
                 SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd");
-                /** Limit for make new page, prevent client crash **/
+                /* Limit for make new page, prevent client crash **/
                 int limit = 15;
                 int start;
                 int i = 1;

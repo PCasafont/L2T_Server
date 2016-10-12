@@ -35,7 +35,6 @@ import java.util.Map;
 public class Potions extends ItemSkills
 {
     /**
-     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance)
      */
     public synchronized void useItem(L2Playable playable, L2ItemInstance item)
     {

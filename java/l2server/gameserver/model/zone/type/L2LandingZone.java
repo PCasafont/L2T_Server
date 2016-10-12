@@ -50,7 +50,6 @@ public class L2LandingZone extends L2ZoneType
     }
 
     /**
-     * @see l2server.gameserver.model.zone.L2ZoneType#onDieInside(l2server.gameserver.model.actor.L2Character)
      */
     @Override
     public void onDieInside(L2Character character, L2Character killer)

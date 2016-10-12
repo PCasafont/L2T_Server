@@ -35,7 +35,7 @@ import java.io.File;
 public final class CharTemplateTable implements Reloadable
 {
 
-    public static final CharTemplateTable getInstance()
+    public static CharTemplateTable getInstance()
     {
         return SingletonHolder._instance;
     }

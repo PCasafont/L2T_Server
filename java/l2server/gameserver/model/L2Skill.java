@@ -2401,7 +2401,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
      *
      * Caution: distance is not checked.
      */
-    public static final boolean checkForAreaOffensiveSkills(L2Character caster, L2Character target, L2Skill skill, boolean sourceInArena)
+    public static boolean checkForAreaOffensiveSkills(L2Character caster, L2Character target, L2Skill skill, boolean sourceInArena)
     {
         if (target == null || target.isDead() || target == caster || target.isInvul())
         {
@@ -2575,7 +2575,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         return true;
     }
 
-    public static final boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
+    public static boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
     {
         if (target == null || isDead != target.isDead())
         {

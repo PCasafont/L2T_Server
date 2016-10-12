@@ -55,7 +55,7 @@ public class ItemsOnGroundManager
         load();
     }
 
-    public static final ItemsOnGroundManager getInstance()
+    public static ItemsOnGroundManager getInstance()
     {
         return SingletonHolder._instance;
     }

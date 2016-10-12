@@ -442,7 +442,7 @@ public class CustomWorldAltars
         }
     }
 
-    public static final CustomWorldAltars getInstance()
+    public static CustomWorldAltars getInstance()
     {
         return SingletonHolder._instance;
     }

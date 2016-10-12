@@ -232,7 +232,6 @@ public class EffectAuraForces extends L2Effect
     }
 
     /**
-     * @see L2Abnormal.gameserver.model.L2Effect#onActionTime()
      */
     @Override
     public boolean onActionTime()

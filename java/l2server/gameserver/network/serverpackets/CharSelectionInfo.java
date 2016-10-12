@@ -51,7 +51,6 @@ public class CharSelectionInfo extends L2GameServerPacket
     private CharSelectInfoPackage[] _characterPackages;
 
     /**
-     * @param _characters
      */
     public CharSelectionInfo(String loginName, int sessionId)
     {

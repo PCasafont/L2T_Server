@@ -306,7 +306,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                 world.officer.setIsMortal(true);
 
                 startQuestTimer("stage_3_spawn_guard", 3000, npc, null);
-                startQuestTimer("stage_3_generator_die", 1 * 60000, npc, null);
+                startQuestTimer("stage_3_generator_die", 60000, npc, null);
             }
             else if (event.equalsIgnoreCase("stage_3_spawn_guard"))
             {

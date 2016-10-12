@@ -45,7 +45,7 @@ public class RaidBossPointsManager
         }
     };
 
-    public static final RaidBossPointsManager getInstance()
+    public static RaidBossPointsManager getInstance()
     {
         return SingletonHolder._instance;
     }

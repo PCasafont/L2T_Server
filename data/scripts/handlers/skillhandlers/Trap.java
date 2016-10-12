@@ -114,6 +114,7 @@ public class Trap implements ISkillHandler
                     }
                 }
             }
+            default:
         }
     }
 

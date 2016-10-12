@@ -203,7 +203,7 @@ public class GraciaSeedsManager
         return _SoDState;
     }
 
-    public static final GraciaSeedsManager getInstance()
+    public static GraciaSeedsManager getInstance()
     {
         return SingletonHolder._instance;
     }

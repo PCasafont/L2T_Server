@@ -31,8 +31,8 @@ public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
         _channel = channel;
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

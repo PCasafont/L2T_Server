@@ -397,7 +397,7 @@ public class SearchDropManager
         }
     }
 
-    public static final SearchDropManager getInstance()
+    public static SearchDropManager getInstance()
     {
         return SingletonHolder._instance;
     }

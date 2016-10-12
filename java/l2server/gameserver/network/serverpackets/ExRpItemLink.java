@@ -29,8 +29,8 @@ public final class ExRpItemLink extends L2ItemListPacket
         _item = item;
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

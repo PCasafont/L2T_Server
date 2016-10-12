@@ -34,7 +34,6 @@ public class GMViewCharacterInfo extends L2GameServerPacket
     private L2PcInstance _activeChar;
 
     /**
-     * @param _characters
      */
     public GMViewCharacterInfo(L2PcInstance character)
     {

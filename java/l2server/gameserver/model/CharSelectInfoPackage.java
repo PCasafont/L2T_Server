@@ -60,7 +60,6 @@ public class CharSelectInfoPackage
     private int _vitalityLevel = 0;
 
     /**
-     * @param int1
      */
     public CharSelectInfoPackage(int objectId, String name)
     {

@@ -39,15 +39,6 @@ public class Topic
     private int _cReply;
 
     /**
-     * @param restaure
-     * @param i
-     * @param j
-     * @param string
-     * @param k
-     * @param string2
-     * @param l
-     * @param m
-     * @param n
      */
     public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply)
     {

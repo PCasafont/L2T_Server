@@ -26,7 +26,6 @@ public class VehicleStarted extends L2GameServerPacket
     private int _state;
 
     /**
-     * @param instance
      */
     public VehicleStarted(L2Character boat, int state)
     {

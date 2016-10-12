@@ -404,9 +404,6 @@ public class Q350_EnhanceYourWeapon extends Quest
     /**
      * Calculate the leveling chance of Soul Crystals based on the attacker that killed this L2Attackable
      *
-     * @param attacker The player that last killed this L2Attackable
-     *                 $ Rewrite 06.12.06 - Yesod
-     *                 $ Rewrite 08.01.10 - Gigiikun
      */
     public void levelSoulCrystals(L2Attackable mob, L2PcInstance killer)
     {

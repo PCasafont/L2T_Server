@@ -103,7 +103,6 @@ public class TeleportLocationTable implements Reloadable
     }
 
     /**
-     * @param template id
      * @return
      */
     public L2TeleportLocation getTemplate(int id)

@@ -31,8 +31,8 @@ public class ExPutEnchantTargetItemResult extends L2GameServerPacket
         _result = result;
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

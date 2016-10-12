@@ -169,7 +169,7 @@ public class Base64
         System.out.println(Base64.encodeBytes(bf.readLine().getBytes()));
     }
 
-    /** Determine which ALPHABET to use. */
+    /* Determine which ALPHABET to use. */
     static
     {
         byte[] __bytes;
@@ -547,7 +547,6 @@ public class Base64
      * @param source     The data to convert
      * @param off        Offset in array where conversion should begin
      * @param len        Length of data to convert
-     * @param breakLines Break lines at 80 characters or less.
      * @param options    Specified options
      * @see Base64#GZIP
      * @see Base64#DONT_BREAK_LINES
@@ -983,7 +982,7 @@ public class Base64
 	/*  I N N E R C L A S S I N P U T S T R E A M */
 
     /**
-     * A {@link Base64#InputStream} will read data from another
+     * A  will read data from another
      * {@link java.io.InputStream}, given in the constructor, and encode/decode
      * to/from Base64 notation on the fly.
      *
@@ -1003,9 +1002,8 @@ public class Base64
         private boolean breakLines; // Break lines at less than 80 characters
 
         /**
-         * Constructs a {@link Base64#InputStream} in DECODE mode.
+         * Constructs a  in DECODE mode.
          *
-         * @param in the {@link java.io.InputStream} from which to read data.
          * @since 1.3
          */
         public InputStream(java.io.InputStream pIn)
@@ -1014,7 +1012,7 @@ public class Base64
         } // end constructor
 
         /**
-         * Constructs a {@link Base64#InputStream} in either ENCODE or DECODE
+         * Constructs a  in either ENCODE or DECODE
          * mode.
          * <p>
          * Valid options:
@@ -1028,7 +1026,6 @@ public class Base64
          * <p>
          * Example: <code>new Base64.InputStream( in, Base64.DECODE )</code>
          *
-         * @param in      the {@link java.io.InputStream} from which to read data.
          * @param options Specified options
          * @see Base64#ENCODE
          * @see Base64#DECODE
@@ -1217,7 +1214,7 @@ public class Base64
 	/*  I N N E R C L A S S O U T P U T S T R E A M */
 
     /**
-     * A {@link Base64#OutputStream} will write data to another
+     * A  will write data to another
      * {@link java.io.OutputStream}, given in the constructor, and encode/decode
      * to/from Base64 notation on the fly.
      *
@@ -1238,10 +1235,8 @@ public class Base64
         private boolean suspendEncoding;
 
         /**
-         * Constructs a {@link Base64#OutputStream} in ENCODE mode.
+         * Constructs a  in ENCODE mode.
          *
-         * @param out the {@link java.io.OutputStream} to which data will be
-         *            written.
          * @since 1.3
          */
         public OutputStream(java.io.OutputStream pOut)
@@ -1250,7 +1245,7 @@ public class Base64
         } // end constructor
 
         /**
-         * Constructs a {@link Base64#OutputStream} in either ENCODE or DECODE
+         * Constructs a  in either ENCODE or DECODE
          * mode.
          * <p>
          * Valid options:
@@ -1264,8 +1259,6 @@ public class Base64
          * <p>
          * Example: <code>new Base64.OutputStream( out, Base64.ENCODE )</code>
          *
-         * @param out     the {@link java.io.OutputStream} to which data will be
-         *                written.
          * @param options Specified options.
          * @see Base64#ENCODE
          * @see Base64#DECODE

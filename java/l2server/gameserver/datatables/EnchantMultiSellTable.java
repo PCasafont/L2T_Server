@@ -129,7 +129,7 @@ public class EnchantMultiSellTable implements Reloadable
         return _categories.get(id);
     }
 
-    public static final EnchantMultiSellTable getInstance()
+    public static EnchantMultiSellTable getInstance()
     {
         return SingletonHolder._instance;
     }

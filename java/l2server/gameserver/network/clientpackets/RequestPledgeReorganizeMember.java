@@ -42,7 +42,6 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

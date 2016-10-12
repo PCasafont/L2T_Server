@@ -1845,7 +1845,7 @@ public final class Config
             200.0, // Level 99
     };
 
-    public final static double getExperienceMultiplierFor(final int level)
+    public static double getExperienceMultiplierFor(final int level)
     {
         if (level <= 0)
         {
@@ -1860,7 +1860,7 @@ public final class Config
         return (SERVER_NAME_MASK & server) > 0;
     }
 
-    public static final File findResource(final String path)
+    public static File findResource(final String path)
     {
         final File custom = findCustomResource(path);
         if (custom.exists())
@@ -1873,12 +1873,12 @@ public final class Config
         return findNonCustomResource(path);
     }
 
-    public static final File findCustomResource(final String path)
+    public static File findCustomResource(final String path)
     {
         return new File("data_" + SERVER_NAME + "/", path);
     }
 
-    public static final File findNonCustomResource(final String path)
+    public static File findNonCustomResource(final String path)
     {
         return new File("data/", path);
     }

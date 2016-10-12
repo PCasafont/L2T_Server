@@ -177,7 +177,6 @@ public class MacroList
     }
 
     /**
-     * @param shortcut
      */
     private void deleteMacroFromDb(L2Macro macro)
     {

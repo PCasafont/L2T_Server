@@ -27,7 +27,6 @@ public class ExOlympiadMode extends L2GameServerPacket
     private int _mode;
 
     /**
-     * @param _mode (0 = return, 3 = spectate)
      */
     public ExOlympiadMode(int mode)
     {

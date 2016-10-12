@@ -26,7 +26,6 @@ public class ObservationMode extends L2GameServerPacket
     private int _x, _y, _z;
 
     /**
-     * @param _characters
      */
     public ObservationMode(int x, int y, int z)
     {

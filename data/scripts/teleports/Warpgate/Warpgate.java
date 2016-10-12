@@ -28,7 +28,7 @@ public class Warpgate extends Quest
 
     private static final int[] WARPGATES = {32314, 32315, 32316, 32317, 32318, 32319, 33900};
 
-    private static final boolean canEnter(L2PcInstance player)
+    private static boolean canEnter(L2PcInstance player)
     {
         if (player.isFlying())
         {

@@ -86,6 +86,7 @@ public class BeastSkills implements ISkillHandler
                     ((L2TamedBeastInstance) target).castBeastSkills();
                 }
                 break;
+            default:
         }
     }
 

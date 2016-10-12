@@ -261,7 +261,7 @@ public class InstanceManager
         createWorld();
     }
 
-    public static final InstanceManager getInstance()
+    public static InstanceManager getInstance()
     {
         return SingletonHolder._instance;
     }

@@ -392,7 +392,7 @@ public class Validator extends Quest
 		return result;*/
     }
 
-    public static final void main(String[] args)
+    public static void main(String[] args)
     {
         new Validator(-1, Validator.class.getSimpleName(), "custom");
     }

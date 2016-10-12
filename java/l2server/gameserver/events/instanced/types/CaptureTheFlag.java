@@ -240,7 +240,7 @@ public class CaptureTheFlag extends EventInstance
                 PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
         for (L2PcInstance assistant : assistants)
         {
-            assistant.addEventPoints(1 * killValue);
+            assistant.addEventPoints(killValue);
         }
 
         new EventTeleporter(killedPlayer, _teams[killedTeamId].getCoords(), false, false);

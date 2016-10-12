@@ -39,7 +39,7 @@ public class OlympiadManager
         _classBasedRegisters = new LinkedHashMap<Integer, List<Integer>>();
     }
 
-    public static final OlympiadManager getInstance()
+    public static OlympiadManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -361,7 +361,6 @@ public class OlympiadManager
     }
 
     /**
-     * @param noble  - checked noble
      * @param player - messages will be sent to this L2PcInstance
      * @return true if all requirements are met
      */

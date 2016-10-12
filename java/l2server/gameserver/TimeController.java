@@ -231,7 +231,6 @@ public class TimeController
     }
 
     /**
-     * @param rise
      */
     class BroadcastSunState implements Runnable
     {

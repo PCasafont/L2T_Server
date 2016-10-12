@@ -39,7 +39,7 @@ public class CoupleManager
         load();
     }
 
-    public static final CoupleManager getInstance()
+    public static CoupleManager getInstance()
     {
         return SingletonHolder._instance;
     }

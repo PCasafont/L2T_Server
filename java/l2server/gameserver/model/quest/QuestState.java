@@ -87,7 +87,6 @@ public final class QuestState
      * @param quest     : quest associated with the QuestState
      * @param player    : L2PcInstance pointing out the player
      * @param state     : state of the quest
-     * @param completed : boolean for completion of the quest
      */
     public QuestState(Quest quest, L2PcInstance player, byte state)
     {
@@ -626,7 +625,6 @@ public final class QuestState
     }
 
     /**
-     * @param int : ID of the item you're looking for
      * @return true if item exists in player's inventory, false - if not
      */
     public boolean hasQuestItems(int itemId)

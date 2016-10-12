@@ -15,8 +15,8 @@
 
 package quests.Q307_ControlDeviceOfTheGiants;
 
-/**
- * @author Gladicek, malyelfik
+/*
+  @author Gladicek, malyelfik
  */
 
 import l2server.gameserver.model.actor.L2Npc;

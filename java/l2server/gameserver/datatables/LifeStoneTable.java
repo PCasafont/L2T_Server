@@ -146,7 +146,7 @@ public class LifeStoneTable
         }
     }
 
-    public static final LifeStoneTable getInstance()
+    public static LifeStoneTable getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -283,10 +283,6 @@ public class LifeStoneTable
     /**
      * Generate a new random augmentation
      *
-     * @param item
-     * @param lifeStoneLevel
-     * @param lifeSoneGrade
-     * @param bodyPart
      * @return L2Augmentation
      */
     public L2Augmentation generateRandomAugmentation(LifeStone lifeStone, L2ItemInstance targetItem)
@@ -414,7 +410,7 @@ public class LifeStoneTable
     /*
      * Check both player and source item conditions for augmentation process
      */
-    public static final boolean isValid(L2PcInstance player, L2ItemInstance item)
+    public static boolean isValid(L2PcInstance player, L2ItemInstance item)
     {
         if (!isValid(player))
         {
@@ -508,7 +504,7 @@ public class LifeStoneTable
     /*
      * Check if player's conditions valid for augmentation process
      */
-    public static final boolean isValid(L2PcInstance player)
+    public static boolean isValid(L2PcInstance player)
     {
         if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE)
         {
@@ -557,7 +553,7 @@ public class LifeStoneTable
     /*
      * Returns GemStone itemId based on item grade
      */
-    public static final int getGemStoneId(int itemGrade, int lifeStoneGrade)
+    public static int getGemStoneId(int itemGrade, int lifeStoneGrade)
     {
         if (lifeStoneGrade == GRADE_ARIA)
         {
@@ -588,7 +584,7 @@ public class LifeStoneTable
      * Returns GemStone count based on item grade and lifestone grade
      * (different for weapon and accessory augmentation)
      */
-    public static final int getGemStoneCount(int itemGrade, int lifeStoneGrade)
+    public static int getGemStoneCount(int itemGrade, int lifeStoneGrade)
     {
         switch (lifeStoneGrade)
         {

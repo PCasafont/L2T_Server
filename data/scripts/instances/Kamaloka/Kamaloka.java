@@ -443,7 +443,7 @@ public class Kamaloka extends Quest
      * @param index  (0-18) index of the kamaloka in arrays
      * @return true if party allowed to enter
      */
-    private static final boolean checkConditions(L2PcInstance player, int index)
+    private static boolean checkConditions(L2PcInstance player, int index)
     {
         final L2Party party = player.getParty();
         // player must be in party
@@ -521,7 +521,7 @@ public class Kamaloka extends Quest
      *
      * @param ch player
      */
-    private static final void removeBuffs(L2Character ch)
+    private static void removeBuffs(L2Character ch)
     {
         for (L2Abnormal e : ch.getAllEffects())
         {
@@ -593,7 +593,7 @@ public class Kamaloka extends Quest
      * @param coords     x,y,z
      * @param instanceId
      */
-    private static final void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
+    private static void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
     {
         player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
         player.setInstanceId(instanceId);
@@ -702,7 +702,7 @@ public class Kamaloka extends Quest
      *
      * @param world instanceWorld
      */
-    private static final void finishInstance(InstanceWorld world)
+    private static void finishInstance(InstanceWorld world)
     {
         if (world instanceof KamaWorld)
         {

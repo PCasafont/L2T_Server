@@ -640,7 +640,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
                 if (npc.getNpcId() == _bossId)
                 {
                     world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                            1 * DimensionalDoor.getDimensionalDoorRewardRate(), player, true);
+                            DimensionalDoor.getDimensionalDoorRewardRate(), player, true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
                     InstanceManager.getInstance().showVidToInstance(48, world.instanceId);
                 }
@@ -705,7 +705,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
         npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player, null);
     }
 
-    private static final void dropHerb(L2Npc mob, L2PcInstance player)
+    private static void dropHerb(L2Npc mob, L2PcInstance player)
     {
         for (int i = 0; i < 2; i++)
         {

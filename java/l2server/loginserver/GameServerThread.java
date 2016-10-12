@@ -183,7 +183,6 @@ public class GameServerThread extends Thread
      * <li><b>Sets the GameServerInfo as Authed</b></li>
      *
      * @param gsi            The GameServerInfo to be attached.
-     * @param gameServerAuth The server info.
      */
     public void attachGameServerInfo(GameServerInfo gsi, int port, String[] hosts, int maxPlayers)
     {
@@ -283,7 +282,6 @@ public class GameServerThread extends Thread
     }
 
     /**
-     * @param gameHost The gameHost to set.
      */
     public void setGameHosts(String[] hosts)
     {

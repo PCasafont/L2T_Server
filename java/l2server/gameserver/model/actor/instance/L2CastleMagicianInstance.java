@@ -438,7 +438,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
         return COND_ALL_FALSE;
     }
 
-    private static final boolean validateGateCondition(L2PcInstance clanLeader, L2PcInstance player)
+    private static boolean validateGateCondition(L2PcInstance clanLeader, L2PcInstance player)
     {
         if (clanLeader.isAlikeDead())
         {

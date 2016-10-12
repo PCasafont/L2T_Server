@@ -125,7 +125,6 @@ public abstract class FaenorParser extends Parser
     }
 
     /**
-     * @param script
      */
     @Override
     public abstract void parseScript(Node node, ScriptContext context);

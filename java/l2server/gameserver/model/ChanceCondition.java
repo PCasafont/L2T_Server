@@ -165,7 +165,7 @@ public final class ChanceCondition
         return null;
     }
 
-    public static final byte[] parseElements(String list)
+    public static byte[] parseElements(String list)
     {
         if (list == null)
         {
@@ -183,7 +183,7 @@ public final class ChanceCondition
         return elements;
     }
 
-    public static final int[] parseActivationSkills(String list)
+    public static int[] parseActivationSkills(String list)
     {
         if (list == null)
         {

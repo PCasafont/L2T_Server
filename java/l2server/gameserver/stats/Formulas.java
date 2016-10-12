@@ -1324,7 +1324,7 @@ public final class Formulas
      * Calculate the HP regen rate (base + modifiers).<BR>
      * <BR>
      */
-    public static final double calcHpRegen(L2Character cha)
+    public static double calcHpRegen(L2Character cha)
     {
         double init = cha.getTemplate().getBaseHpReg(cha.getLevel());
         double hpRegenMultiplier = cha.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
@@ -1447,7 +1447,7 @@ public final class Formulas
     /**
      * Calculate the MP regen rate (base + modifiers).<BR><BR>
      */
-    public static final double calcMpRegen(L2Character cha)
+    public static double calcMpRegen(L2Character cha)
     {
         double init = cha.getTemplate().getBaseMpReg(cha.getLevel());
         double mpRegenMultiplier = cha.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
@@ -1562,7 +1562,7 @@ public final class Formulas
     /**
      * Calculate the CP regen rate (base + modifiers).<BR><BR>
      */
-    public static final double calcCpRegen(L2Character cha)
+    public static double calcCpRegen(L2Character cha)
     {
         double init = cha.getTemplate().getBaseCpReg(cha.getLevel());
         double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
@@ -1612,7 +1612,7 @@ public final class Formulas
         return cha.calcStat(Stats.REGENERATE_CP_RATE, init, null, null) * cpRegenMultiplier + cpRegenBonus;
     }
 
-    public static final double calcSiegeRegenModifer(L2PcInstance activeChar)
+    public static double calcSiegeRegenModifer(L2PcInstance activeChar)
     {
         if (activeChar == null || activeChar.getClan() == null)
         {
@@ -1649,7 +1649,7 @@ public final class Formulas
      * @param ssBonus  if weapon item was charged by soulshot
      * @return damage points
      */
-    public static final double calcPhysDam(L2Character attacker, L2Character target, byte shld, boolean crit, boolean dual, double ssBonus)
+    public static double calcPhysDam(L2Character attacker, L2Character target, byte shld, boolean crit, boolean dual, double ssBonus)
     {
         final boolean isPvP = attacker instanceof L2Playable && target instanceof L2Playable;
         final boolean isPvE = attacker instanceof L2Playable && target instanceof L2Attackable ||
@@ -1994,13 +1994,11 @@ public final class Formulas
      * @param attacker player or NPC that makes ATTACK
      * @param target   player or NPC, target of ATTACK
      * @param skill    The skill used to deal damage
-     * @param miss     one of ATTACK_XXX constants
      * @param crit     if the ATTACK have critical success
      * @param dual     if dual weapon is used
-     * @param ss       if weapon item was charged by soulshot
      * @return damage points
      */
-    public static final double calcPhysSkillDam(L2Character attacker, L2Character target, L2Skill skill, byte shld, boolean crit, boolean dual, double ssBonus)
+    public static double calcPhysSkillDam(L2Character attacker, L2Character target, L2Skill skill, byte shld, boolean crit, boolean dual, double ssBonus)
     {
         final boolean isPvP = attacker instanceof L2Playable && target instanceof L2Playable;
         final boolean isPvE = attacker instanceof L2Playable && target instanceof L2Attackable ||
@@ -2619,13 +2617,13 @@ public final class Formulas
 		return damage;
 	}*/
 
-    public static final double calcCustomModifier(final L2Character attacker, final L2Character target, double damage)
+    public static double calcCustomModifier(final L2Character attacker, final L2Character target, double damage)
     {
         damage *= damageMultiplier(attacker, target);
         return damage;
     }
 
-    public static final double calcMagicDam(L2Character attacker, L2Character target, L2Skill skill, byte shld, double ssMul, boolean mcrit)
+    public static double calcMagicDam(L2Character attacker, L2Character target, L2Skill skill, byte shld, double ssMul, boolean mcrit)
     {
         final boolean isPvP = attacker instanceof L2Playable && target instanceof L2Playable;
         final boolean isPvE = attacker instanceof L2Playable && target instanceof L2Attackable ||
@@ -2872,7 +2870,7 @@ public final class Formulas
         return damage;
     }
 
-    public static final double calcMagicDam(L2CubicInstance attacker, L2Character target, L2Skill skill, boolean mcrit, byte shld)
+    public static double calcMagicDam(L2CubicInstance attacker, L2Character target, L2Skill skill, boolean mcrit, byte shld)
     {
         // Current info include mAtk in the skill power.
         double mAtk = attacker.getMAtk();
@@ -2966,7 +2964,7 @@ public final class Formulas
     /**
      * Returns true in case of critical hit
      */
-    public static final boolean calcCrit(double rate, L2Character target)
+    public static boolean calcCrit(double rate, L2Character target)
     {
         if (target != null)
         {
@@ -2980,7 +2978,7 @@ public final class Formulas
     /**
      * Calculate value of lethal chance
      */
-    public static final double calcLethal(L2Character activeChar, L2Character target, int baseLethal, int magiclvl)
+    public static double calcLethal(L2Character activeChar, L2Character target, int baseLethal, int magiclvl)
     {
         double chance = 0;
         if (magiclvl > 0)
@@ -3019,7 +3017,7 @@ public final class Formulas
         return rate;
     }
 
-    public static final boolean calcLethalHit(L2Character activeChar, L2Character target, L2Skill skill)
+    public static boolean calcLethalHit(L2Character activeChar, L2Character target, L2Skill skill)
     {
         if (target.isRaid() || target instanceof L2RaidBossInstance || target instanceof L2GrandBossInstance ||
                 target instanceof L2DoorInstance || target instanceof L2Npc && ((L2Npc) target).getNpcId() == 35062)
@@ -3027,9 +3025,9 @@ public final class Formulas
             return false;
         }
 
-        /**
-         * LasTravel
-         * - Filter the mobs what are defined as a lethal inmune (few farm mobs with hight drop rate)
+        /*
+          LasTravel
+          - Filter the mobs what are defined as a lethal inmune (few farm mobs with hight drop rate)
          */
         if (target instanceof L2MonsterInstance)
         {
@@ -3111,7 +3109,7 @@ public final class Formulas
         return true;
     }
 
-    public static final boolean calcMCrit(double mRate)
+    public static boolean calcMCrit(double mRate)
     {
         if (Config.isServer(Config.TENKAI))
         {
@@ -3125,7 +3123,7 @@ public final class Formulas
     /**
      * Returns true in case when ATTACK is canceled due to hit
      */
-    public static final boolean calcAtkBreak(L2Character target, double dmg)
+    public static boolean calcAtkBreak(L2Character target, double dmg)
     {
         if (target.getFusionSkill() != null)
         {
@@ -3180,7 +3178,7 @@ public final class Formulas
     /**
      * Calculate delay (in milliseconds) before next ATTACK
      */
-    public static final int calcPAtkSpd(L2Character attacker, L2Character target, double rate)
+    public static int calcPAtkSpd(L2Character attacker, L2Character target, double rate)
     {
         // measured Oct 2006 by Tank6585, formula by Sami
         // attack speed 312 equals 1500 ms delay... (or 300 + 40 ms delay?)
@@ -3197,7 +3195,7 @@ public final class Formulas
     /**
      * Calculate delay (in milliseconds) for skills cast
      */
-    public static final int calcAtkSpd(L2Character attacker, L2Skill skill, double skillTime)
+    public static int calcAtkSpd(L2Character attacker, L2Skill skill, double skillTime)
     {
         double atkSpd;
         if (skill.isMagic())
@@ -4027,9 +4025,9 @@ public final class Formulas
         final boolean isPvP = attacker instanceof L2Playable && target instanceof L2Playable;
         final boolean isPvE = attacker instanceof L2Playable && target instanceof L2Attackable;
 
-        /**
-         * LasTravel
-         * - Filter the debuffs on the mobs defined as inmune
+        /*
+          LasTravel
+          - Filter the debuffs on the mobs defined as inmune
          */
         if (target instanceof L2Attackable)
         {
@@ -4497,7 +4495,6 @@ public final class Formulas
      * for skills with skilltype PDAM, BLOW, CHARGEDAM, MDAM or DEATHLINK</U></li>
      * <br><br>
      *
-     * @param actor
      * @param target
      * @param skill
      * @return SKILL_REFLECTED_FAILED, SKILL_REFLECT_SUCCEED or SKILL_REFLECT_VENGEANCE

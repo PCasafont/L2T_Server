@@ -75,7 +75,6 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
     }
 
     /**
-     * @see l2server.mmocore.network.ReceivablePacket#run()
      */
     @Override
     public void run()

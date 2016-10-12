@@ -34,7 +34,6 @@ public class ValidateLocationInVehicle extends L2GameServerPacket
     /**
      * 0x80 ValidateLocationInVehicle		 hdd
      *
-     * @param _characters
      */
     public ValidateLocationInVehicle(L2PcInstance player)
     {

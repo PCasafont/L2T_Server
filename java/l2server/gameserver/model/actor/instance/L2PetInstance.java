@@ -716,7 +716,6 @@ public class L2PetInstance extends L2Summon
      * Transfers item to another inventory
      *
      * @param process   : String Identifier of process triggering this action
-     * @param itemId    : int Item Identifier of the item to be transfered
      * @param count     : int Quantity of items to be transfered
      * @param actor     : L2PcInstance Player requesting the item transfer
      * @param reference : L2Object Object referencing current action like NPC selling item or previous item in transformation

@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author godson
+/*
+  @author godson
  */
 
 package l2server.gameserver.model.olympiad;
@@ -246,7 +246,6 @@ public class HeroesManager
     /**
      * Restore hero message from Db.
      *
-     * @param charId
      */
     public void loadMessage(HeroInfo hero)
     {

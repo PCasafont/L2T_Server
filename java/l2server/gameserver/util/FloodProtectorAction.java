@@ -30,8 +30,8 @@ import java.util.logging.Level;
 public final class FloodProtectorAction
 {
 
-    /**
-     * Logger
+    /*
+      Logger
      */
 
     /**
@@ -63,7 +63,6 @@ public final class FloodProtectorAction
     /**
      * Creates new instance of FloodProtectorAction.
      *
-     * @param player player for which flood protection is being created
      * @param config flood protector configuration
      */
     public FloodProtectorAction(final L2GameClient client, final FloodProtectorConfig config)

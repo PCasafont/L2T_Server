@@ -29,7 +29,6 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
     private Point3D _origin;
 
     /**
-     * @param actor
      * @param destination
      * @param origin
      */

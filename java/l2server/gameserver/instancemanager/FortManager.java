@@ -33,7 +33,7 @@ public class FortManager implements InstanceListManager
 {
     private List<Fort> _forts = new ArrayList<Fort>();
 
-    public static final FortManager getInstance()
+    public static FortManager getInstance()
     {
         return SingletonHolder._instance;
     }

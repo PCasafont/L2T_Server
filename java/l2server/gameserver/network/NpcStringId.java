@@ -25682,7 +25682,7 @@ public final class NpcStringId
         buildFastLookupTable();
     }
 
-    private final static void buildFastLookupTable()
+    private static void buildFastLookupTable()
     {
         final Field[] fields = NpcStringId.class.getDeclaredFields();
         final ArrayList<NpcStringId> nsIds = new ArrayList<NpcStringId>(fields.length);
@@ -25718,7 +25718,7 @@ public final class NpcStringId
         }
     }
 
-    private static final int parseMessageParameters(final String name)
+    private static int parseMessageParameters(final String name)
     {
         int paramCount = 0;
         char c1, c2;
@@ -25738,13 +25738,13 @@ public final class NpcStringId
         return paramCount;
     }
 
-    public static final NpcStringId getNpcStringId(final int id)
+    public static NpcStringId getNpcStringId(final int id)
     {
         final NpcStringId nsi = getNpcStringIdInternal(id);
         return nsi == null ? new NpcStringId(id) : nsi;
     }
 
-    private static final NpcStringId getNpcStringIdInternal(final int id)
+    private static NpcStringId getNpcStringIdInternal(final int id)
     {
         if (id < 0 || id >= VALUES.length)
         {
@@ -25754,7 +25754,7 @@ public final class NpcStringId
         return VALUES[id];
     }
 
-    public static final NpcStringId getNpcStringId(final String name)
+    public static NpcStringId getNpcStringId(final String name)
     {
         try
         {
@@ -25766,7 +25766,7 @@ public final class NpcStringId
         }
     }
 
-    private static final Builder newBuilder(final String text)
+    private static Builder newBuilder(final String text)
     {
         final ArrayList<Builder> builders = new ArrayList<Builder>();
 

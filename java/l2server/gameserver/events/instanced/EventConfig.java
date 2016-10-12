@@ -214,7 +214,7 @@ public class EventConfig
 
     public int getMinPlayers()
     {
-        return isAllVsAll() ? 2 : _location.getTeamCount() * 1;
+        return isAllVsAll() ? 2 : _location.getTeamCount();
     }
 
     public EventInstance createInstance(int id)

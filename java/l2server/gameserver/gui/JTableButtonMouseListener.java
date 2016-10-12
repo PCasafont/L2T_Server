@@ -1,5 +1,5 @@
-/**
- *
+/*
+
  */
 
 package l2server.gameserver.gui;

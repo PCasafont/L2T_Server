@@ -35,7 +35,6 @@ public final class CreatureSay extends L2GameServerPacket
     private byte _level = 0;
 
     /**
-     * @param _characters
      */
     public CreatureSay(int objectId, int messageType, String charName, String text)
     {

@@ -282,7 +282,6 @@ public class Quest extends ManagedScript
      * @param time:       time in ms for when to fire the timer
      * @param npc:        npc associated with this timer (can be null)
      * @param player:     player associated with this timer (can be null)
-     * @param repeatable: indicates if the timer is repeatable or one-time.
      */
     public void startQuestTimer(String name, long time, L2Npc npc, L2PcInstance player, boolean repeating)
     {
@@ -1083,7 +1082,6 @@ public class Quest extends ManagedScript
      * <LI><U>"res" starts with "<html>" :</U> the message hold in "res" is shown in a dialog box</LI>
      * <LI><U>otherwise :</U> the message held in "res" is shown in chat box</LI>
      *
-     * @param qs  : QuestState
      * @param res : String pointing out the message to show at the player
      * @return boolean
      */
@@ -1120,7 +1118,7 @@ public class Quest extends ManagedScript
      *
      * @param player : Player who is entering the world
      */
-    public final static void playerEnter(L2PcInstance player)
+    public static void playerEnter(L2PcInstance player)
     {
 
         Connection con = null;
@@ -1642,7 +1640,6 @@ public class Quest extends ManagedScript
     /**
      * Add this quest to the list of quests that the passed npc will respond to for Spawn Events.<BR><BR>
      *
-     * @param talkId : ID of the NPC
      * @return int : ID of the NPC
      */
     public L2NpcTemplate addSpawnId(int npcId)
@@ -1653,7 +1650,6 @@ public class Quest extends ManagedScript
     /**
      * Add this quest to the list of quests that the passed npc will respond to for Skill-See Events.<BR><BR>
      *
-     * @param talkId : ID of the NPC
      * @return int : ID of the NPC
      */
     public L2NpcTemplate addSkillSeeId(int npcId)
@@ -1674,7 +1670,6 @@ public class Quest extends ManagedScript
     /**
      * Add this quest to the list of quests that the passed npc will respond to for Faction Call Events.<BR><BR>
      *
-     * @param talkId : ID of the NPC
      * @return int : ID of the NPC
      */
     public L2NpcTemplate addFactionCallId(int npcId)
@@ -1685,7 +1680,6 @@ public class Quest extends ManagedScript
     /**
      * Add this quest to the list of quests that the passed npc will respond to for Character See Events.<BR><BR>
      *
-     * @param talkId : ID of the NPC
      * @return int : ID of the NPC
      */
     public L2NpcTemplate addAggroRangeEnterId(int npcId)
@@ -1972,7 +1966,6 @@ public class Quest extends ManagedScript
     /**
      * Return HTML file contents
      *
-     * @param _player
      * @param fileName
      * @return
      */

@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author Forsaiken
+/*
+  @author Forsaiken
  */
 
 package l2server.gameserver.stats.skills;

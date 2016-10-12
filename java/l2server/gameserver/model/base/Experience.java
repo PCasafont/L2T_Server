@@ -108,7 +108,7 @@ public class Experience
         }
     }
 
-    public final static long getAbsoluteExp(int lvl)
+    public static long getAbsoluteExp(int lvl)
     {
         if (lvl < LEVEL.length)
         {
@@ -118,12 +118,12 @@ public class Experience
         return getAbsoluteExp(lvl - 1) * 3;
     }
 
-    public final static long getLevelExp(int lvl)
+    public static long getLevelExp(int lvl)
     {
         return getAbsoluteExp(lvl + 1) - getAbsoluteExp(lvl);
     }
 
-    public final static double getExpPercent(int lvl, long exp)
+    public static double getExpPercent(int lvl, long exp)
     {
         return (exp - getAbsoluteExp(lvl)) / (double) getLevelExp(lvl);
     }

@@ -35,7 +35,7 @@ import java.util.logging.Level;
  */
 public class EnchantEffectTable
 {
-    public static final EnchantEffectTable getInstance()
+    public static EnchantEffectTable getInstance()
     {
         return SingletonHolder._instance;
     }

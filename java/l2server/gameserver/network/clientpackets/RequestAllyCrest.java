@@ -30,7 +30,6 @@ public final class RequestAllyCrest extends L2GameClientPacket
     /**
      * packet type id 0x88 format: cd
      *
-     * @param rawPacket
      */
     @Override
     protected void readImpl()

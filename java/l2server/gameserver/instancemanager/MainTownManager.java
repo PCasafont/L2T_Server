@@ -300,7 +300,7 @@ public class MainTownManager
         return info;
     }
 
-    public static final MainTownManager getInstance()
+    public static MainTownManager getInstance()
     {
         return SingletonHolder._instance;
     }

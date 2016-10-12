@@ -55,7 +55,6 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket
     }
 
     /**
-     * @see l2server.util.network.BaseRecievePacket.ClientBasePacket#runImpl()
      */
     @Override
     protected void runImpl()

@@ -33,7 +33,6 @@ public class ExDuelAskStart extends L2GameServerPacket
     }
 
     /**
-     * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
      */
     @Override
     protected final void writeImpl()

@@ -27,11 +27,6 @@ public class GetOnVehicle extends L2GameServerPacket
     private Point3D _pos;
 
     /**
-     * @param activeChar
-     * @param boat
-     * @param x
-     * @param y
-     * @param z
      */
     public GetOnVehicle(int charObjId, int boatObjId, Point3D pos)
     {

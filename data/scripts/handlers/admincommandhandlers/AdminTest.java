@@ -384,12 +384,6 @@ public class AdminTest implements IAdminCommandHandler
                     L2DatabaseFactory.close(con);
                 }
             }
-            else if (secondaryCommand.equals("LoadBuffs"))
-            {
-                Config.loadBuffDurationMap();
-
-                activeChar.sendMessage("reloaded.");
-            }
             else if (secondaryCommand.equals("DeleteIstina"))
             {
                 L2Object target = activeChar.getTarget();

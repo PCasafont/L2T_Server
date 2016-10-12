@@ -131,7 +131,6 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 
     /**
      * @param npcObjId
-     * @param text
      * @param questId
      */
     public NpcQuestHtmlMessage(int npcObjId, int questId)

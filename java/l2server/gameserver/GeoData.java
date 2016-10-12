@@ -74,7 +74,6 @@ public class GeoData
      * @param y
      * @param zmin
      * @param zmax
-     * @param spawnid
      * @return
      */
     public short getSpawnHeight(int x, int y, int zmin, int zmax, L2Spawn spawn)
@@ -119,7 +118,6 @@ public class GeoData
     }
 
     /**
-     * @param cha
      * @param target
      * @return True if cha can see target (LOS) and send usful info to PC
      */

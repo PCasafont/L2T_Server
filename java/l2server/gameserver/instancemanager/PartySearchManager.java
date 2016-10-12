@@ -140,7 +140,7 @@ public class PartySearchManager
         return null;
     }
 
-    public static final PartySearchManager getInstance()
+    public static PartySearchManager getInstance()
     {
         return SingletonHolder._instance;
     }

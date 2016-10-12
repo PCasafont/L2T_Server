@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author Migi
+/*
+  @author Migi
  */
 
 package handlers.itemhandlers;
@@ -30,7 +30,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class MagicVisor implements IItemHandler
 {
     /**
-     * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
      */
     @Override
     public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse)

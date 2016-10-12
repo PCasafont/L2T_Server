@@ -42,7 +42,7 @@ import java.util.logging.Level;
 public class SiegeManager
 {
 
-    public static final SiegeManager getInstance()
+    public static SiegeManager getInstance()
     {
         return SingletonHolder._instance;
     }

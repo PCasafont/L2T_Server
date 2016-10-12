@@ -44,7 +44,6 @@ public class ChatAll implements IChatHandler
     /**
      * Handle chat type 'all'
      *
-     * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
      */
     @Override
     public void handleChat(int type, L2PcInstance activeChar, String params, String text)

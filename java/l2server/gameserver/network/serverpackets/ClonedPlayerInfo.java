@@ -69,7 +69,6 @@ public class ClonedPlayerInfo extends L2GameServerPacket
     private int _walkSpd;
 
     /**
-     * @param _characters
      */
     public ClonedPlayerInfo(L2Npc npc, L2PcInstance cha)
     {

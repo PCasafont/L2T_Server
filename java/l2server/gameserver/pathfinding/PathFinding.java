@@ -162,7 +162,6 @@ public abstract class PathFinding
     /**
      * Convert node position to pathnode block position
      *
-     * @param geo_pos
      * @return pathnode block position (0...255)
      */
     public short getNodeBlock(int node_pos)

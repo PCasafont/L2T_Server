@@ -46,7 +46,6 @@ public class L2TenkaiEventZone extends L2ZoneType
     }
 
     /**
-     * @see l2server.gameserver.model.zone.L2ZoneType#onDieInside(l2server.L2Character.gameserver.model.actor.L2Character)
      */
     @Override
     public void onDieInside(L2Character character, L2Character killer)
@@ -54,7 +53,6 @@ public class L2TenkaiEventZone extends L2ZoneType
     }
 
     /**
-     * @see l2server.gameserver.model.zone.L2ZoneType#onReviveInside(l2server.L2Character.gameserver.model.actor.L2Character)
      */
     @Override
     public void onReviveInside(L2Character character)

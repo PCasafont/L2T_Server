@@ -28,7 +28,6 @@ public class ObservationReturn extends L2GameServerPacket
     private L2PcInstance _activeChar;
 
     /**
-     * @param _characters
      */
     public ObservationReturn(L2PcInstance observer)
     {

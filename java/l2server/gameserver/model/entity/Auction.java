@@ -542,8 +542,8 @@ public class Auction
             }
             if (_highestBidderId == 0 && _sellerId > 0)
             {
-                /** If seller haven't sell ClanHall, auction removed,
-                 *  THIS MUST BE CONFIRMED */
+                /* If seller haven't sell ClanHall, auction removed,
+                   THIS MUST BE CONFIRMED */
                 int aucId = ClanHallAuctionManager.getInstance().getAuctionIndex(_id);
                 ClanHallAuctionManager.getInstance().getAuctions().remove(aucId);
                 return;
@@ -565,7 +565,7 @@ public class Auction
         }
         else
         {
-            /** Task waiting ClanHallManager is loaded every 3s */
+            /* Task waiting ClanHallManager is loaded every 3s */
             ThreadPoolManager.getInstance().scheduleGeneral(new AutoEndTask(), 3000);
         }
     }

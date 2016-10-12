@@ -84,7 +84,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @see l2server.gameserver.GeoData#getSpawnHeight(int, int, int, int, int)
      */
     @Override
     public short getSpawnHeight(int x, int y, int zmin, int zmax, L2Spawn spawn)
@@ -905,7 +904,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param pos
      * @return Block Index: 0-255
      */
     private static int getBlock(int geo_pos)
@@ -914,7 +912,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param pos
      * @return Cell Index: 0-7
      */
     private static int getCell(int geo_pos)
@@ -960,8 +957,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
      * @param z
      * @return Nearest Z
      */
@@ -1049,8 +1044,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
      * @param z
      * @return One layer higher Z than parameter Z
      */
@@ -1139,8 +1132,6 @@ public class GeoEngine extends GeoData
     }
 
     /**
-     * @param x
-     * @param y
      * @param zmin
      * @param zmax
      * @return Z betwen zmin and zmax

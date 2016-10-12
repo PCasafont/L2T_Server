@@ -83,9 +83,6 @@ public class FishTable
     }
 
     /**
-     * @param Fish - lvl
-     * @param Fish - type
-     * @param Fish - group
      * @return List of Fish that can be fished
      */
     public List<FishData> getfish(int lvl, int type, int group)

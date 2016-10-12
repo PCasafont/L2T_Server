@@ -576,6 +576,7 @@ public class Disablers implements ISkillHandler
                         skill.getEffects(activeChar, target, new Env(shld, ssMul));
                     }
                 }// end case
+                default:
             }//end switch
 
             //Possibility of a lethal strike
@@ -598,7 +599,6 @@ public class Disablers implements ISkillHandler
     /**
      * @param target
      * @param type
-     * @param power
      * @param maxRemoved
      * @return
      */
@@ -610,7 +610,6 @@ public class Disablers implements ISkillHandler
     /**
      * @param target
      * @param type
-     * @param power
      * @param skillId
      * @param maxRemoved
      * @return

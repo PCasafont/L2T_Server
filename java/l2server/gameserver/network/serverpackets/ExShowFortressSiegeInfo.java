@@ -32,7 +32,6 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
     private int _csize2;
 
     /**
-     * @param fortId
      */
     public ExShowFortressSiegeInfo(Fort fort)
     {
@@ -47,8 +46,8 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
         _csize2 = _fort.getCommanderSpawns().size();
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

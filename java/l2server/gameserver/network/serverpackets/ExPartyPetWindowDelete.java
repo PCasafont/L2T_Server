@@ -29,8 +29,8 @@ public class ExPartyPetWindowDelete extends L2GameServerPacket
         _summon = summon;
     }
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+    /*
+      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
     /**

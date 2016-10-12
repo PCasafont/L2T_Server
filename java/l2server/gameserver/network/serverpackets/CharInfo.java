@@ -75,7 +75,6 @@ public class CharInfo extends L2GameServerPacket
     private int _vehicleId, _airShipHelm;
 
     /**
-     * @param _characters
      */
     public CharInfo(L2PcInstance cha)
     {
@@ -202,7 +201,7 @@ public class CharInfo extends L2GameServerPacket
 
                 writeD(0);
                 writeD(0);
-                writeD(0000); // hmm karma ??
+                writeD(0); // hmm karma ??
 
                 writeD(_activeChar.getClanId()); //clan id
                 writeD(_activeChar.getClanCrestId()); //crest id

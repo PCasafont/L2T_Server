@@ -62,7 +62,7 @@ public class ArtificialPlayersManager implements Reloadable
         ReloadableManager.getInstance().register("aplayers", this);
     }
 
-    public static final ArtificialPlayersManager getInstance()
+    public static ArtificialPlayersManager getInstance()
     {
         return SingletonHolder._instance;
     }

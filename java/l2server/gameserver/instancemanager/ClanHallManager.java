@@ -60,7 +60,7 @@ public class ClanHallManager
         load();
     }
 
-    /** Reload All Clan Hall */
+    /* Reload All Clan Hall */
     /*	public final void reload() Cant reload atm - would loose zone info
         {
 			_clanHall.clear();

@@ -32,7 +32,6 @@ public enum L2ArmorType implements L2ItemType
     /**
      * Constructor of the L2ArmorType.
      *
-     * @param id   : int designating the ID of the ArmorType
      * @param name : String designating the name of the ArmorType
      */
     L2ArmorType(String name)

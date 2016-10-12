@@ -13,8 +13,8 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * @author FBIagent
+/*
+  @author FBIagent
  */
 
 package handlers.itemhandlers;
@@ -32,7 +32,6 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 public class MobSummonItems implements IItemHandler
 {
     /**
-     * @see net.sf.l2j.gameserver.handler.IItemHandler#useItem(net.sf.l2j.gameserver.model.actor.instance.L2Playable, net.sf.l2j.gameserver.model.L2ItemInstance)
      */
     @Override
     public void useItem(L2Playable playable, L2ItemInstance item, boolean forcedUse)

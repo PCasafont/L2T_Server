@@ -351,7 +351,7 @@ public class LotterySystem
         load();
     }
 
-    public static final LotterySystem getInstance()
+    public static LotterySystem getInstance()
     {
         return SingletonHolder._instance;
     }

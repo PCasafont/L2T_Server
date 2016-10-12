@@ -107,7 +107,7 @@ public final class Util
      * Return degree value of object 2 to the horizontal line with object 1
      * being the origin
      */
-    public final static double calculateAngleFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
+    public static double calculateAngleFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
     {
         double angleTarget = Math.toDegrees(Math.atan2(obj2Y - obj1Y, obj2X - obj1X));
         if (angleTarget < 0)
@@ -117,13 +117,13 @@ public final class Util
         return angleTarget;
     }
 
-    public final static double convertHeadingToDegree(int clientHeading)
+    public static double convertHeadingToDegree(int clientHeading)
     {
         double degree = clientHeading / 182.044444444;
         return degree;
     }
 
-    public final static int convertDegreeToClientHeading(double degree)
+    public static int convertDegreeToClientHeading(double degree)
     {
         if (degree < 0)
         {
@@ -132,12 +132,12 @@ public final class Util
         return (int) (degree * 182.044444444);
     }
 
-    public final static int calculateHeadingFrom(L2Object obj1, L2Object obj2)
+    public static int calculateHeadingFrom(L2Object obj1, L2Object obj2)
     {
         return calculateHeadingFrom(obj1.getX(), obj1.getY(), obj2.getX(), obj2.getY());
     }
 
-    public final static int calculateHeadingFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
+    public static int calculateHeadingFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
     {
         double angleTarget = Math.toDegrees(Math.atan2(obj2Y - obj1Y, obj2X - obj1X));
         if (angleTarget < 0)
@@ -147,7 +147,7 @@ public final class Util
         return (int) (angleTarget * 182.044444444);
     }
 
-    public final static int calculateHeadingFrom(double dx, double dy)
+    public static int calculateHeadingFrom(double dx, double dy)
     {
         double angleTarget = Math.toDegrees(Math.atan2(dy, dx));
         if (angleTarget < 0)
@@ -291,7 +291,7 @@ public final class Util
         }
     }
 
-    public static final boolean checkIfInRange(final int range, final int x1, final int y1, final int z1, final int x2, final int y2, final int z2, final boolean includeZAxis)
+    public static boolean checkIfInRange(final int range, final int x1, final int y1, final int z1, final int x2, final int y2, final int z2, final boolean includeZAxis)
     {
         final double dx = (double) x1 - x2;
         final double dy = (double) y1 - y2;
@@ -316,7 +316,6 @@ public final class Util
      * Faster calculation than checkIfInRange if distance is short and collisionRadius isn't needed.
      * Not for long distance checks (potential teleports, far away castles etc).
      *
-     * @param range        - the maximum range between the two objects
      * @param includeZAxis - if true, check also Z axis (3-dimensional check), otherwise only 2D
      * @return {@code true} if objects are within specified range between each other, {@code false} otherwise
      */
@@ -666,7 +665,7 @@ public final class Util
         }
     }
 
-    public final static String getCurrentDate()
+    public static String getCurrentDate()
     {
         return DATE_FORMATER.format(System.currentTimeMillis());
     }
@@ -711,7 +710,7 @@ public final class Util
         }
     }
 
-    public static final L2NpcInstance getNpcCloseTo(final int npcId, final L2PcInstance activeChar)
+    public static L2NpcInstance getNpcCloseTo(final int npcId, final L2PcInstance activeChar)
     {
         Collection<L2Character> knownCharacters = activeChar.getKnownList().getKnownCharactersInRadius(900);
         for (L2Character character : knownCharacters)

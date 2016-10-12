@@ -177,7 +177,7 @@ public class PailakaInjuredDragon extends Quest
             {8604, 1, 40}, {8603, 1, 70}
     };
 
-    private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
+    private static void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
     {
         final int chance = Rnd.get(100);
         for (int[] element : drop)
@@ -190,7 +190,7 @@ public class PailakaInjuredDragon extends Quest
         }
     }
 
-    private static final void dropItem(L2Npc mob, L2PcInstance player)
+    private static void dropItem(L2Npc mob, L2PcInstance player)
     {
         // To make random drops, we shuffle the droplist every time its used
         Collections.shuffle(DROPLIST);
@@ -212,7 +212,7 @@ public class PailakaInjuredDragon extends Quest
         return;
     }
 
-    private static final void teleportPlayer(L2Playable player, int[] coords, int instanceId)
+    private static void teleportPlayer(L2Playable player, int[] coords, int instanceId)
     {
         player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
         player.setInstanceId(instanceId);
@@ -910,7 +910,7 @@ public class PailakaInjuredDragon extends Quest
     @Override
     public String onExitZone(L2Character character, L2ZoneType zone)
     {
-        /**
+        /*
          if (character instanceof L2PcInstance
          && !character.isDead()
          && !character.isTeleporting()

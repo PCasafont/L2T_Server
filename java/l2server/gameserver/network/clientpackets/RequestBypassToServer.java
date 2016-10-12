@@ -467,7 +467,6 @@ public final class RequestBypassToServer extends L2GameClientPacket
     }
 
     /**
-     * @param client
      */
     private static void comeHere(L2PcInstance activeChar)
     {

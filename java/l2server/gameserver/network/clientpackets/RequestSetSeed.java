@@ -54,8 +54,6 @@ public class RequestSetSeed extends L2GameClientPacket
     private Seed _items[] = null;
 
     /**
-     * @param buf
-     * @param client
      */
     @Override
     protected void readImpl()

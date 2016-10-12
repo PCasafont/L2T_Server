@@ -351,7 +351,6 @@ public final class HandysBlockCheckerManager
      * Called when played logs out while participating
      * in Block Checker Event
      *
-     * @param L2PcInstance player
      */
     public void onDisconnect(L2PcInstance player)
     {

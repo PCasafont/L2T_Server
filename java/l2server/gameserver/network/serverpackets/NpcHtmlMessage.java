@@ -136,7 +136,6 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 
     /**
      * @param npcObjId
-     * @param text
      * @param itemId
      */
     public NpcHtmlMessage(int npcObjId, int itemId)
@@ -146,7 +145,6 @@ public final class NpcHtmlMessage extends L2GameServerPacket
     }
 
     /**
-     * @param _characters
      */
     public NpcHtmlMessage(int npcObjId, String text)
     {

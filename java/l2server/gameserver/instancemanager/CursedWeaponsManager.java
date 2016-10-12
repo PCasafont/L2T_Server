@@ -46,7 +46,7 @@ import java.util.logging.Level;
 public class CursedWeaponsManager
 {
 
-    public static final CursedWeaponsManager getInstance()
+    public static CursedWeaponsManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -501,7 +501,7 @@ public class CursedWeaponsManager
         }
         catch (Exception e)
         {
-            /***/
+            /**/
         }
     }
 

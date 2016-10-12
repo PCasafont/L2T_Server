@@ -52,7 +52,7 @@ public class ZoneManager
             new HashMap<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>>();
     private int _lastDynamicId = 300000;
 
-    public static final ZoneManager getInstance()
+    public static ZoneManager getInstance()
     {
         return SingletonHolder._instance;
     }

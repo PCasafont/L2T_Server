@@ -135,7 +135,7 @@ public class FourSepulchersManager
     {
     }
 
-    public static final FourSepulchersManager getInstance()
+    public static FourSepulchersManager getInstance()
     {
         return SingletonHolder._instance;
     }
@@ -238,9 +238,9 @@ public class FourSepulchersManager
         }
         tmp.set(Calendar.MINUTE, _newCycleMin);
         _coolDownTimeEnd = tmp.getTimeInMillis();
-        _entryTimeEnd = _coolDownTimeEnd + Config.FS_TIME_ENTRY * 60000l;
-        _warmUpTimeEnd = _entryTimeEnd + Config.FS_TIME_WARMUP * 60000l;
-        _attackTimeEnd = _warmUpTimeEnd + Config.FS_TIME_ATTACK * 60000l;
+        _entryTimeEnd = _coolDownTimeEnd + Config.FS_TIME_ENTRY * 60000L;
+        _warmUpTimeEnd = _entryTimeEnd + Config.FS_TIME_WARMUP * 60000L;
+        _attackTimeEnd = _warmUpTimeEnd + Config.FS_TIME_ATTACK * 60000L;
     }
 
     public void clean()
@@ -1700,7 +1700,7 @@ public class FourSepulchersManager
             }
             else
             {
-                interval = Config.FS_TIME_ENTRY * 60000l; // else use stupid
+                interval = Config.FS_TIME_ENTRY * 60000L; // else use stupid
             }
             // method
 
@@ -1737,7 +1737,7 @@ public class FourSepulchersManager
             }
             else
             {
-                interval = Config.FS_TIME_WARMUP * 60000l;
+                interval = Config.FS_TIME_WARMUP * 60000L;
             }
             _changeAttackTimeTask = ThreadPoolManager.getInstance().scheduleGeneral(new ChangeAttackTime(), interval);
 
@@ -1805,7 +1805,7 @@ public class FourSepulchersManager
             }
             else
             {
-                interval = Config.FS_TIME_ATTACK * 60000l;
+                interval = Config.FS_TIME_ATTACK * 60000L;
             }
             _changeCoolDownTimeTask =
                     ThreadPoolManager.getInstance().scheduleGeneral(new ChangeCoolDownTime(), interval);

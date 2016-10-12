@@ -36,7 +36,7 @@ import java.util.Map;
  */
 public class EnsoulDataTable
 {
-    public static final EnsoulDataTable getInstance()
+    public static EnsoulDataTable getInstance()
     {
         return SingletonHolder._instance;
     }

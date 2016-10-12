@@ -455,7 +455,7 @@ public class RankingKillInfo
         return tb.toString();
     }
 
-    public static final RankingKillInfo getInstance()
+    public static RankingKillInfo getInstance()
     {
         return SingletonHolder._instance;
     }

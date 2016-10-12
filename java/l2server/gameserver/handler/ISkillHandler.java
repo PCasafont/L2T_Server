@@ -36,8 +36,6 @@ public interface ISkillHandler
      * this is the worker method that is called when using an item.
      *
      * @param activeChar
-     * @param item
-     * @param target
      * @return count reduction after usage
      */
     public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets);

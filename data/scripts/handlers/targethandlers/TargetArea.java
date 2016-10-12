@@ -41,7 +41,6 @@ import java.util.List;
 public class TargetArea implements ISkillTargetTypeHandler
 {
     /**
-     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetList(org.inc.gameserver.model.L2Skill, org.inc.gameserver.model.actor.L2Character, boolean, org.inc.gameserver.model.actor.L2Character)
      */
     @SuppressWarnings("null")
     @Override
@@ -240,7 +239,6 @@ public class TargetArea implements ISkillTargetTypeHandler
     }
 
     /**
-     * @see org.inc.gameserver.handler.ISkillTargetTypeHandler#getTargetType()
      */
     @Override
     public Enum<L2SkillTargetType> getTargetType()

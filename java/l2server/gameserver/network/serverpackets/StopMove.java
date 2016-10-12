@@ -40,7 +40,6 @@ public final class StopMove extends L2GameServerPacket
     }
 
     /**
-     * @param _characters
      */
     public StopMove(int objectId, int x, int y, int z, int heading)
     {

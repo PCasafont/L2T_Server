@@ -30,7 +30,6 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
     }
 
     /**
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
      */
     @Override
     protected final void writeImpl()

@@ -2239,7 +2239,7 @@ public class GMEventManager
         loadPredefinedEvents();
     }
 
-    public static final GMEventManager getInstance()
+    public static GMEventManager getInstance()
     {
         return SingletonHolder._instance;
     }

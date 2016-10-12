@@ -71,7 +71,6 @@ public class Shutdown extends Thread
     /**
      * This functions starts a shutdown countdown
      *
-     * @param activeChar GM who issued the shutdown command
      * @param seconds    seconds until shutdown
      * @param restart    true if the server will restart after shutdown
      */

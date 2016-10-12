@@ -1141,7 +1141,6 @@ public class Siege implements Siegable
     /**
      * Remove clan from siege<BR><BR>
      *
-     * @param _player The L2PcInstance of player/clan being removed
      */
     public void removeSiegeClan(L2Clan clan)
     {
@@ -1356,7 +1355,6 @@ public class Siege implements Siegable
     /**
      * Return the correct siege date as Calendar.<BR><BR>
      *
-     * @param siegeDate The Calendar siege date and time
      */
     public void correctSiegeDateTime()
     {

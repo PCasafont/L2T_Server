@@ -3807,9 +3807,9 @@ public final class SystemMessageId
      */
     public static final SystemMessageId CANNOT_PARTICIPATE_IN_AN_AUCTION;
 
-    /**
-     * ID: 681<br>
-     * Message: The clan does not own a clan hall.
+    /*
+      ID: 681<br>
+      Message: The clan does not own a clan hall.
      */
     //CLAN_HAS_NO_CLAN_HALL(681) // Doesn't exist in Hellbound anymore
 
@@ -21562,7 +21562,7 @@ public final class SystemMessageId
         buildFastLookupTable();
     }
 
-    private final static void buildFastLookupTable()
+    private static void buildFastLookupTable()
     {
         final Field[] fields = SystemMessageId.class.getDeclaredFields();
         final ArrayList<SystemMessageId> smIds = new ArrayList<SystemMessageId>(fields.length);
@@ -21598,7 +21598,7 @@ public final class SystemMessageId
         }
     }
 
-    private static final int parseMessageParameters(final String name)
+    private static int parseMessageParameters(final String name)
     {
         int paramCount = 0;
         char c1, c2;
@@ -21622,13 +21622,13 @@ public final class SystemMessageId
         return paramCount;
     }
 
-    public static final SystemMessageId getSystemMessageId(final int id)
+    public static SystemMessageId getSystemMessageId(final int id)
     {
         final SystemMessageId smi = getSystemMessageIdInternal(id);
         return smi == null ? new SystemMessageId(id) : smi;
     }
 
-    private static final SystemMessageId getSystemMessageIdInternal(final int id)
+    private static SystemMessageId getSystemMessageIdInternal(final int id)
     {
         if (id < 0 || id >= VALUES.length)
         {
@@ -21638,7 +21638,7 @@ public final class SystemMessageId
         return VALUES[id];
     }
 
-    public static final SystemMessageId getSystemMessageId(final String name)
+    public static SystemMessageId getSystemMessageId(final String name)
     {
         try
         {
@@ -21650,7 +21650,7 @@ public final class SystemMessageId
         }
     }
 
-    private static final Builder newBuilder(final String text)
+    private static Builder newBuilder(final String text)
     {
         final ArrayList<Builder> builders = new ArrayList<Builder>();
 

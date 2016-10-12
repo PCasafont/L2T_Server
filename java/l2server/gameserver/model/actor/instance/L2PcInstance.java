@@ -1633,8 +1633,8 @@ public class L2PcInstance extends L2Playable
 
     /**
      * Manage Logout Task: <li>Remove player from world <BR>
-     * {@link L2PcInstance#deleteMe(boolean)}</li> <li>Save player data into DB <BR>
-     * {@link L2GameClient#saveCharToDisk(L2PcInstance, boolean)}</li> <BR>
+     * </li> <li>Save player data into DB <BR>
+     * </li> <BR>
      * <BR>
      */
     public void logout()
@@ -1644,8 +1644,8 @@ public class L2PcInstance extends L2Playable
 
     /**
      * Manage Logout Task: <li>Remove player from world <BR>
-     * {@link L2PcInstance#deleteMe(boolean)}</li> <li>Save player data into DB <BR>
-     * {@link L2GameClient#saveCharToDisk(L2PcInstance, boolean)}</li> <BR>
+     * </li> <li>Save player data into DB <BR>
+     * </li> <BR>
      * <BR>
      *
      * @param closeClient
@@ -1719,7 +1719,6 @@ public class L2PcInstance extends L2Playable
     }
 
     /**
-     * @param recipeID The Identifier of the L2RecipeList to check in the player's recipe books
      * @return <b>TRUE</b> if player has the recipe on Common or Dwarven Recipe book else returns <b>FALSE</b>
      */
     public boolean hasRecipeList(int recipeId)
@@ -1741,7 +1740,6 @@ public class L2PcInstance extends L2Playable
     /**
      * Tries to remove a L2RecipList from the table _DwarvenRecipeBook or from table _CommonRecipeBook, those table contain all L2RecipeList of the L2PcInstance <BR><BR>
      *
-     * @param recipeID The Identifier of the L2RecipeList to remove from the _recipebook
      */
     public void unregisterRecipeList(int recipeId)
     {
@@ -1921,7 +1919,6 @@ public class L2PcInstance extends L2Playable
     /**
      * Return a table containing all QuestState to modify after a L2Attackable killing.<BR><BR>
      *
-     * @param NpcId The Identifier of the L2Attackable attacked
      */
     public QuestState[] getQuestsForAttacks(L2Npc npc)
     {
@@ -1953,7 +1950,6 @@ public class L2PcInstance extends L2Playable
     /**
      * Return a table containing all QuestState to modify after a L2Attackable killing.<BR><BR>
      *
-     * @param NpcId The Identifier of the L2Attackable killed
      */
     public QuestState[] getQuestsForKills(L2Npc npc)
     {
@@ -10262,23 +10258,23 @@ public class L2PcInstance extends L2Playable
                     disableSkill(skill, remainingTime);
                     addTimeStamp(skill, reuseDelay, systime);
                 }
-                /**
-                 *  Restore Type 1
-                 *  The remaning skills lost effect upon logout but
-                 *  were still under a high reuse delay.
+                /*
+                   Restore Type 1
+                   The remaning skills lost effect upon logout but
+                   were still under a high reuse delay.
                  */
                 if (restoreType > 0)
                 {
                     continue;
                 }
 
-                /**
-                 *  Restore Type 0
-                 *  These skill were still in effect on the character
-                 *  upon logout. Some of which were self casted and
-                 *  might still have had a long reuse delay which also
-                 *  is restored.
-                 *
+                /*
+                   Restore Type 0
+                   These skill were still in effect on the character
+                   upon logout. Some of which were self casted and
+                   might still have had a long reuse delay which also
+                   is restored.
+
                  */
                 if (skill.hasEffects())
                 {
@@ -21765,7 +21761,6 @@ public class L2PcInstance extends L2Playable
     }
 
     /**
-     * @param _player
      * @param itemId
      */
     public void deleteAllItemsById(int itemId)

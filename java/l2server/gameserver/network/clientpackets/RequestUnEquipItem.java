@@ -40,7 +40,6 @@ public class RequestUnEquipItem extends L2GameClientPacket
      * packet type id 0x11
      * format:		cd
      *
-     * @param decrypt
      */
     @Override
     protected void readImpl()

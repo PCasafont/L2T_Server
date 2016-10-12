@@ -460,7 +460,6 @@ public class Duel
     /**
      * Restore player conditions
      *
-     * @param was the duel canceled?
      */
     public void restorePlayerConditions(boolean abnormalDuelEnd)
     {
@@ -742,7 +741,6 @@ public class Duel
     /**
      * The duel has reached a state in which it can no longer continue
      *
-     * @param duel result
      */
     public void endDuel(DuelResultEnum result)
     {
@@ -977,7 +975,6 @@ public class Duel
     /**
      * This function is called whenever a player was defeated in a duel
      *
-     * @param dieing player
      */
     public void onPlayerDefeat(L2PcInstance player)
     {
@@ -1031,7 +1028,6 @@ public class Duel
     /**
      * This function is called whenever a player leaves a party
      *
-     * @param leaving player
      */
     public void onRemoveFromParty(L2PcInstance player)
     {

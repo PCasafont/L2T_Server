@@ -148,7 +148,7 @@ public class PlayerAssistsManager
         return new ArrayList<L2PcInstance>(assistants);
     }
 
-    public static final PlayerAssistsManager getInstance()
+    public static PlayerAssistsManager getInstance()
     {
         return SingletonHolder._instance;
     }

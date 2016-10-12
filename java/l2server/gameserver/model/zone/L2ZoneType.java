@@ -91,7 +91,6 @@ public abstract class L2ZoneType
     /**
      * Setup new parameters for this zone
      *
-     * @param Type
      * @param value
      */
     public void setParameter(String name, String value)
@@ -281,7 +280,6 @@ public abstract class L2ZoneType
     /**
      * Returns this zones zone form
      *
-     * @param zone
      * @return
      */
     public L2ZoneForm getZone()

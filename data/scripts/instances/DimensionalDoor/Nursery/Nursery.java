@@ -261,7 +261,7 @@ public class Nursery extends L2AttackableAIScript
                 {
                     world.status = 3;
 
-                    int shinyCoins = 1 * DimensionalDoor.getDimensionalDoorRewardRate();
+                    int shinyCoins = DimensionalDoor.getDimensionalDoorRewardRate();
                     if (world.points >= 1 && world.points <= 800)
                     {
                         shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(),

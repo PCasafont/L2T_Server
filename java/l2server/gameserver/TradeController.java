@@ -206,7 +206,11 @@ public class TradeController implements Reloadable
                 int currentCount = rset.getInt("count");
                 long savedTime = rset.getLong("time");
 
-                L2TradeItem item = _lists.get(shopId).getItemById(itemId);
+                L2TradeList tradeList = _lists.get(shopId);
+                if (tradeList == null)
+                    continue;
+
+                L2TradeItem item = tradeList.getItemById(itemId);
 
                 if (currentCount > -1)
                 {

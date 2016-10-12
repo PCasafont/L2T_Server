@@ -522,7 +522,6 @@ public class TradeList
     /**
      * Add item to TradeList
      *
-     * @param objectId : int
      * @param count    : long
      * @param price    : long
      * @return

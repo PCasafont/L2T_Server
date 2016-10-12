@@ -2661,7 +2661,7 @@ public abstract class L2Character extends L2Object
      */
     public void addTimeStamp(L2Skill skill, long reuse)
     {
-        /***/
+        /**/
     }
 
     public void startFusionSkill(L2Character target, L2Skill skill)
@@ -9515,12 +9515,12 @@ public abstract class L2Character extends L2Object
 
                         if (!isPressingCtrl)
                         {
-                            /** On retail, it's not possible to debuff a clan member, except in Arena's. */
+                            /* On retail, it's not possible to debuff a clan member, except in Arena's. */
                             if (activeChar.isInSameClan(target))
                             {
                                 return false;
                             }
-                            /** On retail, it's not possible to debuff an aly member, except in Arena's. */
+                            /* On retail, it's not possible to debuff an aly member, except in Arena's. */
                             else if (activeChar.isInSameAlly(target))
                             {
                                 return false;
@@ -9537,7 +9537,7 @@ public abstract class L2Character extends L2Object
                             return false;
                         }
 
-                        /** On retail, it is impossible to debuff a "peaceful" player. */
+                        /* On retail, it is impossible to debuff a "peaceful" player. */
                         if (!target.isAvailableForCombat())
                         {
                             return false;
@@ -9550,7 +9550,7 @@ public abstract class L2Character extends L2Object
                     }
                     case ATTACK:
                     {
-                        /** On retail, non-massive and massives attacks has different behaviors.*/
+                        /* On retail, non-massive and massives attacks has different behaviors.*/
                         if (isMassiveCheck)
                         {
                             // Checks for massives attacks...
@@ -9656,17 +9656,17 @@ public abstract class L2Character extends L2Object
                                 return true;
                             }
 
-                            /**
-                             * On retail, there's no way to affect a clan member with a massive attack.
-                             * Unless you are in an arena.
+                            /*
+                              On retail, there's no way to affect a clan member with a massive attack.
+                              Unless you are in an arena.
                              */
                             if (activeChar.isInSameClan(target))
                             {
                                 return false;
                             }
-                            /**
-                             * On retail, there's no way to affect an ally member with a massive attack.
-                             * Unless you are in an arena.
+                            /*
+                              On retail, there's no way to affect an ally member with a massive attack.
+                              Unless you are in an arena.
                              */
                             else if (activeChar.isInSameAlly(target))
                             {
@@ -9683,9 +9683,9 @@ public abstract class L2Character extends L2Object
                                 return true;
                             }
 
-                            /**
-                             * On retail, there's no way to affect a "peaceful" player with massive attacks.
-                             * Even if CTRL is pressed...
+                            /*
+                              On retail, there's no way to affect a "peaceful" player with massive attacks.
+                              Even if CTRL is pressed...
                              */
                             if (!target.isAvailableForCombat())
                             {
@@ -9695,7 +9695,7 @@ public abstract class L2Character extends L2Object
                         else
                         {
                             // Checks for non-massives attacks...
-                            /** It is impossible to affect a player that isn't participating in the same duel.**/
+                            /* It is impossible to affect a player that isn't participating in the same duel.**/
                             if (activeChar.isInDuel())
                             {
                                 // On retail, you can attack a target that's not in your duel with single target skills attacks unless you press CTRL.
@@ -9802,7 +9802,7 @@ public abstract class L2Character extends L2Object
                         }
                         if (cDoor != null)
                         {
-                            /** Maybe we need checks to see if the character is attacker? **/
+                            /* Maybe we need checks to see if the character is attacker? **/
                             if (cDoor.getSiege().getIsInProgress())
                             {
                                 return true;
@@ -9814,7 +9814,7 @@ public abstract class L2Character extends L2Object
                         }
                         else if (fDoor != null)
                         {
-                            /** Maybe we need checks to see if the character is attacker? **/
+                            /* Maybe we need checks to see if the character is attacker? **/
 							/*if (fDoor.getSiege().getIsInProgress() && door.getIsCommanderDoor()) FIXME
 								return true;
 							else

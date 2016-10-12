@@ -243,9 +243,9 @@ public class FaeronSiege extends Quest
             }
             else if (event.equalsIgnoreCase("stone_ai"))
             {
-                /**
-                 * Protection Stone AI
-                 * This NPC will cast non-stop one buff to all the players that are inside his activity radius.
+                /*
+                  Protection Stone AI
+                  This NPC will cast non-stop one buff to all the players that are inside his activity radius.
                  */
                 Collection<L2Character> chars = world._protectionStone.getKnownList()
                         .getKnownCharactersInRadius(_protectionSkill.getSkillRadius());
@@ -279,9 +279,9 @@ public class FaeronSiege extends Quest
             }
             else if (event.equalsIgnoreCase("gravity_core_ai"))
             {
-                /**
-                 * Gravity Core Shield Support AI
-                 * This NPC will cast non-stop a UD skill to all players inside
+                /*
+                  Gravity Core Shield Support AI
+                  This NPC will cast non-stop a UD skill to all players inside
                  */
                 if (world._summonGravityCore != null && !world._summonGravityCore.isDecayed())
                 {
@@ -306,9 +306,9 @@ public class FaeronSiege extends Quest
             }
             else if (event.equalsIgnoreCase("guard_army_ai"))
             {
-                /**
-                 * Guard Army
-                 * We will just start the attack to the boss
+                /*
+                  Guard Army
+                  We will just start the attack to the boss
                  */
                 for (L2Npc guard : world._guardArmy)
                 {
@@ -334,12 +334,12 @@ public class FaeronSiege extends Quest
             }
             else if (event.equalsIgnoreCase("ai_magic_sup"))
             {
-                /**
-                 * Magic Support AI
-                 * This NPC will give some OP buffs to the players and depends on the amount of players without full HP will:
-                 * 		- Cast a Heal skills to a single target
-                 * 		- Summon a protective shield that will full-protect all the players inside
-                 * 		- Res dead players that are inside the resurrection cast skill range
+                /*
+                  Magic Support AI
+                  This NPC will give some OP buffs to the players and depends on the amount of players without full HP will:
+                  		- Cast a Heal skills to a single target
+                  		- Summon a protective shield that will full-protect all the players inside
+                  		- Res dead players that are inside the resurrection cast skill range
                  */
                 final Collection<L2PcInstance> chars =
                         world._warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);

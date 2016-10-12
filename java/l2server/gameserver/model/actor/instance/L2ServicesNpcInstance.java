@@ -965,7 +965,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         }
     }
 
-    private static final void showHtmlMenu(L2PcInstance player, int objectId, int level)
+    private static void showHtmlMenu(L2PcInstance player, int objectId, int level)
     {
         NpcHtmlMessage html = new NpcHtmlMessage(objectId);
         if (player.getRace() == Race.Ertheia && level == 1)
@@ -1036,7 +1036,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         player.sendPacket(html);
     }
 
-    private static final boolean checkAndChangeClass(L2PcInstance player, int val)
+    private static boolean checkAndChangeClass(L2PcInstance player, int val)
     {
         final PlayerClass currentClassId = player.getCurrentClass();
         if (getMinLevel(currentClassId.level()) > player.getLevel() && !Config.ALLOW_ENTIRE_TREE)
@@ -1070,7 +1070,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
      *
      * @param level - current skillId level (0 - start, 1 - first, etc)
      */
-    private static final int getMinLevel(int level)
+    private static int getMinLevel(int level)
     {
         switch (level)
         {
@@ -1094,7 +1094,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
      * @param val  new class index
      * @return
      */
-    private static final boolean validateClass(PlayerClass oldC, int val)
+    private static boolean validateClass(PlayerClass oldC, int val)
     {
         try
         {
@@ -1114,7 +1114,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
      * @param newC new ClassId
      * @return true if class change is possible
      */
-    private static final boolean validateClass(PlayerClass oldC, PlayerClass newC)
+    private static boolean validateClass(PlayerClass oldC, PlayerClass newC)
     {
         if (newC == null)
         {
@@ -1159,29 +1159,29 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
             baseClassId = currentBaseId;
         }
 
-        /**
-         * If the race of your main class is Elf or Dark Elf,
-         * you may not select each class as a subclass to the other class.
-         *
-         * If the race of your main class is Kamael, you may not subclass any other race
-         * If the race of your main class is NOT Kamael, you may not subclass any Kamael class
-         *
-         * You may not select Overlord and Warsmith class as a subclass.
-         *
-         * You may not select a similar class as the subclass.
-         * The occupations classified as similar classes are as follows:
-         *
-         * Treasure Hunter, Plainswalker and Abyss Walker
-         * Hawkeye, Silver Ranger and Phantom Ranger
-         * Paladin, Dark Avenger, Temple Knight and Shillien Knight
-         * Warlocks, Elemental Summoner and Phantom Summoner
-         * Elder and Shillien Elder
-         * Swordsinger and Bladedancer
-         * Sorcerer, Spellsinger and Spellhowler
-         *
-         * Also, Kamael have a special, hidden 4 subclass, the inspector, which can
-         * only be taken if you have already completed the other two Kamael subclasses
-         *
+        /*
+          If the race of your main class is Elf or Dark Elf,
+          you may not select each class as a subclass to the other class.
+
+          If the race of your main class is Kamael, you may not subclass any other race
+          If the race of your main class is NOT Kamael, you may not subclass any Kamael class
+
+          You may not select Overlord and Warsmith class as a subclass.
+
+          You may not select a similar class as the subclass.
+          The occupations classified as similar classes are as follows:
+
+          Treasure Hunter, Plainswalker and Abyss Walker
+          Hawkeye, Silver Ranger and Phantom Ranger
+          Paladin, Dark Avenger, Temple Knight and Shillien Knight
+          Warlocks, Elemental Summoner and Phantom Summoner
+          Elder and Shillien Elder
+          Swordsinger and Bladedancer
+          Sorcerer, Spellsinger and Spellhowler
+
+          Also, Kamael have a special, hidden 4 subclass, the inspector, which can
+          only be taken if you have already completed the other two Kamael subclasses
+
          */
         List<Integer> availSubs = PlayerClassTable.getInstance().getAvailableSubclasses(player, baseClassId);
 
@@ -1267,7 +1267,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         return found;
     }
 
-    private static final String formatClassForDisplay(PlayerClass className)
+    private static String formatClassForDisplay(PlayerClass className)
     {
         String classNameStr = className.getName();
         char[] charArray = classNameStr.toCharArray();
@@ -1356,7 +1356,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    private static final void renameSubPledge(L2PcInstance player, int pledgeType, String pledgeName)
+    private static void renameSubPledge(L2PcInstance player, int pledgeType, String pledgeName)
     {
         if (!player.isClanLeader())
         {

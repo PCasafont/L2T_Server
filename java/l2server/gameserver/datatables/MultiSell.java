@@ -123,7 +123,7 @@ public class MultiSell implements Reloadable
         player.setMultiSell(list);
     }
 
-    public static final boolean checkSpecialIngredient(int id, long amount, L2PcInstance player)
+    public static boolean checkSpecialIngredient(int id, long amount, L2PcInstance player)
     {
         switch (id)
         {
@@ -163,7 +163,7 @@ public class MultiSell implements Reloadable
         return false;
     }
 
-    public static final boolean getSpecialIngredient(int id, long amount, L2PcInstance player)
+    public static boolean getSpecialIngredient(int id, long amount, L2PcInstance player)
     {
         switch (id)
         {
@@ -194,7 +194,7 @@ public class MultiSell implements Reloadable
         return false;
     }
 
-    public static final void addSpecialProduct(int id, long amount, L2PcInstance player)
+    public static void addSpecialProduct(int id, long amount, L2PcInstance player)
     {
         switch (id)
         {
@@ -253,7 +253,7 @@ public class MultiSell implements Reloadable
                         }
                     }
 
-                    for (MultiSellEntry entry : list.getEntries())
+                    /*for (MultiSellEntry entry : list.getEntries())
                     {
                         if (entry.getIngredients().get(0).getItemId() != 4037)
                         {
@@ -265,7 +265,7 @@ public class MultiSell implements Reloadable
                         System.out.println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" +
                                 10000 * price / total / 100.0 + "\" /> <!-- " +
                                 ItemTable.getInstance().getTemplate(hatId).getName() + " -->");
-                    }
+                    }*/
                 }
             }
             catch (Exception e)

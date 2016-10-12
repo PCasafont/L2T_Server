@@ -29,7 +29,6 @@ public class ConditionTargetActiveEffect extends Condition
     /**
      * Instantiates a new condition target active effect id.
      *
-     * @param effectId the effect id
      */
     public ConditionTargetActiveEffect(String effectName)
     {

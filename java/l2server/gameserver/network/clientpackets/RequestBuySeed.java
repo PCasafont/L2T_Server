@@ -44,7 +44,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  * q	// count
  * ]
  *
- * @param decrypt
  * @author l3x
  */
 

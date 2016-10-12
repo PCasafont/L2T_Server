@@ -335,7 +335,7 @@ public class FortSiege implements Siegable
 
             // Schedule a task to prepare auto siege end
             _siegeEnd = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(),
-                    Config.FS_SIEGE_DURATION * 60 * 1000l); // Prepare auto end task
+                    Config.FS_SIEGE_DURATION * 60 * 1000L); // Prepare auto end task
 
             final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_S1_HAS_BEGUN);
             sm.addFortId(getFort().getFortId());
@@ -349,7 +349,6 @@ public class FortSiege implements Siegable
     /**
      * Announce to player.<BR><BR>
      *
-     * @param message The String of the message to send to player
      */
     public void announceToPlayer(SystemMessage sm)
     {
@@ -681,7 +680,7 @@ public class FortSiege implements Siegable
                     getFort().getSiege()
                             .announceToPlayer(SystemMessage.getSystemMessage(SystemMessageId.SEIZED_BARRACKS));
                     _siegeRestore = ThreadPoolManager.getInstance()
-                            .scheduleGeneral(new ScheduleSiegeRestore(), Config.FS_COUNTDOWN * 60 * 1000l);
+                            .scheduleGeneral(new ScheduleSiegeRestore(), Config.FS_COUNTDOWN * 60 * 1000L);
                 }
                 else
                 {
@@ -1174,7 +1173,6 @@ public class FortSiege implements Siegable
      * Save registration to database.<BR><BR>
      *
      * @param clan   The L2Clan of player
-     * @param typeId -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
      */
     private void saveSiegeClan(L2Clan clan)
     {

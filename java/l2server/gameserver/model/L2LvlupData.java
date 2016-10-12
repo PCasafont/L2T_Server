@@ -96,7 +96,6 @@ public class L2LvlupData
     }
 
     /**
-     * @param hpAdd The _classCpAdd to set.
      */
     public void setClassCpAdd(float cpAdd)
     {
@@ -113,7 +112,6 @@ public class L2LvlupData
     }
 
     /**
-     * @param hpBase The _classCpBase to set.
      */
     public void setClassCpBase(float cpBase)
     {
@@ -146,7 +144,6 @@ public class L2LvlupData
     }
 
     /**
-     * @param _classid The _classid to set.
      */
     public void setClassid(int pClassid)
     {

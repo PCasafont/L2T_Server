@@ -328,7 +328,7 @@ public class DamageManager
         load();
     }
 
-    public static final DamageManager getInstance()
+    public static DamageManager getInstance()
     {
         return SingletonHolder._instance;
     }
