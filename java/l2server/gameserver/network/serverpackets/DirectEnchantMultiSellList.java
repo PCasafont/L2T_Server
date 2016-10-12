@@ -52,7 +52,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 		public final int costCount;
 		public final double priceDividerForArmor;
 
-		private DirectEnchantMultiSellConfig(int id, int enchant, int amid, int jwid, int wmid, int count, double priceDivider)
+		DirectEnchantMultiSellConfig(int id, int enchant, int amid, int jwid, int wmid, int count, double priceDivider)
 		{
 			shopId = id;
 			enchantLevel = enchant;

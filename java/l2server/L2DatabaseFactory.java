@@ -28,7 +28,7 @@ public class L2DatabaseFactory
 {
 	static Logger _log = Logger.getLogger(L2DatabaseFactory.class.getName());
 
-	public static enum ProviderType
+	public enum ProviderType
 	{
 		MySql, MsSql
 	}

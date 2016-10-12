@@ -29,7 +29,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
  *
  * @author Julian
  */
-public class L2SyncList<T extends Object> implements List<T>
+public class L2SyncList<T> implements List<T>
 {
 	private final List<T> _list;
 	private final ReentrantReadWriteLock _rw = new ReentrantReadWriteLock();

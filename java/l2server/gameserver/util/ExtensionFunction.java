@@ -37,7 +37,7 @@ public interface ExtensionFunction
 	 * @param name the name of an object or a result of a function
 	 * @return the object
 	 */
-	public Object get(String name);
+	Object get(String name);
 
 	/**
 	 * set the named object to the new value supplied in obj
@@ -45,5 +45,5 @@ public interface ExtensionFunction
 	 * @param name the name of the object
 	 * @param obj  the new value
 	 */
-	public void set(String name, Object obj);
+	void set(String name, Object obj);
 }

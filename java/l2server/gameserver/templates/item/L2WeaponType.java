@@ -53,7 +53,7 @@ public enum L2WeaponType implements L2ItemType
 	 *
 	 * @param name : String designating the name of the WeaponType
 	 */
-	private L2WeaponType(String name)
+	L2WeaponType(String name)
 	{
 		_mask = 1 << ordinal();
 		_name = name;

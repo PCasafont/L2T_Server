@@ -58,7 +58,7 @@ public class Siege implements Siegable
 	private int _controlTowerCount;
 	private int _flameTowerCount;
 
-	public static enum TeleportWhoType
+	public enum TeleportWhoType
 	{
 		All, Attacker, DefenderNotOwner, Owner, Spectator
 	}
@@ -555,7 +555,6 @@ public class Siege implements Siegable
 					SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_control_tower").size();
 			_flameTowerCount =
 					SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_flame_tower").size();
-			;
 			getCastle().spawnDoor(); // Spawn door
 			spawnSiegeGuard(); // Spawn siege guard
 			MercTicketManager.getInstance()

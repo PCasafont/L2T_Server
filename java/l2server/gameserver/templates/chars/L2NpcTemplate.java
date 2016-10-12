@@ -112,12 +112,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 	private L2NpcAIData _aiData = new L2NpcAIData();
 
-	public static enum AIType
+	public enum AIType
 	{
 		FIGHTER, ARCHER, BALANCED, MAGE, HEALER, CORPSE
 	}
 
-	public static enum L2NpcRace
+	public enum L2NpcRace
 	{
 		UNDEAD,
 		MAGICCREATURE,
@@ -164,7 +164,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	private StatsSet _baseSet;
 	private L2NpcTemplate _baseTemplate;
 
-	private List<L2Spawn> _allSpawns = new ArrayList<>();
+	private final List<L2Spawn> _allSpawns = new ArrayList<>();
 
 	/**
 	 * Constructor of L2Character.<BR><BR>

@@ -60,12 +60,12 @@ public class MultiSort
 		_valueList = getIntList(valueMap.values());
 	}
 
-	private final List<Integer> getIntList(Collection<Integer> valueList)
+	private List<Integer> getIntList(Collection<Integer> valueList)
 	{
 		return Arrays.asList(valueList.toArray(new Integer[valueList.size()]));
 	}
 
-	private final List<Integer> getIntList(int[] valueList)
+	private List<Integer> getIntList(int[] valueList)
 	{
 		Integer[] tempIntList = new Integer[valueList.length];
 
@@ -77,12 +77,12 @@ public class MultiSort
 		return Arrays.asList(tempIntList);
 	}
 
-	private final List<?> getList(Collection<?> valueList)
+	private List<?> getList(Collection<?> valueList)
 	{
 		return getList(valueList.toArray(new Object[valueList.size()]));
 	}
 
-	private final List<Object> getList(Object[] valueList)
+	private List<Object> getList(Object[] valueList)
 	{
 		return Arrays.asList(valueList);
 	}

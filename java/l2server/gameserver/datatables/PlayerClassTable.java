@@ -448,7 +448,7 @@ public class PlayerClassTable implements Reloadable
 		return subclasses;
 	}
 
-	private final List<Integer> getList(Race race, int level)
+	private List<Integer> getList(Race race, int level)
 	{
 		List<Integer> list = new ArrayList<>();
 		for (PlayerClass cl : _classes.values())

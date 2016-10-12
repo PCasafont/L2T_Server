@@ -109,7 +109,7 @@ public class AutoChatHandler implements SpawnListener
 		return registerChat(npcInst.getNpcId(), npcInst, chatTexts, chatDelay);
 	}
 
-	private final AutoChatInstance registerChat(int npcId, L2Npc npcInst, String[] chatTexts, long chatDelay)
+	private AutoChatInstance registerChat(int npcId, L2Npc npcInst, String[] chatTexts, long chatDelay)
 	{
 		AutoChatInstance chatInst = null;
 
@@ -712,7 +712,7 @@ public class AutoChatHandler implements SpawnListener
 								continue;
 							}
 
-							if (((L2PcInstance) player).isGM())
+							if (player.isGM())
 							{
 								nearbyGMs.add((L2PcInstance) player);
 							}

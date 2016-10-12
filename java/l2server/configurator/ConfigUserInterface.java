@@ -611,7 +611,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		}
 	}
 
-	public static enum ValueType
+	public enum ValueType
 	{
 		BOOLEAN(Boolean.class),
 		DOUBLE(Double.class),
@@ -621,7 +621,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		private final Class<?> _type;
 
-		private ValueType(Class<?> type)
+		ValueType(Class<?> type)
 		{
 			_type = type;
 		}

@@ -68,7 +68,6 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
 		{
 			if (ClanRecruitManager.getInstance().removeApplicant(activeChar.getObjectId()))
 			{
-				;
 			}
 			{
 				//activeChar.sendMessage(4040);

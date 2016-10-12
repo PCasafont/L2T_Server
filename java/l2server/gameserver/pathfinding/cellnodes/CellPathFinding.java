@@ -293,7 +293,7 @@ public class CellPathFinding extends PathFinding
 		return path;
 	}
 
-	private final CellNodeBuffer alloc(int size, boolean playable)
+	private CellNodeBuffer alloc(int size, boolean playable)
 	{
 		CellNodeBuffer current = null;
 		for (BufferInfo i : _allBuffers)
@@ -347,7 +347,7 @@ public class CellPathFinding extends PathFinding
 		return current;
 	}
 
-	private final void dropDebugItem(int itemId, int num, AbstractNodeLoc loc)
+	private void dropDebugItem(int itemId, int num, AbstractNodeLoc loc)
 	{
 		final L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);

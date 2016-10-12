@@ -22,7 +22,7 @@ package l2server.loginserver.network.serverpackets;
  */
 public final class PlayFail extends L2LoginServerPacket
 {
-	public static enum PlayFailReason
+	public enum PlayFailReason
 	{
 		REASON_NO_MESSAGE(0x00),
 		REASON_SYSTEM_ERROR_LOGIN_LATER(0x01),

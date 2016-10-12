@@ -45,7 +45,7 @@ public class L2JailZone extends L2ZoneType
 			if (Config.JAIL_IS_PVP)
 			{
 				character.setInsideZone(L2Character.ZONE_PVP, true);
-				((L2PcInstance) character)
+				character
 						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 			if (Config.JAIL_DISABLE_TRANSACTION)
@@ -65,7 +65,7 @@ public class L2JailZone extends L2ZoneType
 			if (Config.JAIL_IS_PVP)
 			{
 				character.setInsideZone(L2Character.ZONE_PVP, false);
-				((L2PcInstance) character).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 			}
 			if (((L2PcInstance) character).isInJail())
 			{

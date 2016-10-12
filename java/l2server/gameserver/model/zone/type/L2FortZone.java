@@ -93,7 +93,7 @@ public class L2FortZone extends L2SpawnZone
 				continue;
 			}
 
-			((L2PcInstance) temp).teleToLocation(
+			temp.teleToLocation(
 					MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
 		}
 	}

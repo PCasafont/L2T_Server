@@ -65,7 +65,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public static final boolean geoEnabled = Config.GEODATA > 0;
 
-	public static enum SkillOpType
+	public enum SkillOpType
 	{
 		OP_PASSIVE, OP_ACTIVE, OP_TOGGLE
 	}
@@ -1578,7 +1578,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 		if (activeChar.getSecondaryWeaponItem() != null && activeChar.getSecondaryWeaponItem() instanceof L2Armor)
 		{
-			mask |= ((L2ArmorType) activeChar.getSecondaryWeaponItem().getItemType()).mask();
+			mask |= activeChar.getSecondaryWeaponItem().getItemType().mask();
 		}
 
 		if ((mask & weaponsAllowed) != 0)
@@ -2657,8 +2657,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		if (effector != effected && !ignoreImmunity())
 		{
-			if (effected instanceof L2PcInstance && ((L2PcInstance) effected).getFaceoffTarget() != null &&
-					effector != ((L2PcInstance) effected).getFaceoffTarget())
+			if (effected instanceof L2PcInstance && effected.getFaceoffTarget() != null &&
+					effector != effected.getFaceoffTarget())
 			{
 				return _emptyEffectSet;
 			}
@@ -2682,7 +2682,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					}
 				}
 
-				if (effector instanceof L2PcInstance && ((L2PcInstance) effector).isGM())
+				if (effector instanceof L2PcInstance && effector.isGM())
 				{
 					if (!((L2PcInstance) effector).getAccessLevel().canGiveDamage())
 					{
@@ -2766,7 +2766,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 				sm.addCharName(effected);
 				sm.addSkillName(this);
-				((L2PcInstance) effector).sendPacket(sm);
+				effector.sendPacket(sm);
 			}
 		}
 

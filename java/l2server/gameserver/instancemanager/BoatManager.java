@@ -125,7 +125,7 @@ public class BoatManager
 		{
 			_docksBusy[h] = value;
 		}
-		catch (ArrayIndexOutOfBoundsException e)
+		catch (ArrayIndexOutOfBoundsException ignored)
 		{
 		}
 	}

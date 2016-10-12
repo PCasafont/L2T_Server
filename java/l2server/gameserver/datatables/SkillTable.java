@@ -274,7 +274,7 @@ public class SkillTable implements Reloadable
 	 *
 	 * @author DrHouse
 	 */
-	public static enum FrequentSkill
+	public enum FrequentSkill
 	{
 		RAID_CURSE(4215, 1),
 		RAID_CURSE2(4515, 1),
@@ -303,7 +303,7 @@ public class SkillTable implements Reloadable
 		private final int _level;
 		private L2Skill _skill = null;
 
-		private FrequentSkill(int id, int level)
+		FrequentSkill(int id, int level)
 		{
 			_id = id;
 			_level = level;

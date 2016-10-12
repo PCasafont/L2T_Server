@@ -98,7 +98,7 @@ public class L2SiegeZone extends L2ZoneType
 			if (character instanceof L2PcInstance)
 			{
 				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId) ||
-						((L2PcInstance) character).isGM())
+						character.isGM())
 				{
 					((L2PcInstance) character).setIsInSiege(true); // in siege
 					if (_siege != null && _siege.giveFame())
@@ -109,11 +109,11 @@ public class L2SiegeZone extends L2ZoneType
 				}
 				else if (_siegableId > 100 && !character.isGM())
 				{
-					((L2PcInstance) character).sendMessage("You are not registered at this siege!");
-					((L2PcInstance) character)
+					character.sendMessage("You are not registered at this siege!");
+					character
 							.teleToLocation(TownManager.getClosestTown(character).getSpawnLoc(), true);
 				}
-				((L2PcInstance) character)
+				character
 						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 				if (!Config.ALLOW_WYVERN_DURING_SIEGE && ((L2PcInstance) character).getMountType() == 2)
 				{
@@ -135,7 +135,7 @@ public class L2SiegeZone extends L2ZoneType
 		{
 			if (character instanceof L2PcInstance)
 			{
-				((L2PcInstance) character).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 				if (((L2PcInstance) character).getMountType() == 2)
 				{
 					((L2PcInstance) character).exitedNoLanding();
@@ -235,7 +235,7 @@ public class L2SiegeZone extends L2ZoneType
 
 				if (character instanceof L2PcInstance)
 				{
-					((L2PcInstance) character)
+					character
 							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 					((L2PcInstance) character).stopFameTask();
 					if (((L2PcInstance) character).getMountType() == 2)
@@ -262,7 +262,7 @@ public class L2SiegeZone extends L2ZoneType
 		{
 			if (temp instanceof L2PcInstance)
 			{
-				((L2PcInstance) temp).sendMessage(message);
+				temp.sendMessage(message);
 			}
 		}
 	}
@@ -320,12 +320,12 @@ public class L2SiegeZone extends L2ZoneType
 			{
 				continue;
 			}
-			if (((L2PcInstance) temp).getClan() == owningClan || ((L2PcInstance) temp).isGM())
+			if (((L2PcInstance) temp).getClan() == owningClan || temp.isGM())
 			{
 				continue;
 			}
 
-			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);
+			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		}
 	}
 }

@@ -3090,18 +3090,4 @@
     <!-- Password Recovery Link -->
     <config name="SecondAuthRecoveryLink" var="SECOND_AUTH_REC_LINK"
             default="http://www.example.com/l2j/charPassRec.php" />
-
-    <!-- Anti Bots -->
-    <config name="EnableAntiBots" var="ANTI_BOTS_ENABLED" default="false" />
-
-    <!-- Should we kick the player if the shield was broken? -->
-    <config name="AntiBotsKickIfBrokenShield" var="ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED" default="false" />
-
-    <!-- Should we apply sanction for illegal softwares found only if they are still running? -->
-    <config name="AntiBotsSanctionOnlyIfToolStillRunning" var="ANTI_BOTS_SANCTION_ONLY_IF_TOOL_STILL_RUNNING"
-            default="true" />
-
-    <!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
-    <config name="AntiBotsBanOffendersReliedCharacters" var="ANTI_BOTS_BAN_OFFENDERS_RELIED_CHARACTERS"
-            default="false" />
 </list>

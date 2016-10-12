@@ -37,7 +37,7 @@ import java.util.logging.Level;
  */
 public final class SkillParser extends StatsParser
 {
-	private static enum SkillEnchantBonusType
+	private enum SkillEnchantBonusType
 	{
 		SET, ADD, SUB, ADD_PERCENT, SUB_PERCENT
 	}

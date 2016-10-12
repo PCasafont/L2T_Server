@@ -26,30 +26,30 @@ public interface IChanceSkillTrigger
 	/**
 	 * Just a flag
 	 */
-	public boolean triggersChanceSkill();
+	boolean triggersChanceSkill();
 
 	/**
 	 * Triggered Id
 	 */
-	public int getTriggeredChanceId();
+	int getTriggeredChanceId();
 
 	/**
 	 * Triggered level
 	 */
-	public int getTriggeredChanceLevel();
+	int getTriggeredChanceLevel();
 
 	/**
 	 * Triggered enchant route
 	 */
-	public int getTriggeredChanceEnchantRoute();
+	int getTriggeredChanceEnchantRoute();
 
 	/**
 	 * Triggered enchant level
 	 */
-	public int getTriggeredChanceEnchantLevel();
+	int getTriggeredChanceEnchantLevel();
 
 	/**
 	 * Chance condition object
 	 */
-	public ChanceCondition getTriggeredChanceCondition();
+	ChanceCondition getTriggeredChanceCondition();
 }

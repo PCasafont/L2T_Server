@@ -47,7 +47,7 @@ public final class CharacterRestore extends L2GameClientPacket
 		{
 			getClient().markRestoredChar(_charSlot);
 		}
-		catch (Exception e)
+		catch (Exception ignored)
 		{
 		}
 		CharSelectionInfo cl =

@@ -46,7 +46,7 @@ import java.util.Map;
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 {
 
-	public static enum LoginClientState
+	public enum LoginClientState
 	{
 		CONNECTED, AUTHED_GG, AUTHED_LOGIN
 	}

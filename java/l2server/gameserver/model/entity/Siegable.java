@@ -28,35 +28,35 @@ import java.util.List;
  */
 public interface Siegable
 {
-	public void startSiege();
+	void startSiege();
 
-	public void endSiege();
+	void endSiege();
 
-	public L2SiegeClan getAttackerClan(int clanId);
+	L2SiegeClan getAttackerClan(int clanId);
 
-	public L2SiegeClan getAttackerClan(L2Clan clan);
+	L2SiegeClan getAttackerClan(L2Clan clan);
 
-	public List<L2SiegeClan> getAttackerClans();
+	List<L2SiegeClan> getAttackerClans();
 
-	public List<L2PcInstance> getAttackersInZone();
+	List<L2PcInstance> getAttackersInZone();
 
-	public boolean checkIsAttacker(L2Clan clan);
+	boolean checkIsAttacker(L2Clan clan);
 
-	public L2SiegeClan getDefenderClan(int clanId);
+	L2SiegeClan getDefenderClan(int clanId);
 
-	public L2SiegeClan getDefenderClan(L2Clan clan);
+	L2SiegeClan getDefenderClan(L2Clan clan);
 
-	public List<L2SiegeClan> getDefenderClans();
+	List<L2SiegeClan> getDefenderClans();
 
-	public boolean checkIsDefender(L2Clan clan);
+	boolean checkIsDefender(L2Clan clan);
 
-	public List<L2Npc> getFlag(L2Clan clan);
+	List<L2Npc> getFlag(L2Clan clan);
 
-	public Calendar getSiegeDate();
+	Calendar getSiegeDate();
 
-	public boolean giveFame();
+	boolean giveFame();
 
-	public int getFameFrequency();
+	int getFameFrequency();
 
-	public int getFameAmount();
+	int getFameAmount();
 }

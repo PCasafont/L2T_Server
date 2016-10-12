@@ -176,7 +176,7 @@ public class SiegeManager
 
 	// =========================================================
 	// Method - Private
-	private final void load()
+	private void load()
 	{
 		InputStream is = null;
 		try

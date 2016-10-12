@@ -29,7 +29,7 @@ public class HennaRemoveList extends L2GameServerPacket
 	}
 
 	@SuppressWarnings("unused")
-	private final int getHennaUsedSlots()
+	private int getHennaUsedSlots()
 	{
 		int _slots = 0;
 		switch (_player.getHennaEmptySlots())

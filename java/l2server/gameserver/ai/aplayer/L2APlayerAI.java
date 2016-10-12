@@ -504,7 +504,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	@Override
 	protected void onEvtAttacked(L2Character attacker)
 	{
-		if (attacker instanceof L2Attackable && !((L2Attackable) attacker).isCoreAIDisabled())
+		if (attacker instanceof L2Attackable && !attacker.isCoreAIDisabled())
 		{
 			clientStartAutoAttack();
 		}

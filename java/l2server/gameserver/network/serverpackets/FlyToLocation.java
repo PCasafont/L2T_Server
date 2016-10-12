@@ -31,7 +31,7 @@ public final class FlyToLocation extends L2GameServerPacket
 	{
 		THROW_UP, THROW_HORIZONTAL, DUMMY, // no effect
 		CHARGE, KNOCK_BACK, MAGIC, UNK2, // Causes critical error
-		KNOCK_DOWN, MOVE_HORIZONTAL, DRAG;
+		KNOCK_DOWN, MOVE_HORIZONTAL, DRAG
 	}
 
 	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type)

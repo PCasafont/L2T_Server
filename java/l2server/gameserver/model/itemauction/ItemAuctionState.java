@@ -24,7 +24,7 @@ public enum ItemAuctionState
 
 	private final byte _stateId;
 
-	private ItemAuctionState(final byte stateId)
+	ItemAuctionState(final byte stateId)
 	{
 		_stateId = stateId;
 	}

@@ -104,7 +104,7 @@ public abstract class FloodProtectedListener extends Thread
 				{
 					connection.close();
 				}
-				catch (Exception e2)
+				catch (Exception ignored)
 				{
 				}
 				if (isInterrupted())

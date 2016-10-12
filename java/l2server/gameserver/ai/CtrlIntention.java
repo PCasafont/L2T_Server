@@ -50,5 +50,5 @@ AI_INTENTION_FOLLOW, /**
 AI_INTENTION_PICK_UP, /**
  * Move to target, then interact
  */
-AI_INTENTION_INTERACT;
+AI_INTENTION_INTERACT
 }

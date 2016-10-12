@@ -122,7 +122,7 @@ public class L2ControlTowerInstance extends L2Npc
 						spawn.stopRespawn();
 						//spawn.getNpc().doDie(spawn.getNpc());
 					}
-					catch (Exception e)
+					catch (Exception ignored)
 					{
 					}
 				}

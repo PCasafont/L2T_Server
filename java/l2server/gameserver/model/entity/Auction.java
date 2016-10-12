@@ -64,7 +64,7 @@ public class Auction
 
 	private static final String[] ItemTypeName = {"ClanHall"};
 
-	public static enum ItemTypeEnum
+	public enum ItemTypeEnum
 	{
 		ClanHall
 	}

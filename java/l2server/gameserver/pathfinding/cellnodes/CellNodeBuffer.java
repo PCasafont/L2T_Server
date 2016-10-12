@@ -145,7 +145,7 @@ public class CellNodeBuffer
 		return result;
 	}
 
-	private final void getNeighbors()
+	private void getNeighbors()
 	{
 		final short NSWE = ((NodeLoc) _current.getLoc()).getNSWE();
 		if (NSWE == NSWE_NONE)
@@ -230,7 +230,7 @@ public class CellNodeBuffer
 		}
 	}
 
-	private final CellNode getNode(int x, int y, short z)
+	private CellNode getNode(int x, int y, short z)
 	{
 		final int aX = x - _baseX;
 		if (aX < 0 || aX >= _mapSize)
@@ -267,7 +267,7 @@ public class CellNodeBuffer
 		return result;
 	}
 
-	private final CellNode addNode(int x, int y, short z, boolean diagonal)
+	private CellNode addNode(int x, int y, short z, boolean diagonal)
 	{
 		CellNode newNode = getNode(x, y, z);
 		if (newNode == null)
@@ -337,7 +337,7 @@ public class CellNodeBuffer
 		return newNode;
 	}
 
-	private final boolean isHighWeight(int x, int y, short z)
+	private boolean isHighWeight(int x, int y, short z)
 	{
 		final CellNode result = getNode(x, y, z);
 		if (result == null)
@@ -357,7 +357,7 @@ public class CellNodeBuffer
 		return false;
 	}
 
-	private final double getCost(int x, int y, short z, float weight)
+	private double getCost(int x, int y, short z, float weight)
 	{
 		final int dX = x - _targetX;
 		final int dY = y - _targetY;

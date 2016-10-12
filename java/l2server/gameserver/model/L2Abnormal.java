@@ -46,7 +46,7 @@ import java.util.logging.Level;
 public class L2Abnormal
 {
 
-	public static enum AbnormalState
+	public enum AbnormalState
 	{
 		CREATED, ACTING, FINISHING
 	}
@@ -338,7 +338,7 @@ public class L2Abnormal
 		return _isHerbEffect;
 	}
 
-	private final synchronized void startEffectTask()
+	private synchronized void startEffectTask()
 	{
 		if (_duration > 0)
 		{

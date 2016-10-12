@@ -49,11 +49,10 @@ public final class FuncTemplate
 		}
 		try
 		{
-			constructor = func.getConstructor(new Class[]{
-					Stats.class, // stats to update
+			constructor = func.getConstructor(Stats.class, // stats to update
 					Object.class, // owner
 					Lambda.class // value for function
-			});
+			);
 		}
 		catch (NoSuchMethodException e)
 		{

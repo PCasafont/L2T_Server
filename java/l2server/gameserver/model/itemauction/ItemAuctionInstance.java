@@ -203,7 +203,7 @@ public final class ItemAuctionInstance
 		}
 	}
 
-	private final AuctionItem getAuctionItem(final int auctionItemId)
+	private AuctionItem getAuctionItem(final int auctionItemId)
 	{
 		for (int i = _items.size(); i-- > 0; )
 		{
@@ -394,7 +394,7 @@ public final class ItemAuctionInstance
 			}
 		}
 
-		private final void runImpl() throws Exception
+		private void runImpl() throws Exception
 		{
 			final ItemAuctionState state = _auction.getAuctionState();
 			switch (state)
@@ -541,7 +541,7 @@ public final class ItemAuctionInstance
 		_stateTask = future;
 	}
 
-	private final ItemAuction createAuction(final long after)
+	private ItemAuction createAuction(final long after)
 	{
 		final AuctionItem auctionItem = _items.get(Rnd.get(_items.size()));
 		final long startingTime = _dateGenerator.nextDate(after);
@@ -553,7 +553,7 @@ public final class ItemAuctionInstance
 		return auction;
 	}
 
-	private final ItemAuction loadAuction(final int auctionId) throws SQLException
+	private ItemAuction loadAuction(final int auctionId) throws SQLException
 	{
 		Connection con = null;
 		try

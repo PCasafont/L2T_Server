@@ -68,7 +68,7 @@ public class RaceManagerKnownList extends NpcKnownList
 			for (int i = 0; i < 8; i++)
 			{
 				obj = new DeleteObject(MonsterRace.getInstance().getMonsters()[i]);
-				((L2PcInstance) object).sendPacket(obj);
+				object.sendPacket(obj);
 			}
 		}
 

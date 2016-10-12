@@ -101,13 +101,9 @@ public class SkillTreeTable
 				int id = n.getInt("id");
 				int lvl = n.getInt("level");
 				int minLvl = n.getInt("minLevel");
-				;
 				int cost = n.getInt("spCost");
-				;
 				int costId = n.getInt("itemId");
-				;
 				int costCount = n.getInt("count");
-				;
 				boolean isDwarven = n.getBool("isForDwarf");
 				boolean npc = n.getBool("learnedByNpc");
 				boolean fs = n.getBool("learnedByFS");
@@ -169,7 +165,6 @@ public class SkillTreeTable
 				int lvl = n.getInt("level");
 				int costId = n.getInt("itemId");
 				int costCount = n.getInt("count");
-				;
 				boolean npc = n.getBool("learnedByNpc");
 				boolean fs = n.getBool("learnedByFS");
 

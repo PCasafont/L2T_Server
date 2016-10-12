@@ -214,7 +214,7 @@ public class MultiSell implements Reloadable
 		}
 	}
 
-	private final void load()
+	private void load()
 	{
 		List<File> files = new ArrayList<>();
 
@@ -277,7 +277,7 @@ public class MultiSell implements Reloadable
 		Log.info("MultiSell: Loaded " + _entries.size() + " lists.");
 	}
 
-	private final ListContainer parseDocument(XmlDocument doc)
+	private ListContainer parseDocument(XmlDocument doc)
 	{
 		int entryId = 1;
 		ListContainer list = new ListContainer();
@@ -310,7 +310,7 @@ public class MultiSell implements Reloadable
 		return list;
 	}
 
-	private final MultiSellEntry parseEntry(XmlNode node, int entryId)
+	private MultiSellEntry parseEntry(XmlNode node, int entryId)
 	{
 		final MultiSellEntry entry = new MultiSellEntry(entryId);
 
@@ -343,7 +343,7 @@ public class MultiSell implements Reloadable
 		return entry;
 	}
 
-	private final void hashFiles(String directoryPath, List<File> hash)
+	private void hashFiles(String directoryPath, List<File> hash)
 	{
 		File dir = new File(directoryPath);
 		if (!dir.exists())
@@ -362,7 +362,7 @@ public class MultiSell implements Reloadable
 		}
 	}
 
-	private final void verify()
+	private void verify()
 	{
 		for (ListContainer list : _entries.values())
 		{
@@ -388,7 +388,7 @@ public class MultiSell implements Reloadable
 		}
 	}
 
-	private final boolean verifyIngredient(Ingredient ing)
+	private boolean verifyIngredient(Ingredient ing)
 	{
 		switch (ing.getItemId())
 		{

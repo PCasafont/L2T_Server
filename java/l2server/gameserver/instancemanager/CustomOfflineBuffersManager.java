@@ -57,7 +57,7 @@ public class CustomOfflineBuffersManager
 	private static final String STORE_BUFFERS =
 			"INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
 	private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";
-	private static Map<Integer, BufferTable> _customBufferTable = new HashMap<>();
+	private static final Map<Integer, BufferTable> _customBufferTable = new HashMap<>();
 
 	private class BufferTable
 	{

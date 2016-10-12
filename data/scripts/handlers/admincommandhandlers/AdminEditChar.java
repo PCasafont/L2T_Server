@@ -21,8 +21,6 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.AntiBotsManager;
-import l2server.gameserver.instancemanager.AntiBotsManager.ClientProcess;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Summon;
@@ -37,7 +35,6 @@ import l2server.util.StringUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -144,18 +141,6 @@ public class AdminEditChar implements IAdminCommandHandler
 			else if (activeChar.getTarget() instanceof L2PcInstance)
 			{
 				showCharacterInfo(activeChar, activeChar.getTarget().getActingPlayer());
-			}
-			else
-			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
-			}
-		}
-		else if (command.startsWith("admin_lookup_hw"))
-		{
-			String[] data = command.split(" ");
-			if (data.length > 1)
-			{
-				showHardwareInfo(activeChar, data[1]);
 			}
 			else
 			{
@@ -940,149 +925,6 @@ public class AdminEditChar implements IAdminCommandHandler
 		gatherCharacterInfo(activeChar, player, "charinfo.htm");
 	}
 
-	private void showHardwareInfo(L2PcInstance activeChar, final String hardwareId)
-	{
-		if (Config.isServer(Config.TENKAI))
-		{
-			if (!Config.ANTI_BOTS_ENABLED)
-			{
-				activeChar.sendMessage("Anti Bots isn't enabled...");
-				return;
-			}
-
-			final AntiBotsManager.ClientInfo hardwareInfo =
-					AntiBotsManager.getInstance().getClientInfoByHardwareId(hardwareId);
-			if (hardwareInfo == null)
-			{
-				activeChar.sendMessage("Hardware info couldn't be found");
-				return;
-			}
-
-			SimpleDateFormat dateFormatter = new SimpleDateFormat("h:m:s a z");
-
-			NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-			adminReply.setFile(activeChar.getHtmlPrefix(), "admin/hwinfo.htm");
-			adminReply.replace("%ip%", hardwareInfo.getIp());
-			adminReply.replace("%hwid%", hardwareInfo.getHardwareId());
-			adminReply.replace("%windowsUser%", hardwareInfo.getWindowsUser());
-
-			if (hardwareInfo.getVersion() != null)
-			{
-				adminReply.replace("%version%", hardwareInfo.getVersion());
-			}
-			else
-			{
-				adminReply.replace("Version: %version%<br1>", "");
-			}
-
-			adminReply.replace("%lastUpdate%", dateFormatter.format(hardwareInfo.getLastUpdateTime()));
-			adminReply.replace("%currentTime%", dateFormatter.format(System.currentTimeMillis()));
-			adminReply.replace("%refresh%",
-					"<a action=\"bypass -h admin_lookup_hw " + hardwareInfo.getHardwareId() + "\">Refresh</a>");
-
-			String processes = "";
-
-			StringBuilder sb = new StringBuilder();
-
-			sb.append("<table>");
-			sb.append("<tr>");
-			sb.append("<td width=300>");
-			sb.append("<table bgcolor=131210 width=300>");
-			sb.append("<tr>");
-			sb.append("<td>");
-			sb.append("[+] <font color=%s>%s</a></font>");
-			sb.append("</td>");
-			sb.append("</tr>");
-			sb.append("<tr>");
-			sb.append(
-					"<td><font color=\"c85252\">Found:</font> %s. <font color=\"c85252\">Updated:</font> %s. %s.</td>");
-			sb.append("</tr>");
-			sb.append("</table>");
-			sb.append("</td>");
-			sb.append("</tr>");
-			sb.append("</table>");
-			sb.append("<br>");
-
-			ClientProcess[] clientInfo =
-					hardwareInfo.getProcesses().toArray(new ClientProcess[hardwareInfo.getProcesses().size()]);
-			Arrays.sort(clientInfo, new Comparator<ClientProcess>()
-			{
-				@Override
-				public final int compare(final ClientProcess p1, final ClientProcess p2)
-				{
-					final String o1 = p1._productName;
-					final String o2 = p2._productName;
-
-					if (o1 == o2)
-					{
-						return 0;
-					}
-					if (o1 == null)
-					{
-						return 1;
-					}
-					if (o2 == null)
-					{
-						return -1;
-					}
-
-					return o1.compareTo(o2);
-				}
-			});
-
-			String lastProcessName = "";
-			String lastDuplicateName = "";
-			for (ClientProcess process : clientInfo)
-			{
-				String displayName =
-						(process._productName.equals("") ? process._fileName : process._productName).replace("?", "");
-
-				if (displayName.equals(""))
-				{
-					displayName = process._fileName;
-				}
-
-				if (!lastDuplicateName.equals("") && !displayName.equals(lastDuplicateName))
-				{
-					lastDuplicateName = "";
-				}
-
-				if (displayName.equals(lastProcessName))
-				{
-					if (!lastDuplicateName.equals(displayName))
-					{
-						lastDuplicateName = displayName;
-					}
-
-					processes += "- " + displayName + " (" + process._fileName + ")" + "<br1>";
-					continue;
-				}
-
-				if (displayName.toLowerCase().contains("microsoft") || displayName.toLowerCase().contains("windows") ||
-						displayName.toLowerCase().contains("nvidia") || displayName.toLowerCase().contains("intel(r)"))
-				{
-					continue;
-				}
-
-				processes += String.format(sb.toString(),
-						AntiBotsManager.getInstance().isIllegalProcess(process) ? "cc7416" : "FFFFFF",
-						// Red if illegal, otherwise white.
-						displayName, // Friendly name of the application
-						new SimpleDateFormat("d, k:m:s").format(process._firstSeenAt),
-						// Time at which we've first seen the process.
-						new SimpleDateFormat("d, k:m:s").format(process._lastSeenAt),
-						// Time at which we've last seen it running.
-						process._isRunning ? "<font color=\"31bf00\">ON</font>" : "<font color=\"bf0000\">OFF</font>");
-
-				lastProcessName = process._productName;
-			}
-
-			adminReply.replace("%processes%", processes);
-			//Log.info(processes);
-			activeChar.sendPacket(adminReply);
-		}
-	}
-
 	/**
 	 * Retrieve and replace player's info in filename htm file, sends it to activeChar as NpcHtmlMessage.
 	 *
@@ -1178,26 +1020,6 @@ public class AdminEditChar implements IAdminCommandHandler
 						String.valueOf(player.getInstanceId()) + "\">" + String.valueOf(player.getInstanceId()) +
 						"</a></td></tr>" : "");
 
-		String pcsHtm = "";
-
-		if (Config.ANTI_BOTS_ENABLED)
-		{
-			if (Config.isServer(Config.TENKAI))
-			{
-				/*
-                String properIp = AntiBotsManager.getInstance().getProperPlayerIP(ip);
-				List<AntiBotsManager.ClientInfo> pcsWithSameIp = AntiBotsManager.getInstance().getClientsInfoByIp(properIp);
-				for (AntiBotsManager.ClientInfo ci : pcsWithSameIp)
-					pcsHtm += "- <a action=\"bypass -h admin_lookup_hw "+ci.getHardwareId()+"\">" + ci.getWindowsUser() + "</a> (..." + ci.getHardwareId().substring(ci.getHardwareId().length() - 1, ci.getHardwareId().length()) + ")<br1>";
-				 */
-			}
-		}
-		else
-		{
-			pcsHtm = "";
-		}
-
-		adminReply.replace("%hwlist%", pcsHtm);
 		activeChar.sendPacket(adminReply);
 		//Log.info(player.getStat().calcStat(Stats.CRITICAL_DAMAGE, 100, null, null));
 	}

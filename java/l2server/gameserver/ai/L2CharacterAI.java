@@ -90,7 +90,7 @@ public class L2CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtAttacked(L2Character attacker)
 	{
-		if (attacker instanceof L2Attackable && !((L2Attackable) attacker).isCoreAIDisabled())
+		if (attacker instanceof L2Attackable && !attacker.isCoreAIDisabled())
 		{
 			clientStartAutoAttack();
 		}
@@ -1035,13 +1035,13 @@ public class L2CharacterAI extends AbstractAI
 
 			// while flying there is no move to cast
 			if (_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST && _actor instanceof L2PcInstance &&
-					((L2PcInstance) _actor).isTransformed())
+					_actor.isTransformed())
 			{
 				if (!((L2PcInstance) _actor).getTransformation().canStartFollowToCast())
 				{
-					((L2PcInstance) _actor)
+					_actor
 							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DIST_TOO_FAR_CASTING_STOPPED));
-					((L2PcInstance) _actor).sendPacket(ActionFailed.STATIC_PACKET);
+					_actor.sendPacket(ActionFailed.STATIC_PACKET);
 
 					return true;
 				}

@@ -190,7 +190,7 @@ public class LoginController
 		return _loginServerClients.get(account);
 	}
 
-	public static enum AuthLoginResult
+	public enum AuthLoginResult
 	{
 		INVALID_PASSWORD, ACCOUNT_BANNED, ALREADY_ON_LS, ALREADY_ON_GS, AUTH_SUCCESS
 	}

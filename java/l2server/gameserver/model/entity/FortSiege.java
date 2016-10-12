@@ -46,7 +46,7 @@ import java.util.logging.Level;
 
 public class FortSiege implements Siegable
 {
-	public static enum TeleportWhoType
+	public enum TeleportWhoType
 	{
 		All, Attacker, Owner,
 	}

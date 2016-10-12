@@ -40,7 +40,7 @@ public class GlobalVariablesManager
 		loadVars();
 	}
 
-	private final void loadVars()
+	private void loadVars()
 	{
 		Connection con = null;
 		PreparedStatement statement = null;

@@ -160,7 +160,7 @@ public class L2SkillDrain extends L2Skill
 						damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
-					record.setParameters(new Object[]{activeChar, " did damage ", (int) damage, this, " to ", target});
+					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
 					_logDamage.log(record);
 				}

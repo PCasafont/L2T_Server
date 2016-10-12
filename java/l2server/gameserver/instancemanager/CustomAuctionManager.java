@@ -46,7 +46,7 @@ public class CustomAuctionManager
 
 		private final int ItemId;
 
-		private Currency(int itemId)
+		Currency(int itemId)
 		{
 			ItemId = itemId;
 		}

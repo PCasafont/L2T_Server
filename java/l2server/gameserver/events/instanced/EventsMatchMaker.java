@@ -113,7 +113,6 @@ public class EventsMatchMaker
 			// Prepare an instance
 			while (prepare())
 			{
-				;
 			}
 		}
 

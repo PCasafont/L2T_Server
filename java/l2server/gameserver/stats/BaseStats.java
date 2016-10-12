@@ -55,7 +55,7 @@ public enum BaseStats
 		return _stat.getClass().getSimpleName();
 	}
 
-	private BaseStats(BaseStat s)
+	BaseStats(BaseStat s)
 	{
 		_stat = s;
 	}
@@ -86,7 +86,7 @@ public enum BaseStats
 
 	private interface BaseStat
 	{
-		public double calcBonus(L2Character actor);
+		double calcBonus(L2Character actor);
 	}
 
 	private static final class STR implements BaseStat

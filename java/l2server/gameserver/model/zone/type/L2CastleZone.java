@@ -102,7 +102,7 @@ public class L2CastleZone extends L2SpawnZone
 				continue;
 			}
 
-			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);
+			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		}
 	}
 
@@ -111,7 +111,7 @@ public class L2CastleZone extends L2SpawnZone
 		return _castleId;
 	}
 
-	private final Castle getCastle()
+	private Castle getCastle()
 	{
 		if (_castle == null)
 		{

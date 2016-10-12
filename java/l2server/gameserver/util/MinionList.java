@@ -330,7 +330,7 @@ public class MinionList
 		}
 	}
 
-	private final void spawnMinion(int minionId)
+	private void spawnMinion(int minionId)
 	{
 		if (minionId == 0)
 		{
@@ -473,7 +473,7 @@ public class MinionList
 
 	// Statistics part
 
-	private final int countSpawnedMinionsById(int minionId)
+	private int countSpawnedMinionsById(int minionId)
 	{
 		int count = 0;
 		for (L2MonsterInstance minion : _minionReferences)

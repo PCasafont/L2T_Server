@@ -24,41 +24,41 @@ public abstract class L2ItemListPacket extends L2GameServerPacket
 {
 	public interface ItemInstanceInfo
 	{
-		public int getObjectId();
+		int getObjectId();
 
-		public L2Item getItem();
+		L2Item getItem();
 
-		public int getLocationSlot();
+		int getLocationSlot();
 
-		public long getCount();
+		long getCount();
 
-		public boolean isEquipped();
+		boolean isEquipped();
 
-		public int getEnchantLevel();
+		int getEnchantLevel();
 
-		public int getMana();
+		int getMana();
 
-		public int getRemainingTime();
+		int getRemainingTime();
 
-		public boolean isSoulEnhanced();
+		boolean isSoulEnhanced();
 
-		public int[] getEnsoulEffectIds();
+		int[] getEnsoulEffectIds();
 
-		public int[] getEnsoulSpecialEffectIds();
+		int[] getEnsoulSpecialEffectIds();
 
-		public boolean isAugmented();
+		boolean isAugmented();
 
-		public long getAugmentationBonus();
+		long getAugmentationBonus();
 
-		public boolean isElementEnchanted();
+		boolean isElementEnchanted();
 
-		public byte getAttackElementType();
+		byte getAttackElementType();
 
-		public int getAttackElementPower();
+		int getAttackElementPower();
 
-		public int getElementDefAttr(byte i);
+		int getElementDefAttr(byte i);
 
-		public int getAppearance();
+		int getAppearance();
 	}
 
 	protected void writeItem(ItemInstanceInfo item)

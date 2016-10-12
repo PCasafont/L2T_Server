@@ -173,7 +173,7 @@ public class JIPTextField extends JPanel implements FocusListener
 			}
 			return;
 		}
-		catch (UnknownHostException | NullPointerException ex)
+		catch (UnknownHostException | NullPointerException ignored)
 		{
 		}
 		for (int i = 0; i < 4; i++)

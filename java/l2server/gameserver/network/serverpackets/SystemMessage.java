@@ -165,7 +165,7 @@ public final class SystemMessage extends L2GameServerPacket
 		this(SystemMessageId.getSystemMessageId(id));
 	}
 
-	private final void append(final SMParam param)
+	private void append(final SMParam param)
 	{
 		if (_paramIndex >= _params.length)
 		{

@@ -51,7 +51,7 @@ public class EffectFixedPcDmg extends L2Effect
 		damage = getEffected().calcStat(Stats.FIXED_DMG_VULN, damage, getEffector(), getSkill());
 		((L2PcInstance) getEffected()).getStatus()
 				.reduceHp(damage, getEffector(), true, false, false, true, getSkill().ignoreImmunity());
-		((L2PcInstance) getEffector()).sendDamageMessage(getEffected(), (int) damage, false, false, false);
+		getEffector().sendDamageMessage(getEffected(), (int) damage, false, false, false);
 		return true;
 	}
 

@@ -66,8 +66,8 @@ public class PlayerTableRenderer extends DefaultTableCellRenderer implements Tab
 
 	public interface TooltipTable
 	{
-		public String getToolTip(int row, int col);
+		String getToolTip(int row, int col);
 
-		public boolean getIsMarked(int row);
+		boolean getIsMarked(int row);
 	}
 }

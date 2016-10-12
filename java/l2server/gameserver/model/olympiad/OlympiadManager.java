@@ -89,7 +89,7 @@ public class OlympiadManager
 		return isRegistered(player, false);
 	}
 
-	private final boolean isRegistered(L2PcInstance player, boolean showMessage)
+	private boolean isRegistered(L2PcInstance player, boolean showMessage)
 	{
 		final Integer objId = player.getObjectId();
 		// party may be already dispersed
@@ -365,7 +365,7 @@ public class OlympiadManager
 	 * @return true if all requirements are met
 	 */
 	// TODO: move to the bypass handler after reworking points system
-	private final OlympiadNobleInfo checkNoble(L2PcInstance player)
+	private OlympiadNobleInfo checkNoble(L2PcInstance player)
 	{
 		SystemMessage sm;
 		if (!player.isNoble())
@@ -484,7 +484,7 @@ public class OlympiadManager
 		return nobleInfo;
 	}
 
-	private final void addPlayer(List<Integer> list, OlympiadNobleInfo nobleInfo)
+	private void addPlayer(List<Integer> list, OlympiadNobleInfo nobleInfo)
 	{
 		int points = nobleInfo.getPoints();
 		for (int i = 0; i < list.size(); i++)

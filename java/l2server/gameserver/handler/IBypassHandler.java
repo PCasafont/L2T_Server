@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  */
 public interface IBypassHandler
 {
-	public static Logger _log = Logger.getLogger(IBypassHandler.class.getName());
+	Logger _log = Logger.getLogger(IBypassHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when someone uses an bypass command
@@ -35,12 +35,12 @@ public interface IBypassHandler
 	 * @param target
 	 * @return success
 	 */
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target);
+	boolean useBypass(String command, L2PcInstance activeChar, L2Npc target);
 
 	/**
 	 * this method is called at initialization to register all bypasses automatically
 	 *
 	 * @return all known bypasses
 	 */
-	public String[] getBypassList();
+	String[] getBypassList();
 }

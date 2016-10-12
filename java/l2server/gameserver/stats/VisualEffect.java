@@ -217,7 +217,7 @@ public enum VisualEffect
 	private final int _id;
 	private final String _name;
 
-	private VisualEffect(int id, String name)
+	VisualEffect(int id, String name)
 	{
 		_name = name;
 		_id = id;

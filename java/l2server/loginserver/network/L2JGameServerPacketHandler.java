@@ -30,7 +30,7 @@ public class L2JGameServerPacketHandler
 {
 	protected static Logger _log = Logger.getLogger(L2JGameServerPacketHandler.class.getName());
 
-	public static enum GameServerState
+	public enum GameServerState
 	{
 		CONNECTED, BF_CONNECTED, AUTHED
 	}

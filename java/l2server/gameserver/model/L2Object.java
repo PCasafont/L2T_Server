@@ -66,7 +66,7 @@ public abstract class L2Object
 		initPosition();
 	}
 
-	public static enum InstanceType
+	public enum InstanceType
 	{
 		L2Object(null),
 		L2ItemInstance(L2Object),
@@ -193,7 +193,7 @@ public abstract class L2Object
 		private final long _maskL;
 		private final long _maskH;
 
-		private InstanceType(InstanceType parent)
+		InstanceType(InstanceType parent)
 		{
 			_parent = parent;
 

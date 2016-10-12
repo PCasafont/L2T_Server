@@ -56,7 +56,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * Enumeration of locations for item
 	 */
-	public static enum ItemLocation
+	public enum ItemLocation
 	{
 		VOID, INVENTORY, PAPERDOLL, WAREHOUSE, CLANWH, PET, PET_EQUIP, LEASE, REFUND, MAIL, AUCTION
 	}

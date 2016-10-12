@@ -21,14 +21,12 @@ public class EventConfig
 		{
 			while (selectTeamNames(Rnd.get(4)))
 			{
-				;
 			}
 		}
 		else
 		{
 			while (!selectTeamNames(Rnd.get(4)))
 			{
-				;
 			}
 		}
 	}
@@ -45,14 +43,12 @@ public class EventConfig
 		{
 			while (selectTeamNames(Rnd.get(4)))
 			{
-				;
 			}
 		}
 		else
 		{
 			while (!selectTeamNames(Rnd.get(4)))
 			{
-				;
 			}
 		}
 	}

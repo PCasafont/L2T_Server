@@ -72,7 +72,7 @@ public class ClanHallManager
 	/**
 	 * Load All Clan Hall
 	 */
-	private final void load()
+	private void load()
 	{
 		Connection con = null;
 		try

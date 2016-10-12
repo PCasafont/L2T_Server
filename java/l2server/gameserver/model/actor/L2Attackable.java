@@ -799,11 +799,11 @@ public class L2Attackable extends L2Npc
 					// If the attacker is a Pet, get the party of the owner
 					if (attacker instanceof L2PetInstance)
 					{
-						attackerParty = ((L2PetInstance) attacker).getParty();
+						attackerParty = attacker.getParty();
 					}
 					else if (attacker instanceof L2PcInstance)
 					{
-						attackerParty = ((L2PcInstance) attacker).getParty();
+						attackerParty = attacker.getParty();
 					}
 					else
 					{
@@ -866,7 +866,7 @@ public class L2Attackable extends L2Npc
 									if (pcAttacker.getSkillLevelHash(467) > 0)
 									{
 										L2Skill skill = SkillTable.getInstance()
-												.getInfo(467, ((L2PcInstance) attacker).getSkillLevelHash(467));
+												.getInfo(467, attacker.getSkillLevelHash(467));
 
 										if (skill.getExpNeeded() <= addexp)
 										{
@@ -1839,7 +1839,7 @@ public class L2Attackable extends L2Npc
 
 			// Check if the autoLoot mode is active
 			if ((isFlying() || !isRaid() && Config.AUTO_LOOT || isRaid() && Config.AUTO_LOOT_RAIDS) &&
-					!(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this).isAggressive()))
+					!(this instanceof L2ArmyMonsterInstance && !this.isAggressive()))
 			{
 				player.doAutoLoot(this, item); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
 			}
@@ -1908,7 +1908,7 @@ public class L2Attackable extends L2Npc
 
 				// Check if the autoLoot mode is active
 				if ((isFlying() || !isRaid() && Config.AUTO_LOOT || isRaid() && Config.AUTO_LOOT_RAIDS) &&
-						!(this instanceof L2ArmyMonsterInstance && !((L2ArmyMonsterInstance) this).isAggressive()))
+						!(this instanceof L2ArmyMonsterInstance && !this.isAggressive()))
 				{
 					player.doAutoLoot(this,
 							item); // Give the item(s) to the L2PcInstance that has killed the L2Attackable
@@ -2894,7 +2894,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	@SuppressWarnings("unused")
-	private final int getHighestLevelAttacker(final L2Attackable attackable, L2PcInstance player)
+	private int getHighestLevelAttacker(final L2Attackable attackable, L2PcInstance player)
 	{
 		int highestLevel = player.getLevel();
 

@@ -67,7 +67,7 @@ public class RegionBBSManager extends BaseBBSManager
 			{
 				page = Integer.parseInt(st.nextToken());
 			}
-			catch (NumberFormatException nfe)
+			catch (NumberFormatException ignored)
 			{
 			}
 

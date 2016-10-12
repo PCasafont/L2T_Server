@@ -217,7 +217,7 @@ public final class ItemAuction
 		return lastBid;
 	}
 
-	private final void updatePlayerBid(final ItemAuctionBid bid, final boolean delete)
+	private void updatePlayerBid(final ItemAuctionBid bid, final boolean delete)
 	{
 		updatePlayerBidInternal(bid, delete);
 	}
@@ -341,7 +341,7 @@ public final class ItemAuction
 		}
 	}
 
-	private final void onPlayerBid(final L2PcInstance player, final ItemAuctionBid bid)
+	private void onPlayerBid(final L2PcInstance player, final ItemAuctionBid bid)
 	{
 		if (_highestBid == null)
 		{
@@ -527,7 +527,7 @@ public final class ItemAuction
 		}
 	}
 
-	private final boolean reduceItemCount(final L2PcInstance player, final long count)
+	private boolean reduceItemCount(final L2PcInstance player, final long count)
 	{
 		if (!player.reduceAdena("ItemAuction", count, player, true))
 		{
@@ -537,7 +537,7 @@ public final class ItemAuction
 		return true;
 	}
 
-	private final void increaseItemCount(final L2PcInstance player, final long count)
+	private void increaseItemCount(final L2PcInstance player, final long count)
 	{
 		player.addAdena("ItemAuction", count, player, true);
 	}
@@ -560,7 +560,7 @@ public final class ItemAuction
 		return index != -1 ? _auctionBids.get(index) : null;
 	}
 
-	private final int getBidIndexfor(final int playerObjId)
+	private int getBidIndexfor(final int playerObjId)
 	{
 		for (int i = _auctionBids.size(); i-- > 0; )
 		{

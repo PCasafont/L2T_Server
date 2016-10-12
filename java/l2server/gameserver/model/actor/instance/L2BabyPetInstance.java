@@ -169,7 +169,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 		}
 	}
 
-	private final void startCastTask()
+	private void startCastTask()
 	{
 		if ((_majorHeal != null || _buffs != null || _recharge != null) && _castTask == null &&
 				!isDead()) // cast task is not yet started and not dead (will start on revive)
@@ -183,7 +183,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 		_bufferMode = !_bufferMode;
 	}
 
-	private final void stopCastTask()
+	private void stopCastTask()
 	{
 		if (_castTask != null)
 		{

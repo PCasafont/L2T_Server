@@ -81,13 +81,13 @@ public class L2SkillChargeDmg extends L2Skill
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
 					sm.addString(target.getName());
-					((L2PcInstance) caster).sendPacket(sm);
+					caster.sendPacket(sm);
 				}
 				if (target instanceof L2PcInstance)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK2);
 					sm.addString(caster.getName());
-					((L2PcInstance) target).sendPacket(sm);
+					target.sendPacket(sm);
 				}
 
 				//no futher calculations needed.

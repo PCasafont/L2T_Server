@@ -49,7 +49,7 @@ public class EnchantEffectTable
 		load();
 	}
 
-	private final void load()
+	private void load()
 	{
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchanteffects");
 		if (!dir.exists())

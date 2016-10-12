@@ -91,7 +91,7 @@ public class LoginServerThread extends Thread
 	private int _serverID;
 	private boolean _reserveHost;
 	private int _maxPlayer;
-	private List<WaitingClient> _waitingClients;
+	private final List<WaitingClient> _waitingClients;
 	private Map<String, L2GameClient> _accountsInGameServer;
 	private int _status;
 	private String _serverName;

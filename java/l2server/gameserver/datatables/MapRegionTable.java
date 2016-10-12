@@ -43,7 +43,7 @@ public class MapRegionTable
 
 	private final int[][] _regions = new int[16][18];
 
-	public static enum TeleportWhereType
+	public enum TeleportWhereType
 	{
 		Castle, ClanHall, SiegeFlag, Town, Fortress
 	}

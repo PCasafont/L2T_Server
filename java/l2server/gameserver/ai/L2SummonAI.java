@@ -278,7 +278,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if (target instanceof L2Character && ((L2Character) target).isAutoAttackable(((L2Summon) _actor).getOwner()))
+		if (target instanceof L2Character && target.isAutoAttackable(((L2Summon) _actor).getOwner()))
 		{
 			_attackTarget = (L2Character) _actor.getTarget();
 		}

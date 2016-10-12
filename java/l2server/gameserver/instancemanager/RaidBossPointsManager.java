@@ -50,7 +50,7 @@ public class RaidBossPointsManager
 		init();
 	}
 
-	private final void init()
+	private void init()
 	{
 		_list = new HashMap<>();
 		Connection con = null;

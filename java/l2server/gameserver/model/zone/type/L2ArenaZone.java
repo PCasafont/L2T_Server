@@ -51,7 +51,7 @@ public class L2ArenaZone extends L2SpawnZone
 		{
 			if (!character.isInsideZone(L2Character.ZONE_PVP))
 			{
-				((L2PcInstance) character)
+				character
 						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 		}
@@ -67,7 +67,7 @@ public class L2ArenaZone extends L2SpawnZone
 		{
 			if (!character.isInsideZone(L2Character.ZONE_PVP))
 			{
-				((L2PcInstance) character).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 			}
 		}
 	}

@@ -1243,7 +1243,7 @@ public class L2Npc extends L2Character
 	 * @param npcId The Identifier of the L2NpcInstance whose text must be display
 	 * @param val   The number of the page to display
 	 */
-	private final String getHtmlPathCommon(int npcId, String val)
+	private String getHtmlPathCommon(int npcId, String val)
 	{
 		String pom = "";
 
@@ -1338,7 +1338,7 @@ public class L2Npc extends L2Character
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param val    The number of the page of the L2NpcInstance to display
 	 */
-	private final void showChatWindowCommon(L2PcInstance player, String val)
+	private void showChatWindowCommon(L2PcInstance player, String val)
 	{
 		if (getTemplate().IsNonTalking)
 		{

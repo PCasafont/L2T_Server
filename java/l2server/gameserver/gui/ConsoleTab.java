@@ -64,7 +64,7 @@ public class ConsoleTab extends JPanel
 		public final boolean startEnabled;
 		public final String[] subFilters;
 
-		private ConsoleFilter(ConsoleFilter p, Color tc, boolean se, String... sf)
+		ConsoleFilter(ConsoleFilter p, Color tc, boolean se, String... sf)
 		{
 			parent = p;
 			if (parent != null)

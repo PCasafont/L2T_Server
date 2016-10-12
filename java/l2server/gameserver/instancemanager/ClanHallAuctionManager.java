@@ -150,7 +150,7 @@ public class ClanHallAuctionManager
 		load();
 	}
 
-	private final void load()
+	private void load()
 	{
 		Connection con = null;
 		try

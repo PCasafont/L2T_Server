@@ -47,7 +47,6 @@ public final class RequestPledgeWaitingListApply extends L2GameClientPacket
 		{
 			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, _karma))
 			{
-				;
 			}
 			sendPacket(new ExPledgeRecruitApplyInfo(3));
 		}
@@ -55,7 +54,6 @@ public final class RequestPledgeWaitingListApply extends L2GameClientPacket
 		{
 			if (ClanRecruitManager.getInstance().removeWaitingUser(activeChar))
 			{
-				;
 			}
 			sendPacket(new ExPledgeRecruitApplyInfo(0));
 		}

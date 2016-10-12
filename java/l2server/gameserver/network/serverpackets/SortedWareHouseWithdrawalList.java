@@ -49,7 +49,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	private byte _sortorder;
 	private WarehouseListType _itemtype;
 
-	public static enum WarehouseListType
+	public enum WarehouseListType
 	{
 		WEAPON,
 		ARMOR,

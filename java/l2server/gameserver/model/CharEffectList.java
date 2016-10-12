@@ -1778,7 +1778,7 @@ public class CharEffectList
 	 * Recalculate effect bits flag.<br>
 	 * Please no concurrency access
 	 */
-	private final void computeEffectFlags()
+	private void computeEffectFlags()
 	{
 		int flags = 0;
 

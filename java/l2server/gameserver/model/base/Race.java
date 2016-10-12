@@ -23,5 +23,5 @@ package l2server.gameserver.model.base;
 
 public enum Race
 {
-	Human, Elf, DarkElf, Orc, Dwarf, Kamael, Ertheia;
+	Human, Elf, DarkElf, Orc, Dwarf, Kamael, Ertheia
 }

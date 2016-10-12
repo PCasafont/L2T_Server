@@ -75,7 +75,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 *
 	 * @author KenM
 	 */
-	public static enum GameClientState
+	public enum GameClientState
 	{
 		CONNECTED, AUTHED, IN_GAME
 	}

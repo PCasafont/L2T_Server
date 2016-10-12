@@ -20,7 +20,7 @@ package l2server.gameserver.model;
  */
 public class L2RecipeStatInstance
 {
-	public static enum StatType
+	public enum StatType
 	{
 		HP, MP, XP, SP, GIM // grab item modifier:
 		// GIM: the default function uses only the skilllevel to determine

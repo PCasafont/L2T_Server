@@ -101,7 +101,7 @@ public class GeoEditorListener extends Thread
 			{
 				connection.close();
 			}
-			catch (Exception e2)
+			catch (Exception ignored)
 			{
 			}
 		}

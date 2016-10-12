@@ -3051,7 +3051,7 @@ public final class Formulas
 				L2PcInstance player = (L2PcInstance) target;
 				if (!player.isInvul(activeChar))
 				{
-					if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isGM() &&
+					if (!(activeChar instanceof L2PcInstance && activeChar.isGM() &&
 							!((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
 					{
 						player.setCurrentHp(1);
@@ -3070,7 +3070,7 @@ public final class Formulas
 				L2PcInstance player = (L2PcInstance) target;
 				if (!player.isInvul())
 				{
-					if (!(activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isGM() &&
+					if (!(activeChar instanceof L2PcInstance && activeChar.isGM() &&
 							!((L2PcInstance) activeChar).getAccessLevel().canGiveDamage()))
 					{
 						if (Rnd.get(150) < player.getLUC())
@@ -3968,17 +3968,17 @@ public final class Formulas
 		}
 		if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
 		{
-			((L2PcInstance) target).sendMessage(
+			target.sendMessage(
 					"This " + skill.getName() + "'s effect had a " + rate + "% chance to land over you, with a " +
 							effect.getLandRate() + " base land rate.");
 		}
-		if (attacker instanceof L2PcInstance && ((L2PcInstance) attacker).isGM())
+		if (attacker instanceof L2PcInstance && attacker.isGM())
 		{
 			((L2PcInstance) attacker).sendSysMessage(
 					"Your " + skill.getName() + "'s effect had a " + rate + "% chance to land, with a " +
 							effect.getLandRate() + " base land rate.");
 		}
-		if (target instanceof L2PcInstance && ((L2PcInstance) target).isGM())
+		if (target instanceof L2PcInstance && target.isGM())
 		{
 			((L2PcInstance) target).sendSysMessage(
 					"This " + skill.getName() + "'s effect had a " + rate + "% chance to land over you, with a " +
@@ -4143,7 +4143,7 @@ public final class Formulas
 			}
 			if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
 			{
-				((L2PcInstance) target).sendMessage(
+				target.sendMessage(
 						"This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
 								skill.getPower() + " base land rate.");
 			}

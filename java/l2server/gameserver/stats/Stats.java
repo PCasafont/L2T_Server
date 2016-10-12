@@ -343,7 +343,7 @@ public enum Stats
 		return _value;
 	}
 
-	private Stats(String s)
+	Stats(String s)
 	{
 		_value = s;
 	}

@@ -128,7 +128,7 @@ public class PcKnownList extends PlayableKnownList
 
 		if (Config.CHECK_KNOWN && object instanceof L2Npc && getActiveChar().isGM())
 		{
-			getActiveChar().sendMessage("Removed NPC: " + ((L2Npc) object).getName());
+			getActiveChar().sendMessage("Removed NPC: " + object.getName());
 		}
 
 		return true;

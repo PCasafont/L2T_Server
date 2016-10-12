@@ -200,12 +200,12 @@ public enum L2SkillType
 		}
 	}
 
-	private L2SkillType()
+	L2SkillType()
 	{
 		_class = L2SkillDefault.class;
 	}
 
-	private L2SkillType(Class<? extends L2Skill> classType)
+	L2SkillType(Class<? extends L2Skill> classType)
 	{
 		_class = classType;
 	}

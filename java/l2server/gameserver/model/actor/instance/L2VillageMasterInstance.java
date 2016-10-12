@@ -247,7 +247,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					paramTwo = Integer.parseInt(command.substring(endIndex).trim());
 				}
 			}
-			catch (Exception NumberFormatException)
+			catch (Exception ignored)
 			{
 			}
 
@@ -747,7 +747,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 	 * Returns list of available subclasses
 	 * Base class and already used subclasses removed
 	 */
-	private final List<Integer> getAvailableSubClasses(L2PcInstance player)
+	private List<Integer> getAvailableSubClasses(L2PcInstance player)
 	{
 		// get player base class
 		final int currentBaseId = player.getBaseClass();
@@ -830,7 +830,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 	 * is contains in allowed subclasses)
 	 * Base class not added into allowed subclasses.
 	 */
-	private final boolean isValidNewSubClass(L2PcInstance player, int classId)
+	private boolean isValidNewSubClass(L2PcInstance player, int classId)
 	{
 		if (!checkVillageMaster(classId))
 		{

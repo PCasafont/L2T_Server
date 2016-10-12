@@ -94,7 +94,7 @@ public class L2SkillSpawn extends L2Skill
 
 				if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND)
 				{
-					Point3D wordPosition = ((L2PcInstance) caster).getSkillCastPosition();
+					Point3D wordPosition = caster.getSkillCastPosition();
 
 					if (wordPosition != null)
 					{

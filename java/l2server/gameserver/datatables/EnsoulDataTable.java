@@ -51,7 +51,7 @@ public class EnsoulDataTable
 		load();
 	}
 
-	private final void load()
+	private void load()
 	{
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/effects.xml");
 		if (!file.exists())

@@ -775,8 +775,8 @@ public class L2PcInstance extends L2Playable
 	/**
 	 * Bypass validations
 	 */
-	private List<String> _validBypass = new ArrayList<>();
-	private List<String> _validBypass2 = new ArrayList<>();
+	private final List<String> _validBypass = new ArrayList<>();
+	private final List<String> _validBypass2 = new ArrayList<>();
 
 	private Forum _forumMail;
 	private Forum _forumMemo;
@@ -6549,8 +6549,8 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if ((L2ArmorType) legs.getItemType() == L2ArmorType.HEAVY &&
-					(L2ArmorType) armor.getItemType() == L2ArmorType.HEAVY)
+			if (legs.getItemType() == L2ArmorType.HEAVY &&
+					armor.getItemType() == L2ArmorType.HEAVY)
 			{
 				return true;
 			}
@@ -6558,7 +6558,7 @@ public class L2PcInstance extends L2Playable
 		if (armor != null)
 		{
 			if (getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() ==
-					L2Item.SLOT_FULL_ARMOR && (L2ArmorType) armor.getItemType() == L2ArmorType.HEAVY)
+					L2Item.SLOT_FULL_ARMOR && armor.getItemType() == L2ArmorType.HEAVY)
 			{
 				return true;
 			}
@@ -6573,8 +6573,8 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if ((L2ArmorType) legs.getItemType() == L2ArmorType.LIGHT &&
-					(L2ArmorType) armor.getItemType() == L2ArmorType.LIGHT)
+			if (legs.getItemType() == L2ArmorType.LIGHT &&
+					armor.getItemType() == L2ArmorType.LIGHT)
 			{
 				return true;
 			}
@@ -6582,7 +6582,7 @@ public class L2PcInstance extends L2Playable
 		if (armor != null)
 		{
 			if (getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() ==
-					L2Item.SLOT_FULL_ARMOR && (L2ArmorType) armor.getItemType() == L2ArmorType.LIGHT)
+					L2Item.SLOT_FULL_ARMOR && armor.getItemType() == L2ArmorType.LIGHT)
 			{
 				return true;
 			}
@@ -6597,8 +6597,8 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if ((L2ArmorType) legs.getItemType() == L2ArmorType.MAGIC &&
-					(L2ArmorType) armor.getItemType() == L2ArmorType.MAGIC)
+			if (legs.getItemType() == L2ArmorType.MAGIC &&
+					armor.getItemType() == L2ArmorType.MAGIC)
 			{
 				return true;
 			}
@@ -6606,7 +6606,7 @@ public class L2PcInstance extends L2Playable
 		if (armor != null)
 		{
 			if (getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() ==
-					L2Item.SLOT_FULL_ARMOR && (L2ArmorType) armor.getItemType() == L2ArmorType.MAGIC)
+					L2Item.SLOT_FULL_ARMOR && armor.getItemType() == L2ArmorType.MAGIC)
 			{
 				return true;
 			}
@@ -17116,12 +17116,12 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-	private final void clearPetData()
+	private void clearPetData()
 	{
 		_data = null;
 	}
 
-	private final L2PetData getPetData(int npcId)
+	private L2PetData getPetData(int npcId)
 	{
 		if (_data == null)
 		{
@@ -17130,7 +17130,7 @@ public class L2PcInstance extends L2Playable
 		return _data;
 	}
 
-	private final L2PetLevelData getPetLevelData(int npcId)
+	private L2PetLevelData getPetLevelData(int npcId)
 	{
 		if (_leveldata == null)
 		{
@@ -20591,7 +20591,7 @@ public class L2PcInstance extends L2Playable
 	public boolean isAlly(L2Character target)
 	{
 		return target instanceof L2PcInstance &&
-				(getParty() != null && ((L2PcInstance) target).getParty() == getParty() ||
+				(getParty() != null && target.getParty() == getParty() ||
 						getClanId() != 0 && ((L2PcInstance) target).getClanId() == getClanId() ||
 						getAllyId() != 0 && ((L2PcInstance) target).getAllyId() == getAllyId()
 		/*|| target instanceof L2ApInstance*/);
@@ -22824,7 +22824,7 @@ public class L2PcInstance extends L2Playable
 				{
 					con.close();
 				}
-				catch (Exception e)
+				catch (Exception ignored)
 				{
 
 				}
@@ -23057,7 +23057,7 @@ public class L2PcInstance extends L2Playable
 			{
 				con.close();
 			}
-			catch (final Exception e)
+			catch (final Exception ignored)
 			{
 
 			}

@@ -1393,7 +1393,7 @@ public class CustomCommunityBoard
 			}
 			if (target != null && target.getInstanceId() == pl.getObjectId() && target.getNpcId() == 40001)
 			{
-				targetObjId = ((L2Npc) pl.getTarget()).getObjectId();
+				targetObjId = pl.getTarget().getObjectId();
 				htmlPage.replace("%backButton%",
 						"<table width=120 align=right><tr><td align=left width=20><img src=\"L2UI.bbs_reply\" width=16 height=16></td><td align=left width=104><font color=82a0b1><a action=\"bypass -h npc_" +
 								targetObjId +
@@ -1602,7 +1602,7 @@ public class CustomCommunityBoard
 		return total;
 	}
 
-	private final Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending)
+	private Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending)
 	{
 		final List<Entry<Object, Long>> list = new LinkedList<>(unsortMap.entrySet());
 		Collections.sort(list, (e1, e2) ->

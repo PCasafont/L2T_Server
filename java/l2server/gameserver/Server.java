@@ -413,11 +413,6 @@ public class Server
 
 		KnownListUpdateTaskManager.getInstance();
 
-		if (Config.ANTI_BOTS_ENABLED)
-		{
-			AntiBotsManager.getInstance();
-		}
-
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{
 			OfflineTradersTable.restoreOfflineTraders();

@@ -147,12 +147,12 @@ public class Quest extends ManagedScript
 
 	}
 
-	public static enum TrapAction
+	public enum TrapAction
 	{
 		TRAP_TRIGGERED, TRAP_DETECTED, TRAP_DISARMED
 	}
 
-	public static enum QuestEventType
+	public enum QuestEventType
 	{
 		ON_FIRST_TALK(false),
 		// control the first dialog shown by NPCs when they are clicked (some quests must override the default npc action)

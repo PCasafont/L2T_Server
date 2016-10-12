@@ -203,7 +203,7 @@ public class Fort
 						removeFunction(getType());
 					}
 				}
-				catch (Throwable t)
+				catch (Throwable ignored)
 				{
 				}
 			}

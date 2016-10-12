@@ -60,7 +60,7 @@ public class CoupleManager
 
 	// =========================================================
 	// Method - Private
-	private final void load()
+	private void load()
 	{
 		Connection con = null;
 		try

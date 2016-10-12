@@ -42,7 +42,7 @@ public abstract class EventInstance
 
 	public enum EventState
 	{
-		INACTIVE, READY, STARTED, REWARDING;
+		INACTIVE, READY, STARTED, REWARDING
 	}
 
 	protected final EventConfig _config;

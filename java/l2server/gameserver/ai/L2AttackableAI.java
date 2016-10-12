@@ -151,7 +151,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		if (target.isInvul(me))
 		{
 			// However EffectInvincible requires to check GMs specially
-			if (target instanceof L2PcInstance && ((L2PcInstance) target).isGM())
+			if (target instanceof L2PcInstance && target.isGM())
 			{
 				return false;
 			}
@@ -188,7 +188,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		if (target instanceof L2PcInstance)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
-			if (((L2PcInstance) target).isGM() && !((L2PcInstance) target).getAccessLevel().canTakeAggro())
+			if (target.isGM() && !((L2PcInstance) target).getAccessLevel().canTakeAggro())
 			{
 				return false;
 			}
@@ -618,7 +618,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		if (npc instanceof L2GuardInstance)
 		{
 			// Order to the L2GuardInstance to return to its home location because there's no target to attack
-			((L2GuardInstance) npc).returnHome();
+			npc.returnHome();
 		}
 
 		// Minions following leader

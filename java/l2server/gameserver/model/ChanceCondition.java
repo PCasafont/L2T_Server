@@ -48,7 +48,7 @@ public final class ChanceCondition
 	public static final int EVT_KILL = 0x040000;
 	public static final int EVT_SHIELD_BLOCK = 0x080000;
 
-	public static enum TriggerType
+	public enum TriggerType
 	{
 		// You hit an enemy
 		ON_HIT(EVT_HIT), // You hit an enemy - was crit
@@ -74,7 +74,7 @@ public final class ChanceCondition
 
 		private final int _mask;
 
-		private TriggerType(int mask)
+		TriggerType(int mask)
 		{
 			_mask = mask;
 		}

@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 public interface IItemHandler
 {
-	public static Logger _log = Logger.getLogger(IItemHandler.class.getName());
+	Logger _log = Logger.getLogger(IItemHandler.class.getName());
 
 	/**
 	 * Launch task associated to the item.
@@ -38,5 +38,5 @@ public interface IItemHandler
 	 * @param item      : L2ItemInstance designating the item to use
 	 * @param forceUse: ctrl hold on item use
 	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
+	void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
 }

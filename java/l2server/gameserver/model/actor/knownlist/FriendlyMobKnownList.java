@@ -61,7 +61,7 @@ public class FriendlyMobKnownList extends AttackableKnownList
 		if (getActiveChar().hasAI())
 		{
 			getActiveChar().getAI().notifyEvent(CtrlEvent.EVT_FORGET_OBJECT, object);
-			if (getActiveChar().getTarget() == (L2Character) object)
+			if (getActiveChar().getTarget() == object)
 			{
 				getActiveChar().setTarget(null);
 			}

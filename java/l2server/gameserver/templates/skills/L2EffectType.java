@@ -55,7 +55,7 @@ public enum L2EffectType
 
 	private long _mask;
 
-	private L2EffectType(long mask)
+	L2EffectType(long mask)
 	{
 		_mask = mask;
 	}

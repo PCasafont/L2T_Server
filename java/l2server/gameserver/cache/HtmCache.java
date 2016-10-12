@@ -188,7 +188,7 @@ public class HtmCache implements Reloadable
 				{
 					fis.close();
 				}
-				catch (Exception e1)
+				catch (Exception ignored)
 				{
 				}
 			}

@@ -124,7 +124,7 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 		}
 	}
 
-	private final ClanHall getClanHall()
+	private ClanHall getClanHall()
 	{
 		if (!_init)
 		{

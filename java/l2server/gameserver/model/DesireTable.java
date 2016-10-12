@@ -44,7 +44,7 @@ public class DesireTable
 
 	public enum DesireType
 	{
-		FEAR, DISLIKE, HATE, DAMAGE;
+		FEAR, DISLIKE, HATE, DAMAGE
 	}
 
 	static class DesireValue

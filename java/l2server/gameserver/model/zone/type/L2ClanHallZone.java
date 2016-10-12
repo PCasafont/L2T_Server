@@ -73,7 +73,7 @@ public class L2ClanHallZone extends L2SpawnZone
 
 			// Send decoration packet
 			AgitDecoInfo deco = new AgitDecoInfo(clanHall);
-			((L2PcInstance) character).sendPacket(deco);
+			character.sendPacket(deco);
 		}
 		else if (character instanceof L2Attackable && ((L2Attackable) character).getMostHated() != null)
 		{
@@ -120,7 +120,7 @@ public class L2ClanHallZone extends L2SpawnZone
 				continue;
 			}
 
-			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);
+			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		}
 	}
 

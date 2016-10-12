@@ -18,7 +18,6 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.instancemanager.AntiBotsManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.model.CharSelectInfoPackage;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -131,16 +130,6 @@ public class CharacterSelect extends L2GameClientPacket
 					cha.setClient(getClient());
 					getClient().setActiveChar(cha);
 					cha.setOnlineStatus(true, true);
-
-					if (Config.ANTI_BOTS_ENABLED)
-					{
-						final String hardwareId = AntiBotsManager.getInstance()
-								.getHardwareIdFor(cha.getClient().getConnectionAddress().toString().replace("/", ""));
-						if (hardwareId != null)
-						{
-							getClient().setHWId(hardwareId);
-						}
-					}
 
 					//sendPacket(new SSQInfo());
 					sendPacket(new ExSubjobInfo(cha));

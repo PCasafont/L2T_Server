@@ -1478,7 +1478,7 @@ public abstract class L2Character extends L2Object
 				if (obj instanceof L2Character)
 				{
 					if (obj instanceof L2PetInstance && this instanceof L2PcInstance &&
-							((L2PetInstance) obj).getOwner() == (L2PcInstance) this)
+							((L2PetInstance) obj).getOwner() == this)
 					{
 						continue;
 					}
@@ -2921,7 +2921,7 @@ public abstract class L2Character extends L2Object
 		L2CharacterAI oldAI = getAI();
 		if (oldAI != null && oldAI != newAI && oldAI instanceof L2AttackableAI)
 		{
-			((L2AttackableAI) oldAI).stopAITask();
+			oldAI.stopAITask();
 		}
 		_ai = newAI;
 	}
@@ -3181,7 +3181,7 @@ public abstract class L2Character extends L2Object
 		}
 		else if (this instanceof L2Summon)
 		{
-			((L2Summon) this).broadcastStatusUpdate();
+			this.broadcastStatusUpdate();
 		}
 		else if (this instanceof L2Npc)
 		{
@@ -3633,8 +3633,8 @@ public abstract class L2Character extends L2Object
 				// Dirty fix for... summons not attacking targets automatically after jumping.
 				if (_actor instanceof L2Summon)
 				{
-					((L2Summon) _actor).getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _actor.getTarget());
-					((L2Summon) _actor).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _actor.getTarget());
+					_actor.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _actor.getTarget());
+					_actor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _actor.getTarget());
 				}
 			}
 			catch (Exception e)
@@ -3644,7 +3644,7 @@ public abstract class L2Character extends L2Object
 		}
 	}
 
-	private Set<Integer> _abnormalEffects = new CopyOnWriteArraySet<>();
+	private final Set<Integer> _abnormalEffects = new CopyOnWriteArraySet<>();
 
 	protected CharEffectList _effects = new CharEffectList(this);
 
@@ -4173,7 +4173,7 @@ public abstract class L2Character extends L2Object
 		{
 			if (((L2PcInstance) this).getTransformation() != null)
 			{
-				((L2PcInstance) this).unTransform(removeEffects);
+				this.unTransform(removeEffects);
 			}
 		}
 
@@ -6411,7 +6411,7 @@ public abstract class L2Character extends L2Object
 					// Custom messages - nice but also more network load
 					if (target instanceof L2PcInstance)
 					{
-						((L2PcInstance) target).sendMessage("You reflected " + reflectedDamage + " damage.");
+						target.sendMessage("You reflected " + reflectedDamage + " damage.");
 					}
 					else if (target instanceof L2Summon)
 					{
@@ -6420,7 +6420,7 @@ public abstract class L2Character extends L2Object
 
 					if (this instanceof L2PcInstance)
 					{
-						((L2PcInstance) this).sendMessage("Target reflected to you " + reflectedDamage + " damage.");
+						this.sendMessage("Target reflected to you " + reflectedDamage + " damage.");
 					}
 					else if (this instanceof L2Summon)
 					{
@@ -6772,8 +6772,8 @@ public abstract class L2Character extends L2Object
 
 		if (this instanceof L2Playable && target instanceof L2Playable)
 		{
-			final L2PcInstance player = ((L2Playable) this).getActingPlayer();
-			final L2PcInstance targetedPlayer = ((L2Playable) target).getActingPlayer();
+			final L2PcInstance player = this.getActingPlayer();
+			final L2PcInstance targetedPlayer = target.getActingPlayer();
 
 			if (player.getDuelId() != 0 && player.getDuelId() == targetedPlayer.getDuelId())
 			{
@@ -8652,8 +8652,6 @@ public abstract class L2Character extends L2Object
 		return getStat().getPvPPhysicalDamage(target);
 	}
 
-	;
-
 	public double getPvPPhysicalDefense(L2Character attacker)
 	{
 		return getStat().getPvPPhysicalDefense(attacker);
@@ -8674,22 +8672,16 @@ public abstract class L2Character extends L2Object
 		return getStat().getPvPMagicDamage(target);
 	}
 
-	;
-
 	public double getPvPMagicDefense(L2Character attacker)
 	{
 		return getStat().getPvPMagicDefense(attacker);
 	}
-
-	;
 
 	//PvE Bonus
 	public double getPvEPhysicalDamage(L2Character target)
 	{
 		return getStat().getPvEPhysicalDamage(target);
 	}
-
-	;
 
 	public double getPvEPhysicalDefense(L2Character attacker)
 	{
@@ -8711,14 +8703,10 @@ public abstract class L2Character extends L2Object
 		return getStat().getPvEMagicDamage(target);
 	}
 
-	;
-
 	public double getPvEMagicDefense(L2Character attacker)
 	{
 		return getStat().getPvEMagicDefense(attacker);
 	}
-
-	;
 
 	/**
 	 * Return max visible HP for display purpose.

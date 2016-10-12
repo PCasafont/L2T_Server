@@ -79,7 +79,7 @@ public class L2FortEnvoyInstance extends L2Npc
 			{
 				val = Integer.parseInt(par);
 			}
-			catch (IndexOutOfBoundsException | NumberFormatException ioobe)
+			catch (IndexOutOfBoundsException | NumberFormatException ignored)
 			{
 			}
 

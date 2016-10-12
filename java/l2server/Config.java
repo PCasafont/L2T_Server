@@ -98,12 +98,6 @@ public final class Config
 	//Kill Info Window
 	public static boolean ENABLE_CUSTOM_KILL_INFO;
 
-	// Anti Bots
-	public static boolean ANTI_BOTS_ENABLED;
-	public static boolean ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED;
-	public static boolean ANTI_BOTS_SANCTION_ONLY_IF_TOOL_STILL_RUNNING;
-	public static boolean ANTI_BOTS_BAN_OFFENDERS_RELIED_CHARACTERS;
-
 	//--------------------------------------------------
 	// L2J Variable Definitions
 	//--------------------------------------------------
@@ -876,7 +870,7 @@ public final class Config
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
 
-	public static enum IdFactoryType
+	public enum IdFactoryType
 	{
 		Compaction, BitSet, Stack
 	}
@@ -884,12 +878,12 @@ public final class Config
 	public static IdFactoryType IDFACTORY_TYPE;
 	public static boolean BAD_ID_CHECKING;
 
-	public static enum ObjectMapType
+	public enum ObjectMapType
 	{
 		L2ObjectHashMap, WorldObjectMap
 	}
 
-	public static enum ObjectSetType
+	public enum ObjectSetType
 	{
 		L2ObjectHashSet, WorldObjectSet
 	}
@@ -1158,7 +1152,7 @@ public final class Config
 				{
 					is.close();
 				}
-				catch (Exception e)
+				catch (Exception ignored)
 				{
 				}
 			}
@@ -1178,7 +1172,7 @@ public final class Config
 				{
 					is.close();
 				}
-				catch (Exception e)
+				catch (Exception ignored)
 				{
 				}
 			}

@@ -60,7 +60,7 @@ public class L2DynamicZone extends L2ZoneType
 		{
 			if (character instanceof L2PcInstance)
 			{
-				((L2PcInstance) character).sendMessage("You have entered a temporary zone!");
+				character.sendMessage("You have entered a temporary zone!");
 			}
 			_skill.getEffects(_owner, character);
 		}
@@ -75,7 +75,7 @@ public class L2DynamicZone extends L2ZoneType
 	{
 		if (character instanceof L2PcInstance)
 		{
-			((L2PcInstance) character).sendMessage("You have left a temporary zone!");
+			character.sendMessage("You have left a temporary zone!");
 		}
 		if (character == _owner)
 		{

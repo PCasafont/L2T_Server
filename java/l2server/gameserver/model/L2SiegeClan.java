@@ -72,7 +72,6 @@ public class L2SiegeClan
 		{
 			while (getFlag().remove(flag))
 			{
-				;
 			}
 		}
 

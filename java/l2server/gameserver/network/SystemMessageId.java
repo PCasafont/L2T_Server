@@ -21724,7 +21724,7 @@ public final class SystemMessageId
 		return _id;
 	}
 
-	private final void setName(final String name)
+	private void setName(final String name)
 	{
 		_name = name;
 	}
@@ -21832,13 +21832,13 @@ public final class SystemMessageId
 	/**
 	 * @author Forsaiken
 	 */
-	private static interface Builder
+	private interface Builder
 	{
-		public String toString(final Object param);
+		String toString(final Object param);
 
-		public String toString(final Object... params);
+		String toString(final Object... params);
 
-		public int getIndex();
+		int getIndex();
 	}
 
 	/**

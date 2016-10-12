@@ -278,7 +278,7 @@ public final class RequestSendPost extends L2GameClientPacket
 		}
 	}
 
-	private final boolean removeItems(L2PcInstance player, Message msg)
+	private boolean removeItems(L2PcInstance player, Message msg)
 	{
 		long currentAdena = player.getAdena();
 		long fee = MESSAGE_FEE;

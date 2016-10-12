@@ -270,7 +270,7 @@ public abstract class L2Vehicle extends L2Character
 		{
 			_passengers.remove(player);
 		}
-		catch (Exception e)
+		catch (Exception ignored)
 		{
 		}
 	}

@@ -85,7 +85,7 @@ public class CursedWeaponsManager
 		init();
 	}
 
-	private final void load()
+	private void load()
 	{
 		if (Config.DEBUG)
 		{
@@ -168,7 +168,7 @@ public class CursedWeaponsManager
 		}
 	}
 
-	private final void restore()
+	private void restore()
 	{
 		if (Config.DEBUG)
 		{
@@ -222,7 +222,7 @@ public class CursedWeaponsManager
 		}
 	}
 
-	private final void controlPlayers()
+	private void controlPlayers()
 	{
 		if (Config.DEBUG)
 		{
@@ -300,7 +300,7 @@ public class CursedWeaponsManager
 					rset.close();
 					statement.close();
 				}
-				catch (SQLException sqlE)
+				catch (SQLException ignored)
 				{
 				}
 			}

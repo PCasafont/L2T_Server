@@ -42,7 +42,7 @@ public final class PetitionManager
 	private Map<Integer, Petition> _pendingPetitions;
 	private Map<Integer, Petition> _completedPetitions;
 
-	private static enum PetitionState
+	private enum PetitionState
 	{
 		Pending,
 		Responder_Cancel,
@@ -55,7 +55,7 @@ public final class PetitionManager
 		Completed
 	}
 
-	private static enum PetitionType
+	private enum PetitionType
 	{
 		Immobility,
 		Recovery_Related,

@@ -704,7 +704,7 @@ public final class Util
 					hash.put(Integer.parseInt(f.getName().replaceAll(".xml", "")), f);
 				}
 			}
-			catch (Exception e)
+			catch (Exception ignored)
 			{
 			}
 		}

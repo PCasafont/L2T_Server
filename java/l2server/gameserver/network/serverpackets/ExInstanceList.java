@@ -43,8 +43,6 @@ public class ExInstanceList extends L2GameServerPacket
 		}
 	}
 
-	;
-
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */

@@ -451,36 +451,6 @@ public class VoteNpc extends Quest
 		}
 
 		return result != null && result.contains("TRUE");
-		
-		/*Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-			PreparedStatement stm = con.prepareStatement(SELECT_VOTE_IP);
-			//We will get the proper player external IP, the antibots already check if the player use a ping tool and store his real ip
-			stm.setString(1, Config.ANTI_BOTS_ENABLED ? AntiBotsManager.getInstance().getProperPlayerIP(player.getExternalIP()) : player.getExternalIP());
-			ResultSet rs = stm.executeQuery();
-			if (rs.next())
-			{
-				long currTime = System.currentTimeMillis() / 1000;
-				long expireTime = rs.getLong("expiry_time");
-				if (expireTime > currTime)
-					return true;
-			}
-			rs.close();
-			stm.close();
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-
-		return false;*/
 	}
 
 	public static void main(String[] args)

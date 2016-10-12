@@ -31,12 +31,12 @@ public interface IChatHandler
 	 * @param activeChar
 	 * @param target
 	 */
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text);
+	void handleChat(int type, L2PcInstance activeChar, String target, String text);
 
 	/**
 	 * Returns a list of all chat types registered to this handler
 	 *
 	 * @return
 	 */
-	public int[] getChatTypeList();
+	int[] getChatTypeList();
 }

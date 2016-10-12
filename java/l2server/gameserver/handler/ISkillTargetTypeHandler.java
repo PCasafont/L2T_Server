@@ -32,10 +32,10 @@ public interface ISkillTargetTypeHandler
 	 * @param target
 	 * @return
 	 */
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
+	L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
 
 	/**
 	 * @return
 	 */
-	public Enum<L2SkillTargetType> getTargetType();
+	Enum<L2SkillTargetType> getTargetType();
 }

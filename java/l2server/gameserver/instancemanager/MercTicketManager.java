@@ -1554,7 +1554,7 @@ public class MercTicketManager
 		load();
 	}
 
-	private final void load()
+	private void load()
 	{
 		Connection con = null;
 		// load merc tickets into the world

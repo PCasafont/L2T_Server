@@ -282,14 +282,12 @@ public class ClanWarManager
 
 	public static class ClanWar
 	{
-		public static enum WarState
+		public enum WarState
 		{
 			DECLARED, STARTED, REPOSE
 		}
 
-		;
-
-		public static enum WarSituation
+		public enum WarSituation
 		{
 			DOMINATING, SUPERIOR, EVENLYMATCHED, INFERIOR, OVERWHELMED
 		}

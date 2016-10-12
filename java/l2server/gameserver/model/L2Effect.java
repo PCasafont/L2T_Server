@@ -30,7 +30,7 @@ import l2server.gameserver.templates.skills.L2EffectType;
 public abstract class L2Effect
 {
 
-	public static enum EffectState
+	public enum EffectState
 	{
 		CREATED, ACTING, FINISHING
 	}

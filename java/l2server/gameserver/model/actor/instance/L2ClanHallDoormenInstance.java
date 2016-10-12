@@ -158,7 +158,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 		player.sendPacket(html);
 	}
 
-	private final ClanHall getClanHall()
+	private ClanHall getClanHall()
 	{
 		if (!_init)
 		{

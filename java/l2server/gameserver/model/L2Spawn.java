@@ -120,7 +120,7 @@ public class L2Spawn
 
 	private long _nextRespawn = 0L;
 
-	private static List<SpawnListener> _spawnListeners = new ArrayList<>();
+	private static final List<SpawnListener> _spawnListeners = new ArrayList<>();
 
 	/**
 	 * The task launching the function doSpawn()
@@ -397,7 +397,7 @@ public class L2Spawn
 		{
 			// Set champion on next spawn
 			if (_npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion &&
-					!_npc.isRaid() && !((L2MonsterInstance) _npc).isRaidMinion() &&
+					!_npc.isRaid() && !_npc.isRaidMinion() &&
 					!(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) &&
 					!(_npc instanceof L2EventGolemInstance) && getNpcId() != 44000 &&
 					Config.L2JMOD_CHAMPION_FREQUENCY > 0 && _npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL &&
@@ -425,7 +425,7 @@ public class L2Spawn
 		}
 	}
 
-	private final Class<?> getClassFor(final String templateType, final boolean custom)
+	private Class<?> getClassFor(final String templateType, final boolean custom)
 	{
 		Class<?> instanceClass = null;
 

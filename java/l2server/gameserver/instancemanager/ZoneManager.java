@@ -99,7 +99,7 @@ public class ZoneManager
 	// =========================================================
 	// Method - Private
 
-	private final void load()
+	private void load()
 	{
 		Log.info("Loading zones...");
 		Connection con = null;

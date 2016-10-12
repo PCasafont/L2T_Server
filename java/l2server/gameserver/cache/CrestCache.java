@@ -120,7 +120,7 @@ public class CrestCache
 					{
 						f.close();
 					}
-					catch (Exception e1)
+					catch (Exception ignored)
 					{
 					}
 				}

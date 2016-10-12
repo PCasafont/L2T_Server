@@ -51,7 +51,7 @@ public class Duel
 
 	private ArrayList<PlayerCondition> _playerConditions;
 
-	public static enum DuelResultEnum
+	public enum DuelResultEnum
 	{
 		Continue, Team1Win, Team2Win, Team1Surrender, Team2Surrender, Canceled, Timeout
 	}

@@ -80,19 +80,19 @@ public final class Elementals
 			Integer.MAX_VALUE // TODO: Higher stones
 	};
 
-	public static enum ElementalItemType
+	public enum ElementalItemType
 	{
 		Stone(3), Roughore(3), Crystal(6), Jewel(9), Energy(12);
 
 		public int _maxLevel;
 
-		private ElementalItemType(int maxLvl)
+		ElementalItemType(int maxLvl)
 		{
 			_maxLevel = maxLvl;
 		}
 	}
 
-	public static enum ElementalItems
+	public enum ElementalItems
 	{
 		fireStone(FIRE, 9546, ElementalItemType.Stone),
 		waterStone(WATER, 9547, ElementalItemType.Stone),
@@ -134,7 +134,7 @@ public final class Elementals
 		public int _itemId;
 		public ElementalItemType _type;
 
-		private ElementalItems(byte element, int itemId, ElementalItemType type)
+		ElementalItems(byte element, int itemId, ElementalItemType type)
 		{
 			_element = element;
 			_itemId = itemId;
@@ -282,7 +282,7 @@ public final class Elementals
 				return;
 			}
 
-			((L2Character) player).removeStatsOwner(this);
+			player.removeStatsOwner(this);
 
 			_active = false;
 		}

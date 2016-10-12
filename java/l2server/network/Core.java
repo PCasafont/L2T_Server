@@ -227,7 +227,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		closeSelectorThread();
 	}
 
-	private final void finishConnection(final SelectionKey key, final MMOConnection<T> con)
+	private void finishConnection(final SelectionKey key, final MMOConnection<T> con)
 	{
 		try
 		{
@@ -247,7 +247,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final void acceptConnection(final SelectionKey key, MMOConnection<T> con)
+	private void acceptConnection(final SelectionKey key, MMOConnection<T> con)
 	{
 		ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
 		SocketChannel sc;
@@ -276,7 +276,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final void readPacket(final SelectionKey key, final MMOConnection<T> con)
+	private void readPacket(final SelectionKey key, final MMOConnection<T> con)
 	{
 		if (!con.isClosed())
 		{
@@ -354,7 +354,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final boolean tryReadPacket(final SelectionKey key, final T client, final ByteBuffer buf, final MMOConnection<T> con)
+	private boolean tryReadPacket(final SelectionKey key, final T client, final ByteBuffer buf, final MMOConnection<T> con)
 	{
 		switch (buf.remaining())
 		{
@@ -431,13 +431,13 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final void allocateReadBuffer(final MMOConnection<T> con)
+	private void allocateReadBuffer(final MMOConnection<T> con)
 	{
 		con.setReadBuffer(getPooledBuffer().put(READ_BUFFER));
 		READ_BUFFER.clear();
 	}
 
-	private final void parseClientPacket(final int pos, final ByteBuffer buf, final int dataSize, final T client)
+	private void parseClientPacket(final int pos, final ByteBuffer buf, final int dataSize, final T client)
 	{
 		final boolean ret = client.decrypt(buf, dataSize);
 
@@ -466,7 +466,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final void writeClosePacket(final MMOConnection<T> con)
+	private void writeClosePacket(final MMOConnection<T> con)
 	{
 		SendablePacket<T> sp;
 		synchronized (con.getSendQueue())
@@ -547,7 +547,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final boolean prepareWriteBuffer(final MMOConnection<T> con)
+	private boolean prepareWriteBuffer(final MMOConnection<T> con)
 	{
 		boolean hasPending = false;
 		DIRECT_WRITE_BUFFER.clear();
@@ -605,7 +605,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		return hasPending;
 	}
 
-	private final void putPacketIntoWriteBuffer(final T client, final SendablePacket<T> sp)
+	private void putPacketIntoWriteBuffer(final T client, final SendablePacket<T> sp)
 	{
 		WRITE_BUFFER.clear();
 
@@ -648,7 +648,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		}
 	}
 
-	private final void closeConnectionImpl(final SelectionKey key, final MMOConnection<T> con)
+	private void closeConnectionImpl(final SelectionKey key, final MMOConnection<T> con)
 	{
 		try
 		{

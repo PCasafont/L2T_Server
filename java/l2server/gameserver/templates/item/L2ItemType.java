@@ -22,5 +22,5 @@ package l2server.gameserver.templates.item;
  */
 public interface L2ItemType
 {
-	public int mask();
+	int mask();
 }
