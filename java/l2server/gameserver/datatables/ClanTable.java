@@ -100,7 +100,7 @@ public class ClanTable
             ForumsBBSManager.getInstance().initRoot();
         }
 
-        _clans = new HashMap<Integer, L2Clan>();
+        _clans = new HashMap<>();
         L2Clan clan;
         Connection con = null;
         try
@@ -150,7 +150,7 @@ public class ClanTable
     {
         Comparator<L2Clan> byMemberCount = new ClanByMemberCountComparator();
 
-        ArrayList<L2Clan> sortedClans = new ArrayList<L2Clan>(_clans.values());
+        ArrayList<L2Clan> sortedClans = new ArrayList<>(_clans.values());
         Collections.sort(sortedClans, byMemberCount);
 
         List<L2Clan> temp = sortedClans.subList(0, Math.min(10, sortedClans.size()));
@@ -166,7 +166,7 @@ public class ClanTable
      */
     public L2Clan getClan(int clanId)
     {
-        L2Clan clan = _clans.get(Integer.valueOf(clanId));
+        L2Clan clan = _clans.get(clanId);
 
         return clan;
     }
@@ -264,7 +264,7 @@ public class ClanTable
             Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
         }
 
-        _clans.put(Integer.valueOf(clan.getClanId()), clan);
+        _clans.put(clan.getClanId(), clan);
 
         //should be update packet only
         player.sendPacket(new PledgeShowInfoUpdate(clan));

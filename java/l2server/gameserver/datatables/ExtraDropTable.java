@@ -43,7 +43,7 @@ public class ExtraDropTable
 
     private ExtraDropTable()
     {
-        _extraGroups = new TIntObjectHashMap<ArrayList<L2DropCategory>>();
+        _extraGroups = new TIntObjectHashMap<>();
         if (!Config.IS_CLASSIC)
         {
             restoreData();
@@ -67,7 +67,7 @@ public class ExtraDropTable
                     if (d.getName().equalsIgnoreCase("extraDrop"))
                     {
                         int id = d.getInt("id");
-                        ArrayList<L2DropCategory> extraGroup = new ArrayList<L2DropCategory>();
+                        ArrayList<L2DropCategory> extraGroup = new ArrayList<>();
                         for (XmlNode propertyNode : d.getChildren())
                         {
                             if (propertyNode.getName().equalsIgnoreCase("dropCategory"))

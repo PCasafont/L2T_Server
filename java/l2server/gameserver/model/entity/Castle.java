@@ -57,10 +57,10 @@ public class Castle
 
     // =========================================================
     // Data Field
-    private List<CropProcure> _procure = new ArrayList<CropProcure>();
-    private List<SeedProduction> _production = new ArrayList<SeedProduction>();
-    private List<CropProcure> _procureNext = new ArrayList<CropProcure>();
-    private List<SeedProduction> _productionNext = new ArrayList<SeedProduction>();
+    private List<CropProcure> _procure = new ArrayList<>();
+    private List<SeedProduction> _production = new ArrayList<>();
+    private List<CropProcure> _procureNext = new ArrayList<>();
+    private List<SeedProduction> _productionNext = new ArrayList<>();
 
     private boolean _isNextPeriodApproved = false;
 
@@ -78,7 +78,7 @@ public class Castle
     // =========================================================
     // Data Field
     private int _castleId = 0;
-    private List<L2DoorInstance> _doors = new ArrayList<L2DoorInstance>();
+    private List<L2DoorInstance> _doors = new ArrayList<>();
     private String _name = "";
     private int _ownerId = 0;
     private Siege _siege = null;
@@ -94,10 +94,10 @@ public class Castle
     private L2CastleZone _castleZone = null;
     private L2CastleTeleportZone _teleZone;
     private L2Clan _formerOwner = null;
-    private List<L2ArtefactInstance> _artefacts = new ArrayList<L2ArtefactInstance>(1);
+    private List<L2ArtefactInstance> _artefacts = new ArrayList<>(1);
     private TIntIntHashMap _engrave = new TIntIntHashMap(1);
     private Map<Integer, CastleFunction> _function;
-    private ArrayList<L2Skill> _residentialSkills = new ArrayList<L2Skill>();
+    private ArrayList<L2Skill> _residentialSkills = new ArrayList<>();
     private int _bloodAlliance = 0;
 
     public static final int TENDENCY_NONE = 0;
@@ -537,7 +537,7 @@ public class Castle
     // This method is used to begin removing all castle upgrades
     public void removeUpgrade()
     {
-        Set<Integer> toIterate = new HashSet<Integer>(_function.keySet());
+        Set<Integer> toIterate = new HashSet<>(_function.keySet());
         for (int fk : toIterate)
         {
             removeFunction(fk);
@@ -792,7 +792,7 @@ public class Castle
             L2DatabaseFactory.close(con);
         }
 
-        _function = new HashMap<Integer, CastleFunction>();
+        _function = new HashMap<>();
         _residentialSkills = ResidentialSkillTable.getInstance().getSkills(getCastleId());
         if (getOwnerId() != 0)
         {
@@ -1592,10 +1592,10 @@ public class Castle
 
     public void resetManor()
     {
-        setCropProcure(new ArrayList<CropProcure>(), CastleManorManager.PERIOD_CURRENT);
-        setCropProcure(new ArrayList<CropProcure>(), CastleManorManager.PERIOD_NEXT);
-        setSeedProduction(new ArrayList<SeedProduction>(), CastleManorManager.PERIOD_CURRENT);
-        setSeedProduction(new ArrayList<SeedProduction>(), CastleManorManager.PERIOD_NEXT);
+        setCropProcure(new ArrayList<>(), CastleManorManager.PERIOD_CURRENT);
+        setCropProcure(new ArrayList<>(), CastleManorManager.PERIOD_NEXT);
+        setSeedProduction(new ArrayList<>(), CastleManorManager.PERIOD_CURRENT);
+        setSeedProduction(new ArrayList<>(), CastleManorManager.PERIOD_NEXT);
         if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
         {
             saveCropData();

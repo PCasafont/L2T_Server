@@ -57,7 +57,7 @@ public class CustomOfflineBuffersManager
     private static final String STORE_BUFFERS =
             "INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
     private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";
-    private static Map<Integer, BufferTable> _customBufferTable = new HashMap<Integer, BufferTable>();
+    private static Map<Integer, BufferTable> _customBufferTable = new HashMap<>();
 
     private class BufferTable
     {
@@ -71,7 +71,7 @@ public class CustomOfflineBuffersManager
         {
             _playerId = bufferId;
             _coinName = "Adena";
-            _buffs = new HashMap<Integer, Long>();
+            _buffs = new HashMap<>();
         }
 
         private void setCointId(int i)
@@ -389,7 +389,7 @@ public class CustomOfflineBuffersManager
             return;
         }
         BufferTable buffTable = _customBufferTable.get(player.getObjectId());
-        List<L2Skill> buffSkills = new ArrayList<L2Skill>();
+        List<L2Skill> buffSkills = new ArrayList<>();
         for (L2Skill sk : player.getAllSkills())
         {
             if (sk == null)
@@ -409,7 +409,7 @@ public class CustomOfflineBuffersManager
         {
             if (!buffTable.getBuffs().isEmpty())
             {
-                List<Integer> toDelete = new ArrayList<Integer>();
+                List<Integer> toDelete = new ArrayList<>();
                 for (Entry<Integer, Long> buff : buffTable.getBuffs().entrySet())
                 {
                     if (buff == null)
@@ -674,7 +674,7 @@ public class CustomOfflineBuffersManager
                 String buffs = rs.getString("buffs");
                 int coinId = rs.getInt("coinId");
 
-                Map<Integer, Long> playerBuffs = new HashMap<Integer, Long>();
+                Map<Integer, Long> playerBuffs = new HashMap<>();
                 for (String i : buffs.split(";"))
                 {
                     int buffId = Integer.valueOf(i.split(",")[0]);

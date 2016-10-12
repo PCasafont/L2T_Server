@@ -43,7 +43,7 @@ import java.util.logging.Level;
  */
 public abstract class ItemContainer
 {
-    protected final Map<Integer, L2ItemInstance> _items = new ConcurrentHashMap<Integer, L2ItemInstance>();
+    protected final Map<Integer, L2ItemInstance> _items = new ConcurrentHashMap<>();
 
     protected abstract L2Character getOwner();
 
@@ -114,7 +114,7 @@ public abstract class ItemContainer
      */
     public List<L2ItemInstance> getItemsByItemId(int itemId)
     {
-        List<L2ItemInstance> returnList = new ArrayList<L2ItemInstance>();
+        List<L2ItemInstance> returnList = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item != null && item.getItemId() == itemId)
@@ -620,7 +620,7 @@ public abstract class ItemContainer
         {
             Log.log(Level.SEVERE, "deletedMe()", e);
         }
-        List<L2Object> items = new ArrayList<L2Object>(_items.values());
+        List<L2Object> items = new ArrayList<>(_items.values());
         _items.clear();
 
         L2World.getInstance().removeObjects(items);

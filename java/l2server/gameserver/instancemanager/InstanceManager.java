@@ -53,13 +53,13 @@ import java.util.logging.Level;
  */
 public class InstanceManager
 {
-    private ConcurrentHashMap<Integer, Instance> _instanceList = new ConcurrentHashMap<Integer, Instance>();
-    private HashMap<Integer, InstanceWorld> _instanceWorlds = new HashMap<Integer, InstanceWorld>();
+    private ConcurrentHashMap<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
+    private HashMap<Integer, InstanceWorld> _instanceWorlds = new HashMap<>();
     private int _dynamic = 300000;
 
     // InstanceId Names
-    private final static Map<Integer, String> _instanceIdNames = new HashMap<Integer, String>();
-    private Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new HashMap<Integer, Map<Integer, Long>>();
+    private final static Map<Integer, String> _instanceIdNames = new HashMap<>();
+    private Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new HashMap<>();
 
     private static final String ADD_INSTANCE_TIME =
             "INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
@@ -150,7 +150,7 @@ public class InstanceManager
         {
             return; // already restored
         }
-        _playerInstanceTimes.put(playerObjId, new HashMap<Integer, Long>());
+        _playerInstanceTimes.put(playerObjId, new HashMap<>());
         Connection con = null;
         try
         {
@@ -221,7 +221,7 @@ public class InstanceManager
     {
         public int instanceId;
         public int templateId = -1;
-        public ArrayList<Integer> allowed = new ArrayList<Integer>();
+        public ArrayList<Integer> allowed = new ArrayList<>();
         public volatile int status;
     }
 
@@ -533,7 +533,7 @@ public class InstanceManager
      */
     public List<L2PcInstance> getPlayers(int instanceId)
     {
-        List<L2PcInstance> _instancePlayers = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> _instancePlayers = new ArrayList<>();
         for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
         {
             if (player != null && player.getInstanceId() == instanceId)
@@ -737,7 +737,7 @@ public class InstanceManager
             return false;
         }
 
-        List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> allPlayers = new ArrayList<>();
         L2Party party = null;
         L2CommandChannel cChannel = null;
 

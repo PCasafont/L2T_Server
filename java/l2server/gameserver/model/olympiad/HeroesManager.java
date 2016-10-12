@@ -70,8 +70,8 @@ public class HeroesManager
             "DELETE FROM items WHERE item_id IN (6842, 6611, 6612, 6613, 6614, 6615, 6616, 6617, 6618, 6619, 6620, 6621, 9388, 9389, 9390) AND owner_id NOT IN (SELECT charId FROM characters WHERE accesslevel > 0)";
     private static final String DELETE_HERO = "DELETE FROM heroes WHERE charId = ?";
 
-    private static Map<Integer, HeroInfo> _heroes = new HashMap<Integer, HeroInfo>();
-    private static Map<Integer, HeroInfo> _pastAndCurrentHeroes = new HashMap<Integer, HeroInfo>();
+    private static Map<Integer, HeroInfo> _heroes = new HashMap<>();
+    private static Map<Integer, HeroInfo> _pastAndCurrentHeroes = new HashMap<>();
 
     public static final String COUNT = "count";
     public static final String PLAYED = "played";
@@ -504,7 +504,7 @@ public class HeroesManager
 
                 if (!hero.getDiary().isEmpty())
                 {
-                    ArrayList<DiaryEntry> list = new ArrayList<DiaryEntry>();
+                    ArrayList<DiaryEntry> list = new ArrayList<>();
                     list.addAll(hero.getDiary());
                     Collections.reverse(list);
 
@@ -725,7 +725,7 @@ public class HeroesManager
             return;
         }
 
-        Map<Integer, HeroInfo> heroes = new LinkedHashMap<Integer, HeroInfo>();
+        Map<Integer, HeroInfo> heroes = new LinkedHashMap<>();
 
         for (int classId : newHeroes.keySet())
         {

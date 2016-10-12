@@ -224,39 +224,37 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
     {
         String cmd = e.getActionCommand();
 
-        if (cmd.equals("register"))
+        switch (cmd)
         {
-            RegisterDialog rd = new RegisterDialog(this);
-            rd.setVisible(true);
-        }
-        else if (cmd.equals("exit"))
-        {
-            System.exit(0);
-        }
-        else if (cmd.equals("about"))
-        {
-            JOptionPane.showMessageDialog(getFrame(),
-                    getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
-                            getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
-                            getBundle().getString("translation"), getBundle().getString("aboutItem"),
-                    JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
-        }
-        else if (cmd.equals("removeAll"))
-        {
-            int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
-                    getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
-            if (choice == JOptionPane.YES_OPTION)
-            {
-                try
+            case "register":
+                RegisterDialog rd = new RegisterDialog(this);
+                rd.setVisible(true);
+                break;
+            case "exit":
+                System.exit(0);
+            case "about":
+                JOptionPane.showMessageDialog(getFrame(),
+                        getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
+                                getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
+                                getBundle().getString("translation"), getBundle().getString("aboutItem"),
+                        JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+                break;
+            case "removeAll":
+                int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
+                        getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
+                if (choice == JOptionPane.YES_OPTION)
                 {
-                    BaseGameServerRegister.unregisterAllGameServers();
-                    refreshAsync();
+                    try
+                    {
+                        BaseGameServerRegister.unregisterAllGameServers();
+                        refreshAsync();
+                    }
+                    catch (SQLException e1)
+                    {
+                        GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
+                    }
                 }
-                catch (SQLException e1)
-                {
-                    GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
-                }
-            }
+                break;
         }
     }
 

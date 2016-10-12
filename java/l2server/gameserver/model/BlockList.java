@@ -53,7 +53,7 @@ import java.util.logging.Level;
 public class BlockList
 {
 
-    private static Map<Integer, List<Integer>> _offlineList = new HashMap<Integer, List<Integer>>();
+    private static Map<Integer, List<Integer>> _offlineList = new HashMap<>();
 
     private final L2PcInstance _owner;
     private List<Integer> _blockList;
@@ -90,7 +90,7 @@ public class BlockList
     private static List<Integer> loadList(int ObjId)
     {
         Connection con = null;
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
 
         try
         {

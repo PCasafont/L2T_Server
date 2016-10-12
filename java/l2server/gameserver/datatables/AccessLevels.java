@@ -77,7 +77,7 @@ public class AccessLevels
      */
     private void loadAccessLevels()
     {
-        _accessLevels = new TIntObjectHashMap<L2AccessLevel>();
+        _accessLevels = new TIntObjectHashMap<>();
 
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
         XmlDocument doc = new XmlDocument(file);

@@ -33,7 +33,7 @@ import java.io.File;
  */
 public class ShuttleTable
 {
-    private TIntObjectHashMap<L2ShuttleInstance> _shuttles = new TIntObjectHashMap<L2ShuttleInstance>();
+    private TIntObjectHashMap<L2ShuttleInstance> _shuttles = new TIntObjectHashMap<>();
 
     private static ShuttleTable _instance;
 

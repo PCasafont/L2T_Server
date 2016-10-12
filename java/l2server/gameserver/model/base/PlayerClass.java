@@ -48,9 +48,9 @@ public class PlayerClass
     private Race _race;
     private int _level;
 
-    private Map<Long, L2SkillLearn> _skills = new LinkedHashMap<Long, L2SkillLearn>();
+    private Map<Long, L2SkillLearn> _skills = new LinkedHashMap<>();
 
-    private List<L2Henna> _allowedDyes = new ArrayList<L2Henna>();
+    private List<L2Henna> _allowedDyes = new ArrayList<>();
 
     public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level)
     {

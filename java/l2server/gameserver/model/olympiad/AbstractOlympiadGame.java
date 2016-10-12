@@ -181,13 +181,10 @@ public abstract class AbstractOlympiadGame
             }
             player.setTarget(null);
 
-            for (L2SummonInstance summon : player.getSummons())
+            player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance).forEach(summon ->
             {
-                if (summon instanceof L2MobSummonInstance)
-                {
-                    summon.unSummon(player);
-                }
-            }
+                summon.unSummon(player);
+            });
 
             player.setOlympiadGameId(id);
             player.setInstanceId(id + Olympiad.BASE_INSTANCE_ID);

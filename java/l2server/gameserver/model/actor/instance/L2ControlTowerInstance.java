@@ -145,7 +145,7 @@ public class L2ControlTowerInstance extends L2Npc
             {
                 if (_guards == null)
                 {
-                    _guards = new ArrayList<L2Spawn>();
+                    _guards = new ArrayList<>();
                 }
             }
         }

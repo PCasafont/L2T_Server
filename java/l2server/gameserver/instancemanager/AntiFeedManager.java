@@ -42,8 +42,8 @@ public class AntiFeedManager
 
     private AntiFeedManager()
     {
-        _lastDeathTimes = new ConcurrentHashMap<Integer, Long>();
-        _eventIPs = new TIntObjectHashMap<Map<Integer, Connections>>();
+        _lastDeathTimes = new ConcurrentHashMap<>();
+        _eventIPs = new TIntObjectHashMap<>();
     }
 
     /**
@@ -160,7 +160,7 @@ public class AntiFeedManager
     {
         if (!_eventIPs.containsKey(eventId))
         {
-            _eventIPs.put(eventId, new HashMap<Integer, Connections>());
+            _eventIPs.put(eventId, new HashMap<>());
         }
     }
 
@@ -241,7 +241,7 @@ public class AntiFeedManager
             return false; // no such event registered
         }
 
-        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
+        final Integer addrHash = client.getConnectionAddress().hashCode();
         Connections conns = event.get(addrHash);
         if (conns == null)
         {
@@ -270,7 +270,7 @@ public class AntiFeedManager
             return;
         }
 
-        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
+        final Integer addrHash = client.getConnectionAddress().hashCode();
         _eventIPs.forEachValue(new DisconnectProcedure(addrHash));
     }
 
@@ -314,7 +314,7 @@ public class AntiFeedManager
             return max;
         }
 
-        final Integer addrHash = Integer.valueOf(client.getConnectionAddress().hashCode());
+        final Integer addrHash = client.getConnectionAddress().hashCode();
         final int limit = Config.L2JMOD_DUALBOX_CHECK_WHITELIST.get(addrHash);
         return limit < 0 ? 0 : limit + max;
     }

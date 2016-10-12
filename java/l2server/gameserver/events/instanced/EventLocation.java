@@ -29,7 +29,7 @@ public class EventLocation
         _maxTeamPlayers = node.getInt("maxTeamPlayers");
         _hill = node.getBool("hill", false);
 
-        _spawns = new ArrayList<Point3D>();
+        _spawns = new ArrayList<>();
         for (XmlNode subNode : node.getChildren())
         {
             if (subNode.getName().equals("spawn"))

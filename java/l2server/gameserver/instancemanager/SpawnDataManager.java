@@ -41,7 +41,7 @@ public class SpawnDataManager
         public int currentMp;
     }
 
-    private Map<String, DbSpawnData> _dbSpawnData = new HashMap<String, DbSpawnData>();
+    private Map<String, DbSpawnData> _dbSpawnData = new HashMap<>();
 
     public SpawnDataManager()
     {

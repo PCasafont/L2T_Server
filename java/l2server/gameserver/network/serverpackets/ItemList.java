@@ -74,7 +74,7 @@ public final class ItemList extends L2ItemListPacket
         _inventory = cha.getInventory();
         _items = cha.getInventory().getItems();
         _showWindow = showWindow;
-        _questItems = new ArrayList<L2ItemInstance>();
+        _questItems = new ArrayList<>();
         for (int i = 0; i < _items.length; i++)
         {
             if (_items[i] != null && _items[i].isQuestItem())

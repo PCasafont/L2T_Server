@@ -62,7 +62,7 @@ public class GameServerThread extends Thread
     /**
      * Authed Clients on a GameServer
      */
-    private final Set<String> _accountsOnGameServer = new HashSet<String>();
+    private final Set<String> _accountsOnGameServer = new HashSet<>();
 
     private String _connectionIPAddress;
 

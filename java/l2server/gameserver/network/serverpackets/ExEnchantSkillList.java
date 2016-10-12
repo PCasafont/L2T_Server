@@ -48,7 +48,7 @@ public class ExEnchantSkillList extends L2GameServerPacket
     public ExEnchantSkillList(EnchantSkillType type)
     {
         _type = type;
-        _skills = new ArrayList<Skill>();
+        _skills = new ArrayList<>();
     }
 
     /* (non-Javadoc)

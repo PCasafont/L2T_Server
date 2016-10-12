@@ -31,7 +31,7 @@ import java.util.logging.Level;
  */
 public abstract class FloodProtectedListener extends Thread
 {
-    private Map<String, ForeignConnection> _floodProtection = new HashMap<String, ForeignConnection>();
+    private Map<String, ForeignConnection> _floodProtection = new HashMap<>();
     private String _listenIp;
     private int _port;
     private ServerSocket _serverSocket;

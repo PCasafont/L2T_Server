@@ -98,7 +98,7 @@ public class L2Party
      */
     public L2Party(L2PcInstance leader, int itemDistribution)
     {
-        _members = new CopyOnWriteArrayList<L2PcInstance>();
+        _members = new CopyOnWriteArrayList<>();
         _itemDistribution = itemDistribution;
         getPartyMembers().add(leader);
         _partyLvl = leader.getLevel();
@@ -163,7 +163,7 @@ public class L2Party
      */
     private L2PcInstance getCheckedRandomMember(int ItemId, L2Character target)
     {
-        List<L2PcInstance> availableMembers = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> availableMembers = new ArrayList<>();
         for (L2PcInstance member : getPartyMembers())
         {
             if (member.getInventory().validateCapacityByItemId(ItemId) &&
@@ -830,7 +830,7 @@ public class L2Party
         boolean rewardPlayer = false;
         // Check the number of party members that must be rewarded
         // (The party member must be in range to receive its reward)
-        List<L2PcInstance> toReward = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> toReward = new ArrayList<>();
         for (L2PcInstance member : membersList)
         {
             if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
@@ -1048,7 +1048,7 @@ public class L2Party
 
     private List<L2Playable> getValidMembers(List<L2Playable> members, int topLvl)
     {
-        List<L2Playable> validMembers = new ArrayList<L2Playable>();
+        List<L2Playable> validMembers = new ArrayList<>();
 
         //		Fixed LevelDiff cutoff point
         if (Config.PARTY_XP_CUTOFF_METHOD.equalsIgnoreCase("level"))
@@ -1208,7 +1208,7 @@ public class L2Party
         _requestChangeLoot = type;
         int additionalTime = L2PcInstance.REQUEST_TIMEOUT * 3000;
         _requestChangeLootTimer = System.currentTimeMillis() + additionalTime;
-        _changeLootAnswers = new ArrayList<Integer>();
+        _changeLootAnswers = new ArrayList<>();
         _checkTask = ThreadPoolManager.getInstance()
                 .scheduleGeneralAtFixedRate(new ChangeLootCheck(), additionalTime + 1000, 5000);
         broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLooting(getLeader().getName(), type));
@@ -1279,8 +1279,8 @@ public class L2Party
     {
         L2PcInstance leader = getLeader();
 
-        List<L2Character> enemies = new ArrayList<L2Character>();
-        List<L2PcInstance> allies = new ArrayList<L2PcInstance>();
+        List<L2Character> enemies = new ArrayList<>();
+        List<L2PcInstance> allies = new ArrayList<>();
 
         allies.add(leader);
 
@@ -1311,7 +1311,7 @@ public class L2Party
 
         if (playerFound)
         {
-            List<L2Character> toIterate = new ArrayList<L2Character>(enemies);
+            List<L2Character> toIterate = new ArrayList<>(enemies);
             for (L2Character enemy : toIterate)
             {
                 if (enemy instanceof L2ApInstance)

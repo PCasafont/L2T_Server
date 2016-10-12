@@ -39,7 +39,7 @@ public class FarmZoneManager
     public class FarmZone
     {
         private String _name;
-        private Set<L2NpcTemplate> _mobs = new HashSet<L2NpcTemplate>();
+        private Set<L2NpcTemplate> _mobs = new HashSet<>();
 
         public FarmZone(String name)
         {
@@ -62,7 +62,7 @@ public class FarmZoneManager
         }
     }
 
-    private Map<String, FarmZone> _farmZones = new HashMap<String, FarmZone>();
+    private Map<String, FarmZone> _farmZones = new HashMap<>();
 
     private static FarmZoneManager _instance;
 
@@ -158,7 +158,7 @@ public class FarmZoneManager
                         int itemId = farmNode.getInt("itemId");
                         for (L2NpcTemplate npc : NpcTable.getInstance().getAllTemplates())
                         {
-                            List<L2DropData> dropsToRemove = new ArrayList<L2DropData>();
+                            List<L2DropData> dropsToRemove = new ArrayList<>();
                             for (L2DropData dd : npc.getDropData())
                             {
                                 if (dd.getItemId() == itemId)
@@ -192,7 +192,7 @@ public class FarmZoneManager
                     }
                     else if (farmNode.getName().equalsIgnoreCase("customFarm"))
                     {
-                        Set<L2NpcTemplate> mobs = new HashSet<L2NpcTemplate>();
+                        Set<L2NpcTemplate> mobs = new HashSet<>();
                         if (farmNode.hasAttribute("farmZone"))
                         {
                             String name = farmNode.getString("farmZone");
@@ -255,9 +255,9 @@ public class FarmZoneManager
                             }
                         }
 
-                        List<L2DropData> drops = new ArrayList<L2DropData>();
-                        List<L2DropData> spoilDrops = new ArrayList<L2DropData>();
-                        List<L2DropCategory> dropCategories = new ArrayList<L2DropCategory>();
+                        List<L2DropData> drops = new ArrayList<>();
+                        List<L2DropData> spoilDrops = new ArrayList<>();
+                        List<L2DropCategory> dropCategories = new ArrayList<>();
                         for (XmlNode dropNode : farmNode.getChildren())
                         {
                             if (dropNode.getName().equalsIgnoreCase("itemDrop") ||

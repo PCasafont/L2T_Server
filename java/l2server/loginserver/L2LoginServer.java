@@ -60,7 +60,7 @@ public class L2LoginServer
         final String LOG_FOLDER = "log"; // Name of folder for log file
         final String LOG_NAME = "./log.cfg"; // Name of log file
 
-        /** Main ***/
+        /* Main */
         // Create log folder
         File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
         logFolder.mkdir();
@@ -112,12 +112,7 @@ public class L2LoginServer
         {
             GameServerTable.load();
         }
-        catch (GeneralSecurityException e)
-        {
-            Log.log(Level.SEVERE, "FATAL: Failed to load GameServerTable. Reason: " + e.getMessage(), e);
-            System.exit(1);
-        }
-        catch (SQLException e)
+        catch (GeneralSecurityException | SQLException e)
         {
             Log.log(Level.SEVERE, "FATAL: Failed to load GameServerTable. Reason: " + e.getMessage(), e);
             System.exit(1);
@@ -150,7 +145,7 @@ public class L2LoginServer
         final SelectorHelper sh = new SelectorHelper();
         try
         {
-            _selectorThread = new Core<L2LoginClient>(sc, sh, lph, sh, sh);
+            _selectorThread = new Core<>(sc, sh, lph, sh, sh);
         }
         catch (IOException e)
         {

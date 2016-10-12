@@ -47,8 +47,7 @@ public class TimeController
     protected static boolean _isNight = false;
     protected static boolean _interruptRequest = false;
 
-    private static final ConcurrentHashMap<Integer, L2Character> _movingObjects =
-            new ConcurrentHashMap<Integer, L2Character>();
+    private static final ConcurrentHashMap<Integer, L2Character> _movingObjects = new ConcurrentHashMap<>();
 
     protected static TimerThread _timer;
 

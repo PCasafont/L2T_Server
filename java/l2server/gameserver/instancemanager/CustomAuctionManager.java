@@ -412,8 +412,8 @@ public class CustomAuctionManager
         }
     }
 
-    private static Map<Integer, Auction> _auctions = new HashMap<Integer, Auction>(); //Current auctions
-    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
+    private static Map<Integer, Auction> _auctions = new HashMap<>(); //Current auctions
+    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<>();
     //All the auction info
 
     public final void startAuction(final int templateId)
@@ -625,7 +625,7 @@ public class CustomAuctionManager
                         int[] auctionItems = null;
                         if (d.getAttributes().getNamedItem("itemId") == null)
                         {
-                            List<Integer> itemIds = new ArrayList<Integer>();
+                            List<Integer> itemIds = new ArrayList<>();
                             for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
                             {
                                 if (e.getNodeName().equalsIgnoreCase("item"))
@@ -782,23 +782,23 @@ public class CustomAuctionManager
             int currencyId = 0;
             Currency playerCurrency = null;
 
-            if (coin.equals("Dreams"))
+            switch (coin)
             {
-                currencyId = 50002;
-            }
-            else if (coin.equals("Raid"))
-            {
-                currencyId = 50009;
-            }
-            else
-            {
-                playerCurrency = Currency.valueOf(coin);
-                if (playerCurrency == null) //Possible client hax?
-                {
-                    return;
-                }
+                case "Dreams":
+                    currencyId = 50002;
+                    break;
+                case "Raid":
+                    currencyId = 50009;
+                    break;
+                default:
+                    playerCurrency = Currency.valueOf(coin);
+                    if (playerCurrency == null) //Possible client hax?
+                    {
+                        return;
+                    }
 
-                currencyId = playerCurrency.ItemId;
+                    currencyId = playerCurrency.ItemId;
+                    break;
             }
 
             if (currencyId != currentCurrencyId)//If we have a new currency..

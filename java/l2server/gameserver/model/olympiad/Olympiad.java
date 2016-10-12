@@ -222,7 +222,7 @@ public class Olympiad
 
     private void load()
     {
-        _nobles = new HashMap<Integer, OlympiadNobleInfo>();
+        _nobles = new HashMap<>();
 
         String olyData = GlobalVariablesManager.getInstance().getStoredVariable("olympiadData");
 
@@ -807,7 +807,7 @@ public class Olympiad
             }
         }
 
-        Map<Integer, OlympiadNobleInfo> heroesToBe = new LinkedHashMap<Integer, OlympiadNobleInfo>();
+        Map<Integer, OlympiadNobleInfo> heroesToBe = new LinkedHashMap<>();
         Connection con = null;
 
         try
@@ -866,7 +866,7 @@ public class Olympiad
     {
         // if (_period != 1) return;
 
-        List<String> names = new ArrayList<String>();
+        List<String> names = new ArrayList<>();
 
         Connection con = null;
 

@@ -35,7 +35,7 @@ import java.util.List;
 public class L2ShuttleInstance extends L2Vehicle
 {
     private int _id;
-    private List<ShuttleStop> _stops = new ArrayList<ShuttleStop>();
+    private List<ShuttleStop> _stops = new ArrayList<>();
 
     private int _currentStopId = 0;
 
@@ -103,7 +103,7 @@ public class L2ShuttleInstance extends L2Vehicle
         {
             _passengers.size();
         }
-        List<L2PcInstance> passengersToOust = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> passengersToOust = new ArrayList<>();
         for (L2PcInstance toOust : _passengers)
         {
             passengersToOust.add(toOust);

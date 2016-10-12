@@ -206,7 +206,7 @@ public class CastleManager implements InstanceListManager
     {
         if (_castles == null)
         {
-            _castles = new ArrayList<Castle>();
+            _castles = new ArrayList<>();
         }
         return _castles;
     }

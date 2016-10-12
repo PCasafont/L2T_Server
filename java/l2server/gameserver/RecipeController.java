@@ -43,7 +43,7 @@ public class RecipeController
 {
 
     private Map<Integer, L2RecipeList> _lists;
-    private static final Map<Integer, RecipeItemMaker> _activeMakers = new HashMap<Integer, RecipeItemMaker>();
+    private static final Map<Integer, RecipeItemMaker> _activeMakers = new HashMap<>();
     private static final String RECIPES_FILE = "recipes.xml";
 
     public static RecipeController getInstance()
@@ -53,7 +53,7 @@ public class RecipeController
 
     private RecipeController()
     {
-        _lists = new HashMap<Integer, L2RecipeList>();
+        _lists = new HashMap<>();
 
         try
         {
@@ -232,9 +232,9 @@ public class RecipeController
         if (file.exists())
         {
             XmlDocument doc = new XmlDocument(file);
-            List<L2RecipeInstance> recipePartList = new ArrayList<L2RecipeInstance>();
-            List<L2RecipeStatInstance> recipeStatUseList = new ArrayList<L2RecipeStatInstance>();
-            List<L2RecipeStatInstance> recipeAltStatChangeList = new ArrayList<L2RecipeStatInstance>();
+            List<L2RecipeInstance> recipePartList = new ArrayList<>();
+            List<L2RecipeStatInstance> recipeStatUseList = new ArrayList<>();
+            List<L2RecipeStatInstance> recipeAltStatChangeList = new ArrayList<>();
 
             for (XmlNode n : doc.getChildren())
             {
@@ -789,7 +789,7 @@ public class RecipeController
         {
             L2RecipeInstance[] recipes = _recipeList.getRecipes();
             Inventory inv = _target.getInventory();
-            List<TempItem> materials = new ArrayList<TempItem>();
+            List<TempItem> materials = new ArrayList<>();
             SystemMessage sm;
 
             for (L2RecipeInstance recipe : recipes)

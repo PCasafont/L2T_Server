@@ -20,7 +20,6 @@ import l2server.gameserver.model.L2AccessLevel;
 import l2server.gameserver.model.L2AdminCommandAccessRight;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.HashMap;
@@ -60,27 +59,21 @@ public class AdminCommandAccessRights
      */
     private void loadAdminCommandAccessRights()
     {
-        _adminCommandAccessRights = new HashMap<String, L2AdminCommandAccessRight>();
+        _adminCommandAccessRights = new HashMap<>();
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
         XmlDocument doc = new XmlDocument(file);
-        for (XmlNode n : doc.getChildren())
+        doc.getChildren().stream().filter(n -> n.getName().equalsIgnoreCase("list")).forEachOrdered(n ->
         {
-            if (n.getName().equalsIgnoreCase("list"))
+            n.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d ->
             {
-                for (XmlNode d : n.getChildren())
-                {
-                    if (d.getName().equalsIgnoreCase("command"))
-                    {
-                        String adminCommand = d.getString("name");
-                        String accessLevels = d.getString("accessLevels");
-                        boolean confirm = d.getBool("configmDlg", false);
-                        _adminCommandAccessRights
-                                .put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
-                    }
-                }
-            }
-        }
+                String adminCommand = d.getString("name");
+                String accessLevels = d.getString("accessLevels");
+                boolean confirm = d.getBool("configmDlg", false);
+                _adminCommandAccessRights
+                        .put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
+            });
+        });
 
         Log.info("AdminCommandAccessRights: Loaded " + _adminCommandAccessRights.size() + " from xml.");
     }

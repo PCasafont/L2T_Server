@@ -68,7 +68,7 @@ public class SurveyManager
                 PreparedStatement statement2 = con.prepareStatement(GET_CURRENT_SURVEY_POSSIBLE_ANSWERS);
                 statement2.setInt(1, _id);
                 ResultSet rset2 = statement2.executeQuery();
-                Map<Integer, String> possibleAnswers = new HashMap<Integer, String>();
+                Map<Integer, String> possibleAnswers = new HashMap<>();
                 while (rset2.next())
                 {
                     possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
@@ -79,7 +79,7 @@ public class SurveyManager
                 statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
                 statement2.setInt(1, _id);
                 rset2 = statement2.executeQuery();
-                List<Integer> answers = new ArrayList<Integer>();
+                List<Integer> answers = new ArrayList<>();
                 while (rset2.next())
                 {
                     answers.add(rset.getInt("charId"));

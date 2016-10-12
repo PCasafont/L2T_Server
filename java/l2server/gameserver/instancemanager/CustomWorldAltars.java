@@ -42,9 +42,9 @@ import java.util.concurrent.ScheduledFuture;
 
 public class CustomWorldAltars
 {
-    private static List<Integer> _bosssIds = new ArrayList<Integer>();
-    private static List<AltarsSpawns> _spawnInfo = new ArrayList<AltarsSpawns>();
-    private static List<WorldAltarsInfo> _altarsList = new ArrayList<WorldAltarsInfo>();
+    private static List<Integer> _bosssIds = new ArrayList<>();
+    private static List<AltarsSpawns> _spawnInfo = new ArrayList<>();
+    private static List<WorldAltarsInfo> _altarsList = new ArrayList<>();
     private static int _baseRespawnMinutes;
     private static int _randomRespawnMinutes;
     private static int _cursedChance;
@@ -242,7 +242,7 @@ public class CustomWorldAltars
             {
                 synchronized (_spawnInfo)
                 {
-                    List<AltarsSpawns> _notUsed = new ArrayList<AltarsSpawns>();
+                    List<AltarsSpawns> _notUsed = new ArrayList<>();
                     int pvpZones = 0;
                     for (AltarsSpawns spawn : _spawnInfo)
                     {

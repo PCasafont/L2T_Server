@@ -47,8 +47,8 @@ public class L2BossZone extends L2ZoneType
     {
         super(id);
 
-        _playerEntries = new HashMap<Integer, PlayerEntry>();
-        _raidList = new CopyOnWriteArrayList<L2Character>();
+        _playerEntries = new HashMap<>();
+        _raidList = new CopyOnWriteArrayList<>();
 
         GrandBossManager.getInstance().addZone(this);
     }
@@ -105,22 +105,22 @@ public class L2BossZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("InvadeTime"))
+        switch (name)
         {
-            _timeInvade = Integer.parseInt(value);
-        }
-        else if (name.equals("EnabledByDefault"))
-        {
-            _enabled = Boolean.parseBoolean(value);
-        }
-        else if (name.equals("oustLoc"))
-        {
-            _exitLocation = new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
-                    Integer.parseInt(value.split(",")[2]));
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "InvadeTime":
+                _timeInvade = Integer.parseInt(value);
+                break;
+            case "EnabledByDefault":
+                _enabled = Boolean.parseBoolean(value);
+                break;
+            case "oustLoc":
+                _exitLocation =
+                        new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
+                                Integer.parseInt(value.split(",")[2]));
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 
@@ -414,8 +414,8 @@ public class L2BossZone extends L2ZoneType
 
     public void kickDualBoxes()
     {
-        List<L2PcInstance> toBeKicked = new ArrayList<L2PcInstance>();
-        Map<String, String> allPlayerIps = new HashMap<String, String>();
+        List<L2PcInstance> toBeKicked = new ArrayList<>();
+        Map<String, String> allPlayerIps = new HashMap<>();
         for (L2PcInstance player : getPlayersInside())
         {
             if (player == null || !player.isOnline())

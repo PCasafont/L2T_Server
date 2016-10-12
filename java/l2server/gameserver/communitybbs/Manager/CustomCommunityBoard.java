@@ -46,9 +46,9 @@ public class CustomCommunityBoard
     private static String newsInfo = "";
 
     // Other
-    private static List<cmboard> cmboard_info = new ArrayList<cmboard>();
-    private static List<Object> _raidIds = new ArrayList<Object>();
-    private static List<Object> _bossIds = new ArrayList<Object>();
+    private static List<cmboard> cmboard_info = new ArrayList<>();
+    private static List<Object> _raidIds = new ArrayList<>();
+    private static List<Object> _bossIds = new ArrayList<>();
 
     private class cmboard
     {
@@ -318,7 +318,7 @@ public class CustomCommunityBoard
 
     private void loadRaidData()
     {
-        Map<Object, Long> raidIds = new HashMap<Object, Long>();
+        Map<Object, Long> raidIds = new HashMap<>();
         for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values())
         {
             if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600)
@@ -329,7 +329,7 @@ public class CustomCommunityBoard
 
         raidIds = sortByValue(raidIds, false);
         _raidIds.addAll(raidIds.keySet());
-        Map<Object, Long> bossIds = new HashMap<Object, Long>();
+        Map<Object, Long> bossIds = new HashMap<>();
 
         Connection con = null;
         try
@@ -1082,8 +1082,8 @@ public class CustomCommunityBoard
         int shown = 0;
         boolean hasMore = false;
 
-        Map<L2DropData, Float> drops = new HashMap<L2DropData, Float>();
-        Map<L2DropData, Float> spoilDrops = new HashMap<L2DropData, Float>();
+        Map<L2DropData, Float> drops = new HashMap<>();
+        Map<L2DropData, Float> spoilDrops = new HashMap<>();
 
         if (template.getMultiDropData() != null)
         {
@@ -1481,7 +1481,7 @@ public class CustomCommunityBoard
                         player.getName();
         boolean playerIsInTop = false;
 
-        Map<Object, Long> allPlayers = new HashMap<Object, Long>();
+        Map<Object, Long> allPlayers = new HashMap<>();
         for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
         {
             if (pl == null || pl.isInStoreMode() || pl.isGM())
@@ -1604,7 +1604,7 @@ public class CustomCommunityBoard
 
     private final Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending)
     {
-        final List<Entry<Object, Long>> list = new LinkedList<Entry<Object, Long>>(unsortMap.entrySet());
+        final List<Entry<Object, Long>> list = new LinkedList<>(unsortMap.entrySet());
         Collections.sort(list, (e1, e2) ->
         {
             if (ascending)
@@ -1617,7 +1617,7 @@ public class CustomCommunityBoard
             }
         });
 
-        final Map<Object, Long> sortedMap = new LinkedHashMap<Object, Long>();
+        final Map<Object, Long> sortedMap = new LinkedHashMap<>();
         for (Entry<Object, Long> entry : list)
         {
             sortedMap.put(entry.getKey(), entry.getValue());

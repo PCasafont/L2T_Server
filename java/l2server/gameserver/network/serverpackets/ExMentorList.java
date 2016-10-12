@@ -42,7 +42,7 @@ public class ExMentorList extends L2GameServerPacket
     }
 
     private L2PcInstance _player;
-    private List<PartnerInfo> _partners = new ArrayList<PartnerInfo>();
+    private List<PartnerInfo> _partners = new ArrayList<>();
 
     public ExMentorList(L2PcInstance activeChar)
     {

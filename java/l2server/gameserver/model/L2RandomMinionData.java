@@ -20,8 +20,8 @@ import java.util.List;
 
 public class L2RandomMinionData
 {
-    private List<Integer> _randomMinionIds = new ArrayList<Integer>();
-    private List<Integer> _lastSpawnedMinionIds = new ArrayList<Integer>();
+    private List<Integer> _randomMinionIds = new ArrayList<>();
+    private List<Integer> _lastSpawnedMinionIds = new ArrayList<>();
     private int _minionAmount;
 
     public L2RandomMinionData()
@@ -35,8 +35,8 @@ public class L2RandomMinionData
      */
     public L2RandomMinionData(L2RandomMinionData rhs)
     {
-        _randomMinionIds = new ArrayList<Integer>(rhs._randomMinionIds);
-        _lastSpawnedMinionIds = new ArrayList<Integer>(rhs._lastSpawnedMinionIds);
+        _randomMinionIds = new ArrayList<>(rhs._randomMinionIds);
+        _lastSpawnedMinionIds = new ArrayList<>(rhs._lastSpawnedMinionIds);
         _minionAmount = rhs._minionAmount;
     }
 

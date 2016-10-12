@@ -41,7 +41,7 @@ public class L2CommandChannel
     public L2CommandChannel(L2PcInstance leader)
     {
         _commandLeader = leader;
-        _partys = new CopyOnWriteArrayList<L2Party>();
+        _partys = new CopyOnWriteArrayList<>();
         _partys.add(leader.getParty());
         _channelLvl = leader.getParty().getLevel();
         leader.getParty().setCommandChannel(this);
@@ -186,7 +186,7 @@ public class L2CommandChannel
      */
     public List<L2PcInstance> getMembers()
     {
-        List<L2PcInstance> members = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> members = new ArrayList<>();
         for (L2Party party : getPartys())
         {
             members.addAll(party.getPartyMembers());

@@ -76,7 +76,7 @@ public class L2Henna
         isFourthSlot = set.getBool("fourthSlot", false);
         if (set.getString("skills", null) != null)
         {
-            skills = new ArrayList<SkillHolder>();
+            skills = new ArrayList<>();
 
             String[] skillsParse = set.getString("skills").split(";");
             for (String element : skillsParse)

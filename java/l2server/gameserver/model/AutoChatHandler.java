@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 /**
  * Auto Chat Handler
@@ -50,28 +51,26 @@ public class AutoChatHandler implements SpawnListener
 
     private AutoChatHandler()
     {
-        _registeredChats = new HashMap<Integer, AutoChatInstance>();
+        _registeredChats = new HashMap<>();
         L2Spawn.addSpawnListener(this);
     }
 
     public void reload()
     {
         // unregister all registered spawns
-        for (AutoChatInstance aci : _registeredChats.values())
+        // clear timer
+        _registeredChats.values().stream().filter(aci -> aci != null).forEachOrdered(aci ->
         {
-            if (aci != null)
+            // clear timer
+            if (aci._chatTask != null)
             {
-                // clear timer
-                if (aci._chatTask != null)
-                {
-                    aci._chatTask.cancel(true);
-                }
-                this.removeChat(aci);
+                aci._chatTask.cancel(true);
             }
-        }
+            this.removeChat(aci);
+        });
 
         // create clean list
-        _registeredChats = new HashMap<Integer, AutoChatInstance>();
+        _registeredChats = new HashMap<>();
     }
 
     public static AutoChatHandler getInstance()
@@ -260,7 +259,7 @@ public class AutoChatHandler implements SpawnListener
         private boolean _globalChat = false;
         private boolean _isActive;
 
-        private Map<Integer, AutoChatDefinition> _chatDefinitions = new HashMap<Integer, AutoChatDefinition>();
+        private Map<Integer, AutoChatDefinition> _chatDefinitions = new HashMap<>();
         protected ScheduledFuture<?> _chatTask;
 
         protected AutoChatInstance(int npcId, String[] chatTexts, long chatDelay, boolean isGlobal)
@@ -419,12 +418,8 @@ public class AutoChatHandler implements SpawnListener
          */
         public L2Npc[] getNPCInstanceList()
         {
-            List<L2Npc> npcInsts = new ArrayList<L2Npc>();
-
-            for (AutoChatDefinition chatDefinition : _chatDefinitions.values())
-            {
-                npcInsts.add(chatDefinition._npcInstance);
-            }
+            List<L2Npc> npcInsts = _chatDefinitions.values().stream().map(chatDefinition -> chatDefinition._npcInstance)
+                    .collect(Collectors.toList());
 
             return npcInsts.toArray(new L2Npc[npcInsts.size()]);
         }
@@ -712,8 +707,8 @@ public class AutoChatHandler implements SpawnListener
                     try
                     {
                         L2Npc chatNpc = chatDef._npcInstance;
-                        List<L2PcInstance> nearbyPlayers = new ArrayList<L2PcInstance>();
-                        List<L2PcInstance> nearbyGMs = new ArrayList<L2PcInstance>();
+                        List<L2PcInstance> nearbyPlayers = new ArrayList<>();
+                        List<L2PcInstance> nearbyGMs = new ArrayList<>();
 
                         for (L2Character player : chatNpc.getKnownList().getKnownCharactersInRadius(1500))
                         {
@@ -763,7 +758,7 @@ public class AutoChatHandler implements SpawnListener
 
                             L2PcInstance randomPlayer = nearbyPlayers.get(randomPlayerIndex);
 
-                            if (text.indexOf("%player_random%") > -1)
+                            if (text.contains("%player_random%"))
                             {
                                 text = text.replaceAll("%player_random%", randomPlayer.getName());
                             }

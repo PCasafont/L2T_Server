@@ -26,7 +26,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
     }
 
     private int _targetItem;
-    private List<CrystalEffectData> _effectData = new ArrayList<CrystalEffectData>();
+    private List<CrystalEffectData> _effectData = new ArrayList<>();
 
     @Override
     public void readImpl()

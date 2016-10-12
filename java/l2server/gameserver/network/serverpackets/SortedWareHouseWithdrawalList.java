@@ -44,7 +44,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 
     private L2PcInstance _activeChar;
     private long _playerAdena;
-    private List<L2WarehouseItem> _objects = new ArrayList<L2WarehouseItem>();
+    private List<L2WarehouseItem> _objects = new ArrayList<>();
     private int _whType;
     private byte _sortorder;
     private WarehouseListType _itemtype;
@@ -398,7 +398,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createWeaponList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isWeapon() || item.getItem().getType2() == L2Item.TYPE2_WEAPON ||
@@ -428,7 +428,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createArmorList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isArmor() || item.getItem().getType2() == L2Item.TYPE2_MONEY)
@@ -456,7 +456,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createEtcItemList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() || item.getItem().getType2() == L2Item.TYPE2_MONEY)
@@ -484,7 +484,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createRecipeList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.RECIPE ||
@@ -513,7 +513,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createAmulettList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getItemName().toUpperCase().startsWith("AMULET") ||
@@ -542,7 +542,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createSpellbookList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && !item.getItemName().toUpperCase().startsWith("AMULET") ||
@@ -571,7 +571,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createConsumableList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && (item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
@@ -601,7 +601,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createShotList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SHOT ||
@@ -630,7 +630,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createScrollList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
@@ -659,7 +659,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createSeedList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SEED ||
@@ -688,7 +688,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createOtherList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (item.isEtcItem() && item.getEtcItem().getItemType() != L2EtcItemType.MATERIAL &&
@@ -720,7 +720,7 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
      */
     private List<L2WarehouseItem> createAllList(L2ItemInstance[] _items)
     {
-        List<L2WarehouseItem> _list = new ArrayList<L2WarehouseItem>();
+        List<L2WarehouseItem> _list = new ArrayList<>();
         for (L2ItemInstance item : _items)
         {
             if (_list.size() < MAX_SORT_LIST_ITEMS)

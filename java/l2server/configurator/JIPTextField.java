@@ -112,7 +112,7 @@ public class JIPTextField extends JPanel implements FocusListener
     {
         if (_focusListeners == null)
         {
-            _focusListeners = new LinkedList<FocusListener>();
+            _focusListeners = new LinkedList<>();
         }
 
         if (fl != null && !_focusListeners.contains(fl))
@@ -174,10 +174,7 @@ public class JIPTextField extends JPanel implements FocusListener
             }
             return;
         }
-        catch (UnknownHostException ex)
-        {
-        }
-        catch (NullPointerException npe)
+        catch (UnknownHostException | NullPointerException ex)
         {
         }
         for (int i = 0; i < 4; i++)

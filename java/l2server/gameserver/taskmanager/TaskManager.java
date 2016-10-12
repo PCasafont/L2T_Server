@@ -48,8 +48,8 @@ public final class TaskManager
             "INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"
     };
 
-    private final HashMap<Integer, Task> _tasks = new HashMap<Integer, Task>();
-    protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<ExecutedTask>();
+    private final HashMap<Integer, Task> _tasks = new HashMap<>();
+    protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<>();
 
     public class ExecutedTask implements Runnable
     {

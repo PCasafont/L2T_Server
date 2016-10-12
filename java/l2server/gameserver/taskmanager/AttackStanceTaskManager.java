@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2CubicInstance;
 import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.serverpackets.AutoAttackStop;
 import l2server.log.Log;
 
@@ -44,7 +43,7 @@ import java.util.logging.Level;
 public class AttackStanceTaskManager
 {
 
-    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
+    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 
     private AttackStanceTaskManager()
     {
@@ -68,21 +67,13 @@ public class AttackStanceTaskManager
             L2PcInstance player = (L2PcInstance) actor;
             player.setFightStanceTime(System.currentTimeMillis());
             player.onCombatStanceStart();
-            for (L2CubicInstance cubic : player.getCubics().values())
-            {
-                if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)
-                {
-                    cubic.doAction();
-                }
-            }
+            player.getCubics().values().stream().filter(cubic -> cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+                    .forEach(L2CubicInstance::doAction);
 
-            for (L2SummonInstance summon : player.getSummons())
+            player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance).forEach(summon ->
             {
-                if (summon instanceof L2MobSummonInstance)
-                {
-                    summon.unSummon(player);
-                }
-            }
+                summon.unSummon(player);
+            });
         }
         _attackStanceTasks.put(actor, System.currentTimeMillis());
     }
@@ -146,13 +137,11 @@ public class AttackStanceTaskManager
 
                                     if (((L2PcInstance) actor).getSummons() != null)
                                     {
-                                        for (L2SummonInstance summon : ((L2PcInstance) actor).getSummons())
-                                        {
-                                            if (summon != null)
-                                            {
-                                                summon.broadcastPacket(new AutoAttackStop(summon.getObjectId()));
-                                            }
-                                        }
+                                        ((L2PcInstance) actor).getSummons().stream().filter(summon -> summon != null)
+                                                .forEach(summon ->
+                                                {
+                                                    summon.broadcastPacket(new AutoAttackStop(summon.getObjectId()));
+                                                });
                                     }
                                 }
                                 actor.getAI().setAutoAttacking(false);

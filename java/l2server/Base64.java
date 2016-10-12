@@ -948,11 +948,7 @@ public class Base64
 
             obj = ois.readObject();
         }
-        catch (java.io.IOException e)
-        {
-            e.printStackTrace();
-        }
-        catch (java.lang.ClassNotFoundException e)
+        catch (IOException | ClassNotFoundException e)
         {
             e.printStackTrace();
         }

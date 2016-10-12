@@ -42,7 +42,7 @@ public class ForumsBBSManager extends BaseBBSManager
      */
     private ForumsBBSManager()
     {
-        _table = new ArrayList<Forum>();
+        _table = new ArrayList<>();
 
         Connection con = null;
         try
@@ -74,7 +74,7 @@ public class ForumsBBSManager extends BaseBBSManager
      */
     public void initRoot()
     {
-        List<Forum> copy = new ArrayList<Forum>(_table);
+        List<Forum> copy = new ArrayList<>(_table);
         for (Forum f : copy)
         {
             f.vload();

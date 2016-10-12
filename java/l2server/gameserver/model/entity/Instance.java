@@ -48,7 +48,7 @@ public class Instance
     private TIntHashSet _players = new TIntHashSet();
     private final EjectPlayerProcedure _ejectProc;
 
-    private CopyOnWriteArrayList<L2Npc> _npcs = new CopyOnWriteArrayList<L2Npc>();
+    private CopyOnWriteArrayList<L2Npc> _npcs = new CopyOnWriteArrayList<>();
     private ArrayList<L2DoorInstance> _doors = null;
     private int[] _spawnLoc = new int[3];
     private boolean _allowSummon = true;
@@ -250,7 +250,7 @@ public class Instance
     {
         if (_doors == null)
         {
-            _doors = new ArrayList<L2DoorInstance>(2);
+            _doors = new ArrayList<>(2);
         }
 
         for (L2DoorInstance door : _doors)

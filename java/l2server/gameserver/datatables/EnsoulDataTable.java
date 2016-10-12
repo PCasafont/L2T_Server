@@ -41,8 +41,8 @@ public class EnsoulDataTable
         return SingletonHolder._instance;
     }
 
-    private final Map<Integer, EnsoulEffect> _effects = new HashMap<Integer, EnsoulEffect>();
-    private final Map<Integer, SoulCrystal> _crystals = new HashMap<Integer, SoulCrystal>();
+    private final Map<Integer, EnsoulEffect> _effects = new HashMap<>();
+    private final Map<Integer, SoulCrystal> _crystals = new HashMap<>();
 
     // =========================================================
     // Constructor

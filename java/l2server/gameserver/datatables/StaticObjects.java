@@ -38,7 +38,7 @@ public class StaticObjects
 
     private StaticObjects()
     {
-        _staticObjects = new TIntObjectHashMap<L2StaticObjectInstance>();
+        _staticObjects = new TIntObjectHashMap<>();
         parseData();
         Log.info("StaticObject: Loaded " + _staticObjects.size() + " StaticObject Templates.");
     }

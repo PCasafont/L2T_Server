@@ -33,7 +33,7 @@ import java.util.List;
  */
 public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 {
-    private List<Integer> _alreadyBuffed = new ArrayList<Integer>();
+    private List<Integer> _alreadyBuffed = new ArrayList<>();
 
     public L2NewbieHelperAI(L2Character.AIAccessor accessor)
     {

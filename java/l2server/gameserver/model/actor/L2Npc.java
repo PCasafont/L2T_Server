@@ -346,7 +346,7 @@ public class L2Npc extends L2Character
 
     public ArrayList<L2Skill> getLrangeSkill()
     {
-        ArrayList<L2Skill> skilldata = new ArrayList<L2Skill>();
+        ArrayList<L2Skill> skilldata = new ArrayList<>();
         boolean hasLrange = false;
         L2NpcAIData AI = getTemplate().getAIData();
 
@@ -412,7 +412,7 @@ public class L2Npc extends L2Character
 
     public ArrayList<L2Skill> getSrangeSkill()
     {
-        ArrayList<L2Skill> skilldata = new ArrayList<L2Skill>();
+        ArrayList<L2Skill> skilldata = new ArrayList<>();
         boolean hasSrange = false;
         L2NpcAIData AI = getTemplate().getAIData();
 

@@ -176,7 +176,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 
         long totalPrice = 0;
         _listId = list.getListId();
-        _item_list = new HashMap<Integer, Integer>();
+        _item_list = new HashMap<>();
 
         for (int i = 0; i < _count; i++)
         {

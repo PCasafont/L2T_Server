@@ -459,8 +459,7 @@ public class Server
         sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
 
         _gamePacketHandler = new L2GamePacketHandler();
-        _selectorThread = new Core<L2GameClient>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler,
-                new IPv4Filter());
+        _selectorThread = new Core<>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler, new IPv4Filter());
 
         InetAddress bindAddress = null;
         if (!Config.GAMESERVER_HOSTNAME.equals("*"))
@@ -502,7 +501,7 @@ public class Server
         final String LOG_FOLDER = "log"; // Name of folder for log file
         final String LOG_NAME = "./log.cfg"; // Name of log file
 
-        /** Main ***/
+        /* Main */
         // Create log folder
         File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
         logFolder.mkdir();

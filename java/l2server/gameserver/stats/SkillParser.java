@@ -55,15 +55,14 @@ public final class SkillParser extends StatsParser
     }
 
     private StatsSet[] _sets;
-    Map<Integer, Map<Integer, StatsSet[]>> _enchantSets = new HashMap<Integer, Map<Integer, StatsSet[]>>();
+    Map<Integer, Map<Integer, StatsSet[]>> _enchantSets = new HashMap<>();
     private int _currentLevel;
     private int _currentEnchantRoute;
     private int _currentEnchantLevel;
-    protected Map<String, String[]> _tables = new HashMap<String, String[]>();
-    Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> _enchantTables =
-            new HashMap<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>>();
+    protected Map<String, String[]> _tables = new HashMap<>();
+    Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> _enchantTables = new HashMap<>();
 
-    private Map<Integer, L2Skill> _skills = new HashMap<Integer, L2Skill>();
+    private Map<Integer, L2Skill> _skills = new HashMap<>();
 
     public SkillParser(XmlNode node)
     {
@@ -165,7 +164,7 @@ public final class SkillParser extends StatsParser
             tokenizer = ";\t\n\r\f";
         }
         StringTokenizer data = new StringTokenizer(n.getText(), tokenizer);
-        List<String> array = new ArrayList<String>(data.countTokens());
+        List<String> array = new ArrayList<>(data.countTokens());
         while (data.hasMoreTokens())
         {
             array.add(data.nextToken());
@@ -175,8 +174,7 @@ public final class SkillParser extends StatsParser
 
         if (!n.getChildren().isEmpty())
         {
-            Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap =
-                    new HashMap<Integer, Map<Integer, SkillEnchantBonusData>>();
+            Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = new HashMap<>();
             for (XmlNode node : n.getChildren())
             {
                 if (!node.getName().equalsIgnoreCase("enchantRoute"))
@@ -185,7 +183,7 @@ public final class SkillParser extends StatsParser
                 }
 
                 data = new StringTokenizer(node.getText(), tokenizer);
-                array = new ArrayList<String>(data.countTokens());
+                array = new ArrayList<>(data.countTokens());
                 while (data.hasMoreTokens())
                 {
                     array.add(data.nextToken());
@@ -197,7 +195,7 @@ public final class SkillParser extends StatsParser
 
                 for (String rt : enchRoute)
                 {
-                    Map<Integer, SkillEnchantBonusData> routeMap = new HashMap<Integer, SkillEnchantBonusData>();
+                    Map<Integer, SkillEnchantBonusData> routeMap = new HashMap<>();
                     int route = Integer.parseInt(rt);
                     for (String lv : enchLvl)
                     {
@@ -261,7 +259,7 @@ public final class SkillParser extends StatsParser
                     Map<Integer, StatsSet[]> levelEnchants = _enchantSets.get(level);
                     if (levelEnchants == null)
                     {
-                        levelEnchants = new HashMap<Integer, StatsSet[]>();
+                        levelEnchants = new HashMap<>();
                         _enchantSets.put(level, levelEnchants);
                     }
 

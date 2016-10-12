@@ -243,7 +243,7 @@ public class ClanHall
         _paidUntil = paidUntil;
         _grade = Grade;
         _paid = paid;
-        _functions = new HashMap<Integer, ClanHallFunction>();
+        _functions = new HashMap<>();
 
         if (ownerId != 0)
         {
@@ -332,7 +332,7 @@ public class ClanHall
     {
         if (_doors == null)
         {
-            _doors = new ArrayList<L2DoorInstance>();
+            _doors = new ArrayList<>();
         }
         return _doors;
     }
@@ -393,7 +393,7 @@ public class ClanHall
     {
         _ownerId = 0;
         _isFree = true;
-        Set<Integer> functionIds = new HashSet<Integer>(_functions.keySet());
+        Set<Integer> functionIds = new HashSet<>(_functions.keySet());
         for (int funcId : functionIds)
         {
             removeFunction(funcId);

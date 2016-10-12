@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class RankingKillInfo
 {
-    private static Map<String, KillInfo> _specificKillInfo = new HashMap<String, KillInfo>();
+    private static Map<String, KillInfo> _specificKillInfo = new HashMap<>();
 
     public void updateSpecificKillInfo(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
     {
@@ -231,7 +231,7 @@ public class RankingKillInfo
 
         private KillInfo()
         {
-            _killerList = new HashMap<String, Integer>();
+            _killerList = new HashMap<>();
         }
 
         private int getKillInfo(String name)

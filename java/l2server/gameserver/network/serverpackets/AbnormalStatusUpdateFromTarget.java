@@ -50,7 +50,7 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
     public AbnormalStatusUpdateFromTarget(L2Character c)
     {
         _character = c;
-        _effects = new ArrayList<Effect>();
+        _effects = new ArrayList<>();
 
         for (L2Abnormal e : c.getAllEffects())
         {

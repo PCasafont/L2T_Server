@@ -43,33 +43,29 @@ public class L2CastleTeleportZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("castleId"))
+        switch (name)
         {
-            _castleId = Integer.parseInt(value);
-        }
-        else if (name.equals("spawnMinX"))
-        {
-            _spawnLoc[0] = Integer.parseInt(value);
-        }
-        else if (name.equals("spawnMaxX"))
-        {
-            _spawnLoc[1] = Integer.parseInt(value);
-        }
-        else if (name.equals("spawnMinY"))
-        {
-            _spawnLoc[2] = Integer.parseInt(value);
-        }
-        else if (name.equals("spawnMaxY"))
-        {
-            _spawnLoc[3] = Integer.parseInt(value);
-        }
-        else if (name.equals("spawnZ"))
-        {
-            _spawnLoc[4] = Integer.parseInt(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "castleId":
+                _castleId = Integer.parseInt(value);
+                break;
+            case "spawnMinX":
+                _spawnLoc[0] = Integer.parseInt(value);
+                break;
+            case "spawnMaxX":
+                _spawnLoc[1] = Integer.parseInt(value);
+                break;
+            case "spawnMinY":
+                _spawnLoc[2] = Integer.parseInt(value);
+                break;
+            case "spawnMaxY":
+                _spawnLoc[3] = Integer.parseInt(value);
+                break;
+            case "spawnZ":
+                _spawnLoc[4] = Integer.parseInt(value);
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 
@@ -102,7 +98,7 @@ public class L2CastleTeleportZone extends L2ZoneType
      */
     public ArrayList<L2PcInstance> getAllPlayers()
     {
-        ArrayList<L2PcInstance> players = new ArrayList<L2PcInstance>();
+        ArrayList<L2PcInstance> players = new ArrayList<>();
 
         for (L2Character temp : _characterList.values())
         {

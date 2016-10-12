@@ -36,7 +36,7 @@ public class BypassHandler
 
     private BypassHandler()
     {
-        _datatable = new TIntObjectHashMap<IBypassHandler>();
+        _datatable = new TIntObjectHashMap<>();
     }
 
     public void registerBypassHandler(IBypassHandler handler)
@@ -56,7 +56,7 @@ public class BypassHandler
     {
         String command = BypassCommand;
 
-        if (BypassCommand.indexOf(" ") != -1)
+        if (BypassCommand.contains(" "))
         {
             command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
         }

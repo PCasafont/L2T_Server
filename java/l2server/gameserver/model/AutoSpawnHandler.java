@@ -34,6 +34,7 @@ import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 /**
  * Auto Spawn Handler
@@ -74,8 +75,8 @@ public class AutoSpawnHandler
 
     private AutoSpawnHandler()
     {
-        _registeredSpawns = new HashMap<Integer, AutoSpawnInstance>();
-        _runningSpawns = new HashMap<Integer, ScheduledFuture<?>>();
+        _registeredSpawns = new HashMap<>();
+        _runningSpawns = new HashMap<>();
 
         restoreSpawnData();
     }
@@ -93,25 +94,16 @@ public class AutoSpawnHandler
     public void reload()
     {
         // stop all timers
-        for (ScheduledFuture<?> sf : _runningSpawns.values())
+        _runningSpawns.values().stream().filter(sf -> sf != null).forEach(sf ->
         {
-            if (sf != null)
-            {
-                sf.cancel(true);
-            }
-        }
+            sf.cancel(true);
+        });
         // unregister all registered spawns
-        for (AutoSpawnInstance asi : _registeredSpawns.values())
-        {
-            if (asi != null)
-            {
-                this.removeSpawn(asi);
-            }
-        }
+        _registeredSpawns.values().stream().filter(asi -> asi != null).forEach(this::removeSpawn);
 
         // create clean list
-        _registeredSpawns = new HashMap<Integer, AutoSpawnInstance>();
-        _runningSpawns = new HashMap<Integer, ScheduledFuture<?>>();
+        _registeredSpawns = new HashMap<>();
+        _runningSpawns = new HashMap<>();
 
         // load
         restoreSpawnData();
@@ -411,15 +403,12 @@ public class AutoSpawnHandler
 
     public Map<Integer, AutoSpawnInstance> getAutoSpawnInstances(int npcId)
     {
-        Map<Integer, AutoSpawnInstance> spawnInstList = new HashMap<Integer, AutoSpawnInstance>();
+        Map<Integer, AutoSpawnInstance> spawnInstList = new HashMap<>();
 
-        for (AutoSpawnInstance spawnInst : _registeredSpawns.values())
+        _registeredSpawns.values().stream().filter(spawnInst -> spawnInst.getNpcId() == npcId).forEach(spawnInst ->
         {
-            if (spawnInst.getNpcId() == npcId)
-            {
-                spawnInstList.put(spawnInst.getObjectId(), spawnInst);
-            }
-        }
+            spawnInstList.put(spawnInst.getObjectId(), spawnInst);
+        });
 
         return spawnInstList;
     }
@@ -645,9 +634,9 @@ public class AutoSpawnHandler
 
         protected int _lastLocIndex = -1;
 
-        private List<L2Npc> _npcList = new Vector<L2Npc>();
+        private List<L2Npc> _npcList = new Vector<>();
 
-        private List<Location> _locList = new Vector<Location>();
+        private List<Location> _locList = new Vector<>();
 
         private boolean _spawnActive;
 
@@ -722,12 +711,7 @@ public class AutoSpawnHandler
 
         public L2Spawn[] getSpawns()
         {
-            List<L2Spawn> npcSpawns = new ArrayList<L2Spawn>();
-
-            for (L2Npc npcInst : _npcList)
-            {
-                npcSpawns.add(npcInst.getSpawn());
-            }
+            List<L2Spawn> npcSpawns = _npcList.stream().map(L2Npc::getSpawn).collect(Collectors.toList());
 
             return npcSpawns.toArray(new L2Spawn[npcSpawns.size()]);
         }

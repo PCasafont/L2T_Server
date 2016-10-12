@@ -120,7 +120,7 @@ public class L2Spawn
 
     private long _nextRespawn = 0L;
 
-    private static List<SpawnListener> _spawnListeners = new ArrayList<SpawnListener>();
+    private static List<SpawnListener> _spawnListeners = new ArrayList<>();
 
     /**
      * The task launching the function doSpawn()

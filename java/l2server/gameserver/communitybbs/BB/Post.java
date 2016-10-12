@@ -50,7 +50,7 @@ public class Post
     //public enum ConstructorType {REPLY, CREATE };
     public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
     {
-        _post = new ArrayList<CPost>();
+        _post = new ArrayList<>();
         CPost cp = new CPost();
         cp.postId = 0;
         cp.postOwner = _PostOwner;
@@ -93,7 +93,7 @@ public class Post
 
     public Post(Topic t)
     {
-        _post = new ArrayList<CPost>();
+        _post = new ArrayList<>();
         load(t);
     }
 

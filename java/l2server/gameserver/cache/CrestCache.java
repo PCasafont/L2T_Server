@@ -34,11 +34,11 @@ import java.util.logging.Level;
  */
 public class CrestCache
 {
-    private ConcurrentHashMap<Integer, byte[]> _mapPledge = new ConcurrentHashMap<Integer, byte[]>();
+    private ConcurrentHashMap<Integer, byte[]> _mapPledge = new ConcurrentHashMap<>();
 
-    private ConcurrentHashMap<Integer, byte[][]> _mapPledgeLarge = new ConcurrentHashMap<Integer, byte[][]>();
+    private ConcurrentHashMap<Integer, byte[][]> _mapPledgeLarge = new ConcurrentHashMap<>();
 
-    private ConcurrentHashMap<Integer, byte[]> _mapAlly = new ConcurrentHashMap<Integer, byte[]>();
+    private ConcurrentHashMap<Integer, byte[]> _mapAlly = new ConcurrentHashMap<>();
 
     private int _loadedFiles;
 

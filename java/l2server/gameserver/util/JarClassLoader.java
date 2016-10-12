@@ -33,7 +33,7 @@ import java.util.zip.ZipFile;
  */
 public class JarClassLoader extends ClassLoader
 {
-    HashSet<String> _jars = new HashSet<String>();
+    HashSet<String> _jars = new HashSet<>();
 
     public void addJarFile(String filename)
     {

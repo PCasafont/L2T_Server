@@ -42,8 +42,8 @@ public class UITable
 
     private UITable()
     {
-        _storedKeys = new HashMap<Integer, List<ActionKey>>();
-        _storedCategories = new HashMap<Integer, List<Integer>>();
+        _storedKeys = new HashMap<>();
+        _storedCategories = new HashMap<>();
 
         parseCatData();
         parseKeyData();
@@ -106,7 +106,7 @@ public class UITable
         }
         else
         {
-            List<Integer> tmp = new ArrayList<Integer>();
+            List<Integer> tmp = new ArrayList<>();
             tmp.add(cmd);
             _storedCategories.put(cat, tmp);
         }
@@ -121,7 +121,7 @@ public class UITable
         }
         else
         {
-            List<ActionKey> tmp = new ArrayList<ActionKey>();
+            List<ActionKey> tmp = new ArrayList<>();
             tmp.add(tmk);
             _storedKeys.put(cat, tmp);
         }

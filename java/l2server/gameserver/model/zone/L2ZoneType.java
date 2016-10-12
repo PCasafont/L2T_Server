@@ -69,7 +69,7 @@ public abstract class L2ZoneType
     protected L2ZoneType(int id)
     {
         _id = id;
-        _characterList = new ConcurrentHashMap<Integer, L2Character>();
+        _characterList = new ConcurrentHashMap<>();
 
         _minLvl = 0;
         _maxLvl = 0xFF;
@@ -98,87 +98,82 @@ public abstract class L2ZoneType
         _checkAffected = true;
 
         // Zone name
-        if (name.equals("name"))
+        switch (name)
         {
-            _name = value;
-        }
-        // Minimum level
-        else if (name.equals("affectedLvlMin"))
-        {
-            _minLvl = Integer.parseInt(value);
-        }
-        // Maximum level
-        else if (name.equals("affectedLvlMax"))
-        {
-            _maxLvl = Integer.parseInt(value);
-        }
-        // Affected Races
-        else if (name.equals("affectedRace"))
-        {
-            // Create a new array holding the affected race
-            if (_race == null)
-            {
-                _race = new int[1];
-                _race[0] = Integer.parseInt(value);
-            }
-            else
-            {
-                int[] temp = new int[_race.length + 1];
-
-                int i = 0;
-                for (; i < _race.length; i++)
+            case "name":
+                _name = value;
+                break;
+            // Minimum level
+            case "affectedLvlMin":
+                _minLvl = Integer.parseInt(value);
+                break;
+            // Maximum level
+            case "affectedLvlMax":
+                _maxLvl = Integer.parseInt(value);
+                break;
+            // Affected Races
+            case "affectedRace":
+                // Create a new array holding the affected race
+                if (_race == null)
                 {
-                    temp[i] = _race[i];
+                    _race = new int[1];
+                    _race[0] = Integer.parseInt(value);
                 }
-
-                temp[i] = Integer.parseInt(value);
-
-                _race = temp;
-            }
-        }
-        // Affected classes
-        else if (name.equals("affectedClassId"))
-        {
-            // Create a new array holding the affected classIds
-            if (_class == null)
-            {
-                _class = new int[1];
-                _class[0] = Integer.parseInt(value);
-            }
-            else
-            {
-                int[] temp = new int[_class.length + 1];
-
-                int i = 0;
-                for (; i < _class.length; i++)
+                else
                 {
-                    temp[i] = _class[i];
+                    int[] temp = new int[_race.length + 1];
+
+                    int i = 0;
+                    for (; i < _race.length; i++)
+                    {
+                        temp[i] = _race[i];
+                    }
+
+                    temp[i] = Integer.parseInt(value);
+
+                    _race = temp;
                 }
+                break;
+            // Affected classes
+            case "affectedClassId":
+                // Create a new array holding the affected classIds
+                if (_class == null)
+                {
+                    _class = new int[1];
+                    _class[0] = Integer.parseInt(value);
+                }
+                else
+                {
+                    int[] temp = new int[_class.length + 1];
 
-                temp[i] = Integer.parseInt(value);
+                    int i = 0;
+                    for (; i < _class.length; i++)
+                    {
+                        temp[i] = _class[i];
+                    }
 
-                _class = temp;
-            }
-        }
-        // Affected class type
-        else if (name.equals("affectedClassType"))
-        {
-            if (value.equals("Fighter"))
-            {
-                _classType = 1;
-            }
-            else
-            {
-                _classType = 2;
-            }
-        }
-        else if (name.equals("targetClass"))
-        {
-            _target = Enum.valueOf(InstanceType.class, value);
-        }
-        else
-        {
-            Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
+                    temp[i] = Integer.parseInt(value);
+
+                    _class = temp;
+                }
+                break;
+            // Affected class type
+            case "affectedClassType":
+                if (value.equals("Fighter"))
+                {
+                    _classType = 1;
+                }
+                else
+                {
+                    _classType = 2;
+                }
+                break;
+            case "targetClass":
+                _target = Enum.valueOf(InstanceType.class, value);
+                break;
+            default:
+                Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
+                break;
         }
     }
 
@@ -463,12 +458,12 @@ public abstract class L2ZoneType
     {
         if (_questEvents == null)
         {
-            _questEvents = new HashMap<Quest.QuestEventType, ArrayList<Quest>>();
+            _questEvents = new HashMap<>();
         }
         ArrayList<Quest> questByEvents = _questEvents.get(EventType);
         if (questByEvents == null)
         {
-            questByEvents = new ArrayList<Quest>();
+            questByEvents = new ArrayList<>();
         }
         if (!questByEvents.contains(q))
         {
@@ -536,7 +531,7 @@ public abstract class L2ZoneType
 
     public List<L2PcInstance> getPlayersInside()
     {
-        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> players = new ArrayList<>();
         for (L2Character ch : _characterList.values())
         {
             if (ch != null && ch instanceof L2PcInstance)
@@ -550,7 +545,7 @@ public abstract class L2ZoneType
 
     public List<L2Npc> getNpcsInside()
     {
-        List<L2Npc> npcs = new ArrayList<L2Npc>();
+        List<L2Npc> npcs = new ArrayList<>();
         for (L2Character ch : _characterList.values())
         {
             if (ch == null || ch instanceof L2Playable || ch instanceof L2BoatInstance ||

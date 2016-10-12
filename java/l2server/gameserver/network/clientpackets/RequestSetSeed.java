@@ -124,7 +124,7 @@ public class RequestSetSeed extends L2GameClientPacket
             return;
         }
 
-        List<SeedProduction> seeds = new ArrayList<SeedProduction>(_items.length);
+        List<SeedProduction> seeds = new ArrayList<>(_items.length);
         for (Seed i : _items)
         {
             SeedProduction s = i.getSeed();

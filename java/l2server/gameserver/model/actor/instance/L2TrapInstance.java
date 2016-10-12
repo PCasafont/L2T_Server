@@ -34,7 +34,7 @@ public class L2TrapInstance extends L2Trap
     private L2PcInstance _owner;
     private int _level;
     private boolean _isInArena = false;
-    private final List<Integer> _playersWhoDetectedMe = new ArrayList<Integer>();
+    private final List<Integer> _playersWhoDetectedMe = new ArrayList<>();
 
     /**
      * @param objectId

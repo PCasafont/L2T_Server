@@ -46,7 +46,7 @@ public class TradeList
         private int _type2;
         private long _count;
         private long _storeCount;
-        private Map<L2Item, Long> _priceItems = new HashMap<L2Item, Long>();
+        private Map<L2Item, Long> _priceItems = new HashMap<>();
         private long _price;
         private boolean _isSoulEnhanced;
         private int[] _ensoulEffectIds;
@@ -307,7 +307,7 @@ public class TradeList
 
     public TradeList(L2PcInstance owner)
     {
-        _items = new CopyOnWriteArrayList<TradeItem>();
+        _items = new CopyOnWriteArrayList<>();
         _owner = owner;
     }
 
@@ -371,7 +371,7 @@ public class TradeList
      */
     public TradeList.TradeItem[] getAvailableItems(PcInventory inventory)
     {
-        ArrayList<TradeList.TradeItem> list = new ArrayList<TradeList.TradeItem>();
+        ArrayList<TradeList.TradeItem> list = new ArrayList<>();
         for (TradeList.TradeItem item : _items)
         {
             item = new TradeItem(item, item.getCount(), item.getPrice());

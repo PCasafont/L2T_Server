@@ -223,10 +223,10 @@ public class FortSiege implements Siegable
         }
     }
 
-    private List<L2SiegeClan> _attackerClans = new ArrayList<L2SiegeClan>();
+    private List<L2SiegeClan> _attackerClans = new ArrayList<>();
 
     // Fort setting
-    protected ArrayList<L2Spawn> _commanders = new ArrayList<L2Spawn>();
+    protected ArrayList<L2Spawn> _commanders = new ArrayList<>();
     private final Fort _fort;
     private boolean _isInProgress = false;
     ScheduledFuture<?> _siegeEnd = null;
@@ -555,7 +555,7 @@ public class FortSiege implements Siegable
     @Override
     public List<L2PcInstance> getAttackersInZone()
     {
-        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> players = new ArrayList<>();
         L2Clan clan;
         for (L2SiegeClan siegeclan : getAttackerClans())
         {
@@ -589,7 +589,7 @@ public class FortSiege implements Siegable
      */
     public List<L2PcInstance> getOwnersInZone()
     {
-        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> players = new ArrayList<>();
         L2Clan clan;
         if (getFort().getOwnerClan() != null)
         {

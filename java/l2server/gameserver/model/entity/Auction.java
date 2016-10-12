@@ -60,7 +60,7 @@ public class Auction
     private long _currentBid = 0;
     private long _startingBid = 0;
 
-    private Map<Integer, Bidder> _bidders = new HashMap<Integer, Bidder>();
+    private Map<Integer, Bidder> _bidders = new HashMap<>();
 
     private static final String[] ItemTypeName = {"ClanHall"};
 

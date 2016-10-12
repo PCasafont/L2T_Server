@@ -122,7 +122,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
         int varHavePvPs = 0;
         int varBeCreatedDaysAgo = 0;
 
-        List<String> ips = new ArrayList<String>();
+        List<String> ips = new ArrayList<>();
 
         L2Clan clan = ClanTable.getInstance().getClan(player.getClanId());
 

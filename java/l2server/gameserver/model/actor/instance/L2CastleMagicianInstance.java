@@ -92,10 +92,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
             {
                 val = Integer.parseInt(command.substring(5));
             }
-            catch (IndexOutOfBoundsException ioobe)
-            {
-            }
-            catch (NumberFormatException nfe)
+            catch (IndexOutOfBoundsException | NumberFormatException ioobe)
             {
             }
             showChatWindow(player, val);

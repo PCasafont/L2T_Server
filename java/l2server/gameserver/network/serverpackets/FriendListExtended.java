@@ -68,7 +68,7 @@ public class FriendListExtended extends L2GameServerPacket
 
     public FriendListExtended(L2PcInstance player)
     {
-        _info = new ArrayList<FriendInfo>(player.getFriendList().size());
+        _info = new ArrayList<>(player.getFriendList().size());
         for (int objId : player.getFriendList())
         {
             String name = CharNameTable.getInstance().getNameById(objId);

@@ -385,7 +385,7 @@ public abstract class L2Character extends L2Object
             Formulas.addFuncsToNewCharacter(this);
         }
 
-        _skills = new ConcurrentHashMap<Integer, L2Skill>();
+        _skills = new ConcurrentHashMap<>();
         if (template != null && (this instanceof L2Npc || this instanceof L2Summon))
         {
             // Copy the skills of the NPC from its template to the L2Character Instance
@@ -2972,7 +2972,7 @@ public abstract class L2Character extends L2Object
         {
             if (_attackByList == null)
             {
-                _attackByList = new CopyOnWriteArraySet<L2Character>();
+                _attackByList = new CopyOnWriteArraySet<>();
             }
         }
         return _attackByList;
@@ -3644,7 +3644,7 @@ public abstract class L2Character extends L2Object
         }
     }
 
-    private Set<Integer> _abnormalEffects = new CopyOnWriteArraySet<Integer>();
+    private Set<Integer> _abnormalEffects = new CopyOnWriteArraySet<>();
 
     protected CharEffectList _effects = new CharEffectList(this);
 
@@ -4236,7 +4236,7 @@ public abstract class L2Character extends L2Object
      */
     public Set<Integer> getAbnormalEffect()
     {
-        Set<Integer> result = new HashSet<Integer>();
+        Set<Integer> result = new HashSet<>();
         synchronized (_abnormalEffects)
         {
             result.addAll(_abnormalEffects);
@@ -4557,7 +4557,7 @@ public abstract class L2Character extends L2Object
     public final void addStatFuncs(Func[] funcs)
     {
 
-        ArrayList<Stats> modifiedStats = new ArrayList<Stats>();
+        ArrayList<Stats> modifiedStats = new ArrayList<>();
 
         for (Func f : funcs)
         {
@@ -4650,7 +4650,7 @@ public abstract class L2Character extends L2Object
     public final void removeStatFuncs(Func[] funcs)
     {
 
-        ArrayList<Stats> modifiedStats = new ArrayList<Stats>();
+        ArrayList<Stats> modifiedStats = new ArrayList<>();
 
         for (Func f : funcs)
         {
@@ -7360,7 +7360,7 @@ public abstract class L2Character extends L2Object
             int _skiprange = 0;
             int _skipgeo = 0;
             int _skippeace = 0;
-            List<L2Character> targetList = new ArrayList<L2Character>(targets.length);
+            List<L2Character> targetList = new ArrayList<>(targets.length);
             for (L2Object target : targets)
             {
                 if (target instanceof L2Character)
@@ -7843,7 +7843,7 @@ public abstract class L2Character extends L2Object
             return;
         }
 
-        _disabledSkills.remove(Integer.valueOf(skill.getReuseHashCode()));
+        _disabledSkills.remove(skill.getReuseHashCode());
     }
 
     /**
@@ -7864,7 +7864,7 @@ public abstract class L2Character extends L2Object
             _disabledSkills = Collections.synchronizedMap(new HashMap<Integer, Long>());
         }
 
-        _disabledSkills.put(Integer.valueOf(skill.getReuseHashCode()),
+        _disabledSkills.put(skill.getReuseHashCode(),
                 delay > 10 ? System.currentTimeMillis() + delay : Long.MAX_VALUE);
     }
 
@@ -7922,7 +7922,7 @@ public abstract class L2Character extends L2Object
             return false;
         }
 
-        final Long timeStamp = _disabledSkills.get(Integer.valueOf(reuseHashcode));
+        final Long timeStamp = _disabledSkills.get(reuseHashcode);
         if (timeStamp == null)
         {
             return false;
@@ -7930,7 +7930,7 @@ public abstract class L2Character extends L2Object
 
         if (timeStamp < System.currentTimeMillis())
         {
-            _disabledSkills.remove(Integer.valueOf(reuseHashcode));
+            _disabledSkills.remove(reuseHashcode);
             return false;
         }
 

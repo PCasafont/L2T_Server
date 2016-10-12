@@ -32,13 +32,13 @@ import java.util.*;
 
 public class SkillTreeTable
 {
-    private List<L2SkillLearn> _fishingSkillTrees = new ArrayList<L2SkillLearn>();
+    private List<L2SkillLearn> _fishingSkillTrees = new ArrayList<>();
     //all common skills (taught by Fisherman)
-    private List<L2SkillLearn> _expandDwarfCraftSkillTrees = new ArrayList<L2SkillLearn>();
+    private List<L2SkillLearn> _expandDwarfCraftSkillTrees = new ArrayList<>();
     //list of special skill for dwarf (expand dwarf craft) learned by class teacher
-    private List<L2TransformSkillLearn> _transformSkillTrees = new ArrayList<L2TransformSkillLearn>();
+    private List<L2TransformSkillLearn> _transformSkillTrees = new ArrayList<>();
     // Transform Skills (Test)
-    private ArrayList<L2SkillLearn> _specialSkillTrees = new ArrayList<L2SkillLearn>();
+    private ArrayList<L2SkillLearn> _specialSkillTrees = new ArrayList<>();
 
     // checker, sorted arrays of hash codes
     private TIntObjectHashMap<long[]> _skillsByRaceHashCodes; // race-specific transformations
@@ -200,8 +200,8 @@ public class SkillTreeTable
         long[] array;
 
         // race-specific skills including dwarven (obtained by fishing)
-        ArrayList<Long> list = new ArrayList<Long>();
-        TIntObjectHashMap<long[]> result = new TIntObjectHashMap<long[]>(Race.values().length);
+        ArrayList<Long> list = new ArrayList<>();
+        TIntObjectHashMap<long[]> result = new TIntObjectHashMap<>(Race.values().length);
         for (Race r : Race.values())
         {
             for (L2TransformSkillLearn s : _transformSkillTrees)
@@ -263,7 +263,7 @@ public class SkillTreeTable
 
     public L2SkillLearn[] getAvailableClassSkills(L2PcInstance cha)
     {
-        List<L2SkillLearn> result = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> result = new ArrayList<>();
         Set<Long> skillIds = cha.getCurrentClass().getSkills().keySet();
 
         if (skillIds == null)
@@ -314,8 +314,8 @@ public class SkillTreeTable
     // Very inefficient function but works
     public boolean hasNewSkillsToLearn(L2PcInstance cha, PlayerClass cl)
     {
-        List<L2SkillLearn> result1 = new ArrayList<L2SkillLearn>();
-        List<L2SkillLearn> result2 = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> result1 = new ArrayList<>();
+        List<L2SkillLearn> result2 = new ArrayList<>();
         Collection<L2SkillLearn> skills = PlayerClassTable.getInstance().getClassById(cl.getId()).getSkills().values();
 
         if (skills == null)
@@ -392,8 +392,8 @@ public class SkillTreeTable
 
     public L2SkillLearn[] getAvailableSkills(L2PcInstance cha)
     {
-        List<L2SkillLearn> result = new ArrayList<L2SkillLearn>();
-        List<L2SkillLearn> skills = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> result = new ArrayList<>();
+        List<L2SkillLearn> skills = new ArrayList<>();
 
         skills.addAll(_fishingSkillTrees);
 
@@ -445,8 +445,8 @@ public class SkillTreeTable
 
     public L2SkillLearn[] getAvailableSpecialSkills(L2PcInstance cha)
     {
-        List<L2SkillLearn> result = new ArrayList<L2SkillLearn>();
-        List<L2SkillLearn> skills = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> result = new ArrayList<>();
+        List<L2SkillLearn> skills = new ArrayList<>();
 
         skills.addAll(_specialSkillTrees);
 
@@ -489,7 +489,7 @@ public class SkillTreeTable
 
     public L2TransformSkillLearn[] getAvailableTransformSkills(L2PcInstance cha)
     {
-        List<L2TransformSkillLearn> result = new ArrayList<L2TransformSkillLearn>();
+        List<L2TransformSkillLearn> result = new ArrayList<>();
         List<L2TransformSkillLearn> skills = _transformSkillTrees;
 
         if (skills == null)
@@ -537,7 +537,7 @@ public class SkillTreeTable
     public int getMinLevelForNewSkill(L2PcInstance cha)
     {
         int minLevel = 0;
-        List<L2SkillLearn> skills = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> skills = new ArrayList<>();
 
         skills.addAll(_fishingSkillTrees);
 
@@ -570,7 +570,7 @@ public class SkillTreeTable
     public int getMinLevelForNewTransformSkill(L2PcInstance cha)
     {
         int minLevel = 0;
-        List<L2TransformSkillLearn> skills = new ArrayList<L2TransformSkillLearn>();
+        List<L2TransformSkillLearn> skills = new ArrayList<>();
 
         skills.addAll(_transformSkillTrees);
 
@@ -626,7 +626,7 @@ public class SkillTreeTable
 
     public List<Integer> getAllAllowedSkillId(L2PcInstance player)
     {
-        ArrayList<Integer> skills = new ArrayList<Integer>();
+        ArrayList<Integer> skills = new ArrayList<>();
 
         for (L2SkillLearn tmp : player.getCurrentClass().getSkills().values())
         {
@@ -684,7 +684,7 @@ public class SkillTreeTable
 
     public L2SkillLearn[] getAvailableSkillsForPlayer(final L2PcInstance player, boolean missingOnesOnly, boolean topLevelOnly)
     {
-        List<L2SkillLearn> result = new ArrayList<L2SkillLearn>();
+        List<L2SkillLearn> result = new ArrayList<>();
 
         @SuppressWarnings("unused") final int classId = player.getCurrentClass().getId();
 

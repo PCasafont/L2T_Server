@@ -37,17 +37,17 @@ public class L2AbnormalZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("AbnormalMask"))
+        switch (name)
         {
-            abnormal = Integer.parseInt(value);
-        }
-        else if (name.equals("SpecialMask"))
-        {
-            abnormal = Integer.parseInt(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "AbnormalMask":
+                abnormal = Integer.parseInt(value);
+                break;
+            case "SpecialMask":
+                abnormal = Integer.parseInt(value);
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 

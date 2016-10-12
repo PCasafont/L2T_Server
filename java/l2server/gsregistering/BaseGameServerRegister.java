@@ -72,104 +72,110 @@ public abstract class BaseGameServerRegister
             arg = args[i];
 
 			/* --cmd : no gui */
-            if (arg.equals("-c") || arg.equals("--cmd"))
+            switch (arg)
             {
-                gui = false;
-            }
+                case "-c":
+                case "--cmd":
+                    gui = false;
+                    break;
             /* --force
              * Forces GameServer register operations to overwrite a server if necessary
 			 */
-            else if (arg.equals("-f") || arg.equals("--force"))
-            {
-                force = true;
-            }
+                case "-f":
+                case "--force":
+                    force = true;
+                    break;
 			/* --fallback
 			 * If an register operation fails due to ID already being in use it will then try to register first available ID
 			 */
-            else if (arg.equals("-b") || arg.equals("--fallback"))
-            {
-                fallback = true;
-            }
+                case "-b":
+                case "--fallback":
+                    fallback = true;
+                    break;
 			/* --register <id> <hexid_dest_dir>
 			 * Register GameServer with ID <id> and output hexid on <hexid_dest_dir>
 			 * Fails if <id> already in use, unless -force is used (overwrites)
 			 */
-            else if (arg.equals("-r") || arg.equals("--register"))
-            {
-                gui = false;
-                interactive = false;
-                int id = Integer.parseInt(args[++i]);
-                String dir = args[++i];
+                case "-r":
+                case "--register":
+                {
+                    gui = false;
+                    interactive = false;
+                    int id = Integer.parseInt(args[++i]);
+                    String dir = args[++i];
 
-                task = new RegisterTask(id, dir, force, fallback);
-            }
+                    task = new RegisterTask(id, dir, force, fallback);
+                    break;
+                }
 			/* --unregister <id>
 			 * Removes GameServer denoted by <id>
 			 */
-            else if (arg.equals("-u") || arg.equals("--unregister"))
-            {
-                gui = false;
-                interactive = false;
-                String gsId = args[++i];
-                if (gsId.equalsIgnoreCase("all"))
-                {
-                    task = new UnregisterAllTask();
-                }
-                else
-                {
-                    try
+                case "-u":
+                case "--unregister":
+                    gui = false;
+                    interactive = false;
+                    String gsId = args[++i];
+                    if (gsId.equalsIgnoreCase("all"))
                     {
-                        int id = Integer.parseInt(gsId);
-                        task = new UnregisterTask(id);
+                        task = new UnregisterAllTask();
                     }
-                    catch (NumberFormatException e)
+                    else
                     {
-                        System.out.printf(bundle.getString("wrongUnregisterArg") + '\n', gsId);
-                        System.exit(1);
+                        try
+                        {
+                            int id = Integer.parseInt(gsId);
+                            task = new UnregisterTask(id);
+                        }
+                        catch (NumberFormatException e)
+                        {
+                            System.out.printf(bundle.getString("wrongUnregisterArg") + '\n', gsId);
+                            System.exit(1);
+                        }
                     }
-                }
-            }
+                    break;
 			/* --language <locale>
 			 * Sets the app to use the specified locale, overriding auto-detection
 			 */
-            else if (arg.equals("-l") || arg.equals("--language"))
-            {
-                String loc = args[++i];
-                Locale[] availableLocales = Locale.getAvailableLocales();
-                Locale l;
-                for (int j = 0; j < availableLocales.length && locale == null; j++)
-                {
-                    l = availableLocales[j];
-                    if (l.toString().equals(loc))
+                case "-l":
+                case "--language":
+                    String loc = args[++i];
+                    Locale[] availableLocales = Locale.getAvailableLocales();
+                    Locale l;
+                    for (int j = 0; j < availableLocales.length && locale == null; j++)
                     {
-                        locale = l;
+                        l = availableLocales[j];
+                        if (l.toString().equals(loc))
+                        {
+                            locale = l;
+                        }
                     }
-                }
-                if (locale == null)
-                {
-                    System.out.println("Specified locale '" + loc + "' was not found, using default behaviour.");
-                }
-                else
-                {
-                    try
+                    if (locale == null)
                     {
-                        bundle = ResourceBundle.getBundle("gsregister.GSRegister", locale, LanguageControl.INSTANCE);
+                        System.out.println("Specified locale '" + loc + "' was not found, using default behaviour.");
                     }
-                    catch (Throwable t)
+                    else
                     {
-                        System.out.println("Failed to load translation ''");
+                        try
+                        {
+                            bundle =
+                                    ResourceBundle.getBundle("gsregister.GSRegister", locale, LanguageControl.INSTANCE);
+                        }
+                        catch (Throwable t)
+                        {
+                            System.out.println("Failed to load translation ''");
+                        }
                     }
-                }
-            }
+                    break;
 			/* --help
 			 * Prints usage/arguments/credits
 			 */
-            else if (arg.equals("-h") || arg.equals("--help"))
-            {
-                gui = false;
-                interactive = false;
+                case "-h":
+                case "--help":
+                    gui = false;
+                    interactive = false;
 
-                BaseGameServerRegister.printHelp(bundle);
+                    BaseGameServerRegister.printHelp(bundle);
+                    break;
             }
         }
 

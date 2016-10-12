@@ -792,7 +792,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 
         if (availSubs != null && !availSubs.isEmpty())
         {
-            List<Integer> toIterate = new ArrayList<Integer>(availSubs);
+            List<Integer> toIterate = new ArrayList<>(availSubs);
             for (Integer subId : toIterate)
             {
                 PlayerClass pclass = PlayerClassTable.getInstance().getClassById(subId);

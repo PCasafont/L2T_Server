@@ -36,7 +36,7 @@ public final class L2Armor extends L2Item
 {
     public static final int MAX_ENCHANT_SKILL = 10;
 
-    private TIntObjectHashMap<SkillHolder> _enchantSkills = new TIntObjectHashMap<SkillHolder>();
+    private TIntObjectHashMap<SkillHolder> _enchantSkills = new TIntObjectHashMap<>();
     // skill that activates when armor is enchanted +X
     // private final String[] _skill;
     private L2ArmorType _type;
@@ -206,7 +206,7 @@ public final class L2Armor extends L2Item
             return _emptyFunctionSet;
         }
 
-        ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
+        ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
 
         Func f;
         for (FuncTemplate t : _funcTemplates)

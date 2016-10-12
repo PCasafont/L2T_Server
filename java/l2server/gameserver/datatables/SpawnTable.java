@@ -44,9 +44,9 @@ import java.util.logging.Level;
  */
 public class SpawnTable
 {
-    private CopyOnWriteArraySet<L2Spawn> _spawnTable = new CopyOnWriteArraySet<L2Spawn>();
-    private ConcurrentMap<String, List<L2Spawn>> _specificSpawnTable = new ConcurrentHashMap<String, List<L2Spawn>>();
-    private CopyOnWriteArraySet<SpawnGroup> _spawnGroups = new CopyOnWriteArraySet<SpawnGroup>();
+    private CopyOnWriteArraySet<L2Spawn> _spawnTable = new CopyOnWriteArraySet<>();
+    private ConcurrentMap<String, List<L2Spawn>> _specificSpawnTable = new ConcurrentHashMap<>();
+    private CopyOnWriteArraySet<SpawnGroup> _spawnGroups = new CopyOnWriteArraySet<>();
     private int _customSpawnCount;
 
     public static SpawnTable getInstance()
@@ -223,7 +223,7 @@ public class SpawnTable
 
     private List<L2Spawn> loadSpawns(XmlNode node, boolean isRoot)
     {
-        List<L2Spawn> spawns = new ArrayList<L2Spawn>();
+        List<L2Spawn> spawns = new ArrayList<>();
         for (XmlNode npcNode : node.getChildren())
         {
             if (npcNode.getName().equalsIgnoreCase("specificSpawnList") && isRoot)
@@ -249,7 +249,7 @@ public class SpawnTable
                 int heading = 0;
                 if (!npcNode.hasAttribute("x"))
                 {
-                    randomCoords = new ArrayList<int[]>();
+                    randomCoords = new ArrayList<>();
                     for (XmlNode coordNode : npcNode.getChildren())
                     {
                         if (!coordNode.getName().equalsIgnoreCase("randomCoord"))
@@ -480,7 +480,7 @@ public class SpawnTable
 
             System.out.println(min + " " + max);
         }
-        List<L2Spawn> result = new ArrayList<L2Spawn>();
+        List<L2Spawn> result = new ArrayList<>();
 
         for (L2Spawn spawn : _spawnTable)
         {
@@ -516,7 +516,7 @@ public class SpawnTable
     }
 
     private double _totalDistributedSpawnWeight = 0.0;
-    private Map<L2Spawn, Double> _distributedSpawnWeights = new LinkedHashMap<L2Spawn, Double>();
+    private Map<L2Spawn, Double> _distributedSpawnWeights = new LinkedHashMap<>();
 
     public L2Spawn getRandomDistributedSpawn()
     {

@@ -71,12 +71,12 @@ public final class SystemMessage extends L2GameServerPacket
 
         public final int getIntValue()
         {
-            return ((Integer) _value).intValue();
+            return (Integer) _value;
         }
 
         public final long getLongValue()
         {
-            return ((Long) _value).longValue();
+            return (Long) _value;
         }
 
         public final int[] getIntArrayValue()

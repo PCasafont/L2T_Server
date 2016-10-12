@@ -113,7 +113,7 @@ public class CharStatus
     {
         if (_statusListener == null)
         {
-            _statusListener = new CopyOnWriteArraySet<L2Character>();
+            _statusListener = new CopyOnWriteArraySet<>();
         }
         return _statusListener;
     }

@@ -50,7 +50,7 @@ public class RaidBossPointsManager
 
     private final void init()
     {
-        _list = new HashMap<Integer, Map<Integer, Integer>>();
+        _list = new HashMap<>();
         Connection con = null;
         try
         {
@@ -66,7 +66,7 @@ public class RaidBossPointsManager
                 Map<Integer, Integer> values = _list.get(charId);
                 if (values == null)
                 {
-                    values = new HashMap<Integer, Integer>();
+                    values = new HashMap<>();
                     values.put(0, 0);
                     _list.put(charId, values);
                 }
@@ -123,7 +123,7 @@ public class RaidBossPointsManager
         Map<Integer, Integer> tmpPoint = _list.get(ownerId);
         if (tmpPoint == null)
         {
-            tmpPoint = new HashMap<Integer, Integer>();
+            tmpPoint = new HashMap<>();
             tmpPoint.put(bossId, points);
             tmpPoint.put(0, 0);
             updatePointsInDB(player, bossId, points);
@@ -159,7 +159,7 @@ public class RaidBossPointsManager
         Map<Integer, Integer> list = _list.get(player.getObjectId());
         if (list == null)
         {
-            list = new HashMap<Integer, Integer>();
+            list = new HashMap<>();
             list.put(0, 0);
             _list.put(player.getObjectId(), list);
         }
@@ -200,8 +200,8 @@ public class RaidBossPointsManager
 
     public Map<Integer, Integer> getRankList()
     {
-        Map<Integer, Integer> tmpRanking = new HashMap<Integer, Integer>();
-        Map<Integer, Integer> tmpPoints = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> tmpRanking = new HashMap<>();
+        Map<Integer, Integer> tmpPoints = new HashMap<>();
 
         for (int ownerId : _list.keySet())
         {
@@ -211,7 +211,7 @@ public class RaidBossPointsManager
                 tmpPoints.put(ownerId, totalPoints);
             }
         }
-        ArrayList<Entry<Integer, Integer>> list = new ArrayList<Map.Entry<Integer, Integer>>(tmpPoints.entrySet());
+        ArrayList<Entry<Integer, Integer>> list = new ArrayList<>(tmpPoints.entrySet());
 
         Collections.sort(list, _comparator);
 

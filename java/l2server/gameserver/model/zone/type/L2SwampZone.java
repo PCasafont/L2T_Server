@@ -48,21 +48,20 @@ public class L2SwampZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("move_bonus"))
+        switch (name)
         {
-            _move_bonus = Integer.parseInt(value);
-        }
-        else if (name.equals("castleId"))
-        {
-            _castleId = Integer.parseInt(value);
-        }
-        else if (name.equals("eventId"))
-        {
-            _eventId = Integer.parseInt(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "move_bonus":
+                _move_bonus = Integer.parseInt(value);
+                break;
+            case "castleId":
+                _castleId = Integer.parseInt(value);
+                break;
+            case "eventId":
+                _eventId = Integer.parseInt(value);
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 

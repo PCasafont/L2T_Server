@@ -35,7 +35,7 @@ public class GlobalVariablesManager
 
     private GlobalVariablesManager()
     {
-        _variablesMap = new HashMap<String, String>();
+        _variablesMap = new HashMap<>();
 
         loadVars();
     }

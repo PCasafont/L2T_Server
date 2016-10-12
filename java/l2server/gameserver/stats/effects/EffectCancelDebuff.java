@@ -61,7 +61,7 @@ public class EffectCancelDebuff extends L2Effect
         }
 
         L2Abnormal[] effects = effected.getAllEffects();
-        ArrayList<L2Abnormal> debuffs = new ArrayList<L2Abnormal>();
+        ArrayList<L2Abnormal> debuffs = new ArrayList<>();
 
         int chance = (int) getAbnormal().getLandRate();
         if (chance < 0)
