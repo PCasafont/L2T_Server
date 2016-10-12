@@ -68,7 +68,7 @@ public class HttpHandler
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
             String inputLine;
-            StringBuilder response = new StringBuilder();
+            StringBuffer response = new StringBuffer();
 
             while ((inputLine = in.readLine()) != null)
             {
@@ -120,7 +120,7 @@ public class HttpHandler
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             String inputLine;
-            StringBuilder response = new StringBuilder();
+            StringBuffer response = new StringBuffer();
 
             while ((inputLine = bufferedReader.readLine()) != null)
             {

@@ -359,9 +359,9 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
         if (size <= 11)
         {
             // for small tables linear check is fast
-            for (T a_table : _table)
+            for (int i = 0; i < size; i++)
             {
-                if (a_table == obj)
+                if (_table[i] == obj)
                 {
                     return true;
                 }

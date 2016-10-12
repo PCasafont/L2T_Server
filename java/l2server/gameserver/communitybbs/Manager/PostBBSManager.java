@@ -55,7 +55,10 @@ public class PostBBSManager extends BaseBBSManager
 
     public void addPostByTopic(Post p, Topic t)
     {
-        _postByTopic.putIfAbsent(t, p);
+        if (_postByTopic.get(t) == null)
+        {
+            _postByTopic.put(t, p);
+        }
     }
 
     @Override

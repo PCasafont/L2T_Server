@@ -69,10 +69,23 @@ public abstract class EventInstance
         InstanceManager.getInstance().createInstance(_instanceId);
         setState(EventState.READY);
 
-        ThreadPoolManager.getInstance().scheduleGeneral(
-                () -> sendToAllParticipants("Match found! The event is starting in 20 seconds."), 5000L);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                sendToAllParticipants("Match found! The event is starting in 20 seconds.");
+            }
+        }, 5000L);
 
-        ThreadPoolManager.getInstance().scheduleGeneral(() -> startFight(), 20000L);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                startFight();
+            }
+        }, 20000L);
     }
 
     public boolean startFight()
@@ -214,7 +227,14 @@ public abstract class EventInstance
         if (!_config.isType(EventType.TeamSurvival) && !_config.isType(EventType.Survival) &&
                 !_config.isType(EventType.SimonSays))
         {
-            ThreadPoolManager.getInstance().scheduleGeneral(() -> stopFight(), 60000L * Config.INSTANCED_EVENT_RUNNING_TIME);
+            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    stopFight();
+                }
+            }, 60000L * Config.INSTANCED_EVENT_RUNNING_TIME);
         }
 
         // Set state STARTED
@@ -427,10 +447,14 @@ public abstract class EventInstance
             _teams[3].cleanMe();
         }
 
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            // Set state INACTIVE
-            setState(EventState.INACTIVE);
+            @Override
+            public void run()
+            {
+                // Set state INACTIVE
+                setState(EventState.INACTIVE);
+            }
         }, 5000L);
     }
 

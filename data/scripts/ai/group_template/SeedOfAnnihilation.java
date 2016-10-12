@@ -149,17 +149,17 @@ public class SeedOfAnnihilation extends Quest
 
     private void startEffectZonesControl()
     {
-        for (SeedRegion a_regionsData : _regionsData)
+        for (int i = 0; i < _regionsData.length; i++)
         {
-            for (int j = 0; j < a_regionsData.af_spawns.length; j++)
+            for (int j = 0; j < _regionsData[i].af_spawns.length; j++)
             {
-                a_regionsData.af_npcs[j] =
-                        addSpawn(ANNIHILATION_FURNACE, a_regionsData.af_spawns[j][0], a_regionsData.af_spawns[j][1],
-                                a_regionsData.af_spawns[j][2], a_regionsData.af_spawns[j][3], false, 0);
-                a_regionsData.af_npcs[j].setDisplayEffect(a_regionsData.activeBuff);
+                _regionsData[i].af_npcs[j] =
+                        addSpawn(ANNIHILATION_FURNACE, _regionsData[i].af_spawns[j][0], _regionsData[i].af_spawns[j][1],
+                                _regionsData[i].af_spawns[j][2], _regionsData[i].af_spawns[j][3], false, 0);
+                _regionsData[i].af_npcs[j].setDisplayEffect(_regionsData[i].activeBuff);
             }
-            ZoneManager.getInstance().getZoneById(a_regionsData.buff_zone, L2EffectZone.class)
-                    .addSkill(ZONE_BUFFS[a_regionsData.activeBuff], 1);
+            ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class)
+                    .addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
         }
         startQuestTimer("ChangeSeedsStatus", _seedsNextStatusChange - System.currentTimeMillis(), null, null);
     }

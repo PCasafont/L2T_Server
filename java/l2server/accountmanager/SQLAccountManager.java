@@ -101,49 +101,52 @@ public class SQLAccountManager
                 }
             }
 
-            switch (_mode)
+            if (_mode.equals("1"))
             {
-                case "1":
-                    // Add or Update
-                    addOrUpdateAccount(_uname.trim(), _pass.trim(), _level.trim());
-                    break;
-                case "2":
-                    // Change Level
-                    changeAccountLevel(_uname.trim(), _level.trim());
-                    break;
-                case "3":
-                    // Delete
-                    System.out.print("Do you really want to delete this account ? Y/N : ");
-                    String yesno = _in.readLine();
-                    if (yesno.equalsIgnoreCase("Y"))
-                    {
-                        deleteAccount(_uname.trim());
-                    }
-                    else
-                    {
-                        System.out.println("Deletion cancelled");
-                    }
-                    break;
-                case "4":
-                    // List
-                    _mode = "";
-                    System.out.println("");
-                    System.out.println("Please choose a listing mode:");
-                    System.out.println("");
-                    System.out.println("1 - Banned accounts only (accessLevel < 0)");
-                    System.out.println("2 - GM/privileged accounts (accessLevel > 0)");
-                    System.out.println("3 - Regular accounts only (accessLevel = 0)");
-                    System.out.println("4 - List all");
-                    while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4")))
-                    {
-                        System.out.print("Your choice: ");
-                        _mode = _in.readLine();
-                    }
-                    System.out.println("");
-                    printAccInfo(_mode);
-                    break;
-                case "5":
-                    System.exit(0);
+                // Add or Update
+                addOrUpdateAccount(_uname.trim(), _pass.trim(), _level.trim());
+            }
+            else if (_mode.equals("2"))
+            {
+                // Change Level
+                changeAccountLevel(_uname.trim(), _level.trim());
+            }
+            else if (_mode.equals("3"))
+            {
+                // Delete
+                System.out.print("Do you really want to delete this account ? Y/N : ");
+                String yesno = _in.readLine();
+                if (yesno.equalsIgnoreCase("Y"))
+                {
+                    deleteAccount(_uname.trim());
+                }
+                else
+                {
+                    System.out.println("Deletion cancelled");
+                }
+            }
+            else if (_mode.equals("4"))
+            {
+                // List
+                _mode = "";
+                System.out.println("");
+                System.out.println("Please choose a listing mode:");
+                System.out.println("");
+                System.out.println("1 - Banned accounts only (accessLevel < 0)");
+                System.out.println("2 - GM/privileged accounts (accessLevel > 0)");
+                System.out.println("3 - Regular accounts only (accessLevel = 0)");
+                System.out.println("4 - List all");
+                while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4")))
+                {
+                    System.out.print("Your choice: ");
+                    _mode = _in.readLine();
+                }
+                System.out.println("");
+                printAccInfo(_mode);
+            }
+            else if (_mode.equals("5"))
+            {
+                System.exit(0);
             }
 
             _uname = "";
@@ -160,17 +163,17 @@ public class SQLAccountManager
         Connection con = null;
         con = L2DatabaseFactory.getInstance().getConnection();
         String q = "SELECT login, accessLevel FROM accounts ";
-        switch (m)
+        if (m.equals("1"))
         {
-            case "1":
-                q = q.concat("WHERE accessLevel < 0");
-                break;
-            case "2":
-                q = q.concat("WHERE accessLevel > 0");
-                break;
-            case "3":
-                q = q.concat("WHERE accessLevel = 0");
-                break;
+            q = q.concat("WHERE accessLevel < 0");
+        }
+        else if (m.equals("2"))
+        {
+            q = q.concat("WHERE accessLevel > 0");
+        }
+        else if (m.equals("3"))
+        {
+            q = q.concat("WHERE accessLevel = 0");
         }
         q = q.concat(" ORDER BY login ASC");
 

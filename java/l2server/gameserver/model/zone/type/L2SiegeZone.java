@@ -56,33 +56,34 @@ public class L2SiegeZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        switch (name)
+        if (name.equals("castleId"))
         {
-            case "castleId":
-                if (_siegableId != -1)
-                {
-                    throw new IllegalArgumentException("Siege object already defined!");
-                }
-                _siegableId = Integer.parseInt(value);
-                break;
-            case "fortId":
-                if (_siegableId != -1)
-                {
-                    throw new IllegalArgumentException("Siege object already defined!");
-                }
-                _siegableId = Integer.parseInt(value);
-                break;
-            case "clanHallId":
-                if (_siegableId != -1)
-                {
-                    throw new IllegalArgumentException("Siege object already defined!");
-                }
-                _siegableId = Integer.parseInt(value);
-                //TODO clan hall siege
-                break;
-            default:
-                super.setParameter(name, value);
-                break;
+            if (_siegableId != -1)
+            {
+                throw new IllegalArgumentException("Siege object already defined!");
+            }
+            _siegableId = Integer.parseInt(value);
+        }
+        else if (name.equals("fortId"))
+        {
+            if (_siegableId != -1)
+            {
+                throw new IllegalArgumentException("Siege object already defined!");
+            }
+            _siegableId = Integer.parseInt(value);
+        }
+        else if (name.equals("clanHallId"))
+        {
+            if (_siegableId != -1)
+            {
+                throw new IllegalArgumentException("Siege object already defined!");
+            }
+            _siegableId = Integer.parseInt(value);
+            //TODO clan hall siege
+        }
+        else
+        {
+            super.setParameter(name, value);
         }
     }
 

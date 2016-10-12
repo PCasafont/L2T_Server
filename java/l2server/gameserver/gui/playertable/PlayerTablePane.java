@@ -97,7 +97,14 @@ public class PlayerTablePane extends JPanel
         cons.fill = GridBagConstraints.BOTH;
         add(scrollPane, cons);
 
-        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> updateTable(), 10000, 1000);
+        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                updateTable();
+            }
+        }, 10000, 1000);
     }
 
     public void setSelectedPlayer(int startIndex, int endIndex)
@@ -109,11 +116,15 @@ public class PlayerTablePane extends JPanel
 
     public void updateTable()
     {
-        SwingUtilities.invokeLater(() ->
+        SwingUtilities.invokeLater(new Runnable()
         {
-            if (_playerTableModel.updateData())
+            @Override
+            public void run()
             {
-                getPlayerTable().updateUI();
+                if (_playerTableModel.updateData())
+                {
+                    getPlayerTable().updateUI();
+                }
             }
         });
     }

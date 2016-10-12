@@ -98,82 +98,87 @@ public abstract class L2ZoneType
         _checkAffected = true;
 
         // Zone name
-        switch (name)
+        if (name.equals("name"))
         {
-            case "name":
-                _name = value;
-                break;
-            // Minimum level
-            case "affectedLvlMin":
-                _minLvl = Integer.parseInt(value);
-                break;
-            // Maximum level
-            case "affectedLvlMax":
-                _maxLvl = Integer.parseInt(value);
-                break;
-            // Affected Races
-            case "affectedRace":
-                // Create a new array holding the affected race
-                if (_race == null)
-                {
-                    _race = new int[1];
-                    _race[0] = Integer.parseInt(value);
-                }
-                else
-                {
-                    int[] temp = new int[_race.length + 1];
+            _name = value;
+        }
+        // Minimum level
+        else if (name.equals("affectedLvlMin"))
+        {
+            _minLvl = Integer.parseInt(value);
+        }
+        // Maximum level
+        else if (name.equals("affectedLvlMax"))
+        {
+            _maxLvl = Integer.parseInt(value);
+        }
+        // Affected Races
+        else if (name.equals("affectedRace"))
+        {
+            // Create a new array holding the affected race
+            if (_race == null)
+            {
+                _race = new int[1];
+                _race[0] = Integer.parseInt(value);
+            }
+            else
+            {
+                int[] temp = new int[_race.length + 1];
 
-                    int i = 0;
-                    for (; i < _race.length; i++)
-                    {
-                        temp[i] = _race[i];
-                    }
-
-                    temp[i] = Integer.parseInt(value);
-
-                    _race = temp;
-                }
-                break;
-            // Affected classes
-            case "affectedClassId":
-                // Create a new array holding the affected classIds
-                if (_class == null)
+                int i = 0;
+                for (; i < _race.length; i++)
                 {
-                    _class = new int[1];
-                    _class[0] = Integer.parseInt(value);
+                    temp[i] = _race[i];
                 }
-                else
-                {
-                    int[] temp = new int[_class.length + 1];
 
-                    int i = 0;
-                    for (; i < _class.length; i++)
-                    {
-                        temp[i] = _class[i];
-                    }
+                temp[i] = Integer.parseInt(value);
 
-                    temp[i] = Integer.parseInt(value);
+                _race = temp;
+            }
+        }
+        // Affected classes
+        else if (name.equals("affectedClassId"))
+        {
+            // Create a new array holding the affected classIds
+            if (_class == null)
+            {
+                _class = new int[1];
+                _class[0] = Integer.parseInt(value);
+            }
+            else
+            {
+                int[] temp = new int[_class.length + 1];
 
-                    _class = temp;
-                }
-                break;
-            // Affected class type
-            case "affectedClassType":
-                if (value.equals("Fighter"))
+                int i = 0;
+                for (; i < _class.length; i++)
                 {
-                    _classType = 1;
+                    temp[i] = _class[i];
                 }
-                else
-                {
-                    _classType = 2;
-                }
-                break;
-            case "targetClass":
-                _target = Enum.valueOf(InstanceType.class, value);
-                break;
-            default:
-                Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
-                break;
+
+                temp[i] = Integer.parseInt(value);
+
+                _class = temp;
+            }
+        }
+        // Affected class type
+        else if (name.equals("affectedClassType"))
+        {
+            if (value.equals("Fighter"))
+            {
+                _classType = 1;
+            }
+            else
+            {
+                _classType = 2;
+            }
+        }
+        else if (name.equals("targetClass"))
+        {
+            _target = Enum.valueOf(InstanceType.class, value);
+        }
+        else
+        {
+            Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
         }
     }
 
@@ -566,8 +571,14 @@ public abstract class L2ZoneType
 
         broadcastMovie(vidId);
 
-        ThreadPoolManager.getInstance().scheduleGeneral(
-                () -> startWholeZone(), ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                startWholeZone();
+            }
+        }, ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
     }
 
     public void stopWholeZone()
@@ -621,7 +632,14 @@ public abstract class L2ZoneType
 
     public void sendDelayedPacketToZone(final int delayMsSec, final L2GameServerPacket packet)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(() -> broadcastPacket(packet), delayMsSec);
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                broadcastPacket(packet);
+            }
+        }, delayMsSec);
     }
 
     public void oustAllPlayers()

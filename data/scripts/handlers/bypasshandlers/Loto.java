@@ -47,7 +47,10 @@ public class Loto implements IBypassHandler
         {
             val = Integer.parseInt(command.substring(5));
         }
-        catch (IndexOutOfBoundsException | NumberFormatException ignored)
+        catch (IndexOutOfBoundsException ignored)
+        {
+        }
+        catch (NumberFormatException ignored)
         {
         }
         if (val == 0)

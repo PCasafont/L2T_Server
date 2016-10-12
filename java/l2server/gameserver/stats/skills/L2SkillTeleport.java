@@ -182,7 +182,14 @@ public class L2SkillTeleport extends L2Skill
 
                     final Location tpTo = loc;
                     final L2Character chararacter = target;
-                    ThreadPoolManager.getInstance().scheduleGeneral(() -> chararacter.teleToLocation(tpTo, true), 400);
+                    ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            chararacter.teleToLocation(tpTo, true);
+                        }
+                    }, 400);
                 }
             }
         }

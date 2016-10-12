@@ -42,8 +42,14 @@ public class RegionBBSManager extends BaseBBSManager
 {
     private static Logger _logChat = Logger.getLogger("chat");
 
-    private static final Comparator<L2PcInstance> PLAYER_NAME_COMPARATOR =
-            (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName());
+    private static final Comparator<L2PcInstance> PLAYER_NAME_COMPARATOR = new Comparator<L2PcInstance>()
+    {
+        @Override
+        public int compare(L2PcInstance p1, L2PcInstance p2)
+        {
+            return p1.getName().compareToIgnoreCase(p2.getName());
+        }
+    };
 
     private int _onlineCount = 0;
     private int _onlineCountGm = 0;

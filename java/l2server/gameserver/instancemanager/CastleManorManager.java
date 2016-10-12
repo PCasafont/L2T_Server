@@ -314,29 +314,37 @@ public class CastleManorManager
     {
         Log.info("Manor System: Manor refresh updated");
 
-        _scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        _scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            if (!isDisabled())
+            @Override
+            public void run()
             {
-                setUnderMaintenance(true);
-                Log.info("Manor System: Under maintenance mode started");
-
-                _scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+                if (!isDisabled())
                 {
-                    Log.info("Manor System: Next period started");
-                    setNextPeriod();
-                    try
+                    setUnderMaintenance(true);
+                    Log.info("Manor System: Under maintenance mode started");
+
+                    _scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                     {
-                        save();
-                    }
-                    catch (Exception e)
-                    {
-                        Log.log(Level.WARNING, "Manor System: Failed to save manor data: " + e.getMessage(), e);
-                    }
-                    setUnderMaintenance(false);
-                }, MAINTENANCE_PERIOD);
+                        @Override
+                        public void run()
+                        {
+                            Log.info("Manor System: Next period started");
+                            setNextPeriod();
+                            try
+                            {
+                                save();
+                            }
+                            catch (Exception e)
+                            {
+                                Log.log(Level.WARNING, "Manor System: Failed to save manor data: " + e.getMessage(), e);
+                            }
+                            setUnderMaintenance(false);
+                        }
+                    }, MAINTENANCE_PERIOD);
+                }
+                updateManorRefresh();
             }
-            updateManorRefresh();
         }, getMillisToManorRefresh());
     }
 
@@ -344,14 +352,18 @@ public class CastleManorManager
     {
         Log.info("Manor System: Manor period approve updated");
 
-        _scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        _scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            if (!isDisabled())
+            @Override
+            public void run()
             {
-                approveNextPeriod();
-                Log.info("Manor System: Next period approved");
+                if (!isDisabled())
+                {
+                    approveNextPeriod();
+                    Log.info("Manor System: Next period approved");
+                }
+                updatePeriodApprove();
             }
-            updatePeriodApprove();
         }, getMillisToNextPeriodApprove());
     }
 

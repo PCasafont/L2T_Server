@@ -109,9 +109,9 @@ public class PetNameTable
     {
         boolean result = true;
         char[] chars = text.toCharArray();
-        for (char aChar : chars)
+        for (int i = 0; i < chars.length; i++)
         {
-            if (!Character.isLetterOrDigit(aChar))
+            if (!Character.isLetterOrDigit(chars[i]))
             {
                 result = false;
                 break;

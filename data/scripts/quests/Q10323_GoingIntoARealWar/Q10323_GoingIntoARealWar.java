@@ -184,12 +184,16 @@ public class Q10323_GoingIntoARealWar extends Quest
                 }
 
                 // Show this in 5 sec
-                ThreadPoolManager.getInstance().scheduleAi(() ->
+                ThreadPoolManager.getInstance().scheduleAi(new Runnable()
                 {
-                    st.set("cond", "5");
-                    //st.playSound("ItemSound.quest_middle");
-                    player.sendPacket(new ExShowScreenMessage(1032350, 0, true, 5000));
-                    player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_003_bullet_01.htm"));
+                    @Override
+                    public void run()
+                    {
+                        st.set("cond", "5");
+                        //st.playSound("ItemSound.quest_middle");
+                        player.sendPacket(new ExShowScreenMessage(1032350, 0, true, 5000));
+                        player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_003_bullet_01.htm"));
+                    }
                 }, 5000);
             }
             else if (st.getInt("cond") == 4 || st.getInt("cond") == 5)
@@ -370,11 +374,15 @@ public class Q10323_GoingIntoARealWar extends Quest
         if (guideAI.getCurrentPos() == _guideRoute.size() - 1)
         {
             // Delete in 5 sec
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                if (!guideAI.getActor().isDecayed())
+                @Override
+                public void run()
                 {
-                    guideAI.getActor().deleteMe();
+                    if (!guideAI.getActor().isDecayed())
+                    {
+                        guideAI.getActor().deleteMe();
+                    }
                 }
             }, 5000);
             return null;

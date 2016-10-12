@@ -7843,7 +7843,7 @@ public abstract class L2Character extends L2Object
             return;
         }
 
-        _disabledSkills.remove(skill.getReuseHashCode());
+        _disabledSkills.remove(Integer.valueOf(skill.getReuseHashCode()));
     }
 
     /**
@@ -7864,7 +7864,7 @@ public abstract class L2Character extends L2Object
             _disabledSkills = Collections.synchronizedMap(new HashMap<Integer, Long>());
         }
 
-        _disabledSkills.put(skill.getReuseHashCode(),
+        _disabledSkills.put(Integer.valueOf(skill.getReuseHashCode()),
                 delay > 10 ? System.currentTimeMillis() + delay : Long.MAX_VALUE);
     }
 
@@ -7922,7 +7922,7 @@ public abstract class L2Character extends L2Object
             return false;
         }
 
-        final Long timeStamp = _disabledSkills.get(reuseHashcode);
+        final Long timeStamp = _disabledSkills.get(Integer.valueOf(reuseHashcode));
         if (timeStamp == null)
         {
             return false;
@@ -7930,7 +7930,7 @@ public abstract class L2Character extends L2Object
 
         if (timeStamp < System.currentTimeMillis())
         {
-            _disabledSkills.remove(reuseHashcode);
+            _disabledSkills.remove(Integer.valueOf(reuseHashcode));
             return false;
         }
 

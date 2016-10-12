@@ -390,26 +390,30 @@ public class Antharas extends L2AttackableAIScript
                 world.antharas.setIsImmobilized(false);
 
                 //Force Antharas to attack a target
-                ThreadPoolManager.getInstance().scheduleAi(() ->
+                ThreadPoolManager.getInstance().scheduleAi(new Runnable()
                 {
-                    for (L2Npc chara : world.army)
+                    @Override
+                    public void run()
                     {
-                        if (chara == null)
+                        for (L2Npc chara : world.army)
                         {
-                            continue;
-                        }
-
-                        if (world.antharas.isInsideRadius(chara, 1200, false, false))
-                        {
-                            world.antharas.setTarget(chara);
-                            ((L2Attackable) world.antharas).addDamageHate(chara, 500, 99999);
-                            world.antharas.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, chara, null);
-
-                            if (_debug)
+                            if (chara == null)
                             {
-                                Log.warning(getName() + ": found a target: " + chara.getName());
+                                continue;
                             }
-                            break;
+
+                            if (world.antharas.isInsideRadius(chara, 1200, false, false))
+                            {
+                                world.antharas.setTarget(chara);
+                                ((L2Attackable) world.antharas).addDamageHate(chara, 500, 99999);
+                                world.antharas.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, chara, null);
+
+                                if (_debug)
+                                {
+                                    Log.warning(getName() + ": found a target: " + chara.getName());
+                                }
+                                break;
+                            }
                         }
                     }
                 }, 8000);
@@ -681,16 +685,20 @@ public class Antharas extends L2AttackableAIScript
 
     private void sendMessage(final AntharasWorld world, final L2Npc npc, final int msgId, int delay)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            if (npc != null)
+            @Override
+            public void run()
             {
-                npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), msgId));
-            }
-            else
-            {
-                InstanceManager.getInstance()
-                        .sendPacket(world.instanceId, new ExShowScreenMessage(msgId, 0, true, 5000));
+                if (npc != null)
+                {
+                    npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), msgId));
+                }
+                else
+                {
+                    InstanceManager.getInstance()
+                            .sendPacket(world.instanceId, new ExShowScreenMessage(msgId, 0, true, 5000));
+                }
             }
         }, delay);
     }

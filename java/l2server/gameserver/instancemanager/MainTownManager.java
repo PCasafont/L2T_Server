@@ -222,10 +222,14 @@ public class MainTownManager
             }
         }
 
-        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
+        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
         {
-            changeMainTown();
-            _nextTownTimer = System.currentTimeMillis() + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
+            @Override
+            public void run()
+            {
+                changeMainTown();
+                _nextTownTimer = System.currentTimeMillis() + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
+            }
         }, _nextTownTimer - System.currentTimeMillis(), ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
         //}, 3600000L * 5, 3600000L * 5);
 

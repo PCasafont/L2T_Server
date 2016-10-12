@@ -82,7 +82,7 @@ public class XmlNode
         }
         if (val instanceof Boolean)
         {
-            return (Boolean) val;
+            return ((Boolean) val).booleanValue();
         }
         try
         {
@@ -103,7 +103,7 @@ public class XmlNode
         }
         if (val instanceof Boolean)
         {
-            return (Boolean) val;
+            return ((Boolean) val).booleanValue();
         }
         try
         {

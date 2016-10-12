@@ -55,7 +55,7 @@ public class VoicedCommandHandler
     public IVoicedCommandHandler getVoicedCommandHandler(String voicedCommand)
     {
         String command = voicedCommand;
-        if (voicedCommand.contains(" "))
+        if (voicedCommand.indexOf(" ") != -1)
         {
             command = voicedCommand.substring(0, voicedCommand.indexOf(" "));
         }

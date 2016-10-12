@@ -203,15 +203,17 @@ public class GameServerRegister extends BaseGameServerRegister
             System.out.print(getBundle().getString("yourChoice") + ' ');
             String choice;
             choice = _in.readLine();
-            switch (choice)
+            if (choice.equals("1"))
             {
-                case "1":
-                    return true;
-                case "2":
-                    return false;
-                default:
-                    System.out.printf(getBundle().getString("invalidChoice") + '\n', choice);
-                    break;
+                return true;
+            }
+            else if (choice.equals("2"))
+            {
+                return false;
+            }
+            else
+            {
+                System.out.printf(getBundle().getString("invalidChoice") + '\n', choice);
             }
         }
         while (true);

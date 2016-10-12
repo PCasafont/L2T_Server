@@ -313,7 +313,14 @@ public class DamageManager
             L2DatabaseFactory.close(con);
         }
 
-        _saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> saveData(), 3600000, 3600000);
+        _saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                saveData();
+            }
+        }, 3600000, 3600000);
     }
 
     private DamageManager()

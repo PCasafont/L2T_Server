@@ -138,11 +138,15 @@ public class SealOfTheEmperor extends L2AttackableAIScript
                                 InstanceManager.getInstance().showVidToInstance(13, world.instanceId);
 
                                 final int worldInstid = world.instanceId;
-                                ThreadPoolManager.getInstance().scheduleGeneral(() ->
+                                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
                                 {
-                                    InstanceManager.getInstance()
-                                            .setInstanceReuse(worldInstid, _instanceTemplateId, _reuseMinutes);
-                                    InstanceManager.getInstance().finishInstance(worldInstid, true);
+                                    @Override
+                                    public void run()
+                                    {
+                                        InstanceManager.getInstance()
+                                                .setInstanceReuse(worldInstid, _instanceTemplateId, _reuseMinutes);
+                                        InstanceManager.getInstance().finishInstance(worldInstid, true);
+                                    }
                                 }, ScenePlayerDataTable.getInstance().getVideoDuration(13));
                             }
                         }

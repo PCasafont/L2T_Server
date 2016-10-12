@@ -56,7 +56,7 @@ public class BypassHandler
     {
         String command = BypassCommand;
 
-        if (BypassCommand.contains(" "))
+        if (BypassCommand.indexOf(" ") != -1)
         {
             command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
         }

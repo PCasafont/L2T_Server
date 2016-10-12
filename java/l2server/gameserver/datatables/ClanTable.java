@@ -142,7 +142,14 @@ public class ClanTable
 
         if (Config.isServer(Config.TENKAI))
         {
-            ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::determineTopClansByMemberCount, 0, 3600000);
+            ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    determineTopClansByMemberCount();
+                }
+            }, 0, 3600000);
         }
     }
 
@@ -166,7 +173,7 @@ public class ClanTable
      */
     public L2Clan getClan(int clanId)
     {
-        L2Clan clan = _clans.get(clanId);
+        L2Clan clan = _clans.get(Integer.valueOf(clanId));
 
         return clan;
     }
@@ -264,7 +271,7 @@ public class ClanTable
             Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
         }
 
-        _clans.put(clan.getClanId(), clan);
+        _clans.put(Integer.valueOf(clan.getClanId()), clan);
 
         //should be update packet only
         player.sendPacket(new PledgeShowInfoUpdate(clan));
@@ -417,15 +424,19 @@ public class ClanTable
 
     public void scheduleRemoveClan(final int clanId)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            if (getClan(clanId) == null)
+            @Override
+            public void run()
             {
-                return;
-            }
-            if (getClan(clanId).getDissolvingExpiryTime() != 0)
-            {
-                destroyClan(clanId);
+                if (getClan(clanId) == null)
+                {
+                    return;
+                }
+                if (getClan(clanId).getDissolvingExpiryTime() != 0)
+                {
+                    destroyClan(clanId);
+                }
             }
         }, Math.max(getClan(clanId).getDissolvingExpiryTime() - System.currentTimeMillis(), 300000));
     }

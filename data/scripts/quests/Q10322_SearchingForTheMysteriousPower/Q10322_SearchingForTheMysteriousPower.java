@@ -126,10 +126,14 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
             }, 60000);
 
             // Walk in 2 sec
-            ThreadPoolManager.getInstance().scheduleAi(() ->
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
             {
-                guideAI.initializeRoute(_guideRoute, player);
-                guideAI.walkToLocation();
+                @Override
+                public void run()
+                {
+                    guideAI.initializeRoute(_guideRoute, player);
+                    guideAI.walkToLocation();
+                }
             }, 2000);
         }
         else if (npc.getNpcId() == _newbieHelper)

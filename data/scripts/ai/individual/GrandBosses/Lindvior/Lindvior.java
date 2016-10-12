@@ -823,7 +823,14 @@ public class Lindvior extends L2AttackableAIScript
             _bossZone.stopWholeZone();
 
             // Start the zone when the cameras ends
-            ThreadPoolManager.getInstance().scheduleAi(() -> _bossZone.startWholeZone(), 14000);
+            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    _bossZone.startWholeZone();
+                }
+            }, 14000);
 
             startQuestTimer("unlock_lindvior", GrandBossManager.getInstance().getUnlockTime(_secondFloorLindvior), null,
                     null);

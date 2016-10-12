@@ -1714,7 +1714,10 @@ public class CrystalCaverns extends Quest
                 {
                     for (L2Npc oracle : world.oracles.keySet())
                     {
-                        world.oracles.putIfAbsent(oracle, null);
+                        if (world.oracles.get(oracle) == npc)
+                        {
+                            world.oracles.put(oracle, null);
+                        }
                     }
                 }
                 if (checkKillProgress(0, npc, world))

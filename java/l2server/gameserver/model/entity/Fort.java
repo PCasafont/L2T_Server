@@ -260,14 +260,18 @@ public class Fort
             loadFunctions();
         }
 
-        ThreadPoolManager.getInstance().scheduleGeneral(() ->
+        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
         {
-            spawnNpcCommanders(); // spawn npc Commanders
-            if (getOwnerClan() != null && getFortState() == 0)
+            @Override
+            public void run()
             {
-                spawnSpecialEnvoys();
-                ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this),
-                        60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+                spawnNpcCommanders(); // spawn npc Commanders
+                if (getOwnerClan() != null && getFortState() == 0)
+                {
+                    spawnSpecialEnvoys();
+                    ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this),
+                            60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+                }
             }
         }, 10000L);
 

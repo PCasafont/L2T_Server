@@ -684,109 +684,139 @@ public class AdminEditNpc implements IAdminCommandHandler
                 }
             }
 
-            switch (statToSet)
+            if (statToSet.equals("templateId"))
             {
-                case "templateId":
-                    npc.TemplateId = Integer.parseInt(value);
-                    break;
-                case "name":
-                    npc.Name = value;
-                    break;
-                case "serverSideName":
-                    npc.ServerSideName = Boolean.parseBoolean(value);
-                    break;
-                case "title":
-                    npc.Title = value;
-                    break;
-                case "serverSideTitle":
-                    npc.ServerSideTitle = Boolean.parseBoolean(value);
-                    break;
-                case "collisionRadius":
-                    npc.fCollisionRadius = Float.parseFloat(value);
-                    break;
-                case "collisionHeight":
-                    npc.fCollisionHeight = Float.parseFloat(value);
-                    break;
-                case "level":
-                    npc.Level = Byte.parseByte(value);
-                    break;
-                case "type":
-                    Class.forName("l2server.gameserver.model.actor.instance." + value + "Instance");
-                    npc.Type = value;
-                    break;
-                case "attackRange":
-                    npc.baseAtkRange = Integer.valueOf(value);
-                    break;
-                case "hp":
-                    npc.baseHpMax = Integer.valueOf(value);
-                    break;
-                case "mp":
-                    npc.baseMpMax = Integer.valueOf(value);
-                    break;
-                case "hpRegen":
-                    npc.baseHpReg = Integer.valueOf(value);
-                    break;
-                case "mpRegen":
-                    npc.baseMpReg = Integer.valueOf(value);
-                    break;
-                case "str":
-                    npc.baseSTR = Integer.valueOf(value);
-                    break;
-                case "con":
-                    npc.baseCON = Integer.valueOf(value);
-                    break;
-                case "dex":
-                    npc.baseDEX = Integer.valueOf(value);
-                    break;
-                case "int":
-                    npc.baseINT = Integer.valueOf(value);
-                    break;
-                case "wit":
-                    npc.baseWIT = Integer.valueOf(value);
-                    break;
-                case "men":
-                    npc.baseMEN = Integer.valueOf(value);
-                    break;
-                case "exp":
-                    npc.RewardExp = Long.valueOf(value);
-                    break;
-                case "sp":
-                    npc.RewardSp = Long.valueOf(value);
-                    break;
-                case "pAtk":
-                    npc.basePAtk = Integer.valueOf(value);
-                    break;
-                case "pDef":
-                    npc.basePDef = Integer.valueOf(value);
-                    break;
-                case "mAtk":
-                    npc.baseMAtk = Integer.valueOf(value);
-                    break;
-                case "mDef":
-                    npc.baseMDef = Integer.valueOf(value);
-                    break;
-                case "pAtkSpd":
-                    npc.basePAtkSpd = Integer.valueOf(value);
-                    break;
-                case "aggro":
-                    npc.AggroRange = Integer.valueOf(value);
-                    npc.Aggressive = npc.AggroRange > 0;
-                    break;
-                case "mAtkSpd":
-                    npc.baseMAtkSpd = Integer.valueOf(value);
-                    break;
-                case "rHand":
-                    npc.RHand = Integer.valueOf(value);
-                    break;
-                case "lHand":
-                    npc.LHand = Integer.valueOf(value);
-                    break;
-                case "walkSpd":
-                    npc.baseWalkSpd = Integer.valueOf(value);
-                    break;
-                case "runSpd":
-                    npc.baseRunSpd = Integer.valueOf(value);
-                    break;
+                npc.TemplateId = Integer.parseInt(value);
+            }
+            else if (statToSet.equals("name"))
+            {
+                npc.Name = value;
+            }
+            else if (statToSet.equals("serverSideName"))
+            {
+                npc.ServerSideName = Boolean.parseBoolean(value);
+            }
+            else if (statToSet.equals("title"))
+            {
+                npc.Title = value;
+            }
+            else if (statToSet.equals("serverSideTitle"))
+            {
+                npc.ServerSideTitle = Boolean.parseBoolean(value);
+            }
+            else if (statToSet.equals("collisionRadius"))
+            {
+                npc.fCollisionRadius = Float.parseFloat(value);
+            }
+            else if (statToSet.equals("collisionHeight"))
+            {
+                npc.fCollisionHeight = Float.parseFloat(value);
+            }
+            else if (statToSet.equals("level"))
+            {
+                npc.Level = Byte.parseByte(value);
+            }
+            else if (statToSet.equals("type"))
+            {
+                Class.forName("l2server.gameserver.model.actor.instance." + value + "Instance");
+                npc.Type = value;
+            }
+            else if (statToSet.equals("attackRange"))
+            {
+                npc.baseAtkRange = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("hp"))
+            {
+                npc.baseHpMax = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("mp"))
+            {
+                npc.baseMpMax = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("hpRegen"))
+            {
+                npc.baseHpReg = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("mpRegen"))
+            {
+                npc.baseMpReg = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("str"))
+            {
+                npc.baseSTR = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("con"))
+            {
+                npc.baseCON = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("dex"))
+            {
+                npc.baseDEX = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("int"))
+            {
+                npc.baseINT = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("wit"))
+            {
+                npc.baseWIT = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("men"))
+            {
+                npc.baseMEN = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("exp"))
+            {
+                npc.RewardExp = Long.valueOf(value);
+            }
+            else if (statToSet.equals("sp"))
+            {
+                npc.RewardSp = Long.valueOf(value);
+            }
+            else if (statToSet.equals("pAtk"))
+            {
+                npc.basePAtk = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("pDef"))
+            {
+                npc.basePDef = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("mAtk"))
+            {
+                npc.baseMAtk = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("mDef"))
+            {
+                npc.baseMDef = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("pAtkSpd"))
+            {
+                npc.basePAtkSpd = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("aggro"))
+            {
+                npc.AggroRange = Integer.valueOf(value);
+                npc.Aggressive = npc.AggroRange > 0;
+            }
+            else if (statToSet.equals("mAtkSpd"))
+            {
+                npc.baseMAtkSpd = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("rHand"))
+            {
+                npc.RHand = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("lHand"))
+            {
+                npc.LHand = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("walkSpd"))
+            {
+                npc.baseWalkSpd = Integer.valueOf(value);
+            }
+            else if (statToSet.equals("runSpd"))
+            {
+                npc.baseRunSpd = Integer.valueOf(value);
             }
 
             showNpcProperty(activeChar, NpcTable.getInstance().getTemplate(npcId));
@@ -834,8 +864,8 @@ public class AdminEditNpc implements IAdminCommandHandler
             SkillsEnd = SkillsStart + MaxSkillsPerPage;
         }
 
-        StringBuilder replyMSG =
-                new StringBuilder("<html><title>Show NPC Skill List</title><body><center><font color=\"LEVEL\">");
+        StringBuffer replyMSG =
+                new StringBuffer("<html><title>Show NPC Skill List</title><body><center><font color=\"LEVEL\">");
         replyMSG.append(npcData.getName());
         replyMSG.append(" (");
         replyMSG.append(npcData.NpcId);
@@ -925,7 +955,7 @@ public class AdminEditNpc implements IAdminCommandHandler
     {
         try
         {
-            StringBuilder replyMSG = new StringBuilder("<html><title>NPC Skill Edit</title><body>");
+            StringBuffer replyMSG = new StringBuffer("<html><title>NPC Skill Edit</title><body>");
 
             L2NpcTemplate npcData = NpcTable.getInstance().getTemplate(npcId);
             if (npcData == null)
@@ -981,7 +1011,7 @@ public class AdminEditNpc implements IAdminCommandHandler
     {
         L2NpcTemplate npcData = NpcTable.getInstance().getTemplate(npcId);
 
-        StringBuilder replyMSG = new StringBuilder(
+        StringBuffer replyMSG = new StringBuffer(
                 "<html><title>NPC Skill Add</title><body><table width=\"100%\"><tr><td>NPC: </td><td>");
         replyMSG.append(npcData.getName());
         replyMSG.append(" (");
