@@ -51,7 +51,7 @@ public class TeleportLocationTable implements Reloadable
     @Override
     public boolean reload()
     {
-        _teleports = new TIntObjectHashMap<>();
+        _teleports = new TIntObjectHashMap<L2TeleportLocation>();
         boolean success = true;
 
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");

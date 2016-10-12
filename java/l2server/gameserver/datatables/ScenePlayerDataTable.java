@@ -81,7 +81,7 @@ public class ScenePlayerDataTable implements Reloadable
 
     private ScenePlayerDataTable()
     {
-        _sceneDataTable = new HashMap<>();
+        _sceneDataTable = new HashMap<Integer, Integer>();
 
         reload();
 

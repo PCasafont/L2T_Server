@@ -31,7 +31,7 @@ public class Tests
             // Create input stream for log file -- or store file data into memory
             LogManager.getLogManager().readConfiguration(is);
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
 

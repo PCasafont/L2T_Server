@@ -45,7 +45,7 @@ public class GmListTable
 
     public ArrayList<L2PcInstance> getAllGms(boolean includeHidden)
     {
-        ArrayList<L2PcInstance> tmpGmList = new ArrayList<>();
+        ArrayList<L2PcInstance> tmpGmList = new ArrayList<L2PcInstance>();
         for (Entry<L2PcInstance, Boolean> n : _gmList.entrySet())
         {
             if (includeHidden || !n.getValue())
@@ -59,7 +59,7 @@ public class GmListTable
 
     public ArrayList<String> getAllGmNames(boolean includeHidden)
     {
-        ArrayList<String> tmpGmList = new ArrayList<>();
+        ArrayList<String> tmpGmList = new ArrayList<String>();
         for (Entry<L2PcInstance, Boolean> n : _gmList.entrySet())
         {
             if (!n.getValue())
@@ -77,7 +77,7 @@ public class GmListTable
 
     private GmListTable()
     {
-        _gmList = new ConcurrentHashMap<>();
+        _gmList = new ConcurrentHashMap<L2PcInstance, Boolean>();
     }
 
     /**

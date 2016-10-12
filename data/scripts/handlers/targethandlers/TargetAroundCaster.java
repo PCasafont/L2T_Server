@@ -43,7 +43,7 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
-        final ArrayList<L2Character> result = new ArrayList<>();
+        final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
         L2Character actualCaster = activeChar;
         if (activeChar instanceof L2NpcInstance && ((L2NpcInstance) activeChar).getOwner() != null)

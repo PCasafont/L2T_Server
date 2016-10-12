@@ -37,7 +37,8 @@ import java.util.logging.Level;
 public class ShortCuts
 {
     private L2PcInstance _owner;
-    private Map<Integer, Map<Integer, Map<Integer, L2ShortCut>>> _shortCuts = new TreeMap<>();
+    private Map<Integer, Map<Integer, Map<Integer, L2ShortCut>>> _shortCuts =
+            new TreeMap<Integer, Map<Integer, Map<Integer, L2ShortCut>>>();
 
     private boolean _hasPresetForCurrentLevel;
 
@@ -50,13 +51,13 @@ public class ShortCuts
     {
         if (!_shortCuts.containsKey(_owner.getClassIndex()))
         {
-            _shortCuts.put(_owner.getClassIndex(), new HashMap<>());
+            _shortCuts.put(_owner.getClassIndex(), new HashMap<Integer, Map<Integer, L2ShortCut>>());
         }
 
         if (!_shortCuts.get(_owner.getClassIndex()).containsKey(_owner.getGearGradeForCurrentLevel()))
         {
             _shortCuts.get(_owner.getClassIndex())
-                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<>());
+                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<Integer, L2ShortCut>());
         }
 
         Map<Integer, L2ShortCut> allShortcuts =
@@ -106,14 +107,14 @@ public class ShortCuts
         if (!_shortCuts.containsKey(_owner.getClassIndex()))
         {
             //_owner.sendMessage("Adding classIndex");
-            _shortCuts.put(_owner.getClassIndex(), new HashMap<>());
+            _shortCuts.put(_owner.getClassIndex(), new HashMap<Integer, Map<Integer, L2ShortCut>>());
         }
 
         if (!_shortCuts.get(_owner.getClassIndex()).containsKey(_owner.getGearGradeForCurrentLevel()))
         {
             //_owner.sendMessage("Adding levelRange");
             _shortCuts.get(_owner.getClassIndex())
-                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<>());
+                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<Integer, L2ShortCut>());
         }
 
         L2ShortCut oldShortCut = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel())
@@ -215,7 +216,7 @@ public class ShortCuts
 
         if (!_shortCuts.containsKey(_owner.getClassIndex()))
         {
-            _shortCuts.put(_owner.getClassIndex(), new HashMap<>());
+            _shortCuts.put(_owner.getClassIndex(), new HashMap<Integer, Map<Integer, L2ShortCut>>());
 
             _owner.sendSysMessage("Adding classIndex");
         }
@@ -223,7 +224,7 @@ public class ShortCuts
         if (!_shortCuts.get(_owner.getClassIndex()).containsKey(_owner.getGearGradeForCurrentLevel()))
         {
             _shortCuts.get(_owner.getClassIndex())
-                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<>());
+                    .put(_owner.getGearGradeForCurrentLevel(), new HashMap<Integer, L2ShortCut>());
 
             _owner.sendSysMessage("Adding LevelRange");
         }
@@ -364,12 +365,12 @@ public class ShortCuts
 
                 if (!_shortCuts.containsKey(classIndex))
                 {
-                    _shortCuts.put(classIndex, new HashMap<>());
+                    _shortCuts.put(classIndex, new HashMap<Integer, Map<Integer, L2ShortCut>>());
                 }
 
                 if (!_shortCuts.get(classIndex).containsKey(levelRange))
                 {
-                    _shortCuts.get(classIndex).put(levelRange, new HashMap<>());
+                    _shortCuts.get(classIndex).put(levelRange, new HashMap<Integer, L2ShortCut>());
                 }
 
                 rset.close();

@@ -183,7 +183,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 
             if (Config.isServer(Config.TENKAI))
             {
-                Map<L2ItemType, Integer> typeGroups = new HashMap<>();
+                Map<L2ItemType, Integer> typeGroups = new HashMap<L2ItemType, Integer>();
                 typeGroups.put(L2WeaponType.SWORD, 0);
                 typeGroups.put(L2WeaponType.BLUNT, 0);
                 typeGroups.put(L2WeaponType.DUAL, 1);

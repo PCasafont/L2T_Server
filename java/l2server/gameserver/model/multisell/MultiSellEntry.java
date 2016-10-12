@@ -32,8 +32,8 @@ public class MultiSellEntry
     public MultiSellEntry(int entryId)
     {
         _entryId = entryId;
-        _products = new ArrayList<>();
-        _ingredients = new ArrayList<>();
+        _products = new ArrayList<Ingredient>();
+        _ingredients = new ArrayList<Ingredient>();
     }
 
     /**

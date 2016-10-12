@@ -208,7 +208,7 @@ public class AdminEffects implements IAdminCommandHandler
                     }
                 }
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
         }
@@ -227,7 +227,7 @@ public class AdminEffects implements IAdminCommandHandler
                     }
                 }
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
         }
@@ -316,7 +316,7 @@ public class AdminEffects implements IAdminCommandHandler
                     player.startVisualEffect(VisualEffect.BIG_HEAD);
                 }
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
         }
@@ -332,7 +332,7 @@ public class AdminEffects implements IAdminCommandHandler
                     player.stopVisualEffect(VisualEffect.BIG_HEAD);
                 }
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
         }
@@ -405,7 +405,7 @@ public class AdminEffects implements IAdminCommandHandler
                     }
                 }
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
         }
@@ -742,7 +742,7 @@ public class AdminEffects implements IAdminCommandHandler
                 return false;
             }
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
         return true;

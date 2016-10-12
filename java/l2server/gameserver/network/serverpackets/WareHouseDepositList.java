@@ -41,7 +41,7 @@ public final class WareHouseDepositList extends L2ItemListPacket
     {
         _whType = type;
         _playerAdena = player.getAdena();
-        _items = new ArrayList<>();
+        _items = new ArrayList<L2ItemInstance>();
 
         final boolean isPrivate = _whType == PRIVATE;
         for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate))

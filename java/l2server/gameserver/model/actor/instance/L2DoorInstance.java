@@ -586,7 +586,7 @@ public class L2DoorInstance extends L2Character
 
     public Collection<L2DefenderInstance> getKnownDefenders()
     {
-        ArrayList<L2DefenderInstance> result = new ArrayList<>();
+        ArrayList<L2DefenderInstance> result = new ArrayList<L2DefenderInstance>();
 
         Collection<L2Object> objs = getKnownList().getKnownObjects().values();
         for (L2Object obj : objs)

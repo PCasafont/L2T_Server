@@ -140,7 +140,7 @@ public class ClanHallAuctionManager
     private ClanHallAuctionManager()
     {
         Log.info("Initializing AuctionManager");
-        _auctions = new ArrayList<>();
+        _auctions = new ArrayList<Auction>();
         load();
     }
 

@@ -40,7 +40,7 @@ public class DayNightSpawnManager
 
     private DayNightSpawnManager()
     {
-        _bosses = new HashMap<>();
+        _bosses = new HashMap<L2Spawn, L2RaidBossInstance>();
 
         Log.info("DayNightSpawnManager: Day/Night handler initialized");
     }

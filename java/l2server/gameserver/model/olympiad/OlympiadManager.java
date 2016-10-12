@@ -35,8 +35,8 @@ public class OlympiadManager
 
     private OlympiadManager()
     {
-        _nonClassBasedRegisters = new ArrayList<>();
-        _classBasedRegisters = new LinkedHashMap<>();
+        _nonClassBasedRegisters = new ArrayList<Integer>();
+        _classBasedRegisters = new LinkedHashMap<Integer, List<Integer>>();
     }
 
     public static OlympiadManager getInstance()
@@ -63,7 +63,7 @@ public class OlympiadManager
             {
                 if (result == null)
                 {
-                    result = new ArrayList<>();
+                    result = new ArrayList<List<Integer>>();
                 }
 
                 result.add(classList.getValue());
@@ -247,7 +247,7 @@ public class OlympiadManager
                 }
                 else
                 {
-                    classed = new ArrayList<>();
+                    classed = new ArrayList<Integer>();
                     classed.add(player.getObjectId());
                     _classBasedRegisters.put(classId, classed);
                 }

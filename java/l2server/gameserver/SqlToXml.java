@@ -266,10 +266,10 @@ public class SqlToXml
 
         try
         {
-            TIntObjectHashMap<List<L2Item>> shops = new TIntObjectHashMap<>();
+            TIntObjectHashMap<List<L2Item>> shops = new TIntObjectHashMap<List<L2Item>>();
             for (int i = 0; i < 23; i++)
             {
-                shops.put(i, new ArrayList<>());
+                shops.put(i, new ArrayList<L2Item>());
             }
 
             con = L2DatabaseFactory.getInstance().getConnection();
@@ -445,7 +445,7 @@ public class SqlToXml
 
         try
         {
-            List<SpawnLine> lines = new ArrayList<>();
+            List<SpawnLine> lines = new ArrayList<SpawnLine>();
 
             con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement = con.prepareStatement("SELECT * FROM spawnlist");
@@ -465,7 +465,7 @@ public class SqlToXml
             rset.close();
             statement.close();
 
-            List<SpawnLine> deleted = new ArrayList<>();
+            List<SpawnLine> deleted = new ArrayList<SpawnLine>();
 
             for (SpawnLine l1 : lines)
             {

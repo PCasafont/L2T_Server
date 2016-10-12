@@ -207,7 +207,7 @@ public class Q641_AttackSailren extends Quest
                             st.playSound("ItemSound.quest_itemget");
                         }
                     }
-                    catch (NumberFormatException ignored)
+                    catch (NumberFormatException nfe)
                     {
                     }
                 }

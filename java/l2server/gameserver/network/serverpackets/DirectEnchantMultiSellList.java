@@ -78,7 +78,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
     }
 
     private final DirectEnchantMultiSellConfig _config;
-    private final List<L2ItemInstance> _mainIngredients = new ArrayList<>();
+    private final List<L2ItemInstance> _mainIngredients = new ArrayList<L2ItemInstance>();
 
     public DirectEnchantMultiSellList(L2PcInstance player, DirectEnchantMultiSellConfig config)
     {

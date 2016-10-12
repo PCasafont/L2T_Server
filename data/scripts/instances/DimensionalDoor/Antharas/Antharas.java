@@ -113,9 +113,16 @@ public class Antharas extends L2AttackableAIScript
         private L2Npc fellow;
         private L2Npc ateld;
         private L2Npc commando;
-        private final ArrayList<L2Npc> minions = new ArrayList<>();
-        private final ArrayList<L2Npc> army = new ArrayList<>();
-        private final ArrayList<L2PcInstance> rewardedPlayers = new ArrayList<>();
+        private ArrayList<L2Npc> minions;
+        private ArrayList<L2Npc> army;
+        private ArrayList<L2PcInstance> rewardedPlayers;
+
+        public AntharasWorld()
+        {
+            minions = new ArrayList<L2Npc>();
+            army = new ArrayList<L2Npc>();
+            rewardedPlayers = new ArrayList<L2PcInstance>();
+        }
     }
 
     public Antharas(int questId, String name, String descr)
@@ -775,7 +782,7 @@ public class Antharas extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<>();
+            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
             if (_debug)
             {
                 allPlayers.add(player);

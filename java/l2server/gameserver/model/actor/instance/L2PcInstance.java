@@ -362,7 +362,7 @@ public class L2PcInstance extends L2Playable
 
     private int _bookmarkslot = 0; // The Teleport Bookmark Slot
 
-    private List<TeleportBookmark> tpbookmark = new ArrayList<>();
+    private List<TeleportBookmark> tpbookmark = new ArrayList<TeleportBookmark>();
 
     private PunishLevel _punishLevel = PunishLevel.NONE;
     private long _punishTimer = 0;
@@ -437,13 +437,13 @@ public class L2PcInstance extends L2Playable
     /**
      * The table containing all L2RecipeList of the L2PcInstance
      */
-    private Map<Integer, L2RecipeList> _dwarvenRecipeBook = new HashMap<>();
-    private Map<Integer, L2RecipeList> _commonRecipeBook = new HashMap<>();
+    private Map<Integer, L2RecipeList> _dwarvenRecipeBook = new HashMap<Integer, L2RecipeList>();
+    private Map<Integer, L2RecipeList> _commonRecipeBook = new HashMap<Integer, L2RecipeList>();
 
     /**
      * Premium Items
      */
-    private Map<Integer, L2PremiumItem> _premiumItems = new HashMap<>();
+    private Map<Integer, L2PremiumItem> _premiumItems = new HashMap<Integer, L2PremiumItem>();
 
     /**
      * True if the L2PcInstance is sitting
@@ -539,7 +539,7 @@ public class L2PcInstance extends L2Playable
     /**
      * The table containing all Quests began by the L2PcInstance
      */
-    private Map<String, QuestState> _quests = new HashMap<>();
+    private Map<String, QuestState> _quests = new HashMap<String, QuestState>();
 
     /**
      * The list containing all shortCuts of this L2PcInstance
@@ -551,17 +551,17 @@ public class L2PcInstance extends L2Playable
      */
     private MacroList _macroses = new MacroList(this);
 
-    private List<L2PcInstance> _snoopListener = new ArrayList<>();
-    private List<L2PcInstance> _snoopedPlayer = new ArrayList<>();
+    private List<L2PcInstance> _snoopListener = new ArrayList<L2PcInstance>();
+    private List<L2PcInstance> _snoopedPlayer = new ArrayList<L2PcInstance>();
 
     /**
      * The player stores who is observing his land rates
      */
-    private ArrayList<L2PcInstance> _landrateObserver = new ArrayList<>();
+    private ArrayList<L2PcInstance> _landrateObserver = new ArrayList<L2PcInstance>();
     /**
      * The GM stores player references whose land rates he observes
      */
-    private ArrayList<L2PcInstance> _playersUnderLandrateObservation = new ArrayList<>();
+    private ArrayList<L2PcInstance> _playersUnderLandrateObservation = new ArrayList<L2PcInstance>();
     /**
      * This flag shows land rate observation activity. Means - either observing or under observation
      */
@@ -583,7 +583,7 @@ public class L2PcInstance extends L2Playable
      * The pet of the L2PcInstance
      */
     private L2PetInstance _pet = null;
-    private List<L2SummonInstance> _summons = new CopyOnWriteArrayList<>();
+    private List<L2SummonInstance> _summons = new CopyOnWriteArrayList<L2SummonInstance>();
     private L2SummonInstance _activeSummon = null;
     private boolean _summonsInDefendingMode = false;
     /**
@@ -711,7 +711,7 @@ public class L2PcInstance extends L2Playable
      */
     private L2Weapon _fistsWeaponItem;
 
-    private final Map<Integer, String> _chars = new HashMap<>();
+    private final Map<Integer, String> _chars = new HashMap<Integer, String>();
 
     //private byte _updateKnownCounter = 0;
 
@@ -730,7 +730,7 @@ public class L2PcInstance extends L2Playable
 
     protected boolean _inventoryDisable = false;
 
-    protected Map<Integer, L2CubicInstance> _cubics = new ConcurrentHashMap<>();
+    protected Map<Integer, L2CubicInstance> _cubics = new ConcurrentHashMap<Integer, L2CubicInstance>();
 
     /**
      * Active shots.
@@ -775,8 +775,8 @@ public class L2PcInstance extends L2Playable
     /**
      * Bypass validations
      */
-    private List<String> _validBypass = new ArrayList<>();
-    private List<String> _validBypass2 = new ArrayList<>();
+    private List<String> _validBypass = new ArrayList<String>();
+    private List<String> _validBypass2 = new ArrayList<String>();
 
     private Forum _forumMail;
     private Forum _forumMemo;
@@ -941,7 +941,7 @@ public class L2PcInstance extends L2Playable
     private String _titleColor;
 
     //LasTravel
-    private Map<String, Boolean> _playerConfigs = new HashMap<>();
+    private Map<String, Boolean> _playerConfigs = new HashMap<String, Boolean>();
     private String _publicIP;
     private String _internalIP;
 
@@ -982,7 +982,7 @@ public class L2PcInstance extends L2Playable
     private L2Spawn[] _npcServitors = new L2Spawn[4];
 
     // Images
-    private List<Integer> _receivedImages = new ArrayList<>();
+    private List<Integer> _receivedImages = new ArrayList<Integer>();
 
     // Event disarm
     private boolean _eventDisarmed = false;
@@ -1380,7 +1380,7 @@ public class L2PcInstance extends L2Playable
         // Create a L2Radar object
         _radar = new L2Radar(this);
 
-        _temporarySkills = new ConcurrentHashMap<>();
+        _temporarySkills = new ConcurrentHashMap<Integer, L2Skill>();
     }
 
     private L2PcInstance(int objectId)
@@ -1390,7 +1390,7 @@ public class L2PcInstance extends L2Playable
         super.initCharStatusUpdateValues();
         initPcStatusUpdateValues();
 
-        _temporarySkills = new ConcurrentHashMap<>();
+        _temporarySkills = new ConcurrentHashMap<Integer, L2Skill>();
     }
 
     @Override
@@ -1885,7 +1885,7 @@ public class L2PcInstance extends L2Playable
      */
     public Quest[] getAllActiveQuests()
     {
-        ArrayList<Quest> quests = new ArrayList<>();
+        ArrayList<Quest> quests = new ArrayList<Quest>();
 
         for (QuestState qs : _quests.values())
         {
@@ -2139,7 +2139,7 @@ public class L2PcInstance extends L2Playable
             {
                 if (_notifyQuestOfDeathList == null)
                 {
-                    _notifyQuestOfDeathList = new ArrayList<>();
+                    _notifyQuestOfDeathList = new ArrayList<QuestState>();
                 }
             }
         }
@@ -2479,7 +2479,7 @@ public class L2PcInstance extends L2Playable
     /**
      * For Friend Memo
      */
-    private HashMap<Integer, String> _friendMemo = new HashMap<>();
+    private HashMap<Integer, String> _friendMemo = new HashMap<Integer, String>();
 
     public String getFriendMemo(int objId)
     {
@@ -2524,7 +2524,7 @@ public class L2PcInstance extends L2Playable
     /**
      * For Block Memo
      */
-    public HashMap<Integer, String> _blockMemo = new HashMap<>();
+    public HashMap<Integer, String> _blockMemo = new HashMap<Integer, String>();
 
     public String getBlockMemo(int objId)
     {
@@ -7761,7 +7761,7 @@ public class L2PcInstance extends L2Playable
     {
         if (_tamedBeast == null)
         {
-            _tamedBeast = new ArrayList<>();
+            _tamedBeast = new ArrayList<L2TamedBeastInstance>();
         }
         _tamedBeast.add(tamedBeast);
     }
@@ -9750,7 +9750,7 @@ public class L2PcInstance extends L2Playable
 
             int buff_index = 0;
 
-            final List<Integer> storedSkills = new ArrayList<>();
+            final List<Integer> storedSkills = new ArrayList<Integer>();
 
             // Store all effect data along with calulated remaining
             // reuse delays for matching skills. 'restore_type'= 0.
@@ -13295,7 +13295,7 @@ public class L2PcInstance extends L2Playable
                 return true;
             }
 
-            Map<Integer, L2Skill> prevSkillList = new HashMap<>();
+            Map<Integer, L2Skill> prevSkillList = new HashMap<Integer, L2Skill>();
             for (L2SkillLearn skillInfo : skillTree)
             {
                 if (skillInfo.getMinLevel() <= 40)
@@ -13432,7 +13432,7 @@ public class L2PcInstance extends L2Playable
     {
         if (_subClasses == null)
         {
-            _subClasses = new HashMap<>();
+            _subClasses = new HashMap<Integer, SubClass>();
         }
 
         return _subClasses;
@@ -16506,7 +16506,7 @@ public class L2PcInstance extends L2Playable
         }
     }
 
-    private Map<Integer, TimeStamp> _reuseTimeStamps = new ConcurrentHashMap<>();
+    private Map<Integer, TimeStamp> _reuseTimeStamps = new ConcurrentHashMap<Integer, TimeStamp>();
     private boolean _canFeed;
     private boolean _isInSiege;
 
@@ -17638,7 +17638,7 @@ public class L2PcInstance extends L2Playable
 
         int count = 0;
         int id = 1;
-        ArrayList<Integer> idlist = new ArrayList<>();
+        ArrayList<Integer> idlist = new ArrayList<Integer>();
 
         int size = tpbookmark.size();
 
@@ -17660,7 +17660,7 @@ public class L2PcInstance extends L2Playable
         TeleportBookmark tpadd = new TeleportBookmark(id, x, y, z, icon, tag, name);
         if (tpbookmark == null)
         {
-            tpbookmark = new ArrayList<>();
+            tpbookmark = new ArrayList<TeleportBookmark>();
         }
 
         tpbookmark.add(tpadd);
@@ -17707,7 +17707,7 @@ public class L2PcInstance extends L2Playable
     {
         if (tpbookmark == null)
         {
-            tpbookmark = new ArrayList<>();
+            tpbookmark = new ArrayList<TeleportBookmark>();
         }
         Connection con = null;
 
@@ -17981,7 +17981,7 @@ public class L2PcInstance extends L2Playable
     /**
      * list of character friends
      */
-    private List<Integer> _friendList = new ArrayList<>();
+    private List<Integer> _friendList = new ArrayList<Integer>();
 
     public List<Integer> getFriendList()
     {
@@ -18823,7 +18823,7 @@ public class L2PcInstance extends L2Playable
     }
 
     // Summons that this character summoned before logging out
-    private List<Integer> _lastSummons = new ArrayList<>();
+    private List<Integer> _lastSummons = new ArrayList<Integer>();
 
     private void storeLastSummons()
     {
@@ -20228,7 +20228,7 @@ public class L2PcInstance extends L2Playable
         if (choose != null && choose.getOptions().size() > 0 && choose.getAt() == stepId)
         {
             _flyMoveChoose = choose;
-            Map<Integer, Point3D> options = new HashMap<>();
+            Map<Integer, Point3D> options = new HashMap<Integer, Point3D>();
             for (L2FlyMoveOption o : _flyMoveChoose.getOptions())
             {
                 options.put(o.getStart(), _flyMove.getStep(o.getStart()));
@@ -20335,7 +20335,7 @@ public class L2PcInstance extends L2Playable
         return _flyMoveChoose != null;
     }
 
-    private Map<GlobalQuest, Integer> _mainQuestsState = new HashMap<>();
+    private Map<GlobalQuest, Integer> _mainQuestsState = new HashMap<GlobalQuest, Integer>();
 
     private void setGlobalQuestState(GlobalQuest quest, int state)
     {
@@ -20661,7 +20661,7 @@ public class L2PcInstance extends L2Playable
         sendPacket(new ExWaitWaitingSubStituteInfo(false));
     }
 
-    public ArrayList<Integer> _menteeList = new ArrayList<>();
+    public ArrayList<Integer> _menteeList = new ArrayList<Integer>();
 
     public List<Integer> getMenteeList()
     {
@@ -20820,7 +20820,7 @@ public class L2PcInstance extends L2Playable
 
     public void giveMenteeBuffs()
     {
-        ArrayList<Integer> alreadyAddedBuffs = new ArrayList<>();
+        ArrayList<Integer> alreadyAddedBuffs = new ArrayList<Integer>();
         for (L2Abnormal e : getAllEffects())
         {
             if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
@@ -22260,7 +22260,7 @@ public class L2PcInstance extends L2Playable
             // No Brooches for non awakened characters...
             if (getLevel() <= 85)
             {
-                ArrayList<L2ItemInstance> modifiedItems = new ArrayList<>();
+                ArrayList<L2ItemInstance> modifiedItems = new ArrayList<L2ItemInstance>();
 
                 for (int i = Inventory.PAPERDOLL_TOTALSLOTS; i-- > Inventory.PAPERDOLL_BROOCH; )
                 {
@@ -22375,7 +22375,7 @@ public class L2PcInstance extends L2Playable
             maxAllowedGrade = L2Item.CRYSTAL_NONE;
         }
 
-        ArrayList<L2ItemInstance> modifiedItems = new ArrayList<>();
+        ArrayList<L2ItemInstance> modifiedItems = new ArrayList<L2ItemInstance>();
 
         // Remove over enchanted items and hero weapons
         for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
@@ -22612,7 +22612,7 @@ public class L2PcInstance extends L2Playable
         return _currentClass;
     }
 
-    protected final HashMap<Integer, L2Skill> _certificationSkills = new HashMap<>();
+    protected final HashMap<Integer, L2Skill> _certificationSkills = new HashMap<Integer, L2Skill>();
 
     public final void addCertificationSkill(final L2Skill skill)
     {
@@ -22775,7 +22775,7 @@ public class L2PcInstance extends L2Playable
     }
 
     // ClassId, LevelRange, GearPreset
-    public final Map<Integer, Map<Integer, int[][]>> _gearPresets = new HashMap<>();
+    public final Map<Integer, Map<Integer, int[][]>> _gearPresets = new HashMap<Integer, Map<Integer, int[][]>>();
 
     public final void addGearPreset(final int classId, final int levelRange, final int[][] gearPreset)
     {
@@ -22786,7 +22786,7 @@ public class L2PcInstance extends L2Playable
     {
         if (!_gearPresets.containsKey(classId))
         {
-            _gearPresets.put(classId, new HashMap<>());
+            _gearPresets.put(classId, new HashMap<Integer, int[][]>());
         }
 
         _gearPresets.get(classId).put(levelRange, gearPreset);
@@ -22835,7 +22835,7 @@ public class L2PcInstance extends L2Playable
                 {
                     con.close();
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
 
                 }
@@ -23068,14 +23068,14 @@ public class L2PcInstance extends L2Playable
             {
                 con.close();
             }
-            catch (final Exception ignored)
+            catch (final Exception e)
             {
 
             }
         }
     }
 
-    private Map<Integer, Integer> _tryingOn = new HashMap<>();
+    private Map<Integer, Integer> _tryingOn = new HashMap<Integer, Integer>();
 
     public int getTryingOn(int slot)
     {

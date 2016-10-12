@@ -58,7 +58,7 @@ public class AdminAPlayer implements IAdminCommandHandler
             if (st.hasMoreTokens())
             {
                 // Generate param-specific party
-                List<Integer> classIds = new ArrayList<>();
+                List<Integer> classIds = new ArrayList<Integer>();
 
                 st.nextToken(); // spawn_aparty command
 

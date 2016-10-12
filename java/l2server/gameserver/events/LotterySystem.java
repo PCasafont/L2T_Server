@@ -48,7 +48,7 @@ import java.util.concurrent.ScheduledFuture;
 
 public class LotterySystem
 {
-    private static Map<Integer, List<Integer>> _allNumbers = new HashMap<>();
+    private static Map<Integer, List<Integer>> _allNumbers = new HashMap<Integer, List<Integer>>();
     private static final String LOAD_LOTTERY = "SELECT `ownerId`, `numbers` FROM `lottery_data`";
     private static final String SAVE_LOTTERY =
             "INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";
@@ -67,7 +67,7 @@ public class LotterySystem
             return;
         }
 
-        List<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<Integer>();
         if (_allNumbers.get(pl.getObjectId()) != null)
         {
             numbers = _allNumbers.get(pl.getObjectId());
@@ -112,7 +112,7 @@ public class LotterySystem
         int luckyNumber = Rnd.get(1, 99);
         long totalCoins = _collectedCoins;
 
-        List<String> winnerNames = new ArrayList<>();
+        List<String> winnerNames = new ArrayList<String>();
         for (Map.Entry<Integer, List<Integer>> entry : _allNumbers.entrySet())
         {
             if (entry == null)
@@ -212,7 +212,7 @@ public class LotterySystem
             ResultSet rs = statement.executeQuery();
             while (rs.next())
             {
-                List<Integer> numbers = new ArrayList<>();
+                List<Integer> numbers = new ArrayList<Integer>();
                 StringTokenizer st = new StringTokenizer(rs.getString("numbers"), ",");
 
                 while (st.hasMoreTokens())

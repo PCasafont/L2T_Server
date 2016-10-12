@@ -988,7 +988,7 @@ public final class Config
 
     public static String CONFIG_FILE = "default.cfg";
 
-    private static List<ConfigVar> _configs = new ArrayList<>();
+    private static List<ConfigVar> _configs = new ArrayList<ConfigVar>();
 
     static class ConfigVar
     {
@@ -1091,7 +1091,7 @@ public final class Config
                 // Chat Filter (default)
                 try
                 {
-                    FILTER_LIST = new ArrayList<>();
+                    FILTER_LIST = new ArrayList<String>();
                     LineNumberReader lnr = new LineNumberReader(
                             new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + CHAT_FILTER_FILE))));
                     String line = null;
@@ -1116,7 +1116,7 @@ public final class Config
                 // Language Chat Filter (Tenkai Custom)
                 try
                 {
-                    LANGUAGE_FILTER = new ArrayList<>();
+                    LANGUAGE_FILTER = new ArrayList<String>();
                     LineNumberReader lnr = new LineNumberReader(
                             new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + LANGUAGE_FILTER_FILE))));
                     String line = null;
@@ -1158,7 +1158,7 @@ public final class Config
                 {
                     is.close();
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
             }
@@ -1178,7 +1178,7 @@ public final class Config
                 {
                     is.close();
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
             }
@@ -1339,7 +1339,7 @@ public final class Config
                 else if (field.getType() == ArrayList.class)
                 {
                     String[] split = value.split(",");
-                    ArrayList<String> list = new ArrayList<>();
+                    ArrayList<String> list = new ArrayList<String>();
                     for (String s : split)
                     {
                         list.add(s);
@@ -1620,7 +1620,7 @@ public final class Config
     private static Map<String, Integer> parseStringIntMap(String line)
     {
         String[] propertySplit = line.split(";");
-        Map<String, Integer> result = new HashMap<>();
+        Map<String, Integer> result = new HashMap<String, Integer>();
         if (line.isEmpty())
         {
             return result;

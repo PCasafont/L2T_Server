@@ -36,7 +36,7 @@ import java.util.Set;
 
 public class DoorTable
 {
-    private static final TIntObjectHashMap<Set<Integer>> _groups = new TIntObjectHashMap<>();
+    private static final TIntObjectHashMap<Set<Integer>> _groups = new TIntObjectHashMap<Set<Integer>>();
 
     private final TIntObjectHashMap<L2DoorInstance> _doors;
     private final TIntObjectHashMap<ArrayList<L2DoorInstance>> _regions;
@@ -48,8 +48,8 @@ public class DoorTable
 
     private DoorTable()
     {
-        _doors = new TIntObjectHashMap<>();
-        _regions = new TIntObjectHashMap<>();
+        _doors = new TIntObjectHashMap<L2DoorInstance>();
+        _regions = new TIntObjectHashMap<ArrayList<L2DoorInstance>>();
         parseData();
     }
 
@@ -200,7 +200,7 @@ public class DoorTable
         }
         else
         {
-            final ArrayList<L2DoorInstance> list = new ArrayList<>();
+            final ArrayList<L2DoorInstance> list = new ArrayList<L2DoorInstance>();
             list.add(door);
             _regions.put(region, list);
         }
@@ -294,7 +294,7 @@ public class DoorTable
         Set<Integer> set = _groups.get(groupName.hashCode());
         if (set == null)
         {
-            set = new HashSet<>();
+            set = new HashSet<Integer>();
             set.add(doorId);
             _groups.put(groupName.hashCode(), set);
         }

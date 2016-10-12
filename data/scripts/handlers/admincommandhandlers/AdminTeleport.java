@@ -297,7 +297,7 @@ public class AdminTeleport implements IAdminCommandHandler
                     changeCharacterPosition(activeChar, targetName);
                 }
             }
-            catch (StringIndexOutOfBoundsException ignored)
+            catch (StringIndexOutOfBoundsException e)
             {
             }
         }
@@ -499,7 +499,7 @@ public class AdminTeleport implements IAdminCommandHandler
                 int z = Integer.parseInt(z1);
                 teleportCharacter(player, x, y, z, null);
             }
-            catch (NoSuchElementException ignored)
+            catch (NoSuchElementException nsee)
             {
             }
         }

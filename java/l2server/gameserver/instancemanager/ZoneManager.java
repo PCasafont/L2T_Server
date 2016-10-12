@@ -48,7 +48,8 @@ import java.util.logging.Level;
 public class ZoneManager
 {
     //private final HashMap<Integer, L2ZoneType> _zones = new HashMap<Integer, L2ZoneType>();
-    private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones = new HashMap<>();
+    private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones =
+            new HashMap<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>>();
     private int _lastDynamicId = 300000;
 
     public static ZoneManager getInstance()
@@ -131,7 +132,7 @@ public class ZoneManager
             }
 
             File[] files = dir.listFiles();
-            ArrayList<File> hash = new ArrayList<>(files.length);
+            ArrayList<File> hash = new ArrayList<File>(files.length);
             for (File f : files)
             {
                 // default file first
@@ -242,7 +243,7 @@ public class ZoneManager
                                 {
                                     coords = null;
                                     int[] point;
-                                    ArrayList<int[]> rs = new ArrayList<>();
+                                    ArrayList<int[]> rs = new ArrayList<int[]>();
 
                                     // loading from XML first
                                     for (XmlNode cd : d.getChildren())
@@ -500,7 +501,7 @@ public class ZoneManager
         Map<Integer, T> map = (Map<Integer, T>) _classZones.get(zone.getClass());
         if (map == null)
         {
-            map = new LinkedHashMap<>();
+            map = new LinkedHashMap<Integer, T>();
             map.put(id, zone);
             _classZones.put(zone.getClass(), map);
         }
@@ -520,7 +521,7 @@ public class ZoneManager
     @Deprecated
     public Collection<L2ZoneType> getAllZones()
     {
-        ArrayList<L2ZoneType> zones = new ArrayList<>();
+        ArrayList<L2ZoneType> zones = new ArrayList<L2ZoneType>();
         for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
         {
             zones.addAll(map.values());
@@ -627,7 +628,7 @@ public class ZoneManager
     public ArrayList<L2ZoneType> getZones(int x, int y)
     {
         L2WorldRegion region = L2World.getInstance().getRegion(x, y);
-        ArrayList<L2ZoneType> temp = new ArrayList<>();
+        ArrayList<L2ZoneType> temp = new ArrayList<L2ZoneType>();
         for (L2ZoneType zone : region.getZones())
         {
             if (zone.isInsideZone(x, y))
@@ -649,7 +650,7 @@ public class ZoneManager
     public ArrayList<L2ZoneType> getZones(int x, int y, int z)
     {
         L2WorldRegion region = L2World.getInstance().getRegion(x, y);
-        ArrayList<L2ZoneType> temp = new ArrayList<>();
+        ArrayList<L2ZoneType> temp = new ArrayList<L2ZoneType>();
         for (L2ZoneType zone : region.getZones())
         {
             if (zone.isInsideZone(x, y, z))

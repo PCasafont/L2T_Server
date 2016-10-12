@@ -32,7 +32,7 @@ import java.util.*;
 
 public class PostBBSManager extends BaseBBSManager
 {
-    private final Map<Topic, Post> _postByTopic = new HashMap<>();
+    private final Map<Topic, Post> _postByTopic = new HashMap<Topic, Post>();
 
     public Post getGPosttByTopic(Topic t)
     {

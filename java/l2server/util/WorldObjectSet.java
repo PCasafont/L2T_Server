@@ -43,7 +43,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 
     public WorldObjectSet()
     {
-        _objectMap = new ConcurrentHashMap<>();
+        _objectMap = new ConcurrentHashMap<Integer, T>();
     }
 
     /* (non-Javadoc)

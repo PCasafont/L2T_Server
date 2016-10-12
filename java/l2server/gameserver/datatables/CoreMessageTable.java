@@ -17,7 +17,7 @@ public class CoreMessageTable
 {
     private static CoreMessageTable _instance;
 
-    private static Map<Integer, CoreMessage> _messages = new HashMap<>();
+    private static Map<Integer, CoreMessage> _messages = new HashMap<Integer, CoreMessage>();
 
     public static CoreMessageTable getInstance()
     {

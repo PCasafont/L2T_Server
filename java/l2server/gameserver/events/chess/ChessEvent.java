@@ -441,16 +441,26 @@ public class ChessEvent
 
     private static void setState(ChessState state)
     {
-        if (state == ChessState.PARTICIPATING)
+        synchronized (_state)
         {
-            pieceMoving = false;
+            if (state == ChessState.PARTICIPATING)
+            {
+                pieceMoving = false;
+            }
+            _state = state;
         }
-        _state = state;
     }
 
     public static boolean isState(ChessState state)
     {
-        return _state == state;
+        boolean isState;
+
+        synchronized (_state)
+        {
+            isState = _state == state;
+        }
+
+        return isState;
     }
 
     public static byte getParticipantSideId(int playerObjectId)

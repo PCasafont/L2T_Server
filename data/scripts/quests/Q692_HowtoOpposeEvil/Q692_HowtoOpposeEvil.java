@@ -33,7 +33,7 @@ public final class Q692_HowtoOpposeEvil extends Quest
     private static final int LEKONS_CERTIFICATE = 13857;
     private static final int[] QUEST_ITEMS = {13863, 13864, 13865, 13866, 13867, 15535, 15536};
 
-    private static final TIntObjectHashMap<Integer[]> _questMobs = new TIntObjectHashMap<>();
+    private static final TIntObjectHashMap<Integer[]> _questMobs = new TIntObjectHashMap<Integer[]>();
 
     static
     {

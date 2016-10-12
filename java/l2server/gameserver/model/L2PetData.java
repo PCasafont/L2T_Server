@@ -28,8 +28,8 @@ import java.util.List;
  */
 public class L2PetData
 {
-    private TIntObjectHashMap<L2PetLevelData> _levelStats = new TIntObjectHashMap<>();
-    private List<L2PetSkillLearn> _skills = new ArrayList<>();
+    private TIntObjectHashMap<L2PetLevelData> _levelStats = new TIntObjectHashMap<L2PetLevelData>();
+    private List<L2PetSkillLearn> _skills = new ArrayList<L2PetSkillLearn>();
 
     private int _load = 20000;
     private int _hungry_limit = 1;

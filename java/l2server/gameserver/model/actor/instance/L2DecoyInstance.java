@@ -45,7 +45,7 @@ public class L2DecoyInstance extends L2Attackable
     private int _totalLifeTime;
     private int _timeRemaining;
     private Future<?> _decoyLifeTask;
-    private List<Future<?>> _skillSpam = new ArrayList<>();
+    private List<Future<?>> _skillSpam = new ArrayList<Future<?>>();
 
     public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
     {

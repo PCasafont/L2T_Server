@@ -89,7 +89,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
         {
             playerFail = false;
             deviceSpawned = false;
-            mobs = new ArrayList<>();
+            mobs = new ArrayList<L2Npc>();
         }
     }
 

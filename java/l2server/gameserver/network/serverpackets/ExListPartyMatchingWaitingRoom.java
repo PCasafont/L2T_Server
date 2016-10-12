@@ -43,7 +43,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
         _minlvl = minlvl;
         _maxlvl = maxlvl;
         _mode = mode;
-        _members = new ArrayList<>();
+        _members = new ArrayList<L2PcInstance>();
         for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
         {
             if (cha == null)

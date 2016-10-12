@@ -78,7 +78,7 @@ public class DesireTable
 
         public Desires(DesireType... desireList)
         {
-            _desireTable = new HashMap<>();
+            _desireTable = new HashMap<DesireType, DesireValue>();
 
             for (DesireType desire : desireList)
             {
@@ -118,7 +118,7 @@ public class DesireTable
     public DesireTable(DesireType... desireList)
     {
         _desireTypes = desireList;
-        _objectDesireTable = new HashMap<>();
+        _objectDesireTable = new HashMap<L2Object, Desires>();
         _generalDesires = new Desires(_desireTypes);
     }
 

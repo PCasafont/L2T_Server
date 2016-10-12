@@ -39,7 +39,7 @@ public class PetDataTable
 
     private PetDataTable()
     {
-        _petTable = new TIntObjectHashMap<>();
+        _petTable = new TIntObjectHashMap<L2PetData>();
         load();
     }
 

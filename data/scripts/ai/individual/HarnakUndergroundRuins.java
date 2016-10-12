@@ -42,7 +42,7 @@ import java.util.Map.Entry;
 public class HarnakUndergroundRuins extends L2AttackableAIScript
 {
     private static final int[] _normalMobs = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};
-    private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<>(24);
+    private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<L2ZoneType, zoneInfo>(24);
 
     public HarnakUndergroundRuins(int id, String name, String descr)
     {

@@ -146,7 +146,7 @@ public class Beleth extends L2AttackableAIScript
 
         public belethWorld()
         {
-            Minions = new ArrayList<>();
+            Minions = new ArrayList<L2Npc>();
         }
     }
 
@@ -764,7 +764,7 @@ public class Beleth extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<>();
+            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
             if (_debug)
             {

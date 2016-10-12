@@ -49,7 +49,7 @@ public class PetInventoryUpdate extends L2ItemListPacket
 
     public PetInventoryUpdate()
     {
-        this(new ArrayList<>());
+        this(new ArrayList<ItemInfo>());
     }
 
     public void addItem(L2ItemInstance item)

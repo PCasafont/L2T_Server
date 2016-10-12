@@ -46,7 +46,7 @@ public class ArmorSetsTable implements Reloadable
 
     private ArmorSetsTable()
     {
-        _armorSets = new TIntObjectHashMap<>();
+        _armorSets = new TIntObjectHashMap<L2ArmorSet>();
         reload();
 
         ReloadableManager.getInstance().register("armorsets", this);

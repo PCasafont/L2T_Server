@@ -56,7 +56,7 @@ public class SpecializeClass implements IBypassHandler
         {
             String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "classmaster/specialize.htm");
             String buttons = "";
-            List<PlayerClass> classes = new ArrayList<>();
+            List<PlayerClass> classes = new ArrayList<PlayerClass>();
             for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
             {
                 if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())

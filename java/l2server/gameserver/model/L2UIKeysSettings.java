@@ -166,7 +166,7 @@ public class L2UIKeysSettings
             return;
         }
 
-        _storedCategories = new HashMap<>();
+        _storedCategories = new HashMap<Integer, List<Integer>>();
 
         Connection con = null;
         try
@@ -208,7 +208,7 @@ public class L2UIKeysSettings
             return;
         }
 
-        _storedKeys = new HashMap<>();
+        _storedKeys = new HashMap<Integer, List<ActionKey>>();
 
         Connection con = null;
         try
@@ -255,7 +255,7 @@ public class L2UIKeysSettings
         }
         else
         {
-            List<Integer> tmp = new ArrayList<>();
+            List<Integer> tmp = new ArrayList<Integer>();
             tmp.add(cmd);
             _storedCategories.put(cat, tmp);
         }
@@ -270,7 +270,7 @@ public class L2UIKeysSettings
         }
         else
         {
-            List<ActionKey> tmp = new ArrayList<>();
+            List<ActionKey> tmp = new ArrayList<ActionKey>();
             tmp.add(tmk);
             _storedKeys.put(cat, tmp);
         }

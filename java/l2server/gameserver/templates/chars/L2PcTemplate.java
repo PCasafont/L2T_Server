@@ -34,8 +34,8 @@ public class L2PcTemplate extends L2CharTemplate
     public final double fCollisionHeightFemale;
     public final double fCollisionRadiusFemale;
 
-    private List<PcTemplateItem> _items = new ArrayList<>();
-    private List<Integer> _skillIds = new ArrayList<>();
+    private List<PcTemplateItem> _items = new ArrayList<PcTemplateItem>();
+    private List<Integer> _skillIds = new ArrayList<Integer>();
 
     public L2PcTemplate(StatsSet set)
     {

@@ -274,9 +274,9 @@ public class Siege implements Siegable
         }
     }
 
-    private List<L2SiegeClan> _attackerClans = new ArrayList<>();
-    private List<L2SiegeClan> _defenderClans = new ArrayList<>();
-    private List<L2SiegeClan> _defenderWaitingClans = new ArrayList<>();
+    private List<L2SiegeClan> _attackerClans = new ArrayList<L2SiegeClan>();
+    private List<L2SiegeClan> _defenderClans = new ArrayList<L2SiegeClan>();
+    private List<L2SiegeClan> _defenderWaitingClans = new ArrayList<L2SiegeClan>();
 
     // Castle setting
     private Castle[] _castle;
@@ -462,7 +462,7 @@ public class Siege implements Siegable
                     }
                 }
 
-                List<L2SiegeClan> toIterate = new ArrayList<>(getDefenderClans());
+                List<L2SiegeClan> toIterate = new ArrayList<L2SiegeClan>(getDefenderClans());
                 for (L2SiegeClan sc : toIterate)
                 {
                     if (sc != null)
@@ -896,7 +896,7 @@ public class Siege implements Siegable
     @Override
     public List<L2PcInstance> getAttackersInZone()
     {
-        List<L2PcInstance> players = new ArrayList<>();
+        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
         L2Clan clan;
         for (L2SiegeClan siegeclan : getAttackerClans())
         {
@@ -922,7 +922,7 @@ public class Siege implements Siegable
      */
     public List<L2PcInstance> getDefendersButNotOwnersInZone()
     {
-        List<L2PcInstance> players = new ArrayList<>();
+        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
         L2Clan clan;
         for (L2SiegeClan siegeclan : getDefenderClans())
         {
@@ -960,7 +960,7 @@ public class Siege implements Siegable
      */
     public List<L2PcInstance> getOwnersInZone()
     {
-        List<L2PcInstance> players = new ArrayList<>();
+        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
         L2Clan clan;
         for (L2SiegeClan siegeclan : getDefenderClans())
         {
@@ -990,7 +990,7 @@ public class Siege implements Siegable
      */
     public List<L2PcInstance> getSpectatorsInZone()
     {
-        List<L2PcInstance> players = new ArrayList<>();
+        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
 
         //synchronized (L2World.getInstance().getAllPlayers())
         for (L2PcInstance player : getCastle().getZone().getAllPlayers())

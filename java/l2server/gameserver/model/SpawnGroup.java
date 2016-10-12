@@ -32,7 +32,7 @@ public class SpawnGroup
     private final int _minZ;
     private final int _maxZ;
     private final L2Territory _territory = new L2Territory(0);
-    private final List<L2Spawn> _spawns = new ArrayList<>();
+    private final List<L2Spawn> _spawns = new ArrayList<L2Spawn>();
 
     public SpawnGroup(XmlNode node)
     {

@@ -35,7 +35,7 @@ public class ZombieGatekeepers extends L2AttackableAIScript
         super.addAggroRangeEnterId(22136);
     }
 
-    private HashMap<Integer, ArrayList<L2Character>> _attackersList = new HashMap<>();
+    private HashMap<Integer, ArrayList<L2Character>> _attackersList = new HashMap<Integer, ArrayList<L2Character>>();
 
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
@@ -46,7 +46,7 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 
         if (_attackersList.get(npcObjId) == null)
         {
-            ArrayList<L2Character> player = new ArrayList<>();
+            ArrayList<L2Character> player = new ArrayList<L2Character>();
             player.add(target);
             _attackersList.put(npcObjId, player);
         }

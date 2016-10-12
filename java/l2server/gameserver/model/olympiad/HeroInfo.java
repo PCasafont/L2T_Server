@@ -55,8 +55,8 @@ public class HeroInfo
     private int _allyCrest = 0;
 
     private String _message;
-    private List<DiaryEntry> _diary = new ArrayList<>();
-    private List<FightInfo> _fights = new ArrayList<>();
+    private List<DiaryEntry> _diary = new ArrayList<DiaryEntry>();
+    private List<FightInfo> _fights = new ArrayList<FightInfo>();
 
     public HeroInfo(OlympiadNobleInfo nobleInfo)
     {

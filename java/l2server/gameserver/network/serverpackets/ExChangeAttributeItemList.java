@@ -31,7 +31,7 @@ public class ExChangeAttributeItemList extends L2ItemListPacket
 
     public ExChangeAttributeItemList(L2PcInstance player, int itemOID)
     {
-        _itemsList = new ArrayList<>();
+        _itemsList = new ArrayList<L2ItemInstance>();
         for (L2ItemInstance item : player.getInventory().getItems())
         {
             if (item.isWeapon())

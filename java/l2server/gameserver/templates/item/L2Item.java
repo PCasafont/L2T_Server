@@ -708,7 +708,7 @@ public abstract class L2Item
             return _emptyFunctionSet;
         }
 
-        ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
+        ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
 
         Func f;
         for (FuncTemplate t : _funcTemplates)
@@ -742,7 +742,7 @@ public abstract class L2Item
             return _emptyEffectSet;
         }
 
-        ArrayList<L2Abnormal> effects = new ArrayList<>();
+        ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>();
 
         Env env = new Env();
         env.player = player;
@@ -902,7 +902,7 @@ public abstract class L2Item
     {
         if (_preConditions == null)
         {
-            _preConditions = new ArrayList<>();
+            _preConditions = new ArrayList<Condition>();
         }
         if (!_preConditions.contains(c))
         {

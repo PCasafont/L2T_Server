@@ -39,7 +39,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 {
-    Map<Integer, T> _objectMap = new ConcurrentHashMap<>();
+    Map<Integer, T> _objectMap = new ConcurrentHashMap<Integer, T>();
 
     /* (non-Javadoc)
      * @see l2server.util.L2ObjectMap#size()

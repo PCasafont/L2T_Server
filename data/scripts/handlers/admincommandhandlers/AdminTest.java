@@ -80,8 +80,8 @@ public class AdminTest implements IAdminCommandHandler
     private static final String[] ADMIN_COMMANDS =
             {"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
-    private List<L2NpcTemplate> _npcTemplates = new ArrayList<>();
-    private List<Location> _coords = new ArrayList<>();
+    private List<L2NpcTemplate> _npcTemplates = new ArrayList<L2NpcTemplate>();
+    private List<Location> _coords = new ArrayList<Location>();
 
     /* (non-Javadoc)
      * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)

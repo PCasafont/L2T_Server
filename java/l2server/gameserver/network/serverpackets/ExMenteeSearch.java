@@ -30,7 +30,7 @@ public class ExMenteeSearch extends L2GameServerPacket
 
     public ExMenteeSearch(int page, int minLevel, int maxLevel)
     {
-        _mentees = new ArrayList<>();
+        _mentees = new ArrayList<L2PcInstance>();
         _page = page;
         _playersInPage = 64;
         for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())

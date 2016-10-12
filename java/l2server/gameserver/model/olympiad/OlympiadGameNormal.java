@@ -66,7 +66,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
         L2PcInstance playerOne = null;
         L2PcInstance playerTwo = null;
 
-        List<Integer> toRemove = new ArrayList<>();
+        List<Integer> toRemove = new ArrayList<Integer>();
         OlympiadParticipant[] result = null;
 
         for (int aPlayerId : list)

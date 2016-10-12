@@ -31,9 +31,9 @@ import java.util.List;
 public class FishTable
 {
 
-    private static List<FishData> _fishsNormal = new ArrayList<>();
-    private static List<FishData> _fishsEasy = new ArrayList<>();
-    private static List<FishData> _fishsHard = new ArrayList<>();
+    private static List<FishData> _fishsNormal = new ArrayList<FishData>();
+    private static List<FishData> _fishsEasy = new ArrayList<FishData>();
+    private static List<FishData> _fishsHard = new ArrayList<FishData>();
 
     public static FishTable getInstance()
     {
@@ -87,7 +87,7 @@ public class FishTable
      */
     public List<FishData> getfish(int lvl, int type, int group)
     {
-        List<FishData> result = new ArrayList<>();
+        List<FishData> result = new ArrayList<FishData>();
         List<FishData> _Fishs = null;
         switch (group)
         {

@@ -98,7 +98,7 @@ public class LifeStoneTable
 
         private final int _grade;
         private final int _level;
-        private final Map<String, EnchantEffectGroup[]> _effects = new HashMap<>();
+        private final Map<String, EnchantEffectGroup[]> _effects = new HashMap<String, EnchantEffectGroup[]>();
 
         public LifeStone(int grade, int level)
         {
@@ -165,7 +165,7 @@ public class LifeStoneTable
     protected static final int GEMSTONE_A = 2133;
     protected static final int GEMSTONE_R = 19440;
 
-    private final Map<Integer, LifeStone> _lifeStones = new HashMap<>();
+    private final Map<Integer, LifeStone> _lifeStones = new HashMap<Integer, LifeStone>();
 
     // =========================================================
     // Constructor
@@ -230,7 +230,7 @@ public class LifeStoneTable
                         String[] weaponTypes = groupNode.getString("weaponType").split(",");
                         int order = groupNode.getInt("order");
 
-                        List<EnchantEffectSet> sets = new ArrayList<>();
+                        List<EnchantEffectSet> sets = new ArrayList<EnchantEffectSet>();
                         for (XmlNode setNode : groupNode.getChildren())
                         {
                             if (!setNode.getName().equalsIgnoreCase("augments"))
@@ -240,7 +240,7 @@ public class LifeStoneTable
 
                             String[] ids = setNode.getString("ids").split(",");
                             float chance = setNode.getFloat("chance");
-                            List<EnchantEffect> augments = new ArrayList<>();
+                            List<EnchantEffect> augments = new ArrayList<EnchantEffect>();
                             for (String idRange : ids)
                             {
                                 if (idRange.contains("-"))

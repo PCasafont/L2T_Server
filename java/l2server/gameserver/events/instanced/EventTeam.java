@@ -32,7 +32,7 @@ public class EventTeam
     /**
      * Name and instance of all participated players in HashMap<br>
      */
-    private Map<Integer, L2PcInstance> _participatedPlayers = new LinkedHashMap<>();
+    private Map<Integer, L2PcInstance> _participatedPlayers = new LinkedHashMap<Integer, L2PcInstance>();
 
     private int _flagId = 44004;
     private L2Spawn _flagSpawn;
@@ -112,7 +112,7 @@ public class EventTeam
     public void cleanMe()
     {
         _participatedPlayers.clear();
-        _participatedPlayers = new HashMap<>();
+        _participatedPlayers = new HashMap<Integer, L2PcInstance>();
         _points = 0;
     }
 
@@ -213,7 +213,7 @@ public class EventTeam
     {
         int alivePlayerCount = 0;
 
-        ArrayList<L2PcInstance> toIterate = new ArrayList<>(_participatedPlayers.values());
+        ArrayList<L2PcInstance> toIterate = new ArrayList<L2PcInstance>(_participatedPlayers.values());
         for (L2PcInstance player : toIterate)
         {
             if (!player.isOnline() || player.getClient() == null || player.getEvent() == null)

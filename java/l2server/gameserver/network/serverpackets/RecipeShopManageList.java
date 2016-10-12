@@ -53,7 +53,7 @@ public class RecipeShopManageList extends L2GameServerPacket
         if (_seller.getCreateList() != null)
         {
             L2ManufactureList list = _seller.getCreateList();
-            List<L2ManufactureItem> toIterate = new ArrayList<>(list.getList());
+            List<L2ManufactureItem> toIterate = new ArrayList<L2ManufactureItem>(list.getList());
             for (L2ManufactureItem item : toIterate)
             {
                 if (item.isDwarven() != _isDwarven || !seller.hasRecipeList(item.getRecipeId()))

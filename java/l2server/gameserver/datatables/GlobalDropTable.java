@@ -23,7 +23,7 @@ public class GlobalDropTable implements Reloadable
 {
     public class GlobalDropCategory
     {
-        private List<Integer> _itemIds = new ArrayList<>();
+        private List<Integer> _itemIds = new ArrayList<Integer>();
         private String _description;
         private int _chance;
         private int _minAmount;
@@ -158,7 +158,7 @@ public class GlobalDropTable implements Reloadable
 
     private static GlobalDropTable _instance;
 
-    private static List<GlobalDropCategory> _globalDropCategories = new ArrayList<>();
+    private static List<GlobalDropCategory> _globalDropCategories = new ArrayList<GlobalDropCategory>();
 
     ScheduledFuture<?> _resetSchedule = null;
 

@@ -67,7 +67,7 @@ public class FinalEmperialTomb extends Quest
     private class FETWorld extends InstanceWorld
     {
         public Lock lock = new ReentrantLock();
-        public List<L2Npc> npcList = new ArrayList<>();
+        public List<L2Npc> npcList = new ArrayList<L2Npc>();
         public int darkChoirPlayerCount = 0;
         public FrintezzaSong OnSong = null;
         public ScheduledFuture<?> songTask = null;
@@ -80,8 +80,8 @@ public class FinalEmperialTomb extends Quest
         public L2Npc scarletDummy = null;
         public L2GrandBossInstance frintezza = null;
         public L2GrandBossInstance activeScarlet = null;
-        public List<L2MonsterInstance> demons = new ArrayList<>();
-        public Map<L2MonsterInstance, Integer> portraits = new HashMap<>();
+        public List<L2MonsterInstance> demons = new ArrayList<L2MonsterInstance>();
+        public Map<L2MonsterInstance, Integer> portraits = new HashMap<L2MonsterInstance, Integer>();
         public int scarlet_x = 0;
         public int scarlet_y = 0;
         public int scarlet_z = 0;
@@ -126,9 +126,9 @@ public class FinalEmperialTomb extends Quest
     private static final int INSTANCEID = 136; // this is the client number
     private static final boolean debug = false;
 
-    private final TIntObjectHashMap<L2Territory> _spawnZoneList = new TIntObjectHashMap<>();
-    private final TIntObjectHashMap<List<FETSpawn>> _spawnList = new TIntObjectHashMap<>();
-    private final List<Integer> _mustKillMobsId = new ArrayList<>();
+    private final TIntObjectHashMap<L2Territory> _spawnZoneList = new TIntObjectHashMap<L2Territory>();
+    private final TIntObjectHashMap<List<FETSpawn>> _spawnList = new TIntObjectHashMap<List<FETSpawn>>();
+    private final List<Integer> _mustKillMobsId = new ArrayList<Integer>();
 
     // Teleports
     private static final int[] ENTER_TELEPORT = {-88015, -141153, -9168};
@@ -226,7 +226,7 @@ public class FinalEmperialTomb extends Quest
                                 int flag = d.getInt("flag");
                                 if (!_spawnList.contains(flag))
                                 {
-                                    _spawnList.put(flag, new ArrayList<>());
+                                    _spawnList.put(flag, new ArrayList<FETSpawn>());
                                 }
 
                                 for (XmlNode cd : d.getChildren())
@@ -741,7 +741,7 @@ public class FinalEmperialTomb extends Quest
                     if (_world.frintezza != null && !_world.frintezza.isDead() && _world.activeScarlet != null &&
                             !_world.activeScarlet.isDead())
                     {
-                        List<L2Character> targetList = new ArrayList<>();
+                        List<L2Character> targetList = new ArrayList<L2Character>();
                         if (skill.getSkillType() == L2SkillType.DEBUFF)
                         {
                             for (int objId : _world.allowed)

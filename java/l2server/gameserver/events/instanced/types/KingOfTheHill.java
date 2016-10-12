@@ -68,7 +68,7 @@ public class KingOfTheHill extends EventInstance
     @Override
     public void calculateRewards()
     {
-        List<L2PcInstance> sorted = new ArrayList<>();
+        List<L2PcInstance> sorted = new ArrayList<L2PcInstance>();
         for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
         {
             boolean added = false;

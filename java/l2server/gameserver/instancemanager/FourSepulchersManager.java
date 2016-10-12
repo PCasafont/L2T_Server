@@ -97,30 +97,32 @@ public class FourSepulchersManager
                     {25339, 175591, -72744, -7215, 49317}
             },
             };
-    protected HashMap<Integer, Boolean> _archonSpawned = new HashMap<>();
-    protected HashMap<Integer, Boolean> _hallInUse = new HashMap<>();
-    protected HashMap<Integer, L2PcInstance> _challengers = new HashMap<>();
-    protected TIntObjectHashMap<int[]> _startHallSpawns = new TIntObjectHashMap<>();
+    protected HashMap<Integer, Boolean> _archonSpawned = new HashMap<Integer, Boolean>();
+    protected HashMap<Integer, Boolean> _hallInUse = new HashMap<Integer, Boolean>();
+    protected HashMap<Integer, L2PcInstance> _challengers = new HashMap<Integer, L2PcInstance>();
+    protected TIntObjectHashMap<int[]> _startHallSpawns = new TIntObjectHashMap<int[]>();
     protected TIntIntHashMap _hallGateKeepers = new TIntIntHashMap();
     protected TIntIntHashMap _keyBoxNpc = new TIntIntHashMap();
     protected TIntIntHashMap _victim = new TIntIntHashMap();
-    protected TIntObjectHashMap<L2Spawn> _executionerSpawns = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<L2Spawn> _keyBoxSpawns = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<L2Spawn> _mysteriousBoxSpawns = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<L2Spawn> _shadowSpawns = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2Spawn>> _dukeFinalMobs = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _dukeMobs = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2Spawn>> _emperorsGraveNpcs = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2Spawn>> _magicalMonsters = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2Spawn>> _physicalMonsters = new TIntObjectHashMap<>();
-    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _viscountMobs = new TIntObjectHashMap<>();
+    protected TIntObjectHashMap<L2Spawn> _executionerSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _keyBoxSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _mysteriousBoxSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _shadowSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _dukeFinalMobs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _dukeMobs =
+            new TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _emperorsGraveNpcs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _magicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _physicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _viscountMobs =
+            new TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>>();
 
     protected ArrayList<L2Spawn> _physicalSpawns;
     protected ArrayList<L2Spawn> _magicalSpawns;
     protected ArrayList<L2Spawn> _managers;
     protected ArrayList<L2Spawn> _dukeFinalSpawns;
     protected ArrayList<L2Spawn> _emperorsGraveSpawns;
-    protected ArrayList<L2Npc> _allMobs = new ArrayList<>();
+    protected ArrayList<L2Npc> _allMobs = new ArrayList<L2Npc>();
 
     protected long _attackTimeEnd = 0;
     protected long _coolDownTimeEnd = 0;
@@ -271,7 +273,7 @@ public class FourSepulchersManager
 
     protected void spawnManagers()
     {
-        _managers = new ArrayList<>();
+        _managers = new ArrayList<L2Spawn>();
         // L2Spawn spawnDat;
 
         int i = 31921;
@@ -534,7 +536,7 @@ public class FourSepulchersManager
                 L2Spawn spawnDat;
                 L2NpcTemplate template1;
 
-                _physicalSpawns = new ArrayList<>();
+                _physicalSpawns = new ArrayList<L2Spawn>();
 
                 while (rset2.next())
                 {
@@ -611,7 +613,7 @@ public class FourSepulchersManager
                 L2Spawn spawnDat;
                 L2NpcTemplate template1;
 
-                _magicalSpawns = new ArrayList<>();
+                _magicalSpawns = new ArrayList<L2Spawn>();
 
                 while (rset2.next())
                 {
@@ -688,7 +690,7 @@ public class FourSepulchersManager
                 L2Spawn spawnDat;
                 L2NpcTemplate template1;
 
-                _dukeFinalSpawns = new ArrayList<>();
+                _dukeFinalSpawns = new ArrayList<L2Spawn>();
 
                 while (rset2.next())
                 {
@@ -766,7 +768,7 @@ public class FourSepulchersManager
                 L2Spawn spawnDat;
                 L2NpcTemplate template1;
 
-                _emperorsGraveSpawns = new ArrayList<>();
+                _emperorsGraveSpawns = new ArrayList<L2Spawn>();
 
                 while (rset2.next())
                 {
@@ -1029,7 +1031,7 @@ public class FourSepulchersManager
 
         if (Config.FS_PARTY_MEMBER_COUNT > 1)
         {
-            List<L2PcInstance> members = new ArrayList<>();
+            List<L2PcInstance> members = new ArrayList<L2PcInstance>();
             for (L2PcInstance mem : player.getParty().getPartyMembers())
             {
                 if (!mem.isDead() && Util.checkIfInRange(700, player, mem, true))
@@ -1066,7 +1068,7 @@ public class FourSepulchersManager
         }
         if (Config.FS_PARTY_MEMBER_COUNT <= 1 && player.isInParty())
         {
-            List<L2PcInstance> members = new ArrayList<>();
+            List<L2PcInstance> members = new ArrayList<L2PcInstance>();
             for (L2PcInstance mem : player.getParty().getPartyMembers())
             {
                 if (!mem.isDead() && Util.checkIfInRange(700, player, mem, true))
@@ -1150,7 +1152,7 @@ public class FourSepulchersManager
         }
 
         ArrayList<L2Spawn> monsterList;
-        ArrayList<L2SepulcherMonsterInstance> mobs = new ArrayList<>();
+        ArrayList<L2SepulcherMonsterInstance> mobs = new ArrayList<L2SepulcherMonsterInstance>();
         L2Spawn keyBoxMobSpawn;
 
         if (Rnd.get(2) == 0)

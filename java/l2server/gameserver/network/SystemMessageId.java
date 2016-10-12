@@ -21565,7 +21565,7 @@ public final class SystemMessageId
     private static void buildFastLookupTable()
     {
         final Field[] fields = SystemMessageId.class.getDeclaredFields();
-        final ArrayList<SystemMessageId> smIds = new ArrayList<>(fields.length);
+        final ArrayList<SystemMessageId> smIds = new ArrayList<SystemMessageId>(fields.length);
 
         int maxId = 0, mod;
         SystemMessageId smId;
@@ -21652,7 +21652,7 @@ public final class SystemMessageId
 
     private static Builder newBuilder(final String text)
     {
-        final ArrayList<Builder> builders = new ArrayList<>();
+        final ArrayList<Builder> builders = new ArrayList<Builder>();
 
         int index1 = 0, index2 = 0, paramId, subTextLen;
 

@@ -33,7 +33,7 @@ public class PartyMatchRoomList
 
     private PartyMatchRoomList()
     {
-        _rooms = new HashMap<>();
+        _rooms = new HashMap<Integer, PartyMatchRoom>();
     }
 
     public synchronized void addPartyMatchRoom(int id, PartyMatchRoom room)

@@ -49,8 +49,8 @@ public class GeoEngine extends GeoData
     private static final byte SOUTH = 4;
     private static final byte NORTH = 8;
     private static final byte NSWE_ALL = 15;
-    private static TShortObjectHashMap<MappedByteBuffer> _geodata = new TShortObjectHashMap<>();
-    private static TShortObjectHashMap<IntBuffer> _geodataIndex = new TShortObjectHashMap<>();
+    private static TShortObjectHashMap<MappedByteBuffer> _geodata = new TShortObjectHashMap<MappedByteBuffer>();
+    private static TShortObjectHashMap<IntBuffer> _geodataIndex = new TShortObjectHashMap<IntBuffer>();
     private static BufferedOutputStream _geoBugsOut;
 
     public static GeoEngine getInstance()

@@ -42,8 +42,8 @@ public final class L2SkillLearn
     private final boolean _isTransfer;
     private final boolean _isAutoGet;
 
-    private final Map<Integer, Integer> _costItems = new HashMap<>();
-    private final List<Integer> _costSkills = new ArrayList<>();
+    private final Map<Integer, Integer> _costItems = new HashMap<Integer, Integer>();
+    private final List<Integer> _costSkills = new ArrayList<Integer>();
 
     private boolean _isRemember = false;
 
@@ -145,7 +145,7 @@ public final class L2SkillLearn
 
     public Map<Integer, Integer> getCostSkills(L2PcInstance player)
     {
-        Map<Integer, Integer> costSkills = new HashMap<>();
+        Map<Integer, Integer> costSkills = new HashMap<Integer, Integer>();
         for (int skillId : _costSkills)
         {
             int skillLevel = player.getSkillLevelHash(skillId);

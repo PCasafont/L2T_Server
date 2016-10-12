@@ -39,7 +39,7 @@ public class ChatHandler
      */
     private ChatHandler()
     {
-        _datatable = new TIntObjectHashMap<>();
+        _datatable = new TIntObjectHashMap<IChatHandler>();
     }
 
     /**

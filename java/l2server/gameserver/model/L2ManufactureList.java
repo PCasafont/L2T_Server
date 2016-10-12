@@ -31,7 +31,7 @@ public class L2ManufactureList
 
     public L2ManufactureList()
     {
-        _list = new ArrayList<>();
+        _list = new ArrayList<L2ManufactureItem>();
         _confirmed = false;
     }
 

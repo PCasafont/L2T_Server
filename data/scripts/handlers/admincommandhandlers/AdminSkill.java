@@ -84,7 +84,7 @@ public class AdminSkill implements IAdminCommandHandler
                 String val = command.substring(20);
                 removeSkillsPage(activeChar, Integer.parseInt(val));
             }
-            catch (StringIndexOutOfBoundsException ignored)
+            catch (StringIndexOutOfBoundsException e)
             {
             }
         }
@@ -99,7 +99,7 @@ public class AdminSkill implements IAdminCommandHandler
                 String val = command.substring(18);
                 AdminHelpPage.showHelpPage(activeChar, "skills/" + val + ".htm");
             }
-            catch (StringIndexOutOfBoundsException ignored)
+            catch (StringIndexOutOfBoundsException e)
             {
             }
         }

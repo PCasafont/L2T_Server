@@ -69,9 +69,9 @@ public class HealPercent implements ISkillHandler
         // Sort by most injured targets now.
         if (skill.getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL)
         {
-            Map<L2Character, Double> tmpTargets = new HashMap<>();
+            Map<L2Character, Double> tmpTargets = new HashMap<L2Character, Double>();
 
-            List<L2Character> sortedListToReturn = new ArrayList<>();
+            List<L2Character> sortedListToReturn = new ArrayList<L2Character>();
 
             //activeChar.sendMessage("Main Target = " + activeChar.getTarget().getName());
 

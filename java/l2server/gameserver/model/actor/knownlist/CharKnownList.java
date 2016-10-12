@@ -213,7 +213,7 @@ public class CharKnownList extends ObjectKnownList
 
     public Collection<L2Character> getKnownCharacters()
     {
-        ArrayList<L2Character> result = new ArrayList<>();
+        ArrayList<L2Character> result = new ArrayList<L2Character>();
 
         final Collection<L2Object> objs = getKnownObjects().values();
         //synchronized (getKnownObjects())
@@ -231,7 +231,7 @@ public class CharKnownList extends ObjectKnownList
 
     public Collection<L2Character> getKnownCharactersInRadius(long radius)
     {
-        ArrayList<L2Character> result = new ArrayList<>();
+        ArrayList<L2Character> result = new ArrayList<L2Character>();
 
         final Collection<L2Object> objs = getKnownObjects().values();
         //synchronized (getKnownObjects())
@@ -254,7 +254,7 @@ public class CharKnownList extends ObjectKnownList
     {
         if (_knownPlayers == null)
         {
-            _knownPlayers = new ConcurrentHashMap<>();
+            _knownPlayers = new ConcurrentHashMap<Integer, L2PcInstance>();
         }
         return _knownPlayers;
     }
@@ -263,7 +263,7 @@ public class CharKnownList extends ObjectKnownList
     {
         if (_knownRelations == null)
         {
-            _knownRelations = new ConcurrentHashMap<>();
+            _knownRelations = new ConcurrentHashMap<Integer, Integer>();
         }
         return _knownRelations;
     }
@@ -272,14 +272,14 @@ public class CharKnownList extends ObjectKnownList
     {
         if (_knownSummons == null)
         {
-            _knownSummons = new ConcurrentHashMap<>();
+            _knownSummons = new ConcurrentHashMap<Integer, L2Summon>();
         }
         return _knownSummons;
     }
 
     public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius)
     {
-        ArrayList<L2PcInstance> result = new ArrayList<>();
+        ArrayList<L2PcInstance> result = new ArrayList<L2PcInstance>();
 
         final Collection<L2PcInstance> plrs = getKnownPlayers().values();
         //synchronized (getKnownPlayers())

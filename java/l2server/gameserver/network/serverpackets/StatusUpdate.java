@@ -107,7 +107,7 @@ public final class StatusUpdate extends L2GameServerPacket
      */
     public StatusUpdate(L2Object object)
     {
-        _attributes = new ArrayList<>();
+        _attributes = new ArrayList<Attribute>();
         _objectId = object.getObjectId();
         /*if (object instanceof L2Attackable || object instanceof L2Playable
                 && getClient() != null && getClient().getActiveChar() != null

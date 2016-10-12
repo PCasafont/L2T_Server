@@ -86,12 +86,12 @@ public class L2EffectZone extends L2ZoneType
         }
         else if (name.equals("maxDynamicSkillCount"))
         {
-            _skills = new HashMap<>(Integer.parseInt(value));
+            _skills = new HashMap<Integer, Integer>(Integer.parseInt(value));
         }
         else if (name.equals("skillIdLvl"))
         {
             String[] propertySplit = value.split(";");
-            _skills = new HashMap<>(propertySplit.length);
+            _skills = new HashMap<Integer, Integer>(propertySplit.length);
             for (String skill : propertySplit)
             {
                 String[] skillSplit = skill.split("-");
@@ -207,7 +207,7 @@ public class L2EffectZone extends L2ZoneType
             {
                 if (_skills == null)
                 {
-                    _skills = new HashMap<>(3);
+                    _skills = new HashMap<Integer, Integer>(3);
                 }
             }
         }
@@ -277,7 +277,7 @@ public class L2EffectZone extends L2ZoneType
                         {
                             synchronized (_skills)
                             {
-                                Map<Integer, Integer> toIterate = new HashMap<>(_skills);
+                                Map<Integer, Integer> toIterate = new HashMap<Integer, Integer>(_skills);
                                 for (Entry<Integer, Integer> e : toIterate.entrySet())
                                 {
                                     L2Skill skill = getSkill(e.getKey(), e.getValue());

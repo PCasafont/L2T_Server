@@ -69,7 +69,7 @@ public abstract class L2ZoneType
     protected L2ZoneType(int id)
     {
         _id = id;
-        _characterList = new ConcurrentHashMap<>();
+        _characterList = new ConcurrentHashMap<Integer, L2Character>();
 
         _minLvl = 0;
         _maxLvl = 0xFF;
@@ -463,12 +463,12 @@ public abstract class L2ZoneType
     {
         if (_questEvents == null)
         {
-            _questEvents = new HashMap<>();
+            _questEvents = new HashMap<Quest.QuestEventType, ArrayList<Quest>>();
         }
         ArrayList<Quest> questByEvents = _questEvents.get(EventType);
         if (questByEvents == null)
         {
-            questByEvents = new ArrayList<>();
+            questByEvents = new ArrayList<Quest>();
         }
         if (!questByEvents.contains(q))
         {
@@ -536,7 +536,7 @@ public abstract class L2ZoneType
 
     public List<L2PcInstance> getPlayersInside()
     {
-        List<L2PcInstance> players = new ArrayList<>();
+        List<L2PcInstance> players = new ArrayList<L2PcInstance>();
         for (L2Character ch : _characterList.values())
         {
             if (ch != null && ch instanceof L2PcInstance)
@@ -550,7 +550,7 @@ public abstract class L2ZoneType
 
     public List<L2Npc> getNpcsInside()
     {
-        List<L2Npc> npcs = new ArrayList<>();
+        List<L2Npc> npcs = new ArrayList<L2Npc>();
         for (L2Character ch : _characterList.values())
         {
             if (ch == null || ch instanceof L2Playable || ch instanceof L2BoatInstance ||

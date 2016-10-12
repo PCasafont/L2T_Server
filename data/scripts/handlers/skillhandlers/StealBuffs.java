@@ -100,7 +100,7 @@ public class StealBuffs implements ISkillHandler
             Env env;
             int lastSkillId = 0;
             final L2Abnormal[] effects = target.getAllEffects();
-            final List<L2Abnormal> toSteal = new ArrayList<>(maxNegate);
+            final List<L2Abnormal> toSteal = new ArrayList<L2Abnormal>(maxNegate);
 
             // Consider caster skill and target level
             chance -= (target.getLevel() - skill.getMagicLevel()) * PER_LVL_PENALTY;

@@ -40,7 +40,7 @@ public class EnchantEffectTable
         return SingletonHolder._instance;
     }
 
-    private final Map<Integer, EnchantEffect> _effects = new HashMap<>();
+    private final Map<Integer, EnchantEffect> _effects = new HashMap<Integer, EnchantEffect>();
 
     // =========================================================
     // Constructor
@@ -58,7 +58,7 @@ public class EnchantEffectTable
             return;
         }
 
-        List<File> validFiles = new ArrayList<>();
+        List<File> validFiles = new ArrayList<File>();
         File[] files = dir.listFiles();
         for (File f : files)
         {

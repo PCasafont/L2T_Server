@@ -120,10 +120,10 @@ public class L2FortSupportCaptainInstance extends L2MerchantInstance implements 
             {
                 val = Integer.parseInt(par);
             }
-            catch (IndexOutOfBoundsException ignored)
+            catch (IndexOutOfBoundsException ioobe)
             {
             }
-            catch (NumberFormatException ignored)
+            catch (NumberFormatException nfe)
             {
             }
 

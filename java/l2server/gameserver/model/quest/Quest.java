@@ -67,11 +67,11 @@ public class Quest extends ManagedScript
     /**
      * HashMap containing events from String value of the event
      */
-    private static Map<String, Quest> _allEventsS = new HashMap<>();
+    private static Map<String, Quest> _allEventsS = new HashMap<String, Quest>();
     /**
      * HashMap containing lists of timers from the name of the timer
      */
-    private Map<String, List<QuestTimer>> _allEventTimers = new ConcurrentHashMap<>();
+    private Map<String, List<QuestTimer>> _allEventTimers = new ConcurrentHashMap<String, List<QuestTimer>>();
 
     private final ReentrantReadWriteLock _rwLock = new ReentrantReadWriteLock();
 
@@ -295,7 +295,7 @@ public class Quest extends ManagedScript
         // no timer exists with the same name, at all
         if (timers == null)
         {
-            timers = new CopyOnWriteArrayList<>();
+            timers = new CopyOnWriteArrayList<QuestTimer>();
             timers.add(new QuestTimer(this, name, time, npc, player, repeating));
             _allEventTimers.put(name, timers);
         }
@@ -1818,7 +1818,7 @@ public class Quest extends ManagedScript
 
         // if the player is in a party, gather a list of all matching party members (possibly
         // including this player)
-        ArrayList<L2PcInstance> candidates = new ArrayList<>();
+        ArrayList<L2PcInstance> candidates = new ArrayList<L2PcInstance>();
 
         // get the target for enforcing distance limitations.
         L2Object target = player.getTarget();
@@ -1886,7 +1886,7 @@ public class Quest extends ManagedScript
 
         // if the player is in a party, gather a list of all matching party members (possibly
         // including this player)
-        ArrayList<L2PcInstance> candidates = new ArrayList<>();
+        ArrayList<L2PcInstance> candidates = new ArrayList<L2PcInstance>();
 
         // get the target for enforcing distance limitations.
         L2Object target = player.getTarget();

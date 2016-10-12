@@ -25,7 +25,7 @@ public class ClanWarManager
 {
     private static ClanWarManager _instance = null;
 
-    private List<ClanWar> _wars = new ArrayList<>();
+    private List<ClanWar> _wars = new ArrayList<ClanWar>();
 
     private ClanWarManager()
     {
@@ -40,7 +40,7 @@ public class ClanWarManager
 
     public final void load()
     {
-        List<ClanWar> wars = new ArrayList<>();
+        List<ClanWar> wars = new ArrayList<ClanWar>();
         for (ClanWar war : _wars)
         {
             wars.add(war);

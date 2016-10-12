@@ -25685,7 +25685,7 @@ public final class NpcStringId
     private static void buildFastLookupTable()
     {
         final Field[] fields = NpcStringId.class.getDeclaredFields();
-        final ArrayList<NpcStringId> nsIds = new ArrayList<>(fields.length);
+        final ArrayList<NpcStringId> nsIds = new ArrayList<NpcStringId>(fields.length);
 
         int maxId = 0, mod;
         NpcStringId nsId;
@@ -25768,7 +25768,7 @@ public final class NpcStringId
 
     private static Builder newBuilder(final String text)
     {
-        final ArrayList<Builder> builders = new ArrayList<>();
+        final ArrayList<Builder> builders = new ArrayList<Builder>();
 
         int index1 = 0, index2 = 0, paramId, subTextLen;
 

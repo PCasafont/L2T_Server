@@ -39,7 +39,7 @@ public class SummonItemsData
 
     private SummonItemsData()
     {
-        _summonitems = new TIntObjectHashMap<>();
+        _summonitems = new TIntObjectHashMap<L2SummonItem>();
 
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
         XmlDocument doc = new XmlDocument(file);

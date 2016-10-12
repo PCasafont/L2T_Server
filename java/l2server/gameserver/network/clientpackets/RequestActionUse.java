@@ -116,7 +116,7 @@ public final class RequestActionUse extends L2GameClientPacket
         }
 
         L2PetInstance pet = activeChar.getPet();
-        List<L2Summon> summons = new ArrayList<>(activeChar.getSummons());
+        List<L2Summon> summons = new ArrayList<L2Summon>(activeChar.getSummons());
         summons.add(pet);
         L2Object target = activeChar.getTarget();
 
@@ -1226,7 +1226,7 @@ public final class RequestActionUse extends L2GameClientPacket
             return;
         }
 
-        List<L2Summon> summons = new ArrayList<>(activeChar.getSummons());
+        List<L2Summon> summons = new ArrayList<L2Summon>(activeChar.getSummons());
         summons.add(activeChar.getPet());
         for (L2Summon summon : summons)
         {

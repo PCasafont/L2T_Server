@@ -31,7 +31,7 @@ public class ExOlympiadInfoList extends L2GameServerPacket
 
     public ExOlympiadInfoList()
     {
-        _tasks = new ArrayList<>();
+        _tasks = new ArrayList<OlympiadGameTask>();
         for (int i = 0; i < 160; i++)
         {
             OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(i);

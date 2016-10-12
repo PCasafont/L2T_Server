@@ -85,7 +85,7 @@ public final class ExAcquireSkillList extends L2GameServerPacket
     {
         if (_skills == null)
         {
-            _skills = new ArrayList<>();
+            _skills = new ArrayList<Skill>();
         }
         _skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
     }

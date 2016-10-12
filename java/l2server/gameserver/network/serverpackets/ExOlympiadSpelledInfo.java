@@ -48,7 +48,7 @@ public class ExOlympiadSpelledInfo extends L2GameServerPacket
 
     public ExOlympiadSpelledInfo(L2PcInstance player)
     {
-        _effects = new ArrayList<>();
+        _effects = new ArrayList<Effect>();
         _playerID = player.getObjectId();
     }
 

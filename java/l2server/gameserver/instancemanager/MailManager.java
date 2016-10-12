@@ -41,7 +41,7 @@ import java.util.logging.Level;
  */
 public class MailManager
 {
-    private Map<Integer, Message> _messages = new ConcurrentHashMap<>();
+    private Map<Integer, Message> _messages = new ConcurrentHashMap<Integer, Message>();
 
     public static MailManager getInstance()
     {
@@ -162,7 +162,7 @@ public class MailManager
 
     public final List<Message> getInbox(int objectId)
     {
-        List<Message> inbox = new ArrayList<>();
+        List<Message> inbox = new ArrayList<Message>();
         for (Message msg : _messages.values())
         {
             if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
@@ -175,7 +175,7 @@ public class MailManager
 
     public final List<Message> getOutbox(int objectId)
     {
-        List<Message> outbox = new ArrayList<>();
+        List<Message> outbox = new ArrayList<Message>();
         for (Message msg : _messages.values())
         {
             if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())

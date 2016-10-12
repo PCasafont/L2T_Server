@@ -54,9 +54,9 @@ public class ClanHallManager
     private ClanHallManager()
     {
         Log.info("Initializing ClanHallManager");
-        _clanHall = new HashMap<>();
-        _freeClanHall = new HashMap<>();
-        _allClanHalls = new HashMap<>();
+        _clanHall = new HashMap<Integer, ClanHall>();
+        _freeClanHall = new HashMap<Integer, ClanHall>();
+        _allClanHalls = new HashMap<Integer, ClanHall>();
         load();
     }
 

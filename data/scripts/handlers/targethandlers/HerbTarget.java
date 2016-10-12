@@ -40,7 +40,7 @@ public class HerbTarget implements ISkillTargetTypeHandler
         L2PcInstance aPlayer = null;
         L2Summon aSummon = null;
 
-        final ArrayList<L2Character> _aResult = new ArrayList<>();
+        final ArrayList<L2Character> _aResult = new ArrayList<L2Character>();
 
         if (activeChar instanceof L2PcInstance)
         {

@@ -49,7 +49,7 @@ public class QuestLink implements IBypassHandler
         {
             quest = command.substring(5).trim();
         }
-        catch (IndexOutOfBoundsException ignored)
+        catch (IndexOutOfBoundsException ioobe)
         {
         }
         if (quest.length() == 0)
@@ -251,7 +251,7 @@ public class QuestLink implements IBypassHandler
     public static void showQuestWindow(L2PcInstance player, L2Npc npc)
     {
         // collect awaiting quests and start points
-        List<Quest> options = new ArrayList<>();
+        List<Quest> options = new ArrayList<Quest>();
 
         QuestState[] awaits = player.getQuestsForTalk(npc.getTemplate().NpcId);
         Quest[] starts = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);

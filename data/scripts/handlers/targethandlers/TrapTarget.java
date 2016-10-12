@@ -44,7 +44,7 @@ public class TrapTarget implements ISkillTargetTypeHandler
             return null;
         }
 
-        final ArrayList<L2Character> result = new ArrayList<>();
+        final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
         for (L2Character o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
         {

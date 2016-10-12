@@ -25,7 +25,7 @@ public class SoulCrystal
 {
     private final int _id;
     private final boolean _special;
-    private final List<EnsoulEffect> _effects = new ArrayList<>();
+    private final List<EnsoulEffect> _effects = new ArrayList<EnsoulEffect>();
 
     public SoulCrystal(int id, boolean special)
     {

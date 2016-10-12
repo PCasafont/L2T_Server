@@ -92,7 +92,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
                     Announcements.getInstance().addAnnouncement(val);
                     Announcements.getInstance().listAnnouncements(activeChar);
                 }
-                catch (StringIndexOutOfBoundsException ignored)
+                catch (StringIndexOutOfBoundsException e)
                 {
                 }// ignore errors
             }
@@ -105,7 +105,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
                 Announcements.getInstance().delAnnouncement(val);
                 Announcements.getInstance().listAnnouncements(activeChar);
             }
-            catch (StringIndexOutOfBoundsException ignored)
+            catch (StringIndexOutOfBoundsException e)
             {
             }
         }

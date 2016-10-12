@@ -79,7 +79,7 @@ public class AbilityTable
         }
     }
 
-    private TIntObjectHashMap<Ability> _abilities = new TIntObjectHashMap<>();
+    private TIntObjectHashMap<Ability> _abilities = new TIntObjectHashMap<Ability>();
 
     private static AbilityTable _instance;
 

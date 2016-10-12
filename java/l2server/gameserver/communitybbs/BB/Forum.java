@@ -66,8 +66,8 @@ public class Forum
     {
         _forumId = Forumid;
         _fParent = FParent;
-        _children = new ArrayList<>();
-        _topic = new HashMap<>();
+        _children = new ArrayList<Forum>();
+        _topic = new HashMap<Integer, Topic>();
 
 		/*load();
         getChildren();	*/
@@ -89,8 +89,8 @@ public class Forum
         _forumPerm = perm;
         _fParent = parent;
         _ownerID = OwnerID;
-        _children = new ArrayList<>();
-        _topic = new HashMap<>();
+        _children = new ArrayList<Forum>();
+        _topic = new HashMap<Integer, Topic>();
         parent._children.add(this);
         ForumsBBSManager.getInstance().addForum(this);
         _loaded = true;

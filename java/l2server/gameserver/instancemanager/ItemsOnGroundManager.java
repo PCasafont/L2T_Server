@@ -45,7 +45,7 @@ public class ItemsOnGroundManager
     {
         if (Config.SAVE_DROPPED_ITEM)
         {
-            _items = new ArrayList<>();
+            _items = new ArrayList<L2ItemInstance>();
         }
         if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
         {

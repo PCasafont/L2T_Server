@@ -17,7 +17,7 @@ public class ImageTable
 {
     private static ImageTable _instance;
 
-    private static Map<Integer, PledgeCrest> _images = new HashMap<>();
+    private static Map<Integer, PledgeCrest> _images = new HashMap<Integer, PledgeCrest>();
 
     public static ImageTable getInstance()
     {

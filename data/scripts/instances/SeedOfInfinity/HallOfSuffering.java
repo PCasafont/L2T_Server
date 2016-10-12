@@ -56,7 +56,7 @@ public class HallOfSuffering extends Quest
 
     private class HSWorld extends InstanceWorld
     {
-        public Map<L2Npc, Boolean> npcList = new HashMap<>();
+        public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
         public L2Npc klodekus = null;
         public L2Npc klanikus = null;
         public boolean isBossesAttacked = false;

@@ -49,7 +49,7 @@ public class MultiSell implements Reloadable
     public static final int FAME = -300;
     public static final int RAID_POINTS = -500;
 
-    private final Map<String, ListContainer> _entries = new HashMap<>();
+    private final Map<String, ListContainer> _entries = new HashMap<String, ListContainer>();
     private int _nextId = 1;
 
     public static MultiSell getInstance()
@@ -216,7 +216,7 @@ public class MultiSell implements Reloadable
 
     private final void load()
     {
-        List<File> files = new ArrayList<>();
+        List<File> files = new ArrayList<File>();
 
         if (!Config.SERVER_NAME.isEmpty())
         {

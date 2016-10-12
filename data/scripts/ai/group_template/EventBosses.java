@@ -39,7 +39,7 @@ public class EventBosses extends L2AttackableAIScript
     private static int _bossStatus = 0;
     private static final L2Skill _knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
     private static final L2Skill _finalUltimateDefense = SkillTable.getInstance().getInfo(10017, 4);
-    private static Map<L2PcInstance, String> _attackerIps = new HashMap<>();
+    private static Map<L2PcInstance, String> _attackerIps = new HashMap<L2PcInstance, String>();
 
     private static final String[][] _individualDrop = {
             //Boss id, itemId, chance, min, max;

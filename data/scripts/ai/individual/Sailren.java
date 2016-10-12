@@ -80,8 +80,8 @@ public class Sailren extends L2AttackableAIScript
 
     private L2BossZone _Zone = null;
 
-    private List<L2PcInstance> _playersInside = new ArrayList<>();
-    private ArrayList<Integer> _allowedPlayers = new ArrayList<>();
+    private List<L2PcInstance> _playersInside = new ArrayList<L2PcInstance>();
+    private ArrayList<Integer> _allowedPlayers = new ArrayList<Integer>();
 
     // Task
     protected ScheduledFuture<?> _activityCheckTask = null;
@@ -189,7 +189,7 @@ public class Sailren extends L2AttackableAIScript
     {
         if (event.equalsIgnoreCase("start"))
         {
-            velos = new ArrayList<>();
+            velos = new ArrayList<L2Npc>();
             int x, y;
             L2Npc temp;
             for (int i = 0; i < 3; i++)

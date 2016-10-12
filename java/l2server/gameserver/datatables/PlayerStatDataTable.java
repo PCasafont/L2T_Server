@@ -40,8 +40,9 @@ public class PlayerStatDataTable
         }
     }
 
-    private final Map<Integer, PlayerStatData> _regenData = new HashMap<>();
-    private final Map<Integer, Map<Integer, PlayerStatData>> _classMaxData = new HashMap<>();
+    private final Map<Integer, PlayerStatData> _regenData = new HashMap<Integer, PlayerStatData>();
+    private final Map<Integer, Map<Integer, PlayerStatData>> _classMaxData =
+            new HashMap<Integer, Map<Integer, PlayerStatData>>();
 
     public static PlayerStatDataTable getInstance()
     {
@@ -89,7 +90,7 @@ public class PlayerStatDataTable
                 continue;
             }
 
-            Map<Integer, PlayerStatData> statData = new HashMap<>();
+            Map<Integer, PlayerStatData> statData = new HashMap<Integer, PlayerStatData>();
             for (XmlNode statNode : n.getChildren())
             {
                 if (!statNode.getName().equalsIgnoreCase("statData"))

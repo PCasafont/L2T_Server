@@ -37,7 +37,7 @@ public class GenesisStatues extends L2AttackableAIScript
     private static final int[] _statues = {33138, 33139, 33140};
     private static final int[] _keepers = {23038, 23039, 23040};
     private static final L2Skill _blessingOfGarden = SkillTable.getInstance().getInfo(14200, 1);
-    private static Map<Integer, Long> _spawns = new HashMap<>(3);
+    private static Map<Integer, Long> _spawns = new HashMap<Integer, Long>(3);
 
     public GenesisStatues(int id, String name, String descr)
     {

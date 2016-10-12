@@ -49,7 +49,8 @@ public class NervaPrison extends L2AttackableAIScript
     private static final int _kaysen = 19458;
     private static final int _nervaKey = 36665;
     private static final int _kaiser = 23329;
-    private static final Map<L2ZoneType, List<L2DoorInstance>> _prisons = new HashMap<>();
+    private static final Map<L2ZoneType, List<L2DoorInstance>> _prisons =
+            new HashMap<L2ZoneType, List<L2DoorInstance>>();
 
     public NervaPrison(int id, String name, String descr)
     {
@@ -63,7 +64,7 @@ public class NervaPrison extends L2AttackableAIScript
 
         for (int i = 60052; i <= 60059; i++)
         {
-            List<L2DoorInstance> doors = new ArrayList<>(2);
+            List<L2DoorInstance> doors = new ArrayList<L2DoorInstance>(2);
             L2ZoneType zone = ZoneManager.getInstance().getZoneById(i);
             for (L2Character door : zone.getCharactersInside().values())
             {

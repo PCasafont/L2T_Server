@@ -154,7 +154,7 @@ public class FortSiegeManager
     {
         if (_sieges == null)
         {
-            _sieges = new ArrayList<>();
+            _sieges = new ArrayList<FortSiege>();
         }
         return _sieges;
     }
@@ -163,7 +163,7 @@ public class FortSiegeManager
     {
         if (_sieges == null)
         {
-            _sieges = new ArrayList<>();
+            _sieges = new ArrayList<FortSiege>();
         }
         _sieges.add(fortSiege);
     }

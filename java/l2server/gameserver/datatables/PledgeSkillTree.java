@@ -34,7 +34,7 @@ import java.util.Map;
  */
 public class PledgeSkillTree
 {
-    private Map<Long, L2PledgeSkillLearn> _skillTree = new HashMap<>();
+    private Map<Long, L2PledgeSkillLearn> _skillTree = new HashMap<Long, L2PledgeSkillLearn>();
 
     public PledgeSkillTree()
     {
@@ -118,7 +118,7 @@ public class PledgeSkillTree
 
     public L2PledgeSkillLearn[] getAvailableSkills(L2PcInstance cha)
     {
-        List<L2PledgeSkillLearn> result = new ArrayList<>();
+        List<L2PledgeSkillLearn> result = new ArrayList<L2PledgeSkillLearn>();
         Map<Long, L2PledgeSkillLearn> skills = _skillTree;
 
         if (skills == null)

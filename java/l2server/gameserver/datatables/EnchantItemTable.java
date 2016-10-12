@@ -254,8 +254,8 @@ public class EnchantItemTable implements Reloadable
         }
     }
 
-    private final TIntObjectHashMap<EnchantScroll> _scrolls = new TIntObjectHashMap<>();
-    private final TIntObjectHashMap<EnchantSupportItem> _supports = new TIntObjectHashMap<>();
+    private final TIntObjectHashMap<EnchantScroll> _scrolls = new TIntObjectHashMap<EnchantScroll>();
+    private final TIntObjectHashMap<EnchantSupportItem> _supports = new TIntObjectHashMap<EnchantSupportItem>();
 
     private static EnchantItemTable _instance;
 

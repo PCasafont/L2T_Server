@@ -51,10 +51,10 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class ArtificialPlayersManager implements Reloadable
 {
-    List<L2ApInstance> _players = new ArrayList<>();
+    List<L2ApInstance> _players = new ArrayList<L2ApInstance>();
 
     ScheduledFuture<?> _pvpCheck = null;
-    List<L2Party> _partiesSent = new ArrayList<>();
+    List<L2Party> _partiesSent = new ArrayList<L2Party>();
 
     private ArtificialPlayersManager()
     {
@@ -145,7 +145,7 @@ public class ArtificialPlayersManager implements Reloadable
                 }
 
                 int pvpers = 0;
-                Map<Integer, Integer> allies = new HashMap<>();
+                Map<Integer, Integer> allies = new HashMap<Integer, Integer>();
                 for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
                 {
                     if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) ||
@@ -338,7 +338,7 @@ public class ArtificialPlayersManager implements Reloadable
      */
     public L2Party createParty(List<Integer> classCombination)
     {
-        List<L2ApInstance> available = new ArrayList<>();
+        List<L2ApInstance> available = new ArrayList<L2ApInstance>();
 
         for (L2ApInstance player : _players)
         {
@@ -348,7 +348,7 @@ public class ArtificialPlayersManager implements Reloadable
             }
         }
 
-        List<L2ApInstance> members = new ArrayList<>();
+        List<L2ApInstance> members = new ArrayList<L2ApInstance>();
         for (L2ApInstance player : available)
         {
             if (classCombination.contains(player.getClassId()))
@@ -394,7 +394,7 @@ public class ArtificialPlayersManager implements Reloadable
      */
     public L2Party createRandomParty()
     {
-        List<Integer> classCombination = new ArrayList<>();
+        List<Integer> classCombination = new ArrayList<Integer>();
 
         // The healer is the leader
         classCombination.add(179 + Rnd.get(3));

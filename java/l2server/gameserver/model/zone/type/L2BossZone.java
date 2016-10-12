@@ -47,8 +47,8 @@ public class L2BossZone extends L2ZoneType
     {
         super(id);
 
-        _playerEntries = new HashMap<>();
-        _raidList = new CopyOnWriteArrayList<>();
+        _playerEntries = new HashMap<Integer, PlayerEntry>();
+        _raidList = new CopyOnWriteArrayList<L2Character>();
 
         GrandBossManager.getInstance().addZone(this);
     }
@@ -414,8 +414,8 @@ public class L2BossZone extends L2ZoneType
 
     public void kickDualBoxes()
     {
-        List<L2PcInstance> toBeKicked = new ArrayList<>();
-        Map<String, String> allPlayerIps = new HashMap<>();
+        List<L2PcInstance> toBeKicked = new ArrayList<L2PcInstance>();
+        Map<String, String> allPlayerIps = new HashMap<String, String>();
         for (L2PcInstance player : getPlayersInside())
         {
             if (player == null || !player.isOnline())

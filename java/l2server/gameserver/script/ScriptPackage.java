@@ -33,8 +33,8 @@ public class ScriptPackage
 
     public ScriptPackage(ZipFile pack)
     {
-        _scriptFiles = new ArrayList<>();
-        _otherFiles = new ArrayList<>();
+        _scriptFiles = new ArrayList<ScriptDocument>();
+        _otherFiles = new ArrayList<String>();
         _name = pack.getName();
         addFiles(pack);
     }

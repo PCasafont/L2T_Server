@@ -36,7 +36,7 @@ public class EnchantMultiSellTable implements Reloadable
     public static class EnchantMultiSellCategory
     {
         public int Id;
-        public Map<Integer, EnchantMultiSellEntry> Entries = new HashMap<>();
+        public Map<Integer, EnchantMultiSellEntry> Entries = new HashMap<Integer, EnchantMultiSellEntry>();
 
         public EnchantMultiSellCategory(int id)
         {
@@ -47,8 +47,8 @@ public class EnchantMultiSellTable implements Reloadable
     public static class EnchantMultiSellEntry
     {
         public int EnchantLevel;
-        public Map<Integer, Long> Ingredients = new LinkedHashMap<>();
-        public Map<Integer, Integer> Products = new LinkedHashMap<>();
+        public Map<Integer, Long> Ingredients = new LinkedHashMap<Integer, Long>();
+        public Map<Integer, Integer> Products = new LinkedHashMap<Integer, Integer>();
 
         public EnchantMultiSellEntry(int enchantLevel)
         {
@@ -56,7 +56,7 @@ public class EnchantMultiSellTable implements Reloadable
         }
     }
 
-    public Map<Integer, EnchantMultiSellCategory> _categories = new HashMap<>();
+    public Map<Integer, EnchantMultiSellCategory> _categories = new HashMap<Integer, EnchantMultiSellCategory>();
 
     private EnchantMultiSellTable()
     {

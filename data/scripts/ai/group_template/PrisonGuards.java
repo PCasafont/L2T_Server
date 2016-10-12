@@ -43,7 +43,7 @@ public class PrisonGuards extends L2AttackableAIScript
 
     private boolean _firstAttacked = false;
 
-    private Map<L2Npc, Integer> _guards = new HashMap<>();
+    private Map<L2Npc, Integer> _guards = new HashMap<L2Npc, Integer>();
 
     public PrisonGuards(int questId, String name, String descr)
     {

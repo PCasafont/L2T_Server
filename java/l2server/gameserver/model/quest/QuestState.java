@@ -221,7 +221,7 @@ public final class QuestState
     {
         if (_vars == null)
         {
-            _vars = new ConcurrentHashMap<>();
+            _vars = new ConcurrentHashMap<String, String>();
         }
 
         if (val == null)
@@ -251,7 +251,7 @@ public final class QuestState
     {
         if (_vars == null)
         {
-            _vars = new HashMap<>();
+            _vars = new HashMap<String, String>();
         }
 
         if (val == null)
@@ -1255,7 +1255,7 @@ public final class QuestState
             // Otherwise, delete variables for quest and update database (quest CANNOT be created again => not repeatable)
             if (_vars != null)
             {
-                Map<String, String> toIterate = new HashMap<>(_vars);
+                Map<String, String> toIterate = new HashMap<String, String>(_vars);
                 for (String var : toIterate.keySet())
                 {
                     unset(var);

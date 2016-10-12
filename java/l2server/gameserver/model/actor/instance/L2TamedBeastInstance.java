@@ -200,7 +200,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
     {
         if (_beastSkills == null)
         {
-            _beastSkills = new ArrayList<>();
+            _beastSkills = new ArrayList<L2Skill>();
         }
         _beastSkills.add(skill);
     }

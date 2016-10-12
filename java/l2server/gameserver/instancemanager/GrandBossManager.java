@@ -90,10 +90,10 @@ public class GrandBossManager
 
     private void init()
     {
-        _zones = new ArrayList<>();
+        _zones = new ArrayList<L2BossZone>();
 
-        _bosses = new HashMap<>();
-        _storedInfo = new TIntObjectHashMap<>();
+        _bosses = new HashMap<Integer, L2GrandBossInstance>();
+        _storedInfo = new TIntObjectHashMap<StatsSet>();
         _bossStatus = new TIntIntHashMap();
         Connection con = null;
         try
@@ -165,7 +165,7 @@ public class GrandBossManager
     {
         Connection con = null;
 
-        HashMap<Integer, ArrayList<Integer>> zones = new HashMap<>();
+        HashMap<Integer, ArrayList<Integer>> zones = new HashMap<Integer, ArrayList<Integer>>();
 
         if (_zones == null)
         {
@@ -179,7 +179,7 @@ public class GrandBossManager
             {
                 continue;
             }
-            zones.put(zone.getId(), new ArrayList<>());
+            zones.put(zone.getId(), new ArrayList<Integer>());
         }
 
         try

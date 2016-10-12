@@ -125,7 +125,7 @@ public class EffectSignetPDam extends L2Effect
             soul = weapon.getChargedSoulShot();
         }
 
-        ArrayList<L2Character> targets = new ArrayList<>();
+        ArrayList<L2Character> targets = new ArrayList<L2Character>();
 
         for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
         {

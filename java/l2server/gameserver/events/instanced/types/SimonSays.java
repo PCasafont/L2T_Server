@@ -25,9 +25,9 @@ public class SimonSays extends EventInstance
     private boolean _someoneFailed = false;
     private int _currentSocialActionId = 2;
     private SimonSaysTask _simonSaysTask;
-    private ArrayList<Integer> _actedPlayers = new ArrayList<>();
+    private ArrayList<Integer> _actedPlayers = new ArrayList<Integer>();
 
-    List<L2PcInstance> _winners = new ArrayList<>();
+    List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
 
     public SimonSays(int id, EventConfig config)
     {
@@ -226,7 +226,7 @@ public class SimonSays extends EventInstance
         CreatureSay cs3 =
                 new CreatureSay(0, Say2.TELL, "Instanced Events", "You have been disqualified for not doing anything!");
 
-        List<L2PcInstance> participants = new ArrayList<>(_teams[0].getParticipatedPlayers().values());
+        List<L2PcInstance> participants = new ArrayList<L2PcInstance>(_teams[0].getParticipatedPlayers().values());
         for (L2PcInstance playerInstance : participants)
         {
             if (playerInstance != null && !_actedPlayers.contains(playerInstance.getObjectId()))

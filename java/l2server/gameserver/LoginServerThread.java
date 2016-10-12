@@ -118,8 +118,8 @@ public class LoginServerThread extends Thread
         _reserveHost = Config.RESERVE_HOST_ON_LOGIN;
         _subnets = Config.GAME_SERVER_SUBNETS;
         _hosts = Config.GAME_SERVER_HOSTS;
-        _waitingClients = new ArrayList<>();
-        _accountsInGameServer = new ConcurrentHashMap<>();
+        _waitingClients = new ArrayList<WaitingClient>();
+        _accountsInGameServer = new ConcurrentHashMap<String, L2GameClient>();
         _maxPlayer = Config.MAXIMUM_ONLINE_USERS;
     }
 
@@ -291,7 +291,7 @@ public class LoginServerThread extends Thread
                             sendPacket(st);
                             if (L2World.getInstance().getAllPlayersCount() > 0)
                             {
-                                ArrayList<String> playerList = new ArrayList<>();
+                                ArrayList<String> playerList = new ArrayList<String>();
                                 Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
                                 //synchronized (L2World.getInstance().getAllPlayers())
                                 {
@@ -557,7 +557,7 @@ public class LoginServerThread extends Thread
     {
         Connection con = null;
         int chars = 0;
-        List<Long> charToDel = new ArrayList<>();
+        List<Long> charToDel = new ArrayList<Long>();
         try
         {
             con = L2DatabaseFactory.getInstance().getConnection();

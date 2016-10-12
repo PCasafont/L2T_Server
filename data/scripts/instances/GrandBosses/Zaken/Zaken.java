@@ -56,7 +56,7 @@ public class Zaken extends L2AttackableAIScript
     private static final int _barrelId = 32705;
 
     //Others
-    private static final List<L2ZoneType> _zakenRooms = new ArrayList<>(15);
+    private static final List<L2ZoneType> _zakenRooms = new ArrayList<L2ZoneType>(15);
 
     private static final Location[] _zakenSpawns = {
             new Location(54237, 218135, -3496),
@@ -76,7 +76,7 @@ public class Zaken extends L2AttackableAIScript
             new Location(56258, 220135, -2952)
     };
 
-    private static final Map<Location, Integer> _barrelSpawnsInfo = new HashMap<>();
+    private static final Map<Location, Integer> _barrelSpawnsInfo = new HashMap<Location, Integer>();
 
     {
         _barrelSpawnsInfo.put(new Location(53312, 220128, -3484), 120114); //ok
@@ -136,7 +136,7 @@ public class Zaken extends L2AttackableAIScript
 
         public ZakenWorld()
         {
-            barrelInfo = new HashMap<>();
+            barrelInfo = new HashMap<L2Npc, Integer>();
         }
     }
 
@@ -449,7 +449,7 @@ public class Zaken extends L2AttackableAIScript
 
             setupIDs((ZakenWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<>();
+            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
             if (_debug)
             {
                 allPlayers.add(player);

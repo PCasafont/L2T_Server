@@ -39,7 +39,7 @@ public class KnownListUpdateTaskManager
     // Do full update every FULL_UPDATE_TIMER * KNOWNLIST_UPDATE_INTERVAL
     public static int _fullUpdateTimer = FULL_UPDATE_TIMER;
 
-    private static final HashSet<L2WorldRegion> _failedRegions = new HashSet<>(1);
+    private static final HashSet<L2WorldRegion> _failedRegions = new HashSet<L2WorldRegion>(1);
 
     private KnownListUpdateTaskManager()
     {

@@ -98,7 +98,7 @@ public class EffectSignet extends L2Effect
 
         boolean signetActor = calc() != 0;
 
-        final ArrayList<L2Character> targets = new ArrayList<>();
+        final ArrayList<L2Character> targets = new ArrayList<L2Character>();
         for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
         {
             if (cha == null)

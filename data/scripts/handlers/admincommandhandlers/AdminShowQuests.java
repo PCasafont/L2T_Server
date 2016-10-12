@@ -115,7 +115,7 @@ public class AdminShowQuests implements IAdminCommandHandler
                 {
                     showquestmenu(target, activeChar, val);
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
             }
@@ -139,7 +139,7 @@ public class AdminShowQuests implements IAdminCommandHandler
                 {
                     setquestvar(target, activeChar, val);
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
                 ;
@@ -450,7 +450,7 @@ public class AdminShowQuests implements IAdminCommandHandler
         {
             showquestmenu(target, actor, outval);
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
         ;

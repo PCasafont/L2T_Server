@@ -46,8 +46,8 @@ public class Q10329_BackupSeekers extends Quest
     private int _apprentice = 33124;
 
     private int _guideId = 33204;
-    private List<L2NpcWalkerNode> _guideRoute1 = new ArrayList<>();
-    private List<L2NpcWalkerNode> _guideRoute2 = new ArrayList<>();
+    private List<L2NpcWalkerNode> _guideRoute1 = new ArrayList<L2NpcWalkerNode>();
+    private List<L2NpcWalkerNode> _guideRoute2 = new ArrayList<L2NpcWalkerNode>();
     private int _guideFirstChatId = 1811264;
     private int _guideWaitChatId = 1811265;
     private int _guideTalkId1 = 1811266;

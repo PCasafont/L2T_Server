@@ -56,7 +56,7 @@ public class MinionList
         }
 
         _master = pMaster;
-        _minionReferences = new CopyOnWriteArrayList<>();
+        _minionReferences = new CopyOnWriteArrayList<L2MonsterInstance>();
     }
 
     /**
@@ -190,7 +190,7 @@ public class MinionList
                 _master.getTemplate().getRandomMinionData() != null) && _master.getSpawn() != null &&
                 _master.getSpawn().isRespawnEnabled())
         {
-            _reusedMinionReferences = new ArrayList<>();
+            _reusedMinionReferences = new ArrayList<L2MonsterInstance>();
         }
     }
 
@@ -493,7 +493,7 @@ public class MinionList
 
     public final int lazyCountSpawnedMinionsGroups()
     {
-        Set<Integer> seenGroups = new HashSet<>();
+        Set<Integer> seenGroups = new HashSet<Integer>();
         for (L2MonsterInstance minion : _minionReferences)
         {
             if (minion == null)

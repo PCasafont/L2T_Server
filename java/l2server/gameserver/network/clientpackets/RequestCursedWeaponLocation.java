@@ -50,7 +50,7 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket
             return;
         }
 
-        List<CursedWeaponInfo> list = new ArrayList<>();
+        List<CursedWeaponInfo> list = new ArrayList<CursedWeaponInfo>();
         for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons())
         {
             if (!cw.isActive())

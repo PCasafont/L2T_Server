@@ -63,7 +63,7 @@ public class NpcTable
     // just wrapper
     public void reloadAllNpc()
     {
-        _npcs = new TIntObjectHashMap<>();
+        _npcs = new TIntObjectHashMap<L2NpcTemplate>();
 
         restoreNpcData(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs", false);
 
@@ -73,7 +73,7 @@ public class NpcTable
             for (int npcId : _npcs.keys())
             {
                 L2NpcTemplate npc = _npcs.get(npcId);
-                List<L2DropData> dropsToRemove = new ArrayList<>();
+                List<L2DropData> dropsToRemove = new ArrayList<L2DropData>();
                 for (L2DropData dd : npc.getDropData())
                 {
                     L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
@@ -607,7 +607,7 @@ public class NpcTable
 
     public L2NpcTemplate[] getAllTemplates()
     {
-        List<L2NpcTemplate> list = new ArrayList<>();
+        List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (Object t : _npcs.getValues())
         {
@@ -619,7 +619,7 @@ public class NpcTable
 
     public L2NpcTemplate[] getAllOfLevel(int lvl)
     {
-        List<L2NpcTemplate> list = new ArrayList<>();
+        List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (Object t : _npcs.getValues())
         {
@@ -634,7 +634,7 @@ public class NpcTable
 
     public L2NpcTemplate[] getAllMonstersOfLevel(int lvl)
     {
-        List<L2NpcTemplate> list = new ArrayList<>();
+        List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (Object t : _npcs.getValues())
         {
@@ -649,7 +649,7 @@ public class NpcTable
 
     public L2NpcTemplate[] getAllNpcStartingWith(String letter)
     {
-        List<L2NpcTemplate> list = new ArrayList<>();
+        List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (Object t : _npcs.getValues())
         {
@@ -690,7 +690,7 @@ public class NpcTable
 
     public final L2NpcTemplate[] getAllRaidBoss()
     {
-        final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+        final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (final Object t : _npcs.getValues())
         {
@@ -705,7 +705,7 @@ public class NpcTable
 
     public final L2NpcTemplate[] getAllMonsters()
     {
-        final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+        final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (final Object t : _npcs.getValues())
         {
@@ -719,7 +719,7 @@ public class NpcTable
 
     public final L2NpcTemplate[] getAllNpcByType(final String type)
     {
-        final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+        final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (final Object t : _npcs.getValues())
         {
@@ -733,7 +733,7 @@ public class NpcTable
 
     public final L2NpcTemplate[] getAllMonstersBetweenLevels(final int minLevel, final int maxLevel)
     {
-        final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+        final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 
         for (final Object t : _npcs.getValues())
         {

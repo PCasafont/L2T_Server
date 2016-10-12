@@ -36,7 +36,7 @@ public class DimensionalToIVortex extends Quest
     private static final int _greenDimensionalStone = 4401;
     private static final int _blueDimensionalStone = 4402;
     private static final int _redDimensionalStone = 4403;
-    private static Map<Integer, Location> _teleports = new HashMap<>(10);
+    private static Map<Integer, Location> _teleports = new HashMap<Integer, Location>(10);
 
     public DimensionalToIVortex(int questId, String name, String descr)
     {

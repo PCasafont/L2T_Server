@@ -28,7 +28,7 @@ public class EventsMatchMaker
 
     private MatchMakingTask _pvpTask;
     private MatchMakingTask _specialTask;
-    public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<>();
+    public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<Integer, EventInstance>();
     private int _nextInstanceId = 1;
 
     public static EventsMatchMaker getInstance()
@@ -70,7 +70,7 @@ public class EventsMatchMaker
     {
         private boolean _pvp = true;
         private EventConfig _currentConfig = null;
-        private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<>();
+        private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<Integer, L2PcInstance>();
         private int _prepareAttempts = 0;
         private int _fillProgress = 0;
 
@@ -83,7 +83,7 @@ public class EventsMatchMaker
         @Override
         public void run()
         {
-            List<Integer> toRemove = new ArrayList<>();
+            List<Integer> toRemove = new ArrayList<Integer>();
             try
             {
                 for (EventInstance event : Instances.values())
@@ -716,7 +716,7 @@ public class EventsMatchMaker
     public EventInstance createInstance(int id, int[] group, EventConfig config)
     {
         // A map of lists to access the players sorted by class
-        Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<>();
+        Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<Integer, List<L2PcInstance>>();
         // Classify the players according to their class
         for (int playerId : group)
         {
@@ -735,7 +735,7 @@ public class EventsMatchMaker
             List<L2PcInstance> players = playersByClass.get(classId);
             if (players == null)
             {
-                players = new ArrayList<>();
+                players = new ArrayList<L2PcInstance>();
                 playersByClass.put(classId, players);
             }
 

@@ -33,7 +33,7 @@ import java.util.logging.Level;
  */
 public class L2TradeList
 {
-    private final Map<Integer, L2TradeItem> _items = new LinkedHashMap<>();
+    private final Map<Integer, L2TradeItem> _items = new LinkedHashMap<Integer, L2TradeItem>();
     private final int _listId;
 
     private String _buystorename, _sellstorename;
@@ -132,7 +132,7 @@ public class L2TradeList
 
     public List<L2TradeItem> getItems(int start, int end)
     {
-        List<L2TradeItem> list = new LinkedList<>();
+        List<L2TradeItem> list = new LinkedList<L2TradeItem>();
         list.addAll(_items.values());
         return list.subList(start, end);
     }

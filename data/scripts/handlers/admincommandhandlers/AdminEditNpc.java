@@ -143,7 +143,7 @@ public class AdminEditNpc implements IAdminCommandHandler
             {
                 saveNpcProperty(activeChar, command);
             }
-            catch (StringIndexOutOfBoundsException ignored)
+            catch (StringIndexOutOfBoundsException e)
             {
             }
         }
@@ -837,7 +837,7 @@ public class AdminEditNpc implements IAdminCommandHandler
             return;
         }
 
-        Map<Integer, L2Skill> skills = new HashMap<>();
+        Map<Integer, L2Skill> skills = new HashMap<Integer, L2Skill>();
         if (npcData.getSkills() != null)
         {
             skills = npcData.getSkills();

@@ -67,7 +67,7 @@ public class HelperBuffTable
      */
     private HelperBuffTable()
     {
-        _helperBuff = new ArrayList<>();
+        _helperBuff = new ArrayList<L2HelperBuff>();
         restoreHelperBuffData();
     }
 

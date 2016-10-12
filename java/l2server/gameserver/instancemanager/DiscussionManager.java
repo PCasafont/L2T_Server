@@ -20,7 +20,7 @@ import java.util.List;
 
 public class DiscussionManager
 {
-    private List<Integer> _voted = new ArrayList<>();
+    private List<Integer> _voted = new ArrayList<Integer>();
     private int[] _votes = new int[10];
     private boolean _votesEnabled = false;
     private boolean _globalChatDisabled = false;

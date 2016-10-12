@@ -33,7 +33,7 @@ public class MentorManager
 
     public void load()
     {
-        coinsRewardForLevel = new HashMap<>();
+        coinsRewardForLevel = new HashMap<Integer, Integer>();
         coinsRewardForLevel.put(10, 1);
         coinsRewardForLevel.put(20, 25);
         coinsRewardForLevel.put(30, 30);

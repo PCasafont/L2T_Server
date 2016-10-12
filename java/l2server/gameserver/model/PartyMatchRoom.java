@@ -36,7 +36,7 @@ public class PartyMatchRoom
     private int _minlvl;
     private int _maxlvl;
     private int _maxmem;
-    private final List<L2PcInstance> _members = new ArrayList<>();
+    private final List<L2PcInstance> _members = new ArrayList<L2PcInstance>();
 
     public PartyMatchRoom(int id, String title, int loot, int minlvl, int maxlvl, int maxmem, L2PcInstance owner)
     {

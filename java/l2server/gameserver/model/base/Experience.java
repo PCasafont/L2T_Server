@@ -40,7 +40,7 @@ public class Experience
 
     public static void reload()
     {
-        Map<Integer, Long> levels = new HashMap<>();
+        Map<Integer, Long> levels = new HashMap<Integer, Long>();
         int maxLevel = 0;
         LineNumberReader lnr = null;
         try

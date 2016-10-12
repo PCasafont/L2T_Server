@@ -53,8 +53,10 @@ public class RegionBBSManager extends BaseBBSManager
 
     private int _onlineCount = 0;
     private int _onlineCountGm = 0;
-    private static Map<Integer, List<L2PcInstance>> _onlinePlayers = new ConcurrentHashMap<>();
-    private static Map<Integer, Map<String, String>> _communityPages = new ConcurrentHashMap<>();
+    private static Map<Integer, List<L2PcInstance>> _onlinePlayers =
+            new ConcurrentHashMap<Integer, List<L2PcInstance>>();
+    private static Map<Integer, Map<String, String>> _communityPages =
+            new ConcurrentHashMap<Integer, Map<String, String>>();
 
     @Override
     public void parsecmd(String command, L2PcInstance activeChar)
@@ -73,7 +75,7 @@ public class RegionBBSManager extends BaseBBSManager
             {
                 page = Integer.parseInt(st.nextToken());
             }
-            catch (NumberFormatException ignored)
+            catch (NumberFormatException nfe)
             {
             }
 
@@ -294,7 +296,7 @@ public class RegionBBSManager extends BaseBBSManager
      */
     public void changeCommunityBoard()
     {
-        final List<L2PcInstance> sortedPlayers = new ArrayList<>();
+        final List<L2PcInstance> sortedPlayers = new ArrayList<L2PcInstance>();
         for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
         {
             if (player != null)
@@ -352,7 +354,7 @@ public class RegionBBSManager extends BaseBBSManager
 
         if (!added)
         {
-            List<L2PcInstance> temp = new ArrayList<>();
+            List<L2PcInstance> temp = new ArrayList<L2PcInstance>();
             int page = _onlinePlayers.size() + 1;
             if (temp.add(player))
             {
@@ -380,7 +382,7 @@ public class RegionBBSManager extends BaseBBSManager
 
         for (int page : _onlinePlayers.keySet())
         {
-            Map<String, String> communityPage = new HashMap<>();
+            Map<String, String> communityPage = new HashMap<String, String>();
             htmlCode.setLength(0);
             StringUtil.append(htmlCode,
                     "<html><body><br><table>" + trOpen + "<td align=left valign=top>Server Restarted: ",

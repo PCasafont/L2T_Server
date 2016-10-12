@@ -54,7 +54,7 @@ public class InventoryUpdate extends L2ItemListPacket
 
     public InventoryUpdate()
     {
-        _items = new ArrayList<>();
+        _items = new ArrayList<ItemInfo>();
         if (Config.DEBUG)
         {
             showDebug();

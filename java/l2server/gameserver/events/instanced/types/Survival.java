@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Survival extends EventInstance
 {
-    List<L2PcInstance> _winners = new ArrayList<>();
+    List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
 
     public Survival(int id, EventConfig config)
     {

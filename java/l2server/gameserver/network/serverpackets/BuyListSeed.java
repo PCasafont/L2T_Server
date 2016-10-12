@@ -54,7 +54,7 @@ public final class BuyListSeed extends L2GameServerPacket
 
         if (seeds != null && seeds.size() > 0)
         {
-            _list = new ArrayList<>();
+            _list = new ArrayList<Seed>();
             for (SeedProduction s : seeds)
             {
                 if (s.getCanProduce() > 0 && s.getPrice() > 0)

@@ -37,7 +37,7 @@ public class XmlDocument
         _factory.setIgnoringComments(true);
     }
 
-    private List<XmlNode> _children = new ArrayList<>();
+    private List<XmlNode> _children = new ArrayList<XmlNode>();
 
     public XmlDocument(File file)
     {

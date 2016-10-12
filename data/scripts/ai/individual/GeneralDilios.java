@@ -38,7 +38,7 @@ public class GeneralDilios extends L2AttackableAIScript
     private static final int guardId = 32619;
 
     private L2Npc _general;
-    private List<L2Npc> _guards = new ArrayList<>();
+    private List<L2Npc> _guards = new ArrayList<L2Npc>();
 
     private static final int[] diliosText = {
             1800695,

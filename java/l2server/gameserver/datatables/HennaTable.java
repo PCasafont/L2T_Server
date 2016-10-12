@@ -43,7 +43,7 @@ public class HennaTable implements Reloadable
 
     private HennaTable()
     {
-        _henna = new TIntObjectHashMap<>();
+        _henna = new TIntObjectHashMap<L2Henna>();
         if (!Config.IS_CLASSIC)
         {
             restoreHennaData();

@@ -36,14 +36,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class PlayerClassTable implements Reloadable
 {
-    private Map<Integer, PlayerClass> _classes = new HashMap<>();
+    private Map<Integer, PlayerClass> _classes = new HashMap<Integer, PlayerClass>();
 
-    private Map<Long, Integer> _minSkillLevels = new HashMap<>();
+    private Map<Long, Integer> _minSkillLevels = new HashMap<Long, Integer>();
 
-    private final List<Integer> _mainSubclassSet = new ArrayList<>();
-    private final List<Integer> _neverSubclassed = new ArrayList<>();
+    private final List<Integer> _mainSubclassSet = new ArrayList<Integer>();
+    private final List<Integer> _neverSubclassed = new ArrayList<Integer>();
 
-    private final Map<Integer, List<Integer>> _awakeningBannedSubclasses = new HashMap<>();
+    private final Map<Integer, List<Integer>> _awakeningBannedSubclasses = new HashMap<Integer, List<Integer>>();
 
     public static PlayerClassTable getInstance()
     {
@@ -138,7 +138,7 @@ public class PlayerClassTable implements Reloadable
                             {
                                 int skillId = subNode.getInt("id");
                                 int replacedBy = subNode.getInt("replacedBy");
-                                Map<Long, L2SkillLearn> skills = new HashMap<>();
+                                Map<Long, L2SkillLearn> skills = new HashMap<Long, L2SkillLearn>();
                                 skills.putAll(cl.getSkills());
                                 for (long hash : skills.keySet())
                                 {
@@ -156,7 +156,7 @@ public class PlayerClassTable implements Reloadable
                             else if (subNode.getName().equalsIgnoreCase("skillRemoval"))
                             {
                                 int skillId = subNode.getInt("id");
-                                Map<Long, L2SkillLearn> skills = new HashMap<>();
+                                Map<Long, L2SkillLearn> skills = new HashMap<Long, L2SkillLearn>();
                                 skills.putAll(cl.getSkills());
                                 for (long hash : skills.keySet())
                                 {
@@ -172,7 +172,7 @@ public class PlayerClassTable implements Reloadable
                         // Remove low level skills
                         if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
                         {
-                            Set<Integer> toRemove = new HashSet<>();
+                            Set<Integer> toRemove = new HashSet<Integer>();
                             for (long hash : cl.getSkills().keySet())
                             {
                                 L2SkillLearn sl = cl.getSkills().get(hash);
@@ -186,7 +186,7 @@ public class PlayerClassTable implements Reloadable
                                 }
                             }
 
-                            Map<Long, L2SkillLearn> skills = new HashMap<>();
+                            Map<Long, L2SkillLearn> skills = new HashMap<Long, L2SkillLearn>();
                             skills.putAll(cl.getSkills());
                             for (long hash : skills.keySet())
                             {
@@ -201,7 +201,7 @@ public class PlayerClassTable implements Reloadable
                         if (Config.isServer(Config.TENKAI))
                         {
                             // Copy the map keys so that we avoid a concurrent modification exception
-                            Set<Long> skillHashes = new HashSet<>(cl.getSkills().keySet());
+                            Set<Long> skillHashes = new HashSet<Long>(cl.getSkills().keySet());
                             for (long hash : skillHashes)
                             {
                                 L2SkillLearn sl = cl.getSkills().get(hash);
@@ -292,7 +292,7 @@ public class PlayerClassTable implements Reloadable
             {
                 if (!_awakeningBannedSubclasses.containsKey(getAwakening(pc.getId())))
                 {
-                    List<Integer> list = new ArrayList<>();
+                    List<Integer> list = new ArrayList<Integer>();
                     _awakeningBannedSubclasses.put(getAwakening(pc.getId()), list);
                 }
                 _awakeningBannedSubclasses.get(getAwakening(pc.getId())).add(pc.getId());
@@ -366,7 +366,7 @@ public class PlayerClassTable implements Reloadable
             return null;
         }
 
-        List<Integer> subclasses = new CopyOnWriteArrayList<>();
+        List<Integer> subclasses = new CopyOnWriteArrayList<Integer>();
         if (player.getRace() != Race.Kamael)
         {
             subclasses.addAll(_mainSubclassSet);
@@ -428,7 +428,7 @@ public class PlayerClassTable implements Reloadable
 
         if (player.getRace() == Race.Ertheia)
         {
-            List<Integer> awakened = new ArrayList<>();
+            List<Integer> awakened = new ArrayList<Integer>();
             for (int subId : subclasses)
             {
                 for (PlayerClass cl : _classes.values())
@@ -450,7 +450,7 @@ public class PlayerClassTable implements Reloadable
 
     private final List<Integer> getList(Race race, int level)
     {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
         for (PlayerClass cl : _classes.values())
         {
             if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level))

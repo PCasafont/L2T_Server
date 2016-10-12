@@ -30,7 +30,7 @@ public class EnsoulEffect
     private final String _name;
     private final int _group;
     private final int _stage;
-    private final List<Func> _funcs = new ArrayList<>();
+    private final List<Func> _funcs = new ArrayList<Func>();
 
     public EnsoulEffect(int id, String name, int group, int stage)
     {

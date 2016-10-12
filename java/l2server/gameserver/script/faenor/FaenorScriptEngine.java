@@ -50,14 +50,14 @@ public class FaenorScriptEngine extends ScriptEngine
 
     private FaenorScriptEngine()
     {
-        _scripts = new LinkedList<>();
+        _scripts = new LinkedList<ScriptDocument>();
         loadPackages();
         parsePackages();
     }
 
     public void reloadPackages()
     {
-        _scripts = new LinkedList<>();
+        _scripts = new LinkedList<ScriptDocument>();
         parsePackages();
     }
 

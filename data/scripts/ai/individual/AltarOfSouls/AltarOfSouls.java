@@ -16,7 +16,7 @@ import java.util.Map;
 public class AltarOfSouls extends Quest
 {
     private static final String _qn = "AltarOfSouls";
-    private static final Map<Integer, Boolean> _spawnInfo = new HashMap<>(3);
+    private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
     private static final int[] _raidIds = {25944, 25943, 25942};
     private static final int[] _stoneIds = {38572, 38573, 38574};
     private static final int _altarOfSoulsId = 33920;

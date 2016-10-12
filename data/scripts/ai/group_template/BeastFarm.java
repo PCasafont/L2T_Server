@@ -88,9 +88,9 @@ public class BeastFarm extends L2AttackableAIScript
             18900
     };
 
-    private static Map<Integer, Integer> _FeedInfo = new HashMap<>();
-    private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new HashMap<>();
-    private static Map<String, SkillHolder[]> _TamedBeastsData = new HashMap<>();
+    private static Map<Integer, Integer> _FeedInfo = new HashMap<Integer, Integer>();
+    private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new HashMap<Integer, GrowthCapableMob>();
+    private static Map<String, SkillHolder[]> _TamedBeastsData = new HashMap<String, SkillHolder[]>();
 
     // all mobs that grow by eating
     private static class GrowthCapableMob
@@ -98,7 +98,7 @@ public class BeastFarm extends L2AttackableAIScript
         private int _chance;
         private int _growthLevel;
         private int _tameNpcId;
-        private Map<Integer, Integer> _skillSuccessNpcIdList = new HashMap<>();
+        private Map<Integer, Integer> _skillSuccessNpcIdList = new HashMap<Integer, Integer>();
 
         public GrowthCapableMob(int chance, int growthLevel, int tameNpcId)
         {

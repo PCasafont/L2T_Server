@@ -48,7 +48,7 @@ public class AdminBuffs implements IAdminCommandHandler
                         }
                     }
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
 
@@ -157,7 +157,7 @@ public class AdminBuffs implements IAdminCommandHandler
                 {
                     player = L2World.getInstance().getPlayer(playername);
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
 
@@ -282,7 +282,7 @@ public class AdminBuffs implements IAdminCommandHandler
         {
             target = (L2Character) L2World.getInstance().findObject(objId);
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
 
@@ -316,7 +316,7 @@ public class AdminBuffs implements IAdminCommandHandler
         {
             target = (L2Character) L2World.getInstance().findObject(objId);
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
 

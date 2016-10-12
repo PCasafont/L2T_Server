@@ -32,7 +32,7 @@ import java.util.Iterator;
  */
 public class SubPledgeSkillTree
 {
-    private TLongObjectHashMap<SubUnitSkill> _skilltree = new TLongObjectHashMap<>();
+    private TLongObjectHashMap<SubUnitSkill> _skilltree = new TLongObjectHashMap<SubPledgeSkillTree.SubUnitSkill>();
 
     public SubPledgeSkillTree()
     {
@@ -181,7 +181,7 @@ public class SubPledgeSkillTree
 
     public SubUnitSkill[] getAvailableSkills(L2Clan clan)
     {
-        ArrayList<SubUnitSkill> list = new ArrayList<>();
+        ArrayList<SubUnitSkill> list = new ArrayList<SubUnitSkill>();
         for (Object obj : _skilltree.getValues())
         {
             SubUnitSkill skill = (SubUnitSkill) obj;

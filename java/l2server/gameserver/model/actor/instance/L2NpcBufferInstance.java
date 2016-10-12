@@ -350,7 +350,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
             }
         }
 
-        List<Integer> _buffIds = new ArrayList<>();
+        List<Integer> _buffIds = new ArrayList<Integer>();
         for (int a = 14779; a <= 14790; a++)
         {
             if (a == 14785 && type != 0)

@@ -38,7 +38,7 @@ import java.util.Map;
  */
 public class EventPrizesTable implements Reloadable
 {
-    private final Map<String, List<EventPrize>> _prizes = new HashMap<>();
+    private final Map<String, List<EventPrize>> _prizes = new HashMap<String, List<EventPrize>>();
 
     private EventPrizesTable()
     {
@@ -79,7 +79,7 @@ public class EventPrizesTable implements Reloadable
                     List<EventPrize> list = _prizes.get(name);
                     if (list == null)
                     {
-                        list = new ArrayList<>();
+                        list = new ArrayList<EventPrize>();
                         _prizes.put(name, list);
                     }
 

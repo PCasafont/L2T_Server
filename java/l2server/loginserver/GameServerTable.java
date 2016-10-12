@@ -50,10 +50,10 @@ public class GameServerTable
     private static GameServerTable _instance;
 
     // Server Names Config
-    private static Map<Integer, String> _serverNames = new HashMap<>();
+    private static Map<Integer, String> _serverNames = new HashMap<Integer, String>();
 
     // Game Server Table
-    private Map<Integer, GameServerInfo> _gameServerTable = new ConcurrentHashMap<>();
+    private Map<Integer, GameServerInfo> _gameServerTable = new ConcurrentHashMap<Integer, GameServerInfo>();
 
     // RSA Config
     private static final int KEYS_SIZE = 10;
@@ -266,7 +266,7 @@ public class GameServerTable
         private int _status;
 
         // network
-        private ArrayList<GameServerAddress> _addrs = new ArrayList<>(5);
+        private ArrayList<GameServerAddress> _addrs = new ArrayList<GameServerAddress>(5);
         private int _port;
 
         // config

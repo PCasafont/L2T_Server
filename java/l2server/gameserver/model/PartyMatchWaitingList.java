@@ -29,7 +29,7 @@ public class PartyMatchWaitingList
 
     private PartyMatchWaitingList()
     {
-        _members = new ArrayList<>();
+        _members = new ArrayList<L2PcInstance>();
     }
 
     public void addPlayer(L2PcInstance player)

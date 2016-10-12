@@ -45,7 +45,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 
     private static final String MPCS_FILE = "MerchantPriceConfig.xml";
 
-    private Map<Integer, MerchantPriceConfig> _mpcs = new HashMap<>();
+    private Map<Integer, MerchantPriceConfig> _mpcs = new HashMap<Integer, MerchantPriceConfig>();
     private MerchantPriceConfig _defaultMpc;
 
     private MerchantPriceConfigTable()

@@ -84,8 +84,8 @@ public class Spezion extends L2AttackableAIScript
         {
             isHardMode = false;
             spezionGuards = new int[3];
-            minions = new ArrayList<>();
-            fakeMonsters = new ArrayList<>();
+            minions = new ArrayList<L2Npc>();
+            fakeMonsters = new ArrayList<L2Npc>();
         }
     }
 
@@ -414,7 +414,7 @@ public class Spezion extends L2AttackableAIScript
 
             setupIDs((PrisonOfDarknessWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<>();
+            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
             if (_debug)
             {
                 allPlayers.add(player);

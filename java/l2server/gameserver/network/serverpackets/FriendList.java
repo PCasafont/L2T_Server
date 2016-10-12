@@ -70,7 +70,7 @@ public class FriendList extends L2GameServerPacket
 
     public FriendList(L2PcInstance player)
     {
-        _info = new ArrayList<>(player.getFriendList().size());
+        _info = new ArrayList<FriendInfo>(player.getFriendList().size());
         for (int objId : player.getFriendList())
         {
             memo = player.getFriendMemo(objId);

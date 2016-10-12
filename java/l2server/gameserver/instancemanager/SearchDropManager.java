@@ -39,15 +39,15 @@ import java.util.Map.Entry;
 
 public class SearchDropManager
 {
-    private static Map<Integer, Drops> _allDrops = new HashMap<>();
+    private static Map<Integer, Drops> _allDrops = new HashMap<Integer, Drops>();
 
     private class Drops
     {
         private int _itemId;
         private String _iemName;
         private String _itemIcon;
-        private List<L2NpcTemplate> _droppedBy = new ArrayList<>();
-        private List<L2NpcTemplate> _spoilBy = new ArrayList<>();
+        private List<L2NpcTemplate> _droppedBy = new ArrayList<L2NpcTemplate>();
+        private List<L2NpcTemplate> _spoilBy = new ArrayList<L2NpcTemplate>();
 
         private Drops(int itemId, L2NpcTemplate npc, boolean isSpoil)
         {
@@ -104,8 +104,8 @@ public class SearchDropManager
 
     private List<Drops> getPossibleDropItem(String name)
     {
-        List<Drops> toReturn = new ArrayList<>();
-        List<String> itemNames = new ArrayList<>();
+        List<Drops> toReturn = new ArrayList<Drops>();
+        List<String> itemNames = new ArrayList<String>();
         for (Entry<Integer, Drops> i : _allDrops.entrySet())
         {
             Drops d = i.getValue();
@@ -147,8 +147,8 @@ public class SearchDropManager
             overrideDrops(temp);
         }
 
-        Map<L2DropData, Float> drops = new HashMap<>();
-        Map<L2DropData, Float> spoilDrop = new HashMap<>();
+        Map<L2DropData, Float> drops = new HashMap<L2DropData, Float>();
+        Map<L2DropData, Float> spoilDrop = new HashMap<L2DropData, Float>();
 
         if (!temp.getMultiDropData().isEmpty())
         {
@@ -377,7 +377,7 @@ public class SearchDropManager
         for (Entry<Integer, Drops> i : _allDrops.entrySet())
         {
             Drops d = i.getValue();
-            List<L2NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));
+            List<L2NpcTemplate> dropped = new ArrayList<L2NpcTemplate>(d.getDroppedBy(false));
             for (L2NpcTemplate b : dropped)
             {
                 if (b.NpcId == temp.NpcId)
@@ -386,7 +386,7 @@ public class SearchDropManager
                 }
             }
 
-            dropped = new ArrayList<>(d.getDroppedBy(true));
+            dropped = new ArrayList<L2NpcTemplate>(d.getDroppedBy(true));
             for (L2NpcTemplate b : dropped)
             {
                 if (b.NpcId == temp.NpcId)

@@ -39,7 +39,7 @@ import java.util.HashMap;
 
 public class SagasSuperClass extends QuestJython
 {
-    private static ArrayList<Quest> _scripts = new ArrayList<>();
+    private static ArrayList<Quest> _scripts = new ArrayList<Quest>();
     public String qn = "SagasSuperClass";
     public int qnu;
     public int[] NPC = {};
@@ -51,7 +51,7 @@ public class SagasSuperClass extends QuestJython
     public int[] Y = {};
     public int[] Z = {};
     public String[] Text = {};
-    HashMap<L2Npc, Integer> _SpawnList = new HashMap<>();
+    HashMap<L2Npc, Integer> _SpawnList = new HashMap<L2Npc, Integer>();
 
     int[] QuestClass[] = {
             {0x7f},
@@ -1008,7 +1008,7 @@ public class SagasSuperClass extends QuestJython
                 L2Party party = player.getParty();
                 if (party != null)
                 {
-                    ArrayList<QuestState> PartyQuestMembers = new ArrayList<>();
+                    ArrayList<QuestState> PartyQuestMembers = new ArrayList<QuestState>();
                     for (L2PcInstance player1 : party.getPartyMembers())
                     {
                         QuestState st1 = findQuest(player1);

@@ -30,7 +30,7 @@ import l2server.util.Rnd;
  */
 public class PolymorphingOnAttack extends L2AttackableAIScript
 {
-    private static final TIntObjectHashMap<Integer[]> MOBSPAWNS = new TIntObjectHashMap<>();
+    private static final TIntObjectHashMap<Integer[]> MOBSPAWNS = new TIntObjectHashMap<Integer[]>();
 
     static
     {

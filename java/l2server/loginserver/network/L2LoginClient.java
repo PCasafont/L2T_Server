@@ -240,7 +240,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
     {
         if (_charsOnServers == null)
         {
-            _charsOnServers = new HashMap<>();
+            _charsOnServers = new HashMap<Integer, Integer>();
         }
         _charsOnServers.put(servId, chars);
     }
@@ -254,7 +254,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
     {
         if (_charsToDelete == null)
         {
-            _charsToDelete = new HashMap<>();
+            _charsToDelete = new HashMap<Integer, long[]>();
         }
         _charsToDelete.put(servId, charsToDel);
     }

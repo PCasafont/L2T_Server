@@ -57,9 +57,9 @@ public final class L2WorldRegion
 
     public L2WorldRegion(int pTileX, int pTileY)
     {
-        _allPlayable = new ConcurrentHashMap<>();
-        _visibleObjects = new ConcurrentHashMap<>();
-        _surroundingRegions = new ArrayList<>();
+        _allPlayable = new ConcurrentHashMap<Integer, L2Playable>();
+        _visibleObjects = new ConcurrentHashMap<Integer, L2Object>();
+        _surroundingRegions = new ArrayList<L2WorldRegion>();
 
         _tileX = pTileX;
         _tileY = pTileY;
@@ -73,7 +73,7 @@ public final class L2WorldRegion
         {
             _active = false;
         }
-        _zones = new ArrayList<>();
+        _zones = new ArrayList<L2ZoneType>();
     }
 
     public ArrayList<L2ZoneType> getZones()

@@ -76,8 +76,8 @@ public final class OlympiadGameTask implements Runnable
         zone.registerTask(this, id);
         InstanceManager.getInstance().createInstance(id + Olympiad.BASE_INSTANCE_ID);
         Instance instance = InstanceManager.getInstance().getInstance(id + Olympiad.BASE_INSTANCE_ID);
-        _buffers = new ArrayList<>(2);
-        _doors = new ArrayList<>(2);
+        _buffers = new ArrayList<L2Spawn>(2);
+        _doors = new ArrayList<L2DoorInstance>(2);
 
         StatsSet set = new StatsSet();
         int door1Id = 17100001 + id % 4 * 100;

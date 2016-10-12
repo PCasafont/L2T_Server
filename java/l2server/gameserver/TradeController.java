@@ -42,7 +42,7 @@ import java.util.logging.Level;
 public class TradeController implements Reloadable
 {
 
-    private Map<Integer, L2TradeList> _lists = new HashMap<>();
+    private Map<Integer, L2TradeList> _lists = new HashMap<Integer, L2TradeList>();
 
     public static TradeController getInstance()
     {
@@ -254,7 +254,7 @@ public class TradeController implements Reloadable
 
     public List<L2TradeList> getBuyListByNpcId(int npcId)
     {
-        List<L2TradeList> lists = new ArrayList<>();
+        List<L2TradeList> lists = new ArrayList<L2TradeList>();
         Collection<L2TradeList> values = _lists.values();
 
         for (L2TradeList list : values)

@@ -89,7 +89,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
         {
             _count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
 

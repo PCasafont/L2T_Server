@@ -25,7 +25,7 @@ import java.util.Map;
  */
 public class BossManager
 {
-    private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<>();
+    private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<Integer, L2RaidBossInstance>();
 
     public static BossManager getInstance()
     {

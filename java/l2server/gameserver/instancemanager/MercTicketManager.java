@@ -1847,7 +1847,7 @@ public class MercTicketManager
             {
                 if (_droppedTickets == null)
                 {
-                    _droppedTickets = new ArrayList<>();
+                    _droppedTickets = new ArrayList<L2ItemInstance>();
                 }
             }
         }

@@ -37,7 +37,7 @@ public class StackIDFactory extends IdFactory
     private int _curOID;
     private int _tempOID;
 
-    private Stack<Integer> _freeOIDStack = new Stack<>();
+    private Stack<Integer> _freeOIDStack = new Stack<Integer>();
 
     protected StackIDFactory()
     {

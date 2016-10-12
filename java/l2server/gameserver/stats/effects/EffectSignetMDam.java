@@ -126,7 +126,7 @@ public class EffectSignetMDam extends L2Effect
             weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
         }
 
-        ArrayList<L2Character> targets = new ArrayList<>();
+        ArrayList<L2Character> targets = new ArrayList<L2Character>();
 
         for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
         {

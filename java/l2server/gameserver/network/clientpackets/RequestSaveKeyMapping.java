@@ -32,8 +32,8 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 {
     int _tabNum;
 
-    Map<Integer, List<ActionKey>> _keyMap = new HashMap<>();
-    Map<Integer, List<Integer>> _catMap = new HashMap<>();
+    Map<Integer, List<ActionKey>> _keyMap = new HashMap<Integer, List<ActionKey>>();
+    Map<Integer, List<Integer>> _catMap = new HashMap<Integer, List<Integer>>();
 
     /**
      * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -87,7 +87,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
         }
         else
         {
-            List<Integer> tmp = new ArrayList<>();
+            List<Integer> tmp = new ArrayList<Integer>();
             tmp.add(cmd);
             _catMap.put(cat, tmp);
         }
@@ -102,7 +102,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
         }
         else
         {
-            List<ActionKey> tmp = new ArrayList<>();
+            List<ActionKey> tmp = new ArrayList<ActionKey>();
             tmp.add(tmk);
             _keyMap.put(cat, tmp);
         }

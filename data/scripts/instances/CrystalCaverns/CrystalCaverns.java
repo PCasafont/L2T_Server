@@ -53,31 +53,31 @@ public class CrystalCaverns extends Quest
 
     private class CCWorld extends InstanceWorld
     {
-        public Map<L2Npc, Boolean> npcList1 = new HashMap<>();
+        public Map<L2Npc, Boolean> npcList1 = new HashMap<L2Npc, Boolean>();
         public L2Npc tears;
         public boolean isUsedInvulSkill = false;
         public long dragonScaleStart = 0;
         public int dragonScaleNeed = 0;
         public int cleanedRooms = 0;
         public long endTime = 0;
-        public List<L2Npc> copys = new ArrayList<>();
-        public Map<L2Npc, CrystalGolem> crystalGolems = new HashMap<>();
+        public List<L2Npc> copys = new ArrayList<L2Npc>();
+        public Map<L2Npc, CrystalGolem> crystalGolems = new HashMap<L2Npc, CrystalGolem>();
         public int correctGolems = 0;
         public boolean[] OracleTriggered = {false, false, false};
         public int kechisHenchmanSpawn = 0;
         public int[] roomsStatus = {0, 0, 0, 0}; // 0: not spawned, 1: spawned, 2: cleared
-        public Map<L2DoorInstance, L2PcInstance> openedDoors = new HashMap<>();
-        public Map<Integer, Map<L2Npc, Boolean>> npcList2 = new HashMap<>();
-        public Map<L2Npc, L2Npc> oracles = new HashMap<>();
-        public List<L2Npc> keyKeepers = new ArrayList<>();
-        public List<L2Npc> guards = new ArrayList<>();
-        public List<L2Npc> oracle = new ArrayList<>();
+        public Map<L2DoorInstance, L2PcInstance> openedDoors = new HashMap<L2DoorInstance, L2PcInstance>();
+        public Map<Integer, Map<L2Npc, Boolean>> npcList2 = new HashMap<Integer, Map<L2Npc, Boolean>>();
+        public Map<L2Npc, L2Npc> oracles = new HashMap<L2Npc, L2Npc>();
+        public List<L2Npc> keyKeepers = new ArrayList<L2Npc>();
+        public List<L2Npc> guards = new ArrayList<L2Npc>();
+        public List<L2Npc> oracle = new ArrayList<L2Npc>();
         // baylor variables
-        private List<L2PcInstance> _raiders = new ArrayList<>();
+        private List<L2PcInstance> _raiders = new ArrayList<L2PcInstance>();
         private int _raidStatus = 0;
         private long _dragonClawStart = 0;
         private int _dragonClawNeed = 0;
-        private List<L2Npc> _animationMobs = new ArrayList<>();
+        private List<L2Npc> _animationMobs = new ArrayList<L2Npc>();
         private L2Npc _camera = null;
         private L2Npc _baylor = null;
         private L2Npc _alarm = null;
@@ -765,7 +765,7 @@ public class CrystalCaverns extends Quest
     {
         world.status = 3;
 
-        Map<L2Npc, Boolean> spawnList = new HashMap<>();
+        Map<L2Npc, Boolean> spawnList = new HashMap<L2Npc, Boolean>();
         for (int[] spawn : EMERALD_SPAWNS)
         {
             L2Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.instanceId);
@@ -776,7 +776,7 @@ public class CrystalCaverns extends Quest
 
     protected void runEmeraldRooms(CCWorld world, int[][] spawnList, int room)
     {
-        Map<L2Npc, Boolean> spawned = new HashMap<>();
+        Map<L2Npc, Boolean> spawned = new HashMap<L2Npc, Boolean>();
         for (int[] spawn : spawnList)
         {
             L2Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.instanceId);
@@ -804,7 +804,7 @@ public class CrystalCaverns extends Quest
     {
         world.status = status;
 
-        Map<L2Npc, Boolean> spawned = new HashMap<>();
+        Map<L2Npc, Boolean> spawned = new HashMap<L2Npc, Boolean>();
         for (int[] spawn : spawnList)
         {
             L2Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.instanceId);
@@ -1405,7 +1405,7 @@ public class CrystalCaverns extends Quest
                     return "";
                 }
                 CrystalGolem cryGolem = world.crystalGolems.get(npc);
-                List<L2Object> crystals = new ArrayList<>();
+                List<L2Object> crystals = new ArrayList<L2Object>();
                 for (L2Object object : L2World.getInstance().getVisibleObjects(npc, 300))
                 {
                     if (object instanceof L2ItemInstance && ((L2ItemInstance) object).getItemId() == CRYSTALFOOD)

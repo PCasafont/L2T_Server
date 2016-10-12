@@ -86,7 +86,7 @@ public class CharEffectList
         }
 
         // Create a copy of the effects
-        ArrayList<L2Abnormal> temp = new ArrayList<>();
+        ArrayList<L2Abnormal> temp = new ArrayList<L2Abnormal>();
 
         // Add all buffs and all debuffs
         if (_buffs != null)
@@ -125,7 +125,7 @@ public class CharEffectList
         }
 
         // Create a copy of the effects
-        ArrayList<L2Abnormal> temp = new ArrayList<>();
+        ArrayList<L2Abnormal> temp = new ArrayList<L2Abnormal>();
 
         if (_debuffs != null)
         {
@@ -673,7 +673,7 @@ public class CharEffectList
     public final void stopEffects(L2AbnormalType type)
     {
         // Go through all active skills effects
-        ArrayList<L2Abnormal> temp = new ArrayList<>();
+        ArrayList<L2Abnormal> temp = new ArrayList<L2Abnormal>();
         if (_buffs != null)
         {
             //synchronized (_buffs)
@@ -728,7 +728,7 @@ public class CharEffectList
     public final void stopEffects(L2EffectType type)
     {
         // Go through all active skills effects
-        ArrayList<L2Abnormal> temp = new ArrayList<>();
+        ArrayList<L2Abnormal> temp = new ArrayList<L2Abnormal>();
         if (_buffs != null)
         {
             //synchronized (_buffs)
@@ -783,7 +783,7 @@ public class CharEffectList
     public final void stopSkillEffects(int skillId)
     {
         // Go through all active skills effects
-        ArrayList<L2Abnormal> temp = new ArrayList<>();
+        ArrayList<L2Abnormal> temp = new ArrayList<L2Abnormal>();
         if (_buffs != null)
         {
             //synchronized (_buffs)
@@ -957,8 +957,8 @@ public class CharEffectList
             return;
         }
 
-        _addQueue = new LinkedBlockingQueue<>();
-        _removeQueue = new LinkedBlockingQueue<>();
+        _addQueue = new LinkedBlockingQueue<L2Abnormal>();
+        _removeQueue = new LinkedBlockingQueue<L2Abnormal>();
         _queuesInitialized = true;
     }
 
@@ -1122,7 +1122,7 @@ public class CharEffectList
         {
             if (_debuffs == null)
             {
-                _debuffs = new CopyOnWriteArrayList<>();
+                _debuffs = new CopyOnWriteArrayList<L2Abnormal>();
             }
 
             for (L2Abnormal e : _debuffs)
@@ -1149,7 +1149,7 @@ public class CharEffectList
         {
             if (_buffs == null)
             {
-                _buffs = new CopyOnWriteArrayList<>();
+                _buffs = new CopyOnWriteArrayList<L2Abnormal>();
             }
 
             for (L2Abnormal e : _buffs)
@@ -1354,12 +1354,12 @@ public class CharEffectList
 
         if (_stackedEffects == null)
         {
-            _stackedEffects = new HashMap<>();
+            _stackedEffects = new HashMap<String, List<L2Abnormal>>();
         }
 
-        Set<L2Abnormal> effectsToAdd = new HashSet<>();
-        Set<L2Abnormal> effectsToRemove = new HashSet<>();
-        Set<L2Abnormal> removed = new HashSet<>();
+        Set<L2Abnormal> effectsToAdd = new HashSet<L2Abnormal>();
+        Set<L2Abnormal> effectsToRemove = new HashSet<L2Abnormal>();
+        Set<L2Abnormal> removed = new HashSet<L2Abnormal>();
         for (String stackType : newEffect.getStackType())
         {
             L2Abnormal effectToAdd = null;
@@ -1419,7 +1419,7 @@ public class CharEffectList
             }
             else
             {
-                stackQueue = new ArrayList<>();
+                stackQueue = new ArrayList<L2Abnormal>();
                 stackQueue.add(0, newEffect);
             }
 

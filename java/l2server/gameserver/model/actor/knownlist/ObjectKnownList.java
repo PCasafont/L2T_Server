@@ -222,7 +222,7 @@ public class ObjectKnownList
     {
         if (_knownObjects == null)
         {
-            _knownObjects = new ConcurrentHashMap<>();
+            _knownObjects = new ConcurrentHashMap<Integer, L2Object>();
         }
         return _knownObjects;
     }

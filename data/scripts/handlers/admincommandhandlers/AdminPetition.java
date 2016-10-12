@@ -47,7 +47,7 @@ public class AdminPetition implements IAdminCommandHandler
         {
             petitionId = Integer.parseInt(command.split(" ")[1]);
         }
-        catch (Exception ignored)
+        catch (Exception e)
         {
         }
 

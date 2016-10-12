@@ -194,7 +194,7 @@ public class RevelationSkills extends Quest
     {
         int skillCount = 0;
 
-        List<Integer> haveSkills = new ArrayList<>();
+        List<Integer> haveSkills = new ArrayList<Integer>();
         for (L2Skill skill : player.getAllSkills())
         {
             if (skill == null)

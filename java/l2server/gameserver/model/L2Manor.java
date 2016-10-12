@@ -38,7 +38,7 @@ public class L2Manor
 
     private L2Manor()
     {
-        _seeds = new ConcurrentHashMap<>();
+        _seeds = new ConcurrentHashMap<Integer, SeedData>();
         parseData();
     }
 
@@ -49,7 +49,7 @@ public class L2Manor
 
     public ArrayList<Integer> getAllCrops()
     {
-        ArrayList<Integer> crops = new ArrayList<>();
+        ArrayList<Integer> crops = new ArrayList<Integer>();
 
         for (SeedData seed : _seeds.values())
         {
@@ -228,7 +228,7 @@ public class L2Manor
      */
     public ArrayList<Integer> getCropsForCastle(int castleId)
     {
-        ArrayList<Integer> crops = new ArrayList<>();
+        ArrayList<Integer> crops = new ArrayList<Integer>();
 
         for (SeedData seed : _seeds.values())
         {
@@ -249,7 +249,7 @@ public class L2Manor
      */
     public ArrayList<Integer> getSeedsForCastle(int castleId)
     {
-        ArrayList<Integer> seedsID = new ArrayList<>();
+        ArrayList<Integer> seedsID = new ArrayList<Integer>();
 
         for (SeedData seed : _seeds.values())
         {

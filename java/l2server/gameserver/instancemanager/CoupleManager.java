@@ -167,7 +167,7 @@ public class CoupleManager
     {
         if (_couples == null)
         {
-            _couples = new ArrayList<>();
+            _couples = new ArrayList<Couple>();
         }
         return _couples;
     }

@@ -79,7 +79,7 @@ public class AdminSiege implements IAdminCommandHandler
                 {
                     clanhall = ClanHallManager.getInstance().getClanHallById(Integer.parseInt(st.nextToken()));
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
             }

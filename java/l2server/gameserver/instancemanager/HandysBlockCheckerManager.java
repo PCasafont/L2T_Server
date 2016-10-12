@@ -52,7 +52,7 @@ public final class HandysBlockCheckerManager
     private static HashMap<Integer, Boolean> _arenaStatus;
 
     // Registration request penalty (10 seconds)
-    private static ArrayList<Integer> _registrationPenalty = new ArrayList<>();
+    private static ArrayList<Integer> _registrationPenalty = new ArrayList<Integer>();
 
     /**
      * Return the number of event-start votes for the spcified
@@ -112,7 +112,7 @@ public final class HandysBlockCheckerManager
         // Initialize arena status
         if (_arenaStatus == null)
         {
-            _arenaStatus = new HashMap<>();
+            _arenaStatus = new HashMap<Integer, Boolean>();
             _arenaStatus.put(0, false);
             _arenaStatus.put(1, false);
             _arenaStatus.put(2, false);
@@ -402,8 +402,8 @@ public final class HandysBlockCheckerManager
         public ArenaParticipantsHolder(int arena)
         {
             _arena = arena;
-            _redPlayers = new ArrayList<>(6);
-            _bluePlayers = new ArrayList<>(6);
+            _redPlayers = new ArrayList<L2PcInstance>(6);
+            _bluePlayers = new ArrayList<L2PcInstance>(6);
             _engine = new BlockCheckerEngine(this, _arena);
         }
 
@@ -419,7 +419,7 @@ public final class HandysBlockCheckerManager
 
         public ArrayList<L2PcInstance> getAllPlayers()
         {
-            ArrayList<L2PcInstance> all = new ArrayList<>(12);
+            ArrayList<L2PcInstance> all = new ArrayList<L2PcInstance>(12);
             all.addAll(_redPlayers);
             all.addAll(_bluePlayers);
             return all;

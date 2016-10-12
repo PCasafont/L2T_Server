@@ -44,8 +44,8 @@ public class ExShowSellCropList extends L2GameServerPacket
     public ExShowSellCropList(L2PcInstance player, int manorId, List<CropProcure> crops)
     {
         _manorId = manorId;
-        _castleCrops = new HashMap<>();
-        _cropsItems = new HashMap<>();
+        _castleCrops = new HashMap<Integer, CropProcure>();
+        _cropsItems = new HashMap<Integer, L2ItemInstance>();
 
         ArrayList<Integer> allCrops = L2Manor.getInstance().getAllCrops();
         for (int cropId : allCrops)

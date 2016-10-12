@@ -49,11 +49,11 @@ public class HtmCache implements Reloadable
     {
         if (Config.LAZY_CACHE)
         {
-            _cache = new ConcurrentHashMap<>();
+            _cache = new ConcurrentHashMap<Integer, String>();
         }
         else
         {
-            _cache = new HashMap<>();
+            _cache = new HashMap<Integer, String>();
         }
         reload();
 
@@ -188,7 +188,7 @@ public class HtmCache implements Reloadable
                 {
                     fis.close();
                 }
-                catch (Exception ignored)
+                catch (Exception e1)
                 {
                 }
             }

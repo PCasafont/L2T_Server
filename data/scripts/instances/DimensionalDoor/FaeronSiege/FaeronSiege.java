@@ -114,9 +114,9 @@ public class FaeronSiege extends Quest
 
         private FearonSiegeWorld()
         {
-            _allMinions = new ArrayList<>();
-            _guardArmy = new ArrayList<>();
-            _rewardedPlayers = new ArrayList<>();
+            _allMinions = new ArrayList<L2Npc>();
+            _guardArmy = new ArrayList<L2Npc>();
+            _rewardedPlayers = new ArrayList<L2PcInstance>();
         }
     }
 
@@ -352,8 +352,8 @@ public class FaeronSiege extends Quest
                                         "My mana power are decreasing so fast...!"));
                     }
 
-                    List<L2PcInstance> fuckedPlayers = new ArrayList<>();
-                    List<L2PcInstance> deadPlayers = new ArrayList<>();
+                    List<L2PcInstance> fuckedPlayers = new ArrayList<L2PcInstance>();
+                    List<L2PcInstance> deadPlayers = new ArrayList<L2PcInstance>();
                     for (L2PcInstance chara : chars)
                     {
                         if (chara == null)
@@ -780,7 +780,7 @@ public class FaeronSiege extends Quest
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<>();
+            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
             if (_debug)
             {
                 allPlayers.add(player);

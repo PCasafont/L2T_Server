@@ -609,7 +609,14 @@ public class Kamaloka extends Quest
     private final synchronized void enterInstance(L2PcInstance player, int index)
     {
         int templateId;
-        templateId = INSTANCE_IDS[index];
+        try
+        {
+            templateId = INSTANCE_IDS[index];
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            throw e;
+        }
 
         // check for existing instances for this player
         InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);

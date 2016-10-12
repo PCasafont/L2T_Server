@@ -65,7 +65,7 @@ public class PreparedListContainer extends ListContainer
             }
 
             // size is not known - using ArrayList
-            _entries = new ArrayList<>();
+            _entries = new ArrayList<MultiSellEntry>();
             for (L2ItemInstance item : items)
             {
                 // only do the matchup on equipable items that are not currently equipped
@@ -90,7 +90,7 @@ public class PreparedListContainer extends ListContainer
         }
         else
         {
-            _entries = new ArrayList<>(template.getEntries().size());
+            _entries = new ArrayList<MultiSellEntry>(template.getEntries().size());
             for (MultiSellEntry ent : template.getEntries())
             {
                 _entries.add(new PreparedEntry(ent, null, _applyTaxes, false, taxRate));

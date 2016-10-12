@@ -49,9 +49,10 @@ public class Q350_EnhanceYourWeapon extends Quest
 
     private static final int CHANCE_MULTIPLIER = 2; // TODO: unhardcode and move to config files. Really useful!
 
-    private final HashMap<Integer, SoulCrystal> _soulCrystals = new HashMap<>();
+    private final HashMap<Integer, SoulCrystal> _soulCrystals = new HashMap<Integer, SoulCrystal>();
     // <npcid, <level, LevelingInfo>>
-    private final HashMap<Integer, HashMap<Integer, LevelingInfo>> _npcLevelingInfos = new HashMap<>();
+    private final HashMap<Integer, HashMap<Integer, LevelingInfo>> _npcLevelingInfos =
+            new HashMap<Integer, HashMap<Integer, LevelingInfo>>();
 
     private static enum AbsorbCrystalType
     {
@@ -192,7 +193,7 @@ public class Q350_EnhanceYourWeapon extends Quest
                                 }
                                 int npcId = d.getInt("npcId");
 
-                                HashMap<Integer, LevelingInfo> temp = new HashMap<>();
+                                HashMap<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
 
                                 for (XmlNode cd : d.getChildren())
                                 {
@@ -413,7 +414,7 @@ public class Q350_EnhanceYourWeapon extends Quest
             return;
         }
 
-        HashMap<L2PcInstance, SoulCrystal> players = new HashMap<>();
+        HashMap<L2PcInstance, SoulCrystal> players = new HashMap<L2PcInstance, SoulCrystal>();
         int maxSCLevel = 0;
 
         //TODO: what if mob support last_hit + party?

@@ -445,9 +445,9 @@ public class TenkaiAuctionManager implements Reloadable
         }
     }
 
-    private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>(); //Currency info
-    private static Map<Integer, Auction> _auctions = new LinkedHashMap<>(); //Current auctions
-    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<>();
+    private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<Integer, CurrencyInfo>(); //Currency info
+    private static Map<Integer, Auction> _auctions = new LinkedHashMap<Integer, Auction>(); //Current auctions
+    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
     //All the auction info
 
     /**
@@ -862,7 +862,7 @@ public class TenkaiAuctionManager implements Reloadable
         _auctions.put(auction.getId(), auction);
 
         // Stupid naive sort
-        Map<Integer, Auction> auctions = new HashMap<>(_auctions);
+        Map<Integer, Auction> auctions = new HashMap<Integer, Auction>(_auctions);
         _auctions.clear();
         while (!auctions.isEmpty())
         {

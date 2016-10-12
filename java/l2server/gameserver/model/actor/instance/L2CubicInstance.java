@@ -90,7 +90,7 @@ public class L2CubicInstance
     protected boolean _active;
     private boolean _givenByOther;
 
-    protected List<L2Skill> _skills = new ArrayList<>();
+    protected List<L2Skill> _skills = new ArrayList<L2Skill>();
 
     private Future<?> _disappearTask;
     private Future<?> _actionTask;

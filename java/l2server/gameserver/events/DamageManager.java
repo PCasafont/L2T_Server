@@ -28,7 +28,7 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class DamageManager
 {
-    private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<>();
+    private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<Integer, DamageInfo>();
     protected static ScheduledFuture<?> _saveTask;
 
     public String getRankingInfo()
@@ -206,7 +206,7 @@ public class DamageManager
         }
 
         // Give Rewards (Memory)
-        List<Integer> rewardedCharIds = new ArrayList<>();
+        List<Integer> rewardedCharIds = new ArrayList<Integer>();
         for (Entry<Integer, DamageInfo> damageInfo : dmgIinfo.entrySet())
         {
             if (damageInfo == null)

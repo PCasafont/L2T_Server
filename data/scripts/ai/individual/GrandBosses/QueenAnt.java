@@ -67,7 +67,7 @@ public class QueenAnt extends L2AttackableAIScript
     private static final SkillHolder CURSE = new SkillHolder(4215, 1);
 
     //Others
-    private List<L2MonsterInstance> _nurses = new ArrayList<>(5);
+    private List<L2MonsterInstance> _nurses = new ArrayList<L2MonsterInstance>(5);
     private static long _LastAction;
     private static L2Npc _queenAnt;
     private static L2Npc _larvaAnt;
@@ -206,7 +206,7 @@ public class QueenAnt extends L2AttackableAIScript
             final boolean larvaNeedHeal = _larvaAnt != null && _larvaAnt.getCurrentHp() < _larvaAnt.getMaxHp();
             final boolean queenNeedHeal = _queenAnt != null && _queenAnt.getCurrentHp() < _queenAnt.getMaxHp();
 
-            List<L2MonsterInstance> toIterate = new ArrayList<>(_nurses);
+            List<L2MonsterInstance> toIterate = new ArrayList<L2MonsterInstance>(_nurses);
             for (L2MonsterInstance nurse : toIterate)
             {
                 if (nurse == null || nurse.isDead() || nurse.isCastingNow())

@@ -39,7 +39,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
     private static final int _yin = 19320;
     private static final int _yinFragment = 19308;
     private static final int _spiculaElite = 23303;
-    private static Map<Integer, Long> _yinControl = new HashMap<>();
+    private static Map<Integer, Long> _yinControl = new HashMap<Integer, Long>();
 
     public SpiculaCloneGenerator(int id, String name, String descr)
     {

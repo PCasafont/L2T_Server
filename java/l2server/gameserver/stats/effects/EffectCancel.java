@@ -77,7 +77,7 @@ public class EffectCancel extends L2Effect
         final L2Abnormal[] effects = target.getAllEffects();
 
         // Filter buff-type effects out of the effect collection
-        ArrayList<L2Abnormal> removableBuffs = new ArrayList<>();
+        ArrayList<L2Abnormal> removableBuffs = new ArrayList<L2Abnormal>();
         for (L2Abnormal effect : effects)
         {
             if (effect.canBeStolen() || effect.getEffectMask() == L2EffectType.INVINCIBLE.getMask())

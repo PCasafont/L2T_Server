@@ -41,7 +41,7 @@ public class DuelManager
     private DuelManager()
     {
         Log.info("Initializing DuelManager");
-        _duels = new ArrayList<>();
+        _duels = new ArrayList<Duel>();
     }
 
     // =========================================================

@@ -30,7 +30,7 @@ import java.util.List;
 public class ExSellList extends L2ItemListPacket
 {
 
-    private List<L2TradeItem> _buyList = new ArrayList<>();
+    private List<L2TradeItem> _buyList = new ArrayList<L2TradeItem>();
     private L2ItemInstance[] _sellList = null;
     private L2ItemInstance[] _refundList = null;
     private boolean _done;

@@ -147,10 +147,10 @@ public class EnchantCostsTable
         }
     }
 
-    private TIntObjectHashMap<L2EnchantSkillLearn> _enchantSkillTrees = new TIntObjectHashMap<>();
+    private TIntObjectHashMap<L2EnchantSkillLearn> _enchantSkillTrees = new TIntObjectHashMap<L2EnchantSkillLearn>();
     //enchant skill list
-    private Map<Integer, EnchantSkillRange> _enchantRanges = new HashMap<>();
-    private List<EnchantSkillDetail> _enchantDetails = new ArrayList<>();
+    private Map<Integer, EnchantSkillRange> _enchantRanges = new HashMap<Integer, EnchantSkillRange>();
+    private List<EnchantSkillDetail> _enchantDetails = new ArrayList<EnchantSkillDetail>();
 
     public static EnchantCostsTable getInstance()
     {

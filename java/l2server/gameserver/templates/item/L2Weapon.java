@@ -316,7 +316,7 @@ public final class L2Weapon extends L2Item
             return _emptyFunctionSet;
         }
 
-        ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
+        ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
 
         Func f;
         for (FuncTemplate t : _funcTemplates)
@@ -345,7 +345,7 @@ public final class L2Weapon extends L2Item
         {
             return _emptyEffectSet;
         }
-        List<L2Abnormal> effects = new ArrayList<>();
+        List<L2Abnormal> effects = new ArrayList<L2Abnormal>();
 
         if (_skillsOnCritCondition != null)
         {

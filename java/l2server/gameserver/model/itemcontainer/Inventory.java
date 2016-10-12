@@ -113,7 +113,7 @@ public abstract class Inventory extends ItemContainer
         ChangeRecorder(Inventory inventory)
         {
             _inventory = inventory;
-            _changed = new ArrayList<>();
+            _changed = new ArrayList<L2ItemInstance>();
             _inventory.addPaperdollListener(this);
         }
 
@@ -827,7 +827,7 @@ public abstract class Inventory extends ItemContainer
     protected Inventory()
     {
         _paperdoll = new L2ItemInstance[PAPERDOLL_TOTALSLOTS];
-        _paperdollListeners = new ArrayList<>();
+        _paperdollListeners = new ArrayList<PaperdollListener>();
 
         if (this instanceof PcInventory)
         {
@@ -1039,7 +1039,7 @@ public abstract class Inventory extends ItemContainer
      */
     public L2ItemInstance[] getPaperdollItems()
     {
-        List<L2ItemInstance> list = new ArrayList<>();
+        List<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
         for (L2ItemInstance element : _paperdoll)
         {
             if (element != null)

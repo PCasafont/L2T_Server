@@ -46,7 +46,7 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
         final L2PcInstance aPlayer = activeChar.getActingPlayer();
-        final ArrayList<L2Character> result = new ArrayList<>();
+        final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
         // Check for null target or any other invalid target
         if (target == null || target.isDead())
@@ -109,7 +109,7 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
         }
         else
         {
-            SortedMap<Double, L2Character> map = new TreeMap<>();
+            SortedMap<Double, L2Character> map = new TreeMap<Double, L2Character>();
             for (L2Character obj : result)
             {
                 double percentlost = obj.getCurrentHp() / obj.getMaxHp();

@@ -147,9 +147,9 @@ public final class L2NpcTemplate extends L2CharTemplate
         NONE
     }
 
-    private ArrayList<L2DropData> _spoilDrop = new ArrayList<>();
-    private ArrayList<L2DropData> _normalDrop = new ArrayList<>();
-    private ArrayList<L2DropCategory> _multiDrop = new ArrayList<>();
+    private ArrayList<L2DropData> _spoilDrop = new ArrayList<L2DropData>();
+    private ArrayList<L2DropData> _normalDrop = new ArrayList<L2DropData>();
+    private ArrayList<L2DropCategory> _multiDrop = new ArrayList<L2DropCategory>();
 
     /**
      * The table containing all Minions that must be spawn with the L2NpcInstance using this L2NpcTemplate
@@ -157,14 +157,14 @@ public final class L2NpcTemplate extends L2CharTemplate
     private List<L2MinionData> _minions = null;
     private L2RandomMinionData _randomMinions = null;
     private Map<Integer, L2Skill> _skills = null;
-    private List<SpawnData> _spawns = new ArrayList<>();
+    private List<SpawnData> _spawns = new ArrayList<SpawnData>();
     // contains a list of quests for each event type (questStart, questAttack, questKill, etc)
     private Map<QuestEventType, Quest[]> _questEvents = null;
 
     private StatsSet _baseSet;
     private L2NpcTemplate _baseTemplate;
 
-    private List<L2Spawn> _allSpawns = new ArrayList<>();
+    private List<L2Spawn> _allSpawns = new ArrayList<L2Spawn>();
 
     /**
      * Constructor of L2Character.<BR><BR>
@@ -307,9 +307,9 @@ public final class L2NpcTemplate extends L2CharTemplate
 
         if (!set.getBool("overrideDrops", false))
         {
-            _spoilDrop = new ArrayList<>(baseTemplate._spoilDrop);
-            _normalDrop = new ArrayList<>(baseTemplate._normalDrop);
-            _multiDrop = new ArrayList<>();
+            _spoilDrop = new ArrayList<L2DropData>(baseTemplate._spoilDrop);
+            _normalDrop = new ArrayList<L2DropData>(baseTemplate._normalDrop);
+            _multiDrop = new ArrayList<L2DropCategory>();
             for (L2DropCategory dc : baseTemplate._multiDrop)
             {
                 L2DropCategory newDC = new L2DropCategory(dc.getChance());
@@ -323,7 +323,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 
         if (baseTemplate._minions != null)
         {
-            _minions = new ArrayList<>(baseTemplate._minions);
+            _minions = new ArrayList<L2MinionData>(baseTemplate._minions);
         }
 
         if (baseTemplate._randomMinions != null)
@@ -341,12 +341,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 
         if (!set.getBool("overrideSpawns", false))
         {
-            _spawns = new ArrayList<>(baseTemplate._spawns);
+            _spawns = new ArrayList<SpawnData>(baseTemplate._spawns);
         }
 
         if (baseTemplate._questEvents != null)
         {
-            _questEvents = new HashMap<>(baseTemplate._questEvents);
+            _questEvents = new HashMap<QuestEventType, Quest[]>(baseTemplate._questEvents);
         }
 
         _baseSet = set;
@@ -376,7 +376,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (_minions == null)
         {
-            _minions = new ArrayList<>();
+            _minions = new ArrayList<L2MinionData>();
         }
         _minions.add(minion);
     }
@@ -390,7 +390,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (_skills == null)
         {
-            _skills = new LinkedHashMap<>();
+            _skills = new LinkedHashMap<Integer, L2Skill>();
         }
 
         if (!skill.isPassive())
@@ -546,7 +546,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (_questEvents == null)
         {
-            _questEvents = new HashMap<>();
+            _questEvents = new HashMap<Quest.QuestEventType, Quest[]>();
         }
 
         if (_questEvents.get(EventType) == null)
@@ -768,7 +768,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_BUFF] == null)
         {
-            aiSkills[AIST_BUFF] = new ArrayList<>();
+            aiSkills[AIST_BUFF] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_BUFF].add(skill);
         aiSkillChecks[AIST_BUFF] = true;
@@ -778,7 +778,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_HEAL] == null)
         {
-            aiSkills[AIST_HEAL] = new ArrayList<>();
+            aiSkills[AIST_HEAL] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_HEAL].add(skill);
         aiSkillChecks[AIST_HEAL] = true;
@@ -788,7 +788,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_RES] == null)
         {
-            aiSkills[AIST_RES] = new ArrayList<>();
+            aiSkills[AIST_RES] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_RES].add(skill);
         aiSkillChecks[AIST_RES] = true;
@@ -798,7 +798,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_ATK] == null)
         {
-            aiSkills[AIST_ATK] = new ArrayList<>();
+            aiSkills[AIST_ATK] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_ATK].add(skill);
         aiSkillChecks[AIST_ATK] = true;
@@ -808,7 +808,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_DEBUFF] == null)
         {
-            aiSkills[AIST_DEBUFF] = new ArrayList<>();
+            aiSkills[AIST_DEBUFF] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_DEBUFF].add(skill);
         aiSkillChecks[AIST_DEBUFF] = true;
@@ -818,7 +818,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_ROOT] == null)
         {
-            aiSkills[AIST_ROOT] = new ArrayList<>();
+            aiSkills[AIST_ROOT] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_ROOT].add(skill);
         aiSkillChecks[AIST_ROOT] = true;
@@ -828,7 +828,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_SLEEP] == null)
         {
-            aiSkills[AIST_SLEEP] = new ArrayList<>();
+            aiSkills[AIST_SLEEP] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_SLEEP].add(skill);
         aiSkillChecks[AIST_SLEEP] = true;
@@ -838,7 +838,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_STUN] == null)
         {
-            aiSkills[AIST_STUN] = new ArrayList<>();
+            aiSkills[AIST_STUN] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_STUN].add(skill);
         aiSkillChecks[AIST_STUN] = true;
@@ -848,7 +848,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_PARALYZE] == null)
         {
-            aiSkills[AIST_PARALYZE] = new ArrayList<>();
+            aiSkills[AIST_PARALYZE] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_PARALYZE].add(skill);
         aiSkillChecks[AIST_PARALYZE] = true;
@@ -858,7 +858,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_FLOAT] == null)
         {
-            aiSkills[AIST_FLOAT] = new ArrayList<>();
+            aiSkills[AIST_FLOAT] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_FLOAT].add(skill);
         aiSkillChecks[AIST_FLOAT] = true;
@@ -868,7 +868,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_FOSSIL] == null)
         {
-            aiSkills[AIST_FOSSIL] = new ArrayList<>();
+            aiSkills[AIST_FOSSIL] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_FOSSIL].add(skill);
         aiSkillChecks[AIST_FOSSIL] = true;
@@ -878,7 +878,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_NEGATIVE] == null)
         {
-            aiSkills[AIST_NEGATIVE] = new ArrayList<>();
+            aiSkills[AIST_NEGATIVE] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_NEGATIVE].add(skill);
         aiSkillChecks[AIST_NEGATIVE] = true;
@@ -888,7 +888,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_IMMOBILIZE] == null)
         {
-            aiSkills[AIST_IMMOBILIZE] = new ArrayList<>();
+            aiSkills[AIST_IMMOBILIZE] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_IMMOBILIZE].add(skill);
         aiSkillChecks[AIST_IMMOBILIZE] = true;
@@ -898,7 +898,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_DOT] == null)
         {
-            aiSkills[AIST_DOT] = new ArrayList<>();
+            aiSkills[AIST_DOT] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_DOT].add(skill);
         aiSkillChecks[AIST_DOT] = true;
@@ -908,7 +908,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_UNIVERSAL] == null)
         {
-            aiSkills[AIST_UNIVERSAL] = new ArrayList<>();
+            aiSkills[AIST_UNIVERSAL] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_UNIVERSAL].add(skill);
         aiSkillChecks[AIST_UNIVERSAL] = true;
@@ -918,7 +918,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_COT] == null)
         {
-            aiSkills[AIST_COT] = new ArrayList<>();
+            aiSkills[AIST_COT] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_COT].add(skill);
         aiSkillChecks[AIST_COT] = true;
@@ -928,7 +928,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_MANA] == null)
         {
-            aiSkills[AIST_MANA] = new ArrayList<>();
+            aiSkills[AIST_MANA] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_MANA].add(skill);
         aiSkillChecks[AIST_MANA] = true;
@@ -938,7 +938,7 @@ public final class L2NpcTemplate extends L2CharTemplate
     {
         if (aiSkills[AIST_GENERAL] == null)
         {
-            aiSkills[AIST_GENERAL] = new ArrayList<>();
+            aiSkills[AIST_GENERAL] = new ArrayList<L2Skill>();
         }
         aiSkills[AIST_GENERAL].add(skill);
         aiSkillChecks[AIST_GENERAL] = true;
@@ -950,7 +950,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         {
             if (aiSkills[AIST_SHORT_RANGE] == null)
             {
-                aiSkills[AIST_SHORT_RANGE] = new ArrayList<>();
+                aiSkills[AIST_SHORT_RANGE] = new ArrayList<L2Skill>();
             }
             aiSkills[AIST_SHORT_RANGE].add(skill);
             aiSkillChecks[AIST_SHORT_RANGE] = true;
@@ -959,7 +959,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         {
             if (aiSkills[AIST_LONG_RANGE] == null)
             {
-                aiSkills[AIST_LONG_RANGE] = new ArrayList<>();
+                aiSkills[AIST_LONG_RANGE] = new ArrayList<L2Skill>();
             }
             aiSkills[AIST_LONG_RANGE].add(skill);
             aiSkillChecks[AIST_LONG_RANGE] = true;
@@ -1669,7 +1669,7 @@ public final class L2NpcTemplate extends L2CharTemplate
         return " maxSocial2=\"" + getAIData().getMaxSocial(true) + "\"";
     }
 
-    private List<L2Spawn> _knownSpawns = new ArrayList<>();
+    private List<L2Spawn> _knownSpawns = new ArrayList<L2Spawn>();
 
     public final void addKnownSpawn(final L2Spawn spawn)
     {

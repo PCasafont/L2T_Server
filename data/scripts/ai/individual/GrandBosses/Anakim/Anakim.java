@@ -89,7 +89,7 @@ public class Anakim extends L2AttackableAIScript
     private static final L2BossZone _preAnakimZone = GrandBossManager.getInstance().getZone(172679, -17486, -4906);
 
     //Others
-    private static List<L2Npc> _remnants = new ArrayList<>();
+    private static List<L2Npc> _remnants = new ArrayList<L2Npc>();
     private static long _lastAction;
     private static L2Npc _anakimBoss;
 
@@ -134,7 +134,7 @@ public class Anakim extends L2AttackableAIScript
         {
             int _anakimStatus = GrandBossManager.getInstance().getBossStatus(_anakimId);
 
-            final List<L2PcInstance> allPlayers = new ArrayList<>();
+            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
             if (_anakimStatus == GrandBossManager.getInstance().DEAD)
             {

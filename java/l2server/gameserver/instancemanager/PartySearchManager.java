@@ -36,7 +36,7 @@ public class PartySearchManager
     {
         if (lookingForParty == null)
         {
-            lookingForParty = new ArrayList<>();
+            lookingForParty = new ArrayList<L2PcInstance>();
         }
         else
         {
@@ -44,7 +44,7 @@ public class PartySearchManager
         }
         if (wannaToChangeThisPlayer == null)
         {
-            wannaToChangeThisPlayer = new ArrayList<>();
+            wannaToChangeThisPlayer = new ArrayList<L2PcInstance>();
         }
         else
         {

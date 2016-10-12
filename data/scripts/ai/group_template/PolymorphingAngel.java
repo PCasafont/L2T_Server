@@ -28,7 +28,7 @@ import java.util.Map;
 public class PolymorphingAngel extends L2AttackableAIScript
 {
 
-    private static final Map<Integer, Integer> ANGELSPAWNS = new HashMap<>();
+    private static final Map<Integer, Integer> ANGELSPAWNS = new HashMap<Integer, Integer>();
 
     static
     {

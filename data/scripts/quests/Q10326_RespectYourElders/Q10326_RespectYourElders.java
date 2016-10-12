@@ -43,7 +43,7 @@ public class Q10326_RespectYourElders extends Quest
     private int _pantheon = 32972;
 
     private int _guideId = 32971;
-    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<>();
+    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<L2NpcWalkerNode>();
     private int _guideFirstChatId = 1032307;
     private int _guideWaitChatId = 1032308;
     private int _guideLastChatId = 1032309;

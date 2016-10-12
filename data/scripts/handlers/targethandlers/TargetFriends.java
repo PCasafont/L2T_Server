@@ -50,7 +50,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
     {
         if (skill.isUseableWithoutTarget())
         {
-            final ArrayList<L2Character> result = new ArrayList<>();
+            final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
             if (activeChar instanceof L2Playable)
             {
@@ -90,7 +90,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
                 }
                 else
                 {
-                    candidates = new ArrayList<>();
+                    candidates = new ArrayList<L2Character>();
                     if (aPlayer.isInParty())
                     {
                         candidates.addAll(aPlayer.getParty().getPartyMembers());

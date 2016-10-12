@@ -101,7 +101,7 @@ public class AdminSpawn implements IAdminCommandHandler
                         AdminHelpPage.showHelpPage(activeChar, "spawns_debug.htm");
                     }
                 }
-                catch (Exception ignored)
+                catch (Exception e)
                 {
                 }
             }
@@ -122,7 +122,7 @@ public class AdminSpawn implements IAdminCommandHandler
                 {
                     from = Integer.parseInt(st.nextToken());
                 }
-                catch (NoSuchElementException ignored)
+                catch (NoSuchElementException nsee)
                 {
                 }
                 showMonsters(activeChar, level, from);
@@ -148,7 +148,7 @@ public class AdminSpawn implements IAdminCommandHandler
                 {
                     from = Integer.parseInt(st.nextToken());
                 }
-                catch (NoSuchElementException ignored)
+                catch (NoSuchElementException nsee)
                 {
                 }
                 showNpcs(activeChar, letter, from);

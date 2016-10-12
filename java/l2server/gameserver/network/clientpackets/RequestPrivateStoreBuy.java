@@ -49,7 +49,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
         {
             return;
         }
-        _items = new HashSet<>();
+        _items = new HashSet<ItemRequest>();
 
         for (int i = 0; i < count; i++)
         {

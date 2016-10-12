@@ -177,7 +177,7 @@ public final class Calculator
      */
     public synchronized ArrayList<Stats> removeOwner(Object owner)
     {
-        ArrayList<Stats> modifiedStats = new ArrayList<>();
+        ArrayList<Stats> modifiedStats = new ArrayList<Stats>();
 
         for (Func func : _functions)
         {

@@ -51,7 +51,7 @@ public class Q10323_GoingIntoARealWar extends Quest
     private int _shannon = 32974;
 
     private int _guideId = 33006;
-    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<>();
+    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<L2NpcWalkerNode>();
     private int _guideFirstChatId = 1032304;
     private int _guideWaitChatId = 1032305;
     private int _guideLastChatId = 1032306;

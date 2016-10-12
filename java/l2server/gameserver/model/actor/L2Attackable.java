@@ -248,7 +248,7 @@ public class L2Attackable extends L2Npc
         }
     }
 
-    private ConcurrentHashMap<L2Character, AggroInfo> _aggroList = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<L2Character, AggroInfo> _aggroList = new ConcurrentHashMap<L2Character, AggroInfo>();
 
     public final ConcurrentHashMap<L2Character, AggroInfo> getAggroList()
     {
@@ -311,7 +311,7 @@ public class L2Attackable extends L2Npc
 
     private boolean _absorbed;
 
-    private ConcurrentHashMap<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<Integer, AbsorberInfo>();
 
     private boolean _mustGiveExpSp;
 
@@ -660,7 +660,7 @@ public class L2Attackable extends L2Npc
     protected void calculateRewards(L2Character lastAttacker)
     {
         // Creates an empty list of rewards
-        HashMap<L2Character, RewardInfo> rewards = new HashMap<>();
+        HashMap<L2Character, RewardInfo> rewards = new HashMap<L2Character, RewardInfo>();
         try
         {
             if (getAggroList().isEmpty())
@@ -772,7 +772,7 @@ public class L2Attackable extends L2Npc
                 RewardInfo reward2;
                 long[] tmp;
 
-                List<L2Character> toRemove = new ArrayList<>();
+                List<L2Character> toRemove = new ArrayList<L2Character>();
                 for (Entry<L2Character, RewardInfo> entry : rewards.entrySet())
                 {
                     if (entry == null || toRemove.contains(entry.getKey()))
@@ -905,7 +905,7 @@ public class L2Attackable extends L2Npc
                         partyLvl = 0;
 
                         // Get all L2Character that can be rewarded in the party
-                        List<L2Playable> rewardedMembers = new ArrayList<>();
+                        List<L2Playable> rewardedMembers = new ArrayList<L2Playable>();
                         // Go through all L2PcInstance in the party
                         List<L2PcInstance> groupMembers;
 
@@ -1339,7 +1339,7 @@ public class L2Attackable extends L2Npc
         L2Character mostHated = null;
         L2Character secondMostHated = null;
         int maxHate = 0;
-        List<L2Character> result = new ArrayList<>();
+        List<L2Character> result = new ArrayList<L2Character>();
 
         // While iterating over this map removing objects is not allowed
         //synchronized (getAggroList())
@@ -1379,7 +1379,7 @@ public class L2Attackable extends L2Npc
         {
             return null;
         }
-        List<L2Character> result = new ArrayList<>();
+        List<L2Character> result = new ArrayList<L2Character>();
 
         //synchronized (getAggroList())
         {
@@ -1801,7 +1801,7 @@ public class L2Attackable extends L2Npc
         if (isSpoil())
         {
             RewardItem item = null;
-            ArrayList<RewardItem> sweepList = new ArrayList<>();
+            ArrayList<RewardItem> sweepList = new ArrayList<RewardItem>();
 
             for (L2DropData dd : npcTemplate.getSpoilData())
             {
@@ -2619,7 +2619,7 @@ public class L2Attackable extends L2Npc
             count += diff;
         }
 
-        ArrayList<RewardItem> harvested = new ArrayList<>();
+        ArrayList<RewardItem> harvested = new ArrayList<RewardItem>();
 
         harvested.add(new RewardItem(L2Manor.getInstance().getCropType(_seedType), count * Config.RATE_DROP_MANOR));
 

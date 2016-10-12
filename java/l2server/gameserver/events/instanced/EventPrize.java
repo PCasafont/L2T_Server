@@ -75,7 +75,7 @@ public abstract class EventPrize
 
     public static class EventPrizeCategory extends EventPrize
     {
-        private final List<EventPrizeItem> _items = new ArrayList<>();
+        private final List<EventPrizeItem> _items = new ArrayList<EventPrizeItem>();
 
         public EventPrizeCategory(XmlNode node)
         {

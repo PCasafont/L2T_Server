@@ -123,12 +123,12 @@ public class MainTownManager
 
     private static final int ROTATION_INTERVAL_DAYS = 2;
 
-    private final List<MainTownInfo> _mainTowns = new ArrayList<>();
+    private final List<MainTownInfo> _mainTowns = new ArrayList<MainTownInfo>();
 
     private int _rotationIndex = 0;
     private MainTownInfo _currentMainTown = null;
 
-    private List<MainTownInfo> _nextTowns = new ArrayList<>();
+    private List<MainTownInfo> _nextTowns = new ArrayList<MainTownInfo>();
     private long _nextTownTimer = 0L;
 
     public MainTownManager()

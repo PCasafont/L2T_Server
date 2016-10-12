@@ -120,7 +120,7 @@ public class CellNodeBuffer
 
     public final ArrayList<CellNode> debugPath()
     {
-        ArrayList<CellNode> result = new ArrayList<>();
+        ArrayList<CellNode> result = new ArrayList<CellNode>();
 
         for (CellNode n = _current; n.getParent() != null; n = (CellNode) n.getParent())
         {

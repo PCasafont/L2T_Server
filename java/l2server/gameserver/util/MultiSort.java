@@ -113,7 +113,7 @@ public class MultiSort
     {
         if (_keyList == null)
         {
-            return new ArrayList<>();
+            return new ArrayList<Object>();
         }
 
         return _keyList;
@@ -151,7 +151,7 @@ public class MultiSort
             return -1;
         }
 
-        List<Double> tempValList = new ArrayList<>();
+        List<Double> tempValList = new ArrayList<Double>();
 
         int meanValue = getMean();
         int numValues = getCount();
@@ -193,7 +193,7 @@ public class MultiSort
     {
         if (_valueList == null)
         {
-            return new ArrayList<>();
+            return new ArrayList<Integer>();
         }
 
         return _valueList;
@@ -218,8 +218,8 @@ public class MultiSort
     {
         try
         {
-            List<Object> newKeyList = new ArrayList<>();
-            List<Integer> newValueList = new ArrayList<>();
+            List<Object> newKeyList = new ArrayList<Object>();
+            List<Integer> newValueList = new ArrayList<Integer>();
 
             // Sort the list of values in ascending numerical order.
             Collections.sort(getValues());

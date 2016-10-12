@@ -36,7 +36,7 @@ public class ListPartyWaiting extends L2GameServerPacket
         _cha = player;
         _loc = location;
         _lim = limit;
-        _rooms = new ArrayList<>();
+        _rooms = new ArrayList<PartyMatchRoom>();
         for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms())
         {
             if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() ||

@@ -221,10 +221,10 @@ public class CastleManorManager
             PreparedStatement statementProcure = con.prepareStatement(CASTLE_MANOR_LOAD_PROCURE);
             for (Castle castle : CastleManager.getInstance().getCastles())
             {
-                ArrayList<SeedProduction> production = new ArrayList<>();
-                ArrayList<SeedProduction> productionNext = new ArrayList<>();
-                ArrayList<CropProcure> procure = new ArrayList<>();
-                ArrayList<CropProcure> procureNext = new ArrayList<>();
+                ArrayList<SeedProduction> production = new ArrayList<SeedProduction>();
+                ArrayList<SeedProduction> productionNext = new ArrayList<SeedProduction>();
+                ArrayList<CropProcure> procure = new ArrayList<CropProcure>();
+                ArrayList<CropProcure> procureNext = new ArrayList<CropProcure>();
 
                 // restore seed production info
                 statementProduction.setInt(1, castle.getCastleId());
@@ -472,7 +472,7 @@ public class CastleManorManager
             }
             else
             {
-                ArrayList<SeedProduction> production = new ArrayList<>();
+                ArrayList<SeedProduction> production = new ArrayList<SeedProduction>();
                 for (SeedProduction s : c.getSeedProduction(PERIOD_CURRENT))
                 {
                     s.setCanProduce(s.getStartProduce());
@@ -480,7 +480,7 @@ public class CastleManorManager
                 }
                 c.setSeedProduction(production, PERIOD_NEXT);
 
-                ArrayList<CropProcure> procure = new ArrayList<>();
+                ArrayList<CropProcure> procure = new ArrayList<CropProcure>();
                 for (CropProcure cr : c.getCropProcure(PERIOD_CURRENT))
                 {
                     cr.setAmount(cr.getStartAmount());
@@ -515,8 +515,8 @@ public class CastleManorManager
 
             if (c.getOwnerId() <= 0)
             { // Castle has no owner
-                c.setCropProcure(new ArrayList<>(), PERIOD_NEXT);
-                c.setSeedProduction(new ArrayList<>(), PERIOD_NEXT);
+                c.setCropProcure(new ArrayList<CropProcure>(), PERIOD_NEXT);
+                c.setSeedProduction(new ArrayList<SeedProduction>(), PERIOD_NEXT);
             }
             else if (c.getTreasury() < c.getManorCost(PERIOD_NEXT))
             {
@@ -577,7 +577,7 @@ public class CastleManorManager
 
     private ArrayList<SeedProduction> getNewSeedsList(int castleId)
     {
-        ArrayList<SeedProduction> seeds = new ArrayList<>();
+        ArrayList<SeedProduction> seeds = new ArrayList<SeedProduction>();
         ArrayList<Integer> seedsIds = L2Manor.getInstance().getSeedsForCastle(castleId);
         for (int sd : seedsIds)
         {
@@ -588,7 +588,7 @@ public class CastleManorManager
 
     private ArrayList<CropProcure> getNewCropsList(int castleId)
     {
-        ArrayList<CropProcure> crops = new ArrayList<>();
+        ArrayList<CropProcure> crops = new ArrayList<CropProcure>();
         ArrayList<Integer> cropsIds = L2Manor.getInstance().getCropsForCastle(castleId);
         for (int cr : cropsIds)
         {

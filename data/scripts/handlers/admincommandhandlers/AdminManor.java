@@ -84,7 +84,7 @@ public class AdminManor implements IAdminCommandHandler
             {
                 castleId = Integer.parseInt(st.nextToken());
             }
-            catch (Exception ignored)
+            catch (Exception e)
             {
             }
 
