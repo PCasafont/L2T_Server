@@ -79,7 +79,7 @@ public class L2AbnormalTemplate
 
     public L2Abnormal getEffect(Env env)
     {
-        List<L2Effect> list = new ArrayList<L2Effect>();
+        List<L2Effect> list = new ArrayList<>();
         for (L2EffectTemplate temp : effects)
         {
             list.add(temp.getEffect(env));
@@ -105,7 +105,7 @@ public class L2AbnormalTemplate
      */
     public L2Abnormal getStolenEffect(Env env, L2Abnormal stolen)
     {
-        List<L2Effect> list = new ArrayList<L2Effect>();
+        List<L2Effect> list = new ArrayList<>();
         for (L2Effect temp : stolen.getEffects())
         {
             list.add(L2EffectTemplate.getStolenEffect(env, temp));

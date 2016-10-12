@@ -72,8 +72,8 @@ public class MC_Show extends Quest
             1800104 // We love you
     };
 
-    private static Map<String, Object[]> talks = new HashMap<String, Object[]>();
-    private static Map<String, Object[]> walks = new HashMap<String, Object[]>();
+    private static Map<String, Object[]> talks = new HashMap<>();
+    private static Map<String, Object[]> walks = new HashMap<>();
 
     private void load()
     {

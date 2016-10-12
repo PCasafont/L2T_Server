@@ -60,7 +60,7 @@ public class DarkCloudMansion extends Quest
 
     private static class DMCRoom
     {
-        public ArrayList<DMCNpc> npcList = new ArrayList<DMCNpc>();
+        public ArrayList<DMCNpc> npcList = new ArrayList<>();
         public int counter = 0;
         public int reset = 0;
         public int founded = 0;
@@ -69,7 +69,7 @@ public class DarkCloudMansion extends Quest
 
     private class DMCWorld extends InstanceWorld
     {
-        public HashMap<String, DMCRoom> rooms = new HashMap<String, DMCRoom>();
+        public HashMap<String, DMCRoom> rooms = new HashMap<>();
 
         public DMCWorld()
         {

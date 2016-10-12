@@ -111,8 +111,8 @@ public class Freya extends L2AttackableAIScript
 
         public FreyaWorld()
         {
-            AllMobs = new ArrayList<L2Npc>();
-            Monuments = new ArrayList<L2Npc>();
+            AllMobs = new ArrayList<>();
+            Monuments = new ArrayList<>();
         }
     }
 
@@ -250,7 +250,7 @@ public class Freya extends L2AttackableAIScript
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(23140101).closeMe();
 
                 //Kick retards
-                ArrayList<Integer> allowedPlayers = new ArrayList<Integer>(world.allowed);
+                ArrayList<Integer> allowedPlayers = new ArrayList<>(world.allowed);
                 for (int objId : allowedPlayers)
                 {
                     L2PcInstance pl = L2World.getInstance().getPlayer(objId);
@@ -717,7 +717,7 @@ public class Freya extends L2AttackableAIScript
 
             setupIDs((FreyaWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

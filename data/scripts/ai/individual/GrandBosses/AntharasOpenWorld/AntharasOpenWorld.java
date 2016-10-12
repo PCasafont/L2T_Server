@@ -64,7 +64,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
     private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(179700, 113800, -7709);
 
     //Others
-    private static final List<L2Npc> _allMonsters = new ArrayList<L2Npc>();
+    private static final List<L2Npc> _allMonsters = new ArrayList<>();
     private static L2Npc _antharasBoss;
     private static long _LastAction;
 
@@ -103,7 +103,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
         {
             int anthyStatus = GrandBossManager.getInstance().getBossStatus(_antharasId);
 
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
 
             if (anthyStatus == GrandBossManager.getInstance().DEAD)
             {
@@ -283,7 +283,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
         {
             if (_antharasBoss != null && !_antharasBoss.isDead())
             {
-                List<Integer> minionsToSpawn = new ArrayList<Integer>();
+                List<Integer> minionsToSpawn = new ArrayList<>();
                 for (int i = 1; i <= 5; i++)
                 {
                     if (_allMonsters.size() < _maxMinions)

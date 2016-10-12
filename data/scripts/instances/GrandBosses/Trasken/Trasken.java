@@ -71,7 +71,7 @@ public class Trasken extends L2AttackableAIScript
     private static final Location _enterCaveCords = new Location(78721, -182239, -9905);
 
     //Others
-    private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+    private static List<L2NpcWalkerNode> _route = new ArrayList<>();
 
     //Spawns
     private static final int[][] _larvaSpawns = {{88798, -173756, -15981, 32767}, {87763, -173760, -15980, 65170}};
@@ -115,7 +115,7 @@ public class Trasken extends L2AttackableAIScript
 
         public TraskenWorld()
         {
-            _teredors = new ArrayList<L2Npc>();
+            _teredors = new ArrayList<>();
             isTeredorTime = false;
             isTraskenTime = false;
         }
@@ -674,7 +674,7 @@ public class Trasken extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

@@ -33,7 +33,7 @@ public class ListContainer
 
     public ListContainer()
     {
-        _entries = new ArrayList<MultiSellEntry>();
+        _entries = new ArrayList<>();
     }
 
     /**

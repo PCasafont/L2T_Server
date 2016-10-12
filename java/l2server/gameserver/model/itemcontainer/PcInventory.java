@@ -121,7 +121,7 @@ public class PcInventory extends Inventory
 
     public L2ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (!allowAdena && item.getItemId() == 57)
@@ -171,7 +171,7 @@ public class PcInventory extends Inventory
 
     public L2ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item == null)
@@ -224,7 +224,7 @@ public class PcInventory extends Inventory
      */
     public L2ItemInstance[] getAllItemsByItemId(int itemId, boolean includeEquipped)
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item == null)
@@ -261,7 +261,7 @@ public class PcInventory extends Inventory
      */
     public L2ItemInstance[] getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped)
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item == null)
@@ -288,7 +288,7 @@ public class PcInventory extends Inventory
      */
     public L2ItemInstance[] getAvailableItems(boolean allowAdena, boolean allowNonTradeable)
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item != null && item.isAvailable(getOwner(), allowAdena, allowNonTradeable) &&
@@ -310,7 +310,7 @@ public class PcInventory extends Inventory
      */
     public L2ItemInstance[] getAugmentedItems()
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item != null && item.isAugmented())
@@ -331,7 +331,7 @@ public class PcInventory extends Inventory
      */
     public L2ItemInstance[] getElementItems()
     {
-        ArrayList<L2ItemInstance> list = new ArrayList<L2ItemInstance>();
+        ArrayList<L2ItemInstance> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item != null && item.getElementals() != null)
@@ -352,7 +352,7 @@ public class PcInventory extends Inventory
      */
     public TradeList.TradeItem[] getAvailableItems(TradeList tradeList)
     {
-        ArrayList<TradeList.TradeItem> list = new ArrayList<TradeList.TradeItem>();
+        ArrayList<TradeList.TradeItem> list = new ArrayList<>();
         for (L2ItemInstance item : _items.values())
         {
             if (item != null && item.isAvailable(getOwner(), false, false))

@@ -19,15 +19,15 @@ public class PacketOpcodes
     public static class PacketFamily
     {
         public int switchLength;
-        public final Map<Integer, Object> children = new HashMap<Integer, Object>();
+        public final Map<Integer, Object> children = new HashMap<>();
     }
 
     private static String PROTOCOL_FILE;
     private static boolean GENERATE_MISSING_PACKETS = true;
 
     public static final PacketFamily ClientPacketsFamily = new PacketFamily();
-    public static final Map<Class<?>, byte[]> ClientPackets = new HashMap<Class<?>, byte[]>();
-    public static final Map<Class<?>, byte[]> ServerPackets = new HashMap<Class<?>, byte[]>();
+    public static final Map<Class<?>, byte[]> ClientPackets = new HashMap<>();
+    public static final Map<Class<?>, byte[]> ServerPackets = new HashMap<>();
 
     private static long _lastModified = 0;
 
@@ -227,7 +227,7 @@ public class PacketOpcodes
             }
             catch (ClassNotFoundException e)
             {
-                Map<String, String> parts = new HashMap<String, String>();
+                Map<String, String> parts = new HashMap<>();
                 int rep = 1;
                 for (XmlNode z : y.getChildren())
                 {

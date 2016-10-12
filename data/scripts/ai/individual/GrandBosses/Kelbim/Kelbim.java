@@ -80,7 +80,7 @@ public class Kelbim extends L2AttackableAIScript
     private static L2Npc _kelbimBoss;
     private static long _lastAction;
     private static int _bossStage;
-    private static ArrayList<L2Npc> _minions = new ArrayList<L2Npc>();
+    private static ArrayList<L2Npc> _minions = new ArrayList<>();
 
     public Kelbim(int id, String name, String descr)
     {
@@ -136,7 +136,7 @@ public class Kelbim extends L2AttackableAIScript
         if (npcId == _npcEnterId)
         {
             int kelbimStatus = GrandBossManager.getInstance().getBossStatus(_kelbimId);
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
             if (kelbimStatus == GrandBossManager.getInstance().DEAD)
             {
                 return "34052-1.htm";
@@ -271,7 +271,7 @@ public class Kelbim extends L2AttackableAIScript
                 if (_kelbimBoss.isInCombat())
                 {
                     L2Skill randomAttackSkill = _areaSkills[Rnd.get(_areaSkills.length)];
-                    ArrayList<L2Npc> _skillNpcs = new ArrayList<L2Npc>();
+                    ArrayList<L2Npc> _skillNpcs = new ArrayList<>();
                     for (L2PcInstance pl : _bossZone.getPlayersInside())
                     {
                         if (pl == null)

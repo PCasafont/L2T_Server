@@ -58,7 +58,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
                 {
                     player = L2World.getInstance().getPlayer(playername);
                 }
-                catch (Exception e)
+                catch (Exception ignored)
                 {
                 }
 

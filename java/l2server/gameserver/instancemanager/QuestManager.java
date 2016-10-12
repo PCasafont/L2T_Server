@@ -38,7 +38,7 @@ public class QuestManager extends ScriptManager<Quest>
 
     // =========================================================
     // Data Field
-    private Map<String, Quest> _quests = new HashMap<String, Quest>();
+    private Map<String, Quest> _quests = new HashMap<>();
 
     // =========================================================
     // Constructor

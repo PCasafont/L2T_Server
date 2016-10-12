@@ -48,8 +48,8 @@ public class CharNameTable
 
     private CharNameTable()
     {
-        _chars = new ConcurrentHashMap<Integer, String>();
-        _accessLevels = new HashMap<Integer, Integer>();
+        _chars = new ConcurrentHashMap<>();
+        _accessLevels = new HashMap<>();
         if (Config.CACHE_CHAR_NAMES)
         {
             loadAll();

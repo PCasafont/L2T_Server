@@ -74,9 +74,9 @@ public class NornilsCave extends L2AttackableAIScript
         private NornilsCaveWorld()
         {
             _firstBossAttack = false;
-            _roomMobs = new ArrayList<L2Npc>();
-            _bozMobs = new ArrayList<L2Npc>();
-            rewardedPlayers = new ArrayList<L2PcInstance>();
+            _roomMobs = new ArrayList<>();
+            _bozMobs = new ArrayList<>();
+            rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -405,7 +405,7 @@ public class NornilsCave extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

@@ -70,8 +70,8 @@ public class CompoundTable implements Reloadable
         }
     }
 
-    private final Map<Integer, Combination> _combinations = new HashMap<Integer, Combination>();
-    private final Set<Integer> _combinable = new HashSet<Integer>();
+    private final Map<Integer, Combination> _combinations = new HashMap<>();
+    private final Set<Integer> _combinable = new HashSet<>();
 
     private CompoundTable()
     {

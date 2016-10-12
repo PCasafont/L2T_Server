@@ -29,7 +29,7 @@ import java.util.List;
 public class GameServerListener extends FloodProtectedListener
 {
 
-    private static List<GameServerThread> _gameServers = new ArrayList<GameServerThread>();
+    private static List<GameServerThread> _gameServers = new ArrayList<>();
 
     public GameServerListener() throws IOException
     {

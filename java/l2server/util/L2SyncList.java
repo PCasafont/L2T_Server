@@ -41,7 +41,7 @@ public class L2SyncList<T extends Object> implements List<T>
      */
     public L2SyncList()
     {
-        _list = new ArrayList<T>();
+        _list = new ArrayList<>();
     }
 
     public L2SyncList(List<T> list)
@@ -279,7 +279,7 @@ public class L2SyncList<T extends Object> implements List<T>
         _rl.lock();
         try
         {
-            return new L2SyncList<T>(_list.subList(fromIndex, toIndex));
+            return new L2SyncList<>(_list.subList(fromIndex, toIndex));
         }
         finally
         {

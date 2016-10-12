@@ -125,7 +125,7 @@ public class FaenorInterface implements EngineInterface
         {
             return null;
         }
-        List<L2DropData> questDrops = new ArrayList<L2DropData>();
+        List<L2DropData> questDrops = new ArrayList<>();
         for (L2DropCategory cat : npc.getMultiDropData())
         {
             for (L2DropData drop : cat.getAllDrops())

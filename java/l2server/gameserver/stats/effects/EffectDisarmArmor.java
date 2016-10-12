@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class EffectDisarmArmor extends L2Effect
 {
-    private static Map<Integer, Integer> _armors = new HashMap<Integer, Integer>();
+    private static Map<Integer, Integer> _armors = new HashMap<>();
 
     public EffectDisarmArmor(Env env, L2EffectTemplate template)
     {

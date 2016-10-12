@@ -76,7 +76,7 @@ public class EventDroplist
      */
     private EventDroplist()
     {
-        _allNpcDateDrops = new ArrayList<DateDrop>();
+        _allNpcDateDrops = new ArrayList<>();
     }
 
     /**
@@ -106,7 +106,7 @@ public class EventDroplist
      */
     public List<DateDrop> getAllDrops()
     {
-        List<DateDrop> list = new ArrayList<DateDrop>();
+        List<DateDrop> list = new ArrayList<>();
 
         for (DateDrop drop : _allNpcDateDrops)
         {

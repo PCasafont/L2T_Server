@@ -35,7 +35,7 @@ public class SkillTargetTypeHandler
 
     private SkillTargetTypeHandler()
     {
-        _datatable = new HashMap<Enum<L2SkillTargetType>, ISkillTargetTypeHandler>();
+        _datatable = new HashMap<>();
     }
 
     public void registerSkillTargetType(ISkillTargetTypeHandler handler)

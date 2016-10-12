@@ -93,7 +93,7 @@ public class SquadSkills extends Quest
             35680,
             35662
     };
-    private static final List<SkillInfo> _skillInfo = new ArrayList<SkillInfo>();
+    private static final List<SkillInfo> _skillInfo = new ArrayList<>();
 
     public SquadSkills(int questId, String name, String descr)
     {
@@ -331,9 +331,9 @@ public class SquadSkills extends Quest
 
     private static Map<Integer, Integer> getAvailableLearnSkills(L2Clan clan, int pledgeType)
     {
-        Map<Integer, Integer> availableSkills = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> availableSkills = new HashMap<>();
 
-        Map<Integer, Integer> pledgeSkills = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> pledgeSkills = new HashMap<>();
 
         if (pledgeType == 0)
         {

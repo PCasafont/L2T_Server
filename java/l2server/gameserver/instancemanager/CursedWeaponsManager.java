@@ -65,7 +65,7 @@ public class CursedWeaponsManager
     private void init()
     {
         Log.info("Initializing CursedWeaponsManager");
-        _cursedWeapons = new HashMap<Integer, CursedWeapon>();
+        _cursedWeapons = new HashMap<>();
 
         if (!Config.ALLOW_CURSED_WEAPONS)
         {
@@ -300,7 +300,7 @@ public class CursedWeaponsManager
                     rset.close();
                     statement.close();
                 }
-                catch (SQLException sqlE)
+                catch (SQLException ignored)
                 {
                 }
             }

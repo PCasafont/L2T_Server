@@ -34,8 +34,8 @@ public class TalkingIslandGuards extends L2AttackableAIScript
     private static final int generalId = 33007;
     private static final int guardId = 33018;
     private static int _action = 0;
-    private List<L2Npc> _generals = new ArrayList<L2Npc>();
-    private List<L2Npc> _guards = new ArrayList<L2Npc>();
+    private List<L2Npc> _generals = new ArrayList<>();
+    private List<L2Npc> _guards = new ArrayList<>();
 
     public TalkingIslandGuards(int questId, String name, String descr)
     {

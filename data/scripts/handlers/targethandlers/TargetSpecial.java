@@ -56,7 +56,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler
             return null;
         }
 
-        final ArrayList<L2Character> result = new ArrayList<L2Character>();
+        final ArrayList<L2Character> result = new ArrayList<>();
 
         final L2Summon aPet = aPlayer.getPet();
         if (aPet != null && !aPet.isDead())

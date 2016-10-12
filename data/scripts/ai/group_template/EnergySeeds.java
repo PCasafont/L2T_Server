@@ -51,8 +51,8 @@ public class EnergySeeds extends L2AttackableAIScript
     private static final int RATE = 1;
     private static final int RESPAWN = 480000;
     private static final int RANDOM_RESPAWN_OFFSET = 180000;
-    private static Map<Integer, ESSpawn> _spawns = new HashMap<Integer, ESSpawn>();
-    private static ConcurrentHashMap<L2Npc, Integer> _spawnedNpcs = new ConcurrentHashMap<L2Npc, Integer>();
+    private static Map<Integer, ESSpawn> _spawns = new HashMap<>();
+    private static ConcurrentHashMap<L2Npc, Integer> _spawnedNpcs = new ConcurrentHashMap<>();
 
     private static final int TEMPORARY_TELEPORTER = 32602;
     private static final int[] SEEDIDS = {18678, 18679, 18680, 18681, 18682, 18683};

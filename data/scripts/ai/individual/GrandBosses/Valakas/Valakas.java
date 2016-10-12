@@ -161,7 +161,7 @@ public class Valakas extends L2AttackableAIScript
         if (npc.getNpcId() == _heartOfVolkano)
         {
             int vallyStatus = GrandBossManager.getInstance().getBossStatus(_valakasId);
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
 
             if (_bossZone.getPlayersInside().size() > 200)
             {
@@ -627,7 +627,7 @@ public class Valakas extends L2AttackableAIScript
 
     private L2Playable getRandomTarget()
     {
-        List<L2Playable> result = new ArrayList<L2Playable>();
+        List<L2Playable> result = new ArrayList<>();
         for (L2Character obj : _valakasBoss.getKnownList().getKnownCharacters())
         {
             if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance ||

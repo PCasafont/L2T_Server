@@ -36,7 +36,7 @@ public class AdminCommandHandler
 
     private AdminCommandHandler()
     {
-        _datatable = new TIntObjectHashMap<IAdminCommandHandler>();
+        _datatable = new TIntObjectHashMap<>();
     }
 
     public void registerAdminCommandHandler(IAdminCommandHandler handler)

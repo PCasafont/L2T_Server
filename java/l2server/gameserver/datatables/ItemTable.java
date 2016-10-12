@@ -55,10 +55,10 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 public class ItemTable implements Reloadable
 {
 
-    public static final Map<String, Integer> _crystalTypes = new HashMap<String, Integer>();
-    public static final Map<String, Integer> _slots = new HashMap<String, Integer>();
-    public static final Map<String, L2WeaponType> _weaponTypes = new HashMap<String, L2WeaponType>();
-    public static final Map<String, L2ArmorType> _armorTypes = new HashMap<String, L2ArmorType>();
+    public static final Map<String, Integer> _crystalTypes = new HashMap<>();
+    public static final Map<String, Integer> _slots = new HashMap<>();
+    public static final Map<String, L2WeaponType> _weaponTypes = new HashMap<>();
+    public static final Map<String, L2ArmorType> _armorTypes = new HashMap<>();
 
     private L2Item[] _allTemplates;
     private Map<Integer, L2EtcItem> _etcItems;
@@ -146,9 +146,9 @@ public class ItemTable implements Reloadable
      */
     private ItemTable()
     {
-        _etcItems = new HashMap<Integer, L2EtcItem>();
-        _armors = new HashMap<Integer, L2Armor>();
-        _weapons = new HashMap<Integer, L2Weapon>();
+        _etcItems = new HashMap<>();
+        _armors = new HashMap<>();
+        _weapons = new HashMap<>();
         load();
 
         ReloadableManager.getInstance().register("items", this);
@@ -167,7 +167,7 @@ public class ItemTable implements Reloadable
             Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
             return;
         }
-        List<File> validFiles = new ArrayList<File>();
+        List<File> validFiles = new ArrayList<>();
         File[] files = dir.listFiles();
         for (File f : files)
         {
@@ -182,7 +182,7 @@ public class ItemTable implements Reloadable
             validFiles.add(customfile);
         }
 
-        Map<Integer, ItemParser> items = new HashMap<Integer, ItemParser>();
+        Map<Integer, ItemParser> items = new HashMap<>();
         for (File f : validFiles)
         {
             XmlDocument doc = new XmlDocument(f);

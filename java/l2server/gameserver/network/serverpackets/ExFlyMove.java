@@ -50,7 +50,7 @@ public class ExFlyMove extends L2GameServerPacket
         _objectId = activeChar.getObjectId();
         _type = L2FlyMoveType.MOVE;
         _id = id;
-        _moves = new HashMap<Integer, Point3D>();
+        _moves = new HashMap<>();
         _moves.put(ordinal, new Point3D(x, y, z));
         activeChar.setXYZ(x, y, z);
     }

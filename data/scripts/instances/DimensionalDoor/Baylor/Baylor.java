@@ -80,8 +80,8 @@ public class Baylor extends L2AttackableAIScript
 
         private BaylorWorld()
         {
-            _cameraMinions = new ArrayList<L2Npc>();
-            rewardedPlayers = new ArrayList<L2PcInstance>();
+            _cameraMinions = new ArrayList<>();
+            rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -406,7 +406,7 @@ public class Baylor extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

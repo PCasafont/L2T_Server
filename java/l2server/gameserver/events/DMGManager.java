@@ -29,7 +29,7 @@ public class DMGManager
     private static final String eventname = "Damage Manager";
 
     // Other
-    private static Map<Integer, dmginfo> dmgIinfo = new HashMap<Integer, dmginfo>();
+    private static Map<Integer, dmginfo> dmgIinfo = new HashMap<>();
 
     public static String getRankingInfo()
     {

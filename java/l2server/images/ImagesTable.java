@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class ImagesTable
 {
-    private static final Map<String, ImageIcon> IMAGES = new HashMap<String, ImageIcon>();
+    private static final Map<String, ImageIcon> IMAGES = new HashMap<>();
 
     public static final String IMAGES_DIRECTORY = "../images/";
 

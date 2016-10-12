@@ -28,7 +28,7 @@ public class ResidentialSkillTable
 
     private void load()
     {
-        _list = new TIntObjectHashMap<ArrayList<L2Skill>>();
+        _list = new TIntObjectHashMap<>();
 
         if (Config.IS_CLASSIC)
         {
@@ -60,7 +60,7 @@ public class ResidentialSkillTable
 
                         if (!_list.containsKey(entityId))
                         {
-                            ArrayList<L2Skill> aux = new ArrayList<L2Skill>();
+                            ArrayList<L2Skill> aux = new ArrayList<>();
                             aux.add(sk);
                             _list.put(entityId, aux);
                         }

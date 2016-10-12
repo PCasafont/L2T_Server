@@ -62,7 +62,7 @@ public class Teredor extends L2AttackableAIScript
     private static final int[] _adventureSpawn = {177228, -186305, -3800, 339};
 
     //Others
-    private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+    private static List<L2NpcWalkerNode> _route = new ArrayList<>();
 
     //Cords
     private static final Location[] _playerEnter = {
@@ -448,7 +448,7 @@ public class Teredor extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

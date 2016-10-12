@@ -27,7 +27,7 @@ import java.util.List;
 public class StalkedStalkers extends EventInstance
 {
 
-    private HashMap<Integer, String> _assignedStalkers = new HashMap<Integer, String>();
+    private HashMap<Integer, String> _assignedStalkers = new HashMap<>();
 
     public StalkedStalkers(int id, EventConfig config)
     {
@@ -66,7 +66,7 @@ public class StalkedStalkers extends EventInstance
     @Override
     public void calculateRewards()
     {
-        List<L2PcInstance> sorted = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> sorted = new ArrayList<>();
         for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
         {
             boolean added = false;
@@ -272,7 +272,7 @@ public class StalkedStalkers extends EventInstance
 
         String playerName = CharNameTable.getInstance().getNameById(playerObjectId);
 
-        List<Integer> toIterate = new ArrayList<Integer>(_assignedStalkers.keySet());
+        List<Integer> toIterate = new ArrayList<>(_assignedStalkers.keySet());
         for (int stalkerObjId : toIterate)
         {
             if (_assignedStalkers.get(stalkerObjId).equals(playerName))

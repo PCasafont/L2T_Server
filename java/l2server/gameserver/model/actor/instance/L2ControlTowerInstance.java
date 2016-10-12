@@ -122,7 +122,7 @@ public class L2ControlTowerInstance extends L2Npc
                         spawn.stopRespawn();
                         //spawn.getNpc().doDie(spawn.getNpc());
                     }
-                    catch (Exception e)
+                    catch (Exception ignored)
                     {
                     }
                 }
@@ -145,7 +145,7 @@ public class L2ControlTowerInstance extends L2Npc
             {
                 if (_guards == null)
                 {
-                    _guards = new ArrayList<L2Spawn>();
+                    _guards = new ArrayList<>();
                 }
             }
         }

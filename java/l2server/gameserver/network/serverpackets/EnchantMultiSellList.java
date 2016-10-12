@@ -48,8 +48,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
     public static int ShopId = 4000000;
     public static int ItemIdMod = 100000000;
 
-    private final Map<Integer, List<L2ItemInstance>> _mainIngredients =
-            new LinkedHashMap<Integer, List<L2ItemInstance>>();
+    private final Map<Integer, List<L2ItemInstance>> _mainIngredients = new LinkedHashMap<>();
     private final MerchantPriceConfig _mpc;
 
     public EnchantMultiSellList(L2PcInstance player)
@@ -57,7 +56,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
         _mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(player);
         for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
         {
-            List<L2ItemInstance> mainIngredients = new ArrayList<L2ItemInstance>();
+            List<L2ItemInstance> mainIngredients = new ArrayList<>();
             for (L2ItemInstance item : player.getInventory().getItems())
             {
                 if (!item.isEquipped() && EnchantItemTable.isEnchantable(item) &&

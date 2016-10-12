@@ -27,11 +27,11 @@ public class PlayerAssistsManager
 {
     public class PlayerInfo
     {
-        public Map<L2PcInstance, Long> AttackTimers = new HashMap<L2PcInstance, Long>();
-        public Map<L2PcInstance, Long> HelpTimers = new HashMap<L2PcInstance, Long>();
+        public Map<L2PcInstance, Long> AttackTimers = new HashMap<>();
+        public Map<L2PcInstance, Long> HelpTimers = new HashMap<>();
     }
 
-    Map<Integer, PlayerInfo> _players = new HashMap<Integer, PlayerInfo>();
+    Map<Integer, PlayerInfo> _players = new HashMap<>();
 
     public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target)
     {
@@ -74,13 +74,13 @@ public class PlayerAssistsManager
     public List<L2PcInstance> getAssistants(L2PcInstance killer, L2PcInstance victim, boolean killed)
     {
         long curTime = System.currentTimeMillis();
-        Set<L2PcInstance> assistants = new HashSet<L2PcInstance>();
+        Set<L2PcInstance> assistants = new HashSet<>();
         if (killer != null && _players.containsKey(killer.getObjectId()))
         {
             PlayerInfo killerInfo = _players.get(killer.getObjectId());
 
             // Gather the assistants
-            List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> toDeleteList = new ArrayList<>();
             for (L2PcInstance assistant : killerInfo.HelpTimers.keySet())
             {
                 if (killerInfo.HelpTimers.get(assistant) > curTime)
@@ -115,7 +115,7 @@ public class PlayerAssistsManager
                         PlayerInfo assistantInfo = _players.get(assistant.getObjectId());
 
                         // Gather the assistant's assistants
-                        List<L2PcInstance> toDeleteList = new ArrayList<L2PcInstance>();
+                        List<L2PcInstance> toDeleteList = new ArrayList<>();
                         for (Entry<L2PcInstance, Long> assistantsAssistant : assistantInfo.HelpTimers.entrySet())
                         {
                             if (assistantsAssistant.getValue() > curTime)
@@ -145,7 +145,7 @@ public class PlayerAssistsManager
 
         assistants.remove(killer);
         assistants.remove(victim);
-        return new ArrayList<L2PcInstance>(assistants);
+        return new ArrayList<>(assistants);
     }
 
     public static PlayerAssistsManager getInstance()

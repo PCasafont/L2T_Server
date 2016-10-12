@@ -32,7 +32,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 
     public ExEnchantSkillInfo(int id, int lvl, int enchRoute, int enchLvl)
     {
-        _routes = new ArrayList<Integer>();
+        _routes = new ArrayList<>();
         _id = id;
         _lvl = lvl;
         _enchant = enchRoute * 1000 + enchLvl;

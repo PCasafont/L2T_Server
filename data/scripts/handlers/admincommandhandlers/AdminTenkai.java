@@ -52,8 +52,8 @@ import java.util.StringTokenizer;
  */
 public class AdminTenkai implements IAdminCommandHandler
 {
-    private static List<SpawnInfo> _deletedSpawns = new ArrayList<SpawnInfo>();
-    private static List<Integer> _mobIds = new ArrayList<Integer>();
+    private static List<SpawnInfo> _deletedSpawns = new ArrayList<>();
+    private static List<Integer> _mobIds = new ArrayList<>();
 
     private static final String[] ADMIN_COMMANDS = {
             "admin_chess_start",
@@ -136,7 +136,7 @@ public class AdminTenkai implements IAdminCommandHandler
                     {
                         con.close();
                     }
-                    catch (Exception e)
+                    catch (Exception ignored)
                     {
                     }
                 }

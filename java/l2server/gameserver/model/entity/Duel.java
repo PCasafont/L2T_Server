@@ -75,7 +75,7 @@ public class Duel
             _duelEndTime.add(Calendar.SECOND, 120);
         }
 
-        _playerConditions = new ArrayList<PlayerCondition>();
+        _playerConditions = new ArrayList<>();
 
         setFinished(false);
 
@@ -156,7 +156,7 @@ public class Duel
         {
             if (_debuffs == null)
             {
-                _debuffs = new ArrayList<L2Abnormal>();
+                _debuffs = new ArrayList<>();
             }
 
             _debuffs.add(debuff);

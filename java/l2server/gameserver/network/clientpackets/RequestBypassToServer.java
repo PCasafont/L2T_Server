@@ -163,7 +163,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 
                     activeChar.sendPacket(ActionFailed.STATIC_PACKET);
                 }
-                catch (NumberFormatException nfe)
+                catch (NumberFormatException ignored)
                 {
                 }
             }
@@ -197,7 +197,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 
                     activeChar.sendPacket(ActionFailed.STATIC_PACKET);
                 }
-                catch (NumberFormatException nfe)
+                catch (NumberFormatException ignored)
                 {
                 }
             }

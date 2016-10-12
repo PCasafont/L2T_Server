@@ -73,7 +73,7 @@ public class AdminPledge implements IAdminCommandHandler
                 action = st.nextToken(); // create|info|dismiss|setlevel|rep
                 parameter = st.nextToken(); // clanname|nothing|nothing|level|rep_points
             }
-            catch (NoSuchElementException nse)
+            catch (NoSuchElementException ignored)
             {
             }
             if (action.equals("create"))
@@ -117,7 +117,7 @@ public class AdminPledge implements IAdminCommandHandler
             }
             else if (action.startsWith("skills"))
             {
-                Map<Integer, Integer> skills = new HashMap<Integer, Integer>();
+                Map<Integer, Integer> skills = new HashMap<>();
                 skills.put(370, 2);
                 skills.put(371, 3);
                 skills.put(372, 1);

@@ -31,7 +31,7 @@ import java.util.List;
 
 public class FortManager implements InstanceListManager
 {
-    private List<Fort> _forts = new ArrayList<Fort>();
+    private List<Fort> _forts = new ArrayList<>();
 
     public static FortManager getInstance()
     {

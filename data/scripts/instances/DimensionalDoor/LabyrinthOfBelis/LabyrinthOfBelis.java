@@ -94,7 +94,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
         private LabyrinthOfBelisWorld()
         {
-            operativeList = new ArrayList<L2Npc>();
+            operativeList = new ArrayList<>();
             isOfficerWalking = false;
             isGuardAttacked = false;
         }

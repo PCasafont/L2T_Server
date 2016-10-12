@@ -113,7 +113,7 @@ public class Monastery extends L2AttackableAIScript
     {
         if (Util.contains(mobs1, npc.getNpcId()))
         {
-            ArrayList<L2Playable> result = new ArrayList<L2Playable>();
+            ArrayList<L2Playable> result = new ArrayList<>();
             Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
             for (L2Object obj : objs)
             {

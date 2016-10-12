@@ -412,8 +412,8 @@ public class CustomAuctionManager
         }
     }
 
-    private static Map<Integer, Auction> _auctions = new HashMap<Integer, Auction>(); //Current auctions
-    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
+    private static Map<Integer, Auction> _auctions = new HashMap<>(); //Current auctions
+    private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<>();
     //All the auction info
 
     public final void startAuction(final int templateId)
@@ -625,7 +625,7 @@ public class CustomAuctionManager
                         int[] auctionItems = null;
                         if (d.getAttributes().getNamedItem("itemId") == null)
                         {
-                            List<Integer> itemIds = new ArrayList<Integer>();
+                            List<Integer> itemIds = new ArrayList<>();
                             for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
                             {
                                 if (e.getNodeName().equalsIgnoreCase("item"))

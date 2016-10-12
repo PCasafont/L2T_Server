@@ -113,7 +113,7 @@ public class AdminHeal implements IAdminCommandHandler
                     activeChar.sendMessage("Healed within " + radius + " unit radius.");
                     return;
                 }
-                catch (NumberFormatException nbe)
+                catch (NumberFormatException ignored)
                 {
                 }
             }

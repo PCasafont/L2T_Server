@@ -37,10 +37,10 @@ public class ComboSkillTable
         }
 
         public int id;
-        public Map<Integer, Integer> skills = new HashMap<Integer, Integer>();
+        public Map<Integer, Integer> skills = new HashMap<>();
     }
 
-    private Map<Integer, Combo> _combos = new HashMap<Integer, Combo>();
+    private Map<Integer, Combo> _combos = new HashMap<>();
 
     private ComboSkillTable()
     {

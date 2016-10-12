@@ -31,7 +31,7 @@ public class L2DropCategory
     public L2DropCategory(float chance)
     {
         _chance = chance;
-        _drops = new ArrayList<L2DropData>();
+        _drops = new ArrayList<>();
     }
 
     public void addDropData(L2DropData drop)
@@ -80,7 +80,7 @@ public class L2DropCategory
      */
     public synchronized L2DropData dropSeedAllowedDropsOnly()
     {
-        ArrayList<L2DropData> drops = new ArrayList<L2DropData>();
+        ArrayList<L2DropData> drops = new ArrayList<>();
         int subCatChance = 0;
         for (L2DropData drop : getAllDrops())
         {

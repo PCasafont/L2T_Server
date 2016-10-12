@@ -105,9 +105,9 @@ public final class L2World
     private L2World()
     {
         //_allGms	 = new HashMap<String, L2PcInstance>();
-        _allPlayers = new ConcurrentHashMap<Integer, L2PcInstance>();
-        _petsInstance = new ConcurrentHashMap<Integer, L2PetInstance>();
-        _allObjects = new ConcurrentHashMap<Integer, L2Object>();
+        _allPlayers = new ConcurrentHashMap<>();
+        _petsInstance = new ConcurrentHashMap<>();
+        _allObjects = new ConcurrentHashMap<>();
 
         initRegions();
     }
@@ -544,7 +544,7 @@ public final class L2World
         }
 
         // Create an ArrayList in order to contain all visible L2Object
-        List<L2Object> result = new ArrayList<L2Object>();
+        List<L2Object> result = new ArrayList<>();
 
         // Go through the ArrayList of region
         for (L2WorldRegion regi : reg.getSurroundingRegions())
@@ -590,7 +590,7 @@ public final class L2World
     {
         if (object == null || !object.isVisible())
         {
-            return new ArrayList<L2Object>();
+            return new ArrayList<>();
         }
 
         int x = object.getX();
@@ -598,7 +598,7 @@ public final class L2World
         int sqRadius = radius * radius;
 
         // Create an ArrayList in order to contain all visible L2Object
-        List<L2Object> result = new ArrayList<L2Object>();
+        List<L2Object> result = new ArrayList<>();
 
         // Go through the ArrayList of region
         for (L2WorldRegion regi : object.getWorldRegion().getSurroundingRegions())
@@ -656,7 +656,7 @@ public final class L2World
     {
         if (object == null || !object.isVisible())
         {
-            return new ArrayList<L2Object>();
+            return new ArrayList<>();
         }
 
         int x = object.getX();
@@ -665,7 +665,7 @@ public final class L2World
         int sqRadius = radius * radius;
 
         // Create an ArrayList in order to contain all visible L2Object
-        List<L2Object> result = new ArrayList<L2Object>();
+        List<L2Object> result = new ArrayList<>();
 
         // Go through visible object of the selected region
         for (L2WorldRegion regi : object.getWorldRegion().getSurroundingRegions())
@@ -721,7 +721,7 @@ public final class L2World
         }
 
         // Create an ArrayList in order to contain all visible L2Object
-        List<L2Playable> result = new ArrayList<L2Playable>();
+        List<L2Playable> result = new ArrayList<>();
 
         // Go through the ArrayList of region
         for (L2WorldRegion regi : reg.getSurroundingRegions())
@@ -896,7 +896,7 @@ public final class L2World
 
     public List<L2PcInstance> getAllPlayerShops()
     {
-        List<L2PcInstance> _shops = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> _shops = new ArrayList<>();
         for (L2PcInstance _player : getAllPlayersArray())
         {
             if (_player == null || _player.isInJail() || !_player.isInStoreMode())
@@ -911,7 +911,7 @@ public final class L2World
 
     public List<L2PcInstance> getAllOlympiadPlayers()
     {
-        List<L2PcInstance> _players = new ArrayList<L2PcInstance>();
+        List<L2PcInstance> _players = new ArrayList<>();
         for (L2PcInstance _player : getAllPlayersArray())
         {
             if (_player == null || _player.isInJail())

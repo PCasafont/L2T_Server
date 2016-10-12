@@ -1119,7 +1119,7 @@ public abstract class L2Summon extends L2Playable
 
             int buff_index = 0;
 
-            final List<Integer> storedSkills = new ArrayList<Integer>();
+            final List<Integer> storedSkills = new ArrayList<>();
 
             // Store all effect data along with calulated remaining
             // reuse delays for matching skills. 'restore_type'= 0.

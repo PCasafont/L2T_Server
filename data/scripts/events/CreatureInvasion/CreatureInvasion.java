@@ -65,10 +65,10 @@ public class CreatureInvasion extends Quest
             _strangeCreatures[0],
             _strangeCreatures[1]
     };
-    private static Map<Integer, AttackInfo> _attackInfo = new HashMap<Integer, AttackInfo>();
-    private static Map<String, String> _rewardedIps = new HashMap<String, String>();
-    private static Map<String, List<DropChances>> _dropInfo = new HashMap<String, List<DropChances>>();
-    private static ArrayList<L2Npc> _allCreatures = new ArrayList<L2Npc>();
+    private static Map<Integer, AttackInfo> _attackInfo = new HashMap<>();
+    private static Map<String, String> _rewardedIps = new HashMap<>();
+    private static Map<String, List<DropChances>> _dropInfo = new HashMap<>();
+    private static ArrayList<L2Npc> _allCreatures = new ArrayList<>();
     private static boolean _isEventStarted;
     private static BossAttackInfo _bossAttackInfo;
 
@@ -108,7 +108,7 @@ public class CreatureInvasion extends Quest
                     if (d.getName().equalsIgnoreCase("drop"))
                     {
                         String category = d.getString("category");
-                        List<DropChances> dropChances = new ArrayList<DropChances>();
+                        List<DropChances> dropChances = new ArrayList<>();
 
                         for (XmlNode b : d.getChildren())
                         {
@@ -170,7 +170,7 @@ public class CreatureInvasion extends Quest
         private BossAttackInfo(L2Npc boss)
         {
             _boss = boss;
-            _registredDamages = new HashMap<Integer, Long>();
+            _registredDamages = new HashMap<>();
         }
 
         private void deleteBoss()

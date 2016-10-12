@@ -85,7 +85,7 @@ public class AdminMenu implements IAdminCommandHandler
                 teleportCharacter(player, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar,
                         "Admin is teleporting you.");
             }
-            catch (StringIndexOutOfBoundsException e)
+            catch (StringIndexOutOfBoundsException ignored)
             {
             }
         }
@@ -156,7 +156,7 @@ public class AdminMenu implements IAdminCommandHandler
                 activeChar.setInstanceId(player.getInstanceId());
                 teleportToCharacter(activeChar, player);
             }
-            catch (StringIndexOutOfBoundsException e)
+            catch (StringIndexOutOfBoundsException ignored)
             {
             }
         }

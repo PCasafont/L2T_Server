@@ -45,7 +45,7 @@ public class TargetSummon implements ISkillTargetTypeHandler
                 return null;
             }
 
-            List<L2Character> targetList = new ArrayList<L2Character>();
+            List<L2Character> targetList = new ArrayList<>();
 
             //LasTravel: Servitor Balance Life should balance owner too
             if (skill.getId() == 11299)

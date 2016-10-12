@@ -38,7 +38,7 @@ public class BattleSoldier extends L2AttackableAIScript
             {-113600, 237167, -3045} //4
     };
 
-    private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+    private static List<L2NpcWalkerNode> _route = new ArrayList<>();
 
     public BattleSoldier(int id, String name, String descr)
     {

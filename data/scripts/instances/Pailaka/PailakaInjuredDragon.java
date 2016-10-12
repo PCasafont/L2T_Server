@@ -37,7 +37,7 @@ public class PailakaInjuredDragon extends Quest
     private static final int[] TELEPORT = {125757, -40928, -3736};
 
     // NO EXIT ZONES
-    private static final Map<Integer, int[]> NOEXIT_ZONES = new HashMap<Integer, int[]>();
+    private static final Map<Integer, int[]> NOEXIT_ZONES = new HashMap<>();
 
     static
     {
@@ -157,7 +157,7 @@ public class PailakaInjuredDragon extends Quest
             {4347, 6} // Blessed Body Lv6
     };
 
-    private static final ArrayList<PailakaDrop> DROPLIST = new ArrayList<PailakaDrop>();
+    private static final ArrayList<PailakaDrop> DROPLIST = new ArrayList<>();
 
     static
     {

@@ -40,7 +40,7 @@ public class ClanRecruitManager
         public int karma = 0;
         public String introduction = "";
         public String largeIntroduction = "";
-        public Map<Integer, ClanRecruitWaitingUser> applicants = new HashMap<Integer, ClanRecruitWaitingUser>();
+        public Map<Integer, ClanRecruitWaitingUser> applicants = new HashMap<>();
     }
 
     public class ClanRecruitWaitingUser
@@ -54,9 +54,9 @@ public class ClanRecruitManager
         public ClanRecruitData recruitData = null;
     }
 
-    private Map<Integer, ClanRecruitData> _recruitData = new HashMap<Integer, ClanRecruitData>();
-    private Map<Integer, ClanRecruitWaitingUser> _allApplicants = new HashMap<Integer, ClanRecruitWaitingUser>();
-    private Map<Integer, ClanRecruitWaitingUser> _waitingUsers = new HashMap<Integer, ClanRecruitWaitingUser>();
+    private Map<Integer, ClanRecruitData> _recruitData = new HashMap<>();
+    private Map<Integer, ClanRecruitWaitingUser> _allApplicants = new HashMap<>();
+    private Map<Integer, ClanRecruitWaitingUser> _waitingUsers = new HashMap<>();
 
     public static ClanRecruitManager getInstance()
     {
@@ -239,7 +239,7 @@ public class ClanRecruitManager
             return false;
         }
 
-        List<ClanRecruitWaitingUser> toIterate = new ArrayList<ClanRecruitWaitingUser>(data.applicants.values());
+        List<ClanRecruitWaitingUser> toIterate = new ArrayList<>(data.applicants.values());
         for (ClanRecruitWaitingUser applicant : toIterate)
         {
             removeApplicant(applicant.id);
@@ -281,7 +281,7 @@ public class ClanRecruitManager
     public List<ClanRecruitData> getRecruitData(int level, int karma, boolean clanName, String name, final int sortBy, final boolean desc)
     {
         name = name.toLowerCase();
-        List<ClanRecruitData> list = new ArrayList<ClanRecruitData>();
+        List<ClanRecruitData> list = new ArrayList<>();
 
         for (ClanRecruitData data : _recruitData.values())
         {
@@ -513,7 +513,7 @@ public class ClanRecruitManager
     public List<ClanRecruitWaitingUser> getWaitingUsers(int minLevel, int maxLevel, int role, final int sortBy, final boolean desc, String name)
     {
         name = name.toLowerCase();
-        List<ClanRecruitWaitingUser> result = new ArrayList<ClanRecruitWaitingUser>();
+        List<ClanRecruitWaitingUser> result = new ArrayList<>();
         for (ClanRecruitWaitingUser user : _waitingUsers.values())
         {
             if (user.level < minLevel || user.level > maxLevel)

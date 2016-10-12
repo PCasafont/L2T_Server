@@ -56,7 +56,7 @@ public class L2Clan
     private String _name;
     private int _clanId;
     private L2ClanMember _leader;
-    private Map<Integer, L2ClanMember> _members = new HashMap<Integer, L2ClanMember>();
+    private Map<Integer, L2ClanMember> _members = new HashMap<>();
 
     private String _allyName;
     private int _allyId;
@@ -93,7 +93,7 @@ public class L2Clan
 
     private ClanWarehouse _warehouse = null;
 
-    private List<ClanWar> _wars = new ArrayList<ClanWar>();
+    private List<ClanWar> _wars = new ArrayList<>();
 
     @SuppressWarnings("unused")
     private Forum _forum;
@@ -182,10 +182,10 @@ public class L2Clan
     /**
      * HashMap(Integer, L2Skill) containing all skills of the L2Clan
      */
-    private final Map<Integer, L2Skill> _skills = new HashMap<Integer, L2Skill>();
-    private final Map<Integer, RankPrivs> _privs = new HashMap<Integer, RankPrivs>();
-    private final Map<Integer, SubPledge> _subPledges = new HashMap<Integer, SubPledge>();
-    private final Map<Integer, L2Skill> _subPledgeSkills = new HashMap<Integer, L2Skill>();
+    private final Map<Integer, L2Skill> _skills = new HashMap<>();
+    private final Map<Integer, RankPrivs> _privs = new HashMap<>();
+    private final Map<Integer, SubPledge> _subPledges = new HashMap<>();
+    private final Map<Integer, L2Skill> _subPledgeSkills = new HashMap<>();
 
     private int _reputationScore = 0;
     private int _rank = 0;
@@ -605,7 +605,7 @@ public class L2Clan
 
     public L2PcInstance[] getOnlineMembers(int exclude)
     {
-        ArrayList<L2PcInstance> list = new ArrayList<L2PcInstance>();
+        ArrayList<L2PcInstance> list = new ArrayList<>();
         for (L2ClanMember temp : _members.values())
         {
             if (temp != null && temp.isOnline() && !(temp.getObjectId() == exclude))
@@ -1602,7 +1602,7 @@ public class L2Clan
 
     public List<L2Clan> getClansAtWarRepose()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.REPOSE)
@@ -1615,7 +1615,7 @@ public class L2Clan
 
     public List<L2Clan> getClansAtWarQueue()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.DECLARED)
@@ -1628,7 +1628,7 @@ public class L2Clan
 
     public List<L2Clan> getEnemiesQueue()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.DECLARED && this ==
@@ -1670,7 +1670,7 @@ public class L2Clan
 
     public List<L2Clan> getAttackersQueue()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.DECLARED && this !=
@@ -1733,7 +1733,7 @@ public class L2Clan
 
     public List<L2Clan> getWarList()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.STARTED && this ==
@@ -1748,7 +1748,7 @@ public class L2Clan
 
     public List<L2Clan> getAttackerList()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.STARTED && this !=
@@ -1762,7 +1762,7 @@ public class L2Clan
 
     public List<L2Clan> getDeclaredWars()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() != WarState.REPOSE && this == war.getClan1())
@@ -1776,7 +1776,7 @@ public class L2Clan
 
     public List<L2Clan> getUnderAttackWars()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() != WarState.REPOSE && this != war.getClan1())
@@ -1790,7 +1790,7 @@ public class L2Clan
 
     public List<L2Clan> getClanWars()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             clanList.add(this == war.getClan1() ? war.getClan2() : war.getClan1());
@@ -1801,7 +1801,7 @@ public class L2Clan
 
     public List<L2Clan> getStartedWarList()
     {
-        List<L2Clan> clanList = new ArrayList<L2Clan>();
+        List<L2Clan> clanList = new ArrayList<>();
         for (ClanWar war : _wars)
         {
             if (war.getState() == WarState.STARTED)
@@ -1847,7 +1847,7 @@ public class L2Clan
         private int _id;
         private String _subPledgeName;
         private int _leaderId;
-        private final Map<Integer, L2Skill> _subPledgeSkills = new HashMap<Integer, L2Skill>();
+        private final Map<Integer, L2Skill> _subPledgeSkills = new HashMap<>();
 
         public SubPledge(int id, String name, int leaderId)
         {
@@ -3391,7 +3391,7 @@ public class L2Clan
 
     public SubPledgeSkill[] getAllSubSkills()
     {
-        ArrayList<SubPledgeSkill> list = new ArrayList<SubPledgeSkill>();
+        ArrayList<SubPledgeSkill> list = new ArrayList<>();
         for (L2Skill skill : _subPledgeSkills.values())
         {
             list.add(new SubPledgeSkill(0, skill.getId(), skill.getLevelHash()));

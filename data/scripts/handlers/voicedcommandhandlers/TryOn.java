@@ -216,7 +216,7 @@ public class TryOn implements IVoicedCommandHandler
 
     private List<L2Item> getItems(String search)
     {
-        List<L2Item> items = new ArrayList<L2Item>();
+        List<L2Item> items = new ArrayList<>();
         for (L2Item it : ItemTable.getInstance().getAllItems())
         {
             L2Item item = null;
@@ -402,7 +402,7 @@ public class TryOn implements IVoicedCommandHandler
 
     private List<L2Item> getPage(List<L2Item> allItems, int page)
     {
-        List<L2Item> items = new ArrayList<L2Item>();
+        List<L2Item> items = new ArrayList<>();
         int index = 0;
         for (L2Item item : allItems)
         {

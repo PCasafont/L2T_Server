@@ -52,7 +52,7 @@ public class L2ContactList
     public L2ContactList(L2PcInstance player)
     {
         activeChar = player;
-        _contacts = new CopyOnWriteArrayList<String>();
+        _contacts = new CopyOnWriteArrayList<>();
         restore();
     }
 

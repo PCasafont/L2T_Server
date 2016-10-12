@@ -161,7 +161,7 @@ public class AdminBan implements IAdminCommandHandler
                     {
                         con.close();
                     }
-                    catch (Exception e)
+                    catch (Exception ignored)
                     {
                     }
                 }
@@ -217,7 +217,7 @@ public class AdminBan implements IAdminCommandHandler
                 {
                     con.close();
                 }
-                catch (Exception e)
+                catch (Exception ignored)
                 {
                 }
             }

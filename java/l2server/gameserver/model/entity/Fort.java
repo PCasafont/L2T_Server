@@ -50,7 +50,7 @@ public class Fort
     // =========================================================
     // Data Field
     private int _fortId = 0;
-    private List<L2DoorInstance> _doors = new ArrayList<L2DoorInstance>();
+    private List<L2DoorInstance> _doors = new ArrayList<>();
     private L2StaticObjectInstance _flagPole = null;
     private String _name = "";
     private FortSiege _siege = null;
@@ -65,11 +65,11 @@ public class Fort
     private int _blood = 0;
     private int _supplyLvL = 0;
     private HashMap<Integer, FortFunction> _function;
-    private ArrayList<L2Skill> _residentialSkills = new ArrayList<L2Skill>();
+    private ArrayList<L2Skill> _residentialSkills = new ArrayList<>();
     private ScheduledFuture<?>[] _fortUpdater = new ScheduledFuture<?>[2];
     private boolean _isSuspiciousMerchantSpawned = false;
 
-    private ArrayList<CombatFlag> _flagList = new ArrayList<CombatFlag>();
+    private ArrayList<CombatFlag> _flagList = new ArrayList<>();
 
     private TIntIntHashMap _envoyCastles = new TIntIntHashMap(2);
 
@@ -203,7 +203,7 @@ public class Fort
                         removeFunction(getType());
                     }
                 }
-                catch (Throwable t)
+                catch (Throwable ignored)
                 {
                 }
             }
@@ -252,7 +252,7 @@ public class Fort
 
         loadDbData();
 
-        _function = new HashMap<Integer, FortFunction>();
+        _function = new HashMap<>();
         _residentialSkills = ResidentialSkillTable.getInstance().getSkills(_fortId);
         if (getOwnerClan() != null)
         {
@@ -775,7 +775,7 @@ public class Fort
      */
     private void removeAllFunctions()
     {
-        HashMap<Integer, FortFunction> toIterate = new HashMap<Integer, FortFunction>(_function);
+        HashMap<Integer, FortFunction> toIterate = new HashMap<>(_function);
         for (int id : toIterate.keySet())
         {
             removeFunction(id);

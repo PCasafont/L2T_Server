@@ -157,9 +157,9 @@ public class ChainHeal implements ISkillHandler
 
     private L2Character[] getTargetsToHeal(L2Character[] targets, L2Character caster, int skillRadius)
     {
-        Map<L2Character, Double> tmpTargets = new LinkedHashMap<L2Character, Double>();
+        Map<L2Character, Double> tmpTargets = new LinkedHashMap<>();
 
-        List<L2Character> sortedListToReturn = new LinkedList<L2Character>();
+        List<L2Character> sortedListToReturn = new LinkedList<>();
 
         if (caster.getTarget() == caster)
         {

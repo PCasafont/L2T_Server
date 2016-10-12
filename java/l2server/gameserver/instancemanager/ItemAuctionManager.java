@@ -46,7 +46,7 @@ public final class ItemAuctionManager
 
     private ItemAuctionManager()
     {
-        _managerInstances = new TIntObjectHashMap<ItemAuctionInstance>();
+        _managerInstances = new TIntObjectHashMap<>();
         _auctionIds = new AtomicInteger(1);
 
         if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC)

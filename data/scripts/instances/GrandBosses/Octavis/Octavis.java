@@ -156,9 +156,9 @@ public class Octavis extends L2AttackableAIScript
         public OctavisWorld()
         {
             isHardMode = false;
-            rewardedPlayers = new ArrayList<L2PcInstance>();
-            curatorMinions = new ArrayList<L2Npc>();
-            allMinions = new ArrayList<L2Npc>();
+            rewardedPlayers = new ArrayList<>();
+            curatorMinions = new ArrayList<>();
+            allMinions = new ArrayList<>();
         }
     }
 
@@ -374,7 +374,7 @@ public class Octavis extends L2AttackableAIScript
 
                 world.octavisLions.setAI(world.lionsAI);
 
-                List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
+                List<L2NpcWalkerNode> route = new ArrayList<>();
                 for (int[] coord : _walkRoutes)
                 {
                     route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
@@ -763,7 +763,7 @@ public class Octavis extends L2AttackableAIScript
 
             setupIDs((OctavisWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

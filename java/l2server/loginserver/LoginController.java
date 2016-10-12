@@ -62,10 +62,9 @@ public class LoginController
     /**
      * Authed Clients on LoginServer
      */
-    protected ConcurrentHashMap<String, L2LoginClient> _loginServerClients =
-            new ConcurrentHashMap<String, L2LoginClient>();
+    protected ConcurrentHashMap<String, L2LoginClient> _loginServerClients = new ConcurrentHashMap<>();
 
-    private final Map<String, BanInfo> _bannedIps = new HashMap<String, BanInfo>();
+    private final Map<String, BanInfo> _bannedIps = new HashMap<>();
 
     private final Map<InetAddress, FailedLoginAttempt> _hackProtection;
 
@@ -100,7 +99,7 @@ public class LoginController
     {
         Log.info("Loading LoginController...");
 
-        _hackProtection = new HashMap<InetAddress, FailedLoginAttempt>();
+        _hackProtection = new HashMap<>();
 
         _keyPairs = new ScrambledKeyPair[10];
 

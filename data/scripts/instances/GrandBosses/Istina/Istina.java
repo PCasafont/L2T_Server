@@ -128,7 +128,7 @@ public class Istina extends L2AttackableAIScript
             isHardMode = false;
             ballistaSeconds = 30;
             zone = zoneInUse.NONE;
-            rewardedPlayers = new ArrayList<L2PcInstance>();
+            rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -418,7 +418,7 @@ public class Istina extends L2AttackableAIScript
                 }
 
                 //Kick retards
-                ArrayList<Integer> allowedPlayers = new ArrayList<Integer>(world.allowed);
+                ArrayList<Integer> allowedPlayers = new ArrayList<>(world.allowed);
                 for (int objId : allowedPlayers)
                 {
                     L2PcInstance pl = L2World.getInstance().getPlayer(objId);
@@ -986,7 +986,7 @@ public class Istina extends L2AttackableAIScript
 
             setupIDs((IstinaWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

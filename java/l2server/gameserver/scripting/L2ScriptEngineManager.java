@@ -42,9 +42,9 @@ public final class L2ScriptEngineManager
         return SingletonHolder._instance;
     }
 
-    private final Map<String, ScriptEngine> _nameEngines = new HashMap<String, ScriptEngine>();
-    private final Map<String, ScriptEngine> _extEngines = new HashMap<String, ScriptEngine>();
-    private final List<ScriptManager<?>> _scriptManagers = new LinkedList<ScriptManager<?>>();
+    private final Map<String, ScriptEngine> _nameEngines = new HashMap<>();
+    private final Map<String, ScriptEngine> _extEngines = new HashMap<>();
+    private final List<ScriptManager<?>> _scriptManagers = new LinkedList<>();
 
     private final CompiledScriptCache _cache;
 

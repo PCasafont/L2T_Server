@@ -112,7 +112,7 @@ public class Teleport implements IBypassHandler
                 // Check if the player's clan is already outnumbering the PvP
                 if (activeChar.getClan() != null)
                 {
-                    Map<Integer, Integer> clanNumbers = new HashMap<Integer, Integer>();
+                    Map<Integer, Integer> clanNumbers = new HashMap<>();
                     int allyId = activeChar.getAllyId();
                     if (allyId == 0)
                     {

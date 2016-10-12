@@ -120,7 +120,7 @@ public class CellPathFinding extends PathFinding
         {
             if (_debugItems == null)
             {
-                _debugItems = new ArrayList<L2ItemInstance>();
+                _debugItems = new ArrayList<>();
             }
             else
             {
@@ -249,7 +249,7 @@ public class CellPathFinding extends PathFinding
 
     private List<AbstractNodeLoc> constructPath(AbstractNode node)
     {
-        List<AbstractNodeLoc> path = new ArrayList<AbstractNodeLoc>();
+        List<AbstractNodeLoc> path = new ArrayList<>();
         int previousDirectionX = Integer.MIN_VALUE;
         int previousDirectionY = Integer.MIN_VALUE;
         int directionX, directionY;
@@ -370,7 +370,7 @@ public class CellPathFinding extends PathFinding
         {
             mapSize = size;
             count = cnt;
-            bufs = new ArrayList<CellNodeBuffer>(count);
+            bufs = new ArrayList<>(count);
         }
 
         @Override

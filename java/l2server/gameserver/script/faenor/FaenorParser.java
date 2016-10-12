@@ -79,7 +79,7 @@ public abstract class FaenorParser extends Parser
                 }
             }
         }
-        catch (Exception e)
+        catch (Exception ignored)
         {
         }
         if (defaultValue != null)

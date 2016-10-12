@@ -59,7 +59,7 @@ public class ConsoleTab extends JPanel
         WhisperChat(Chat, Color.magenta, false, "Talker", "Listener");
 
         public final ConsoleFilter parent;
-        public final List<ConsoleFilter> children = new ArrayList<ConsoleFilter>();
+        public final List<ConsoleFilter> children = new ArrayList<>();
         public final Color textColor;
         public final boolean startEnabled;
         public final String[] subFilters;
@@ -92,8 +92,8 @@ public class ConsoleTab extends JPanel
     }
 
     private static int _instanceId = 0;
-    private static List<ConsoleTab> _instances = new ArrayList<ConsoleTab>();
-    private static List<ConsoleLine> _messages = new ArrayList<ConsoleLine>();
+    private static List<ConsoleTab> _instances = new ArrayList<>();
+    private static List<ConsoleLine> _messages = new ArrayList<>();
 
     private class ConsoleFilterInstance
     {

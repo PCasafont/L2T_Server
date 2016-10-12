@@ -53,7 +53,7 @@ public class ConsoleLogFormatter extends Formatter
             {
                 StringUtil.append(output, Util.getStackTrace(record.getThrown()), CRLF);
             }
-            catch (Exception ex)
+            catch (Exception ignored)
             {
             }
         }

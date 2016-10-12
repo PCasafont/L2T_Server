@@ -38,8 +38,8 @@ public class TopicBBSManager extends BaseBBSManager
 
     protected TopicBBSManager()
     {
-        _table = new ArrayList<Topic>();
-        _maxId = new ConcurrentHashMap<Forum, Integer>();
+        _table = new ArrayList<>();
+        _maxId = new ConcurrentHashMap<>();
     }
 
     public void addTopic(Topic tt)

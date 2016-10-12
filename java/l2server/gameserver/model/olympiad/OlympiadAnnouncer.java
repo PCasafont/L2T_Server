@@ -31,7 +31,7 @@ public final class OlympiadAnnouncer implements Runnable
 {
     private static final int OLY_MANAGER = 31688;
 
-    private List<L2Spawn> _managers = new ArrayList<L2Spawn>();
+    private List<L2Spawn> _managers = new ArrayList<>();
     private int _currentStadium = 0;
 
     public OlympiadAnnouncer()

@@ -33,7 +33,7 @@ public class ItemsAutoDestroy
     private ItemsAutoDestroy()
     {
         Log.info("Initializing ItemsAutoDestroy.");
-        _items = new CopyOnWriteArrayList<L2ItemInstance>();
+        _items = new CopyOnWriteArrayList<>();
         _sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
         if (_sleep ==
                 0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..

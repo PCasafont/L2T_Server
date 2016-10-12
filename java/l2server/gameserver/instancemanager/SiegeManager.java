@@ -276,7 +276,7 @@ public class SiegeManager
 
     public final List<Siege> getSieges()
     {
-        ArrayList<Siege> sieges = new ArrayList<Siege>();
+        ArrayList<Siege> sieges = new ArrayList<>();
         for (Castle castle : CastleManager.getInstance().getCastles())
         {
             sieges.add(castle.getSiege());

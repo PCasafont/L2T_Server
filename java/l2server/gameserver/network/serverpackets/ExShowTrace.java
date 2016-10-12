@@ -25,7 +25,7 @@ import java.util.List;
  */
 public final class ExShowTrace extends L2GameServerPacket
 {
-    private final List<Trace> _traces = new ArrayList<Trace>();
+    private final List<Trace> _traces = new ArrayList<>();
 
     public void addTrace(int x, int y, int z, int time)
     {

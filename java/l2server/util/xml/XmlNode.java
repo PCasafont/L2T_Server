@@ -29,8 +29,8 @@ import java.util.Map.Entry;
 public class XmlNode
 {
     private String _name;
-    private Map<String, String> _attributes = new HashMap<String, String>();
-    private List<XmlNode> _children = new ArrayList<XmlNode>();
+    private Map<String, String> _attributes = new HashMap<>();
+    private List<XmlNode> _children = new ArrayList<>();
     private String _text = null;
 
     public XmlNode(Node base)

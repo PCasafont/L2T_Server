@@ -48,7 +48,7 @@ public class PartySpelled extends L2GameServerPacket
 
     public PartySpelled(L2Character cha)
     {
-        _effects = new ArrayList<Effect>();
+        _effects = new ArrayList<>();
         _activeChar = cha;
     }
 

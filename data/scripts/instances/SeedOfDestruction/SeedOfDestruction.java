@@ -36,7 +36,7 @@ public class SeedOfDestruction extends Quest
 
     private class SODWorld extends InstanceWorld
     {
-        public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
+        public Map<L2Npc, Boolean> npcList = new HashMap<>();
         public int killedDevice = 0;
         public int deviceSpawnedMobCount = 0;
 

@@ -31,7 +31,7 @@ import java.util.logging.Level;
 public final class StatsSet
 {
 
-    private final Map<String, Object> _set = new HashMap<String, Object>();
+    private final Map<String, Object> _set = new HashMap<>();
 
     /**
      * Returns the set of values

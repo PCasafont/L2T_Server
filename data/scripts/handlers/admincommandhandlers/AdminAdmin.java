@@ -291,7 +291,7 @@ public class AdminAdmin implements IAdminCommandHandler
         {
             mode = Integer.parseInt(command.substring(11));
         }
-        catch (Exception e)
+        catch (Exception ignored)
         {
         }
         switch (mode)

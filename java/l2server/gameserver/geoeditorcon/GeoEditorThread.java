@@ -49,7 +49,7 @@ public class GeoEditorThread extends Thread
     {
         _geSocket = ge;
         _working = true;
-        _gms = new ArrayList<L2PcInstance>();
+        _gms = new ArrayList<>();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class GeoEditorThread extends Thread
             {
                 _geSocket.close();
             }
-            catch (Exception ex)
+            catch (Exception ignored)
             {
             }
             _working = false;
@@ -197,7 +197,7 @@ public class GeoEditorThread extends Thread
             {
                 _geSocket.close();
             }
-            catch (Exception ex)
+            catch (Exception ignored)
             {
             }
             _working = false;

@@ -66,10 +66,10 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
                 {
                     val = Integer.parseInt(command.substring(5));
                 }
-                catch (IndexOutOfBoundsException ioobe)
+                catch (IndexOutOfBoundsException ignored)
                 {
                 }
-                catch (NumberFormatException nfe)
+                catch (NumberFormatException ignored)
                 {
                 }
                 showChatWindow(player, val);

@@ -74,8 +74,8 @@ public class AutoSpawnHandler
 
     private AutoSpawnHandler()
     {
-        _registeredSpawns = new HashMap<Integer, AutoSpawnInstance>();
-        _runningSpawns = new HashMap<Integer, ScheduledFuture<?>>();
+        _registeredSpawns = new HashMap<>();
+        _runningSpawns = new HashMap<>();
 
         restoreSpawnData();
     }
@@ -110,8 +110,8 @@ public class AutoSpawnHandler
         }
 
         // create clean list
-        _registeredSpawns = new HashMap<Integer, AutoSpawnInstance>();
-        _runningSpawns = new HashMap<Integer, ScheduledFuture<?>>();
+        _registeredSpawns = new HashMap<>();
+        _runningSpawns = new HashMap<>();
 
         // load
         restoreSpawnData();
@@ -411,7 +411,7 @@ public class AutoSpawnHandler
 
     public Map<Integer, AutoSpawnInstance> getAutoSpawnInstances(int npcId)
     {
-        Map<Integer, AutoSpawnInstance> spawnInstList = new HashMap<Integer, AutoSpawnInstance>();
+        Map<Integer, AutoSpawnInstance> spawnInstList = new HashMap<>();
 
         for (AutoSpawnInstance spawnInst : _registeredSpawns.values())
         {
@@ -645,9 +645,9 @@ public class AutoSpawnHandler
 
         protected int _lastLocIndex = -1;
 
-        private List<L2Npc> _npcList = new Vector<L2Npc>();
+        private final List<L2Npc> _npcList = new Vector<>();
 
-        private List<Location> _locList = new Vector<Location>();
+        private List<Location> _locList = new Vector<>();
 
         private boolean _spawnActive;
 
@@ -722,7 +722,7 @@ public class AutoSpawnHandler
 
         public L2Spawn[] getSpawns()
         {
-            List<L2Spawn> npcSpawns = new ArrayList<L2Spawn>();
+            List<L2Spawn> npcSpawns = new ArrayList<>();
 
             for (L2Npc npcInst : _npcList)
             {

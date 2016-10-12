@@ -94,8 +94,8 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 
         private SealOfTheEmperorWorld()
         {
-            toKill = new ArrayList<L2Npc>();
-            doneDevices = new ArrayList<L2Npc>();
+            toKill = new ArrayList<>();
+            doneDevices = new ArrayList<>();
         }
     }
 

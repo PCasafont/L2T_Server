@@ -46,7 +46,7 @@ import java.util.logging.Level;
 public abstract class L2Vehicle extends L2Character
 {
     protected int _dockId = 0;
-    protected final ArrayList<L2PcInstance> _passengers = new ArrayList<L2PcInstance>();
+    protected final ArrayList<L2PcInstance> _passengers = new ArrayList<>();
     protected Location _oustLoc = null;
     private Runnable _engine = null;
 
@@ -270,7 +270,7 @@ public abstract class L2Vehicle extends L2Character
         {
             _passengers.remove(player);
         }
-        catch (Exception e)
+        catch (Exception ignored)
         {
         }
     }

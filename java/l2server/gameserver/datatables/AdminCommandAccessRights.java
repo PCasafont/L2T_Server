@@ -60,7 +60,7 @@ public class AdminCommandAccessRights
      */
     private void loadAdminCommandAccessRights()
     {
-        _adminCommandAccessRights = new HashMap<String, L2AdminCommandAccessRight>();
+        _adminCommandAccessRights = new HashMap<>();
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
         XmlDocument doc = new XmlDocument(file);

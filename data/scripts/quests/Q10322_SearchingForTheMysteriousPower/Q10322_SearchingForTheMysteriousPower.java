@@ -52,7 +52,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
     private int _scarecrow = 27457;
 
     private int _guideId = 33016;
-    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<L2NpcWalkerNode>();
+    private List<L2NpcWalkerNode> _guideRoute = new ArrayList<>();
     private int _guideFirstChatId = 1032301;
     private int _guideWaitChatId = 1032302;
     private int _guideLastChatId = 1032303;

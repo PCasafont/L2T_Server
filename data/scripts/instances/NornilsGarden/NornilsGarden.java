@@ -532,7 +532,7 @@ public class NornilsGarden extends Quest
             {
                 htmltext = enterInstance(npc, player);
             }
-            catch (Exception e)
+            catch (Exception ignored)
             {
             }
         }
@@ -542,7 +542,7 @@ public class NornilsGarden extends Quest
             {
                 exitInstance(player);
             }
-            catch (Exception e)
+            catch (Exception ignored)
             {
             }
         }

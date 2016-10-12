@@ -34,7 +34,7 @@ public class SkillHandler
 
     private SkillHandler()
     {
-        _datatable = new TIntObjectHashMap<ISkillHandler>();
+        _datatable = new TIntObjectHashMap<>();
     }
 
     public void registerSkillHandler(ISkillHandler handler)

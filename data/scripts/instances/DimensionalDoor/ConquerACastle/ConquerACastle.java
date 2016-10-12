@@ -111,7 +111,7 @@ public class ConquerACastle extends L2AttackableAIScript
         private ConquerACastleWorld()
         {
             isGolemAttacking = false;
-            rewardedPlayers = new ArrayList<L2PcInstance>();
+            rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -593,7 +593,7 @@ public class ConquerACastle extends L2AttackableAIScript
 
             wrld.castleId = castleId;
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

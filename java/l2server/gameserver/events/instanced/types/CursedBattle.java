@@ -24,7 +24,7 @@ public class CursedBattle extends EventInstance
 {
     private L2PcInstance _cursedPlayer;
 
-    List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
+    List<L2PcInstance> _winners = new ArrayList<>();
 
     public CursedBattle(int id, EventConfig config)
     {

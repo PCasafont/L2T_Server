@@ -34,10 +34,10 @@ public class DarkWaterDragon extends L2AttackableAIScript
     private static final int FAFURION = 18482;
     private static final int DETRACTOR1 = 22270;
     private static final int DETRACTOR2 = 22271;
-    private static HashSet<Integer> secondSpawn = new HashSet<Integer>();
+    private static HashSet<Integer> secondSpawn = new HashSet<>();
     //Used to track if second Shades were already spawned
-    private static HashSet<Integer> myTrackingSet = new HashSet<Integer>(); //Used to track instances of npcs
-    private static ConcurrentHashMap<Integer, L2PcInstance> _idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
+    private static HashSet<Integer> myTrackingSet = new HashSet<>(); //Used to track instances of npcs
+    private static ConcurrentHashMap<Integer, L2PcInstance> _idmap = new ConcurrentHashMap<>();
     //Used to track instances of npcs
 
     public DarkWaterDragon(int id, String name, String descr)

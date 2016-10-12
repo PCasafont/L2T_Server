@@ -74,7 +74,7 @@ public class ServerStatus extends BaseSendablePacket
 
     public ServerStatus()
     {
-        _attributes = new ArrayList<Attribute>();
+        _attributes = new ArrayList<>();
     }
 
     public void addAttribute(int id, int value)

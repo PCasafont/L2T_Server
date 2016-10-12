@@ -252,7 +252,7 @@ public class CharSelectionInfo extends L2GameServerPacket
     private static CharSelectInfoPackage[] loadCharacterSelectInfo(String loginName)
     {
         CharSelectInfoPackage charInfopackage;
-        List<CharSelectInfoPackage> characterList = new ArrayList<CharSelectInfoPackage>();
+        List<CharSelectInfoPackage> characterList = new ArrayList<>();
 
         Connection con = null;
 

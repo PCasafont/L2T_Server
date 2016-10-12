@@ -85,15 +85,15 @@ public class Balok extends L2AttackableAIScript
 
     private class CrystalPrisonWorld extends InstanceWorld
     {
-        private List<L2Npc> minionList;
+        private final List<L2Npc> minionList;
         private L2Npc balok;
         private L2Npc currentMinion;
-        private ArrayList<L2PcInstance> _rewardedPlayers;
+        private final ArrayList<L2PcInstance> _rewardedPlayers;
 
         private CrystalPrisonWorld()
         {
-            minionList = new ArrayList<L2Npc>();
-            _rewardedPlayers = new ArrayList<L2PcInstance>();
+            minionList = new ArrayList<>();
+            _rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -408,7 +408,7 @@ public class Balok extends L2AttackableAIScript
 
             InstanceManager.getInstance().addWorld(world);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

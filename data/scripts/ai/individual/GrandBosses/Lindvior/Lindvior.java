@@ -102,7 +102,7 @@ public class Lindvior extends L2AttackableAIScript
     private Location _bossLocation;
     private static long _LastAction;
     private int _bossStage;
-    private Map<L2Npc, Double> _manageGenerators = new HashMap<L2Npc, Double>();
+    private Map<L2Npc, Double> _manageGenerators = new HashMap<>();
 
     public Lindvior(int questId, String name, String descr)
     {
@@ -195,7 +195,7 @@ public class Lindvior extends L2AttackableAIScript
         {
             int lindStatus = GrandBossManager.getInstance().getBossStatus(_secondFloorLindvior);
 
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
             if (lindStatus == GrandBossManager.getInstance().DEAD)
             {
                 return "33881-01.html";

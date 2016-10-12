@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class BoatManager
 {
-    private Map<Integer, L2BoatInstance> _boats = new HashMap<Integer, L2BoatInstance>();
+    private Map<Integer, L2BoatInstance> _boats = new HashMap<>();
     private boolean[] _docksBusy = new boolean[3];
 
     public static final int TALKING_ISLAND = 1;
@@ -125,7 +125,7 @@ public class BoatManager
         {
             _docksBusy[h] = value;
         }
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {
         }
     }

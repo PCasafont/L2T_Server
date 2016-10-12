@@ -93,7 +93,7 @@ public class AntiBotsManager
 
     public class ClientInfo
     {
-        private final ArrayList<ClientProcess> _processes = new ArrayList<ClientProcess>();
+        private final ArrayList<ClientProcess> _processes = new ArrayList<>();
         private String _ip;
         private String _localIp;
         private String _windowsUser;
@@ -227,7 +227,7 @@ public class AntiBotsManager
 
         private final ArrayList<ClientProcess> getProcessesByFilePath(final String filePath)
         {
-            ArrayList<ClientProcess> result = new ArrayList<ClientProcess>();
+            ArrayList<ClientProcess> result = new ArrayList<>();
             for (ClientProcess process : _processes)
             {
                 if (!process.getFilePath().equals(filePath))
@@ -328,7 +328,7 @@ public class AntiBotsManager
     }
 
     //Trace the users by his forum IP AKA users using ping tools
-    private static final Map<String, String> _conflictiveUserIps = new HashMap<String, String>();
+    private static final Map<String, String> _conflictiveUserIps = new HashMap<>();
 
     private static final String SELECT_AUTH_DATA_FOR_IP =
             "SELECT localIp, hardwareId, windowsUser, version, processes, lastUpdateTime FROM " + Config.LOGIN_DB_NAME +
@@ -347,9 +347,9 @@ public class AntiBotsManager
     private static int _failedWebHitTimes = 0;
 
     // Key: IP
-    public static final Map<String, ClientInfo> _clients = new HashMap<String, ClientInfo>();
-    public static final ArrayList<PlayerBanTrace> _pendingBans = new ArrayList<PlayerBanTrace>();
-    public static final ArrayList<String> _hardwareBans = new ArrayList<String>();
+    public static final Map<String, ClientInfo> _clients = new HashMap<>();
+    public static final ArrayList<PlayerBanTrace> _pendingBans = new ArrayList<>();
+    public static final ArrayList<String> _hardwareBans = new ArrayList<>();
 
     private static final String[] PROHIBITED_PROCESSES_NAMES = {
             "l2tower", //http://www.forum.l2tower.eu
@@ -767,7 +767,7 @@ public class AntiBotsManager
             {
                 con.close();
             }
-            catch (Exception e)
+            catch (Exception ignored)
             {
             }
         }
@@ -814,7 +814,7 @@ public class AntiBotsManager
 
     private List<ClientProcess> getIllegalProcesses(final ClientInfo clientInfo)
     {
-        List<ClientProcess> result = new ArrayList<ClientProcess>();
+        List<ClientProcess> result = new ArrayList<>();
         for (ClientProcess process : clientInfo.getProcesses())
         {
             if (!isIllegalProcess(process))
@@ -857,7 +857,7 @@ public class AntiBotsManager
 
     public final List<ClientInfo> getClientsInfoByIp(final String ip)
     {
-        List<ClientInfo> result = new ArrayList<ClientInfo>();
+        List<ClientInfo> result = new ArrayList<>();
 
         Connection con = null;
         try

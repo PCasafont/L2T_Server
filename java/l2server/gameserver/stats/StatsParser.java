@@ -472,7 +472,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("clanHall"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -538,7 +538,7 @@ public abstract class StatsParser
             else if ("class_id_restriction".equalsIgnoreCase(a.getKey()))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -549,7 +549,7 @@ public abstract class StatsParser
             else if ("starts_with_class_name_restriction".equalsIgnoreCase(a.getKey()))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<String> array = new ArrayList<String>(st.countTokens());
+                ArrayList<String> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -565,7 +565,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("instanceId"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -586,7 +586,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("hasPet"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -597,7 +597,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("hasPet"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -608,7 +608,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("servitorNpcId"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -679,7 +679,7 @@ public abstract class StatsParser
             else if ("class_id_restriction".equalsIgnoreCase(a.getKey()))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -730,7 +730,7 @@ public abstract class StatsParser
             else if ("race_id".equalsIgnoreCase(a.getKey()))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();
@@ -781,7 +781,7 @@ public abstract class StatsParser
             else if (a.getKey().equalsIgnoreCase("npcId"))
             {
                 StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-                ArrayList<Integer> array = new ArrayList<Integer>(st.countTokens());
+                ArrayList<Integer> array = new ArrayList<>(st.countTokens());
                 while (st.hasMoreTokens())
                 {
                     String item = st.nextToken().trim();

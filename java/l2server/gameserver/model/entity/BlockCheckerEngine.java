@@ -52,15 +52,15 @@ public final class BlockCheckerEngine
     // The object which holds all basic members info
     private HandysBlockCheckerManager.ArenaParticipantsHolder _holder;
     // Maps to hold player of each team and his points
-    private HashMap<L2PcInstance, Integer> _redTeamPoints = new HashMap<L2PcInstance, Integer>();
-    private HashMap<L2PcInstance, Integer> _blueTeamPoints = new HashMap<L2PcInstance, Integer>();
+    private HashMap<L2PcInstance, Integer> _redTeamPoints = new HashMap<>();
+    private HashMap<L2PcInstance, Integer> _blueTeamPoints = new HashMap<>();
     // The initial points of the event
     private int _redPoints = 15;
     private int _bluePoints = 15;
     // Current used arena
     private int _arena = -1;
     // All blocks
-    private ArrayList<L2Spawn> _spawns = new ArrayList<L2Spawn>();
+    private ArrayList<L2Spawn> _spawns = new ArrayList<>();
     // Sets if the red team won the event at the end of this (used for packets)
     private boolean _isRedWinner;
     // Time when the event starts. Used on packet sending
@@ -80,7 +80,7 @@ public final class BlockCheckerEngine
     // Common z coordinate
     private static final int _zCoord = -2405;
     // List of dropped items in event (for later deletion)
-    private ArrayList<L2ItemInstance> _drops = new ArrayList<L2ItemInstance>();
+    private ArrayList<L2ItemInstance> _drops = new ArrayList<>();
     // Default arena
     private static final byte DEFAULT_ARENA = -1;
     // Event is started

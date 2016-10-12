@@ -61,7 +61,7 @@ public final class SkillList extends L2GameServerPacket
 
     public SkillList()
     {
-        _skills = new ArrayList<Skill>();
+        _skills = new ArrayList<>();
     }
 
     public void addSkill(int id, int level, int reuseGroup, boolean passive, boolean disabled, boolean enchanted)

@@ -60,8 +60,8 @@ public class CertificateSkillTable
         }
     }
 
-    private Map<Integer, CertificateSkillLearn> _subClassSkills = new HashMap<Integer, CertificateSkillLearn>();
-    private Map<Integer, CertificateSkillLearn> _dualClassSkills = new HashMap<Integer, CertificateSkillLearn>();
+    private Map<Integer, CertificateSkillLearn> _subClassSkills = new HashMap<>();
+    private Map<Integer, CertificateSkillLearn> _dualClassSkills = new HashMap<>();
 
     public static CertificateSkillTable getInstance()
     {

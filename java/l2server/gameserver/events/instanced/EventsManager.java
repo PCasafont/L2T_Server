@@ -34,14 +34,14 @@ public class EventsManager implements Reloadable
 {
     public static EventsManager _instance = null;
 
-    private HashMap<Integer, EventLocation> _locations = new HashMap<Integer, EventLocation>();
+    private HashMap<Integer, EventLocation> _locations = new HashMap<>();
 
     private EventManagerTask _task;
-    private ConcurrentHashMap<Integer, EventInstance> _instances = new ConcurrentHashMap<Integer, EventInstance>();
+    private ConcurrentHashMap<Integer, EventInstance> _instances = new ConcurrentHashMap<>();
     private int _nextInstanceId = 1;
 
     private EventConfig _currentConfig = null;
-    private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<Integer, L2PcInstance>();
+    private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<>();
 
     public static EventsManager getInstance()
     {
@@ -138,7 +138,7 @@ public class EventsManager implements Reloadable
         @Override
         public void run()
         {
-            List<Integer> toRemove = new ArrayList<Integer>();
+            List<Integer> toRemove = new ArrayList<>();
             try
             {
                 for (EventInstance event : _instances.values())
@@ -269,11 +269,11 @@ public class EventsManager implements Reloadable
         }
 
         // Next divide all the registered players in groups, depending on the location's maximum room
-        List<List<Integer>> groups = new ArrayList<List<Integer>>();
+        List<List<Integer>> groups = new ArrayList<>();
         i = 0;
         while (i < sorted.length)
         {
-            List<Integer> group = new ArrayList<Integer>();
+            List<Integer> group = new ArrayList<>();
             int j = 0;
             while (i + j < sorted.length)
             {
@@ -725,7 +725,7 @@ public class EventsManager implements Reloadable
     public EventInstance createInstance(int id, List<Integer> group, EventConfig config)
     {
         // A map of lists to access the players sorted by class
-        Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<Integer, List<L2PcInstance>>();
+        Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<>();
         // Classify the players according to their class
         for (int playerId : group)
         {
@@ -744,7 +744,7 @@ public class EventsManager implements Reloadable
             List<L2PcInstance> players = playersByClass.get(classId);
             if (players == null)
             {
-                players = new ArrayList<L2PcInstance>();
+                players = new ArrayList<>();
                 playersByClass.put(classId, players);
             }
 

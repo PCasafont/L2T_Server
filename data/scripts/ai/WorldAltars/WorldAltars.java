@@ -82,7 +82,7 @@ public class WorldAltars extends Quest
                     return "";
                 }
                 //Check if have at least 4 different players
-                Map<String, String> pIps = new HashMap<String, String>();
+                Map<String, String> pIps = new HashMap<>();
                 for (L2PcInstance pMember : party.getPartyMembers())
                 {
                     if (pMember == null)

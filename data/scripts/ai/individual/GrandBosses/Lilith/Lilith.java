@@ -85,7 +85,7 @@ public class Lilith extends L2AttackableAIScript
     private static final L2BossZone _preLilithZone = GrandBossManager.getInstance().getZone(-19105, 13588, -4906);
 
     //Others
-    private static List<L2Npc> _remnants = new ArrayList<L2Npc>();
+    private static List<L2Npc> _remnants = new ArrayList<>();
     private static long _lastAction;
     private static L2Npc _lilithBoss;
 
@@ -130,7 +130,7 @@ public class Lilith extends L2AttackableAIScript
         {
             int _lilithStatus = GrandBossManager.getInstance().getBossStatus(_lilithId);
 
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
 
             if (_lilithStatus == GrandBossManager.getInstance().DEAD)
             {

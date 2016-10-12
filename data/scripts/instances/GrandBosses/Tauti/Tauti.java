@@ -94,7 +94,7 @@ public class Tauti extends L2AttackableAIScript
 
         public TautiWorld()
         {
-            _fakeTautis = new ArrayList<L2Npc>();
+            _fakeTautis = new ArrayList<>();
             isHardMode = false;
         }
     }
@@ -221,7 +221,7 @@ public class Tauti extends L2AttackableAIScript
                 }
 
                 //kick buggers
-                ArrayList<Integer> allowedPlayers = new ArrayList<Integer>(world.allowed);
+                ArrayList<Integer> allowedPlayers = new ArrayList<>(world.allowed);
                 for (int objId : allowedPlayers)
                 {
                     L2PcInstance pl = L2World.getInstance().getPlayer(objId);
@@ -511,7 +511,7 @@ public class Tauti extends L2AttackableAIScript
 
             setupIDs((TautiWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

@@ -371,7 +371,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         String negateAbnormals = set.getString("negateAbnormals", null);
         if (negateAbnormals != null && negateAbnormals != "")
         {
-            _negateAbnormals = new HashMap<String, Byte>();
+            _negateAbnormals = new HashMap<>();
             for (String ngtStack : negateAbnormals.split(";"))
             {
                 String[] ngt = ngtStack.split(",");
@@ -1689,7 +1689,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         // (ex : ONE, SELF, HOLY, PET, AURA, AURA_CLOSE, AREA, MULTIFACE, PARTY, CLAN, CORPSE_PLAYER, CORPSE_MOB, CORPSE_CLAN, UNLOCKABLE, ITEM, UNDEAD)
         L2SkillTargetType targetType = getTargetType();
 
-        List<L2Character> targetList = new ArrayList<L2Character>();
+        List<L2Character> targetList = new ArrayList<>();
 
         switch (targetType)
         {
@@ -2603,7 +2603,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
             return _emptyFunctionSet;
         }
 
-        ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
+        ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
 
         Func f;
         for (FuncTemplate t : _funcTemplates)
@@ -2692,7 +2692,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
             }
         }
 
-        ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>(_effectTemplates.length);
+        ArrayList<L2Abnormal> effects = new ArrayList<>(_effectTemplates.length);
         if (env == null)
         {
             env = new Env();
@@ -2820,7 +2820,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
             }
         }
 
-        ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>(_effectTemplates.length);
+        ArrayList<L2Abnormal> effects = new ArrayList<>(_effectTemplates.length);
 
         if (env == null)
         {
@@ -2868,7 +2868,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
             return _emptyEffectSet;
         }
 
-        List<L2Abnormal> effects = new ArrayList<L2Abnormal>(_effectTemplatesSelf.length);
+        List<L2Abnormal> effects = new ArrayList<>(_effectTemplatesSelf.length);
 
         for (L2AbnormalTemplate et : _effectTemplatesSelf)
         {
@@ -2947,7 +2947,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         {
             if (_itemPreCondition == null)
             {
-                _itemPreCondition = new ArrayList<Condition>();
+                _itemPreCondition = new ArrayList<>();
             }
             _itemPreCondition.add(c);
         }
@@ -2955,7 +2955,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
         {
             if (_preCondition == null)
             {
-                _preCondition = new ArrayList<Condition>();
+                _preCondition = new ArrayList<>();
             }
             _preCondition.add(c);
         }
@@ -3100,7 +3100,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
     {
         String[] lineSplit = values.split(";");
 
-        final ArrayList<L2ExtractableProductItem> product_temp = new ArrayList<L2ExtractableProductItem>();
+        final ArrayList<L2ExtractableProductItem> product_temp = new ArrayList<>();
 
         for (int i = 0; i <= lineSplit.length - 1; i++)
         {

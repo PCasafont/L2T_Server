@@ -49,9 +49,9 @@ public class Christmas extends Quest
     private static L2PcInstance _player;
     private static L2Npc _santa;
     private static boolean _isUnderInvasion = false;
-    private Map<Integer, invaderInfo> _attackInfo = new HashMap<Integer, invaderInfo>();
-    private ArrayList<L2Character> _invaders = new ArrayList<L2Character>();
-    private ArrayList<String> _rewardedPlayers = new ArrayList<String>(); //IP based
+    private Map<Integer, invaderInfo> _attackInfo = new HashMap<>();
+    private ArrayList<L2Character> _invaders = new ArrayList<>();
+    private ArrayList<String> _rewardedPlayers = new ArrayList<>(); //IP based
 
     private static final int[][] _randomRewards = {
             //Item Id, ammount
@@ -411,7 +411,7 @@ public class Christmas extends Quest
                 return "";
             }
 
-            List<L2PcInstance> playerList = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> playerList = new ArrayList<>();
             for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
             {
                 if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(L2Character.ZONE_PEACE) &&

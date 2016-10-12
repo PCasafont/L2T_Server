@@ -281,7 +281,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
                     paramTwo = Integer.parseInt(command.substring(endIndex).trim());
                 }
             }
-            catch (Exception NumberFormatException)
+            catch (Exception ignored)
             {
             }
 
@@ -1187,7 +1187,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 
         if (availSubs != null && !availSubs.isEmpty())
         {
-            List<Integer> toIterate = new ArrayList<Integer>(availSubs);
+            List<Integer> toIterate = new ArrayList<>(availSubs);
             for (Integer subId : toIterate)
             {
                 PlayerClass pclass = PlayerClassTable.getInstance().getClassById(subId);

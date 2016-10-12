@@ -24,7 +24,7 @@ import l2server.gameserver.stats.funcs.LambdaConst;
 
 public final class Elementals
 {
-    private static final TIntObjectHashMap<ElementalItems> TABLE = new TIntObjectHashMap<ElementalItems>();
+    private static final TIntObjectHashMap<ElementalItems> TABLE = new TIntObjectHashMap<>();
 
     static
     {

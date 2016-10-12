@@ -38,7 +38,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 {
     private static final int _pointsPerKill = 2;
     private static final int[] _mobs = {23275, 23273, 23272, 23268, 23269};
-    private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<L2ZoneType, zoneInfo>(3);
+    private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<>(3);
 
     public NornilsCaveSystem(int id, String name, String descr)
     {

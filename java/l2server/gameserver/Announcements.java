@@ -43,8 +43,8 @@ import java.util.logging.Level;
 public class Announcements
 {
 
-    private List<String> _announcements = new ArrayList<String>();
-    private List<List<Object>> _eventAnnouncements = new ArrayList<List<Object>>();
+    private List<String> _announcements = new ArrayList<>();
+    private List<List<Object>> _eventAnnouncements = new ArrayList<>();
 
     private Announcements()
     {
@@ -109,7 +109,7 @@ public class Announcements
 
     public void addEventAnnouncement(DateRange validDateRange, String[] msg)
     {
-        List<Object> entry = new ArrayList<Object>();
+        List<Object> entry = new ArrayList<>();
         entry.add(validDateRange);
         entry.add(msg);
         _eventAnnouncements.add(entry);

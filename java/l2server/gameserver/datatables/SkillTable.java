@@ -47,9 +47,9 @@ public class SkillTable implements Reloadable
 
     private SkillTable()
     {
-        _skills = new TLongObjectHashMap<L2Skill>();
+        _skills = new TLongObjectHashMap<>();
         _skillMaxLevel = new TIntIntHashMap();
-        _enchantable = new HashSet<Integer>();
+        _enchantable = new HashSet<>();
         load();
 
         ReloadableManager.getInstance().register("skills", this);
@@ -86,7 +86,7 @@ public class SkillTable implements Reloadable
             return;
         }
 
-        List<File> validFiles = new ArrayList<File>();
+        List<File> validFiles = new ArrayList<>();
         File[] files = dir.listFiles();
         for (File f : files)
         {

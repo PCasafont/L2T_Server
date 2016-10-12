@@ -33,7 +33,7 @@ public class EnchantEffect
 
     private int _skillId = 0;
     private int _skillLevel = 0;
-    private final List<Func> _funcs = new ArrayList<Func>();
+    private final List<Func> _funcs = new ArrayList<>();
 
     public EnchantEffect(int id, int rarity, int slot)
     {

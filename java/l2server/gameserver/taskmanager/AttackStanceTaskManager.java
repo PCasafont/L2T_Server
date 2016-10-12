@@ -44,7 +44,7 @@ import java.util.logging.Level;
 public class AttackStanceTaskManager
 {
 
-    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
+    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 
     private AttackStanceTaskManager()
     {

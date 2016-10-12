@@ -46,7 +46,7 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
-        final ArrayList<L2Character> result = new ArrayList<L2Character>();
+        final ArrayList<L2Character> result = new ArrayList<>();
         final L2PcInstance src = activeChar.getActingPlayer();
         boolean isAttackingPlayer = false;
 

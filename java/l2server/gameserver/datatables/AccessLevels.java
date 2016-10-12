@@ -54,7 +54,7 @@ public class AccessLevels
     /**
      * HashMap of access levels defined in database<br>
      */
-    private TIntObjectHashMap<L2AccessLevel> _accessLevels;
+    private final TIntObjectHashMap<L2AccessLevel> _accessLevels = new TIntObjectHashMap<>();
 
     /**
      * Returns the one and only instance of this class<br><br>
@@ -77,7 +77,7 @@ public class AccessLevels
      */
     private void loadAccessLevels()
     {
-        _accessLevels = new TIntObjectHashMap<L2AccessLevel>();
+        _accessLevels.clear();
 
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
         XmlDocument doc = new XmlDocument(file);

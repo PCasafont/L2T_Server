@@ -82,7 +82,7 @@ public final class PetitionManager
         private PetitionState _state = PetitionState.Pending;
         private String _content;
 
-        private List<CreatureSay> _messageLog = new ArrayList<CreatureSay>();
+        private List<CreatureSay> _messageLog = new ArrayList<>();
 
         private L2PcInstance _petitioner;
         private L2PcInstance _responder;
@@ -229,8 +229,8 @@ public final class PetitionManager
     private PetitionManager()
     {
         Log.info("Initializing PetitionManager");
-        _pendingPetitions = new HashMap<Integer, Petition>();
-        _completedPetitions = new HashMap<Integer, Petition>();
+        _pendingPetitions = new HashMap<>();
+        _completedPetitions = new HashMap<>();
     }
 
     public void clearCompletedPetitions()

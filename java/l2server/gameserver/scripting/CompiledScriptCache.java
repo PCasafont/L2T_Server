@@ -35,7 +35,7 @@ public class CompiledScriptCache implements Serializable
 {
     private static final long serialVersionUID = 2L;
 
-    private Map<String, CompiledScriptHolder> _compiledScripts = new HashMap<String, CompiledScriptHolder>();
+    private Map<String, CompiledScriptHolder> _compiledScripts = new HashMap<>();
     private transient boolean _modified = false;
 
     public CompiledScript loadCompiledScript(ScriptEngine engine, File file) throws FileNotFoundException,

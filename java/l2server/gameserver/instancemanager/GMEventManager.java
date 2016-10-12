@@ -66,9 +66,9 @@ public class GMEventManager
     private static final int _bufferNpcId = 8508;
     private static final int _dummyArenaSignNpcId = 35608;
     private static final int _rewardCoinId = 14720;
-    private Map<String, Event> _predefinedEvents = new HashMap<String, Event>();
-    private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<Integer, CurrencyInfo>();
-    private static Map<String, SubEvent> _subEvents = new HashMap<String, SubEvent>();
+    private Map<String, Event> _predefinedEvents = new HashMap<>();
+    private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>();
+    private static Map<String, SubEvent> _subEvents = new HashMap<>();
     private static Event _currentEvent;
 
     public String getCustomEventPanel(L2PcInstance player, int pageToShow)
@@ -386,7 +386,7 @@ public class GMEventManager
                 sb.append(
                         "<tr><td><table width=850 bgcolor=999999 border=0><tr><td FIXWIDTH=750>Waiting Players</td></tr></table></td></tr>");
                 sb.append("<tr><td>");
-                List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+                List<L2PcInstance> allPlayers = new ArrayList<>();
                 for (L2PeaceZone zone : _currentEvent.getPeaceZones())
                 {
                     if (zone == null)
@@ -819,8 +819,7 @@ public class GMEventManager
                     break;
 
                 case "stopEvent":
-                    ArrayList<Integer> copyParticipants =
-                            new ArrayList<Integer>(_currentEvent.getParticipants().keySet());
+                    ArrayList<Integer> copyParticipants = new ArrayList<>(_currentEvent.getParticipants().keySet());
                     for (int i : copyParticipants)
                     {
                         _currentEvent.removeParticipant(i);
@@ -1110,21 +1109,21 @@ public class GMEventManager
         private Event(String eventName)
         {
             _eventName = eventName;
-            _doors = new ArrayList<Integer>();
-            _arenaZones = new ArrayList<L2ArenaZone>();
-            _peaceZones = new ArrayList<L2PeaceZone>();
-            _participants = new HashMap<Integer, Integer>();
-            _areaFences = new ArrayList<L2ColosseumFence>();
-            _bannedIpsFromTheEvent = new HashMap<String, String>();
-            _arenaSignSpawns = new ArrayList<Location>();
-            _arenaSignIds = new ArrayList<Integer>();
-            _acceptedEventRules = new HashMap<Integer, Boolean>();
-            _participatedRegister = new HashMap<Integer, ParticipateRegister>();
-            _usedBuffs = new HashMap<Integer, Integer>();
-            _buffers = new ArrayList<L2Npc>();
-            _arenaSigns = new ArrayList<L2Npc>();
-            _rewardedPlayers = new ArrayList<Integer>();
-            _bets = new HashMap<Integer, Bets>();
+            _doors = new ArrayList<>();
+            _arenaZones = new ArrayList<>();
+            _peaceZones = new ArrayList<>();
+            _participants = new HashMap<>();
+            _areaFences = new ArrayList<>();
+            _bannedIpsFromTheEvent = new HashMap<>();
+            _arenaSignSpawns = new ArrayList<>();
+            _arenaSignIds = new ArrayList<>();
+            _acceptedEventRules = new HashMap<>();
+            _participatedRegister = new HashMap<>();
+            _usedBuffs = new HashMap<>();
+            _buffers = new ArrayList<>();
+            _arenaSigns = new ArrayList<>();
+            _rewardedPlayers = new ArrayList<>();
+            _bets = new HashMap<>();
             _allowBets = false;
         }
 
@@ -1143,16 +1142,16 @@ public class GMEventManager
             _eventTeleport = eventSpawn;
             _arenaSignSpawns = arenaSignSpawns;
             _arenaSignIds = arenaSigns;
-            _participants = new HashMap<Integer, Integer>();
-            _areaFences = new ArrayList<L2ColosseumFence>();
-            _bannedIpsFromTheEvent = new HashMap<String, String>();
-            _acceptedEventRules = new HashMap<Integer, Boolean>();
-            _participatedRegister = new HashMap<Integer, ParticipateRegister>();
-            _usedBuffs = new HashMap<Integer, Integer>();
-            _buffers = new ArrayList<L2Npc>();
-            _arenaSigns = new ArrayList<L2Npc>();
-            _rewardedPlayers = new ArrayList<Integer>();
-            _bets = new HashMap<Integer, Bets>();
+            _participants = new HashMap<>();
+            _areaFences = new ArrayList<>();
+            _bannedIpsFromTheEvent = new HashMap<>();
+            _acceptedEventRules = new HashMap<>();
+            _participatedRegister = new HashMap<>();
+            _usedBuffs = new HashMap<>();
+            _buffers = new ArrayList<>();
+            _arenaSigns = new ArrayList<>();
+            _rewardedPlayers = new ArrayList<>();
+            _bets = new HashMap<>();
             _allowBets = false;
         }
 
@@ -1172,16 +1171,16 @@ public class GMEventManager
             _arenaSignSpawns = event.getArenaSignSpawns();
             _arenaSignIds = event.getArenaSignIds();
             _arenaSignSpawns = event.getArenaSignSpawns();
-            _participants = new HashMap<Integer, Integer>();
-            _areaFences = new ArrayList<L2ColosseumFence>();
-            _bannedIpsFromTheEvent = new HashMap<String, String>();
-            _acceptedEventRules = new HashMap<Integer, Boolean>();
-            _participatedRegister = new HashMap<Integer, ParticipateRegister>();
-            _usedBuffs = new HashMap<Integer, Integer>();
-            _buffers = new ArrayList<L2Npc>();
-            _arenaSigns = new ArrayList<L2Npc>();
-            _rewardedPlayers = new ArrayList<Integer>();
-            _bets = new HashMap<Integer, Bets>();
+            _participants = new HashMap<>();
+            _areaFences = new ArrayList<>();
+            _bannedIpsFromTheEvent = new HashMap<>();
+            _acceptedEventRules = new HashMap<>();
+            _participatedRegister = new HashMap<>();
+            _usedBuffs = new HashMap<>();
+            _buffers = new ArrayList<>();
+            _arenaSigns = new ArrayList<>();
+            _rewardedPlayers = new ArrayList<>();
+            _bets = new HashMap<>();
             _allowBets = false;
         }
 
@@ -1781,7 +1780,7 @@ public class GMEventManager
         {
             _isFightStarted = false;
 
-            ArrayList<Integer> copyParticipants = new ArrayList<Integer>(_currentEvent.getParticipants().keySet());
+            ArrayList<Integer> copyParticipants = new ArrayList<>(_currentEvent.getParticipants().keySet());
             for (int i : copyParticipants)
             {
                 removeParticipant(i);
@@ -2153,11 +2152,11 @@ public class GMEventManager
                                 d.hasAttribute("arenaSignSpawnTwo") ? d.getString("arenaSignSpawnTwo").split(",") :
                                         null;
 
-                        List<Integer> doorList = new ArrayList<Integer>();
-                        List<L2ArenaZone> arenaZones = new ArrayList<L2ArenaZone>();
-                        List<L2PeaceZone> peaceZones = new ArrayList<L2PeaceZone>();
-                        List<Integer> arenaSignList = new ArrayList<Integer>();
-                        List<Location> arenaSignSpawnList = new ArrayList<Location>();
+                        List<Integer> doorList = new ArrayList<>();
+                        List<L2ArenaZone> arenaZones = new ArrayList<>();
+                        List<L2PeaceZone> peaceZones = new ArrayList<>();
+                        List<Integer> arenaSignList = new ArrayList<>();
+                        List<Location> arenaSignSpawnList = new ArrayList<>();
 
                         if (doors != null)
                         {

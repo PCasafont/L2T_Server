@@ -86,9 +86,9 @@ public class Spezion extends L2AttackableAIScript
         {
             isHardMode = false;
             spezionGuards = new int[3];
-            minions = new ArrayList<L2Npc>();
-            fakeMonsters = new ArrayList<L2Npc>();
-            rewardedPlayers = new ArrayList<L2PcInstance>();
+            minions = new ArrayList<>();
+            fakeMonsters = new ArrayList<>();
+            rewardedPlayers = new ArrayList<>();
         }
     }
 
@@ -289,7 +289,7 @@ public class Spezion extends L2AttackableAIScript
                 }
 
                 //It's Invul minions
-                List<L2Npc> toIterate = new ArrayList<L2Npc>(world.fakeMonsters);
+                List<L2Npc> toIterate = new ArrayList<>(world.fakeMonsters);
                 for (L2Npc fakeSpezion : toIterate)
                 {
                     for (int a = 1; a < 3; a++)
@@ -441,7 +441,7 @@ public class Spezion extends L2AttackableAIScript
 
             setupIDs((PrisonOfDarknessWorld) world, template_id);
 
-            List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            List<L2PcInstance> allPlayers = new ArrayList<>();
             if (_debug)
             {
                 allPlayers.add(player);

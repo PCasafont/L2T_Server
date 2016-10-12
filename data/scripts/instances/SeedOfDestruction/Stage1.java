@@ -64,7 +64,7 @@ public class Stage1 extends Quest
 {
     private class SOD1World extends InstanceWorld
     {
-        public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
+        public Map<L2Npc, Boolean> npcList = new HashMap<>();
         public int deviceSpawnedMobCount = 0;
         public Lock lock = new ReentrantLock();
 
@@ -92,9 +92,9 @@ public class Stage1 extends Quest
     private static final int MAX_PLAYERS = 45;
     private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 
-    private TIntObjectHashMap<L2Territory> _spawnZoneList = new TIntObjectHashMap<L2Territory>();
-    private TIntObjectHashMap<List<SODSpawn>> _spawnList = new TIntObjectHashMap<List<SODSpawn>>();
-    private List<Integer> _mustKillMobsId = new ArrayList<Integer>();
+    private TIntObjectHashMap<L2Territory> _spawnZoneList = new TIntObjectHashMap<>();
+    private TIntObjectHashMap<List<SODSpawn>> _spawnList = new TIntObjectHashMap<>();
+    private List<Integer> _mustKillMobsId = new ArrayList<>();
 
     // teleports
     private static final int[] ENTER_TELEPORT_1 = {-242759, 219981, -9986};
@@ -208,7 +208,7 @@ public class Stage1 extends Quest
                                 int flag = d.getInt("flag");
                                 if (!_spawnList.contains(flag))
                                 {
-                                    _spawnList.put(flag, new ArrayList<SODSpawn>());
+                                    _spawnList.put(flag, new ArrayList<>());
                                 }
 
                                 for (XmlNode cd : d.getChildren())

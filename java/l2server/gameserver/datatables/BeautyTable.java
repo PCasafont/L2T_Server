@@ -36,9 +36,9 @@ public class BeautyTable implements Reloadable
     public class BeautyTemplate
     {
         private int _id;
-        private Map<Integer, BeautyInfo> _hairStyles = new HashMap<Integer, BeautyInfo>();
-        private Map<Integer, BeautyInfo> _faceStyles = new HashMap<Integer, BeautyInfo>();
-        private Map<Integer, BeautyInfo> _hairColors = new HashMap<Integer, BeautyInfo>();
+        private Map<Integer, BeautyInfo> _hairStyles = new HashMap<>();
+        private Map<Integer, BeautyInfo> _faceStyles = new HashMap<>();
+        private Map<Integer, BeautyInfo> _hairColors = new HashMap<>();
 
         public BeautyTemplate(int id)
         {
@@ -109,7 +109,7 @@ public class BeautyTable implements Reloadable
         }
     }
 
-    private Map<Integer, BeautyTemplate> _beautyTable = new HashMap<Integer, BeautyTemplate>();
+    private Map<Integer, BeautyTemplate> _beautyTable = new HashMap<>();
 
     private BeautyTable()
     {

@@ -275,7 +275,7 @@ public class L2SiegeZone extends L2ZoneType
      */
     public ArrayList<L2PcInstance> getAllPlayers()
     {
-        ArrayList<L2PcInstance> players = new ArrayList<L2PcInstance>();
+        ArrayList<L2PcInstance> players = new ArrayList<>();
 
         for (L2Character temp : _characterList.values())
         {

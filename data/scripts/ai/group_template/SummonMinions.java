@@ -31,9 +31,8 @@ public class SummonMinions extends L2AttackableAIScript
 {
     private static int HasSpawned;
     private static TIntHashSet myTrackingSet = new TIntHashSet(); //Used to track instances of npcs
-    private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> _attackersList =
-            new ConcurrentHashMap<Integer, ArrayList<L2PcInstance>>();
-    private static final TIntObjectHashMap<int[]> MINIONS = new TIntObjectHashMap<int[]>();
+    private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> _attackersList = new ConcurrentHashMap<>();
+    private static final TIntObjectHashMap<int[]> MINIONS = new TIntObjectHashMap<>();
 
     static
     {
@@ -130,7 +129,7 @@ public class SummonMinions extends L2AttackableAIScript
                             {
                                 if (_attackersList.get(npcObjId) == null)
                                 {
-                                    ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
+                                    ArrayList<L2PcInstance> player = new ArrayList<>();
                                     player.add(member);
                                     _attackersList.put(npcObjId, player);
                                 }
@@ -144,7 +143,7 @@ public class SummonMinions extends L2AttackableAIScript
                         {
                             if (_attackersList.get(npcObjId) == null)
                             {
-                                ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
+                                ArrayList<L2PcInstance> player = new ArrayList<>();
                                 player.add(attacker);
                                 _attackersList.put(npcObjId, player);
                             }

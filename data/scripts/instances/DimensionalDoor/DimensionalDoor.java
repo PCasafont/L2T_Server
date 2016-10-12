@@ -21,7 +21,7 @@ public class DimensionalDoor extends Quest
     //Ids
     private static final int _npcManagerId = 80200;
     private static final int _shinyCoin = 37559;
-    private static final Map<Integer, Integer> _availableSkills = new HashMap<Integer, Integer>();
+    private static final Map<Integer, Integer> _availableSkills = new HashMap<>();
     private static final int[][] _availableSkillsIds = {
             //Skill id, skill price amount
             {1372, 5}, //Expand Inventory (Fishing skill)

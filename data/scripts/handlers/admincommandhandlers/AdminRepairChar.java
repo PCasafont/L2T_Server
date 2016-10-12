@@ -107,7 +107,7 @@ public class AdminRepairChar implements IAdminCommandHandler
             {
                 connection.close();
             }
-            catch (Exception e)
+            catch (Exception ignored)
             {
             }
         }

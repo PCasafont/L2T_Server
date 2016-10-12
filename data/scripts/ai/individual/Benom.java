@@ -235,7 +235,7 @@ public class Benom extends L2AttackableAIScript
         }
         else if (event.equals("Attacking"))
         {
-            ArrayList<L2PcInstance> numPlayers = new ArrayList<L2PcInstance>();
+            ArrayList<L2PcInstance> numPlayers = new ArrayList<>();
             for (L2PcInstance plr : npc.getKnownList().getKnownPlayers().values())
             {
                 numPlayers.add(plr);

@@ -38,7 +38,7 @@ import java.util.List;
  */
 public class NpcWalkersTable
 {
-    private TIntObjectHashMap<List<L2NpcWalkerNode>> _routes = new TIntObjectHashMap<List<L2NpcWalkerNode>>();
+    private TIntObjectHashMap<List<L2NpcWalkerNode>> _routes = new TIntObjectHashMap<>();
 
     public static NpcWalkersTable getInstance()
     {
@@ -66,7 +66,7 @@ public class NpcWalkersTable
             {
                 if (d.getName().equals("walker"))
                 {
-                    List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
+                    List<L2NpcWalkerNode> route = new ArrayList<>();
                     int npcId = d.getInt("npcId");
                     for (XmlNode r : d.getChildren())
                     {

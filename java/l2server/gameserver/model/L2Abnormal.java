@@ -638,7 +638,7 @@ public class L2Abnormal
         {
             return _emptyFunctionSet;
         }
-        ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
+        ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
 
         Env env = new Env();
         env.player = getEffector();

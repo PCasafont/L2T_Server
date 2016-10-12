@@ -61,8 +61,8 @@ public class Halloween extends Quest
     private static int round = 0;
 
     //Others
-    private static List<L2Npc> allMinions = new ArrayList<L2Npc>();
-    private static List<L2Npc> townBuffers = new ArrayList<L2Npc>();
+    private static List<L2Npc> allMinions = new ArrayList<>();
+    private static List<L2Npc> townBuffers = new ArrayList<>();
     private static final L2Skill blessingOfHalloween = SkillTable.getInstance().getInfo(21129, 1);
 
     public Halloween(int questId, String name, String descr)

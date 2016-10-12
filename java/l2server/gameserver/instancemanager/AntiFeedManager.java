@@ -42,8 +42,8 @@ public class AntiFeedManager
 
     private AntiFeedManager()
     {
-        _lastDeathTimes = new ConcurrentHashMap<Integer, Long>();
-        _eventIPs = new TIntObjectHashMap<Map<Integer, Connections>>();
+        _lastDeathTimes = new ConcurrentHashMap<>();
+        _eventIPs = new TIntObjectHashMap<>();
     }
 
     /**
@@ -160,7 +160,7 @@ public class AntiFeedManager
     {
         if (!_eventIPs.containsKey(eventId))
         {
-            _eventIPs.put(eventId, new HashMap<Integer, Connections>());
+            _eventIPs.put(eventId, new HashMap<>());
         }
     }
 

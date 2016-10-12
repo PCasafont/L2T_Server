@@ -39,7 +39,7 @@ public class PreparedEntry extends MultiSellEntry
         ItemInfo info = null;
         long adenaAmount = 0;
 
-        _ingredients = new ArrayList<Ingredient>(template.getIngredients().size());
+        _ingredients = new ArrayList<>(template.getIngredients().size());
         for (Ingredient ing : template.getIngredients())
         {
             if (ing.getItemId() == ADENA_ID)
@@ -81,7 +81,7 @@ public class PreparedEntry extends MultiSellEntry
         }
 
         // now copy products
-        _products = new ArrayList<Ingredient>(template.getProducts().size());
+        _products = new ArrayList<>(template.getProducts().size());
         for (Ingredient ing : template.getProducts())
         {
             if (!ing.isStackable())

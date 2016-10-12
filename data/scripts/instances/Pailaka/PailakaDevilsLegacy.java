@@ -325,7 +325,7 @@ public class PailakaDevilsLegacy extends Quest
             // To be sure, reduce again
             ((L2Attackable) npc).reduceHate(player, 9999);
             // Spawn followers
-            _followerslist = new ArrayList<L2Npc>();
+            _followerslist = new ArrayList<>();
             for (int[] SPAWN : FOLLOWERS_SPAWNS)
             {
                 L2Npc _follower = addSpawn(FOLLOWERS, SPAWN[0], SPAWN[1], SPAWN[2], SPAWN[3], false, 0, true,

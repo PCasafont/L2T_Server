@@ -34,7 +34,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 
     public ExChooseInventoryAttributeItem(L2PcInstance player, L2ItemInstance item)
     {
-        _inventoryItems = new ArrayList<L2ItemInstance>();
+        _inventoryItems = new ArrayList<>();
         _itemId = item.getItemId();
         for (L2ItemInstance _item : player.getInventory().getItems())
         {

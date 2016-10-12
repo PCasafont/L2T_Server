@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class ReloadableManager
 {
-    private Map<String, Reloadable> _reloadables = new HashMap<String, Reloadable>();
+    private Map<String, Reloadable> _reloadables = new HashMap<>();
 
     public static ReloadableManager getInstance()
     {

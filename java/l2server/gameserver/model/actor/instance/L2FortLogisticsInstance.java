@@ -84,10 +84,10 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
             {
                 val = Integer.parseInt(par);
             }
-            catch (IndexOutOfBoundsException ioobe)
+            catch (IndexOutOfBoundsException ignored)
             {
             }
-            catch (NumberFormatException nfe)
+            catch (NumberFormatException ignored)
             {
             }
 

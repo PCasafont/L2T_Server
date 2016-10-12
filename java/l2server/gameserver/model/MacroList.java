@@ -39,7 +39,7 @@ public class MacroList
     private L2PcInstance _owner;
     private int _revision;
     private int _macroId;
-    private Map<Integer, L2Macro> _macroses = new HashMap<Integer, L2Macro>();
+    private Map<Integer, L2Macro> _macroses = new HashMap<>();
 
     public MacroList(L2PcInstance owner)
     {
@@ -220,7 +220,7 @@ public class MacroList
                 String name = rset.getString("name");
                 String descr = rset.getString("descr");
                 String acronym = rset.getString("acronym");
-                List<L2MacroCmd> commands = new ArrayList<L2MacroCmd>();
+                List<L2MacroCmd> commands = new ArrayList<>();
                 StringTokenizer st1 = new StringTokenizer(rset.getString("commands"), ";");
                 while (st1.hasMoreTokens())
                 {

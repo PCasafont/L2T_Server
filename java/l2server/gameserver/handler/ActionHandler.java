@@ -32,8 +32,8 @@ public class ActionHandler
 
     private ActionHandler()
     {
-        _actions = new HashMap<InstanceType, IActionHandler>();
-        _actionsShift = new HashMap<InstanceType, IActionHandler>();
+        _actions = new HashMap<>();
+        _actionsShift = new HashMap<>();
     }
 
     public void registerActionHandler(IActionHandler handler)

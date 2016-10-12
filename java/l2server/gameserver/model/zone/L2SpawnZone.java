@@ -41,7 +41,7 @@ public abstract class L2SpawnZone extends L2ZoneType
     {
         if (_spawnLocs == null)
         {
-            _spawnLocs = new ArrayList<Location>();
+            _spawnLocs = new ArrayList<>();
         }
 
         _spawnLocs.add(new Location(x, y, z));
@@ -51,7 +51,7 @@ public abstract class L2SpawnZone extends L2ZoneType
     {
         if (_chaoticSpawnLocs == null)
         {
-            _chaoticSpawnLocs = new ArrayList<Location>();
+            _chaoticSpawnLocs = new ArrayList<>();
         }
 
         _chaoticSpawnLocs.add(new Location(x, y, z));

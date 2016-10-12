@@ -107,7 +107,7 @@ public class Baium extends L2AttackableAIScript
         {
             int baiumStatus = GrandBossManager.getInstance().getBossStatus(_liveBaium);
 
-            final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+            final List<L2PcInstance> allPlayers = new ArrayList<>();
 
             if (baiumStatus == GrandBossManager.getInstance().DEAD)
             {

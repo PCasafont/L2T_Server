@@ -32,8 +32,8 @@ public class L2FlyMove
     }
 
     private int _id;
-    private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<Point3D>();
-    private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<L2FlyMoveChoose>();
+    private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<>();
+    private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<>();
 
     public L2FlyMove(int id)
     {
@@ -68,7 +68,7 @@ public class L2FlyMove
     public class L2FlyMoveChoose
     {
         private int _at;
-        private List<L2FlyMoveOption> _options = new ArrayList<L2FlyMoveOption>();
+        private List<L2FlyMoveOption> _options = new ArrayList<>();
 
         public L2FlyMoveChoose(int at)
         {

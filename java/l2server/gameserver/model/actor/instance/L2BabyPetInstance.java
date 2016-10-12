@@ -116,7 +116,7 @@ public final class L2BabyPetInstance extends L2PetInstance
                     case BUFF:
                         if (_buffs == null)
                         {
-                            _buffs = new ArrayList<SkillHolder>();
+                            _buffs = new ArrayList<>();
                         }
                         _buffs.add(new SkillHolder(skill));
                         break;
@@ -228,7 +228,7 @@ public final class L2BabyPetInstance extends L2PetInstance
     private class CastTask implements Runnable
     {
         private final L2BabyPetInstance _baby;
-        private List<L2Skill> _currentBuffs = new ArrayList<L2Skill>();
+        private List<L2Skill> _currentBuffs = new ArrayList<>();
 
         public CastTask(L2BabyPetInstance baby)
         {

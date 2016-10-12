@@ -272,9 +272,9 @@ public class SQLAccountManager
             statement.setString(1, account);
             rset = statement.executeQuery();
 
-            ArrayList<String> objIds = new ArrayList<String>();
-            ArrayList<String> charNames = new ArrayList<String>();
-            ArrayList<String> clanIds = new ArrayList<String>();
+            ArrayList<String> objIds = new ArrayList<>();
+            ArrayList<String> charNames = new ArrayList<>();
+            ArrayList<String> clanIds = new ArrayList<>();
 
             while (rset.next())
             {

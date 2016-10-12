@@ -13,7 +13,7 @@ import java.util.Vector;
 public class CoreMessage
 {
     private final String _message;
-    private final Vector<String> _value = new Vector<String>();
+    private final Vector<String> _value = new Vector<>();
 
     public CoreMessage(String message)
     {

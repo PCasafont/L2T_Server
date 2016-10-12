@@ -47,7 +47,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
     public L2OlympiadStadiumZone(int id)
     {
         super(id);
-        _instances = new ArrayList<OlympiadGameTask>(40);
+        _instances = new ArrayList<>(40);
     }
 
     public final void registerTask(OlympiadGameTask task, int id)
