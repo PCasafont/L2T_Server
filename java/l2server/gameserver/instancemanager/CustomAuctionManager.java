@@ -782,23 +782,23 @@ public class CustomAuctionManager
             int currencyId = 0;
             Currency playerCurrency = null;
 
-            if (coin.equals("Dreams"))
+            switch (coin)
             {
-                currencyId = 50002;
-            }
-            else if (coin.equals("Raid"))
-            {
-                currencyId = 50009;
-            }
-            else
-            {
-                playerCurrency = Currency.valueOf(coin);
-                if (playerCurrency == null) //Possible client hax?
-                {
-                    return;
-                }
+                case "Dreams":
+                    currencyId = 50002;
+                    break;
+                case "Raid":
+                    currencyId = 50009;
+                    break;
+                default:
+                    playerCurrency = Currency.valueOf(coin);
+                    if (playerCurrency == null) //Possible client hax?
+                    {
+                        return;
+                    }
 
-                currencyId = playerCurrency.ItemId;
+                    currencyId = playerCurrency.ItemId;
+                    break;
             }
 
             if (currencyId != currentCurrencyId)//If we have a new currency..

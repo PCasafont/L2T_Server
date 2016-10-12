@@ -55,15 +55,10 @@ public class ScriptDocument
             }
             x.printStackTrace();
         }
-        catch (ParserConfigurationException pce)
+        catch (ParserConfigurationException | IOException pce)
         {
             // Parser with specified options can't be built
             Log.log(Level.WARNING, "", pce);
-        }
-        catch (IOException ioe)
-        {
-            // I/O error
-            Log.log(Level.WARNING, "", ioe);
         }
     }
 

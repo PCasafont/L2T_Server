@@ -125,100 +125,96 @@ public class ArtificialPlayersManager implements Reloadable
             _pvpCheck.cancel(false);
         }
 
-        _pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        _pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
+            for (L2Party party : _partiesSent)
             {
-                for (L2Party party : _partiesSent)
+                for (L2PcInstance member : party.getPartyMembers())
                 {
+                    member.deleteMe();
+                }
+            }
+
+            _partiesSent.clear();
+            if (_partiesSent.isEmpty())
+            {
+                return;
+            }
+
+            int pvpers = 0;
+            Map<Integer, Integer> allies = new HashMap<>();
+            for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
+            {
+                if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) ||
+                        player.isInsideZone(L2Character.ZONE_SIEGE) ||
+                        player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0)
+                {
+                    continue;
+                }
+
+                pvpers++;
+                if (player instanceof L2ApInstance)
+                {
+                    continue;
+                }
+
+                if (!allies.containsKey(player.getAllyId()))
+                {
+                    allies.put(player.getAllyId(), 1);
+                }
+                else
+                {
+                    allies.put(player.getAllyId(), allies.get(player.getAllyId()) + 1);
+                }
+            }
+
+            int biggestAlly = 0;
+            int smallestAlly = 100;
+            for (int members : allies.values())
+            {
+                if (members > biggestAlly)
+                {
+                    biggestAlly = members;
+                }
+                if (members < smallestAlly)
+                {
+                    smallestAlly = members;
+                }
+            }
+
+            if (biggestAlly - smallestAlly > 5)
+            {
+                while (_partiesSent.size() * 7 < biggestAlly)
+                {
+                    L2Party party = createRandomParty();
                     for (L2PcInstance member : party.getPartyMembers())
                     {
-                        member.deleteMe();
+                        member.teleToLocation(-20893, 186060, -4103, true);
+                        member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
+                        member.startPvPFlag();
                     }
+                    _partiesSent.add(party);
                 }
-
-                _partiesSent.clear();
-                if (_partiesSent.isEmpty())
+            }
+            else if (pvpers < 5)
+            {
+                while (_partiesSent.size() < 2)
                 {
-                    return;
-                }
-
-                int pvpers = 0;
-                Map<Integer, Integer> allies = new HashMap<>();
-                for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-                {
-                    if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) ||
-                            player.isInsideZone(L2Character.ZONE_SIEGE) ||
-                            player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0)
-                    {
-                        continue;
-                    }
-
-                    pvpers++;
-                    if (player instanceof L2ApInstance)
-                    {
-                        continue;
-                    }
-
-                    if (!allies.containsKey(player.getAllyId()))
-                    {
-                        allies.put(player.getAllyId(), 1);
-                    }
-                    else
-                    {
-                        allies.put(player.getAllyId(), allies.get(player.getAllyId()) + 1);
-                    }
-                }
-
-                int biggestAlly = 0;
-                int smallestAlly = 100;
-                for (int members : allies.values())
-                {
-                    if (members > biggestAlly)
-                    {
-                        biggestAlly = members;
-                    }
-                    if (members < smallestAlly)
-                    {
-                        smallestAlly = members;
-                    }
-                }
-
-                if (biggestAlly - smallestAlly > 5)
-                {
-                    while (_partiesSent.size() * 7 < biggestAlly)
-                    {
-                        L2Party party = createRandomParty();
-                        for (L2PcInstance member : party.getPartyMembers())
-                        {
-                            member.teleToLocation(-20893, 186060, -4103, true);
-                            member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
-                            member.startPvPFlag();
-                        }
-                        _partiesSent.add(party);
-                    }
-                }
-                else if (pvpers < 5)
-                {
-                    while (_partiesSent.size() < 2)
-                    {
-                        L2Party party = createRandomParty();
-                        for (L2PcInstance member : party.getPartyMembers())
-                        {
-                            member.teleToLocation(-24501, 187976, -3975, true);
-                            member.startPvPFlag();
-                        }
-                        _partiesSent.add(party);
-                    }
-                }
-                else if (_partiesSent.size() > 0 && pvpers > 20)
-                {
-                    L2Party party = _partiesSent.remove(0);
+                    L2Party party = createRandomParty();
                     for (L2PcInstance member : party.getPartyMembers())
                     {
-                        member.deleteMe();
+                        member.teleToLocation(-24501, 187976, -3975, true);
+                        member.startPvPFlag();
                     }
+                    _partiesSent.add(party);
+                }
+            }
+            else if (_partiesSent.size() > 0 && pvpers > 20)
+            {
+                L2Party party = _partiesSent.remove(0);
+                for (L2PcInstance member : party.getPartyMembers())
+                {
+                    member.deleteMe();
                 }
             }
         }, 100000L, 100000L);

@@ -47,21 +47,20 @@ public class L2TownZone extends L2SpawnZone
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("townId"))
+        switch (name)
         {
-            _townId = Integer.parseInt(value);
-        }
-        else if (name.equals("taxById"))
-        {
-            _taxById = Integer.parseInt(value);
-        }
-        else if (name.equals("isPeaceZone"))
-        {
-            _isPeaceZone = Boolean.parseBoolean(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "townId":
+                _townId = Integer.parseInt(value);
+                break;
+            case "taxById":
+                _taxById = Integer.parseInt(value);
+                break;
+            case "isPeaceZone":
+                _isPeaceZone = Boolean.parseBoolean(value);
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 

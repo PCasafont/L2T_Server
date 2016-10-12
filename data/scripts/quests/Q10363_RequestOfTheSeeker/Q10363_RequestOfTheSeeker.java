@@ -142,40 +142,36 @@ public class Q10363_RequestOfTheSeeker extends Quest
             return null;
         }
 
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
+            if (actionId == 13)
             {
-                if (actionId == 13)
+                boolean isCorpse = false;
+                for (int id : _bodies)
                 {
-                    boolean isCorpse = false;
-                    for (int id : _bodies)
+                    if (id == npc.getNpcId())
                     {
-                        if (id == npc.getNpcId())
-                        {
-                            isCorpse = true;
-                            break;
-                        }
-                    }
-
-                    if (isCorpse && st.getInt("cond") >= 1 && st.getInt("cond") <= 5 && npc.canInteract(player))
-                    {
-                        // TODO: Show according screen message
-                        st.set("cond", String.valueOf(st.getInt("cond") + 1));
-                        st.playSound("ItemSound.quest_middle");
-                        // TODO: Delete corpse and set a respawn time for it
-                    }
-                    else if (!npc.canInteract(player))
-                    {
-                        // TODO: Show according screen message
+                        isCorpse = true;
+                        break;
                     }
                 }
-                else
+
+                if (isCorpse && st.getInt("cond") >= 1 && st.getInt("cond") <= 5 && npc.canInteract(player))
                 {
                     // TODO: Show according screen message
-                    // TODO: Delete corpse and spawn mob in its place
+                    st.set("cond", String.valueOf(st.getInt("cond") + 1));
+                    st.playSound("ItemSound.quest_middle");
+                    // TODO: Delete corpse and set a respawn time for it
                 }
+                else if (!npc.canInteract(player))
+                {
+                    // TODO: Show according screen message
+                }
+            }
+            else
+            {
+                // TODO: Show according screen message
+                // TODO: Delete corpse and spawn mob in its place
             }
         }, 2000L);
 

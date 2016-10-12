@@ -115,19 +115,15 @@ public class EnergySeeds extends L2AttackableAIScript
 
         public void scheduleRespawn(long waitTime)
         {
-            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+            ThreadPoolManager.getInstance().scheduleGeneral(() ->
             {
-                @Override
-                public void run()
+                // if the AI is inactive, do not spawn the NPC
+                if (isSeedActive(_seedId))
                 {
-                    // if the AI is inactive, do not spawn the NPC
-                    if (isSeedActive(_seedId))
-                    {
-                        //get a random NPC that should spawn at this location
-                        Integer spawnId = _spawnId; // the map uses "Integer", not "int"
-                        _spawnedNpcs.put(addSpawn(_npcIds[Rnd.get(_npcIds.length)], _spawnCoords[0], _spawnCoords[1],
-                                _spawnCoords[2], 0, false, 0), spawnId);
-                    }
+                    //get a random NPC that should spawn at this location
+                    Integer spawnId = _spawnId; // the map uses "Integer", not "int"
+                    _spawnedNpcs.put(addSpawn(_npcIds[Rnd.get(_npcIds.length)], _spawnCoords[0], _spawnCoords[1],
+                            _spawnCoords[2], 0, false, 0), spawnId);
                 }
             }, waitTime);
         }

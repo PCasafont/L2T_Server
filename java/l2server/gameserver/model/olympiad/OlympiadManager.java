@@ -91,7 +91,7 @@ public class OlympiadManager
 
     private final boolean isRegistered(L2PcInstance player, boolean showMessage)
     {
-        final Integer objId = Integer.valueOf(player.getObjectId());
+        final Integer objId = player.getObjectId();
         // party may be already dispersed
 
         if (_nonClassBasedRegisters.contains(objId))
@@ -303,7 +303,7 @@ public class OlympiadManager
         }
 
         sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_DELETED_FROM_THE_WAITING_LIST_OF_A_GAME);
-        Integer objId = Integer.valueOf(player.getObjectId());
+        Integer objId = player.getObjectId();
         if (_nonClassBasedRegisters.remove(objId))
         {
             if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
@@ -341,7 +341,7 @@ public class OlympiadManager
             task.getGame().handleDisconnect(player);
         }
 
-        final Integer objId = Integer.valueOf(player.getObjectId());
+        final Integer objId = player.getObjectId();
         if (_nonClassBasedRegisters.remove(objId))
         {
             return;

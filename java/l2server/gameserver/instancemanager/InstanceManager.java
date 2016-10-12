@@ -398,14 +398,8 @@ public class InstanceManager
         stopWholeInstance(instId);
         broadcastMovie(vidId, instId);
 
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                startWholeInstance(instId);
-            }
-        }, ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
+        ThreadPoolManager.getInstance().scheduleGeneral(
+                () -> startWholeInstance(instId), ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
     }
 
     /**
@@ -513,14 +507,7 @@ public class InstanceManager
      */
     public void sendDelayedPacketToInstance(final int instanceId, final int delaySec, final L2GameServerPacket packet)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                sendPacket(instanceId, packet);
-            }
-        }, delaySec * 1000);
+        ThreadPoolManager.getInstance().scheduleGeneral(() -> sendPacket(instanceId, packet), delaySec * 1000);
     }
 
     /**
@@ -531,15 +518,11 @@ public class InstanceManager
      */
     public void sendDelayedPacketToPlayer(final L2PcInstance player, int delaySec, final int instanceId, final L2GameServerPacket packet)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
+            if (player != null && player.getInstanceId() == instanceId)
             {
-                if (player != null && player.getInstanceId() == instanceId)
-                {
-                    player.sendPacket(packet);
-                }
+                player.sendPacket(packet);
             }
         }, delaySec * 1000);
     }

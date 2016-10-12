@@ -461,10 +461,8 @@ public class CharSelectionInfo extends L2GameServerPacket
 
         charInfopackage.setDeleteTimer(deletetime);
         charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
-        Connection con = null;
-        try
+        try (Connection con = L2DatabaseFactory.getInstance().getConnection())
         {
-            con = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement =
                     con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
             statement.setString(1, chardata.getString("account_name"));
@@ -484,10 +482,6 @@ public class CharSelectionInfo extends L2GameServerPacket
         catch (Exception e)
         {
             Log.log(Level.WARNING, "Could not restore vitality points info: " + e.getMessage(), e);
-        }
-        finally
-        {
-            con.close();
         }
         return charInfopackage;
     }

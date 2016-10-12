@@ -85,47 +85,39 @@ public class TopicBBSManager extends BaseBBSManager
     @Override
     public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
     {
-        if (ar1.equals("crea"))
+        switch (ar1)
         {
-            Forum f = ForumsBBSManager.getInstance().getForumByID(Integer.parseInt(ar2));
-            if (f == null)
+            case "crea":
             {
-                ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
-                activeChar.sendPacket(sb);
-                activeChar.sendPacket(new ShowBoard(null, "102"));
-                activeChar.sendPacket(new ShowBoard(null, "103"));
-            }
-            else
-            {
-                f.vload();
-                Topic t = new Topic(Topic.ConstructorType.CREATE, TopicBBSManager.getInstance().getMaxID(f) + 1,
-                        Integer.parseInt(ar2), ar5, Calendar.getInstance().getTimeInMillis(), activeChar.getName(),
-                        activeChar.getObjectId(), Topic.MEMO, 0);
-                f.addTopic(t);
-                TopicBBSManager.getInstance().setMaxID(t.getID(), f);
-                Post p = new Post(activeChar.getName(), activeChar.getObjectId(),
-                        Calendar.getInstance().getTimeInMillis(), t.getID(), f.getID(), ar4);
-                PostBBSManager.getInstance().addPostByTopic(p, t);
-                parsecmd("_bbsmemo", activeChar);
-            }
-        }
-        else if (ar1.equals("del"))
-        {
-            Forum f = ForumsBBSManager.getInstance().getForumByID(Integer.parseInt(ar2));
-            if (f == null)
-            {
-                ShowBoard sb = new ShowBoard("<html><body><br><br><center>the forum: " + ar2 +
-                        " does not exist !</center><br><br></body></html>", "101");
-                activeChar.sendPacket(sb);
-                activeChar.sendPacket(new ShowBoard(null, "102"));
-                activeChar.sendPacket(new ShowBoard(null, "103"));
-            }
-            else
-            {
-                Topic t = f.getTopic(Integer.parseInt(ar3));
-                if (t == null)
+                Forum f = ForumsBBSManager.getInstance().getForumByID(Integer.parseInt(ar2));
+                if (f == null)
                 {
-                    ShowBoard sb = new ShowBoard("<html><body><br><br><center>the topic: " + ar3 +
+                    ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
+                    activeChar.sendPacket(sb);
+                    activeChar.sendPacket(new ShowBoard(null, "102"));
+                    activeChar.sendPacket(new ShowBoard(null, "103"));
+                }
+                else
+                {
+                    f.vload();
+                    Topic t = new Topic(Topic.ConstructorType.CREATE, TopicBBSManager.getInstance().getMaxID(f) + 1,
+                            Integer.parseInt(ar2), ar5, Calendar.getInstance().getTimeInMillis(), activeChar.getName(),
+                            activeChar.getObjectId(), Topic.MEMO, 0);
+                    f.addTopic(t);
+                    TopicBBSManager.getInstance().setMaxID(t.getID(), f);
+                    Post p = new Post(activeChar.getName(), activeChar.getObjectId(),
+                            Calendar.getInstance().getTimeInMillis(), t.getID(), f.getID(), ar4);
+                    PostBBSManager.getInstance().addPostByTopic(p, t);
+                    parsecmd("_bbsmemo", activeChar);
+                }
+                break;
+            }
+            case "del":
+            {
+                Forum f = ForumsBBSManager.getInstance().getForumByID(Integer.parseInt(ar2));
+                if (f == null)
+                {
+                    ShowBoard sb = new ShowBoard("<html><body><br><br><center>the forum: " + ar2 +
                             " does not exist !</center><br><br></body></html>", "101");
                     activeChar.sendPacket(sb);
                     activeChar.sendPacket(new ShowBoard(null, "102"));
@@ -133,23 +125,35 @@ public class TopicBBSManager extends BaseBBSManager
                 }
                 else
                 {
-                    // CPost cp = null;
-                    Post p = PostBBSManager.getInstance().getGPosttByTopic(t);
-                    if (p != null)
+                    Topic t = f.getTopic(Integer.parseInt(ar3));
+                    if (t == null)
                     {
-                        p.deleteme(t);
+                        ShowBoard sb = new ShowBoard("<html><body><br><br><center>the topic: " + ar3 +
+                                " does not exist !</center><br><br></body></html>", "101");
+                        activeChar.sendPacket(sb);
+                        activeChar.sendPacket(new ShowBoard(null, "102"));
+                        activeChar.sendPacket(new ShowBoard(null, "103"));
                     }
-                    t.deleteme(f);
-                    parsecmd("_bbsmemo", activeChar);
+                    else
+                    {
+                        // CPost cp = null;
+                        Post p = PostBBSManager.getInstance().getGPosttByTopic(t);
+                        if (p != null)
+                        {
+                            p.deleteme(t);
+                        }
+                        t.deleteme(f);
+                        parsecmd("_bbsmemo", activeChar);
+                    }
                 }
+                break;
             }
-        }
-        else
-        {
-            ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
-            activeChar.sendPacket(sb);
-            activeChar.sendPacket(new ShowBoard(null, "102"));
-            activeChar.sendPacket(new ShowBoard(null, "103"));
+            default:
+                ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
+                activeChar.sendPacket(sb);
+                activeChar.sendPacket(new ShowBoard(null, "102"));
+                activeChar.sendPacket(new ShowBoard(null, "103"));
+                break;
         }
     }
 

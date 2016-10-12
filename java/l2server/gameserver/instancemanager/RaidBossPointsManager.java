@@ -36,14 +36,7 @@ public class RaidBossPointsManager
 {
     private HashMap<Integer, Map<Integer, Integer>> _list;
 
-    private final Comparator<Map.Entry<Integer, Integer>> _comparator = new Comparator<Map.Entry<Integer, Integer>>()
-    {
-        @Override
-        public int compare(Map.Entry<Integer, Integer> entry, Map.Entry<Integer, Integer> entry1)
-        {
-            return entry.getValue().equals(entry1.getValue()) ? 0 : entry.getValue() < entry1.getValue() ? 1 : -1;
-        }
-    };
+    private final Comparator<Map.Entry<Integer, Integer>> _comparator = (entry, entry1) -> entry.getValue().equals(entry1.getValue()) ? 0 : entry.getValue() < entry1.getValue() ? 1 : -1;
 
     public static RaidBossPointsManager getInstance()
     {

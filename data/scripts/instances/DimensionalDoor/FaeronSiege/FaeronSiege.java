@@ -422,21 +422,17 @@ public class FaeronSiege extends Quest
                             world._warriorMageSup.setTarget(world._warriorMageSup);
                             world._warriorMageSup.doCast(_summonCore);
 
-                            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+                            ThreadPoolManager.getInstance().scheduleAi(() ->
                             {
-                                @Override
-                                public void run()
-                                {
-                                    world._summonGravityCore = addSpawn(_gravityCoreId, world._warriorMageSup.getX(),
-                                            world._warriorMageSup.getY(), world._warriorMageSup.getZ() + 20, 0, false,
-                                            20000, true, world.instanceId);
+                                world._summonGravityCore = addSpawn(_gravityCoreId, world._warriorMageSup.getX(),
+                                        world._warriorMageSup.getY(), world._warriorMageSup.getZ() + 20, 0, false,
+                                        20000, true, world.instanceId);
 
-                                    //We will start that task only one time, then will be running all time while a tree is spawned
-                                    QuestTimer coreAi = getQuestTimer("gravity_core_ai", null, null);
-                                    if (coreAi == null)
-                                    {
-                                        startQuestTimer("gravity_core_ai", 1000, world._protectionStone, null);
-                                    }
+                                //We will start that task only one time, then will be running all time while a tree is spawned
+                                QuestTimer coreAi = getQuestTimer("gravity_core_ai", null, null);
+                                if (coreAi == null)
+                                {
+                                    startQuestTimer("gravity_core_ai", 1000, world._protectionStone, null);
                                 }
                             }, _summonCore.getHitTime() + 1000);
 
@@ -475,21 +471,17 @@ public class FaeronSiege extends Quest
                             world._warriorMageSup.doCast(_buffPresentation);
 
                             //Cast the buff and delay the next task
-                            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+                            ThreadPoolManager.getInstance().scheduleAi(() ->
                             {
-                                @Override
-                                public void run()
+                                for (L2PcInstance chara : chars)
                                 {
-                                    for (L2PcInstance chara : chars)
+                                    if (chara == null ||
+                                            !chara.isInsideRadius(world._warriorMageSup, 150, false, false))
                                     {
-                                        if (chara == null ||
-                                                !chara.isInsideRadius(world._warriorMageSup, 150, false, false))
-                                        {
-                                            continue;
-                                        }
-
-                                        buffSkill.getEffects(world._warriorMageSup, chara);
+                                        continue;
                                     }
+
+                                    buffSkill.getEffects(world._warriorMageSup, chara);
                                 }
                             }, _buffPresentation.getHitTime() + 700);
 
@@ -542,48 +534,40 @@ public class FaeronSiege extends Quest
                             new MagicSkillUse(world._protectionStone, _portalEffect1.getId(), 1,
                                     _portalEffect1.getHitTime(), _portalEffect1.getReuseDelay()));
 
-                    ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+                    ThreadPoolManager.getInstance().scheduleAi(() ->
                     {
-                        @Override
-                        public void run()
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new MagicSkillUse(world._protectionStone, _portalEffect2.getId(), 1,
+                                        _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
+
+                        for (int i = 0; i < 15; i++)
                         {
-                            InstanceManager.getInstance().sendPacket(world.instanceId,
-                                    new MagicSkillUse(world._protectionStone, _portalEffect2.getId(), 1,
-                                            _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
+                            L2Npc guard = addSpawn(_warriorGuard, world._protectionStone.getX(),
+                                    world._protectionStone.getY(), world._protectionStone.getZ(), 0, true, 0, true,
+                                    world.instanceId);
+                            world._guardArmy.add(guard);
 
-                            for (int i = 0; i < 15; i++)
+                            guard.broadcastPacket(new MagicSkillUse(guard, _warriorsSpawnEffect.getId(), 1,
+                                    _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        }
+
+                        ThreadPoolManager.getInstance().scheduleAi(() ->
+                        {
+                            InstanceManager.getInstance().startWholeInstance(world.instanceId);
+                            InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                                    new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                            "The Royal Army Guards from the Aden realm has been arrived!"));
+
+                            L2Npc randomGuard = world._guardArmy.get(Rnd.get(world._guardArmy.size()));
+                            if (randomGuard != null)
                             {
-                                L2Npc guard = addSpawn(_warriorGuard, world._protectionStone.getX(),
-                                        world._protectionStone.getY(), world._protectionStone.getZ(), 0, true, 0, true,
-                                        world.instanceId);
-                                world._guardArmy.add(guard);
-
-                                guard.broadcastPacket(new MagicSkillUse(guard, _warriorsSpawnEffect.getId(), 1,
-                                        _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                                        new CreatureSay(randomGuard.getObjectId(), 1, randomGuard.getName(),
+                                                "Our Captains will arrive soon!"));
                             }
 
-                            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-                            {
-                                @Override
-                                public void run()
-                                {
-                                    InstanceManager.getInstance().startWholeInstance(world.instanceId);
-                                    InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
-                                            new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                                    "The Royal Army Guards from the Aden realm has been arrived!"));
-
-                                    L2Npc randomGuard = world._guardArmy.get(Rnd.get(world._guardArmy.size()));
-                                    if (randomGuard != null)
-                                    {
-                                        InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
-                                                new CreatureSay(randomGuard.getObjectId(), 1, randomGuard.getName(),
-                                                        "Our Captains will arrive soon!"));
-                                    }
-
-                                    startQuestTimer("guard_army_ai", 3000, world._protectionStone, null);
-                                }
-                            }, 4000);
-                        }
+                            startQuestTimer("guard_army_ai", 3000, world._protectionStone, null);
+                        }, 4000);
                     }, 12000);
                 }
                 else if (world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
@@ -602,71 +586,63 @@ public class FaeronSiege extends Quest
                             new MagicSkillUse(world._protectionStone, _portalEffect1.getId(), 1,
                                     _portalEffect1.getHitTime(), _portalEffect1.getReuseDelay()));
 
-                    ThreadPoolManager.getInstance().scheduleAi(new Runnable()
+                    ThreadPoolManager.getInstance().scheduleAi(() ->
                     {
-                        @Override
-                        public void run()
+                        InstanceManager.getInstance().sendPacket(world.instanceId,
+                                new MagicSkillUse(world._protectionStone, _portalEffect2.getId(), 1,
+                                        _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
+
+                        world._warriorLeona = addSpawn(_warriorLeonaId, world._protectionStone.getX(),
+                                world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
+                                world.instanceId);
+                        world._warriorKain = addSpawn(_warriorKainId, world._protectionStone.getX(),
+                                world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
+                                world.instanceId);
+                        world._warriorMageSup = addSpawn(_warriorMageSUpId, world._protectionStone.getX(),
+                                world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
+                                world.instanceId);
+
+                        world._warriorLeona.broadcastPacket(
+                                new MagicSkillUse(world._warriorLeona, _warriorsSpawnEffect.getId(), 1,
+                                        _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        world._warriorKain.broadcastPacket(
+                                new MagicSkillUse(world._warriorKain, _warriorsSpawnEffect.getId(), 1,
+                                        _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+                        world._warriorMageSup.broadcastPacket(
+                                new MagicSkillUse(world._warriorMageSup, _warriorsSpawnEffect.getId(), 1,
+                                        _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
+
+                        L2Npc randomGuard = world._guardArmy.get(Rnd.get(world._guardArmy.size()));
+                        if (randomGuard != null)
                         {
-                            InstanceManager.getInstance().sendPacket(world.instanceId,
-                                    new MagicSkillUse(world._protectionStone, _portalEffect2.getId(), 1,
-                                            _portalEffect2.getHitTime(), _portalEffect2.getReuseDelay()));
-
-                            world._warriorLeona = addSpawn(_warriorLeonaId, world._protectionStone.getX(),
-                                    world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
-                                    world.instanceId);
-                            world._warriorKain = addSpawn(_warriorKainId, world._protectionStone.getX(),
-                                    world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
-                                    world.instanceId);
-                            world._warriorMageSup = addSpawn(_warriorMageSUpId, world._protectionStone.getX(),
-                                    world._protectionStone.getY(), world._protectionStone.getZ() + 20, 0, true, 0, true,
-                                    world.instanceId);
-
-                            world._warriorLeona.broadcastPacket(
-                                    new MagicSkillUse(world._warriorLeona, _warriorsSpawnEffect.getId(), 1,
-                                            _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
-                            world._warriorKain.broadcastPacket(
-                                    new MagicSkillUse(world._warriorKain, _warriorsSpawnEffect.getId(), 1,
-                                            _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
-                            world._warriorMageSup.broadcastPacket(
-                                    new MagicSkillUse(world._warriorMageSup, _warriorsSpawnEffect.getId(), 1,
-                                            _warriorsSpawnEffect.getHitTime(), _warriorsSpawnEffect.getReuseDelay()));
-
-                            L2Npc randomGuard = world._guardArmy.get(Rnd.get(world._guardArmy.size()));
-                            if (randomGuard != null)
-                            {
-                                InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 5,
-                                        new CreatureSay(randomGuard.getObjectId(), 1, randomGuard.getName(),
-                                                "They're here finally!"));
-                            }
-
-                            world._guardArmy.add(world._warriorMageSup);
-                            world._guardArmy.add(world._warriorLeona);
-                            world._guardArmy.add(world._warriorKain);
-
-                            //Start It back
-                            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-                            {
-                                @Override
-                                public void run()
-                                {
-                                    InstanceManager.getInstance().startWholeInstance(world.instanceId);
-
-                                    InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
-                                            new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
-                                                    "The Royal Army Captains from the Aden realm has been arrived!"));
-
-                                    InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
-                                            new CreatureSay(world._warriorLeona.getObjectId(), 1,
-                                                    world._warriorLeona.getName(), "Keep pushing warriors!"));
-                                    InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
-                                            new CreatureSay(world._warriorKain.getObjectId(), 1,
-                                                    world._warriorKain.getName(), "C'mon!"));
-
-                                    startQuestTimer("guard_army_ai", 3000, world._protectionStone, null);
-                                    startQuestTimer("ai_magic_sup", 6000, world._protectionStone, null);
-                                }
-                            }, 3000);
+                            InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 5,
+                                    new CreatureSay(randomGuard.getObjectId(), 1, randomGuard.getName(),
+                                            "They're here finally!"));
                         }
+
+                        world._guardArmy.add(world._warriorMageSup);
+                        world._guardArmy.add(world._warriorLeona);
+                        world._guardArmy.add(world._warriorKain);
+
+                        //Start It back
+                        ThreadPoolManager.getInstance().scheduleAi(() ->
+                        {
+                            InstanceManager.getInstance().startWholeInstance(world.instanceId);
+
+                            InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                                    new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0,
+                                            "The Royal Army Captains from the Aden realm has been arrived!"));
+
+                            InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                                    new CreatureSay(world._warriorLeona.getObjectId(), 1,
+                                            world._warriorLeona.getName(), "Keep pushing warriors!"));
+                            InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
+                                    new CreatureSay(world._warriorKain.getObjectId(), 1,
+                                            world._warriorKain.getName(), "C'mon!"));
+
+                            startQuestTimer("guard_army_ai", 3000, world._protectionStone, null);
+                            startQuestTimer("ai_magic_sup", 6000, world._protectionStone, null);
+                        }, 3000);
                     }, 12000);
                 }
                 else if (world.status == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.10)

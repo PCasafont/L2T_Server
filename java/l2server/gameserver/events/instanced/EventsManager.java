@@ -196,15 +196,8 @@ public class EventsManager implements Reloadable
                 Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
                         "The " + _currentConfig.getEventName() + " will start in " + _minutesToStart + " minute" +
                                 (_minutesToStart > 1 ? "s" : "") + ".", 5000));
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-                                "Use the Community Board's (ALT+B) \"Join Events\" menu to join.", 5000));
-                    }
-                }, 5000L);
+                ThreadPoolManager.getInstance().scheduleGeneral(() -> Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
+                        "Use the Community Board's (ALT+B) \"Join Events\" menu to join.", 5000)), 5000L);
             }
         }
 

@@ -81,16 +81,14 @@ public class Announcements
 
     public void showAnnouncements(L2PcInstance activeChar)
     {
-        for (int i = 0; i < _announcements.size(); i++)
+        for (String _announcement : _announcements)
         {
-            CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), _announcements.get(i));
+            CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), _announcement);
             activeChar.sendPacket(cs);
         }
 
-        for (int i = 0; i < _eventAnnouncements.size(); i++)
+        for (List<Object> entry : _eventAnnouncements)
         {
-            List<Object> entry = _eventAnnouncements.get(i);
-
             DateRange validDateRange = (DateRange) entry.get(0);
             String[] msg = (String[]) entry.get(1);
             Date currentDate = new Date();
@@ -194,9 +192,9 @@ public class Announcements
         try
         {
             save = new FileWriter(file);
-            for (int i = 0; i < _announcements.size(); i++)
+            for (String _announcement : _announcements)
             {
-                save.write(_announcements.get(i));
+                save.write(_announcement);
                 save.write("\r\n");
             }
         }

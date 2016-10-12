@@ -238,15 +238,11 @@ public class GlobalDropTable implements Reloadable
         long initial = firstRun.getTimeInMillis() - System.currentTimeMillis();
         long delay = 24 * 3600 * 1000L;
 
-        _resetSchedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        _resetSchedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
+            for (GlobalDropCategory cat : _globalDropCategories)
             {
-                for (GlobalDropCategory cat : _globalDropCategories)
-                {
-                    cat.resetCountsPerPlayer();
-                }
+                cat.resetCountsPerPlayer();
             }
         }, initial, delay);
 

@@ -72,14 +72,7 @@ public abstract class IdFactory
 
     protected IdFactory()
     {
-        ThreadPoolManager.getInstance().executeTask(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                setAllCharacterOffline();
-            }
-        });
+        ThreadPoolManager.getInstance().executeTask(() -> setAllCharacterOffline());
 
         cleanUpDB();
         cleanUpTimeStamps();

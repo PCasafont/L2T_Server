@@ -49,14 +49,7 @@ public class L2DynamicZone extends L2ZoneType
         _owner = owner;
         _skill = skill;
 
-        Runnable r = new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                remove();
-            }
-        };
+        Runnable r = () -> remove();
         setTask(ThreadPoolManager.getInstance().scheduleGeneral(r, skill.getBuffDuration()));
     }
 

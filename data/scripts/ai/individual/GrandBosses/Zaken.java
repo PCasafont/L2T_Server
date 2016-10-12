@@ -98,40 +98,36 @@ public class Zaken extends L2AttackableAIScript
         super(questId, name, descr);
 
         // Zaken doors handling
-        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
+            try
             {
-                try
-                {
-                    int t = TimeController.getInstance().getGameTime();
-                    int h = t / 60;
-                    int m = t % 60;
-                    //System.out.println("Zaken, H = " + h + ", M = " + m);
+                int t = TimeController.getInstance().getGameTime();
+                int h = t / 60;
+                int m = t % 60;
+                //System.out.println("Zaken, H = " + h + ", M = " + m);
 
-                    int hour = 0;
-                    //System.out.println("H = " + h + ", Hours = " + hour);
-                    while (h >= hour)
+                int hour = 0;
+                //System.out.println("H = " + h + ", Hours = " + hour);
+                while (h >= hour)
+                {
+                    //System.out.println("Zaken, H = " + h + ", M = " + m + ", Hours = " + hour);
+                    if (h == hour && m <= 60 && !DoorTable.getInstance().getDoor(21240006).getOpen())
                     {
-                        //System.out.println("Zaken, H = " + h + ", M = " + m + ", Hours = " + hour);
-                        if (h == hour && m <= 60 && !DoorTable.getInstance().getDoor(21240006).getOpen())
-                        {
-                            DoorTable.getInstance().getDoor(21240006).openMe();
-                        }
-
-                        if (h == hour + 1 && m == 0)
-                        {
-                            DoorTable.getInstance().getDoor(21240006).closeMe();
-                        }
-
-                        hour += 24;
+                        DoorTable.getInstance().getDoor(21240006).openMe();
                     }
+
+                    if (h == hour + 1 && m == 0)
+                    {
+                        DoorTable.getInstance().getDoor(21240006).closeMe();
+                    }
+
+                    hour += 24;
                 }
-                catch (Throwable e)
-                {
-                    log.warning("Cannot open door ID: 21240006 " + e);
-                }
+            }
+            catch (Throwable e)
+            {
+                log.warning("Cannot open door ID: 21240006 " + e);
             }
         }, 1000, 1000);
 

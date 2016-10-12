@@ -53,14 +53,8 @@ public class FaenorEventParser extends FaenorParser
         if (_eventDates.getStartDate().after(currentDate))
         {
             Log.info("Event ID: (" + ID + ") is not active yet... Ignored.");
-            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    parseEventDropAndMessage(eventNode);
-                }
-            }, _eventDates.getStartDate().getTime() - currentDate.getTime());
+            ThreadPoolManager.getInstance().scheduleGeneral(
+                    () -> parseEventDropAndMessage(eventNode), _eventDates.getStartDate().getTime() - currentDate.getTime());
             return;
         }
 

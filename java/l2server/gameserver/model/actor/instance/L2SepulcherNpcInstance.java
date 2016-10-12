@@ -322,10 +322,7 @@ public class L2SepulcherNpcInstance extends L2Npc
             {
                 val = Integer.parseInt(command.substring(5));
             }
-            catch (IndexOutOfBoundsException ignored)
-            {
-            }
-            catch (NumberFormatException ignored)
+            catch (IndexOutOfBoundsException | NumberFormatException ignored)
             {
             }
             showChatWindow(player, val);

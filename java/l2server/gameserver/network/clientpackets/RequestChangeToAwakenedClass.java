@@ -143,16 +143,12 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 
         player.broadcastUserInfo();
         player.setIsImmobilized(true);
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
-            {
-                player.setIsImmobilized(false);
+            player.setIsImmobilized(false);
 
-                // Is this even custom?
-                //player.sendPacket(new ExShowUsmPacket(10));
-            }
+            // Is this even custom?
+            //player.sendPacket(new ExShowUsmPacket(10));
         }, 7500L);
     }
 }

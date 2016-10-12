@@ -347,29 +347,26 @@ public class AdminTeleport implements IAdminCommandHandler
                 {
                     intVal = Integer.parseInt(st.nextToken());
                 }
-                if (dir.equals("east"))
+                switch (dir)
                 {
-                    x += intVal;
-                }
-                else if (dir.equals("west"))
-                {
-                    x -= intVal;
-                }
-                else if (dir.equals("north"))
-                {
-                    y -= intVal;
-                }
-                else if (dir.equals("south"))
-                {
-                    y += intVal;
-                }
-                else if (dir.equals("up"))
-                {
-                    z += intVal;
-                }
-                else if (dir.equals("down"))
-                {
-                    z -= intVal;
+                    case "east":
+                        x += intVal;
+                        break;
+                    case "west":
+                        x -= intVal;
+                        break;
+                    case "north":
+                        y -= intVal;
+                        break;
+                    case "south":
+                        y += intVal;
+                        break;
+                    case "up":
+                        z += intVal;
+                        break;
+                    case "down":
+                        z -= intVal;
+                        break;
                 }
                 activeChar.teleToLocation(x, y, z, false);
                 showTeleportWindow(activeChar);

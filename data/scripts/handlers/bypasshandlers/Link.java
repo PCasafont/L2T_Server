@@ -35,7 +35,7 @@ public class Link implements IBypassHandler
         try
         {
             String path = command.substring(5).trim();
-            if (path.indexOf("..") != -1)
+            if (path.contains(".."))
             {
                 return false;
             }
